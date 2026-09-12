@@ -1,0 +1,472 @@
+{
+  "schema_version": 2,
+  "project": "KnotzAxxon",
+  "updated_at": "2026-09-12T11:49:02.093Z",
+  "status": "combat_polish_complete_browser_smoke_passed_player_acceptance_pending",
+  "production_ready": false,
+  "validation": {
+    "tests": {
+      "command": "npm test",
+      "passed": 75,
+      "failed": 0,
+      "new_combat_polish_tests": 8
+    },
+    "build": {
+      "command": "npm run build",
+      "status": "passed",
+      "modules": 47,
+      "application_asset": "index-C1TDY5Z-.js",
+      "application_kb": 214.18,
+      "application_gzip_kb": 68.06
+    },
+    "final_live_browser_smoke": "passed_headless_edge_controlled_scenes_and_production_startup",
+    "runtime_performance": "controlled_scene_render_counts_measured_sustained_frame_pacing_and_GPU_memory_unmeasured",
+    "source_null_byte_scan": {
+      "files": 43,
+      "corruption_found": false
+    },
+    "browser": {
+      "browser": "Microsoft Edge 153.0.4234.32",
+      "mode": "isolated_headless",
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": {
+        "desktop": [
+          1280,
+          720
+        ],
+        "portrait": [
+          390,
+          844
+        ]
+      },
+      "quality": "medium",
+      "javascript_or_shader_errors": 0,
+      "controlled_scenes": [
+        {
+          "mode": "classic",
+          "state": "playing",
+          "markers": [
+            "turret",
+            "fuel",
+            "drone"
+          ],
+          "calls": 241,
+          "triangles": 22731,
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "mode": "modern",
+          "state": "playing",
+          "markers": [
+            "turret",
+            "fuel",
+            "drone"
+          ],
+          "calls": 275,
+          "triangles": 31059,
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "mode": "chase",
+          "state": "playing",
+          "markers": [
+            "turret",
+            "fuel",
+            "drone"
+          ],
+          "calls": 275,
+          "triangles": 31059,
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        }
+      ],
+      "keyboard": "real DOM left/right events passed in Classic, Modern and Chase",
+      "production_start": "title-to-flight plus 30 active animation frames passed",
+      "reports": [
+        "artifacts/browser-smoke.json",
+        "artifacts/production-smoke.json"
+      ],
+      "screenshots": [
+        "artifacts/combat-classic.png",
+        "artifacts/combat-modern.png",
+        "artifacts/combat-chase.png",
+        "artifacts/combat-portrait.png",
+        "artifacts/production-start.png"
+      ],
+      "limitations": [
+        "Controlled scene setup uses the development debug API; it is not a full campaign playtest.",
+        "Physical controller/touch acceptance and an audio audition remain pending.",
+        "Desktop CUA still fails at Windows sandbox initialization; direct headless Edge testing succeeded."
+      ]
+    }
+  },
+  "critic": {
+    "completed_rounds": 2,
+    "threshold": 8.5,
+    "all_categories_passed": false,
+    "scores": [
+      {
+        "category": "Visual Fidelity & Shaders",
+        "round_1": 7.8,
+        "round_2": 8.2
+      },
+      {
+        "category": "Authenticity & Altitude Feel",
+        "round_1": 8,
+        "round_2": 8.5
+      },
+      {
+        "category": "Modern Game Feel & Polish",
+        "round_1": 8.1,
+        "round_2": 8.3
+      },
+      {
+        "category": "UI/UX Architecture",
+        "round_1": 8.3,
+        "round_2": 8.5
+      },
+      {
+        "category": "Code Quality & Performance",
+        "round_1": 7.8,
+        "round_2": 8.2
+      }
+    ],
+    "basis": "Independent focused source, CPU simulation and simulated-event reviews. All five provisional implementation scores reach 8.5; live review remains pending. scores preserves the historical baseline rounds.",
+    "strategy": "Sequential category reviews; historic two-round overhaul limit superseded by 2026-09-10 user instruction.",
+    "baseline_round_limit": 2,
+    "focused_all_categories_passed": true,
+    "full_live_gate_passed": false,
+    "focused_scores": [
+      {
+        "category": "Visual Fidelity & Shaders",
+        "round_1": 7.9,
+        "round_2": 8.5,
+        "provisional": true,
+        "reports": [
+          "CRITIC_VISUAL_1.md",
+          "CRITIC_VISUAL_2.md"
+        ]
+      },
+      {
+        "category": "Authenticity & Altitude Feel",
+        "round_1": 7,
+        "round_2": 8.5,
+        "provisional": true,
+        "reports": [
+          "CRITIC_AUTHENTICITY_1.md",
+          "CRITIC_AUTHENTICITY_2.md"
+        ]
+      },
+      {
+        "category": "Modern Game Feel & Polish",
+        "round_1": 7.4,
+        "round_2": 8.5,
+        "provisional": true,
+        "reports": [
+          "CRITIC_FEEL_1.md",
+          "CRITIC_FEEL_2.md"
+        ]
+      },
+      {
+        "category": "UI/UX Architecture",
+        "round_1": 7.4,
+        "round_2": 8.5,
+        "provisional": true,
+        "reports": [
+          "CRITIC_UX_1.md",
+          "CRITIC_UX_2.md"
+        ]
+      },
+      {
+        "category": "Code Quality & Performance",
+        "round_1": 7.6,
+        "round_2": 8.5,
+        "provisional": true,
+        "reports": [
+          "CRITIC_PERFORMANCE_1.md",
+          "CRITIC_PERFORMANCE_2.md"
+        ]
+      }
+    ]
+  },
+  "resolution_recovery": {
+    "status": "fixed_and_regression_tested",
+    "recovery_frame_ms": 17.5,
+    "upward_step": 0.05,
+    "probe_cooldown_seconds": 5,
+    "overload_frame_ms": 22.5,
+    "downward_step": 0.1,
+    "rollback_cooldown_seconds": 1.2
+  },
+  "crash_recovery": {
+    "restored": [
+      "tests/frame-budget.test.js"
+    ],
+    "null_byte_scan_files": 40,
+    "game_source_null_corruption_found": false
+  },
+  "user_testing": {
+    "launcher": "./start-user-testing.ps1",
+    "url": "http://127.0.0.1:4173",
+    "preview_http_status": 200,
+    "referenced_assets_http_checked": 3,
+    "served_assets_match_dist": true,
+    "verified_at": "2026-09-12T11:49:02.089Z",
+    "commands": [
+      "npm install",
+      "npm test",
+      "npm run build",
+      "./start-user-testing.ps1"
+    ],
+    "checklist": [
+      "Classic camera with Flight Assist OFF: left/right must match the screen. Repeat in Modern and Chase, including directional rolls.",
+      "Check coral enemy brackets, amber fuel and green radar markers against dark deck sections. Arrows suggest climb/dive; the cyan bracket confirms an actual firing lane.",
+      "Fire toward targets beyond each screen edge: unseen collisions must not award kills, damage, score or explosion feedback. Compare Flight Assist ON.",
+      "Shoot fuel at matching altitude, compare high shots and ramming, then pass low/high wall openings and moving gates while boosted.",
+      "Build a chain from the first kill through x2 and toward x8. Check milestone text, red low-time countdown, expiry, damage interruption, pause and retry.",
+      "Check warning cues, all boss phases and full campaign victory.",
+      "Test physical controller and touch, portrait and landscape HUD, audio clarity and stereo placement.",
+      "Use F for telemetry; profile crowded combat, boss encounters, repeated retries and quality switches on named hardware."
+    ]
+  },
+  "open_items": [
+    "Interactive acceptance of enemy contrast, markers, viewport-limited combat and combo feedback",
+    "Low/high altitude and moving-gate playtest throughout the campaign",
+    "Boss phases and full campaign victory",
+    "Physical audio/controller/touch and responsive-layout acceptance",
+    "Named-hardware sustained FPS, p95 frame pacing and repeated-restart GPU-memory measurement"
+  ],
+  "workspace": {
+    "git_repository_present": true,
+    "branch": "main",
+    "remote": "origin",
+    "remote_url": "https://github.com/KnotEnvy/KnotzAxxon.git",
+    "branch_cleanup": "No existing local commits or remote branches; initialize the completed snapshot directly on main.",
+    "ignored_local_directories": [
+      "node_modules/",
+      "dist/",
+      ".claude/"
+    ]
+  },
+  "documents": [
+    "CRITIC_ROUND_1.md",
+    "CRITIC_ROUND_2.md",
+    "CRITIC_VISIBILITY_1.md",
+    "CRITIC_VISIBILITY_2.md",
+    "CRITIC_AUTHENTICITY_1.md",
+    "CRITIC_AUTHENTICITY_2.md",
+    "CRITIC_PERFORMANCE_1.md",
+    "CRITIC_PERFORMANCE_2.md",
+    "CRITIC_FEEL_1.md",
+    "CRITIC_FEEL_2.md",
+    "CRITIC_UX_1.md",
+    "CRITIC_UX_2.md",
+    "CRITIC_VISUAL_1.md",
+    "CRITIC_VISUAL_2.md"
+  ],
+  "polish": {
+    "active_area": null,
+    "threshold": 8.5,
+    "strategy": "One category at a time; existing sectors and accepted views preserved",
+    "gate": "requested_combat_polish_implemented_and_regression_tested_player_acceptance_pending",
+    "live_playtest_performed_by_agent": false,
+    "rendered_browser_checks_performed": true
+  },
+  "polish_history": [
+    {
+      "approach": "One area at a time; do not start the next area until this gate is accepted.",
+      "active_area": "Playfield and enemy visibility / altitude legibility",
+      "threshold": 8.5,
+      "static_scores": [
+        8,
+        8.3
+      ],
+      "gate": "user_accepted_three_view_visibility",
+      "user_feedback": "User reports successful playtesting overall but enemies obscured by playfield geometry.",
+      "changes": [
+        "Classic corridor-centered camera with 28-unit look-ahead and portrait coverage",
+        "Near-side decorative trench/skyline/arena cutaways",
+        "Passed wall/arch/gate visuals retire independently; approaching barriers remain opaque",
+        "Surface-aware altitude guides above floor dressing, including arena stripe",
+        "Orthographic sightline, framing, retirement, guide and arena regressions"
+      ],
+      "live_playtest_performed_by_agent": false,
+      "reports": [
+        "CRITIC_VISIBILITY_1.md",
+        "CRITIC_VISIBILITY_2.md"
+      ],
+      "remaining_acceptance": [
+        "Enemy visibility at low/high altitude on both lanes",
+        "Contrast and reveal time around approaching barriers",
+        "Guide continuity over panels/platforms and arena stripes",
+        "Added obstacle batches draw-call cost on named hardware"
+      ],
+      "user_acceptance": {
+        "date": "2026-09-10",
+        "source": "User reports all three views good and visibility issues resolved."
+      }
+    },
+    {
+      "approach": "One category at a time; no new sectors; require critic 8.5+ and distinguish implementation from live acceptance.",
+      "active_area": "Authenticity & Altitude Feel",
+      "threshold": 8.5,
+      "static_scores": [
+        7,
+        8.5
+      ],
+      "gate": "8.5_provisional_source_simulation_live_acceptance_pending",
+      "live_playtest_performed_by_agent": false,
+      "reports": [
+        "CRITIC_AUTHENTICITY_1.md",
+        "CRITIC_AUTHENTICITY_2.md"
+      ],
+      "changes": [
+        "Standard gunfire stays level and forward; aim steering only with explicit Flight Assist",
+        "Alignment cue checks muzzle lane, altitude, cover and actual boss hit radius",
+        "Unified swept collision for player hull, both projectile sides and moving gates",
+        "Terrain pushout remains active during invulnerability; safe HUD bands include hull clearance",
+        "Fuel earned by shooting tanks, not ramming; empty fuel cannot consume shields or exploit roll protection",
+        "Dive fighters approach then commit to peel; enemy altitude stays within playable range",
+        "Visible engagement windows with real-time first-attack warnings, subsequent difficulty cooldown unchanged"
+      ],
+      "remaining_acceptance": [
+        "Normal and assisted combat feel on keyboard and controller",
+        "First-shot cues readable in motion across all rigs",
+        "Wall/gate clearance and cover during boosted flight",
+        "Full boss fight and victory with level gunfire"
+      ]
+    },
+    {
+      "approach": "One category at a time; no new sectors",
+      "active_area": "Code Quality & Performance",
+      "threshold": 8.5,
+      "static_scores": [
+        7.6,
+        8.5
+      ],
+      "gate": "8.5_provisional_engineering_live_measurements_pending",
+      "reports": [
+        "CRITIC_PERFORMANCE_1.md",
+        "CRITIC_PERFORMANCE_2.md"
+      ],
+      "live_playtest_performed_by_agent": false
+    },
+    {
+      "active_area": "Modern Game Feel & Polish",
+      "threshold": 8.5,
+      "gate": "8.5_provisional_source_simulation_live_acceptance_pending",
+      "live_playtest_performed_by_agent": false,
+      "reports": [
+        "CRITIC_FEEL_1.md",
+        "CRITIC_FEEL_2.md"
+      ],
+      "static_scores": [
+        7.4,
+        8.5
+      ]
+    },
+    {
+      "active_area": "Visual Fidelity & Shaders",
+      "threshold": 8.5,
+      "static_scores": [
+        7.9,
+        8.5
+      ],
+      "gate": "8.5_provisional_source_live_acceptance_pending",
+      "live_playtest_performed_by_agent": false,
+      "reports": [
+        "CRITIC_VISUAL_1.md",
+        "CRITIC_VISUAL_2.md"
+      ]
+    },
+    {
+      "active_area": "UI/UX Architecture",
+      "threshold": 8.5,
+      "static_scores": [
+        7.4,
+        8.5
+      ],
+      "gate": "8.5_provisional_source_live_acceptance_pending",
+      "live_playtest_performed_by_agent": false,
+      "reports": [
+        "CRITIC_UX_1.md",
+        "CRITIC_UX_2.md"
+      ]
+    },
+    {
+      "date": "2026-09-12T11:49:02.093Z",
+      "active_area": "Enemy visibility, screen-relative steering, visible combat and combo emphasis",
+      "changes": [
+        "Corrected flight and roll X direction while preserving menu input conventions.",
+        "Mirrored radar lanes and stereo panning to match the flight camera.",
+        "Blocked off-screen target acquisition and off-screen collision damage/rewards/explosion feedback; stale assisted locks cannot steer toward off-screen targets.",
+        "Added twelve reusable, cover-aware enemy markers with type colors and altitude hints.",
+        "Added warm shared enemy rim shading and a small emissive contribution without extra meshes, lights or geometry draws.",
+        "Expanded chain HUD from the first kill with countdown, next-multiplier progress, milestones, x8 cap styling and chain-loss feedback.",
+        "Added eight behavioral regressions; repaired an existing random-drop test fixture.",
+        "Updated in-game help and README; consolidated the handoff into JSON."
+      ],
+      "validation": "75 tests pass; production build passes; all camera scenes, portrait layout, real keyboard input and production startup checked in headless Edge.",
+      "independent_critic_performed": false,
+      "player_acceptance_pending": true
+    }
+  ],
+  "project_constraints": [
+    "Polish the existing eight-sector campaign; preserve the three accepted camera rigs.",
+    "Keep classic orthographic flight, level forward gunfire and altitude-dependent targeting; steering shots requires Flight Assist.",
+    "Keep local procedural assets, seeded level data, synthesized audio and pooled effects.",
+    "Approaching hazards remain opaque; retire cleared obstacle visuals and cut away foreground decoration.",
+    "Preserve the legacy reference directory.",
+    "Keep source-review scores separate from rendered tests and human acceptance."
+  ],
+  "architecture": {
+    "entry": "src/main.js owns boot, menu actions and coordinated shutdown",
+    "engine": "src/core/Engine.js owns renderer, one RAF, adaptive resolution, input and bounded substeps",
+    "simulation": "src/game/Game.js owns state, spawning, swept collision, scoring and campaign progression",
+    "presentation": "Game.lateUpdate runs camera, effects, projectile uploads and DOM HUD once per rendered frame",
+    "world": "Level produces seeded data; Fortress streams merged geometry with at most two chunk builds per rendered frame",
+    "visibility": "CombatVisibility projects target centers with a 4 percent screen-edge margin. Marker sightlines honor solid cover using parallel orthographic or perspective rays.",
+    "render": "RenderPass, HDR-threshold bloom, ACES/sRGB output and combined FXAA/chroma/vignette/scanlines",
+    "audio": "Web Audio synthesis and a lookahead music scheduler"
+  },
+  "resource_ownership": {
+    "application": "Lifetime owns event subscriptions and cancellable waits; shutdown disposes actors before shared caches.",
+    "shared": "Materials and Textures own reusable materials/textures; enemy and pickup caches live until application shutdown.",
+    "instances": "Fortress owns streamed geometry; actors own private geometry and flash/core materials; pools own their instance buffers.",
+    "new_markers": "HUD owns and reuses at most twelve DOM marker nodes, hides them on reset and removes them on disposal.",
+    "visibility_queries": "Reusable scalar/vector/box scratch storage; marker queries do not mutate gate collision caches or retain actor references."
+  },
+  "known_tradeoffs": [
+    "Procedural texture anisotropy still changes only after reload; other quality budgets switch live.",
+    "Partial constructor failures can leave allocations outside the outer shutdown owner.",
+    "Simulation uses up to four bounded variable substeps, not a fixed-step accumulator.",
+    "Projectile tests use moving enemy current centers; moving gates have previous/current face sweeps.",
+    "Viewport eligibility is based on the target center or boss impact point, not GPU occlusion queries. Physical cover still blocks bullets; HUD marker sightlines separately respect approaching walls/gates.",
+    "The twelve-marker limit bounds DOM work; radar still shows farther contacts.",
+    "No new independent critic scores were assigned during this maintenance pass."
+  ],
+  "performance_targets": {
+    "desktop": {
+      "resolution": "1920x1080",
+      "quality": "medium",
+      "fps": 60,
+      "p95_frame_interval_ms_below": 20,
+      "scenes": [
+        "idle",
+        "crowded combat",
+        "boss"
+      ]
+    },
+    "mobile": {
+      "quality": "low",
+      "fps": 30,
+      "thermal_test_minutes": 10
+    },
+    "memory": "Require a stable post-warm-up geometry/texture/GPU-memory plateau across ten retries, quality switching and a complete campaign.",
+    "measurement_limits": "Current render-call/triangle counts are controlled 1280x720 scene snapshots, not sustained FPS or GPU byte measurements."
+  },
+  "handoff_migration": {
+    "format": "JSON only",
+    "removed_file": "HANDOFF.md",
+    "preserved": "Architecture, ownership, constraints, known tradeoffs, performance targets and playtest checklist are represented in this JSON; historical critic reports remain unchanged."
+  }
+}

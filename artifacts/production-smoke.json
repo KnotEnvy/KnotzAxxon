@@ -1,0 +1,27 @@
+{
+  "verified_at": "2026-09-12T11:49:02.089Z",
+  "status": 200,
+  "htmlMatches": true,
+  "assets": [
+    {
+      "path": "./assets/index-C1TDY5Z-.js",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "./assets/three-UrDI_wJH.js",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "./assets/index-BeVV1_g7.css",
+      "status": 200,
+      "matches": true
+    }
+  ],
+  "browser": "153.0.4234.32",
+  "errors": [],
+  "productionBoot": true,
+  "productionStart": true,
+  "activeFrames": 30
+}

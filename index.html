@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#04070c" />
+  <meta name="description" content="KNOTZAXXON - Assault on the Iron Fortress. A 3D isometric rail shooter built with Three.js." />
+  <title>KNOTZAXXON // ASSAULT ON THE IRON FORTRESS</title>
+</head>
+
+<body>
+  <div id="app">
+    <canvas id="viewport" aria-label="KnotzAxxon flight playfield"></canvas>
+
+    <!-- ============================== HUD ============================== -->
+    <div id="hud" class="hud" aria-hidden="true">
+
+      <svg class="hud-frame" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M24 96 L24 40 L96 40" />
+        <path d="M1896 96 L1896 40 L1824 40" />
+        <path d="M24 984 L24 1040 L96 1040" />
+        <path d="M1896 984 L1896 1040 L1824 1040" />
+      </svg>
+
+      <!-- TOP LEFT : score -->
+      <div class="hud-block hud-tl">
+        <div class="score-row">
+          <span class="label">SCORE</span>
+          <span class="score" id="hud-score">000000</span>
+        </div>
+        <div class="score-sub">
+          <span class="label">BEST</span>
+          <span id="hud-best">000000</span>
+        </div>
+        <div class="chain" id="hud-chain">
+          <span class="chain-x" id="hud-chain-mult">x1</span>
+          <div class="chain-info">
+            <span class="chain-detail" id="hud-chain-detail">BUILD YOUR CHAIN</span>
+            <div class="chain-bar"><i id="hud-chain-fill"></i></div>
+            <span class="chain-event" id="hud-chain-event"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP RIGHT : sector -->
+      <div class="hud-block hud-tr">
+        <div class="sector-name"><span id="hud-sector">SECTOR 01</span></div>
+        <div class="sector-sub" id="hud-sector-type">OUTER FORTRESS</div>
+        <div class="progress">
+          <div class="progress-track"><i id="hud-progress"></i></div>
+        </div>
+      </div>
+
+      <!-- TOP CENTER : boss -->
+      <div class="boss-bar" id="hud-boss">
+        <div class="boss-name" id="hud-boss-name">IRON SENTINEL</div>
+        <div class="boss-track">
+          <b id="hud-boss-ghost"></b>
+          <i id="hud-boss-fill"></i>
+        </div>
+        <div class="boss-phase" id="hud-boss-phase">PHASE 1</div>
+      </div>
+
+      <!-- RIGHT : altitude ladder -->
+      <div class="altimeter" id="hud-altimeter">
+        <div class="alt-label">ALT</div>
+        <div class="alt-track" id="alt-track">
+          <div class="alt-ticks" id="alt-ticks"></div>
+          <div class="alt-hazard" id="alt-hazard"></div>
+          <div class="alt-marker" id="alt-marker"><span></span></div>
+        </div>
+        <div class="alt-value" id="alt-value">000</div>
+      </div>
+
+      <!-- BOTTOM LEFT : systems -->
+      <div class="hud-block hud-bl">
+        <div class="gauge">
+          <div class="gauge-head"><span class="label">FUEL</span><span id="hud-fuel-pct">100</span></div>
+          <div class="gauge-track fuel"><i id="hud-fuel"></i></div>
+        </div>
+        <div class="gauge">
+          <div class="gauge-head"><span class="label">HULL</span><span id="hud-hull-pct">100</span></div>
+          <div class="gauge-track hull"><i id="hud-hull"></i></div>
+        </div>
+        <div class="pips" id="hud-shields"></div>
+      </div>
+
+      <!-- BOTTOM RIGHT : weapon -->
+      <div class="hud-block hud-br">
+        <div class="weapon-name" id="hud-weapon">PULSE ARRAY</div>
+        <div class="gauge">
+          <div class="gauge-head"><span class="label">HEAT</span></div>
+          <div class="gauge-track heat"><i id="hud-heat"></i></div>
+        </div>
+        <div class="gauge">
+          <div class="gauge-head"><span class="label">BOOST</span></div>
+          <div class="gauge-track boost"><i id="hud-boost"></i></div>
+        </div>
+      </div>
+
+      <!-- BOTTOM CENTER : radar -->
+      <div class="radar" id="hud-radar">
+        <canvas id="radar-canvas" width="240" height="140"></canvas>
+        <div class="radar-label">TACTICAL</div>
+      </div>
+
+      <div id="hud-threats" class="threats" aria-hidden="true"></div>
+      <div class="lock" id="hud-lock">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M6 28 L6 6 L28 6 M72 6 L94 6 L94 28 M94 72 L94 94 L72 94 M28 94 L6 94 L6 72" />
+          <circle cx="50" cy="50" r="3" />
+        </svg>
+      </div>
+      <div class="floaters" id="floaters"></div>
+      <div class="warn" id="hud-warn" role="status" aria-live="polite"></div>
+    </div>
+
+    <!-- overlays -->
+    <div class="vignette" id="vignette"></div>
+    <div class="damage-flash" id="damage-flash"></div>
+    <div class="scanlines" id="scanlines"></div>
+
+    <!-- ============================== SCREENS ============================== -->
+
+    <div class="screen is-active" id="screen-boot">
+      <div class="boot">
+        <pre class="boot-log" id="boot-log"></pre>
+        <div class="boot-bar"><i id="boot-bar"></i></div>
+      </div>
+    </div>
+
+    <div class="screen" id="screen-title">
+      <div class="title-wrap">
+        <div class="title-kicker">KNOTZ INTERACTIVE / FLIGHT DIVISION</div>
+        <h1 class="title"><span class="t-glitch" data-text="KNOTZAXXON">KNOTZAXXON</span></h1>
+        <div class="title-sub">ASSAULT ON THE IRON FORTRESS</div><p class="mission-brief">One interceptor. Eight hostile sectors.<br>Match altitude. Read your shadow. Break the fortress.</p>
+        <div class="menu" id="title-menu">
+          <button class="mi" data-action="start">ENGAGE</button>
+          <button class="mi" data-action="howto">FLIGHT MANUAL</button>
+          <button class="mi" data-action="settings">SYSTEMS</button>
+          <button class="mi" data-action="scores">RECORDS</button>
+        </div>
+        <div class="title-foot"><span id="title-hint">ENTER / CLICK TO ENGAGE</span></div>
+      </div>
+    </div>
+
+    <div class="screen" id="screen-howto">
+      <div class="panel">
+        <h2 class="panel-title">FLIGHT MANUAL</h2>
+        <div class="manual">
+          <div class="man-col">
+            <h3>CONTROLS</h3>
+            <dl>
+              <dt>LEFT / RIGHT &middot; A D</dt><dd>Lateral thrust</dd>
+              <dt>UP / DOWN &middot; W S</dt><dd>Altitude</dd>
+              <dt>SPACE &middot; J</dt><dd>Fire pulse array</dd>
+              <dt>SHIFT &middot; K</dt><dd>Afterburner (release after depletion)</dd>
+              <dt>L &middot; RIGHT-CLICK</dt><dd>Barrel roll</dd>
+              <dt>ESC &middot; P</dt><dd>Pause</dd>
+            </dl>
+            <p class="note">Gamepad: stick/D-pad flies, A/RT fires, X/LT boosts, B rolls, Start pauses. Menus: A selects, B returns. Touch controls appear during flight.</p>
+          </div>
+          <div class="man-col">
+            <h3>DOCTRINE</h3>
+            <ul>
+              <li><b>Guns fire level.</b> Match the target lane and altitude. Flight Assist enables aim steering.</li>
+              <li><b>Altitude is everything.</b> Your shadow on the deck tells you where you really are. Read it.</li>
+              <li><b>Walls have gaps.</b> The altimeter paints the safe band in amber. Thread it.</li>
+              <li><b>Fuel cells:</b> shoot them at matching altitude to refuel. Ramming them damages your ship.</li>
+              <li><b>Enemy brackets:</b> coral marks hostiles, amber marks fuel, green marks radar. Arrows suggest climb or dive; the cyan lock confirms a firing lane.</li>
+              <li><b>Fight in view.</b> Off-screen targets cannot take player-shot damage. Keep enemies in the picture to confirm your kills.</li>
+              <li><b>Chain kills</b> within three seconds to build your multiplier up to x8. The timer turns red before your chain expires.</li>
+              <li><b>Radar towers</b> are worth a fortune and blind enemy fire prediction.</li>
+              <li><b>The roll</b> grants brief invulnerability and vents weapon heat.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="menu"><button class="mi" data-action="back">RETURN</button></div>
+      </div>
+    </div>
+
+    <div class="screen" id="screen-settings">
+      <div class="panel">
+        <h2 class="panel-title">SYSTEMS</h2>
+        <div class="settings" id="settings-list"></div>
+        <div class="menu"><button class="mi" data-action="back">RETURN</button></div>
+      </div>
+    </div>
+
+    <div class="screen" id="screen-scores">
+      <div class="panel">
+        <h2 class="panel-title">RECORDS</h2>
+        <ol class="scores" id="scores-list"></ol>
+        <div class="menu"><button class="mi" data-action="back">RETURN</button></div>
+      </div>
+    </div>
+
+    <div class="screen" id="screen-pause">
+      <div class="panel narrow">
+        <h2 class="panel-title">PAUSED</h2>
+        <div class="menu">
+          <button class="mi" data-action="resume">RESUME</button>
+          <button class="mi" data-action="settings">SYSTEMS</button>
+          <button class="mi" data-action="abort">ABORT MISSION</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen no-bg" id="screen-sector">
+      <div class="sector-card">
+        <div class="sc-line"></div>
+        <div class="sc-num" id="sc-num">SECTOR 01</div>
+        <div class="sc-name" id="sc-name">OUTER FORTRESS</div>
+        <div class="sc-desc" id="sc-desc"></div>
+        <div class="sc-line"></div>
+      </div>
+    </div>
+
+    <div class="screen" id="screen-over">
+      <div class="panel">
+        <h2 class="panel-title" id="over-title">MISSION FAILED</h2>
+        <div class="results" id="over-results"></div>
+        <div class="menu">
+          <button class="mi" data-action="retry">RE-ENGAGE</button>
+          <button class="mi" data-action="title">MAIN MENU</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="touch" id="touch" inert aria-hidden="true">
+      <button class="tb touch-pause" id="tb-pause" aria-label="Pause game">II</button>
+      <div class="stick" id="touch-stick"><i></i></div>
+      <div class="tbtns">
+        <button class="tb" id="tb-fire">FIRE</button>
+        <button class="tb small" id="tb-boost">BST</button>
+        <button class="tb small" id="tb-roll">ROLL</button>
+      </div>
+    </div>
+
+    <div class="perf" id="perf"></div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
