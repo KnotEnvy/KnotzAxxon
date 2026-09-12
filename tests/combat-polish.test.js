@@ -96,14 +96,13 @@ test('stereo panning and radar both place world negative X on screen-right',()=>
   assert.ok(arcs[0][0]>50);assert.ok(arcs[1][0]<50);
 });
 
-test('enemy markers reuse twelve nodes and clear on retry and disposal',()=>{
-  const h=new HUD(),c=camera(),p=pilot();h.threatsEl=new Node();
-  const enemies=Array.from({length:20},(_,i)=>({alive:true,pos:new THREE.Vector3(i*.1,9,30),radius:2,kind:'drone'}));
-  for(let i=0;i<50;i++)h._updateThreats(enemies,c,p);
-  assert.equal(h._threatMarkers.length,12);assert.equal(h.threatsEl.children.length,12);
-  h.reset();assert.ok(h._threatMarkers.every(e=>e.style.display==='none'));
-  h._updateThreats(enemies.slice(0,2),c,p);assert.equal(h._threatMarkers.filter(e=>e.style.display!=='none').length,2);
-  h.dispose();assert.equal(h.threatsEl.children.length,0);
+test('altitude echo reports level and clears on retry without an enemy overlay',()=>{
+  const h=new HUD();h.altEcho=new Node();h.altEchoOn.el=h.altEcho;h.altEchoLevel.el=h.altEcho;h.altEchoStatus.el=new Node();
+  const s={altitudeEcho:{min:5,max:10},altitude:8,hasDeck:true};
+  h._updateAltitudeEcho(s);assert.ok(h.altEcho.classList.contains('on'));assert.ok(h.altEcho.classList.contains('level'));assert.equal(h.altEchoStatus.el.textContent,'LEVEL');
+  s.altitude=12;h._updateAltitudeEcho(s);assert.equal(h.altEcho.classList.contains('level'),false);assert.equal(h.altEchoStatus.el.textContent,'CONTACT');
+  s.altitudeEcho=null;h._updateAltitudeEcho(s);assert.equal(h.altEcho.classList.contains('on'),false);
+  h.reset();assert.equal(h.altEchoStatus.el.textContent,'ALT');assert.equal(h._threatMarkers,undefined);
 });
 
 test('chains announce early kills and milestones, retain x8 cap, warn on timeout and clear on retry',()=>{

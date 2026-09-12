@@ -1,0 +1,132 @@
+{
+  "browser": "153.0.4234.32",
+  "errors": [],
+  "results": [
+    {
+      "mode": "classic",
+      "state": "playing",
+      "altitudeEcho": {
+        "min": 8.32481639052965,
+        "max": 13.635183609470351,
+        "center": 10.98,
+        "kind": "drone"
+      },
+      "enemyHelpers": 0,
+      "calls": 235,
+      "triangles": 23547,
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "mode": "modern",
+      "state": "playing",
+      "altitudeEcho": {
+        "min": 8.32481639052965,
+        "max": 13.635183609470351,
+        "center": 10.98,
+        "kind": "drone"
+      },
+      "enemyHelpers": 0,
+      "calls": 261,
+      "triangles": 31923,
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "mode": "chase",
+      "state": "playing",
+      "altitudeEcho": {
+        "min": 8.32481639052965,
+        "max": 13.635183609470351,
+        "center": 10.98,
+        "kind": "drone"
+      },
+      "enemyHelpers": 0,
+      "calls": 261,
+      "triangles": 31923,
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "portrait": {
+        "scrollWidth": 390,
+        "width": 390,
+        "chain": {
+          "x": 25,
+          "y": 64,
+          "width": 135.609375,
+          "height": 52,
+          "top": 64,
+          "right": 160.609375,
+          "bottom": 116,
+          "left": 25
+        },
+        "sector": {
+          "x": 246,
+          "y": 14,
+          "width": 130,
+          "height": 66.5,
+          "top": 14,
+          "right": 376,
+          "bottom": 80.5,
+          "left": 246
+        }
+      }
+    },
+    {
+      "sectorText": {
+        "name": "OUTER FORTRESS",
+        "rhythm": "LEARN THE RUN",
+        "animations": 2
+      }
+    },
+    {
+      "reducedMotionAnimations": 0
+    },
+    {
+      "keyboard": {
+        "mode": "classic",
+        "key": "ArrowLeft",
+        "axis": -1,
+        "worldX": 3.4125000000000005
+      }
+    },
+    {
+      "keyboard": {
+        "mode": "classic",
+        "key": "ArrowRight",
+        "axis": 1,
+        "worldX": -3.4125000000000005
+      }
+    },
+    {
+      "keyboard": {
+        "mode": "modern",
+        "key": "ArrowLeft",
+        "axis": -1,
+        "worldX": 3.4125000000000005
+      }
+    },
+    {
+      "keyboard": {
+        "mode": "modern",
+        "key": "ArrowRight",
+        "axis": 1,
+        "worldX": -3.4125000000000005
+      }
+    },
+    {
+      "keyboard": {
+        "mode": "chase",
+        "key": "ArrowLeft",
+        "axis": -1,
+        "worldX": 3.4125000000000005
+      }
+    },
+    {
+      "keyboard": {
+        "mode": "chase",
+        "key": "ArrowRight",
+        "axis": 1,
+        "worldX": -3.4125000000000005
+      }
+    }
+  ]
+}

@@ -67,9 +67,11 @@ Touch controls appear automatically on coarse-pointer devices.
   for twenty seconds — they stop leading their shots.
 - **The roll** grants brief invulnerability and vents weapon heat.
 - **Guns fire level and forward.** Match the target lane and altitude. Only Flight Assist enables aim steering.
-- **Visible combat.** Off-screen target hits consume the shot without damage, score or explosion feedback. Coral brackets locate nearby hostiles; amber marks fuel and green marks radar. Arrows suggest climb/dive, while the cyan alignment bracket confirms a firing lane.
+- **Visible combat.** Off-screen target hits consume the shot without damage, score or explosion feedback. A single target-height echo sits beside the altimeter; it turns green at matching altitude. The cyan alignment bracket still confirms a firing lane. Enemy overlays have been removed.
 - **Screen-relative steering.** Left/right input, directional rolls, radar and stereo panning agree in all three camera views.
 - **Chain feedback.** The first kill starts the counter; every third kill raises the multiplier to a maximum of x8. The larger countdown turns red near expiry, with milestone and chain-loss messages.
+
+The opening speed eases from 36 to 40 world units per second (previously 48), with fuel burn adjusted to preserve cost per distance. The first sector introduces fuel, a lone gun, a forgiving wall, radar and fighters in sequence. Gun batteries, fighter waves, reactor gates and the final fortress each have distinct encounter weights. The HUD route strip tracks all eight sectors; brief sector titles reveal in steps, with reduced-motion support.
 
 Eight sectors, ending at the Iron Sentinel — a three-phase boss that holds station ahead
 of you while the fight moves down the corridor.
@@ -138,7 +140,7 @@ tapered ribbon rather than a pile of additive sprites for exactly that reason.
 between 55% and 100%, rate-limited so the image never pumps. Quality presets are
 auto-detected on first run from core count, device memory and pointer type.
 
-**Draw-call measurement.** Counts vary with camera, scene and quality. The final-polish controlled 1280x720 MEDIUM scene measured 241 calls in Classic and 275 in Modern/Chase on headless Edge with a GTX 1650 Ti. These are complete-composer scene snapshots, not sustained performance measurements. Enemy rim shading and DOM markers add no geometry draws.
+**Draw-call measurement.** Counts vary with camera, scene and quality. The sector-refinement controlled 1280x720 MEDIUM scene measured 235 calls in Classic and 261 in Modern/Chase on headless Edge with a GTX 1650 Ti. These are complete-composer scene snapshots, not sustained performance measurements. Enemy rim shading and the altimeter echo add no geometry draws.
 
 Press **F** in game for the live readout: frame time, draw calls, triangles, resolution
 scale and entity count.

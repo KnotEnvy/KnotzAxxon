@@ -46,6 +46,7 @@
       <!-- TOP RIGHT : sector -->
       <div class="hud-block hud-tr">
         <div class="sector-name"><span id="hud-sector">SECTOR 01</span></div>
+        <div class="route-strip" id="hud-route" aria-hidden="true"><i></i><i></i><i class="space-leg"></i><i></i><i class="space-leg"></i><i></i><i></i><i class="boss-leg"></i></div>
         <div class="sector-sub" id="hud-sector-type">OUTER FORTRESS</div>
         <div class="progress">
           <div class="progress-track"><i id="hud-progress"></i></div>
@@ -66,11 +67,14 @@
       <div class="altimeter" id="hud-altimeter">
         <div class="alt-label">ALT</div>
         <div class="alt-track" id="alt-track">
+          <div class="alt-fill" id="alt-fill"></div>
           <div class="alt-ticks" id="alt-ticks"></div>
+          <div class="alt-contact" id="alt-contact" aria-hidden="true"></div>
           <div class="alt-hazard" id="alt-hazard"></div>
           <div class="alt-marker" id="alt-marker"><span></span></div>
         </div>
         <div class="alt-value" id="alt-value">000</div>
+        <div class="alt-contact-status" id="alt-contact-status">ALT</div>
       </div>
 
       <!-- BOTTOM LEFT : systems -->
@@ -105,7 +109,6 @@
         <div class="radar-label">TACTICAL</div>
       </div>
 
-      <div id="hud-threats" class="threats" aria-hidden="true"></div>
       <div class="lock" id="hud-lock">
         <svg viewBox="0 0 100 100" aria-hidden="true">
           <path d="M6 28 L6 6 L28 6 M72 6 L94 6 L94 28 M94 72 L94 94 L72 94 M28 94 L6 94 L6 72" />
@@ -168,7 +171,7 @@
               <li><b>Altitude is everything.</b> Your shadow on the deck tells you where you really are. Read it.</li>
               <li><b>Walls have gaps.</b> The altimeter paints the safe band in amber. Thread it.</li>
               <li><b>Fuel cells:</b> shoot them at matching altitude to refuel. Ramming them damages your ship.</li>
-              <li><b>Enemy brackets:</b> coral marks hostiles, amber marks fuel, green marks radar. Arrows suggest climb or dive; the cyan lock confirms a firing lane.</li>
+              <li><b>Altitude echo:</b> the narrow band beside your altimeter shows the nearest visible target in your firing lane. Green means matching height; amber stripes show wall clearance.</li>
               <li><b>Fight in view.</b> Off-screen targets cannot take player-shot damage. Keep enemies in the picture to confirm your kills.</li>
               <li><b>Chain kills</b> within three seconds to build your multiplier up to x8. The timer turns red before your chain expires.</li>
               <li><b>Radar towers</b> are worth a fortune and blind enemy fire prediction.</li>
@@ -211,6 +214,7 @@
       <div class="sector-card">
         <div class="sc-line"></div>
         <div class="sc-num" id="sc-num">SECTOR 01</div>
+        <div class="sc-rhythm" id="sc-rhythm">LEARN THE RUN</div>
         <div class="sc-name" id="sc-name">OUTER FORTRESS</div>
         <div class="sc-desc" id="sc-desc"></div>
         <div class="sc-line"></div>

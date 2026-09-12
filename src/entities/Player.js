@@ -16,7 +16,7 @@ import { disposeModel } from '../render/Dispose.js';
 
 import * as THREE from 'three';
 import { SIDE } from './Projectiles.js';
-import { CORRIDOR_HALF, ALT_MIN, ALT_MAX } from '../world/Level.js';
+import { CORRIDOR_HALF, ALT_MIN, ALT_MAX, FLIGHT_SPEED } from '../world/Level.js';
 import { clamp, clamp01, damp, lerp, approach, rand } from '../core/Utils.js';
 import { settings } from '../core/Settings.js';
 import { audio } from '../audio/Audio.js';
@@ -251,7 +251,7 @@ export class Player {
     this.pos.set(0, 9, z);
     this.velocity.set(0, 0, 0);
 
-    this.baseSpeed = 48;
+    this.baseSpeed = FLIGHT_SPEED;
     this.speed = this.baseSpeed;
     this.speedScale = 1;
 

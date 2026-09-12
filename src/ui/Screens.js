@@ -70,6 +70,8 @@ export class Screens extends EventTarget {
   }
 
   hide() {
+    for (const animation of this._cardAnimations ?? []) animation.cancel();
+    this._cardAnimations = [];
     for (const el of this.screens.values()) { el.classList.remove('is-active'); el.inert = true; el.setAttribute('aria-hidden', 'true'); }
     document.activeElement?.blur?.();
     this.current = null;
@@ -309,13 +311,28 @@ export class Screens extends EventTarget {
   /* Sector card                                                         */
   /* ------------------------------------------------------------------ */
 
-  sectorCard(sector, duration = 2.6) {
+  sectorCard(sector, duration = 3.0) {
     const el = this.screens.get('sector');
     if (!el) return;
     document.getElementById('sc-num').textContent =
       `SECTOR ${String(sector.index + 1).padStart(2, '0')}`;
     document.getElementById('sc-name').textContent = sector.name;
+    const rhythm = document.getElementById('sc-rhythm');
+    if (rhythm) rhythm.textContent = sector.rhythm ?? '';
     document.getElementById('sc-desc').textContent = sector.brief ?? sector.sub;
+    for (const animation of this._cardAnimations ?? []) animation.cancel();
+    this._cardAnimations = [];
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const title = document.getElementById('sc-name');
+      const subtitle = document.getElementById('sc-desc');
+      const reveal = title?.animate?.([
+        {clipPath:'inset(0 100% 0 0)',transform:'translateX(-6px)',opacity:.5},
+        {clipPath:'inset(0 0 0 0)',transform:'translateX(0)',opacity:1}
+      ], {duration:550,easing:'steps(14, end)'});
+      const detail = subtitle?.animate?.([{opacity:0,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],{duration:300,delay:220,fill:'backwards'});
+      if (reveal) this._cardAnimations.push(reveal);
+      if (detail) this._cardAnimations.push(detail);
+    }
     el.classList.add('is-active');
     clearTimeout(this._cardT);
     this._cardT = setTimeout(() => el.classList.remove('is-active'), duration * 1000);
@@ -389,6 +406,8 @@ export class Screens extends EventTarget {
     if (barEl) barEl.style.width = '100%';
     await this._lifetime.delay(260);
   }
-  dispose() { this._lifetime.dispose(); clearTimeout(this._cardT); }
+  dispose() {
+    for (const animation of this._cardAnimations ?? []) animation.cancel();
+    this._cardAnimations = []; this._lifetime.dispose(); clearTimeout(this._cardT); }
 
 }

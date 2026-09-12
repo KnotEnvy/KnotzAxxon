@@ -1,4 +1,5 @@
-import { inCombatView, markerVisible } from './CombatVisibility.js';
+import { findAltitudeEcho } from './AltitudeEcho.js';
+import { inCombatView } from './CombatVisibility.js';
 import { Lifetime } from '../core/Lifetime.js';
 import { traceWorld } from './WorldCollision.js';
 import { segmentSphere, segmentBox } from '../core/Collision.js';
@@ -12,7 +13,7 @@ import { segmentSphere, segmentBox } from '../core/Collision.js';
  */
 
 import * as THREE from 'three';
-import { Level, SECTOR_KINDS, CORRIDOR_HALF, DECK_HALF, ALT_MIN, ALT_MAX } from '../world/Level.js';
+import { Level, SECTOR_KINDS, CORRIDOR_HALF, DECK_HALF, ALT_MIN, ALT_MAX, FLIGHT_SPEED } from '../world/Level.js';
 import { Fortress } from '../world/Fortress.js';
 import { Player } from '../entities/Player.js';
 import { Projectiles, SIDE } from '../entities/Projectiles.js';
@@ -74,7 +75,7 @@ export class Game {
     this._previousPlayer = new THREE.Vector3();
     this._colliderScratch = [];
     this._contacts = [];
-    this._visibleEnemies = [];
+    this._altitudeEcho = {};
     this._wallsAhead = [];
 
     this.reset(1);
@@ -341,6 +342,8 @@ export class Game {
 
   _ctx(dt, time) {
     const p = this.player;
+    const legacyPace = 1 + Math.max(0,this.sectorIndex) * .035 + this.loop * .16;
+    const pace = this.level.paceAt?.(p.pos.z) ?? legacyPace;
     return {
       dt, time,
       game: this,
@@ -356,8 +359,9 @@ export class Game {
       hasDeck: this.level.hasDeck(p.pos.z),
       guideSurfaceAt: (x, z, y) => this.fortress.surfaceAt(x, z, y),
       radarJammed: this.radarJamTimer > 0,
-      speedMultiplier: 1 + this.sectorIndex * 0.035 + this.loop * 0.16,
-      fuelBurnScale: 1,
+      speedMultiplier: pace,
+      // Preserve fuel cost per travelled distance when slowing the opening run.
+      fuelBurnScale: (FLIGHT_SPEED / 48) * pace / legacyPace,
       warn: (t) => this.warn(t),
       findTarget: (from) => this.findTarget(from),
       cameraKick: (a) => this.rig.kick(a),
@@ -952,18 +956,8 @@ export class Game {
       this._contacts.push({ x: this.boss.pos.x, z: this.boss.pos.z, color: '#ff3d55', big: true });
     }
 
-    // Reuse the candidate list; only twelve nearby, uncovered contacts get markers.
-    const visible = this._visibleEnemies ??= [];
-    visible.length = 0;
     this.engine.camera.updateMatrixWorld?.(true);
-    for (const e of this.enemies) {
-      const dz = e.pos.z - p.pos.z;
-      if (!e.alive || dz < -8 || dz > 120) continue;
-      if (markerVisible(this.engine.camera, this.level, this.fortress?.animated,
-          p.pos.z, e.pos.x, e.pos.y + e.radius * 0.4, e.pos.z)) visible.push(e);
-    }
-    visible.sort((a,b) => Math.abs(a.pos.z-p.pos.z)-Math.abs(b.pos.z-p.pos.z));
-    if (visible.length > 12) visible.length = 12;
+    const altitudeEcho = p.alive ? findAltitudeEcho(this, this._altitudeEcho ??= {}) : null;
 
     const sectorSpan = sector.zEnd - sector.zStart;
     this.hud.update({
@@ -974,6 +968,7 @@ export class Game {
       chainTime: this.chainTimer / 3,
       sectorLabel: `SECTOR ${String(sector.index + 1 + this.loop * 8).padStart(2, '0')}`,
       sectorSub: sector.sub,
+      sectorIndex: sector.index,
       progress: clamp01((p.pos.z - sector.zStart) / sectorSpan),
       fuel: p.fuel,
       hull: p.hull, hullMax: p.hullMax,
@@ -987,7 +982,8 @@ export class Game {
       camera: this.engine.camera,
       player: p,
       contacts: this._contacts,
-      visibleEnemies: visible,
+      altitudeEcho,
+      hasDeck: this.level.hasDeck?.(p.pos.z) ?? true,
       wallsAhead: this._wallsAhead,
       stats: this.engine.stats,
       entities: this.enemies.length + this.pickups.length,

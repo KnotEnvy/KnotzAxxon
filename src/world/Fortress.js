@@ -275,6 +275,12 @@ export class Fortress {
     batch.box('grate', 7, 0.35, CHUNK_LEN, 0, -0.12, zc, 4, 0x9aa6b4);
     batch.box('neon', 1.5, 0.1, CHUNK_LEN - 6, 0, 0.22, zc, 10, 0x45e0ff, 0, 0.5);
 
+    // Small runway edge dashes share the existing emissive batch.
+    const stripeColor = sector.index === 3 ? 0xffbf69 : sector.index >= 5 ? 0xe5c2a0 : 0x8bcbd0;
+    for (let i=0;i<4;i++) for (const side of [-1,1]) {
+      batch.box('neon', i===0 ? 2.8 : 1.5, .025, .45, side*23, .72, z0+12+i*24, 10, stripeColor, 0, .28);
+    }
+
     // surface plating variation
     const plates = rng.int(5, 5 + Math.round(CHUNK_LEN / 12));
     for (let i = 0; i < plates; i++) {

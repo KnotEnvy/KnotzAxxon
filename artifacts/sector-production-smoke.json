@@ -1,0 +1,18 @@
+{
+  "verified_at": "2026-09-12T23:13:52.807Z",
+  "url": "http://127.0.0.1:4173",
+  "browser": "153.0.4234.32",
+  "assets_matched": [
+    "./assets/index-CP1elLdA.js",
+    "./assets/three-UrDI_wJH.js",
+    "./assets/index-BNyksupi.css"
+  ],
+  "active_animation_frames": 30,
+  "hud": {
+    "live": true,
+    "altitudeBand": true,
+    "enemyHelpers": 0,
+    "routePips": 8
+  },
+  "errors": []
+}

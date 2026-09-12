@@ -6,7 +6,7 @@ const {chromium}=require(process.env.KZ_PLAYWRIGHT_PATH || 'playwright');
  const errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error'&&!m.text().includes('404'))errors.push(m.text());});
  await page.addInitScript(()=>localStorage.setItem('knotzaxxon.settings.v2',JSON.stringify({quality:'medium',camera:'classic',shake:0})));
  await page.goto(process.env.KZ_TEST_URL || 'http://127.0.0.1:4175');await page.waitForFunction(()=>window.KZ,{timeout:60000});
- await page.evaluate(()=>{KZ.engine.stop();KZ.game.start();KZ.screens.hide();document.getElementById('sector-card')?.classList.remove('is-active');});
+ await page.evaluate(()=>{KZ.engine.stop();KZ.game.start();KZ.screens.hide();document.getElementById('screen-sector')?.classList.remove('is-active');});
  const results=[];
  for(const mode of ['classic','modern','chase']) {
   const result=await page.evaluate(async(mode)=>{
@@ -22,14 +22,23 @@ const {chromium}=require(process.env.KZ_PLAYWRIGHT_PATH || 'playwright');
    game._updatePresentation(1/60,engine.time,game._ctx(1/60,engine.time));
    engine.renderer.info.reset();engine.postfx.render(1/60);
    const gl=engine.renderer.getContext(), ext=gl.getExtension('WEBGL_debug_renderer_info');
-   return {mode,state:game.state,markers:game._visibleEnemies.map(e=>e.kind),calls:engine.renderer.info.render.calls,triangles:engine.renderer.info.render.triangles,renderer:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER)};
+   return {mode,state:game.state,altitudeEcho:game._altitudeEcho,enemyHelpers:document.querySelectorAll('.threat-marker').length,calls:engine.renderer.info.render.calls,triangles:engine.renderer.info.render.triangles,renderer:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER)};
   },mode);
-  await page.screenshot({path:'artifacts/combat-'+mode+'.png'});results.push(result);
+  await page.screenshot({path:'artifacts/sector-'+mode+'.png'});results.push(result);
  }
  await page.setViewportSize({width:390,height:844});
  await page.evaluate(()=>{KZ.settings.set('camera','classic');KZ.game.rig.snap(KZ.game.player);KZ.game._updatePresentation(0,0,KZ.game._ctx(0,0));KZ.engine.postfx.render(0);});
- await page.screenshot({path:'artifacts/combat-portrait.png'});
+ await page.screenshot({path:'artifacts/sector-portrait.png'});
  results.push(await page.evaluate(()=>({portrait:{scrollWidth:document.documentElement.scrollWidth,width:innerWidth,chain:document.getElementById('hud-chain').getBoundingClientRect().toJSON(),sector:document.querySelector('.hud-tr').getBoundingClientRect().toJSON()}})));
+ await page.setViewportSize({width:1280,height:720});
+ await page.evaluate(()=>{KZ.game.rig.snap(KZ.game.player);KZ.game._updatePresentation(0,0,KZ.game._ctx(0,0));KZ.engine.postfx.render(0);KZ.screens.sectorCard(KZ.game.level.sectors[0]);});
+ await page.waitForTimeout(650);
+ await page.screenshot({path:'artifacts/sector-title.png'});
+ results.push(await page.evaluate(()=>({sectorText:{name:document.getElementById('sc-name').textContent,rhythm:document.getElementById('sc-rhythm').textContent,animations:KZ.screens._cardAnimations.length}})));
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.evaluate(()=>KZ.screens.sectorCard(KZ.game.level.sectors[3]));
+ results.push(await page.evaluate(()=>({reducedMotionAnimations:KZ.screens._cardAnimations.length})));
+ await page.evaluate(()=>KZ.screens.hide());
  // Real DOM keyboard events run through the game's input mapping, then bounded player updates.
  for(const mode of ['classic','modern','chase']) for(const key of ['ArrowLeft','ArrowRight']) {
   await page.evaluate(mode=>{KZ.settings.set('camera',mode);KZ.game.player.reset(0);KZ.game.rig.snap(KZ.game.player);KZ.engine.input.reset();},mode);
@@ -38,6 +47,6 @@ const {chromium}=require(process.env.KZ_PLAYWRIGHT_PATH || 'playwright');
   await page.keyboard.up(key);results.push({keyboard:{mode,key,...result}});
   if((key==='ArrowRight'&&result.worldX>=0)||(key==='ArrowLeft'&&result.worldX<=0))throw Error('Keyboard direction regression');
  }
- console.log(JSON.stringify({browser:browser.version(),errors,results},null,2));fs.writeFileSync('artifacts/browser-smoke.json',JSON.stringify({browser:browser.version(),errors,results},null,2));
+ console.log(JSON.stringify({browser:browser.version(),errors,results},null,2));fs.writeFileSync('artifacts/sector-smoke.json',JSON.stringify({browser:browser.version(),errors,results},null,2));
  if(errors.length)process.exitCode=1;
 }finally{await browser?.close();}})().catch(e=>{console.error(e);process.exitCode=1});

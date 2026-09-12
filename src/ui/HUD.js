@@ -46,8 +46,13 @@ export class HUD {
     this.chainEventEl = $('hud-chain-event');
     this._comboTimer = 0;
     this._comboPulse = 0;
-    this.threatsEl = $('hud-threats');
-    this._threatMarkers = [];
+    this.altEcho = $('alt-contact');
+    this.altEchoOn = cls(this.altEcho, 'on');
+    this.altEchoLevel = cls(this.altEcho, 'level');
+    this.altEchoStatus = text($('alt-contact-status'));
+    this.altFill = $('alt-fill');
+    this.routePips = Array.from($('hud-route')?.children ?? []);
+    this._routeIndex = -1;
 
     this.sector = text($('hud-sector'));
     this.sectorType = text($('hud-sector-type'));
@@ -154,6 +159,10 @@ export class HUD {
     this.sector.set(s.sectorLabel);
     this.sectorType.set(s.sectorSub);
     this.progress.set(clamp01(s.progress));
+    if (Number.isInteger(s.sectorIndex) && s.sectorIndex !== this._routeIndex) {
+      this._routeIndex = s.sectorIndex;
+      this.routePips.forEach((pip,i)=>{pip.classList.toggle('passed',i<s.sectorIndex);pip.classList.toggle('active',i===s.sectorIndex);});
+    }
 
     /* --- systems ------------------------------------------------------- */
     this.fuel.set(clamp01(s.fuel));
@@ -208,7 +217,7 @@ export class HUD {
       if (this._warnTimer <= 0) this.warnOn.set(false);
     }
 
-    this._updateThreats(s.visibleEnemies, s.camera, s.player);
+    this._updateAltitudeEcho(s);
     this._updateLock(s.lock, s.camera);
     this._updateFloaters(dt, s.camera);
 
@@ -234,6 +243,12 @@ export class HUD {
       const milestone = chain % 3 === 0 && chain <= 21;
       this.chainEventEl.textContent = lost ? 'CHAIN LOST' : mult === 8 ? 'MAX CHAIN' : milestone ? 'MULTIPLIER UP' : 'CHAIN +1';
       this.chainEventEl.classList.toggle('lost', lost);
+      this._comboAnimation?.cancel();
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        this._comboAnimation = this.chainEventEl.animate?.([
+          {transform:'translateY(5px)',opacity:0}, {transform:'translateY(0)',opacity:1}
+        ], {duration:180,easing:'ease-out'});
+      }
     }
   }
 
@@ -252,28 +267,16 @@ export class HUD {
     this.chainEventEl?.classList.toggle('on', this._comboTimer > 0);
   }
 
-  _updateThreats(enemies = [], camera, player) {
-    if (!this.threatsEl || !camera || !player) return;
-    let used = 0;
-    for (const e of enemies) {
-      if (used >= 12 || !e.alive || !inCombatView(camera,e.pos.x,e.pos.y+e.radius*0.4,e.pos.z)) continue;
-      let el = this._threatMarkers[used];
-      if (!el) {
-        el = document.createElement('div');
-        el.className = 'threat-marker';
-        this.threatsEl.appendChild(el);
-        this._threatMarkers.push(el);
-      }
-      used++;
-      _p.set(e.pos.x,e.pos.y+e.radius*0.4,e.pos.z).project(camera);
-      const dy = e.pos.y + e.radius*0.4 - (player.pos.y - 0.1);
-      el.textContent = Math.abs(dy) <= e.radius + 0.9 ? '·' : dy > 0 ? '↑' : '↓';
-      el.classList.toggle('fuel', e.kind === 'fuel');
-      el.classList.toggle('radar-contact', e.kind === 'radar');
-      el.style.transform = 'translate(' + ((_p.x*.5+.5)*innerWidth) + 'px,' + ((-_p.y*.5+.5)*innerHeight) + 'px) translate(-50%,-50%)';
-      el.style.display = '';
-    }
-    for (let i=used;i<this._threatMarkers.length;i++) this._threatMarkers[i].style.display = 'none';
+  _updateAltitudeEcho(s) {
+    const echo=s.altitudeEcho;
+    this.altEchoOn.set(!!echo);
+    const level=!!echo && s.altitude>=echo.min && s.altitude<=echo.max;
+    this.altEchoLevel.set(level);
+    this.altEchoStatus.set(echo ? (level ? 'LEVEL' : 'CONTACT') : s.hazard ? 'GAP' : s.hasDeck === false ? 'SPACE' : 'ALT');
+    if (this.altFill) this.altFill.style.transform='scaleY('+clamp01((s.altitude-ALT_MIN)/(ALT_MAX-ALT_MIN))+')';
+    if (!echo || !this.altEcho) return;
+    this.altEcho.style.bottom=(clamp01((echo.min-ALT_MIN)/(ALT_MAX-ALT_MIN))*100)+'%';
+    this.altEcho.style.height=(clamp01((echo.max-echo.min)/(ALT_MAX-ALT_MIN))*100)+'%';
   }
 
   _updateLock(lock, camera) {
@@ -453,7 +456,7 @@ export class HUD {
     });
   }
 
-  dispose() { clearTimeout(this._bumpT); this.reset(); this.setLive(false); for (const el of this._threatMarkers) el.remove(); this._threatMarkers.length = 0; }
+  dispose() { clearTimeout(this._bumpT); this.reset(); this.setLive(false); }
 
   reset() {
     clearTimeout(this._bumpT);
@@ -464,7 +467,9 @@ export class HUD {
     this.chainEventEl?.classList.remove('on', 'lost');
     this.chainWrap?.classList.remove('urgent', 'max-chain');
     if (this.chainMult.el) this.chainMult.el.style.transform = '';
-    for (const el of this._threatMarkers) el.style.display = 'none';
+    this.altEchoOn.set(false); this.altEchoLevel.set(false); this.altEchoStatus.set('ALT');
+    this._comboAnimation?.cancel(); this._comboAnimation = null;
+    this._routeIndex = -1;
     if (this.damageFlash) { this.damageFlash.style.transition = 'none'; this.damageFlash.style.opacity = '0'; }
     this.scoreEl?.classList.remove('bump');
     this.lockEl?.classList.remove('on');

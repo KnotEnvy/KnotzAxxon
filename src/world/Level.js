@@ -20,6 +20,7 @@ export const DECK_HALF = 27;
 /** Flight ceiling and floor. */
 export const ALT_MIN = 1.3;
 export const ALT_MAX = 25;
+export const FLIGHT_SPEED = 40;
 /**
  * Static geometry is built in slices this long. Longer slices mean fewer
  * merged meshes on screen — the streamer is draw-call bound, not fill bound.
@@ -37,42 +38,50 @@ export const SECTOR_KINDS = { FORTRESS: 'fortress', SPACE: 'space', BOSS: 'boss'
 const CAMPAIGN = [
   {
     name: 'OUTER FORTRESS', sub: 'PERIMETER DEFENCE GRID', kind: SECTOR_KINDS.FORTRESS,
-    sky: 'dusk', length: 1500, threat: 0.30,
+    sky: 'dusk', length: 1500, threat: 0.22,
+    rhythm: 'LEARN THE RUN', weights: [1.2, 0, 1, .9, .4, 0, .2],
     brief: 'Punch through the outer wall. Watch your altitude.',
   },
   {
     name: 'GUN BATTERIES', sub: 'HEAVY EMPLACEMENTS', kind: SECTOR_KINDS.FORTRESS,
     sky: 'dusk', length: 1700, threat: 0.45,
+    rhythm: 'GROUND ASSAULT', weights: [1, 0, 2, .85, .9, .15, .25],
     brief: 'Flak corridor. Keep moving.',
   },
   {
     name: 'THE VOID GAP', sub: 'OPEN SPACE TRANSIT', kind: SECTOR_KINDS.SPACE,
     sky: 'deepspace', length: 1350, threat: 0.50,
+    rhythm: 'FIGHTER WAVES', spaceWeights: [1.8, .25, .15, .65],
     brief: 'No deck, no cover. Interceptors inbound.',
   },
   {
     name: 'REACTOR SPINE', sub: 'THERMAL EXHAUST TRENCH', kind: SECTOR_KINDS.FORTRESS,
     sky: 'ember', length: 1800, threat: 0.62,
+    rhythm: 'TIME THE GATES', weights: [.9, 1.4, .8, .85, .3, .2, .8],
     brief: 'Coolant gates cycle open. Time them.',
   },
   {
     name: 'INTERCEPTOR SCREEN', sub: 'FIGHTER WING ENGAGEMENT', kind: SECTOR_KINDS.SPACE,
     sky: 'deepspace', length: 1450, threat: 0.72,
+    rhythm: 'FORMATION ATTACK', spaceWeights: [2.2, .35, .35, .4],
     brief: 'Their whole wing is up. Chain your kills.',
   },
   {
     name: 'INNER CITADEL', sub: 'COMMAND SUPERSTRUCTURE', kind: SECTOR_KINDS.FORTRESS,
     sky: 'ember', length: 1900, threat: 0.85,
+    rhythm: 'PRECISION RUN', weights: [1.4, .7, 1.2, .85, .8, .35, .8],
     brief: 'Dense architecture. Threading required.',
   },
   {
     name: 'THE GAUNTLET', sub: 'FINAL APPROACH', kind: SECTOR_KINDS.FORTRESS,
     sky: 'void', length: 1600, threat: 1.0,
+    rhythm: 'FINAL ASSAULT', weights: [1.2, 1.2, 1.35, 1, .7, .7, .6],
     brief: 'Everything they have left is pointed at you.',
   },
   {
     name: 'THE IRON SENTINEL', sub: 'FORTRESS CORE', kind: SECTOR_KINDS.BOSS,
     sky: 'void', length: 900, threat: 1.0,
+    rhythm: 'DESTROY THE CORE',
     brief: 'Kill the core.',
   },
 ];
@@ -101,6 +110,15 @@ export class Level {
     const s = this.sectorAt(z);
     const base = s ? s.threat : 0.5;
     return base * (1 + this.loop * 0.35);
+  }
+
+  /** A gentler launch, then the existing gradual sector/loop escalation. */
+  paceAt(z) {
+    const sector = this.sectorAt(z);
+    const index = sector?.index ?? 0;
+    const t = clamp((z - (sector?.zStart ?? 0)) / 600, 0, 1);
+    const launch = index === 0 ? .9 + .1 * t * t * (3 - 2 * t) : 1;
+    return (1 + index * .035 + this.loop * .16) * launch;
   }
 
   sectorAt(z) {
@@ -161,26 +179,37 @@ export class Level {
 
   /* --- fortress ------------------------------------------------------ */
 
+  /** Authored opening beats: fuel lane, lone gun, forgiving clearance, radar, then fighters. */
+  _openingRun(sector, rng) {
+    const start = sector.zStart;
+    for (const [kind,x,y,z] of [
+      ['fuel',-7,0,180], ['fuel',-7,0,214], ['turret',7,0,310],
+      ['radar',0,0,610], ['drone',-6,11,780], ['drone',6,11,810],
+    ]) this._push({kind,x,y,z:start+z,seed:rng.int(0,1e6),pattern:'weave'});
+    const z=start+460, thickness=5, y=5, h=13, width=DECK_HALF*2;
+    this._push({kind:'wall',type:'slot',z,thickness,gaps:[{x:0,w:width,y,h}]});
+    this._collider(0,0,z,width,y,thickness,true,'wall');
+    this._collider(0,y+h,z,width,ALT_MAX+10-y-h,thickness,true,'wall');
+  }
+
   _genFortress(sector, rng) {
     const { zStart, zEnd, threat } = sector;
     // A short calm lead-in so the sector card is readable before anything shoots.
-    let z = zStart + 130;
+    let z = zStart + (sector.index === 0 ? 980 : 160);
 
     // Ambient architecture markers — the streamer turns these into geometry.
     for (let mz = zStart; mz < zEnd; mz += CHUNK_LEN) {
       this._push({ kind: 'deck', z: mz, seed: rng.int(0, 1e6) });
     }
 
-    while (z < zEnd - 180) {
-      const roll = rng.weighted([
-        ['wall', 1.0],
-        ['gate', threat > 0.4 ? 0.55 : 0.15],
-        ['emplacement', 1.25],
-        ['supply', 0.85],
-        ['tower', 0.55],
-        ['flight', threat > 0.35 ? 0.7 : 0.25],
-        ['arch', 0.5],
-      ]);
+    if (sector.index === 0) this._openingRun(sector, rng);
+
+    // A final fuel lane gives a deliberate reward before the next sector.
+    for (let i=0;i<2;i++) this._push({kind:'fuel',x:0,y:0,z:zEnd-110+i*24,seed:rng.int(0,1e6)});
+
+    while (z < zEnd - 260) {
+      const kinds = ['wall','gate','emplacement','supply','tower','flight','arch'];
+      const roll = rng.weighted(kinds.map((kind,i)=>[kind,sector.weights[i]]));
 
       switch (roll) {
         case 'wall': {
@@ -203,7 +232,7 @@ export class Level {
         case 'emplacement': {
           const n = 1 + Math.round(rng.range(0, 1 + threat * 2.4));
           for (let i = 0; i < n; i++) {
-            const heavy = rng.bool(threat * 0.45);
+            const heavy = sector.index > 0 && rng.bool(threat * 0.45);
             this._push({
               kind: heavy ? 'heavyTurret' : 'turret',
               z: z + i * rng.range(26, 46),
@@ -213,7 +242,7 @@ export class Level {
               seed: rng.int(0, 1e6),
             });
           }
-          if (rng.bool(0.35 + threat * 0.3)) {
+          if (sector.index > 0 && rng.bool(0.35 + threat * 0.3)) {
             this._push({
               kind: 'silo',
               z: z + rng.range(20, 70),
@@ -295,7 +324,7 @@ export class Level {
       }
 
       // Free-floating mines fill dead air at higher threat.
-      if (rng.bool(threat * 0.5)) {
+      if (sector.index > 0 && rng.bool(threat * 0.5)) {
         const n = rng.int(2, 5);
         for (let i = 0; i < n; i++) {
           this._push({
@@ -315,7 +344,7 @@ export class Level {
    * problem: `slot` tests altitude, `notch` tests lateral, `window` tests both.
    */
   _wall(z, rng, threat) {
-    const type = rng.pick(WALL_TYPES);
+    const type = rng.pick(threat < .3 ? ['slot','notch'] : WALL_TYPES);
     const thickness = rng.range(4, 7);
     const top = ALT_MAX + 10;
     const W = DECK_HALF * 2;
@@ -384,22 +413,20 @@ export class Level {
     let z = zStart + 120;
 
     while (z < zEnd - 140) {
-      const roll = rng.weighted([
-        ['wing', 1.4],
-        ['platform', 0.9],
-        ['minefield', 0.7],
-        ['debrisRing', 0.6],
-      ]);
+      const roll = rng.weighted(['wing','platform','minefield','debrisRing'].map((kind,i)=>[kind,sector.spaceWeights[i]]));
 
       if (roll === 'wing') {
-        const count = 3 + Math.round(threat * 4);
+        const count = 3 + Math.round(threat * 3);
+        const altitude = rng.pick([7,13,19]);
+        const centerX = rng.range(-3,3);
+        const pattern = rng.pick(['weave','strafe','dive']);
         for (let i = 0; i < count; i++) {
           this._push({
             kind: 'interceptor',
-            z: z + i * rng.range(10, 26),
-            x: rng.range(-CORRIDOR_HALF + 1, CORRIDOR_HALF - 1),
-            y: rng.range(ALT_MIN + 3, ALT_MAX - 2),
-            pattern: rng.pick(['weave', 'dive', 'strafe', 'orbit']),
+            z: z + Math.abs(i-(count-1)/2)*14,
+            x: clamp(centerX+(i-(count-1)/2)*5,-CORRIDOR_HALF+1,CORRIDOR_HALF-1),
+            y: altitude,
+            pattern,
             seed: rng.int(0, 1e6),
           });
         }

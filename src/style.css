@@ -589,15 +589,7 @@ html, body {
   .touch-device .hud-br { right: calc(var(--safe-right) + 80px); }
 }
 
-/* Combat readability: small, bounded markers leave enemy silhouettes exposed. */
-.threats { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-.threat-marker { position: absolute; left: 0; top: 0; width: 30px; height: 30px;
-  border-left: 2px solid currentColor; border-right: 2px solid currentColor;
-  border-radius: 6px; color: #ff796e; font-size: 17px; font-weight: 800;
-  line-height: 12px; text-align: center; text-shadow: 0 1px 3px #000;
-  filter: drop-shadow(0 1px 2px #000); }
-.threat-marker.fuel { color: #ffcd65; }
-.threat-marker.radar-contact { color: #82ffb7; }
+/* Combo emphasis stays in the fixed HUD. */
 .chain { gap: 10px; min-height: 52px; }
 .chain-x { font-size: clamp(27px, 3.4vmin, 42px); line-height: 1; display: inline-block; transform-origin: left center; }
 .chain-info { display: flex; flex-direction: column; gap: 5px; }
@@ -610,3 +602,27 @@ html, body {
 .chain.max-chain .chain-x { color: #92ffd0; text-shadow: 0 0 12px #52ffa866; }
 @media (max-width: 440px) { .chain { gap: 6px; } .chain-x { font-size: 26px; } .chain-detail { font-size: 8px; } .chain-bar { width: 100px; } }
 @media (prefers-reduced-motion: reduce) { .chain-x { transform: none !important; } }
+
+/* A cabinet-style altitude ladder with one separate target-height echo. */
+.altimeter { min-width: 62px; padding: 12px 15px; background: linear-gradient(90deg,#05111de8,#071623ab); border-right: 1px solid #70d3df66; }
+.alt-fill { position:absolute; inset:0; transform-origin:bottom; background:repeating-linear-gradient(to top,#53d8e85c 0 5px,transparent 5px 8px); transform:scaleY(0); }
+.alt-contact { position:absolute; left:-11px; width:7px; border:1px solid #ff9985; border-left-width:3px; background:#ff887133; opacity:0; transition:opacity .16s; }
+.alt-contact.on { opacity:1; }
+.alt-contact.level { border-color:#8dffc1; background:#65fca544; box-shadow:0 0 7px #6effb944; }
+.alt-contact-status { min-width:44px; text-align:center; font-size:8px; letter-spacing:.08em; color:#accedb; }
+.route-strip { display:flex; gap:4px; margin:2px 0; }
+.route-strip i { width:12px; height:4px; background:#46616b66; }
+.route-strip .space-leg { border:1px solid #7b9daa88; background:transparent; }
+.route-strip .boss-leg { width:6px; transform:rotate(45deg); }
+.route-strip .passed { background:#559b9c; }
+.route-strip .active { background:#a1f3ff; box-shadow:0 0 8px #53d8e877; }
+.sc-rhythm { font-size:9px; letter-spacing:.24em; color:#ffcc88; margin:10px 0 5px; }
+#screen-sector { align-items:flex-start; padding-top:clamp(140px,24vh,245px); }
+.sector-card { max-width:min(90vw,650px); padding:0 18px 12px; background:linear-gradient(90deg,transparent,#031019d9,transparent); }
+#screen-sector .sc-name { font-size:clamp(19px,3vmin,36px); }
+#screen-sector .sc-desc { color:#c0d5df; line-height:1.5; }
+#screen-sector.is-active .sc-line { animation:lineIn .5s ease-out both; }
+#screen-sector:not(.is-active) .sc-line { animation:none; }
+@media (max-width:440px) { .altimeter { min-width:50px; padding:8px 11px; } .route-strip { gap:3px; } .route-strip i { width:9px; } .sector-card { padding:0 8px 8px; } }
+@media (max-height:480px) { #screen-sector { padding-top:110px; } #screen-sector .sc-line { margin:.4em 0; } .sc-rhythm { margin:4px 0; } }
+@media (prefers-reduced-motion:reduce) { .sc-line, .result-row { animation:none !important; } .alt-contact { transition:none; } }

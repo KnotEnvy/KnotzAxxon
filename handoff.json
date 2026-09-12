@@ -1,28 +1,29 @@
 {
   "schema_version": 2,
   "project": "KnotzAxxon",
-  "updated_at": "2026-09-12T11:50:43.028Z",
-  "status": "combat_polish_complete_browser_smoke_passed_player_acceptance_pending",
+  "updated_at": "2026-09-12T23:15:21.148Z",
+  "status": "sector_refinement_complete_browser_smoke_passed_player_acceptance_pending",
   "production_ready": false,
   "validation": {
     "tests": {
       "command": "npm test",
-      "passed": 75,
+      "passed": 83,
       "failed": 0,
-      "new_combat_polish_tests": 8
+      "new_combat_polish_tests": 8,
+      "new_sector_refinement_tests": 8
     },
     "build": {
       "command": "npm run build",
       "status": "passed",
-      "modules": 47,
-      "application_asset": "index-C1TDY5Z-.js",
-      "application_kb": 214.18,
-      "application_gzip_kb": 68.06
+      "modules": 48,
+      "application_asset": "index-CP1elLdA.js",
+      "application_kb": 217.39,
+      "application_gzip_kb": 69.45
     },
     "final_live_browser_smoke": "passed_headless_edge_controlled_scenes_and_production_startup",
     "runtime_performance": "controlled_scene_render_counts_measured_sustained_frame_pacing_and_GPU_memory_unmeasured",
     "source_null_byte_scan": {
-      "files": 43,
+      "files": 45,
       "corruption_found": false
     },
     "browser": {
@@ -45,58 +46,68 @@
         {
           "mode": "classic",
           "state": "playing",
-          "markers": [
-            "turret",
-            "fuel",
-            "drone"
-          ],
-          "calls": 241,
-          "triangles": 22731,
+          "altitudeEcho": {
+            "min": 8.32481639052965,
+            "max": 13.635183609470351,
+            "center": 10.98,
+            "kind": "drone"
+          },
+          "enemyHelpers": 0,
+          "calls": 235,
+          "triangles": 23547,
           "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         {
           "mode": "modern",
           "state": "playing",
-          "markers": [
-            "turret",
-            "fuel",
-            "drone"
-          ],
-          "calls": 275,
-          "triangles": 31059,
+          "altitudeEcho": {
+            "min": 8.32481639052965,
+            "max": 13.635183609470351,
+            "center": 10.98,
+            "kind": "drone"
+          },
+          "enemyHelpers": 0,
+          "calls": 261,
+          "triangles": 31923,
           "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         {
           "mode": "chase",
           "state": "playing",
-          "markers": [
-            "turret",
-            "fuel",
-            "drone"
-          ],
-          "calls": 275,
-          "triangles": 31059,
+          "altitudeEcho": {
+            "min": 8.32481639052965,
+            "max": 13.635183609470351,
+            "center": 10.98,
+            "kind": "drone"
+          },
+          "enemyHelpers": 0,
+          "calls": 261,
+          "triangles": 31923,
           "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         }
       ],
       "keyboard": "real DOM left/right events passed in Classic, Modern and Chase",
       "production_start": "title-to-flight plus 30 active animation frames passed",
       "reports": [
-        "artifacts/browser-smoke.json",
-        "artifacts/production-smoke.json"
+        "artifacts/sector-smoke.json",
+        "artifacts/sector-production-smoke.json"
       ],
       "screenshots": [
-        "artifacts/combat-classic.png",
-        "artifacts/combat-modern.png",
-        "artifacts/combat-chase.png",
-        "artifacts/combat-portrait.png",
-        "artifacts/production-start.png"
+        "artifacts/sector-classic.png",
+        "artifacts/sector-modern.png",
+        "artifacts/sector-chase.png",
+        "artifacts/sector-portrait.png",
+        "artifacts/sector-title.png",
+        "artifacts/sector-production.png"
       ],
       "limitations": [
         "Controlled scene setup uses the development debug API; it is not a full campaign playtest.",
         "Physical controller/touch acceptance and an audio audition remain pending.",
         "Desktop CUA still fails at Windows sandbox initialization; direct headless Edge testing succeeded."
-      ]
+      ],
+      "sector_card": "Rendered over gameplay; two cancellable text animations, zero with reduced motion",
+      "enemy_altitude_helpers": 0,
+      "altimeter_echo": "One static contact band, green only at matching firing height; cover and viewport aware"
     }
   },
   "critic": {
@@ -186,7 +197,8 @@
           "CRITIC_PERFORMANCE_2.md"
         ]
       }
-    ]
+    ],
+    "current_pass": "No independent critic review or new scores assigned to the sector refinement; previous scores are historical and provisional."
   },
   "resolution_recovery": {
     "status": "fixed_and_regression_tested",
@@ -210,7 +222,7 @@
     "preview_http_status": 200,
     "referenced_assets_http_checked": 3,
     "served_assets_match_dist": true,
-    "verified_at": "2026-09-12T11:49:02.089Z",
+    "verified_at": "2026-09-12T23:13:52.807Z",
     "commands": [
       "npm install",
       "npm test",
@@ -219,17 +231,20 @@
     ],
     "checklist": [
       "Classic camera with Flight Assist OFF: left/right must match the screen. Repeat in Modern and Chase, including directional rolls.",
-      "Check coral enemy brackets, amber fuel and green radar markers against dark deck sections. Arrows suggest climb/dive; the cyan bracket confirms an actual firing lane.",
+      "Confirm there are no per-enemy altitude brackets or arrows. Align a firing lane and use the single altimeter contact band; green means matching height, amber GAP remains obstacle clearance. Hidden or covered contacts must not appear.",
+      "Play the slower opening from fuel tanks through a turret, broad wall opening, radar and first fighter pair. Check time to react, fuel availability and the transition to denser later sectors.",
       "Fire toward targets beyond each screen edge: unseen collisions must not award kills, damage, score or explosion feedback. Compare Flight Assist ON.",
       "Shoot fuel at matching altitude, compare high shots and ramming, then pass low/high wall openings and moving gates while boosted.",
       "Build a chain from the first kill through x2 and toward x8. Check milestone text, red low-time countdown, expiry, damage interruption, pause and retry.",
       "Check warning cues, all boss phases and full campaign victory.",
+      "Check fortress ground-assault, reactor moving gates, open-space fighter formations and late-sector precision. Confirm route pips, sector reveals and chain text remain readable; test reduced motion.",
       "Test physical controller and touch, portrait and landscape HUD, audio clarity and stereo placement.",
       "Use F for telemetry; profile crowded combat, boss encounters, repeated retries and quality switches on named hardware."
     ]
   },
   "open_items": [
-    "Interactive acceptance of enemy contrast, markers, viewport-limited combat and combo feedback",
+    "Interactive acceptance of opening pace, authored encounter order, altimeter contact band and text effects",
+    "Fuel and difficulty balancing across all eight sectors at the slower cruise speed",
     "Low/high altitude and moving-gate playtest throughout the campaign",
     "Boss phases and full campaign victory",
     "Physical audio/controller/touch and responsive-layout acceptance",
@@ -240,13 +255,19 @@
     "branch": "main",
     "remote": "origin",
     "remote_url": "https://github.com/KnotEnvy/KnotzAxxon.git",
-    "branch_cleanup": "Initial repository: the completed snapshot was committed directly on main; no branch merge was necessary.",
+    "branch_cleanup": "Refinement implemented on the existing main branch; no separate feature branch requires merging.",
     "ignored_local_directories": [
       "node_modules/",
       "dist/",
       ".claude/"
     ],
     "delivery": {
+      "status": "prepared_for_main_push",
+      "branch": "main",
+      "remote_branch": "origin/main",
+      "note": "This refinement is validated locally. GitHub publication is recorded after the game commit is pushed and verified."
+    },
+    "previous_delivery": {
       "status": "published",
       "verified_game_commit": "b4a3a318c0210c34aeb35e188b4a8350bddf20be",
       "branch": "main",
@@ -275,7 +296,7 @@
     "active_area": null,
     "threshold": 8.5,
     "strategy": "One category at a time; existing sectors and accepted views preserved",
-    "gate": "requested_combat_polish_implemented_and_regression_tested_player_acceptance_pending",
+    "gate": "requested_sector_refinement_implemented_and_regression_tested_player_acceptance_pending",
     "live_playtest_performed_by_agent": false,
     "rendered_browser_checks_performed": true
   },
@@ -416,6 +437,22 @@
       "validation": "75 tests pass; production build passes; all camera scenes, portrait layout, real keyboard input and production startup checked in headless Edge.",
       "independent_critic_performed": false,
       "player_acceptance_pending": true
+    },
+    {
+      "date": "2026-09-12T23:15:21.148Z",
+      "active_area": "Sector rhythm, gentler flight pace, uncluttered altitude feedback and animated HUD",
+      "changes": [
+        "Removed all twelve per-enemy altitude markers and arrows; retained shared enemy rim shading and the actual cyan alignment cue.",
+        "Added one static altimeter echo for the nearest visible, unobstructed target in the next muzzle lane; height cross-section accounts for target radius and lane offset.",
+        "Reduced base cruise from 48 to 40 world units per second; opening ramps smoothly from 36 to 40, preserving later-sector and loop escalation. Fuel burn compensates for the longer traversal.",
+        "Authored the first 900 world units with fuel, a turret, broad wall slot, radar and first fighter pair; advanced hazards arrive later.",
+        "Weighted the existing eight sectors toward distinct ground assaults, reactor gates, space fighter formations and late precision runs; added fortress exit fuel lanes.",
+        "Added segmented altitude fill, eight-sector route pips, compact stepped sector-title reveals, combo text pops and subtle batched runway dashes.",
+        "Animations cancel on replacement/reset/disposal and honor reduced motion. Removed the per-enemy DOM update list and sorting."
+      ],
+      "validation": "83 tests pass; 48-module production build passes; all three camera fixtures, keyboard directions, portrait layout, sector text animations, reduced motion and production title-to-flight verified in headless Edge.",
+      "independent_critic_performed": false,
+      "player_acceptance_pending": true
     }
   ],
   "project_constraints": [
@@ -432,7 +469,7 @@
     "simulation": "src/game/Game.js owns state, spawning, swept collision, scoring and campaign progression",
     "presentation": "Game.lateUpdate runs camera, effects, projectile uploads and DOM HUD once per rendered frame",
     "world": "Level produces seeded data; Fortress streams merged geometry with at most two chunk builds per rendered frame",
-    "visibility": "CombatVisibility projects target centers with a 4 percent screen-edge margin. Marker sightlines honor solid cover using parallel orthographic or perspective rays.",
+    "visibility": "CombatVisibility projects target centers with a 4 percent screen-edge margin. AltitudeEcho chooses one forward-lane target; sightlines honor solid cover using parallel orthographic or perspective rays, and the candidate firing path is traced against collision geometry.",
     "render": "RenderPass, HDR-threshold bloom, ACES/sRGB output and combined FXAA/chroma/vignette/scanlines",
     "audio": "Web Audio synthesis and a lookahead music scheduler"
   },
@@ -440,17 +477,18 @@
     "application": "Lifetime owns event subscriptions and cancellable waits; shutdown disposes actors before shared caches.",
     "shared": "Materials and Textures own reusable materials/textures; enemy and pickup caches live until application shutdown.",
     "instances": "Fortress owns streamed geometry; actors own private geometry and flash/core materials; pools own their instance buffers.",
-    "new_markers": "HUD owns and reuses at most twelve DOM marker nodes, hides them on reset and removes them on disposal.",
-    "visibility_queries": "Reusable scalar/vector/box scratch storage; marker queries do not mutate gate collision caches or retain actor references."
+    "visibility_queries": "Reusable scalar/vector/box scratch storage; sightline queries do not mutate gate collision caches or retain actor references.",
+    "altimeter": "HUD owns one fixed DOM contact band and reusable snapshot; no per-enemy DOM nodes or actor references. Combo and sector text animations are canceled when replaced and on reset/disposal."
   },
   "known_tradeoffs": [
     "Procedural texture anisotropy still changes only after reload; other quality budgets switch live.",
     "Partial constructor failures can leave allocations outside the outer shutdown owner.",
     "Simulation uses up to four bounded variable substeps, not a fixed-step accumulator.",
     "Projectile tests use moving enemy current centers; moving gates have previous/current face sweeps.",
-    "Viewport eligibility is based on the target center or boss impact point, not GPU occlusion queries. Physical cover still blocks bullets; HUD marker sightlines separately respect approaching walls/gates.",
-    "The twelve-marker limit bounds DOM work; radar still shows farther contacts.",
-    "No new independent critic scores were assigned during this maintenance pass."
+    "Viewport eligibility is based on the target center or boss impact point, not GPU occlusion queries. Physical cover blocks bullets; altimeter sightlines separately respect approaching walls/gates.",
+    "No new independent critic scores were assigned during this maintenance pass.",
+    "Altimeter contact describes the next muzzle lane and current target position; moving targets still require player timing.",
+    "Slower travel preserves baseline fuel per distance, but longer exposure to enemy fire and sector encounter weights still need human campaign balancing."
   ],
   "performance_targets": {
     "desktop": {
@@ -476,5 +514,27 @@
     "format": "JSON only",
     "removed_file": "HANDOFF.md",
     "preserved": "Architecture, ownership, constraints, known tradeoffs, performance targets and playtest checklist are represented in this JSON; historical critic reports remain unchanged."
+  },
+  "sector_refinement": {
+    "opening_speed": 36,
+    "base_cruise_speed": 40,
+    "previous_base_cruise_speed": 48,
+    "speed_units": "world units per second before boost and later-sector/loop multipliers",
+    "opening_ramp_distance": 600,
+    "authored_opening_distance": 900,
+    "fuel_policy": "Scale cruise fuel burn with the speed reduction so baseline fuel per distance remains equivalent.",
+    "altitude_feedback": "Single HUD contact band replaces all enemy altitude helpers.",
+    "sector_rhythms": [
+      "LEARN THE RUN",
+      "GROUND ASSAULT",
+      "FIGHTER WAVES",
+      "TIME THE GATES",
+      "FORMATION ATTACK",
+      "PRECISION RUN",
+      "FINAL ASSAULT",
+      "DESTROY THE CORE"
+    ],
+    "design_reference": "https://arcarc.xmission.com/PDF_Arcade_Manuals_and_Schematics/Zaxxon_Manual_(420-0724).pdf",
+    "scope": "Refine the existing eight sectors; retain isometric altitude-dependent forward combat and fortress/space transitions."
   }
 }
