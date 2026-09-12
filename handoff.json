@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "project": "KnotzAxxon",
-  "updated_at": "2026-09-12T11:49:02.093Z",
+  "updated_at": "2026-09-12T11:50:43.028Z",
   "status": "combat_polish_complete_browser_smoke_passed_player_acceptance_pending",
   "production_ready": false,
   "validation": {
@@ -240,12 +240,20 @@
     "branch": "main",
     "remote": "origin",
     "remote_url": "https://github.com/KnotEnvy/KnotzAxxon.git",
-    "branch_cleanup": "No existing local commits or remote branches; initialize the completed snapshot directly on main.",
+    "branch_cleanup": "Initial repository: the completed snapshot was committed directly on main; no branch merge was necessary.",
     "ignored_local_directories": [
       "node_modules/",
       "dist/",
       ".claude/"
-    ]
+    ],
+    "delivery": {
+      "status": "published",
+      "verified_game_commit": "b4a3a318c0210c34aeb35e188b4a8350bddf20be",
+      "branch": "main",
+      "remote_branch": "origin/main",
+      "verified_at": "2026-09-12T11:50:43.028Z",
+      "note": "The game commit was verified against GitHub main before this handoff-only delivery record was committed."
+    }
   },
   "documents": [
     "CRITIC_ROUND_1.md",
