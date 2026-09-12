@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "project": "KnotzAxxon",
-  "updated_at": "2026-09-12T23:15:21.148Z",
+  "updated_at": "2026-09-12T23:16:22.182Z",
   "status": "sector_refinement_complete_browser_smoke_passed_player_acceptance_pending",
   "production_ready": false,
   "validation": {
@@ -262,10 +262,12 @@
       ".claude/"
     ],
     "delivery": {
-      "status": "prepared_for_main_push",
+      "status": "published",
+      "verified_game_commit": "8dd450c9d25eca1f95835a9e490eaeff6a0cec68",
       "branch": "main",
       "remote_branch": "origin/main",
-      "note": "This refinement is validated locally. GitHub publication is recorded after the game commit is pushed and verified."
+      "verified_at": "2026-09-12T23:16:22.182Z",
+      "note": "The sector refinement game commit was verified against GitHub main before this handoff-only publication record was committed."
     },
     "previous_delivery": {
       "status": "published",
