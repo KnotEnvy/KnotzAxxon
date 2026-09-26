@@ -604,7 +604,8 @@ html, body {
   .pilot-entry { flex-wrap: wrap; }
 }
 @media (min-aspect-ratio: 4/3) {
-  .touch-device .hud-br { right: calc(var(--safe-right) + 80px); }
+  /* clear the altimeter, which sits on the same right edge */
+  .touch-device .hud-br { right: calc(var(--safe-right) + 100px); }
 }
 
 /* Combo emphasis stays in the fixed HUD. */

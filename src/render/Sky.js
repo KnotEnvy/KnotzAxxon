@@ -170,7 +170,7 @@ export const SKY_PRESETS = {
     zenith: 0x2e0a18, horizon: 0x9c2c12, ground: 0x2c0d06,
     nebulaA: 0xff7a30, nebulaB: 0xc11a42, nebulaAmount: 1.15,
     sunColor: 0xff8f4a, sunDir: [0.34, 0.60, -0.72], sunIntensity: 3.8,
-    fog: 0x4a1810, fogDensity: 0.0046,
+    fog: 0x5c2418, fogDensity: 0.0038,
     ambient: 0x8a4430, ambientIntensity: 1.9,
   },
   void: {
