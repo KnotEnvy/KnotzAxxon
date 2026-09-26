@@ -8,7 +8,7 @@ import { segmentSphere, segmentBox } from '../core/Collision.js';
  *
  * Owns the state machine, spawns entities from the level plan, resolves every
  * collision, and feeds the HUD. Systems below this file know nothing about
- * each other â€” all the "what happens when X hits Y" rules live here on purpose,
+ * each other — all the "what happens when X hits Y" rules live here on purpose,
  * because that is the part that gets tuned most.
  */
 
@@ -427,7 +427,7 @@ export class Game {
 
   }
 
-  /** Camera and post-processing only â€” used behind menus. */
+  /** Camera and post-processing only — used behind menus. */
   _idleUpdate(dt, time) {
     const p = this.player;
     if (this.state === STATE.IDLE) {
@@ -1110,7 +1110,7 @@ export class Game {
     this.projectiles.clear();
   }
 
-  /** Campaign complete â€” wrap into the next, harder loop. */
+  /** Campaign complete — wrap into the next, harder loop. */
   _nextLoop() {
     this.loop++;
     const keep = { score: this.score, kills: this.kills, time: this.runTime, grazes: this.grazes,
@@ -1384,7 +1384,7 @@ export class Game {
   }
 }
 
-/** Neutral input used while the player is dying â€” no control, no crash. */
+/** Neutral input used while the player is dying — no control, no crash. */
 const NULL_INPUT = {
   moveX: 0, moveY: 0, fire: false, boost: false,
   justPressed: () => false,

@@ -149,14 +149,15 @@ export class Audio {
     this.pink = this._noiseBuffer(2, 'pink');
     this.brown = this._noiseBuffer(2, 'brown');
 
-    // One room per environment; swapped with a short dip on sector entry.
-    this._rooms = {
-      fortress: this._impulse(1.3, 3.2, 0),
-      space: this._impulse(3.6, 2.2, 0.55),
-      arena: this._impulse(2.4, 2.6, 0.2),
-    };
+    // One room per environment; swapped with a short dip on sector entry. The
+    // campaign opens in the fortress, so the two long tails are built shortly
+    // after start-up rather than on the first key press.
+    this._rooms = { fortress: this._impulse(1.3, 3.2, 0) };
+    if (offline) this._buildRooms();
+    else this._lifetime.delay(1500).then((ok) => { if (ok) this._buildRooms(); });
     this.reverb = ctx.createConvolver();
     this.reverb.buffer = this._rooms.fortress;
+    this._room = 'fortress';
     this.reverbIn = ctx.createGain();
     this.sfxSend = ctx.createGain();
     this.sfxSend.gain.value = 0.26;
@@ -255,19 +256,33 @@ export class Audio {
     const rate = this.ctx.sampleRate;
     const len = Math.floor(rate * seconds);
     const buf = this.ctx.createBuffer(2, len, rate);
+    // a short pre-delay keeps the early reflections from smearing transients
+    const pre = Math.floor(rate * 0.012);
     for (let ch = 0; ch < 2; ch++) {
       const d = buf.getChannelData(ch);
       let lp = 0;
-      for (let i = 0; i < len; i++) {
-        const t = i / len;
-        // a short pre-delay keeps the early reflections from smearing transients
-        const gate = i < rate * 0.012 ? 0 : 1;
-        const n = Math.random() * 2 - 1;
-        lp += (n - lp) * (1 - dark * Math.min(1, t * 2.5));
-        d[i] = lp * Math.pow(1 - t, decay) * gate;
+      // The envelope and the tail darkening move slowly: evaluate them once
+      // per 128-sample block instead of calling pow() for every sample.
+      for (let i0 = pre; i0 < len; i0 += 128) {
+        const t = i0 / len;
+        const env = Math.pow(1 - t, decay);
+        const k = 1 - dark * Math.min(1, t * 2.5);
+        const end = Math.min(len, i0 + 128);
+        for (let i = i0; i < end; i++) {
+          lp += (Math.random() * 2 - 1 - lp) * k;
+          d[i] = lp * env;
+        }
       }
     }
     return buf;
+  }
+
+  /** The long space and arena tails; applies a room that was asked for early. */
+  _buildRooms() {
+    if (!this.ctx || this._rooms?.space) return;
+    this._rooms.space = this._impulse(3.6, 2.2, 0.55);
+    this._rooms.arena = this._impulse(2.4, 2.6, 0.2);
+    if (this._bedKind && this._bedKind !== this._room) this.setEnvironment(this._bedKind, this._bedFlavor);
   }
 
   /* ------------------------------------------------------------------ */
@@ -426,26 +441,6 @@ export class Audio {
     this._env(k, t, 0.001, 0.035, 0.18);
     const ko = this._osc('sine', 180, t, 0.05, k);
     ko.frequency.exponentialRampToValueAtTime(60, t + 0.04);
-  }
-
-  /** Charged / heavy shot. */
-  heavyShot(pan = 0) {
-    if (!this.ready) return;
-    const t = this._now();
-    const g = this.ctx.createGain();
-    const f = this.ctx.createBiquadFilter();
-    f.type = 'lowpass';
-    f.frequency.setValueAtTime(2400, t);
-    f.frequency.exponentialRampToValueAtTime(320, t + 0.3);
-    const p = this._pan(pan);
-    g.connect(f); f.connect(p); p.connect(this.sfxBus);
-    this._env(g, t, 0.004, 0.32, 0.5);
-    const o = this._osc('sawtooth', 320, t, 0.34, g);
-    o.frequency.exponentialRampToValueAtTime(64, t + 0.3);
-    const n = this.ctx.createGain();
-    n.connect(f);
-    this._env(n, t, 0.002, 0.14, 0.22);
-    this._noiseSrc(t, 0.16, n, 0.7);
   }
 
   /**

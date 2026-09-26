@@ -6,7 +6,7 @@
  * `transform: scaleX` so nothing triggers layout, and every write is guarded
  * by a dirty check because the update runs sixty times a second.
  *
- * The radar is the one canvas element â€” it's genuinely a drawing.
+ * The radar is the one canvas element — it's genuinely a drawing.
  */
 
 import * as THREE from 'three';

@@ -77,14 +77,20 @@ Eight sectors, ending at the Iron Sentinel — a three-phase robot that drops in
 arena, tracks you with its head and holds station ahead of you while the fight moves down
 the corridor. Shoot off its shoulder cannons, punish the chest reactor while it is open,
 and from phase two land six hits on its charging missile launcher to blow the missile in
-the rack (the Zaxxon robot duel). Beat it and you can continue into a harder loop with
-your score banked.
+the rack (the Zaxxon robot duel). While the launcher charges, the robot leans in, the
+lock bracket moves onto the rack, the reactor dims and the warning line counts `RACK n/6`.
+Its fire curtain has an audible gap: the sweep drops out as it pans past the opening.
+Beat it and you can continue into a harder loop with your score banked.
 
 - **Style scoring.** Threading a wall gap close to its edge, diving low under an arch and
   grazing enemy fire all pay bonuses that keep your chain alive.
-- **Sector grades.** Each sector is graded S/A/B/C on targets destroyed and hull hits;
-  a damage-free sector earns a clean bonus. 50,000 and 150,000 points earn extra hull.
+- **Sector grades.** Each sector is graded S/A/B/C on targets destroyed and hull hits.
+  A damage-free sector earns a clean bonus only if you fought it (35% of targets or more,
+  full bonus from 80%). Your best grade per sector is kept in browser storage and shown
+  next to the run's grades on the results screen. 50,000 and 150,000 points earn extra hull.
 - **Daily sortie.** One seeded fortress per UTC day, the same for every pilot.
+- **Fortress codes.** The results screen prints a six-character code for the fortress you
+  flew. Open the game with `?seed=CODE` to fly that exact fortress again, or share it.
 - **Ground targets have a life.** Destroyed emplacements leave burning wrecks and scorch
   marks, turret domes pop off, radar dishes topple, fuel tanks go up in a fire column.
   Parked fighters sit on hardstands; some crews scramble and climb as you approach.
@@ -92,9 +98,17 @@ your score banked.
 Every sector has its own look: an airfield with parked fighters and landing pads, flak
 batteries firing tracers into the sky, reactor cooling stacks venting steam, a dense
 citadel of antennae and bunkers, and a red-alarm gauntlet. Leaving the fortress you fly
-off a lit deck edge into space; coming back you clear its battlemented perimeter wall.
-Space sectors have tumbling asteroid fields, a derelict dreadnought beneath the lane and
-the interceptor wing's carrier running alongside.
+off a lit deck edge into space; coming back you clear its battlemented perimeter wall,
+and the very first wall of the campaign is that perimeter too. Electric barriers span the
+lane between pylons in later fortress sectors. Space sectors have tumbling asteroid fields
+and debris gates, drifts of rock and hull plating packed across the lane with one clear
+band, read on the altimeter like a slot wall. Gun towers rise on pylons from the derelict
+dreadnought beneath the lane, and fighter wings launch from the hangar bays of the carrier
+running alongside.
+
+The score has a hand-written hook for sectors 1, 4 and 7 and for the boss (the other
+songs improvise a seeded motif). Each environment has an ambient bed: deck wind, open-space
+air, reactor hum and steam, and an arena sub drone that climbs with the boss's phase.
 
 ---
 
@@ -118,7 +132,9 @@ A few things worth calling out:
 chevrons into 2D canvases, then Sobel-filters the height fields into tangent-space normal
 maps so the PBR lighting has something to bite on. `audio/Audio.js` synthesises every
 sound effect as a one-shot node graph and drives the music from a lookahead scheduler
-with layers that fade in with combat intensity.
+with layers that fade in with combat intensity. The mix runs through a glue compressor,
+a brick-wall compressor and a unity-gain soft clipper; heavy impacts duck the music and
+carve its low end, and gameplay cues open a short pocket in its 1-3 kHz band.
 
 **The sky is baked once.** `render/Sky.js` renders its gradient, nebula and starfield into
 a cubemap when a sector loads, then uses it as both `scene.background` and — via PMREM —
@@ -130,7 +146,9 @@ seeded so a run is reproducible. `world/Fortress.js` slices it into chunks and s
 chunk's hundreds of boxes and prop templates straight into pooled per-material vertex
 arrays, with per-block variation and baked ambient occlusion carried in vertex colours.
 A visible fortress is a few dozen draw calls rather than several hundred. The chunk under
-the ship builds first; a second build in the same frame only happens inside a 6 ms slice.
+the ship builds first. A second build in the same frame only happens while that frame's
+measured build time is inside a 6 ms slice. Barrier approach faces and, in open space,
+the faces the ship sees get a baked tint lift, so they read without extra lights.
 
 **The fortress animates without draw calls.** Every emissive strip in a chunk shares one
 material whose vertex shader reads a per-vertex animation code: strobing beacons, runway
@@ -180,10 +198,12 @@ between 55% and 100%, rate-limited so the image never pumps. Quality presets are
 auto-detected on first run from core count, device memory and pointer type.
 
 **Draw-call measurement.** Counts vary with camera, scene and quality. On the HIGH preset at
-1280x720 (headless Edge, GTX 1650 Ti) the showcase scenes measure roughly 96–307 calls, at or
-below the previous build's 207–337 despite the added scenery: the player ship is baked into
-four meshes by material, and idle hit-flash shells no longer draw. These are complete-composer
-scene snapshots, not sustained performance measurements.
+1280x720 (headless Edge, GTX 1650 Ti) the 24 showcase scenes measure roughly 126–283 calls,
+below the pre-session build's 207–337 despite the added scenery: the player ship is baked into
+four meshes by material, idle hit-flash shells no longer draw, and every landmark, lamp and
+seam rides in a chunk's existing batches. These are complete-composer scene snapshots, not
+sustained performance measurements. The campaign smoke also tracks the renderer's program
+count, which stays flat from the first frame to loop 2.
 
 **Tooling.** Four scripts in `artifacts/` drive the development build through headless
 Edge with Playwright (set `KZ_PLAYWRIGHT_PATH` to a `playwright-core` install and

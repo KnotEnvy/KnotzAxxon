@@ -88,7 +88,7 @@ export const CAMERA_MODES = {
   chase: { label: 'CHASE', yaw: 6, dist: 24, height: 9.5, fov: 66 },
 };
 
-/** Declarative schema â€” the SYSTEMS screen renders straight from this. */
+/** Declarative schema — the SYSTEMS screen renders straight from this. */
 export const SCHEMA = [
   {
     id: 'quality',
@@ -177,7 +177,7 @@ class SettingsStore extends EventTarget {
     try {
       localStorage.setItem(KEY, JSON.stringify(this.values));
     } catch {
-      /* private browsing â€” settings just won't persist */
+      /* private browsing — settings just won't persist */
     }
   }
 

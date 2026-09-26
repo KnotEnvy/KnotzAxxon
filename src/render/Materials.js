@@ -216,9 +216,7 @@ export class Materials {
       envMapIntensity: 1.3,
     })));
 
-    this.circuit = Tex.circuitTexture(this.aniso);
     this.glow = Tex.glowSprite();
-    this.flare = Tex.flareSprite();
     this.ring = Tex.ringSprite();
     this.blob = Tex.blobShadowSprite();
   }
@@ -454,46 +452,6 @@ export class Materials {
           float pulse = 0.6 + 0.4 * sin(uTime * 6.0);
           float a = (0.35 + fres * 0.9) * uIntensity;
           gl_FragColor = vec4(uColor * (1.4 + fres * 2.2) * pulse * uIntensity, a);
-        }
-      `,
-    });
-    return this.track(m);
-  }
-
-  /**
-   * Scrolling energy conduit — long emissive strips running along corridors.
-   */
-  conduit(color = 0x45e0ff, speed = 1.6) {
-    const m = new THREE.ShaderMaterial({
-      transparent: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      toneMapped: false,
-      uniforms: {
-        uTime: { value: 0 },
-        uColor: { value: new THREE.Color(color) },
-        uSpeed: { value: speed },
-      },
-      vertexShader: /* glsl */`
-        varying vec2 vUv;
-        void main() {
-          vUv = uv;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-        }
-      `,
-      fragmentShader: /* glsl */`
-        precision highp float;
-        uniform float uTime;
-        uniform vec3 uColor;
-        uniform float uSpeed;
-        varying vec2 vUv;
-        void main() {
-          float t = vUv.y * 3.0 - uTime * uSpeed;
-          float pulse = pow(fract(t), 6.0);
-          float base = 0.22;
-          float edge = (1.0 - smoothstep(0.0, 0.5, abs(vUv.x - 0.5)));
-          float a = (base + pulse * 0.95) * edge;
-          gl_FragColor = vec4(uColor * (1.0 + pulse * 3.0), a);
         }
       `,
     });

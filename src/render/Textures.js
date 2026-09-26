@@ -398,44 +398,6 @@ export function hazardTexture(aniso = 8, color = '#ffb43a') {
   });
 }
 
-/** Glowing circuitry, used as an emissive overlay on power structures. */
-export function circuitTexture(aniso = 8) {
-  return once(`circuit:${aniso}`, () => {
-    const size = 512;
-    const rng = new Rng(0xc0de);
-    const { c, ctx } = canvas(size);
-    ctx.fillStyle = '#000';
-    ctx.fillRect(0, 0, size, size);
-    ctx.lineCap = 'square';
-    ctx.strokeStyle = '#7cf6ff';
-    ctx.shadowColor = '#45e0ff';
-
-    for (let trace = 0; trace < 34; trace++) {
-      let x = Math.floor(rng.next() * 16) * (size / 16);
-      let y = Math.floor(rng.next() * 16) * (size / 16);
-      ctx.lineWidth = rng.bool(0.3) ? 5 : 2.5;
-      ctx.shadowBlur = ctx.lineWidth * 2.5;
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      const segs = rng.int(3, 8);
-      for (let s = 0; s < segs; s++) {
-        const len = Math.floor(rng.range(1, 4)) * (size / 16);
-        if (rng.bool()) x += rng.bool() ? len : -len;
-        else y += rng.bool() ? len : -len;
-        ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-      // solder pad at the end
-      ctx.fillStyle = '#c8fbff';
-      ctx.beginPath();
-      ctx.arc(x, y, ctx.lineWidth * 1.6, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    ctx.shadowBlur = 0;
-    return finish(c, { srgb: true, aniso });
-  });
-}
-
 /* ------------------------------------------------------------------ */
 /* Sprites                                                             */
 /* ------------------------------------------------------------------ */
@@ -459,40 +421,6 @@ export function glowSprite(size = 128, falloff = 2.2) {
       }
     }
     ctx.putImageData(img, 0, 0);
-    const t = new THREE.CanvasTexture(c);
-    t.colorSpace = THREE.SRGBColorSpace;
-    t.needsUpdate = true;
-    return t;
-  });
-}
-
-/** Four-point starburst for muzzle flashes and pickups. */
-export function flareSprite(size = 256) {
-  return once(`flare:${size}`, () => {
-    const { c, ctx } = canvas(size);
-    const half = size / 2;
-    const core = ctx.createRadialGradient(half, half, 0, half, half, half);
-    core.addColorStop(0, 'rgba(255,255,255,1)');
-    core.addColorStop(0.12, 'rgba(255,255,255,0.85)');
-    core.addColorStop(0.35, 'rgba(255,255,255,0.16)');
-    core.addColorStop(1, 'rgba(255,255,255,0)');
-    ctx.fillStyle = core;
-    ctx.fillRect(0, 0, size, size);
-
-    ctx.globalCompositeOperation = 'lighter';
-    for (let i = 0; i < 4; i++) {
-      ctx.save();
-      ctx.translate(half, half);
-      ctx.rotate((Math.PI / 2) * i + Math.PI / 4 * (i % 2));
-      const g = ctx.createLinearGradient(0, 0, half, 0);
-      g.addColorStop(0, 'rgba(255,255,255,0.9)');
-      g.addColorStop(1, 'rgba(255,255,255,0)');
-      ctx.fillStyle = g;
-      const w = i % 2 ? size * 0.012 : size * 0.02;
-      ctx.fillRect(0, -w / 2, half, w);
-      ctx.fillRect(-half, -w / 2, half, w);
-      ctx.restore();
-    }
     const t = new THREE.CanvasTexture(c);
     t.colorSpace = THREE.SRGBColorSpace;
     t.needsUpdate = true;
