@@ -41,6 +41,8 @@ class Pool {
     this.scaleL = new Float32Array(capacity);
     this.scaleR = new Float32Array(capacity);
     this.target = new Array(capacity).fill(null);
+    /** Set once a bolt has scored a near-miss graze on the player. */
+    this.grazed = new Uint8Array(capacity);
     this.turn = new Float32Array(capacity);
     this.cursor = 0;
     this.count = 0;
@@ -132,6 +134,7 @@ export class Projectiles {
     pool.radius[i] = opts.radius ?? 0.7;
     pool.scaleL[i] = opts.length ?? 1;
     pool.scaleR[i] = opts.width ?? 1;
+    pool.grazed[i] = 0;
     return i;
   }
 
@@ -152,6 +155,7 @@ export class Projectiles {
     p.radius[i] = opts.radius ?? 1.0;
     p.target[i] = target;
     p.turn[i] = opts.turn ?? 2.2;
+    p.grazed[i] = 0;
     return i;
   }
 

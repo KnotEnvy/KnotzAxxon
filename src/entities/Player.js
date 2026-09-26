@@ -15,6 +15,7 @@ import { disposeModel } from '../render/Dispose.js';
  */
 
 import * as THREE from 'three';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { SIDE } from './Projectiles.js';
 import { CORRIDOR_HALF, ALT_MIN, ALT_MAX, FLIGHT_SPEED } from '../world/Level.js';
 import { clamp, clamp01, damp, lerp, approach, rand } from '../core/Utils.js';
@@ -36,58 +37,66 @@ const _euler = new THREE.Euler();
  */
 function buildShip(mats) {
   const g = new THREE.Group();
-  const hull = mats.playerHull;
-  const accent = mats.playerAccent;
+  /** Static parts are baked per material: the whole airframe is four draws. */
+  const buckets = { hull: [], accent: [], glass: [], neon: [] };
+  const _obj = new THREE.Object3D();
 
-  const add = (geo, mat, x, y, z, rx = 0, ry = 0, rz = 0) => {
-    const m = new THREE.Mesh(geo, mat);
-    m.position.set(x, y, z);
-    m.rotation.set(rx, ry, rz);
-    m.castShadow = true;
-    m.receiveShadow = false;
-    g.add(m);
-    return m;
+  const add = (geo, bucket, x, y, z, rx = 0, ry = 0, rz = 0, sx = 1, sy = 1, sz = 1, color = null) => {
+    _obj.position.set(x, y, z);
+    _obj.rotation.set(rx, ry, rz);
+    _obj.scale.set(sx, sy, sz);
+    _obj.updateMatrix();
+    let part = geo.index ? geo.toNonIndexed() : geo.clone();
+    part.applyMatrix4(_obj.matrix);
+    part.deleteAttribute('uv1');
+    part.clearGroups();
+    if (bucket === 'neon') {
+      const c = new THREE.Color(color);
+      const n = part.attributes.position.count;
+      const data = new Float32Array(n * 3);
+      for (let i = 0; i < n; i++) data.set([c.r, c.g, c.b], i * 3);
+      part.setAttribute('color', new THREE.BufferAttribute(data, 3));
+    }
+    buckets[bucket].push(part);
   };
+  const neonColor = (hex, gain) => new THREE.Color(hex).multiplyScalar(gain);
 
   /* --- fuselage ---------------------------------------------------- */
 
   const nose = new THREE.ConeGeometry(0.62, 2.6, 8);
   nose.rotateX(Math.PI / 2);
-  add(nose, hull, 0, 0, 1.9);
+  add(nose, 'hull', 0, 0, 1.9);
 
   const body = new THREE.CylinderGeometry(0.62, 0.78, 2.6, 8);
   body.rotateX(Math.PI / 2);
-  add(body, hull, 0, 0, 0.3);
+  add(body, 'hull', 0, 0, 0.3);
 
   const tail = new THREE.CylinderGeometry(0.78, 0.5, 1.5, 8);
   tail.rotateX(Math.PI / 2);
-  add(tail, accent, 0, 0, -1.7);
+  add(tail, 'accent', 0, 0, -1.7);
 
   /* --- wings -------------------------------------------------------- */
 
-  // swept delta, drawn once and mirrored
-  const wingShape = new THREE.Shape();
-  wingShape.moveTo(0, 0.9);
-  wingShape.lineTo(3.4, -1.5);
-  wingShape.lineTo(3.55, -2.15);
-  wingShape.lineTo(2.2, -2.0);
-  wingShape.lineTo(0.55, -1.1);
-  wingShape.closePath();
-  const wingGeo = new THREE.ExtrudeGeometry(wingShape, { depth: 0.15, bevelEnabled: true, bevelSegments: 2, steps: 1, bevelSize: 0.045, bevelThickness: 0.04 });
-  wingGeo.translate(0, 0, -0.095);
-  wingGeo.rotateX(Math.PI / 2);
-
+  // Swept delta. Each side is its own outline: extrusion keeps the winding
+  // front-facing, which a baked negative scale would not.
   for (const side of [1, -1]) {
-    const w = add(wingGeo, hull, side * 0.5, -0.06, 0.1);
-    w.scale.x = side;
-    w.rotation.z = side * -0.09;
+    const wingShape = new THREE.Shape();
+    wingShape.moveTo(0, 0.9);
+    wingShape.lineTo(side * 3.4, -1.5);
+    wingShape.lineTo(side * 3.55, -2.15);
+    wingShape.lineTo(side * 2.2, -2.0);
+    wingShape.lineTo(side * 0.55, -1.1);
+    wingShape.closePath();
+    const wingGeo = new THREE.ExtrudeGeometry(wingShape, { depth: 0.15, bevelEnabled: true, bevelSegments: 2, steps: 1, bevelSize: 0.045, bevelThickness: 0.04 });
+    wingGeo.translate(0, 0, -0.095);
+    wingGeo.rotateX(Math.PI / 2);
+    add(wingGeo, 'hull', side * 0.5, -0.06, 0.1, 0, 0, side * -0.09);
   }
 
   // wing leading-edge accents
   const edgeGeo = new THREE.BoxGeometry(3.1, 0.1, 0.34);
   for (const side of [1, -1]) {
-    const e = add(edgeGeo, accent, side * 2.0, 0.03, 0.62, 0, 0, side * -0.09);
-    e.rotation.y = side * 0.62;
+    add(edgeGeo, 'accent', side * 2.0, 0.03, 0.62, 0, side * 0.62, side * -0.09);
   }
 
   /* --- vertical stabilisers ------------------------------------------ */
@@ -101,14 +110,13 @@ function buildShip(mats) {
   const finGeo = new THREE.ExtrudeGeometry(finShape, { depth: 0.12, bevelEnabled: false });
   finGeo.translate(0, 0, -0.06);
   for (const side of [1, -1]) {
-    add(finGeo, accent, side * 0.62, 0.24, -1.35, 0, 0, side * 0.22);
+    add(finGeo, 'accent', side * 0.62, 0.24, -1.35, 0, 0, side * 0.22);
   }
 
   /* --- canopy -------------------------------------------------------- */
 
   const canopyGeo = new THREE.SphereGeometry(0.5, 16, 12, 0, Math.PI * 2, 0, Math.PI * 0.55);
-  const canopy = add(canopyGeo, mats.glass, 0, 0.42, 0.75);
-  canopy.scale.set(1, 0.85, 1.9);
+  add(canopyGeo, 'glass', 0, 0.42, 0.75, 0, 0, 0, 1, 0.85, 1.9);
 
   /* --- engines ------------------------------------------------------- */
 
@@ -119,8 +127,8 @@ function buildShip(mats) {
 
   const engines = [];
   for (const side of [1, -1]) {
-    add(nacelle, accent, side * 1.05, -0.1, -1.25);
-    add(nozzle, mats.neon(0x2a3644, 1), side * 1.05, -0.1, -2.4);
+    add(nacelle, 'accent', side * 1.05, -0.1, -1.25);
+    add(nozzle, 'neon', side * 1.05, -0.1, -2.4, 0, 0, 0, 1, 1, 1, neonColor(0x2a3644, 1));
     // Small and only just over the bloom threshold. The old value put a
     // 3.2x emissive disc a few metres from the camera, which is what turned
     // the bottom of the frame into a white sheet.
@@ -135,35 +143,62 @@ function buildShip(mats) {
   /* --- running lights ------------------------------------------------ */
 
   const lightGeo = new THREE.BoxGeometry(0.16, 0.1, 0.5);
-  add(lightGeo, mats.neon(0xff3d55, 1.5), -3.4, 0, -1.55);
-  add(lightGeo, mats.neon(0x52ffa8, 1.5), 3.4, 0, -1.55);
+  add(lightGeo, 'neon', -3.4, 0, -1.55, 0, 0, 0, 1, 1, 1, neonColor(0xff3d55, 1.5));
+  add(lightGeo, 'neon', 3.4, 0, -1.55, 0, 0, 0, 1, 1, 1, neonColor(0x52ffa8, 1.5));
 
   // spine and wing trim: the ship's readable outline in silhouette
   const spine = new THREE.BoxGeometry(0.14, 0.06, 2.4);
-  add(spine, mats.neon(0x45e0ff, 1.15), 0, 0.66, -0.3);
+  add(spine, 'neon', 0, 0.66, -0.3, 0, 0, 0, 1, 1, 1, neonColor(0x45e0ff, 1.15));
 
   const trimGeo = new THREE.BoxGeometry(2.6, 0.07, 0.13);
   for (const side of [1, -1]) {
-    const t = add(trimGeo, mats.neon(0x45e0ff, 1.05), side * 2.0, 0.06, 0.5, 0, 0, side * -0.09);
-    t.rotation.y = side * 0.62;
-    t.castShadow = false;
+    add(trimGeo, 'neon', side * 2.0, 0.06, 0.5, 0, side * 0.62, side * -0.09, 1, 1, 1, neonColor(0x45e0ff, 1.05));
   }
 
   // Layered armour, intake vanes and concentric nozzle rings provide a
   // manufactured silhouette without external asset or texture requests.
   for (const side of [-1, 1]) {
     for (let j = 0; j < 4; j++) {
-      add(new THREE.BoxGeometry(0.62, 0.06, 0.10), accent, side * 1.08, 0.32, -0.65 - j * 0.28);
+      add(new THREE.BoxGeometry(0.62, 0.06, 0.10), 'accent', side * 1.08, 0.32, -0.65 - j * 0.28);
     }
     for (let j = 0; j < 3; j++) {
-      add(new THREE.TorusGeometry(0.43 + j * 0.025, 0.055, 6, 20), accent,
+      add(new THREE.TorusGeometry(0.43 + j * 0.025, 0.055, 6, 20), 'accent',
         side * 1.05, -0.1, -2.12 - j * 0.19);
     }
-    const panel = add(new THREE.BoxGeometry(1.1, 0.09, 0.7), accent, side * 2.1, 0.11, 0.55);
-    panel.rotation.y = side * 0.62;
-    add(new THREE.CylinderGeometry(0.10, 0.15, 1.5, 10), accent, side * 1.6, -0.12, 1.1, Math.PI / 2);
+    add(new THREE.BoxGeometry(1.1, 0.09, 0.7), 'accent', side * 2.1, 0.11, 0.55, 0, side * 0.62);
+    add(new THREE.CylinderGeometry(0.10, 0.15, 1.5, 10), 'accent', side * 1.6, -0.12, 1.1, Math.PI / 2);
+    // wingtip gun pods: the visible source of the alternating bolts
+    add(new THREE.CylinderGeometry(0.09, 0.12, 1.3, 8), 'accent', side * 1.6, -0.1, 1.95, Math.PI / 2);
+  }
+
+  const materials = {
+    hull: mats.playerHull,
+    accent: mats.playerAccent,
+    glass: mats.glass,
+    neon: (mats._playerNeon ??= mats.track(new THREE.MeshBasicMaterial({ vertexColors: true, toneMapped: false }))),
+  };
+  // Classic-rig silhouette: the airframe drawn again only where something
+  // stands in front of it, so threading a pillar never hides the ship.
+  const silhouette = new THREE.Mesh(
+    mergeGeometries([...buckets.hull, ...buckets.accent], false),
+    (mats._playerSilhouette ??= mats.track(new THREE.MeshBasicMaterial({
+      color: 0x7fe8ff, transparent: true, opacity: 0.38, depthWrite: false,
+      depthFunc: THREE.GreaterDepth, toneMapped: false,
+    }))),
+  );
+  silhouette.renderOrder = 12;
+  silhouette.visible = false;
+  g.add(silhouette);
+  for (const [key, parts] of Object.entries(buckets)) {
+    const merged = mergeGeometries(parts, false);
+    for (const p of parts) p.dispose();
+    const mesh = new THREE.Mesh(merged, materials[key]);
+    mesh.castShadow = key !== 'neon';
+    mesh.receiveShadow = false;
+    g.add(mesh);
   }
   g.userData.engines = engines;
+  g.userData.silhouette = silhouette;
   return g;
 }
 
@@ -313,7 +348,7 @@ export class Player {
       this.rollCooldown = 0.9;
       this.invuln = Math.max(this.invuln, 0.42);
       this.heat = Math.max(0, this.heat - 0.35);   // rolling vents the weapon
-      audio.ui('confirm');
+      audio.roll(this.rollDir);
       this.fx.addTrauma(0.12);
     }
     const rolling = this.rollTimer > 0;
@@ -400,7 +435,7 @@ export class Player {
     this.fireCooldown -= dt;
     const coolRate = this.overheated ? 0.55 : 0.42;
     this.heat = clamp01(this.heat - coolRate * dt);
-    if (this.overheated && this.heat <= 0.05) this.overheated = false;
+    if (this.overheated && this.heat <= 0.05) { this.overheated = false; audio.cooled(); }
 
     if ((input.fire || input.justPressed('fire')) && this.fireCooldown <= 0 && !this.overheated && !rolling) {
       this._fire(ctx);
@@ -416,6 +451,8 @@ export class Player {
     }
 
     /* --- engine FX -------------------------------------------------------- */
+    const silhouette = this.model.userData?.silhouette;
+    if (silhouette) silhouette.visible = !!ctx.camera?.classic;
     this._engineFx(dt, ctx, boostT);
     this._updateShadow(ctx, dt);
 
@@ -430,7 +467,7 @@ export class Player {
     this.heat = clamp01(this.heat + 0.075);
     if (this.heat >= 1) {
       this.overheated = true;
-      audio.ui('back');
+      audio.overheat();
     }
 
     const speed = 190;
@@ -455,11 +492,15 @@ export class Player {
         _v2.x, _v2.y, _v2.z, speed,
         { damage: 1, radius: 0.9, life: 1.6, length: 1.15 },
       );
-      this.fx.muzzle(_v, _v2, 0x8ff0ff, 0.85);
+      // A compact flash just ahead of the gun pod: at 8.7 shots a second a
+      // big sprite and a pooled light turned the ship into a white orb.
+      _aim.copy(_v).addScaledVector(_v2, 0.8);
+      this.fx.muzzle(_aim, _v2, 0x8ff0ff, 0.42, false);
     }
 
+    // Screen-right is world -X, so the right-hand pod pans right.
+    audio.laser(shots.length === 1 ? -this.muzzleSide * 0.22 : 0, 1);
     this.muzzleSide *= -1;
-    audio.laser(0, 1);
     this.fx.addTrauma(0.03);
     ctx.cameraKick?.(0.16);
   }
@@ -500,7 +541,7 @@ export class Player {
   }
 
   _updateShadow(ctx, dt) {
-    const show = ctx.hasDeck && this.alive;
+    const show = (ctx.hasDeck || ctx.flightGrid) && this.alive;
     this.shadow.visible = show;
     this.reticle.visible = show;
     this.dropLine.visible = show && settings.get('shadowLine');

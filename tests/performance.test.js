@@ -91,7 +91,8 @@ test('quality switches resize every effect pool and dispose superseded GPU resou
   assert.deepEqual([fx.sparks.capacity,fx.smoke.capacity,fx.debris.capacity,fx.lights.lights.length],[900,315,120,2]);
   assert.equal(fx.sparks._time,23);
   for(let i=0;i<10;i++){fx.applyQuality(Q.ultra);fx.applyQuality(Q.low);}
-  assert.equal(scene.children.length,31);
+  // 31 pooled effect objects plus the wreck decal/slab and named-chunk instancers.
+  assert.equal(scene.children.length,34);
   fx.dispose();fx.dispose();assert.equal(scene.children.length,0);m.dispose();
 });
 

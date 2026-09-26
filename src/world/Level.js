@@ -39,43 +39,43 @@ const CAMPAIGN = [
   {
     name: 'OUTER FORTRESS', sub: 'PERIMETER DEFENCE GRID', kind: SECTOR_KINDS.FORTRESS,
     sky: 'dusk', length: 1500, threat: 0.22,
-    rhythm: 'LEARN THE RUN', weights: [1.2, 0, 1, .9, .4, 0, .2],
+    rhythm: 'LEARN THE RUN', weights: [1.2, 0, 1, .9, .4, 0, .2, 1.1, .3],
     brief: 'Punch through the outer wall. Watch your altitude.',
   },
   {
     name: 'GUN BATTERIES', sub: 'HEAVY EMPLACEMENTS', kind: SECTOR_KINDS.FORTRESS,
     sky: 'dusk', length: 1700, threat: 0.45,
-    rhythm: 'GROUND ASSAULT', weights: [1, 0, 2, .85, .9, .15, .25],
+    rhythm: 'GROUND ASSAULT', weights: [1, 0, 2, .85, .9, .15, .25, .6, .7],
     brief: 'Flak corridor. Keep moving.',
   },
   {
     name: 'THE VOID GAP', sub: 'OPEN SPACE TRANSIT', kind: SECTOR_KINDS.SPACE,
     sky: 'deepspace', length: 1350, threat: 0.50,
-    rhythm: 'FIGHTER WAVES', spaceWeights: [1.8, .25, .15, .65],
+    rhythm: 'FIGHTER WAVES', spaceWeights: [1.8, .25, .15, .65, .7],
     brief: 'No deck, no cover. Interceptors inbound.',
   },
   {
     name: 'REACTOR SPINE', sub: 'THERMAL EXHAUST TRENCH', kind: SECTOR_KINDS.FORTRESS,
     sky: 'ember', length: 1800, threat: 0.62,
-    rhythm: 'TIME THE GATES', weights: [.9, 1.4, .8, .85, .3, .2, .8],
+    rhythm: 'TIME THE GATES', weights: [.9, 1.4, .8, .85, .3, .2, .8, .2, .8],
     brief: 'Coolant gates cycle open. Time them.',
   },
   {
     name: 'INTERCEPTOR SCREEN', sub: 'FIGHTER WING ENGAGEMENT', kind: SECTOR_KINDS.SPACE,
     sky: 'deepspace', length: 1450, threat: 0.72,
-    rhythm: 'FORMATION ATTACK', spaceWeights: [2.2, .35, .35, .4],
+    rhythm: 'FORMATION ATTACK', spaceWeights: [2.2, .35, .35, .4, .6],
     brief: 'Their whole wing is up. Chain your kills.',
   },
   {
     name: 'INNER CITADEL', sub: 'COMMAND SUPERSTRUCTURE', kind: SECTOR_KINDS.FORTRESS,
     sky: 'ember', length: 1900, threat: 0.85,
-    rhythm: 'PRECISION RUN', weights: [1.4, .7, 1.2, .85, .8, .35, .8],
+    rhythm: 'PRECISION RUN', weights: [1.4, .7, 1.2, .85, .8, .35, .8, .3, 1],
     brief: 'Dense architecture. Threading required.',
   },
   {
     name: 'THE GAUNTLET', sub: 'FINAL APPROACH', kind: SECTOR_KINDS.FORTRESS,
     sky: 'void', length: 1600, threat: 1.0,
-    rhythm: 'FINAL ASSAULT', weights: [1.2, 1.2, 1.35, 1, .7, .7, .6],
+    rhythm: 'FINAL ASSAULT', weights: [1.2, 1.2, 1.35, 1, .7, .7, .6, .2, 1.1],
     brief: 'Everything they have left is pointed at you.',
   },
   {
@@ -187,7 +187,8 @@ export class Level {
       ['radar',0,0,610], ['drone',-6,11,780], ['drone',6,11,810],
     ]) this._push({kind,x,y,z:start+z,seed:rng.int(0,1e6),pattern:'weave'});
     const z=start+460, thickness=5, y=5, h=13, width=DECK_HALF*2;
-    this._push({kind:'wall',type:'slot',z,thickness,gaps:[{x:0,w:width,y,h}]});
+    // The first wall is the fortress's battlemented outer wall: Zaxxon's entry beat.
+    this._push({kind:'wall',type:'slot',z,thickness,perimeter:true,gaps:[{x:0,w:width,y,h}]});
     this._collider(0,0,z,width,y,thickness,true,'wall');
     this._collider(0,y+h,z,width,ALT_MAX+10-y-h,thickness,true,'wall');
   }
@@ -203,13 +204,23 @@ export class Level {
     }
 
     if (sector.index === 0) this._openingRun(sector, rng);
+    // Arriving from open space you clear the fortress's outer wall: the
+    // Zaxxon entry beat, with a generous slot and a fuel reward behind it.
+    const previous = CAMPAIGN[sector.index - 1];
+    if (previous?.kind === SECTOR_KINDS.SPACE) {
+      const wz = zStart + 70, y = 6, h = 12, W = DECK_HALF * 2, top = ALT_MAX + 10;
+      this._push({ kind: 'wall', type: 'slot', z: wz, thickness: 6, perimeter: true, gaps: [{ x: 0, w: W, y, h }] });
+      this._collider(0, 0, wz, W, y, 6, true, 'wall');
+      this._collider(0, y + h, wz, W, top - y - h, 6, true, 'wall');
+      for (const x of [-6, 6]) this._push({ kind: 'fuel', x, y: 0, z: zStart + 125, seed: rng.int(0, 1e6) });
+    }
 
     // A final fuel lane gives a deliberate reward before the next sector.
     for (let i=0;i<2;i++) this._push({kind:'fuel',x:0,y:0,z:zEnd-110+i*24,seed:rng.int(0,1e6)});
 
     while (z < zEnd - 260) {
-      const kinds = ['wall','gate','emplacement','supply','tower','flight','arch'];
-      const roll = rng.weighted(kinds.map((kind,i)=>[kind,sector.weights[i]]));
+      const kinds = ['wall','gate','emplacement','supply','tower','flight','arch','airfield','phrase'];
+      const roll = rng.weighted(kinds.map((kind,i)=>[kind,sector.weights[i] ?? 0]));
 
       switch (roll) {
         case 'wall': {
@@ -315,10 +326,42 @@ export class Level {
           break;
         }
         case 'arch': {
+          if (sector.index > 0 && rng.bool(0.55)) {
+            // Zaxxon's electric barrier: a live beam between two pylons.
+            // Fly over it or under it; the beam itself is the only hazard.
+            const band = lerp(2.6, 3.6, clamp(threat, 0, 1));
+            const y = rng.range(6, ALT_MAX - band - 6);
+            this._push({ kind: 'fence', z, y, band, thickness: 1.6, seed: rng.int(0, 1e6) });
+            this._collider(0, y, z, DECK_HALF * 2, band, 1.6, true, 'fence');
+            z += rng.range(120, 170);
+            break;
+          }
           const clearance = rng.range(9, 15);
           this._push({ kind: 'arch', z, clearance, seed: rng.int(0, 1e6) });
           this._collider(0, clearance, z, DECK_HALF * 2, ALT_MAX + 12 - clearance, 7, true, 'arch');
           z += rng.range(120, 180);
+          break;
+        }
+        case 'airfield': {
+          // Parked fighters in a hardstand row: a strafing run for low flyers.
+          const n = rng.int(3, 5);
+          const lane = rng.range(-CORRIDOR_HALF + 4, CORRIDOR_HALF - 4);
+          const diagonal = rng.bool(0.5) ? rng.range(-2.2, 2.2) : 0;
+          for (let i = 0; i < n; i++) {
+            this._push({
+              kind: 'parked', z: z + i * 11,
+              x: clamp(lane + (i - (n - 1) / 2) * diagonal, -CORRIDOR_HALF + 2, CORRIDOR_HALF - 2),
+              y: 0, seed: rng.int(0, 1e6),
+            });
+          }
+          if (sector.index > 0 && rng.bool(0.5)) {
+            this._push({ kind: 'turret', z: z + n * 11 + 16, x: clamp(-lane * 0.6, -CORRIDOR_HALF + 3, CORRIDOR_HALF - 3), y: 0, seed: rng.int(0, 1e6) });
+          }
+          z += rng.range(130, 190);
+          break;
+        }
+        case 'phrase': {
+          z = this._phrase(sector, rng, z, threat);
           break;
         }
       }
@@ -337,6 +380,52 @@ export class Level {
         }
       }
     }
+  }
+
+  /**
+   * Authored encounter sentences mixed into the roll: a hazard, a threat that
+   * uses it, and a reward for handling both. Returns the next free Z.
+   */
+  _phrase(sector, rng, z, threat) {
+    const gatesAllowed = z >= 3200;
+    const pick = rng.pick(gatesAllowed ? ['guarded', 'window', 'gate', 'fuelrun'] : ['guarded', 'window', 'fuelrun']);
+    if (pick === 'guarded') {
+      // a slot wall with a gun pair waiting on the far side, fuel after that
+      this._wall(z, rng, Math.min(threat, 0.25));
+      for (const x of [-7, 7]) this._push({ kind: 'turret', z: z + 38, x: x + rng.range(-2, 2), y: 0, seed: rng.int(0, 1e6) });
+      this._push({ kind: 'fuel', z: z + 72, x: rng.range(-6, 6), y: 0, seed: rng.int(0, 1e6) });
+      return z + rng.range(150, 200);
+    }
+    if (pick === 'window') {
+      // shoot the radar through the window before you reach it
+      const h = lerp(11, 8, clamp(threat, 0, 1)), w = lerp(15, 11, clamp(threat, 0, 1));
+      const x = rng.range(-CORRIDOR_HALF + w / 2 + 1, CORRIDOR_HALF - w / 2 - 1), y = ALT_MIN + 0.4;
+      const W = DECK_HALF * 2, top = ALT_MAX + 10, t = 5;
+      this._push({ kind: 'wall', z, type: 'window', thickness: t, gaps: [{ x, w, y, h }] });
+      this._collider(0, y + h, z, W, top - (y + h), t);
+      this._collider(0, 0, z, W, y, t);
+      const leftW = (x - w / 2) + DECK_HALF, rightW = DECK_HALF - (x + w / 2);
+      if (leftW > 0.2) this._collider(-DECK_HALF + leftW / 2, y, z, leftW, h, t);
+      if (rightW > 0.2) this._collider(DECK_HALF - rightW / 2, y, z, rightW, h, t);
+      this._push({ kind: 'radar', z: z + 45, x, y: 0, seed: rng.int(0, 1e6) });
+      return z + rng.range(150, 200);
+    }
+    if (pick === 'gate') {
+      // a cycling gate with a fighter pair riding through it
+      const gapH = lerp(11, 7, clamp(threat, 0, 1));
+      this._push({ kind: 'gate', z, gapY: rng.range(ALT_MIN + 1, ALT_MAX - gapH - 1), gapH, cycle: rng.range(3, 4.2), phase: rng.next() * 6.28 });
+      for (let i = 0; i < 2; i++) {
+        this._push({ kind: 'drone', z: z + 60 + i * 10, x: (i ? 1 : -1) * rng.range(4, 9), y: rng.range(6, 16), pattern: 'weave', seed: rng.int(0, 1e6) });
+      }
+      return z + rng.range(160, 210);
+    }
+    // fuel run: a tempting tank lane threaded with mines
+    const lane = rng.range(-CORRIDOR_HALF + 4, CORRIDOR_HALF - 4);
+    for (let i = 0; i < 3; i++) this._push({ kind: 'fuel', z: z + i * 20, x: lane, y: 0, seed: rng.int(0, 1e6) });
+    for (let i = 0; i < 3 + Math.round(threat * 2); i++) {
+      this._push({ kind: 'mine', z: z + rng.range(0, 60), x: lane + rng.range(-7, 7), y: rng.range(3, 12), seed: rng.int(0, 1e6) });
+    }
+    return z + rng.range(130, 180);
   }
 
   /**
@@ -413,13 +502,15 @@ export class Level {
     let z = zStart + 120;
 
     while (z < zEnd - 140) {
-      const roll = rng.weighted(['wing','platform','minefield','debrisRing'].map((kind,i)=>[kind,sector.spaceWeights[i]]));
+      const roll = rng.weighted(['wing','platform','minefield','debrisRing','debrisGate'].map((kind,i)=>[kind,sector.spaceWeights[i] ?? 0]));
 
       if (roll === 'wing') {
         const count = 3 + Math.round(threat * 3);
         const altitude = rng.pick([7,13,19]);
         const centerX = rng.range(-3,3);
         const pattern = rng.pick(['weave','strafe','dive']);
+        // Alongside the carrier, wings visibly launch from its hangar bays.
+        const launch = sector.index === 4 && z > sector.zStart + 160 && z < sector.zStart + 1140;
         for (let i = 0; i < count; i++) {
           this._push({
             kind: 'interceptor',
@@ -427,6 +518,7 @@ export class Level {
             x: clamp(centerX+(i-(count-1)/2)*5,-CORRIDOR_HALF+1,CORRIDOR_HALF-1),
             y: altitude,
             pattern,
+            launch,
             seed: rng.int(0, 1e6),
           });
         }
@@ -458,9 +550,29 @@ export class Level {
           });
         }
         z += rng.range(150, 210);
+      } else if (roll === 'debrisGate') {
+        // A drift of wreckage packed across the lane with one clear band:
+        // space's version of the slot wall, read on the same altimeter.
+        const h = lerp(11, 7, clamp(threat, 0, 1));
+        const y = rng.range(ALT_MIN + 2, ALT_MAX - h - 2);
+        const W = DECK_HALF * 2, top = ALT_MAX + 10, t = 6;
+        this._push({ kind: 'wall', type: 'slot', debris: true, z, thickness: t, seed: rng.int(0, 1e6), gaps: [{ x: 0, w: W, y, h }] });
+        this._collider(0, -8, z, W, y + 8, t, true, 'wall');
+        this._collider(0, y + h, z, W, top - (y + h), t, true, 'wall');
+        z += rng.range(150, 210);
       } else {
         this._push({ kind: 'debrisRing', z, seed: rng.int(0, 1e6), radius: rng.range(26, 40) });
         z += rng.range(120, 180);
+      }
+    }
+
+    // THE VOID GAP: gun towers rise on pylons from the derelict dreadnought.
+    if (sector.index === 2) {
+      for (let k = 0; k < 3; k++) {
+        const pz = zStart + 330 + k * 230, px = rng.range(-9, 9), py = rng.range(3, 6);
+        this._push({ kind: 'platform', z: pz, x: px, y: py, pylon: true, seed: rng.int(0, 1e6) });
+        this._collider(px, py, pz, 16, 2.4, 16, true, 'platform');
+        this._push({ kind: rng.bool(0.4) ? 'heavyTurret' : 'turret', z: pz, x: px, y: py + 2.4, seed: rng.int(0, 1e6) });
       }
     }
   }

@@ -8,19 +8,21 @@ import { segmentSphere, segmentBox } from '../core/Collision.js';
  *
  * Owns the state machine, spawns entities from the level plan, resolves every
  * collision, and feeds the HUD. Systems below this file know nothing about
- * each other â€” all the "what happens when X hits Y" rules live here on purpose,
+ * each other — all the "what happens when X hits Y" rules live here on purpose,
  * because that is the part that gets tuned most.
  */
 
 import * as THREE from 'three';
-import { Level, SECTOR_KINDS, CORRIDOR_HALF, DECK_HALF, ALT_MIN, ALT_MAX, FLIGHT_SPEED } from '../world/Level.js';
+import { Level, SECTOR_KINDS, CORRIDOR_HALF, DECK_HALF, ALT_MIN, ALT_MAX, FLIGHT_SPEED, CHUNK_LEN } from '../world/Level.js';
 import { Fortress } from '../world/Fortress.js';
 import { Player } from '../entities/Player.js';
 import { Projectiles, SIDE } from '../entities/Projectiles.js';
 import { createEnemy, ENEMY_KINDS } from '../entities/Enemies.js';
-import { Pickup } from '../entities/Pickup.js';
+import { Pickup, PICKUP_KINDS } from '../entities/Pickup.js';
 import { Boss } from '../entities/Boss.js';
 import { Effects } from '../fx/Effects.js';
+import { AmbientDust } from '../fx/Ambience.js';
+import { SKY_PRESETS } from '../render/Sky.js';
 import { CameraRig } from './CameraRig.js';
 import { HUD } from '../ui/HUD.js';
 import { settings, Scores } from '../core/Settings.js';
@@ -39,6 +41,50 @@ export const STATE = {
   DYING: 'dying',
   OVER: 'over',
   VICTORY: 'victory',
+};
+
+/** Emplacements that leave a burning wreck where they stood. */
+const GROUND_KINDS = new Set(['turret', 'heavyTurret', 'silo', 'fuel', 'radar', 'parked']);
+
+/** UTC date as YYYY-MM-DD; the daily sortie's name. */
+export const dailyLabel = (date = new Date()) => date.toISOString().slice(0, 10);
+/** One seed per UTC day, so every pilot flies the same fortress. */
+export function dailySeed(date = new Date()) {
+  let h = 2166136261;
+  for (const ch of `KNOTZAXXON:${dailyLabel(date)}`) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
+  return (h >>> 0) % 1e9;
+}
+
+/** Six-character, shareable form of a fortress seed (seeds are below 36^6). */
+export const seedCode = (seed) => (seed >>> 0).toString(36).toUpperCase().padStart(6, '0');
+/** Parse a shared code back to a seed; null when it is not a valid code. */
+export function parseSeedCode(code) {
+  if (!code || !/^[0-9A-Za-z]{1,6}$/.test(code)) return null;
+  const seed = parseInt(code, 36);
+  return Number.isFinite(seed) && seed < 1e9 ? seed : null;
+}
+
+/** Score thresholds that award an extra hull point (or a shield when full). */
+const HULL_BONUS_AT = [50000, 150000, 300000, 500000];
+const GRADE_ORDER = ['S', 'A', 'B', 'C'];
+const GRADES_KEY = 'knotzaxxon.grades.v1';
+
+/** Best grade per campaign sector, kept in browser storage when available. */
+export const BestGrades = {
+  load() {
+    try {
+      const list = JSON.parse(localStorage.getItem(GRADES_KEY) ?? '[]');
+      return Array.from({ length: 8 }, (_, i) => (GRADE_ORDER.includes(list?.[i]) ? list[i] : null));
+    } catch { return Array(8).fill(null); }
+  },
+  record(index, grade) {
+    const list = this.load();
+    const slot = index % 8;
+    const better = !list[slot] || GRADE_ORDER.indexOf(grade) < GRADE_ORDER.indexOf(list[slot]);
+    if (better) list[slot] = grade;
+    try { localStorage.setItem(GRADES_KEY, JSON.stringify(list)); } catch { /* storage unavailable */ }
+    return better;
+  },
 };
 
 /** How far ahead of the player features become live entities. */
@@ -62,6 +108,7 @@ export class Game {
     this.rig = new CameraRig(engine.camera);
 
     this.fx = new Effects(this.scene, this.materials, settings.quality);
+    this.dust = new AmbientDust(this.scene);
     this.projectiles = new Projectiles(this.scene, this.materials, settings.quality);
     this.player = new Player(this.scene, this.materials, this.projectiles, this.fx);
 
@@ -98,7 +145,8 @@ export class Game {
     this.boss?.dispose(); this.boss = null;
     this.fortress?.clear(); this.fortress?.root.removeFromParent();
     this.fortress?._gateMat?.dispose();
-    this.player.dispose(); this.projectiles.dispose(); this.fx.dispose(); this.hud.dispose();
+    this.fortress?._fenceMat?.dispose();
+    this.player.dispose(); this.projectiles.dispose(); this.fx.dispose(); this.dust.dispose(); this.hud.dispose();
   }
 
   _onSetting({ id }) {
@@ -135,7 +183,22 @@ export class Game {
 
     this.featureCursor = 0;
     this._hudCursor = 0;
+    this._passCursor = 0;
+    this._crashTime = -10;
+    this._grazeFloat = 0;
+    this._fuelBeep = 0;
+    this._wasLevel = false;
+    this.grazes = 0;
+    this.threads = 0;
+    this.styleScore = 0;
+    // Per-sector report card: targets on offer, kills, hull damage taken.
+    this._sectorStats = this.level.sectors.map(s => ({
+      targets: this.level.features.filter(f => ENEMY_KINDS.has(f.kind) && f.kind !== 'mine' && f.z >= s.zStart && f.z < s.zEnd).length,
+      kills: 0, damage: 0, grade: null,
+    }));
     this._bestScore = Scores.best();
+    this._hullBonus = 0;
+    this._runDate = Date.now();
     this.score = 0;
     this.chain = 0;
     this.chainMult = 1;
@@ -159,18 +222,72 @@ export class Game {
     this.rig.setFraming(0);
     this.rig.snap(this.player);
     this.engine.sky.apply(this.level.sectors[0].sky, seed);
+    this.dust.setPreset(this.level.sectors[0].sky, true);
+    this.engine.underlay?.setEnvironment(this.level.sectors[0].sky, this.level.sectors[0].kind === SECTOR_KINDS.SPACE, true);
   }
 
-  start() {
+  /**
+   * Compile every shader program the campaign will need before the first
+   * frame: one chunk of each sector, one of each enemy, the boss and each
+   * pickup are staged, compiled, and torn down again.
+   */
+  prewarm(compile) {
+    const f = this.fortress;
+    const groups = this.level.sectors.map(s => f._buildChunk(Math.floor((s.zStart + 200) / CHUNK_LEN)));
+    const staged = [...ENEMY_KINDS].map(kind => this._spawnEnemy(kind, { x: 0, y: 6, z: 40, seed: 1 })).filter(Boolean);
+    const boss = new Boss(this.scene, this.materials, { z: 80 });
+    boss.group.position.set(0, 14, 80);
+    const pickups = PICKUP_KINDS.map(kind => new Pickup(this.scene, this.materials, kind, 0, 6, 30));
+    // Gates and electric barriers create their shared force-field material on
+    // first stream-in; make it now and put one quad in front of the compile.
+    f._gateMat ??= this.materials.forceField(0xff6a2a);
+    f._fenceMat ??= this.materials.forceField(0x8fdcff);
+    const fields = [f._gateMat, f._fenceMat].map((m) => {
+      const q = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), m);
+      q.position.set(0, 6, 50);
+      this.scene.add(q);
+      return q;
+    });
+    // The classic-rig silhouette only shows in that rig.
+    const silhouette = this.player.model?.userData?.silhouette;
+    const silhouetteShown = silhouette?.visible;
+    if (silhouette) silhouette.visible = true;
+    // instanced effect pools only compile their variants once they hold an instance
+    _v.set(0, 4, 40);
+    this.fx.wreck(_v, 0, 1);
+    this.fx.chunk(_v, 0, 0, 0, 1);
+    this.fx.explosion(_v, 1);
+    this.fx.update(0.001, 0, this.engine.camera);
+    try {
+      compile();
+    } finally {
+      this.fx.clear();
+      for (const g of groups) f._disposeChunk(g);
+      for (const e of staged) e.dispose();
+      this.enemies.length = 0;
+      boss.dispose();
+      for (const p of pickups) p.dispose();
+      for (const q of fields) { q.removeFromParent(); q.geometry.dispose(); }
+      if (silhouette) silhouette.visible = silhouetteShown;
+    }
+  }
+
+  /**
+   * @param {{daily?: boolean, seed?: number}} [mode] a daily sortie flies the
+   *   same seeded fortress for everyone on a given UTC date; `seed` replays a
+   *   shared fortress code; retries keep the last mode
+   */
+  start(mode = this.mode ?? {}) {
     // Fire and forget: a blocked audio context must never stall the run.
     audio.init();
-    this.reset((Math.random() * 1e9) | 0, 0);
+    this.mode = { daily: !!mode.daily, seed: Number.isInteger(mode.seed) ? mode.seed : null };
+    this.reset(this.mode.daily ? dailySeed() : this.mode.seed ?? (Math.random() * 1e9) | 0, 0);
     this.state = STATE.PLAYING;
     this.hud.setLive(true);
     this.screens.hide();
     audio.startEngine();
     audio.setPaused(false);
-    audio.startMusic('combat');
+    audio.startMusic(0);
     audio.setIntensity(0.35);
     this.engine.setTimeScale(1);
     this.engine.postfx.setDesaturation(0);
@@ -236,6 +353,11 @@ export class Game {
     /* --- sector tracking ---------------------------------------------- */
     const sector = this.level.sectorAt(p.pos.z);
     if (sector && sector.index !== this.sectorIndex) this._enterSector(sector.index);
+    // The report card lands over the closing fuel lane, well before the next
+    // sector's title card; the title card retires it if it is still up.
+    if (sector && sector.kind !== SECTOR_KINDS.BOSS && this.state === STATE.PLAYING && p.pos.z > sector.zEnd - 190) {
+      this._gradeSector(sector.index);
+    }
 
     /* --- world -------------------------------------------------------- */
     this.fortress.update(p.pos.z, dt, time, this.engine.frame);
@@ -275,6 +397,7 @@ export class Game {
       this._collideEnemyProjectiles(ctx);
       this._collideStatic(ctx);
       this._collideContact(ctx);
+      this._detectPasses(this._previousPlayer.z, p.pos.z);
     }
 
     /* --- scoring chain --------------------------------------------------- */
@@ -304,7 +427,7 @@ export class Game {
 
   }
 
-  /** Camera and post-processing only â€” used behind menus. */
+  /** Camera and post-processing only — used behind menus. */
   _idleUpdate(dt, time) {
     const p = this.player;
     if (this.state === STATE.IDLE) {
@@ -335,6 +458,7 @@ export class Game {
       this.rig.setFraming(18);
       this.rig.update(dt, time, this.player, { trauma: 0 });
     }
+    this._ambience(dt, time, 22);
     this.fx.update(dt, time, this.engine.camera);
     this.projectiles.render(this.engine.camera);
     this.engine.sky.update(dt, time, this.player.pos);
@@ -357,6 +481,8 @@ export class Game {
       level: this.level,
       difficulty: clamp01(this.level.difficultyAt(p.pos.z)),
       hasDeck: this.level.hasDeck(p.pos.z),
+      // Open space draws a flight grid at the altitude floor to carry the shadow.
+      flightGrid: !this.level.hasDeck(p.pos.z),
       guideSurfaceAt: (x, z, y) => this.fortress.surfaceAt(x, z, y),
       radarJammed: this.radarJamTimer > 0,
       speedMultiplier: pace,
@@ -365,12 +491,13 @@ export class Game {
       warn: (t) => this.warn(t),
       findTarget: (from) => this.findTarget(from),
       cameraKick: (a) => this.rig.kick(a),
-      awardScore: (v, pos, label) => this.award(v, pos, label),
+      awardScore: (v, pos, label, show = true) => this.award(v, pos, label, show),
       spawnEnemy: (kind, feature) => this._spawnEnemy(kind, feature),
       onBossEngage: (b) => this._bossEngage(b),
-      onBossPhase: () => audio.setIntensity(1),
+      onBossPhase: (b) => { audio.setIntensity(1); audio.setBossPhase(b.phase); },
       onBossDefeated: (b) => this._bossDefeated(b),
       onBossGone: () => this._bossGone(),
+      onRackHit: (hits, need) => this.hud.warn(`RACK ${hits}/${need}`, 0.9),
     };
   }
 
@@ -419,6 +546,8 @@ export class Game {
         _v.setFromMatrixPosition(this.boss.coreGroup.matrixWorld);
         consider(this.boss, _v.x, _v.y, _v.z, 0.9, 6.5, 0);
       }
+      const L = this.boss.launcher;
+      if (L?.charging) consider(this.boss, L.pos.x, L.pos.y, L.pos.z, 1.2, L.radius, 0);
     }
 
     return best;
@@ -439,6 +568,7 @@ export class Game {
         this._spawnEnemy(f.kind, f);
       } else if (f.kind === 'boss') {
         this.boss = new Boss(this.scene, this.materials, f);
+        audio.setBossPhase(0);
       }
     }
   }
@@ -483,6 +613,11 @@ export class Game {
           const t=segmentSphere(ax,ay,az,x,y,z,_v2.x,_v2.y,_v2.z,6.5);
           if(t<nearest) { nearest=t; hit=this.boss; kind='boss'; }
         }
+        const L=this.boss.launcher;
+        if (L?.charging) {
+          const t=segmentSphere(ax,ay,az,x,y,z,L.pos.x,L.pos.y,L.pos.z,L.radius);
+          if(t<nearest) { nearest=t; hit=L; kind='boss'; }
+        }
         for(let j=0; j<=this.boss.pods.length; j++) {
           const part=this.boss.pods[j] ?? this.boss;
           if(!part.alive) continue;
@@ -507,12 +642,12 @@ export class Game {
       if(kind==='enemy') {
         this.shotsHit++;
         if(hit.hit(pool.dmg[i],ctx)) this._killEnemy(hit,ctx);
-        else { this.fx.impact(_v,_n,0x9fe8ff,0.9); audio.impact(audio.panFor(x,this.player.pos.x)); }
+        else { this.fx.impact(_v,_n,0x9fe8ff,0.9); audio.impact(audio.panFor(x,this.player.pos.x), z-this.player.pos.z); }
       } else if(kind==='boss') {
         if(this.boss.hitAt(_v,pool.dmg[i],ctx)) this.shotsHit++;
       } else {
         this.fx.impact(_v,_n,0x9fb8cc,0.7);
-        audio.impact(audio.panFor(x,this.player.pos.x));
+        audio.impact(audio.panFor(x,this.player.pos.x), z-this.player.pos.z);
       }
       pool.life[i]=0;
     }
@@ -538,13 +673,21 @@ export class Game {
           this.fx.impact(_v,_n.set(0,0,-1),0xff965a,0.6);
           continue;
         }
-        if(!Number.isFinite(contact)) continue;
+        if(!Number.isFinite(contact)) {
+          // Near miss: the bolt's sweep came within a hand's width of the hull.
+          if (!pool.grazed[i] && Number.isFinite(segmentSphere(pool.px[i]-this._previousPlayer.x+p.pos.x,pool.py[i]-this._previousPlayer.y+p.pos.y,pool.pz[i]-this._previousPlayer.z+p.pos.z,pool.x[i],pool.y[i],pool.z[i],p.pos.x,p.pos.y,p.pos.z,rr+1.7))) {
+            pool.grazed[i] = 1;
+            this._graze(p.pos);
+          }
+          continue;
+        }
 
         _v.set(pool.x[i], pool.y[i], pool.z[i]);
         pool.life[i] = 0;
         pool.target[i] = null;
 
         const result = p.damage(pool.dmg[i], ctx);
+        if (result === 'hull' || result === 'dead') this._noteDamage();
         if (result === 'none') {
           this.fx.impact(_v, _n.set(dx, dy, dz).normalize(), 0x9fe8ff, 0.7);
         } else {
@@ -582,6 +725,7 @@ export class Game {
       e.hit(999, ctx);
       this._killEnemy(e, ctx, false);
       const res = p.damage(e.contactDamage, ctx);
+      if (res === 'hull' || res === 'dead') this._noteDamage();
       if (res !== 'none' && res !== 'shield') this.hud.pulseDamage(1);
       if (res !== 'none') this._breakChain();
     }
@@ -592,18 +736,6 @@ export class Game {
       pk.alive = false;
       this._applyPickup(pk, ctx);
     }
-  }
-
-  /** Point-vs-solid test used by projectiles. */
-  _pointInSolid(x, y, z, r) {
-    const list = this.level.collidersNear(z - 2, z + 2, this._colliderScratch);
-    for (const c of list) {
-      if (x + r < c.minX || x - r > c.maxX) continue;
-      if (y + r < c.minY || y - r > c.maxY) continue;
-      if (z + r < c.minZ || z - r > c.maxZ) continue;
-      return true;
-    }
-    return false;
   }
 
   /**
@@ -622,6 +754,8 @@ export class Game {
     const assist = settings.get('assist');
 
     const res = p.damage(assist ? 0.5 : 1, ctx, { pierce: true });
+    this._crashTime = this.runTime;
+    if (res === 'hull' || res === 'dead') this._noteDamage?.();
     this._pushOut(p, collider);
     p.speedScale = 0.5;
     p.velocity.multiplyScalar(0.25);
@@ -630,7 +764,8 @@ export class Game {
     this.fx.explosion(p.pos, 1.2, { shake: 1.6, debris: false });
     this.hud.pulseDamage(1);
     this._breakChain();
-    this.warn(tag === 'gate' ? 'COOLANT DISCHARGE' : 'HULL SCRAPE');
+    this.warn(tag === 'gate' ? 'COOLANT DISCHARGE' : tag === 'fence' ? 'ELECTRIC BARRIER' : 'HULL SCRAPE');
+    if (tag === 'fence') audio.zap();
   }
 
   /**
@@ -672,19 +807,29 @@ export class Game {
     if (e.kind === 'fuel') {
       if (reward) this.player.refuel(e.fuelValue ?? 0.16);
       this.fx.explosion(e.pos, 1.5, { colorHot: 0xfff0a0, colorMid: 0xffb43a, groundY });
+      this.fx.fireColumn?.(e.pos, groundY);
       if (reward) this.hud.floater(e.pos, `+FUEL`, '#ffb43a', 1.05);
-      audio.pickup(this.kills);
+      audio.fuelBoom(audio.panFor(e.pos.x, this.player.pos.x), e.pos.z - this.player.pos.z);
+      if (reward) audio.pickup(this.kills, 'fuel');
     } else {
       this.fx.explosion(e.pos, big ? 1.7 : 1.0, { groundY });
-      audio.explosion(big ? 1.5 : 0.85, audio.panFor(e.pos.x, this.player.pos.x));
+      audio.explosion(big ? 1.5 : 0.85, audio.panFor(e.pos.x, this.player.pos.x), e.pos.z - this.player.pos.z);
     }
 
-    this.engine.hitStop(0.2, big ? 0.055 : 0.03);
+    this.engine.hitStop(0.2, e.kind === 'radar' ? 0.075 : big ? 0.055 : 0.03);
+    this._killPayoff(e, groundY);
     this.engine.input.rumble(0.35, 0.2, 90);
+    // A scrambled fighter shot down mid-climb leaves debris, not a burning pad.
+    if (GROUND_KINDS.has(e.kind) && !(e.lift > 0.05)) {
+      const surface = Math.max(e.pos.y, this.fortress?.surfaceAt(e.pos.x, e.pos.z, e.pos.y + 1) ?? 0);
+      this.fx.wreck(e.pos, surface, big ? 1.35 : e.kind === 'fuel' ? 0.8 : 1);
+    }
 
     if (!reward) return;
 
     this.kills++;
+    const stats = this._sectorStats?.[this.level.sectorAt(e.pos.z)?.index];
+    if (stats) stats.kills++;
     this._bumpChain();
     this.award(Math.round((e.score ?? 100) * this.chainMult), e.pos);
 
@@ -692,7 +837,7 @@ export class Game {
       this.radarJamTimer = 22;
       this.warn('ENEMY TRACKING BLINDED');
       this.fx.rings.spawn(e.pos, { from: 3, to: 120, life: 1.1, color: 0x52ffa8, opacity: 0.7 });
-      audio.sting(true);
+      audio.radarDown(audio.panFor(e.pos.x, this.player.pos.x));
     }
 
     // drops
@@ -703,6 +848,24 @@ export class Game {
       this._dropPickup(e.pos, 'repair');
     } else if (roll < 0.045) {
       this._dropPickup(e.pos, 'shield');
+    }
+  }
+
+  /** Kind-specific destruction: the named part that flies off. */
+  _killPayoff(e, groundY) {
+    if (!this.fx.chunk) return;
+    const r = () => rand.range(-1, 1);
+    if (e.kind === 'turret' || e.kind === 'heavyTurret') {
+      const s = e.heavy ? 1.5 : 1;
+      _v.set(e.pos.x, e.pos.y + 1.2 * s, e.pos.z);
+      this.fx.chunk(_v, r() * 4, 13 + rand.next() * 5, r() * 4 + 3, s, groundY);
+    } else if (e.kind === 'radar') {
+      // the dish shears off the mast and topples away from the blast
+      _v.set(e.pos.x, e.pos.y + 7.2, e.pos.z);
+      this.fx.chunk(_v, r() * 7, 5, 4 + rand.next() * 3, 2.2, groundY);
+    } else if (e.kind === 'silo') {
+      _v.set(e.pos.x, e.pos.y + 2.5, e.pos.z);
+      this.fx.chunk(_v, r() * 3, 18, r() * 3, 1.6, groundY);
     }
   }
 
@@ -717,7 +880,7 @@ export class Game {
     this.fx.pickup(pk.pos, pk.color);
     this.hud.floater(pk.pos, pk.def.label, `#${pk.color.toString(16).padStart(6, '0')}`, 1.15);
     this.award(pk.score, pk.pos, null, false);
-    audio.pickup(this.kills);
+    audio.pickup(this.kills, pk.kind);
     this.engine.postfx.flash(0.18, pk.color);
   }
 
@@ -745,11 +908,144 @@ export class Game {
 
   award(points, pos, label = null, showFloater = true) {
     this.score += points;
+    this._checkHullBonus();
     if (showFloater && pos) {
       this.hud.floater(pos, label ?? `+${commafy(points)}`, '#ffffff', points >= 1000 ? 1.3 : 1);
     } else if (label && pos) {
       this.hud.floater(pos, label, '#ffb43a', 1.25);
     }
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Style scoring                                                       */
+  /* ------------------------------------------------------------------ */
+
+  /** Walls, gates and arches the ship crossed this step. */
+  _detectPasses(fromZ, toZ) {
+    const feats = this.level.features;
+    while (this._passCursor < feats.length && feats[this._passCursor].z < fromZ - 12) this._passCursor++;
+    for (let i = this._passCursor; i < feats.length; i++) {
+      const f = feats[i];
+      if (f.z > toZ) break;
+      if (f.z <= fromZ || f.passed) continue;
+      if (f.kind !== 'wall' && f.kind !== 'gate' && f.kind !== 'arch' && f.kind !== 'fence') continue;
+      f.passed = true;
+      this._scorePass(f);
+    }
+  }
+
+  /**
+   * Threading bonus: the less clearance you left in a gap, the more it pays.
+   * A scrape in the last half second forfeits the style award.
+   */
+  _scorePass(f) {
+    const p = this.player;
+    const r = p.radius * 0.72;
+    let clear = Infinity, span = 1;
+    if (f.kind === 'wall') {
+      if (f.type === 'pillars') {
+        for (const g of f.gaps) clear = Math.min(clear, Math.abs(p.pos.x - g.x) - g.w / 2 - r);
+        span = 4;
+      } else {
+        const g = f.gaps[0];
+        const vy = Math.min(p.pos.y - g.y, g.y + g.h - p.pos.y) - r;
+        const vx = Math.min(p.pos.x - (g.x - g.w / 2), g.x + g.w / 2 - p.pos.x) - r;
+        clear = f.type === 'notch' ? vx : f.type === 'window' ? Math.min(vx, vy) : vy;
+        span = f.type === 'notch' ? g.w / 2 : f.type === 'window' ? Math.min(g.w, g.h) / 2 : g.h / 2;
+      }
+    } else if (f.kind === 'gate' && f.runtime) {
+      clear = Math.min(p.pos.y - f.runtime.gapY, f.runtime.gapY + f.runtime.gapH - p.pos.y) - r;
+      span = f.runtime.gapH / 2;
+    } else if (f.kind === 'arch') {
+      clear = f.clearance - p.pos.y - r;
+      span = f.clearance / 2;
+    } else if (f.kind === 'fence') {
+      clear = Math.max(f.y - (p.pos.y + r), p.pos.y - r - (f.y + f.band));
+      span = 4;
+    }
+    if (!Number.isFinite(clear)) return;
+    const tight = clamp01(1 - clear / Math.max(1, span));
+    audio.pass(tight, audio.panFor(p.pos.x, 0));
+    if (this.runTime - this._crashTime < 0.6) return;
+    let label = null, pts = 0;
+    if (f.kind === 'arch' && p.pos.y < f.clearance * 0.45) { label = 'LOW PASS'; pts = 300; }
+    else if (f.kind === 'fence' && tight >= 0.55) { label = p.pos.y > f.y ? 'OVER THE WIRE' : 'UNDER THE WIRE'; pts = tight >= 0.85 ? 600 : 300; }
+    else if (tight >= 0.85) { label = 'PERFECT THREAD'; pts = 600; }
+    else if (tight >= 0.55) { label = 'THREAD'; pts = 250; }
+    if (!label) return;
+    pts = Math.round(pts * (1 + this.loop * 0.5));
+    this.threads++;
+    this._styleAward(pts, `${label} +${commafy(pts)}`, pts >= 600 ? 2 : 1);
+  }
+
+  /** An enemy bolt passed within a hand's width. Grazes feed the chain. */
+  _graze(pos) {
+    this.grazes++;
+    const pts = 50 * (1 + this.loop);
+    if (this.chain > 0) this.chainTimer = Math.max(this.chainTimer, 1.5);
+    if (this.runTime - this._grazeFloat > 0.3) {
+      this._grazeFloat = this.runTime;
+      this._styleAward(pts, 'GRAZE', 0, false);
+    } else {
+      this.score += pts; this.styleScore += pts;
+    }
+  }
+
+  _styleAward(pts, label, level = 1, bump = true) {
+    this.score += pts;
+    this.styleScore += pts;
+    this._checkHullBonus();
+    if (bump) this._bumpChain();
+    this.hud.floater(this.player.pos, label, '#8dffc1', level >= 2 ? 1.3 : 1.05);
+    audio.bonus(level);
+  }
+
+  _noteDamage() {
+    const stats = this._sectorStats?.[this.sectorIndex];
+    if (stats) stats.damage++;
+  }
+
+  _checkHullBonus() {
+    const next = HULL_BONUS_AT[this._hullBonus];
+    if (next === undefined || this.score < next) return;
+    this._hullBonus++;
+    const p = this.player;
+    if (!p?.alive || this.state !== STATE.PLAYING) return;
+    if (p.hull < p.hullMax) p.repair(1); else p.addShield();
+    this.hud.floater(p.pos, 'EXTRA HULL', '#52ffa8', 1.35);
+    audio.jingle('grade');
+  }
+
+  /** Grade a finished sector: share of targets destroyed and hull kept. */
+  _gradeSector(index) {
+    const stats = this._sectorStats?.[index];
+    const sector = this.level.sectors[index];
+    if (!stats || stats.grade || !sector) return;
+    const ratio = stats.targets ? stats.kills / stats.targets : 1;
+    const grade = ratio >= 0.8 && stats.damage === 0 ? 'S'
+      : ratio >= 0.6 && stats.damage <= 1 ? 'A'
+        : ratio >= 0.35 ? 'B' : 'C';
+    stats.grade = grade;
+    let detail = `TARGETS ${Math.round(ratio * 100)}%  //  ${stats.damage ? `HULL HITS ${stats.damage}` : 'NO DAMAGE'}`;
+    // A clean sector pays only when you fought it: nothing below 35% of the
+    // targets, the full bonus from 80%. Dodging everything is not a skill bonus.
+    if (stats.damage === 0 && ratio >= 0.35) {
+      const bonus = Math.round(2000 * (1 + this.loop) * Math.min(1, ratio / 0.8) / 100) * 100;
+      this.score += bonus;
+      this._checkHullBonus();
+      detail += `  //  CLEAN +${commafy(bonus)}`;
+    }
+    if (BestGrades.record(index, grade) && this.loop === 0) detail += '  //  BEST';
+    this.hud.grade(grade, `SECTOR ${String(index + 1 + this.loop * 8).padStart(2, '0')} CLEAR`, detail);
+    audio.jingle('grade');
+  }
+
+  get gradeLine() {
+    return (this._sectorStats ?? []).map(s => s.grade ?? '-').join(' ');
+  }
+
+  get grades() {
+    return (this._sectorStats ?? []).map(s => s.grade);
   }
 
   warn(label) {
@@ -766,12 +1062,21 @@ export class Game {
   _enterSector(index) {
     const s = this.level.sectors[index];
     if (!s) return;
+    if (index > 0 && this.state === STATE.PLAYING) this._gradeSector(index - 1);
+    const previousSky = this.engine.sky.presetName;
     this.sectorIndex = index;
-    this.engine.sky.apply(s.sky, this.seed + index);
+    this.engine.sky.apply(s.sky, this.seed + index, true);
+    // a brief wash in the new horizon colour hides the backdrop swap
+    if (previousSky && previousSky !== s.sky) this.engine.postfx.flash(0.16, SKY_PRESETS[s.sky]?.horizon ?? 0xffffff);
+    this.dust.setPreset(s.sky);
+    this.engine.underlay?.setEnvironment(s.sky, s.kind === SECTOR_KINDS.SPACE);
+    this.hud.dismissGrade?.();
     this.screens.sectorCard(s);
     audio.sting(true);
+    if (index > 0) audio.jingle('clear');
     audio.setIntensity(clamp01(0.25 + s.threat * 0.5));
-    if (s.kind === SECTOR_KINDS.BOSS) audio.startMusic('boss');
+    audio.startMusic(s.kind === SECTOR_KINDS.BOSS ? 'boss' : index);
+    audio.setEnvironment(s.kind === SECTOR_KINDS.SPACE ? 'space' : s.kind === SECTOR_KINDS.BOSS ? 'arena' : 'fortress', s.sky);
     this.rig.setFraming(s.kind === SECTOR_KINDS.BOSS ? 6 : 0);
   }
 
@@ -786,6 +1091,9 @@ export class Game {
   _bossDefeated(b) {
     this.bossDefeated = true;
     this.award(b.score, b.pos, 'SENTINEL DESTROYED');
+    const stats = this._sectorStats?.[this.sectorIndex];
+    if (stats) stats.kills = Math.max(stats.kills, stats.targets);
+    this._gradeSector(this.sectorIndex);
     this.engine.setTimeScale(0.32);
     this.engine.postfx.setDesaturation(0.35);
   }
@@ -802,14 +1110,17 @@ export class Game {
     this.projectiles.clear();
   }
 
-  /** Campaign complete â€” wrap into the next, harder loop. */
+  /** Campaign complete — wrap into the next, harder loop. */
   _nextLoop() {
     this.loop++;
-    const keep = { score: this.score, kills: this.kills, time: this.runTime };
+    const keep = { score: this.score, kills: this.kills, time: this.runTime, grazes: this.grazes,
+      threads: this.threads, style: this.styleScore, hullBonus: this._hullBonus, date: this._runDate };
     this.reset((Math.random() * 1e9) | 0, this.loop);
     this.score = keep.score;
     this.kills = keep.kills;
     this.runTime = keep.time;
+    this.grazes = keep.grazes; this.threads = keep.threads; this.styleScore = keep.style;
+    this._hullBonus = keep.hullBonus; this._runDate = keep.date;
     this.state = STATE.PLAYING;
     this._ending = false;
     this._endingCountdown = 0;
@@ -835,31 +1146,58 @@ export class Game {
     this.hud.setLive(false);
     audio.stopEngine();
     audio.stopMusic();
+    audio.jingle(victory ? 'victory' : 'defeat');
 
-    const timeBonus = victory ? Math.max(0, 60000 - Math.floor(this.runTime) * 120) : 0;
+    const timeBonus = victory ? Math.max(0, 60000 - Math.floor(this.runTime) * 120) * (1 + this.loop) : 0;
     const total = this.score + timeBonus;
+    // Banked if the pilot continues into the next loop.
+    this._victoryBonus = timeBonus;
 
     const entry = {
       name: 'ACE',
       score: total,
       sector: this.sectorIndex + 1 + this.loop * 8,
       time: this.runTime,
-      date: Date.now(),
+      // One record per run: continuing into a new loop replaces this entry.
+      date: this._runDate ?? Date.now(),
     };
     const rank = Scores.submit(entry);
 
     this.screens.results({
-      title: victory ? 'FORTRESS NEUTRALISED' : 'MISSION FAILED',
+      title: victory ? (this.loop ? `LOOP ${this.loop + 1} CLEARED` : 'FORTRESS NEUTRALISED') : 'MISSION FAILED',
       rows: [
+        { label: this.mode?.daily ? `DAILY SORTIE ${dailyLabel()}` : 'FORTRESS CODE', value: seedCode(this.seed) },
         { label: 'SECTOR REACHED', value: String(this.sectorIndex + 1 + this.loop * 8).padStart(2, '0') },
+        { label: 'SECTOR GRADES', chips: this.grades },
+        { label: 'BEST GRADES', chips: BestGrades.load(), dim: true },
         { label: 'TARGETS DESTROYED', value: commafy(this.kills) },
+        { label: 'THREADS / GRAZES', value: `${this.threads ?? 0} / ${this.grazes ?? 0}` },
+        { label: 'STYLE BONUS', value: commafy(this.styleScore ?? 0) },
         { label: 'FLIGHT TIME', value: timeString(this.runTime) },
         { label: 'COMBAT SCORE', value: commafy(this.score) },
         ...(timeBonus ? [{ label: 'TIME BONUS', value: commafy(timeBonus) }] : []),
         { label: 'TOTAL', value: commafy(total), total: true },
       ],
       rank, entry,
+      canContinue: victory,
+      continueLabel: `CONTINUE: LOOP ${this.loop + 2}`,
     });
+  }
+
+  /** After a victory, fly on into a harder campaign with the score banked. */
+  continueLoop() {
+    if (this.state !== STATE.VICTORY) return;
+    this.score += this._victoryBonus ?? 0;
+    this._victoryBonus = 0;
+    audio.init();
+    audio.startEngine();
+    audio.setPaused(false);
+    this.state = STATE.PLAYING;
+    this.hud.setLive(true);
+    this.screens.hide();
+    this._nextLoop();
+    audio.jingle('loop');
+    audio.setIntensity(0.45);
   }
 
   /* ------------------------------------------------------------------ */
@@ -876,6 +1214,7 @@ export class Game {
 
     this.engine.sky.update(dt, time, p.pos);
     this.engine.postfx.setBoost(p.boosting ? 1 : 0);
+    this._ambience(dt, time, p.speed);
 
     // Critical-hull heartbeat: a slow red breathe at the screen edge. Reads
     // instantly in peripheral vision without stealing the centre of the frame.
@@ -893,6 +1232,48 @@ export class Game {
     }
 
     this._updateHud(dt, ctx);
+    this._audioCues(dt, p, this._echoNow);
+  }
+
+  /** Living-world presentation: emitters, wreck fires and drifting motes. */
+  _ambience(dt, time, speed) {
+    const p = this.player;
+    this.fx.focusZ = p.pos.z;
+    this.fx.focusPoint = p.pos;
+    if (this.fortress) this.fx.ambient(this.fortress.emitters, dt, p.pos.z);
+    this.dust.update(dt, time, p.pos, speed, this.rig.classic);
+    this.engine.underlay?.update(dt, time, p.pos, this.rig.classic);
+  }
+
+  /** Continuous and edge-triggered audio cues derived from the HUD snapshot. */
+  _audioCues(dt, p, echo) {
+    if (this.state !== STATE.PLAYING || !p.alive) { audio.setProximity(0, 0); return; }
+    // the Zaxxon tell: a tick the moment your guns line up with a target's height
+    const level = !!echo && p.pos.y >= echo.min && p.pos.y <= echo.max;
+    if (level && !this._wasLevel) audio.lockTick();
+    this._wasLevel = level;
+
+    if (p.fuel < 0.25) {
+      this._fuelBeep -= dt;
+      if (this._fuelBeep <= 0) {
+        audio.lowFuel(p.fuel < 0.1);
+        this._fuelBeep = p.fuel < 0.1 ? 0.6 : 1.4;
+      }
+    } else this._fuelBeep = 0;
+
+    let field = 0;
+    for (const w of this._wallsAhead) {
+      if (!w.gate) continue;
+      field = Math.max(field, clamp01(1 - Math.abs(w.z - p.pos.z) / 70));
+    }
+    let missile = 0;
+    const pool = this.projectiles.missile;
+    for (let i = 0; i < pool.capacity; i++) {
+      if (pool.life[i] <= 0) continue;
+      const d = Math.hypot(pool.x[i] - p.pos.x, pool.y[i] - p.pos.y, pool.z[i] - p.pos.z);
+      missile = Math.max(missile, clamp01(1 - d / 70));
+    }
+    audio.setProximity(field, missile);
   }
 
   _updateHud(dt, ctx) {
@@ -926,12 +1307,19 @@ export class Game {
           }
         }
       } else if (f.kind === 'gate' && f.runtime) {
-        this._wallsAhead.push({ z: f.z, gapX: null });
+        this._wallsAhead.push({ z: f.z, gapX: null, gate: true });
         if (!hazard && f.z - p.pos.z < 130) {
           hazard = { y0: f.runtime.gapY + clearance, y1: f.runtime.gapY + f.runtime.gapH - clearance, z: f.z };
         }
       } else if (f.kind === 'arch') {
         if (!hazard && f.z - p.pos.z < 130) hazard = { y0: ALT_MIN, y1: f.clearance - clearance, z: f.z };
+      } else if (f.kind === 'fence') {
+        // Two ways past a live beam: paint the safe band on the side you are on.
+        if (!hazard && f.z - p.pos.z < 130) {
+          const over = p.pos.y > f.y + f.band / 2;
+          hazard = over ? { y0: f.y + f.band + clearance, y1: ALT_MAX, z: f.z } : { y0: ALT_MIN, y1: f.y - clearance, z: f.z };
+        }
+        this._wallsAhead.push({ z: f.z, gapX: null });
       }
     }
 
@@ -958,6 +1346,7 @@ export class Game {
 
     this.engine.camera.updateMatrixWorld?.(true);
     const altitudeEcho = p.alive ? findAltitudeEcho(this, this._altitudeEcho ??= {}) : null;
+    this._echoNow = altitudeEcho;
 
     const sectorSpan = sector.zEnd - sector.zStart;
     this.hud.update({
@@ -987,12 +1376,15 @@ export class Game {
       wallsAhead: this._wallsAhead,
       stats: this.engine.stats,
       entities: this.enemies.length + this.pickups.length,
-      lock: p.alive ? p.target : null,
+      // While the launcher charges it is the target, so the bracket sits on it.
+      lock: !p.alive ? null : this.boss?.launcher?.charging
+        ? { x: this.boss.launcher.pos.x, y: this.boss.launcher.pos.y, z: this.boss.launcher.pos.z, obj: this.boss }
+        : p.target,
     }, dt);
   }
 }
 
-/** Neutral input used while the player is dying â€” no control, no crash. */
+/** Neutral input used while the player is dying — no control, no crash. */
 const NULL_INPUT = {
   moveX: 0, moveY: 0, fire: false, boost: false,
   justPressed: () => false,

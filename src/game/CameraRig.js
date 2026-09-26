@@ -71,7 +71,8 @@ export class CameraRig {
     if (this.classic) {
       // Anchor to the corridor, not lateral input: targets stay on screen.
       // Lead both eye and focus equally to retain the classic isometric angle.
-      const lead = 28;
+      // Boss framing pushes the lead out so the Sentinel stays in the picture.
+      const lead = 28 + this.extraDist * 1.6;
       _desired.set(_off.x, 9 + _off.y, p.z + lead + _off.z);
       _look.set(0, 9, p.z + lead);
       return;
@@ -145,7 +146,7 @@ export class CameraRig {
 
   _halfHeight() {
     // Preserve lateral coverage on portrait displays instead of cropping lanes.
-    return Math.max(40, 60 / this.camera.aspect) + this.extraDist * 0.3;
+    return Math.max(40, 60 / this.camera.aspect) + this.extraDist * 0.8;
   }
 
   /** Recoil impulse, consumed and decayed by update(). */

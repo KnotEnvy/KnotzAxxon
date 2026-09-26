@@ -6,7 +6,7 @@
  * `transform: scaleX` so nothing triggers layout, and every write is guarded
  * by a dirty check because the update runs sixty times a second.
  *
- * The radar is the one canvas element â€” it's genuinely a drawing.
+ * The radar is the one canvas element — it's genuinely a drawing.
  */
 
 import * as THREE from 'three';
@@ -84,6 +84,11 @@ export class HUD {
     this.bossGhost = bar($('hud-boss-ghost'));
     this.bossPhase = text($('hud-boss-phase'));
 
+    this.gradeEl = $('hud-grade');
+    this.gradeLetter = $('hud-grade-letter');
+    this.gradeTitle = $('hud-grade-title');
+    this.gradeDetail = $('hud-grade-detail');
+    this._gradeTimer = 0;
     this.warnEl = $('hud-warn');
     this.warnOn = cls($('hud-warn'), 'on');
     this.lockEl = $('hud-lock');
@@ -209,6 +214,11 @@ export class HUD {
       this.bossPhase.set(`PHASE ${s.boss.phase + 1}`);
     } else {
       this._bossGhostHp = 1;
+    }
+
+    if (this._gradeTimer > 0) {
+      this._gradeTimer -= dt;
+      if (this._gradeTimer <= 0) this.gradeEl?.classList.remove('on');
     }
 
     /* --- warnings -------------------------------------------------------- */
@@ -349,6 +359,24 @@ export class HUD {
 
   /* ------------------------------------------------------------------ */
 
+  /** Sector report card, shown over play without covering the ship. */
+  grade(letter, title, detail, duration = 2.8) {
+    if (!this.gradeEl) return;
+    this.gradeEl.dataset.grade = letter;
+    if (this.gradeLetter) this.gradeLetter.textContent = letter;
+    if (this.gradeTitle) this.gradeTitle.textContent = title;
+    if (this.gradeDetail) this.gradeDetail.textContent = detail;
+    this.gradeEl.classList.add('on');
+    this._gradeTimer = duration;
+  }
+
+  /** Retire the grade banner early, e.g. when a sector card takes the strip. */
+  dismissGrade() {
+    if (this._gradeTimer <= 0) return;
+    this._gradeTimer = 0;
+    this.gradeEl?.classList.remove('on');
+  }
+
   warn(label, duration = 1.6) {
     if (!this.warnEl) return;
     this.warnEl.textContent = label;
@@ -463,6 +491,8 @@ export class HUD {
     if (this._damageRaf != null) cancelAnimationFrame(this._damageRaf);
     this._damageRaf = null;
     this._warnTimer = 0;
+    this._gradeTimer = 0;
+    this.gradeEl?.classList.remove('on');
     this._comboTimer = this._comboPulse = 0;
     this.chainEventEl?.classList.remove('on', 'lost');
     this.chainWrap?.classList.remove('urgent', 'max-chain');

@@ -342,12 +342,16 @@ export class Screens extends EventTarget {
   /* Results                                                             */
   /* ------------------------------------------------------------------ */
 
-  results({ title, rows, rank, entry }) {
+  results({ title, rows, rank, entry, canContinue = false, continueLabel = 'CONTINUE: LOOP 2' }) {
     document.getElementById('over-title').textContent = title;
+    const cont = document.getElementById('btn-continue');
+    if (cont) { cont.hidden = !canContinue; cont.textContent = continueLabel; }
     const host = document.getElementById('over-results');
+    const chips = (list, dim) => `<span class="grade-chips${dim ? ' dim' : ''}">${list.map((g, k) =>
+      `<i class="g-${g ?? 'none'}" title="Sector ${k + 1}"><small>${k + 1}</small>${g ?? '–'}</i>`).join('')}</span>`;
     host.innerHTML = rows.map((r, i) => `
       <div class="result-row ${r.total ? 'total' : ''}" style="animation-delay:${i * 0.07}s">
-        <span>${r.label}</span><span>${r.value}</span>
+        <span>${r.label}</span>${r.chips ? chips(r.chips, r.dim) : `<span>${r.value}</span>`}
       </div>`).join('');
     if (rank >= 0) {
       host.insertAdjacentHTML('beforeend', `

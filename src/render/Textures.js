@@ -217,7 +217,7 @@ function gratingHeight(size, seed) {
  * Full PBR set for fortress armour.
  * @param {number} aniso renderer max anisotropy
  */
-export function hullSet(aniso = 8, tint = [0.30, 0.35, 0.42]) {
+export function hullSet(aniso = 8, tint = [0.40, 0.45, 0.52]) {
   return once(`hull:${aniso}:${tint.join()}`, () => {
     const size = 512;
     const height = platingHeight(size, 0xa5f3, { cells: 4 });
@@ -272,7 +272,7 @@ export function deckSet(aniso = 8) {
     const d = img.data;
     for (let i = 0; i < d.length; i += 4) {
       const v = d[i] / 255;
-      const s = 0.16 + v * 0.34;
+      const s = 0.26 + v * 0.42;
       d[i] = s * 0.72 * 255;
       d[i + 1] = s * 0.84 * 255;
       d[i + 2] = s * 1.0 * 255;
@@ -317,6 +317,62 @@ export function gratingSet(aniso = 8) {
   });
 }
 
+/**
+ * Fuel drum livery: safety yellow with white bands and a black FUEL stencil,
+ * wrapped twice around a cylinder so it reads from any side.
+ */
+export function fuelDrumTexture(aniso = 4) {
+  return once(`fuel:${aniso}`, () => {
+    const w = 512, h = 256;
+    const c = document.createElement('canvas');
+    c.width = w; c.height = h;
+    const ctx = c.getContext('2d');
+    ctx.fillStyle = '#e6b21e';
+    ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = '#f2efe6';
+    for (const y of [18, h - 46]) ctx.fillRect(0, y, w, 28);
+    ctx.fillStyle = '#1a1612';
+    for (const y of [10, h - 18]) ctx.fillRect(0, y, w, 8);
+    ctx.font = 'bold 92px Consolas, "Courier New", monospace';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    for (const x of [w * 0.25, w * 0.75]) ctx.fillText('FUEL', x, h * 0.5);
+    // chevrons under the stencil and weathering on top
+    ctx.fillStyle = '#1a1612';
+    for (let x = 12; x < w; x += 44) {
+      ctx.beginPath(); ctx.moveTo(x, h * 0.7); ctx.lineTo(x + 16, h * 0.7); ctx.lineTo(x + 26, h * 0.76); ctx.lineTo(x + 10, h * 0.76); ctx.fill();
+    }
+    const rng = new Rng(0xf0e1);
+    streaks(ctx, w, rng, 22, '60,40,20', 0.35);
+    return finish(c, { srgb: true, aniso });
+  });
+}
+
+/** Pitted regolith for asteroids and rubble; vertex colour supplies the hue. */
+export function rockTexture(aniso = 8) {
+  return once(`rock:${aniso}`, () => {
+    const size = 256;
+    const rng = new Rng(0x70c4);
+    const { c, ctx } = canvas(size);
+    ctx.fillStyle = '#c4bdb4';
+    ctx.fillRect(0, 0, size, size);
+    noiseFill(ctx, size, rng, { octaves: 4, alpha: 0.4 });
+    // craters: dark bowls with a bright lip on one side
+    for (let i = 0; i < 26; i++) {
+      const x = rng.next() * size, y = rng.next() * size, r = rng.range(3, 16);
+      const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, 'rgba(20,18,16,0.55)');
+      g.addColorStop(0.7, 'rgba(40,36,32,0.25)');
+      g.addColorStop(0.86, 'rgba(210,200,190,0.35)');
+      g.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(x - r, y - r, r * 2, r * 2);
+    }
+    streaks(ctx, size, rng, 14, '30,26,22', 0.35);
+    return finish(c, { srgb: true, aniso });
+  });
+}
+
 /** Diagonal hazard chevrons for barrier faces. */
 export function hazardTexture(aniso = 8, color = '#ffb43a') {
   return once(`hazard:${color}:${aniso}`, () => {
@@ -338,44 +394,6 @@ export function hazardTexture(aniso = 8, color = '#ffb43a') {
     ctx.globalAlpha = 0.35;
     noiseFill(ctx, size, rng, { octaves: 2, alpha: 0.4 });
     ctx.globalAlpha = 1;
-    return finish(c, { srgb: true, aniso });
-  });
-}
-
-/** Glowing circuitry, used as an emissive overlay on power structures. */
-export function circuitTexture(aniso = 8) {
-  return once(`circuit:${aniso}`, () => {
-    const size = 512;
-    const rng = new Rng(0xc0de);
-    const { c, ctx } = canvas(size);
-    ctx.fillStyle = '#000';
-    ctx.fillRect(0, 0, size, size);
-    ctx.lineCap = 'square';
-    ctx.strokeStyle = '#7cf6ff';
-    ctx.shadowColor = '#45e0ff';
-
-    for (let trace = 0; trace < 34; trace++) {
-      let x = Math.floor(rng.next() * 16) * (size / 16);
-      let y = Math.floor(rng.next() * 16) * (size / 16);
-      ctx.lineWidth = rng.bool(0.3) ? 5 : 2.5;
-      ctx.shadowBlur = ctx.lineWidth * 2.5;
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      const segs = rng.int(3, 8);
-      for (let s = 0; s < segs; s++) {
-        const len = Math.floor(rng.range(1, 4)) * (size / 16);
-        if (rng.bool()) x += rng.bool() ? len : -len;
-        else y += rng.bool() ? len : -len;
-        ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-      // solder pad at the end
-      ctx.fillStyle = '#c8fbff';
-      ctx.beginPath();
-      ctx.arc(x, y, ctx.lineWidth * 1.6, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    ctx.shadowBlur = 0;
     return finish(c, { srgb: true, aniso });
   });
 }
@@ -403,40 +421,6 @@ export function glowSprite(size = 128, falloff = 2.2) {
       }
     }
     ctx.putImageData(img, 0, 0);
-    const t = new THREE.CanvasTexture(c);
-    t.colorSpace = THREE.SRGBColorSpace;
-    t.needsUpdate = true;
-    return t;
-  });
-}
-
-/** Four-point starburst for muzzle flashes and pickups. */
-export function flareSprite(size = 256) {
-  return once(`flare:${size}`, () => {
-    const { c, ctx } = canvas(size);
-    const half = size / 2;
-    const core = ctx.createRadialGradient(half, half, 0, half, half, half);
-    core.addColorStop(0, 'rgba(255,255,255,1)');
-    core.addColorStop(0.12, 'rgba(255,255,255,0.85)');
-    core.addColorStop(0.35, 'rgba(255,255,255,0.16)');
-    core.addColorStop(1, 'rgba(255,255,255,0)');
-    ctx.fillStyle = core;
-    ctx.fillRect(0, 0, size, size);
-
-    ctx.globalCompositeOperation = 'lighter';
-    for (let i = 0; i < 4; i++) {
-      ctx.save();
-      ctx.translate(half, half);
-      ctx.rotate((Math.PI / 2) * i + Math.PI / 4 * (i % 2));
-      const g = ctx.createLinearGradient(0, 0, half, 0);
-      g.addColorStop(0, 'rgba(255,255,255,0.9)');
-      g.addColorStop(1, 'rgba(255,255,255,0)');
-      ctx.fillStyle = g;
-      const w = i % 2 ? size * 0.012 : size * 0.02;
-      ctx.fillRect(0, -w / 2, half, w);
-      ctx.fillRect(-half, -w / 2, half, w);
-      ctx.restore();
-    }
     const t = new THREE.CanvasTexture(c);
     t.colorSpace = THREE.SRGBColorSpace;
     t.needsUpdate = true;

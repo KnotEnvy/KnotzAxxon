@@ -7,6 +7,7 @@
  */
 
 import * as THREE from 'three';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { clamp01, damp, TAU } from '../core/Utils.js';
 
 const _v = new THREE.Vector3();
@@ -20,6 +21,40 @@ const KINDS = {
 
 let shellGeo = null;
 let coreGeo = null;
+/** Each kind has its own silhouette, so colour is a second cue, not the only one. */
+const shapeGeo = new Map();
+
+function merge(parts) {
+  const flat = parts.map(g => (g.index ? g.toNonIndexed() : g));
+  for (const g of flat) { g.deleteAttribute('uv1'); g.clearGroups(); }
+  const out = mergeGeometries(flat, false);
+  for (const g of new Set([...parts, ...flat])) g.dispose();
+  return out;
+}
+
+function shapeFor(kind) {
+  if (shapeGeo.has(kind)) return shapeGeo.get(kind);
+  let g;
+  if (kind === 'shield') {
+    g = new THREE.TorusGeometry(1.55, 0.26, 4, 6);                       // hex ring
+  } else if (kind === 'spread') {
+    const parts = [];
+    for (let k = 0; k < 3; k++) for (const s of [-1, 1]) {
+      parts.push(new THREE.BoxGeometry(1.3, 0.3, 0.3).rotateZ(s * 0.6).translate(s * 0.5, -0.8 + k * 0.8 + 0.35, 0));
+    }
+    g = merge(parts);                                                     // triple chevron
+  } else if (kind === 'repair') {
+    g = merge([new THREE.BoxGeometry(2.2, 0.62, 0.5), new THREE.BoxGeometry(0.62, 2.2, 0.5)]);   // cross
+  } else {
+    g = merge([
+      new THREE.CylinderGeometry(0.7, 0.7, 1.6, 10),
+      new THREE.TorusGeometry(0.72, 0.1, 4, 12).rotateX(Math.PI / 2).translate(0, 0.45, 0),
+      new THREE.TorusGeometry(0.72, 0.1, 4, 12).rotateX(Math.PI / 2).translate(0, -0.45, 0),
+    ]);                                                                   // drum
+  }
+  shapeGeo.set(kind, g);
+  return g;
+}
 
 export class Pickup {
   constructor(scene, mats, kind, x, y, z) {
@@ -43,9 +78,13 @@ export class Pickup {
       mats.neon(def.color, 1.4, { transparent: true, opacity: 0.45, additive: true, depthWrite: false }),
     );
     this.core = new THREE.Mesh(coreGeo, mats.neon(def.color, 3.2));
-    this.group.add(this.shell, this.core);
+    this.core.scale.setScalar(0.55);
+    this.shape = new THREE.Mesh(shapeFor(kind), mats.neon(def.color, 1.9));
+    this.group.add(this.shell, this.core, this.shape);
 
-    this.halo = new THREE.Sprite(mats.sprite(mats.glow, def.color));
+    const halos = (mats._pickupHalos ??= new Map());
+    if (!halos.has(def.color)) halos.set(def.color, mats.sprite(mats.glow, def.color, { opacity: 0.35 }));
+    this.halo = new THREE.Sprite(halos.get(def.color));
     this.halo.scale.setScalar(7);
     this.group.add(this.halo);
 
@@ -60,9 +99,13 @@ export class Pickup {
     this.shell.rotation.y += dt * 1.4;
     this.shell.rotation.x += dt * 0.9;
     this.core.rotation.y -= dt * 2.2;
+    // the silhouette turns to face you on a slow wobble
+    this.shape.rotation.y = Math.sin(this.phase * 1.7) * 0.6 + (this.kind === 'shield' ? this.phase : 0);
+    this.shape.rotation.z = this.kind === 'shield' ? this.phase * 0.8 : Math.sin(this.phase * 2.2) * 0.12;
     const pulse = 1 + Math.sin(this.phase * 4) * 0.12;
     this.shell.scale.setScalar(pulse);
-    this.halo.material.opacity = 0.35 + Math.sin(this.phase * 4) * 0.15;
+    // the shared halo breathes in size rather than opacity
+    this.halo.scale.setScalar(7 * (1 + Math.sin(this.phase * 4) * 0.2));
 
     const p = ctx.player;
     const d = this.pos.distanceTo(p.pos);
@@ -77,7 +120,6 @@ export class Pickup {
   }
 
   dispose() {
-    this.halo.material.dispose();
     this.group.parent?.remove(this.group);
   }
 }
@@ -88,4 +130,6 @@ export const PICKUP_KINDS = Object.keys(KINDS);
 export function disposePickupGeometry() {
   shellGeo?.dispose(); coreGeo?.dispose();
   shellGeo = coreGeo = null;
+  for (const g of shapeGeo.values()) g.dispose();
+  shapeGeo.clear();
 }

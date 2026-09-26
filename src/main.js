@@ -2,6 +2,7 @@ import { Lifetime } from './core/Lifetime.js';
 import { disposeTextures } from './render/Textures.js';
 import { disposeEnemyGeometry } from './entities/Enemies.js';
 import { disposePickupGeometry } from './entities/Pickup.js';
+import { disposeFortressTemplates } from './world/Fortress.js';
 /**
  * KNOTZAXXON — entry point.
  *
@@ -11,7 +12,7 @@ import { disposePickupGeometry } from './entities/Pickup.js';
 
 import './style.css';
 import { Engine } from './core/Engine.js';
-import { Game, STATE } from './game/Game.js';
+import { Game, STATE, parseSeedCode, seedCode } from './game/Game.js';
 import { Screens } from './ui/Screens.js';
 import { settings } from './core/Settings.js';
 import { audio } from './audio/Audio.js';
@@ -39,7 +40,7 @@ async function main() {
     if (lifetime.closed) return;
     lifetime.dispose();
     engine?.stop(); game?.dispose(); screens.dispose(); audio.dispose();
-    disposeEnemyGeometry(); disposePickupGeometry();
+    disposeEnemyGeometry(); disposePickupGeometry(); disposeFortressTemplates();
     engine?.dispose(); disposeTextures();
     if (window.KZ?.engine === engine) delete window.KZ;
   };
@@ -50,8 +51,23 @@ async function main() {
     // the sky bake. The boot log is covering real work, not a fake progress bar.
     engine = new Engine(canvas);
     game = new Game(engine, screens);
-    // Warm the pipeline so the first frame of play isn't a shader-compile stall.
-    engine.renderer.compile(engine.scene, engine.camera);
+    // Warm the pipeline so no first sighting in the campaign is a shader-compile stall.
+    // Compile against the composer's target: rendering to a target selects
+    // different tone-mapping and colour-space variants than the canvas does.
+    game.prewarm(() => {
+      const renderer = engine.renderer, previous = renderer.getRenderTarget();
+      renderer.setRenderTarget(engine.postfx.composer.readBuffer);
+      renderer.compile(engine.scene, engine.camera);
+      // compile() builds programs only; upload every texture the staged scene
+      // uses too, so the first explosion or pickup does not pay for it.
+      engine.scene.traverse((object) => {
+        for (const material of [].concat(object.material ?? [])) {
+          const slots = [...Object.values(material), ...Object.values(material.uniforms ?? {}).map(u => u?.value)];
+          for (const t of slots) if (t?.isTexture && !t.isRenderTargetTexture) renderer.initTexture(t);
+        }
+      });
+      renderer.setRenderTarget(previous);
+    });
     // Yield without relying on rAF, which may be suspended in background tabs.
     await lifetime.delay(0);
   });
@@ -75,14 +91,29 @@ async function main() {
   /* Menu actions                                                        */
   /* ------------------------------------------------------------------ */
 
+  // A shared fortress code in the URL (?seed=4F9K2A) replaces the random seed.
+  const sharedSeed = parseSeedCode(new URLSearchParams(location.search).get('seed'));
+  if (sharedSeed !== null) {
+    const hint = document.getElementById('title-hint');
+    if (hint) hint.textContent = `SHARED FORTRESS ${seedCode(sharedSeed)} // ENTER TO ENGAGE`;
+  }
+
   lifetime.listen(screens, 'action', (e) => {
     switch (e.detail) {
       case 'start':
+        game.start({ daily: false, seed: sharedSeed ?? undefined });
+        break;
+      case 'daily':
+        game.start({ daily: true });
+        break;
       case 'retry':
         game.start();
         break;
       case 'resume':
         game.resume();
+        break;
+      case 'continue':
+        game.continueLoop();
         break;
       case 'abort':
       case 'title':
@@ -114,7 +145,7 @@ async function main() {
     // Enter on the title screen is handled by Screens; this covers the
     // gamepad "A" shortcut when no item happens to be focused.
     if (action === 'confirm' && game.state === STATE.IDLE && screens.current === 'title') {
-      game.start();
+      game.start({ daily: false, seed: sharedSeed ?? undefined });
     }
   });
 

@@ -97,6 +97,8 @@ class Enemy {
     this.flashMesh = new THREE.Mesh(sourceGeo, this.flashMat);
     this.flashMesh.scale.setScalar(scale);
     this.flashMesh.renderOrder = 5;
+    // An invisible additive shell still costs a draw; only show it mid-flash.
+    this.flashMesh.visible = false;
     this.group.add(this.flashMesh);
   }
 
@@ -125,6 +127,7 @@ class Enemy {
     if (this.flash > 0) {
       this.flash = Math.max(0, this.flash - dt * 6);
       if (this.flashMat) this.flashMat.opacity = this.flash * 0.75;
+      if (this.flashMesh) this.flashMesh.visible = this.flash > 0;
     }
   }
 
@@ -272,7 +275,7 @@ export class Turret extends Enemy {
       });
       ctx.fx.muzzle(_v, _v2, 0xff7a4a, this.heavy ? 1.1 : 0.7);
     }
-    audio.enemyShot(audio.panFor(this.pos.x, ctx.player.pos.x));
+    audio.enemyShot(audio.panFor(this.pos.x, ctx.player.pos.x), this.pos.z - ctx.player.pos.z, this.heavy ? 'heavy' : 'turret');
   }
 }
 
@@ -352,7 +355,7 @@ export class Silo extends Enemy {
         { damage: 1, radius: 1.3, turn: lerp(1.5, 2.9, clamp01(ctx.difficulty)), life: 7 },
       );
       ctx.fx.muzzle(_v, new THREE.Vector3(0, 1, 0), 0xffb060, 1.4);
-      audio.missile(audio.panFor(this.pos.x, ctx.player.pos.x));
+      audio.missile(audio.panFor(this.pos.x, ctx.player.pos.x), this.pos.z - ctx.player.pos.z);
       ctx.warn('MISSILE LAUNCH');
     }
   }
@@ -371,17 +374,18 @@ export class FuelCell extends Enemy {
     this.fuelValue = 0.16;
     this.contactDamage = 1;
 
+    // A tall safety-yellow drum with a FUEL stencil: never mistaken for the
+    // squat brown gun domes it often stands beside.
     const tankGeo = geo('fuelTank', () => {
-      const g = new THREE.CapsuleGeometry(1.3, 1.6, 4, 12);
-      g.translate(0, 2.0, 0);
+      const g = new THREE.CylinderGeometry(1.35, 1.35, 3.4, 16, 1, true);
+      g.translate(0, 2.2, 0);
       return g;
     });
-    this.add(tankGeo, mats.enemyHull);
-    this.add(geo('fuelFoot', () => {
-      const g = new THREE.CylinderGeometry(1.5, 1.7, 0.5, 8);
-      g.translate(0, 0.25, 0);
-      return g;
-    }), mats.darkMetal);
+    this.add(tankGeo, mats.fuelDrum ?? mats.enemyHull);
+    this.add(geo('fuelCaps', () => mergeParts([
+      new THREE.SphereGeometry(1.35, 16, 6, 0, TAU, 0, Math.PI / 2).scale(1, 0.45, 1).translate(0, 3.9, 0),
+      new THREE.CylinderGeometry(1.5, 1.7, 0.5, 12).translate(0, 0.25, 0),
+    ])), mats.darkMetal);
 
     this.band = new THREE.Mesh(
       geo('fuelBand', () => {
@@ -391,20 +395,20 @@ export class FuelCell extends Enemy {
       }),
       mats.neon(0xffb43a, 2.6),
     );
-    this.band.position.y = 2.0;
+    this.band.position.y = 2.2;
     this.group.add(this.band);
 
     this.add(geo('fuelPlumbing', () => mergeParts([
-      collar(1.29,.09,1.2), collar(1.29,.09,2.8),
-      box(.2,1.7,.24,1.35,2,0), box(.2,1.7,.24,-1.35,2,0),
-      new THREE.CylinderGeometry(.32,.4,.24,8).translate(0,4.02,0),
+      collar(1.4,.1,0.62), collar(1.4,.1,3.78),
+      box(.2,3.2,.24,1.42,2.2,0), box(.2,3.2,.24,-1.42,2.2,0),
+      new THREE.CylinderGeometry(.32,.4,.4,8).translate(0,4.55,0),
     ])), mats.darkMetal, 0, 0, 0, false);
     this._addFlashShell(tankGeo, 1.1);
   }
 
   update(dt, ctx) {
     super.update(dt, ctx);
-    this.band.position.y = 2.0 + Math.sin(ctx.time * 2.4 + this.pos.z * 0.2) * 0.35;
+    this.band.position.y = 2.2 + Math.sin(ctx.time * 2.4 + this.pos.z * 0.2) * 1.1;
     this.band.rotation.y += dt * 1.2;
   }
 }
@@ -486,21 +490,18 @@ export class Mine extends Enemy {
     const coreGeo = geo('mineCore', () => new THREE.IcosahedronGeometry(1.2, 0));
     this.core = this.add(coreGeo, mats.enemyHull);
 
-    // spikes
-    const spikeGeo = geo('mineSpike', () => {
-      const g = new THREE.ConeGeometry(0.22, 1.1, 5);
-      g.rotateX(Math.PI / 2);
-      g.translate(0, 0, 1.3);
-      return g;
-    });
-    for (const d of [
-      [1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1],
-    ]) {
-      const s = new THREE.Mesh(spikeGeo, mats.darkMetal);
-      s.lookAt(d[0], d[1], d[2]);
-      s.castShadow = true;
-      this.group.add(s);
-    }
+    // six contact spikes baked into one draw
+    this.add(geo('mineSpikes', () => {
+      const parts = [];
+      const m = new THREE.Object3D();
+      for (const d of [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]]) {
+        const g = new THREE.ConeGeometry(0.22, 1.1, 5).rotateX(Math.PI / 2).translate(0, 0, 1.3);
+        m.lookAt(d[0], d[1], d[2]);
+        m.updateMatrix();
+        parts.push(g.applyMatrix4(m.matrix));
+      }
+      return mergeParts(parts);
+    }), mats.darkMetal);
 
     this.lamp = new THREE.Mesh(
       geo('mineLamp', () => new THREE.SphereGeometry(0.4, 8, 6)),
@@ -525,6 +526,7 @@ export class Mine extends Enemy {
     this.lamp.scale.setScalar(blink);
     if (near > 0.55 && !this._warned) {
       this._warned = true;
+      audio.mineArm(audio.panFor(this.pos.x, ctx.player.pos.x));
     }
   }
 }
@@ -548,6 +550,10 @@ class Flyer extends Enemy {
     this.homeY = feature.y;
     this.peeling = false;
     this.peelDir = this.rng.bool() ? 1 : -1;
+    // Carrier-launched wings start in the hangar bay on the far beam and
+    // bank into formation.
+    this.launching = !!feature.launch;
+    if (this.launching) this.pos.set(58 + this.rng.range(-2, 2), 2 + this.rng.range(-2, 4), this.pos.z);
 
     const bodyGeo = geo(`flyBody${fast}`, () => {
       // Armoured keel: a narrow interceptor nose, broad drone shoulders.
@@ -624,6 +630,17 @@ class Flyer extends Enemy {
     const p = ctx.player;
     this.phase += dt;
 
+    if (this.launching) {
+      const prevX = this.pos.x;
+      this.pos.x = damp(this.pos.x, this.homeX, 1.4, dt);
+      this.pos.y = damp(this.pos.y, this.homeY, 1.4, dt);
+      this.pos.z += p.speed * (this.fast ? 0.82 : 0.62) * dt;
+      this.group.rotation.z = damp(this.group.rotation.z, clamp((this.pos.x - prevX) / dt * 0.04, -1.1, 1.1), 5, dt);
+      if (Math.abs(this.pos.x - this.homeX) < 1.5) this.launching = false;
+      this.engine.scale.setScalar(1.3 + Math.sin(ctx.time * 30) * 0.15);
+      return;
+    }
+
     const trail = this.fast ? 0.82 : 0.62;
     let vx = 0, vy = 0, vz = p.speed * trail;
 
@@ -671,6 +688,12 @@ class Flyer extends Enemy {
 
     // fire when roughly ahead of the player
     const dz = this.pos.z - p.pos.z;
+    // Doppler fly-by as a fighter slides past the canopy.
+    if (!this._flewBy && this._lastDz > 3 && dz <= 3 && Math.abs(this.pos.x - p.pos.x) < 14 && Math.abs(this.pos.y - p.pos.y) < 10) {
+      this._flewBy = true;
+      audio.flyby(audio.panFor(this.pos.x, p.pos.x));
+    }
+    this._lastDz = dz;
     if (dz > 4 && dz < 85 && p.alive) {
       this.fireTimer -= dt * (0.7 + ctx.difficulty * 0.8);
       if (this.fireTimer <= 0) {
@@ -683,7 +706,7 @@ class Flyer extends Enemy {
           damage: 1, radius: 0.9, life: 4,
         });
         ctx.fx.muzzle(_v, _v2, 0xff7a4a, 0.6);
-        audio.enemyShot(audio.panFor(this.pos.x, p.pos.x));
+        audio.enemyShot(audio.panFor(this.pos.x, p.pos.x), dz, 'flyer');
       }
     }
   }
@@ -697,11 +720,83 @@ export class Interceptor extends Flyer {
 }
 
 /* ------------------------------------------------------------------ */
+/* Parked fighter — Zaxxon's airfield targets                          */
+/* ------------------------------------------------------------------ */
+
+/**
+ * A fighter on its hardstand, nose toward the intruder. Strafe it low. Some
+ * crews scramble: engines light as you approach and the plane climbs away,
+ * so a late shot has to match a rising altitude.
+ */
+export class ParkedFighter extends Enemy {
+  constructor(mats, feature) {
+    super(mats, feature);
+    this.hp = 1;
+    this.radius = 2.4;
+    this.score = 150;
+    this.scramble = this.rng.bool(0.35);
+    this.lift = 0;
+    this.velocity = new THREE.Vector3();
+
+    const fuselage = geo('parkedBody', () => mergeParts([
+      box(1.1, 0.75, 4.4, 0, 1.0, 0),
+      new THREE.ConeGeometry(0.55, 1.7, 6).rotateX(-Math.PI / 2).translate(0, 1.0, -3.0),
+      ...[1, -1].map(side => {
+        const s = new THREE.Shape();
+        s.moveTo(0, -0.6); s.lineTo(side * 3.0, 0.9); s.lineTo(side * 3.1, 1.35); s.lineTo(side * 0.4, 0.8); s.closePath();
+        return new THREE.ExtrudeGeometry(s, { depth: 0.14, bevelEnabled: false }).rotateX(Math.PI / 2).translate(0, 0.95, 0.2);
+      }),
+      box(0.16, 1.2, 1.4, 0, 1.75, 1.6),
+    ]));
+    this.add(fuselage, mats.enemyHull);
+    this.add(geo('parkedGear', () => mergeParts([
+      new THREE.CylinderGeometry(0.08, 0.1, 0.9, 5).translate(0, 0.45, -1.4),
+      new THREE.CylinderGeometry(0.08, 0.1, 0.9, 5).translate(-1, 0.45, 0.8),
+      new THREE.CylinderGeometry(0.08, 0.1, 0.9, 5).translate(1, 0.45, 0.8),
+      new THREE.SphereGeometry(1, 10, 6).scale(0.42, 0.3, 0.8).translate(0, 1.42, -0.8),
+      new THREE.TorusGeometry(0.34, 0.1, 5, 10).translate(0, 1.0, 2.25),
+    ])), mats.darkMetal, 0, 0, 0, false);
+
+    this.engine = new THREE.Mesh(geo('parkedJet', () => new THREE.CircleGeometry(0.32, 10)), mats.neon(0xff9a3a, 2.2));
+    this.engine.position.set(0, 1.0, 2.3);
+    this.engine.scale.setScalar(0.3);
+    this.group.add(this.engine);
+    this.beacon = new THREE.Mesh(geo('parkedBeacon', () => new THREE.SphereGeometry(0.18, 6, 4)), mats.neon(0xff3d55, 3));
+    this.beacon.position.set(0, 2.4, 1.6);
+    this.group.add(this.beacon);
+    this.group.rotation.y = this.rng.range(-0.2, 0.2);
+    this._addFlashShell(fuselage, 1.12);
+  }
+
+  update(dt, ctx) {
+    super.update(dt, ctx);
+    const p = ctx.player;
+    const dz = this.pos.z - p.pos.z;
+    this.beacon.visible = Math.sin(ctx.time * 5 + this.pos.z) > 0.2;
+    if (!this.scramble) return;
+    // engines spool up as the intruder closes, then the plane climbs out
+    const spool = clamp01((95 - dz) / 40);
+    this.engine.scale.setScalar(0.3 + spool * 1.1 + Math.sin(ctx.time * 30) * 0.08 * spool);
+    if (dz < 60 && dz > -20) {
+      this.lift = Math.min(1, this.lift + dt * 0.55);
+      this.velocity.set(0, this.lift * 9, p.speed * this.lift * 0.75);
+      this.pos.addScaledVector(this.velocity, dt);
+      this.pos.y = Math.min(this.pos.y, ALT_MAX - 2);
+      this.group.rotation.x = damp(this.group.rotation.x, -0.35 * this.lift, 4, dt);
+      if (this.lift > 0.05 && !this._roared) {
+        this._roared = true;
+        audio.flyby(audio.panFor(this.pos.x, p.pos.x));
+      }
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
 /* Factory                                                             */
 /* ------------------------------------------------------------------ */
 
 export const ENEMY_KINDS = new Set([
-  'turret', 'heavyTurret', 'silo', 'fuel', 'radar', 'mine', 'drone', 'interceptor',
+  'turret', 'heavyTurret', 'silo', 'fuel', 'radar', 'mine', 'drone', 'interceptor', 'parked',
 ]);
 
 export function createEnemy(kind, mats, feature) {
@@ -722,6 +817,7 @@ function _create(kind, mats, feature) {
     case 'mine': return new Mine(mats, feature);
     case 'drone': return new Drone(mats, feature);
     case 'interceptor': return new Interceptor(mats, feature);
+    case 'parked': return new ParkedFighter(mats, feature);
     default: return null;
   }
 }
