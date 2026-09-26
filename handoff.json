@@ -1,204 +1,123 @@
 {
   "schema_version": 2,
   "project": "KnotzAxxon",
-  "updated_at": "2026-09-12T23:16:22.182Z",
-  "status": "sector_refinement_complete_browser_smoke_passed_player_acceptance_pending",
-  "production_ready": false,
+  "updated_at": "2026-09-26T09:35:08.000Z",
+  "status": "visual_juice_session_complete_two_critic_rounds_merged_player_acceptance_pending",
+  "production_ready": true,
+  "production_ready_basis": "All automated gates pass (tests, build, campaign smoke, production smoke); human playtest and audio audition are still pending.",
   "validation": {
     "tests": {
       "command": "npm test",
-      "passed": 83,
+      "passed": 94,
       "failed": 0,
-      "new_combat_polish_tests": 8,
-      "new_sector_refinement_tests": 8
+      "new_showcase_tests": 11,
+      "file": "tests/showcase.test.js"
     },
     "build": {
       "command": "npm run build",
       "status": "passed",
-      "modules": 48,
-      "application_asset": "index-CP1elLdA.js",
-      "application_kb": 217.39,
-      "application_gzip_kb": 69.45
+      "modules": 50,
+      "application_asset": "index-DRBzDtQe.js",
+      "application_kb": 306.93,
+      "application_gzip_kb": 99.03,
+      "three_chunk_kb": 568.13
     },
-    "final_live_browser_smoke": "passed_headless_edge_controlled_scenes_and_production_startup",
-    "runtime_performance": "controlled_scene_render_counts_measured_sustained_frame_pacing_and_GPU_memory_unmeasured",
-    "source_null_byte_scan": {
-      "files": 45,
-      "corruption_found": false
+    "campaign_smoke": {
+      "command": "KZ_PLAYWRIGHT_PATH=<playwright-core> KZ_TEST_URL=http://localhost:5177 node artifacts/campaign-smoke.cjs",
+      "pilot": "invulnerable scripted autopilot, trigger held; progression and stability check, not a balance test",
+      "victory": true,
+      "campaign_seconds": 297,
+      "grades": "A S C S C S S S",
+      "loop_2_entered_with_score_banked": true,
+      "javascript_errors": 0,
+      "rendered_frame_cpu_ms": {
+        "median": 9.9,
+        "p95": 16.1,
+        "p99": 23.3,
+        "max": 94
+      },
+      "shader_programs": 52,
+      "shader_program_count_flat_after_prewarm": true,
+      "first_run_of_round_for_comparison": "median 20.6, p95 57.3, max 7244.6 ms before the prewarm and program-lifetime fixes"
+    },
+    "production_smoke": {
+      "server": "vite preview on 127.0.0.1:4174 (launch config knotzaxxon-preview)",
+      "viewports": [
+        "1280x720",
+        "390x844 touch",
+        "844x390 touch"
+      ],
+      "input": "real keyboard: Enter to start, Space fire, arrows, Escape pause",
+      "console_errors": 0,
+      "horizontal_overflow": false,
+      "worst_rAF_frame_ms": 152.5
+    },
+    "showcase_capture": {
+      "command": "node artifacts/showcase-capture.cjs",
+      "scenes": 24,
+      "draw_calls": "126-283 (pre-session baseline 207-337)",
+      "classic_luma": "S1 classic 40.8 (baseline 26); reactor classic 21.3 and space classic 18.4 remain the darkest"
+    },
+    "audio_render": {
+      "command": "node artifacts/audio-render.cjs",
+      "peak_dbfs": -5.31,
+      "music_rms_db": -25.6,
+      "mix_during_blast_db": -15.2,
+      "note": "Offline render through the real mix bus with a labelled spectrogram; no human audition."
     },
     "browser": {
-      "browser": "Microsoft Edge 153.0.4234.32",
-      "mode": "isolated_headless",
-      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-      "viewport": {
-        "desktop": [
-          1280,
-          720
-        ],
-        "portrait": [
-          390,
-          844
-        ]
-      },
-      "quality": "medium",
-      "javascript_or_shader_errors": 0,
-      "controlled_scenes": [
-        {
-          "mode": "classic",
-          "state": "playing",
-          "altitudeEcho": {
-            "min": 8.32481639052965,
-            "max": 13.635183609470351,
-            "center": 10.98,
-            "kind": "drone"
-          },
-          "enemyHelpers": 0,
-          "calls": 235,
-          "triangles": 23547,
-          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)"
-        },
-        {
-          "mode": "modern",
-          "state": "playing",
-          "altitudeEcho": {
-            "min": 8.32481639052965,
-            "max": 13.635183609470351,
-            "center": 10.98,
-            "kind": "drone"
-          },
-          "enemyHelpers": 0,
-          "calls": 261,
-          "triangles": 31923,
-          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)"
-        },
-        {
-          "mode": "chase",
-          "state": "playing",
-          "altitudeEcho": {
-            "min": 8.32481639052965,
-            "max": 13.635183609470351,
-            "center": 10.98,
-            "kind": "drone"
-          },
-          "enemyHelpers": 0,
-          "calls": 261,
-          "triangles": 31923,
-          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)"
-        }
-      ],
-      "keyboard": "real DOM left/right events passed in Classic, Modern and Chase",
-      "production_start": "title-to-flight plus 30 active animation frames passed",
-      "reports": [
-        "artifacts/sector-smoke.json",
-        "artifacts/sector-production-smoke.json"
-      ],
-      "screenshots": [
-        "artifacts/sector-classic.png",
-        "artifacts/sector-modern.png",
-        "artifacts/sector-chase.png",
-        "artifacts/sector-portrait.png",
-        "artifacts/sector-title.png",
-        "artifacts/sector-production.png"
-      ],
-      "limitations": [
-        "Controlled scene setup uses the development debug API; it is not a full campaign playtest.",
-        "Physical controller/touch acceptance and an audio audition remain pending.",
-        "Desktop CUA still fails at Windows sandbox initialization; direct headless Edge testing succeeded."
-      ],
-      "sector_card": "Rendered over gameplay; two cancellable text animations, zero with reduced motion",
-      "enemy_altitude_helpers": 0,
-      "altimeter_echo": "One static contact band, green only at matching firing height; cover and viewport aware"
-    }
+      "browser": "Microsoft Edge 154.0.4258.37, isolated headless via playwright-core",
+      "renderer": "ANGLE (NVIDIA GeForce GTX 1650 Ti, Direct3D11)",
+      "quality": "high"
+    },
+    "limitations": [
+      "All rendered checks are headless Edge on one GPU; no sustained FPS or GPU-memory measurement on named hardware.",
+      "No human playtest, audio audition, physical controller or touch session was performed by the agent.",
+      "Headless compositing adds DOM-raster hitches (sector cards, HUD reveal) that a GPU-composited desktop browser should not show; frame pacing numbers include them."
+    ]
   },
   "critic": {
     "completed_rounds": 2,
-    "threshold": 8.5,
-    "all_categories_passed": false,
+    "scale": "1-10, 10 = best in class for a browser arcade shooter; scores not inflated to track earlier rounds",
+    "reports": [
+      "CRITIC_SHOWCASE_1.md",
+      "CRITIC_SHOWCASE_2.md"
+    ],
     "scores": [
       {
-        "category": "Visual Fidelity & Shaders",
-        "round_1": 7.8,
-        "round_2": 8.2
+        "category": "Graphics",
+        "round_1": 6,
+        "round_2": 7
       },
       {
-        "category": "Authenticity & Altitude Feel",
-        "round_1": 8,
-        "round_2": 8.5
+        "category": "Asset design",
+        "round_1": 5,
+        "round_2": 6.5
       },
       {
-        "category": "Modern Game Feel & Polish",
-        "round_1": 8.1,
-        "round_2": 8.3
+        "category": "Stage design",
+        "round_1": 4.5,
+        "round_2": 6
       },
       {
-        "category": "UI/UX Architecture",
-        "round_1": 8.3,
-        "round_2": 8.5
+        "category": "Sound FX",
+        "round_1": 5.5,
+        "round_2": 7
       },
       {
-        "category": "Code Quality & Performance",
-        "round_1": 7.8,
-        "round_2": 8.2
+        "category": "Fun factor",
+        "round_1": 6,
+        "round_2": 7
       }
     ],
-    "basis": "Independent focused source, CPU simulation and simulated-event reviews. All five provisional implementation scores reach 8.5; live review remains pending. scores preserves the historical baseline rounds.",
-    "strategy": "Sequential category reviews; historic two-round overhaul limit superseded by 2026-09-10 user instruction.",
-    "baseline_round_limit": 2,
-    "focused_all_categories_passed": true,
-    "full_live_gate_passed": false,
-    "focused_scores": [
-      {
-        "category": "Visual Fidelity & Shaders",
-        "round_1": 7.9,
-        "round_2": 8.5,
-        "provisional": true,
-        "reports": [
-          "CRITIC_VISUAL_1.md",
-          "CRITIC_VISUAL_2.md"
-        ]
-      },
-      {
-        "category": "Authenticity & Altitude Feel",
-        "round_1": 7,
-        "round_2": 8.5,
-        "provisional": true,
-        "reports": [
-          "CRITIC_AUTHENTICITY_1.md",
-          "CRITIC_AUTHENTICITY_2.md"
-        ]
-      },
-      {
-        "category": "Modern Game Feel & Polish",
-        "round_1": 7.4,
-        "round_2": 8.5,
-        "provisional": true,
-        "reports": [
-          "CRITIC_FEEL_1.md",
-          "CRITIC_FEEL_2.md"
-        ]
-      },
-      {
-        "category": "UI/UX Architecture",
-        "round_1": 7.4,
-        "round_2": 8.5,
-        "provisional": true,
-        "reports": [
-          "CRITIC_UX_1.md",
-          "CRITIC_UX_2.md"
-        ]
-      },
-      {
-        "category": "Code Quality & Performance",
-        "round_1": 7.6,
-        "round_2": 8.5,
-        "provisional": true,
-        "reports": [
-          "CRITIC_PERFORMANCE_1.md",
-          "CRITIC_PERFORMANCE_2.md"
-        ]
-      }
-    ],
-    "current_pass": "No independent critic review or new scores assigned to the sector refinement; previous scores are historical and provisional."
+    "mean": {
+      "round_1": 5.4,
+      "round_2": 6.7
+    },
+    "basis": "Round 1 scored the pre-session build; round 2 scored commit 94edf82 (after fix round 1). Both judged rendered frames, crops, luma measurements, offline audio spectrograms and source; sound was not auditioned by ear.",
+    "fix_round_2_scored": false,
+    "fix_round_2_note": "Fix round 2 (commit 352c0b5) addressed the round-2 top list; it has not been independently re-scored.",
+    "previous_series": "Earlier CRITIC_* category reports (visual, authenticity, feel, UX, performance) used a different rubric and threshold of 8.5; they are historical and not comparable to the showcase series."
   },
   "resolution_recovery": {
     "status": "fixed_and_regression_tested",
@@ -222,7 +141,7 @@
     "preview_http_status": 200,
     "referenced_assets_http_checked": 3,
     "served_assets_match_dist": true,
-    "verified_at": "2026-09-12T23:13:52.807Z",
+    "verified_at": "2026-09-26T09:35:08.000Z",
     "commands": [
       "npm install",
       "npm test",
@@ -230,52 +149,53 @@
       "./start-user-testing.ps1"
     ],
     "checklist": [
-      "Classic camera with Flight Assist OFF: left/right must match the screen. Repeat in Modern and Chase, including directional rolls.",
-      "Confirm there are no per-enemy altitude brackets or arrows. Align a firing lane and use the single altimeter contact band; green means matching height, amber GAP remains obstacle clearance. Hidden or covered contacts must not appear.",
-      "Play the slower opening from fuel tanks through a turret, broad wall opening, radar and first fighter pair. Check time to react, fuel availability and the transition to denser later sectors.",
-      "Fire toward targets beyond each screen edge: unseen collisions must not award kills, damage, score or explosion feedback. Compare Flight Assist ON.",
-      "Shoot fuel at matching altitude, compare high shots and ramming, then pass low/high wall openings and moving gates while boosted.",
-      "Build a chain from the first kill through x2 and toward x8. Check milestone text, red low-time countdown, expiry, damage interruption, pause and retry.",
-      "Check warning cues, all boss phases and full campaign victory.",
-      "Check fortress ground-assault, reactor moving gates, open-space fighter formations and late-sector precision. Confirm route pips, sector reveals and chain text remain readable; test reduced motion.",
-      "Test physical controller and touch, portrait and landscape HUD, audio clarity and stereo placement.",
-      "Use F for telemetry; profile crowded combat, boss encounters, repeated retries and quality switches on named hardware."
+      "Play S1 from the perimeter wall through the first fighter pair in all three rigs; confirm the classic ship silhouette shows through near structures and nowhere else.",
+      "Shoot parked fighters, FUEL drums, radar and turrets; confirm decor (grey tarped fighters, horizontal tanks, roof flak) never reads as a target.",
+      "Thread wall gaps, electric barriers and debris gates; check THREAD/PERFECT THREAD/LOW PASS and graze awards and that the altimeter band matches each opening.",
+      "Finish a sector with no damage both below and above 35% targets; the clean bonus must only pay above.",
+      "Watch the grade card land over the closing fuel lane and yield to the next sector card; check the results grade chips and BEST GRADES after two runs.",
+      "Copy the results FORTRESS CODE, open the game with ?seed=CODE and confirm the same fortress; fly DAILY SORTIE twice on one day.",
+      "Boss: pods, core, then the rack duel from phase two (lean-in, lock on rack, RACK n/6); listen for the curtain sweep dropping out at the gap.",
+      "Listen through a whole run on speakers and headphones: sector hooks in S1, S4, S7 and the boss, ambient beds per environment, and ducking under big blasts.",
+      "Continue into loop 2 and check score banking and harder pacing.",
+      "Test controller, touch, portrait and landscape; use F for telemetry on named hardware during crowded combat and the boss."
     ]
   },
   "open_items": [
-    "Interactive acceptance of opening pace, authored encounter order, altimeter contact band and text effects",
-    "Fuel and difficulty balancing across all eight sectors at the slower cruise speed",
-    "Low/high altitude and moving-gate playtest throughout the campaign",
-    "Boss phases and full campaign victory",
-    "Physical audio/controller/touch and responsive-layout acceptance",
-    "Named-hardware sustained FPS, p95 frame pacing and repeated-restart GPU-memory measurement"
+    "Human playtest of the full campaign: opening pace, sector grades, clean-bonus threshold (35%), debris gates, electric barriers and the rack duel.",
+    "Audio audition by ear: hooks, environment beds, the curtain-gap sweep, limiter behaviour in dense combat, and stereo placement.",
+    "Physical controller and touch acceptance, portrait and landscape HUD in real devices.",
+    "Named-hardware sustained FPS, p95 frame pacing and repeated-restart GPU memory.",
+    "Round-2 critic items not taken: one lane-shape rule per fortress sector (the playable lane is still one template), wall-mounted guns (they would sit outside the firing lane and break level forward gunfire), and staging the boss curtain from the arena pylons with a core-chamber wall.",
+    "Exposure: reactor (ember) classic frames still measure about 21 luma and space classic about 18; raising them further needs a deck-tint or key-light change, not bloom.",
+    "The S1 opening keeps the gentle 900-unit authored pace at the user's earlier request; the critic suggested trimming it to about 450."
   ],
   "workspace": {
     "git_repository_present": true,
     "branch": "main",
     "remote": "origin",
     "remote_url": "https://github.com/KnotEnvy/KnotzAxxon.git",
-    "branch_cleanup": "Refinement implemented on the existing main branch; no separate feature branch requires merging.",
+    "branch_cleanup": "Session work landed on session/visual-juice and merged to main through PR #1.",
     "ignored_local_directories": [
       "node_modules/",
       "dist/",
       ".claude/"
     ],
     "delivery": {
+      "status": "merged",
+      "pull_request": "https://github.com/KnotEnvy/KnotzAxxon/pull/1",
+      "head_branch": "session/visual-juice",
+      "verified_game_commit": "3e6426f",
+      "base": "main",
+      "verified_at": "2026-09-26T09:35:08.000Z"
+    },
+    "previous_delivery": {
       "status": "published",
       "verified_game_commit": "8dd450c9d25eca1f95835a9e490eaeff6a0cec68",
       "branch": "main",
       "remote_branch": "origin/main",
       "verified_at": "2026-09-12T23:16:22.182Z",
       "note": "The sector refinement game commit was verified against GitHub main before this handoff-only publication record was committed."
-    },
-    "previous_delivery": {
-      "status": "published",
-      "verified_game_commit": "b4a3a318c0210c34aeb35e188b4a8350bddf20be",
-      "branch": "main",
-      "remote_branch": "origin/main",
-      "verified_at": "2026-09-12T11:50:43.028Z",
-      "note": "The game commit was verified against GitHub main before this handoff-only delivery record was committed."
     }
   },
   "documents": [
@@ -296,9 +216,8 @@
   ],
   "polish": {
     "active_area": null,
-    "threshold": 8.5,
-    "strategy": "One category at a time; existing sectors and accepted views preserved",
-    "gate": "requested_sector_refinement_implemented_and_regression_tested_player_acceptance_pending",
+    "strategy": "Two critic rounds (graphics, asset design, stage design, sound FX, fun factor) with a fix round after each, then a deployment pass; no added bloom or post-processing.",
+    "gate": "merged_regression_tested_player_acceptance_pending",
     "live_playtest_performed_by_agent": false,
     "rendered_browser_checks_performed": true
   },
@@ -455,6 +374,23 @@
       "validation": "83 tests pass; 48-module production build passes; all three camera fixtures, keyboard directions, portrait layout, sector text animations, reduced motion and production title-to-flight verified in headless Edge.",
       "independent_critic_performed": false,
       "player_acceptance_pending": true
+    },
+    {
+      "date": "2026-09-26T09:35:08.000Z",
+      "active_area": "Visual juice: animated fortress, Zaxxon cast, space terrain, scoring hooks and scored audio",
+      "changes": [
+        "Per-vertex light animation (strobe, chase, breathe, flicker) and vertex-shader spin in the shared batch materials; zero added draws.",
+        "Sector dressing kits (airfield, flak batteries, reactor stacks, citadel, gauntlet), skyline towers, landing pads, parked and scrambling fighters, FUEL drums, shape-coded pickups.",
+        "Battlemented perimeter wall (also S1's first wall), electric barrier, debris gates, dreadnought gun-tower pylons, carrier wing launches, deck-edge lips and a world underlay below classic view.",
+        "Robot Sentinel rebuilt: livery, head tracking, sky-drop entrance, shoulder pods, chest core and the six-hit missile-rack duel with lean-in and RACK counter.",
+        "Thread, graze and low-pass scoring; S/A/B/C sector grades with an honest clean bonus; best grades; daily sortie; ?seed= fortress codes; loop continue.",
+        "Audio rewrite: per-sector songs with A/B phrases, four hand-written hooks, jingles, per-room reverb, environment beds, distance model, brick-wall limiter and cue-band pocket.",
+        "Fortress streaming rebuilt on cached templates and pooled buffers with a measured build slice; constant light pool, explicit PCFShadowMap, prewarm against the composer target with texture uploads and persistent shared programs.",
+        "Final pass: deferred reverb tails, dead code removed, inline favicon, comment mojibake repaired, README updated."
+      ],
+      "validation": "94 tests pass; production build passes; full-campaign smoke to loop 2 with zero errors; production smoke on three viewports; 24-scene showcase capture; offline audio render.",
+      "independent_critic_performed": true,
+      "player_acceptance_pending": true
     }
   ],
   "project_constraints": [
@@ -463,17 +399,21 @@
     "Keep local procedural assets, seeded level data, synthesized audio and pooled effects.",
     "Approaching hazards remain opaque; retire cleared obstacle visuals and cut away foreground decoration.",
     "Preserve the legacy reference directory.",
-    "Keep source-review scores separate from rendered tests and human acceptance."
+    "Keep source-review scores separate from rendered tests and human acceptance.",
+    "Juice comes from geometry, vertex animation and authored emissive detail inside existing batches, not from more bloom, post-processing or lights.",
+    "Keep the composer target samples: 0 and emissive gains authored around the 1.02 bloom threshold.",
+    "Keep the light count constant (lights sit at zero intensity when idle); changing it recompiles every lit material."
   ],
   "architecture": {
     "entry": "src/main.js owns boot, menu actions and coordinated shutdown",
     "engine": "src/core/Engine.js owns renderer, one RAF, adaptive resolution, input and bounded substeps",
     "simulation": "src/game/Game.js owns state, spawning, swept collision, scoring and campaign progression",
     "presentation": "Game.lateUpdate runs camera, effects, projectile uploads and DOM HUD once per rendered frame",
-    "world": "Level produces seeded data; Fortress streams merged geometry with at most two chunk builds per rendered frame",
+    "world": "Level produces seeded data (sector phrases, perimeter walls, debris gates, carrier launches); Fortress stamps chunks from cached templates into pooled per-material buffers with baked AO and approach/side tint lifts, building the chunk under the ship first and further chunks only inside a 6 ms measured build slice.",
     "visibility": "CombatVisibility projects target centers with a 4 percent screen-edge margin. AltitudeEcho chooses one forward-lane target; sightlines honor solid cover using parallel orthographic or perspective rays, and the candidate firing path is traced against collision geometry.",
-    "render": "RenderPass, HDR-threshold bloom, ACES/sRGB output and combined FXAA/chroma/vignette/scanlines",
-    "audio": "Web Audio synthesis and a lookahead music scheduler"
+    "render": "RenderPass, HDR-threshold bloom, ACES/sRGB output and one composite pass. Emissive strips animate in the shared neon vertex shader (LIGHT_ANIM); dishes, fans and wreckage spin in the vertex shader (Materials.addSpin). Underlay plane and flight grid owned by Engine.",
+    "audio": "Web Audio synthesis: SONGS table with A/B phrases and hooks, lookahead scheduler, sfx and music buses, duck plus low-shelf and cue-band pocket, glue compressor, brick-wall compressor, unity-gain tanh clipper, per-room convolver, environment beds; offline rendering via init(offlineCtx) and at(seconds).",
+    "prewarm": "Game.prewarm stages one chunk per sector, every enemy, the boss, pickups, instanced effects, both force fields and the classic silhouette, then main.js compiles against the composer target and uploads every staged texture. Shared materials that own unique programs (pickup halos, boss core, force fields) are never disposed mid-run, so the program count stays flat."
   },
   "resource_ownership": {
     "application": "Lifetime owns event subscriptions and cancellable waits; shutdown disposes actors before shared caches.",
@@ -490,7 +430,11 @@
     "Viewport eligibility is based on the target center or boss impact point, not GPU occlusion queries. Physical cover blocks bullets; altimeter sightlines separately respect approaching walls/gates.",
     "No new independent critic scores were assigned during this maintenance pass.",
     "Altimeter contact describes the next muzzle lane and current target position; moving targets still require player timing.",
-    "Slower travel preserves baseline fuel per distance, but longer exposure to enemy fire and sector encounter weights still need human campaign balancing."
+    "Slower travel preserves baseline fuel per distance, but longer exposure to enemy fire and sector encounter weights still need human campaign balancing.",
+    "Pickup halos share one material per colour, so they pulse in size rather than opacity.",
+    "The space and arena reverb tails are generated 1.5 s after audio start; a space sector entered sooner would keep the fortress room until they exist.",
+    "Decorative fighters, drums and flak are deliberately grey and inert; only orange-livery objects are targets.",
+    "The boss core material is shared across loops and owned by Materials rather than the Boss instance."
   ],
   "performance_targets": {
     "desktop": {
@@ -538,5 +482,15 @@
     ],
     "design_reference": "https://arcarc.xmission.com/PDF_Arcade_Manuals_and_Schematics/Zaxxon_Manual_(420-0724).pdf",
     "scope": "Refine the existing eight sectors; retain isometric altitude-dependent forward combat and fortress/space transitions."
+  },
+  "tooling": {
+    "playwright": "Scripts expect KZ_PLAYWRIGHT_PATH pointing at a playwright-core install and use installed Edge (channel msedge).",
+    "scripts": {
+      "artifacts/showcase-capture.cjs": "Seeded scenes rendered with draw calls, triangles and luma; KZ_ONLY filters scenes, KZ_OUT sets the folder.",
+      "artifacts/motion-capture.cjs": "Six-frame sequences tiled into contact sheets.",
+      "artifacts/audio-render.cjs": "Offline score and effects render to WAV, spectrogram and loudness JSON.",
+      "artifacts/campaign-smoke.cjs": "Invulnerable autopilot through the whole campaign into loop 2: grades, results rows, errors, frame timing, program count."
+    },
+    "visual_verification": "Page screenshots do not capture the WebGL canvas reliably; the capture scripts read pixels back from the renderer instead."
   }
 }
