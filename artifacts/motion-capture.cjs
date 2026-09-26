@@ -18,7 +18,7 @@ const SEQUENCES = [
   ['fuel-kill', 'chase', 0, 150, 30, 8, 'fuel'],
   ['boss-entrance', 'chase', 7, 190, 1, 26, 'boss'],
   ['launcher-duel', 'chase', 7, 250, 260, 14, 'duel'],
-  ['scramble', 'chase', 1, 10, 10, 14, 'scramble'],
+  ['scramble', 'chase', 1, 10, 4, 12, 'scramble'],
   ['runway-lights', 'classic', 0, 1100, 30, 7, null],
 ];
 
@@ -65,7 +65,7 @@ const SEQUENCES = [
         if (setup === 'fuel') target = game._spawnEnemy('fuel', { x: 0, y: 0, z: p.pos.z + 34, seed: 3 });
         if (setup === 'scramble') {
           for (let k = 0; k < 3; k++) {
-            const e = game._spawnEnemy('parked', { x: -9 + k * 9, y: 0, z: p.pos.z + 95 + k * 8, seed: 11 + k });
+            const e = game._spawnEnemy('parked', { x: -9 + k * 9, y: 0, z: p.pos.z + 70 + k * 8, seed: 11 + k });
             e.scramble = true;
           }
         }

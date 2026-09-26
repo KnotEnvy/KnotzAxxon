@@ -86,6 +86,11 @@ async function main() {
   lifetime.listen(screens, 'action', (e) => {
     switch (e.detail) {
       case 'start':
+        game.start({ daily: false });
+        break;
+      case 'daily':
+        game.start({ daily: true });
+        break;
       case 'retry':
         game.start();
         break;
@@ -125,7 +130,7 @@ async function main() {
     // Enter on the title screen is handled by Screens; this covers the
     // gamepad "A" shortcut when no item happens to be focused.
     if (action === 'confirm' && game.state === STATE.IDLE && screens.current === 'title') {
-      game.start();
+      game.start({ daily: false });
     }
   });
 

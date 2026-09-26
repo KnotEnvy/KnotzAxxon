@@ -46,6 +46,15 @@ export const STATE = {
 /** Emplacements that leave a burning wreck where they stood. */
 const GROUND_KINDS = new Set(['turret', 'heavyTurret', 'silo', 'fuel', 'radar', 'parked']);
 
+/** UTC date as YYYY-MM-DD; the daily sortie's name. */
+export const dailyLabel = (date = new Date()) => date.toISOString().slice(0, 10);
+/** One seed per UTC day, so every pilot flies the same fortress. */
+export function dailySeed(date = new Date()) {
+  let h = 2166136261;
+  for (const ch of `KNOTZAXXON:${dailyLabel(date)}`) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
+  return (h >>> 0) % 1e9;
+}
+
 /** Score thresholds that award an extra hull point (or a shield when full). */
 const HULL_BONUS_AT = [50000, 150000, 300000, 500000];
 const GRADE_ORDER = ['S', 'A', 'B', 'C'];
@@ -218,10 +227,15 @@ export class Game {
     }
   }
 
-  start() {
+  /**
+   * @param {{daily?: boolean}} [mode] a daily sortie flies the same seeded
+   *   fortress for everyone on a given UTC date; retries keep the last mode
+   */
+  start(mode = this.mode ?? {}) {
     // Fire and forget: a blocked audio context must never stall the run.
     audio.init();
-    this.reset((Math.random() * 1e9) | 0, 0);
+    this.mode = { daily: !!mode.daily };
+    this.reset(this.mode.daily ? dailySeed() : (Math.random() * 1e9) | 0, 0);
     this.state = STATE.PLAYING;
     this.hud.setLive(true);
     this.screens.hide();
@@ -1098,6 +1112,7 @@ export class Game {
     this.screens.results({
       title: victory ? (this.loop ? `LOOP ${this.loop + 1} CLEARED` : 'FORTRESS NEUTRALISED') : 'MISSION FAILED',
       rows: [
+        { label: this.mode?.daily ? 'DAILY SORTIE' : 'FORTRESS SEED', value: this.mode?.daily ? dailyLabel() : String(this.seed) },
         { label: 'SECTOR REACHED', value: String(this.sectorIndex + 1 + this.loop * 8).padStart(2, '0') },
         { label: 'SECTOR GRADES', value: this.gradeLine },
         { label: 'TARGETS DESTROYED', value: commafy(this.kills) },

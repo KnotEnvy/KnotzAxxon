@@ -67,7 +67,7 @@ const GRID_FRAG = /* glsl */`
     // the flight envelope's edges stay bright; the grid fades out around the ship
     float lane = 1.0 - smoothstep(0.0, 0.6, abs(abs(vWorld.x) - 16.9));
     // A local halo around the ship, not a floor: minor lines only up close.
-    float d = length((vWorld.xz - uFocus.xz) * vec2(1.0, 0.5)) / 60.0;
+    float d = length((vWorld.xz - uFocus.xz) * vec2(1.0, 0.6)) / 46.0;
     float fade = 1.0 - smoothstep(0.1, 1.0, d);
     gl_FragColor = vec4(uColor, (g * 0.4 * fade + lane * 0.6 * (1.0 - smoothstep(0.3, 1.6, d))) * fade * uOpacity);
   }
@@ -162,7 +162,7 @@ export class Underlay {
     this.plane.position.set(focus.x, -DEPTH, focus.z + 120);
 
     this._gridOpacity = damp(this._gridOpacity, this._grid ? 1 : 0, 2, dt);
-    this.gridMaterial.uniforms.uOpacity.value = this._gridOpacity * 0.5;
+    this.gridMaterial.uniforms.uOpacity.value = this._gridOpacity * 0.36;
     this.gridMaterial.uniforms.uFocus.value.copy(focus);
     this.grid.visible = this._gridOpacity > 0.01;
     this.grid.position.set(0, 0.02, focus.z + 80);
