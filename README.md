@@ -73,8 +73,28 @@ Touch controls appear automatically on coarse-pointer devices.
 
 The opening speed eases from 36 to 40 world units per second (previously 48), with fuel burn adjusted to preserve cost per distance. The first sector introduces fuel, a lone gun, a forgiving wall, radar and fighters in sequence. Gun batteries, fighter waves, reactor gates and the final fortress each have distinct encounter weights. The HUD route strip tracks all eight sectors; brief sector titles reveal in steps, with reduced-motion support.
 
-Eight sectors, ending at the Iron Sentinel — a three-phase boss that holds station ahead
-of you while the fight moves down the corridor.
+Eight sectors, ending at the Iron Sentinel — a three-phase robot that drops into the
+arena, tracks you with its head and holds station ahead of you while the fight moves down
+the corridor. Shoot off its shoulder cannons, punish the chest reactor while it is open,
+and from phase two land six hits on its charging missile launcher to blow the missile in
+the rack (the Zaxxon robot duel). Beat it and you can continue into a harder loop with
+your score banked.
+
+- **Style scoring.** Threading a wall gap close to its edge, diving low under an arch and
+  grazing enemy fire all pay bonuses that keep your chain alive.
+- **Sector grades.** Each sector is graded S/A/B/C on targets destroyed and hull hits;
+  a damage-free sector earns a clean bonus. 50,000 and 150,000 points earn extra hull.
+- **Daily sortie.** One seeded fortress per UTC day, the same for every pilot.
+- **Ground targets have a life.** Destroyed emplacements leave burning wrecks and scorch
+  marks, turret domes pop off, radar dishes topple, fuel tanks go up in a fire column.
+  Parked fighters sit on hardstands; some crews scramble and climb as you approach.
+
+Every sector has its own look: an airfield with parked fighters and landing pads, flak
+batteries firing tracers into the sky, reactor cooling stacks venting steam, a dense
+citadel of antennae and bunkers, and a red-alarm gauntlet. Leaving the fortress you fly
+off a lit deck edge into space; coming back you clear its battlemented perimeter wall.
+Space sectors have tumbling asteroid fields, a derelict dreadnought beneath the lane and
+the interceptor wing's carrier running alongside.
 
 ---
 
@@ -106,10 +126,29 @@ a cubemap when a sector loads, then uses it as both `scene.background` and — v
 for free.
 
 **Geometry streams in merged slices.** The level is planned as pure data (`world/Level.js`),
-seeded so a run is reproducible. `world/Fortress.js` slices it into chunks and merges each
-chunk's dozens of boxes down to one mesh per material, with per-block variation carried in
-vertex colours. A visible fortress is a few dozen draw calls rather than several hundred.
-At most two chunks build per frame to bound streaming work; hardware profiling is still needed for frame pacing.
+seeded so a run is reproducible. `world/Fortress.js` slices it into chunks and stamps each
+chunk's hundreds of boxes and prop templates straight into pooled per-material vertex
+arrays, with per-block variation and baked ambient occlusion carried in vertex colours.
+A visible fortress is a few dozen draw calls rather than several hundred. The chunk under
+the ship builds first; a second build in the same frame only happens inside a 6 ms slice.
+
+**The fortress animates without draw calls.** Every emissive strip in a chunk shares one
+material whose vertex shader reads a per-vertex animation code: strobing beacons, runway
+chase lights, breathing conduits and failing tubes (`LIGHT_ANIM` in `render/Materials.js`).
+Radar dishes, fans and orbiting wreckage rotate in the vertex shader about per-vertex
+pivots (`Materials.addSpin`). Neither adds a draw call or any per-frame CPU work.
+
+**The world below the lane.** The classic rig looks down at 35 degrees, so half its frame
+is whatever lies below the deck edges. `render/Underlay.js` draws one world-anchored plane
+far below: the fortress's lit lower city, or a nebula field in open space. In space a faint
+flight grid at the altitude floor carries the ship's shadow so the depth cue never goes away.
+
+**Shader programs are compiled before play.** `Game.prewarm` stages one chunk of every
+sector, every enemy, the boss, each pickup and each instanced effect, and compiles them
+against the composer's render target (rendering to a target selects different
+tone-mapping variants than the canvas). The explosion light pool stays in the scene at zero
+intensity: toggling light visibility changes the light count, and every new count
+recompiles every lit material, which used to cost multi-second stalls on the first blasts.
 
 **Particles are integrated on the GPU.** `fx/Particles.js` stores spawn state (origin,
 velocity, drag, gravity, birth time) in attributes and solves the trajectory in the vertex
@@ -140,7 +179,20 @@ tapered ribbon rather than a pile of additive sprites for exactly that reason.
 between 55% and 100%, rate-limited so the image never pumps. Quality presets are
 auto-detected on first run from core count, device memory and pointer type.
 
-**Draw-call measurement.** Counts vary with camera, scene and quality. The sector-refinement controlled 1280x720 MEDIUM scene measured 235 calls in Classic and 261 in Modern/Chase on headless Edge with a GTX 1650 Ti. These are complete-composer scene snapshots, not sustained performance measurements. Enemy rim shading and the altimeter echo add no geometry draws.
+**Draw-call measurement.** Counts vary with camera, scene and quality. On the HIGH preset at
+1280x720 (headless Edge, GTX 1650 Ti) the showcase scenes measure roughly 96–307 calls, at or
+below the previous build's 207–337 despite the added scenery: the player ship is baked into
+four meshes by material, and idle hit-flash shells no longer draw. These are complete-composer
+scene snapshots, not sustained performance measurements.
+
+**Tooling.** Four scripts in `artifacts/` drive the development build through headless
+Edge with Playwright (set `KZ_PLAYWRIGHT_PATH` to a `playwright-core` install and
+`KZ_TEST_URL` to the dev server):
+`showcase-capture.cjs` renders a fixed list of seeded scenes with render counts and luma;
+`motion-capture.cjs` tiles six-frame sequences into contact sheets;
+`audio-render.cjs` renders the score and effects offline through the real mix bus to a WAV
+plus a labelled spectrogram; `campaign-smoke.cjs` flies the whole campaign with an
+invulnerable autopilot into loop 2 and reports grades, errors and frame timing.
 
 Press **F** in game for the live readout: frame time, draw calls, triangles, resolution
 scale and entity count.

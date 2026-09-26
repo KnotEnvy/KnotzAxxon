@@ -709,6 +709,20 @@ export class Audio {
     this._noiseSrc(t, 0.55, g, 1.1);
   }
 
+  /** Contact with an electric barrier: a crackling buzz. */
+  zap() {
+    if (!this.ready || !this._throttled('zap', 0.3)) return;
+    const t = this._now();
+    const g = this.ctx.createGain();
+    const f = this.ctx.createBiquadFilter();
+    f.type = 'bandpass'; f.frequency.value = 2400; f.Q.value = 0.8;
+    g.connect(f); f.connect(this.sfxBus);
+    this._env(g, t, 0.002, 0.45, 0.4);
+    this._osc('square', 120, t, 0.5, g);
+    this._osc('sawtooth', 181, t, 0.5, g, 20);
+    this._noiseSrc(t, 0.45, g, 2.6);
+  }
+
   /** Mine arming: two close pips. */
   mineArm(pan = 0) {
     if (!this.ready || !this._throttled('mine', 0.3)) return;

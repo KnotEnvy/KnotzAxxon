@@ -117,6 +117,7 @@ export class Game {
     this.boss?.dispose(); this.boss = null;
     this.fortress?.clear(); this.fortress?.root.removeFromParent();
     this.fortress?._gateMat?.dispose();
+    this.fortress?._fenceMat?.dispose();
     this.player.dispose(); this.projectiles.dispose(); this.fx.dispose(); this.dust.dispose(); this.hud.dispose();
   }
 
@@ -723,7 +724,8 @@ export class Game {
     this.fx.explosion(p.pos, 1.2, { shake: 1.6, debris: false });
     this.hud.pulseDamage(1);
     this._breakChain();
-    this.warn(tag === 'gate' ? 'COOLANT DISCHARGE' : 'HULL SCRAPE');
+    this.warn(tag === 'gate' ? 'COOLANT DISCHARGE' : tag === 'fence' ? 'ELECTRIC BARRIER' : 'HULL SCRAPE');
+    if (tag === 'fence') audio.zap();
   }
 
   /**
@@ -886,7 +888,7 @@ export class Game {
       const f = feats[i];
       if (f.z > toZ) break;
       if (f.z <= fromZ || f.passed) continue;
-      if (f.kind !== 'wall' && f.kind !== 'gate' && f.kind !== 'arch') continue;
+      if (f.kind !== 'wall' && f.kind !== 'gate' && f.kind !== 'arch' && f.kind !== 'fence') continue;
       f.passed = true;
       this._scorePass(f);
     }
@@ -917,6 +919,9 @@ export class Game {
     } else if (f.kind === 'arch') {
       clear = f.clearance - p.pos.y - r;
       span = f.clearance / 2;
+    } else if (f.kind === 'fence') {
+      clear = Math.max(f.y - (p.pos.y + r), p.pos.y - r - (f.y + f.band));
+      span = 4;
     }
     if (!Number.isFinite(clear)) return;
     const tight = clamp01(1 - clear / Math.max(1, span));
@@ -924,6 +929,7 @@ export class Game {
     if (this.runTime - this._crashTime < 0.6) return;
     let label = null, pts = 0;
     if (f.kind === 'arch' && p.pos.y < f.clearance * 0.45) { label = 'LOW PASS'; pts = 300; }
+    else if (f.kind === 'fence' && tight >= 0.55) { label = p.pos.y > f.y ? 'OVER THE WIRE' : 'UNDER THE WIRE'; pts = tight >= 0.85 ? 600 : 300; }
     else if (tight >= 0.85) { label = 'PERFECT THREAD'; pts = 600; }
     else if (tight >= 0.55) { label = 'THREAD'; pts = 250; }
     if (!label) return;
@@ -1256,6 +1262,13 @@ export class Game {
         }
       } else if (f.kind === 'arch') {
         if (!hazard && f.z - p.pos.z < 130) hazard = { y0: ALT_MIN, y1: f.clearance - clearance, z: f.z };
+      } else if (f.kind === 'fence') {
+        // Two ways past a live beam: paint the safe band on the side you are on.
+        if (!hazard && f.z - p.pos.z < 130) {
+          const over = p.pos.y > f.y + f.band / 2;
+          hazard = over ? { y0: f.y + f.band + clearance, y1: ALT_MAX, z: f.z } : { y0: ALT_MIN, y1: f.y - clearance, z: f.z };
+        }
+        this._wallsAhead.push({ z: f.z, gapX: null });
       }
     }
 

@@ -521,11 +521,12 @@ export class Fortress {
     // features that own real geometry
     for (const f of this.level.features) {
       if (f.z < z0 || f.z >= z1) continue;
-      if (f.kind === 'wall' || f.kind === 'arch' || f.kind === 'gate') {
+      if (f.kind === 'wall' || f.kind === 'arch' || f.kind === 'gate' || f.kind === 'fence') {
         const obstacle = new THREE.Group();
         group.add(obstacle);
         const featureBatch = new Batch();
         if (f.kind === 'gate') this._gate(obstacle, f, group, featureBatch);
+        else if (f.kind === 'fence') this._fence(obstacle, f, featureBatch, rng);
         else if (f.kind === 'wall') this._wall(featureBatch, f, rng);
         else this._arch(featureBatch, f, rng);
         featureBatch.merge(this._matFor, obstacle);
@@ -1067,6 +1068,49 @@ export class Fortress {
     for (let z = f.z - 3; z <= f.z + 3; z += 1.5) {
       for (let x = -CORRIDOR_HALF; x <= CORRIDOR_HALF; x += 4) {
         batch.box('neon', 0.4, 0.12, 0.4, x, f.clearance - 0.75, z, 8, 0xffe0a0, 0, 1.2, { anim: [CHASE, 1.2, ((z - f.z + 3) / 6) % 1] });
+      }
+    }
+  }
+
+  /**
+   * Electric barrier: emitter pylons just outside the flight envelope and a
+   * live horizontal beam between them. The beam is the shared force-field
+   * shader in a cold blue-white; flickering zig-zag arcs crawl along it.
+   */
+  _fence(group, f, batch, rng) {
+    const W = DECK_HALF * 2;
+    const mat = (this._fenceMat ??= this.materials.forceField(0x8fdcff));
+    const beam = new THREE.Mesh(new THREE.PlaneGeometry(W, f.band), mat);
+    beam.position.set(0, f.y + f.band / 2, f.z);
+    beam.frustumCulled = false;
+    group.add(beam);
+    for (const side of [-1, 1]) {
+      const x = side * (CORRIDOR_HALF + 4);
+      // A barrier, not decoration: the near pylon rises just past the beam it holds.
+      const h = side < 0 ? f.y + f.band + 2.5 : ALT_MAX + 4;
+      batch.box('dark', 2.6, h, 2.6, x, 0, f.z, 4, 0xffffff);
+      batch.box('hull', 3.6, 1.2, 3.6, x, 0, f.z, 4, 0x8a96a6);
+      // insulator coils around the emitter head, breathing with the current
+      for (let k = 0; k < 4; k++) {
+        const y = f.y - 1 + k * (f.band + 2) / 4;
+        batch.box('dark', 3.4, 0.5, 3.4, x, y, f.z, 3, 0xffffff);
+        batch.box('neon', 3.5, 0.2, 3.5, x, y + 0.15, f.z, 8, 0x9fe8ff, 0, 1.3, { anim: [BREATHE, 2.2, k / 4 + (side > 0 ? 0.5 : 0)] });
+      }
+      batch.box('neon', 0.8, f.band, 0.8, x - side * 1.5, f.y, f.z, 8, 0xdff6ff, 0, 1.5, { anim: [FLICKER, 1.3, side > 0 ? 0.3 : 0.7] });
+      if (side > 0) batch.lamp(x, h + 0.3, f.z, 0.8, 0xff3d55, 1.6, [STROBE, 0.8, 0]);
+    }
+    // three zig-zag arcs along the beam, each flickering on its own beat
+    for (let a = 0; a < 3; a++) {
+      const yc = f.y + f.band * (0.25 + a * 0.25);
+      const anim = { anim: [FLICKER, rng.range(1.4, 2.4), rng.next()] };
+      let x = -CORRIDOR_HALF - 3, y = yc;
+      while (x < CORRIDOR_HALF + 3) {
+        const step = rng.range(1.2, 2.6);
+        const ny = yc + rng.range(-f.band * 0.35, f.band * 0.35);
+        const len = Math.hypot(step, ny - y);
+        const g = new THREE.BoxGeometry(len, 0.12, 0.12).rotateZ(Math.atan2(ny - y, step)).translate(step / 2, (y + ny) / 2 - y, 0);
+        batch.add('neon', g, x, y, f.z - 0.05, 8, 0xeaf8ff, 0, 1.6, anim);
+        x += step; y = ny;
       }
     }
   }

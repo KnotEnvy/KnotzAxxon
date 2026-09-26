@@ -325,6 +325,16 @@ export class Level {
           break;
         }
         case 'arch': {
+          if (sector.index > 0 && rng.bool(0.55)) {
+            // Zaxxon's electric barrier: a live beam between two pylons.
+            // Fly over it or under it; the beam itself is the only hazard.
+            const band = lerp(2.6, 3.6, clamp(threat, 0, 1));
+            const y = rng.range(6, ALT_MAX - band - 6);
+            this._push({ kind: 'fence', z, y, band, thickness: 1.6, seed: rng.int(0, 1e6) });
+            this._collider(0, y, z, DECK_HALF * 2, band, 1.6, true, 'fence');
+            z += rng.range(120, 170);
+            break;
+          }
           const clearance = rng.range(9, 15);
           this._push({ kind: 'arch', z, clearance, seed: rng.int(0, 1e6) });
           this._collider(0, clearance, z, DECK_HALF * 2, ALT_MAX + 12 - clearance, 7, true, 'arch');

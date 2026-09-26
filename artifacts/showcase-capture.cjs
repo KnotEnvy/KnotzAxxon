@@ -41,6 +41,8 @@ const SCENES = [
   ['s3-dreadnought-chase', 'chase', 2, 620, 120, { x: 3, y: 6 }],
   ['s5-carrier-modern', 'modern', 4, 420, 120, { x: 4, y: 14 }],
   ['s4-perimeter-modern', 'modern', 3, -10, 40, { x: 0, y: 11 }],
+  ['s4-fence-modern', 'modern', 3, 1240, 40, { x: 2, y: 16 }],
+  ['s4-fence-classic', 'classic', 3, 1230, 50, { x: 0, y: 16 }],
 ];
 
 (async () => {
