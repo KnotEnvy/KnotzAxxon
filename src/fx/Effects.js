@@ -12,9 +12,11 @@
 
 import * as THREE from 'three';
 import { ParticleSystem } from './Particles.js';
-import { rand, clamp01, damp } from '../core/Utils.js';
+import { rand, clamp01, damp, lerp } from '../core/Utils.js';
 
+const UP = new THREE.Vector3(0, 1, 0);
 const _v = new THREE.Vector3();
+const _v2 = new THREE.Vector3();
 const _q = new THREE.Quaternion();
 const _s = new THREE.Vector3();
 const _m = new THREE.Matrix4();
@@ -28,11 +30,10 @@ const _e = new THREE.Euler();
  * Instanced hull fragments with simple ballistic physics and a ground bounce.
  */
 class DebrisField {
-  constructor(scene, material, capacity = 400) {
+  constructor(scene, material, capacity = 400, geometry = null) {
     this.capacity = capacity;
     // A squashed tetra reads as a torn plate far better than a cube does.
-    const geo = new THREE.TetrahedronGeometry(0.5, 0);
-    geo.scale(1, 0.55, 1.35);
+    const geo = geometry ?? new THREE.TetrahedronGeometry(0.5, 0).scale(1, 0.55, 1.35);
 
     this.mesh = new THREE.InstancedMesh(geo, material, capacity);
     this.mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
@@ -217,15 +218,128 @@ class RingField {
 }
 
 /* ------------------------------------------------------------------ */
+/* Wrecks                                                              */
+/* ------------------------------------------------------------------ */
+
+/**
+ * What a destroyed ground target leaves behind: a scorch mark, a few charred
+ * slabs, and a smoke column with licking flames that burns out over several
+ * seconds. Two instanced draws for the whole field; smoke and fire reuse the
+ * shared particle pools.
+ */
+class WreckField {
+  constructor(scene, materials, capacity = 24) {
+    this.capacity = capacity;
+    const decalGeo = new THREE.PlaneGeometry(1, 1).rotateX(-Math.PI / 2);
+    this.decalMat = new THREE.MeshBasicMaterial({
+      map: materials.blob, color: 0x000000, transparent: true, opacity: 0.82,
+      depthWrite: false, polygonOffset: true, polygonOffsetFactor: -4, polygonOffsetUnits: -4,
+    });
+    this.decals = new THREE.InstancedMesh(decalGeo, this.decalMat, capacity);
+
+    const slabGeo = new THREE.DodecahedronGeometry(0.62, 0).scale(1.5, 0.55, 1.1);
+    slabGeo.setAttribute('color', new THREE.BufferAttribute(new Float32Array(slabGeo.attributes.position.count * 3).fill(0.32), 3));
+    this.slabs = new THREE.InstancedMesh(slabGeo, materials.darkMetal, capacity * 4);
+
+    for (const mesh of [this.decals, this.slabs]) {
+      mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+      mesh.frustumCulled = false;
+      mesh.count = 0;
+      scene.add(mesh);
+    }
+    this.decals.renderOrder = 1;
+    this.slabs.castShadow = false;
+    this.slabs.receiveShadow = true;
+    this.items = [];
+    this.cursor = 0;
+  }
+
+  spawn(pos, groundY, scale = 1) {
+    const i = this.cursor;
+    this.cursor = (this.cursor + 1) % this.capacity;
+    const it = this.items[i] ??= { x: 0, y: 0, z: 0, life: 0, maxLife: 1, smoke: 0, fire: 0, scale: 1 };
+    it.x = pos.x; it.y = groundY; it.z = pos.z;
+    it.life = it.maxLife = 7 + scale * 3;
+    it.scale = scale; it.smoke = 0; it.fire = 0;
+
+    _e.set(0, rand.next() * Math.PI * 2, 0);
+    _q.setFromEuler(_e);
+    _s.set(5.5 * scale, 1, 5.5 * scale * rand.range(0.7, 1.1));
+    _m.compose(_v.set(pos.x, groundY + 0.03, pos.z), _q, _s);
+    this.decals.setMatrixAt(i, _m);
+    for (let k = 0; k < 4; k++) {
+      const a = rand.next() * Math.PI * 2, r = rand.range(0.4, 2.2) * scale;
+      _e.set(rand.range(-0.35, 0.35), rand.next() * 6.28, rand.range(-0.35, 0.35));
+      _q.setFromEuler(_e);
+      _s.setScalar(rand.range(0.6, 1.3) * scale);
+      _m.compose(_v.set(pos.x + Math.cos(a) * r, groundY + 0.15, pos.z + Math.sin(a) * r), _q, _s);
+      this.slabs.setMatrixAt(i * 4 + k, _m);
+    }
+    this.decals.count = Math.max(this.decals.count, i + 1);
+    this.slabs.count = Math.max(this.slabs.count, (i + 1) * 4);
+    this.decals.instanceMatrix.needsUpdate = true;
+    this.slabs.instanceMatrix.needsUpdate = true;
+  }
+
+  update(dt, fx, playerZ) {
+    for (const it of this.items) {
+      if (!it || it.life <= 0) continue;
+      it.life -= dt;
+      if (it.z < playerZ - 40 || it.z > playerZ + 260) continue;
+      const t = it.life / it.maxLife;
+      it.smoke -= dt;
+      if (it.smoke <= 0) {
+        it.smoke = lerp(0.3, 0.1, t);
+        _v.set(it.x + rand.range(-0.6, 0.6) * it.scale, it.y + 0.6, it.z + rand.range(-0.6, 0.6) * it.scale);
+        fx.smoke.burst({
+          position: _v, count: 1, direction: UP, spread: 0.25,
+          speed: 3.5, speedVar: 0.4, life: 2.4, lifeVar: 0.3,
+          size: 3.2 * it.scale, sizeVar: 0.35,
+          colorA: 0x2c2a2e, colorB: 0x0c0c10,
+          drag: 0.7, gravity: 1.6, grow: 2.4, fade: 1.3, spin: 0.8,
+        });
+      }
+      it.fire -= dt;
+      if (t > 0.35 && it.fire <= 0) {
+        it.fire = rand.range(0.07, 0.16);
+        _v.set(it.x + rand.range(-1, 1) * it.scale, it.y + 0.3, it.z + rand.range(-1, 1) * it.scale);
+        fx.sparks.burst({
+          position: _v, count: 1, direction: UP, spread: 0.35,
+          speed: 2.5, speedVar: 0.5, life: 0.45, lifeVar: 0.4,
+          size: 2.4 * it.scale * t, sizeVar: 0.4,
+          colorA: 0xffd080, colorB: 0xff3a10,
+          drag: 1.5, gravity: 5, grow: 0.3, fade: 1.4,
+        });
+      }
+    }
+  }
+
+  clear() {
+    for (const it of this.items) if (it) it.life = 0;
+    this.decals.count = this.slabs.count = 0;
+    this.cursor = 0;
+  }
+
+  dispose() {
+    for (const mesh of [this.decals, this.slabs]) { mesh.removeFromParent(); mesh.dispose(); mesh.geometry.dispose(); }
+    this.decalMat.dispose();
+  }
+}
+
+/* ------------------------------------------------------------------ */
 /* Pooled dynamic lights                                               */
 /* ------------------------------------------------------------------ */
 
+/**
+ * Every pooled light stays visible at zero intensity when idle. Toggling
+ * visibility changes the scene's light count, and each new count recompiles
+ * every lit material — a multi-second stall the first time a blast lands.
+ */
 class LightPool {
   constructor(scene, count = 6) {
     this.lights = [];
     for (let i = 0; i < count; i++) {
       const l = new THREE.PointLight(0xffffff, 0, 60, 2);
-      l.visible = false;
       scene.add(l);
       this.lights.push({ light: l, life: 0, maxLife: 1, peak: 0 });
     }
@@ -239,7 +353,6 @@ class LightPool {
     it.light.position.copy(pos);
     it.light.color.setHex(color);
     it.light.distance = radius;
-    it.light.visible = true;
     it.peak = intensity;
     it.life = life;
     it.maxLife = life;
@@ -249,7 +362,7 @@ class LightPool {
     for (const it of this.lights) {
       if (it.life <= 0) continue;
       it.life -= dt;
-      if (it.life <= 0) { it.light.visible = false; it.light.intensity = 0; continue; }
+      if (it.life <= 0) { it.light.intensity = 0; continue; }
       const t = it.life / it.maxLife;
       // sharp attack, exponential decay
       it.light.intensity = it.peak * t * t;
@@ -264,7 +377,6 @@ class LightPool {
     }
     while (this.lights.length < count) {
       const l = new THREE.PointLight(0xffffff, 0, 60, 2);
-      l.visible = false;
       scene.add(l);
       this.lights.push({ light: l, life: 0, maxLife: 1, peak: 0 });
     }
@@ -272,7 +384,7 @@ class LightPool {
   }
 
   clear() {
-    for (const it of this.lights) { it.life = 0; it.light.visible = false; it.light.intensity = 0; }
+    for (const it of this.lights) { it.life = 0; it.light.intensity = 0; }
   }
 }
 
@@ -300,6 +412,11 @@ export class Effects {
     this.debris = new DebrisField(scene, materials.darkMetal, quality.debrisBudget);
     this.rings = new RingField(scene, materials.ring, 26);
     this.lights = new LightPool(scene, quality.lights);
+    this.wrecks = new WreckField(scene, materials, 24);
+    // Big named pieces: turret domes and radar dishes that pop off and tumble.
+    const dome = new THREE.SphereGeometry(1.1, 12, 6, 0, Math.PI * 2, 0, Math.PI / 2);
+    this.chunks = new DebrisField(scene, materials.enemyHull, 16, dome);
+    this._timers = [];
 
     /** Camera trauma, consumed by the camera rig. Squared for a punchier curve. */
     this.trauma = 0;
@@ -435,8 +552,8 @@ export class Effects {
     });
   }
 
-  /** Muzzle flash at a weapon port. */
-  muzzle(pos, dir, color = 0x8ff0ff, scale = 1) {
+  /** Muzzle flash at a weapon port. `light: false` skips the pooled light. */
+  muzzle(pos, dir, color = 0x8ff0ff, scale = 1, light = true) {
     this.sparks.burst({
       position: pos,
       count: Math.round(4 * scale),
@@ -448,7 +565,7 @@ export class Effects {
       colorA: 0xffffff, colorB: color,
       drag: 7, gravity: 0, grow: 1.4, fade: 1.0,
     });
-    this.lights.flash(pos, color, 26 * scale, 16 * scale, 0.07);
+    if (light) this.lights.flash(pos, color, 26 * scale, 16 * scale, 0.07);
   }
 
   /**
@@ -522,6 +639,115 @@ export class Effects {
     this.trauma = Math.min(1.6, this.trauma + t);
   }
 
+  /** A large named fragment: a dome blown off its ring, a dish sheared from its mast. */
+  chunk(pos, vx, vy, vz, scale = 1, groundY = 0) {
+    this.chunks.spawn(pos.x, pos.y, pos.z, vx, vy, vz, scale, 3.2, groundY);
+  }
+
+  /** Fuel ignition: a column of fire with a couple of secondary pops. */
+  fireColumn(pos, groundY = 0) {
+    this.sparks.burst({
+      position: pos, count: 26, direction: UP, spread: 0.28,
+      speed: 20, speedVar: 0.45, life: 0.8, lifeVar: 0.35, size: 5.5, sizeVar: 0.4,
+      colorA: 0xfff4c0, colorB: 0xff6a18, drag: 1.8, gravity: -6, grow: 1.4, fade: 1.2,
+    });
+    this.smoke.burst({
+      position: pos, count: 6, direction: UP, spread: 0.3,
+      speed: 9, speedVar: 0.4, life: 1.8, lifeVar: 0.3, size: 5, sizeVar: 0.3,
+      colorA: 0x3a2a22, colorB: 0x0c0a0a, drag: 1.4, gravity: 2, grow: 2.2, fade: 1.2, spin: 0.8,
+    });
+    const at = pos.clone();
+    for (let k = 1; k <= 2; k++) {
+      this.after(0.14 * k, () => this.explosion(
+        _v.set(at.x + rand.range(-2.5, 2.5), at.y + 1.5 + k, at.z + rand.range(-2.5, 2.5)),
+        0.55, { colorHot: 0xfff0a0, colorMid: 0xffa030, groundY, shake: 0.4 },
+      ));
+    }
+  }
+
+  /** Run `fn` after `seconds` of effect time (pauses and hit-stops included). */
+  after(seconds, fn) {
+    this._timers.push({ t: seconds, fn });
+  }
+
+  /** A destroyed ground target keeps burning where it fell. */
+  wreck(pos, groundY, scale = 1) {
+    this.wrecks.spawn(pos, groundY, scale);
+  }
+
+  /**
+   * Fortress ambience: steam vents, chimney smoke, reactor heat and flak
+   * batteries. Only sources near the flight path emit, and each kind is a
+   * trickle into the shared pools, never a burst that could starve combat.
+   */
+  ambient(emitters, dt, playerZ) {
+    for (const e of emitters) {
+      if (e.z < playerZ - 20 || e.z > playerZ + 210) continue;
+      e.t -= dt * e.rate;
+      if (e.kind === 'flak' && e.burst > 0) {
+        e.burst -= dt;
+        if (e.burst <= 0) this._flakBurst(e);
+      }
+      if (e.t > 0) continue;
+      _v.set(e.x, e.y, e.z);
+      switch (e.kind) {
+        case 'steam':
+          e.t = 0.22;
+          this.smoke.burst({
+            position: _v, count: 1, direction: e.dir ?? UP, spread: 0.3,
+            speed: 5, speedVar: 0.4, life: 1.6, lifeVar: 0.3, size: 2.6, sizeVar: 0.3,
+            colorA: 0xb8c4cc, colorB: 0x3a4048, drag: 1.2, gravity: 2.2, grow: 2.2, fade: 1.5, spin: 0.6,
+          });
+          break;
+        case 'stack':
+          e.t = 0.4;
+          this.smoke.burst({
+            position: _v, count: 1, direction: UP, spread: 0.2,
+            speed: 3, speedVar: 0.3, life: 3.2, lifeVar: 0.3, size: 5, sizeVar: 0.3,
+            colorA: 0x26242a, colorB: 0x08080a, drag: 0.5, gravity: 1.2, grow: 2.6, fade: 1.2, spin: 0.4,
+          });
+          break;
+        case 'heat':
+          e.t = rand.range(0.25, 0.5);
+          this.sparks.burst({
+            position: _v, count: 1, direction: UP, spread: 0.4,
+            speed: 3, speedVar: 0.5, life: 0.9, lifeVar: 0.3, size: 1.1, sizeVar: 0.4,
+            colorA: 0xffc070, colorB: 0xff3a10, drag: 0.8, gravity: 3, fade: 1.2,
+          });
+          break;
+        case 'flak': {
+          e.t = rand.range(2.2, 4.2);
+          const dir = e.dir ?? UP;
+          this.sparks.burst({
+            position: _v, count: 4, direction: dir, spread: 0.35,
+            speed: 10, speedVar: 0.5, life: 0.14, lifeVar: 0.3, size: 3.2, sizeVar: 0.3,
+            colorA: 0xffffff, colorB: 0xffa040, drag: 6, gravity: 0, grow: 1.2, fade: 1,
+          });
+          // tracers: a short stream arcing up toward the intruder
+          for (let k = 0; k < 3; k++) {
+            this.sparks.spark(_v, _v2.copy(dir).multiplyScalar(70 + k * 6).add(UP.clone().multiplyScalar(rand.range(-3, 3))),
+              { colorA: 0xfff0b0, colorB: 0xff7020, life: 0.75, size: 1.3, drag: 0.1, gravity: -6, fade: 1.2 });
+          }
+          e.burst = 0.7;
+          e.burstAt = (e.burstAt ?? new THREE.Vector3()).copy(_v).addScaledVector(dir, 48);
+          break;
+        }
+      }
+    }
+  }
+
+  _flakBurst(e) {
+    const p = e.burstAt;
+    this.sparks.burst({
+      position: p, count: 6, speed: 7, speedVar: 0.5, life: 0.22, lifeVar: 0.3,
+      size: 5, sizeVar: 0.4, colorA: 0xfff0c0, colorB: 0xff8030, drag: 5, gravity: 0, grow: 1.4, fade: 1.1,
+    });
+    this.smoke.burst({
+      position: p, count: 3, speed: 3, speedVar: 0.5, life: 1.8, lifeVar: 0.3,
+      size: 5.5, sizeVar: 0.3, colorA: 0x2a2626, colorB: 0x0a0a0c, drag: 1.4, gravity: 0.3, grow: 1.8, fade: 1.2, spin: 0.7,
+    });
+  }
+
   /* ---------------------------------------------------------------- */
 
   update(dt, time, camera) {
@@ -533,6 +759,13 @@ export class Effects {
     this.debris.update(dt);
     this.rings.update(dt, camera);
     this.lights.update(dt);
+    this.wrecks.update(dt, this, this.focusZ ?? 0);
+    this.chunks.update(dt);
+    for (let i = this._timers.length - 1; i >= 0; i--) {
+      const timer = this._timers[i];
+      timer.t -= dt;
+      if (timer.t <= 0) { this._timers.splice(i, 1); timer.fn(); }
+    }
     this.trauma = Math.max(0, damp(this.trauma, 0, 3.2, dt) - dt * 0.15);
   }
 
@@ -542,13 +775,16 @@ export class Effects {
     this.debris.clear();
     this.rings.clear();
     this.lights.clear();
+    this.wrecks.clear();
+    this.chunks.clear();
+    this._timers.length = 0;
     this.trauma = 0;
     this.pendingHitStop = 0;
   }
   dispose() {
     if (this._disposed) return;
     this._disposed = true;
-    this.sparks.dispose(); this.smoke.dispose(); this.debris.dispose(); this.rings.dispose();
+    this.sparks.dispose(); this.smoke.dispose(); this.debris.dispose(); this.rings.dispose(); this.wrecks.dispose(); this.chunks.dispose();
     this.lights.resize(this.scene, 0);
   }
 

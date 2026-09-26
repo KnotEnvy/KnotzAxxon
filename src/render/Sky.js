@@ -15,6 +15,8 @@ import { disposeModel } from './Dispose.js';
 import * as THREE from 'three';
 import { TAU } from '../core/Utils.js';
 
+const _ambient = new THREE.Color();
+
 const SKY_VERT = /* glsl */`
   varying vec3 vDir;
   void main() {
@@ -155,28 +157,28 @@ export const SKY_PRESETS = {
     nebulaA: 0xb5589c, nebulaB: 0x4a7fd0, nebulaAmount: 1.05,
     sunColor: 0xffbc86, sunDir: [-0.46, 0.64, 0.62], sunIntensity: 3.4,
     fog: 0x2a2c48, fogDensity: 0.0034,
-    ambient: 0x4a5f85, ambientIntensity: 1.5,
+    ambient: 0x5a6f95, ambientIntensity: 1.9,
   },
   deepspace: {
     zenith: 0x05091c, horizon: 0x0e1c3a, ground: 0x03050e,
     nebulaA: 0x2f9ae8, nebulaB: 0x8a45d8, nebulaAmount: 1.6,
     sunColor: 0xd6ecff, sunDir: [0.52, 0.70, 0.49], sunIntensity: 2.9,
     fog: 0x0a1224, fogDensity: 0.0020,
-    ambient: 0x2f4a72, ambientIntensity: 1.25,
+    ambient: 0x3a5680, ambientIntensity: 1.6,
   },
   ember: {
     zenith: 0x2e0a18, horizon: 0x9c2c12, ground: 0x2c0d06,
     nebulaA: 0xff7a30, nebulaB: 0xc11a42, nebulaAmount: 1.15,
     sunColor: 0xff8f4a, sunDir: [0.34, 0.60, -0.72], sunIntensity: 3.8,
     fog: 0x4a1810, fogDensity: 0.0046,
-    ambient: 0x7a3524, ambientIntensity: 1.6,
+    ambient: 0x8a4430, ambientIntensity: 1.9,
   },
   void: {
     zenith: 0x03061a, horizon: 0x0a1430, ground: 0x02040c,
     nebulaA: 0x1c6f9e, nebulaB: 0x5a2090, nebulaAmount: 0.85,
     sunColor: 0xe6f4ff, sunDir: [-0.22, 0.76, -0.61], sunIntensity: 2.8,
     fog: 0x08101f, fogDensity: 0.0026,
-    ambient: 0x24365a, ambientIntensity: 1.15,
+    ambient: 0x30446a, ambientIntensity: 1.55,
   },
 };
 
@@ -302,8 +304,14 @@ export class Sky {
    * @param {string} name key in SKY_PRESETS
    * @param {number} seed varies the nebula and star layout per run
    */
-  apply(name, seed = 1) {
+  apply(name, seed = 1, blend = false) {
     const p = SKY_PRESETS[name] ?? SKY_PRESETS.dusk;
+    // Crossfade fog and light over a couple of seconds instead of cutting.
+    const from = blend && this.scene.fog ? {
+      fog: this.scene.fog.color.clone(), density: this.scene.fog.density,
+      sun: this.sunLight.color.clone(), sunI: this.sunLight.intensity,
+      amb: this.ambient.color.clone(), ambI: this.ambient.intensity, ground: this.ambient.groundColor.clone(),
+    } : null;
     this.preset = p;
     this.presetName = name;
 
@@ -320,8 +328,10 @@ export class Sky {
 
     this._bake();
 
-    // fog
-    this.scene.fog = new THREE.FogExp2(p.fog, p.fogDensity);
+    // fog: one instance, mutated, so blends and materials keep their reference
+    if (!this.scene.fog) this.scene.fog = new THREE.FogExp2(p.fog, p.fogDensity);
+    this.scene.fog.color.setHex(p.fog);
+    this.scene.fog.density = p.fogDensity;
 
     // lights
     const dir = new THREE.Vector3().fromArray(p.sunDir).normalize();
@@ -331,12 +341,34 @@ export class Sky {
     this.rimLight.position.copy(dir).multiplyScalar(-140).setY(60);
     this.ambient.color.setHex(p.ambient);
     this.ambient.intensity = p.ambientIntensity;
-    this.ambient.groundColor.setHex(p.fog);
+    // Bounce light off the deck: lift the ground term above the fog colour.
+    this.ambient.groundColor.setHex(p.fog).lerp(_ambient.setHex(p.ambient), 0.45);
+    this._blendTo = {
+      fog: this.scene.fog.color.clone(), density: p.fogDensity,
+      sun: this.sunLight.color.clone(), sunI: p.sunIntensity,
+      amb: this.ambient.color.clone(), ambI: p.ambientIntensity, ground: this.ambient.groundColor.clone(),
+    };
+    this._blendFrom = from;
+    this._blend = from ? 0 : 1;
+    if (from) this._applyBlend(0);
 
     // celestial placement
     this.sunDisc.material.color.setHex(p.sunColor);
     this.sunGlow.material.color.setHex(p.sunColor);
     this.planetMat.color.setHex(p.nebulaB);
+  }
+
+  _applyBlend(t) {
+    const a = this._blendFrom, b = this._blendTo;
+    if (!a || !b) return;
+    const k = t * t * (3 - 2 * t);
+    this.scene.fog.color.copy(a.fog).lerp(b.fog, k);
+    this.scene.fog.density = a.density + (b.density - a.density) * k;
+    this.sunLight.color.copy(a.sun).lerp(b.sun, k);
+    this.sunLight.intensity = a.sunI + (b.sunI - a.sunI) * k;
+    this.ambient.color.copy(a.amb).lerp(b.amb, k);
+    this.ambient.intensity = a.ambI + (b.ambI - a.ambI) * k;
+    this.ambient.groundColor.copy(a.ground).lerp(b.ground, k);
   }
 
   _bake() {
@@ -362,6 +394,10 @@ export class Sky {
    * the action. Called every frame.
    */
   update(dt, time, focus) {
+    if (this._blend < 1) {
+      this._blend = Math.min(1, this._blend + dt / 2.4);
+      this._applyBlend(this._blend);
+    }
     // celestial bodies ride along with the player so they stay "infinitely" far
     this.group.position.set(focus.x, 0, focus.z);
     this.group.updateMatrix();

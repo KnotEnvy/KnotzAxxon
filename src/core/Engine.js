@@ -10,6 +10,7 @@ import * as THREE from 'three';
 import { PostFX } from '../render/PostFX.js';
 import { Materials } from '../render/Materials.js';
 import { Sky } from '../render/Sky.js';
+import { Underlay } from '../render/Underlay.js';
 import { Input } from './Input.js';
 import { settings } from './Settings.js';
 import { clamp, damp } from './Utils.js';
@@ -81,7 +82,9 @@ export class Engine {
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.02;
     this.renderer.shadowMap.enabled = q.shadows;
-    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    // PCFSoft is deprecated: three swaps it to PCF on the first shadow render,
+    // which invalidates every program compiled before that frame.
+    this.renderer.shadowMap.type = THREE.PCFShadowMap;
     this.renderer.shadowMap.autoUpdate = true;
     this.renderer.info.autoReset = false;
 
@@ -126,6 +129,7 @@ export class Engine {
     this.sky = new Sky(this.renderer, this.scene);
     this.sky.setShadowQuality(q.shadows, q.shadowMapSize);
     this.sky.setRange(this.camera.far);
+    this.underlay = new Underlay(this.scene);
 
     this.postfx = new PostFX(this.renderer, this.scene, this.camera, q);
     this.postfx.setScanlines(settings.get('scanlines'));
@@ -324,6 +328,7 @@ export class Engine {
     this._updateHooks.length = this._lateHooks.length = 0;
     this.onQualityChange = this.onVisibility = null;
     this.postfx.dispose();
+    this.underlay.dispose();
     this.sky.dispose();
     this.materials.dispose();
     this.renderer.dispose();

@@ -9,11 +9,46 @@
 import * as THREE from 'three';
 import * as Tex from './Textures.js';
 
+/**
+ * Per-vertex light animation, evaluated in the vertex shader so a whole
+ * chunk of fortress lighting still costs one draw call.
+ *
+ *   aAnim.x  mode  0 steady | 1 strobe | 2 chase | 3 breathe | 4 flicker
+ *   aAnim.y  rate  cycles per second
+ *   aAnim.z  phase 0..1 (chase lights derive it from world Z)
+ */
+export const LIGHT_ANIM = { STEADY: 0, STROBE: 1, CHASE: 2, BREATHE: 3, FLICKER: 4 };
+
+const ANIM_GLSL = /* glsl */`
+  float lightGain(vec3 anim, float time) {
+    float c = fract(time * anim.y + anim.z);
+    if (anim.x < 0.5) return 1.0;
+    if (anim.x < 1.5) return 0.08 + 1.45 * smoothstep(0.0, 0.03, c) * (1.0 - smoothstep(0.12, 0.2, c));
+    if (anim.x < 2.5) return 0.18 + 1.35 * pow(c, 6.0);
+    if (anim.x < 3.5) return 0.55 + 0.45 * sin(c * 6.2832);
+    float n = fract(sin(floor(time * anim.y * 7.0 + anim.z * 91.0) * 12.9898) * 43758.5453);
+    return n > 0.22 ? 1.0 : 0.25;
+  }
+`;
+
+/** Rodrigues rotation about a per-vertex pivot and axis; w is rad/s. */
+const SPIN_GLSL = /* glsl */`
+  attribute vec3 aPivot;
+  attribute vec4 aSpin;
+  uniform float uSpinTime;
+  vec3 spinAround(vec3 v, vec3 k, float a) {
+    float c = cos(a), s = sin(a);
+    return v * c + cross(k, v) * s + k * dot(k, v) * (1.0 - c);
+  }
+`;
+
 export class Materials {
   constructor(aniso = 8) {
     this.aniso = aniso;
     this._neon = new Map();
     this._disposables = [];
+    /** Shared clock for every patched (non-ShaderMaterial) animated material. */
+    this.clock = { value: 0 };
     this.build();
   }
 
@@ -39,7 +74,9 @@ export class Materials {
       normalMap: hull.normalMap,
       roughnessMap: hull.roughnessMap,
       normalScale: new THREE.Vector2(1.1, 1.1),
-      metalness: 0.62,
+      // Mostly dielectric: under the orthographic rig every pixel reflects the
+      // same environment direction, so high metalness flattened walls to one tone.
+      metalness: 0.36,
       roughness: 1.0,
       vertexColors: true,
       envMapIntensity: 1.5,
@@ -51,7 +88,7 @@ export class Materials {
       normalMap: deck.normalMap,
       roughnessMap: deck.roughnessMap,
       normalScale: new THREE.Vector2(0.9, 0.9),
-      metalness: 0.48,
+      metalness: 0.22,
       roughness: 1.0,
       vertexColors: true,
       envMapIntensity: 1.2,
@@ -80,9 +117,9 @@ export class Materials {
 
     /** Unlit dark filler — struts, undersides, greebles. */
     this.darkMetal = this.track(new THREE.MeshStandardMaterial({
-      color: 0x2a3646,
-      metalness: 0.75,
-      roughness: 0.4,
+      color: 0x3a4a5e,
+      metalness: 0.5,
+      roughness: 0.46,
       vertexColors: true,
     }));
 
@@ -136,6 +173,49 @@ export class Materials {
       envMapIntensity: 2.0,
     }));
 
+    /** Fuel drums: stencilled safety livery, open-ended cylinder capped by geometry. */
+    this.fuelDrum = this.track(new THREE.MeshStandardMaterial({
+      map: Tex.fuelDrumTexture(this.aniso),
+      metalness: 0.25,
+      roughness: 0.55,
+      side: THREE.DoubleSide,
+      emissive: 0x3a2a08,
+      emissiveIntensity: 0.5,
+    }));
+
+    /** Deck paint: runway lines, chevrons, pad markings. Raised a hair above the plates. */
+    this.paint = this.track(new THREE.MeshStandardMaterial({
+      color: 0xffffff,
+      metalness: 0.05,
+      roughness: 0.72,
+      vertexColors: true,
+      polygonOffset: true,
+      polygonOffsetFactor: -2,
+      polygonOffsetUnits: -2,
+    }));
+
+    /** Asteroids and rubble: faceted, rough, lit by the sky environment. */
+    this.rock = this.track(new THREE.MeshStandardMaterial({
+      color: 0xffffff,
+      map: Tex.rockTexture(this.aniso),
+      metalness: 0.08,
+      roughness: 0.9,
+      vertexColors: true,
+      flatShading: true,
+      envMapIntensity: 1.6,
+    }));
+    // A cool sky rim keeps dark-side rocks from reading as holes in the nebula.
+    this.addSpin(this.addRim(this.rock, 0x6f9cff, 0.55, 2.2));
+
+    /** Rotating machinery: radar dishes, fans, orbiting wreckage. */
+    this.spinMetal = this.addSpin(this.track(new THREE.MeshStandardMaterial({
+      color: 0x3a4a5e,
+      metalness: 0.78,
+      roughness: 0.36,
+      vertexColors: true,
+      envMapIntensity: 1.3,
+    })));
+
     this.circuit = Tex.circuitTexture(this.aniso);
     this.glow = Tex.glowSprite();
     this.flare = Tex.flareSprite();
@@ -172,19 +252,54 @@ export class Materials {
   }
 
   /**
+   * Rotates geometry in the vertex shader around per-vertex `aPivot` and
+   * `aSpin` (axis xyz, rad/s w). A merged chunk of dishes and fans keeps
+   * spinning at zero CPU cost and no extra draw calls. Spinning meshes do not
+   * cast shadows: the depth material would not share the rotation.
+   */
+  addSpin(material) {
+    const clock = this.clock;
+    const previous = material.onBeforeCompile;
+    material.onBeforeCompile = (shader, renderer) => {
+      previous?.call(material, shader, renderer);
+      shader.uniforms.uSpinTime = clock;
+      shader.vertexShader = SPIN_GLSL + shader.vertexShader
+        .replace('#include <beginnormal_vertex>',
+          '#include <beginnormal_vertex>\n objectNormal = spinAround(objectNormal, aSpin.xyz, aSpin.w * uSpinTime);')
+        .replace('#include <begin_vertex>',
+          '#include <begin_vertex>\n transformed = aPivot + spinAround(transformed - aPivot, aSpin.xyz, aSpin.w * uSpinTime);');
+    };
+    material.customProgramCacheKey = () => 'spin';
+    material.needsUpdate = true;
+    return material;
+  }
+
+  /**
    * One shared emissive material for every glowing strip in the level.
    * Hue *and* brightness ride in the vertex colour, which means the whole
    * fortress lighting rig is a single draw call per chunk and each piece can
-   * still sit deliberately above or below the bloom threshold.
+   * still sit deliberately above or below the bloom threshold. `aAnim` adds
+   * strobes, runway chasers and breathing conduits without touching the CPU.
    */
   get neonVertex() {
     if (!this._neonVertex) {
-      this._neonVertex = this.track(new THREE.MeshBasicMaterial({
+      const m = new THREE.MeshBasicMaterial({
         color: 0xffffff,
         vertexColors: true,
         toneMapped: false,
         fog: true,
-      }));
+      });
+      const clock = this.clock;
+      m.onBeforeCompile = (shader) => {
+        shader.uniforms.uLightTime = clock;
+        shader.vertexShader = 'attribute vec3 aAnim;\nuniform float uLightTime;\nvarying float vLightGain;\n'
+          + ANIM_GLSL + shader.vertexShader.replace('#include <begin_vertex>',
+            '#include <begin_vertex>\n vLightGain = lightGain(aAnim, uLightTime);');
+        shader.fragmentShader = 'varying float vLightGain;\n' + shader.fragmentShader.replace('#include <color_fragment>',
+          '#include <color_fragment>\n diffuseColor.rgb *= vLightGain;');
+      };
+      m.customProgramCacheKey = () => 'neon-anim';
+      this._neonVertex = this.track(m);
     }
     return this._neonVertex;
   }
@@ -387,6 +502,7 @@ export class Materials {
 
   /** Advance every time-driven shader. */
   update(time) {
+    this.clock.value = time;
     for (const m of this._disposables) {
       if (m.uniforms?.uTime) m.uniforms.uTime.value = time;
     }

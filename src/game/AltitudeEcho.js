@@ -27,6 +27,7 @@ export function findAltitudeEcho(game, out = {}) {
   if (b?.alive && b.active) {
     for (const pod of b.pods) if(pod.alive) consider(b,pod.pos.x,pod.pos.y,pod.pos.z,pod.radius,0);
     if(b.coreOpen>.55){b.coreGroup.getWorldPosition(core);consider(b,core.x,core.y,core.z,6.5,0);}
+    if(b.launcher?.charging) consider(b,b.launcher.pos.x,b.launcher.pos.y,b.launcher.pos.z,b.launcher.radius,0);
   }
   scratch.length=0;
   return found ? out : null;

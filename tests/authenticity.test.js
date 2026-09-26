@@ -71,7 +71,7 @@ test('invulnerability retains terrain push-out and slowdown',()=>{
 });
 
 test('rammed fuel does not refuel; shooting the same tank does',()=>{
- let fuel=0;const g={player:{refuel:n=>fuel+=n},level:{groundAt:()=>0},fx:{explosion(){}},hud:{floater(){}},engine:{hitStop(){},input:{rumble(){}}},kills:0,_bumpChain(){},award(){},_dropPickup(){}};
+ let fuel=0;const g={player:{refuel:n=>fuel+=n,pos:new THREE.Vector3()},level:{groundAt:()=>0},fx:{explosion(){},wreck(){}},hud:{floater(){}},engine:{hitStop(){},input:{rumble(){}}},kills:0,_bumpChain(){},award(){},_dropPickup(){},_killPayoff(){}};
  const tank={kind:'fuel',pos:new THREE.Vector3(),radius:2.2,fuelValue:.16};
  Game.prototype._killEnemy.call(g,tank,{},false);assert.equal(fuel,0);
  Game.prototype._killEnemy.call(g,tank,{},true);assert.equal(fuel,.16);

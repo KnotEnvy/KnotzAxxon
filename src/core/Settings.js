@@ -60,7 +60,9 @@ export const QUALITY_PRESETS = {
     debrisBudget: 460,
     drawDistance: 560,
     anisotropy: 8,
-    lights: 7,
+    // Pool lights are always live (a constant count avoids shader recompiles),
+    // so the pool stays small: each one is per-fragment work on lit surfaces.
+    lights: 5,
   },
   ultra: {
     label: 'ULTRA',
@@ -76,7 +78,7 @@ export const QUALITY_PRESETS = {
     debrisBudget: 800,
     drawDistance: 700,
     anisotropy: 16,
-    lights: 10,
+    lights: 6,
   },
 };
 
@@ -283,7 +285,8 @@ export const Scores = {
     const clean = cleanScores([entry])[0];
     if (!clean) return -1;
     Object.assign(entry, clean);
-    const list = this.all(); list.push(entry); list.sort((a,b)=>b.score-a.score);
+    // A continued run re-submits its growing score: replace, don't duplicate.
+    const list = this.all().filter(e => e.date !== entry.date); list.push(entry); list.sort((a,b)=>b.score-a.score);
     const rank = list.indexOf(entry); this.save(list);
     return rank < 10 ? rank : -1;
   },

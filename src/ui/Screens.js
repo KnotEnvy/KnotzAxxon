@@ -342,8 +342,10 @@ export class Screens extends EventTarget {
   /* Results                                                             */
   /* ------------------------------------------------------------------ */
 
-  results({ title, rows, rank, entry }) {
+  results({ title, rows, rank, entry, canContinue = false, continueLabel = 'CONTINUE: LOOP 2' }) {
     document.getElementById('over-title').textContent = title;
+    const cont = document.getElementById('btn-continue');
+    if (cont) { cont.hidden = !canContinue; cont.textContent = continueLabel; }
     const host = document.getElementById('over-results');
     host.innerHTML = rows.map((r, i) => `
       <div class="result-row ${r.total ? 'total' : ''}" style="animation-delay:${i * 0.07}s">

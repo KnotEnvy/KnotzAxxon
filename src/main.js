@@ -2,6 +2,7 @@ import { Lifetime } from './core/Lifetime.js';
 import { disposeTextures } from './render/Textures.js';
 import { disposeEnemyGeometry } from './entities/Enemies.js';
 import { disposePickupGeometry } from './entities/Pickup.js';
+import { disposeFortressTemplates } from './world/Fortress.js';
 /**
  * KNOTZAXXON — entry point.
  *
@@ -39,7 +40,7 @@ async function main() {
     if (lifetime.closed) return;
     lifetime.dispose();
     engine?.stop(); game?.dispose(); screens.dispose(); audio.dispose();
-    disposeEnemyGeometry(); disposePickupGeometry();
+    disposeEnemyGeometry(); disposePickupGeometry(); disposeFortressTemplates();
     engine?.dispose(); disposeTextures();
     if (window.KZ?.engine === engine) delete window.KZ;
   };
@@ -50,8 +51,15 @@ async function main() {
     // the sky bake. The boot log is covering real work, not a fake progress bar.
     engine = new Engine(canvas);
     game = new Game(engine, screens);
-    // Warm the pipeline so the first frame of play isn't a shader-compile stall.
-    engine.renderer.compile(engine.scene, engine.camera);
+    // Warm the pipeline so no first sighting in the campaign is a shader-compile stall.
+    // Compile against the composer's target: rendering to a target selects
+    // different tone-mapping and colour-space variants than the canvas does.
+    game.prewarm(() => {
+      const renderer = engine.renderer, previous = renderer.getRenderTarget();
+      renderer.setRenderTarget(engine.postfx.composer.readBuffer);
+      renderer.compile(engine.scene, engine.camera);
+      renderer.setRenderTarget(previous);
+    });
     // Yield without relying on rAF, which may be suspended in background tabs.
     await lifetime.delay(0);
   });
@@ -83,6 +91,9 @@ async function main() {
         break;
       case 'resume':
         game.resume();
+        break;
+      case 'continue':
+        game.continueLoop();
         break;
       case 'abort':
       case 'title':

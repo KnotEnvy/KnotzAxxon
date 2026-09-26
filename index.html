@@ -90,8 +90,12 @@
         <div class="pips" id="hud-shields"></div>
       </div>
 
-      <!-- BOTTOM RIGHT : weapon -->
+      <!-- BOTTOM RIGHT : tactical radar over weapon systems, clear of the flight lane -->
       <div class="hud-block hud-br">
+        <div class="radar" id="hud-radar">
+          <canvas id="radar-canvas" width="240" height="140"></canvas>
+          <div class="radar-label">TACTICAL</div>
+        </div>
         <div class="weapon-name" id="hud-weapon">PULSE ARRAY</div>
         <div class="gauge">
           <div class="gauge-head"><span class="label">HEAT</span></div>
@@ -103,12 +107,6 @@
         </div>
       </div>
 
-      <!-- BOTTOM CENTER : radar -->
-      <div class="radar" id="hud-radar">
-        <canvas id="radar-canvas" width="240" height="140"></canvas>
-        <div class="radar-label">TACTICAL</div>
-      </div>
-
       <div class="lock" id="hud-lock">
         <svg viewBox="0 0 100 100" aria-hidden="true">
           <path d="M6 28 L6 6 L28 6 M72 6 L94 6 L94 28 M94 72 L94 94 L72 94 M28 94 L6 94 L6 72" />
@@ -117,6 +115,13 @@
       </div>
       <div class="floaters" id="floaters"></div>
       <div class="warn" id="hud-warn" role="status" aria-live="polite"></div>
+      <div class="grade" id="hud-grade" role="status" aria-live="polite">
+        <span class="grade-letter" id="hud-grade-letter">A</span>
+        <div class="grade-info">
+          <b id="hud-grade-title">SECTOR 01 CLEAR</b>
+          <span id="hud-grade-detail"></span>
+        </div>
+      </div>
     </div>
 
     <!-- overlays -->
@@ -174,6 +179,8 @@
               <li><b>Altitude echo:</b> the narrow band beside your altimeter shows the nearest visible target in your firing lane. Green means matching height; amber stripes show wall clearance.</li>
               <li><b>Fight in view.</b> Off-screen targets cannot take player-shot damage. Keep enemies in the picture to confirm your kills.</li>
               <li><b>Chain kills</b> within three seconds to build your multiplier up to x8. The timer turns red before your chain expires.</li>
+              <li><b>Style pays.</b> Thread a gap close to its edge, dive low under arches and graze enemy fire for bonus points that keep your chain alive.</li>
+              <li><b>Sector grades</b> rate each sector on targets destroyed and damage taken. A clean sector earns a bonus; 50,000 and 150,000 points earn extra hull.</li>
               <li><b>Radar towers</b> are worth a fortune and blind enemy fire prediction.</li>
               <li><b>The roll</b> grants brief invulnerability and vents weapon heat.</li>
             </ul>
@@ -226,6 +233,7 @@
         <h2 class="panel-title" id="over-title">MISSION FAILED</h2>
         <div class="results" id="over-results"></div>
         <div class="menu">
+          <button class="mi" data-action="continue" id="btn-continue" hidden>CONTINUE: LOOP 2</button>
           <button class="mi" data-action="retry">RE-ENGAGE</button>
           <button class="mi" data-action="title">MAIN MENU</button>
         </div>
