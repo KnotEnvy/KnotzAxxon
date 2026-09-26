@@ -12,7 +12,7 @@ import { disposeFortressTemplates } from './world/Fortress.js';
 
 import './style.css';
 import { Engine } from './core/Engine.js';
-import { Game, STATE } from './game/Game.js';
+import { Game, STATE, parseSeedCode, seedCode } from './game/Game.js';
 import { Screens } from './ui/Screens.js';
 import { settings } from './core/Settings.js';
 import { audio } from './audio/Audio.js';
@@ -58,6 +58,14 @@ async function main() {
       const renderer = engine.renderer, previous = renderer.getRenderTarget();
       renderer.setRenderTarget(engine.postfx.composer.readBuffer);
       renderer.compile(engine.scene, engine.camera);
+      // compile() builds programs only; upload every texture the staged scene
+      // uses too, so the first explosion or pickup does not pay for it.
+      engine.scene.traverse((object) => {
+        for (const material of [].concat(object.material ?? [])) {
+          const slots = [...Object.values(material), ...Object.values(material.uniforms ?? {}).map(u => u?.value)];
+          for (const t of slots) if (t?.isTexture && !t.isRenderTargetTexture) renderer.initTexture(t);
+        }
+      });
       renderer.setRenderTarget(previous);
     });
     // Yield without relying on rAF, which may be suspended in background tabs.
@@ -83,10 +91,17 @@ async function main() {
   /* Menu actions                                                        */
   /* ------------------------------------------------------------------ */
 
+  // A shared fortress code in the URL (?seed=4F9K2A) replaces the random seed.
+  const sharedSeed = parseSeedCode(new URLSearchParams(location.search).get('seed'));
+  if (sharedSeed !== null) {
+    const hint = document.getElementById('title-hint');
+    if (hint) hint.textContent = `SHARED FORTRESS ${seedCode(sharedSeed)} // ENTER TO ENGAGE`;
+  }
+
   lifetime.listen(screens, 'action', (e) => {
     switch (e.detail) {
       case 'start':
-        game.start({ daily: false });
+        game.start({ daily: false, seed: sharedSeed ?? undefined });
         break;
       case 'daily':
         game.start({ daily: true });
@@ -130,7 +145,7 @@ async function main() {
     // Enter on the title screen is handled by Screens; this covers the
     // gamepad "A" shortcut when no item happens to be focused.
     if (action === 'confirm' && game.state === STATE.IDLE && screens.current === 'title') {
-      game.start({ daily: false });
+      game.start({ daily: false, seed: sharedSeed ?? undefined });
     }
   });
 

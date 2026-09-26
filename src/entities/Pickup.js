@@ -82,7 +82,9 @@ export class Pickup {
     this.shape = new THREE.Mesh(shapeFor(kind), mats.neon(def.color, 1.9));
     this.group.add(this.shell, this.core, this.shape);
 
-    this.halo = new THREE.Sprite(mats.sprite(mats.glow, def.color));
+    const halos = (mats._pickupHalos ??= new Map());
+    if (!halos.has(def.color)) halos.set(def.color, mats.sprite(mats.glow, def.color, { opacity: 0.35 }));
+    this.halo = new THREE.Sprite(halos.get(def.color));
     this.halo.scale.setScalar(7);
     this.group.add(this.halo);
 
@@ -102,7 +104,8 @@ export class Pickup {
     this.shape.rotation.z = this.kind === 'shield' ? this.phase * 0.8 : Math.sin(this.phase * 2.2) * 0.12;
     const pulse = 1 + Math.sin(this.phase * 4) * 0.12;
     this.shell.scale.setScalar(pulse);
-    this.halo.material.opacity = 0.35 + Math.sin(this.phase * 4) * 0.15;
+    // the shared halo breathes in size rather than opacity
+    this.halo.scale.setScalar(7 * (1 + Math.sin(this.phase * 4) * 0.2));
 
     const p = ctx.player;
     const d = this.pos.distanceTo(p.pos);
@@ -117,7 +120,6 @@ export class Pickup {
   }
 
   dispose() {
-    this.halo.material.dispose();
     this.group.parent?.remove(this.group);
   }
 }

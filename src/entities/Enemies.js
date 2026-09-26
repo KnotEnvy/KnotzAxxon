@@ -550,6 +550,10 @@ class Flyer extends Enemy {
     this.homeY = feature.y;
     this.peeling = false;
     this.peelDir = this.rng.bool() ? 1 : -1;
+    // Carrier-launched wings start in the hangar bay on the far beam and
+    // bank into formation.
+    this.launching = !!feature.launch;
+    if (this.launching) this.pos.set(58 + this.rng.range(-2, 2), 2 + this.rng.range(-2, 4), this.pos.z);
 
     const bodyGeo = geo(`flyBody${fast}`, () => {
       // Armoured keel: a narrow interceptor nose, broad drone shoulders.
@@ -625,6 +629,17 @@ class Flyer extends Enemy {
     super.update(dt, ctx);
     const p = ctx.player;
     this.phase += dt;
+
+    if (this.launching) {
+      const prevX = this.pos.x;
+      this.pos.x = damp(this.pos.x, this.homeX, 1.4, dt);
+      this.pos.y = damp(this.pos.y, this.homeY, 1.4, dt);
+      this.pos.z += p.speed * (this.fast ? 0.82 : 0.62) * dt;
+      this.group.rotation.z = damp(this.group.rotation.z, clamp((this.pos.x - prevX) / dt * 0.04, -1.1, 1.1), 5, dt);
+      if (Math.abs(this.pos.x - this.homeX) < 1.5) this.launching = false;
+      this.engine.scale.setScalar(1.3 + Math.sin(ctx.time * 30) * 0.15);
+      return;
+    }
 
     const trail = this.fast ? 0.82 : 0.62;
     let vx = 0, vy = 0, vz = p.speed * trail;

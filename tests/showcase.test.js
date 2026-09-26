@@ -182,16 +182,17 @@ test('every streamed chunk bucket carries complete, finite vertex streams', () =
   world.clear(); m.dispose();
 });
 
-test('fortress re-entry from space opens with a perimeter wall and a fuel reward', () => {
+test('the campaign opens, and re-enters from space, over a perimeter wall', () => {
   for (let seed = 1; seed <= 20; seed++) {
     const level = new Level(seed);
     for (const s of level.sectors) {
       const prev = level.sectors[s.index - 1];
       const perimeter = level.features.find(f => f.perimeter && f.z >= s.zStart && f.z < s.zEnd);
-      if (s.kind === SECTOR_KINDS.FORTRESS && prev?.kind === SECTOR_KINDS.SPACE) {
+      const reentry = s.kind === SECTOR_KINDS.FORTRESS && prev?.kind === SECTOR_KINDS.SPACE;
+      if (reentry || s.index === 0) {
         assert.ok(perimeter, `sector ${s.index} seed ${seed}`);
         assert.equal(perimeter.type, 'slot'); assert.ok(perimeter.gaps[0].h >= 12);
-        assert.equal(level.features.filter(f => f.kind === 'fuel' && f.z === s.zStart + 125).length, 2);
+        if (reentry) assert.equal(level.features.filter(f => f.kind === 'fuel' && f.z === s.zStart + 125).length, 2);
       } else {
         assert.equal(perimeter, undefined);
       }

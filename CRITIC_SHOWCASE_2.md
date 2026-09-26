@@ -40,7 +40,7 @@ This is a real fix round. Of our round-1 top 10, eight landed in full or in subs
 
 | R1 # | Item | Status in `94edf82` |
 | ---: | --- | --- |
-| 1 | Draw-call recovery | **Landed.** `Player.buildShip` bakes to 4 meshes, flash shells are hidden when idle, and mine spikes are merged. Draw calls fell 15-27% per scene (for example `s1-opening-classic` 207 to 152, `s6-citadel-chase` 337 to 284). Triangles rose 2-3x (to 21-81k), which is still trivial. |
+| 1 | Draw-call recovery | **Landed.** `Player.buildShip` bakes to 4 meshes, flash shells are hidden when idle, and mine spikes are merged. Draw calls fell in every comparable scene, by 1-27% and typically about 20% (for example `s1-opening-classic` 207 to 152, `s2-guns-chase` 323 to 242, `s6-citadel-chase` 337 to 284). Triangles rose 2-3x (to 21-81k), which is still trivial. |
 | 2 | Replay and skill hooks | **Mostly landed.** `_scorePass` (THREAD, PERFECT THREAD, LOW PASS), `_graze`, `_gradeSector`, `_checkHullBonus` and `continueLoop` are all in. Still missing: a daily or shareable seed, and persisted per-sector best grades. |
 | 3 | Audio arrangement and mix | **Landed.** `SONGS` table, 16-bar phrases with A and B sections, fills, `jingle`, `duckMusic`, `musicComp`, tanh limiter. |
 | 4 | Audio event coverage | **Landed.** Roll, overheat, cooled, low fuel, pass, lock tick, mine arm, fly-by, radar down, fuel boom, servo, charge, roar, and proximity hum and whistle. |
@@ -93,7 +93,7 @@ This is a real fix round. Of our round-1 top 10, eight landed in full or in subs
 1. **Still under-exposed against the round-1 target.** Classic deck frames sit at 26 luma with 47% near-black. The target was at least 35 and at most 35%.
    - The ember preset is worst: `s4-reactor-classic` is 57% near-black.
    - The boss arena is 23-26 luma with 45-55% near-black in all four boss frames.
-2. **Barriers are black silhouettes.** The dusk and deepspace sun directions have +Z components (`SKY_PRESETS.dusk.sunDir` is `[-0.46, 0.64, 0.62]`), so the key light back-lights every approach face.
+2. **Barriers are black silhouettes.** The dusk and deepspace sun directions have +Z components (`SKY_PRESETS.dusk.sunDir` is `[-0.46, 0.64, 0.62]`), and `Sky.update` places the sun at `focus + d·140`. So in S1, S2, S3 and S5 the key light back-lights every approach face, and the weaker opposite rim light does not rescue it.
    - The masonry courses (`Fortress._wall` `courses`) are dark lines on a dark face, which reads as nothing.
    - See the top 40% of `s1-wall-modern`, the barrier slab in `s1-opening-modern`, `s1-turret-chase` and `explosion-modern`, and both pillars in `motion-runway-lights`.
    - Walls are the game's central obstacle and are still its least-lit object.
@@ -266,7 +266,7 @@ This is a real fix round. Of our round-1 top 10, eight landed in full or in subs
 ### What still fails
 
 1. **The boss riff is a wall of low end.** From 20 s the spectrogram is saturated from about 40 to 250 Hz with almost no gaps.
-   - `BASS.riff` fires on 15 of 16 steps.
+   - `BASS.riff` fires on all 16 of its 16 steps.
    - It uses a sawtooth plus sub through a Q-6 resonant low-pass, over kicks on every beat and step 6.
    - The launcher blast at 25.6 s barely rises above it below 120 Hz, and the grade and victory jingles at 27-29 s are hard to find at all.
    - This is where the biggest impacts in the game happen.
@@ -279,7 +279,7 @@ This is a real fix round. Of our round-1 top 10, eight landed in full or in subs
 ### Fixes, highest impact first
 
 1. **Carve the boss riff.**
-   - Thin `BASS.riff` to about 10 of 16 steps.
+   - Thin `BASS.riff` to about 10 of its 16 steps.
    - Drop the filter Q to 3.
    - High-pass the bass voice at 45 Hz.
    - Add a *low-band* duck: a low-shelf −6 dB on `musicBus` driven with `duckMusic` for size-2 or larger events.
@@ -312,7 +312,7 @@ This is a real fix round. Of our round-1 top 10, eight landed in full or in subs
 ### What still fails
 
 1. **Space plays exactly as before** (see Stage, item 2). Two of eight sectors are still "shoot orange things"; they are just prettier now.
-2. **The clean bonus can be farmed.** `_gradeSector` adds `2000 × (1 + loop)` whenever `damage === 0`, even at 0% targets. `s4-perimeter-modern` and `sector-transition-modern` literally show "TARGETS 0% // NO DAMAGE // CLEAN +2,000". A pacifist route through all eight sectors earns 16,000 per loop. The bonus should reward skill, not avoidance.
+2. **The clean bonus can be farmed.** `_gradeSector` adds `2000 × (1 + loop)` whenever `damage === 0`, even at 0% targets. `s4-perimeter-modern` and `sector-transition-modern` literally show "TARGETS 0% // NO DAMAGE // CLEAN +2,000". A pacifist, damage-free route earns up to 16,000 per loop. The bonus should reward skill, not avoidance.
 3. **Decor wastes shots** (see Asset Design, item 1). Unshootable fighters, drums and guns, plus S2 flak tracers in the enemy-fire orange palette (`Effects.ambient` `flak`, `0xfff0b0` to `0xff7020`) that can cross the corridor, blur the question "what is a threat?".
 4. **The duel is far away.** The launcher (`radius` 3.4) must take six hits at 64-78 units while the chest reactor glows brighter beside it. The core is the most salient thing on screen but is not the priority target (crop `boss-duel`). That is a legibility risk we could not test by hand.
 5. **Thin replay hooks remain.** The seed is still random per run, with no daily or shareable seed. Grades are not persisted per sector. The results grade line is a dash string (`- - - - - - C -`).

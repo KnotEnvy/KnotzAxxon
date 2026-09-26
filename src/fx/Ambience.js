@@ -41,6 +41,9 @@ const FRAG = /* glsl */`
   }
 `;
 
+/** Streaks in the classic rig: dimmer and blue, so white stays with the bolts. */
+const CLASSIC_STREAK = { opacity: 0.5, color: new THREE.Color(0x8fb0ff) };
+
 /** Per-sky presets: colour, opacity, tail vector per unit speed, drift. */
 const PRESETS = {
   dusk: { color: 0xc8d6e6, opacity: 0.22, tail: [0, 0, -0.035], drift: [0.4, -0.2, 0] },
@@ -97,8 +100,9 @@ export class AmbientDust {
   setPreset(name, immediate = false) {
     const p = PRESETS[name] ?? PRESETS.dusk;
     this._preset = p;
+    this._color = new THREE.Color(p.color);
     const u = this.material.uniforms;
-    u.uColor.value.setHex(p.color);
+    u.uColor.value.copy(this._color);
     u.uDrift.value.fromArray(p.drift);
     if (immediate) this._opacity = p.opacity;
   }
@@ -106,10 +110,16 @@ export class AmbientDust {
   /**
    * @param {THREE.Vector3} focus ship position
    * @param {number} speed forward speed, stretches streaks in open space
+   * @param {boolean} [classic] the orthographic rig, where long streaks run
+   *   parallel to the player's bolts
    */
-  update(dt, time, focus, speed) {
+  update(dt, time, focus, speed, classic = false) {
     const u = this.material.uniforms;
-    this._opacity = damp(this._opacity, this._preset.opacity, 2.5, dt);
+    // Only the long-tailed (open space) presets read as bolts.
+    const streaky = classic && this._preset.tail[2] < -0.05;
+    const target = this._preset.opacity * (streaky ? CLASSIC_STREAK.opacity : 1);
+    this._opacity = damp(this._opacity, target, 2.5, dt);
+    if (this._color) u.uColor.value.copy(this._color).lerp(CLASSIC_STREAK.color, streaky ? 0.7 : 0);
     u.uOpacity.value = this._opacity;
     u.uTime.value = time;
     u.uCenter.value.set(focus.x, focus.y, focus.z + 90);

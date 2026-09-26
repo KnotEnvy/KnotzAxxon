@@ -38,15 +38,16 @@ const UNDERLAY_FRAG = /* glsl */`
   uniform vec3 uTint;
   uniform float uGain;
   uniform float uTime;
+  uniform float uOpacity;
   varying vec2 vUv;
   varying vec2 vLocal;
   void main() {
     vec3 a = texture2D(uMapA, vUv).rgb;
     vec3 b = texture2D(uMapB, vUv * 0.7 + vec2(0.0, uTime * 0.002)).rgb;
     vec3 col = mix(a, b, uMix) * uTint * uGain;
-    // soft edge so the plane never shows a border
-    float edge = 1.0 - smoothstep(0.55, 1.0, length(vLocal));
-    gl_FragColor = vec4(col * edge, 1.0);
+    // the rim fades out, so the sky shows through instead of a hard horizon
+    float edge = 1.0 - smoothstep(0.45, 0.95, length(vLocal));
+    gl_FragColor = vec4(col, edge * uOpacity);
   }
 `;
 
@@ -106,9 +107,10 @@ export class Underlay {
         uGain: { value: 1 },
         uOffset: { value: new THREE.Vector2() },
         uTime: { value: 0 },
+        uOpacity: { value: 1 },
       },
+      transparent: true,
       depthWrite: false,
-      toneMapped: true,
     });
     this.plane = new THREE.Mesh(new THREE.PlaneGeometry(SIZE, SIZE).rotateX(-Math.PI / 2), this.material);
     this.plane.frustumCulled = false;
@@ -134,6 +136,8 @@ export class Underlay {
     scene.add(this.grid);
 
     this._mix = 1;
+    this._opacity = 1;
+    this._space = false;
     this._gridOpacity = 0;
     this._look = LOOKS.dusk;
     this._grid = false;
@@ -144,6 +148,7 @@ export class Underlay {
   setEnvironment(sky, space, immediate = false) {
     this._look = LOOKS[sky] ?? LOOKS.dusk;
     this._grid = space;
+    this._space = space;
     if (immediate) {
       this._mix = this._look.city;
       this._gridOpacity = space ? 1 : 0;
@@ -151,8 +156,13 @@ export class Underlay {
     }
   }
 
-  update(dt, time, focus) {
+  /** @param {boolean} classic the orthographic rig is active */
+  update(dt, time, focus, classic = true) {
     const u = this.material.uniforms;
+    // Perspective rigs see a real horizon in open space: keep their sky clear.
+    this._opacity = damp(this._opacity, this._space && !classic ? 0 : 1, 2, dt);
+    u.uOpacity.value = this._opacity;
+    this.plane.visible = this._opacity > 0.01;
     this._mix = damp(this._mix, this._look.city, 1.2, dt);
     u.uMix.value = this._mix;
     u.uTint.value.lerp(_tint.setHex(this._look.tint), 1 - Math.exp(-1.2 * dt));

@@ -51,7 +51,7 @@ const CAMPAIGN = [
   {
     name: 'THE VOID GAP', sub: 'OPEN SPACE TRANSIT', kind: SECTOR_KINDS.SPACE,
     sky: 'deepspace', length: 1350, threat: 0.50,
-    rhythm: 'FIGHTER WAVES', spaceWeights: [1.8, .25, .15, .65],
+    rhythm: 'FIGHTER WAVES', spaceWeights: [1.8, .25, .15, .65, .7],
     brief: 'No deck, no cover. Interceptors inbound.',
   },
   {
@@ -63,7 +63,7 @@ const CAMPAIGN = [
   {
     name: 'INTERCEPTOR SCREEN', sub: 'FIGHTER WING ENGAGEMENT', kind: SECTOR_KINDS.SPACE,
     sky: 'deepspace', length: 1450, threat: 0.72,
-    rhythm: 'FORMATION ATTACK', spaceWeights: [2.2, .35, .35, .4],
+    rhythm: 'FORMATION ATTACK', spaceWeights: [2.2, .35, .35, .4, .6],
     brief: 'Their whole wing is up. Chain your kills.',
   },
   {
@@ -187,7 +187,8 @@ export class Level {
       ['radar',0,0,610], ['drone',-6,11,780], ['drone',6,11,810],
     ]) this._push({kind,x,y,z:start+z,seed:rng.int(0,1e6),pattern:'weave'});
     const z=start+460, thickness=5, y=5, h=13, width=DECK_HALF*2;
-    this._push({kind:'wall',type:'slot',z,thickness,gaps:[{x:0,w:width,y,h}]});
+    // The first wall is the fortress's battlemented outer wall: Zaxxon's entry beat.
+    this._push({kind:'wall',type:'slot',z,thickness,perimeter:true,gaps:[{x:0,w:width,y,h}]});
     this._collider(0,0,z,width,y,thickness,true,'wall');
     this._collider(0,y+h,z,width,ALT_MAX+10-y-h,thickness,true,'wall');
   }
@@ -501,13 +502,15 @@ export class Level {
     let z = zStart + 120;
 
     while (z < zEnd - 140) {
-      const roll = rng.weighted(['wing','platform','minefield','debrisRing'].map((kind,i)=>[kind,sector.spaceWeights[i]]));
+      const roll = rng.weighted(['wing','platform','minefield','debrisRing','debrisGate'].map((kind,i)=>[kind,sector.spaceWeights[i] ?? 0]));
 
       if (roll === 'wing') {
         const count = 3 + Math.round(threat * 3);
         const altitude = rng.pick([7,13,19]);
         const centerX = rng.range(-3,3);
         const pattern = rng.pick(['weave','strafe','dive']);
+        // Alongside the carrier, wings visibly launch from its hangar bays.
+        const launch = sector.index === 4 && z > sector.zStart + 160 && z < sector.zStart + 1140;
         for (let i = 0; i < count; i++) {
           this._push({
             kind: 'interceptor',
@@ -515,6 +518,7 @@ export class Level {
             x: clamp(centerX+(i-(count-1)/2)*5,-CORRIDOR_HALF+1,CORRIDOR_HALF-1),
             y: altitude,
             pattern,
+            launch,
             seed: rng.int(0, 1e6),
           });
         }
@@ -546,9 +550,29 @@ export class Level {
           });
         }
         z += rng.range(150, 210);
+      } else if (roll === 'debrisGate') {
+        // A drift of wreckage packed across the lane with one clear band:
+        // space's version of the slot wall, read on the same altimeter.
+        const h = lerp(11, 7, clamp(threat, 0, 1));
+        const y = rng.range(ALT_MIN + 2, ALT_MAX - h - 2);
+        const W = DECK_HALF * 2, top = ALT_MAX + 10, t = 6;
+        this._push({ kind: 'wall', type: 'slot', debris: true, z, thickness: t, seed: rng.int(0, 1e6), gaps: [{ x: 0, w: W, y, h }] });
+        this._collider(0, -8, z, W, y + 8, t, true, 'wall');
+        this._collider(0, y + h, z, W, top - (y + h), t, true, 'wall');
+        z += rng.range(150, 210);
       } else {
         this._push({ kind: 'debrisRing', z, seed: rng.int(0, 1e6), radius: rng.range(26, 40) });
         z += rng.range(120, 180);
+      }
+    }
+
+    // THE VOID GAP: gun towers rise on pylons from the derelict dreadnought.
+    if (sector.index === 2) {
+      for (let k = 0; k < 3; k++) {
+        const pz = zStart + 330 + k * 230, px = rng.range(-9, 9), py = rng.range(3, 6);
+        this._push({ kind: 'platform', z: pz, x: px, y: py, pylon: true, seed: rng.int(0, 1e6) });
+        this._collider(px, py, pz, 16, 2.4, 16, true, 'platform');
+        this._push({ kind: rng.bool(0.4) ? 'heavyTurret' : 'turret', z: pz, x: px, y: py + 2.4, seed: rng.int(0, 1e6) });
       }
     }
   }

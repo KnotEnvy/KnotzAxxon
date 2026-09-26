@@ -177,6 +177,18 @@ function buildShip(mats) {
     glass: mats.glass,
     neon: (mats._playerNeon ??= mats.track(new THREE.MeshBasicMaterial({ vertexColors: true, toneMapped: false }))),
   };
+  // Classic-rig silhouette: the airframe drawn again only where something
+  // stands in front of it, so threading a pillar never hides the ship.
+  const silhouette = new THREE.Mesh(
+    mergeGeometries([...buckets.hull, ...buckets.accent], false),
+    (mats._playerSilhouette ??= mats.track(new THREE.MeshBasicMaterial({
+      color: 0x7fe8ff, transparent: true, opacity: 0.38, depthWrite: false,
+      depthFunc: THREE.GreaterDepth, toneMapped: false,
+    }))),
+  );
+  silhouette.renderOrder = 12;
+  silhouette.visible = false;
+  g.add(silhouette);
   for (const [key, parts] of Object.entries(buckets)) {
     const merged = mergeGeometries(parts, false);
     for (const p of parts) p.dispose();
@@ -186,6 +198,7 @@ function buildShip(mats) {
     g.add(mesh);
   }
   g.userData.engines = engines;
+  g.userData.silhouette = silhouette;
   return g;
 }
 
@@ -438,6 +451,8 @@ export class Player {
     }
 
     /* --- engine FX -------------------------------------------------------- */
+    const silhouette = this.model.userData?.silhouette;
+    if (silhouette) silhouette.visible = !!ctx.camera?.classic;
     this._engineFx(dt, ctx, boostT);
     this._updateShadow(ctx, dt);
 

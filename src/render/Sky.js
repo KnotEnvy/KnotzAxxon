@@ -155,30 +155,32 @@ export const SKY_PRESETS = {
   dusk: {
     zenith: 0x111f4d, horizon: 0x6b4478, ground: 0x18101f,
     nebulaA: 0xb5589c, nebulaB: 0x4a7fd0, nebulaAmount: 1.05,
-    sunColor: 0xffbc86, sunDir: [-0.46, 0.64, 0.62], sunIntensity: 3.4,
+    // The sun hangs ahead of the ship; the key light comes from behind-left so
+    // approaching barrier faces are front-lit instead of silhouetted.
+    sunColor: 0xffbc86, sunDir: [-0.46, 0.64, 0.62], keyDir: [-0.5, 0.7, -0.52], sunIntensity: 3.4,
     fog: 0x2a2c48, fogDensity: 0.0034,
     ambient: 0x5a6f95, ambientIntensity: 1.9,
   },
   deepspace: {
     zenith: 0x05091c, horizon: 0x0e1c3a, ground: 0x03050e,
     nebulaA: 0x2f9ae8, nebulaB: 0x8a45d8, nebulaAmount: 1.6,
-    sunColor: 0xd6ecff, sunDir: [0.52, 0.70, 0.49], sunIntensity: 2.9,
+    sunColor: 0xd6ecff, sunDir: [0.52, 0.70, 0.49], keyDir: [0.45, 0.75, -0.5], sunIntensity: 2.9,
     fog: 0x0a1224, fogDensity: 0.0020,
     ambient: 0x3a5680, ambientIntensity: 1.6,
   },
   ember: {
     zenith: 0x2e0a18, horizon: 0x9c2c12, ground: 0x2c0d06,
     nebulaA: 0xff7a30, nebulaB: 0xc11a42, nebulaAmount: 1.15,
-    sunColor: 0xff8f4a, sunDir: [0.34, 0.60, -0.72], sunIntensity: 3.8,
+    sunColor: 0xff8f4a, sunDir: [0.34, 0.60, -0.72], sunIntensity: 4.2,
     fog: 0x5c2418, fogDensity: 0.0038,
-    ambient: 0x8a4430, ambientIntensity: 1.9,
+    ambient: 0x8a4430, ambientIntensity: 2.6,
   },
   void: {
     zenith: 0x03061a, horizon: 0x0a1430, ground: 0x02040c,
     nebulaA: 0x1c6f9e, nebulaB: 0x5a2090, nebulaAmount: 0.85,
     sunColor: 0xe6f4ff, sunDir: [-0.22, 0.76, -0.61], sunIntensity: 2.8,
     fog: 0x08101f, fogDensity: 0.0026,
-    ambient: 0x30446a, ambientIntensity: 1.55,
+    ambient: 0x30446a, ambientIntensity: 1.8,
   },
 };
 
@@ -326,7 +328,13 @@ export class Sky {
     u.uSunDir.value.fromArray(p.sunDir).normalize();
     u.uSeed.value = (seed % 997) * 0.37;
 
-    this._bake();
+    // The bake is a cube render plus PMREM; the run's first sector applies the
+    // sky twice (reset, then sector entry), so skip an identical re-bake.
+    const bakeKey = `${name}:${seed}`;
+    if (bakeKey !== this._bakeKey || !this._envRT) {
+      this._bakeKey = bakeKey;
+      this._bake();
+    }
 
     // fog: one instance, mutated, so blends and materials keep their reference
     if (!this.scene.fog) this.scene.fog = new THREE.FogExp2(p.fog, p.fogDensity);
@@ -334,7 +342,8 @@ export class Sky {
     this.scene.fog.density = p.fogDensity;
 
     // lights
-    const dir = new THREE.Vector3().fromArray(p.sunDir).normalize();
+    const dir = new THREE.Vector3().fromArray(p.keyDir ?? p.sunDir).normalize();
+    this._discDir = new THREE.Vector3().fromArray(p.sunDir).normalize();
     this.sunLight.color.setHex(p.sunColor);
     this.sunLight.intensity = p.sunIntensity;
     this._sunDir = dir;
@@ -404,7 +413,8 @@ export class Sky {
 
     const R = this.bodyDist;
     const d = this._sunDir;
-    this.sunDisc.position.set(d.x * R, d.y * R + R * 0.08, d.z * R);
+    const disc = this._discDir ?? d;
+    this.sunDisc.position.set(disc.x * R, disc.y * R + R * 0.08, disc.z * R);
     this.sunDisc.scale.setScalar(R * this.sunRatio);
     this.sunGlow.position.copy(this.sunDisc.position);
     this.sunGlow.scale.setScalar(R * this.glowRatio);

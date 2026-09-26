@@ -470,16 +470,31 @@ export class Effects {
     } = opts;
 
     const s = scale;
+    // Blasts close to the ship trade flash for body: a white sheet over the
+    // hero reads as glare, a longer orange fireball reads as fire.
+    const near = this.focus ? Math.max(0, 1 - this.focus.distanceTo(pos) / 40) : 0;
+    const flash = 1 - near * 0.55;
 
-    // fireball core — big, bright, gone fast
+    // fireball core — bright, gone fast
     this.sparks.burst({
       position: pos,
-      count: Math.round(18 * s),
+      count: Math.round(14 * s),
       speed: 8 * s, speedVar: 0.6,
-      life: 0.30 * (0.7 + s * 0.4), lifeVar: 0.35,
-      size: 7 * s, sizeVar: 0.45,
+      life: 0.26 * (0.7 + s * 0.4), lifeVar: 0.35,
+      size: 6 * s * flash, sizeVar: 0.45,
       colorA: colorHot, colorB: colorMid,
-      drag: 6.0, gravity: 2 * s, grow: 2.0, fade: 1.2,
+      drag: 6.0, gravity: 2 * s, grow: 1.6, fade: 1.2,
+    });
+
+    // fire body — orange, slower, rolling upward after the flash is gone
+    this.sparks.burst({
+      position: pos,
+      count: Math.round(12 * s),
+      speed: 5 * s, speedVar: 0.5,
+      life: 0.55 * (0.8 + s * 0.3), lifeVar: 0.3,
+      size: 5.2 * s, sizeVar: 0.4,
+      colorA: colorMid, colorB: 0x6a1c08,
+      drag: 3.2, gravity: 5, grow: 1.4, fade: 1.6,
     });
 
     // sparks — thin, fast, long-lived
@@ -501,7 +516,7 @@ export class Effects {
       life: 1.25 * (0.8 + s * 0.3), lifeVar: 0.4,
       size: 5.5 * s, sizeVar: 0.4,
       colorA: smokeColor, colorB: 0x05060a,
-      drag: 2.6, gravity: 1.5, grow: 1.7, fade: 1.1, spin: 1.2,
+      drag: 2.6, gravity: 2.4, grow: 1.9, fade: 1.0, spin: 1.2,
     });
 
     // Fast, thin and gone. A shockwave that outlives the fireball stops
@@ -529,7 +544,7 @@ export class Effects {
       }
     }
 
-    this.lights.flash(pos, colorMid, 200 * s * s, 46 * s, 0.3 + s * 0.08);
+    this.lights.flash(pos, colorMid, 200 * s * s * flash, 46 * s, 0.3 + s * 0.08);
     this.addTrauma(0.28 * s * shake);
     this.pendingHitStop = Math.max(this.pendingHitStop, Math.min(0.09, 0.02 * s));
   }
@@ -647,9 +662,9 @@ export class Effects {
   /** Fuel ignition: a column of fire with a couple of secondary pops. */
   fireColumn(pos, groundY = 0) {
     this.sparks.burst({
-      position: pos, count: 26, direction: UP, spread: 0.28,
-      speed: 20, speedVar: 0.45, life: 0.8, lifeVar: 0.35, size: 5.5, sizeVar: 0.4,
-      colorA: 0xfff4c0, colorB: 0xff6a18, drag: 1.8, gravity: -6, grow: 1.4, fade: 1.2,
+      position: pos, count: 28, direction: UP, spread: 0.24,
+      speed: 30, speedVar: 0.4, life: 1.1, lifeVar: 0.3, size: 5.5, sizeVar: 0.4,
+      colorA: 0xffd890, colorB: 0xff4a10, drag: 1.8, gravity: -8, grow: 1.5, fade: 1.3,
     });
     this.smoke.burst({
       position: pos, count: 6, direction: UP, spread: 0.3,
@@ -719,14 +734,16 @@ export class Effects {
           e.t = rand.range(2.2, 4.2);
           const dir = e.dir ?? UP;
           this.sparks.burst({
-            position: _v, count: 4, direction: dir, spread: 0.35,
-            speed: 10, speedVar: 0.5, life: 0.14, lifeVar: 0.3, size: 3.2, sizeVar: 0.3,
-            colorA: 0xffffff, colorB: 0xffa040, drag: 6, gravity: 0, grow: 1.2, fade: 1,
+            position: _v, count: 3, direction: dir, spread: 0.35,
+            speed: 10, speedVar: 0.5, life: 0.12, lifeVar: 0.3, size: 2.6, sizeVar: 0.3,
+            colorA: 0xffffff, colorB: 0xc8d0dc, drag: 6, gravity: 0, grow: 1.2, fade: 1,
           });
-          // tracers: a short stream arcing up toward the intruder
+          // Tracers climb away from the lane in steel-white, never in the
+          // orange that means enemy fire.
           for (let k = 0; k < 3; k++) {
-            this.sparks.spark(_v, _v2.copy(dir).multiplyScalar(70 + k * 6).add(UP.clone().multiplyScalar(rand.range(-3, 3))),
-              { colorA: 0xfff0b0, colorB: 0xff7020, life: 0.75, size: 1.3, drag: 0.1, gravity: -6, fade: 1.2 });
+            _v2.copy(dir).multiplyScalar(70 + k * 6);
+            _v2.y += rand.range(-3, 3);
+            this.sparks.spark(_v, _v2, { colorA: 0xf2f6ff, colorB: 0x8090a8, life: 0.75, size: 1.2, drag: 0.1, gravity: -6, fade: 1.2 });
           }
           e.burst = 0.7;
           e.burstAt = (e.burstAt ?? new THREE.Vector3()).copy(_v).addScaledVector(dir, 48);
@@ -739,8 +756,8 @@ export class Effects {
   _flakBurst(e) {
     const p = e.burstAt;
     this.sparks.burst({
-      position: p, count: 6, speed: 7, speedVar: 0.5, life: 0.22, lifeVar: 0.3,
-      size: 5, sizeVar: 0.4, colorA: 0xfff0c0, colorB: 0xff8030, drag: 5, gravity: 0, grow: 1.4, fade: 1.1,
+      position: p, count: 5, speed: 7, speedVar: 0.5, life: 0.18, lifeVar: 0.3,
+      size: 4, sizeVar: 0.4, colorA: 0xffffff, colorB: 0xb0b8c8, drag: 5, gravity: 0, grow: 1.4, fade: 1.1,
     });
     this.smoke.burst({
       position: p, count: 3, speed: 3, speedVar: 0.5, life: 1.8, lifeVar: 0.3,
@@ -752,6 +769,7 @@ export class Effects {
 
   update(dt, time, camera) {
     this._time = time;
+    this.focus = this.focusPoint ?? null;
     this.sparks.setTime(time);
     this.smoke.setTime(time);
     this.sparks.flush();

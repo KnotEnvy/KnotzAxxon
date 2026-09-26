@@ -370,6 +370,13 @@ export class HUD {
     this._gradeTimer = duration;
   }
 
+  /** Retire the grade banner early, e.g. when a sector card takes the strip. */
+  dismissGrade() {
+    if (this._gradeTimer <= 0) return;
+    this._gradeTimer = 0;
+    this.gradeEl?.classList.remove('on');
+  }
+
   warn(label, duration = 1.6) {
     if (!this.warnEl) return;
     this.warnEl.textContent = label;

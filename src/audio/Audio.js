@@ -35,14 +35,20 @@ const SCALES = {
  */
 const SONGS = {
   menu: { bpm: 96, root: 45, scale: 'dorian', prog: [0, -4, -2, -5], progB: [0, -4, -7, -5], kit: 'none', bass: 'pulse', arp: [0, 2, 4, 6, 7, 6, 4, 2], pad: 0.12, lead: 0.05 },
-  s0: { bpm: 126, root: 45, scale: 'aeolian', prog: [0, 5, 3, -2], progB: [0, -4, 3, -2], kit: 'four', bass: 'eighths', arp: [0, 2, 4, 6, 7, 6, 4, 2], pad: 0.06, lead: 0.07 },
+  // `hook` is a hand-written 2-bar lead (8th notes, scale degrees, null rests);
+  // songs without one improvise a seeded motif.
+  s0: { bpm: 126, root: 45, scale: 'aeolian', prog: [0, 5, 3, -2], progB: [0, -4, 3, -2], kit: 'four', bass: 'eighths', arp: [0, 2, 4, 6, 7, 6, 4, 2], pad: 0.06, lead: 0.07,
+    hook: [0, null, 4, null, 7, 6, 4, null, 5, 4, 2, null, 4, null, null, null] },
   s1: { bpm: 132, root: 43, scale: 'aeolian', prog: [0, 0, -2, -4], progB: [3, 1, 0, -2], kit: 'march', bass: 'gallop', arp: [0, 4, 7, 4, 2, 4, 7, 9], pad: 0.05, lead: 0.08 },
   s2: { bpm: 128, root: 50, scale: 'dorian', prog: [0, -2, -4, -2], progB: [0, 3, -4, -2], kit: 'half', bass: 'pulse', arp: [0, 4, 7, 11, 14, 11, 7, 4], pad: 0.1, lead: 0.06 },
-  s3: { bpm: 136, root: 40, scale: 'phrygian', prog: [0, 1, 0, -2], progB: [0, 1, 3, 1], kit: 'toms', bass: 'gallop', arp: [0, 1, 4, 1, 7, 4, 1, 0], pad: 0.06, lead: 0.08 },
+  s3: { bpm: 136, root: 40, scale: 'phrygian', prog: [0, 1, 0, -2], progB: [0, 1, 3, 1], kit: 'toms', bass: 'gallop', arp: [0, 1, 4, 1, 7, 4, 1, 0], pad: 0.06, lead: 0.08,
+    hook: [0, 1, 0, null, 4, null, 3, 1, 0, null, 1, null, 5, 4, 3, null] },
   s4: { bpm: 140, root: 48, scale: 'dorian', prog: [0, -4, -2, 3], progB: [0, -4, 5, 3], kit: 'breaks', bass: 'eighths', arp: [0, 2, 4, 7, 9, 7, 4, 2], pad: 0.08, lead: 0.08 },
   s5: { bpm: 138, root: 42, scale: 'harmonic', prog: [0, -4, -3, -5], progB: [0, 1, -3, -5], kit: 'four', bass: 'gallop', arp: [0, 2, 4, 6, 7, 6, 4, 2], pad: 0.06, lead: 0.09 },
-  s6: { bpm: 146, root: 41, scale: 'phrygian', prog: [0, 1, -2, -1], progB: [0, 1, 3, 1], kit: 'breaks', bass: 'eighths', arp: [0, 1, 4, 7, 8, 7, 4, 1], pad: 0.05, lead: 0.09 },
-  boss: { bpm: 152, root: 40, scale: 'phrygianDom', prog: [0, 0, -2, -3], progB: [0, 1, 0, -3], kit: 'riff', bass: 'riff', arp: [0, 1, 4, 5, 7, 5, 4, 1], pad: 0.05, lead: 0.1 },
+  s6: { bpm: 146, root: 41, scale: 'phrygian', prog: [0, 1, -2, -1], progB: [0, 1, 3, 1], kit: 'breaks', bass: 'eighths', arp: [0, 1, 4, 7, 8, 7, 4, 1], pad: 0.05, lead: 0.09,
+    hook: [7, null, 6, 7, null, 4, null, 1, 0, 1, 3, null, 1, null, 0, null] },
+  boss: { bpm: 152, root: 40, scale: 'phrygianDom', prog: [0, 0, -2, -3], progB: [0, 1, 0, -3], kit: 'riff', bass: 'riff', arp: [0, 1, 4, 5, 7, 5, 4, 1], pad: 0.05, lead: 0.1,
+    hook: [0, 0, 1, null, 0, null, 4, null, 5, 4, 1, null, 0, null, null, null] },
 };
 
 /** 16th-note bass patterns: scale degrees, null for rest, +7 is an octave. */
@@ -50,7 +56,7 @@ const BASS = {
   pulse: [0, null, null, null, 0, null, null, null, 0, null, null, null, 4, null, null, null],
   eighths: [0, null, 0, null, 0, null, 4, null, 0, null, 0, null, 2, null, 4, null],
   gallop: [0, null, 0, 0, 0, null, 0, 0, 0, null, 0, 0, 4, null, 2, 2],
-  riff: [0, 0, 1, 0, 0, 0, 7, 0, 0, 0, 1, 0, 4, 3, 1, 0],
+  riff: [0, null, 1, 0, null, 0, 7, null, 0, null, 1, 0, null, 3, 1, null],
 };
 
 const noteHz = (semi) => 440 * Math.pow(2, (semi - 69) / 12);
@@ -101,7 +107,14 @@ export class Audio {
     this.comp.attack.value = 0.004;
     this.comp.release.value = 0.2;
 
-    // Soft clip after the glue compressor: a tanh curve never hard-clips.
+    // A brick-wall compressor catches peaks, then a unity-gain tanh rounds
+    // off anything that still gets through: it never hard-clips.
+    this.brickwall = ctx.createDynamicsCompressor();
+    this.brickwall.threshold.value = -3;
+    this.brickwall.ratio.value = 20;
+    this.brickwall.knee.value = 0;
+    this.brickwall.attack.value = 0.001;
+    this.brickwall.release.value = 0.1;
     this.limiter = ctx.createWaveShaper();
     this.limiter.curve = softClipCurve();
     this.limiter.oversample = '2x';
@@ -109,6 +122,17 @@ export class Audio {
     this.sfxBus = ctx.createGain();
     this.musicBus = ctx.createGain();
     this.duck = ctx.createGain();
+    // Big impacts also carve the music's low end, where the riff lives.
+    this.musicShelf = ctx.createBiquadFilter();
+    this.musicShelf.type = 'lowshelf';
+    this.musicShelf.frequency.value = 180;
+    this.musicShelf.gain.value = 0;
+    // Cues (lock tick, bonuses, pips) get a pocket in the 1-3 kHz band.
+    this.musicPocket = ctx.createBiquadFilter();
+    this.musicPocket.type = 'peaking';
+    this.musicPocket.frequency.value = 1900;
+    this.musicPocket.Q.value = 0.9;
+    this.musicPocket.gain.value = 0;
     this.musicComp = ctx.createDynamicsCompressor();
     this.musicComp.threshold.value = -18;
     this.musicComp.ratio.value = 3;
@@ -141,7 +165,9 @@ export class Audio {
 
     this.sfxBus.connect(this.comp);
     this.musicBus.connect(this.duck);
-    this.duck.connect(this.musicComp);
+    this.duck.connect(this.musicShelf);
+    this.musicShelf.connect(this.musicPocket);
+    this.musicPocket.connect(this.musicComp);
     this.musicComp.connect(this.comp);
     this.sfxBus.connect(this.sfxSend);
     this.musicBus.connect(this.musicSend);
@@ -149,7 +175,8 @@ export class Audio {
     this.musicSend.connect(this.reverbIn);
     this.reverbIn.connect(this.reverb);
     this.reverb.connect(this.comp);
-    this.comp.connect(this.limiter);
+    this.comp.connect(this.brickwall);
+    this.brickwall.connect(this.limiter);
     this.limiter.connect(this.muffle);
     this.muffle.connect(this.master);
     this.master.connect(ctx.destination);
@@ -176,8 +203,8 @@ export class Audio {
     clearInterval(this._schedTimer);
     this.ready = false;
     if (this.ctx) {
-      for (const key of ['master', 'comp', 'limiter', 'sfxBus', 'musicBus', 'duck', 'musicComp', 'muffle',
-        'reverb', 'reverbIn', 'sfxSend', 'musicSend']) {
+      for (const key of ['master', 'comp', 'brickwall', 'limiter', 'sfxBus', 'musicBus', 'duck', 'musicShelf', 'musicPocket',
+        'musicComp', 'muffle', 'reverb', 'reverbIn', 'sfxSend', 'musicSend']) {
         this[key]?.disconnect(); this[key] = null;
       }
       this.ctx.close().catch(() => {});
@@ -324,17 +351,39 @@ export class Audio {
     return g;
   }
 
-  /** Pull the music down under an impact, then let it breathe back. */
-  duckMusic(amount = 0.5, release = 0.35) {
+  /**
+   * Pull the music down under an impact, then let it breathe back. Heavy
+   * impacts also cut the music's low end so their thump owns the sub band.
+   */
+  duckMusic(amount = 0.5, release = 0.35, low = false) {
     if (!this.ready) return;
     const t = this._now();
     this.duck.gain.cancelScheduledValues(t);
     this.duck.gain.setTargetAtTime(Math.max(0.1, 1 - amount), t, 0.012);
     this.duck.gain.setTargetAtTime(1, t + 0.06, release);
+    if (low) {
+      this.musicShelf.gain.cancelScheduledValues(t);
+      this.musicShelf.gain.setTargetAtTime(-9, t, 0.01);
+      this.musicShelf.gain.setTargetAtTime(0, t + 0.1, release * 1.4);
+    }
   }
 
-  /** Swap the reverb room: fortress, space or arena. */
-  setEnvironment(kind) {
+  /** Open a short pocket in the music's cue band under a gameplay cue. */
+  _cuePocket() {
+    const t = this._now();
+    this.musicPocket.gain.cancelScheduledValues(t);
+    this.musicPocket.gain.setTargetAtTime(-6, t, 0.005);
+    this.musicPocket.gain.setTargetAtTime(0, t + 0.08, 0.12);
+  }
+
+  /**
+   * Swap the reverb room (fortress, space or arena) and the ambient bed.
+   * `flavor` 'ember' adds the reactor hum and steam hiss to a fortress.
+   */
+  setEnvironment(kind, flavor = null) {
+    this._bedKind = kind;
+    this._bedFlavor = flavor;
+    this._applyBed();
     if (!this.ready || !this._rooms?.[kind] || this._room === kind) return;
     this._room = kind;
     const t = this._now();
@@ -417,7 +466,7 @@ export class Audio {
       drive.curve = driveCurve();
       drive.connect(out);
       bodyOut = drive;
-      this.duckMusic(Math.min(0.7, 0.3 + size * 0.15), 0.5);
+      this.duckMusic(Math.min(0.7, 0.3 + size * 0.15), 0.5, size >= 2);
     }
 
     // body: brown noise sweeping down
@@ -556,6 +605,7 @@ export class Audio {
   bonus(level = 1) {
     if (!this.ready || !this._throttled('bonus', 0.15)) return;
     const t = this._now();
+    this._cuePocket();
     const g = this.ctx.createGain();
     g.connect(this.sfxBus);
     this._env(g, t, 0.003, 0.35, 0.16);
@@ -651,11 +701,19 @@ export class Audio {
   lockTick() {
     if (!this.ready || !this._throttled('lock', 0.35)) return;
     const t = this._now();
+    this._cuePocket();
     const g = this.ctx.createGain();
     g.connect(this.sfxBus);
-    this._env(g, t, 0.002, 0.09, 0.07);
+    this._env(g, t, 0.002, 0.1, 0.12);
     this._osc('sine', 1568, t, 0.05, g);
     this._osc('sine', 2093, t + 0.045, 0.06, g);
+    // a 3 kHz click on the front edge so it cuts through a busy mix
+    const c = this.ctx.createGain();
+    const f = this.ctx.createBiquadFilter();
+    f.type = 'bandpass'; f.frequency.value = 3000; f.Q.value = 2;
+    c.connect(f); f.connect(this.sfxBus);
+    this._env(c, t, 0.001, 0.02, 0.2);
+    this._noiseSrc(t, 0.03, c, 2);
   }
 
   /** Warning klaxon. */
@@ -979,8 +1037,80 @@ export class Audio {
     const wo = ctx.createOscillator(); wo.type = 'triangle'; wo.frequency.value = 900;
     wo.connect(whistle); wo.start(t);
 
-    this._engineNodes = { out, rumble, o1, o2, wf, lf, wg, lg, hum, humF, h1, h2, crackle, crackleF, crackleG, whistle, wo };
+    // Environment beds, crossfaded by setEnvironment: deck wind, open-space
+    // air, reactor hum and hiss, and the arena's rising sub drone.
+    const bed = (node, gainNode) => { node.connect(gainNode); gainNode.connect(this.sfxBus); gainNode.gain.value = 0; return gainNode; };
+    const wind = ctx.createBufferSource(); wind.buffer = this.brown; wind.loop = true; wind.playbackRate.value = 0.6;
+    const windF = ctx.createBiquadFilter(); windF.type = 'lowpass'; windF.frequency.value = 500;
+    wind.connect(windF); const windG = bed(windF, ctx.createGain()); wind.start(t);
+    const air = ctx.createBufferSource(); air.buffer = this.pink; air.loop = true;
+    const airF = ctx.createBiquadFilter(); airF.type = 'bandpass'; airF.frequency.value = 900; airF.Q.value = 1.4;
+    const airLfo = ctx.createOscillator(); airLfo.frequency.value = 0.07;
+    const airDepth = ctx.createGain(); airDepth.gain.value = 600;
+    airLfo.connect(airDepth); airDepth.connect(airF.frequency); airLfo.start(t);
+    air.connect(airF); const airG = bed(airF, ctx.createGain()); air.start(t);
+    const reactor = ctx.createOscillator(); reactor.type = 'sawtooth'; reactor.frequency.value = 50;
+    const reactorF = ctx.createBiquadFilter(); reactorF.type = 'lowpass'; reactorF.frequency.value = 220;
+    reactor.connect(reactorF); const reactorG = bed(reactorF, ctx.createGain()); reactor.start(t);
+    const hiss = ctx.createBufferSource(); hiss.buffer = this.noise; hiss.loop = true;
+    const hissF = ctx.createBiquadFilter(); hissF.type = 'highpass'; hissF.frequency.value = 5000;
+    hiss.connect(hissF); hissF.connect(reactorG); hiss.start(t);
+    const drone = ctx.createOscillator(); drone.type = 'sine'; drone.frequency.value = 41;
+    const drone2 = ctx.createOscillator(); drone2.type = 'triangle'; drone2.frequency.value = 61.7;
+    const droneG = ctx.createGain(); droneG.gain.value = 0; droneG.connect(this.sfxBus);
+    drone.connect(droneG); drone2.connect(droneG); drone.start(t); drone2.start(t);
+
+    this._engineNodes = { out, rumble, o1, o2, wf, lf, wg, lg, hum, humF, h1, h2, crackle, crackleF, crackleG, whistle, wo,
+      wind, windF, windG, air, airF, airLfo, airDepth, airG, reactor, reactorF, reactorG, hiss, hissF, drone, drone2, droneG };
+    this._applyBed();
     out.gain.setTargetAtTime(0.16, t, 0.4);
+  }
+
+  /** Crossfade the environment beds toward the current room and flavour. */
+  _applyBed() {
+    const n = this._engineNodes;
+    if (!n) return;
+    const t = this.ctx.currentTime, kind = this._bedKind ?? 'fortress';
+    n.windG.gain.setTargetAtTime(kind === 'fortress' ? 0.05 : 0.0001, t, 0.8);
+    n.airG.gain.setTargetAtTime(kind === 'space' ? 0.045 : 0.0001, t, 0.8);
+    n.reactorG.gain.setTargetAtTime(kind === 'fortress' && this._bedFlavor === 'ember' ? 0.035 : 0.0001, t, 0.8);
+    n.droneG.gain.setTargetAtTime(kind === 'arena' ? 0.06 + (this._bossPhase ?? 0) * 0.03 : 0.0001, t, 0.8);
+  }
+
+  /** The arena drone climbs with the Sentinel's phase. */
+  setBossPhase(phase) {
+    this._bossPhase = phase;
+    const n = this._engineNodes;
+    if (n) {
+      const t = this.ctx.currentTime;
+      n.drone.frequency.setTargetAtTime(41 * Math.pow(2, phase / 12 * 3), t, 0.5);
+      n.drone2.frequency.setTargetAtTime(61.7 * Math.pow(2, phase / 12 * 3), t, 0.5);
+    }
+    this._applyBed();
+  }
+
+  /**
+   * The boss's fire curtain: a noise wall sweeping left to right that drops
+   * out as it passes the gap, so the opening is audible.
+   */
+  curtain(gapPan = 0) {
+    if (!this.ready) return;
+    const t = this._now(), dur = 0.7;
+    const g = this.ctx.createGain();
+    const f = this.ctx.createBiquadFilter();
+    f.type = 'bandpass'; f.frequency.value = 1400; f.Q.value = 0.7;
+    const p = this.ctx.createStereoPanner();
+    p.pan.setValueAtTime(-1, t);
+    p.pan.linearRampToValueAtTime(1, t + dur);
+    g.connect(f); f.connect(p); p.connect(this.sfxBus);
+    const gapAt = t + dur * (clamp(gapPan, -1, 1) + 1) / 2;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.28, t + 0.04);
+    g.gain.setValueAtTime(0.28, Math.max(t + 0.05, gapAt - 0.08));
+    g.gain.exponentialRampToValueAtTime(0.02, gapAt);
+    g.gain.exponentialRampToValueAtTime(0.28, Math.min(t + dur - 0.05, gapAt + 0.08));
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur + 0.05);
+    this._noiseSrc(t, dur + 0.1, g, 1.3, this.pink);
   }
 
   /** @param {number} throttle 0..1 @param {number} boost 0..1 */
@@ -1020,6 +1150,7 @@ export class Audio {
     n.hum.gain.setTargetAtTime(0.0001, t, 0.1);
     n.crackleG.gain.setTargetAtTime(0.0001, t, 0.1);
     n.whistle.gain.setTargetAtTime(0.0001, t, 0.1);
+    for (const g of [n.windG, n.airG, n.reactorG, n.droneG]) g.gain.setTargetAtTime(0.0001, t, 0.15);
     this._lifetime.delay(600).then(() => {
       for (const node of Object.values(n)) {
         try { node.stop?.(); } catch { /* already stopped */ }
@@ -1286,8 +1417,11 @@ export class Audio {
     f.type = 'lowpass';
     f.frequency.setValueAtTime(gritty ? 1500 : 800, t);
     f.frequency.exponentialRampToValueAtTime(180, t + 0.2);
-    f.Q.value = 6;
-    g.connect(f); f.connect(this.musicBus);
+    f.Q.value = gritty ? 3 : 6;
+    const hp = this.ctx.createBiquadFilter();
+    hp.type = 'highpass';
+    hp.frequency.value = 45;
+    g.connect(f); f.connect(hp); hp.connect(this.musicBus);
     this._env(g, t, 0.006, 0.2, gain, 0.0001, 0.02);
     this._osc(gritty ? 'sawtooth' : 'square', hz, t, 0.24, g);
     this._osc('sine', hz / 2, t, 0.24, g);
@@ -1297,7 +1431,8 @@ export class Audio {
     const g = this.ctx.createGain();
     const f = this.ctx.createBiquadFilter();
     f.type = 'bandpass';
-    f.frequency.value = hz * 2.2;
+    // centred just above the note, keeping the arpeggio out of the cue band
+    f.frequency.value = hz * 1.4;
     f.Q.value = 3;
     g.connect(f); f.connect(this.musicBus);
     this._env(g, t, 0.003, 0.13, gain);
@@ -1355,6 +1490,7 @@ export class Audio {
 
 /** A seeded two-bar lead motif (8th notes, scale degrees, null rests). */
 function motif(key, song) {
+  if (song.hook) return song.hook;
   const rng = new Rng([...key].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7));
   const out = [];
   let d = rng.pick([0, 2, 4]);
@@ -1374,7 +1510,8 @@ function softClipCurve() {
   _softCurve = new Float32Array(n);
   for (let i = 0; i < n; i++) {
     const x = (i / (n - 1)) * 2 - 1;
-    _softCurve[i] = Math.tanh(x * 1.4) / Math.tanh(1.4);
+    // tanh(kx)/k has unity slope at zero: colour on peaks, no gain on the mix
+    _softCurve[i] = Math.tanh(x * 1.1) / 1.1;
   }
   return _softCurve;
 }

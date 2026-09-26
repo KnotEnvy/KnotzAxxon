@@ -31,6 +31,8 @@ const _v2 = new THREE.Vector3();
 const _obj = new THREE.Object3D();
 
 const STANDOFF = [92, 78, 64];
+/** How close the Sentinel leans in for its big moments: the duel and phase breaks. */
+const LEAN_IN = 48;
 /** Hits the launcher must take while charging to blow the missile in its rack. */
 export const LAUNCHER_HITS = 6;
 const CHARGE_TIME = 2.6;
@@ -52,12 +54,19 @@ class Kit {
     this.parts.get(key).push(g);
     return this;
   }
+  /** One mesh per material: keys that share a material (dark and frame) merge. */
   build(parent, materials, shadow = true) {
+    const byMaterial = new Map();
     for (const [key, list] of this.parts) {
+      const m = materials[key];
+      if (!byMaterial.has(m)) byMaterial.set(m, []);
+      byMaterial.get(m).push(...list);
+    }
+    for (const [material, list] of byMaterial) {
       const merged = mergeGeometries(list, false);
       for (const g of list) g.dispose();
-      const mesh = new THREE.Mesh(merged, materials[key]);
-      const lit = key === 'hull' || key === 'dark';
+      const mesh = new THREE.Mesh(merged, material);
+      const lit = material.isMeshStandardMaterial;
       mesh.castShadow = shadow && lit;
       mesh.receiveShadow = shadow && lit;
       parent.add(mesh);
@@ -94,6 +103,7 @@ export class Boss {
     this.entrance = 0;
     this.deathTimer = 0;
     this.stagger = 0;
+    this.leanIn = 0;
     this.velocity = new THREE.Vector3();
     this._hover = 14;
     this._dropY = 58;
@@ -113,15 +123,20 @@ export class Boss {
     const M = {
       hull: mats.enemyHull,
       dark: mats.darkMetal,
+      frame: mats.darkMetal,
+      hazard: mats.hazard ?? mats.darkMetal,
       neon: this.seamMat,
       glow: mats.neon(0xff7a3a, 2.4),
       visor: this.visorMat,
       charge: this.chargeMat,
     };
-    // darkMetal expects vertex colours; bake a light grey into every dark part.
+    // Vertex-coloured materials: dark greebles, a lighter gunmetal frame, and
+    // full-strength hazard chevrons. Orange armour is reserved for plates.
     const whiten = (kit) => {
-      for (const g of kit.parts.get('dark') ?? []) {
-        g.setAttribute('color', new THREE.BufferAttribute(new Float32Array(g.attributes.position.count * 3).fill(0.85), 3));
+      for (const [key, value] of [['dark', 0.85], ['frame', 1.45], ['hazard', 1]]) {
+        for (const g of kit.parts.get(key) ?? []) {
+          g.setAttribute('color', new THREE.BufferAttribute(new Float32Array(g.attributes.position.count * 3).fill(value), 3));
+        }
       }
     };
 
@@ -129,8 +144,9 @@ export class Boss {
     this.torso = new THREE.Group();
     this.group.add(this.torso);
     const t = new Kit();
-    t.add('hull', taperedBox(12, 17, 10, 8, 10), 0, -4, 0);
-    t.add('hull', taperedBox(13, 8, 5, 9, 6).rotateX(Math.PI), 0, -4, 0);          // skirt, narrowing down
+    t.add('frame', taperedBox(12, 17, 10, 8, 10), 0, -4, 0);
+    t.add('frame', taperedBox(13, 8, 5, 9, 6).rotateX(Math.PI), 0, -4, 0);         // skirt, narrowing down
+    t.add('hazard', box(13.4, 0.6, 9.4), 0, -5.2, 0);                             // hazard belt over the skirt
     t.add('dark', box(8.5, 1.6, 7.5), 0, 6.6, 0.4);                                 // collar
     t.add('dark', box(15, 1.1, 10.4), 0, -4.3, 0);                                   // belt
     for (const s of [-1, 1]) {
@@ -143,7 +159,7 @@ export class Boss {
         t.add('glow', cyl(1.0, 1.0, 0.12, 10), s * 3.2, -10.35, k ? 2.2 : -2.2);
       }
     }
-    for (let k = 0; k < 3; k++) t.add('hull', box(5 - k * 0.6, 1.3, 1), 0, -1.6 - k * 1.5, -4.5 + k * 0.3, 0.1);   // abdominal plates
+    for (let k = 0; k < 3; k++) t.add('frame', box(5 - k * 0.6, 1.3, 1), 0, -1.6 - k * 1.5, -4.5 + k * 0.3, 0.1);   // abdominal plates
     t.add('dark', new THREE.TorusGeometry(4.1, 0.55, 6, 24), 0, 1, -5.25);          // reactor housing ring
     for (const s of [-1, 1]) {
       t.add('neon', box(0.18, 5.5, 0.18), s * 5.2, 0.8, -5.0, 0, 0, s * 0.3);        // red chest seams
@@ -180,7 +196,9 @@ export class Boss {
     this.coreGroup.position.set(0, 1, -5.6);
     this.torso.add(this.coreGroup);
 
-    this.coreMat = mats.energyCore(0xff3d55);
+    // Shared and owned by Materials: disposing it would release the program and
+    // make the next Sentinel recompile it on arrival.
+    this.coreMat = (mats._bossCore ??= mats.energyCore(0xff3d55));
     this.core = new THREE.Mesh(new THREE.IcosahedronGeometry(3.1, 1), this.coreMat);
     this.coreGroup.add(this.core);
 
@@ -218,7 +236,7 @@ export class Boss {
       const sh = new Kit();
       sh.add('hull', taperedBox(6.4, 4.6, 3.2, 7.6, 6), side * 9.6, 4.4, 0);
       sh.add('dark', box(7, 0.8, 8.2), side * 9.6, 4.2, 0);
-      sh.add('dark', cyl(1.3, 1.3, 6, 10), side * 10.4, 0.8, 0.4);                  // upper arm
+      sh.add('frame', cyl(1.3, 1.3, 6, 10), side * 10.4, 0.8, 0.4);                 // upper arm
       sh.add('dark', new THREE.SphereGeometry(1.7, 10, 8), side * 10.4, -2.6, 0.4);  // elbow
       whiten(sh);
       sh.build(this.torso, M);
@@ -228,11 +246,13 @@ export class Boss {
       forearm.position.set(side * 10.4, -2.6, 0.4);
       this.torso.add(forearm);
       const fa = new Kit();
-      fa.add('hull', box(3.2, 3.2, 7.4), 0, 0, -3.4);
+      fa.add('frame', box(3.2, 3.2, 7.4), 0, 0, -3.4);
       fa.add('dark', box(3.6, 0.7, 5), 0, 1.9, -3.6);
       if (side > 0) {
         fa.add('hull', box(4.6, 4.6, 5.6), 0, 0.3, -6.4);
         fa.add('dark', box(5, 1, 6), 0, 2.9, -6.4);
+        // chevrons mark the launcher: this is the arm you shoot at
+        for (const s of [-1, 1]) fa.add('hazard', box(0.3, 3.6, 5), s * 2.4, 0.3, -6.4);
         for (const [dx, dy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) {
           fa.add('dark', cyl(0.75, 0.75, 1.2, 10).rotateX(Math.PI / 2), dx * 1.1, 0.3 + dy * 1.1, -9.3);
           fa.add('charge', new THREE.CircleGeometry(0.62, 12).rotateY(Math.PI), dx * 1.1, 0.3 + dy * 1.1, -9.92);
@@ -354,7 +374,11 @@ export class Boss {
     }
 
     /* --- station keeping --------------------------------------------- */
-    const standoff = STANDOFF[Math.min(this.phase, 2)];
+    // Lean in while the launcher charges and for a beat after each phase break,
+    // so the robot fills the frame when it matters.
+    this.leanIn = Math.max(0, this.leanIn - dt);
+    const leaning = this.launcher.charging || this.leanIn > 0;
+    const standoff = leaning ? Math.min(LEAN_IN, STANDOFF[Math.min(this.phase, 2)]) : STANDOFF[Math.min(this.phase, 2)];
     const wantZ = p.pos.z + standoff;
     const prevZ = this.pos.z;
     this.pos.z = damp(this.pos.z, wantZ, 2.6, dt);
@@ -397,7 +421,8 @@ export class Boss {
     this.core.rotation.y += dt * 0.8;
     const pulse = 1 + Math.sin(ctx.time * 6) * 0.06;
     this.coreShell.scale.setScalar(pulse * (0.9 + this.coreOpen * 0.35));
-    this.coreMat.uniforms.uIntensity.value = 0.35 + this.coreOpen * 1.5;
+    // The reactor dims while the launcher charges: one priority target at a time.
+    this.coreMat.uniforms.uIntensity.value = (0.35 + this.coreOpen * 1.5) * (this.launcher.charging ? 0.45 : 1);
     for (const t of this.thrusters) t.scale.setScalar(1 + Math.sin(ctx.time * 22) * 0.1);
 
     // hover wash: jets under the skirt
@@ -515,6 +540,7 @@ export class Boss {
 
   _advancePhase(ctx) {
     this.phase++;
+    this.leanIn = 2.2;
     this.attackTimer = 1.4;
     this._wantOpen = true;
     this.coreTimer = 4.5;
@@ -684,7 +710,7 @@ export class Boss {
       }
     }
     ctx.warn('BARRAGE');
-    audio.enemyShot(0, this.pos.z - ctx.player.pos.z, 'boss');
+    audio.curtain(audio.panFor(gapX, ctx.player.pos.x));
   }
 
   /* ------------------------------------------------------------------ */
@@ -704,7 +730,10 @@ export class Boss {
       L.hits++;
       ctx.fx.impact(worldPos, _v2.set(0, 0, -1), 0xffb43a, 1.1);
       if (L.hits >= LAUNCHER_HITS) this._detonateLauncher(ctx);
-      else ctx.awardScore?.(50, L.pos, `${LAUNCHER_HITS - L.hits}`);
+      else {
+        ctx.awardScore?.(50, L.pos, null, false);
+        ctx.onRackHit?.(L.hits, LAUNCHER_HITS);
+      }
       return 'launcher';
     }
 
@@ -813,7 +842,6 @@ export class Boss {
     if (this._disposed) return;
     this._disposed = true;
     disposeModel(this.group);
-    this.coreMat.dispose();
     for (const m of [this.visorMat, this.chargeMat, this.seamMat]) m.dispose();
     for (const pod of this.pods) pod.flashMat.dispose();
   }

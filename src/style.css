@@ -255,7 +255,7 @@ html, body {
 /* --- sector grade ------------------------------------------------------ */
 
 .grade {
-  position: absolute; top: 15%; left: 50%; transform: translate(-50%, -8px);
+  position: absolute; top: clamp(62px, 10vh, 100px); left: 50%; transform: translate(-50%, -8px);
   display: flex; align-items: center; gap: 14px; padding: 8px 20px 8px 14px;
   background: linear-gradient(90deg, transparent, #031019e0 18%, #031019e0 82%, transparent);
   opacity: 0; transition: opacity .25s, transform .35s var(--ease);
@@ -271,6 +271,22 @@ html, body {
 .grade-info b { font-size: var(--fs-sm); letter-spacing: .3em; color: var(--ink); }
 .grade-info span { font-size: var(--fs-xs); letter-spacing: .12em; color: #bcdbe6; }
 @media (prefers-reduced-motion: reduce) { .grade { transition: opacity .2s; transform: translate(-50%, 0); } }
+@media (max-width: 680px) { #screen-sector { padding-top: 150px; } .grade { top: 140px; } }
+
+/* results: one chip per sector */
+.grade-chips { display: flex; gap: 4px; }
+.grade-chips i {
+  position: relative; display: inline-grid; place-items: center; width: 26px; height: 24px;
+  font-style: normal; font-weight: 700; font-size: 13px; color: #06121a; background: #6e8ea6;
+}
+.grade-chips i small { position: absolute; top: -9px; left: 2px; font-size: 8px; font-weight: 400; color: var(--ink-dim); }
+.grade-chips .g-S { background: #92ffd0; }
+.grade-chips .g-A { background: var(--amber); }
+.grade-chips .g-B { background: #a8c8dc; }
+.grade-chips .g-C { background: #ff9a8a; }
+.grade-chips .g-none { background: transparent; color: var(--ink-dim); outline: 1px solid #2a3c4a; }
+.grade-chips.dim i { opacity: 0.65; }
+@media (max-width: 440px) { .grade-chips i { width: 20px; } }
 
 /* ==========================================================================
    Full-screen overlays
@@ -636,7 +652,8 @@ html, body {
 .route-strip .passed { background:#559b9c; }
 .route-strip .active { background:#a1f3ff; box-shadow:0 0 8px #53d8e877; }
 .sc-rhythm { font-size:11px; letter-spacing:.24em; color:#ffcc88; margin:10px 0 5px; }
-#screen-sector { align-items:flex-start; padding-top:clamp(140px,24vh,245px); }
+/* Sector and grade cards sit in the top strip, above the lane's look-ahead. */
+#screen-sector { align-items:flex-start; padding-top:clamp(64px,10vh,104px); }
 .sector-card { max-width:min(90vw,650px); padding:0 18px 12px; background:linear-gradient(90deg,transparent,#031019d9,transparent); }
 #screen-sector .sc-name { font-size:clamp(19px,3vmin,36px); }
 #screen-sector .sc-desc { color:#c0d5df; line-height:1.5; }

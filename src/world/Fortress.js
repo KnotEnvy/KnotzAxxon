@@ -21,6 +21,8 @@ import { CHUNK_LEN, DECK_HALF, CORRIDOR_HALF, ALT_MAX, SECTOR_KINDS } from './Le
 
 const _c = new THREE.Color();
 const { STROBE, CHASE, BREATHE, FLICKER } = LIGHT_ANIM;
+/** Chunk-build time a rendered frame may spend before deferring a second build. */
+const BUILD_SLICE_MS = 6;
 
 /** Lit structure gets baked contact shading; emissive and flat buckets do not. */
 const AO_KEYS = new Set(['hull', 'deck', 'dark', 'grate', 'hazard']);
@@ -84,6 +86,10 @@ class Batch {
     this.buckets = new Map();
     this.surfaces = [];
     this.captureSurfaces = false;
+    /** Tint multiplier for lit faces turned toward the approaching ship (-Z). */
+    this.frontLift = 1;
+    /** Tint multiplier for faces turned across the lane (+X / -X). */
+    this.sideLift = 1;
   }
 
   _bucket(key) {
@@ -178,6 +184,8 @@ class Batch {
         if (ao) {
           if (span > 0.6) shade = 0.58 + 0.42 * Math.sqrt(Math.max(0, wy - y - minY) / span);
           if (lny > 0.7) shade *= 1.1;
+          if (nz < -0.7) shade *= this.frontLift;
+          else if (Math.abs(nx) > 0.7) shade *= this.sideLift;
         }
         this._vertex(b, wx, wy, wz, nx, lny, nz, u, v, _c.r, _c.g, _c.b, shade, fx, x, y, z);
       }
@@ -206,6 +214,8 @@ class Batch {
       if (ao) {
         if (h > 0.6) s = 0.58 + 0.42 * Math.sqrt(ly / h);
         if (ny > 0.7) s *= 1.1;
+        if (nz < -0.7) s *= this.frontLift;
+        else if (Math.abs(nx) > 0.7) s *= this.sideLift;
       }
       this._vertex(b, wx, wy, wz, nx, ny, nz, u, v, _c.r, _c.g, _c.b, s, fx, x, y, z);
     }
@@ -255,11 +265,16 @@ const _tri = new Float32Array(9);
 
 /** Closed parabolic-ish dish facing +Z with a feed horn, origin at the hub. */
 function dishGeometry(r) {
-  const bowl = new THREE.CylinderGeometry(r, r * 0.28, r * 0.42, 14, 1, false);
+  // A deep bowl with a rolled rim and a back truss reads as a dish from the
+  // classic angle; a shallow disc turns into a paper cut-out edge-on.
+  const bowl = new THREE.CylinderGeometry(r, r * 0.3, r * 0.6, 16, 1, false);
   bowl.rotateX(Math.PI / 2);
-  const horn = new THREE.CylinderGeometry(r * 0.05, r * 0.05, r * 0.9, 5).rotateX(Math.PI / 2).translate(0, 0, r * 0.55);
-  const hub = new THREE.BoxGeometry(r * 0.35, r * 0.35, r * 0.3).translate(0, 0, -r * 0.3);
-  return mergeFlat([bowl, horn, hub]);
+  const rim = new THREE.TorusGeometry(r, r * 0.07, 5, 18).translate(0, 0, r * 0.3);
+  const horn = new THREE.CylinderGeometry(r * 0.05, r * 0.05, r * 1.1, 5).rotateX(Math.PI / 2).translate(0, 0, r * 0.75);
+  const hub = new THREE.BoxGeometry(r * 0.4, r * 0.4, r * 0.4).translate(0, 0, -r * 0.45);
+  const truss = new THREE.BoxGeometry(r * 1.4, r * 0.12, r * 0.12).translate(0, 0, -r * 0.35);
+  const truss2 = new THREE.BoxGeometry(r * 0.12, r * 1.4, r * 0.12).translate(0, 0, -r * 0.35);
+  return mergeFlat([bowl, rim, horn, hub, truss, truss2]);
 }
 
 /** Four-bladed fan in a square housing, facing -X (toward the corridor). */
@@ -345,7 +360,7 @@ function mergeFlat(parts) {
 /** Per-sector dressing palette. Index matches the campaign order in Level.js. */
 const THEMES = [
   { name: 'airfield', conduit: 0x3ad6b0, conduitAnim: null, accent: 0x8bcbd0, warm: 0xffb43a },
-  { name: 'battery', conduit: 0xffb43a, conduitAnim: null, accent: 0xffbf69, warm: 0xffb43a },
+  { name: 'battery', conduit: 0x9fb4c8, conduitAnim: null, accent: 0xa8bccc, warm: 0xffb43a },
   null,
   { name: 'reactor', conduit: 0xff7a3a, conduitAnim: [BREATHE, 0.35, 0], accent: 0xffbf69, warm: 0xff8a3a },
   null,
@@ -421,16 +436,19 @@ export class Fortress {
     if (frame === undefined || frame !== this._buildFrame) {
       this._buildFrame = frame;
       this._buildBudget = 2;
+      this._buildSpent = 0;
     }
-    // A second build in the same frame only happens if the first left time
-    // in a small slice; the first always runs so streaming keeps moving.
-    const sliceEnd = performance.now() + 6;
+    // A second build in the same frame only happens if the first was cheap;
+    // the first always runs so streaming keeps moving. Only build time
+    // counts, so unrelated stalls never change what gets built.
     while (this._buildBudget > 0 && this.buildQueue.length) {
-      if (this._buildBudget < 2 && performance.now() > sliceEnd) break;
+      if (this._buildBudget < 2 && this._buildSpent > BUILD_SLICE_MS) break;
       const i = this.buildQueue.shift();
       if (i < first || i > last) continue;
       this._buildBudget--;
+      const t0 = performance.now();
       this.chunks.set(i, this._buildChunk(i));
+      this._buildSpent += performance.now() - t0;
     }
 
     // retire chunks behind the player
@@ -500,6 +518,9 @@ export class Fortress {
     const rng = new Rng((index * 2654435761 + this.level.seed) >>> 0);
     const sector = this.level.sectorAt(z0 + CHUNK_LEN * 0.5);
     const batch = new Batch();
+    // Open space has no bounce light: lift the faces the ship sees so the
+    // dreadnought, carrier and platforms read as hulls against the void.
+    if (sector?.kind === SECTOR_KINDS.SPACE) batch.frontLift = batch.sideLift = 1.4;
     const emit = (kind, x, y, z, rate = 1, dir = null) => this.emitters.push({ owner: group, kind, x, y, z, rate, dir, t: rng.next() });
 
     if (!sector) return group;
@@ -525,6 +546,8 @@ export class Fortress {
         const obstacle = new THREE.Group();
         group.add(obstacle);
         const featureBatch = new Batch();
+        // Barriers are the game's central read: lift their approach faces.
+        featureBatch.frontLift = 1.55;
         if (f.kind === 'gate') this._gate(obstacle, f, group, featureBatch);
         else if (f.kind === 'fence') this._fence(obstacle, f, featureBatch, rng);
         else if (f.kind === 'wall') this._wall(featureBatch, f, rng);
@@ -536,7 +559,9 @@ export class Fortress {
     }
 
     group.userData.deckSurfaces = batch.surfaces;
-    batch.merge(this._matFor, group);
+    // In open space the reticle on the flight grid is the only ground cue; a
+    // second ship shadow on the dreadnought far below would contradict it.
+    batch.merge(this._matFor, group, true, sector.kind !== SECTOR_KINDS.SPACE);
     return group;
   }
 
@@ -743,7 +768,6 @@ export class Fortress {
       if (rng.bool(0.5)) this._landingPad(batch, rng, rng.range(21, 22.5), z0 + rng.range(12, CHUNK_LEN - 12), theme);
       if (rng.bool(0.6)) this._fuelDepot(batch, rng, farX(), z0 + rng.range(10, CHUNK_LEN - 10));
     } else if (theme.name === 'battery') {
-      for (let k = 0; k < rng.int(1, 2); k++) this._flakGun(batch, rng, farX() + 1, z0 + rng.range(10, CHUNK_LEN - 10), emit);
       for (let k = 0; k < 2; k++) this._crates(batch, rng, farX(), z0 + rng.range(6, CHUNK_LEN - 6), 3.2);
       if (rng.bool(0.5)) this._hazardPad(batch, farX(), z0 + rng.range(12, CHUNK_LEN - 12));
     } else if (theme.name === 'reactor') {
@@ -793,15 +817,19 @@ export class Fortress {
     }
   }
 
+  /**
+   * A mothballed airframe under covers: grey, tarped and unlit, so it never
+   * reads as one of the live parked fighters you can strafe.
+   */
   _parkedFighter(batch, x, z, rng) {
     const rot = rng.range(-0.25, 0.25);
-    const tint = rng.pick([0xa06a64, 0x8a7072, 0x9a7a5a]);
-    batch.stamp('hull', TPL.fighter.hull, x, 0, z, 3, tint, { rotY: rot });
+    batch.stamp('hull', TPL.fighter.hull, x, 0, z, 3, 0x7a8088, { rotY: rot });
     batch.stamp('dark', TPL.fighter.dark, x, 0, z, 3, 0xffffff, { rotY: rot });
-    // hardstand outline and a red canopy light
-    batch.box('paint', 7.5, 0.02, 0.3, x, 0.006, z - 3.6, 4, 0xd8c060);
-    batch.box('paint', 7.5, 0.02, 0.3, x, 0.006, z + 3.6, 4, 0xd8c060);
-    batch.lamp(x, 1.5, z - 0.8, 0.25, 0xff3d55, 1.3, [BREATHE, 0.5, rng.next()]);
+    batch.box('grate', 1.9, 0.9, 5.2, x, 0.7, z, 2, 0x6a7466, rot);
+    batch.box('grate', 6.4, 0.18, 1.8, x, 0.88, z + 0.6, 2, 0x6a7466, rot);
+    // hardstand outline
+    batch.box('paint', 7.5, 0.02, 0.3, x, 0.006, z - 3.6, 4, 0x9aa4ae);
+    batch.box('paint', 7.5, 0.02, 0.3, x, 0.006, z + 3.6, 4, 0x9aa4ae);
   }
 
   _landingPad(batch, rng, x, z, theme) {
@@ -815,12 +843,17 @@ export class Fortress {
     }
   }
 
+  /** A horizontal tank farm on saddles: bulk storage, not a shootable drum. */
   _fuelDepot(batch, rng, x, z) {
     for (let k = 0; k < 2; k++) {
-      batch.stamp('hull', TPL.drum, x, 0, z + k * 3.6, 3, 0xc9b98a, { sx: 1.5, sy: 3.4, sz: 1.5 });
-      batch.stamp('hazard', TPL.drum, x, 2.25, z + k * 3.6, 2, 0xffffff, { sx: 1.56, sy: 0.3, sz: 1.56 });
+      const tx = x + (k ? 1.6 : -1.6);
+      batch.stamp('hull', TPL.pipeZ, tx, 1.5, z, 3, 0x9aa2aa, { sx: 1.25, sy: 1.25, sz: 8 });
+      for (const dz of [-2.6, 2.6]) {
+        batch.box('dark', 2.2, 0.9, 0.6, tx, 0, z + dz, 3, 0xffffff);
+        batch.stamp('dark', TPL.pipeZ, tx, 1.5, z + dz, 3, 0xffffff, { sx: 1.32, sy: 1.32, sz: 0.3 });
+      }
     }
-    batch.stamp('dark', TPL.pipeZ, x - 1.8, 0.6, z + 1.8, 3, 0xffffff, { sx: 0.2, sy: 0.2, sz: 5 });
+    batch.stamp('dark', TPL.pipeZ, x, 2.9, z, 3, 0xffffff, { sx: 0.2, sy: 0.2, sz: 7 });
   }
 
   _hazardPad(batch, x, z) {
@@ -828,20 +861,24 @@ export class Fortress {
     batch.box('grate', 4, 0.1, 4, x, 0.02, z, 2, 0x7f8a99);
   }
 
-  /** Static anti-aircraft gun that fires tracer flak into the sky. */
-  _flakGun(batch, rng, x, z, emit) {
-    batch.box('dark', 3.4, 1.2, 3.4, x, 0, z, 3, 0xffffff);
-    batch.stamp('hull', TPL.drum, x, 1.2, z, 3, 0x8a7a70, { sx: 1.4, sy: 1.2, sz: 1.4 });
-    const pitch = rng.range(0.7, 1.0), yaw = rng.range(-0.5, 0.5);
+  /**
+   * Anti-aircraft battery on a far tower roof, firing steel-white tracer
+   * flak up and away from the lane. `y` is the roof height.
+   */
+  _flakGun(batch, rng, x, z, emit, y = 0) {
+    batch.box('dark', 3.4, 1.2, 3.4, x, y, z, 3, 0xffffff);
+    batch.stamp('hull', TPL.drum, x, y + 1.2, z, 3, 0x8a8e96, { sx: 1.4, sy: 1.2, sz: 1.4 });
+    // barrels point up and outward, away from the corridor
+    const pitch = rng.range(1.0, 1.3), yaw = -rng.range(0.6, 1.1);
     for (const s of [-0.45, 0.45]) {
       const barrel = new THREE.CylinderGeometry(0.16, 0.2, 4.2, 6)
         .translate(0, 2.1, 0).rotateX(-(Math.PI / 2 - pitch)).translate(s, 2.1, 0);
-      batch.add('dark', barrel, x, 0, z, 3, 0xffffff, yaw);
+      batch.add('dark', barrel, x, y, z, 3, 0xffffff, yaw);
     }
     const tip = new THREE.Vector3(0, 4.2 * Math.cos(Math.PI / 2 - pitch) + 2.1, -4.2 * Math.sin(Math.PI / 2 - pitch))
       .applyAxisAngle(new THREE.Vector3(0, 1, 0), yaw);
     const dir = new THREE.Vector3(0, Math.cos(Math.PI / 2 - pitch), -Math.sin(Math.PI / 2 - pitch)).applyAxisAngle(new THREE.Vector3(0, 1, 0), yaw);
-    emit('flak', x + tip.x, tip.y, z + tip.z, rng.range(0.25, 0.45), dir);
+    emit('flak', x + tip.x, y + tip.y, z + tip.z, rng.range(0.25, 0.45), dir);
   }
 
   _coolingStack(batch, rng, x, z, emit) {
@@ -911,6 +948,7 @@ export class Fortress {
           x + ox * Math.cos(rot), y, z - ox * Math.sin(rot), 8, rng.bool(0.7) ? 0xffc27a : 0x9fe8ff, rot, 1.05);
       }
       if (h > 40 && rng.bool(0.25)) emit('stack', x, h + 1, z, 0.5);
+      else if (themeFor(sector).name === 'battery' && h > 22 && rng.bool(0.6)) this._flakGun(batch, rng, x, z, emit, h);
     }
   }
 
@@ -952,10 +990,15 @@ export class Fortress {
     const t = f.thickness;
     const tint = 0xb9c4d2;
     const face = f.z - t / 2 - 0.08;   // approach face, where the lamps live
-    // Masonry courses on the approach face give the walls weight and scale.
+    // Panel seams on the approach face give the walls scale. They glow just
+    // under the bloom threshold, so a wall reads as built even when unlit.
     const courses = (x0, x1, y0, y1) => {
-      for (let y = y0 + 2.4; y < y1 - 0.4; y += 2.4) {
-        batch.box('dark', x1 - x0, 0.14, 0.2, (x0 + x1) / 2, y, face, 4, 0x6a7686);
+      if (y1 - y0 < 1) return;
+      for (let y = y0 + 4.8; y < y1 - 0.6; y += 4.8) {
+        batch.box('neon', x1 - x0, 0.12, 0.12, (x0 + x1) / 2, y, face, 4, 0x5e7c92, 0, 0.42);
+      }
+      for (let x = Math.ceil((x0 + 0.6) / 6) * 6; x < x1 - 0.6; x += 6) {
+        batch.box('neon', 0.12, y1 - y0, 0.12, x, y0, face, 4, 0x5e7c92, 0, 0.32);
       }
     };
 
@@ -974,6 +1017,8 @@ export class Fortress {
       });
       return;
     }
+
+    if (f.debris) { this._debrisGate(batch, f, rng); return; }
 
     const gap = f.gaps[0];
     // Tiny guide lamps chase toward the opening. Pieces are small, so they
@@ -1055,6 +1100,38 @@ export class Fortress {
     }
   }
 
+  /**
+   * A drift of rock and hull plating packed across the lane above and below
+   * one clear band. Burning torn edges frame the band so it reads at speed.
+   */
+  _debrisGate(batch, f, rng) {
+    const gap = f.gaps[0], top = ALT_MAX + 10, t = f.thickness;
+    const fill = (y0, y1) => {
+      for (let y = y0; y < y1; y += 4.6) {
+        for (let x = -DECK_HALF; x <= DECK_HALF; x += 5.2) {
+          const s = rng.range(2.8, 3.8);
+          const cy = Math.min(y1 - s * 0.6, y + rng.range(0.6, 1.8));
+          batch.add('rock', rockGeometry(rng, s), x + rng.range(-1, 1), Math.max(y0 + s * 0.5, cy), f.z + rng.range(-t / 2 + 1, t / 2 - 1), s * 2,
+            rng.pick([0xb8b0a4, 0x9a928a, 0xc4b8a8]), 0, 1, { spin: [0, 1, 0, 0] });
+        }
+      }
+      // a few big hull plates lock the drift together
+      for (let k = 0; k < 5; k++) {
+        const w = rng.range(9, 15), h = Math.min(y1 - y0, rng.range(2.5, 5));
+        batch.box('hull', w, h, 1.2, rng.range(-DECK_HALF + w / 2, DECK_HALF - w / 2), y0 + rng.range(0, Math.max(0, y1 - y0 - h)), f.z - t / 2 + 0.4, 6, 0x8e98a6, rng.range(-0.2, 0.2));
+      }
+    };
+    if (gap.y > 0) fill(-6, gap.y);
+    fill(gap.y + gap.h, top);
+    // burning edges along both lips of the clear band
+    for (const y of [gap.y - 0.3, gap.y + gap.h + 0.1]) {
+      for (let x = -CORRIDOR_HALF; x <= CORRIDOR_HALF; x += 2.2) {
+        batch.box('neon', rng.range(1, 2), 0.22, 0.22, x, y, f.z - t / 2 - 0.3, 8, 0xff7a2a, rng.range(-0.3, 0.3), 1.3,
+          { anim: [FLICKER, rng.range(0.8, 1.6), rng.next()] });
+      }
+    }
+  }
+
   _arch(batch, f, rng) {
     const W = DECK_HALF * 2;
     const h = ALT_MAX + 12 - f.clearance;
@@ -1121,8 +1198,15 @@ export class Fortress {
     batch.box('dark', 17.5, 0.5, 17.5, f.x, f.y - 0.5, f.z, 8, 0xffffff);
     batch.box('neon', 15, 0.12, 0.35, f.x, f.y + 2.45, f.z - 7.6, 8, 0x45e0ff, 0, 0.85);
     batch.box('neon', 15, 0.12, 0.35, f.x, f.y + 2.45, f.z + 7.6, 8, 0x45e0ff, 0, 0.85);
-    // underside strut, so it doesn't look like it's floating by magic
-    batch.box('dark', 2, 6, 2, f.x, f.y - 6.2, f.z, 6, 0xffffff);
+    // underside strut, so it doesn't look like it's floating by magic; tower
+    // platforms stand on a pylon rising from the dreadnought's deck
+    if (f.pylon) {
+      const base = -15;
+      batch.box('dark', 2.6, f.y - 0.5 - base, 2.6, f.x, base, f.z, 6, 0xffffff);
+      for (let y = base + 3; y < f.y - 2; y += 4) batch.box('neon', 2.8, 0.18, 2.8, f.x, y, f.z, 8, 0xff3d55, 0, 0.9, { anim: [CHASE, 0.8, (y - base) / 24] });
+    } else {
+      batch.box('dark', 2, 6, 2, f.x, f.y - 6.2, f.z, 6, 0xffffff);
+    }
     // station-keeping thrusters and corner beacons
     for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
       batch.box('dark', 1.6, 1.2, 1.6, f.x + sx * 6.5, f.y - 1.6, f.z + sz * 6.5, 3, 0xffffff);
@@ -1178,7 +1262,8 @@ export class Fortress {
     // asteroid field, parallax from near to far
     for (let i = 0; i < rng.int(5, 9); i++) {
       const [x, y] = place(34, 170);
-      const s = lerp(2.5, 16, rng.next() ** 2) * (Math.abs(x) > 90 ? 1.8 : 1);
+      // big rocks only far out, so none sweeps across the chase camera
+      const s = lerp(2.5, 16, rng.next() ** 2) * (Math.abs(x) > 90 ? 1.8 : 1) * (Math.abs(x) < 45 ? 0.4 : 1);
       const z = z0 + rng.range(0, CHUNK_LEN);
       const axis = new THREE.Vector3(rng.range(-1, 1), rng.range(-1, 1), rng.range(-1, 1)).normalize();
       batch.add('rock', rockGeometry(rng, s), x, y, z, s * 2, rng.pick([0xb8b0a4, 0x9a928a, 0xc4b8a8, 0xa89c90]), 0, 1,
@@ -1237,10 +1322,16 @@ export class Fortress {
       const local = zc - start;
       const breach = Math.floor(local / 110) % 3 === 1 && local % 110 > 30 && local % 110 < 78;
       if (!breach) {
-        batch.box('hull', w, 26, len, cx, top - 26, zc, 12, 0x8e98a6);
+        batch.box('hull', w, 26, len, cx, top - 26, zc, 12, 0xb0bac8);
         batch.box('dark', w * 0.92, 0.5, len * 0.9, cx, top, zc, 5, 0x5a6472);
+        // armour-belt seams along both flanks: the hull reads as plated, not a hole
+        for (const s of [-1, 1]) {
+          for (const y of [top - 4, top - 11, top - 19]) {
+            batch.box('neon', 0.2, 0.3, len - 0.6, cx + s * (w / 2 + 0.08), y, zc, 8, 0x6e8ca2, 0, 0.5);
+          }
+        }
       } else {
-        batch.box('hull', w, 10, len, cx, top - 26, zc, 12, 0x7a8492);
+        batch.box('hull', w, 10, len, cx, top - 26, zc, 12, 0x98a2b0);
         for (let k = -2; k <= 2; k++) batch.box('dark', 0.9, 16, 0.9, cx + k * w * 0.2, top - 16, zc, 4, 0x4a5462);
         batch.box('dark', w, 0.8, 0.9, cx, top - 1, zc, 4, 0x4a5462);
         batch.box('neon', w * 0.5, 0.3, len * 0.6, cx, top - 14, zc, 8, 0xff6a2a, 0, 1.1, { anim: [FLICKER, 0.7, rng.next()] });
@@ -1258,18 +1349,19 @@ export class Fortress {
       const z = a + 10 + rng.range(0, Math.max(1, b - a - 20));
       if (z < b) {
         const h = rng.range(16, 30);
-        batch.add('hull', taperedBox(12, 8, h, 16, 10), cx + 24, top, z, 8, 0x9aa4b2);
+        batch.add('hull', taperedBox(12, 8, h, 16, 10), cx + 24, top, z, 8, 0xbcc6d2);
         batch.box('dark', 14, 1, 18, cx + 24, top + h * 0.6, z, 4, 0xffffff);
         for (let k = 0; k < 4; k++) batch.box('neon', 0.3, 0.7, 8, cx + 17.8, top + 4 + k * h * 0.2, z, 8, rng.bool(0.6) ? 0x3a5068 : 0xffc27a, 0, 1);
         batch.lamp(cx + 24, top + h + 0.6, z, 1, 0xff3d55, 1.6, [STROBE, 0.5, rng.next()]);
       }
     }
+    // gutted turret rings: smashed stumps with embers, clearly long dead
     for (let k = 0; k < 2; k++) {
       const z = a + rng.range(4, Math.max(5, b - a - 4));
       const x = cx + rng.range(-20, 12);
-      batch.box('dark', 5, 2.2, 6, x, top, z, 3, 0xffffff);
-      const barrel = new THREE.CylinderGeometry(0.4, 0.5, 9, 6).rotateX(Math.PI / 2 - 0.5).translate(0, 3.2, 3);
-      batch.add('dark', barrel, x, top, z, 3, 0xffffff, rng.range(-0.5, 0.5));
+      batch.box('dark', 5, 1.2, 6, x, top, z, 3, 0x6a7482);
+      for (let j = 0; j < 4; j++) batch.box('dark', rng.range(0.6, 1.4), rng.range(0.8, 2.2), rng.range(0.6, 1.6), x + rng.range(-2, 2), top + 1.2, z + rng.range(-2.4, 2.4), 3, 0x4a5462, rng.next() * 3);
+      batch.box('neon', 3.6, 0.2, 0.2, x, top + 1.25, z - 2.9, 8, 0xff6a2a, 0, 1.2, { anim: [FLICKER, 0.8, rng.next()] });
     }
     // stern engine bells
     if (end > z0 && end <= z0 + CHUNK_LEN) {
@@ -1294,7 +1386,11 @@ export class Fortress {
       const len = Math.min(16, b - z), zc = z + len / 2;
       const u = (zc - start) / (end - start);
       const taper = Math.max(0.3, Math.min(1, u / 0.1, (1 - u) / 0.08));
-      batch.box('hull', W * taper, H, len, x0 + W / 2, y0, zc, 14, 0x8a94a4);
+      batch.box('hull', W * taper, H, len, x0 + W / 2, y0, zc, 14, 0xb0bac8);
+      // plating seams on the corridor-facing flank
+      for (const y of [y0 + 5, y0 + 14, y0 + 34]) {
+        batch.box('neon', 0.2, 0.34, len - 0.6, x0 + W / 2 - W * taper / 2 - 0.12, y, zc, 8, 0x6e8ca2, 0, 0.5);
+      }
       // flight deck overhanging on the corridor side
       batch.box('deck', W * taper + 10, 1.4, len, x0 + W / 2 - 5, y0 + H, zc, 10, 0xb8c0cc);
       batch.box('paint', 0.5, 0.02, len * 0.6, x0 + 6, y0 + H + 1.42, zc, 4, 0xe0c060);
@@ -1312,7 +1408,7 @@ export class Fortress {
     // the island superstructure
     const islandZ = start + 420;
     if (islandZ >= z0 && islandZ < z0 + CHUNK_LEN) {
-      batch.add('hull', taperedBox(10, 7, 22, 26, 18), x0 + 36, y0 + H, islandZ, 8, 0x9aa4b2);
+      batch.add('hull', taperedBox(10, 7, 22, 26, 18), x0 + 36, y0 + H, islandZ, 8, 0xbcc6d2);
       for (let k = 0; k < 5; k++) batch.box('neon', 0.3, 0.8, 16, x0 + 30.8, y0 + H + 3 + k * 3.6, islandZ, 8, 0xffc27a, 0, 1.05);
       batch.stamp('spin', TPL.dish, x0 + 36, y0 + H + 25, islandZ, 4, 0xa4b0bf,
         { s: 4, fx: { pivot: [x0 + 36, y0 + H + 25, islandZ], spin: [0, 1, 0, 0.6] } });
@@ -1335,7 +1431,7 @@ export class Fortress {
     const local = z0 - sector.zStart;
     const W = 84;
 
-    batch.box('deck', W, 2.4, CHUNK_LEN, 0, -2.4, zc, 12, 0xaab6c4);
+    batch.box('deck', W, 2.4, CHUNK_LEN, 0, -2.4, zc, 12, 0xc4d0dc);
     batch.box('neon', W - 8, 0.1, 1.2, 0, 0.06, zc, 10, 0xff3d55, 0, 0.55);
 
     batch.captureSurfaces = false;
@@ -1343,6 +1439,7 @@ export class Fortress {
     // radial floor ribs and a pulse that runs the length of the arena
     for (let z = z0 + 6; z < z0 + CHUNK_LEN; z += 12) {
       batch.box('paint', W - 10, 0.02, 0.5, 0, 0.006, z, 6, 0x6a2a34);
+      batch.box('neon', W - 12, 0.03, 0.18, 0, 0.03, z, 8, 0xff3d55, 0, 0.35);
       for (const x of [-30, -18, 18, 30]) {
         batch.lamp(x, 0.02, z, 0.6, 0xff3d55, 1.25, [CHASE, 0.7, ((-z / 96) % 1 + 1) % 1]);
       }
