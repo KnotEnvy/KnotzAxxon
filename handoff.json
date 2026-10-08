@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
   "project": "KnotzAxxon",
-  "updated_at": "2026-10-08T00:46:54.230Z",
-  "status": "github_pages_candidate_prepared_local_tests_and_build_passed",
+  "updated_at": "2026-10-08T01:01:40.738Z",
+  "status": "github_pages_playtest_release_live_repo_clean_next_team_ready",
   "production_ready": false,
-  "production_ready_basis": "Release candidate for GitHub Pages playtesting. Automated release validation and deployment are being prepared; full human campaign, audio and device acceptance remain open.",
+  "production_ready_basis": "GitHub Pages release candidate is live. 94 tests, Pages build, CI production browser smoke, exact public assets and public desktop/portrait/landscape UI checks pass. Human campaign, audio, physical-device and sustained-performance acceptance remain pending.",
   "validation": {
     "tests": {
       "command": "npm test",
@@ -83,6 +83,30 @@
       "command": "npm audit",
       "vulnerabilities": 0,
       "compatible_fix": "source-map-js 1.2.1 -> 1.2.2"
+    },
+    "release_browser": {
+      "tests_passed": 94,
+      "build": "passed",
+      "dependency_audit_vulnerabilities": 0,
+      "browser": "passed Microsoft Edge 154.0.4258.62, LOW preset, desktop and two touch viewports",
+      "report": "docs/testing/2026-10-07/release-edge.json",
+      "served_assets_match_dist": true
+    },
+    "historical_campaign_and_showcase_evidence_date": "2026-09-26",
+    "pages_release": {
+      "regression_tests_passed": 94,
+      "build": "passed",
+      "workflow_conclusion": "success",
+      "workflow_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/37709563149",
+      "ci_report": "docs/testing/2026-10-07/release-ci.json",
+      "local_report": "docs/testing/2026-10-07/release-edge.json",
+      "public_report": "docs/testing/2026-10-07/public-verification.json",
+      "public_landscape_report": "docs/testing/2026-10-07/pages-live-landscape.json",
+      "quality": "low",
+      "limitations": [
+        "Public UI startup and layout checks, not human full-campaign acceptance.",
+        "Audio audition, physical controller/touch and named-hardware sustained performance remain open."
+      ]
     }
   },
   "critic": {
@@ -150,7 +174,7 @@
     "preview_http_status": 200,
     "referenced_assets_http_checked": 3,
     "served_assets_match_dist": true,
-    "verified_at": "2026-09-26T09:35:08.000Z",
+    "verified_at": "2026-10-08T00:59:45.397Z",
     "commands": [
       "npm ci",
       "npm test",
@@ -172,7 +196,9 @@
     ],
     "local_url": "http://127.0.0.1:4173/KnotzAxxon/",
     "pages_url": "https://knotenvy.github.io/KnotzAxxon/",
-    "playtest_guide": "docs/PLAYTEST.md"
+    "playtest_guide": "docs/PLAYTEST.md",
+    "acceptance_status": "human_playtest_pending",
+    "evidence": "docs/testing/2026-10-07/public-verification.json"
   },
   "open_items": [
     "Human playtest of the full campaign: opening pace, sector grades, clean-bonus threshold (35%), debris gates, electric barriers and the rack duel.",
@@ -188,27 +214,29 @@
     "branch": "main",
     "remote": "origin",
     "remote_url": "https://github.com/KnotEnvy/KnotzAxxon.git",
-    "branch_cleanup": "Session work landed on session/visual-juice and merged to main through PR #1.",
+    "branch_cleanup": "PR #1 was already merged to main. Release setup committed directly to main. The fully merged session/visual-juice branch was removed locally and from GitHub.",
     "ignored_local_directories": [
       "node_modules/",
       "dist/",
       ".claude/"
     ],
     "delivery": {
+      "status": "github_pages_published",
+      "branch": "main",
+      "remote_branch": "origin/main",
+      "verified_deployed_commit": "3a55bc24fd1307eacefaf9bbbb11e94d68a22d4a",
+      "workflow_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/37709563149",
+      "url": "https://knotenvy.github.io/KnotzAxxon/",
+      "verified_at": "2026-10-08T01:01:40.738Z",
+      "note": "This handoff-only evidence commit follows the verified deployed revision; it changes no game code and is excluded from Pages push triggers."
+    },
+    "previous_delivery": {
       "status": "merged",
       "pull_request": "https://github.com/KnotEnvy/KnotzAxxon/pull/1",
       "head_branch": "session/visual-juice",
       "verified_game_commit": "3e6426f",
       "base": "main",
       "verified_at": "2026-09-26T09:35:08.000Z"
-    },
-    "previous_delivery": {
-      "status": "published",
-      "verified_game_commit": "8dd450c9d25eca1f95835a9e490eaeff6a0cec68",
-      "branch": "main",
-      "remote_branch": "origin/main",
-      "verified_at": "2026-09-12T23:16:22.182Z",
-      "note": "The sector refinement game commit was verified against GitHub main before this handoff-only publication record was committed."
     }
   },
   "documents": [
@@ -234,7 +262,7 @@
   "polish": {
     "active_area": null,
     "strategy": "Two critic rounds (graphics, asset design, stage design, sound FX, fun factor) with a fix round after each, then a deployment pass; no added bloom or post-processing.",
-    "gate": "pages_release_automated_validation_and_human_acceptance_pending",
+    "gate": "pages_playtest_candidate_live_human_acceptance_pending",
     "live_playtest_performed_by_agent": false,
     "rendered_browser_checks_performed": true
   },
@@ -408,6 +436,22 @@
       "validation": "94 tests pass; production build passes; full-campaign smoke to loop 2 with zero errors; production smoke on three viewports; 24-scene showcase capture; offline audio render.",
       "independent_critic_performed": true,
       "player_acceptance_pending": true
+    },
+    {
+      "date": "2026-10-08T01:01:40.738Z",
+      "active_area": "Merge audit, GitHub Pages release preparation and next-team cleanup",
+      "changes": [
+        "Confirmed PR #1 and all visual-session commits are contained in main; removed the merged session/visual-juice branch locally and on GitHub.",
+        "Added a SHA-pinned GitHub Actions workflow using Node 24, locked dependency installation, regression tests, /KnotzAxxon/ build and production browser checks before deployment.",
+        "Locked Playwright for reproducible QA and updated source-map-js to 1.2.2; dependency audit reports zero vulnerabilities.",
+        "Moved 16 historical reviews to docs/reviews, 15 existing captures/reports to docs/testing/2026-09-12 and five QA scripts to scripts/qa; generated artifacts are ignored.",
+        "Preserved all game source, tests and the legacy prototype.",
+        "Added docs/RELEASE.md for reproduction/deployment/rollback and docs/PLAYTEST.md for human acceptance and next-team intake; JSON remains the authoritative handoff."
+      ],
+      "validation": "94 tests, Pages build, Edge local production smoke, CI Chromium production smoke and deployment pass. Exact public assets match dist. Public desktop/portrait and separately tested landscape UI pass.",
+      "workflow_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/37709563149",
+      "independent_critic_performed": false,
+      "player_acceptance_pending": true
     }
   ],
   "project_constraints": [
@@ -516,7 +560,7 @@
     "url": "https://knotenvy.github.io/KnotzAxxon/",
     "workflow": ".github/workflows/pages.yml",
     "source_branch": "main",
-    "status": "prepared_for_ci_validation_and_deployment",
+    "status": "live_verified_for_playtesting",
     "deployment_base": "/KnotzAxxon/",
     "build_command": "npm run build:pages",
     "release_check_command": "npm run test:release",
@@ -529,8 +573,23 @@
       "tests_passed": 94,
       "build": "passed",
       "dependency_audit_vulnerabilities": 0,
-      "browser": "Edge verification running; Windows Chromium stalled during public-UI interaction. CI Chromium validation gates publication."
-    }
+      "browser": "passed Microsoft Edge 154.0.4258.62, LOW preset, desktop and two touch viewports",
+      "report": "docs/testing/2026-10-07/release-edge.json",
+      "served_assets_match_dist": true
+    },
+    "deployed_commit": "3a55bc24fd1307eacefaf9bbbb11e94d68a22d4a",
+    "workflow_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/37709563149",
+    "workflow_conclusion": "success",
+    "deployment_id": 6924474442,
+    "deployment_state": "success",
+    "ci_browser_report": "docs/testing/2026-10-07/release-ci.json",
+    "published_at": "2026-10-08T00:53:25Z",
+    "local_transport_note": "The combined public check completed desktop and portrait before a Windows connection reset during landscape navigation. Exact assets were verified; the focused landscape check later passed without a retry.",
+    "public_verification": "docs/testing/2026-10-07/public-verification.json",
+    "public_landscape_report": "docs/testing/2026-10-07/pages-live-landscape.json",
+    "public_http_status": 200,
+    "served_assets_match_dist": true,
+    "public_verified_at": "2026-10-08T00:59:45.397Z"
   },
   "repo_cleanup": {
     "reviews": "docs/reviews/",
@@ -538,7 +597,14 @@
     "qa_scripts": "scripts/qa/",
     "generated_evidence": "artifacts/ (ignored)",
     "legacy": "legacy/ preserved",
-    "feature_branch": "session/visual-juice fully contained in main; removal pending deployment"
+    "feature_branch": "Removed local and origin/session/visual-juice after verifying its complete ancestry in main; no unmerged work.",
+    "status": "complete",
+    "remote_heads": [
+      "main"
+    ],
+    "worktrees": 1,
+    "handoff_format": "JSON only",
+    "historical_files_preserved": 36
   },
   "next_team": {
     "start_here": [
@@ -554,6 +620,9 @@
       "Named-hardware frame pacing and retry resource measurements"
     ],
     "release_gate": "Regression tests, Pages build and public-UI production smoke must pass before deployment.",
-    "deferred_work": "Existing open_items retain exposure and stage-design suggestions. No new critic scores were assigned during release preparation."
-  }
+    "deferred_work": "Existing open_items retain exposure and stage-design suggestions. No new critic scores were assigned during release preparation.",
+    "deployed_revision": "3a55bc24fd1307eacefaf9bbbb11e94d68a22d4a",
+    "playtest_url": "https://knotenvy.github.io/KnotzAxxon/"
+  },
+  "release_ready_for_playtesting": true
 }

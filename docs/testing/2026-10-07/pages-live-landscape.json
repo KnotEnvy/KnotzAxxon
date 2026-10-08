@@ -1,0 +1,31 @@
+{
+  "verified_at": "2026-10-08T00:59:45.397Z",
+  "url": "https://knotenvy.github.io/KnotzAxxon/",
+  "fixture": "touch-landscape",
+  "viewport": [
+    844,
+    390
+  ],
+  "quality": "low",
+  "transport_retries": [],
+  "errors": [],
+  "browser": "154.0.4258.62",
+  "layout": {
+    "width": 844,
+    "height": 390,
+    "scrollWidth": 844,
+    "altimeter": {
+      "left": 754,
+      "right": 830,
+      "top": 105,
+      "bottom": 285
+    },
+    "touch_controls": true,
+    "debug_api": false,
+    "canvas": {
+      "width": 633,
+      "height": 292
+    }
+  },
+  "status": "passed"
+}

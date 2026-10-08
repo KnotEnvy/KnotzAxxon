@@ -1,0 +1,83 @@
+{
+  "verified_at": "2026-10-08T00:46:07.413Z",
+  "url": "http://127.0.0.1:50436/KnotzAxxon/",
+  "target": "local_pages_build",
+  "checks": [
+    {
+      "fixture": "desktop",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "canvas": {
+        "width": 912,
+        "height": 513
+      },
+      "altimeter": {
+        "left": 1188.171875,
+        "right": 1264.171875,
+        "top": 212,
+        "bottom": 508
+      },
+      "debug_api": false,
+      "title_to_flight": true,
+      "keyboard_pause_resume": true,
+      "touch_controls": false
+    },
+    {
+      "shared_fortress_start": true,
+      "daily_sortie_start": true,
+      "settings_persist": true
+    },
+    {
+      "fixture": "touch-portrait",
+      "width": 390,
+      "scrollWidth": 390,
+      "canvas": {
+        "width": 263,
+        "height": 569
+      },
+      "altimeter": {
+        "left": 308,
+        "right": 376,
+        "top": 311,
+        "bottom": 533
+      },
+      "debug_api": false,
+      "title_to_flight": true,
+      "keyboard_pause_resume": false,
+      "touch_controls": true
+    },
+    {
+      "fixture": "touch-landscape",
+      "width": 844,
+      "scrollWidth": 844,
+      "canvas": {
+        "width": 569,
+        "height": 263
+      },
+      "altimeter": {
+        "left": 754,
+        "right": 830,
+        "top": 105,
+        "bottom": 285
+      },
+      "debug_api": false,
+      "title_to_flight": true,
+      "keyboard_pause_resume": false,
+      "touch_controls": true
+    }
+  ],
+  "errors": [],
+  "failed_requests": [],
+  "assets": [
+    "/KnotzAxxon/assets/index-DRBzDtQe.js",
+    "/KnotzAxxon/assets/three-D_srbncc.js",
+    "/KnotzAxxon/assets/index-9G-nlxEV.css"
+  ],
+  "assets_matched_dist": true,
+  "browser": "154.0.4258.62",
+  "status": "passed",
+  "quality": "low",
+  "limitations": [
+    "UI startup, layout and network smoke only; not a full campaign or physical-device playtest."
+  ]
+}
