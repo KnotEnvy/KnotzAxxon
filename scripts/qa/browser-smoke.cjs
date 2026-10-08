@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const {chromium}=require(process.env.KZ_PLAYWRIGHT_PATH || 'playwright');
+fs.mkdirSync('artifacts', {recursive:true});
 (async()=>{let browser;try{
  browser=await chromium.launch({channel:'msedge',headless:true});
  const page=await browser.newPage({viewport:{width:1280,height:720}});

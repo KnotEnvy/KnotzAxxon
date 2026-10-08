@@ -1,4 +1,4 @@
-> Current status and acceptance checklist: [handoff.json](handoff.json). Use `./start-user-testing.ps1` for the local production preview.
+> Playtest release: [GitHub Pages](https://knotenvy.github.io/KnotzAxxon/). Current status: [handoff.json](handoff.json). Next team: [playtest guide](docs/PLAYTEST.md) and [release guide](docs/RELEASE.md).
 
 # KNOTZAXXON
 
@@ -17,7 +17,7 @@ sounds or fonts in this repository — the whole thing is code.
 ## Running it
 
 ```bash
-npm install
+npm ci
 ```
 
 ```bash
@@ -205,14 +205,16 @@ seam rides in a chunk's existing batches. These are complete-composer scene snap
 sustained performance measurements. The campaign smoke also tracks the renderer's program
 count, which stays flat from the first frame to loop 2.
 
-**Tooling.** Four scripts in `artifacts/` drive the development build through headless
-Edge with Playwright (set `KZ_PLAYWRIGHT_PATH` to a `playwright-core` install and
+**Tooling.** Development capture scripts in `scripts/qa/` drive the development build through headless
+Edge with the locked Playwright dependency (set `KZ_PLAYWRIGHT_PATH` to a `playwright-core` install and
 `KZ_TEST_URL` to the dev server):
 `showcase-capture.cjs` renders a fixed list of seeded scenes with render counts and luma;
 `motion-capture.cjs` tiles six-frame sequences into contact sheets;
 `audio-render.cjs` renders the score and effects offline through the real mix bus to a WAV
 plus a labelled spectrogram; `campaign-smoke.cjs` flies the whole campaign with an
 invulnerable autopilot into loop 2 and reports grades, errors and frame timing.
+
+Release QA runs with `npm run build:pages` followed by `npm run test:release`. Install its browser once with `npx playwright install chromium`. Generated screenshots and reports go to ignored `artifacts/`; historical evidence and reviews live under `docs/`.
 
 Press **F** in game for the live readout: frame time, draw calls, triangles, resolution
 scale and entity count.

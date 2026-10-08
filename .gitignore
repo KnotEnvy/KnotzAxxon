@@ -5,3 +5,8 @@ dist/
 
 # Local assistant launch/permission settings
 .claude/
+
+# Generated QA captures; retained evidence lives under docs/testing/
+artifacts/
+playwright-report/
+test-results/

@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
   "project": "KnotzAxxon",
-  "updated_at": "2026-09-26T09:35:08.000Z",
-  "status": "visual_juice_session_complete_two_critic_rounds_merged_player_acceptance_pending",
-  "production_ready": true,
-  "production_ready_basis": "All automated gates pass (tests, build, campaign smoke, production smoke); human playtest and audio audition are still pending.",
+  "updated_at": "2026-10-08T00:46:54.230Z",
+  "status": "github_pages_candidate_prepared_local_tests_and_build_passed",
+  "production_ready": false,
+  "production_ready_basis": "Release candidate for GitHub Pages playtesting. Automated release validation and deployment are being prepared; full human campaign, audio and device acceptance remain open.",
   "validation": {
     "tests": {
       "command": "npm test",
@@ -14,7 +14,7 @@
       "file": "tests/showcase.test.js"
     },
     "build": {
-      "command": "npm run build",
+      "command": "npm run build:pages",
       "status": "passed",
       "modules": 50,
       "application_asset": "index-DRBzDtQe.js",
@@ -23,7 +23,7 @@
       "three_chunk_kb": 568.13
     },
     "campaign_smoke": {
-      "command": "KZ_PLAYWRIGHT_PATH=<playwright-core> KZ_TEST_URL=http://localhost:5177 node artifacts/campaign-smoke.cjs",
+      "command": "KZ_PLAYWRIGHT_PATH=<playwright-core> KZ_TEST_URL=http://localhost:5177 node scripts/qa/campaign-smoke.cjs",
       "pilot": "invulnerable scripted autopilot, trigger held; progression and stability check, not a balance test",
       "victory": true,
       "campaign_seconds": 297,
@@ -53,13 +53,13 @@
       "worst_rAF_frame_ms": 152.5
     },
     "showcase_capture": {
-      "command": "node artifacts/showcase-capture.cjs",
+      "command": "node scripts/qa/showcase-capture.cjs",
       "scenes": 24,
       "draw_calls": "126-283 (pre-session baseline 207-337)",
       "classic_luma": "S1 classic 40.8 (baseline 26); reactor classic 21.3 and space classic 18.4 remain the darkest"
     },
     "audio_render": {
-      "command": "node artifacts/audio-render.cjs",
+      "command": "node scripts/qa/audio-render.cjs",
       "peak_dbfs": -5.31,
       "music_rms_db": -25.6,
       "mix_during_blast_db": -15.2,
@@ -74,14 +74,23 @@
       "All rendered checks are headless Edge on one GPU; no sustained FPS or GPU-memory measurement on named hardware.",
       "No human playtest, audio audition, physical controller or touch session was performed by the agent.",
       "Headless compositing adds DOM-raster hitches (sector cards, HUD reveal) that a GPU-composited desktop browser should not show; frame pacing numbers include them."
-    ]
+    ],
+    "source_null_byte_scan": {
+      "files": 48,
+      "corruption_found": false
+    },
+    "dependency_audit": {
+      "command": "npm audit",
+      "vulnerabilities": 0,
+      "compatible_fix": "source-map-js 1.2.1 -> 1.2.2"
+    }
   },
   "critic": {
     "completed_rounds": 2,
     "scale": "1-10, 10 = best in class for a browser arcade shooter; scores not inflated to track earlier rounds",
     "reports": [
-      "CRITIC_SHOWCASE_1.md",
-      "CRITIC_SHOWCASE_2.md"
+      "docs/reviews/CRITIC_SHOWCASE_1.md",
+      "docs/reviews/CRITIC_SHOWCASE_2.md"
     ],
     "scores": [
       {
@@ -137,15 +146,16 @@
   },
   "user_testing": {
     "launcher": "./start-user-testing.ps1",
-    "url": "http://127.0.0.1:4173",
+    "url": "https://knotenvy.github.io/KnotzAxxon/",
     "preview_http_status": 200,
     "referenced_assets_http_checked": 3,
     "served_assets_match_dist": true,
     "verified_at": "2026-09-26T09:35:08.000Z",
     "commands": [
-      "npm install",
+      "npm ci",
       "npm test",
-      "npm run build",
+      "npm run build:pages",
+      "npm run test:release",
       "./start-user-testing.ps1"
     ],
     "checklist": [
@@ -159,7 +169,10 @@
       "Listen through a whole run on speakers and headphones: sector hooks in S1, S4, S7 and the boss, ambient beds per environment, and ducking under big blasts.",
       "Continue into loop 2 and check score banking and harder pacing.",
       "Test controller, touch, portrait and landscape; use F for telemetry on named hardware during crowded combat and the boss."
-    ]
+    ],
+    "local_url": "http://127.0.0.1:4173/KnotzAxxon/",
+    "pages_url": "https://knotenvy.github.io/KnotzAxxon/",
+    "playtest_guide": "docs/PLAYTEST.md"
   },
   "open_items": [
     "Human playtest of the full campaign: opening pace, sector grades, clean-bonus threshold (35%), debris gates, electric barriers and the rack duel.",
@@ -199,25 +212,29 @@
     }
   },
   "documents": [
-    "CRITIC_ROUND_1.md",
-    "CRITIC_ROUND_2.md",
-    "CRITIC_VISIBILITY_1.md",
-    "CRITIC_VISIBILITY_2.md",
-    "CRITIC_AUTHENTICITY_1.md",
-    "CRITIC_AUTHENTICITY_2.md",
-    "CRITIC_PERFORMANCE_1.md",
-    "CRITIC_PERFORMANCE_2.md",
-    "CRITIC_FEEL_1.md",
-    "CRITIC_FEEL_2.md",
-    "CRITIC_UX_1.md",
-    "CRITIC_UX_2.md",
-    "CRITIC_VISUAL_1.md",
-    "CRITIC_VISUAL_2.md"
+    "docs/reviews/CRITIC_AUTHENTICITY_1.md",
+    "docs/reviews/CRITIC_AUTHENTICITY_2.md",
+    "docs/reviews/CRITIC_FEEL_1.md",
+    "docs/reviews/CRITIC_FEEL_2.md",
+    "docs/reviews/CRITIC_PERFORMANCE_1.md",
+    "docs/reviews/CRITIC_PERFORMANCE_2.md",
+    "docs/reviews/CRITIC_ROUND_1.md",
+    "docs/reviews/CRITIC_ROUND_2.md",
+    "docs/reviews/CRITIC_SHOWCASE_1.md",
+    "docs/reviews/CRITIC_SHOWCASE_2.md",
+    "docs/reviews/CRITIC_UX_1.md",
+    "docs/reviews/CRITIC_UX_2.md",
+    "docs/reviews/CRITIC_VISIBILITY_1.md",
+    "docs/reviews/CRITIC_VISIBILITY_2.md",
+    "docs/reviews/CRITIC_VISUAL_1.md",
+    "docs/reviews/CRITIC_VISUAL_2.md",
+    "docs/PLAYTEST.md",
+    "docs/RELEASE.md"
   ],
   "polish": {
     "active_area": null,
     "strategy": "Two critic rounds (graphics, asset design, stage design, sound FX, fun factor) with a fix round after each, then a deployment pass; no added bloom or post-processing.",
-    "gate": "merged_regression_tested_player_acceptance_pending",
+    "gate": "pages_release_automated_validation_and_human_acceptance_pending",
     "live_playtest_performed_by_agent": false,
     "rendered_browser_checks_performed": true
   },
@@ -241,8 +258,8 @@
       ],
       "live_playtest_performed_by_agent": false,
       "reports": [
-        "CRITIC_VISIBILITY_1.md",
-        "CRITIC_VISIBILITY_2.md"
+        "docs/reviews/CRITIC_VISIBILITY_1.md",
+        "docs/reviews/CRITIC_VISIBILITY_2.md"
       ],
       "remaining_acceptance": [
         "Enemy visibility at low/high altitude on both lanes",
@@ -266,8 +283,8 @@
       "gate": "8.5_provisional_source_simulation_live_acceptance_pending",
       "live_playtest_performed_by_agent": false,
       "reports": [
-        "CRITIC_AUTHENTICITY_1.md",
-        "CRITIC_AUTHENTICITY_2.md"
+        "docs/reviews/CRITIC_AUTHENTICITY_1.md",
+        "docs/reviews/CRITIC_AUTHENTICITY_2.md"
       ],
       "changes": [
         "Standard gunfire stays level and forward; aim steering only with explicit Flight Assist",
@@ -295,8 +312,8 @@
       ],
       "gate": "8.5_provisional_engineering_live_measurements_pending",
       "reports": [
-        "CRITIC_PERFORMANCE_1.md",
-        "CRITIC_PERFORMANCE_2.md"
+        "docs/reviews/CRITIC_PERFORMANCE_1.md",
+        "docs/reviews/CRITIC_PERFORMANCE_2.md"
       ],
       "live_playtest_performed_by_agent": false
     },
@@ -306,8 +323,8 @@
       "gate": "8.5_provisional_source_simulation_live_acceptance_pending",
       "live_playtest_performed_by_agent": false,
       "reports": [
-        "CRITIC_FEEL_1.md",
-        "CRITIC_FEEL_2.md"
+        "docs/reviews/CRITIC_FEEL_1.md",
+        "docs/reviews/CRITIC_FEEL_2.md"
       ],
       "static_scores": [
         7.4,
@@ -324,8 +341,8 @@
       "gate": "8.5_provisional_source_live_acceptance_pending",
       "live_playtest_performed_by_agent": false,
       "reports": [
-        "CRITIC_VISUAL_1.md",
-        "CRITIC_VISUAL_2.md"
+        "docs/reviews/CRITIC_VISUAL_1.md",
+        "docs/reviews/CRITIC_VISUAL_2.md"
       ]
     },
     {
@@ -338,8 +355,8 @@
       "gate": "8.5_provisional_source_live_acceptance_pending",
       "live_playtest_performed_by_agent": false,
       "reports": [
-        "CRITIC_UX_1.md",
-        "CRITIC_UX_2.md"
+        "docs/reviews/CRITIC_UX_1.md",
+        "docs/reviews/CRITIC_UX_2.md"
       ]
     },
     {
@@ -484,13 +501,59 @@
     "scope": "Refine the existing eight sectors; retain isometric altitude-dependent forward combat and fortress/space transitions."
   },
   "tooling": {
-    "playwright": "Scripts expect KZ_PLAYWRIGHT_PATH pointing at a playwright-core install and use installed Edge (channel msedge).",
+    "playwright": "Playwright is locked in devDependencies. Run npx playwright install chromium for production release QA. Historical development captures can use installed Edge and KZ_PLAYWRIGHT_PATH.",
     "scripts": {
-      "artifacts/showcase-capture.cjs": "Seeded scenes rendered with draw calls, triangles and luma; KZ_ONLY filters scenes, KZ_OUT sets the folder.",
-      "artifacts/motion-capture.cjs": "Six-frame sequences tiled into contact sheets.",
-      "artifacts/audio-render.cjs": "Offline score and effects render to WAV, spectrogram and loudness JSON.",
-      "artifacts/campaign-smoke.cjs": "Invulnerable autopilot through the whole campaign into loop 2: grades, results rows, errors, frame timing, program count."
+      "scripts/qa/showcase-capture.cjs": "Seeded scenes rendered with draw calls, triangles and luma; KZ_ONLY filters scenes, KZ_OUT sets the folder.",
+      "scripts/qa/motion-capture.cjs": "Six-frame sequences tiled into contact sheets.",
+      "scripts/qa/audio-render.cjs": "Offline score and effects render to WAV, spectrogram and loudness JSON.",
+      "scripts/qa/campaign-smoke.cjs": "Invulnerable autopilot through the whole campaign into loop 2: grades, results rows, errors, frame timing, program count.",
+      "scripts/qa/release-smoke.cjs": "Production-only title, menus, real keyboard flight/pause/resume, daily sortie, shared seed, settings persistence and touch-layout checks. Starts a Pages-path preview locally; KZ_TEST_URL targets the deployed site."
     },
     "visual_verification": "Page screenshots do not capture the WebGL canvas reliably; the capture scripts read pixels back from the renderer instead."
+  },
+  "release": {
+    "target": "GitHub Pages",
+    "url": "https://knotenvy.github.io/KnotzAxxon/",
+    "workflow": ".github/workflows/pages.yml",
+    "source_branch": "main",
+    "status": "prepared_for_ci_validation_and_deployment",
+    "deployment_base": "/KnotzAxxon/",
+    "build_command": "npm run build:pages",
+    "release_check_command": "npm run test:release",
+    "human_acceptance": "pending",
+    "reference_docs": [
+      "https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages",
+      "https://vite.dev/guide/static-deploy.html#github-pages"
+    ],
+    "local_validation": {
+      "tests_passed": 94,
+      "build": "passed",
+      "dependency_audit_vulnerabilities": 0,
+      "browser": "Edge verification running; Windows Chromium stalled during public-UI interaction. CI Chromium validation gates publication."
+    }
+  },
+  "repo_cleanup": {
+    "reviews": "docs/reviews/",
+    "historical_evidence": "docs/testing/2026-09-12/",
+    "qa_scripts": "scripts/qa/",
+    "generated_evidence": "artifacts/ (ignored)",
+    "legacy": "legacy/ preserved",
+    "feature_branch": "session/visual-juice fully contained in main; removal pending deployment"
+  },
+  "next_team": {
+    "start_here": [
+      "handoff.json",
+      "docs/PLAYTEST.md",
+      "docs/RELEASE.md"
+    ],
+    "first_action": "Collect human Pages playtest findings with deployed commit, fortress code and device settings before modifying game balance.",
+    "acceptance_pending": [
+      "Full campaign and loop 2 on Pages",
+      "Audio audition by ear",
+      "Physical controller and touch devices",
+      "Named-hardware frame pacing and retry resource measurements"
+    ],
+    "release_gate": "Regression tests, Pages build and public-UI production smoke must pass before deployment.",
+    "deferred_work": "Existing open_items retain exposure and stage-design suggestions. No new critic scores were assigned during release preparation."
   }
 }

@@ -9,7 +9,7 @@
  * It is a progression and stability check, not a balance playtest: the
  * pilot cannot die and aims with perfect altitude knowledge.
  *
- *   KZ_PLAYWRIGHT_PATH=... KZ_TEST_URL=http://localhost:5177 node artifacts/campaign-smoke.cjs
+ *   KZ_PLAYWRIGHT_PATH=... KZ_TEST_URL=http://localhost:5177 node scripts/qa/campaign-smoke.cjs
  */
 const fs = require('node:fs');
 const { chromium } = require(process.env.KZ_PLAYWRIGHT_PATH || 'playwright');
@@ -150,6 +150,7 @@ const OUT = process.env.KZ_OUT || 'artifacts/campaign-smoke.json';
       };
     });
     const report = { ...result, errors };
+    fs.mkdirSync(require('node:path').dirname(OUT), {recursive:true});
     fs.writeFileSync(OUT, JSON.stringify(report, null, 2));
     console.log(JSON.stringify(report, null, 2));
     if (errors.length || !result.campaign.victory) process.exitCode = 1;

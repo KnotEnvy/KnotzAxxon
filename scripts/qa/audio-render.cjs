@@ -5,7 +5,7 @@
  *   - audition-spectrum.png (spectrogram with labelled event markers)
  *   - audition.json        (per-segment loudness and the duck depth)
  *
- *   KZ_PLAYWRIGHT_PATH=... KZ_TEST_URL=http://localhost:5177 KZ_OUT=artifacts/audio node artifacts/audio-render.cjs
+ *   KZ_PLAYWRIGHT_PATH=... KZ_TEST_URL=http://localhost:5177 KZ_OUT=artifacts/audio node scripts/qa/audio-render.cjs
  */
 const fs = require('node:fs');
 const path = require('node:path');

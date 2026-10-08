@@ -3,7 +3,7 @@
  * contact sheets (6 frames, left to right, top to bottom). Stills cannot show
  * animation timing; these show how effects and set pieces evolve.
  *
- *   KZ_PLAYWRIGHT_PATH=... KZ_TEST_URL=http://localhost:5177 KZ_OUT=artifacts/motion node artifacts/motion-capture.cjs
+ *   KZ_PLAYWRIGHT_PATH=... KZ_TEST_URL=http://localhost:5177 KZ_OUT=artifacts/motion node scripts/qa/motion-capture.cjs
  */
 const fs = require('node:fs');
 const path = require('node:path');

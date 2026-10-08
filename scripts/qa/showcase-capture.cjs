@@ -3,7 +3,7 @@
  * seeded scenes and saves one rendered frame per scene, plus render counts.
  *
  *   KZ_PLAYWRIGHT_PATH=<dir>/node_modules/playwright-core \
- *   KZ_TEST_URL=http://localhost:5177 KZ_OUT=artifacts/showcase node artifacts/showcase-capture.cjs
+ *   KZ_TEST_URL=http://localhost:5177 KZ_OUT=artifacts/showcase node scripts/qa/showcase-capture.cjs
  *
  * Scenes run the real Game.update/lateUpdate with a scripted pilot (steady
  * lane, trigger held) so bullets, kills, explosions and animation are live.
