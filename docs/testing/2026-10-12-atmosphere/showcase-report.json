@@ -1,0 +1,259 @@
+{
+  "quality": "high",
+  "scenes": [
+    {
+      "name": "title"
+    },
+    {
+      "name": "s1-opening-classic",
+      "camera": "classic",
+      "sector": 1,
+      "calls": 106,
+      "triangles": 54191,
+      "enemies": 1,
+      "luma": 40.6,
+      "nearBlack": 41
+    },
+    {
+      "name": "s1-opening-modern",
+      "camera": "modern",
+      "sector": 1,
+      "calls": 138,
+      "triangles": 65737,
+      "enemies": 2,
+      "luma": 41.3,
+      "nearBlack": 23
+    },
+    {
+      "name": "s1-turret-chase",
+      "camera": "chase",
+      "sector": 1,
+      "calls": 140,
+      "triangles": 64847,
+      "enemies": 1,
+      "luma": 45.9,
+      "nearBlack": 27
+    },
+    {
+      "name": "s1-wall-modern",
+      "camera": "modern",
+      "sector": 1,
+      "calls": 127,
+      "triangles": 60293,
+      "enemies": 1,
+      "luma": 32.2,
+      "nearBlack": 42
+    },
+    {
+      "name": "s2-guns-classic",
+      "camera": "classic",
+      "sector": 2,
+      "calls": 105,
+      "triangles": 49643,
+      "enemies": 6,
+      "luma": 42.1,
+      "nearBlack": 40
+    },
+    {
+      "name": "s2-guns-chase",
+      "camera": "chase",
+      "sector": 2,
+      "calls": 162,
+      "triangles": 69519,
+      "enemies": 10,
+      "luma": 52.7,
+      "nearBlack": 14
+    },
+    {
+      "name": "s3-space-classic",
+      "camera": "classic",
+      "sector": 3,
+      "calls": 125,
+      "triangles": 53287,
+      "enemies": 6,
+      "luma": 17.8,
+      "nearBlack": 42
+    },
+    {
+      "name": "s3-space-chase",
+      "camera": "chase",
+      "sector": 3,
+      "calls": 100,
+      "triangles": 42805,
+      "enemies": 2,
+      "luma": 37.3,
+      "nearBlack": 25
+    },
+    {
+      "name": "s4-reactor-modern",
+      "camera": "modern",
+      "sector": 4,
+      "calls": 139,
+      "triangles": 63389,
+      "enemies": 4,
+      "luma": 35.7,
+      "nearBlack": 28
+    },
+    {
+      "name": "s4-reactor-classic",
+      "camera": "classic",
+      "sector": 4,
+      "calls": 144,
+      "triangles": 58583,
+      "enemies": 10,
+      "luma": 21.8,
+      "nearBlack": 45
+    },
+    {
+      "name": "s5-formation-modern",
+      "camera": "modern",
+      "sector": 5,
+      "calls": 145,
+      "triangles": 34041,
+      "enemies": 7,
+      "luma": 26.6,
+      "nearBlack": 43
+    },
+    {
+      "name": "s6-citadel-chase",
+      "camera": "chase",
+      "sector": 6,
+      "calls": 175,
+      "triangles": 76441,
+      "enemies": 11,
+      "luma": 40.8,
+      "nearBlack": 26
+    },
+    {
+      "name": "s7-gauntlet-classic",
+      "camera": "classic",
+      "sector": 7,
+      "calls": 139,
+      "triangles": 60333,
+      "enemies": 10,
+      "luma": 32.7,
+      "nearBlack": 44
+    },
+    {
+      "name": "s8-boss-classic",
+      "camera": "classic",
+      "sector": 8,
+      "calls": 138,
+      "triangles": 36365,
+      "enemies": 0,
+      "luma": 31.2,
+      "nearBlack": 45
+    },
+    {
+      "name": "s8-boss-chase",
+      "camera": "chase",
+      "sector": 8,
+      "calls": 153,
+      "triangles": 38593,
+      "enemies": 0,
+      "luma": 30.4,
+      "nearBlack": 52
+    },
+    {
+      "name": "s8-boss-modern",
+      "camera": "modern",
+      "sector": 8,
+      "calls": 166,
+      "triangles": 38753,
+      "enemies": 0,
+      "luma": 31.9,
+      "nearBlack": 50
+    },
+    {
+      "name": "sector-transition-modern",
+      "camera": "modern",
+      "sector": 2,
+      "calls": 127,
+      "triangles": 58153,
+      "enemies": 2,
+      "luma": 42.9,
+      "nearBlack": 27
+    },
+    {
+      "name": "s3-dreadnought-classic",
+      "camera": "classic",
+      "sector": 3,
+      "calls": 86,
+      "triangles": 51311,
+      "enemies": 2,
+      "luma": 20.7,
+      "nearBlack": 39
+    },
+    {
+      "name": "s3-dreadnought-chase",
+      "camera": "chase",
+      "sector": 3,
+      "calls": 137,
+      "triangles": 46579,
+      "enemies": 6,
+      "luma": 34.3,
+      "nearBlack": 28
+    },
+    {
+      "name": "s5-carrier-modern",
+      "camera": "modern",
+      "sector": 5,
+      "calls": 141,
+      "triangles": 33381,
+      "enemies": 6,
+      "luma": 26.9,
+      "nearBlack": 44
+    },
+    {
+      "name": "s4-perimeter-modern",
+      "camera": "modern",
+      "sector": 4,
+      "calls": 131,
+      "triangles": 57427,
+      "enemies": 2,
+      "luma": 33.1,
+      "nearBlack": 33
+    },
+    {
+      "name": "s4-fence-modern",
+      "camera": "modern",
+      "sector": 4,
+      "calls": 128,
+      "triangles": 59055,
+      "enemies": 3,
+      "luma": 39.2,
+      "nearBlack": 25
+    },
+    {
+      "name": "s4-fence-classic",
+      "camera": "classic",
+      "sector": 4,
+      "calls": 102,
+      "triangles": 47559,
+      "enemies": 3,
+      "luma": 26.4,
+      "nearBlack": 41
+    },
+    {
+      "name": "explosion-modern",
+      "calls": 141,
+      "triangles": 56521,
+      "enemies": 3,
+      "luma": 43.5,
+      "nearBlack": 24
+    },
+    {
+      "name": "boss-duel-chase",
+      "calls": 136,
+      "triangles": 28377,
+      "enemies": 0,
+      "luma": 32.1,
+      "nearBlack": 52
+    },
+    {
+      "name": "results"
+    }
+  ],
+  "errors": [],
+  "browser": "155.0.4283.45"
+}

@@ -69,6 +69,7 @@ Touch controls appear automatically on coarse-pointer devices.
 - **Guns fire level and forward.** Match the target lane and altitude. Only Flight Assist enables aim steering.
 - **Visible combat.** Off-screen target hits consume the shot without damage, score or explosion feedback. A single target-height echo sits beside the altimeter; it turns green at matching altitude. The cyan alignment bracket still confirms a firing lane. Enemy overlays have been removed.
 - **Screen-relative steering.** Left/right input, directional rolls, radar and stereo panning agree in all three camera views.
+- **Hit confirmation.** A brief pale cross confirms damage, gold accents mark weak points and kills, and a grey diamond means boss armor blocked the shot. The boss bar names the current target. Damage chirps differ from armor ricochets; important pilot warnings briefly lower weapon noise.
 - **Chain feedback.** The first kill starts the counter; every third kill raises the multiplier to a maximum of x8. The larger countdown turns red near expiry, with milestone and chain-loss messages.
 
 The opening speed eases from 36 to 40 world units per second (previously 48), with fuel burn adjusted to preserve cost per distance. The first sector introduces fuel, a lone gun, a forgiving wall, radar and fighters in sequence. Gun batteries, fighter waves, reactor gates and the final fortress each have distinct encounter weights. The HUD route strip tracks all eight sectors; brief sector titles reveal in steps, with reduced-motion support.
@@ -197,13 +198,10 @@ tapered ribbon rather than a pile of additive sprites for exactly that reason.
 between 55% and 100%, rate-limited so the image never pumps. Quality presets are
 auto-detected on first run from core count, device memory and pointer type.
 
-**Draw-call measurement.** Counts vary with camera, scene and quality. On the HIGH preset at
-1280x720 (headless Edge, GTX 1650 Ti) the 24 showcase scenes measure roughly 126–283 calls,
-below the pre-session build's 207–337 despite the added scenery: the player ship is baked into
-four meshes by material, idle hit-flash shells no longer draw, and every landmark, lamp and
-seam rides in a chunk's existing batches. These are complete-composer scene snapshots, not
-sustained performance measurements. The campaign smoke also tracks the renderer's program
-count, which stays flat from the first frame to loop 2.
+**Rendering measurements.** Counts vary with camera, scene and quality. See
+[`docs/release-validation.json`](docs/release-validation.json) for the current capture and
+campaign results. Scene snapshots and scripted CPU timing are not sustained hardware FPS
+measurements. Idle hit shells do not draw, and scenery details share chunk material batches.
 
 **Tooling.** Development capture scripts in `scripts/qa/` drive the development build through headless
 Edge with the locked Playwright dependency (set `KZ_PLAYWRIGHT_PATH` to a `playwright-core` install and
@@ -214,7 +212,7 @@ Edge with the locked Playwright dependency (set `KZ_PLAYWRIGHT_PATH` to a `playw
 plus a labelled spectrogram; `campaign-smoke.cjs` flies the whole campaign with an
 invulnerable autopilot into loop 2 and reports grades, errors and frame timing.
 
-Release QA runs with `npm run build:pages` followed by `npm run test:release`. Install its browser once with `npx playwright install chromium`. Generated screenshots and reports go to ignored `artifacts/`; historical evidence and reviews live under `docs/`.
+Release QA runs with `npm run build:pages` followed by `npm run test:release`. Install its browser once with `npx playwright install chromium`. Generated screenshots, audio and intermediate reports belong in ignored `artifacts/` and can be deleted after review. Use the concise current validation JSON in `docs/` for release status. Historical text reports remain under `docs/reviews/` and `docs/testing/`; tracked captures are recoverable from Git history, and QA scripts regenerate new captures.
 
 Press **F** in game for the live readout: frame time, draw calls, triangles, resolution
 scale and entity count.

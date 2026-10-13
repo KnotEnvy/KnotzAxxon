@@ -51,6 +51,9 @@ const URL = process.env.KZ_TEST_URL || 'http://localhost:5177';
       // --- effects over the music
       const fx = [
         [1.0, 'LASER x4', () => { for (let k = 0; k < 4; k++) { a.at(1.0 + k * 0.115); a.laser(k % 2 ? 0.22 : -0.22); } }],
+        [1.5, 'DAMAGE CONFIRM', () => a.at(1.5).targetHit(-0.25, 45)],
+        [1.7, 'WEAK POINT', () => a.at(1.7).targetHit(0.25, 45, true)],
+        [1.9, 'ARMOUR RICOCHET', () => a.at(1.9).impact(0, 30)],
         [2.2, 'TURRET FIRE (far)', () => a.at(2.2).enemyShot(0.3, 70, 'turret')],
         [2.6, 'TURRET FIRE (near)', () => a.at(2.6).enemyShot(-0.3, 8, 'heavy')],
         [3.2, 'EXPLOSION + DUCK', () => a.at(3.2).explosion(1.7, 0.2, 20)],
@@ -65,6 +68,13 @@ const URL = process.env.KZ_TEST_URL || 'http://localhost:5177';
         [11.3, 'COOLED', () => a.at(11.3).cooled()],
         [12.0, 'MINE ARM', () => a.at(12.0).mineArm(-0.4)],
         [12.8, 'RADAR DOWN', () => a.at(12.8).radarDown(0.2)],
+        [13.5, 'DENSE FIRE UNDER WARNING', () => {
+          for(let k=0;k<22;k++) {
+            a.at(13.5+k*0.1).laser(k%2 ? -0.22 : 0.22);
+            if(k%3===0) a.at(13.5+k*0.1).enemyShot(-0.3,18,'heavy');
+            if(k%5===0) a.at(13.5+k*0.1).explosion(0.85,0.3,35);
+          }
+        }],
         [14.4, 'LOW FUEL', () => { a.at(14.4).lowFuel(false); a.at(15.4).lowFuel(true); }],
         [16.4, 'SHIELD HIT', () => a.at(16.4).shield(0)],
         [17.4, 'HULL HIT', () => a.at(17.4).hurt()],
@@ -81,8 +91,11 @@ const URL = process.env.KZ_TEST_URL || 'http://localhost:5177';
       const L = buffer.getChannelData(0), R = buffer.getChannelData(1);
 
       // --- stats: peak, RMS per second, duck depth around the 3.2 s blast
-      let peak = 0;
-      for (let i = 0; i < L.length; i++) peak = Math.max(peak, Math.abs(L[i]), Math.abs(R[i]));
+      let peak = 0, clippedSamples = 0, nonFiniteSamples = 0;
+      for (let i = 0; i < L.length; i++) {
+        peak = Math.max(peak, Math.abs(L[i]), Math.abs(R[i]));
+        for(const v of [L[i],R[i]]) { if(!Number.isFinite(v)) nonFiniteSamples++; if(Math.abs(v)>=1) clippedSamples++; }
+      }
       const rmsAt = (t0, t1) => {
         let s = 0, n = 0;
         for (let i = Math.floor(t0 * RATE); i < Math.floor(t1 * RATE); i++) { s += L[i] * L[i] + R[i] * R[i]; n += 2; }
@@ -180,6 +193,7 @@ const URL = process.env.KZ_TEST_URL || 'http://localhost:5177';
         wavB64, pngB64,
         stats: {
           seconds: SECONDS, peakDbfs: +(20 * Math.log10(peak)).toFixed(2),
+          clippedSamples, nonFiniteSamples,
           rmsPerSecondDb: perSecond,
           musicBeforeBlastDb: +rmsAt(2.7, 3.15).toFixed(1),
           mixDuringBlastDb: +rmsAt(3.25, 3.7).toFixed(1),
@@ -191,7 +205,7 @@ const URL = process.env.KZ_TEST_URL || 'http://localhost:5177';
     fs.writeFileSync(path.join(OUT, 'audition-spectrum.png'), Buffer.from(result.pngB64, 'base64'));
     fs.writeFileSync(path.join(OUT, 'audition.json'), JSON.stringify({ ...result.stats, errors }, null, 2));
     console.log(JSON.stringify({ ...result.stats, events: result.stats.events.length, errors }, null, 2));
-    if (errors.length) process.exitCode = 1;
+    if (errors.length || result.stats.clippedSamples || result.stats.nonFiniteSamples || !Number.isFinite(result.stats.peakDbfs)) process.exitCode = 1;
   } finally {
     await browser.close();
   }

@@ -270,7 +270,7 @@ export class PostFX {
     this.bloom.enabled = q.bloom;
     this.bloom.strength = q.bloomStrength;
     const u = this.composite.uniforms;
-    u.uGrain.value = q.grain ? 0.045 : 0;
+    u.uGrain.value = q.grain ? 0.022 : 0;
     // The low preset already renders below native and upscales; FXAA on top
     // of that just smears it.
     u.uFxaa.value = q.resolution >= 1 ? 1 : 0;

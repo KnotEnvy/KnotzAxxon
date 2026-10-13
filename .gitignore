@@ -6,7 +6,13 @@ dist/
 # Local assistant launch/permission settings
 .claude/
 
-# Generated QA captures; retained evidence lives under docs/testing/
+# Generated QA captures; keep only docs/release-validation.json as release evidence
 artifacts/
 playwright-report/
 test-results/
+
+# Keep generated media out of documentation commits
+/docs/**/*.png
+/docs/**/*.jpg
+/docs/**/*.webp
+/docs/**/*.wav

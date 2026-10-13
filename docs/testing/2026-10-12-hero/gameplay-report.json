@@ -1,0 +1,47 @@
+{
+  "quality": "high",
+  "scenes": [
+    {
+      "name": "s1-opening-classic",
+      "camera": "classic",
+      "sector": 1,
+      "calls": 104,
+      "triangles": 41871,
+      "enemies": 1,
+      "luma": 41,
+      "nearBlack": 40
+    },
+    {
+      "name": "s1-opening-modern",
+      "camera": "modern",
+      "sector": 1,
+      "calls": 136,
+      "triangles": 49681,
+      "enemies": 2,
+      "luma": 40.3,
+      "nearBlack": 28
+    },
+    {
+      "name": "s1-turret-chase",
+      "camera": "chase",
+      "sector": 1,
+      "calls": 138,
+      "triangles": 49271,
+      "enemies": 1,
+      "luma": 46.2,
+      "nearBlack": 27
+    },
+    {
+      "name": "s3-space-chase",
+      "camera": "chase",
+      "sector": 3,
+      "calls": 100,
+      "triangles": 29677,
+      "enemies": 2,
+      "luma": 46.1,
+      "nearBlack": 21
+    }
+  ],
+  "errors": [],
+  "browser": "155.0.4283.45"
+}

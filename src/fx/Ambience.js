@@ -9,7 +9,7 @@
  */
 
 import * as THREE from 'three';
-import { damp } from '../core/Utils.js';
+import { Rng, damp } from '../core/Utils.js';
 
 const VERT = /* glsl */`
   uniform vec3 uCenter;
@@ -27,6 +27,11 @@ const VERT = /* glsl */`
     vec3 d = abs(wp - uCenter) / (uBox * 0.5);
     wp += uTail * aTail * (0.5 + aSeed.y);
     vAlpha = (1.0 - smoothstep(0.55, 1.0, max(d.x, max(d.y, d.z)))) * (1.0 - aTail * 0.85);
+    // Keep the immediate aiming corridor quiet. Motes frame the lane and
+    // gain depth through different magnitudes instead of becoming fake bolts.
+    float corridor = smoothstep(5.0, 22.0, abs(wp.x-uCenter.x));
+    vAlpha *= mix(0.22,1.0,corridor) * (0.35+0.65*aSeed.z);
+    vAlpha *= 0.82+0.18*sin(uTime*(0.35+aSeed.x)+aSeed.z*30.0);
     gl_Position = projectionMatrix * viewMatrix * vec4(wp, 1.0);
   }
 `;
@@ -47,8 +52,8 @@ const CLASSIC_STREAK = { opacity: 0.5, color: new THREE.Color(0x8fb0ff) };
 /** Per-sky presets: colour, opacity, tail vector per unit speed, drift. */
 const PRESETS = {
   dusk: { color: 0xc8d6e6, opacity: 0.22, tail: [0, 0, -0.035], drift: [0.4, -0.2, 0] },
-  deepspace: { color: 0xcfe2ff, opacity: 0.62, tail: [0, 0, -0.11], drift: [0, 0, 0] },
-  ember: { color: 0xff9a4a, opacity: 0.7, tail: [0, -0.02, -0.01], drift: [0.3, 3.2, 0] },
+  deepspace: { color: 0xa9c9ed, opacity: 0.48, tail: [0, 0, -0.075], drift: [0, 0, 0] },
+  ember: { color: 0xd5a572, opacity: 0.48, tail: [0, -0.014, -0.008], drift: [0.3, 3.2, 0] },
   void: { color: 0x9fb4ff, opacity: 0.4, tail: [0, 0, -0.07], drift: [0, 0, 0] },
 };
 
@@ -57,8 +62,9 @@ export class AmbientDust {
     const seeds = new Float32Array(count * 2 * 3);
     const tails = new Float32Array(count * 2);
     const positions = new Float32Array(count * 2 * 3);
+    const rng = new Rng(0xa6b1e);
     for (let i = 0; i < count; i++) {
-      const sx = Math.random(), sy = Math.random(), sz = Math.random();
+      const sx = rng.next(), sy = rng.next(), sz = rng.next();
       for (let k = 0; k < 2; k++) {
         seeds.set([sx, sy, sz], (i * 2 + k) * 3);
         tails[i * 2 + k] = k;

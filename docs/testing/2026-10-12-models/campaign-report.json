@@ -1,0 +1,96 @@
+{
+  "campaign": {
+    "victory": true,
+    "bossSeen": true,
+    "seconds": 296.7,
+    "kills": 111,
+    "score": 88330,
+    "grades": "A A A S S S S S",
+    "threads": 1,
+    "grazes": 28,
+    "loop": 0
+  },
+  "results": {
+    "title": "FORTRESS NEUTRALISED",
+    "continueVisible": true,
+    "continueLabel": "CONTINUE: LOOP 2",
+    "rows": [
+      "FORTRESS CODE1QGLZ9",
+      "SECTOR REACHED08",
+      "SECTOR GRADES1A2A3A4S5S6S7S8S",
+      "BEST GRADES1A2A3A4S5S6S7S8S",
+      "TARGETS DESTROYED111",
+      "THREADS / GRAZES1 / 28",
+      "STYLE BONUS1,700",
+      "FLIGHT TIME4:56",
+      "COMBAT SCORE88,330",
+      "TIME BONUS24,480",
+      "TOTAL112,810",
+      "NEW RECORDRANK 01"
+    ],
+    "screen": "over"
+  },
+  "loop2": {
+    "state": "playing",
+    "loop": 1,
+    "sector": 1,
+    "scoreBanked": 112810,
+    "scoreAfter": 120910,
+    "enemies": 6
+  },
+  "sectors": [
+    {
+      "index": 0,
+      "atSeconds": 0,
+      "score": 0
+    },
+    {
+      "index": 1,
+      "atSeconds": 38.3,
+      "score": 4650
+    },
+    {
+      "index": 2,
+      "atSeconds": 79.4,
+      "score": 13260
+    },
+    {
+      "index": 3,
+      "atSeconds": 111,
+      "score": 20810
+    },
+    {
+      "index": 4,
+      "atSeconds": 151.7,
+      "score": 27930
+    },
+    {
+      "index": 5,
+      "atSeconds": 184.3,
+      "score": 42520
+    },
+    {
+      "index": 6,
+      "atSeconds": 224.8,
+      "score": 52450
+    },
+    {
+      "index": 7,
+      "atSeconds": 258,
+      "score": 58610
+    }
+  ],
+  "renderedFrameCpuMs": {
+    "samples": 5051,
+    "median": 5.5,
+    "p95": 10.3,
+    "p99": 14.3,
+    "max": 101.2
+  },
+  "programs": 53,
+  "memory": {
+    "geometries": 130,
+    "textures": 38
+  },
+  "errors": []
+}

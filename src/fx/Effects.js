@@ -403,8 +403,9 @@ export class Effects {
     this.materials = materials;
 
     this.sparks = new ParticleSystem(scene, materials.glow, quality.particleBudget, { intensity: 1.25 });
-    this.smoke = new ParticleSystem(scene, materials.glow, Math.floor(quality.particleBudget * 0.35), {
+    this.smoke = new ParticleSystem(scene, materials.smoke ?? materials.glow, Math.floor(quality.particleBudget * 0.35), {
       blending: THREE.NormalBlending,
+      fadeIn: 0.16,
       intensity: 0.85,
       renderOrder: 7,
     });
@@ -431,8 +432,8 @@ export class Effects {
     if (this.sparks.capacity !== q.particleBudget) {
       this.sparks.dispose(); this.smoke.dispose();
       this.sparks = new ParticleSystem(this.scene, this.materials.glow, q.particleBudget, { intensity: 1.25 });
-      this.smoke = new ParticleSystem(this.scene, this.materials.glow, Math.floor(q.particleBudget * 0.35), {
-        blending: THREE.NormalBlending, intensity: 0.85, renderOrder: 7,
+      this.smoke = new ParticleSystem(this.scene, this.materials.smoke ?? this.materials.glow, Math.floor(q.particleBudget * 0.35), {
+        blending: THREE.NormalBlending, intensity: 0.85, renderOrder: 7, fadeIn: 0.16,
       });
       if (this._viewportCamera) this.setViewport(this._viewportHeight, this._viewportCamera);
       this.sparks.setTime(this._time ?? 0); this.smoke.setTime(this._time ?? 0);

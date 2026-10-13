@@ -1,0 +1,79 @@
+{
+  "verified_at": "2026-10-13T03:04:46.700Z",
+  "url": "http://127.0.0.1:55197/KnotzAxxon/",
+  "target": "local_pages_build",
+  "checks": [
+    {
+      "fixture": "desktop",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "canvas": {
+        "width": 576,
+        "height": 324
+      },
+      "altimeter": {
+        "left": 1188.171875,
+        "right": 1264.171875,
+        "top": 212,
+        "bottom": 508
+      },
+      "debug_api": false,
+      "title_to_flight": true,
+      "keyboard_pause_resume": true,
+      "touch_controls": false
+    },
+    {
+      "shared_fortress_start": true,
+      "daily_sortie_start": true,
+      "settings_persist": true
+    },
+    {
+      "fixture": "touch-portrait",
+      "width": 390,
+      "scrollWidth": 390,
+      "canvas": {
+        "width": 263,
+        "height": 569
+      },
+      "altimeter": {
+        "left": 308,
+        "right": 376,
+        "top": 311,
+        "bottom": 533
+      },
+      "debug_api": false,
+      "title_to_flight": true,
+      "keyboard_pause_resume": false,
+      "touch_controls": true
+    },
+    {
+      "fixture": "touch-landscape",
+      "width": 844,
+      "scrollWidth": 844,
+      "canvas": {
+        "width": 569,
+        "height": 263
+      },
+      "altimeter": {
+        "left": 754,
+        "right": 830,
+        "top": 105,
+        "bottom": 285
+      },
+      "debug_api": false,
+      "title_to_flight": true,
+      "keyboard_pause_resume": false,
+      "touch_controls": true
+    }
+  ],
+  "errors": [],
+  "failed_requests": [],
+  "assets": [
+    "/KnotzAxxon/assets/index-DGHwWP07.js",
+    "/KnotzAxxon/assets/three-CnwDmlhA.js",
+    "/KnotzAxxon/assets/index-9G-nlxEV.css"
+  ],
+  "assets_matched_dist": true,
+  "browser": "155.0.4283.45",
+  "status": "passed"
+}

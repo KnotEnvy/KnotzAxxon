@@ -1,0 +1,537 @@
+{
+  "verified_at": "2026-10-12T23:32:24.65127-04:00",
+  "status": "local_release_candidate_passed",
+  "browser": "155.0.4283.45",
+  "tests": {
+    "command": "npm test",
+    "passed": 104,
+    "failed": 0
+  },
+  "build": {
+    "command": "npm run build:pages",
+    "status": "passed",
+    "modules": 52,
+    "application_kb": 321.28,
+    "application_gzip_kb": 104.36,
+    "assets": [
+      "/KnotzAxxon/assets/index-BkOtGFth.js",
+      "/KnotzAxxon/assets/three-CnwDmlhA.js",
+      "/KnotzAxxon/assets/index-B-4H7Kir.css"
+    ]
+  },
+  "production_browser": {
+    "verified_at": "2026-10-13T03:29:19.684Z",
+    "url": "http://127.0.0.1:56115/KnotzAxxon/",
+    "target": "local_pages_build",
+    "checks": [
+      {
+        "fixture": "desktop",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "canvas": {
+          "width": 912,
+          "height": 513
+        },
+        "altimeter": {
+          "left": 1188.171875,
+          "right": 1264.171875,
+          "top": 212,
+          "bottom": 508
+        },
+        "debug_api": false,
+        "title_to_flight": true,
+        "keyboard_pause_resume": true,
+        "touch_controls": false
+      },
+      {
+        "shared_fortress_start": true,
+        "daily_sortie_start": true,
+        "settings_persist": true
+      },
+      {
+        "fixture": "touch-portrait",
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "width": 292,
+          "height": 633
+        },
+        "altimeter": {
+          "left": 308,
+          "right": 376,
+          "top": 311,
+          "bottom": 533
+        },
+        "debug_api": false,
+        "title_to_flight": true,
+        "keyboard_pause_resume": false,
+        "touch_controls": true
+      },
+      {
+        "fixture": "touch-landscape",
+        "width": 844,
+        "scrollWidth": 844,
+        "canvas": {
+          "width": 569,
+          "height": 263
+        },
+        "altimeter": {
+          "left": 754,
+          "right": 830,
+          "top": 105,
+          "bottom": 285
+        },
+        "debug_api": false,
+        "title_to_flight": true,
+        "keyboard_pause_resume": false,
+        "touch_controls": true
+      }
+    ],
+    "errors": [],
+    "failed_requests": [],
+    "assets": [
+      "/KnotzAxxon/assets/index-BkOtGFth.js",
+      "/KnotzAxxon/assets/three-CnwDmlhA.js",
+      "/KnotzAxxon/assets/index-B-4H7Kir.css"
+    ],
+    "assets_matched_dist": true,
+    "browser": "155.0.4283.45",
+    "status": "passed"
+  },
+  "combat_feedback": {
+    "checks": [
+      {
+        "kind": "damage",
+        "opacity": "1",
+        "className": "combat-confirm damage",
+        "inBounds": true,
+        "pointerEvents": "none",
+        "width": 1280
+      },
+      {
+        "kind": "armour",
+        "opacity": "1",
+        "className": "combat-confirm armour",
+        "inBounds": true,
+        "pointerEvents": "none",
+        "width": 1280
+      },
+      {
+        "kind": "weak",
+        "opacity": "1",
+        "className": "combat-confirm weak",
+        "inBounds": true,
+        "pointerEvents": "none",
+        "width": 1280
+      },
+      {
+        "kind": "kill",
+        "opacity": "1",
+        "className": "combat-confirm kill",
+        "inBounds": true,
+        "pointerEvents": "none",
+        "width": 1280
+      },
+      {
+        "kind": "damage",
+        "opacity": "1",
+        "className": "combat-confirm damage",
+        "inBounds": true,
+        "pointerEvents": "none",
+        "width": 390
+      },
+      {
+        "kind": "armour",
+        "opacity": "1",
+        "className": "combat-confirm armour",
+        "inBounds": true,
+        "pointerEvents": "none",
+        "width": 390
+      },
+      {
+        "kind": "weak",
+        "opacity": "1",
+        "className": "combat-confirm weak",
+        "inBounds": true,
+        "pointerEvents": "none",
+        "width": 390
+      },
+      {
+        "kind": "kill",
+        "opacity": "1",
+        "className": "combat-confirm kill",
+        "inBounds": true,
+        "pointerEvents": "none",
+        "width": 390
+      }
+    ],
+    "errors": []
+  },
+  "combat_showcase": {
+    "quality": "high",
+    "scenes": [
+      {
+        "name": "s1-opening-classic",
+        "camera": "classic",
+        "sector": 1,
+        "calls": 106,
+        "triangles": 54191,
+        "enemies": 1,
+        "luma": 40.5,
+        "nearBlack": 41
+      },
+      {
+        "name": "s2-guns-chase",
+        "camera": "chase",
+        "sector": 2,
+        "calls": 161,
+        "triangles": 69483,
+        "enemies": 10,
+        "luma": 53.3,
+        "nearBlack": 14
+      },
+      {
+        "name": "s4-reactor-modern",
+        "camera": "modern",
+        "sector": 4,
+        "calls": 138,
+        "triangles": 63353,
+        "enemies": 4,
+        "luma": 35.9,
+        "nearBlack": 28
+      },
+      {
+        "name": "s8-boss-classic",
+        "camera": "classic",
+        "sector": 8,
+        "calls": 138,
+        "triangles": 36365,
+        "enemies": 0,
+        "luma": 31.2,
+        "nearBlack": 45
+      },
+      {
+        "name": "s8-boss-chase",
+        "camera": "chase",
+        "sector": 8,
+        "calls": 155,
+        "triangles": 38665,
+        "enemies": 0,
+        "luma": 30.4,
+        "nearBlack": 52
+      },
+      {
+        "name": "s8-boss-modern",
+        "camera": "modern",
+        "sector": 8,
+        "calls": 157,
+        "triangles": 38625,
+        "enemies": 0,
+        "luma": 31.6,
+        "nearBlack": 50
+      },
+      {
+        "name": "explosion-modern",
+        "calls": 137,
+        "triangles": 56063,
+        "enemies": 3,
+        "luma": 43.3,
+        "nearBlack": 23
+      },
+      {
+        "name": "boss-duel-chase",
+        "calls": 138,
+        "triangles": 28469,
+        "enemies": 0,
+        "luma": 32,
+        "nearBlack": 52
+      }
+    ],
+    "errors": [],
+    "browser": "155.0.4283.45"
+  },
+  "previous_visual_pass": {
+    "scenes": 27,
+    "errors": [],
+    "scope": "All eight sectors and three camera rigs; hero, model catalogue and atmosphere accepted by the user before the combat pass."
+  },
+  "audio": {
+    "seconds": 32,
+    "peakDbfs": -5.32,
+    "clippedSamples": 0,
+    "nonFiniteSamples": 0,
+    "rmsPerSecondDb": [
+      -26.1,
+      -25.8,
+      -24.9,
+      -17.6,
+      -23.8,
+      -25.4,
+      -26.5,
+      -25,
+      -24.7,
+      -25.1,
+      -24.1,
+      -25,
+      -22.7,
+      -23.1,
+      -22.5,
+      -21.7,
+      -22.1,
+      -23.5,
+      -24.8,
+      -23.6,
+      -18.4,
+      -23.8,
+      -22.7,
+      -22.2,
+      -21.8,
+      -16.8,
+      -25.3,
+      -22.2,
+      -22.3,
+      -21.6,
+      -22.6
+    ],
+    "musicBeforeBlastDb": -25.6,
+    "mixDuringBlastDb": -15.3,
+    "events": [
+      {
+        "t": 0.1,
+        "label": "SECTOR 1 SONG (A)"
+      },
+      {
+        "t": 15.338095238095237,
+        "label": "B SECTION + LEAD"
+      },
+      {
+        "t": 20.100000000000005,
+        "label": "BOSS RIFF"
+      },
+      {
+        "t": 1,
+        "label": "LASER x4"
+      },
+      {
+        "t": 1.5,
+        "label": "DAMAGE CONFIRM"
+      },
+      {
+        "t": 1.7,
+        "label": "WEAK POINT"
+      },
+      {
+        "t": 1.9,
+        "label": "ARMOUR RICOCHET"
+      },
+      {
+        "t": 2.2,
+        "label": "TURRET FIRE (far)"
+      },
+      {
+        "t": 2.6,
+        "label": "TURRET FIRE (near)"
+      },
+      {
+        "t": 3.2,
+        "label": "EXPLOSION + DUCK"
+      },
+      {
+        "t": 4.6,
+        "label": "FUEL WHOOMP"
+      },
+      {
+        "t": 5.4,
+        "label": "PICKUP FUEL"
+      },
+      {
+        "t": 6.2,
+        "label": "WALL PASS (tight)"
+      },
+      {
+        "t": 6.4,
+        "label": "THREAD BONUS"
+      },
+      {
+        "t": 7.4,
+        "label": "LOCK TICK"
+      },
+      {
+        "t": 8.2,
+        "label": "BARREL ROLL"
+      },
+      {
+        "t": 9.2,
+        "label": "FLY-BY"
+      },
+      {
+        "t": 10.2,
+        "label": "OVERHEAT"
+      },
+      {
+        "t": 11.3,
+        "label": "COOLED"
+      },
+      {
+        "t": 12,
+        "label": "MINE ARM"
+      },
+      {
+        "t": 12.8,
+        "label": "RADAR DOWN"
+      },
+      {
+        "t": 13.5,
+        "label": "DENSE FIRE UNDER WARNING"
+      },
+      {
+        "t": 14.4,
+        "label": "LOW FUEL"
+      },
+      {
+        "t": 16.4,
+        "label": "SHIELD HIT"
+      },
+      {
+        "t": 17.4,
+        "label": "HULL HIT"
+      },
+      {
+        "t": 18.6,
+        "label": "CHAIN x4 / x8"
+      },
+      {
+        "t": 20.4,
+        "label": "BOSS ROAR"
+      },
+      {
+        "t": 22.4,
+        "label": "SERVO + CHARGE"
+      },
+      {
+        "t": 25.6,
+        "label": "LAUNCHER BLAST"
+      },
+      {
+        "t": 27.4,
+        "label": "SECTOR CLEAR + GRADE"
+      },
+      {
+        "t": 29.2,
+        "label": "VICTORY"
+      }
+    ],
+    "errors": []
+  },
+  "campaign": {
+    "campaign": {
+      "victory": true,
+      "bossSeen": true,
+      "seconds": 293.8,
+      "kills": 134,
+      "score": 128200,
+      "grades": "A S B S B S S S",
+      "threads": 3,
+      "grazes": 52,
+      "loop": 0
+    },
+    "results": {
+      "title": "FORTRESS NEUTRALISED",
+      "continueVisible": true,
+      "continueLabel": "CONTINUE: LOOP 2",
+      "rows": [
+        "FORTRESS CODE781GFJ",
+        "SECTOR REACHED08",
+        "SECTOR GRADES1A2S3B4S5B6S7S8S",
+        "BEST GRADES1A2S3B4S5B6S7S8S",
+        "TARGETS DESTROYED134",
+        "THREADS / GRAZES3 / 52",
+        "STYLE BONUS3,400",
+        "FLIGHT TIME4:53",
+        "COMBAT SCORE128,200",
+        "TIME BONUS24,840",
+        "TOTAL153,040",
+        "NEW RECORDRANK 01"
+      ],
+      "screen": "over"
+    },
+    "loop2": {
+      "state": "playing",
+      "loop": 1,
+      "sector": 1,
+      "scoreBanked": 153040,
+      "scoreAfter": 160390,
+      "enemies": 9
+    },
+    "sectors": [
+      {
+        "index": 0,
+        "atSeconds": 0,
+        "score": 0
+      },
+      {
+        "index": 1,
+        "atSeconds": 38.3,
+        "score": 5900
+      },
+      {
+        "index": 2,
+        "atSeconds": 79.4,
+        "score": 15470
+      },
+      {
+        "index": 3,
+        "atSeconds": 111,
+        "score": 31350
+      },
+      {
+        "index": 4,
+        "atSeconds": 151.7,
+        "score": 55280
+      },
+      {
+        "index": 5,
+        "atSeconds": 183.5,
+        "score": 59940
+      },
+      {
+        "index": 6,
+        "atSeconds": 223.9,
+        "score": 78070
+      },
+      {
+        "index": 7,
+        "atSeconds": 256.9,
+        "score": 98730
+      }
+    ],
+    "renderedFrameCpuMs": {
+      "samples": 5007,
+      "median": 6,
+      "p95": 10.9,
+      "p99": 14.3,
+      "max": 52.2
+    },
+    "programs": 52,
+    "memory": {
+      "geometries": 132,
+      "textures": 39
+    },
+    "errors": []
+  },
+  "cleanup": {
+    "policy": "Generated screenshots and rendered audio removed from the checkout. Historical text reviews and JSON evidence retained; current evidence consolidated in this summary. Git history is unchanged.",
+    "removed_media_files": 184,
+    "removed_media_bytes": 164372232.0,
+    "removed_media_mib": 156.8
+  },
+  "limitations": [
+    "Audio was synthesized and measured through OfflineAudioContext; no human audition is claimed.",
+    "The campaign uses an invulnerable scripted pilot and is not a balance playtest.",
+    "Headless desktop and emulated touch layouts do not establish physical controller/touch or sustained named-device performance."
+  ],
+  "deployment": {
+    "status": "pending",
+    "url": "https://knotenvy.github.io/KnotzAxxon/"
+  }
+}

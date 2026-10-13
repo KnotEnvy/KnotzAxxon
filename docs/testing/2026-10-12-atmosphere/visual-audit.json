@@ -1,0 +1,67 @@
+{
+  "scope": "Background, ambient and accent visuals in the active src game; eight sectors and three camera rigs preserved.",
+  "refined": [
+    {
+      "area": "Celestial bodies",
+      "changes": "Procedural continent, ocean, cloud and ice detail; projection-aware atmospheric limb and sunlight-facing terminator; fine ring bands with a broad gap. Reuses the existing two body meshes."
+    },
+    {
+      "area": "Sky and reflections",
+      "changes": "Subdued nebula energy to separate the playfield; star density uniform now controls both layers. Existing baked cubemap, PMREM, shadow rig and sector palettes retained."
+    },
+    {
+      "area": "Lower city",
+      "changes": "Layered roof shading, rooftop equipment, window rows, quieter avenues and subtle shader-driven traffic. City UVs stay anchored while nebula drift remains slow. Fixed underlay edge fade to use the rotated plane XZ axes."
+    },
+    {
+      "area": "Skyline",
+      "changes": "Fitted rooftop caps, vents, parapets and supported warning lights; fixtures follow tower yaw and taper; separated warm window panes. Replaces oversized or detached cyan strips within existing material batches."
+    },
+    {
+      "area": "Asteroids",
+      "changes": "More geometric silhouette detail with continuous erosion and impact-basin displacement; softer cool rim. World positions, decorative clearance and orbit paths unchanged."
+    },
+    {
+      "area": "Smoke and steam",
+      "changes": "Cached procedural billowing alpha texture, short fade-in and varied rotation for shared smoke pool. Rotated sprite UVs clip outside their bounds. Immediate additive sparks retained."
+    },
+    {
+      "area": "Ambient dust and embers",
+      "changes": "Repeatable seeded GPU field, varied magnitudes, subtle shimmer, shorter quieter streaks and lower opacity near the aiming corridor. Still one fixed line draw."
+    },
+    {
+      "area": "Post-processing",
+      "changes": "Reduced film grain amplitude from 0.045 to 0.022. Existing bloom, damage, boost and CRT behavior retained."
+    }
+  ],
+  "reviewed_retained": [
+    "Hero and enemy airframes",
+    "Weapon and danger color language",
+    "Force fields and electric barriers",
+    "Runway chase lights and sector conduits",
+    "Exhaust ribbons",
+    "Shockwave rings and explosion lights",
+    "Wreck/debris pools",
+    "Altitude grid, shadow and aiming cues",
+    "Carrier/dreadnought landmarks"
+  ],
+  "validation": {
+    "tests_passed": 101,
+    "tests_failed": 0,
+    "pages_build": "passed; 52 modules",
+    "application_asset": "index-DGHwWP07.js",
+    "application_kb": 319.19,
+    "application_gzip_kb": 103.68,
+    "high_quality_showcase_scenes": 26,
+    "low_quality_showcase_scenes": 5,
+    "rendering_errors": 0,
+    "production_browser": "Desktop, touch portrait and touch landscape passed with no JavaScript errors or failed requests",
+    "campaign": "Invulnerable scripted pilot completed all eight sectors, victory and Loop 2 without errors"
+  },
+  "limits": [
+    "Live human visual/motion and sustained device performance acceptance remains separate from these automated checks.",
+    "Low-quality catalogue predates only the final minor rooftop fixture seating adjustment; final production smoke and high-quality catalogue include it.",
+    "Campaign CPU measurements ran alongside other validation and are not an isolated performance benchmark.",
+    "Changes are local, uncommitted and not published."
+  ]
+}

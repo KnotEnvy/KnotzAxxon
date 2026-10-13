@@ -14,7 +14,7 @@
 
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
-import { taperedBox } from '../render/GeoUtils.js';
+import { taperedBox, facetedHull, airframePanel, reflectorGeometry } from '../render/GeoUtils.js';
 import { LIGHT_ANIM } from '../render/Materials.js';
 import { Rng, clamp, lerp, TAU } from '../core/Utils.js';
 import { CHUNK_LEN, DECK_HALF, CORRIDOR_HALF, ALT_MAX, SECTOR_KINDS } from './Level.js';
@@ -267,8 +267,7 @@ const _tri = new Float32Array(9);
 function dishGeometry(r) {
   // A deep bowl with a rolled rim and a back truss reads as a dish from the
   // classic angle; a shallow disc turns into a paper cut-out edge-on.
-  const bowl = new THREE.CylinderGeometry(r, r * 0.3, r * 0.6, 16, 1, false);
-  bowl.rotateX(Math.PI / 2);
+  const bowl = reflectorGeometry(r, 16);
   const rim = new THREE.TorusGeometry(r, r * 0.07, 5, 18).translate(0, 0, r * 0.3);
   const horn = new THREE.CylinderGeometry(r * 0.05, r * 0.05, r * 1.1, 5).rotateX(Math.PI / 2).translate(0, 0, r * 0.75);
   const hub = new THREE.BoxGeometry(r * 0.4, r * 0.4, r * 0.4).translate(0, 0, -r * 0.45);
@@ -287,17 +286,19 @@ function fanGeometry(r) {
   return mergeFlat(parts);
 }
 
-/** Low-poly tumbling rock: displaced icosphere with deterministic dents. */
+/** Tumbling rock: continuous erosion and a broad impact basin, without cracks. */
 function rockGeometry(rng, r) {
-  const g = new THREE.IcosahedronGeometry(r, rng.bool(0.4) ? 1 : 0);
+  const g = new THREE.IcosahedronGeometry(r, rng.bool(0.4) ? 2 : 1);
   const p = g.attributes.position;
   const sx = rng.range(0.7, 1.3), sy = rng.range(0.55, 1.0), sz = rng.range(0.7, 1.4);
   const seed = rng.next() * 10;
   for (let i = 0; i < p.count; i++) {
     const x = p.getX(i), y = p.getY(i), z = p.getZ(i);
-    // Hash on the position so shared corners move together and stay watertight.
-    const h = Math.sin(x * 3.1 + y * 5.7 + z * 2.3 + seed) * 43758.5453;
-    const k = 0.78 + (h - Math.floor(h)) * 0.38;
+    // Position-based deformation keeps duplicated triangle corners identical.
+    const nx=x/r, ny=y/r, nz=z/r;
+    const erosion = Math.sin(nx*3.8+seed)*Math.sin(ny*4.3-seed)*Math.cos(nz*3.1+seed);
+    const basin = Math.max(0,nx*Math.cos(seed)*0.8+ny*0.6+nz*Math.sin(seed)*0.8-0.55);
+    const k = 0.94 + erosion*0.13 - basin*basin*0.36;
     p.setXYZ(i, x * k * sx, y * k * sy, z * k * sz);
   }
   g.computeVertexNormals();
@@ -314,8 +315,7 @@ function parkedFighterParts() {
   });
   return {
     hull: [
-      new THREE.BoxGeometry(1.1, 0.7, 4.2).translate(0, 1.0, 0),
-      new THREE.ConeGeometry(0.55, 1.6, 6).rotateX(-Math.PI / 2).translate(0, 1.0, -2.8),
+      facetedHull([[-3.5,.03,1,.95],[-1.8,.43,1.24,.72],[-.6,.56,1.37,.64],[1.2,.52,1.26,.66],[2.1,.35,1.22,.75]]),
       ...wings,
     ],
     dark: [
@@ -825,8 +825,8 @@ export class Fortress {
     const rot = rng.range(-0.25, 0.25);
     batch.stamp('hull', TPL.fighter.hull, x, 0, z, 3, 0x7a8088, { rotY: rot });
     batch.stamp('dark', TPL.fighter.dark, x, 0, z, 3, 0xffffff, { rotY: rot });
-    batch.box('grate', 1.9, 0.9, 5.2, x, 0.7, z, 2, 0x6a7466, rot);
-    batch.box('grate', 6.4, 0.18, 1.8, x, 0.88, z + 0.6, 2, 0x6a7466, rot);
+    batch.add('hull', facetedHull([[-1.9,.45,1.28,.72],[-.65,.62,1.53,.64],[1.4,.56,1.32,.66]]),x,0,z,3,0x788077,rot);
+    batch.add('hull', airframePanel([[-2.5,.75],[-.4,-.42],[.4,-.42],[2.5,.75],[2.45,1.18],[-2.45,1.18]],.96,.04,0),x,0,z,3,0x788077,rot);
     // hardstand outline
     batch.box('paint', 7.5, 0.02, 0.3, x, 0.006, z - 3.6, 4, 0x9aa4ae);
     batch.box('paint', 7.5, 0.02, 0.3, x, 0.006, z + 3.6, 4, 0x9aa4ae);
@@ -884,8 +884,12 @@ export class Fortress {
   _coolingStack(batch, rng, x, z, emit) {
     const h = rng.range(7, 11);
     batch.add('hull', taperedBox(4.2, 3.0, h, 4.2, 3.0), x, 0, z, 4, 0x9a8a80);
-    for (let y = 1.5; y < h - 1; y += 2.2) batch.box('dark', 4.4, 0.35, 4.4, x, y, z, 3, 0xffffff);
-    batch.box('neon', 3.1, 0.2, 3.1, x, h, z, 8, 0xff6a2a, 0, 1.2, { anim: [BREATHE, 0.4, rng.next()] });
+    for (let y = 1.5; y < h - 1; y += 2.2) {
+      const w = lerp(4.2,3.0,y/h)+.18;
+      batch.box('dark', w, .22, w, x, y, z, 3, 0xffffff);
+    }
+    batch.box('dark',3.2,.18,3.2,x,h,z,3,0xffffff);
+    batch.box('neon', 2.7, 0.05, 2.7, x, h+.19, z, 8, 0xff6a2a, 0, 1.2, { anim: [BREATHE, 0.4, rng.next()] });
     emit('steam', x, h + 0.4, z, 1);
   }
 
@@ -898,7 +902,7 @@ export class Fortress {
 
   _bunker(batch, rng, x, z, theme) {
     batch.add('hull', taperedBox(7, 5, 3.2, 8, 6), x, 0, z, 4, 0x8a929c);
-    batch.box('neon', 0.15, 0.4, 4, x - 2.6, 1.8, z, 8, theme.warm, 0, 1.1, { anim: [BREATHE, 0.3, rng.next()] });
+    batch.box('neon', 0.15, 0.4, 4, x - 3.03, 1.8, z, 8, theme.warm, 0, 1.1, { anim: [BREATHE, 0.3, rng.next()] });
     batch.box('dark', 2.4, 0.8, 2.4, x, 3.2, z, 3, 0xffffff);
   }
 
@@ -918,18 +922,29 @@ export class Fortress {
       // Towers rise from the fortress's lower tiers, so none of them float.
       const root = 60, taper = h / (h + root);
       batch.add('dark', taperedBox(lerp(wTop, w, 1 / taper), wTop, h + root, lerp(dTop, dBottom, 1 / taper), dTop), x, -root, z, 12, 0xffffff, rot);
+      // Fixtures are authored in each roof's own frame so yaw never leaves
+      // a beacon or parapet hanging in empty space beside a tapered tower.
+      const roof = (key, rw, rh, rd, ox, oy, oz, color, gain = 1, fx = null) =>
+        batch.box(key, rw, rh, rd, x + ox*Math.cos(rot) + oz*Math.sin(rot), h+oy,
+          z - ox*Math.sin(rot) + oz*Math.cos(rot), 8, color, rot, gain, fx);
+      roof('hull', wTop+0.3, 0.3, dTop+0.3, 0, -0.08, 0, 0x748394);
+      roof('dark', wTop*0.32, 0.9, dTop*0.40, 0, 0.22, 0, 0x7d8c9d);
+      for (let v=0; v<3; v++) roof('hull', wTop*0.24, 0.12, 0.13, 0, 1.12, (v-1)*dTop*0.10, 0x9aa6b4);
       if (side < 0) {
         // Low near-side roofs get a lit parapet so they read as buildings, not slabs.
-        batch.box('neon', w * 0.9, 0.18, 0.18, x, h - 0.1, z - dTop * 0.45, 8, 0x45e0ff, rot, 0.75);
-        batch.box('neon', w * 0.9, 0.18, 0.18, x, h - 0.1, z + dTop * 0.45, 8, 0x45e0ff, rot, 0.75);
+        for (const edge of [-1,1]) {
+          roof('hull', wTop, 0.35, 0.24, 0, 0.22, edge*dTop*0.48, 0x748394);
+          roof('neon', wTop*0.76, 0.09, 0.12, 0, 0.57, edge*dTop*0.48, themeFor(sector).accent, 0.6);
+        }
       }
 
       // aircraft warning lights, strobing out of phase like a real skyline
       if (rng.bool(0.55)) {
-        batch.box('neon', 1.1, 1.1, 1.1, x, h + 0.4, z, 8, 0xff3d55, 0, 1.5, { anim: [STROBE, rng.range(0.45, 0.8), rng.next()] });
+        roof('dark', 0.5, 1.6, 0.5, wTop*0.32, 0.22, 0, 0x9ca7b5);
+        roof('neon', 0.38, 0.30, 0.38, wTop*0.32, 1.82, 0, 0xff6e5a, 1.3, { anim: [STROBE, rng.range(0.45, 0.8), rng.next()] });
       }
       if (rng.bool(0.5)) {
-        batch.box('neon', 0.4, h * 0.6, 0.4, x + w * 0.4, h * 0.2, z, 8, 0x45e0ff, 0, 0.85, rng.bool(0.3) ? { anim: [BREATHE, 0.25, rng.next()] } : null);
+        roof('neon', wTop*0.24, 0.10, 0.12, 0, 0.6, -dTop*0.20, themeFor(sector).accent, 0.65, rng.bool(0.3) ? { anim: [BREATHE, 0.25, rng.next()] } : null);
       }
       if (side < 0) continue;
       // Tall far towers carry rotating radar and lit floors.
@@ -944,8 +959,13 @@ export class Fortress {
         if (!rng.bool(0.4)) continue;
         const y = f * 6, t = y / h;
         const ox = -(lerp(w, wTop, t) / 2 + 0.08);
-        batch.box('neon', 0.3, 0.5, lerp(dBottom, dTop, t) * rng.range(0.3, 0.7),
-          x + ox * Math.cos(rot), y, z - ox * Math.sin(rot), 8, rng.bool(0.7) ? 0xffc27a : 0x9fe8ff, rot, 1.05);
+        const span = lerp(dBottom, dTop, t) * rng.range(0.3, 0.7);
+        const tint = rng.bool(0.7) ? 0xffc27a : 0x9fc8da;
+        for (let pane=0; pane<4; pane++) {
+          const oz=(pane-1.5)*span/4;
+          batch.box('neon', 0.18, 0.38, span*0.16,
+            x+ox*Math.cos(rot)+oz*Math.sin(rot), y, z-ox*Math.sin(rot)+oz*Math.cos(rot), 8, tint, rot, 0.8);
+        }
       }
       if (h > 40 && rng.bool(0.25)) emit('stack', x, h + 1, z, 0.5);
       else if (themeFor(sector).name === 'battery' && h > 22 && rng.bool(0.6)) this._flakGun(batch, rng, x, z, emit, h);
@@ -1386,6 +1406,7 @@ export class Fortress {
       const len = Math.min(16, b - z), zc = z + len / 2;
       const u = (zc - start) / (end - start);
       const taper = Math.max(0.3, Math.min(1, u / 0.1, (1 - u) / 0.08));
+      const flank = x0 + W / 2 - W * taper / 2;
       batch.box('hull', W * taper, H, len, x0 + W / 2, y0, zc, 14, 0xb0bac8);
       // plating seams on the corridor-facing flank
       for (const y of [y0 + 5, y0 + 14, y0 + 34]) {
@@ -1393,17 +1414,17 @@ export class Fortress {
       }
       // flight deck overhanging on the corridor side
       batch.box('deck', W * taper + 10, 1.4, len, x0 + W / 2 - 5, y0 + H, zc, 10, 0xb8c0cc);
-      batch.box('paint', 0.5, 0.02, len * 0.6, x0 + 6, y0 + H + 1.42, zc, 4, 0xe0c060);
+      batch.box('paint', 0.5, 0.02, len * 0.6, flank + 6, y0 + H + 1.42, zc, 4, 0xe0c060);
       // hangar bays on the corridor-facing flank
       if (Math.floor(zc / 16) % 3 !== 0) {
-        batch.box('dark', 0.8, 9, len - 3, x0 - 0.2, y0 + 20, zc, 4, 0x1c222c);
-        batch.box('neon', 0.3, 0.4, len - 4, x0 - 0.6, y0 + 28.6, zc, 8, 0xffa04a, 0, 1.15);
-        batch.box('neon', 0.3, 0.2, len - 4, x0 - 0.6, y0 + 20.3, zc, 8, 0x45e0ff, 0, 0.8, { anim: [CHASE, 0.8, ((-zc / 128) % 1 + 1) % 1] });
+        batch.box('dark', 0.8, 9, len - 3, flank - 0.2, y0 + 20, zc, 4, 0x1c222c);
+        batch.box('neon', 0.3, 0.4, len - 4, flank - 0.6, y0 + 28.6, zc, 8, 0xffa04a, 0, 1.15);
+        batch.box('neon', 0.3, 0.2, len - 4, flank - 0.6, y0 + 20.3, zc, 8, 0x45e0ff, 0, 0.8, { anim: [CHASE, 0.8, ((-zc / 128) % 1 + 1) % 1] });
       } else {
-        for (let k = 0; k < 4; k++) batch.box('neon', 0.3, 0.6, 2, x0 - 0.2, y0 + 8 + k * 7, zc + rng.range(-4, 4), 8, rng.bool(0.7) ? 0xffc27a : 0x9fe8ff, 0, 1);
+        for (let k = 0; k < 4; k++) batch.box('neon', 0.3, 0.6, 2, flank - 0.2, y0 + 8 + k * 7, zc + rng.range(-4, 4), 8, rng.bool(0.7) ? 0xffc27a : 0x9fe8ff, 0, 1);
       }
       // catapult lights racing along the deck edge
-      batch.box('neon', 0.5, 0.2, 0.8, x0 - 4.6, y0 + H + 1.5, zc, 8, 0xfff0c0, 0, 1.3, { anim: [CHASE, 1.4, ((-zc / 96) % 1 + 1) % 1] });
+      batch.box('neon', 0.5, 0.2, 0.8, flank - 4.6, y0 + H + 1.5, zc, 8, 0xfff0c0, 0, 1.3, { anim: [CHASE, 1.4, ((-zc / 96) % 1 + 1) % 1] });
     }
     // the island superstructure
     const islandZ = start + 420;
