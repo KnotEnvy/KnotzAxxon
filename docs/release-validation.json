@@ -1,6 +1,6 @@
 {
-  "verified_at": "2026-10-12T23:32:24.65127-04:00",
-  "status": "local_release_candidate_passed",
+  "verified_at": "2026-10-13T03:52:58.418081+00:00",
+  "status": "published_tester_build_verified",
   "browser": "155.0.4283.45",
   "tests": {
     "command": "npm test",
@@ -523,7 +523,8 @@
     "policy": "Generated screenshots and rendered audio removed from the checkout. Historical text reviews and JSON evidence retained; current evidence consolidated in this summary. Git history is unchanged.",
     "removed_media_files": 184,
     "removed_media_bytes": 164372232.0,
-    "removed_media_mib": 156.8
+    "removed_media_mib": 156.8,
+    "retained": "Historical text/JSON evidence and the merged release branch remain. Generated media was removed; Git history was not rewritten."
   },
   "limitations": [
     "Audio was synthesized and measured through OfflineAudioContext; no human audition is claimed.",
@@ -531,7 +532,99 @@
     "Headless desktop and emulated touch layouts do not establish physical controller/touch or sustained named-device performance."
   ],
   "deployment": {
-    "status": "pending",
-    "url": "https://knotenvy.github.io/KnotzAxxon/"
+    "status": "github_pages_published_verified",
+    "url": "https://knotenvy.github.io/KnotzAxxon/",
+    "deployed_commit": "2bcdad9bced2c24edc7c058bab6f731682c2f709",
+    "workflow_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/38342937588",
+    "workflow_status": "success",
+    "verified_at": "2026-10-13T03:52:58.418081+00:00",
+    "note": "The following documentation-only evidence commit does not change game assets or trigger redeployment."
+  },
+  "pull_request": {
+    "url": "https://github.com/KnotEnvy/KnotzAxxon/pull/2",
+    "state": "merged",
+    "merge_commit": "2bcdad9bced2c24edc7c058bab6f731682c2f709",
+    "ci_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/38342418505",
+    "ci_status": "success"
+  },
+  "public_browser": {
+    "verified_at": "2026-10-13T03:51:05.817Z",
+    "url": "https://knotenvy.github.io/KnotzAxxon/",
+    "target": "deployed_site",
+    "checks": [
+      {
+        "fixture": "desktop",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "canvas": {
+          "width": 912,
+          "height": 513
+        },
+        "altimeter": {
+          "left": 1188.171875,
+          "right": 1264.171875,
+          "top": 212,
+          "bottom": 508
+        },
+        "debug_api": false,
+        "title_to_flight": true,
+        "keyboard_pause_resume": true,
+        "touch_controls": false
+      },
+      {
+        "shared_fortress_start": true,
+        "daily_sortie_start": true,
+        "settings_persist": true
+      },
+      {
+        "fixture": "touch-portrait",
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "width": 292,
+          "height": 633
+        },
+        "altimeter": {
+          "left": 308,
+          "right": 376,
+          "top": 311,
+          "bottom": 533
+        },
+        "debug_api": false,
+        "title_to_flight": true,
+        "keyboard_pause_resume": false,
+        "touch_controls": true
+      },
+      {
+        "fixture": "touch-landscape",
+        "width": 844,
+        "scrollWidth": 844,
+        "canvas": {
+          "width": 633,
+          "height": 292
+        },
+        "altimeter": {
+          "left": 754,
+          "right": 830,
+          "top": 105,
+          "bottom": 285
+        },
+        "debug_api": false,
+        "title_to_flight": true,
+        "keyboard_pause_resume": false,
+        "touch_controls": true
+      }
+    ],
+    "errors": [],
+    "failed_requests": [],
+    "assets": [
+      "/KnotzAxxon/assets/index-BkOtGFth.js",
+      "/KnotzAxxon/assets/three-CnwDmlhA.js",
+      "/KnotzAxxon/assets/index-B-4H7Kir.css"
+    ],
+    "assets_matched_dist": true,
+    "browser": "155.0.4283.45",
+    "status": "passed",
+    "transport_note": "Initial standard-browser attempts encountered connection resets. Final complete check passed with HTTP/2 and QUIC disabled in the isolated QA browser; deployed game unchanged. Bounded navigation retry support retained transport failures separately; the final run needed none."
   }
 }

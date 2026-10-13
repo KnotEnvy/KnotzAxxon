@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
   "project": "KnotzAxxon",
-  "updated_at": "2026-10-13T03:32:24.651270+00:00",
-  "status": "validated_release_candidate_awaiting_merge_and_pages",
+  "updated_at": "2026-10-13T03:52:58.418081+00:00",
+  "status": "github_pages_tester_release_live_verified",
   "production_ready": false,
-  "production_ready_basis": "Automated release gates passed. Ready to publish as the requested tester build; human gameplay, audio and hardware acceptance remain open.",
+  "production_ready_basis": "The requested tester build is merged and live. 104 tests, local and CI production checks, full scripted campaign and public desktop/portrait/landscape browser verification passed; served assets match the tested build. Human audio, balance, physical-device and sustained-performance acceptance remain open.",
   "release_scope": [
     "Hero ship: continuous closed airframe, fitted canopy/wings/engines and corrected Classic silhouette depth ordering.",
     "Model catalogue: nine enemy types, Sentinel shutters and details, pickup badges, missiles and scenery; repaired inward tapered-box face winding.",
@@ -29,7 +29,9 @@
     "audio_peak_dbfs": -5.32,
     "audio_clipped_samples": 0,
     "campaign_victory": true,
-    "loop_2_playing": true
+    "loop_2_playing": true,
+    "public_site": "passed, assets match local dist byte-for-byte",
+    "ci": "passed on PR and merged main"
   },
   "remaining_acceptance": [
     "Human full-campaign playtest of opening pace, fuel, gates, boss vulnerabilities and Loop 2.",
@@ -42,9 +44,18 @@
     "base_branch": "main",
     "remote": "https://github.com/KnotEnvy/KnotzAxxon.git",
     "delivery": {
-      "status": "pending",
-      "url": "https://knotenvy.github.io/KnotzAxxon/"
-    }
+      "status": "github_pages_published_verified",
+      "url": "https://knotenvy.github.io/KnotzAxxon/",
+      "deployed_commit": "2bcdad9bced2c24edc7c058bab6f731682c2f709",
+      "workflow_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/38342937588",
+      "workflow_status": "success",
+      "verified_at": "2026-10-13T03:52:58.418081+00:00",
+      "note": "The following documentation-only evidence commit does not change game assets or trigger redeployment."
+    },
+    "branch": "main",
+    "pull_request": "https://github.com/KnotEnvy/KnotzAxxon/pull/2",
+    "merged_commit": "2bcdad9bced2c24edc7c058bab6f731682c2f709",
+    "release_branch_status": "Merged; retained locally and remotely."
   },
   "commands": [
     "npm ci",
@@ -57,5 +68,6 @@
     "docs/RELEASE.md",
     "docs/release-validation.json"
   ],
-  "evidence_policy": "Keep new generated screenshots and WAVs in ignored artifacts/ only while reviewing. Current evidence is consolidated in docs/release-validation.json. Historical text/JSON reports remain; their removed tracked images are recoverable in Git history, or regenerated with QA scripts."
+  "evidence_policy": "Keep new generated screenshots and WAVs in ignored artifacts/ only while reviewing. Current evidence is consolidated in docs/release-validation.json. Historical text/JSON reports remain; their removed tracked images are recoverable in Git history, or regenerated with QA scripts.",
+  "ready_for_testers": true
 }
