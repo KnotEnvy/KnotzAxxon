@@ -39,12 +39,15 @@ function shapeFor(kind) {
     g = new THREE.TorusGeometry(1.55, 0.26, 4, 6);                       // hex ring
   } else if (kind === 'spread') {
     const parts = [];
-    for (let k = 0; k < 3; k++) for (const s of [-1, 1]) {
-      parts.push(new THREE.BoxGeometry(1.3, 0.3, 0.3).rotateZ(s * 0.6).translate(s * 0.5, -0.8 + k * 0.8 + 0.35, 0));
+    for (let k = 0; k < 3; k++) {
+      const shape = new THREE.Shape([[-.9,-.15],[0,.48],[.9,-.15],[.7,-.37],[0,.13],[-.7,-.37]].map(p=>new THREE.Vector2(...p)));
+      parts.push(new THREE.ExtrudeGeometry(shape,{depth:.12,bevelEnabled:true,bevelThickness:.035,bevelSize:.035,bevelSegments:1}).translate(0,-.8+k*.8,0));
     }
     g = merge(parts);                                                     // triple chevron
   } else if (kind === 'repair') {
-    g = merge([new THREE.BoxGeometry(2.2, 0.62, 0.5), new THREE.BoxGeometry(0.62, 2.2, 0.5)]);   // cross
+    const shape = new THREE.Shape([[-.31,-1.1],[.31,-1.1],[.31,-.31],[1.1,-.31],[1.1,.31],[.31,.31],
+      [.31,1.1],[-.31,1.1],[-.31,.31],[-1.1,.31],[-1.1,-.31],[-.31,-.31]].map(p=>new THREE.Vector2(...p)));
+    g = new THREE.ExtrudeGeometry(shape,{depth:.12,bevelEnabled:true,bevelThickness:.04,bevelSize:.04,bevelSegments:1});
   } else {
     g = merge([
       new THREE.CylinderGeometry(0.7, 0.7, 1.6, 10),
@@ -66,8 +69,8 @@ export class Pickup {
     this.alive = true;
     this.radius = 2.2;
 
-    shellGeo ??= new THREE.OctahedronGeometry(1.5, 0);
-    coreGeo ??= new THREE.IcosahedronGeometry(0.7, 0);
+    shellGeo ??= new THREE.TorusGeometry(1.98, .065, 6, 32);
+    coreGeo ??= new THREE.CylinderGeometry(1.64,1.64,.16,6).rotateX(Math.PI/2);
 
     this.group = new THREE.Group();
     this.pos = this.group.position;
@@ -75,11 +78,13 @@ export class Pickup {
 
     this.shell = new THREE.Mesh(
       shellGeo,
-      mats.neon(def.color, 1.4, { transparent: true, opacity: 0.45, additive: true, depthWrite: false }),
+      mats.neon(def.color, 1.15),
     );
-    this.core = new THREE.Mesh(coreGeo, mats.neon(def.color, 3.2));
-    this.core.scale.setScalar(0.55);
-    this.shape = new THREE.Mesh(shapeFor(kind), mats.neon(def.color, 1.9));
+    this.core = new THREE.Mesh(coreGeo, mats.enemyMetal ?? mats.darkMetal);
+    this.core.position.z = -.30;
+    this.shape = new THREE.Mesh(shapeFor(kind), mats.neon(def.color, 1.35));
+    this.shape.position.z = .10;
+    if (kind === 'fuel') this.shape.scale.set(.82, .82, .25);
     this.group.add(this.shell, this.core, this.shape);
 
     const halos = (mats._pickupHalos ??= new Map());
@@ -96,13 +101,11 @@ export class Pickup {
 
   update(dt, ctx) {
     this.phase += dt;
-    this.shell.rotation.y += dt * 1.4;
-    this.shell.rotation.x += dt * 0.9;
-    this.core.rotation.y -= dt * 2.2;
-    // the silhouette turns to face you on a slow wobble
-    this.shape.rotation.y = Math.sin(this.phase * 1.7) * 0.6 + (this.kind === 'shield' ? this.phase : 0);
-    this.shape.rotation.z = this.kind === 'shield' ? this.phase * 0.8 : Math.sin(this.phase * 2.2) * 0.12;
-    const pulse = 1 + Math.sin(this.phase * 4) * 0.12;
+    // Keep the badge readable in every rig; its ring never sweeps through it.
+    if (ctx.camera?.quaternion) this.group.quaternion.copy(ctx.camera.quaternion);
+    this.shell.rotation.z += dt * .3;
+    this.shape.rotation.z = Math.sin(this.phase * 2.2) * .08;
+    const pulse = 1 + Math.sin(this.phase * 4) * 0.025;
     this.shell.scale.setScalar(pulse);
     // the shared halo breathes in size rather than opacity
     this.halo.scale.setScalar(7 * (1 + Math.sin(this.phase * 4) * 0.2));

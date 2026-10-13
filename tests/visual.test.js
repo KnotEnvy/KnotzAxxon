@@ -86,7 +86,7 @@ test('energy shaders use inverse-transpose view normals and projection-aware unn
 
 test('manufactured enemies reuse bounded geometry and keep collision radii and telegraph meshes',()=>{
   const m=materials();
-  const budgets={turret:[7,2000,2.4],heavyTurret:[8,2400,3.4],silo:[6,2200,3.2],fuel:[5,2200,2.2],drone:[8,2200,2.2],interceptor:[8,2200,2.2]};
+  const budgets={turret:[7,2000,2.4],heavyTurret:[8,2400,3.4],silo:[6,2200,3.2],fuel:[5,2200,2.2],drone:[8,2200,2.2],interceptor:[8,2200,2.2],radar:[6,1500,3],mine:[4,1500,1.9],parked:[5,1800,2.4]};
   for(const [kind,[drawLimit,triangleLimit,radius]] of Object.entries(budgets)) {
     const first=createEnemy(kind,m,{x:0,y:0,z:0,seed:1}),second=createEnemy(kind,m,{x:0,y:0,z:0,seed:2});
     const meshes=[];first.group.traverse(o=>{if(o.isMesh)meshes.push(o);});

@@ -120,6 +120,10 @@ export class Audio {
     this.limiter.oversample = '2x';
 
     this.sfxBus = ctx.createGain();
+    // World weapons share a duckable bus. Pilot warnings and confirmations
+    // enter the SFX bus directly and keep their level during crowded combat.
+    this.combatBus = ctx.createGain();
+    this.combatBus.connect(this.sfxBus);
     this.musicBus = ctx.createGain();
     this.duck = ctx.createGain();
     // Big impacts also carve the music's low end, where the riff lives.
@@ -204,7 +208,7 @@ export class Audio {
     clearInterval(this._schedTimer);
     this.ready = false;
     if (this.ctx) {
-      for (const key of ['master', 'comp', 'brickwall', 'limiter', 'sfxBus', 'musicBus', 'duck', 'musicShelf', 'musicPocket',
+      for (const key of ['master', 'comp', 'brickwall', 'limiter', 'sfxBus', 'combatBus', 'musicBus', 'duck', 'musicShelf', 'musicPocket',
         'musicComp', 'muffle', 'reverb', 'reverbIn', 'sfxSend', 'musicSend']) {
         this[key]?.disconnect(); this[key] = null;
       }
@@ -349,7 +353,7 @@ export class Audio {
    * model (quieter and duller the further ahead the source is). Returns the
    * gain node the effect should drive.
    */
-  _voice(pan = 0, dist = 0, bus = this.sfxBus) {
+  _voice(pan = 0, dist = 0, bus = this.combatBus ?? this.sfxBus) {
     const g = this.ctx.createGain();
     let tail = g;
     const d = Math.max(0, dist);
@@ -391,6 +395,17 @@ export class Audio {
     this.musicPocket.gain.setTargetAtTime(0, t + 0.08, 0.12);
   }
 
+  /** Warnings briefly clear the weapon bed without silencing the action. */
+  _warningPocket() {
+    this._cuePocket();
+    const gain = this.combatBus?.gain;
+    if (!gain) return;
+    const t = this._now();
+    gain.cancelScheduledValues(t);
+    gain.setTargetAtTime(0.48, t, 0.008);
+    gain.setTargetAtTime(1, t + 0.12, 0.16);
+  }
+
   /**
    * Swap the reverb room (fortress, space or arena) and the ambient bed.
    * `flavor` 'ember' adds the reactor hum and steam hiss to a fortress.
@@ -427,9 +442,9 @@ export class Audio {
     f.frequency.exponentialRampToValueAtTime(700 * pitch, t + 0.11);
     f.Q.value = 2.5;
     const p = this._pan(pan);
-    g.connect(f); f.connect(p); p.connect(this.sfxBus);
+    g.connect(f); f.connect(p); p.connect(this.combatBus ?? this.sfxBus);
 
-    this._env(g, t, 0.002, 0.11, 0.3);
+    this._env(g, t, 0.002, 0.085, 0.24);
 
     const o1 = this._osc('sawtooth', 1500 * pitch, t, 0.13, g);
     o1.frequency.exponentialRampToValueAtTime(360 * pitch, t + 0.12);
@@ -535,9 +550,24 @@ export class Audio {
     o.frequency.exponentialRampToValueAtTime(180, t + 0.07);
   }
 
+  /** Confirm actual damage: a compact rising pair, brighter on a weak point.
+   * Separate throttle from armour impacts; no music duck on every bullet. */
+  targetHit(pan = 0, dist = 0, weak = false) {
+    if (!this.ready || !this._throttled(weak ? 'weakHit' : 'targetHit', 0.07)) return;
+    const t = this._now(), pitch = this._vary(0.025);
+    const out = this._voice(pan * 0.65, Math.min(24, Math.max(0, dist)), this.sfxBus);
+    const g = this.ctx.createGain(); g.connect(out);
+    this._env(g, t, 0.002, weak ? 0.12 : 0.075, weak ? 0.16 : 0.12);
+    const base = (weak ? 1180 : 850) * pitch;
+    const o = this._osc('triangle', base, t, 0.09, g);
+    o.frequency.exponentialRampToValueAtTime(base * 1.35, t + 0.055);
+    if (weak) this._osc('sine', base * 1.5, t + 0.025, 0.09, g);
+  }
+
   /** Shield absorbed damage — metallic ring. */
   shield(pan = 0) {
     if (!this.ready) return;
+    this._warningPocket();
     const t = this._now();
     const g = this.ctx.createGain();
     const p = this._pan(pan);
@@ -552,6 +582,7 @@ export class Audio {
   /** Player took hull damage. */
   hurt() {
     if (!this.ready) return;
+    this._warningPocket();
     const t = this._now();
     const g = this.ctx.createGain();
     const f = this.ctx.createBiquadFilter();
@@ -651,6 +682,7 @@ export class Audio {
   /** Weapon overheated: steam vent and a falling servo tone. */
   overheat() {
     if (!this.ready) return;
+    this._warningPocket();
     const t = this._now();
     const g = this.ctx.createGain();
     const f = this.ctx.createBiquadFilter();
@@ -680,6 +712,7 @@ export class Audio {
   /** Low-fuel warning. `urgent` doubles the pips. */
   lowFuel(urgent = false) {
     if (!this.ready) return;
+    this._warningPocket();
     const t = this._now();
     const g = this.ctx.createGain();
     g.connect(this.sfxBus);
@@ -714,6 +747,7 @@ export class Audio {
   /** Warning klaxon. */
   alarm() {
     if (!this.ready || !this._throttled('alarm', 0.9)) return;
+    this._warningPocket();
     const t = this._now();
     const g = this.ctx.createGain();
     g.connect(this.sfxBus);

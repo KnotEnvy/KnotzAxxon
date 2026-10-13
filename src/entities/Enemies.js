@@ -15,6 +15,7 @@
 
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import { facetedHull, airframePanel, reflectorGeometry, strut } from '../render/GeoUtils.js';
 import { SIDE } from './Projectiles.js';
 import { CORRIDOR_HALF, ALT_MIN, ALT_MAX } from '../world/Level.js';
 import { Rng, clamp, clamp01, damp, lerp, rand, TAU } from '../core/Utils.js';
@@ -176,8 +177,8 @@ export class Turret extends Enemy {
       return g;
     });
     const domeGeo = geo(`turretDome${heavy}`, () => {
-      const g = new THREE.SphereGeometry(1.15 * s, 12, 8, 0, TAU, 0, Math.PI * 0.55);
-      return g;
+      return new THREE.LatheGeometry([[0, -.08], [1.15, -.08], [1.2, .18], [1.02, .76], [.65, 1.05], [0, 1.05]]
+        .map(([r, y]) => new THREE.Vector2(r * s, y * s)), 12);
     });
     const barrelGeo = geo(`turretBarrel${heavy}`, () => {
       const g = new THREE.CylinderGeometry(0.19 * s, 0.24 * s, 3.0 * s, 6);
@@ -186,31 +187,42 @@ export class Turret extends Enemy {
       // Sleeves share the barrel draw and follow its pitch without extra shadows.
       const sleeve = new THREE.CylinderGeometry(.31*s, .34*s, .9*s, 8)
         .rotateX(Math.PI/2).translate(0, 0, .75*s);
-      const muzzle = new THREE.TorusGeometry(.24*s, .065*s, 4, 8).translate(0, 0, 2.76*s);
-      return mergeParts([g, sleeve, muzzle]);
+      const muzzle = new THREE.TorusGeometry(.24*s, .065*s, 4, 12).translate(0, 0, 2.76*s);
+      const parts = [g, sleeve, muzzle];
+      for (let i = 0; i < 3; i++) parts.push(new THREE.TorusGeometry(.225*s, .04*s, 4, 12).translate(0, 0, (1.5+i*.3)*s));
+      return mergeParts(parts);
     });
 
-    this.add(baseGeo, mats.darkMetal);
+    this.add(baseGeo, (mats.enemyMetal ?? mats.darkMetal));
     this.add(geo(`turretArmor${heavy}`, () => {
       const parts = [collar(1.42, .13, .84)];
       for (let i=0; i<8; i++) {
-        const a=i*TAU/8;
-        parts.push(box(.66,.5,.15,0,.46,1.62).rotateY(a));
+        const a=(i+.5)*TAU/8;
+        parts.push(new THREE.BoxGeometry(.66,.5,.12).rotateX(-.354).translate(0,.46,1.65).rotateY(a));
       }
       return mergeParts(parts).scale(s,s,s);
-    }), mats.enemyHull, 0, 0, 0, false);
+    }), (mats.enemyArmor ?? mats.enemyHull), 0, 0, 0, false);
     this.turntable = new THREE.Group();
     this.turntable.position.y = 1.0 * s;
     this.group.add(this.turntable);
 
-    const dome = new THREE.Mesh(domeGeo, mats.enemyHull);
+    const dome = new THREE.Mesh(domeGeo, (mats.enemyArmor ?? mats.enemyHull));
     dome.castShadow = true;
     this.turntable.add(dome);
+    const trim = new THREE.Mesh(geo(`turretTrim${heavy}`, () => {
+      const parts = [collar(1.16, .065, .10), new THREE.CylinderGeometry(.44, .5, .12, 12).translate(0, 1.08, 0)];
+      for (const side of [-1, 1]) {
+        parts.push(box(.13, .38, .7, side * .92, .42, -.15));
+        parts.push(new THREE.CylinderGeometry(.30, .30, .28, 10).rotateZ(Math.PI/2).translate(side*1.05,.20,.08));
+      }
+      return mergeParts(parts).scale(s,s,s);
+    }), (mats.enemyMetal ?? mats.darkMetal));
+    this.turntable.add(trim);
 
     this.barrels = [];
     const offs = heavy ? [-0.45, 0.45] : [0];
     for (const o of offs) {
-      const b = new THREE.Mesh(barrelGeo, mats.darkMetal);
+      const b = new THREE.Mesh(barrelGeo, (mats.enemyMetal ?? mats.darkMetal));
       b.position.set(o * s, 0.15 * s, 0);
       b.castShadow = true;
       this.turntable.add(b);
@@ -222,7 +234,7 @@ export class Turret extends Enemy {
       geo(`turretEye${heavy}`, () => new THREE.SphereGeometry(0.3 * s, 8, 6)),
       mats.neon(heavy ? 0xff3d55 : 0xff8a3a, 3),
     );
-    this.eye.position.set(0, 0.5 * s, 0.75 * s);
+    this.eye.position.set(0, 0.58 * s, 1.02 * s);
     this.turntable.add(this.eye);
 
     this._addFlashShell(domeGeo, 1.15);
@@ -293,39 +305,40 @@ export class Silo extends Enemy {
     this.doors = 0;
 
     const bodyGeo = geo('siloBody', () => {
-      const g = new THREE.CylinderGeometry(2.2, 2.6, 2.4, 8);
-      g.translate(0, 1.2, 0);
-      return g;
+      // A real open well: the former cylinder cap hid the launch glow.
+      return new THREE.LatheGeometry([[0, 0], [2.6, 0], [2.2, 2.4], [1.75, 2.4], [1.75, .4], [0, .4]]
+        .map(p => new THREE.Vector2(...p)), 16);
     });
-    this.add(bodyGeo, mats.enemyHull);
+    this.add(bodyGeo, (mats.enemyArmor ?? mats.enemyHull));
     this.add(geo('siloRim', () => {
       const g = new THREE.TorusGeometry(2.1, 0.22, 6, 16);
       g.rotateX(Math.PI / 2);
       g.translate(0, 2.45, 0);
       return g;
-    }), mats.darkMetal);
+    }), (mats.enemyMetal ?? mats.darkMetal));
 
     this.hatch = this.add(geo('siloHatch', () => {
-      const g = new THREE.CylinderGeometry(1.85, 1.85, 0.3, 8);
-      return g;
-    }), mats.darkMetal, 0, 2.45, 0);
+      const parts = [new THREE.CylinderGeometry(1.85, 1.85, .24, 12)];
+      for (let i=0;i<6;i++) parts.push(box(.065,.035,1.65,0,.14,.86).rotateY(i*TAU/6));
+      return mergeParts(parts);
+    }), (mats.enemyMetal ?? mats.darkMetal), 0, 2.45, 0);
 
     this.glow = new THREE.Mesh(
       geo('siloGlow', () => new THREE.CircleGeometry(1.75, 16).rotateX(-Math.PI / 2)),
       mats.neon(0xff3d55, 2.4),
     );
-    this.glow.position.y = 2.4;
+    this.glow.position.y = 2.415;
     this.group.add(this.glow);
 
     this.add(geo('siloBraces', () => {
       const parts=[];
       for (let i=0; i<8; i++) {
         const a=(i+.5)*TAU/8;
-        parts.push(box(.3,1.8,.3,0,1.2,2.35).rotateY(a));
+        parts.push(strut([0,.20,2.61],[0,2.22,2.27],.12,6).rotateY(a));
         parts.push(box(.65,.22,.45,0,2.22,2.05).rotateY(a));
       }
       return mergeParts(parts);
-    }), mats.darkMetal, 0, 0, 0, false);
+    }), (mats.enemyMetal ?? mats.darkMetal), 0, 0, 0, false);
     this._addFlashShell(bodyGeo, 1.1);
   }
 
@@ -343,7 +356,7 @@ export class Silo extends Enemy {
     this.doors = damp(this.doors, opening ? 1 : 0, 8, dt);
     this.hatch.position.y = 2.45 + this.doors * 0.1;
     this.hatch.scale.setScalar(1 - this.doors * 0.85);
-    this.glow.scale.setScalar(0.4 + this.doors * 0.8);
+    this.glow.scale.setScalar(0.4 + this.doors * 0.55);
 
     if (this.fireTimer <= 0) {
       this.firstShotPending=false;
@@ -381,11 +394,11 @@ export class FuelCell extends Enemy {
       g.translate(0, 2.2, 0);
       return g;
     });
-    this.add(tankGeo, mats.fuelDrum ?? mats.enemyHull);
+    this.add(tankGeo, mats.fuelDrum ?? (mats.enemyArmor ?? mats.enemyHull));
     this.add(geo('fuelCaps', () => mergeParts([
       new THREE.SphereGeometry(1.35, 16, 6, 0, TAU, 0, Math.PI / 2).scale(1, 0.45, 1).translate(0, 3.9, 0),
       new THREE.CylinderGeometry(1.5, 1.7, 0.5, 12).translate(0, 0.25, 0),
-    ])), mats.darkMetal);
+    ])), (mats.enemyMetal ?? mats.darkMetal));
 
     this.band = new THREE.Mesh(
       geo('fuelBand', () => {
@@ -402,7 +415,9 @@ export class FuelCell extends Enemy {
       collar(1.4,.1,0.62), collar(1.4,.1,3.78),
       box(.2,3.2,.24,1.42,2.2,0), box(.2,3.2,.24,-1.42,2.2,0),
       new THREE.CylinderGeometry(.32,.4,.4,8).translate(0,4.55,0),
-    ])), mats.darkMetal, 0, 0, 0, false);
+      new THREE.TorusGeometry(.38,.075,5,16).rotateX(Math.PI/2).translate(0,4.8,0),
+      box(.64,.07,.10,0,4.8,0), box(.10,.07,.64,0,4.8,0),
+    ])), (mats.enemyMetal ?? mats.darkMetal), 0, 0, 0, false);
     this._addFlashShell(tankGeo, 1.1);
   }
 
@@ -428,43 +443,51 @@ export class RadarTower extends Enemy {
       const g = new THREE.CylinderGeometry(0.45, 0.8, 7, 6);
       g.translate(0, 3.5, 0);
       return g;
-    }), mats.darkMetal);
+    }), (mats.enemyMetal ?? mats.darkMetal));
     this.add(geo('radarBase', () => {
       const g = new THREE.CylinderGeometry(1.8, 2.2, 1.0, 8);
       g.translate(0, 0.5, 0);
       return g;
-    }), mats.enemyHull);
+    }), (mats.enemyArmor ?? mats.enemyHull));
 
     this.dish = new THREE.Group();
     this.dish.position.y = 7.2;
     this.group.add(this.dish);
 
     const dishGeo = geo('radarDish', () => {
-      const g = new THREE.SphereGeometry(2.4, 16, 10, 0, TAU, 0, Math.PI * 0.34);
-      g.rotateX(-Math.PI / 2.2);
-      return g;
+      return reflectorGeometry(2.35).rotateX(-.28);
     });
     // The dish is an open shell, so it needs its own double-sided material
     // rather than mutating the shared enemy hull.
     const dishMat = mat('dish', () => {
-      const m = mats.enemyHull.clone();
+      const m = (mats.enemyArmor ?? mats.enemyHull).clone();
       m.side = THREE.DoubleSide;
       return m;
     });
     const d = new THREE.Mesh(dishGeo, dishMat);
     d.castShadow = true;
     this.dish.add(d);
+    const frame = new THREE.Mesh(geo('radarFrame', () => {
+      const parts = [new THREE.CylinderGeometry(.6,.6,.48,12).rotateX(Math.PI/2).translate(0,0,-.20),
+        strut([0,-.1,-.18],[0,.42,1.65],.10)];
+      for (let i=0;i<3;i++) {
+        const a=i*TAU/3;
+        parts.push(strut([Math.cos(a)*2.05,Math.sin(a)*2.05,.59],[0,.42,1.65],.055));
+      }
+      return mergeParts(parts).rotateX(-.28);
+    }), (mats.enemyMetal ?? mats.darkMetal));
+    this.dish.add(frame);
 
     const emitter = new THREE.Mesh(
       geo('radarEmit', () => new THREE.SphereGeometry(0.34, 8, 6)),
       mats.neon(0x52ffa8, 3),
     );
-    emitter.position.set(0, 1.1, 1.1);
+    emitter.position.set(0, .42, 1.65).applyAxisAngle(new THREE.Vector3(1,0,0),-.28);
     this.dish.add(emitter);
     this.emitter = emitter;
 
     this._addFlashShell(dishGeo, 1.12);
-    this.flashMesh.position.y = 7.2;
+    this.dish.add(this.flashMesh);
   }
 
   update(dt, ctx) {
@@ -488,7 +511,7 @@ export class Mine extends Enemy {
     this.armed = 0;
 
     const coreGeo = geo('mineCore', () => new THREE.IcosahedronGeometry(1.2, 0));
-    this.core = this.add(coreGeo, mats.enemyHull);
+    this.core = this.add(coreGeo, (mats.enemyArmor ?? mats.enemyHull));
 
     // six contact spikes baked into one draw
     this.add(geo('mineSpikes', () => {
@@ -499,12 +522,18 @@ export class Mine extends Enemy {
         m.lookAt(d[0], d[1], d[2]);
         m.updateMatrix();
         parts.push(g.applyMatrix4(m.matrix));
+        const ring = new THREE.TorusGeometry(.24,.07,4,10).translate(0,0,1.05);
+        parts.push(ring.applyMatrix4(m.matrix));
       }
       return mergeParts(parts);
-    }), mats.darkMetal);
+    }), (mats.enemyMetal ?? mats.darkMetal));
 
     this.lamp = new THREE.Mesh(
-      geo('mineLamp', () => new THREE.SphereGeometry(0.4, 8, 6)),
+      geo('mineLamp', () => mergeParts([
+        new THREE.TorusGeometry(1.18,.045,4,20),
+        ...[[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]].map(([x,y,z]) =>
+          new THREE.SphereGeometry(.13,8,6).translate(x*1.13,y*1.13,z*1.13)),
+      ])),
       mats.neon(0xff3d55, 3.2),
     );
     this.group.add(this.lamp);
@@ -522,7 +551,7 @@ export class Mine extends Enemy {
     const d = this.pos.distanceTo(ctx.player.pos);
     const near = clamp01(1 - d / 34);
     this.armed = near;
-    const blink = 1 + Math.sin(ctx.time * (4 + near * 26)) * (0.25 + near * 0.5);
+    const blink = 1 + Math.sin(ctx.time * (4 + near * 26)) * (0.015 + near * 0.045);
     this.lamp.scale.setScalar(blink);
     if (near > 0.55 && !this._warned) {
       this._warned = true;
@@ -555,38 +584,27 @@ class Flyer extends Enemy {
     this.launching = !!feature.launch;
     if (this.launching) this.pos.set(58 + this.rng.range(-2, 2), 2 + this.rng.range(-2, 4), this.pos.z);
 
-    const bodyGeo = geo(`flyBody${fast}`, () => {
-      // Armoured keel: a narrow interceptor nose, broad drone shoulders.
-      const shape = new THREE.Shape();
-      const width=fast ? .75 : 1.05, nose=fast ? 1.86 : 1.45;
-      shape.moveTo(0,nose); shape.lineTo(width,.35);
-      shape.lineTo(width*.72,-1.05); shape.lineTo(.38,-1.5);
-      shape.lineTo(-.38,-1.5); shape.lineTo(-width*.72,-1.05);
-      shape.lineTo(-width,.35); shape.closePath();
-      return new THREE.ExtrudeGeometry(shape, {depth:.45,steps:1,
-        bevelEnabled:true,bevelThickness:.12,bevelSize:.1,bevelSegments:1})
-        .rotateX(Math.PI/2).translate(0,.225,0);
-    });
-    this.body = this.add(bodyGeo, mats.enemyHull);
+    const bodyGeo = geo(`flyBody${fast}`, () => facetedHull([
+      [-1.70, .36, .16, -.22], [-1.05, fast ? .62 : .86, .31, -.30],
+      [.25, fast ? .70 : .98, .36, -.25], [fast ? 1.36 : 1.03, .28, .16, -.15],
+      [fast ? 1.92 : 1.49, .055, .035, -.055],
+    ]));
+    this.body = this.add(bodyGeo, (mats.enemyArmor ?? mats.enemyHull));
 
-    const wingGeo = geo(`flyWing${fast}`, () => {
-      const s = new THREE.Shape();
-      s.moveTo(0, 0.5);
-      s.lineTo(2.4, -0.7);
-      s.lineTo(2.5, -1.1);
-      s.lineTo(0.4, -0.6);
-      s.closePath();
-      const g = new THREE.ExtrudeGeometry(s, { depth: 0.12, steps: 1, bevelEnabled: true, bevelThickness: .035, bevelSize: .035, bevelSegments: 1 });
-      g.rotateX(Math.PI / 2);
-      return g;
-    });
-    for (const side of [1, -1]) {
-      const w = new THREE.Mesh(wingGeo, mats.darkMetal);
-      w.scale.x = side;
-      w.position.set(side * 0.5, 0, 0);
-      w.castShadow = true;
-      this.group.add(w);
-    }
+    // Drone shoulders are broad and clipped; interceptors have swept blades.
+    const wingOutline = fast
+      ? [[.48,.55],[2.88,-.95],[2.72,-1.38],[.60,-.68]]
+      : [[.65,.48],[2.64,.08],[2.9,-.42],[2.60,-1.05],[.65,-.68]];
+    const wingGeo = geo(`flyWing${fast}`, () => mergeParts([-1,1].map(side =>
+      airframePanel(wingOutline.map(([x,z])=>[x*side,z]),-.04,.12))));
+    this.add(wingGeo, (mats.enemyMetal ?? mats.darkMetal));
+    this.add(geo(`flyPanels${fast}`, () => {
+      const parts = [-1,1].map(side => airframePanel(wingOutline.map(([x,z])=>[(.8+(x-.8)*.82)*side,z*.75-.08]), .003, .025, 0));
+      for (const side of [-1,1]) {
+        parts.push(facetedHull([[-1.50,.07,.22,.06],[-1.18,.07,.77,.10],[-.48,.07,.25,.10]]).translate(side*.57,0,0));
+      }
+      return mergeParts(parts);
+    }), (mats.enemyArmor ?? mats.enemyHull));
 
     this.add(geo(`flyMachinery${fast}`, () => {
       const parts=[];
@@ -597,9 +615,10 @@ class Flyer extends Enemy {
         parts.push(box(.43,.42,.16,x,0,.32));
         for(let i=0;i<3;i++) parts.push(box(.5,.06,.09,x,.23,-.15-i*.24));
       }
-      parts.push(new THREE.TorusGeometry(.42,.12,6,12).translate(0,0,fast ? -1.86 : -1.48));
+      parts.push(new THREE.CylinderGeometry(.36,.34,.48,12,1,true).rotateX(Math.PI/2).translate(0,-.035,-1.70));
+      parts.push(new THREE.TorusGeometry(.34,.055,5,16).translate(0,-.035,-1.94));
       return mergeParts(parts);
-    }), mats.darkMetal, 0, 0, 0, false);
+    }), (mats.enemyMetal ?? mats.darkMetal), 0, 0, 0, false);
     const canopyMat=mat('enemyCanopy', () => new THREE.MeshStandardMaterial({
       color:0x151c29,metalness:.68,roughness:.22,envMapIntensity:1.1,
     }));
@@ -608,10 +627,10 @@ class Flyer extends Enemy {
       canopyMat, 0, 0, 0, false);
 
     this.engine = new THREE.Mesh(
-      geo('flyEngine', () => new THREE.CircleGeometry(0.38, 10)),
+      geo('flyEngine', () => new THREE.CircleGeometry(0.26, 16)),
       mats.neon(fast ? 0xff5a3a : 0xff9a3a, 3),
     );
-    this.engine.position.z = fast ? -2.0 : -1.5;
+    this.engine.position.set(0,-.035,-1.948);
     this.engine.rotation.y = Math.PI;
     this.group.add(this.engine);
 
@@ -637,7 +656,7 @@ class Flyer extends Enemy {
       this.pos.z += p.speed * (this.fast ? 0.82 : 0.62) * dt;
       this.group.rotation.z = damp(this.group.rotation.z, clamp((this.pos.x - prevX) / dt * 0.04, -1.1, 1.1), 5, dt);
       if (Math.abs(this.pos.x - this.homeX) < 1.5) this.launching = false;
-      this.engine.scale.setScalar(1.3 + Math.sin(ctx.time * 30) * 0.15);
+      this.engine.scale.setScalar(1.04 + Math.sin(ctx.time * 9) * 0.025);
       return;
     }
 
@@ -684,7 +703,7 @@ class Flyer extends Enemy {
     this.group.rotation.z = damp(this.group.rotation.z, -vx * 0.035, 6, dt);
     this.group.rotation.x = damp(this.group.rotation.x, -vy * 0.02, 6, dt);
     this.group.rotation.y = damp(this.group.rotation.y, vx * 0.012, 5, dt);
-    this.engine.scale.setScalar(1 + Math.sin(ctx.time * 30 + this.phase) * 0.12);
+    this.engine.scale.setScalar(1 + Math.sin(ctx.time * 9 + this.phase) * 0.03);
 
     // fire when roughly ahead of the player
     const dz = this.pos.z - p.pos.z;
@@ -739,25 +758,22 @@ export class ParkedFighter extends Enemy {
     this.velocity = new THREE.Vector3();
 
     const fuselage = geo('parkedBody', () => mergeParts([
-      box(1.1, 0.75, 4.4, 0, 1.0, 0),
-      new THREE.ConeGeometry(0.55, 1.7, 6).rotateX(-Math.PI / 2).translate(0, 1.0, -3.0),
-      ...[1, -1].map(side => {
-        const s = new THREE.Shape();
-        s.moveTo(0, -0.6); s.lineTo(side * 3.0, 0.9); s.lineTo(side * 3.1, 1.35); s.lineTo(side * 0.4, 0.8); s.closePath();
-        return new THREE.ExtrudeGeometry(s, { depth: 0.14, bevelEnabled: false }).rotateX(Math.PI / 2).translate(0, 0.95, 0.2);
-      }),
-      box(0.16, 1.2, 1.4, 0, 1.75, 1.6),
+      facetedHull([[-3.7,.025,1.00,.95],[-2.0,.40,1.24,.72],[-.70,.58,1.39,.63],[1.30,.54,1.26,.65],[2.22,.35,1.22,.75]]),
+      ...[-1,1].map(side => airframePanel([[side*.4,-.9],[side*3.05,.95],[side*2.9,1.40],[side*.45,.70]],.96,.14)),
+      facetedHull([[.7,.065,1.3,1.1],[1.35,.065,2.35,1.1],[2.0,.065,2.15,1.1]]),
     ]));
-    this.add(fuselage, mats.enemyHull);
+    this.add(fuselage, (mats.enemyArmor ?? mats.enemyHull));
     this.add(geo('parkedGear', () => mergeParts([
       new THREE.CylinderGeometry(0.08, 0.1, 0.9, 5).translate(0, 0.45, -1.4),
       new THREE.CylinderGeometry(0.08, 0.1, 0.9, 5).translate(-1, 0.45, 0.8),
       new THREE.CylinderGeometry(0.08, 0.1, 0.9, 5).translate(1, 0.45, 0.8),
       new THREE.SphereGeometry(1, 10, 6).scale(0.42, 0.3, 0.8).translate(0, 1.42, -0.8),
-      new THREE.TorusGeometry(0.34, 0.1, 5, 10).translate(0, 1.0, 2.25),
-    ])), mats.darkMetal, 0, 0, 0, false);
+      new THREE.TorusGeometry(0.34, 0.07, 5, 16).translate(0, 1.0, 2.25),
+      ...[[-1,.8],[1,.8],[0,-1.4]].map(([x,z]) => new THREE.CylinderGeometry(.17,.17,.17,10).rotateZ(Math.PI/2).translate(x,.17,z)),
+      ...[-1,1].map(side => airframePanel([[side*.85,-.40],[side*2.50,.73],[side*2.28,.80],[side*.85,-.18]],.986,.018,0)),
+    ])), (mats.enemyMetal ?? mats.darkMetal), 0, 0, 0, false);
 
-    this.engine = new THREE.Mesh(geo('parkedJet', () => new THREE.CircleGeometry(0.32, 10)), mats.neon(0xff9a3a, 2.2));
+    this.engine = new THREE.Mesh(geo('parkedJet', () => new THREE.CircleGeometry(0.24, 16)), mats.neon(0xff9a3a, 2.2));
     this.engine.position.set(0, 1.0, 2.3);
     this.engine.scale.setScalar(0.3);
     this.group.add(this.engine);
@@ -776,7 +792,7 @@ export class ParkedFighter extends Enemy {
     if (!this.scramble) return;
     // engines spool up as the intruder closes, then the plane climbs out
     const spool = clamp01((95 - dz) / 40);
-    this.engine.scale.setScalar(0.3 + spool * 1.1 + Math.sin(ctx.time * 30) * 0.08 * spool);
+    this.engine.scale.setScalar(0.3 + spool * 0.72 + Math.sin(ctx.time * 9) * 0.025 * spool);
     if (dz < 60 && dz > -20) {
       this.lift = Math.min(1, this.lift + dt * 0.55);
       this.velocity.set(0, this.lift * 9, p.speed * this.lift * 0.75);

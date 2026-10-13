@@ -138,39 +138,48 @@ export class Materials {
     }));
     this.addRim(this.enemyHull, 0xffaa7d, 0.65, 2.4);
 
+    // Small moving targets need broad material separation; the fortress's
+    // dense panel texture overwhelms their few screen pixels.
+    this.enemyArmor = this.track(new THREE.MeshStandardMaterial({
+      color: 0x995c48, metalness: .48, roughness: .42, envMapIntensity: 1.2,
+      emissive: 0x4b2419, emissiveIntensity: .16,
+    }));
+    this.addRim(this.enemyArmor, 0xffb68a, .32, 2.8);
+    this.enemyMetal = this.track(new THREE.MeshStandardMaterial({
+      color: 0x526579, metalness: .56, roughness: .38, envMapIntensity: 1.15,
+    }));
+    this.addRim(this.enemyMetal, 0x8facbf, .16, 3);
+
     /**
      * Player chassis.
      *
-     * A near-white hull disappeared into its own engine bloom. A mid-dark
-     * slate body reads as a silhouette against the bright deck, and the
-     * fresnel rim guarantees a lit edge no matter what is behind it — that
-     * rim is the ship's readability, not the paint.
+     * Vertex-painted silver armor, slate panels and warm identification marks.
+     * A restrained rim separates the silhouette without bleaching the livery.
      */
     this.playerHull = this.track(new THREE.MeshStandardMaterial({
-      color: 0x5c6e84,
-      metalness: 0.78,
-      roughness: 0.3,
-      envMapIntensity: 1.45,
+      color: 0xffffff,
+      vertexColors: true,
+      metalness: 0.52,
+      roughness: 0.34,
+      envMapIntensity: 1.2,
     }));
-    this.addRim(this.playerHull, 0x8fecff, 1.25, 2.3);
+    this.addRim(this.playerHull, 0x8fecff, 0.48, 2.8);
 
     this.playerAccent = this.track(new THREE.MeshStandardMaterial({
-      color: 0x121b26,
-      metalness: 0.88,
-      roughness: 0.3,
+      color: 0x233548,
+      metalness: 0.58,
+      roughness: 0.38,
       envMapIntensity: 1.1,
     }));
-    this.addRim(this.playerAccent, 0x3fa8d8, 0.55, 3.0);
+    this.addRim(this.playerAccent, 0x3fa8d8, 0.28, 3.0);
 
     this.glass = this.track(new THREE.MeshPhysicalMaterial({
-      color: 0x0a2634,
-      metalness: 0.1,
-      roughness: 0.06,
-      transmission: 0.55,
-      thickness: 0.6,
-      transparent: true,
-      opacity: 0.82,
-      envMapIntensity: 2.0,
+      color: 0x123e52,
+      metalness: 0.58,
+      roughness: 0.16,
+      clearcoat: 1,
+      clearcoatRoughness: 0.08,
+      envMapIntensity: 1.8,
     }));
 
     /** Fuel drums: stencilled safety livery, open-ended cylinder capped by geometry. */
@@ -205,7 +214,7 @@ export class Materials {
       envMapIntensity: 1.6,
     }));
     // A cool sky rim keeps dark-side rocks from reading as holes in the nebula.
-    this.addSpin(this.addRim(this.rock, 0x6f9cff, 0.55, 2.2));
+    this.addSpin(this.addRim(this.rock, 0x829bb5, 0.28, 2.8));
 
     /** Rotating machinery: radar dishes, fans, orbiting wreckage. */
     this.spinMetal = this.addSpin(this.track(new THREE.MeshStandardMaterial({
@@ -217,6 +226,7 @@ export class Materials {
     })));
 
     this.glow = Tex.glowSprite();
+    this.smoke = Tex.smokeSprite();
     this.ring = Tex.ringSprite();
     this.blob = Tex.blobShadowSprite();
   }

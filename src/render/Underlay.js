@@ -25,7 +25,7 @@ const UNDERLAY_VERT = /* glsl */`
   void main() {
     vec4 world = modelMatrix * vec4(position, 1.0);
     vUv = world.xz / ${TILE.toFixed(1)} + uOffset;
-    vLocal = position.xy / ${(SIZE / 2).toFixed(1)};
+    vLocal = position.xz / ${(SIZE / 2).toFixed(1)};
     gl_Position = projectionMatrix * viewMatrix * world;
   }
 `;
@@ -42,9 +42,16 @@ const UNDERLAY_FRAG = /* glsl */`
   varying vec2 vUv;
   varying vec2 vLocal;
   void main() {
-    vec3 a = texture2D(uMapA, vUv).rgb;
-    vec3 b = texture2D(uMapB, vUv * 0.7 + vec2(0.0, uTime * 0.002)).rgb;
+    vec3 a = texture2D(uMapA, vUv + vec2(0.0, uTime * 0.0008)).rgb;
+    vec2 cityUv = vUv * 0.7;
+    vec3 b = texture2D(uMapB, cityUv).rgb;
+    // Tiny transports travel along the avenues; the city itself never slides.
+    vec2 block = cityUv * 16.0;
+    float road = 1.0-smoothstep(0.008,0.022,abs(fract(block.x+0.5)-0.5));
+    float traffic = pow(max(0.0,sin(block.y*6.28318-uTime*0.7+floor(block.x+0.5)*2.4)),48.0);
+    b += vec3(0.09,0.12,0.15)*road*traffic;
     vec3 col = mix(a, b, uMix) * uTint * uGain;
+    col = mix(col, vec3(0.028,0.035,0.055)*uTint, smoothstep(0.1,0.9,length(vLocal))*0.45);
     // the rim fades out, so the sky shows through instead of a hard horizon
     float edge = 1.0 - smoothstep(0.45, 0.95, length(vLocal));
     gl_FragColor = vec4(col, edge * uOpacity);
@@ -221,13 +228,27 @@ function cityTexture(size = 1024) {
       for (let s = 0; s < subs * subs; s++) {
         const sx = x + 3 + (s % subs) * (cell - 6) / subs, sy = y + 3 + Math.floor(s / subs) * (cell - 6) / subs;
         const w = (cell - 6) / subs - 2, h = (cell - 6) / subs - 2;
-        const g = 18 + rng.int(0, 22);
-        ctx.fillStyle = `rgb(${g},${g + 3},${g + 10})`;
+        // A displaced shadow, wall face and rim give each block a roofline.
+        const g = 22 + rng.int(0, 23);
+        ctx.fillStyle = 'rgba(0,0,0,0.65)';
+        ctx.fillRect(sx + 4, sy + 5, w, h);
+        ctx.fillStyle = '#121a28';
         ctx.fillRect(sx, sy, w, h);
+        ctx.fillStyle = `rgb(${g},${g + 3},${g + 10})`;
+        ctx.fillRect(sx, sy, w - 3, h - 4);
+        ctx.fillStyle = 'rgba(135,166,188,0.18)';
+        ctx.fillRect(sx, sy, w - 3, 1);
+        ctx.fillRect(sx, sy, 1, h - 4);
+        if (w > 17 && h > 17) {
+          ctx.fillStyle = 'rgba(7,13,24,0.65)';
+          ctx.fillRect(sx + 5, sy + 5, w * 0.32, h * 0.4);
+          ctx.fillStyle = 'rgba(94,120,139,0.4)';
+          ctx.fillRect(sx + 5, sy + 5, w * 0.32, 1);
+        }
         // lit windows
         for (let k = 0; k < rng.int(2, 10); k++) {
-          ctx.fillStyle = rng.bool(0.7) ? 'rgba(255,190,110,0.85)' : 'rgba(130,220,255,0.8)';
-          ctx.fillRect(sx + rng.next() * w, sy + rng.next() * h, 1.6, 1.6);
+          ctx.fillStyle = rng.bool(0.7) ? 'rgba(255,190,110,0.65)' : 'rgba(130,200,225,0.55)';
+          ctx.fillRect(sx + 2 + rng.next() * (w - 5), sy + h - 3, 1.2, 1.5);
         }
       }
     }
@@ -236,10 +257,10 @@ function cityTexture(size = 1024) {
   for (let i = 0; i <= 16; i++) {
     const p = i * cell;
     const warm = i % 4 === 0;
-    ctx.fillStyle = warm ? 'rgba(255,170,80,0.75)' : 'rgba(255,170,80,0.28)';
-    ctx.fillRect(p - 1, 0, warm ? 3 : 1.5, size);
-    ctx.fillStyle = i % 5 === 2 ? 'rgba(90,220,255,0.7)' : 'rgba(255,170,80,0.22)';
-    ctx.fillRect(0, p - 1, size, i % 5 === 2 ? 2.5 : 1.2);
+    ctx.fillStyle = warm ? 'rgba(255,170,80,0.32)' : 'rgba(255,170,80,0.12)';
+    ctx.fillRect(p - 1, 0, warm ? 1.6 : 0.8, size);
+    ctx.fillStyle = i % 5 === 2 ? 'rgba(90,180,215,0.28)' : 'rgba(255,170,80,0.10)';
+    ctx.fillRect(0, p - 1, size, i % 5 === 2 ? 1.5 : 0.8);
   }
   // furnace glows and beacon clusters
   for (let k = 0; k < 40; k++) {

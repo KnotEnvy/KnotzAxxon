@@ -31,10 +31,14 @@ For a regression, use a Git revert commit on main and let the same tests and dep
 
 - src/ — current game; tests/ — behavioral regressions.
 - scripts/qa/ — reproducible browser, scene, campaign and audio QA.
-- docs/reviews/ — historical reviews, including their original evidence limits.
-- docs/testing/2026-09-12/ — retained screenshots and reports from that pass.
-- artifacts/ — ignored generated captures; retain only useful summaries in docs/testing/.
+- docs/release-validation.json — concise current validation and deployment evidence.
+- artifacts/ — ignored generated captures; fold useful results into release-validation.json.
 - legacy/ — preserved prototype reference, excluded from the built game.
 - handoff.json — authoritative current status and next-team tasks.
+
+After reviewing a QA run, delete its generated media from artifacts/. Do not commit
+screenshots, WAV files or intermediate capture reports. Historical text reviews and JSON evidence remain in docs/reviews/ and docs/testing/.
+Their old image references are historical; tracked media remains recoverable from Git
+history. Use the QA scripts to regenerate captures into artifacts/.
 
 Deployment follows [GitHub's custom workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [Vite's static deployment guide](https://vite.dev/guide/static-deploy.html#github-pages). Automated startup checks do not establish human gameplay, audio or physical-device acceptance.

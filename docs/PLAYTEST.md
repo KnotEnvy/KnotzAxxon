@@ -11,10 +11,11 @@ Record the deployed commit from the successful GitHub Pages release workflow, br
 1. Fly the gentle opening in Classic, Modern and Chase. Check screen-relative left/right controls and rolls, reaction time, fuel availability, target contrast and the first wall.
 2. Use the single altimeter contact band for firing height and amber obstacle-clearance band for walls. Check covered and off-screen targets do not award invisible kills or explosions.
 3. Shoot fuel, radar, guns and parked enemy fighters. Decorative grey objects must remain distinguishable. Build chains through multiplier milestones; check expiry, damage interruption, pause and retry.
+   Check the brief damage cross, gold weak-point/kill confirmation and grey armor diamond. Listen for the rising damage chirp versus the dry armor strike. Boss armor should not improve shot accuracy.
 4. Traverse all eight sectors: fortress ground targets, reactor moving gates, electric barriers, open-space formations and debris gates. Check near geometry, shadow depth cues and route/grade cards.
 5. Earn thread, low-pass and graze awards. Finish a clean sector below and above 35% targets; the clean bonus starts only above that threshold. Check sector grades, best grades and hull awards at 50,000 and 150,000.
 6. Fight the Sentinel pods, core and phase-two missile rack (six hits during charging). Beat it, inspect results, share the fortress code, retry and continue to loop 2 with score banked.
-7. Listen on speakers and headphones: warning clarity, music hooks, environment beds, stereo placement, dense-combat mix and curtain-gap cue. Audio needs an audition by ear.
+7. Listen on speakers and headphones: warning clarity, music hooks, environment beds, stereo placement, dense-combat mix and curtain-gap cue. Confirm low-fuel, hull/shield damage and overheat warnings remain clear as the weapon bed briefly dips. Audio needs an audition by ear.
 8. Test physical controller and touch in portrait and landscape. Check menus, altimeter, buttons, orientation changes and pause when focus leaves the game. Repeat with reduced motion.
 9. Use F for telemetry. Record sustained FPS and p95 frame intervals during crowded combat and the boss; inspect resource growth through ten retries and quality switches on named hardware.
 
@@ -32,7 +33,7 @@ Screenshot/video and telemetry if relevant:
 Severity: blocker / gameplay issue / visual or audio polish
 ```
 
-Report in GitHub Issues or return the collected notes to the next team. Never treat the invulnerable campaign autopilot as a balance verdict. Prior reviews are historical: the final showcase fixes have not been independently rescored.
+Report in GitHub Issues or return the collected notes to the next team. Never treat the invulnerable campaign autopilot as a balance verdict. Current automated evidence is in release-validation.json; historical text reviews remain under docs/reviews/.
 
 ## Next team after playtesting
 

@@ -1,0 +1,55 @@
+{
+  "quality": "low",
+  "scenes": [
+    {
+      "name": "s1-opening-classic",
+      "camera": "classic",
+      "sector": 1,
+      "calls": 78,
+      "triangles": 34891,
+      "enemies": 1,
+      "luma": 41.2,
+      "nearBlack": 43
+    },
+    {
+      "name": "s3-space-chase",
+      "camera": "chase",
+      "sector": 3,
+      "calls": 76,
+      "triangles": 32249,
+      "enemies": 2,
+      "luma": 36.9,
+      "nearBlack": 27
+    },
+    {
+      "name": "s4-reactor-modern",
+      "camera": "modern",
+      "sector": 4,
+      "calls": 91,
+      "triangles": 35717,
+      "enemies": 4,
+      "luma": 36.6,
+      "nearBlack": 27
+    },
+    {
+      "name": "s8-boss-chase",
+      "camera": "chase",
+      "sector": 8,
+      "calls": 102,
+      "triangles": 22821,
+      "enemies": 0,
+      "luma": 30.5,
+      "nearBlack": 53
+    },
+    {
+      "name": "explosion-modern",
+      "calls": 94,
+      "triangles": 34503,
+      "enemies": 3,
+      "luma": 43.4,
+      "nearBlack": 24
+    }
+  ],
+  "errors": [],
+  "browser": "155.0.4283.45"
+}

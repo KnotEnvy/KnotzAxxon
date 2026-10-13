@@ -22,6 +22,7 @@ const VERT = /* glsl */`
   uniform float uTime;
   uniform float uHeightScale;
   uniform float uOrthographic;
+  uniform float uFadeIn;
 
   attribute vec3 aVelocity;
   attribute vec4 aParams;   // x: birth, y: life, z: size, w: drag
@@ -68,7 +69,8 @@ const VERT = /* glsl */`
 
     vColor = mix(aColorA, aColorB, t);
     vAlpha = pow(1.0 - t, max(aExtra.w, 0.05));
-    vSpin = aExtra.z * age;
+    vAlpha *= uFadeIn > 0.0 ? smoothstep(0.0,uFadeIn,age) : 1.0;
+    vSpin = aExtra.z * age + fract(dot(position,vec3(0.13,0.27,0.19)))*6.28318;
 
     gl_Position = projectionMatrix * mv;
   }
@@ -90,6 +92,7 @@ const FRAG = /* glsl */`
     vec2 uv = gl_PointCoord - 0.5;
     float s = sin(vSpin), c = cos(vSpin);
     uv = mat2(c, -s, s, c) * uv + 0.5;
+    if (any(lessThan(uv,vec2(0.0))) || any(greaterThan(uv,vec2(1.0)))) discard;
 
     float a = texture2D(uMap, uv).a;
     if (a < 0.004) discard;
@@ -141,6 +144,7 @@ export class ParticleSystem {
         uTime: { value: 0 },
         uHeightScale: { value: 600 },
         uOrthographic: { value: 0 },
+        uFadeIn: { value: opts.fadeIn ?? 0 },
         uMap: { value: sprite },
         uIntensity: { value: opts.intensity ?? 1.6 },
         uPremul: { value: opts.blending === undefined ? 1 : 0 },

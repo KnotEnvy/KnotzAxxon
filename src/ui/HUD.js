@@ -93,6 +93,9 @@ export class HUD {
     this.warnOn = cls($('hud-warn'), 'on');
     this.lockEl = $('hud-lock');
     this.floatersEl = $('floaters');
+    this.hitEl = $('combat-confirm');
+    this._hitWorld = new THREE.Vector3();
+    this._hitLife = 0;
     this.damageFlash = $('damage-flash');
     this.perfEl = $('perf');
 
@@ -211,7 +214,11 @@ export class HUD {
       // the ghost bar drains a beat later, showing the damage you just did
       this._bossGhostHp = Math.max(t, this._bossGhostHp - dt * 0.22);
       this.bossGhost.set(this._bossGhostHp);
-      this.bossPhase.set(`PHASE ${s.boss.phase + 1}`);
+      const b = s.boss;
+      const target = b.launcher?.charging ? `RACK ${b.launcher.hits}/6`
+        : b.coreOpen > 0.55 ? 'CORE EXPOSED'
+        : b.pods?.some(p => p.alive) ? 'DESTROY CANNONS' : 'SHUTTERS CLOSED';
+      this.bossPhase.set(`PHASE ${b.phase + 1} · ${target}`);
     } else {
       this._bossGhostHp = 1;
     }
@@ -333,6 +340,7 @@ export class HUD {
 
   _updateFloaters(dt, camera) {
     if (!camera) return;
+    this._updateCombatHit(dt, camera);
     for (let i = this._floaters.length - 1; i >= 0; i--) {
       const f = this._floaters[i];
       f.life -= dt;
@@ -355,6 +363,31 @@ export class HUD {
   clearFloaters() {
     for (const f of this._floaters) { f.el.remove(); this._floaterPool.push(f.el); }
     this._floaters.length = 0;
+  }
+
+  /** One short-lived, world-anchored confirmation; never a persistent target overlay. */
+  combatHit(worldPos, kind = 'damage') {
+    if (!this.hitEl) return;
+    const priority = { armour: 0, damage: 1, weak: 2, kill: 3 }[kind] ?? 1;
+    if (this._hitLife > 0.06 && priority < this._hitPriority) return;
+    this._hitPriority = priority;
+    this._hitWorld.copy(worldPos);
+    this._hitLife = this._hitDuration = kind === 'kill' ? 0.24 : 0.16;
+    this.hitEl.className = `combat-confirm ${kind}`;
+  }
+
+  _updateCombatHit(dt, camera) {
+    if (!this.hitEl) return;
+    this._hitLife = Math.max(0, this._hitLife - dt);
+    const p = this._hitWorld;
+    if (!this._hitLife || !inCombatView(camera, p.x, p.y, p.z)) {
+      this.hitEl.style.opacity = '0'; return;
+    }
+    _p.copy(p).project(camera);
+    const x = (_p.x * 0.5 + 0.5) * innerWidth;
+    const y = (-_p.y * 0.5 + 0.5) * innerHeight;
+    this.hitEl.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+    this.hitEl.style.opacity = String(Math.min(1, this._hitLife / 0.08));
   }
 
   /* ------------------------------------------------------------------ */
@@ -491,6 +524,8 @@ export class HUD {
     if (this._damageRaf != null) cancelAnimationFrame(this._damageRaf);
     this._damageRaf = null;
     this._warnTimer = 0;
+    this._hitLife = 0;
+    if (this.hitEl) this.hitEl.style.opacity = '0';
     this._gradeTimer = 0;
     this.gradeEl?.classList.remove('on');
     this._comboTimer = this._comboPulse = 0;

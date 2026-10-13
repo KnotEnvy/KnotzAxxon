@@ -1,0 +1,355 @@
+{
+  "scope": "Active src/ game models; legacy/ is archived and excluded.",
+  "status": "local_model_review_complete_pending_human_visual_acceptance",
+  "review_method": "Source inspection, nine catalogue sheets, 26 showcase scenes, scripted campaign and geometry regression tests. Not a human art approval or sustained hardware benchmark.",
+  "models": [
+    {
+      "model": "hero-interceptor",
+      "status": "approved-preserved",
+      "detail": "Previously approved hero model retained.",
+      "evidence": "../2026-10-12-hero/after.png"
+    },
+    {
+      "model": "turret",
+      "status": "refined",
+      "detail": "Armored cupola, fitted base plates, trunnions, barrel sleeves and cooling collars; existing aim and telegraph behavior retained.",
+      "evidence": "enemies-after.png"
+    },
+    {
+      "model": "heavy-turret",
+      "status": "refined",
+      "detail": "Armored cupola, fitted base plates, trunnions, barrel sleeves and cooling collars; existing aim and telegraph behavior retained.",
+      "evidence": "enemies-after.png"
+    },
+    {
+      "model": "missile-silo",
+      "status": "repaired",
+      "detail": "Open launch well replaces closed cap that hid glow; engraved hatch and fitted braces.",
+      "evidence": "enemies-after.png"
+    },
+    {
+      "model": "fuel-cell",
+      "status": "refined",
+      "detail": "Readable cap, collars, plumbing and valve; yellow fuel stencil retained.",
+      "evidence": "enemies-after.png"
+    },
+    {
+      "model": "radar-tower",
+      "status": "repaired",
+      "detail": "Thick concave reflector, feed struts and supported emitter; hit shell follows dish rotation.",
+      "evidence": "enemies-after.png"
+    },
+    {
+      "model": "mine",
+      "status": "repaired",
+      "detail": "External warning band and contact lights replace buried lamp; contact spike sockets.",
+      "evidence": "enemies-after.png"
+    },
+    {
+      "model": "drone",
+      "status": "refined",
+      "detail": "Continuous faceted hulls, distinct broad/swept wings, fitted upper panels, tail fins and connected exhaust.",
+      "evidence": "enemies-after.png"
+    },
+    {
+      "model": "interceptor",
+      "status": "refined",
+      "detail": "Continuous faceted hulls, distinct broad/swept wings, fitted upper panels, tail fins and connected exhaust.",
+      "evidence": "enemies-after.png"
+    },
+    {
+      "model": "parked-fighter",
+      "status": "refined",
+      "detail": "Continuous tapered nose, wing inlays, wheels and contained engine spool glow.",
+      "evidence": "enemies-after.png"
+    },
+    {
+      "model": "sentinel-torso",
+      "status": "repaired",
+      "detail": "Outward-facing tapered armor restores solid surfaces; broad armor material and chest vent details.",
+      "evidence": "boss-after.png"
+    },
+    {
+      "model": "sentinel-head",
+      "status": "repaired",
+      "detail": "Outward-facing tapered armor restores solid surfaces; broad armor material and chest vent details.",
+      "evidence": "boss-after.png"
+    },
+    {
+      "model": "sentinel-shoulders",
+      "status": "repaired",
+      "detail": "Outward-facing tapered armor restores solid surfaces; broad armor material and chest vent details.",
+      "evidence": "boss-after.png"
+    },
+    {
+      "model": "sentinel-reactor",
+      "status": "repaired",
+      "detail": "Shallow reactor behind four fitted shutter wedges; phase timing and target coordinates preserved.",
+      "evidence": "boss-after.png"
+    },
+    {
+      "model": "sentinel-shutters",
+      "status": "repaired",
+      "detail": "Shallow reactor behind four fitted shutter wedges; phase timing and target coordinates preserved.",
+      "evidence": "boss-after.png"
+    },
+    {
+      "model": "sentinel-cannon-pods",
+      "status": "refined",
+      "detail": "Banded pod armor, muzzle collars, sleeved barrels and cooling slots; detail disappears with destroyed pod body.",
+      "evidence": "boss-after.png"
+    },
+    {
+      "model": "sentinel-launcher",
+      "status": "reviewed-retained",
+      "detail": "Existing articulation, charge mouths and destroyed-state silhouettes remain clear; reviewed in catalogue and live duel capture.",
+      "evidence": "boss-in-game.png"
+    },
+    {
+      "model": "sentinel-claw",
+      "status": "reviewed-retained",
+      "detail": "Existing articulation, charge mouths and destroyed-state silhouettes remain clear; reviewed in catalogue and live duel capture.",
+      "evidence": "boss-in-game.png"
+    },
+    {
+      "model": "sentinel-destroyed-mounts",
+      "status": "reviewed-retained",
+      "detail": "Existing articulation, charge mouths and destroyed-state silhouettes remain clear; reviewed in catalogue and live duel capture.",
+      "evidence": "boss-in-game.png"
+    },
+    {
+      "model": "sentinel-thrusters",
+      "status": "refined",
+      "detail": "Rear exhaust housings and fitted rings support existing luminous discs.",
+      "evidence": "boss-after.png"
+    },
+    {
+      "model": "shield-pickup",
+      "status": "refined",
+      "detail": "Camera-facing badges, contrasting backplates and separate rings remove overlapping transparent shells.",
+      "evidence": "items-after.png"
+    },
+    {
+      "model": "spread-pickup",
+      "status": "refined",
+      "detail": "Camera-facing badges, contrasting backplates and separate rings remove overlapping transparent shells.",
+      "evidence": "items-after.png"
+    },
+    {
+      "model": "repair-pickup",
+      "status": "refined",
+      "detail": "Camera-facing badges, contrasting backplates and separate rings remove overlapping transparent shells.",
+      "evidence": "items-after.png"
+    },
+    {
+      "model": "fuel-pickup",
+      "status": "refined",
+      "detail": "Camera-facing badges, contrasting backplates and separate rings remove overlapping transparent shells.",
+      "evidence": "items-after.png"
+    },
+    {
+      "model": "homing-missile",
+      "status": "refined",
+      "detail": "Continuous nose/body, tail fins and exhaust collar in one instanced mesh.",
+      "evidence": "items-after.png"
+    },
+    {
+      "model": "player-bolt",
+      "status": "reviewed-retained",
+      "detail": "Tapered bolts and distinct cyan/orange colors remain appropriate at gameplay size.",
+      "evidence": "items-after.png"
+    },
+    {
+      "model": "enemy-bolt",
+      "status": "reviewed-retained",
+      "detail": "Tapered bolts and distinct cyan/orange colors remain appropriate at gameplay size.",
+      "evidence": "items-after.png"
+    },
+    {
+      "model": "stored-fighter",
+      "status": "repaired",
+      "detail": "Continuous airframe and fitted muted covers replace oversized block coverings.",
+      "evidence": "props-after.png"
+    },
+    {
+      "model": "cooling-stack",
+      "status": "repaired",
+      "detail": "Corrected shared face winding; cooling bands follow taper and bunker viewing slit reaches wall surface.",
+      "evidence": "props-after.png and showcase-report.json"
+    },
+    {
+      "model": "bunker",
+      "status": "repaired",
+      "detail": "Corrected shared face winding; cooling bands follow taper and bunker viewing slit reaches wall surface.",
+      "evidence": "props-after.png and showcase-report.json"
+    },
+    {
+      "model": "skyline-towers",
+      "status": "repaired",
+      "detail": "Corrected shared face winding; cooling bands follow taper and bunker viewing slit reaches wall surface.",
+      "evidence": "props-after.png and showcase-report.json"
+    },
+    {
+      "model": "dreadnought-superstructure",
+      "status": "repaired",
+      "detail": "Corrected shared face winding; cooling bands follow taper and bunker viewing slit reaches wall surface.",
+      "evidence": "props-after.png and showcase-report.json"
+    },
+    {
+      "model": "carrier-island",
+      "status": "repaired",
+      "detail": "Corrected shared face winding; cooling bands follow taper and bunker viewing slit reaches wall surface.",
+      "evidence": "props-after.png and showcase-report.json"
+    },
+    {
+      "model": "carrier-hull-and-hangars",
+      "status": "repaired",
+      "detail": "Hangars, runway marks and edge lights follow the taper at bow and stern.",
+      "evidence": "showcase-report.json"
+    },
+    {
+      "model": "scenery-radar-dishes",
+      "status": "refined",
+      "detail": "Shared thick concave reflector replaces capped cone reflector.",
+      "evidence": "showcase-report.json"
+    },
+    {
+      "model": "cargo-crates-and-drums",
+      "status": "reviewed-retained",
+      "detail": "Existing silhouettes and material separation fit their background role; inspected from three catalogue angles.",
+      "evidence": "props-after.png"
+    },
+    {
+      "model": "landing-pad",
+      "status": "reviewed-retained",
+      "detail": "Existing silhouettes and material separation fit their background role; inspected from three catalogue angles.",
+      "evidence": "props-after.png"
+    },
+    {
+      "model": "fuel-depot",
+      "status": "reviewed-retained",
+      "detail": "Existing silhouettes and material separation fit their background role; inspected from three catalogue angles.",
+      "evidence": "props-after.png"
+    },
+    {
+      "model": "hazard-pad",
+      "status": "reviewed-retained",
+      "detail": "Existing silhouettes and material separation fit their background role; inspected from three catalogue angles.",
+      "evidence": "props-after.png"
+    },
+    {
+      "model": "flak-gun",
+      "status": "reviewed-retained",
+      "detail": "Existing silhouettes and material separation fit their background role; inspected from three catalogue angles.",
+      "evidence": "props-after.png"
+    },
+    {
+      "model": "antenna",
+      "status": "reviewed-retained",
+      "detail": "Existing silhouettes and material separation fit their background role; inspected from three catalogue angles.",
+      "evidence": "props-after.png"
+    },
+    {
+      "model": "deck-and-trench-walls",
+      "status": "reviewed-retained",
+      "detail": "Inspected geometry builders and seeded campaign/showcase views; preserve clear flight envelope, openings and visual hazard language.",
+      "evidence": "showcase-report.json and campaign-report.json"
+    },
+    {
+      "model": "wall-slots-and-pillars",
+      "status": "reviewed-retained",
+      "detail": "Inspected geometry builders and seeded campaign/showcase views; preserve clear flight envelope, openings and visual hazard language.",
+      "evidence": "showcase-report.json and campaign-report.json"
+    },
+    {
+      "model": "arches",
+      "status": "reviewed-retained",
+      "detail": "Inspected geometry builders and seeded campaign/showcase views; preserve clear flight envelope, openings and visual hazard language.",
+      "evidence": "showcase-report.json and campaign-report.json"
+    },
+    {
+      "model": "electric-fences",
+      "status": "reviewed-retained",
+      "detail": "Inspected geometry builders and seeded campaign/showcase views; preserve clear flight envelope, openings and visual hazard language.",
+      "evidence": "showcase-report.json and campaign-report.json"
+    },
+    {
+      "model": "moving-gates",
+      "status": "reviewed-retained",
+      "detail": "Inspected geometry builders and seeded campaign/showcase views; preserve clear flight envelope, openings and visual hazard language.",
+      "evidence": "showcase-report.json and campaign-report.json"
+    },
+    {
+      "model": "platforms",
+      "status": "reviewed-retained",
+      "detail": "Inspected geometry builders and seeded campaign/showcase views; preserve clear flight envelope, openings and visual hazard language.",
+      "evidence": "showcase-report.json and campaign-report.json"
+    },
+    {
+      "model": "debris-gates",
+      "status": "reviewed-retained",
+      "detail": "Inspected geometry builders and seeded campaign/showcase views; preserve clear flight envelope, openings and visual hazard language.",
+      "evidence": "showcase-report.json and campaign-report.json"
+    },
+    {
+      "model": "debris-rings",
+      "status": "reviewed-retained",
+      "detail": "Inspected geometry builders and seeded campaign/showcase views; preserve clear flight envelope, openings and visual hazard language.",
+      "evidence": "showcase-report.json and campaign-report.json"
+    },
+    {
+      "model": "asteroids",
+      "status": "reviewed-retained",
+      "detail": "Inspected geometry builders and seeded campaign/showcase views; preserve clear flight envelope, openings and visual hazard language.",
+      "evidence": "showcase-report.json and campaign-report.json"
+    },
+    {
+      "model": "dreadnought-hull",
+      "status": "reviewed-retained",
+      "detail": "Inspected geometry builders and seeded campaign/showcase views; preserve clear flight envelope, openings and visual hazard language.",
+      "evidence": "showcase-report.json and campaign-report.json"
+    },
+    {
+      "model": "boss-arena",
+      "status": "reviewed-retained",
+      "detail": "Inspected geometry builders and seeded campaign/showcase views; preserve clear flight envelope, openings and visual hazard language.",
+      "evidence": "showcase-report.json and campaign-report.json"
+    },
+    {
+      "model": "explosion-fragments",
+      "status": "reviewed-retained",
+      "detail": "Existing effect and background geometry reviewed in source and rendered showcase; no geometry defect requiring expansion found.",
+      "evidence": "showcase-report.json"
+    },
+    {
+      "model": "wreck-slabs",
+      "status": "reviewed-retained",
+      "detail": "Existing effect and background geometry reviewed in source and rendered showcase; no geometry defect requiring expansion found.",
+      "evidence": "showcase-report.json"
+    },
+    {
+      "model": "turret-debris",
+      "status": "reviewed-retained",
+      "detail": "Existing effect and background geometry reviewed in source and rendered showcase; no geometry defect requiring expansion found.",
+      "evidence": "showcase-report.json"
+    },
+    {
+      "model": "planet",
+      "status": "reviewed-retained",
+      "detail": "Existing effect and background geometry reviewed in source and rendered showcase; no geometry defect requiring expansion found.",
+      "evidence": "showcase-report.json"
+    },
+    {
+      "model": "planet-rings",
+      "status": "reviewed-retained",
+      "detail": "Existing effect and background geometry reviewed in source and rendered showcase; no geometry defect requiring expansion found.",
+      "evidence": "showcase-report.json"
+    },
+    {
+      "model": "sun",
+      "status": "reviewed-retained",
+      "detail": "Existing effect and background geometry reviewed in source and rendered showcase; no geometry defect requiring expansion found.",
+      "evidence": "showcase-report.json"
+    }
+  ]
+}

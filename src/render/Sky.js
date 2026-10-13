@@ -1,5 +1,6 @@
 import { glowSprite } from './Textures.js';
 import { disposeModel } from './Dispose.js';
+import { planetMaterial, planetRingMaterial } from './CelestialMaterials.js';
 /**
  * Procedural sky.
  *
@@ -129,7 +130,7 @@ const SKY_FRAG = /* glsl */`
     float n2 = fbm(np * 2.7 + n * 1.4);
     float clouds = smoothstep(0.35, 0.95, n * 0.65 + n2 * 0.45) * band;
     vec3 neb = mix(uNebulaA, uNebulaB, smoothstep(0.2, 0.8, n2));
-    col += neb * clouds * uNebulaAmount;
+    col += neb * clouds * uNebulaAmount * 0.62;
 
     /* dust lanes cut back into the nebula */
     float dust = smoothstep(0.55, 0.95, fbm(np * 3.6 + 11.0)) * band;
@@ -137,8 +138,8 @@ const SKY_FRAG = /* glsl */`
 
     /* stars, dimmed inside bright nebula */
     float occl = 1.0 - clamp(clouds * 1.3, 0.0, 0.85);
-    col += stars(dir, 90.0, 0.055, 1.5) * occl;
-    col += stars(dir, 240.0, 0.030, 0.7) * occl;
+    col += stars(dir, 90.0, uStarDensity, 1.5) * occl;
+    col += stars(dir, 240.0, uStarDensity * 0.55, 0.7) * occl;
 
     /* sun bloom in the sky itself */
     float sd = max(dot(dir, normalize(uSunDir)), 0.0);
@@ -284,19 +285,13 @@ export class Sky {
 
     // a big moody planet hanging off to one side
     const planetGeo = new THREE.SphereGeometry(1, 48, 32);
-    this.planetMat = new THREE.MeshStandardMaterial({
-      color: 0x33506e, roughness: 0.95, metalness: 0.0, fog: false,
-      emissive: 0x050a14, emissiveIntensity: 1,
-    });
+    this.planetMat = planetMaterial();
     this.planet = new THREE.Mesh(planetGeo, this.planetMat);
     this.planetDir = new THREE.Vector3(-0.48, 0.16, 0.86).normalize();
     this.group.add(this.planet);
 
     const ringGeo = new THREE.RingGeometry(1.45, 2.3, 96, 1);
-    this.planetRing = new THREE.Mesh(ringGeo, new THREE.MeshBasicMaterial({
-      color: 0x7ea8cc, transparent: true, opacity: 0.30, side: THREE.DoubleSide,
-      depthWrite: false, fog: false, toneMapped: false,
-    }));
+    this.planetRing = new THREE.Mesh(ringGeo, planetRingMaterial());
     this.planetRing.rotation.set(-1.15, 0.35, 0.2);
     this.group.add(this.planetRing);
   }
@@ -364,7 +359,12 @@ export class Sky {
     // celestial placement
     this.sunDisc.material.color.setHex(p.sunColor);
     this.sunGlow.material.color.setHex(p.sunColor);
-    this.planetMat.color.setHex(p.nebulaB);
+    const hot = name === 'ember';
+    this.planetMat.uniforms.uOcean.value.setHex(hot ? 0x44282b : 0x173956);
+    this.planetMat.uniforms.uLand.value.setHex(hot ? 0x94775d : 0x557b87);
+    this.planetMat.uniforms.uAir.value.setHex(hot ? 0xe6a679 : 0x65b7da);
+    this.planetMat.uniforms.uSun.value.copy(this._discDir).sub(this.planetDir).normalize();
+    this.planetRing.material.uniforms.uColor.value.setHex(hot ? 0xba9b82 : 0x9ea8bc);
   }
 
   _applyBlend(t) {

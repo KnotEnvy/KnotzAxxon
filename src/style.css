@@ -233,6 +233,18 @@ html, body {
 /* --- floating text ---------------------------------------------------- */
 
 .floaters { position: absolute; inset: 0; overflow: hidden; }
+.combat-confirm { position:absolute; left:0; top:0; width:26px; height:26px; opacity:0; pointer-events:none; color:#dff8ff; }
+.combat-confirm i { position:absolute; width:8px; height:2px; background:currentColor; box-shadow:0 0 2px #07131c; }
+.combat-confirm i:nth-child(1) { left:0; top:3px; transform:rotate(45deg); }
+.combat-confirm i:nth-child(2) { right:0; top:3px; transform:rotate(-45deg); }
+.combat-confirm i:nth-child(3) { left:0; bottom:3px; transform:rotate(-45deg); }
+.combat-confirm i:nth-child(4) { right:0; bottom:3px; transform:rotate(45deg); }
+.combat-confirm.weak { color:#ffd27a; width:30px; height:30px; }
+.combat-confirm.kill { color:#ffd27a; width:34px; height:34px; }
+.combat-confirm.kill i { height:3px; width:10px; }
+.combat-confirm.armour { color:#a2b3c0; }
+.combat-confirm.armour i { display:none; }
+.combat-confirm.armour::after { content:''; position:absolute; inset:6px; border:1px solid currentColor; transform:rotate(45deg); }
 .floater {
   position: absolute;
   font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0.08em;

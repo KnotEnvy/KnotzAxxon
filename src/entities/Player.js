@@ -15,7 +15,7 @@ import { disposeModel } from '../render/Dispose.js';
  */
 
 import * as THREE from 'three';
-import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import { buildShip } from '../render/PlayerShip.js';
 import { SIDE } from './Projectiles.js';
 import { CORRIDOR_HALF, ALT_MIN, ALT_MAX, FLIGHT_SPEED } from '../world/Level.js';
 import { clamp, clamp01, damp, lerp, approach, rand } from '../core/Utils.js';
@@ -27,180 +27,6 @@ const _v = new THREE.Vector3();
 const _v2 = new THREE.Vector3();
 const _aim = new THREE.Vector3();
 const _euler = new THREE.Euler();
-
-/* ------------------------------------------------------------------ */
-/* Model                                                               */
-/* ------------------------------------------------------------------ */
-
-/**
- * Builds a panelled interceptor with swept wings and machined engine details. Nose points +Z, the direction of travel.
- */
-function buildShip(mats) {
-  const g = new THREE.Group();
-  /** Static parts are baked per material: the whole airframe is four draws. */
-  const buckets = { hull: [], accent: [], glass: [], neon: [] };
-  const _obj = new THREE.Object3D();
-
-  const add = (geo, bucket, x, y, z, rx = 0, ry = 0, rz = 0, sx = 1, sy = 1, sz = 1, color = null) => {
-    _obj.position.set(x, y, z);
-    _obj.rotation.set(rx, ry, rz);
-    _obj.scale.set(sx, sy, sz);
-    _obj.updateMatrix();
-    let part = geo.index ? geo.toNonIndexed() : geo.clone();
-    part.applyMatrix4(_obj.matrix);
-    part.deleteAttribute('uv1');
-    part.clearGroups();
-    if (bucket === 'neon') {
-      const c = new THREE.Color(color);
-      const n = part.attributes.position.count;
-      const data = new Float32Array(n * 3);
-      for (let i = 0; i < n; i++) data.set([c.r, c.g, c.b], i * 3);
-      part.setAttribute('color', new THREE.BufferAttribute(data, 3));
-    }
-    buckets[bucket].push(part);
-  };
-  const neonColor = (hex, gain) => new THREE.Color(hex).multiplyScalar(gain);
-
-  /* --- fuselage ---------------------------------------------------- */
-
-  const nose = new THREE.ConeGeometry(0.62, 2.6, 8);
-  nose.rotateX(Math.PI / 2);
-  add(nose, 'hull', 0, 0, 1.9);
-
-  const body = new THREE.CylinderGeometry(0.62, 0.78, 2.6, 8);
-  body.rotateX(Math.PI / 2);
-  add(body, 'hull', 0, 0, 0.3);
-
-  const tail = new THREE.CylinderGeometry(0.78, 0.5, 1.5, 8);
-  tail.rotateX(Math.PI / 2);
-  add(tail, 'accent', 0, 0, -1.7);
-
-  /* --- wings -------------------------------------------------------- */
-
-  // Swept delta. Each side is its own outline: extrusion keeps the winding
-  // front-facing, which a baked negative scale would not.
-  for (const side of [1, -1]) {
-    const wingShape = new THREE.Shape();
-    wingShape.moveTo(0, 0.9);
-    wingShape.lineTo(side * 3.4, -1.5);
-    wingShape.lineTo(side * 3.55, -2.15);
-    wingShape.lineTo(side * 2.2, -2.0);
-    wingShape.lineTo(side * 0.55, -1.1);
-    wingShape.closePath();
-    const wingGeo = new THREE.ExtrudeGeometry(wingShape, { depth: 0.15, bevelEnabled: true, bevelSegments: 2, steps: 1, bevelSize: 0.045, bevelThickness: 0.04 });
-    wingGeo.translate(0, 0, -0.095);
-    wingGeo.rotateX(Math.PI / 2);
-    add(wingGeo, 'hull', side * 0.5, -0.06, 0.1, 0, 0, side * -0.09);
-  }
-
-  // wing leading-edge accents
-  const edgeGeo = new THREE.BoxGeometry(3.1, 0.1, 0.34);
-  for (const side of [1, -1]) {
-    add(edgeGeo, 'accent', side * 2.0, 0.03, 0.62, 0, side * 0.62, side * -0.09);
-  }
-
-  /* --- vertical stabilisers ------------------------------------------ */
-
-  const finShape = new THREE.Shape();
-  finShape.moveTo(0, 0);
-  finShape.lineTo(-1.5, 0);
-  finShape.lineTo(-1.15, 1.35);
-  finShape.lineTo(-0.15, 1.2);
-  finShape.closePath();
-  const finGeo = new THREE.ExtrudeGeometry(finShape, { depth: 0.12, bevelEnabled: false });
-  finGeo.translate(0, 0, -0.06);
-  for (const side of [1, -1]) {
-    add(finGeo, 'accent', side * 0.62, 0.24, -1.35, 0, 0, side * 0.22);
-  }
-
-  /* --- canopy -------------------------------------------------------- */
-
-  const canopyGeo = new THREE.SphereGeometry(0.5, 16, 12, 0, Math.PI * 2, 0, Math.PI * 0.55);
-  add(canopyGeo, 'glass', 0, 0.42, 0.75, 0, 0, 0, 1, 0.85, 1.9);
-
-  /* --- engines ------------------------------------------------------- */
-
-  const nacelle = new THREE.CylinderGeometry(0.42, 0.5, 2.2, 10);
-  nacelle.rotateX(Math.PI / 2);
-  const nozzle = new THREE.CylinderGeometry(0.44, 0.3, 0.35, 10);
-  nozzle.rotateX(Math.PI / 2);
-
-  const engines = [];
-  for (const side of [1, -1]) {
-    add(nacelle, 'accent', side * 1.05, -0.1, -1.25);
-    add(nozzle, 'neon', side * 1.05, -0.1, -2.4, 0, 0, 0, 1, 1, 1, neonColor(0x2a3644, 1));
-    // Small and only just over the bloom threshold. The old value put a
-    // 3.2x emissive disc a few metres from the camera, which is what turned
-    // the bottom of the frame into a white sheet.
-    const glowMat = mats.neon(0x8fe4ff, 1.55);
-    const glow = new THREE.Mesh(new THREE.CircleGeometry(0.34, 12), glowMat);
-    glow.position.set(side * 1.05, -0.1, -2.56);
-    glow.rotation.y = Math.PI;
-    g.add(glow);
-    engines.push(glow);
-  }
-
-  /* --- running lights ------------------------------------------------ */
-
-  const lightGeo = new THREE.BoxGeometry(0.16, 0.1, 0.5);
-  add(lightGeo, 'neon', -3.4, 0, -1.55, 0, 0, 0, 1, 1, 1, neonColor(0xff3d55, 1.5));
-  add(lightGeo, 'neon', 3.4, 0, -1.55, 0, 0, 0, 1, 1, 1, neonColor(0x52ffa8, 1.5));
-
-  // spine and wing trim: the ship's readable outline in silhouette
-  const spine = new THREE.BoxGeometry(0.14, 0.06, 2.4);
-  add(spine, 'neon', 0, 0.66, -0.3, 0, 0, 0, 1, 1, 1, neonColor(0x45e0ff, 1.15));
-
-  const trimGeo = new THREE.BoxGeometry(2.6, 0.07, 0.13);
-  for (const side of [1, -1]) {
-    add(trimGeo, 'neon', side * 2.0, 0.06, 0.5, 0, side * 0.62, side * -0.09, 1, 1, 1, neonColor(0x45e0ff, 1.05));
-  }
-
-  // Layered armour, intake vanes and concentric nozzle rings provide a
-  // manufactured silhouette without external asset or texture requests.
-  for (const side of [-1, 1]) {
-    for (let j = 0; j < 4; j++) {
-      add(new THREE.BoxGeometry(0.62, 0.06, 0.10), 'accent', side * 1.08, 0.32, -0.65 - j * 0.28);
-    }
-    for (let j = 0; j < 3; j++) {
-      add(new THREE.TorusGeometry(0.43 + j * 0.025, 0.055, 6, 20), 'accent',
-        side * 1.05, -0.1, -2.12 - j * 0.19);
-    }
-    add(new THREE.BoxGeometry(1.1, 0.09, 0.7), 'accent', side * 2.1, 0.11, 0.55, 0, side * 0.62);
-    add(new THREE.CylinderGeometry(0.10, 0.15, 1.5, 10), 'accent', side * 1.6, -0.12, 1.1, Math.PI / 2);
-    // wingtip gun pods: the visible source of the alternating bolts
-    add(new THREE.CylinderGeometry(0.09, 0.12, 1.3, 8), 'accent', side * 1.6, -0.1, 1.95, Math.PI / 2);
-  }
-
-  const materials = {
-    hull: mats.playerHull,
-    accent: mats.playerAccent,
-    glass: mats.glass,
-    neon: (mats._playerNeon ??= mats.track(new THREE.MeshBasicMaterial({ vertexColors: true, toneMapped: false }))),
-  };
-  // Classic-rig silhouette: the airframe drawn again only where something
-  // stands in front of it, so threading a pillar never hides the ship.
-  const silhouette = new THREE.Mesh(
-    mergeGeometries([...buckets.hull, ...buckets.accent], false),
-    (mats._playerSilhouette ??= mats.track(new THREE.MeshBasicMaterial({
-      color: 0x7fe8ff, transparent: true, opacity: 0.38, depthWrite: false,
-      depthFunc: THREE.GreaterDepth, toneMapped: false,
-    }))),
-  );
-  silhouette.renderOrder = 12;
-  silhouette.visible = false;
-  g.add(silhouette);
-  for (const [key, parts] of Object.entries(buckets)) {
-    const merged = mergeGeometries(parts, false);
-    for (const p of parts) p.dispose();
-    const mesh = new THREE.Mesh(merged, materials[key]);
-    mesh.castShadow = key !== 'neon';
-    mesh.receiveShadow = false;
-    g.add(mesh);
-  }
-  g.userData.engines = engines;
-  g.userData.silhouette = silhouette;
-  return g;
-}
 
 /* ------------------------------------------------------------------ */
 /* Player                                                              */
@@ -508,7 +334,9 @@ export class Player {
   _engineFx(dt, ctx, boostT) {
     const intensity = 0.32 + boostT * 0.55;
     // A gentle 9 Hz shimmer. The old 40 Hz flicker strobed at 60 fps.
-    const glowScale = 1 + boostT * 0.45 + Math.sin(ctx.time * 9) * 0.05;
+    // The core stays inside its recessed nozzle even under full boost.
+    // Trail length/width carry the thrust change without clipping the rim.
+    const glowScale = 0.95 + boostT * 0.04 + Math.sin(ctx.time * 9) * 0.01;
     for (const e of this.model.userData.engines) e.scale.setScalar(glowScale);
 
     const camPos = ctx.camera.position;

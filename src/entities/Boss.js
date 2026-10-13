@@ -121,7 +121,7 @@ export class Boss {
     this.chargeMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(0xffb43a), toneMapped: false });
     this.seamMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(0xff3d55).multiplyScalar(0.8), toneMapped: false });
     const M = {
-      hull: mats.enemyHull,
+      hull: mats.enemyArmor ?? mats.enemyHull,
       dark: mats.darkMetal,
       frame: mats.darkMetal,
       hazard: mats.hazard ?? mats.darkMetal,
@@ -160,7 +160,18 @@ export class Boss {
       }
     }
     for (let k = 0; k < 3; k++) t.add('frame', box(5 - k * 0.6, 1.3, 1), 0, -1.6 - k * 1.5, -4.5 + k * 0.3, 0.1);   // abdominal plates
-    t.add('dark', new THREE.TorusGeometry(4.1, 0.55, 6, 24), 0, 1, -5.25);          // reactor housing ring
+    t.add('dark', new THREE.TorusGeometry(4.1, 0.40, 8, 32), 0, 1, -6.45);
+    t.add('frame', new THREE.CylinderGeometry(4.1, 4.1, 1.4, 24, 1, true), 0, 1, -5.8, Math.PI/2);
+    for (let k=0;k<12;k++) {
+      const a=k*TAU/12;
+      t.add('frame', cyl(.13,.13,.16,6), Math.cos(a)*4.1, 1+Math.sin(a)*4.1, -6.84, Math.PI/2);
+    }
+    for (const side of [-1,1]) {
+      for (let k=0;k<4;k++) t.add('frame', box(2.2,.16,.3), side*4.8, 4.4-k*.45, -5.92);
+      t.add('frame', box(1.2,4.8,1.0), side*5.2, -.7, 5.5);
+      t.add('dark', new THREE.TorusGeometry(2.45,.24,6,24), side*5, 0, 6.0);
+      t.add('frame', cyl(2.5,2.25,1.5,16), side*5, 0, 5.1, Math.PI/2);
+    }
     for (const s of [-1, 1]) {
       t.add('neon', box(0.18, 5.5, 0.18), s * 5.2, 0.8, -5.0, 0, 0, s * 0.3);        // red chest seams
       t.add('neon', box(3.2, 0.16, 0.18), s * 3.8, -2.6, -4.7);
@@ -200,6 +211,7 @@ export class Boss {
     // make the next Sentinel recompile it on arrival.
     this.coreMat = (mats._bossCore ??= mats.energyCore(0xff3d55));
     this.core = new THREE.Mesh(new THREE.IcosahedronGeometry(3.1, 1), this.coreMat);
+    this.core.scale.z = .30;
     this.coreGroup.add(this.core);
 
     this.coreShell = new THREE.Mesh(
@@ -207,18 +219,25 @@ export class Boss {
       mats.neon(0xff3d55, 2.2, { transparent: true, opacity: 0.5, additive: true, depthWrite: false }),
     );
     this.coreGroup.add(this.coreShell);
+    this.coreShell.scale.z = .30;
 
     // iris shutters — four petals that retract to expose the core
     this.shutters = [];
-    const petal = new THREE.BoxGeometry(6.4, 3.6, 1.4);
+    // Four fitted wedges meet at the centre. A shallow reactor sits behind
+    // their closed plane; the old sphere poked through box-shaped shutters.
+    const petalShape = new THREE.Shape([
+      new THREE.Vector2(0,-3.365), new THREE.Vector2(3.75,.35), new THREE.Vector2(-3.75,.35),
+    ]);
+    const petal = new THREE.ExtrudeGeometry(petalShape, { depth:.5, steps:1,
+      bevelEnabled:true, bevelSize:.035, bevelThickness:.035, bevelSegments:1 }).translate(0,0,-.25);
     for (let i = 0; i < 4; i++) {
-      const s = new THREE.Mesh(petal, mats.enemyHull);
+      const s = new THREE.Mesh(petal, mats.enemyArmor ?? mats.enemyHull);
       s.castShadow = true;
       const holder = new THREE.Group();
       holder.position.set(0, 1, 0);
       holder.rotation.z = (i / 4) * TAU + Math.PI / 4;
       holder.add(s);
-      s.position.set(0, 3.4, -6.4);
+      s.position.set(0, 3.4, -7.0);
       this.torso.add(holder);
       this.shutters.push({ holder, mesh: s, base: 3.4 });
     }
@@ -226,10 +245,12 @@ export class Boss {
     /* --- shoulders, arms and the cannon pods ------------------------------ */
     this.pods = [];
     this.arms = [];
-    const podGeo = new THREE.CylinderGeometry(3.4, 4.0, 6.5, 10);
-    const barrelGeo = new THREE.CylinderGeometry(0.5, 0.62, 6, 8);
-    barrelGeo.rotateX(-Math.PI / 2);
-    barrelGeo.translate(0, 0, -3);
+    const podGeo = new THREE.CylinderGeometry(3.4, 4.0, 6.5, 12);
+    const barrelParts = [new THREE.CylinderGeometry(.5,.62,6,12).rotateX(-Math.PI/2).translate(0,0,-3)];
+    for (const z of [-1,-2.2,-3.4,-5.8]) barrelParts.push(new THREE.TorusGeometry(.58,.11,5,16).translate(0,0,z));
+    const barrelFlat = barrelParts.map(g=>g.toNonIndexed());
+    const barrelGeo = mergeGeometries(barrelFlat,false);
+    for (const g of [...barrelParts,...barrelFlat]) g.dispose();
 
     for (const side of [1, -1]) {
       // pauldron on the torso
@@ -279,14 +300,21 @@ export class Boss {
       g.position.set(side * 13.8, 5.6, -0.6);
       this.torso.add(g);
 
-      const body = new THREE.Mesh(podGeo, mats.enemyHull);
+      const body = new THREE.Mesh(podGeo, mats.enemyArmor ?? mats.enemyHull);
       body.rotation.x = Math.PI / 2;
       body.castShadow = true;
       g.add(body);
+      // Detail follows the pod body, including its destruction visibility.
+      const podDetails = new THREE.Group(); podDetails.rotation.x = -Math.PI/2; body.add(podDetails);
+      const pd = new Kit();
+      for (const z of [-3.28,2.9]) pd.add('frame',new THREE.TorusGeometry(z<0 ? 3.85:3.45,.16,5,24),0,0,z);
+      for (const side of [-1,1]) for (let k=0;k<4;k++) pd.add('dark',box(.16,1.25,.42),side*3.58,0,-1.7+k*.85);
+      for (const x of [-1.3,1.3]) pd.add('frame',new THREE.TorusGeometry(.82,.15,6,16),x,0,-3.38);
+      whiten(pd); pd.build(podDetails,M);
 
       const barrels = [];
       for (const o of [-1.3, 1.3]) {
-        const b = new THREE.Mesh(barrelGeo, mats.darkMetal);
+        const b = new THREE.Mesh(barrelGeo, mats.enemyMetal ?? mats.darkMetal);
         b.position.set(o, 0, -3);
         b.castShadow = true;
         g.add(b);
@@ -417,10 +445,10 @@ export class Boss {
     this.seamMat.color.setRGB(0.8 + this.phase * 0.5 + this.coreOpen * 0.4, 0.2, 0.26);
     for (const tip of this.antennaTips) tip.visible = Math.sin(ctx.time * 6) > 0;
 
-    this.core.rotation.x += dt * 0.5;
-    this.core.rotation.y += dt * 0.8;
+    this.core.rotation.z += dt * 0.5;
     const pulse = 1 + Math.sin(ctx.time * 6) * 0.06;
-    this.coreShell.scale.setScalar(pulse * (0.9 + this.coreOpen * 0.35));
+    const shellScale = pulse * (0.9 + this.coreOpen * 0.20);
+    this.coreShell.scale.set(shellScale, shellScale, shellScale*.30);
     // The reactor dims while the launcher charges: one priority target at a time.
     this.coreMat.uniforms.uIntensity.value = (0.35 + this.coreOpen * 1.5) * (this.launcher.charging ? 0.45 : 1);
     for (const t of this.thrusters) t.scale.setScalar(1 + Math.sin(ctx.time * 22) * 0.1);

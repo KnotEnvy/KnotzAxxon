@@ -641,10 +641,20 @@ export class Game {
       }
       if(kind==='enemy') {
         this.shotsHit++;
-        if(hit.hit(pool.dmg[i],ctx)) this._killEnemy(hit,ctx);
-        else { this.fx.impact(_v,_n,0x9fe8ff,0.9); audio.impact(audio.panFor(x,this.player.pos.x), z-this.player.pos.z); }
+        const killed = hit.hit(pool.dmg[i],ctx);
+        this.hud?.combatHit?.(_v, killed ? 'kill' : 'damage');
+        if(killed) this._killEnemy(hit,ctx);
+        else { this.fx.impact(_v,_n,0x9fe8ff,0.9); audio.targetHit(audio.panFor(x,this.player.pos.x), z-this.player.pos.z); }
       } else if(kind==='boss') {
-        if(this.boss.hitAt(_v,pool.dmg[i],ctx)) this.shotsHit++;
+        const result = this.boss.hitAt(_v,pool.dmg[i],ctx);
+        if(result) {
+          const armour = result === 'armour';
+          if(!armour) this.shotsHit++;
+          this.hud?.combatHit?.(_v, armour ? 'armour' : result === 'pod' ? 'damage' : 'weak');
+          const pan = audio.panFor(x,this.player.pos.x), dist = z-this.player.pos.z;
+          if(armour) audio.impact(pan,dist);
+          else audio.targetHit(pan,dist,result !== 'pod');
+        }
       } else {
         this.fx.impact(_v,_n,0x9fb8cc,0.7);
         audio.impact(audio.panFor(x,this.player.pos.x), z-this.player.pos.z);

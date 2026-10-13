@@ -428,6 +428,26 @@ export function glowSprite(size = 128, falloff = 2.2) {
   });
 }
 
+/** Soft overlapping lobes give steam and wreck smoke a billowing silhouette. */
+export function smokeSprite(size = 128) {
+  return once(`smoke:${size}`, () => {
+    const { c, ctx } = canvas(size), img = ctx.createImageData(size, size);
+    const rng = new Rng(0x5a0ce);
+    const lobes = Array.from({ length: 12 }, () => [rng.range(-0.48,0.48), rng.range(-0.48,0.48), rng.range(0.18,0.4)]);
+    for (let y = 0; y < size; y++) for (let x = 0; x < size; x++) {
+      const px = (x+0.5)/size*2-1, py = (y+0.5)/size*2-1;
+      let density = 0;
+      for (const [cx,cy,r] of lobes) density += Math.exp(-((px-cx)**2+(py-cy)**2)/(r*r)*2)*0.36;
+      const edge = 1-smoothstep((Math.hypot(px,py)-0.72)/0.26);
+      const i = (y*size+x)*4;
+      img.data[i] = img.data[i+1] = img.data[i+2] = 255;
+      img.data[i+3] = clamp01(density)*edge*210;
+    }
+    ctx.putImageData(img,0,0);
+    return new THREE.CanvasTexture(c);
+  });
+}
+
 /** Ring gradient used for shockwaves. */
 export function ringSprite(size = 256) {
   return once(`ring:${size}`, () => {
