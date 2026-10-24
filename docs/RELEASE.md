@@ -21,6 +21,16 @@ The smoke script owns a temporary preview on an available local port and stops i
 
 The portable build remains npm run build (relative asset paths). The Pages build uses /KnotzAxxon/; publish only dist, never the repository root. No server, backend, API keys or external assets are required. WebGL 2 is required. Browser storage holds local settings, records and grades; it is specific to the browser and origin.
 
+## Link preview art
+
+`public/og-image.png` (1200x630, used by Open Graph and Twitter cards), `public/social-preview.png` (1280x640, for the GitHub repository social preview) and the `apple-touch-icon.png` / `icon-512.png` icons are rendered from a clean frame of the running game by `scripts/brand/render-link-art.cjs`. Regenerate them after a visual change with the dev server or preview running:
+
+```bash
+KZ_TEST_URL=http://localhost:5173/ node scripts/brand/render-link-art.cjs
+```
+
+Upload `public/social-preview.png` by hand under the repository Settings → Social preview; the GitHub API does not accept it.
+
 ## Deploy and rollback
 
 Merge a reviewed change into main or manually run GitHub Pages release in Actions. Check both validate and deploy jobs, then test the public URL in a fresh browser. Pages is configured to build from GitHub Actions; the environment allows main.
