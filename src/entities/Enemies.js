@@ -1,3 +1,5 @@
+import { buildImportedGround } from '../render/ImportedModels.js';
+import { disposeModel } from '../render/Dispose.js';
 /**
  * Enemies and destructible props.
  *
@@ -151,6 +153,7 @@ class Enemy {
   }
 
   dispose() {
+    if (this._importedRoot) disposeModel(this._importedRoot);
     this.flashMat?.dispose();
     this.group.parent?.remove(this.group);
   }
@@ -170,6 +173,7 @@ export class Turret extends Enemy {
     this.fireTimer = this.rng.range(0.6, 2.2);
     this.burst = 0;
 
+    if (!heavy && buildImportedGround(this, 'turret')) return;
     const s = heavy ? 1.5 : 1;
     const baseGeo = geo(`turretBase${heavy}`, () => {
       const g = new THREE.CylinderGeometry(1.5 * s, 1.9 * s, 1.0 * s, 8);
@@ -438,6 +442,7 @@ export class RadarTower extends Enemy {
     this.hp = 4;
     this.radius = 3.0;
     this.score = 1000;
+    if (buildImportedGround(this, 'radar')) return;
 
     this.add(geo('radarMast', () => {
       const g = new THREE.CylinderGeometry(0.45, 0.8, 7, 6);

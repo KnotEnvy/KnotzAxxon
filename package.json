@@ -9,6 +9,7 @@
     "build": "vite build",
     "preview": "vite preview --port 4173",
     "test": "node --test tests/*.test.js",
+    "test:models": "node scripts/qa/imported-models.cjs",
     "build:pages": "vite build --base=/KnotzAxxon/",
     "test:release": "node scripts/qa/release-smoke.cjs"
   },

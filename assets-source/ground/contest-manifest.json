@@ -1,0 +1,1039 @@
+{
+ "snapshot": "final",
+ "baseline_commit": "c07e5e7236afa8ee53bf42bc831f0f7cb3802ce0",
+ "blender": "5.2.1 LTS (background, factory startup)",
+ "assets": [
+  {
+   "asset": "turret",
+   "files": {
+    "turret.blend": {
+     "bytes": 108512,
+     "sha256": "cf55942c4c4669396159722546ea49549f5ee8cea9f0f64dddad9dd528babf3e"
+    },
+    "turret.glb": {
+     "bytes": 58440,
+     "sha256": "4311e2f28db87f0643886c228702606d2097d7d74a11dd6bc70f05016f8822bc"
+    }
+   },
+   "glb_inspection_pure_python": {
+    "triangles": 1194,
+    "primitives_mesh_draws": 8,
+    "materials_declared": 4,
+    "materials_used": 4,
+    "textures": 0,
+    "images": 0,
+    "bounds_rest_world_gltf": {
+     "min": [
+      -1.9,
+      0.0,
+      -1.9
+     ],
+     "max": [
+      1.9,
+      2.15,
+      2.815
+     ],
+     "size": [
+      3.8,
+      2.15,
+      4.715
+     ]
+    },
+    "budget": {
+     "triangles": 15000,
+     "primitives": 8
+    },
+    "within_budget": true
+   },
+   "baseline_comparison": {
+    "baseline_size": [
+     3.7999999523,
+     2.1399999857,
+     4.7250000238
+    ],
+    "size": [
+     3.8,
+     2.15,
+     4.715
+    ],
+    "percent_change_per_axis_x_y_z": [
+     0.0,
+     0.47,
+     -0.21
+    ],
+    "baseline_triangles": 1176,
+    "baseline_primitives": 6
+   },
+   "blender_verification": {
+    "blend_reopened": {
+     "triangles": 1194,
+     "primitives_per_material_slot": 9,
+     "size": [
+      3.8,
+      2.15,
+      4.715
+     ]
+    },
+    "glb_reimported_clean_scene": {
+     "triangles": 1194,
+     "primitives_per_material_slot": 8,
+     "size": [
+      3.8,
+      2.15,
+      4.715
+     ],
+     "materials": [
+      "amber_eye",
+      "cool_slate",
+      "dark_structure",
+      "warm_armor"
+     ]
+    }
+   },
+   "node_tree": [
+    {
+     "name": "base_armor",
+     "parent": "base",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0,
+      0,
+      0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "base",
+     "parent": "turret",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0,
+      0,
+      0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "barrel_visual",
+     "parent": "barrel",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0.0,
+      1.15,
+      0.0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "bore",
+     "parent": "barrel",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0.0,
+      1.15,
+      0.0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "muzzle",
+     "parent": "barrel",
+     "translation": [
+      0,
+      0,
+      2.8
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0.0,
+      1.15,
+      2.8
+     ],
+     "has_mesh": false
+    },
+    {
+     "name": "barrel",
+     "parent": "turntable",
+     "translation": [
+      0,
+      0.15,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0.0,
+      1.15,
+      0.0
+     ],
+     "has_mesh": false
+    },
+    {
+     "name": "port_plate",
+     "parent": "dome",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0,
+      1,
+      0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "dome",
+     "parent": "turntable",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0,
+      1,
+      0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "eye",
+     "parent": "turntable",
+     "translation": [
+      0,
+      0.58,
+      1.02
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0.0,
+      1.58,
+      1.02
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "trim",
+     "parent": "turntable",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0,
+      1,
+      0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "turntable",
+     "parent": "turret",
+     "translation": [
+      0,
+      1,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0,
+      1,
+      0
+     ],
+     "has_mesh": false
+    },
+    {
+     "name": "turret",
+     "parent": null,
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0,
+      0,
+      0
+     ],
+     "has_mesh": false
+    }
+   ],
+   "material_mapping_by_node": {
+    "base_armor": [
+     "warm_armor"
+    ],
+    "base": [
+     "cool_slate"
+    ],
+    "barrel_visual": [
+     "cool_slate"
+    ],
+    "bore": [
+     "dark_structure"
+    ],
+    "port_plate": [
+     "dark_structure"
+    ],
+    "dome": [
+     "warm_armor"
+    ],
+    "eye": [
+     "amber_eye"
+    ],
+    "trim": [
+     "cool_slate"
+    ]
+   },
+   "materials": [
+    {
+     "index": 0,
+     "name": "warm_armor",
+     "baseColorFactor": [
+      0.3185,
+      0.107,
+      0.0648,
+      1
+     ],
+     "metallicFactor": 0.47999998927116394,
+     "roughnessFactor": 0.41999998688697815,
+     "emissiveFactor": [
+      0,
+      0,
+      0
+     ],
+     "emissiveStrength": 1.0,
+     "doubleSided": true,
+     "usedBy_primitives": null
+    },
+    {
+     "index": 1,
+     "name": "cool_slate",
+     "baseColorFactor": [
+      0.0844,
+      0.1301,
+      0.1912,
+      1
+     ],
+     "metallicFactor": 0.5600000023841858,
+     "roughnessFactor": 0.3799999952316284,
+     "emissiveFactor": [
+      0,
+      0,
+      0
+     ],
+     "emissiveStrength": 1.0,
+     "doubleSided": true,
+     "usedBy_primitives": null
+    },
+    {
+     "index": 2,
+     "name": "dark_structure",
+     "baseColorFactor": [
+      0.0423,
+      0.0685,
+      0.1119,
+      1
+     ],
+     "metallicFactor": 0.5,
+     "roughnessFactor": 0.46000000834465027,
+     "emissiveFactor": [
+      0,
+      0,
+      0
+     ],
+     "emissiveStrength": 1.0,
+     "doubleSided": true,
+     "usedBy_primitives": null
+    },
+    {
+     "index": 3,
+     "name": "amber_eye",
+     "baseColorFactor": [
+      1,
+      0.2542,
+      0.0423,
+      1
+     ],
+     "metallicFactor": 0,
+     "roughnessFactor": 0.30000001192092896,
+     "emissiveFactor": [
+      1,
+      0.2542,
+      0.0423
+     ],
+     "emissiveStrength": 3,
+     "doubleSided": true,
+     "usedBy_primitives": null
+    }
+   ],
+   "clearance": [
+    {
+     "pitch_deg_nose_up": -10,
+     "eye_scale": 1.0,
+     "barrel_to_eye_surface_gap_conservative": 0.2462,
+     "barrel_to_top_bezel_gap": 0.5412,
+     "barrel_to_base_top_height_above_plane": -0.2052
+    },
+    {
+     "pitch_deg_nose_up": -10,
+     "eye_scale": 1.45,
+     "barrel_to_eye_surface_gap_conservative": 0.2464,
+     "barrel_to_top_bezel_gap": 0.5412,
+     "barrel_to_base_top_height_above_plane": -0.2052
+    },
+    {
+     "pitch_deg_nose_up": -7,
+     "eye_scale": 1.0,
+     "barrel_to_eye_surface_gap_conservative": 0.2132,
+     "barrel_to_top_bezel_gap": 0.5084,
+     "barrel_to_base_top_height_above_plane": -0.1235
+    },
+    {
+     "pitch_deg_nose_up": -7,
+     "eye_scale": 1.45,
+     "barrel_to_eye_surface_gap_conservative": 0.2119,
+     "barrel_to_top_bezel_gap": 0.5084,
+     "barrel_to_base_top_height_above_plane": -0.1235
+    },
+    {
+     "pitch_deg_nose_up": -3,
+     "eye_scale": 1.0,
+     "barrel_to_eye_surface_gap_conservative": 0.1752,
+     "barrel_to_top_bezel_gap": 0.4672,
+     "barrel_to_base_top_height_above_plane": -0.0178
+    },
+    {
+     "pitch_deg_nose_up": -3,
+     "eye_scale": 1.45,
+     "barrel_to_eye_surface_gap_conservative": 0.1706,
+     "barrel_to_top_bezel_gap": 0.4672,
+     "barrel_to_base_top_height_above_plane": -0.0178
+    },
+    {
+     "pitch_deg_nose_up": -2,
+     "eye_scale": 1.0,
+     "barrel_to_eye_surface_gap_conservative": 0.167,
+     "barrel_to_top_bezel_gap": 0.4564,
+     "barrel_to_base_top_height_above_plane": 0.0081
+    },
+    {
+     "pitch_deg_nose_up": -2,
+     "eye_scale": 1.45,
+     "barrel_to_eye_surface_gap_conservative": 0.1614,
+     "barrel_to_top_bezel_gap": 0.4564,
+     "barrel_to_base_top_height_above_plane": 0.0081
+    },
+    {
+     "pitch_deg_nose_up": 0,
+     "eye_scale": 1.0,
+     "barrel_to_eye_surface_gap_conservative": 0.1525,
+     "barrel_to_top_bezel_gap": 0.435,
+     "barrel_to_base_top_height_above_plane": 0.06
+    },
+    {
+     "pitch_deg_nose_up": 0,
+     "eye_scale": 1.45,
+     "barrel_to_eye_surface_gap_conservative": 0.1444,
+     "barrel_to_top_bezel_gap": 0.435,
+     "barrel_to_base_top_height_above_plane": 0.06
+    },
+    {
+     "pitch_deg_nose_up": 1,
+     "eye_scale": 1.0,
+     "barrel_to_eye_surface_gap_conservative": 0.1464,
+     "barrel_to_top_bezel_gap": 0.4221,
+     "barrel_to_base_top_height_above_plane": 0.0769
+    },
+    {
+     "pitch_deg_nose_up": 1,
+     "eye_scale": 1.45,
+     "barrel_to_eye_surface_gap_conservative": 0.1368,
+     "barrel_to_top_bezel_gap": 0.4221,
+     "barrel_to_base_top_height_above_plane": 0.0769
+    },
+    {
+     "pitch_deg_nose_up": 2,
+     "eye_scale": 1.0,
+     "barrel_to_eye_surface_gap_conservative": 0.1409,
+     "barrel_to_top_bezel_gap": 0.4094,
+     "barrel_to_base_top_height_above_plane": 0.0938
+    },
+    {
+     "pitch_deg_nose_up": 2,
+     "eye_scale": 1.45,
+     "barrel_to_eye_surface_gap_conservative": 0.1297,
+     "barrel_to_top_bezel_gap": 0.4094,
+     "barrel_to_base_top_height_above_plane": 0.0938
+    },
+    {
+     "pitch_deg_nose_up": 5,
+     "eye_scale": 1.0,
+     "barrel_to_eye_surface_gap_conservative": 0.1296,
+     "barrel_to_top_bezel_gap": 0.3719,
+     "barrel_to_base_top_height_above_plane": 0.1425
+    },
+    {
+     "pitch_deg_nose_up": 5,
+     "eye_scale": 1.45,
+     "barrel_to_eye_surface_gap_conservative": 0.1126,
+     "barrel_to_top_bezel_gap": 0.3719,
+     "barrel_to_base_top_height_above_plane": 0.1425
+    },
+    {
+     "pitch_deg_nose_up": 10,
+     "eye_scale": 1.0,
+     "barrel_to_eye_surface_gap_conservative": 0.0611,
+     "barrel_to_top_bezel_gap": 0.312,
+     "barrel_to_base_top_height_above_plane": 0.2258
+    },
+    {
+     "pitch_deg_nose_up": 10,
+     "eye_scale": 1.45,
+     "barrel_to_eye_surface_gap_conservative": 0.0637,
+     "barrel_to_top_bezel_gap": 0.312,
+     "barrel_to_base_top_height_above_plane": 0.2258
+    }
+   ]
+  },
+  {
+   "asset": "radar",
+   "files": {
+    "radar.blend": {
+     "bytes": 111381,
+     "sha256": "45e5212f9fb7548931709999b16ecbae30a7999cb341058c488ec8f08c381d4b"
+    },
+    "radar.glb": {
+     "bytes": 55564,
+     "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d"
+    }
+   },
+   "glb_inspection_pure_python": {
+    "triangles": 1288,
+    "primitives_mesh_draws": 9,
+    "materials_declared": 5,
+    "materials_used": 5,
+    "textures": 0,
+    "images": 0,
+    "bounds_rest_world_gltf": {
+     "min": [
+      -2.35,
+      0.0,
+      -2.2
+     ],
+     "max": [
+      2.35,
+      9.659805,
+      2.2
+     ],
+     "size": [
+      4.7,
+      9.659805,
+      4.4
+     ]
+    },
+    "budget": {
+     "triangles": 20000,
+     "primitives": 10
+    },
+    "within_budget": true
+   },
+   "baseline_comparison": {
+    "baseline_size": [
+     4.6999998093,
+     9.6598052502,
+     4.4000000954
+    ],
+    "size": [
+     4.7,
+     9.659805,
+     4.4
+    ],
+    "percent_change_per_axis_x_y_z": [
+     0.0,
+     -0.0,
+     -0.0
+    ],
+    "baseline_triangles": 640,
+    "baseline_primitives": 5
+   },
+   "blender_verification": {
+    "blend_reopened": {
+     "triangles": 1288,
+     "primitives_per_material_slot": 9,
+     "size": [
+      4.7,
+      9.659805,
+      4.4
+     ]
+    },
+    "glb_reimported_clean_scene": {
+     "triangles": 1288,
+     "primitives_per_material_slot": 9,
+     "size": [
+      4.7,
+      9.659805,
+      4.4
+     ],
+     "materials": [
+      "cool_slate",
+      "dark_structure",
+      "dish_warm",
+      "radar_emitter",
+      "warm_armor"
+     ]
+    }
+   },
+   "node_tree": [
+    {
+     "name": "base",
+     "parent": "radar",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0,
+      0,
+      0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "base_trim",
+     "parent": "radar",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0,
+      0,
+      0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "dish_frame",
+     "parent": "dish",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0.0,
+      7.2,
+      0.0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "dish_shell",
+     "parent": "dish",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0.0,
+      7.2,
+      0.0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "emitter",
+     "parent": "dish",
+     "translation": [
+      0,
+      0.85963,
+      1.469672
+     ],
+     "rotation_quat": [
+      -0.139543,
+      0,
+      0,
+      0.990216
+     ],
+     "world_translation": [
+      0.0,
+      8.059629,
+      1.469672
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "feed_housing",
+     "parent": "dish",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0.0,
+      7.2,
+      0.0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "dish",
+     "parent": "radar",
+     "translation": [
+      0,
+      7.2,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0.0,
+      7.2,
+      0.0
+     ],
+     "has_mesh": false
+    },
+    {
+     "name": "mast_braces",
+     "parent": "mast",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0,
+      0,
+      0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "mast_cap",
+     "parent": "mast",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0,
+      0,
+      0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "mast",
+     "parent": "radar",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0,
+      0,
+      0
+     ],
+     "has_mesh": true
+    },
+    {
+     "name": "radar",
+     "parent": null,
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation_quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "world_translation": [
+      0,
+      0,
+      0
+     ],
+     "has_mesh": false
+    }
+   ],
+   "material_mapping_by_node": {
+    "base": [
+     "warm_armor"
+    ],
+    "base_trim": [
+     "cool_slate"
+    ],
+    "dish_frame": [
+     "dark_structure"
+    ],
+    "dish_shell": [
+     "dish_warm"
+    ],
+    "emitter": [
+     "radar_emitter"
+    ],
+    "feed_housing": [
+     "cool_slate"
+    ],
+    "mast_braces": [
+     "dark_structure"
+    ],
+    "mast_cap": [
+     "dark_structure"
+    ],
+    "mast": [
+     "cool_slate"
+    ]
+   },
+   "materials": [
+    {
+     "index": 0,
+     "name": "warm_armor",
+     "baseColorFactor": [
+      0.3185,
+      0.107,
+      0.0648,
+      1
+     ],
+     "metallicFactor": 0.47999998927116394,
+     "roughnessFactor": 0.41999998688697815,
+     "emissiveFactor": [
+      0,
+      0,
+      0
+     ],
+     "emissiveStrength": 1.0,
+     "doubleSided": true,
+     "usedBy_primitives": null
+    },
+    {
+     "index": 1,
+     "name": "cool_slate",
+     "baseColorFactor": [
+      0.0844,
+      0.1301,
+      0.1912,
+      1
+     ],
+     "metallicFactor": 0.5600000023841858,
+     "roughnessFactor": 0.3799999952316284,
+     "emissiveFactor": [
+      0,
+      0,
+      0
+     ],
+     "emissiveStrength": 1.0,
+     "doubleSided": true,
+     "usedBy_primitives": null
+    },
+    {
+     "index": 2,
+     "name": "dark_structure",
+     "baseColorFactor": [
+      0.0423,
+      0.0685,
+      0.1119,
+      1
+     ],
+     "metallicFactor": 0.5,
+     "roughnessFactor": 0.46000000834465027,
+     "emissiveFactor": [
+      0,
+      0,
+      0
+     ],
+     "emissiveStrength": 1.0,
+     "doubleSided": true,
+     "usedBy_primitives": null
+    },
+    {
+     "index": 3,
+     "name": "dish_warm",
+     "baseColorFactor": [
+      0.3325,
+      0.1441,
+      0.0908,
+      1
+     ],
+     "metallicFactor": 0.41999998688697815,
+     "roughnessFactor": 0.3400000035762787,
+     "emissiveFactor": [
+      0,
+      0,
+      0
+     ],
+     "emissiveStrength": 1.0,
+     "doubleSided": true,
+     "usedBy_primitives": null
+    },
+    {
+     "index": 4,
+     "name": "radar_emitter",
+     "baseColorFactor": [
+      0.0844,
+      1,
+      0.3916,
+      1
+     ],
+     "metallicFactor": 0,
+     "roughnessFactor": 0.25,
+     "emissiveFactor": [
+      0.0844,
+      1,
+      0.3916
+     ],
+     "emissiveStrength": 2.200000047683716,
+     "doubleSided": true,
+     "usedBy_primitives": null
+    }
+   ],
+   "clearance": null
+  }
+ ]
+}

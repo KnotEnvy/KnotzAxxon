@@ -1,0 +1,1898 @@
+{
+ "contest": "KnotzAxxon Blender asset contest round 1",
+ "baseline_commit": "c07e5e7236afa8ee53bf42bc831f0f7cb3802ce0",
+ "blender": "5.2.1 LTS (Windows, driven from WSL)",
+ "coordinate_system": "glTF: X across, Y up; fighter nose +Z; boss front -Z; 1 unit = 1 game unit",
+ "time_spent_minutes": 27.5,
+ "assets": {
+  "player": {
+   "files": {
+    "blend": "player.blend",
+    "glb": "player.glb",
+    "build_script": "blender/build_player.py"
+   },
+   "counts": {
+    "evaluated_triangles_blender": 11556,
+    "triangles_glb": 11556,
+    "vertices_glb": 12906,
+    "material_primitives": 8,
+    "unique_primitives": 8,
+    "materials": 7,
+    "textures": [],
+    "file_mib": 0.456,
+    "meshes": 8,
+    "nodes": 11
+   },
+   "budget": {
+    "triangles": 25000,
+    "primitives": 8
+   },
+   "budget_ok": true,
+   "overages": [],
+   "bounds": {
+    "min": [
+     -3.9523,
+     -0.584,
+     -2.537
+    ],
+    "max": [
+     3.9523,
+     1.4071,
+     3.19
+    ],
+    "size": [
+     7.9046,
+     1.9911,
+     5.727
+    ]
+   },
+   "baseline": {
+    "triangles": 4052,
+    "size": [
+     7.9,
+     2.05,
+     5.71
+    ],
+    "min": [
+     -3.95,
+     -0.57,
+     -2.53
+    ],
+    "max": [
+     3.95,
+     1.48,
+     3.18
+    ],
+    "meshes": 6
+   },
+   "size_ratio_vs_baseline": [
+    1.0006,
+    0.9713,
+    1.003
+   ],
+   "within_10_percent": true,
+   "pivots": {
+    "engine-core--1": {
+     "expected": [
+      -1.05,
+      -0.1,
+      -2.515
+     ],
+     "world": [
+      -1.05,
+      -0.1,
+      -2.515
+     ],
+     "ok": true
+    },
+    "engine-core-1": {
+     "expected": [
+      1.05,
+      -0.1,
+      -2.515
+     ],
+     "world": [
+      1.05,
+      -0.1,
+      -2.515
+     ],
+     "ok": true
+    },
+    "muzzle-socket--1": {
+     "expected": [
+      -1.6,
+      -0.1,
+      2.4
+     ],
+     "world": [
+      -1.6,
+      -0.1,
+      2.4
+     ],
+     "ok": true
+    },
+    "muzzle-socket-1": {
+     "expected": [
+      1.6,
+      -0.1,
+      2.4
+     ],
+     "world": [
+      1.6,
+      -0.1,
+      2.4
+     ],
+     "ok": true
+    },
+    "hero-interceptor": {
+     "expected": [
+      0,
+      0,
+      0
+     ],
+     "world": [
+      0,
+      0,
+      0
+     ],
+     "ok": true
+    }
+   },
+   "pivots_ok": true,
+   "extensions_used": [
+    "KHR_materials_clearcoat",
+    "KHR_materials_emissive_strength"
+   ],
+   "has_vertex_colour": true,
+   "animations": [
+    {
+     "name": "engine_pulse",
+     "duration_s": 1.0,
+     "channels": 2,
+     "frame0_equals_rest": true,
+     "animated_nodes": [
+      "engine-core--1",
+      "engine-core-1"
+     ]
+    }
+   ],
+   "material_usage_primitives": {
+    "KZ_PlayerAccent": 1,
+    "KZ_PlayerGlass": 1,
+    "KZ_PlayerHull": 1,
+    "KZ_NavPort": 1,
+    "KZ_NavStarboard": 1,
+    "KZ_NeonCyan": 1,
+    "KZ_EngineGlow": 2
+   },
+   "per_node_triangles": {
+    "airframe-accent": {
+     "triangles": 3258,
+     "primitives": 1
+    },
+    "airframe-glass": {
+     "triangles": 278,
+     "primitives": 1
+    },
+    "airframe-hull": {
+     "triangles": 7608,
+     "primitives": 1
+    },
+    "airframe-nav-port": {
+     "triangles": 44,
+     "primitives": 1
+    },
+    "airframe-nav-starboard": {
+     "triangles": 44,
+     "primitives": 1
+    },
+    "airframe-neon": {
+     "triangles": 40,
+     "primitives": 1
+    },
+    "engine-core-1": {
+     "triangles": 142,
+     "primitives": 1
+    },
+    "engine-core--1": {
+     "triangles": 142,
+     "primitives": 1
+    }
+   },
+   "material_to_runtime": {
+    "KZ_PlayerHull": "mats.playerHull",
+    "KZ_PlayerAccent": "mats.playerAccent",
+    "KZ_PlayerGlass": "mats.glass",
+    "KZ_NeonCyan": "MeshBasicMaterial 0x52bdcf, toneMapped=false",
+    "KZ_NavPort": "MeshBasicMaterial 0xff4563",
+    "KZ_NavStarboard": "MeshBasicMaterial 0x65dfac",
+    "KZ_EngineGlow": "mats.neon(0x8fe4ff, 1.35)"
+   },
+   "node_tree": [
+    {
+     "name": "airframe-accent",
+     "parent": "hero-interceptor",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_PlayerAccent"
+     ],
+     "runtime": "mesh; runtime mats.playerAccent"
+    },
+    {
+     "name": "airframe-glass",
+     "parent": "hero-interceptor",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_PlayerGlass"
+     ],
+     "runtime": "mesh; runtime mats.glass"
+    },
+    {
+     "name": "airframe-hull",
+     "parent": "hero-interceptor",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_PlayerHull"
+     ],
+     "runtime": "mesh; runtime mats.playerHull (vertexColors, livery in COLOR_0)"
+    },
+    {
+     "name": "airframe-nav-port",
+     "parent": "hero-interceptor",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_NavPort"
+     ],
+     "runtime": "mesh; neon, red 0xff4563 (-X wingtip)"
+    },
+    {
+     "name": "airframe-nav-starboard",
+     "parent": "hero-interceptor",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_NavStarboard"
+     ],
+     "runtime": "mesh; neon, green 0x65dfac (+X wingtip)"
+    },
+    {
+     "name": "airframe-neon",
+     "parent": "hero-interceptor",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_NeonCyan"
+     ],
+     "runtime": "mesh; runtime player neon bucket (cyan strips)"
+    },
+    {
+     "name": "engine-core-1",
+     "parent": "hero-interceptor",
+     "translation": [
+      1.05,
+      -0.1,
+      -2.515
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_EngineGlow"
+     ],
+     "runtime": "group.userData.engines[1]; scale pulse about origin (+1.05,-0.1,-2.515)"
+    },
+    {
+     "name": "engine-core--1",
+     "parent": "hero-interceptor",
+     "translation": [
+      -1.05,
+      -0.1,
+      -2.515
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_EngineGlow"
+     ],
+     "runtime": "group.userData.engines[0]; scale pulse about origin (-1.05,-0.1,-2.515)"
+    },
+    {
+     "name": "muzzle-socket-1",
+     "parent": "hero-interceptor",
+     "translation": [
+      1.6,
+      -0.1,
+      2.4
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "empty at (+1.6,-0.1,2.4): Player.fire() spawn point"
+    },
+    {
+     "name": "muzzle-socket--1",
+     "parent": "hero-interceptor",
+     "translation": [
+      -1.6,
+      -0.1,
+      2.4
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "empty at (-1.6,-0.1,2.4): Player.fire() spawn point"
+    },
+    {
+     "name": "hero-interceptor",
+     "parent": null,
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "group = buildShip() result; add to Player.group"
+    }
+   ],
+   "verification": {
+    "blend_reopen_and_glb_reimport": true,
+    "blend_triangles": 11556,
+    "glb_reimport_triangles": 11556,
+    "blend_objects": 11,
+    "glb_reimport_objects": 11
+   },
+   "animation_cues": {
+    "engine-core-*": "runtime scales nodes 0.95-0.99 (+/-0.01 sine); asset ships a 1 s loop `engine_pulse` doing the same"
+   }
+  },
+  "sentinel": {
+   "files": {
+    "blend": "sentinel.blend",
+    "glb": "sentinel.glb",
+    "build_script": "blender/build_sentinel.py"
+   },
+   "counts": {
+    "evaluated_triangles_blender": 17758,
+    "triangles_glb": 17758,
+    "vertices_glb": 23364,
+    "material_primitives": 43,
+    "unique_primitives": 43,
+    "materials": 12,
+    "textures": [
+     {
+      "name": "KZ_HazardChevron",
+      "mime": "image/png",
+      "width": 256,
+      "height": 256,
+      "bytes": 119838
+     }
+    ],
+    "file_mib": 1.132,
+    "meshes": 23,
+    "nodes": 36
+   },
+   "budget": {
+    "triangles": 100000,
+    "primitives": 48
+   },
+   "budget_ok": true,
+   "overages": [],
+   "bounds": {
+    "min": [
+     -17.87,
+     -10.35,
+     -10.8174
+    ],
+    "max": [
+     17.87,
+     14.5163,
+     7.4001
+    ],
+    "size": [
+     35.74,
+     24.8663,
+     18.2175
+    ]
+   },
+   "baseline": {
+    "triangles": 8724,
+    "size": [
+     35.62,
+     24.94,
+     18.13
+    ],
+    "min": [
+     -17.81,
+     -10.41,
+     -10.68
+    ],
+    "max": [
+     17.81,
+     14.53,
+     7.45
+    ],
+    "meshes": 41
+   },
+   "size_ratio_vs_baseline": [
+    1.0034,
+    0.997,
+    1.0048
+   ],
+   "within_10_percent": true,
+   "pivots": {
+    "iron-sentinel": {
+     "expected": [
+      0,
+      0,
+      0
+     ],
+     "world": [
+      0,
+      0,
+      0
+     ],
+     "ok": true
+    },
+    "torso": {
+     "expected": [
+      0,
+      0,
+      0
+     ],
+     "world": [
+      0,
+      0,
+      0
+     ],
+     "ok": true
+    },
+    "head": {
+     "expected": [
+      0,
+      8.4,
+      -0.6
+     ],
+     "world": [
+      0.0,
+      8.4,
+      -0.6
+     ],
+     "ok": true
+    },
+    "reactor": {
+     "expected": [
+      0,
+      1,
+      -5.6
+     ],
+     "world": [
+      0.0,
+      1.0,
+      -5.6
+     ],
+     "ok": true
+    },
+    "forearm-R": {
+     "expected": [
+      10.4,
+      -2.6,
+      0.4
+     ],
+     "world": [
+      10.4,
+      -2.6,
+      0.4
+     ],
+     "ok": true
+    },
+    "forearm-L": {
+     "expected": [
+      -10.4,
+      -2.6,
+      0.4
+     ],
+     "world": [
+      -10.4,
+      -2.6,
+      0.4
+     ],
+     "ok": true
+    },
+    "pod-R": {
+     "expected": [
+      13.8,
+      5.6,
+      -0.6
+     ],
+     "world": [
+      13.8,
+      5.6,
+      -0.6
+     ],
+     "ok": true
+    },
+    "pod-L": {
+     "expected": [
+      -13.8,
+      5.6,
+      -0.6
+     ],
+     "world": [
+      -13.8,
+      5.6,
+      -0.6
+     ],
+     "ok": true
+    },
+    "launcher-mouth": {
+     "expected": [
+      10.4,
+      -2.3,
+      -8.4
+     ],
+     "world": [
+      10.4,
+      -2.3,
+      -8.4
+     ],
+     "ok": true
+    },
+    "shutter-holder-0": {
+     "expected": [
+      0,
+      1,
+      0
+     ],
+     "world": [
+      0,
+      1,
+      0
+     ],
+     "ok": true
+    },
+    "shutter-holder-1": {
+     "expected": [
+      0,
+      1,
+      0
+     ],
+     "world": [
+      0,
+      1,
+      0
+     ],
+     "ok": true
+    },
+    "shutter-holder-2": {
+     "expected": [
+      0,
+      1,
+      0
+     ],
+     "world": [
+      0,
+      1,
+      0
+     ],
+     "ok": true
+    },
+    "shutter-holder-3": {
+     "expected": [
+      0,
+      1,
+      0
+     ],
+     "world": [
+      0,
+      1,
+      0
+     ],
+     "ok": true
+    }
+   },
+   "pivots_ok": true,
+   "extensions_used": [
+    "KHR_materials_emissive_strength"
+   ],
+   "has_vertex_colour": true,
+   "animations": [
+    {
+     "name": "idle_hover",
+     "duration_s": 4.0,
+     "channels": 2,
+     "frame0_equals_rest": true,
+     "animated_nodes": [
+      "head",
+      "torso"
+     ]
+    },
+    {
+     "name": "missile_charge",
+     "duration_s": 3.3333,
+     "channels": 3,
+     "frame0_equals_rest": true,
+     "animated_nodes": [
+      "forearm-R",
+      "launcher-charge-discs",
+      "torso"
+     ]
+    },
+    {
+     "name": "pod_destroyed_R",
+     "duration_s": 1.0,
+     "channels": 5,
+     "frame0_equals_rest": true,
+     "animated_nodes": [
+      "pod-barrels-R",
+      "pod-body-R",
+      "pod-eye-R",
+      "pod-stump-R",
+      "torso"
+     ]
+    },
+    {
+     "name": "pod_destroyed_L",
+     "duration_s": 1.0,
+     "channels": 5,
+     "frame0_equals_rest": true,
+     "animated_nodes": [
+      "pod-barrels-L",
+      "pod-body-L",
+      "pod-eye-L",
+      "pod-stump-L",
+      "torso"
+     ]
+    },
+    {
+     "name": "defeat_head_tear",
+     "duration_s": 2.0,
+     "channels": 2,
+     "frame0_equals_rest": true,
+     "animated_nodes": [
+      "head"
+     ]
+    },
+    {
+     "name": "reactor_cycle",
+     "duration_s": 3.0,
+     "channels": 6,
+     "frame0_equals_rest": true,
+     "animated_nodes": [
+      "reactor-core",
+      "reactor-shell",
+      "shutter-0",
+      "shutter-1",
+      "shutter-2",
+      "shutter-3"
+     ]
+    }
+   ],
+   "material_usage_primitives": {
+    "KZ_Gunmetal": 5,
+    "KZ_DarkMetal": 12,
+    "KZ_Armor": 10,
+    "KZ_Hazard": 2,
+    "KZ_Charge": 1,
+    "KZ_AntennaTip": 2,
+    "KZ_Visor": 1,
+    "KZ_PodEye": 2,
+    "KZ_GlowOrange": 5,
+    "KZ_ReactorCore": 1,
+    "KZ_ReactorShell": 1,
+    "KZ_SeamRed": 1
+   },
+   "per_node_triangles": {
+    "forearm-L-body": {
+     "triangles": 816,
+     "primitives": 3
+    },
+    "forearm-R-body": {
+     "triangles": 1408,
+     "primitives": 4
+    },
+    "launcher-charge-discs": {
+     "triangles": 48,
+     "primitives": 1
+    },
+    "antenna-tip-L": {
+     "triangles": 64,
+     "primitives": 1
+    },
+    "antenna-tip-R": {
+     "triangles": 64,
+     "primitives": 1
+    },
+    "head-shell": {
+     "triangles": 696,
+     "primitives": 3
+    },
+    "pod-barrels-L": {
+     "triangles": 1452,
+     "primitives": 1
+    },
+    "pod-body-L": {
+     "triangles": 1574,
+     "primitives": 2
+    },
+    "pod-eye-L": {
+     "triangles": 144,
+     "primitives": 1
+    },
+    "pod-stump-L": {
+     "triangles": 618,
+     "primitives": 2
+    },
+    "pod-barrels-R": {
+     "triangles": 1452,
+     "primitives": 1
+    },
+    "pod-body-R": {
+     "triangles": 1574,
+     "primitives": 2
+    },
+    "pod-eye-R": {
+     "triangles": 144,
+     "primitives": 1
+    },
+    "pod-stump-R": {
+     "triangles": 618,
+     "primitives": 2
+    },
+    "reactor-core": {
+     "triangles": 360,
+     "primitives": 1
+    },
+    "reactor-shell": {
+     "triangles": 120,
+     "primitives": 1
+    },
+    "shutter-0": {
+     "triangles": 96,
+     "primitives": 2
+    },
+    "shutter-1": {
+     "triangles": 96,
+     "primitives": 2
+    },
+    "shutter-2": {
+     "triangles": 96,
+     "primitives": 2
+    },
+    "shutter-3": {
+     "triangles": 96,
+     "primitives": 2
+    },
+    "thruster-L": {
+     "triangles": 18,
+     "primitives": 1
+    },
+    "thruster-R": {
+     "triangles": 18,
+     "primitives": 1
+    },
+    "torso-body": {
+     "triangles": 6186,
+     "primitives": 6
+    }
+   },
+   "material_to_runtime": {
+    "KZ_AntennaTip": "mats.neon(0xff3d55, 3); blinks at 6 rad/s",
+    "KZ_Armor": "mats.enemyArmor",
+    "KZ_Charge": "Boss.chargeMat (rest 0.35, charging 0.6-4.1 pulsed)",
+    "KZ_DarkMetal": "mats.darkMetal (dark/frame keys)",
+    "KZ_GlowOrange": "mats.neon(0xff7a3a, 2.4)",
+    "KZ_Gunmetal": "mats.enemyMetal (frame/barrel metal)",
+    "KZ_Hazard": "mats.hazard (launcher chevrons, belt)",
+    "KZ_PodEye": "mats.neon(0xffb43a, 3); pulses scale 1+/-0.18; hidden when pod destroyed",
+    "KZ_ReactorCore": "REPLACE with mats.energyCore(0xff3d55) (uIntensity = 0.35+1.5*coreOpen)",
+    "KZ_ReactorShell": "REPLACE with additive mats.neon(0xff3d55,2.2,{transparent,opacity .5,additive,depthWrite false})",
+    "KZ_SeamRed": "Boss.seamMat (colour animated: red 0.8+0.5*phase+0.4*coreOpen)",
+    "KZ_Visor": "Boss.visorMat (colour animated 1.6+/-0.35, x1.5 phase 3)"
+   },
+   "node_tree": [
+    {
+     "name": "forearm-L-body",
+     "parent": "forearm-L",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_Armor",
+      "KZ_DarkMetal",
+      "KZ_Gunmetal"
+     ],
+     "runtime": "left forearm + clawed fist"
+    },
+    {
+     "name": "forearm-L",
+     "parent": "torso",
+     "translation": [
+      -10.4,
+      -2.6,
+      0.4
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "Boss.arms[side -1].forearm pivot (guard sway rotation.x ~0.35)"
+    },
+    {
+     "name": "forearm-R-body",
+     "parent": "forearm-R",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_Armor",
+      "KZ_DarkMetal",
+      "KZ_Gunmetal",
+      "KZ_Hazard"
+     ],
+     "runtime": "right forearm + 2x2 missile launcher; hazard primitive = chevrons"
+    },
+    {
+     "name": "launcher-charge-discs",
+     "parent": "forearm-R",
+     "translation": [
+      0,
+      0.3,
+      -9.92
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_Charge"
+     ],
+     "runtime": "four muzzle plugs: Boss.chargeMat emissive (0.35 idle -> 4.1 charging); scale-pulse also exported"
+    },
+    {
+     "name": "launcher-mouth",
+     "parent": "forearm-R",
+     "translation": [
+      0,
+      0.3,
+      -8.8
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "Boss.launcher.mouth (missile spawn + hit-test centre; radius 3.4)"
+    },
+    {
+     "name": "forearm-R",
+     "parent": "torso",
+     "translation": [
+      10.4,
+      -2.6,
+      0.4
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "Boss.arms[side +1].forearm pivot = launcher.forearm (guard sway rotation.x ~0.35; aims level while charging)"
+    },
+    {
+     "name": "antenna-tip-L",
+     "parent": "head",
+     "translation": [
+      -2.6,
+      5.85,
+      1.7
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_AntennaTip"
+     ],
+     "runtime": "Boss.antennaTips[0]; visibility blinks sin(t*6)>0"
+    },
+    {
+     "name": "antenna-tip-R",
+     "parent": "head",
+     "translation": [
+      2.6,
+      5.85,
+      1.7
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_AntennaTip"
+     ],
+     "runtime": "Boss.antennaTips[1]; visibility blinks sin(t*6)>0"
+    },
+    {
+     "name": "head-shell",
+     "parent": "head",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_Armor",
+      "KZ_DarkMetal",
+      "KZ_Visor"
+     ],
+     "runtime": "helm: armor/dark + emissive visor slit (Boss.visorMat)"
+    },
+    {
+     "name": "head",
+     "parent": "torso",
+     "translation": [
+      0,
+      8.4,
+      -0.6
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "Boss.head pivot (rotation.y/x tracks player; death spin)"
+    },
+    {
+     "name": "pod-barrels-L",
+     "parent": "pod-L",
+     "translation": [
+      0,
+      0,
+      -3
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_Gunmetal"
+     ],
+     "runtime": "Boss.pods[].barrels (both): rotation.x = pitch*0.6, position.z = -3 + recoil*1.2"
+    },
+    {
+     "name": "pod-body-L",
+     "parent": "pod-L",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_Armor",
+      "KZ_DarkMetal"
+     ],
+     "runtime": "cannon pod body (hidden on destruction: Boss.pods[].body)"
+    },
+    {
+     "name": "pod-eye-L",
+     "parent": "pod-L",
+     "translation": [
+      0,
+      2.2,
+      -2.4
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_PodEye"
+     ],
+     "runtime": "Boss.pods[].eye weak-point lamp; scale pulse"
+    },
+    {
+     "name": "pod-stump-L",
+     "parent": "pod-L",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_DarkMetal",
+      "KZ_GlowOrange"
+     ],
+     "runtime": "Boss.pods[].stump: visible only after pod death (sparking mount); sits inside the intact pod"
+    },
+    {
+     "name": "pod-L",
+     "parent": "torso",
+     "translation": [
+      -13.8,
+      5.6,
+      -0.6
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "Boss.pods[1].group (rotation.y aims at player; world pos = hit-test centre, radius 5)"
+    },
+    {
+     "name": "pod-barrels-R",
+     "parent": "pod-R",
+     "translation": [
+      0,
+      0,
+      -3
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_Gunmetal"
+     ],
+     "runtime": "Boss.pods[].barrels (both): rotation.x = pitch*0.6, position.z = -3 + recoil*1.2"
+    },
+    {
+     "name": "pod-body-R",
+     "parent": "pod-R",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_Armor",
+      "KZ_DarkMetal"
+     ],
+     "runtime": "cannon pod body (hidden on destruction: Boss.pods[].body)"
+    },
+    {
+     "name": "pod-eye-R",
+     "parent": "pod-R",
+     "translation": [
+      0,
+      2.2,
+      -2.4
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_PodEye"
+     ],
+     "runtime": "Boss.pods[].eye weak-point lamp; scale pulse"
+    },
+    {
+     "name": "pod-stump-R",
+     "parent": "pod-R",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_DarkMetal",
+      "KZ_GlowOrange"
+     ],
+     "runtime": "Boss.pods[].stump: visible only after pod death (sparking mount); sits inside the intact pod"
+    },
+    {
+     "name": "pod-R",
+     "parent": "torso",
+     "translation": [
+      13.8,
+      5.6,
+      -0.6
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "Boss.pods[0].group (rotation.y aims at player; world pos = hit-test centre, radius 5)"
+    },
+    {
+     "name": "reactor-core",
+     "parent": "reactor",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      0.3
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_ReactorCore"
+     ],
+     "runtime": "Boss.core: runtime applies scale.z=0.30, rotation.z += 0.5*dt, mats.energyCore material"
+    },
+    {
+     "name": "reactor-shell",
+     "parent": "reactor",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      0.3
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_ReactorShell"
+     ],
+     "runtime": "Boss.coreShell: scale (s,s,0.30*s), s=pulse*(0.9+0.2*coreOpen)"
+    },
+    {
+     "name": "reactor",
+     "parent": "torso",
+     "translation": [
+      0,
+      1.0,
+      -5.6
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "Boss.coreGroup (world pos used for hit test + spiral origin)"
+    },
+    {
+     "name": "shutter-0",
+     "parent": "shutter-holder-0",
+     "translation": [
+      0,
+      3.4,
+      -7.0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_Armor",
+      "KZ_DarkMetal"
+     ],
+     "runtime": "Boss.shutters[0].mesh: runtime sets position.y = 3.4 + 4.6*coreOpen, visible = coreOpen<0.98"
+    },
+    {
+     "name": "shutter-holder-0",
+     "parent": "torso",
+     "translation": [
+      0,
+      1,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0.38268,
+      0.92388
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "iris holder: rotation.z = i*90deg + 45deg about the reactor centre; do not animate"
+    },
+    {
+     "name": "shutter-1",
+     "parent": "shutter-holder-1",
+     "translation": [
+      0,
+      3.4,
+      -7.0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_Armor",
+      "KZ_DarkMetal"
+     ],
+     "runtime": "Boss.shutters[1].mesh: runtime sets position.y = 3.4 + 4.6*coreOpen, visible = coreOpen<0.98"
+    },
+    {
+     "name": "shutter-holder-1",
+     "parent": "torso",
+     "translation": [
+      0,
+      1,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0.92388,
+      0.38268
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "iris holder: rotation.z = i*90deg + 45deg about the reactor centre; do not animate"
+    },
+    {
+     "name": "shutter-2",
+     "parent": "shutter-holder-2",
+     "translation": [
+      0,
+      3.4,
+      -7.0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_Armor",
+      "KZ_DarkMetal"
+     ],
+     "runtime": "Boss.shutters[2].mesh: runtime sets position.y = 3.4 + 4.6*coreOpen, visible = coreOpen<0.98"
+    },
+    {
+     "name": "shutter-holder-2",
+     "parent": "torso",
+     "translation": [
+      0,
+      1,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      -0.92388,
+      0.38268
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "iris holder: rotation.z = i*90deg + 45deg about the reactor centre; do not animate"
+    },
+    {
+     "name": "shutter-3",
+     "parent": "shutter-holder-3",
+     "translation": [
+      0,
+      3.4,
+      -7.0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_Armor",
+      "KZ_DarkMetal"
+     ],
+     "runtime": "Boss.shutters[3].mesh: runtime sets position.y = 3.4 + 4.6*coreOpen, visible = coreOpen<0.98"
+    },
+    {
+     "name": "shutter-holder-3",
+     "parent": "torso",
+     "translation": [
+      0,
+      1,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      -0.38268,
+      0.92388
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "iris holder: rotation.z = i*90deg + 45deg about the reactor centre; do not animate"
+    },
+    {
+     "name": "thruster-L",
+     "parent": "torso",
+     "translation": [
+      -5,
+      0,
+      6.1
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_GlowOrange"
+     ],
+     "runtime": "Boss.thrusters[0]: scale pulse 1+/-0.1 at 22 rad/s"
+    },
+    {
+     "name": "thruster-R",
+     "parent": "torso",
+     "translation": [
+      5,
+      0,
+      6.1
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_GlowOrange"
+     ],
+     "runtime": "Boss.thrusters[1]: scale pulse 1+/-0.1 at 22 rad/s"
+    },
+    {
+     "name": "torso-body",
+     "parent": "torso",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": true,
+     "materials": [
+      "KZ_Armor",
+      "KZ_DarkMetal",
+      "KZ_GlowOrange",
+      "KZ_Gunmetal",
+      "KZ_Hazard",
+      "KZ_SeamRed"
+     ],
+     "runtime": "static torso, shoulders, upper arms, hips; materials armor/gunmetal/dark/hazard/seam/glow"
+    },
+    {
+     "name": "torso",
+     "parent": "iron-sentinel",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "Boss.torso (breathe: position.y; stagger: rotation.x)"
+    },
+    {
+     "name": "iron-sentinel",
+     "parent": null,
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "mesh": false,
+     "materials": [],
+     "runtime": "Boss.group (world position/yaw/roll driven by Boss.update)"
+    }
+   ],
+   "verification": {
+    "blend_reopen_and_glb_reimport": true,
+    "blend_triangles": 17758,
+    "glb_reimport_triangles": 17758,
+    "blend_objects": 36,
+    "glb_reimport_objects": 36
+   },
+   "cue_states": {
+    "reactor_closed_open": {
+     "nodes": {
+      "shutter-0..3": "child of shutter-holder-i; runtime sets position.y = 3.4 + 4.6*coreOpen (GLB: 3.4 -> 8.0) and visible = coreOpen < 0.98",
+      "shutter-holder-0..3": "static pivot (0,1,0), rotation.z = i*90deg + 45deg (never animated)",
+      "reactor-core": "scale (1,1,0.30), rotation.z += 0.5*dt, material replaced by mats.energyCore(0xff3d55); uIntensity = (0.35+1.5*coreOpen)*(charging?0.45:1)",
+      "reactor-shell": "scale (s,s,0.30*s), s = (1+sin(6t)*0.06)*(0.9+0.2*coreOpen); material = additive neon 0xff3d55 x2.2 @ 0.5",
+      "reactor": "pivot (0,1,-5.6) = Boss.coreGroup; world position is the reactor hit-test centre and spiral origin"
+     },
+     "materials": {
+      "KZ_ReactorCore": "energyCore",
+      "KZ_ReactorShell": "additive neon",
+      "KZ_SeamRed": "Boss.seamMat (red seams brighten with phase/coreOpen)"
+     },
+     "export_animation": "reactor_cycle",
+     "pose_states": [
+      "reactor_closed",
+      "reactor_open"
+     ]
+    },
+    "charge": {
+     "nodes": {
+      "forearm-R": "pivot (10.4,-2.6,0.4) = launcher.forearm; runtime damp rotation.x toward clamp(-pitch,-0.4,0.4) while charging, else 0.35+sin(1.6t+side)*0.08",
+      "launcher-mouth": "empty (0,0.3,-8.8) in forearm-R = launcher.mouth (missile origin, hit-test centre, radius 3.4)",
+      "launcher-charge-discs": "four muzzle plugs; share Boss.chargeMat whose colour is set each frame: rest 0.35, charging 0.6+3*charge+0.5*sin(...)"
+     },
+     "materials": {
+      "KZ_Charge": "Boss.chargeMat",
+      "KZ_Hazard": "mats.hazard chevrons mark the launcher"
+     },
+     "export_animation": "missile_charge",
+     "pose_states": [
+      "charge"
+     ]
+    },
+    "shoulder_destroyed": {
+     "nodes": {
+      "pod-R / pod-L": "pivot (+-13.8,5.6,-0.6) = Boss.pods[i].group; rotation.y aims; hit-test centre radius 5",
+      "pod-body-*": "pods[i].body: set visible=false on death (GLB anim scales to 0.001)",
+      "pod-barrels-*": "pods[i].barrels (one node for the twin pair; pivot (0,0,-3)): rotation.x pitch, position.z = -3 + recoil*1.2; hidden on death",
+      "pod-eye-*": "pods[i].eye: pulse scale; hidden on death",
+      "pod-stump-*": "pods[i].stump: visible=true on death (rests inside the intact pod)",
+      "torso-body": "keeps the cradle brackets that remain visible after a pod is shot away"
+     },
+     "materials": {
+      "KZ_PodEye": "neon amber x3",
+      "KZ_GlowOrange": "stump glow disc / hover jets / stacks"
+     },
+     "export_animation": "pod_destroyed_R, pod_destroyed_L",
+     "pose_states": [
+      "pod_destroyed_R",
+      "pod_destroyed_L",
+      "all_cues"
+     ]
+    }
+   }
+  }
+ }
+}

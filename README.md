@@ -9,8 +9,40 @@ raked isometric angle, which means you cannot tell how high you are by looking a
 ship — you read it off the shadow on the deck and the altimeter on the right. Walls have
 gaps. Some of those gaps are at your altitude and some are not.
 
-Everything you see and hear is generated at runtime. There are no textures, models,
-sounds or fonts in this repository — the whole thing is code.
+The fighter, Iron Sentinel, standard ground turret and radar tower use Blender-authored models, selected through the asset
+contest. Their GLBs load during boot; editable sources live in `assets-source/`.
+The fortress, other entities, textures, sound effects and music are generated in code.
+
+[![KNOTZAXXON: the same instant as CLASSIC 45 under the CRT overlay, and as the CHASE camera](media/hero.jpg)](https://knotenvy.github.io/KnotzAxxon/)
+
+**[Play it free in your browser](https://knotenvy.github.io/KnotzAxxon/)** — keyboard, gamepad or touch.
+
+## Trailer
+
+[![The opening of the trailer: the classic camera with the CRT overlay dives into the chase camera](media/dive.gif)](media/KnotzAxxon-Trailer-720p.mp4)
+
+**[Watch the 87-second trailer](media/KnotzAxxon-Trailer-720p.mp4)** (720p). Every frame is real gameplay,
+filmed from the game itself, and the score is played on the game's own synthesizer. How it
+was made, and how to rebuild it, is in [`trailer/README.md`](trailer/README.md).
+
+## Screenshots
+
+**One fortress, three cameras.** The same instant through each camera rig from the
+**SYSTEMS** menu.
+
+| `CLASSIC 45` (CRT overlay optional) | `MODERN 20` | `CHASE` |
+| --- | --- | --- |
+| <img src="media/rig-classic.jpg" alt="Classic 45 camera" width="320"> | <img src="media/rig-modern.jpg" alt="Modern 20 camera" width="320"> | <img src="media/rig-chase.jpg" alt="Chase camera" width="320"> |
+
+**Read your shadow.** The shadow, the drop-line and the altimeter say which gap in a wall is yours.
+
+| Match the gap | Electric barrier | Debris gate |
+| --- | --- | --- |
+| <img src="media/shadow.jpg" alt="Threading a gap in a fortress wall" width="320"> | <img src="media/barrier.jpg" alt="An electric barrier across the lane" width="320"> | <img src="media/debris.jpg" alt="A debris gate in open space" width="320"> |
+
+| Reactor gate | Iron Sentinel, core exposed | Iron Sentinel, fire curtain |
+| --- | --- | --- |
+| <img src="media/reactor-gate.jpg" alt="A reactor coolant gate" width="320"> | <img src="media/sentinel-core.jpg" alt="The Iron Sentinel with its reactor open" width="320"> | <img src="media/sentinel-curtain.jpg" alt="The Iron Sentinel's fire curtain" width="320"> |
 
 ---
 

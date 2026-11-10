@@ -1,4 +1,5 @@
 import { Lifetime } from './core/Lifetime.js';
+import { loadImportedModels, disposeImportedModels } from './render/ImportedModels.js';
 import { disposeTextures } from './render/Textures.js';
 import { disposeEnemyGeometry } from './entities/Enemies.js';
 import { disposePickupGeometry } from './entities/Pickup.js';
@@ -42,11 +43,14 @@ async function main() {
     engine?.stop(); game?.dispose(); screens.dispose(); audio.dispose();
     disposeEnemyGeometry(); disposePickupGeometry(); disposeFortressTemplates();
     engine?.dispose(); disposeTextures();
+    disposeImportedModels();
     if (window.KZ?.engine === engine) delete window.KZ;
   };
 
   await screens.boot(async () => {
     if (lifetime.closed) return;
+    await loadImportedModels();
+    if (lifetime.closed) { disposeImportedModels(); return; }
     // Everything expensive happens here: shader compiles, procedural textures,
     // the sky bake. The boot log is covering real work, not a fake progress bar.
     engine = new Engine(canvas);

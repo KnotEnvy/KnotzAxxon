@@ -1,0 +1,2034 @@
+{
+ "entry": "anonymous contest entry (round 1)",
+ "baseline_commit": "c07e5e7236afa8ee53bf42bc831f0f7cb3802ce0",
+ "blender": "5.2.1 LTS",
+ "coordinate_note": "All positions are game space (three.js travel space), metres = world units.",
+ "loader_note": "three.js GLTFLoader turns a multi-primitive mesh node into a Group with one child Mesh per primitive (e.g. torso, airframe); traverse children when swapping materials. Node names contain only letters, digits and hyphens, so they survive name sanitising.",
+ "pose_script": {
+  "file": "build/pose_states.py",
+  "states": {
+   "rest": "reactor closed, guard pose",
+   "reactor_closed": "ReactorClose end frame",
+   "reactor_open": "ReactorOpen end frame (shutters out and hidden, shell enlarged)",
+   "charge": "LauncherCharge end frame (launcher arm level, tube discs pulsed, SN_Charge bright)",
+   "destroyed_L": "ShoulderDestroyed_L end frame",
+   "destroyed_R": "ShoulderDestroyed_R end frame",
+   "guard": "Idle",
+   "engine_boost": "fighter Boost end frame"
+  },
+  "combine": "states join with '+', e.g. 'reactor_open+destroyed_R'"
+ },
+ "player": {
+  "files": {
+   "blend": "player.blend",
+   "glb": "player.glb"
+  },
+  "axes": "glTF X across, Y up; nose +Z",
+  "origin": [
+   0,
+   0,
+   0
+  ],
+  "counts": {
+   "evaluated_triangles_blend": 12304,
+   "material_primitives_blend": 6,
+   "triangles_glb": 12304,
+   "primitives_glb": 6,
+   "triangles_glb_reimport": 12304,
+   "primitives_glb_reimport": 6,
+   "budget_triangles": 25000,
+   "budget_primitives": 8,
+   "overages": [],
+   "baseline_triangles": 4052,
+   "baseline_primitives": 6
+  },
+  "bounds_rest": {
+   "min": [
+    -3.95,
+    -0.565,
+    -2.6
+   ],
+   "max": [
+    3.95,
+    1.4797,
+    3.18
+   ],
+   "size": [
+    7.9,
+    2.0447,
+    5.78
+   ],
+   "baseline_size": [
+    7.9,
+    2.054,
+    5.713
+   ],
+   "ratio_vs_baseline": [
+    1.0,
+    0.9955,
+    1.0117
+   ]
+  },
+  "glb_bytes": 392040,
+  "textures": [
+   {
+    "name": "KX_Fighter_HullPalette",
+    "mimeType": "image/png",
+    "bytes": 320,
+    "size": [
+     32,
+     16
+    ]
+   },
+   {
+    "name": "KX_Fighter_NeonPalette",
+    "mimeType": "image/png",
+    "bytes": 285,
+    "size": [
+     32,
+     8
+    ]
+   }
+  ],
+  "materials": [
+   {
+    "name": "KX_Fighter_Hull",
+    "baseColorFactor": null,
+    "metallic": 0.5199999809265137,
+    "roughness": 0.3400000035762787,
+    "baseColorTexture": true,
+    "emissiveFactor": null,
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [],
+    "emissiveStrength": null
+   },
+   {
+    "name": "KX_Fighter_Accent",
+    "baseColorFactor": [
+     0.016807375475764275,
+     0.03560131415724754,
+     0.06480326503515244,
+     1
+    ],
+    "metallic": 0.5799999833106995,
+    "roughness": 0.3799999952316284,
+    "baseColorTexture": false,
+    "emissiveFactor": null,
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [],
+    "emissiveStrength": null
+   },
+   {
+    "name": "KX_Fighter_Glass",
+    "baseColorFactor": [
+     0.006048833020031452,
+     0.04817182570695877,
+     0.08437620848417282,
+     1
+    ],
+    "metallic": 0.5799999833106995,
+    "roughness": 0.1599999964237213,
+    "baseColorTexture": false,
+    "emissiveFactor": null,
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [],
+    "emissiveStrength": null
+   },
+   {
+    "name": "KX_Fighter_Neon",
+    "baseColorFactor": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "metallic": 0,
+    "roughness": 1.0,
+    "baseColorTexture": false,
+    "emissiveFactor": [
+     1,
+     1,
+     1
+    ],
+    "emissiveTexture": true,
+    "alphaMode": "OPAQUE",
+    "extensions": [
+     "KHR_materials_emissive_strength"
+    ],
+    "emissiveStrength": 1.25
+   },
+   {
+    "name": "KX_Fighter_EngineCore",
+    "baseColorFactor": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "metallic": 0,
+    "roughness": 1.0,
+    "baseColorTexture": false,
+    "emissiveFactor": [
+     0.2746773064136505,
+     0.7758222222328186,
+     1
+    ],
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [
+     "KHR_materials_emissive_strength"
+    ],
+    "emissiveStrength": 1.350000023841858
+   }
+  ],
+  "extensions_used": [
+   "KHR_materials_emissive_strength"
+  ],
+  "extensions_required": [],
+  "nodes_verified": [
+   {
+    "node": "engine-core-L",
+    "parent": "hero-interceptor",
+    "local_translation": [
+     -1.05,
+     -0.1,
+     -2.515
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "engine-core-R",
+    "parent": "hero-interceptor",
+    "local_translation": [
+     1.05,
+     -0.1,
+     -2.515
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "muzzle-L",
+    "parent": "hero-interceptor",
+    "local_translation": [
+     -1.6,
+     -0.1,
+     2.4
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "muzzle-R",
+    "parent": "hero-interceptor",
+    "local_translation": [
+     1.6,
+     -0.1,
+     2.4
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "exhaust-fx-L",
+    "parent": "hero-interceptor",
+    "local_translation": [
+     -1.05,
+     -0.1,
+     -2.62
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "exhaust-fx-R",
+    "parent": "hero-interceptor",
+    "local_translation": [
+     1.05,
+     -0.1,
+     -2.62
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "airframe",
+    "parent": "hero-interceptor",
+    "local_translation": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   }
+  ],
+  "node_runtime_mapping": {
+   "hero-interceptor": {
+    "runtime": "buildShip() group / Player.model",
+    "pivot": [
+     0,
+     0,
+     0
+    ],
+    "notes": "Ship origin and axes unchanged; Player rotates this node (pitch, yaw, roll)."
+   },
+   "airframe": {
+    "runtime": "replaces airframe-hull/-accent/-glass/-neon batches",
+    "materials": {
+     "KX_Fighter_Hull": "mats.playerHull (+ map = KX_Fighter_HullPalette; vertex colours no longer needed)",
+     "KX_Fighter_Accent": "mats.playerAccent",
+     "KX_Fighter_Glass": "mats.glass",
+     "KX_Fighter_Neon": "player neon MeshBasicMaterial (map = KX_Fighter_NeonPalette) or keep GLB emissive"
+    },
+    "notes": "Occluded silhouette: merge the Hull, Accent and Glass primitives (not Neon) with mats._playerSilhouette, renderOrder 5, as buildShip does. castShadow on all but Neon; renderOrder 6."
+   },
+   "engine-core-L": {
+    "runtime": "userData.engines[0] (side -1; baseline name engine-core--1)",
+    "pivot": [
+     -1.05,
+     -0.1,
+     -2.515
+    ],
+    "materials": {
+     "KX_Fighter_EngineCore": "mats.neon(0x8fe4ff, 1.35)"
+    },
+    "notes": "Origin at disc centre so e.scale.setScalar(glowScale) pulses in place; renderOrder 6."
+   },
+   "engine-core-R": {
+    "runtime": "userData.engines[1] (side +1; baseline name engine-core-1)",
+    "pivot": [
+     1.05,
+     -0.1,
+     -2.515
+    ],
+    "materials": {
+     "KX_Fighter_EngineCore": "mats.neon(0x8fe4ff, 1.35)"
+    }
+   },
+   "muzzle-L": {
+    "runtime": "Player.js bullet spawn side -1 (+/-1.6, -0.1, 2.4)",
+    "pivot": [
+     -1.6,
+     -0.1,
+     2.4
+    ]
+   },
+   "muzzle-R": {
+    "runtime": "Player.js bullet spawn side +1",
+    "pivot": [
+     1.6,
+     -0.1,
+     2.4
+    ]
+   },
+   "exhaust-fx-L": {
+    "runtime": "Player._engineFx trail emitter side -1 (+/-1.05, -0.1, -2.62)",
+    "pivot": [
+     -1.05,
+     -0.1,
+     -2.62
+    ]
+   },
+   "exhaust-fx-R": {
+    "runtime": "Player._engineFx trail emitter side +1",
+    "pivot": [
+     1.05,
+     -0.1,
+     -2.62
+    ]
+   }
+  },
+  "per_object": {
+   "airframe": {
+    "triangles": 12116,
+    "primitives": 4,
+    "materials": [
+     "KX_Fighter_Accent",
+     "KX_Fighter_Glass",
+     "KX_Fighter_Hull",
+     "KX_Fighter_Neon"
+    ]
+   },
+   "engine-core-L": {
+    "triangles": 94,
+    "primitives": 1,
+    "materials": [
+     "KX_Fighter_EngineCore"
+    ]
+   },
+   "engine-core-R": {
+    "triangles": 94,
+    "primitives": 1,
+    "materials": [
+     "KX_Fighter_EngineCore"
+    ]
+   }
+  },
+  "animations": [
+   {
+    "name": "EnginePulse",
+    "channels": 2,
+    "duration_s": 0.5,
+    "targets": [
+     "engine-core-L",
+     "engine-core-R"
+    ],
+    "end_values": {
+     "engine-core-L.scale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "engine-core-R.scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    }
+   },
+   {
+    "name": "Boost",
+    "channels": 2,
+    "duration_s": 0.3,
+    "targets": [
+     "engine-core-L",
+     "engine-core-R"
+    ],
+    "end_values": {
+     "engine-core-L.scale": [
+      1.6,
+      1.6,
+      1.6
+     ],
+     "engine-core-R.scale": [
+      1.6,
+      1.6,
+      1.6
+     ]
+    }
+   }
+  ],
+  "verification": {
+   "blend_reopen": "PASS",
+   "glb_parser_check": "PASS",
+   "glb_parser_errors": []
+  }
+ },
+ "sentinel": {
+  "files": {
+   "blend": "sentinel.blend",
+   "glb": "sentinel.glb"
+  },
+  "axes": "glTF X across, Y up; front -Z",
+  "origin": [
+   0,
+   0,
+   0
+  ],
+  "counts": {
+   "evaluated_triangles_blend": 34718,
+   "material_primitives_blend": 38,
+   "triangles_glb": 34718,
+   "primitives_glb": 38,
+   "triangles_glb_reimport": 34718,
+   "primitives_glb_reimport": 38,
+   "budget_triangles": 100000,
+   "budget_primitives": 48,
+   "overages": [],
+   "baseline_triangles": 8528,
+   "baseline_primitives": 37
+  },
+  "bounds_rest": {
+   "min": [
+    -18.145,
+    -10.36,
+    -10.4824
+   ],
+   "max": [
+    18.145,
+    14.53,
+    7.2455
+   ],
+   "size": [
+    36.29,
+    24.89,
+    17.728
+   ],
+   "baseline_size": [
+    35.62,
+    24.94,
+    18.132
+   ],
+   "ratio_vs_baseline": [
+    1.0188,
+    0.998,
+    0.9777
+   ]
+  },
+  "glb_bytes": 1140172,
+  "textures": [
+   {
+    "name": "SN_FramePalette",
+    "mimeType": "image/png",
+    "bytes": 285,
+    "size": [
+     32,
+     8
+    ]
+   },
+   {
+    "name": "SN_ArmorPalette",
+    "mimeType": "image/png",
+    "bytes": 285,
+    "size": [
+     32,
+     8
+    ]
+   },
+   {
+    "name": "SN_Hazard",
+    "mimeType": "image/png",
+    "bytes": 1436,
+    "size": [
+     128,
+     128
+    ]
+   }
+  ],
+  "materials": [
+   {
+    "name": "SN_Frame",
+    "baseColorFactor": null,
+    "metallic": 0.5,
+    "roughness": 0.46000000834465027,
+    "baseColorTexture": true,
+    "emissiveFactor": null,
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [],
+    "emissiveStrength": null
+   },
+   {
+    "name": "SN_Armor",
+    "baseColorFactor": null,
+    "metallic": 0.47999998927116394,
+    "roughness": 0.41999998688697815,
+    "baseColorTexture": true,
+    "emissiveFactor": null,
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [],
+    "emissiveStrength": null
+   },
+   {
+    "name": "SN_Charge",
+    "baseColorFactor": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "metallic": 0,
+    "roughness": 1.0,
+    "baseColorTexture": false,
+    "emissiveFactor": [
+     1,
+     0.4564110338687897,
+     0.0423114113509655
+    ],
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [],
+    "emissiveStrength": null
+   },
+   {
+    "name": "SN_Hazard",
+    "baseColorFactor": null,
+    "metallic": 0.4000000059604645,
+    "roughness": 0.6499999761581421,
+    "baseColorTexture": true,
+    "emissiveFactor": [
+     0.44999998807907104,
+     0.44999998807907104,
+     0.44999998807907104
+    ],
+    "emissiveTexture": true,
+    "alphaMode": "OPAQUE",
+    "extensions": [],
+    "emissiveStrength": null
+   },
+   {
+    "name": "SN_Beacon",
+    "baseColorFactor": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "metallic": 0,
+    "roughness": 1.0,
+    "baseColorTexture": false,
+    "emissiveFactor": [
+     1,
+     0.04666508734226227,
+     0.09084171056747437
+    ],
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [
+     "KHR_materials_emissive_strength"
+    ],
+    "emissiveStrength": 3
+   },
+   {
+    "name": "SN_Visor",
+    "baseColorFactor": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "metallic": 0,
+    "roughness": 1.0,
+    "baseColorTexture": false,
+    "emissiveFactor": [
+     1,
+     0.04666508734226227,
+     0.09084171056747437
+    ],
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [
+     "KHR_materials_emissive_strength"
+    ],
+    "emissiveStrength": 2.200000047683716
+   },
+   {
+    "name": "SN_Metal",
+    "baseColorFactor": [
+     0.08437620848417282,
+     0.13013647496700287,
+     0.19120168685913086,
+     1
+    ],
+    "metallic": 0.5600000023841858,
+    "roughness": 0.3799999952316284,
+    "baseColorTexture": false,
+    "emissiveFactor": null,
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [],
+    "emissiveStrength": null
+   },
+   {
+    "name": "SN_PodEye",
+    "baseColorFactor": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "metallic": 0,
+    "roughness": 1.0,
+    "baseColorTexture": false,
+    "emissiveFactor": [
+     1,
+     0.4564110338687897,
+     0.0423114113509655
+    ],
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [
+     "KHR_materials_emissive_strength"
+    ],
+    "emissiveStrength": 2.5
+   },
+   {
+    "name": "SN_Glow",
+    "baseColorFactor": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "metallic": 0,
+    "roughness": 1.0,
+    "baseColorTexture": false,
+    "emissiveFactor": [
+     1,
+     0.1946178376674652,
+     0.0423114113509655
+    ],
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [
+     "KHR_materials_emissive_strength"
+    ],
+    "emissiveStrength": 2
+   },
+   {
+    "name": "SN_Core",
+    "baseColorFactor": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "metallic": 0,
+    "roughness": 1.0,
+    "baseColorTexture": false,
+    "emissiveFactor": [
+     1,
+     0.04666508734226227,
+     0.09084171056747437
+    ],
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [
+     "KHR_materials_emissive_strength"
+    ],
+    "emissiveStrength": 1.5
+   },
+   {
+    "name": "SN_CoreShell",
+    "baseColorFactor": [
+     0,
+     0,
+     0,
+     0.3499999940395355
+    ],
+    "metallic": 0,
+    "roughness": 1.0,
+    "baseColorTexture": false,
+    "emissiveFactor": [
+     1,
+     0.04666508734226227,
+     0.09084171056747437
+    ],
+    "emissiveTexture": false,
+    "alphaMode": "BLEND",
+    "extensions": [],
+    "emissiveStrength": null
+   },
+   {
+    "name": "SN_Seam",
+    "baseColorFactor": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "metallic": 0,
+    "roughness": 1.0,
+    "baseColorTexture": false,
+    "emissiveFactor": [
+     1,
+     0.04666508734226227,
+     0.09084171056747437
+    ],
+    "emissiveTexture": false,
+    "alphaMode": "OPAQUE",
+    "extensions": [
+     "KHR_materials_emissive_strength"
+    ],
+    "emissiveStrength": 1.2000000476837158
+   }
+  ],
+  "extensions_used": [
+   "KHR_materials_emissive_strength"
+  ],
+  "extensions_required": [],
+  "nodes_verified": [
+   {
+    "node": "torso",
+    "parent": "iron-sentinel",
+    "local_translation": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "head",
+    "parent": "torso",
+    "local_translation": [
+     0.0,
+     8.4,
+     -0.6
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "antenna-tip-L",
+    "parent": "head",
+    "local_translation": [
+     -2.6,
+     5.85,
+     1.7
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "antenna-tip-R",
+    "parent": "head",
+    "local_translation": [
+     2.6,
+     5.85,
+     1.7
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "reactor",
+    "parent": "torso",
+    "local_translation": [
+     0.0,
+     1.0,
+     -5.6
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "reactor-core",
+    "parent": "reactor",
+    "local_translation": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "reactor-shell",
+    "parent": "reactor",
+    "local_translation": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "shutter-holder-0",
+    "parent": "torso",
+    "local_translation": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "shutter-0",
+    "parent": "shutter-holder-0",
+    "local_translation": [
+     -0.0,
+     3.4,
+     -7.0
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "shutter-holder-1",
+    "parent": "torso",
+    "local_translation": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "shutter-1",
+    "parent": "shutter-holder-1",
+    "local_translation": [
+     0.0,
+     3.4,
+     -7.0
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "shutter-holder-2",
+    "parent": "torso",
+    "local_translation": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "shutter-2",
+    "parent": "shutter-holder-2",
+    "local_translation": [
+     0.0,
+     3.4,
+     -7.0
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "shutter-holder-3",
+    "parent": "torso",
+    "local_translation": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "shutter-3",
+    "parent": "shutter-holder-3",
+    "local_translation": [
+     0.0,
+     3.4,
+     -7.0
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "forearm-R",
+    "parent": "torso",
+    "local_translation": [
+     10.4,
+     -2.6,
+     0.4
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "forearm-L",
+    "parent": "torso",
+    "local_translation": [
+     -10.4,
+     -2.6,
+     0.4
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "missile-mouth",
+    "parent": "forearm-R",
+    "local_translation": [
+     0.0,
+     0.3,
+     -8.8
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "launcher-charge",
+    "parent": "forearm-R",
+    "local_translation": [
+     0.0,
+     0.3,
+     -9.92
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "pod-R",
+    "parent": "torso",
+    "local_translation": [
+     13.8,
+     5.6,
+     -0.6
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "pod-L",
+    "parent": "torso",
+    "local_translation": [
+     -13.8,
+     5.6,
+     -0.6
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "pod-R-body",
+    "parent": "pod-R",
+    "local_translation": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "pod-L-body",
+    "parent": "pod-L",
+    "local_translation": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "pod-R-barrel-0",
+    "parent": "pod-R",
+    "local_translation": [
+     -1.3,
+     0.0,
+     -3.0
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "pod-R-barrel-1",
+    "parent": "pod-R",
+    "local_translation": [
+     1.3,
+     0.0,
+     -3.0
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "pod-L-barrel-0",
+    "parent": "pod-L",
+    "local_translation": [
+     -1.3,
+     0.0,
+     -3.0
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "pod-L-barrel-1",
+    "parent": "pod-L",
+    "local_translation": [
+     1.3,
+     0.0,
+     -3.0
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "pod-R-eye",
+    "parent": "pod-R",
+    "local_translation": [
+     0.0,
+     2.2,
+     -2.4
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "pod-L-eye",
+    "parent": "pod-L",
+    "local_translation": [
+     0.0,
+     2.2,
+     -2.4
+    ],
+    "error": 0.0,
+    "animated_on_import": true
+   },
+   {
+    "node": "pod-R-stump",
+    "parent": "pod-R",
+    "local_translation": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "pod-L-stump",
+    "parent": "pod-L",
+    "local_translation": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "thruster-L",
+    "parent": "torso",
+    "local_translation": [
+     -5.0,
+     0.0,
+     6.1
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "thruster-R",
+    "parent": "torso",
+    "local_translation": [
+     5.0,
+     0.0,
+     6.1
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   },
+   {
+    "node": "hover-wash",
+    "parent": "torso",
+    "local_translation": [
+     0.0,
+     -10.6,
+     0.0
+    ],
+    "error": 0.0,
+    "animated_on_import": false
+   }
+  ],
+  "node_runtime_mapping": {
+   "iron-sentinel": {
+    "runtime": "Boss.group",
+    "pivot": [
+     0,
+     0,
+     0
+    ]
+   },
+   "torso": {
+    "runtime": "Boss.torso (static Kit meshes incl. pauldrons, upper arms, elbows)",
+    "pivot": [
+     0,
+     0,
+     0
+    ],
+    "materials": {
+     "SN_Armor": "mats.enemyArmor (+ map = SN_ArmorPalette)",
+     "SN_Frame": "mats.darkMetal (+ map = SN_FramePalette; replaces whiten() dark/frame vertex colours)",
+     "SN_Hazard": "mats.hazard",
+     "SN_Seam": "Boss.seamMat (charge/open/phase cue: colour driven per frame)",
+     "SN_Glow": "mats.neon(0xff7a3a, 2.4)"
+    },
+    "notes": "torso.position.y breathing and rotation.x stagger as before."
+   },
+   "head": {
+    "runtime": "Boss.head",
+    "pivot": [
+     0,
+     8.4,
+     -0.6
+    ],
+    "materials": {
+     "SN_Visor": "Boss.visorMat (pulse/phase cue)"
+    }
+   },
+   "antenna-tip-L": {
+    "runtime": "Boss.antennaTips[0] (side -1), blink via visible",
+    "pivot": [
+     -2.6,
+     5.85,
+     1.7
+    ],
+    "materials": {
+     "SN_Beacon": "mats.neon(0xff3d55, 3)"
+    }
+   },
+   "antenna-tip-R": {
+    "runtime": "Boss.antennaTips[1] (side +1)",
+    "pivot": [
+     2.6,
+     5.85,
+     1.7
+    ]
+   },
+   "reactor": {
+    "runtime": "Boss.coreGroup (hit test origin, coreOpen > 0.55 radius 6.5 unchanged)",
+    "pivot": [
+     0,
+     1,
+     -5.6
+    ]
+   },
+   "reactor-core": {
+    "runtime": "Boss.core",
+    "pivot": [
+     0,
+     0,
+     0
+    ],
+    "rest_scale": [
+     1,
+     1,
+     0.3
+    ],
+    "materials": {
+     "SN_Core": "mats.energyCore(0xff3d55) (uIntensity = open/charge cue)"
+    },
+    "notes": "Geometry unsquashed; node scale z 0.3 exactly as baseline; rotation.z spin."
+   },
+   "reactor-shell": {
+    "runtime": "Boss.coreShell",
+    "pivot": [
+     0,
+     0,
+     0
+    ],
+    "rest_scale": [
+     1,
+     1,
+     0.3
+    ],
+    "materials": {
+     "SN_CoreShell": "mats.neon(0xff3d55, 2.2, {transparent, opacity .5, additive, depthWrite false})"
+    },
+    "notes": "Runtime scale.set(s, s, s * .30) works unchanged."
+   },
+   "shutter-holder-0..3": {
+    "runtime": "Boss.shutters[i].holder",
+    "pivot": [
+     0,
+     1,
+     0
+    ],
+    "notes": "rotation.z = i * 90deg + 45deg, baked into the node."
+   },
+   "shutter-0..3": {
+    "runtime": "Boss.shutters[i].mesh, base 3.4",
+    "pivot": [
+     0,
+     3.4,
+     -7.0
+    ],
+    "materials": {
+     "SN_Armor": "mats.enemyArmor"
+    },
+    "notes": "Open cue unchanged: position.y = 3.4 + coreOpen * 4.6; visible = coreOpen < 0.98."
+   },
+   "forearm-R": {
+    "runtime": "Boss.arms[0].forearm and Boss.launcher.forearm (side +1)",
+    "pivot": [
+     10.4,
+     -2.6,
+     0.4
+    ],
+    "notes": "rotation.x guard sway / aim as before. Primitives: SN_Frame, SN_Armor, SN_Hazard."
+   },
+   "forearm-L": {
+    "runtime": "Boss.arms[1].forearm (side -1, clawed fist)",
+    "pivot": [
+     -10.4,
+     -2.6,
+     0.4
+    ]
+   },
+   "missile-mouth": {
+    "runtime": "Boss.launcher.mouth (hit radius 3.4 unchanged)",
+    "pivot": [
+     0,
+     0.3,
+     -8.8
+    ],
+    "parent": "forearm-R"
+   },
+   "launcher-charge": {
+    "runtime": "four tube discs drawn with Boss.chargeMat (charge cue colour)",
+    "pivot": [
+     0,
+     0.3,
+     -9.92
+    ],
+    "parent": "forearm-R",
+    "materials": {
+     "SN_Charge": "Boss.chargeMat"
+    }
+   },
+   "pod-R": {
+    "runtime": "Boss.pods[0].group (side +1; pod.pos from getWorldPosition; radius 5 unchanged)",
+    "pivot": [
+     13.8,
+     5.6,
+     -0.6
+    ]
+   },
+   "pod-L": {
+    "runtime": "Boss.pods[1].group (side -1)",
+    "pivot": [
+     -13.8,
+     5.6,
+     -0.6
+    ]
+   },
+   "pod-*-body": {
+    "runtime": "pod.body (hidden on destroy)",
+    "pivot": [
+     0,
+     0,
+     0
+    ],
+    "materials": {
+     "SN_Armor": "mats.enemyArmor",
+     "SN_Frame": "mats.darkMetal"
+    },
+    "notes": "Identity transform (baseline body carried rotation.x = PI/2). Damage flash: new Mesh(body geometry, flashMat) at scale 1.1 under the pod group, no extra rotation."
+   },
+   "pod-*-barrel-0": {
+    "runtime": "pod.barrels[0] (x -1.3)",
+    "pivot": [
+     -1.3,
+     0,
+     -3
+    ],
+    "materials": {
+     "SN_Metal": "mats.enemyMetal"
+    },
+    "notes": "Breech pivot; rotation.x pitch and position.z = -3 + recoil * 1.2 unchanged."
+   },
+   "pod-*-barrel-1": {
+    "runtime": "pod.barrels[1] (x +1.3)",
+    "pivot": [
+     1.3,
+     0,
+     -3
+    ]
+   },
+   "pod-*-eye": {
+    "runtime": "pod.eye (scale pulse, hidden on destroy)",
+    "pivot": [
+     0,
+     2.2,
+     -2.4
+    ],
+    "materials": {
+     "SN_PodEye": "mats.neon(0xffb43a, 3)"
+    }
+   },
+   "pod-*-stump": {
+    "runtime": "pod.stump (destroyed-shoulder cue)",
+    "pivot": [
+     0,
+     0,
+     0
+    ],
+    "materials": {
+     "SN_Frame": "mats.darkMetal",
+     "SN_Glow": "mats.neon(0xff7a3a, 2.4)"
+    },
+    "notes": "glTF has no visibility flag: set stump.visible = false after load (extras.runtime_initial_visible = false). It is fully enclosed by the pod body, so it never shows through if left visible."
+   },
+   "thruster-L": {
+    "runtime": "Boss.thrusters[0] (side -1), scale pulse",
+    "pivot": [
+     -5,
+     0,
+     6.1
+    ],
+    "materials": {
+     "SN_Glow": "mats.neon(0xff7a3a, 2.6)"
+    },
+    "notes": "Faces +Z (node rotated 180deg about Y)."
+   },
+   "thruster-R": {
+    "runtime": "Boss.thrusters[1] (side +1)",
+    "pivot": [
+     5,
+     0,
+     6.1
+    ]
+   },
+   "hover-wash": {
+    "runtime": "socket for the hover wash particles (torso-local y -10.6)",
+    "pivot": [
+     0,
+     -10.6,
+     0
+    ]
+   }
+  },
+  "per_object": {
+   "antenna-tip-L": {
+    "triangles": 80,
+    "primitives": 1,
+    "materials": [
+     "SN_Beacon"
+    ]
+   },
+   "antenna-tip-R": {
+    "triangles": 80,
+    "primitives": 1,
+    "materials": [
+     "SN_Beacon"
+    ]
+   },
+   "forearm-L": {
+    "triangles": 912,
+    "primitives": 2,
+    "materials": [
+     "SN_Armor",
+     "SN_Frame"
+    ]
+   },
+   "forearm-R": {
+    "triangles": 2204,
+    "primitives": 3,
+    "materials": [
+     "SN_Armor",
+     "SN_Frame",
+     "SN_Hazard"
+    ]
+   },
+   "head": {
+    "triangles": 1656,
+    "primitives": 3,
+    "materials": [
+     "SN_Armor",
+     "SN_Frame",
+     "SN_Visor"
+    ]
+   },
+   "launcher-charge": {
+    "triangles": 216,
+    "primitives": 1,
+    "materials": [
+     "SN_Charge"
+    ]
+   },
+   "pod-L-barrel-0": {
+    "triangles": 1288,
+    "primitives": 1,
+    "materials": [
+     "SN_Metal"
+    ]
+   },
+   "pod-L-barrel-1": {
+    "triangles": 1288,
+    "primitives": 1,
+    "materials": [
+     "SN_Metal"
+    ]
+   },
+   "pod-L-body": {
+    "triangles": 3870,
+    "primitives": 2,
+    "materials": [
+     "SN_Armor",
+     "SN_Frame"
+    ]
+   },
+   "pod-L-eye": {
+    "triangles": 168,
+    "primitives": 1,
+    "materials": [
+     "SN_PodEye"
+    ]
+   },
+   "pod-L-stump": {
+    "triangles": 418,
+    "primitives": 2,
+    "materials": [
+     "SN_Frame",
+     "SN_Glow"
+    ]
+   },
+   "pod-R-barrel-0": {
+    "triangles": 1288,
+    "primitives": 1,
+    "materials": [
+     "SN_Metal"
+    ]
+   },
+   "pod-R-barrel-1": {
+    "triangles": 1288,
+    "primitives": 1,
+    "materials": [
+     "SN_Metal"
+    ]
+   },
+   "pod-R-body": {
+    "triangles": 3870,
+    "primitives": 2,
+    "materials": [
+     "SN_Armor",
+     "SN_Frame"
+    ]
+   },
+   "pod-R-eye": {
+    "triangles": 168,
+    "primitives": 1,
+    "materials": [
+     "SN_PodEye"
+    ]
+   },
+   "pod-R-stump": {
+    "triangles": 418,
+    "primitives": 2,
+    "materials": [
+     "SN_Frame",
+     "SN_Glow"
+    ]
+   },
+   "reactor-core": {
+    "triangles": 20,
+    "primitives": 1,
+    "materials": [
+     "SN_Core"
+    ]
+   },
+   "reactor-shell": {
+    "triangles": 20,
+    "primitives": 1,
+    "materials": [
+     "SN_CoreShell"
+    ]
+   },
+   "shutter-0": {
+    "triangles": 288,
+    "primitives": 1,
+    "materials": [
+     "SN_Armor"
+    ]
+   },
+   "shutter-1": {
+    "triangles": 288,
+    "primitives": 1,
+    "materials": [
+     "SN_Armor"
+    ]
+   },
+   "shutter-2": {
+    "triangles": 288,
+    "primitives": 1,
+    "materials": [
+     "SN_Armor"
+    ]
+   },
+   "shutter-3": {
+    "triangles": 288,
+    "primitives": 1,
+    "materials": [
+     "SN_Armor"
+    ]
+   },
+   "thruster-L": {
+    "triangles": 78,
+    "primitives": 1,
+    "materials": [
+     "SN_Glow"
+    ]
+   },
+   "thruster-R": {
+    "triangles": 78,
+    "primitives": 1,
+    "materials": [
+     "SN_Glow"
+    ]
+   },
+   "torso": {
+    "triangles": 14158,
+    "primitives": 5,
+    "materials": [
+     "SN_Armor",
+     "SN_Frame",
+     "SN_Glow",
+     "SN_Hazard",
+     "SN_Seam"
+    ]
+   }
+  },
+  "animations": [
+   {
+    "name": "Idle",
+    "channels": 7,
+    "duration_s": 2,
+    "targets": [
+     "forearm-L",
+     "forearm-R",
+     "head",
+     "pod-L",
+     "pod-R",
+     "torso"
+    ],
+    "end_values": {
+     "torso.translation": [
+      0.0,
+      -0.0,
+      -0.0
+     ],
+     "torso.rotation": [
+      0.0,
+      0.0,
+      -0.0,
+      1.0
+     ],
+     "forearm-L.rotation": [
+      0.1409,
+      0.0,
+      -0.0,
+      0.99
+     ],
+     "forearm-R.rotation": [
+      0.2071,
+      0.0,
+      -0.0,
+      0.9783
+     ],
+     "head.rotation": [
+      0.0,
+      0.0,
+      -0.0,
+      1.0
+     ],
+     "pod-L.rotation": [
+      0.0,
+      -0.084,
+      -0.0,
+      0.9965
+     ],
+     "pod-R.rotation": [
+      0.0,
+      0.084,
+      -0.0,
+      0.9965
+     ]
+    }
+   },
+   {
+    "name": "LauncherCharge",
+    "channels": 3,
+    "duration_s": 2.6,
+    "targets": [
+     "forearm-R",
+     "head",
+     "launcher-charge"
+    ],
+    "end_values": {
+     "forearm-R.rotation": [
+      0.0,
+      0.0,
+      -0.0,
+      1.0
+     ],
+     "launcher-charge.scale": [
+      1.08,
+      1.08,
+      1.08
+     ],
+     "head.rotation": [
+      0.0597,
+      0.0897,
+      0.0054,
+      0.9942
+     ]
+    }
+   },
+   {
+    "name": "ShoulderDestroyed_L",
+    "channels": 4,
+    "duration_s": 0.2,
+    "targets": [
+     "pod-L-barrel-0",
+     "pod-L-barrel-1",
+     "pod-L-body",
+     "pod-L-eye"
+    ],
+    "end_values": {
+     "pod-L-barrel-0.scale": [
+      0.0001,
+      0.0001,
+      0.0001
+     ],
+     "pod-L-barrel-1.scale": [
+      0.0001,
+      0.0001,
+      0.0001
+     ],
+     "pod-L-body.scale": [
+      0.0001,
+      0.0001,
+      0.0001
+     ],
+     "pod-L-eye.scale": [
+      0.0001,
+      0.0001,
+      0.0001
+     ]
+    }
+   },
+   {
+    "name": "ShoulderDestroyed_R",
+    "channels": 4,
+    "duration_s": 0.2,
+    "targets": [
+     "pod-R-barrel-0",
+     "pod-R-barrel-1",
+     "pod-R-body",
+     "pod-R-eye"
+    ],
+    "end_values": {
+     "pod-R-barrel-0.scale": [
+      0.0001,
+      0.0001,
+      0.0001
+     ],
+     "pod-R-barrel-1.scale": [
+      0.0001,
+      0.0001,
+      0.0001
+     ],
+     "pod-R-body.scale": [
+      0.0001,
+      0.0001,
+      0.0001
+     ],
+     "pod-R-eye.scale": [
+      0.0001,
+      0.0001,
+      0.0001
+     ]
+    }
+   },
+   {
+    "name": "ReactorOpen",
+    "channels": 10,
+    "duration_s": 1,
+    "targets": [
+     "reactor-core",
+     "reactor-shell",
+     "shutter-0",
+     "shutter-1",
+     "shutter-2",
+     "shutter-3"
+    ],
+    "end_values": {
+     "reactor-core.rotation": [
+      0.0,
+      0.0,
+      0.2474,
+      0.9689
+     ],
+     "reactor-shell.scale": [
+      1.1,
+      1.1,
+      0.33
+     ],
+     "shutter-0.translation": [
+      0.0,
+      8.0,
+      -7.0
+     ],
+     "shutter-0.scale": [
+      0.0001,
+      0.0001,
+      0.0001
+     ],
+     "shutter-1.translation": [
+      -0.0,
+      8.0,
+      -7.0
+     ],
+     "shutter-1.scale": [
+      0.0001,
+      0.0001,
+      0.0001
+     ],
+     "shutter-2.translation": [
+      0.0,
+      8.0,
+      -7.0
+     ],
+     "shutter-2.scale": [
+      0.0001,
+      0.0001,
+      0.0001
+     ],
+     "shutter-3.translation": [
+      -0.0,
+      8.0,
+      -7.0
+     ],
+     "shutter-3.scale": [
+      0.0001,
+      0.0001,
+      0.0001
+     ]
+    }
+   },
+   {
+    "name": "ReactorClose",
+    "channels": 10,
+    "duration_s": 1,
+    "targets": [
+     "reactor-core",
+     "reactor-shell",
+     "shutter-0",
+     "shutter-1",
+     "shutter-2",
+     "shutter-3"
+    ],
+    "end_values": {
+     "reactor-core.rotation": [
+      0.0,
+      0.0,
+      -0.0,
+      1.0
+     ],
+     "reactor-shell.scale": [
+      0.9,
+      0.9,
+      0.27
+     ],
+     "shutter-0.translation": [
+      -0.0,
+      3.4,
+      -7.0
+     ],
+     "shutter-0.scale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "shutter-1.translation": [
+      0.0,
+      3.4,
+      -7.0
+     ],
+     "shutter-1.scale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "shutter-2.translation": [
+      0.0,
+      3.4,
+      -7.0
+     ],
+     "shutter-2.scale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "shutter-3.translation": [
+      0.0,
+      3.4,
+      -7.0
+     ],
+     "shutter-3.scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    }
+   }
+  ],
+  "verification": {
+   "blend_reopen": "PASS",
+   "glb_parser_check": "PASS",
+   "glb_parser_errors": []
+  }
+ },
+ "unchanged_rules": "No combat, collision, hit-radius or targeting values are defined by these assets; Boss.js radii (body 9, pods 5, launcher 3.4, core 6.5) and Player.js muzzle/trail offsets remain authoritative.",
+ "files": [
+  {
+   "path": "README.md",
+   "bytes": 9982,
+   "sha256": "cc3c9a499ff503ce024a69e037d019874e4bc9b8bc9270036e29048b7cd3f7ed"
+  },
+  {
+   "path": "build/build_all.sh",
+   "bytes": 1681,
+   "sha256": "72bb9235aab3b76929d09a3dea1548293fc33de992a805b13c1e356281d25c51"
+  },
+  {
+   "path": "build/build_player.py",
+   "bytes": 14137,
+   "sha256": "f2ff1f157c84ad401346b1badc2a795ee3cf7f02cd2f1dfea5a8c1fedec2d695"
+  },
+  {
+   "path": "build/build_sentinel.py",
+   "bytes": 26780,
+   "sha256": "efbfd6023118b7b0bda4af22cd5c0af502a7dabdc808b3a8e7875f163baa8c80"
+  },
+  {
+   "path": "build/expected_nodes.json",
+   "bytes": 3880,
+   "sha256": "2642e1fb9e7d3d3ebdf58bb1c594210f8b77beb22d0f204fa7e4ed4555bf8e46"
+  },
+  {
+   "path": "build/inspect_glb.py",
+   "bytes": 7301,
+   "sha256": "9a0910a1fc5d3378fde5df8b467d7e9f209264c38f60a0a05711db6f47a4eb9e"
+  },
+  {
+   "path": "build/kx_common.py",
+   "bytes": 19595,
+   "sha256": "c3ba8f14b4f5905531523cb99838579eb39f0e67884af0538a82ed880afe1248"
+  },
+  {
+   "path": "build/loader_check.mjs",
+   "bytes": 1774,
+   "sha256": "af62e5fbd1b4424cf7a084e2a02832558e9f326d6b257a230816b2a9d5676bab"
+  },
+  {
+   "path": "build/make_manifest.py",
+   "bytes": 11793,
+   "sha256": "7894277e201bae88308b83db3b4a5538134a77e808b309c3375c0aadc827e909"
+  },
+  {
+   "path": "build/pose_states.py",
+   "bytes": 2349,
+   "sha256": "0d412f382c0412df8b2b69c9b709f3805243f5b00c736909a8be744864326ffb"
+  },
+  {
+   "path": "build/render_preview.py",
+   "bytes": 4025,
+   "sha256": "aee29ecfc340b8ab4d1241cc8c6a1a961db1120e008a0954857fded19c5b0e5a"
+  },
+  {
+   "path": "build/verify_blender.py",
+   "bytes": 6143,
+   "sha256": "8d7ead9072098bbe443045e16c1a93475c7143f03b42923823827c1966995b01"
+  },
+  {
+   "path": "player.blend",
+   "bytes": 184510,
+   "sha256": "294f0b09fa34e9025b9d5e237be96e538eb843071a3015dd15ccf6b6a9763fd1"
+  },
+  {
+   "path": "player.glb",
+   "bytes": 392040,
+   "sha256": "0f9cfa3a5c877a1b2aa8ae3bd4ac4fd1de350498ce8a7aeca9546914df10fbc7"
+  },
+  {
+   "path": "renders/player_classic.png",
+   "bytes": 528779,
+   "sha256": "8dac5ddf8e429f69534da5f9076d31f3963ef54b2f252e70e8f49f90d6605cc5"
+  },
+  {
+   "path": "renders/player_classic_small.png",
+   "bytes": 22720,
+   "sha256": "452f4c2c141fbd2666fe355055a7de2c3c5c5c947a01092bebf3e53638407f2d"
+  },
+  {
+   "path": "renders/player_hero.png",
+   "bytes": 754721,
+   "sha256": "6cc04f884d45e15dd5ae2955cd3ef875e9f557c862b78fcd666a2933ebd50494"
+  },
+  {
+   "path": "renders/player_rear.png",
+   "bytes": 525240,
+   "sha256": "8b980880222bad2b894b3b4fdb6aeebbf1a17ab978b1a6b057534dd99302c009"
+  },
+  {
+   "path": "renders/player_top.png",
+   "bytes": 547959,
+   "sha256": "879ade0026c8ac619e217d1e3ceb227ad2c00a851f11ad8dc55cf6bf87cfc686"
+  },
+  {
+   "path": "renders/sentinel_back3q.png",
+   "bytes": 709780,
+   "sha256": "ded87efb74da4fdc9a7fe2442ab86253ecad102f6bfd2a89edd924191aac36f2"
+  },
+  {
+   "path": "renders/sentinel_charge_face3q.png",
+   "bytes": 1081376,
+   "sha256": "8e29eb397f65e0a1af5308a4ac2bb5bb37742ff7921b7408d0fad0ff3143f3e1"
+  },
+  {
+   "path": "renders/sentinel_charge_player_pov.png",
+   "bytes": 739343,
+   "sha256": "4fa2de965a91521347c13c729f5cd32d74d6d98c18cf7c93e676e567c4915dd7"
+  },
+  {
+   "path": "renders/sentinel_classic.png",
+   "bytes": 735607,
+   "sha256": "c3b809a1796c4c666d88ef267503af248ca59a89991a6858bae0979274aad99f"
+  },
+  {
+   "path": "renders/sentinel_destroyed_R_face3q.png",
+   "bytes": 1062814,
+   "sha256": "f901ef8df573eaf6045da23e976b55c380b8afc20ff90c2026bda6f632362fd2"
+  },
+  {
+   "path": "renders/sentinel_destroyed_R_player_pov.png",
+   "bytes": 729873,
+   "sha256": "29dee3009574507b318713f469b10d51725c41ca7bf51e7fb881fdca2cb1132b"
+  },
+  {
+   "path": "renders/sentinel_player_pov_small.png",
+   "bytes": 47243,
+   "sha256": "0f7dfb5ade5598171cea186cbcfe0e73d666658c3347f60c926ee20028f526ee"
+  },
+  {
+   "path": "renders/sentinel_reactor_open_face3q.png",
+   "bytes": 1084644,
+   "sha256": "5beee2c7ce4ca54032ecef4222420107d113cda35009e3b3460ba132dfe54ff1"
+  },
+  {
+   "path": "renders/sentinel_reactor_open_player_pov.png",
+   "bytes": 745662,
+   "sha256": "ebfe2ace88d2646fb1b3d7a233c8bf03287b48fe9ceb291efaf2ba5ad9c0fb85"
+  },
+  {
+   "path": "renders/sentinel_rest_face3q.png",
+   "bytes": 1082259,
+   "sha256": "d107675c56750c782e2a457373f18c5f22772f6af94707f5ae794cedb6130ae7"
+  },
+  {
+   "path": "renders/sentinel_rest_player_pov.png",
+   "bytes": 742287,
+   "sha256": "7c6ee20e7ec96c0d483e73ea71b4e781682ca93619158371883a85d71d3cb2c5"
+  },
+  {
+   "path": "sentinel.blend",
+   "bytes": 257983,
+   "sha256": "93bd7a444a809388f7bb27b366d5c69fb4d9ffc9ea31e07d030fb0a1931f96d4"
+  },
+  {
+   "path": "sentinel.glb",
+   "bytes": 1140172,
+   "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef"
+  },
+  {
+   "path": "verification/blender_verify.json",
+   "bytes": 23534,
+   "sha256": "8c2b54dbba4de3a98cc233f0d0803582174139a20693f8dca06d72c52552e351"
+  },
+  {
+   "path": "verification/glb_inspect.json",
+   "bytes": 28544,
+   "sha256": "e0f0601be5e962a6993d842d1a51f92b747929310d9bb6aa35ce7f2ed4af3fff"
+  }
+ ]
+}

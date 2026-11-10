@@ -1,0 +1,26 @@
+{
+  "name": "knotzaxxon-trailer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "KnotzAxxon trailer: real gameplay filmed frame by frame from the game itself, scored on the game's own synth voices, cut in Remotion.",
+  "scripts": {
+    "capture": "node capture/capture.mjs",
+    "sfx": "node capture/sfx-pass.mjs",
+    "music": "node audio/render-music.mjs",
+    "studio": "remotion studio edit/index.ts",
+    "render": "node render.mjs"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.539",
+    "@remotion/cli": "4.0.539",
+    "@remotion/renderer": "4.0.539",
+    "remotion": "4.0.539",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "typescript": "^5"
+  }
+}

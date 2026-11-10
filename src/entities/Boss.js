@@ -1,4 +1,5 @@
 import { disposeModel } from '../render/Dispose.js';
+import { buildImportedBoss } from '../render/ImportedModels.js';
 /**
  * THE IRON SENTINEL — the fortress core guardian, and this game's answer to
  * Zaxxon's robot.
@@ -116,6 +117,7 @@ export class Boss {
   /* ------------------------------------------------------------------ */
 
   _build(mats) {
+    if (buildImportedBoss(this, mats)) return;
     // Per-boss materials that animate; everything else is shared and cached.
     this.visorMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(0xff3d55).multiplyScalar(2.2), toneMapped: false });
     this.chargeMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(0xffb43a), toneMapped: false });

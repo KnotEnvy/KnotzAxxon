@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { buildImportedShip } from './ImportedModels.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 
 // All stations use travel space: X across, Y up, nose +Z. Shared stations
@@ -32,6 +33,8 @@ function loft(stations) {
 
 /** Procedural hero interceptor. Four static batches plus two engine cores. */
 export function buildShip(mats) {
+  const imported = buildImportedShip(mats);
+  if (imported) return imported;
   const group = new THREE.Group(); group.name = 'hero-interceptor';
   const buckets = { hull: [], accent: [], glass: [], neon: [] };
   const transform = new THREE.Object3D();
