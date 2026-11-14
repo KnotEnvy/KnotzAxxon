@@ -3,7 +3,7 @@
   "phase": "production_blender_upgrades",
   "date": "2026-11-14",
   "baseRevision": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
-  "status": "approved_release_verified_ready_to_commit",
+  "status": "approved_twenty_one_assets_live_verified_broader_queue_retained",
   "maxConcurrentAssets": 2,
   "orchestrator": {
     "environmentId": "dd9d199e-852d-44e3-a2d3-62d31f3a5af2",
@@ -55,7 +55,7 @@
     {
       "priority": 1,
       "asset": "drone",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "initialFrozen": true,
       "formalReviewsCompleted": 0,
       "fixPassesCompleted": 0,
@@ -64,12 +64,13 @@
       "sources": "assets-source/production/drone/initial",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "priority": 2,
       "asset": "interceptor",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "initialFrozen": true,
       "formalReviewsCompleted": 0,
       "fixPassesCompleted": 0,
@@ -78,12 +79,13 @@
       "sources": "assets-source/production/interceptor/initial",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "priority": 3,
       "asset": "heavyTurret",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "initialFrozen": true,
       "formalReviewsCompleted": 0,
       "fixPassesCompleted": 0,
@@ -92,12 +94,13 @@
       "sources": "assets-source/production/heavy-turret/initial",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "priority": 4,
       "asset": "mine",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "initialFrozen": true,
       "formalReviewsCompleted": 0,
       "fixPassesCompleted": 0,
@@ -106,12 +109,13 @@
       "receipt": "mine-receipt.json",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "priority": 5,
       "asset": "parked",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "initialFrozen": true,
       "formalReviewsCompleted": 0,
       "fixPassesCompleted": 0,
@@ -120,12 +124,13 @@
       "receipt": "parked-fighter-receipt.json",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "priority": 6,
       "asset": "pickup:shield",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "initialFrozen": true,
       "formalReviewsCompleted": 0,
       "fixPassesCompleted": 0,
@@ -134,12 +139,13 @@
       "receipt": "shield-pickup-receipt.json",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "priority": 7,
       "asset": "pickup:spread",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "initialFrozen": true,
       "formalReviewsCompleted": 0,
       "fixPassesCompleted": 0,
@@ -148,12 +154,13 @@
       "receipt": "spread-pickup-receipt.json",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "priority": 8,
       "asset": "pickup:repair",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "initialFrozen": true,
       "formalReviewsCompleted": 0,
       "fixPassesCompleted": 0,
@@ -163,12 +170,13 @@
       "sources": "assets-source/production/repair-pickup/initial",
       "receipt": "repair-pickup-receipt.json",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "priority": 9,
       "asset": "pickup:fuel",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "initialFrozen": true,
       "formalReviewsCompleted": 0,
       "fixPassesCompleted": 0,
@@ -178,14 +186,16 @@
       "receipt": "fuel-pickup-receipt.json",
       "sources": "assets-source/production/fuel-pickup/initial",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     }
   ],
   "broaderScope": "README.md#broader-retained-inventory",
   "deploymentAuthorized": true,
   "resume": [
-    "Commit,push and merge approved21-asset release after CI;verify live startup and model hashes.",
-    "Keep deferred Opus polish and broader meaningful scenery queue recorded;no formal review completion claimed."
+    "Current21 user-approved assets are committed,merged and live-verified.",
+    "Formal Opus review/polish remains deferred at0 formal reviews/fixes;retain verified initial archives.",
+    "Broader scenery/gates/space-structure inventory remains recorded for a later scoped pass;no new builders running."
   ],
   "localValidation": {
     "baselineGenerator": "passed; actual source geometry plus 300 seeded campaign plans",
@@ -464,7 +474,7 @@
   "broaderQueue": [
     {
       "asset": "missile",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "priority": 10,
       "category": "projectile",
       "baseline": "missile-baseline.json",
@@ -485,11 +495,12 @@
       "sources": "assets-source/production/missile/initial",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "asset": "carrier",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "baseline": "landmark-baseline.json",
       "formalReviewsCompleted": 0,
       "fixPassesCompleted": 0,
@@ -499,11 +510,12 @@
       "initialFrozen": true,
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "asset": "derelict-dreadnought",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "baseline": "landmark-baseline.json",
       "formalReviewsCompleted": 0,
       "fixPassesCompleted": 0,
@@ -513,7 +525,8 @@
       "sources": "assets-source/production/dreadnought/initial",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "asset": "asteroids-wreckage",
@@ -533,7 +546,7 @@
     },
     {
       "asset": "asteroids",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "category": "scenery_kit",
       "builder": "Sol XHigh",
       "formalReviewsCompleted": 0,
@@ -544,11 +557,12 @@
       "initialFrozen": true,
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "asset": "wreckage",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "category": "scenery_kit",
       "builder": "Sol XHigh",
       "formalReviewsCompleted": 0,
@@ -559,11 +573,12 @@
       "sources": "assets-source/production/wreckage/initial",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "asset": "cooling-stack",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "category": "fortress_prop",
       "baseline": "cooling-stack-baseline.json",
       "formalReviewsCompleted": 0,
@@ -574,11 +589,12 @@
       "receipt": "cooling-stack-receipt.json",
       "sources": "assets-source/production/cooling-stack/initial",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "asset": "antenna",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "category": "fortress_prop",
       "baseline": "antenna-baseline.json",
       "formalReviewsCompleted": 0,
@@ -589,11 +605,12 @@
       "receipt": "antenna-receipt.json",
       "sources": "assets-source/production/antenna/initial",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "asset": "bunker",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "category": "fortress_prop",
       "baseline": "bunker-baseline.json",
       "formalReviewsCompleted": 0,
@@ -604,11 +621,12 @@
       "receipt": "bunker-receipt.json",
       "sources": "assets-source/production/bunker/initial",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "asset": "flak-gun",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "category": "fortress_prop",
       "baseline": "flak-gun-baseline.json",
       "formalReviewsCompleted": 0,
@@ -619,11 +637,12 @@
       "sources": "assets-source/production/flak-gun/initial",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "asset": "fuel-depot",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "category": "fortress_prop",
       "baseline": "fuel-depot-baseline.json",
       "formalReviewsCompleted": 0,
@@ -634,11 +653,12 @@
       "sources": "assets-source/production/fuel-depot/initial",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "asset": "cargo-kit",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "category": "fortress_prop_kit",
       "baseline": "cargo-kit-baseline.json",
       "formalReviewsCompleted": 0,
@@ -649,11 +669,12 @@
       "sources": "assets-source/production/cargo-kit/initial",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     },
     {
       "asset": "covered-fighter",
-      "status": "user_approved_release_verified",
+      "status": "user_approved_live_verified",
       "category": "passive_fortress_prop",
       "baseline": "covered-fighter-baseline.json",
       "budget": {
@@ -672,7 +693,8 @@
       "sources": "assets-source/production/covered-fighter/initial",
       "builderTaskStatus": "completed",
       "userApproved": true,
-      "releaseVerified": true
+      "releaseVerified": true,
+      "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225"
     }
   ],
   "releaseApproval": {
@@ -695,5 +717,19 @@
     "manifest": "retention.json",
     "devlog": "DEVLOG.md"
   },
-  "releaseWorkflow": "Existing Actions workflow retained unchanged: saved OAuth app cannot update workflows without workflow scope. Full model QA passed locally;CI still runs104 regressions,build and expanded public-UI/model-network/hash release smoke."
+  "releaseWorkflow": "Existing Actions workflow retained unchanged: saved OAuth app cannot update workflows without workflow scope. Full model QA passed locally;CI still runs104 regressions,build and expanded public-UI/model-network/hash release smoke.",
+  "release": {
+    "pullRequest": "https://github.com/KnotEnvy/KnotzAxxon/pull/4",
+    "head": "56c1b9fe0fb4dbbcb82db9ceef2a239d13c4e434",
+    "mergeCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225",
+    "workflow": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/43646540758",
+    "deploymentStatus": "success",
+    "publicVerification": "passed",
+    "deploymentCompletedAt": "2026-11-14T22:14:04Z",
+    "publicUrl": "https://knotenvy.github.io/KnotzAxxon/",
+    "verifiedAt": "2026-11-14T22:15:54.226059+00:00",
+    "runtimeResourceCount": 27,
+    "servedHashesVerified": 34,
+    "publicEvidence": "assets-source/production/integration-evidence/release"
+  }
 }

@@ -9,9 +9,11 @@ raked isometric angle, which means you cannot tell how high you are by looking a
 ship — you read it off the shadow on the deck and the altimeter on the right. Walls have
 gaps. Some of those gaps are at your altitude and some are not.
 
-The fighter, Iron Sentinel, standard ground turret, radar tower, missile silo and fuel cell use Blender-authored models, selected through the asset
-contest. Their GLBs load during boot; editable sources live in `assets-source/`.
-The fortress, other entities, textures, sound effects and music are generated in code.
+The ships, enemies, pickups and selected fortress scenery use Blender-authored models.
+The six original selections are joined by 21 approved production submissions. Models and
+shared scenery templates load during boot; editable sources and devlog images live in
+`assets-source/`. Seeded fortress assembly, remaining scenery, textures and audio are
+generated in code.
 
 [![KNOTZAXXON: the same instant as CLASSIC 45 under the CRT overlay, and as the CHASE camera](media/hero.jpg)](https://knotenvy.github.io/KnotzAxxon/)
 
@@ -266,7 +268,7 @@ The previous Phaser 3 prototype is preserved untouched in [`legacy/`](legacy/); 
 the current build references it.
 
 Production Blender upgrades: [prioritized queue and protocol](docs/asset-production/README.md),
-with [machine-readable status](docs/asset-production/status.json). Six selected models remain shipped;
-new upgrades are prepared for review before publication.
+with [machine-readable status](docs/asset-production/status.json) and a
+[curated asset devlog](docs/asset-production/DEVLOG.md). The approved upgrades load by default.
 
-The approved production asset release enables21 new gameplay/scenery submissions by default. `?productionModels=0` is retained only as a procedural QA fallback. Editable sources and curated devlog evidence are under `assets-source/production/`;release progress is recorded in `docs/asset-production/status.json`.
+The approved production asset release enables 21 new gameplay/scenery submissions by default. `?productionModels=0` is retained only as a procedural QA fallback. Editable sources and curated devlog evidence are under `assets-source/production/`; release progress is recorded in `docs/asset-production/status.json`.

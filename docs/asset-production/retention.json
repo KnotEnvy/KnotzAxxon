@@ -307,7 +307,7 @@
   "retentionPolicy": {
     "kept": "Original packed editable blends and GLBs, runtime templates/maps, manifests, original SHA256SUMS, source snapshots, generator/build/verification/runtime-recipe scripts, every non-log textual protocol/review record and JSON report, and 3-5 selected original PNGs per asset.",
     "removed": "Unselected PNG renders/component frames and raw .log files from the initial trees, plus 17 repeated Chase captures from the pre-existing integration-evidence snapshot. Every omitted initial and integration path is listed with its original SHA256 and byte count.",
-    "reproduction": "Core authoring binaries, generator/runtime sources, JSON reports, QA source fixtures, and verification code remain byte-identical. Full initial render/contact-sheet reproduction may require omitted PNG frames or logs; restore that asset’s complete initial-tree archive into a writable copy before running evidence scripts. Restore the original pre-existing integration captures from the separate integration-evidence archive. Do not run generators in retained initial directories.",
+    "reproduction": "Core authoring binaries, generator/runtime sources, JSON reports, QA source fixtures, and verification code remain byte-identical. Full initial render/contact-sheet reproduction may require omitted PNG frames or logs; restore that asset\u2019s complete initial-tree archive into a writable copy before running evidence scripts. Restore the original pre-existing integration captures from the separate integration-evidence archive. Do not run generators in retained initial directories.",
     "historicalChecksumNote": "Each original initial/SHA256SUMS is preserved unchanged and describes its full pre-trim initial tree. It is expected not to verify the lean copy because omitted original files are absent. Each initial directory now has a separate retainedSHA256SUMS and RETENTION.md."
   },
   "qaFixtureDependencies": {
@@ -5317,5 +5317,15 @@
     "combinedOmittedFiles": 670,
     "combinedOmittedBytes": 249327183,
     "selectedOriginalPNGCount": 87
-  }
+  },
+  "postReleaseEvidence": {
+    "path": "assets-source/production/integration-evidence/release",
+    "files": [
+      "public-desktop.png",
+      "public-touch-portrait.png",
+      "SHA256SUMS"
+    ],
+    "note": "Added after original retention snapshot;covered by adjacent checksum list,not the historical924-path retained list."
+  },
+  "disposableQaPngsRemovedAfterVerification": 37
 }

@@ -201,5 +201,9 @@
     }
   ],
   "localStatus": "passed",
-  "liveStatus": "pending"
+  "liveStatus": "passed",
+  "verifiedAt": "2026-11-14T22:15:54.226059+00:00",
+  "deployedCommit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225",
+  "workflow": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/43646540758",
+  "publicUrl": "https://knotenvy.github.io/KnotzAxxon/"
 }

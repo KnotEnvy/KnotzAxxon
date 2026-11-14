@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "project": "KnotzAxxon",
-  "updated_at": "2026-11-14T05:48:46.887594+00:00",
-  "status": "selected_blender_models_live_verified",
+  "updated_at": "2026-11-14T22:15:54.226059+00:00",
+  "status": "production_blender_assets_live_verified",
   "production_ready": false,
   "production_ready_basis": "Six selected Blender models are integrated and live. 104 regressions, model runtime checks, local and CI release checks, and public desktop/portrait/landscape verification passed. All six live GLBs match the selected repository exports. Human audio, balance, physical-device and sustained-performance acceptance remain open.",
   "release_scope": [
@@ -49,15 +49,15 @@
     "delivery": {
       "status": "github_pages_published_verified",
       "url": "https://knotenvy.github.io/KnotzAxxon/",
-      "deployed_commit": "2bcdad9bced2c24edc7c058bab6f731682c2f709",
-      "workflow_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/38342937588",
+      "deployed_commit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225",
+      "workflow_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/43646540758",
       "workflow_status": "success",
-      "verified_at": "2026-10-13T03:52:58.418081+00:00",
-      "note": "The following documentation-only evidence commit does not change game assets or trigger redeployment."
+      "verified_at": "2026-11-14T22:15:54.226059+00:00",
+      "note": "Subsequent source/documentation evidence commit does not change deployed assets."
     },
     "branch": "main",
-    "pull_request": "https://github.com/KnotEnvy/KnotzAxxon/pull/2",
-    "merged_commit": "2bcdad9bced2c24edc7c058bab6f731682c2f709",
+    "pull_request": "https://github.com/KnotEnvy/KnotzAxxon/pull/4",
+    "merged_commit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225",
     "release_branch_status": "Merged; retained locally and remotely."
   },
   "commands": [
@@ -87,10 +87,16 @@
     "future_assignments": "Contests remain closed. New production queue authorized 2026-11-14: docs/asset-production/README.md; exact status in docs/asset-production/status.json."
   },
   "asset_production": {
-    "status": "approved_release_verified_ready_to_commit",
+    "status": "approved_twenty_one_assets_live_verified_broader_queue_retained",
     "queue": "docs/asset-production/status.json",
     "protocol": "docs/asset-production/README.md",
     "baseline": "docs/asset-production/baseline.json",
-    "note": "All21 submissions are user-approved and enabled by default.104 regressions,build,default+legacy model QA and desktop/touch release smoke pass;27 runtime resources and34 served hashes verified locally. Luna cleanup archived full originals and omitted670 redundant files/249327183 bytes;924 retained hashes and1476 archived original hashes independently verified. Ready for commit/merge/deploy;formal Opus polish remains deferred."
+    "note": "All21 user-approved submissions are enabled by default and live at8a7d74d via PR4.104 regressions,build,default+legacy model QA and local/public desktop/touch release smoke pass;27 default runtime resources and34 served model/template hashes verified. Full originals archived before670 redundant files were omitted;924 retained and1476 archived original hashes independently verified. Formal Opus polish is deferred;broader inventory retained,no builders active.",
+    "release": {
+      "pull_request": "https://github.com/KnotEnvy/KnotzAxxon/pull/4",
+      "deployed_commit": "8a7d74d325a8389e4bc56a82493ad4d4a2b17225",
+      "workflow": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/43646540758",
+      "verified_at": "2026-11-14T22:15:54.226059+00:00"
+    }
   }
 }

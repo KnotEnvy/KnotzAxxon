@@ -3,7 +3,8 @@
 The player fighter is contest entry C (Sonnet 5.5 High, initial submission).
 The Iron Sentinel is entry A (Opus 5.5 High, initial submission).
 The editable Blender files, original generators and manifests are preserved here.
-Only the selected GLBs in `public/models/` ship in the web build.
+Runtime GLBs and shared template data in `public/models/` ship in the web build;
+these editable authoring sources do not.
 
 The missile silo and fuel cell are round 3 entry C, built by Opus 5.5 High solo.
 Their selected final GLBs ship byte-for-byte in `public/models/silo.glb` and
@@ -38,7 +39,7 @@ blender --background --factory-startup --python assets-source/fighter/blender/bu
 blender --background --factory-startup --python assets-source/sentinel/build/build_sentinel.py -- OUTPUT_DIRECTORY
 ```
 
-When invoking Windows Blender from WSL, convert script and output paths with `wslpath -w`.
+Use the existing native Linux Blender runtime on NitroBliss for production regeneration.
 Review the generated files before copying the selected GLB to `public/models/`.
 Original manifests also describe the other contestant asset; only the selected asset
 in each directory is used by the game.
@@ -55,8 +56,8 @@ reactor and charge states, shoulder destruction, and repeated boss creation/disp
 in Chromium. `npm run build:pages` and `npm run test:release` check the deployable build.
 
 New production upgrades are tracked in [the production queue](../docs/asset-production/README.md).
-The first pair is drone and enemy interceptor; their sources will be retained here after
-verified delivery. The fuel pickup in that queue is separate from the shipped destructible fuel cell.
+All 21 approved submissions have verified sources under `production/`. The fuel pickup
+is separate from the shipped destructible fuel cell.
 Native Linux Blender on NitroBliss is the required runtime for this phase.
 
-Production asset release was user-approved on2026-11-14. The21 new submissions load by default after release;curated development evidence remains with editable source packs,and complete initial snapshots are preserved in the local archive according to docs/asset-production/retention.json. Formal Opus review/polish is still deferred.
+Production asset release was user-approved on 2026-11-14. The 21 new submissions load by default. Curated development evidence remains with editable source packs, and complete initial snapshots are preserved in the local archive recorded by `docs/asset-production/retention.json`. Formal Opus review/polish is still deferred.

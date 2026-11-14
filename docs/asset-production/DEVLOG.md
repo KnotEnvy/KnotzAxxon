@@ -38,3 +38,7 @@ Each initial directory has a RETENTION.md and a per-initial retainedSHA256SUMS f
 - [Global retained checksum list](retainedSHA256SUMS) — 924 retained files; verify from the repository root with sha256sum -c docs/asset-production/retainedSHA256SUMS.
 - [Original archive index](/home/knotz2/code/KnotzAxxon-archive/2026-11-14/production-asset-snapshots/archive-index-20261114T212637Z-a5a280c8f9.json) — the 19 initial archives and the pre-existing integration-evidence snapshot.
 - [Archive index supplement](/home/knotz2/code/KnotzAxxon-archive/2026-11-14/production-asset-snapshots/archive-index-addendum-20261114T214628Z-af0e5df3d7.json) — verified cargo-kit and covered-fighter initial archives.
+
+## Live release
+
+[PR #4](https://github.com/KnotEnvy/KnotzAxxon/pull/4) merged the approved21 submissions. [GitHub Pages deployment](https://github.com/KnotEnvy/KnotzAxxon/actions/runs/43646540758) passed at8a7d74d;the public desktop/portrait/landscape smoke and all34 model/template hashes match the build. Retained live captures: [desktop](../../assets-source/production/integration-evidence/release/public-desktop.png) and [portrait touch](../../assets-source/production/integration-evidence/release/public-touch-portrait.png). Their checksum file is adjacent.
