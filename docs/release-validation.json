@@ -1,6 +1,6 @@
 {
-  "verified_at": "2026-11-14T05:40:12.809875+00:00",
-  "status": "local_release_validated_deployment_pending",
+  "verified_at": "2026-11-14T05:48:46.887594+00:00",
+  "status": "selected_blender_models_live_verified",
   "tests": {
     "command": "npm test",
     "passed": 104,
@@ -122,11 +122,141 @@
     "fuel": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc"
   },
   "deployment": {
-    "status": "pending",
+    "status": "success",
+    "revision": "c506721c45212294a7cf843b9564a48ce09a422d",
+    "workflow_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/43562648374",
     "url": "https://knotenvy.github.io/KnotzAxxon/"
   },
   "limitations": [
     "Automated release checks do not establish physical-device, human balance/audio or sustained hardware performance acceptance.",
     "Contest rupture/detach demonstrations are not new gameplay animations."
-  ]
+  ],
+  "public_browser": {
+    "verified_at": "2026-11-14T05:45:15.462Z",
+    "url": "https://knotenvy.github.io/KnotzAxxon/",
+    "target": "deployed_site",
+    "checks": [
+      {
+        "fixture": "desktop",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "canvas": {
+          "width": 528,
+          "height": 297
+        },
+        "altimeter": {
+          "left": 1188.171875,
+          "right": 1264.171875,
+          "top": 212,
+          "bottom": 508
+        },
+        "debug_api": false,
+        "title_to_flight": true,
+        "keyboard_pause_resume": true,
+        "touch_controls": false
+      },
+      {
+        "shared_fortress_start": true,
+        "daily_sortie_start": true,
+        "settings_persist": true
+      },
+      {
+        "fixture": "touch-portrait",
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "width": 234,
+          "height": 506
+        },
+        "altimeter": {
+          "left": 308,
+          "right": 376,
+          "top": 311,
+          "bottom": 533
+        },
+        "debug_api": false,
+        "title_to_flight": true,
+        "keyboard_pause_resume": false,
+        "touch_controls": true
+      },
+      {
+        "fixture": "touch-landscape",
+        "width": 844,
+        "scrollWidth": 844,
+        "canvas": {
+          "width": 506,
+          "height": 234
+        },
+        "altimeter": {
+          "left": 754,
+          "right": 830,
+          "top": 105,
+          "bottom": 285
+        },
+        "debug_api": false,
+        "title_to_flight": true,
+        "keyboard_pause_resume": false,
+        "touch_controls": true
+      }
+    ],
+    "errors": [],
+    "failed_requests": [],
+    "assets": [
+      "/KnotzAxxon/assets/index-Fv_eld_A.js",
+      "/KnotzAxxon/assets/three-Dwm98Kpv.js",
+      "/KnotzAxxon/assets/index-B-4H7Kir.css"
+    ],
+    "assets_matched_dist": true,
+    "browser": "156.0.8078.4",
+    "status": "passed"
+  },
+  "public_model_hashes": {
+    "verified_at": "2026-11-14T05:45:15.244Z",
+    "base": "https://knotenvy.github.io/KnotzAxxon/",
+    "models": [
+      {
+        "name": "player",
+        "bytes": 478292,
+        "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+        "matches_source": true
+      },
+      {
+        "name": "sentinel",
+        "bytes": 1140172,
+        "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef",
+        "matches_source": true
+      },
+      {
+        "name": "turret",
+        "bytes": 58452,
+        "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+        "matches_source": true
+      },
+      {
+        "name": "radar",
+        "bytes": 55564,
+        "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d",
+        "matches_source": true
+      },
+      {
+        "name": "silo",
+        "bytes": 1281700,
+        "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e",
+        "matches_source": true
+      },
+      {
+        "name": "fuel",
+        "bytes": 1087156,
+        "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc",
+        "matches_source": true
+      }
+    ]
+  },
+  "cleanup": {
+    "local_contest_worktrees_removed": 3,
+    "local_contest_branches_removed": 3,
+    "archive": "../KnotzAxxon-archive/2026-11-14/",
+    "winning_sources_preserved": "assets-source/supplies/",
+    "comparisons_and_nonwinning_entries": "archived outside repository"
+  }
 }

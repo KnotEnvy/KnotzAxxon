@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
   "project": "KnotzAxxon",
-  "updated_at": "2026-11-14T05:40:12.809875+00:00",
-  "status": "selected_blender_models_validated_deployment_pending",
+  "updated_at": "2026-11-14T05:48:46.887594+00:00",
+  "status": "selected_blender_models_live_verified",
   "production_ready": false,
-  "production_ready_basis": "Six selected Blender models are integrated; regression, runtime model and local desktop/touch production checks pass. Live deployment verification is pending. Human audio, balance, physical-device and sustained-performance acceptance remain open.",
+  "production_ready_basis": "Six selected Blender models are integrated and live. 104 regressions, model runtime checks, local and CI release checks, and public desktop/portrait/landscape verification passed. All six live GLBs match the selected repository exports. Human audio, balance, physical-device and sustained-performance acceptance remain open.",
   "release_scope": [
     "Hero ship: continuous closed airframe, fitted canopy/wings/engines and corrected Classic silhouette depth ordering.",
     "Model catalogue: nine enemy types, Sentinel shutters and details, pickup badges, missiles and scenery; repaired inward tapered-box face winding.",
@@ -33,7 +33,8 @@
     "loop_2_playing": true,
     "public_site": "passed, assets match local dist byte-for-byte",
     "ci": "passed on PR and merged main",
-    "imported_model_runtime": "passed"
+    "imported_model_runtime": "passed",
+    "public_desktop_and_touch_layouts": "passed"
   },
   "remaining_acceptance": [
     "Human full-campaign playtest of opening pace, fuel, gates, boss vulnerabilities and Loop 2.",
@@ -71,5 +72,18 @@
     "docs/release-validation.json"
   ],
   "evidence_policy": "Keep new generated screenshots and WAVs in ignored artifacts/ only while reviewing. Current evidence is consolidated in docs/release-validation.json. Historical text/JSON reports remain; their removed tracked images are recoverable in Git history, or regenerated with QA scripts.",
-  "ready_for_testers": true
+  "ready_for_testers": true,
+  "selected_model_release": {
+    "status": "success",
+    "revision": "c506721c45212294a7cf843b9564a48ce09a422d",
+    "workflow_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/43562648374",
+    "url": "https://knotenvy.github.io/KnotzAxxon/"
+  },
+  "asset_contest": {
+    "status": "closed",
+    "round_3_choice": "C: Opus 5.5 High solo, silo and fuel",
+    "sources": "assets-source/supplies/",
+    "archive": "../KnotzAxxon-archive/2026-11-14/",
+    "future_assignments": "User and orchestrator will choose together; none scheduled."
+  }
 }
