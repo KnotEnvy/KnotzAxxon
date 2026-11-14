@@ -1,0 +1,13 @@
+{
+  "compositor": "Blender image decoding/scaling + NumPy + stdlib PNG writer; no added dependencies",
+  "scale": "overview resampling only; original full-size frames preserved",
+  "boards": [
+    "boards/hardware.png",
+    "boards/multiview.png",
+    "boards/stacks-1.9.png",
+    "boards/stacks-3.2.png",
+    "boards/world-rigs.png"
+  ],
+  "captions": "No visual asset changes; headers/labels only",
+  "view_status": "See visual-inspection.json for actual opened files"
+}

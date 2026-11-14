@@ -1,0 +1,185 @@
+{
+  "method": "Actual source FlightCamera and CameraRig.snap, 16:9, player center x0 y9, each sampled space chunk midpoint; source geometry radius about shader pivot. Sphere/frustum intersections overestimate visible surface and do not measure occlusion. Includes campaign boundaries. No runtime WebGL.",
+  "rows": [
+    {
+      "distance": 320,
+      "mode": "classic",
+      "samples": 232,
+      "residentSpaceRocks": {
+        "min": 10,
+        "max": 37,
+        "mean": 29.336206896551722
+      },
+      "conservativeFrustumSphereIntersections": {
+        "min": 0,
+        "max": 9,
+        "mean": 3
+      }
+    },
+    {
+      "distance": 320,
+      "mode": "modern",
+      "samples": 232,
+      "residentSpaceRocks": {
+        "min": 10,
+        "max": 37,
+        "mean": 29.336206896551722
+      },
+      "conservativeFrustumSphereIntersections": {
+        "min": 0,
+        "max": 24,
+        "mean": 15.241379310344827
+      }
+    },
+    {
+      "distance": 320,
+      "mode": "chase",
+      "samples": 232,
+      "residentSpaceRocks": {
+        "min": 10,
+        "max": 37,
+        "mean": 29.336206896551722
+      },
+      "conservativeFrustumSphereIntersections": {
+        "min": 0,
+        "max": 26,
+        "mean": 16.45689655172414
+      }
+    },
+    {
+      "distance": 440,
+      "mode": "classic",
+      "samples": 232,
+      "residentSpaceRocks": {
+        "min": 10,
+        "max": 51,
+        "mean": 38.258620689655174
+      },
+      "conservativeFrustumSphereIntersections": {
+        "min": 0,
+        "max": 9,
+        "mean": 3
+      }
+    },
+    {
+      "distance": 440,
+      "mode": "modern",
+      "samples": 232,
+      "residentSpaceRocks": {
+        "min": 10,
+        "max": 51,
+        "mean": 38.258620689655174
+      },
+      "conservativeFrustumSphereIntersections": {
+        "min": 0,
+        "max": 36,
+        "mean": 24.163793103448278
+      }
+    },
+    {
+      "distance": 440,
+      "mode": "chase",
+      "samples": 232,
+      "residentSpaceRocks": {
+        "min": 10,
+        "max": 51,
+        "mean": 38.258620689655174
+      },
+      "conservativeFrustumSphereIntersections": {
+        "min": 0,
+        "max": 38,
+        "mean": 25.379310344827587
+      }
+    },
+    {
+      "distance": 560,
+      "mode": "classic",
+      "samples": 232,
+      "residentSpaceRocks": {
+        "min": 10,
+        "max": 58,
+        "mean": 42.043103448275865
+      },
+      "conservativeFrustumSphereIntersections": {
+        "min": 0,
+        "max": 9,
+        "mean": 3
+      }
+    },
+    {
+      "distance": 560,
+      "mode": "modern",
+      "samples": 232,
+      "residentSpaceRocks": {
+        "min": 10,
+        "max": 58,
+        "mean": 42.043103448275865
+      },
+      "conservativeFrustumSphereIntersections": {
+        "min": 0,
+        "max": 43,
+        "mean": 27.948275862068964
+      }
+    },
+    {
+      "distance": 560,
+      "mode": "chase",
+      "samples": 232,
+      "residentSpaceRocks": {
+        "min": 10,
+        "max": 58,
+        "mean": 42.043103448275865
+      },
+      "conservativeFrustumSphereIntersections": {
+        "min": 0,
+        "max": 46,
+        "mean": 29.163793103448278
+      }
+    },
+    {
+      "distance": 700,
+      "mode": "classic",
+      "samples": 232,
+      "residentSpaceRocks": {
+        "min": 10,
+        "max": 66,
+        "mean": 45.375
+      },
+      "conservativeFrustumSphereIntersections": {
+        "min": 0,
+        "max": 9,
+        "mean": 3
+      }
+    },
+    {
+      "distance": 700,
+      "mode": "modern",
+      "samples": 232,
+      "residentSpaceRocks": {
+        "min": 10,
+        "max": 66,
+        "mean": 45.375
+      },
+      "conservativeFrustumSphereIntersections": {
+        "min": 0,
+        "max": 50,
+        "mean": 31.280172413793103
+      }
+    },
+    {
+      "distance": 700,
+      "mode": "chase",
+      "samples": 232,
+      "residentSpaceRocks": {
+        "min": 10,
+        "max": 66,
+        "mean": 45.375
+      },
+      "conservativeFrustumSphereIntersections": {
+        "min": 0,
+        "max": 51,
+        "mean": 32.49568965517241
+      }
+    }
+  ]
+}

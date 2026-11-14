@@ -1,0 +1,1828 @@
+{
+  "name": "ASTEROID SCENERY KIT",
+  "revision": "initial",
+  "sourceCommit": "ee221ad",
+  "createdUtc": "2026-11-14T19:16:13.090Z",
+  "status": "pending_deferred_opus_review",
+  "formalReviewPasses": 0,
+  "formalReviewFixPasses": 0,
+  "helpers": 0,
+  "claudeRetries": 0,
+  "implementation": {
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "xhigh",
+    "speed": "available runtime speed; no separate override",
+    "blender": "5.2.1 LTS",
+    "blenderBuild": "9e2066aef7ef",
+    "blenderExecutableSha256": "c2fd82553c979a7f6ba85202c487aa1173c90db588a67d74d70cc7b0c2bea01c",
+    "platform": "Linux",
+    "engine": "BLENDER_EEVEE",
+    "renderThreads": 4,
+    "environment": {
+      "LP_NUM_THREADS": "4",
+      "LIBGL_ALWAYS_SOFTWARE": "1",
+      "EGL_PLATFORM": "surfaceless",
+      "nativeExistingSysroot": true
+    },
+    "three": "0.185.1",
+    "node": "v24.14.0",
+    "generation": "Deterministic authored analytic surfaces; no AI bitmap generation, no failed contest design mining."
+  },
+  "scope": {
+    "assignedDirectory": "asset-work/asteroids/",
+    "productionEdits": false,
+    "commits": false,
+    "pushes": false,
+    "deployment": false,
+    "gameplayColliders": "unchanged",
+    "gateRingRocks": "unchanged; no optional mapping",
+    "sourceReferenceSnapshots": true
+  },
+  "assets": [
+    {
+      "file": "assets/asteroid-scenery-kit.glb",
+      "bytes": 179280,
+      "sha256": "0450b85240d589e4e2f65454f61b53af52d443a427d76f2c38a1008ae16272b2"
+    },
+    {
+      "file": "assets/talus-basin.glb",
+      "bytes": 60792,
+      "sha256": "9c64a5cb198a6f58226a30a05c992f7f315827e517c439a30a04d9f0f4591f8f"
+    },
+    {
+      "file": "assets/keel-double-impact.glb",
+      "bytes": 66908,
+      "sha256": "7a44540cf9774ab45ced8c5b8784c8c14c93e2375dc62a786c1df59989f022eb"
+    },
+    {
+      "file": "assets/scar-cleaved.glb",
+      "bytes": 52548,
+      "sha256": "3386985e17394a0d38cb46d1f0f3b49aa02cec820685e01be441a5bd7aa5882a"
+    },
+    {
+      "file": "source/asteroid-scenery-kit.blend",
+      "bytes": 128057,
+      "sha256": "fec5fd97ddc309666cf6ed707686725a37834e117f0ef594341790d6bb63b419"
+    }
+  ],
+  "templateMap": [
+    {
+      "node": "AS_Talus_Basin",
+      "file": "assets/talus-basin.glb",
+      "triangles": 432,
+      "materialPrimitives": 1,
+      "runtimeBucket": "rock",
+      "runtimeMaterial": "shared Materials.rock",
+      "gltfMaterial": "AS_Regolith_RuntimeRock",
+      "authoredBoundsGame": {
+        "min": [
+          -0.8719831705093384,
+          -0.8292713165283203,
+          -0.9150117039680481
+        ],
+        "max": [
+          0.8985510468482971,
+          0.9311781525611877,
+          0.8766337037086487
+        ]
+      },
+      "radiusAboutPivot": 1.0134939614576204,
+      "placementScaleRecipe": "source s * original sampled sx/sy/sz; no normalization or hidden fit factor",
+      "pivotRecipe": "repeat world center as aPivot vec3 for every stamped corner",
+      "spinRecipe": "repeat original normalized axis xyz and rad/s speed as aSpin vec4 for every corner",
+      "vertexPaletteRecipe": "multiply actual Batch linear tint colors by exported linear COLOR_0 per indexed corner",
+      "uvRecipe": "actual Batch dominant triangle-axis world box projection at uvScale=2*s; imported UVs are preview/edit data"
+    },
+    {
+      "node": "AS_Keel_DoubleImpact",
+      "file": "assets/keel-double-impact.glb",
+      "triangles": 480,
+      "materialPrimitives": 1,
+      "runtimeBucket": "rock",
+      "runtimeMaterial": "shared Materials.rock",
+      "gltfMaterial": "AS_Regolith_RuntimeRock",
+      "authoredBoundsGame": {
+        "min": [
+          -0.7699352502822876,
+          -0.763970673084259,
+          -1.0356165170669556
+        ],
+        "max": [
+          0.7390154600143433,
+          0.8961785435676575,
+          1.0151530504226685
+        ]
+      },
+      "radiusAboutPivot": 1.0486480846507884,
+      "placementScaleRecipe": "source s * original sampled sx/sy/sz; no normalization or hidden fit factor",
+      "pivotRecipe": "repeat world center as aPivot vec3 for every stamped corner",
+      "spinRecipe": "repeat original normalized axis xyz and rad/s speed as aSpin vec4 for every corner",
+      "vertexPaletteRecipe": "multiply actual Batch linear tint colors by exported linear COLOR_0 per indexed corner",
+      "uvRecipe": "actual Batch dominant triangle-axis world box projection at uvScale=2*s; imported UVs are preview/edit data"
+    },
+    {
+      "node": "AS_Scar_Cleaved",
+      "file": "assets/scar-cleaved.glb",
+      "triangles": 384,
+      "materialPrimitives": 1,
+      "runtimeBucket": "rock",
+      "runtimeMaterial": "shared Materials.rock",
+      "gltfMaterial": "AS_Regolith_RuntimeRock",
+      "authoredBoundsGame": {
+        "min": [
+          -0.9518015384674072,
+          -0.7762361168861389,
+          -0.8625665307044983
+        ],
+        "max": [
+          0.9326685070991516,
+          0.9114342331886292,
+          0.7699951529502869
+        ]
+      },
+      "radiusAboutPivot": 1.0051049467971251,
+      "placementScaleRecipe": "source s * original sampled sx/sy/sz; no normalization or hidden fit factor",
+      "pivotRecipe": "repeat world center as aPivot vec3 for every stamped corner",
+      "spinRecipe": "repeat original normalized axis xyz and rad/s speed as aSpin vec4 for every corner",
+      "vertexPaletteRecipe": "multiply actual Batch linear tint colors by exported linear COLOR_0 per indexed corner",
+      "uvRecipe": "actual Batch dominant triangle-axis world box projection at uvScale=2*s; imported UVs are preview/edit data"
+    }
+  ],
+  "runtime": {
+    "loadOnce": true,
+    "templatesPerRock": 1,
+    "gameRngForVariant": 0,
+    "draws": "one merged scenery rock bucket per chunk, including unchanged debrisRing rocks when present; pre-existing obstacle-owned debrisGate featureBatch rock meshes remain separate and unchanged",
+    "perRockRuntimeMaterialClones": 0,
+    "perRockRootClones": 0,
+    "perFrameRebuild": false,
+    "newAssetTextures": 0,
+    "existingRockMapRetained": true,
+    "assetEmission": 0,
+    "chunkRetirement": "unique chunk geometries once; no shared resource disposal",
+    "shutdown": "retained templates and imported preview resources once via kit.shutdown; Materials owns shared runtime material/textures"
+  },
+  "baselineSummary": {
+    "commit": "ee221ad",
+    "sampleSeeds": [
+      1,
+      42,
+      2718,
+      7919,
+      137,
+      2026,
+      3737844653,
+      305419896
+    ],
+    "sampleChunks": 232,
+    "sampleRocks": 1513,
+    "topology": [
+      {
+        "detail": 1,
+        "triangles": 80
+      },
+      {
+        "detail": 2,
+        "triangles": 180
+      }
+    ],
+    "countHistogram": {
+      "5": 41,
+      "6": 81,
+      "7": 71,
+      "8": 26,
+      "9": 13
+    },
+    "meanCount": 6.521551724137931,
+    "radiusParameter": [
+      1.0010383574151562,
+      28.769279198151757
+    ],
+    "conservativeSpinRadius": [
+      0.926033770134092,
+      37.44862769917174
+    ],
+    "trianglesPerChunk": [
+      400,
+      1240
+    ],
+    "meanTrianglesPerChunk": 768.2758620689655,
+    "rngRecipe": "Each successful iteration: 1 condition int + 3 placement + 1 radius + 1 z + 3 axis + 5 rockGeometry + 1 tint + 1 speed = 16 next(); final failed condition = 1. Landmarks before and wreck/truss after are additional, executed unmodified.",
+    "theoreticalCount": [
+      5,
+      9
+    ],
+    "theoreticalS": [
+      1,
+      28.8
+    ],
+    "stream": [
+      {
+        "distance": 320,
+        "behind": 90,
+        "requestedChunks": [
+          5,
+          6
+        ],
+        "possibleRetainedExtra": 3,
+        "note": "Retirement allows first-1 through last+2. Includes non-space boundary chunks; this is an all-space proxy, not frustum visibility."
+      },
+      {
+        "distance": 440,
+        "behind": 90,
+        "requestedChunks": [
+          6,
+          7
+        ],
+        "possibleRetainedExtra": 3,
+        "note": "Retirement allows first-1 through last+2. Includes non-space boundary chunks; this is an all-space proxy, not frustum visibility."
+      },
+      {
+        "distance": 560,
+        "behind": 90,
+        "requestedChunks": [
+          7,
+          8
+        ],
+        "possibleRetainedExtra": 3,
+        "note": "Retirement allows first-1 through last+2. Includes non-space boundary chunks; this is an all-space proxy, not frustum visibility."
+      },
+      {
+        "distance": 700,
+        "behind": 90,
+        "requestedChunks": [
+          9,
+          10
+        ],
+        "possibleRetainedExtra": 3,
+        "note": "Retirement allows first-1 through last+2. Includes non-space boundary chunks; this is an all-space proxy, not frustum visibility."
+      }
+    ],
+    "gatePolicy": "debrisRing and wall drift source rockGeometry remain unchanged; no optional gate mapping."
+  },
+  "prototypeSummary": {
+    "status": "pending_deferred_opus_review",
+    "formalReviewPasses": 0,
+    "formalFixPasses": 0,
+    "actualBatch": true,
+    "runtimeWebGL": false,
+    "followingGeometryMatches": 232,
+    "fullChunkComparisons": 29,
+    "gateRingComparisons": 2,
+    "fullChunkRockTotalsIncludingUnchangedRings": [
+      {
+        "seed": 42,
+        "index": 33,
+        "source": {
+          "triangles": 780,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2544,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 34,
+        "source": {
+          "triangles": 11100,
+          "buckets": 2
+        },
+        "adapter": {
+          "triangles": 13560,
+          "buckets": 2
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 35,
+        "source": {
+          "triangles": 1060,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2928,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 36,
+        "source": {
+          "triangles": 400,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2112,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 37,
+        "source": {
+          "triangles": 860,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2880,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 38,
+        "source": {
+          "triangles": 680,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2592,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 39,
+        "source": {
+          "triangles": 11880,
+          "buckets": 2
+        },
+        "adapter": {
+          "triangles": 14440,
+          "buckets": 2
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 40,
+        "source": {
+          "triangles": 660,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 3072,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 41,
+        "source": {
+          "triangles": 11100,
+          "buckets": 2
+        },
+        "adapter": {
+          "triangles": 13608,
+          "buckets": 2
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 42,
+        "source": {
+          "triangles": 860,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 3024,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 43,
+        "source": {
+          "triangles": 500,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2208,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 44,
+        "source": {
+          "triangles": 1220,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 3936,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 45,
+        "source": {
+          "triangles": 1720,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 4176,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 46,
+        "source": {
+          "triangles": 600,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2208,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 66,
+        "source": {
+          "triangles": 940,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 3408,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 67,
+        "source": {
+          "triangles": 860,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 3168,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 68,
+        "source": {
+          "triangles": 1060,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2928,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 69,
+        "source": {
+          "triangles": 2740,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 5160,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 70,
+        "source": {
+          "triangles": 480,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2640,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 71,
+        "source": {
+          "triangles": 660,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2880,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 72,
+        "source": {
+          "triangles": 940,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 3456,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 73,
+        "source": {
+          "triangles": 680,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2544,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 74,
+        "source": {
+          "triangles": 1120,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 3840,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 75,
+        "source": {
+          "triangles": 860,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2928,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 76,
+        "source": {
+          "triangles": 500,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2112,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 77,
+        "source": {
+          "triangles": 1020,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 3888,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 78,
+        "source": {
+          "triangles": 800,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2160,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 79,
+        "source": {
+          "triangles": 1160,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 3120,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      },
+      {
+        "seed": 42,
+        "index": 80,
+        "source": {
+          "triangles": 500,
+          "buckets": 1
+        },
+        "adapter": {
+          "triangles": 2064,
+          "buckets": 1
+        },
+        "note": "Complete source chunk rock meshes, including unmodified ring and obstacle-owned debrisGate featureBatch buckets when present."
+      }
+    ],
+    "customAttributeVertices": 1965744,
+    "rngCallsAndFollowingValuesExact": true,
+    "allPlacementsRadiusTintAxisSpeedExact": true,
+    "nonRockFollowingMergedBuffersByteExact": true,
+    "sourceGateAndWallRockCallsitesUnmodified": true,
+    "variantCounts": {
+      "AS_Talus_Basin": 491,
+      "AS_Keel_DoubleImpact": 528,
+      "AS_Scar_Cleaved": 494
+    },
+    "chunkTriangleRange": [
+      2016,
+      4032
+    ],
+    "meanChunkTriangles": 2824.344827586207,
+    "actualFullSpinRadius": [
+      0.8617059289998578,
+      38.52282071591478
+    ],
+    "minimumGameplayPrismSphereClearance": 10.173112883574188,
+    "conservativeGameplayPrismSphereCandidates": 0,
+    "clearanceSamples": [
+      {
+        "mode": "classic",
+        "sampledRockCameraPairs": 187299,
+        "worstEyeSphereClearance": {
+          "clearance": -1.7777965333791168,
+          "seed": 1,
+          "index": 73,
+          "ordinal": 4,
+          "player": [
+            -16,
+            1.3,
+            7056
+          ],
+          "eye": [
+            -45.254833995939045,
+            54.255,
+            7038.745166004061
+          ]
+        },
+        "worstThreeUnitSightCapsuleClearance": {
+          "clearance": -8.25410038448328,
+          "seed": 1,
+          "index": 73,
+          "ordinal": 4,
+          "player": [
+            -16,
+            25,
+            7056
+          ]
+        },
+        "newEyeSphereCandidatesVersusSource": 0,
+        "newSightCapsuleCandidatesVersusSource": 0
+      },
+      {
+        "mode": "modern",
+        "sampledRockCameraPairs": 187299,
+        "worstEyeSphereClearance": {
+          "clearance": 4.368875103755043,
+          "seed": 3737844653,
+          "index": 42,
+          "ordinal": 3,
+          "player": [
+            -16,
+            9,
+            4080
+          ],
+          "eye": [
+            -25.91858415644439,
+            23,
+            4052.7489139972085
+          ]
+        },
+        "worstThreeUnitSightCapsuleClearance": {
+          "clearance": 1.7188751037550425,
+          "seed": 3737844653,
+          "index": 42,
+          "ordinal": 3,
+          "player": [
+            -16,
+            9,
+            4080
+          ]
+        },
+        "newEyeSphereCandidatesVersusSource": 0,
+        "newSightCapsuleCandidatesVersusSource": 0
+      },
+      {
+        "mode": "chase",
+        "sampledRockCameraPairs": 187299,
+        "worstEyeSphereClearance": {
+          "clearance": 12.74651977431377,
+          "seed": 3737844653,
+          "index": 42,
+          "ordinal": 3,
+          "player": [
+            -16,
+            9,
+            4080
+          ],
+          "eye": [
+            -18.508683118423683,
+            18.5,
+            4056.1314745111613
+          ]
+        },
+        "worstThreeUnitSightCapsuleClearance": {
+          "clearance": 7.496338960649496,
+          "seed": 2718,
+          "index": 33,
+          "ordinal": 6,
+          "player": [
+            16,
+            9,
+            3263
+          ]
+        },
+        "newEyeSphereCandidatesVersusSource": 0,
+        "newSightCapsuleCandidatesVersusSource": 0
+      }
+    ],
+    "aggregate": [
+      {
+        "distance": 320,
+        "samples": 232,
+        "residentRocks": {
+          "min": 10,
+          "max": 37,
+          "mean": 29.336206896551722
+        },
+        "residentTriangles": {
+          "min": 4176,
+          "max": 16560,
+          "mean": 12711.51724137931
+        },
+        "rockBuckets": {
+          "min": 2,
+          "max": 5,
+          "mean": 4.517241379310345
+        },
+        "theoreticalAllSpaceRequested": {
+          "chunks": 6,
+          "rocks": 54,
+          "triangles": 25920
+        },
+        "theoreticalRetained": {
+          "chunks": 9,
+          "rocks": 81,
+          "triangles": 38880,
+          "uploadBytesUpperBound": 8398080
+        }
+      },
+      {
+        "distance": 440,
+        "samples": 232,
+        "residentRocks": {
+          "min": 10,
+          "max": 51,
+          "mean": 38.258620689655174
+        },
+        "residentTriangles": {
+          "min": 4176,
+          "max": 22608,
+          "mean": 16572.620689655174
+        },
+        "rockBuckets": {
+          "min": 2,
+          "max": 7,
+          "mean": 5.896551724137931
+        },
+        "theoreticalAllSpaceRequested": {
+          "chunks": 7,
+          "rocks": 63,
+          "triangles": 30240
+        },
+        "theoreticalRetained": {
+          "chunks": 10,
+          "rocks": 90,
+          "triangles": 43200,
+          "uploadBytesUpperBound": 9331200
+        }
+      },
+      {
+        "distance": 560,
+        "samples": 232,
+        "residentRocks": {
+          "min": 10,
+          "max": 58,
+          "mean": 42.043103448275865
+        },
+        "residentTriangles": {
+          "min": 4176,
+          "max": 25536,
+          "mean": 18208.96551724138
+        },
+        "rockBuckets": {
+          "min": 2,
+          "max": 8,
+          "mean": 6.482758620689655
+        },
+        "theoreticalAllSpaceRequested": {
+          "chunks": 8,
+          "rocks": 72,
+          "triangles": 34560
+        },
+        "theoreticalRetained": {
+          "chunks": 11,
+          "rocks": 99,
+          "triangles": 47520,
+          "uploadBytesUpperBound": 10264320
+        }
+      },
+      {
+        "distance": 700,
+        "samples": 232,
+        "residentRocks": {
+          "min": 10,
+          "max": 66,
+          "mean": 45.375
+        },
+        "residentTriangles": {
+          "min": 4176,
+          "max": 28224,
+          "mean": 19648.137931034482
+        },
+        "rockBuckets": {
+          "min": 2,
+          "max": 9,
+          "mean": 7
+        },
+        "theoreticalAllSpaceRequested": {
+          "chunks": 10,
+          "rocks": 90,
+          "triangles": 43200
+        },
+        "theoreticalRetained": {
+          "chunks": 13,
+          "rocks": 117,
+          "triangles": 56160,
+          "uploadBytesUpperBound": 12130560
+        }
+      }
+    ],
+    "completeRockWindowProxy": [
+      {
+        "distance": 320,
+        "seed": 42,
+        "sampleWindows": 29,
+        "maximumSourceTriangles": 25180,
+        "maximumKitTriangles": 36736,
+        "maximumSourceRockMeshes": 7,
+        "maximumKitRockMeshes": 7,
+        "note": "Space-chunk windows only, includes unchanged barrier/ring rocks in those chunks. Not a whole-game or all-retained benchmark.",
+        "rows": [
+          {
+            "index": 33,
+            "sourceTriangles": 13340,
+            "kitTriangles": 21144,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 34,
+            "sourceTriangles": 14200,
+            "kitTriangles": 24024,
+            "sourceRockMeshes": 6,
+            "kitRockMeshes": 6
+          },
+          {
+            "index": 35,
+            "sourceTriangles": 14100,
+            "kitTriangles": 24072,
+            "sourceRockMeshes": 6,
+            "kitRockMeshes": 6
+          },
+          {
+            "index": 36,
+            "sourceTriangles": 14880,
+            "kitTriangles": 24952,
+            "sourceRockMeshes": 6,
+            "kitRockMeshes": 6
+          },
+          {
+            "index": 37,
+            "sourceTriangles": 14480,
+            "kitTriangles": 25096,
+            "sourceRockMeshes": 6,
+            "kitRockMeshes": 6
+          },
+          {
+            "index": 38,
+            "sourceTriangles": 25180,
+            "kitTriangles": 36592,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 39,
+            "sourceTriangles": 25180,
+            "kitTriangles": 36736,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 40,
+            "sourceTriangles": 25000,
+            "kitTriangles": 36352,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 41,
+            "sourceTriangles": 14340,
+            "kitTriangles": 25848,
+            "sourceRockMeshes": 6,
+            "kitRockMeshes": 6
+          },
+          {
+            "index": 42,
+            "sourceTriangles": 15400,
+            "kitTriangles": 26952,
+            "sourceRockMeshes": 6,
+            "kitRockMeshes": 6
+          },
+          {
+            "index": 43,
+            "sourceTriangles": 4900,
+            "kitTriangles": 15552,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 44,
+            "sourceTriangles": 4040,
+            "kitTriangles": 12528,
+            "sourceRockMeshes": 4,
+            "kitRockMeshes": 4
+          },
+          {
+            "index": 45,
+            "sourceTriangles": 3540,
+            "kitTriangles": 10320,
+            "sourceRockMeshes": 3,
+            "kitRockMeshes": 3
+          },
+          {
+            "index": 46,
+            "sourceTriangles": 2320,
+            "kitTriangles": 6384,
+            "sourceRockMeshes": 2,
+            "kitRockMeshes": 2
+          },
+          {
+            "index": 66,
+            "sourceTriangles": 5600,
+            "kitTriangles": 14664,
+            "sourceRockMeshes": 4,
+            "kitRockMeshes": 4
+          },
+          {
+            "index": 67,
+            "sourceTriangles": 6080,
+            "kitTriangles": 17304,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 68,
+            "sourceTriangles": 5800,
+            "kitTriangles": 16776,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 69,
+            "sourceTriangles": 5880,
+            "kitTriangles": 17064,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 70,
+            "sourceTriangles": 5500,
+            "kitTriangles": 16680,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 71,
+            "sourceTriangles": 3880,
+            "kitTriangles": 15360,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 72,
+            "sourceTriangles": 4260,
+            "kitTriangles": 15648,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 73,
+            "sourceTriangles": 4100,
+            "kitTriangles": 14880,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 74,
+            "sourceTriangles": 4180,
+            "kitTriangles": 15312,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 75,
+            "sourceTriangles": 4300,
+            "kitTriangles": 14928,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 76,
+            "sourceTriangles": 4340,
+            "kitTriangles": 14208,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 77,
+            "sourceTriangles": 3980,
+            "kitTriangles": 13344,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 78,
+            "sourceTriangles": 3480,
+            "kitTriangles": 11232,
+            "sourceRockMeshes": 4,
+            "kitRockMeshes": 4
+          },
+          {
+            "index": 79,
+            "sourceTriangles": 2460,
+            "kitTriangles": 7344,
+            "sourceRockMeshes": 3,
+            "kitRockMeshes": 3
+          },
+          {
+            "index": 80,
+            "sourceTriangles": 1660,
+            "kitTriangles": 5184,
+            "sourceRockMeshes": 2,
+            "kitRockMeshes": 2
+          }
+        ]
+      },
+      {
+        "distance": 440,
+        "seed": 42,
+        "sampleWindows": 29,
+        "maximumSourceTriangles": 27940,
+        "maximumKitTriangles": 44464,
+        "maximumSourceRockMeshes": 9,
+        "maximumKitRockMeshes": 9,
+        "note": "Space-chunk windows only, includes unchanged barrier/ring rocks in those chunks. Not a whole-game or all-retained benchmark.",
+        "rows": [
+          {
+            "index": 33,
+            "sourceTriangles": 14880,
+            "kitTriangles": 26616,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 34,
+            "sourceTriangles": 26760,
+            "kitTriangles": 41056,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 35,
+            "sourceTriangles": 26640,
+            "kitTriangles": 41584,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 36,
+            "sourceTriangles": 26640,
+            "kitTriangles": 41632,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 37,
+            "sourceTriangles": 26440,
+            "kitTriangles": 41728,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 38,
+            "sourceTriangles": 26540,
+            "kitTriangles": 41824,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 39,
+            "sourceTriangles": 26900,
+            "kitTriangles": 42880,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 40,
+            "sourceTriangles": 27940,
+            "kitTriangles": 44464,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 41,
+            "sourceTriangles": 16660,
+            "kitTriangles": 32232,
+            "sourceRockMeshes": 8,
+            "kitRockMeshes": 8
+          },
+          {
+            "index": 42,
+            "sourceTriangles": 16000,
+            "kitTriangles": 29160,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 43,
+            "sourceTriangles": 4900,
+            "kitTriangles": 15552,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 44,
+            "sourceTriangles": 4040,
+            "kitTriangles": 12528,
+            "sourceRockMeshes": 4,
+            "kitRockMeshes": 4
+          },
+          {
+            "index": 45,
+            "sourceTriangles": 3540,
+            "kitTriangles": 10320,
+            "sourceRockMeshes": 3,
+            "kitRockMeshes": 3
+          },
+          {
+            "index": 46,
+            "sourceTriangles": 2320,
+            "kitTriangles": 6384,
+            "sourceRockMeshes": 2,
+            "kitRockMeshes": 2
+          },
+          {
+            "index": 66,
+            "sourceTriangles": 6740,
+            "kitTriangles": 20184,
+            "sourceRockMeshes": 6,
+            "kitRockMeshes": 6
+          },
+          {
+            "index": 67,
+            "sourceTriangles": 7680,
+            "kitTriangles": 23640,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 68,
+            "sourceTriangles": 7420,
+            "kitTriangles": 22776,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 69,
+            "sourceTriangles": 7680,
+            "kitTriangles": 23448,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 70,
+            "sourceTriangles": 7480,
+            "kitTriangles": 23448,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 71,
+            "sourceTriangles": 5240,
+            "kitTriangles": 20400,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 72,
+            "sourceTriangles": 5780,
+            "kitTriangles": 21648,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 73,
+            "sourceTriangles": 5920,
+            "kitTriangles": 20928,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 74,
+            "sourceTriangles": 6140,
+            "kitTriangles": 20592,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 75,
+            "sourceTriangles": 5960,
+            "kitTriangles": 20112,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 76,
+            "sourceTriangles": 4840,
+            "kitTriangles": 16272,
+            "sourceRockMeshes": 6,
+            "kitRockMeshes": 6
+          },
+          {
+            "index": 77,
+            "sourceTriangles": 3980,
+            "kitTriangles": 13344,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 78,
+            "sourceTriangles": 3480,
+            "kitTriangles": 11232,
+            "sourceRockMeshes": 4,
+            "kitRockMeshes": 4
+          },
+          {
+            "index": 79,
+            "sourceTriangles": 2460,
+            "kitTriangles": 7344,
+            "sourceRockMeshes": 3,
+            "kitRockMeshes": 3
+          },
+          {
+            "index": 80,
+            "sourceTriangles": 1660,
+            "kitTriangles": 5184,
+            "sourceRockMeshes": 2,
+            "kitRockMeshes": 2
+          }
+        ]
+      },
+      {
+        "distance": 560,
+        "seed": 42,
+        "sampleWindows": 29,
+        "maximumSourceTriangles": 37740,
+        "maximumKitTriangles": 55192,
+        "maximumSourceRockMeshes": 11,
+        "maximumKitRockMeshes": 11,
+        "note": "Space-chunk windows only, includes unchanged barrier/ring rocks in those chunks. Not a whole-game or all-retained benchmark.",
+        "rows": [
+          {
+            "index": 33,
+            "sourceTriangles": 26760,
+            "kitTriangles": 41056,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 34,
+            "sourceTriangles": 27420,
+            "kitTriangles": 44128,
+            "sourceRockMeshes": 10,
+            "kitRockMeshes": 10
+          },
+          {
+            "index": 35,
+            "sourceTriangles": 37740,
+            "kitTriangles": 55192,
+            "sourceRockMeshes": 11,
+            "kitRockMeshes": 11
+          },
+          {
+            "index": 36,
+            "sourceTriangles": 27500,
+            "kitTriangles": 44656,
+            "sourceRockMeshes": 10,
+            "kitRockMeshes": 10
+          },
+          {
+            "index": 37,
+            "sourceTriangles": 26940,
+            "kitTriangles": 43936,
+            "sourceRockMeshes": 10,
+            "kitRockMeshes": 10
+          },
+          {
+            "index": 38,
+            "sourceTriangles": 27760,
+            "kitTriangles": 45760,
+            "sourceRockMeshes": 10,
+            "kitRockMeshes": 10
+          },
+          {
+            "index": 39,
+            "sourceTriangles": 28620,
+            "kitTriangles": 47056,
+            "sourceRockMeshes": 10,
+            "kitRockMeshes": 10
+          },
+          {
+            "index": 40,
+            "sourceTriangles": 28540,
+            "kitTriangles": 46672,
+            "sourceRockMeshes": 10,
+            "kitRockMeshes": 10
+          },
+          {
+            "index": 41,
+            "sourceTriangles": 16660,
+            "kitTriangles": 32232,
+            "sourceRockMeshes": 8,
+            "kitRockMeshes": 8
+          },
+          {
+            "index": 42,
+            "sourceTriangles": 16000,
+            "kitTriangles": 29160,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 43,
+            "sourceTriangles": 4900,
+            "kitTriangles": 15552,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 44,
+            "sourceTriangles": 4040,
+            "kitTriangles": 12528,
+            "sourceRockMeshes": 4,
+            "kitRockMeshes": 4
+          },
+          {
+            "index": 45,
+            "sourceTriangles": 3540,
+            "kitTriangles": 10320,
+            "sourceRockMeshes": 3,
+            "kitRockMeshes": 3
+          },
+          {
+            "index": 46,
+            "sourceTriangles": 2320,
+            "kitTriangles": 6384,
+            "sourceRockMeshes": 2,
+            "kitRockMeshes": 2
+          },
+          {
+            "index": 66,
+            "sourceTriangles": 7680,
+            "kitTriangles": 23640,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 67,
+            "sourceTriangles": 8360,
+            "kitTriangles": 26184,
+            "sourceRockMeshes": 8,
+            "kitRockMeshes": 8
+          },
+          {
+            "index": 68,
+            "sourceTriangles": 8540,
+            "kitTriangles": 26616,
+            "sourceRockMeshes": 8,
+            "kitRockMeshes": 8
+          },
+          {
+            "index": 69,
+            "sourceTriangles": 8540,
+            "kitTriangles": 26376,
+            "sourceRockMeshes": 8,
+            "kitRockMeshes": 8
+          },
+          {
+            "index": 70,
+            "sourceTriangles": 7980,
+            "kitTriangles": 25560,
+            "sourceRockMeshes": 8,
+            "kitRockMeshes": 8
+          },
+          {
+            "index": 71,
+            "sourceTriangles": 6260,
+            "kitTriangles": 24288,
+            "sourceRockMeshes": 8,
+            "kitRockMeshes": 8
+          },
+          {
+            "index": 72,
+            "sourceTriangles": 6580,
+            "kitTriangles": 23808,
+            "sourceRockMeshes": 8,
+            "kitRockMeshes": 8
+          },
+          {
+            "index": 73,
+            "sourceTriangles": 7080,
+            "kitTriangles": 24048,
+            "sourceRockMeshes": 8,
+            "kitRockMeshes": 8
+          },
+          {
+            "index": 74,
+            "sourceTriangles": 6640,
+            "kitTriangles": 22656,
+            "sourceRockMeshes": 8,
+            "kitRockMeshes": 8
+          },
+          {
+            "index": 75,
+            "sourceTriangles": 5960,
+            "kitTriangles": 20112,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 76,
+            "sourceTriangles": 4840,
+            "kitTriangles": 16272,
+            "sourceRockMeshes": 6,
+            "kitRockMeshes": 6
+          },
+          {
+            "index": 77,
+            "sourceTriangles": 3980,
+            "kitTriangles": 13344,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 78,
+            "sourceTriangles": 3480,
+            "kitTriangles": 11232,
+            "sourceRockMeshes": 4,
+            "kitRockMeshes": 4
+          },
+          {
+            "index": 79,
+            "sourceTriangles": 2460,
+            "kitTriangles": 7344,
+            "sourceRockMeshes": 3,
+            "kitRockMeshes": 3
+          },
+          {
+            "index": 80,
+            "sourceTriangles": 1660,
+            "kitTriangles": 5184,
+            "sourceRockMeshes": 2,
+            "kitRockMeshes": 2
+          }
+        ]
+      },
+      {
+        "distance": 700,
+        "seed": 42,
+        "sampleWindows": 29,
+        "maximumSourceTriangles": 38600,
+        "maximumKitTriangles": 58216,
+        "maximumSourceRockMeshes": 12,
+        "maximumKitRockMeshes": 12,
+        "note": "Space-chunk windows only, includes unchanged barrier/ring rocks in those chunks. Not a whole-game or all-retained benchmark.",
+        "rows": [
+          {
+            "index": 33,
+            "sourceTriangles": 27420,
+            "kitTriangles": 44128,
+            "sourceRockMeshes": 10,
+            "kitRockMeshes": 10
+          },
+          {
+            "index": 34,
+            "sourceTriangles": 38520,
+            "kitTriangles": 57736,
+            "sourceRockMeshes": 12,
+            "kitRockMeshes": 12
+          },
+          {
+            "index": 35,
+            "sourceTriangles": 38600,
+            "kitTriangles": 58216,
+            "sourceRockMeshes": 12,
+            "kitRockMeshes": 12
+          },
+          {
+            "index": 36,
+            "sourceTriangles": 28000,
+            "kitTriangles": 46864,
+            "sourceRockMeshes": 11,
+            "kitRockMeshes": 11
+          },
+          {
+            "index": 37,
+            "sourceTriangles": 28160,
+            "kitTriangles": 47872,
+            "sourceRockMeshes": 11,
+            "kitRockMeshes": 11
+          },
+          {
+            "index": 38,
+            "sourceTriangles": 29480,
+            "kitTriangles": 49936,
+            "sourceRockMeshes": 11,
+            "kitRockMeshes": 11
+          },
+          {
+            "index": 39,
+            "sourceTriangles": 29220,
+            "kitTriangles": 49264,
+            "sourceRockMeshes": 11,
+            "kitRockMeshes": 11
+          },
+          {
+            "index": 40,
+            "sourceTriangles": 28540,
+            "kitTriangles": 46672,
+            "sourceRockMeshes": 10,
+            "kitRockMeshes": 10
+          },
+          {
+            "index": 41,
+            "sourceTriangles": 16660,
+            "kitTriangles": 32232,
+            "sourceRockMeshes": 8,
+            "kitRockMeshes": 8
+          },
+          {
+            "index": 42,
+            "sourceTriangles": 16000,
+            "kitTriangles": 29160,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 43,
+            "sourceTriangles": 4900,
+            "kitTriangles": 15552,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 44,
+            "sourceTriangles": 4040,
+            "kitTriangles": 12528,
+            "sourceRockMeshes": 4,
+            "kitRockMeshes": 4
+          },
+          {
+            "index": 45,
+            "sourceTriangles": 3540,
+            "kitTriangles": 10320,
+            "sourceRockMeshes": 3,
+            "kitRockMeshes": 3
+          },
+          {
+            "index": 46,
+            "sourceTriangles": 2320,
+            "kitTriangles": 6384,
+            "sourceRockMeshes": 2,
+            "kitRockMeshes": 2
+          },
+          {
+            "index": 66,
+            "sourceTriangles": 8360,
+            "kitTriangles": 26184,
+            "sourceRockMeshes": 8,
+            "kitRockMeshes": 8
+          },
+          {
+            "index": 67,
+            "sourceTriangles": 9480,
+            "kitTriangles": 30024,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 68,
+            "sourceTriangles": 9400,
+            "kitTriangles": 29544,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 69,
+            "sourceTriangles": 9040,
+            "kitTriangles": 28488,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 70,
+            "sourceTriangles": 9000,
+            "kitTriangles": 29448,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 71,
+            "sourceTriangles": 7060,
+            "kitTriangles": 26448,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 72,
+            "sourceTriangles": 7740,
+            "kitTriangles": 26928,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 73,
+            "sourceTriangles": 7580,
+            "kitTriangles": 26112,
+            "sourceRockMeshes": 9,
+            "kitRockMeshes": 9
+          },
+          {
+            "index": 74,
+            "sourceTriangles": 6640,
+            "kitTriangles": 22656,
+            "sourceRockMeshes": 8,
+            "kitRockMeshes": 8
+          },
+          {
+            "index": 75,
+            "sourceTriangles": 5960,
+            "kitTriangles": 20112,
+            "sourceRockMeshes": 7,
+            "kitRockMeshes": 7
+          },
+          {
+            "index": 76,
+            "sourceTriangles": 4840,
+            "kitTriangles": 16272,
+            "sourceRockMeshes": 6,
+            "kitRockMeshes": 6
+          },
+          {
+            "index": 77,
+            "sourceTriangles": 3980,
+            "kitTriangles": 13344,
+            "sourceRockMeshes": 5,
+            "kitRockMeshes": 5
+          },
+          {
+            "index": 78,
+            "sourceTriangles": 3480,
+            "kitTriangles": 11232,
+            "sourceRockMeshes": 4,
+            "kitRockMeshes": 4
+          },
+          {
+            "index": 79,
+            "sourceTriangles": 2460,
+            "kitTriangles": 7344,
+            "sourceRockMeshes": 3,
+            "kitRockMeshes": 3
+          },
+          {
+            "index": 80,
+            "sourceTriangles": 1660,
+            "kitTriangles": 5184,
+            "sourceRockMeshes": 2,
+            "kitRockMeshes": 2
+          }
+        ]
+      }
+    ],
+    "disposal": {
+      "chunkUniqueGeometryEvents": 1,
+      "templateEventsBeforeShutdown": 0,
+      "templateEventsAfterTwoShutdownCalls": 3,
+      "sharedRuntimeMaterialEvents": 0
+    },
+    "limitations": [
+      "CPU actual-source prototype; MeshBasicMaterial test double avoids DOM canvas Materials construction, not a live shader or GPU timing test.",
+      "Sphere and 3-unit sight capsule candidates overestimate mesh overlap. Negative clearance is not proof of actual occlusion; no claim of all-seed camera safety.",
+      "Full-spin per-axis bounds are analytic for triangles under Rodrigues rotation; placement values are not normalized or rescaled to improve comparisons.",
+      "Gate ring and wall rocks remain legacy source topology. Boundary non-space chunks and transient retained chunks differ from all-space proxy.",
+      "Aggregate counts are asteroid-only, not whole-game triangles, memory, draw calls, or FPS."
+    ]
+  },
+  "binaryAudit": {
+    "file": "measurements/binary-audit.json",
+    "method": "Independent Python standard-library GLB chunk/accessor/node transform/index/welded edge audit; not the Blender exporter or importer.",
+    "allFilesPassed": true
+  },
+  "reopenReimport": "measurements/reopen-reimport.json",
+  "deterministicRebuild": "measurements/deterministic-rebuild.json",
+  "inspectedEvidence": "measurements/visual-inspection.json",
+  "evidenceTruth": {
+    "offlineEngine": "BLENDER_EEVEE",
+    "liveWebGL": false,
+    "fpsBenchmark": false,
+    "actualSourceCameras": true,
+    "sourceGeometryAndPlacements": true,
+    "shippedPlayerUnscaled": true,
+    "omitted": [
+      "existing exact canvas rock texture",
+      "Three.js rim shader",
+      "all non-asteroid scenery, enemies, UI and postprocessing"
+    ],
+    "materialApproximation": "neutral .74 attenuation on linear seed tint and authored palette; actual source map/rim response documented, not claimed rendered",
+    "bounds": "actual sampled placement/anisotropy; analytic full-spin axis bounds and conservative pivot sphere; no normalized comparisons"
+  },
+  "knownLimits": [
+    "CPU actual-source prototype; MeshBasicMaterial test double avoids DOM canvas Materials construction, not a live shader or GPU timing test.",
+    "Sphere and 3-unit sight capsule candidates overestimate mesh overlap. Negative clearance is not proof of actual occlusion; no claim of all-seed camera safety.",
+    "Full-spin per-axis bounds are analytic for triangles under Rodrigues rotation; placement values are not normalized or rescaled to improve comparisons.",
+    "Gate ring and wall rocks remain legacy source topology. Boundary non-space chunks and transient retained chunks differ from all-space proxy.",
+    "Aggregate counts are asteroid-only, not whole-game triangles, memory, draw calls, or FPS.",
+    "Classic camera has inherited conservative sphere/capsule candidates; zero newly flagged sample events versus source is not all-seed proof.",
+    "Eye sphere uses .35 radius; it does not certify complete projected near-plane clearance, especially the wide orthographic Classic near plane.",
+    "Camera snap samples exclude shake/boost/lag trajectories, other aspect ratios, target visibility, and actual GPU shader/depth behavior.",
+    "Offline camera-parented label geometry can cast minor shadows in closeup evidence; these labels are not part of delivered mesh assets.",
+    "Initial authored craft only; Opus formal review/polish intentionally deferred. No formal review or fix pass performed."
+  ],
+  "transport": {
+    "authorizedCli": "/mnt/c/Program Files/Tailscale/tailscale.exe",
+    "verb": "file cp",
+    "destination": "100.112.66.64:",
+    "pathConversion": "wslpath -w",
+    "receiptLocation": "outside initial/",
+    "receiverVerification": "orchestrator responsibility, not asserted by sender"
+  },
+  "freeze": {
+    "checksumFile": "SHA256SUMS",
+    "coverage": "every content file except SHA256SUMS itself",
+    "archiveAndReceipt": "outside initial/",
+    "mutableAfterFreeze": false,
+    "excludes": [
+      "runtime tools",
+      "libraries",
+      "caches",
+      "temporary files",
+      "other assets or work",
+      "shipped reference GLBs"
+    ]
+  }
+}

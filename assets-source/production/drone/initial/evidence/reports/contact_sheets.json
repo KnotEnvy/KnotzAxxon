@@ -1,0 +1,164 @@
+[
+  {
+    "file": "reference_contact_sheet.png",
+    "tiles": [
+      {
+        "file": "ref_player.png",
+        "label": "SHIPPED PLAYER"
+      },
+      {
+        "file": "ref_sentinel.png",
+        "label": "SHIPPED SENTINEL"
+      },
+      {
+        "file": "ref_turret.png",
+        "label": "SHIPPED TURRET"
+      },
+      {
+        "file": "ref_radar.png",
+        "label": "SHIPPED RADAR"
+      },
+      {
+        "file": "ref_silo.png",
+        "label": "SHIPPED SILO"
+      },
+      {
+        "file": "ref_fuel.png",
+        "label": "SHIPPED FUEL"
+      }
+    ],
+    "dimensions": [
+      960,
+      584
+    ]
+  },
+  {
+    "file": "contact_sheet.png",
+    "tiles": [
+      {
+        "file": "rest_three_quarter_front.png",
+        "label": "FRONT THREE QUARTER"
+      },
+      {
+        "file": "rest_front.png",
+        "label": "FRONT"
+      },
+      {
+        "file": "rest_rear.png",
+        "label": "REAR"
+      },
+      {
+        "file": "rest_top.png",
+        "label": "TOP"
+      },
+      {
+        "file": "rest_side.png",
+        "label": "SIDE"
+      },
+      {
+        "file": "common_neutral.png",
+        "label": "COMMON NEUTRAL - SPAN 14"
+      },
+      {
+        "file": "action_weave_bank.png",
+        "label": "SOURCE WEAVE BANK"
+      },
+      {
+        "file": "action_strafe_bank.png",
+        "label": "SOURCE STRAFE BANK"
+      },
+      {
+        "file": "action_orbit_restore_extreme.png",
+        "label": "ORBIT RESTORE EXTREME"
+      },
+      {
+        "file": "action_pitch_peel.png",
+        "label": "COMMITTED PEEL PITCH"
+      },
+      {
+        "file": "action_carrier_roll_extreme.png",
+        "label": "CARRIER ROLL EXTREME"
+      },
+      {
+        "file": "action_launch_initial.png",
+        "label": "LAUNCH INITIAL X58"
+      },
+      {
+        "file": "action_launch_transition.png",
+        "label": "LAUNCH TRANSITION"
+      },
+      {
+        "file": "world_scale_player_and_drone.png",
+        "label": "DRONE / PLAYER - WORLD SCALE"
+      },
+      {
+        "file": "offline_gameplay_classic.png",
+        "label": "OFFLINE CLASSIC - 960X540"
+      },
+      {
+        "file": "offline_gameplay_modern.png",
+        "label": "OFFLINE MODERN - 960X540"
+      },
+      {
+        "file": "offline_gameplay_chase.png",
+        "label": "OFFLINE CHASE - 960X540"
+      },
+      {
+        "file": "action_contract_roll_minus_1p1.png",
+        "label": "SYNTHETIC CLAMP -1.1"
+      },
+      {
+        "file": "action_contract_roll_plus_1p1.png",
+        "label": "SYNTHETIC CLAMP +1.1"
+      },
+      {
+        "file": "hit_flash_shell_demonstration.png",
+        "label": "FLASH GEOMETRY DEMONSTRATION"
+      },
+      {
+        "file": "debug_actual_shot_ray.png",
+        "label": "DEBUG SOURCE SHOT RAY"
+      }
+    ],
+    "dimensions": [
+      960,
+      1934
+    ]
+  },
+  {
+    "file": "gameplay_scale_1to1.png",
+    "method": "Exact source pixels cropped and pasted 1:1. No model normalization or zoom.",
+    "crops": [
+      {
+        "source": "offline_gameplay_classic.png",
+        "source_crop_xywh": [
+          400,
+          214,
+          160,
+          100
+        ],
+        "output_pixel_scale": 1
+      },
+      {
+        "source": "offline_gameplay_modern.png",
+        "source_crop_xywh": [
+          421,
+          203,
+          160,
+          100
+        ],
+        "output_pixel_scale": 1
+      },
+      {
+        "source": "offline_gameplay_chase.png",
+        "source_crop_xywh": [
+          406,
+          210,
+          160,
+          100
+        ],
+        "output_pixel_scale": 1
+      }
+    ]
+  }
+]

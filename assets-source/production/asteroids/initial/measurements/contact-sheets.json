@@ -1,0 +1,52 @@
+[
+  {
+    "file": "evidence/studio-details-contact.png",
+    "sourceFiles": [
+      "evidence/talus-basin-crater.png",
+      "evidence/keel-double-impact-crater.png",
+      "evidence/scar-cleaved-crater.png",
+      "evidence/talus-basin-back.png",
+      "evidence/keel-double-impact-back.png",
+      "evidence/scar-cleaved-back.png"
+    ],
+    "columns": 3,
+    "note": "Nearest-neighbor contact derivative of actual labeled renders; not a fresh render or live game capture."
+  },
+  {
+    "file": "evidence/actual-radius-spin-contact.png",
+    "sourceFiles": [
+      "evidence/actual-radius-spin-000.png",
+      "evidence/actual-radius-spin-090.png",
+      "evidence/actual-radius-spin-180.png",
+      "evidence/actual-radius-spin-270.png"
+    ],
+    "columns": 2,
+    "note": "Nearest-neighbor contact derivative of actual labeled renders; not a fresh render or live game capture."
+  },
+  {
+    "file": "evidence/world-rest-contact.png",
+    "sourceFiles": [
+      "evidence/world-classic-source.png",
+      "evidence/world-classic-kit.png",
+      "evidence/world-modern-source.png",
+      "evidence/world-modern-kit.png",
+      "evidence/world-chase-source.png",
+      "evidence/world-chase-kit.png"
+    ],
+    "columns": 2,
+    "note": "Nearest-neighbor contact derivative of actual labeled renders; not a fresh render or live game capture."
+  },
+  {
+    "file": "evidence/world-spin-contact.png",
+    "sourceFiles": [
+      "evidence/world-classic-source-t12-5.png",
+      "evidence/world-classic-kit-t12-5.png",
+      "evidence/world-modern-source-t12-5.png",
+      "evidence/world-modern-kit-t12-5.png",
+      "evidence/world-chase-source-t12-5.png",
+      "evidence/world-chase-kit-t12-5.png"
+    ],
+    "columns": 2,
+    "note": "Nearest-neighbor contact derivative of actual labeled renders; not a fresh render or live game capture."
+  }
+]

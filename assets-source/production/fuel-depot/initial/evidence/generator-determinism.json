@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "method": "Independent second execution of deterministic generator, byte-for-byte template SHA256 comparison",
+  "beforeSHA256": "84bb0fb34892052a5c423cf750ed07c2acff033b11a34963f8770970696b15a1",
+  "afterSHA256": "84bb0fb34892052a5c423cf750ed07c2acff033b11a34963f8770970696b15a1",
+  "gameRngDraws": 0
+}

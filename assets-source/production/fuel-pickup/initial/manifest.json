@@ -1,0 +1,423 @@
+{
+  "asset": "FUEL collectible pickup",
+  "revision": "INITIAL",
+  "frozen": true,
+  "scope": "asset-work/fuel-pickup only; source FuelCell/public/models/fuel.glb and all production files untouched; no active repair access",
+  "files": {
+    "asset/fuel-pickup.glb": {
+      "sha256": "152fac271b398f2a44183759b4c4250716a87fc28862221bde6035a84caa912f",
+      "bytes": 109876
+    },
+    "asset/fuel-pickup.blend": {
+      "sha256": "d1bf8ea29d314e877840ed486e68e464762fc20800d936a15acb18c5ac2ea5ae",
+      "bytes": 107778
+    },
+    "scripts/build_fuel.py": {
+      "sha256": "33fe941a0ce6a519092a790ac41ff3717aacc29e0a2894c8fceb88c88cc19dca",
+      "bytes": 12799
+    }
+  },
+  "geometry": {
+    "evaluated_triangles": 1480,
+    "target_triangles": 1500,
+    "ceiling_triangles": 2500,
+    "object_triangles": {
+      "core": 116,
+      "shape": 500,
+      "shell": 864
+    },
+    "mesh_nodes": 3,
+    "visible_material_primitives": 3,
+    "shared_halo_additional": true,
+    "textures": 0,
+    "animations": 0,
+    "transformed_rest_bounds_game": {
+      "min": [
+        -2.0450000762939453,
+        -2.0450000762939453,
+        -0.3800000101327896
+      ],
+      "max": [
+        2.0450000762939453,
+        2.0450000762939453,
+        0.30000000447034836
+      ],
+      "size": [
+        4.090000152587891,
+        4.090000152587891,
+        0.680000014603138
+      ]
+    },
+    "all_motion_visual_sphere_radius": 2.0964320544917117,
+    "source_collider_radius": 2.2,
+    "glb_limit_bytes": 524288
+  },
+  "source_envelope_comparison": {
+    "shape": {
+      "actual_source_rest_bounds_game": {
+        "min": [
+          -0.6723999941349029,
+          -0.6560000097751617,
+          -0.10499999821186065
+        ],
+        "max": [
+          0.6723999941349029,
+          0.6560000097751617,
+          0.30499999821186063
+        ]
+      },
+      "authored_rest_bounds_game": {
+        "min": [
+          -0.656000018119812,
+          -0.656000018119812,
+          -0.10000000149011612
+        ],
+        "max": [
+          0.656000018119812,
+          0.656000018119812,
+          0.30000000447034836
+        ],
+        "size": [
+          1.312000036239624,
+          1.312000036239624,
+          0.4000000059604645
+        ]
+      },
+      "within_original_axis_aligned_envelope_tolerance_1e_6": true
+    },
+    "whole_badge": {
+      "actual_source_rest_bounds_game": {
+        "min": [
+          -2.0450000762939453,
+          -2.0450000762939453,
+          -0.37999999821186065
+        ],
+        "max": [
+          2.0450000762939453,
+          2.0450000762939453,
+          0.30499999821186063
+        ]
+      },
+      "authored_rest_bounds_game": {
+        "min": [
+          -2.0450000762939453,
+          -2.0450000762939453,
+          -0.3800000101327896
+        ],
+        "max": [
+          2.0450000762939453,
+          2.0450000762939453,
+          0.30000000447034836
+        ],
+        "size": [
+          4.090000152587891,
+          4.090000152587891,
+          0.680000014603138
+        ]
+      },
+      "within_original_axis_aligned_envelope_tolerance_1e_6": true
+    }
+  },
+  "shape_scale": {
+    "source": [
+      0.82,
+      0.82,
+      0.25
+    ],
+    "baked_into_geometry": true,
+    "exported_node": [
+      1,
+      1,
+      1
+    ],
+    "adapter_must_not_apply_again": true
+  },
+  "mechanics": {
+    "color": "0xffd76a",
+    "label": "FUEL",
+    "score": 150,
+    "radius": 2.2,
+    "playerRadius": 1.5,
+    "collectionCenterDistance": 3.7,
+    "fuelGranted": 0.3,
+    "fuelCap": "clamp01(existing+.3)",
+    "staticShapeScale": {
+      "source": [
+        0.82,
+        0.82,
+        0.25
+      ],
+      "delivered": [
+        1,
+        1,
+        1
+      ],
+      "bakedIntoVertices": true
+    },
+    "despawnBehind": 55,
+    "timedLifetime": null,
+    "baseY": 6,
+    "velocity": [
+      0,
+      0,
+      0
+    ],
+    "phaseInitialization": "Actual Math.random()*TAU, unseeded. Controlled phase ONLY diagnostics.",
+    "shellNeon": [
+      1.15,
+      0.7814738400705237,
+      0.1657477414754084
+    ],
+    "shapeNeon": [
+      1.35,
+      0.9173823339958324,
+      0.19457343564504467
+    ],
+    "haloOpacity": 0.35,
+    "charge": "N/A",
+    "detach": "N/A except normal collected/cull dispose"
+  },
+  "tank_separation": {
+    "actualFuelCellConstructor": true,
+    "importedVisualStubOnly": true,
+    "hp": 1,
+    "contactDamage": 1,
+    "fuelValue": 0.16,
+    "score": 100,
+    "actualKillEnemyRewardSamples": [
+      {
+        "reward": true,
+        "before": 0.2,
+        "after": 0.36
+      },
+      {
+        "reward": false,
+        "before": 0.2,
+        "after": 0.2
+      }
+    ],
+    "actualContactNoFuelReward": true,
+    "limitation": "Imported tank visuals bypassed by explicit constructor import stub; tests execute actual Game reward/contact methods with FX/audio/input stubs. No live projectile simulation."
+  },
+  "collection": {
+    "aboveThresholdNotCollected": true,
+    "thresholdCollected": true,
+    "sourceFuelCapVerified": true,
+    "dropAltitudeFloor": 3,
+    "nextUpdateDetached": true,
+    "behind55Detached": true
+  },
+  "ownership": {
+    "instances": 128,
+    "actualGlbParsed": true,
+    "geometryClones": 384,
+    "retainedMaterialClones": 384,
+    "shellShapeSourceGains": [
+      1.15,
+      1.35
+    ],
+    "replacedImportedMaterialsDisposedOnce": 256,
+    "totalMaterialAllocations": 640,
+    "disposedExactlyOnce": true,
+    "neighborUnaffected": true,
+    "templateResourcesRetained": true,
+    "materialsOwnedNeonCacheRetained": true,
+    "haloCacheRetained": true,
+    "templateTexturePolicy": "No asset textures. disposeModel does not dispose textures; existing halo glow remains externally owned.",
+    "limitation": "Recipe tests only: production Pickup.dispose remains detach-only and MUST explicitly gain releaseImportedFuel behavior on integration."
+  },
+  "clearance": {
+    "independent_pose_samples": 1080,
+    "ring_angles_degrees": "0..355 step 5",
+    "shape_wobbles_radians": [
+      -0.08,
+      -0.04,
+      0,
+      0.04,
+      0.08
+    ],
+    "ring_scales": [
+      0.975,
+      1,
+      1.025
+    ],
+    "triangle_overlap_pairs": 0,
+    "minimum_sampled_vertex_to_triangle_distance": 0.3209924101829529,
+    "minimum_sample_pose": {
+      "shell_degrees": 0,
+      "shell_scale": 0.975,
+      "shape_radians": -0.08
+    },
+    "shell_projected_inner_radius_mesh_edges": 1.8959319132111294,
+    "shape_max_radius": 0.8472627929177324,
+    "core_max_radius": 1.6399999856948853,
+    "glyph_backplate_continuous_depth_gap": 0.08500000089406967,
+    "glyph_backplate_gap_proof": "Shape wobble is about game Z and never changes vertex depth; fixed core depth. Strict separated Z slabs cover every wobble, spin and pulse combination.",
+    "continuous_conservative_radial_clearance_lower_bound": 0.2085336296859659,
+    "projected_shell_triangles_containing_origin": 0,
+    "source_timeline_samples": 289,
+    "source_timeline_seconds": [
+      0,
+      24
+    ],
+    "source_timeline_overlap_pairs": 0,
+    "method_limits": "Finite BVH overlap and bidirectional vertex-to-triangle distance do not find every triangle-interior distance minimum. Conservative radial separating-cylinder bound additionally covers all shell spin angles, pulse range and badge wobbles: all projected shell triangles stay outside its inner edge/chord radius; all core/shape triangles are inside their convex vertex radial maximum. Float tolerance, not collision/physics integration proof."
+  },
+  "limitations": {
+    "formal_reviews": 0,
+    "formal_fix_passes": 0,
+    "opus_review_polish": "deferred",
+    "helpers": 0,
+    "claude_retries": 0,
+    "live_integration": false,
+    "live_WebGL_capture": false,
+    "gpu_performance_claim": false,
+    "renders": "Offline Blender reconstructions of actual source rig eye/target/projection/billboard, source geometry, source motion. Halo/additive/postFX/hemisphere/particles/HUD/audio are approximate or not reproduced.",
+    "clearance": "Finite BVH overlap and bidirectional vertex-to-triangle distance do not find every triangle-interior distance minimum. Conservative radial separating-cylinder bound additionally covers all shell spin angles, pulse range and badge wobbles: all projected shell triangles stay outside its inner edge/chord radius; all core/shape triangles are inside their convex vertex radial maximum. Float tolerance, not collision/physics integration proof.",
+    "readability": "Manual implementation inspection only; small/far detail merging is documented, not a universal recognition study.",
+    "charge": "N/A",
+    "detach": "N/A except collected/cull lifecycle removal",
+    "determinism": "Generated geometry/names/materials/transforms and GLB are deterministic. Blender binary session metadata may differ; no byte-identical blend promise."
+  },
+  "deliberate_kit_reuse": "Common frozen spread frame/backplate geometry-generation profile and neutral tint/material language; freshly generated standalone fuel meshes; original drum glyph.",
+  "reference_glb_sha256": {
+    "asset-work/shield-pickup/initial/asset/shield-pickup.glb": "8619ec08a7fce0679408172052a009073e1dcd39356374ab3b2608993981d4ae",
+    "asset-work/spread-pickup/initial/asset/spread-pickup.glb": "01df1ee78e1bbbead7cd7cd58121d571ab5a40f8259e2a4cf0dea2211883256f"
+  },
+  "evidence": {
+    "readability": {
+      "pixel_sizes": [
+        {
+          "mode": "classic",
+          "context": "near",
+          "native_badge_pixel_width": 28.297691345214844
+        },
+        {
+          "mode": "classic",
+          "context": "far",
+          "native_badge_pixel_width": 28.297691345214844
+        },
+        {
+          "mode": "modern",
+          "context": "near",
+          "native_badge_pixel_width": 46.65962219238281
+        },
+        {
+          "mode": "modern",
+          "context": "far",
+          "native_badge_pixel_width": 25.719337463378906
+        },
+        {
+          "mode": "chase",
+          "context": "near",
+          "native_badge_pixel_width": 46.63905143737793
+        },
+        {
+          "mode": "chase",
+          "context": "far",
+          "native_badge_pixel_width": 23.38362693786621
+        }
+      ],
+      "grayscale": "Decode sRGB -> linear Rec709 luminance (.2126,.7152,.0722) -> encode sRGB; no contrast enhancement.",
+      "assessment": "Manual visual inspection required; Drum silhouette and two rolled bands are the primary non-color cues; small/far views require recorded manual assessment, not a text-readability guarantee. Far perspective views are smaller; no claim of text readability or final art approval.",
+      "sampling": "Contact sheets downsample whole frames with nearest-neighbor only for presentation. Native crop files and small-gameplay-readability.png do not resize assets or pixels."
+    },
+    "viewed": {
+      "date": "2026-11-14",
+      "tool": "functions.view_image",
+      "formal_art_review": false,
+      "formal_reviews": 0,
+      "formal_fix_passes": 0,
+      "opus_polish": "deferred",
+      "views": [
+        {
+          "file": "evidence/png/view-front.png",
+          "sha256": "d1c026459938098576eb9b6dd496f2342ff486f32a768a5ff3f46098873d0a82",
+          "coverage": "Direct runtime-gain front view; drum body, two rolled hoops, panel and small cap inspected."
+        },
+        {
+          "file": "evidence/png/contact-sheet.png",
+          "sha256": "05c85440921dd709d260b6521c171661a7f0328e5ae4feb2a40f16ef6d6b7faa",
+          "coverage": "Rest, static front/rear/edge/quarter, combined extremes, source pulse/wobble/spin, and world-scale baseline/player comparison viewed in one contact sheet."
+        },
+        {
+          "file": "evidence/png/spin-endpoints-sheet.png",
+          "sha256": "9014dc40d49f133174d97f79b740f13f6266046f888bc80ad16d843e89d395f4",
+          "coverage": "Independent shell0/90/180/270 degree and .975/1.025 scale and +/- .08 wobble combinations viewed."
+        },
+        {
+          "file": "evidence/png/offline-gameplay-sheet.png",
+          "sha256": "2543c6669229fa0deade6cc1ca1052d5d4b941c8a6a96654b02a1d91858443a9",
+          "coverage": "All six actual-source Classic/Modern/Chase near/far billboard reconstructions viewed. Offline, not live gameplay."
+        },
+        {
+          "file": "evidence/png/small-gameplay-readability.png",
+          "sha256": "e416c91ba7776841e54705c0dda511fafa77419d2e6f6bff41ccd640eead02c6",
+          "coverage": "Native geometric badge widths23.38..46.66px, color and linear Rec709 grayscale crops viewed without internal pixel resizing."
+        },
+        {
+          "file": "evidence/png/contexts-sheet.png",
+          "sha256": "9ebda8530e3ac9241312eec6ae6923cef82e351f136f26914a5c5a8206d63f1a",
+          "coverage": "Drift outside magnet, d11 attraction context, precontact3.8, source contact3.7 and next-update removed context viewed."
+        },
+        {
+          "file": "evidence/png/view-exact-yellow.png",
+          "sha256": "c0100f3a9f7877eddedddf5dc526a631c1414f46c65152956b52fca4d274c4a3",
+          "coverage": "Nominal #ffd76a gain1 diagnostic viewed separately from runtime1.15/1.35 response."
+        },
+        {
+          "file": "evidence/png/grayscale-kind-silhouette-cues.png",
+          "sha256": "c5cd603bd0797a7a7bfb98ba8d2e24066d4070c1897747da33e7165ac0229b16",
+          "coverage": "New drum versus actual-source shield hex, triple spread chevrons, repair cross and danger mine in grayscale viewed; repair reference is source procedural only."
+        },
+        {
+          "file": "evidence/png/kit-reference-comparison.png",
+          "sha256": "55bd7a74eef7e8da21deeab48b4224a5f37e2ab4496c14b8b60a0722cdcf79d7",
+          "coverage": "Fuel plus read-only frozen shield/spread INITIAL imports at shared world scale viewed; no binary reference geometry included in deliverable."
+        },
+        {
+          "file": "evidence/png/action-full-source-spin.png",
+          "sha256": "bf61e9329c0edeb5e4f8ca574e8e7ca2c2a6d62759c7f3810454d8195dec866a",
+          "coverage": "Actual-source one-full-spin phase20.9439510239 seconds with coupled pulse/wobble viewed."
+        }
+      ],
+      "assessment": {
+        "large": "Drum/canister shape and two hoops distinguish it without text or color alone; original compressed source envelope preserved.",
+        "native_small": "At Classic28.30px and perspective near46.64..46.66px badge widths, central body/hoops/panel contrast remain present. At perspective far23.38..25.72px, bands/cap/bevel detail soften or merge; drum silhouette/neutral center panel survive but universal recognition is not claimed.",
+        "kit": "Common ring and slate backplate language is deliberate. Frozen shield/spread symbols remain distinct from the compact source-scale fuel drum.",
+        "limits": "No human recognition study, formal art approval, final live-game rasterization, HDR/postFX equivalence, or unseen-pixel inspection is claimed. Source collection particles/HUD/audio are numerically sampled, not recreated in these stills."
+      }
+    },
+    "packed_reopened": {
+      "linked_libraries": 0,
+      "image_datablocks": 0,
+      "external_images": [],
+      "pack_all_called_by_generator": true,
+      "self_contained": true
+    },
+    "determinism": {
+      "before_sha256": {
+        "fuel-pickup.glb": "152fac271b398f2a44183759b4c4250716a87fc28862221bde6035a84caa912f",
+        "fuel-pickup.blend": "116562cce500041a02fa05cca2f5c338431ff8fff14788972f523f75ecfc315d"
+      },
+      "after_sha256": {
+        "fuel-pickup.glb": "152fac271b398f2a44183759b4c4250716a87fc28862221bde6035a84caa912f",
+        "fuel-pickup.blend": "d1bf8ea29d314e877840ed486e68e464762fc20800d936a15acb18c5ac2ea5ae"
+      },
+      "glb_byte_identical_independent_factory_startup_build": true,
+      "blend_byte_identical": false,
+      "method": "One fresh independent Blender factory-startup rerun of delivered editable generator; complete GLB SHA256 comparison.",
+      "limits": "Demonstrates repeatability on this installed Blender/exporter, not across Blender versions/platforms. Blend session/serialization metadata may differ."
+    },
+    "exact_nominal_color": {
+      "identity_srgb": "#ffd76a",
+      "exact_rgb_pixels_in_nominal_glb_diagnostic": 10620,
+      "source_gain_render": "view-front.png preserves runtime 1.15/1.35 response; not falsely called nominal #ffd76a pixels",
+      "gain_one_is_diagnostic_only": true
+    },
+    "camera_projection_crosscheck": "evidence/camera-projection-crosscheck.json",
+    "binary_inspection": "evidence/glb-independent.json",
+    "source": "evidence/source-contract.json",
+    "source_preservation": "evidence/source-preservation.json"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "type": "initial builder technical evidence inspection, not formal review",
+  "formal_reviews": 0,
+  "formal_review_fix_passes": 0,
+  "status": "pending_deferred_opus_review",
+  "tool": "functions.view_image (actual local PNG files)",
+  "individually_opened": [
+    "01_overview_isometric.png",
+    "03_open_breach_ribs.png",
+    "07_game_Classic.png",
+    "09_game_Chase.png",
+    "12_destroyed_gun_ring.png"
+  ],
+  "all_views_opened_via_contact_sheet": "00_multiview_contact_sheet.png",
+  "observations": [
+    "The 820-unit body reads as one elongated armored hull with a continuous lower keel and distinct tapered bow, singular far bridge and twin engine bells.",
+    "The near flank and upper deck are genuinely missing in the breach; ribs, lower braces, service mains and machinery are visible through the opening.",
+    "Deck panels and flank overlaps have intentional physical gaps and thickness; most broad armor remains deliberately sparse and untextured.",
+    "The same-scale shipped player is visibly much smaller than the landmark and remains readable in the Classic, Modern and Chase evidence frames.",
+    "Low-altitude Modern evidence retains the bridge on the far side rather than across the centered flight lane. This is a static composition check, not a live gameplay claim.",
+    "Engine blue remnants are very dim and recessed; time0/time1.25 cue images do not suggest thrust or an active weapon. The GPU implementation of the original shader was not compiled here.",
+    "The destroyed gun-ring close-up shows a recessed empty well, missing ring sectors and broken upright fragments, without an intact barrel or aiming assembly.",
+    "PNG labels explicitly identify initial/offline EEVEE, approximate source lighting and pending deferred review. Tight gun detail crops the player rather than rescaling it."
+  ],
+  "limitations": [
+    "No live game renderer, active targets, HUD, original sky/fog/bloom, source procedural material textures, collision/targeting simulation or runtime performance capture.",
+    "The sparse broad plates are a deliberate first-best-effort geometry treatment, not polished texture/weathering work.",
+    "Contact-sheet thumbnails are a navigation aid; original labeled full-resolution PNGs remain in evidence/.",
+    "Opus review, formal visual acceptance and any later polish are deferred; this initial tree must remain unchanged."
+  ]
+}

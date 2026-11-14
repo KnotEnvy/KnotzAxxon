@@ -1,0 +1,19 @@
+{
+  "taskId": "node:delegated-task:command%3Amcp%3A5804c46b-c218-4df6-87ce-ee28f95841db%3Adelegate-task%3Aproduction-repo-cleanup-luna-xhigh-20261114-01",
+  "childThreadId": "thread:delegated-task:command%3Amcp%3A5804c46b-c218-4df6-87ce-ee28f95841db%3Adelegate-task%3Aproduction-repo-cleanup-luna-xhigh-20261114-01",
+  "model": "gpt-6-luna",
+  "providerInstanceId": "codex",
+  "options": {
+    "reasoningEffort": "xhigh"
+  },
+  "status": "completed",
+  "scope": "Preserve full verified external originals;curate editable source plus small devlog set. No runtime edits or git mutations.",
+  "retentionManifest": "retention.json",
+  "devlog": "DEVLOG.md",
+  "independentVerification": {
+    "retainedHashes": 924,
+    "archives": 22,
+    "originalContentHashes": 1476,
+    "allPassed": true
+  }
+}

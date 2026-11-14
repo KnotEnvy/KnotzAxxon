@@ -1,0 +1,16 @@
+{
+  "blender_version": "5.2.1 LTS",
+  "build_hash": "9e2066aef7ef",
+  "engine": "BLENDER_EEVEE",
+  "render_threads": 4,
+  "eevee_taa_render_samples": 24,
+  "view_transform": "Standard",
+  "look": "None",
+  "exposure": 0.0,
+  "gamma": 1.0,
+  "png_bits": "8",
+  "gpu_vendor": "Mesa",
+  "gpu_renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+  "gpu_version": "4.5 (Core Profile) Mesa 23.2.1-1ubuntu3.1~22.04.4",
+  "runtime_wrapper": "Native existing Linux Blender/sysroot; LIBGL_ALWAYS_SOFTWARE=1; LP_NUM_THREADS=4; no installation"
+}

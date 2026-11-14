@@ -1,0 +1,78 @@
+{
+  "status": "pending_deferred_opus_review",
+  "formalReviews": 0,
+  "formalReviewFixRounds": 0,
+  "actualImageToolViewsCompleted": true,
+  "tool": "functions.view_image; successful local bitmap observations only",
+  "recordedUtc": "2026-11-14T21:39:24.246642+00:00",
+  "viewedPngs": [
+    {
+      "path": "evidence/renders/clean-glb-import-proof.png",
+      "sha256": "49e564ab93f4dad51158f3ebfb4a3db2c200e812bd4e844be52f968a5c118473"
+    },
+    {
+      "path": "evidence/renders/structure-canvas-and-tiedowns.png",
+      "sha256": "f03a405a5d5000e17db49dabe0251b4c5a57eaa014abca2926af3c13f883a43d"
+    },
+    {
+      "path": "evidence/renders/structure-attached-gear.png",
+      "sha256": "d6dacc22abb921746efd5b958d3f85b1f382da09d866b9b6675cc4f8884548d3"
+    },
+    {
+      "path": "evidence/renders/shipped-selected-craft-reference-board.png",
+      "sha256": "4da7277612d516c84bb8a150019fdf1e69e06b3de95d073cba6c8879addb44ae"
+    },
+    {
+      "path": "evidence/renders/world-modern-candidate-centerlane.png",
+      "sha256": "de2f041c3fa17bf17d28e7a7a9f17e7371c42a736d88331cd7e29225177f0758"
+    },
+    {
+      "path": "evidence/renders/world-chase-candidate-centerlane.png",
+      "sha256": "a3db82e0e1017450a91a297de9315b6a37d697ae75cad155e319ae1ccc7188be"
+    },
+    {
+      "path": "evidence/sheets/multiview.png",
+      "sha256": "64bf67cdc313efa9f543b6818653369f1d7aacd865642c291f1c3f72dea3a557"
+    },
+    {
+      "path": "evidence/sheets/structure.png",
+      "sha256": "84ea57372bb0a9e6dad26ebd10ad998a1cba0a27e49fd3e450d19b4599f2f527"
+    },
+    {
+      "path": "evidence/sheets/full-yaw.png",
+      "sha256": "12519ee97e0cc3ca77cc690549b5623a5fbd9bed7e46132957e6c02623aae535"
+    },
+    {
+      "path": "evidence/sheets/world-classic.png",
+      "sha256": "a285605665c5b8d478b0bb4d7b49822be0d9bae281747ef3c3662871b769bd22"
+    },
+    {
+      "path": "evidence/sheets/world-modern.png",
+      "sha256": "72ee115b9fd3244e62c591b99ebcf80392dd226fa4170eff9781c3b953cc37b6"
+    },
+    {
+      "path": "evidence/sheets/world-chase.png",
+      "sha256": "be915893d46ab294e139805303bf2e369f167a42139ca8e664503fa34c5b129f"
+    },
+    {
+      "path": "evidence/sheets/world-classic-centerlane.png",
+      "sha256": "51a838a06142d30e9d230e7a63507faf65c8b6338ff5f3bbc902b16bdd572426"
+    },
+    {
+      "path": "evidence/sheets/world-modern-centerlane.png",
+      "sha256": "ad3e15351500c952f723e0057991c523db93160006771ec8e73d4bc7fe790ab9"
+    },
+    {
+      "path": "evidence/sheets/world-chase-centerlane.png",
+      "sha256": "833e5426a7bb695211ede33378e73618ea32b343a5c9454b3935e14bd7c74a80"
+    },
+    {
+      "path": "evidence/sheets/world-modern-centerlane-detail-4x.png",
+      "sha256": "22f98e2d1352361b37c14b31a636a282a53bd17a1cac4d037d88dbc215f8c468"
+    }
+  ],
+  "rawRenderedPngs": 28,
+  "sheetPngs": 15,
+  "liveGpuAcceptance": false,
+  "notes": "visual-inspection.md"
+}

@@ -1,0 +1,1098 @@
+{
+  "method": "Actual source Batch/Level/Rng/Fortress._buildChunk, real BufferGeometry and actual disposal events. CPU materials are doubles; source hull map ownership tested with placeholder Texture, not procedural canvas texture fidelity. Full airfield chunks, not just isolated _deckProps. No renderer/GPU/FPS.",
+  "results": [
+    {
+      "seed": 1,
+      "isolated": {
+        "triangles": 992,
+        "buckets": {
+          "hull": 384,
+          "dark": 608
+        },
+        "bounds": [
+          [
+            -2.9200000762939453,
+            0,
+            -4
+          ],
+          [
+            2.9200000762939453,
+            3.0999999046325684,
+            4
+          ]
+        ]
+      },
+      "methodRngDraws": 0,
+      "surfacesExact": true
+    },
+    {
+      "seed": 7,
+      "isolated": {
+        "triangles": 992,
+        "buckets": {
+          "hull": 384,
+          "dark": 608
+        },
+        "bounds": [
+          [
+            -2.9200000762939453,
+            0,
+            -4
+          ],
+          [
+            2.9200000762939453,
+            3.0999999046325684,
+            4
+          ]
+        ]
+      },
+      "methodRngDraws": 0,
+      "surfacesExact": true
+    },
+    {
+      "seed": 42,
+      "isolated": {
+        "triangles": 992,
+        "buckets": {
+          "hull": 384,
+          "dark": 608
+        },
+        "bounds": [
+          [
+            -2.9200000762939453,
+            0,
+            -4
+          ],
+          [
+            2.9200000762939453,
+            3.0999999046325684,
+            4
+          ]
+        ]
+      },
+      "methodRngDraws": 0,
+      "surfacesExact": true
+    },
+    {
+      "seed": 123,
+      "isolated": {
+        "triangles": 992,
+        "buckets": {
+          "hull": 384,
+          "dark": 608
+        },
+        "bounds": [
+          [
+            -2.9200000762939453,
+            0,
+            -4
+          ],
+          [
+            2.9200000762939453,
+            3.0999999046325684,
+            4
+          ]
+        ]
+      },
+      "methodRngDraws": 0,
+      "surfacesExact": true
+    }
+  ],
+  "chunks": [
+    {
+      "seed": 1,
+      "index": 0,
+      "calls": [
+        {
+          "x": 23.597259795293212,
+          "z": 74.6069746306166,
+          "stateBefore": 665471668,
+          "stateAfter": 665471668
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 1,
+      "calls": [
+        {
+          "x": 19.90528529835865,
+          "z": 149.69233179464936,
+          "stateBefore": 3504154720,
+          "stateAfter": 3504154720
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 2,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 3,
+      "calls": [
+        {
+          "x": 20.971988333039917,
+          "z": 320.6750964941457,
+          "stateBefore": 3325905103,
+          "stateAfter": 3325905103
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 4,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 5,
+      "calls": [
+        {
+          "x": 22.041011031134985,
+          "z": 494.75867659412324,
+          "stateBefore": 3452208871,
+          "stateAfter": 3452208871
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 6,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 7,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 8,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 9,
+      "calls": [
+        {
+          "x": 22.342909728060476,
+          "z": 891.2584549849853,
+          "stateBefore": 2384780170,
+          "stateAfter": 2384780170
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 10,
+      "calls": [
+        {
+          "x": 19.962587843067013,
+          "z": 970.135749951005,
+          "stateBefore": 2256108463,
+          "stateAfter": 2256108463
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 11,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 12,
+      "calls": [
+        {
+          "x": 23.209616941516288,
+          "z": 1214.2924477476627,
+          "stateBefore": 3405471383,
+          "stateAfter": 3405471383
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 13,
+      "calls": [
+        {
+          "x": 21.411510080681182,
+          "z": 1262.8460835590959,
+          "stateBefore": 2197375627,
+          "stateAfter": 2197375627
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 14,
+      "calls": [
+        {
+          "x": 22.25107587024104,
+          "z": 1388.2059800121933,
+          "stateBefore": 2140221417,
+          "stateAfter": 2140221417
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 1,
+      "index": 15,
+      "calls": [
+        {
+          "x": 21.589215529616922,
+          "z": 1482.5887686349452,
+          "stateBefore": 2515502986,
+          "stateAfter": 2515502986
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 0,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 1,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 2,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 3,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 4,
+      "calls": [
+        {
+          "x": 23.472028382588178,
+          "z": 466.06166137196124,
+          "stateBefore": 3885433969,
+          "stateAfter": 3885433969
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 5,
+      "calls": [
+        {
+          "x": 21.926402247394435,
+          "z": 551.1042502447963,
+          "stateBefore": 1428819473,
+          "stateAfter": 1428819473
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 6,
+      "calls": [
+        {
+          "x": 21.917705672909506,
+          "z": 659.5185883250087,
+          "stateBefore": 1555912554,
+          "stateAfter": 1555912554
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 7,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 8,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 9,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 10,
+      "calls": [
+        {
+          "x": 20.339997132774442,
+          "z": 983.985340397805,
+          "stateBefore": 240295365,
+          "stateAfter": 240295365
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 11,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 12,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 13,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 14,
+      "calls": [
+        {
+          "x": 21.941059985314496,
+          "z": 1395.8959180247039,
+          "stateBefore": 940491280,
+          "stateAfter": 940491280
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 7,
+      "index": 15,
+      "calls": [
+        {
+          "x": 22.692083727219142,
+          "z": 1461.222642140463,
+          "stateBefore": 4034939120,
+          "stateAfter": 4034939120
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 0,
+      "calls": [
+        {
+          "x": 20.75429578498006,
+          "z": 29.769880801439285,
+          "stateBefore": 3369485380,
+          "stateAfter": 3369485380
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 1,
+      "calls": [
+        {
+          "x": 22.029015382518992,
+          "z": 160.26060019340366,
+          "stateBefore": 4072049234,
+          "stateAfter": 4072049234
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 2,
+      "calls": [
+        {
+          "x": 20.050884803873487,
+          "z": 238.73465948179364,
+          "stateBefore": 3183659463,
+          "stateAfter": 3183659463
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 3,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 4,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 5,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 6,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 7,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 8,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 9,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 10,
+      "calls": [
+        {
+          "x": 22.892024541157298,
+          "z": 1014.4826445421204,
+          "stateBefore": 3647662238,
+          "stateAfter": 3647662238
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 11,
+      "calls": [
+        {
+          "x": 21.761534521356225,
+          "z": 1126.4169172905385,
+          "stateBefore": 2063495600,
+          "stateAfter": 2063495600
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 12,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 13,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 14,
+      "calls": [
+        {
+          "x": 22.98012550896965,
+          "z": 1402.7723618391901,
+          "stateBefore": 677150227,
+          "stateAfter": 677150227
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 42,
+      "index": 15,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 0,
+      "calls": [
+        {
+          "x": 19.912957845255733,
+          "z": 21.437542845495045,
+          "stateBefore": 353342105,
+          "stateAfter": 353342105
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 1,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 2,
+      "calls": [
+        {
+          "x": 21.73135510494467,
+          "z": 227.9460284402594,
+          "stateBefore": 95998691,
+          "stateAfter": 95998691
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 3,
+      "calls": [
+        {
+          "x": 20.149755910621025,
+          "z": 304.8200176227838,
+          "stateBefore": 1118268530,
+          "stateAfter": 1118268530
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 4,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 5,
+      "calls": [
+        {
+          "x": 23.296548632788472,
+          "z": 525.0235481774434,
+          "stateBefore": 3196444205,
+          "stateAfter": 3196444205
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 6,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 7,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 8,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 9,
+      "calls": [
+        {
+          "x": 20.39601086557377,
+          "z": 940.7349288482219,
+          "stateBefore": 1057167755,
+          "stateAfter": 1057167755
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 10,
+      "calls": [
+        {
+          "x": 21.61426141904667,
+          "z": 988.9021932361647,
+          "stateBefore": 3079767846,
+          "stateAfter": 3079767846
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 11,
+      "calls": [
+        {
+          "x": 23.18528136285022,
+          "z": 1088.2167628919706,
+          "stateBefore": 2063495681,
+          "stateAfter": 2063495681
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 12,
+      "calls": [],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 13,
+      "calls": [
+        {
+          "x": 19.744598485529423,
+          "z": 1317.6457534506917,
+          "stateBefore": 3333164695,
+          "stateAfter": 3333164695
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 14,
+      "calls": [
+        {
+          "x": 23.711644077091478,
+          "z": 1399.113850847818,
+          "stateBefore": 492903017,
+          "stateAfter": 492903017
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    },
+    {
+      "seed": 123,
+      "index": 15,
+      "calls": [
+        {
+          "x": 21.168637562077492,
+          "z": 1471.332670650445,
+          "stateBefore": 2579444305,
+          "stateAfter": 2579444305
+        }
+      ],
+      "exactPrefixDownstreamBuffers": true,
+      "exactSurfaces": true,
+      "exactEmittersAndPhase": true
+    }
+  ],
+  "envelopeProbes": [
+    {
+      "x": 19.5,
+      "z": 10,
+      "sourceBounds": [
+        [
+          16.579999923706055,
+          0,
+          6
+        ],
+        [
+          22.420000076293945,
+          3.0999999046325684,
+          14
+        ]
+      ],
+      "candidateBounds": [
+        [
+          16.579999923706055,
+          0,
+          6
+        ],
+        [
+          22.420000076293945,
+          3.0999999046325684,
+          14
+        ]
+      ],
+      "containedWithTolerance": 0.000001
+    },
+    {
+      "x": 19.5,
+      "z": 86,
+      "sourceBounds": [
+        [
+          16.579999923706055,
+          0,
+          82
+        ],
+        [
+          22.420000076293945,
+          3.0999999046325684,
+          90
+        ]
+      ],
+      "candidateBounds": [
+        [
+          16.579999923706055,
+          0,
+          82
+        ],
+        [
+          22.420000076293945,
+          3.0999999046325684,
+          90
+        ]
+      ],
+      "containedWithTolerance": 0.000001
+    },
+    {
+      "x": 19.5,
+      "z": 1450,
+      "sourceBounds": [
+        [
+          16.579999923706055,
+          0,
+          1446
+        ],
+        [
+          22.420000076293945,
+          3.0999999046325684,
+          1454
+        ]
+      ],
+      "candidateBounds": [
+        [
+          16.579999923706055,
+          0,
+          1446
+        ],
+        [
+          22.420000076293945,
+          3.0999999046325684,
+          1454
+        ]
+      ],
+      "containedWithTolerance": 0.000001
+    },
+    {
+      "x": 19.5,
+      "z": 1526,
+      "sourceBounds": [
+        [
+          16.579999923706055,
+          0,
+          1522
+        ],
+        [
+          22.420000076293945,
+          3.0999999046325684,
+          1530
+        ]
+      ],
+      "candidateBounds": [
+        [
+          16.579999923706055,
+          0,
+          1522
+        ],
+        [
+          22.420000076293945,
+          3.0999999046325684,
+          1530
+        ]
+      ],
+      "containedWithTolerance": 0.000001
+    },
+    {
+      "x": 24,
+      "z": 10,
+      "sourceBounds": [
+        [
+          21.079999923706055,
+          0,
+          6
+        ],
+        [
+          26.920000076293945,
+          3.0999999046325684,
+          14
+        ]
+      ],
+      "candidateBounds": [
+        [
+          21.079999923706055,
+          0,
+          6
+        ],
+        [
+          26.920000076293945,
+          3.0999999046325684,
+          14
+        ]
+      ],
+      "containedWithTolerance": 0.000001
+    },
+    {
+      "x": 24,
+      "z": 86,
+      "sourceBounds": [
+        [
+          21.079999923706055,
+          0,
+          82
+        ],
+        [
+          26.920000076293945,
+          3.0999999046325684,
+          90
+        ]
+      ],
+      "candidateBounds": [
+        [
+          21.079999923706055,
+          0,
+          82
+        ],
+        [
+          26.920000076293945,
+          3.0999999046325684,
+          90
+        ]
+      ],
+      "containedWithTolerance": 0.000001
+    },
+    {
+      "x": 24,
+      "z": 1450,
+      "sourceBounds": [
+        [
+          21.079999923706055,
+          0,
+          1446
+        ],
+        [
+          26.920000076293945,
+          3.0999999046325684,
+          1454
+        ]
+      ],
+      "candidateBounds": [
+        [
+          21.079999923706055,
+          0,
+          1446
+        ],
+        [
+          26.920000076293945,
+          3.0999999046325684,
+          1454
+        ]
+      ],
+      "containedWithTolerance": 0.000001
+    },
+    {
+      "x": 24,
+      "z": 1526,
+      "sourceBounds": [
+        [
+          21.079999923706055,
+          0,
+          1522
+        ],
+        [
+          26.920000076293945,
+          3.0999999046325684,
+          1530
+        ]
+      ],
+      "candidateBounds": [
+        [
+          21.079999923706055,
+          0,
+          1522
+        ],
+        [
+          26.920000076293945,
+          3.0999999046325684,
+          1530
+        ]
+      ],
+      "containedWithTolerance": 0.000001
+    }
+  ],
+  "lifecycle": {
+    "chunkGeometryDisposals": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "templateDisposals": [
+      1,
+      1
+    ],
+    "materialDisposals": 0,
+    "textureDisposals": 0
+  },
+  "passed": true,
+  "formalReviews": 0,
+  "formalReviewFixRounds": 0
+}

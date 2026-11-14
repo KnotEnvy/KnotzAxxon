@@ -1,0 +1,55 @@
+{
+  "type": "Implementation technical visual inspection, NOT formal review or art acceptance",
+  "opened_with_view_image": [
+    {
+      "file": "view-front.png",
+      "sha256": "4294c56c13b35c1374b9a8263602d05520d4b2af9727ff71c8a76875752e11b2"
+    },
+    {
+      "file": "contact-sheet.png",
+      "sha256": "3a9e1182fb0340d592a369d733dc5f2346964fb3034ccc90ae5207b2a1a84672"
+    },
+    {
+      "file": "offline-gameplay-sheet.png",
+      "sha256": "0332892723698ac4473305f03d1d9ce38dec596b25d1fbee8fcefe9f59faa9ac"
+    },
+    {
+      "file": "small-gameplay-readability.png",
+      "sha256": "db7a4e174927ce00904abcd68c9f32939e9f75ac7f2215ddc076de7c3b9cb3d4"
+    },
+    {
+      "file": "grayscale-kind-silhouette-cues.png",
+      "sha256": "002d3d8595ce3a5ef863bc80c332875a61b965c0527d8bc81daf6c147f9d2b91"
+    },
+    {
+      "file": "contexts-sheet.png",
+      "sha256": "d35ad3c1940355d6550d9418f75df3030b49c8327485cbe9208ef9604b8117e7"
+    },
+    {
+      "file": "view-exact-amber.png",
+      "sha256": "c1eeae4fbfea1f147c1a64f05ee162e6054e39b589645d31e5ababe75d19b8a5"
+    },
+    {
+      "file": "spin-endpoints-sheet.png",
+      "sha256": "328a43597eff0bfd7f96d2e3b7fcfd58d7de286a3706c53c47c1abbf378ef6f8"
+    },
+    {
+      "file": "kit-reference-comparison.png",
+      "sha256": "fecd56b1837d52a8d3aedb96af9cdb0ac8faae5604e3672392cf2deb7b6445c8"
+    },
+    {
+      "file": "grayscale-exact-amber.png",
+      "sha256": "fc52f700df2c5230bf57f13eca14748d72d25af64ec69e3388d96de5c09bd1b9"
+    }
+  ],
+  "observations": [
+    "Broad three-chevron motif remains distinct in Rec709 grayscale from hex/cross/drum/spiked mine.",
+    "Original world scale retained; Classic near/far28.3px, perspective far23.4..25.7px; fine bevel detail secondary.",
+    "Full-spin endpoint frames show continuous visible shell clearance with full source pulse/wobble.",
+    "Kit comparison is explicitly labeled new spread vs read-only delivered shield; shared language reuse is declared."
+  ],
+  "limitations": [
+    "Manual inspection is not formal acceptance or live Three/WebGL gameplay proof.",
+    "Final PNGs shown in sheets are source-sized images; some sheets downsample whole frames, native crop sheet does not resize."
+  ]
+}

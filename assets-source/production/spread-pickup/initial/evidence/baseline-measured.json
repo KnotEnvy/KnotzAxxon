@@ -1,0 +1,21 @@
+{
+  "triangles": 540,
+  "objects": {
+    "baseline_core": 24,
+    "baseline_shape": 132,
+    "baseline_shell": 384
+  },
+  "bounds_game": {
+    "min": [
+      -2.0450000762939453,
+      -2.0450000762939453,
+      -0.3799999952316284
+    ],
+    "max": [
+      2.0450000762939453,
+      2.0450000762939453,
+      0.2549999952316284
+    ]
+  },
+  "method": "Actual saved Pickup spread constructor executed with Three.js 0.185.1; exact vertex/index arrays reconstructed in Blender; no fabricated ring approximation."
+}

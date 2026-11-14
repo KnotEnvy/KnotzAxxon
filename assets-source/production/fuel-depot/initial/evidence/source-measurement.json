@@ -1,0 +1,1462 @@
+{
+  "method": "Unmodified real Batch, Fortress methods, Level and Rng. Execute original deck/trench/wallDressing prefix then original deckProps on each airfield chunk. Emit CPU stub preserves the original phase rng.next draw. No rendering or GPU performance measured.",
+  "sourceCommit": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "sourceHashes": {
+    "src/world/Fortress.js": "824a3d8d9e64bf775e5a486e52c29bef8ce94daebfa138bd4ab2067121790165",
+    "src/world/Level.js": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016",
+    "src/core/Utils.js": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972",
+    "src/core/Settings.js": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+    "src/game/CameraRig.js": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205",
+    "src/core/FlightCamera.js": "f691b3cef8a36de611762cb3129571f0684457e607be141dc1b5158401f4506e",
+    "src/render/Materials.js": "8af35e4641253713d8d8d1770edebb3dd0bff77bf5caee4eaba7f0db58aebd52",
+    "src/render/Textures.js": "c94160c1d3980da63fc7822b88d049b2adccb5ea301e1705b8a1b48ae9dc8c05",
+    "src/render/Sky.js": "12314912081437f6c646031ee8d14b62753755b890ca104ae48f7f3083801ed5",
+    "src/render/ImportedModels.js": "212b8c8f4f438ae70b408e2ff218524850e3cf6b027e63961a813e58d6d42773",
+    "src/entities/Player.js": "70d34d33ca9e81a4c27f8a37d94ab6089d7e4c97cf4df2a6772bd24277aabe5b"
+  },
+  "isolated": [
+    {
+      "seed": 1,
+      "stateBefore": 1,
+      "stateAfter": 1,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          -2.9200000762939453,
+          0,
+          -4
+        ],
+        [
+          2.9200000762939453,
+          3.0999999046325684,
+          4
+        ]
+      ],
+      "surfaces": [
+        {
+          "minX": -2.7,
+          "maxX": -0.5,
+          "minZ": -2.9,
+          "maxZ": -2.3000000000000003,
+          "top": 0.9
+        },
+        {
+          "minX": -2.7,
+          "maxX": -0.5,
+          "minZ": 2.3000000000000003,
+          "maxZ": 2.9,
+          "top": 0.9
+        },
+        {
+          "minX": 0.5,
+          "maxX": 2.7,
+          "minZ": -2.9,
+          "maxZ": -2.3000000000000003,
+          "top": 0.9
+        },
+        {
+          "minX": 0.5,
+          "maxX": 2.7,
+          "minZ": 2.3000000000000003,
+          "maxZ": 2.9,
+          "top": 0.9
+        }
+      ]
+    },
+    {
+      "seed": 7,
+      "stateBefore": 7,
+      "stateAfter": 7,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          -2.9200000762939453,
+          0,
+          -4
+        ],
+        [
+          2.9200000762939453,
+          3.0999999046325684,
+          4
+        ]
+      ],
+      "surfaces": [
+        {
+          "minX": -2.7,
+          "maxX": -0.5,
+          "minZ": -2.9,
+          "maxZ": -2.3000000000000003,
+          "top": 0.9
+        },
+        {
+          "minX": -2.7,
+          "maxX": -0.5,
+          "minZ": 2.3000000000000003,
+          "maxZ": 2.9,
+          "top": 0.9
+        },
+        {
+          "minX": 0.5,
+          "maxX": 2.7,
+          "minZ": -2.9,
+          "maxZ": -2.3000000000000003,
+          "top": 0.9
+        },
+        {
+          "minX": 0.5,
+          "maxX": 2.7,
+          "minZ": 2.3000000000000003,
+          "maxZ": 2.9,
+          "top": 0.9
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "stateBefore": 42,
+      "stateAfter": 42,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          -2.9200000762939453,
+          0,
+          -4
+        ],
+        [
+          2.9200000762939453,
+          3.0999999046325684,
+          4
+        ]
+      ],
+      "surfaces": [
+        {
+          "minX": -2.7,
+          "maxX": -0.5,
+          "minZ": -2.9,
+          "maxZ": -2.3000000000000003,
+          "top": 0.9
+        },
+        {
+          "minX": -2.7,
+          "maxX": -0.5,
+          "minZ": 2.3000000000000003,
+          "maxZ": 2.9,
+          "top": 0.9
+        },
+        {
+          "minX": 0.5,
+          "maxX": 2.7,
+          "minZ": -2.9,
+          "maxZ": -2.3000000000000003,
+          "top": 0.9
+        },
+        {
+          "minX": 0.5,
+          "maxX": 2.7,
+          "minZ": 2.3000000000000003,
+          "maxZ": 2.9,
+          "top": 0.9
+        }
+      ]
+    },
+    {
+      "seed": 123,
+      "stateBefore": 123,
+      "stateAfter": 123,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          -2.9200000762939453,
+          0,
+          -4
+        ],
+        [
+          2.9200000762939453,
+          3.0999999046325684,
+          4
+        ]
+      ],
+      "surfaces": [
+        {
+          "minX": -2.7,
+          "maxX": -0.5,
+          "minZ": -2.9,
+          "maxZ": -2.3000000000000003,
+          "top": 0.9
+        },
+        {
+          "minX": -2.7,
+          "maxX": -0.5,
+          "minZ": 2.3000000000000003,
+          "maxZ": 2.9,
+          "top": 0.9
+        },
+        {
+          "minX": 0.5,
+          "maxX": 2.7,
+          "minZ": -2.9,
+          "maxZ": -2.3000000000000003,
+          "top": 0.9
+        },
+        {
+          "minX": 0.5,
+          "maxX": 2.7,
+          "minZ": 2.3000000000000003,
+          "maxZ": 2.9,
+          "top": 0.9
+        }
+      ]
+    }
+  ],
+  "chunks": [
+    {
+      "seed": 1,
+      "index": 0,
+      "count": 1,
+      "stateAfterDeckProps": 2497037481
+    },
+    {
+      "seed": 1,
+      "index": 1,
+      "count": 1,
+      "stateAfterDeckProps": 2240483380
+    },
+    {
+      "seed": 1,
+      "index": 2,
+      "count": 0,
+      "stateAfterDeckProps": 1167846318
+    },
+    {
+      "seed": 1,
+      "index": 3,
+      "count": 1,
+      "stateAfterDeckProps": 862503620
+    },
+    {
+      "seed": 1,
+      "index": 4,
+      "count": 0,
+      "stateAfterDeckProps": 3325115790
+    },
+    {
+      "seed": 1,
+      "index": 5,
+      "count": 1,
+      "stateAfterDeckProps": 2188537531
+    },
+    {
+      "seed": 1,
+      "index": 6,
+      "count": 0,
+      "stateAfterDeckProps": 1740159839
+    },
+    {
+      "seed": 1,
+      "index": 7,
+      "count": 0,
+      "stateAfterDeckProps": 3954583521
+    },
+    {
+      "seed": 1,
+      "index": 8,
+      "count": 0,
+      "stateAfterDeckProps": 3321958538
+    },
+    {
+      "seed": 1,
+      "index": 9,
+      "count": 1,
+      "stateAfterDeckProps": 4216345983
+    },
+    {
+      "seed": 1,
+      "index": 10,
+      "count": 1,
+      "stateAfterDeckProps": 992437123
+    },
+    {
+      "seed": 1,
+      "index": 11,
+      "count": 0,
+      "stateAfterDeckProps": 1055589007
+    },
+    {
+      "seed": 1,
+      "index": 12,
+      "count": 1,
+      "stateAfterDeckProps": 942069900
+    },
+    {
+      "seed": 1,
+      "index": 13,
+      "count": 1,
+      "stateAfterDeckProps": 933704287
+    },
+    {
+      "seed": 1,
+      "index": 14,
+      "count": 1,
+      "stateAfterDeckProps": 876550077
+    },
+    {
+      "seed": 1,
+      "index": 15,
+      "count": 1,
+      "stateAfterDeckProps": 1251831646
+    },
+    {
+      "seed": 7,
+      "index": 0,
+      "count": 0,
+      "stateAfterDeckProps": 1033966256
+    },
+    {
+      "seed": 7,
+      "index": 1,
+      "count": 0,
+      "stateAfterDeckProps": 3887801908
+    },
+    {
+      "seed": 7,
+      "index": 2,
+      "count": 0,
+      "stateAfterDeckProps": 3887012595
+    },
+    {
+      "seed": 7,
+      "index": 3,
+      "count": 0,
+      "stateAfterDeckProps": 1238574508
+    },
+    {
+      "seed": 7,
+      "index": 4,
+      "count": 1,
+      "stateAfterDeckProps": 1422032486
+    },
+    {
+      "seed": 7,
+      "index": 5,
+      "count": 1,
+      "stateAfterDeckProps": 3260385286
+    },
+    {
+      "seed": 7,
+      "index": 6,
+      "count": 1,
+      "stateAfterDeckProps": 3387478367
+    },
+    {
+      "seed": 7,
+      "index": 7,
+      "count": 0,
+      "stateAfterDeckProps": 915711271
+    },
+    {
+      "seed": 7,
+      "index": 8,
+      "count": 0,
+      "stateAfterDeckProps": 610368573
+    },
+    {
+      "seed": 7,
+      "index": 9,
+      "count": 0,
+      "stateAfterDeckProps": 2192956585
+    },
+    {
+      "seed": 7,
+      "index": 10,
+      "count": 1,
+      "stateAfterDeckProps": 3271591321
+    },
+    {
+      "seed": 7,
+      "index": 11,
+      "count": 0,
+      "stateAfterDeckProps": 3462625599
+    },
+    {
+      "seed": 7,
+      "index": 12,
+      "count": 0,
+      "stateAfterDeckProps": 2837576916
+    },
+    {
+      "seed": 7,
+      "index": 13,
+      "count": 0,
+      "stateAfterDeckProps": 1189469081
+    },
+    {
+      "seed": 7,
+      "index": 14,
+      "count": 1,
+      "stateAfterDeckProps": 2772057093
+    },
+    {
+      "seed": 7,
+      "index": 15,
+      "count": 1,
+      "stateAfterDeckProps": 2771267780
+    },
+    {
+      "seed": 42,
+      "index": 0,
+      "count": 1,
+      "stateAfterDeckProps": 906083897
+    },
+    {
+      "seed": 42,
+      "index": 1,
+      "count": 1,
+      "stateAfterDeckProps": 2808377894
+    },
+    {
+      "seed": 42,
+      "index": 2,
+      "count": 1,
+      "stateAfterDeckProps": 720257980
+    },
+    {
+      "seed": 42,
+      "index": 3,
+      "count": 0,
+      "stateAfterDeckProps": 727044967
+    },
+    {
+      "seed": 42,
+      "index": 4,
+      "count": 0,
+      "stateAfterDeckProps": 3317539531
+    },
+    {
+      "seed": 42,
+      "index": 5,
+      "count": 0,
+      "stateAfterDeckProps": 101206971
+    },
+    {
+      "seed": 42,
+      "index": 6,
+      "count": 0,
+      "stateAfterDeckProps": 3962949175
+    },
+    {
+      "seed": 42,
+      "index": 7,
+      "count": 0,
+      "stateAfterDeckProps": 994805103
+    },
+    {
+      "seed": 42,
+      "index": 8,
+      "count": 0,
+      "stateAfterDeckProps": 234297726
+    },
+    {
+      "seed": 42,
+      "index": 9,
+      "count": 0,
+      "stateAfterDeckProps": 1865674335
+    },
+    {
+      "seed": 42,
+      "index": 10,
+      "count": 1,
+      "stateAfterDeckProps": 1184260755
+    },
+    {
+      "seed": 42,
+      "index": 11,
+      "count": 1,
+      "stateAfterDeckProps": 3895061413
+    },
+    {
+      "seed": 42,
+      "index": 12,
+      "count": 0,
+      "stateAfterDeckProps": 1502388114
+    },
+    {
+      "seed": 42,
+      "index": 13,
+      "count": 0,
+      "stateAfterDeckProps": 110045067
+    },
+    {
+      "seed": 42,
+      "index": 14,
+      "count": 1,
+      "stateAfterDeckProps": 2508716040
+    },
+    {
+      "seed": 42,
+      "index": 15,
+      "count": 0,
+      "stateAfterDeckProps": 932125702
+    },
+    {
+      "seed": 123,
+      "index": 0,
+      "count": 1,
+      "stateAfterDeckProps": 2184907918
+    },
+    {
+      "seed": 123,
+      "index": 1,
+      "count": 0,
+      "stateAfterDeckProps": 2815954275
+    },
+    {
+      "seed": 123,
+      "index": 2,
+      "count": 1,
+      "stateAfterDeckProps": 1927564504
+    },
+    {
+      "seed": 123,
+      "index": 3,
+      "count": 1,
+      "stateAfterDeckProps": 4149564486
+    },
+    {
+      "seed": 123,
+      "index": 4,
+      "count": 0,
+      "stateAfterDeckProps": 229878759
+    },
+    {
+      "seed": 123,
+      "index": 5,
+      "count": 1,
+      "stateAfterDeckProps": 733042722
+    },
+    {
+      "seed": 123,
+      "index": 6,
+      "count": 0,
+      "stateAfterDeckProps": 4083255350
+    },
+    {
+      "seed": 123,
+      "index": 7,
+      "count": 0,
+      "stateAfterDeckProps": 1626640854
+    },
+    {
+      "seed": 123,
+      "index": 8,
+      "count": 0,
+      "stateAfterDeckProps": 1618275241
+    },
+    {
+      "seed": 123,
+      "index": 9,
+      "count": 1,
+      "stateAfterDeckProps": 4088463711
+    },
+    {
+      "seed": 123,
+      "index": 10,
+      "count": 1,
+      "stateAfterDeckProps": 1816096506
+    },
+    {
+      "seed": 123,
+      "index": 11,
+      "count": 1,
+      "stateAfterDeckProps": 799824341
+    },
+    {
+      "seed": 123,
+      "index": 12,
+      "count": 0,
+      "stateAfterDeckProps": 246293155
+    },
+    {
+      "seed": 123,
+      "index": 13,
+      "count": 1,
+      "stateAfterDeckProps": 869763212
+    },
+    {
+      "seed": 123,
+      "index": 14,
+      "count": 1,
+      "stateAfterDeckProps": 2324468830
+    },
+    {
+      "seed": 123,
+      "index": 15,
+      "count": 1,
+      "stateAfterDeckProps": 116042822
+    }
+  ],
+  "placements": [
+    {
+      "seed": 1,
+      "chunk": 0,
+      "x": 23.597259795293212,
+      "z": 74.6069746306166,
+      "stateBefore": 665471668,
+      "stateAfter": 665471668,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          20.67725944519043,
+          0,
+          70.60697174072266
+        ],
+        [
+          26.51725959777832,
+          3.0999999046325684,
+          78.60697174072266
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "chunk": 1,
+      "x": 19.90528529835865,
+      "z": 149.69233179464936,
+      "stateBefore": 3504154720,
+      "stateAfter": 3504154720,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          16.98528480529785,
+          0,
+          145.6923370361328
+        ],
+        [
+          22.825284957885742,
+          3.0999999046325684,
+          153.6923370361328
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "chunk": 3,
+      "x": 20.971988333039917,
+      "z": 320.6750964941457,
+      "stateBefore": 3325905103,
+      "stateAfter": 3325905103,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          18.05198860168457,
+          0,
+          316.67510986328125
+        ],
+        [
+          23.89198875427246,
+          3.0999999046325684,
+          324.67510986328125
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "chunk": 5,
+      "x": 22.041011031134985,
+      "z": 494.75867659412324,
+      "stateBefore": 3452208871,
+      "stateAfter": 3452208871,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          19.12101173400879,
+          0,
+          490.7586669921875
+        ],
+        [
+          24.96101188659668,
+          3.0999999046325684,
+          498.7586669921875
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "chunk": 9,
+      "x": 22.342909728060476,
+      "z": 891.2584549849853,
+      "stateBefore": 2384780170,
+      "stateAfter": 2384780170,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          19.422908782958984,
+          0,
+          887.2584838867188
+        ],
+        [
+          25.262908935546875,
+          3.0999999046325684,
+          895.2584838867188
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "chunk": 10,
+      "x": 19.962587843067013,
+      "z": 970.135749951005,
+      "stateBefore": 2256108463,
+      "stateAfter": 2256108463,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          17.042587280273438,
+          0,
+          966.1357421875
+        ],
+        [
+          22.882587432861328,
+          3.0999999046325684,
+          974.1357421875
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "chunk": 12,
+      "x": 23.209616941516288,
+      "z": 1214.2924477476627,
+      "stateBefore": 3405471383,
+      "stateAfter": 3405471383,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          20.28961753845215,
+          0,
+          1210.29248046875
+        ],
+        [
+          26.12961769104004,
+          3.0999999046325684,
+          1218.29248046875
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "chunk": 13,
+      "x": 21.411510080681182,
+      "z": 1262.8460835590959,
+      "stateBefore": 2197375627,
+      "stateAfter": 2197375627,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          18.49151039123535,
+          0,
+          1258.8460693359375
+        ],
+        [
+          24.331510543823242,
+          3.0999999046325684,
+          1266.8460693359375
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "chunk": 14,
+      "x": 22.25107587024104,
+      "z": 1388.2059800121933,
+      "stateBefore": 2140221417,
+      "stateAfter": 2140221417,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          19.33107566833496,
+          0,
+          1384.2059326171875
+        ],
+        [
+          25.17107582092285,
+          3.0999999046325684,
+          1392.2059326171875
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "chunk": 15,
+      "x": 21.589215529616922,
+      "z": 1482.5887686349452,
+      "stateBefore": 2515502986,
+      "stateAfter": 2515502986,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          18.66921615600586,
+          0,
+          1478.5887451171875
+        ],
+        [
+          24.50921630859375,
+          3.0999999046325684,
+          1486.5887451171875
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "chunk": 4,
+      "x": 23.472028382588178,
+      "z": 466.06166137196124,
+      "stateBefore": 3885433969,
+      "stateAfter": 3885433969,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          20.55202865600586,
+          0,
+          462.0616760253906
+        ],
+        [
+          26.39202880859375,
+          3.0999999046325684,
+          470.0616760253906
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "chunk": 5,
+      "x": 21.926402247394435,
+      "z": 551.1042502447963,
+      "stateBefore": 1428819473,
+      "stateAfter": 1428819473,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          19.00640296936035,
+          0,
+          547.104248046875
+        ],
+        [
+          24.846403121948242,
+          3.0999999046325684,
+          555.104248046875
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "chunk": 6,
+      "x": 21.917705672909506,
+      "z": 659.5185883250087,
+      "stateBefore": 1555912554,
+      "stateAfter": 1555912554,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          18.997705459594727,
+          0,
+          655.5186157226562
+        ],
+        [
+          24.837705612182617,
+          3.0999999046325684,
+          663.5186157226562
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "chunk": 10,
+      "x": 20.339997132774442,
+      "z": 983.985340397805,
+      "stateBefore": 240295365,
+      "stateAfter": 240295365,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          17.41999626159668,
+          0,
+          979.9853515625
+        ],
+        [
+          23.25999641418457,
+          3.0999999046325684,
+          987.9853515625
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "chunk": 14,
+      "x": 21.941059985314496,
+      "z": 1395.8959180247039,
+      "stateBefore": 940491280,
+      "stateAfter": 940491280,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          19.021059036254883,
+          0,
+          1391.8958740234375
+        ],
+        [
+          24.861059188842773,
+          3.0999999046325684,
+          1399.8958740234375
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "chunk": 15,
+      "x": 22.692083727219142,
+      "z": 1461.222642140463,
+      "stateBefore": 4034939120,
+      "stateAfter": 4034939120,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          19.772083282470703,
+          0,
+          1457.22265625
+        ],
+        [
+          25.612083435058594,
+          3.0999999046325684,
+          1465.22265625
+        ]
+      ]
+    },
+    {
+      "seed": 42,
+      "chunk": 0,
+      "x": 20.75429578498006,
+      "z": 29.769880801439285,
+      "stateBefore": 3369485380,
+      "stateAfter": 3369485380,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          17.83429527282715,
+          0,
+          25.769880294799805
+        ],
+        [
+          23.67429542541504,
+          3.0999999046325684,
+          33.76988220214844
+        ]
+      ]
+    },
+    {
+      "seed": 42,
+      "chunk": 1,
+      "x": 22.029015382518992,
+      "z": 160.26060019340366,
+      "stateBefore": 4072049234,
+      "stateAfter": 4072049234,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          19.1090145111084,
+          0,
+          156.26060485839844
+        ],
+        [
+          24.94901466369629,
+          3.0999999046325684,
+          164.26060485839844
+        ]
+      ]
+    },
+    {
+      "seed": 42,
+      "chunk": 2,
+      "x": 20.050884803873487,
+      "z": 238.73465948179364,
+      "stateBefore": 3183659463,
+      "stateAfter": 3183659463,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          17.130884170532227,
+          0,
+          234.7346649169922
+        ],
+        [
+          22.970884323120117,
+          3.0999999046325684,
+          242.7346649169922
+        ]
+      ]
+    },
+    {
+      "seed": 42,
+      "chunk": 10,
+      "x": 22.892024541157298,
+      "z": 1014.4826445421204,
+      "stateBefore": 3647662238,
+      "stateAfter": 3647662238,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          19.97202491760254,
+          0,
+          1010.482666015625
+        ],
+        [
+          25.81202507019043,
+          3.0999999046325684,
+          1018.482666015625
+        ]
+      ]
+    },
+    {
+      "seed": 42,
+      "chunk": 11,
+      "x": 21.761534521356225,
+      "z": 1126.4169172905385,
+      "stateBefore": 2063495600,
+      "stateAfter": 2063495600,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          18.841533660888672,
+          0,
+          1122.4168701171875
+        ],
+        [
+          24.681533813476562,
+          3.0999999046325684,
+          1130.4168701171875
+        ]
+      ]
+    },
+    {
+      "seed": 42,
+      "chunk": 14,
+      "x": 22.98012550896965,
+      "z": 1402.7723618391901,
+      "stateBefore": 677150227,
+      "stateAfter": 677150227,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          20.06012535095215,
+          0,
+          1398.7723388671875
+        ],
+        [
+          25.90012550354004,
+          3.0999999046325684,
+          1406.7723388671875
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "chunk": 0,
+      "x": 19.912957845255733,
+      "z": 21.437542845495045,
+      "stateBefore": 353342105,
+      "stateAfter": 353342105,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          16.992958068847656,
+          0,
+          17.437541961669922
+        ],
+        [
+          22.832958221435547,
+          3.0999999046325684,
+          25.437541961669922
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "chunk": 2,
+      "x": 21.73135510494467,
+      "z": 227.9460284402594,
+      "stateBefore": 95998691,
+      "stateAfter": 95998691,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          18.811355590820312,
+          0,
+          223.94602966308594
+        ],
+        [
+          24.651355743408203,
+          3.0999999046325684,
+          231.94602966308594
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "chunk": 3,
+      "x": 20.149755910621025,
+      "z": 304.8200176227838,
+      "stateBefore": 1118268530,
+      "stateAfter": 1118268530,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          17.229755401611328,
+          0,
+          300.82000732421875
+        ],
+        [
+          23.06975555419922,
+          3.0999999046325684,
+          308.82000732421875
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "chunk": 5,
+      "x": 23.296548632788472,
+      "z": 525.0235481774434,
+      "stateBefore": 3196444205,
+      "stateAfter": 3196444205,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          20.376548767089844,
+          0,
+          521.0235595703125
+        ],
+        [
+          26.216548919677734,
+          3.0999999046325684,
+          529.0235595703125
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "chunk": 9,
+      "x": 20.39601086557377,
+      "z": 940.7349288482219,
+      "stateBefore": 1057167755,
+      "stateAfter": 1057167755,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          17.476011276245117,
+          0,
+          936.7349243164062
+        ],
+        [
+          23.316011428833008,
+          3.0999999046325684,
+          944.7349243164062
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "chunk": 10,
+      "x": 21.61426141904667,
+      "z": 988.9021932361647,
+      "stateBefore": 3079767846,
+      "stateAfter": 3079767846,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          18.69426155090332,
+          0,
+          984.9022216796875
+        ],
+        [
+          24.53426170349121,
+          3.0999999046325684,
+          992.9022216796875
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "chunk": 11,
+      "x": 23.18528136285022,
+      "z": 1088.2167628919706,
+      "stateBefore": 2063495681,
+      "stateAfter": 2063495681,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          20.265281677246094,
+          0,
+          1084.216796875
+        ],
+        [
+          26.105281829833984,
+          3.0999999046325684,
+          1092.216796875
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "chunk": 13,
+      "x": 19.744598485529423,
+      "z": 1317.6457534506917,
+      "stateBefore": 3333164695,
+      "stateAfter": 3333164695,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          16.82459831237793,
+          0,
+          1313.645751953125
+        ],
+        [
+          22.66459846496582,
+          3.0999999046325684,
+          1321.645751953125
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "chunk": 14,
+      "x": 23.711644077091478,
+      "z": 1399.113850847818,
+      "stateBefore": 492903017,
+      "stateAfter": 492903017,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          20.791643142700195,
+          0,
+          1395.1138916015625
+        ],
+        [
+          26.631643295288086,
+          3.0999999046325684,
+          1403.1138916015625
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "chunk": 15,
+      "x": 21.168637562077492,
+      "z": 1471.332670650445,
+      "stateBefore": 2579444305,
+      "stateAfter": 2579444305,
+      "triangles": 272,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "bounds": [
+        [
+          18.248638153076172,
+          0,
+          1467.3326416015625
+        ],
+        [
+          24.088638305664062,
+          3.0999999046325684,
+          1475.3326416015625
+        ]
+      ]
+    }
+  ],
+  "density": {
+    "eligibleAirfieldChunks": 64,
+    "observedDepots": 32,
+    "mean": 0.5,
+    "callerProbability": 0.6,
+    "maximumPerChunk": 1
+  },
+  "observedPlacements": {
+    "x": [
+      19.744598485529423,
+      23.711644077091478
+    ],
+    "z": [
+      21.437542845495045,
+      1482.5887686349452
+    ]
+  },
+  "contract": {
+    "caller": "rng.bool(.6), farX = rng.range(19.5,24), z = chunkZ + rng.range(10,86)",
+    "methodGameRngDraws": 0,
+    "surfaces": "four original saddle boxes; axis-aligned guide surfaces only, not collision",
+    "inheritedEnvelope": [
+      [
+        -2.9200001,
+        0,
+        -4
+      ],
+      [
+        2.9200001,
+        3.0999999,
+        4
+      ]
+    ],
+    "minSourceXSupport": 16.58,
+    "nominalLaneGap": 0.58,
+    "playerRadius": 1.5,
+    "fullSphereClearance": false,
+    "flightX": [
+      -16,
+      16
+    ],
+    "flightY": [
+      1.3,
+      25
+    ],
+    "warning": "Player 1.5-radius envelope can overlap passive decorative scenery at near placement. Do not change or narrow flight/aim ranges."
+  }
+}

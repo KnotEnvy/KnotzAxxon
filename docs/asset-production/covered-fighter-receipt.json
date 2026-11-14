@@ -1,0 +1,14 @@
+{
+  "archive": "covered-fighter-INITIAL-ee221ad-20261114.tar.gz",
+  "sha256": "06aedfb4de528446820b8cc408f318b32c2c8802a83f1afbbf17ab5e5c10b3ad",
+  "contentHashesVerified": 91,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/covered-fighter/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "glbSha256": "5234cd4ad177855ed5c6fd5b76584f409e5bfa669edf38243b272d50aedf12d3",
+  "blendSha256": "a406556058d39e524c97e66e67aceea7a764b1b9c1269d88ea4cad6426baf699",
+  "senderExit": 0,
+  "senderRoute": "Authorized Windows Tailscale to100.112.66.64"
+}

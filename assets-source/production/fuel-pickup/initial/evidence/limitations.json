@@ -1,0 +1,16 @@
+{
+  "formal_reviews": 0,
+  "formal_fix_passes": 0,
+  "opus_review_polish": "deferred",
+  "helpers": 0,
+  "claude_retries": 0,
+  "live_integration": false,
+  "live_WebGL_capture": false,
+  "gpu_performance_claim": false,
+  "renders": "Offline Blender reconstructions of actual source rig eye/target/projection/billboard, source geometry, source motion. Halo/additive/postFX/hemisphere/particles/HUD/audio are approximate or not reproduced.",
+  "clearance": "Finite BVH overlap and bidirectional vertex-to-triangle distance do not find every triangle-interior distance minimum. Conservative radial separating-cylinder bound additionally covers all shell spin angles, pulse range and badge wobbles: all projected shell triangles stay outside its inner edge/chord radius; all core/shape triangles are inside their convex vertex radial maximum. Float tolerance, not collision/physics integration proof.",
+  "readability": "Manual implementation inspection only; small/far detail merging is documented, not a universal recognition study.",
+  "charge": "N/A",
+  "detach": "N/A except collected/cull lifecycle removal",
+  "determinism": "Generated geometry/names/materials/transforms and GLB are deterministic. Blender binary session metadata may differ; no byte-identical blend promise."
+}

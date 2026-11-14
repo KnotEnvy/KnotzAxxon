@@ -1,0 +1,12 @@
+{
+  "method": "Unmodified instantiate/disposeModel functions, tracked CPU resources and structural GLB hierarchy; no live WebGL lifecycle assertion.",
+  "cloneGeometries": 5,
+  "cloneMaterials": 2,
+  "independentInstances": true,
+  "originalTemplateUnchanged": true,
+  "firstCloneDisposedOnce": true,
+  "secondCloneSurvives": true,
+  "sharedSourceNeonNotDisposed": true,
+  "generatedFlashGeometryDisposedOnce": true,
+  "enemyOwnedFlashMaterialDisposedOnce": true
+}

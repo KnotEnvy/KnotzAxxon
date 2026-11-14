@@ -1,0 +1,85 @@
+{
+  "hierarchy": {
+    "coordinates": {
+      "badge_plane": "XY",
+      "front": "+Z",
+      "up": "+Y",
+      "unit_scale": 1,
+      "authoring_to_game": "(BlenderX,BlenderZ,-BlenderY)",
+      "corrective_import_transform": "NONE"
+    },
+    "root": "Pickup.group: original gameplay position and camera.quaternion",
+    "children": {
+      "halo": "EXISTING sibling sprite; externally shared material and texture, unchanged",
+      "imported_scene": {
+        "transform": "identity",
+        "owned": true,
+        "children": {
+          "spread_pickup_root": {
+            "transform": "identity",
+            "children": {
+              "shell": {
+                "pivot": [
+                  0,
+                  0,
+                  0
+                ],
+                "motion": "rotation.z+=dt*.3; uniform1+sin(phase*4)*.025"
+              },
+              "core": {
+                "pivot": [
+                  0,
+                  0,
+                  -0.3
+                ],
+                "motion": "static"
+              },
+              "shape": {
+                "pivot": [
+                  0,
+                  0,
+                  0.1
+                ],
+                "motion": "rotation.z=sin(phase*2.2)*.08"
+              }
+            }
+          }
+        }
+      }
+    },
+    "integration": "RECIPE ONLY, no production edits; imported teardown MUST be added specifically to Pickup.dispose"
+  },
+  "materials": {
+    "shell": {
+      "glb": "spread_shell_amber_unlit",
+      "primitive_count": 1,
+      "nominal_srgb": "#ffb43a",
+      "runtime": "owned clone of untouched mats.neon(0xffb43a,1.15), vertexColors=true, toneMapped=false",
+      "vertex_color": "neutral multiplier; no replacement hue"
+    },
+    "core": {
+      "glb": "spread_core_titanium",
+      "primitive_count": 1,
+      "runtime": "per-instance cloned imported PBR material",
+      "metallic": 0.48,
+      "roughness": 0.4,
+      "vertex_color": "authored absolute slate/titanium"
+    },
+    "shape": {
+      "glb": "spread_shape_amber_unlit",
+      "primitive_count": 1,
+      "nominal_srgb": "#ffb43a",
+      "runtime": "owned clone of untouched mats.neon(0xffb43a,1.35), vertexColors=true, toneMapped=false",
+      "vertex_color": "neutral multiplier; no replacement hue"
+    },
+    "halo": {
+      "exported": false,
+      "source_material_owner": "Materials._pickupHalos color-keyed cache",
+      "source_texture_owner": "Materials/Textures glow; never per-instance disposed",
+      "opacity": 0.35,
+      "source_scale": "7*(1+sin(phase*4)*.2)"
+    },
+    "textures": 0,
+    "visible_material_primitives_including_shell_core_shape": 3
+  }
+}

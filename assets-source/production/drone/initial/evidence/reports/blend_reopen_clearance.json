@@ -1,0 +1,1025 @@
+{
+  "save_reopen_passed": true,
+  "visible": {
+    "triangles": 2640,
+    "material_primitives": 6,
+    "bounds_game": {
+      "min": [
+        -2.799999952316284,
+        -0.41341304779052734,
+        -1.9500000476837158
+      ],
+      "max": [
+        2.799999952316284,
+        0.7200000286102295,
+        1.4900000095367432
+      ]
+    }
+  },
+  "hidden_flash": {
+    "triangles": 220,
+    "material_primitives": 1,
+    "bounds_game": {
+      "min": [
+        -2.9119999408721924,
+        -0.3951999843120575,
+        -1.5911998748779297
+      ],
+      "max": [
+        2.9119999408721924,
+        0.3327999711036682,
+        1.3727999925613403
+      ]
+    }
+  },
+  "engine_pulse_samples": 96,
+  "engine_pulse_interval": [
+    0.97,
+    1.065
+  ],
+  "minimum_engine_to_static_surface_vertex_proxy": 0.01778913475573063,
+  "all_engine_triangle_intersections_zero": true,
+  "engine_clearance_samples": [
+    {
+      "scale": 0.97,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.038789987564086914
+    },
+    {
+      "scale": 0.971,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.0385969877243042
+    },
+    {
+      "scale": 0.972,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.038403987884521484
+    },
+    {
+      "scale": 0.973,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03821098804473877
+    },
+    {
+      "scale": 0.974,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03801800310611725
+    },
+    {
+      "scale": 0.975,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03782498836517334
+    },
+    {
+      "scale": 0.976,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.037631988525390625
+    },
+    {
+      "scale": 0.977,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03743898868560791
+    },
+    {
+      "scale": 0.978,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.037245988845825195
+    },
+    {
+      "scale": 0.979,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.037053003907203674
+    },
+    {
+      "scale": 0.98,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.036859989166259766
+    },
+    {
+      "scale": 0.981,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03666698932647705
+    },
+    {
+      "scale": 0.982,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.036473989486694336
+    },
+    {
+      "scale": 0.983,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03628098964691162
+    },
+    {
+      "scale": 0.984,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.036087989807128906
+    },
+    {
+      "scale": 0.985,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03589498996734619
+    },
+    {
+      "scale": 0.986,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03570199012756348
+    },
+    {
+      "scale": 0.987,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03550899028778076
+    },
+    {
+      "scale": 0.988,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03531599044799805
+    },
+    {
+      "scale": 0.989,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03512299060821533
+    },
+    {
+      "scale": 0.99,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03492999076843262
+    },
+    {
+      "scale": 0.991,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.0347369909286499
+    },
+    {
+      "scale": 0.992,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03454399108886719
+    },
+    {
+      "scale": 0.993,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03435099124908447
+    },
+    {
+      "scale": 0.994,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03415799140930176
+    },
+    {
+      "scale": 0.995,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03396499156951904
+    },
+    {
+      "scale": 0.996,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03377199172973633
+    },
+    {
+      "scale": 0.997,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03357899188995361
+    },
+    {
+      "scale": 0.998,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.0333859920501709
+    },
+    {
+      "scale": 0.999,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.033192992210388184
+    },
+    {
+      "scale": 1.0,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03299999237060547
+    },
+    {
+      "scale": 1.001,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03280697762966156
+    },
+    {
+      "scale": 1.002,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03261399269104004
+    },
+    {
+      "scale": 1.003,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.032420992851257324
+    },
+    {
+      "scale": 1.004,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.0322280079126358
+    },
+    {
+      "scale": 1.005,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.032034993171691895
+    },
+    {
+      "scale": 1.006,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.031841978430747986
+    },
+    {
+      "scale": 1.007,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03164072707295418
+    },
+    {
+      "scale": 1.008,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.031430747359991074
+    },
+    {
+      "scale": 1.009,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.031220771372318268
+    },
+    {
+      "scale": 1.01,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03101075440645218
+    },
+    {
+      "scale": 1.011,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03080078773200512
+    },
+    {
+      "scale": 1.012,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.030590809881687164
+    },
+    {
+      "scale": 1.013,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03038082644343376
+    },
+    {
+      "scale": 1.014,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.03017081320285797
+    },
+    {
+      "scale": 1.015,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.029960844665765762
+    },
+    {
+      "scale": 1.016,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.029750876128673553
+    },
+    {
+      "scale": 1.017,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.029540905728936195
+    },
+    {
+      "scale": 1.018,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.029330898076295853
+    },
+    {
+      "scale": 1.019,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.029120901599526405
+    },
+    {
+      "scale": 1.02,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.028910959139466286
+    },
+    {
+      "scale": 1.021,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.028700994327664375
+    },
+    {
+      "scale": 1.022,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.028491005301475525
+    },
+    {
+      "scale": 1.023,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.02828102372586727
+    },
+    {
+      "scale": 1.024,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.028071021661162376
+    },
+    {
+      "scale": 1.025,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.027861053124070168
+    },
+    {
+      "scale": 1.026,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.02765107899904251
+    },
+    {
+      "scale": 1.027,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.02744109369814396
+    },
+    {
+      "scale": 1.028,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.027231091633439064
+    },
+    {
+      "scale": 1.029,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.02702111005783081
+    },
+    {
+      "scale": 1.03,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.02681112475693226
+    },
+    {
+      "scale": 1.031,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.026581909507513046
+    },
+    {
+      "scale": 1.032,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.026323117315769196
+    },
+    {
+      "scale": 1.033,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.026064271107316017
+    },
+    {
+      "scale": 1.034,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.02580541931092739
+    },
+    {
+      "scale": 1.035,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.02554663084447384
+    },
+    {
+      "scale": 1.036,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.02528773806989193
+    },
+    {
+      "scale": 1.037,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.025028949603438377
+    },
+    {
+      "scale": 1.038,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.024770131334662437
+    },
+    {
+      "scale": 1.039,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.024511277675628662
+    },
+    {
+      "scale": 1.04,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.02425248734652996
+    },
+    {
+      "scale": 1.041,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.02399362064898014
+    },
+    {
+      "scale": 1.042,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.023734772577881813
+    },
+    {
+      "scale": 1.043,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.023475948721170425
+    },
+    {
+      "scale": 1.044,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.023217160254716873
+    },
+    {
+      "scale": 1.045,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.022958317771553993
+    },
+    {
+      "scale": 1.046,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.022699495777487755
+    },
+    {
+      "scale": 1.047,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.022440673783421516
+    },
+    {
+      "scale": 1.048,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.022181840613484383
+    },
+    {
+      "scale": 1.049,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.021923022344708443
+    },
+    {
+      "scale": 1.05,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.021664252504706383
+    },
+    {
+      "scale": 1.051,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.021405654028058052
+    },
+    {
+      "scale": 1.052,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.021147212013602257
+    },
+    {
+      "scale": 1.053,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.020888948813080788
+    },
+    {
+      "scale": 1.054,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.020630592480301857
+    },
+    {
+      "scale": 1.055,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.020372286438941956
+    },
+    {
+      "scale": 1.056,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.020113972947001457
+    },
+    {
+      "scale": 1.057,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.019855642691254616
+    },
+    {
+      "scale": 1.058,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.0195973701775074
+    },
+    {
+      "scale": 1.059,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.01933904178440571
+    },
+    {
+      "scale": 1.06,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.019080715253949165
+    },
+    {
+      "scale": 1.061,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.018822437152266502
+    },
+    {
+      "scale": 1.062,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.018564103171229362
+    },
+    {
+      "scale": 1.063,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.018305756151676178
+    },
+    {
+      "scale": 1.064,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.01804744452238083
+    },
+    {
+      "scale": 1.065,
+      "triangle_intersections": 0,
+      "vertex_to_static_surface_min": 0.01778913475573063
+    }
+  ],
+  "shot_graphics_probe": [
+    {
+      "pose": "weave_bank",
+      "euler": [
+        -0.09839173179550402,
+        -0.1712184454828672,
+        0.507288385003821
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        -0.2323291003704071,
+        0.10545029491186142,
+        1.4686825275421143
+      ],
+      "mouth_to_spawn_distance": 0.25705516885605945,
+      "shot_nearest_static_surface": 0.08953747153282166
+    },
+    {
+      "pose": "weave_pitch",
+      "euler": [
+        -0.11803583227948275,
+        -0.10598173991532153,
+        0.33264143091576
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        -0.14300544559955597,
+        0.13242653012275696,
+        1.4778828620910645
+      ],
+      "mouth_to_spawn_distance": 0.19615430129160852,
+      "shot_nearest_static_surface": 0.03639030456542969
+    },
+    {
+      "pose": "strafe_bank",
+      "euler": [
+        -0.07297333675224556,
+        0.2226379539448299,
+        -0.6576125173020688
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        0.30217036604881287,
+        0.07087469100952148,
+        1.4580105543136597
+      ],
+      "mouth_to_spawn_distance": 0.31319844789371726,
+      "shot_nearest_static_surface": 0.136894091963768
+    },
+    {
+      "pose": "strafe_pitch",
+      "euler": [
+        -0.07524969820900984,
+        0.17691423449178126,
+        -0.4995684077230207
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        0.2410086691379547,
+        0.0711643248796463,
+        1.469345211982727
+      ],
+      "mouth_to_spawn_distance": 0.2531585557703209,
+      "shot_nearest_static_surface": 0.07896052300930023
+    },
+    {
+      "pose": "orbit_bank",
+      "euler": [
+        0.0006386749485689765,
+        0.1144406358176752,
+        -0.3384901325439698
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        0.15529948472976685,
+        -0.043393053114414215,
+        1.481932520866394
+      ],
+      "mouth_to_spawn_distance": 0.16225695893795866,
+      "shot_nearest_static_surface": 0.00018791115144267678
+    },
+    {
+      "pose": "orbit_pitch",
+      "euler": [
+        0.10362412275798667,
+        -0.005452514724141231,
+        0.0007387043821166679
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        -0.008090965449810028,
+        -0.19888007640838623,
+        1.4773308038711548
+      ],
+      "mouth_to_spawn_distance": 0.20033132758019423,
+      "shot_nearest_static_surface": 0.04952691122889519
+    },
+    {
+      "pose": "orbit_restore_stress_bank",
+      "euler": [
+        0.43430233860841516,
+        -0.3574319110482547,
+        1.1119618607866324
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        -0.48350995779037476,
+        -0.6113538146018982,
+        1.270664930343628
+      ],
+      "mouth_to_spawn_distance": 0.8124838080076562,
+      "shot_nearest_static_surface": 0.35931670665740967
+    },
+    {
+      "pose": "orbit_restore_stress_pitch",
+      "euler": [
+        0.43793228628714453,
+        -0.3508827791396195,
+        1.1040501124020023
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        -0.4744150638580322,
+        -0.6175575256347656,
+        1.2710932493209839
+      ],
+      "mouth_to_spawn_distance": 0.8116928410365014,
+      "shot_nearest_static_surface": 0.3563503921031952
+    },
+    {
+      "pose": "dive_and_committed_peel_bank",
+      "euler": [
+        -0.15999999999999986,
+        0.2879999999999997,
+        -0.8399999999999995
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        0.39108356833457947,
+        0.1994713693857193,
+        1.4245665073394775
+      ],
+      "mouth_to_spawn_distance": 0.44544965164943634,
+      "shot_nearest_static_surface": 0.26663321256637573
+    },
+    {
+      "pose": "dive_and_committed_peel_pitch",
+      "euler": [
+        -0.15999999999999986,
+        0.2879999999999997,
+        -0.8399999999999995
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        0.39108356833457947,
+        0.1994713693857193,
+        1.4245665073394775
+      ],
+      "mouth_to_spawn_distance": 0.44544965164943634,
+      "shot_nearest_static_surface": 0.26663321256637573
+    },
+    {
+      "pose": "carrier_launch_transition_bank",
+      "euler": [
+        0,
+        0,
+        -1.0855790253564845
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        -0.0398058146238327,
+        -0.02098802663385868,
+        1.4900000095367432
+      ],
+      "mouth_to_spawn_distance": 0.04609772172393094,
+      "shot_nearest_static_surface": 0.06299272179603577
+    },
+    {
+      "pose": "carrier_launch_transition_pitch",
+      "euler": [
+        0.10307739795431055,
+        -0.004576965670608857,
+        -0.0022055193775813667
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        -0.006918902043253183,
+        -0.19807285070419312,
+        1.4774452447891235
+      ],
+      "mouth_to_spawn_distance": 0.1994729103828611,
+      "shot_nearest_static_surface": 0.04853350296616554
+    },
+    {
+      "pose": "launch_initial",
+      "euler": [
+        0,
+        0,
+        -0.5803967919848836
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        -0.024676011875271797,
+        -0.03763103112578392,
+        1.4900000095367432
+      ],
+      "mouth_to_spawn_distance": 0.04609772077690483,
+      "shot_nearest_static_surface": 0.06299272179603577
+    },
+    {
+      "pose": "launch_transition",
+      "euler": [
+        0,
+        0,
+        -0.11443070196684225
+      ],
+      "world_shot_minus_root": [
+        0,
+        0,
+        1.5
+      ],
+      "rotated_mouth_minus_root": [
+        -0.005138150881975889,
+        -0.044705700129270554,
+        1.4900000095367432
+      ],
+      "mouth_to_spawn_distance": 0.046097722513119346,
+      "shot_nearest_static_surface": 0.06299272179603577
+    }
+  ],
+  "sampled_root_bounds": [
+    {
+      "pose": "weave_bank",
+      "bounds_game": {
+        "min": [
+          -2.393219470977783,
+          -1.4436360597610474,
+          -1.9664983749389648
+        ],
+        "max": [
+          2.4563019275665283,
+          1.3930543661117554,
+          1.499671220779419
+        ]
+      }
+    },
+    {
+      "pose": "weave_pitch",
+      "bounds_game": {
+        "min": [
+          -2.620666742324829,
+          -1.0164347887039185,
+          -1.9676636457443237
+        ],
+        "max": [
+          2.6605193614959717,
+          0.9373735785484314,
+          1.502368450164795
+        ]
+      }
+    },
+    {
+      "pose": "strafe_bank",
+      "bounds_game": {
+        "min": [
+          -2.240528106689453,
+          -1.7844083309173584,
+          -1.9627734422683716
+        ],
+        "max": [
+          2.1371960639953613,
+          1.7435879707336426,
+          1.4953778982162476
+        ]
+      }
+    },
+    {
+      "pose": "strafe_pitch",
+      "bounds_game": {
+        "min": [
+          -2.4647090435028076,
+          -1.415913462638855,
+          -1.970001220703125
+        ],
+        "max": [
+          2.4001219272613525,
+          1.3719877004623413,
+          1.500702142715454
+        ]
+      }
+    },
+    {
+      "pose": "orbit_bank",
+      "bounds_game": {
+        "min": [
+          -2.654168128967285,
+          -0.9672203660011292,
+          -1.977262020111084
+        ],
+        "max": [
+          2.611663579940796,
+          0.9438287019729614,
+          1.5025206804275513
+        ]
+      }
+    },
+    {
+      "pose": "orbit_pitch",
+      "bounds_game": {
+        "min": [
+          -2.7991507053375244,
+          -0.3636320233345032,
+          -1.9726101160049438
+        ],
+        "max": [
+          2.800804853439331,
+          0.7013585567474365,
+          1.4928460121154785
+        ]
+      }
+    },
+    {
+      "pose": "orbit_restore_stress_bank",
+      "bounds_game": {
+        "min": [
+          -1.121869683265686,
+          -2.0569937229156494,
+          -2.0763022899627686
+        ],
+        "max": [
+          1.3799710273742676,
+          2.277104139328003,
+          1.484669804573059
+        ]
+      }
+    },
+    {
+      "pose": "orbit_restore_stress_pitch",
+      "bounds_game": {
+        "min": [
+          -1.1442030668258667,
+          -2.0426506996154785,
+          -2.078977108001709
+        ],
+        "max": [
+          1.3963170051574707,
+          2.266576051712036,
+          1.4866926670074463
+        ]
+      }
+    },
+    {
+      "pose": "dive_and_committed_peel_bank",
+      "bounds_game": {
+        "min": [
+          -1.93398916721344,
+          -2.190863847732544,
+          -1.928093433380127
+        ],
+        "max": [
+          1.7600276470184326,
+          2.129405975341797,
+          1.4730910062789917
+        ]
+      }
+    },
+    {
+      "pose": "dive_and_committed_peel_pitch",
+      "bounds_game": {
+        "min": [
+          -1.93398916721344,
+          -2.190863847732544,
+          -1.928093433380127
+        ],
+        "max": [
+          1.7600276470184326,
+          2.129405975341797,
+          1.4730910062789917
+        ]
+      }
+    },
+    {
+      "pose": "carrier_launch_transition_bank",
+      "bounds_game": {
+        "min": [
+          -1.3413046598434448,
+          -2.49546217918396,
+          -1.9500000476837158
+        ],
+        "max": [
+          1.319190263748169,
+          2.483802080154419,
+          1.4900000095367432
+        ]
+      }
+    },
+    {
+      "pose": "carrier_launch_transition_pitch",
+      "bounds_game": {
+        "min": [
+          -2.799365282058716,
+          -0.36288294196128845,
+          -1.9725592136383057
+        ],
+        "max": [
+          2.8006832599639893,
+          0.7018998265266418,
+          1.492880940437317
+        ]
+      }
+    },
+    {
+      "pose": "launch_initial",
+      "bounds_game": {
+        "min": [
+          -2.3634204864501953,
+          -1.5688459873199463,
+          -1.9500000476837158
+        ],
+        "max": [
+          2.3497116565704346,
+          1.5479398965835571,
+          1.4900000095367432
+        ]
+      }
+    },
+    {
+      "pose": "launch_transition",
+      "bounds_game": {
+        "min": [
+          -2.7862548828125,
+          -0.42783647775650024,
+          -1.9500000476837158
+        ],
+        "max": [
+          2.783400535583496,
+          0.7347699403762817,
+          1.4900000095367432
+        ]
+      }
+    }
+  ],
+  "method": "Evaluated saved blend, BVHTree engine vs body triangle intersection + engine-vertex nearest static-surface proxy over 96 scales. Root poses rigid; do not alter internal clearance. Distance proxy is not continuous exact mesh-to-mesh distance. Shot probes are points vs nearest visible surface, not projectile collision changes.",
+  "detach": "N/A: no detachable Flyer mechanic. Preserve existing normal explosion/wreck effects.",
+  "limitations": [
+    "No moving carrier, wing, boss, environment or live collision validation",
+    "Shot mouth follows visual root; gameplay spawn/muzzle FX/aiming do not. Report mismatch; do not change aim.",
+    "No fixed orbit velocity cap; chosen sampled transforms are evidence, not global limits"
+  ]
+}

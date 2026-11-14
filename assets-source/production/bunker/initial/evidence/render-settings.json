@@ -1,0 +1,113 @@
+{
+  "method": "Offline native Linux EEVEE software rendering. Not live game screenshots, GPU/FPS evidence, source shader acceptance or final art approval.",
+  "cameras": [
+    {
+      "mode": "classic",
+      "position": [
+        -45.254833995939045,
+        54.255,
+        -17.254833995939038
+      ],
+      "look": [
+        0,
+        9,
+        28
+      ],
+      "fov": 52,
+      "aspect": 1.5,
+      "classic": true,
+      "halfHeight": 40,
+      "near": 0.35,
+      "far": 1344,
+      "quality": "high",
+      "bunkerPosition": [
+        19.5,
+        0,
+        28
+      ],
+      "playerPosition": [
+        8,
+        6,
+        0
+      ]
+    },
+    {
+      "mode": "modern",
+      "position": [
+        -1.9185841564443908,
+        20,
+        -27.251086002791343
+      ],
+      "look": [
+        8,
+        7.2,
+        16
+      ],
+      "fov": 58,
+      "aspect": 1.5,
+      "classic": false,
+      "halfHeight": 40,
+      "near": 0.35,
+      "far": 1344,
+      "quality": "high",
+      "bunkerPosition": [
+        19.5,
+        0,
+        28
+      ],
+      "playerPosition": [
+        8,
+        6,
+        0
+      ]
+    },
+    {
+      "mode": "chase",
+      "position": [
+        5.491316881576317,
+        15.5,
+        -23.86852548883856
+      ],
+      "look": [
+        8,
+        7.2,
+        16
+      ],
+      "fov": 66,
+      "aspect": 1.5,
+      "classic": false,
+      "halfHeight": 40,
+      "near": 0.35,
+      "far": 1344,
+      "quality": "high",
+      "bunkerPosition": [
+        19.5,
+        0,
+        28
+      ],
+      "playerPosition": [
+        8,
+        6,
+        0
+      ]
+    }
+  ],
+  "lighting": "Citadel source ember / gauntlet source void directional color, direction and intensity; ambient converted to uniform world approximation, not actual hemisphere or PMREM.",
+  "limitations": [
+    "Source procedural hull maps are an average RGB proxy; original world-projected UVs are exercised only by the actual Batch CPU tests.",
+    "EEVEE AgX +0.6 is not Three ACES exposure1.02. Fog, PMREM, rim shader, post-FX/bloom and live occlusion are not reproduced.",
+    "World deck/channel/seams/lane boundary are labeled geometry test doubles; only player uses actual shipped GLB at unscaled dimensions.",
+    "Fixed common WORLD-space placement with source CameraRig pose, FOV and orthographic extent. Offline clipping .1/1000 differs from source high-quality .35/1344; no object-fitted cameras or full projection-matrix identity claim.",
+    "Cue extrema use exact source hues and analytic BREATHE gains .1 and1 with gain1.1; offline emission response is approximate."
+  ],
+  "clipping": {
+    "offline": [
+      0.1,
+      1000
+    ],
+    "sourceHighQuality": [
+      0.35,
+      1344
+    ]
+  }
+}

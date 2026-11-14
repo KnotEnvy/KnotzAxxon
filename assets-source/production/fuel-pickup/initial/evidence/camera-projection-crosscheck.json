@@ -1,0 +1,109 @@
+{
+  "checks": [
+    {
+      "render": "offline-classic-near.png",
+      "actual_Three_pixel_bounds": [
+        365.61876948894803,
+        302.69770096413384,
+        393.91645804466555,
+        330.9953895198513
+      ],
+      "Blender_pixel_bounds": [
+        365.6187057495117,
+        302.6977425813675,
+        393.91639709472656,
+        330.9954285621643
+      ],
+      "maximum_error_pixels": 6.373943631388101e-05,
+      "billboard_normal_dot": 0.9999999701976776
+    },
+    {
+      "render": "offline-classic-far.png",
+      "actual_Three_pixel_bounds": [
+        546.9916588632974,
+        197.98175838147156,
+        575.2893474190149,
+        226.27944693718905
+      ],
+      "Blender_pixel_bounds": [
+        546.9915390014648,
+        197.98178672790527,
+        575.2892303466797,
+        226.279456615448
+      ],
+      "maximum_error_pixels": 0.00011986183255885408,
+      "billboard_normal_dot": 0.9999999701976776
+    },
+    {
+      "render": "offline-modern-near.png",
+      "actual_Three_pixel_bounds": [
+        392.58442659069,
+        268.0845402567244,
+        439.2440448016959,
+        314.68695588456916
+      ],
+      "Blender_pixel_bounds": [
+        392.5844192504883,
+        268.08454871177673,
+        439.2440414428711,
+        314.686975479126
+      ],
+      "maximum_error_pixels": 1.959455681799227e-05,
+      "billboard_normal_dot": 0.9999997541308403
+    },
+    {
+      "render": "offline-modern-far.png",
+      "actual_Three_pixel_bounds": [
+        483.86268123512207,
+        205.97160655500278,
+        509.5820210054433,
+        231.71760464004524
+      ],
+      "Blender_pixel_bounds": [
+        483.86266708374023,
+        205.97163677215576,
+        509.58200454711914,
+        231.71762466430664
+      ],
+      "maximum_error_pixels": 3.0217152982459083e-05,
+      "billboard_normal_dot": 0.9999997541308403
+    },
+    {
+      "render": "offline-chase-near.png",
+      "actual_Three_pixel_bounds": [
+        398.47076453671326,
+        268.0779001488798,
+        445.10978835778235,
+        314.6595783485955
+      ],
+      "Blender_pixel_bounds": [
+        398.4707450866699,
+        268.07785391807556,
+        445.10979652404785,
+        314.65952038764954
+      ],
+      "maximum_error_pixels": 5.796094598053969e-05,
+      "billboard_normal_dot": 0.9999999913852662
+    },
+    {
+      "render": "offline-chase-far.png",
+      "actual_Three_pixel_bounds": [
+        452.38794707778027,
+        226.008585371445,
+        475.7715782552019,
+        249.4057175986634
+      ],
+      "Blender_pixel_bounds": [
+        452.38795280456543,
+        226.0085427761078,
+        475.77157974243164,
+        249.40565586090088
+      ],
+      "maximum_error_pixels": 6.173776250761875e-05,
+      "billboard_normal_dot": 0.9999999913852662
+    }
+  ],
+  "method": "Independent actual source CameraRig/FlightCamera + Three Vector3.project versus offline Blender projected imported vertices, same world positions/pulse/wobble at960x540; no halo bounds.",
+  "maximum_tolerance_pixels": 0.001,
+  "limitations": "Zero boost, no camera shake/kick/intro; baseline snap rigs, not arbitrary runtime trajectories or rasterizer pixel matching."
+}

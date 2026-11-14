@@ -20,5 +20,7 @@ worktrees are preserved outside the repository in the adjacent
 The original briefs remain recoverable from Git history. The round-3 baseline JSON
 is retained because the selected asset verification scripts use it.
 
-The remaining gameplay models and scenery are candidates for future Blender work.
-Builder assignments will be chosen jointly with the user; this document schedules none.
+The user authorized a separate production upgrade queue on 2026-11-14, starting with
+drone and enemy interceptor using Sonnet 5.5 High and Opus 5.5 Medium review on NitroBliss.
+This is production work, not a new contest. See [production queue](../asset-production/README.md)
+and its machine-readable status for active assignments and remaining scenery scope.

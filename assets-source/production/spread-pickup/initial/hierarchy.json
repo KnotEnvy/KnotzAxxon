@@ -1,0 +1,50 @@
+{
+  "coordinates": {
+    "badge_plane": "XY",
+    "front": "+Z",
+    "up": "+Y",
+    "unit_scale": 1,
+    "authoring_to_game": "(BlenderX,BlenderZ,-BlenderY)",
+    "corrective_import_transform": "NONE"
+  },
+  "root": "Pickup.group: original gameplay position and camera.quaternion",
+  "children": {
+    "halo": "EXISTING sibling sprite; externally shared material and texture, unchanged",
+    "imported_scene": {
+      "transform": "identity",
+      "owned": true,
+      "children": {
+        "spread_pickup_root": {
+          "transform": "identity",
+          "children": {
+            "shell": {
+              "pivot": [
+                0,
+                0,
+                0
+              ],
+              "motion": "rotation.z+=dt*.3; uniform1+sin(phase*4)*.025"
+            },
+            "core": {
+              "pivot": [
+                0,
+                0,
+                -0.3
+              ],
+              "motion": "static"
+            },
+            "shape": {
+              "pivot": [
+                0,
+                0,
+                0.1
+              ],
+              "motion": "rotation.z=sin(phase*2.2)*.08"
+            }
+          }
+        }
+      }
+    }
+  },
+  "integration": "RECIPE ONLY, no production edits; imported teardown MUST be added specifically to Pickup.dispose"
+}

@@ -1,0 +1,130 @@
+{
+  "asset": "covered-fighter",
+  "stage": "user_approved_default_integration",
+  "formalReviewsCompleted": 0,
+  "fixPassesCompleted": 0,
+  "runtime": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 3
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 3
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 1
+      }
+    ],
+    "props": 24,
+    "sourceParity": "Original arguments,RNG,surfaces,paint,emitters,outside-prop buffers and merged hull retirement"
+  },
+  "shutdown": {
+    "geometries": 6,
+    "antennaGeometries": 5,
+    "bunkerGeometries": 3,
+    "fuelDepotGeometries": 2,
+    "cargoGeometries": 2,
+    "coveredGeometries": 42,
+    "disposedExactlyOnce": true
+  },
+  "regressions": 104,
+  "build": "passed",
+  "defaultModelQA": "passed",
+  "legacyModelQA": "passed",
+  "runtimeProcessExit": 0,
+  "visualInspection": "assets-source/production/integration-evidence/covered-fighter/inspection.json",
+  "limitations": [
+    "Actual stationary Three.js source-rig captures are not sustained hardware/GPU acceptance.",
+    "Mapped material lighting darkens the offline palette;existing scenery and camera edge occlusion retained.",
+    "Full formal Opus review/polish remains deferred after user release approval."
+  ],
+  "limits": "Covered fighter remains passive,grey/tarped and unlit;source hardstand and yaw unchanged.",
+  "legacyRuntimeProcessExit": 0
+}

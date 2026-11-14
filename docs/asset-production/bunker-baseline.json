@@ -1,0 +1,103 @@
+{
+  "method": "Actual _bunker and Batch; four CPU samples, not GPU profiling",
+  "sourceHeightRange": [
+    0,
+    4
+  ],
+  "sourceDraws": 1,
+  "sourceBuckets": 3,
+  "samples": [
+    {
+      "seed": 1,
+      "buckets": {
+        "hull": 12,
+        "neon": 12,
+        "dark": 12
+      },
+      "triangles": 36,
+      "bounds": {
+        "min": [
+          -3.5,
+          0,
+          -4
+        ],
+        "max": [
+          3.5,
+          4,
+          4
+        ]
+      },
+      "emissions": [],
+      "rngState": 1831565814
+    },
+    {
+      "seed": 7,
+      "buckets": {
+        "hull": 12,
+        "neon": 12,
+        "dark": 12
+      },
+      "triangles": 36,
+      "bounds": {
+        "min": [
+          -3.5,
+          0,
+          -4
+        ],
+        "max": [
+          3.5,
+          4,
+          4
+        ]
+      },
+      "emissions": [],
+      "rngState": 1831565820
+    },
+    {
+      "seed": 42,
+      "buckets": {
+        "hull": 12,
+        "neon": 12,
+        "dark": 12
+      },
+      "triangles": 36,
+      "bounds": {
+        "min": [
+          -3.5,
+          0,
+          -4
+        ],
+        "max": [
+          3.5,
+          4,
+          4
+        ]
+      },
+      "emissions": [],
+      "rngState": 1831565855
+    },
+    {
+      "seed": 123,
+      "buckets": {
+        "hull": 12,
+        "neon": 12,
+        "dark": 12
+      },
+      "triangles": 36,
+      "bounds": {
+        "min": [
+          -3.5,
+          0,
+          -4
+        ],
+        "max": [
+          3.5,
+          4,
+          4
+        ]
+      },
+      "emissions": [],
+      "rngState": 1831565936
+    }
+  ]
+}

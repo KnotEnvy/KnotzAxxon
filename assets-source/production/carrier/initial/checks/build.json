@@ -1,0 +1,29 @@
+{
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "objects": 292,
+  "triangles": 18898,
+  "buckets": {
+    "hull": 8622,
+    "deck": 470,
+    "dark": 4258,
+    "paint": 2088,
+    "neon": 3280,
+    "spin": 180
+  },
+  "bounds": {
+    "min": [
+      48.0,
+      -26.0,
+      -0.0
+    ],
+    "max": [
+      108.55000305175781,
+      44.5,
+      987.0
+    ]
+  },
+  "glbBytes": 2389144,
+  "textures": 0,
+  "packed": true
+}

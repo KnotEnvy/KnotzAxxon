@@ -1,3 +1,6 @@
+import { appendImportedCargo } from '../render/ImportedCargo.js';
+import { appendImportedCoveredFighter } from '../render/ImportedCoveredFighter.js';
+import { appendImportedFuelDepot } from '../render/ImportedFuelDepot.js';
 /**
  * Fortress geometry streamer.
  *
@@ -15,6 +18,12 @@
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { taperedBox, facetedHull, airframePanel, reflectorGeometry } from '../render/GeoUtils.js';
+import { appendImportedFlakGun } from '../render/ImportedFlakGun.js';
+import { appendImportedCoolingStack } from '../render/ImportedCoolingStack.js';
+import { appendImportedAntenna } from '../render/ImportedAntenna.js';
+import { appendImportedWreckage } from '../render/ImportedWreckage.js';
+import { appendImportedCarrier } from '../render/ImportedCarrier.js';
+import { appendImportedDreadnought, appendImportedAsteroid, appendImportedBunker } from '../render/ImportedLandmarks.js';
 import { LIGHT_ANIM } from '../render/Materials.js';
 import { Rng, clamp, lerp, TAU } from '../core/Utils.js';
 import { CHUNK_LEN, DECK_HALF, CORRIDOR_HALF, ALT_MAX, SECTOR_KINDS } from './Level.js';
@@ -801,6 +810,11 @@ export class Fortress {
   }
 
   _crates(batch, rng, x, z, maxH) {
+    if (appendImportedCargo(this, batch, rng, x, z, maxH, this._proceduralCrates)) return;
+    this._proceduralCrates(batch, rng, x, z, maxH);
+  }
+
+  _proceduralCrates(batch, rng, x, z, maxH) {
     const tints = [0x8f9a6a, 0xa87a58, 0x7c8ea4, 0x9aa0a8];
     let y = 0;
     for (let k = 0; k < rng.int(1, 3) && y < maxH - 0.8; k++) {
@@ -822,6 +836,11 @@ export class Fortress {
    * reads as one of the live parked fighters you can strafe.
    */
   _parkedFighter(batch, x, z, rng) {
+    if (appendImportedCoveredFighter(batch, x, z, rng)) return;
+    this._proceduralParkedFighter(batch, x, z, rng);
+  }
+
+  _proceduralParkedFighter(batch, x, z, rng) {
     const rot = rng.range(-0.25, 0.25);
     batch.stamp('hull', TPL.fighter.hull, x, 0, z, 3, 0x7a8088, { rotY: rot });
     batch.stamp('dark', TPL.fighter.dark, x, 0, z, 3, 0xffffff, { rotY: rot });
@@ -845,6 +864,11 @@ export class Fortress {
 
   /** A horizontal tank farm on saddles: bulk storage, not a shootable drum. */
   _fuelDepot(batch, rng, x, z) {
+    if (appendImportedFuelDepot(batch, rng, x, z)) return;
+    this._proceduralFuelDepot(batch, rng, x, z);
+  }
+
+  _proceduralFuelDepot(batch, rng, x, z) {
     for (let k = 0; k < 2; k++) {
       const tx = x + (k ? 1.6 : -1.6);
       batch.stamp('hull', TPL.pipeZ, tx, 1.5, z, 3, 0x9aa2aa, { sx: 1.25, sy: 1.25, sz: 8 });
@@ -866,6 +890,10 @@ export class Fortress {
    * flak up and away from the lane. `y` is the roof height.
    */
   _flakGun(batch, rng, x, z, emit, y = 0) {
+    if (!appendImportedFlakGun(batch, rng, x, z, emit, y)) this._proceduralFlakGun(batch, rng, x, z, emit, y);
+  }
+
+  _proceduralFlakGun(batch, rng, x, z, emit, y = 0) {
     batch.box('dark', 3.4, 1.2, 3.4, x, y, z, 3, 0xffffff);
     batch.stamp('hull', TPL.drum, x, y + 1.2, z, 3, 0x8a8e96, { sx: 1.4, sy: 1.2, sz: 1.4 });
     // barrels point up and outward, away from the corridor
@@ -882,6 +910,10 @@ export class Fortress {
   }
 
   _coolingStack(batch, rng, x, z, emit) {
+    if (!appendImportedCoolingStack(batch, rng, x, z, emit)) this._proceduralCoolingStack(batch, rng, x, z, emit);
+  }
+
+  _proceduralCoolingStack(batch, rng, x, z, emit) {
     const h = rng.range(7, 11);
     batch.add('hull', taperedBox(4.2, 3.0, h, 4.2, 3.0), x, 0, z, 4, 0x9a8a80);
     for (let y = 1.5; y < h - 1; y += 2.2) {
@@ -894,6 +926,10 @@ export class Fortress {
   }
 
   _antenna(batch, rng, x, z, theme) {
+    if (!appendImportedAntenna(batch, rng, x, z, theme)) this._proceduralAntenna(batch, rng, x, z, theme);
+  }
+
+  _proceduralAntenna(batch, rng, x, z, theme) {
     const h = rng.range(7, 13);
     batch.box('dark', 0.35, h, 0.35, x, 0, z, 3, 0xffffff);
     for (let y = 2; y < h; y += rng.range(1.8, 2.6)) batch.box('dark', rng.range(1.2, 2.4), 0.12, 0.12, x, y, z, 3, 0xffffff);
@@ -901,6 +937,10 @@ export class Fortress {
   }
 
   _bunker(batch, rng, x, z, theme) {
+    if (!appendImportedBunker(batch, rng, x, z, theme)) this._proceduralBunker(batch, rng, x, z, theme);
+  }
+
+  _proceduralBunker(batch, rng, x, z, theme) {
     batch.add('hull', taperedBox(7, 5, 3.2, 8, 6), x, 0, z, 4, 0x8a929c);
     batch.box('neon', 0.15, 0.4, 4, x - 3.03, 1.8, z, 8, theme.warm, 0, 1.1, { anim: [BREATHE, 0.3, rng.next()] });
     batch.box('dark', 2.4, 0.8, 2.4, x, 3.2, z, 3, 0xffffff);
@@ -1286,24 +1326,15 @@ export class Fortress {
       const s = lerp(2.5, 16, rng.next() ** 2) * (Math.abs(x) > 90 ? 1.8 : 1) * (Math.abs(x) < 45 ? 0.4 : 1);
       const z = z0 + rng.range(0, CHUNK_LEN);
       const axis = new THREE.Vector3(rng.range(-1, 1), rng.range(-1, 1), rng.range(-1, 1)).normalize();
-      batch.add('rock', rockGeometry(rng, s), x, y, z, s * 2, rng.pick([0xb8b0a4, 0x9a928a, 0xc4b8a8, 0xa89c90]), 0, 1,
+      if (!appendImportedAsteroid(batch, rng, s, x, y, z, axis, i, Math.floor(z0 / CHUNK_LEN))) {
+        batch.add('rock', rockGeometry(rng, s), x, y, z, s * 2, rng.pick([0xb8b0a4, 0x9a928a, 0xc4b8a8, 0xa89c90]), 0, 1,
         { pivot: [x, y, z], spin: [axis.x, axis.y, axis.z, rng.range(0.05, 0.3)] });
+      }
     }
 
     // drifting wreck: a gutted hull section with glowing torn edges
     if (rng.bool(0.5)) {
-      const [x, y] = place(60, 150);
-      const z = z0 + rng.range(10, CHUNK_LEN - 10);
-      const s = rng.range(10, 22);
-      const rot = rng.range(-0.8, 0.8);
-      batch.add('dark', taperedBox(s * 0.6, s * 0.35, s * 1.8, s * 0.5, s * 0.3).rotateX(Math.PI / 2).rotateZ(rng.range(-0.6, 0.6)), x, y, z, 12, 0x6a7482, rot);
-      for (let k = 0; k < 5; k++) {
-        batch.box('dark', s * 0.9, 0.5, 0.6, x, y - s * 0.2 + k * s * 0.12, z - s * 0.6 + k * s * 0.3, 4, 0x4a5462, rot);
-      }
-      for (let k = 0; k < 4; k++) {
-        batch.box('neon', rng.range(1, 3), 0.25, 0.25, x + rng.range(-s * 0.2, s * 0.2), y + rng.range(-s * 0.2, s * 0.2),
-          z + rng.range(-s * 0.6, s * 0.6), 8, 0xff7a2a, rot, 1.4, { anim: [FLICKER, rng.range(0.8, 1.6), rng.next()] });
-      }
+      this._driftingWreckage(batch, rng, z0, place);
     }
 
     // distant orbital station truss with running lights
@@ -1322,12 +1353,43 @@ export class Fortress {
     }
   }
 
+  _driftingWreckage(batch, rng, z0, place) {
+    if (!appendImportedWreckage(batch, rng, z0)) this._proceduralWreckage(batch, rng, z0, place);
+  }
+
+  _proceduralWreckage(batch, rng, z0, place) {
+      const [x, y] = place(60, 150);
+      const z = z0 + rng.range(10, CHUNK_LEN - 10);
+      const s = rng.range(10, 22);
+      const rot = rng.range(-0.8, 0.8);
+      batch.add('dark', taperedBox(s * 0.6, s * 0.35, s * 1.8, s * 0.5, s * 0.3).rotateX(Math.PI / 2).rotateZ(rng.range(-0.6, 0.6)), x, y, z, 12, 0x6a7482, rot);
+      for (let k = 0; k < 5; k++) {
+        batch.box('dark', s * 0.9, 0.5, 0.6, x, y - s * 0.2 + k * s * 0.12, z - s * 0.6 + k * s * 0.3, 4, 0x4a5462, rot);
+      }
+      for (let k = 0; k < 4; k++) {
+        batch.box('neon', rng.range(1, 3), 0.25, 0.25, x + rng.range(-s * 0.2, s * 0.2), y + rng.range(-s * 0.2, s * 0.2),
+          z + rng.range(-s * 0.6, s * 0.6), 8, 0xff7a2a, rot, 1.4, { anim: [FLICKER, rng.range(0.8, 1.6), rng.next()] });
+      }
+  }
+
   /**
    * THE VOID GAP's landmark: a gutted dreadnought drifting beneath the lane.
    * Its deck lies well under the flight floor, so it frames the classic view
    * without ever standing between you and a target.
    */
   _dreadnought(batch, rng, z0, sector) {
+    if (appendImportedDreadnought(batch, z0, sector)) {
+      // Run the original RNG branches so following scenery stays identical.
+      // Consumed temporary geometry is discarded; no source hull is appended.
+      Fortress.prototype._proceduralDreadnought.call(this, {
+        box() {}, lamp() {}, add(key, geometry) { geometry.dispose(); },
+      }, rng, z0, sector);
+      return;
+    }
+    Fortress.prototype._proceduralDreadnought.call(this, batch, rng, z0, sector);
+  }
+
+  _proceduralDreadnought(batch, rng, z0, sector) {
     const start = (sector.zStart ?? 0) + 200, end = start + 820;
     const a = Math.max(z0, start), b = Math.min(z0 + CHUNK_LEN, end);
     if (b <= a) return;
@@ -1398,6 +1460,12 @@ export class Fortress {
    * the far beam, hangar mouths lit and catapult lights racing forward.
    */
   _carrier(batch, rng, z0, sector) {
+    if (!appendImportedCarrier(batch, rng, z0, sector)) {
+      Fortress.prototype._proceduralCarrier.call(this, batch, rng, z0, sector);
+    }
+  }
+
+  _proceduralCarrier(batch, rng, z0, sector) {
     const start = (sector.zStart ?? 0) + 160, end = start + 980;
     const a = Math.max(z0, start), b = Math.min(z0 + CHUNK_LEN, end);
     if (b <= a) return;

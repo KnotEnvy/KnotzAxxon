@@ -1,0 +1,65 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { THREE, Projectiles, mats, Materials } from './source_probe.mjs';
+
+const work=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const threeRoot=process.env.MISSILE_THREE_ROOT??path.resolve(work,'../../parked-fighter/.runtime/three');
+const {GLTFLoader}=await import(pathToFileURL(path.join(threeRoot,'examples/jsm/loaders/GLTFLoader.js')));
+const bytes=fs.readFileSync(path.join(work,'assets/missile.glb'));
+const imported=await new GLTFLoader().parseAsync(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength),'');
+imported.scene.updateMatrixWorld(true);
+const meshes=[]; imported.scene.traverse(node=>{if(node.isMesh)meshes.push(node);});
+assert.equal(meshes.length,1);
+const template=meshes[0]; assert.equal(template.name,'MISSILE_POOLED');
+assert.equal(template.matrixWorld.determinant(),1);
+assert.equal(template.geometry.index.count/3,464);
+assert.equal(template.geometry.groups.length,0);
+assert.equal(template.material.vertexColors,true);
+assert.equal(template.material.side,THREE.FrontSide);
+assert.equal(template.material.color.getHex(),0xffffff);
+assert.equal(template.geometry.getAttribute('color').count,template.geometry.getAttribute('position').count);
+const sourceContract=JSON.parse(fs.readFileSync(path.join(work,'evidence/source-contract.json')));
+const pixelFootprints=[];
+for(const context of sourceContract.contexts)for(const sample of context.samples)for(const rig of sample.cameras) {
+  const camera=new THREE.PerspectiveCamera();camera.position.fromArray(rig.eye);camera.lookAt(new THREE.Vector3(...rig.target));camera.updateMatrixWorld(true);camera.projectionMatrix.fromArray(rig.projection);
+  const matrix=new THREE.Matrix4().fromArray(sample.matrix);
+  const positions=template.geometry.getAttribute('position');const points=[];
+  for(let index=0;index<positions.count;index++){const point=new THREE.Vector3().fromBufferAttribute(positions,index).applyMatrix4(matrix).project(camera);points.push([(point.x+1)*480,(1-point.y)*270,point.z]);}
+  const minimum=[0,1,2].map(axis=>Math.min(...points.map(point=>point[axis])));const maximum=[0,1,2].map(axis=>Math.max(...points.map(point=>point[axis])));
+  pixelFootprints.push({context:context.label,time:sample.time,mode:rig.mode,resolution:[960,540],bbox_pixels_top_left:[...minimum.slice(0,2),...maximum.slice(0,2)],size_pixels:[maximum[0]-minimum[0],maximum[1]-minimum[1]],inside_screen:minimum[0]>=0&&minimum[1]>=0&&maximum[0]<=960&&maximum[1]<=540,ndc_depth:[minimum[2],maximum[2]],note:'Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof.'});
+}
+fs.writeFileSync(path.join(work,'evidence/projected-pixel-footprints.json'),JSON.stringify(pixelFootprints,null,2));
+const sourceMaterial=mats.enemyArmor;
+const tintSample=new THREE.Color(0x995c48);
+const doubleTint=tintSample.clone().multiply(sourceMaterial.color);
+const ownedGeometry=template.geometry.clone();
+const ownedMaterial=sourceMaterial.clone(); ownedMaterial.color.setHex(0xffffff); ownedMaterial.vertexColors=true;
+Materials.prototype.addRim.call({},ownedMaterial,0xffb68a,.32,2.8);
+const shader={uniforms:{},fragmentShader:'void main() {\n#include <emissivemap_fragment>\n}'};
+ownedMaterial.onBeforeCompile(shader,{}); assert.ok(shader.fragmentShader.includes('totalEmissiveRadiance +='));
+assert.equal(shader.uniforms.uRimStrength.value,.32);
+const counters={owned_geometry:0,owned_material:0,library_material:0,template_geometry:0,template_material:0};
+for(const [resource,key] of [[ownedGeometry,'owned_geometry'],[ownedMaterial,'owned_material'],[sourceMaterial,'library_material'],[template.geometry,'template_geometry'],[template.material,'template_material']])resource.addEventListener('dispose',()=>counters[key]++);
+const scene=new THREE.Scene(); const owner=new Projectiles(scene,mats,{});
+owner.missileMesh.geometry.dispose();
+owner.missileMesh.geometry=ownedGeometry;
+owner.missileMesh.material=ownedMaterial;
+const arrayIdentity=owner.missile.x;
+for(let index=0;index<40;index++)owner.launchMissile(index%8,9,Math.floor(index/8)*2,0,0,-1,44,null);
+owner._drawMissiles(); assert.equal(owner.missileMesh.count,40);
+assert.equal(owner.missileMesh.material,ownedMaterial);
+assert.deepEqual(owner.missileMesh.instanceMatrix.updateRanges,[{start:0,count:640}]);
+const sixtyFrames=[];
+for(let frame=0;frame<60;frame++) {owner.update(1/60,{playerZ:0});owner._drawMissiles();sixtyFrames.push(owner.missileMesh.count);assert.equal(owner.missile.x,arrayIdentity);assert.equal(owner.missileMesh.geometry,ownedGeometry);assert.equal(owner.missileMesh.material,ownedMaterial);}
+owner.clear(); owner._drawMissiles(); assert.equal(owner.missileMesh.count,0);
+owner.launchMissile(0,9,20,1,0,0,44,null);owner._drawMissiles();assert.equal(owner.missileMesh.count,1);
+let shutdown=false;
+const shutdownHarness=()=>{if(shutdown)return;shutdown=true;owner.dispose();ownedMaterial.dispose();};
+shutdownHarness();shutdownHarness();
+assert.deepEqual(counters,{owned_geometry:1,owned_material:1,library_material:0,template_geometry:0,template_material:0});
+assert.equal(scene.children.length,0);
+const report={mode:'CPU-only throwaway binding test, NOT production integration or renderer proof',mesh_count:1,material_count:1,primitives:1,capacity:40,triangles_per_instance:464,triangles_at_capacity:18560,active_update_range_floats:640,source_instance_scale:1,steady_60_frames_no_slot_resource_ownership:true,clear_and_reuse_pass:true,disposal_counters:counters,source_material_vertex_colors:false,owned_material_vertex_colors:true,owned_material_white_base:true,source_rim_reapplied_and_shader_patch_executed:true,hue:{authored_armor_srgb:'#995c48',wrong_double_tint_srgb:'#'+doubleTint.getHexString(),explanation:'Unmodified shared enemyArmor has vertexColors=false and ignores all palette separation. Enabling COLOR_0 without whitening multiplies two linear brown tints. Owned white clone preserves authored absolute palette; uniform source emissive and rim still warm the final lit result.'},limits:['No WebGL context: one draw is the source InstancedMesh/one primitive contract, not a captured GPU draw.','No production adapter was written or applied. Test owns one geometry/material clone total, not one per missile.','Template resources remain undisposed; a real loader/cache retains ownership.']};
+fs.writeFileSync(path.join(work,'evidence/pool-asset-cpu-verification.json'),JSON.stringify(report,null,2));
+console.log('POOL_ASSET_VERIFIED',JSON.stringify(report));

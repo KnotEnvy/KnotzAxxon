@@ -1,0 +1,23 @@
+{
+  "asset": "missile",
+  "source": "src/entities/Projectiles.js",
+  "sourceSha256": "59005ba34945adc131afd980dbc8a2d7ef4fa3a967ec5b7af74b69dc2aec7ab1",
+  "method": "Actual Three.js procedural Projectiles constructor with stub materials; CPU geometry only",
+  "triangles": 204,
+  "primitives": 1,
+  "materialCount": 1,
+  "poolCapacity": 40,
+  "drawContract": "one shared InstancedMesh draw for entire missile pool",
+  "bounds": {
+    "min": [
+      -0.41999998688697815,
+      -0.41999998688697815,
+      -0.7599999904632568
+    ],
+    "max": [
+      0.41999998688697815,
+      0.41999998688697815,
+      0.9300000071525574
+    ]
+  }
+}

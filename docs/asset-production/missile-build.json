@@ -1,0 +1,27 @@
+{
+  "taskId": "node:delegated-task:command%3Amcp%3A2f58fd8b-de15-4764-9b39-0bc19581fbe8%3Aremote-delegate%3Anitro-sol-missile-production-20261114-01",
+  "childThreadId": null,
+  "remoteChild": {
+    "environmentId": "543fe9a3-cf00-4f96-8f57-b8d50dd01cd2",
+    "threadId": "mcp:launch:2d303d94f64c81d0f2d6fa06fb0010b72389c4ecff2abddb515ddd7e9269ae4f",
+    "label": "NitroBliss"
+  },
+  "link": "[Missile production asset \u2014 Sol XHigh](t3-thread://v2/543fe9a3-cf00-4f96-8f57-b8d50dd01cd2/mcp:launch:2d303d94f64c81d0f2d6fa06fb0010b72389c4ecff2abddb515ddd7e9269ae4f)",
+  "childRunId": null,
+  "childNodeId": "node:delegated-task:command%3Amcp%3A2f58fd8b-de15-4764-9b39-0bc19581fbe8%3Aremote-delegate%3Anitro-sol-missile-production-20261114-01",
+  "status": "completed",
+  "workState": "result_available",
+  "hasPendingChildRuns": false,
+  "latestTerminalRunId": null,
+  "latestTerminalStatus": "completed",
+  "latestTerminalSummary": null,
+  "latestTerminalResultContextTransferId": null,
+  "providerInstanceId": "codex",
+  "model": "gpt-6.1-sol",
+  "executedModel": null,
+  "summary": "Frozen initial received;110 content hashes and actual pooled integration verified.",
+  "resultContextTransferId": null,
+  "hasPendingQuestion": false,
+  "pendingApproval": null,
+  "waitTimedOut": false
+}

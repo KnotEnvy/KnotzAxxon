@@ -6,6 +6,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawn } = require('node:child_process');
+const { createHash } = require('node:crypto');
 const { chromium } = require('playwright');
 const OUT = process.env.KZ_OUT || 'artifacts/release-smoke';
 const remote = !!process.env.KZ_TEST_URL;
@@ -54,6 +55,7 @@ async function layout(page) {
     report.assets=assets.map(a=>a.pathname);report.assets_matched_dist=!remote||process.env.KZ_COMPARE_DIST==='1';
     browser=await chromium.launch({headless:true,...(process.env.KZ_BROWSER_CHANNEL ? {channel:process.env.KZ_BROWSER_CHANNEL} : {})});
     report.browser=browser.version();
+    const loadedModels=new Set();
     const contexts=[];
     for(const fixture of [
       {name:'desktop',width:1280,height:720,touch:false,quality:'low'},
@@ -65,7 +67,7 @@ async function layout(page) {
       page.on('pageerror',e=>report.errors.push(fixture.name+': '+e.message));
       page.on('console',m=>{if(m.type()==='error')report.errors.push(fixture.name+': '+m.text());});
       page.on('requestfailed',r=>report.failed_requests.push({fixture:fixture.name,url:r.url(),error:r.failure()?.errorText}));
-      page.on('response',r=>{if(r.status()>=400)report.errors.push(fixture.name+': HTTP '+r.status()+' '+r.url());});
+      page.on('response',r=>{const pathname=new global.URL(r.url()).pathname;if(pathname.includes('/models/')&&r.ok())loadedModels.add(pathname);if(r.status()>=400)report.errors.push(fixture.name+': HTTP '+r.status()+' '+r.url());});
       await page.addInitScript(quality=>localStorage.setItem('knotzaxxon.settings.v2',JSON.stringify({quality,camera:'classic',shake:0})),fixture.quality);
       await page.goto(URL);await title(page);
       assert(!(await page.evaluate(()=>!!window.KZ)),'Production exposed development debug API');
@@ -99,6 +101,21 @@ async function layout(page) {
       }
       await context.close();
     }
+    const requiredModels=[
+      ...['player','sentinel','turret','radar','silo','fuel'].map(n=>'models/'+n+'.glb'),
+      ...['drone','interceptor','heavy-turret','mine','shield-pickup','parked-fighter','spread-pickup','repair-pickup','fuel-pickup','missile','dreadnought','asteroids','bunker','cargo-kit'].map(n=>'models/production/'+n+'.glb'),
+      ...['carrier-template.json','carrier-template.bin','wreckage-templates.json','cooling-stack.template.json','flak-gun.template.json','fuel-depot.template.json','covered-fighter.recipe.json'].map(n=>'models/production/'+n),
+    ];
+    for(const name of requiredModels)assert(loadedModels.has(new global.URL(name,URL).pathname),'Default release failed to load '+name);
+    report.default_model_assets=[...loadedModels].sort();
+    const modelFiles=[...['player','sentinel','turret','radar','silo','fuel'].map(n=>'models/'+n+'.glb'),...fs.readdirSync('dist/models/production').filter(n=>/\.(glb|json|bin)$/.test(n)).map(n=>'models/production/'+n)];
+    report.model_hashes=await Promise.all(modelFiles.map(async name=>{
+      const response=await fetch(new global.URL(name,URL),{cache:'no-store'});assert(response.ok,'Model HTTP '+response.status+': '+name);
+      const actual=Buffer.from(await response.arrayBuffer());
+      if(!remote||process.env.KZ_COMPARE_DIST==='1')assert(actual.equals(fs.readFileSync(path.join('dist',name))),'Served model differs from dist: '+name);
+      return {asset:name,bytes:actual.length,sha256:createHash('sha256').update(actual).digest('hex')};
+    }));
+    report.models_matched_dist=!remote||process.env.KZ_COMPARE_DIST==='1';
     assert(report.errors.length===0,'Browser errors: '+report.errors.join('\n'));
     assert(report.failed_requests.length===0,'Failed network requests: '+JSON.stringify(report.failed_requests));
     report.status='passed';

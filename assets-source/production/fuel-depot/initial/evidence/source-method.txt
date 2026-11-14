@@ -1,0 +1,11 @@
+_fuelDepot(batch, rng, x, z) {
+    for (let k = 0; k < 2; k++) {
+      const tx = x + (k ? 1.6 : -1.6);
+      batch.stamp('hull', TPL.pipeZ, tx, 1.5, z, 3, 0x9aa2aa, { sx: 1.25, sy: 1.25, sz: 8 });
+      for (const dz of [-2.6, 2.6]) {
+        batch.box('dark', 2.2, 0.9, 0.6, tx, 0, z + dz, 3, 0xffffff);
+        batch.stamp('dark', TPL.pipeZ, tx, 1.5, z + dz, 3, 0xffffff, { sx: 1.32, sy: 1.32, sz: 0.3 });
+      }
+    }
+    batch.stamp('dark', TPL.pipeZ, x, 2.9, z, 3, 0xffffff, { sx: 0.2, sy: 0.2, sz: 7 });
+  }

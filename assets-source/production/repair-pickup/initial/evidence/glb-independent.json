@@ -1,0 +1,306 @@
+{
+  "bytes": 75676,
+  "sha256": "f063dc0d9daa554f982da33fc72a9222c1a396031a59fe5f2ba71eb9c0929caa",
+  "triangles": 928,
+  "material_primitives": 3,
+  "mesh_nodes": 3,
+  "nodes": [
+    {
+      "extras": {
+        "game_pivot": [
+          0.0,
+          0.0,
+          -0.3
+        ],
+        "ownership": "clone geometry and material per instance; no textures",
+        "motion": "static relative to billboard root; original pivot (0,0,-.30)"
+      },
+      "mesh": 0,
+      "name": "core",
+      "translation": [
+        0,
+        0,
+        -0.30000001192092896
+      ]
+    },
+    {
+      "extras": {
+        "game_pivot": [
+          0.0,
+          0.0,
+          0.1
+        ],
+        "ownership": "clone geometry and material per instance; no textures",
+        "motion": "GAME local rotation.z=sin(phase*2.2)*.08; original pivot (0,0,.10)"
+      },
+      "mesh": 1,
+      "name": "shape",
+      "translation": [
+        0,
+        0,
+        0.10000000149011612
+      ]
+    },
+    {
+      "extras": {
+        "game_pivot": [
+          0,
+          0,
+          0
+        ],
+        "ownership": "clone geometry and material per instance; no textures",
+        "motion": "rotation.z += dt*.3 in GAME local Z; uniform scale 1+sin(phase*4)*.025"
+      },
+      "mesh": 2,
+      "name": "shell"
+    },
+    {
+      "children": [
+        0,
+        1,
+        2
+      ],
+      "extras": {
+        "game_axes": "+X across / +Y up / +Z camera-facing badge normal; XY badge plane",
+        "source_contract": "Pickup.js ee221ad3e05cd66292fe02b71b50f513696bdda2; root copies ctx.camera.quaternion",
+        "review_status": "pending_deferred_opus_review; frozen INITIAL only"
+      },
+      "name": "repair_pickup_root"
+    }
+  ],
+  "materials": [
+    {
+      "extras": {
+        "identity_srgb": "#52ffa8",
+        "external_halo": "not present; retain Materials._pickupHalos shared sprite opacity .35"
+      },
+      "name": "repair_core_titanium",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.47999998927116394,
+        "roughnessFactor": 0.4000000059604645
+      }
+    },
+    {
+      "extensions": {
+        "KHR_materials_unlit": {}
+      },
+      "extras": {
+        "identity_srgb": "#52ffa8",
+        "external_halo": "not present; retain Materials._pickupHalos shared sprite opacity .35"
+      },
+      "name": "repair_shape_ceramic",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "roughnessFactor": 0.9
+      }
+    },
+    {
+      "extensions": {
+        "KHR_materials_unlit": {}
+      },
+      "extras": {
+        "identity_srgb": "#52ffa8",
+        "external_halo": "not present; retain Materials._pickupHalos shared sprite opacity .35"
+      },
+      "name": "repair_shell_green_unlit",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "roughnessFactor": 0.9
+      }
+    }
+  ],
+  "images": 0,
+  "textures": 0,
+  "animations": 0,
+  "transformed_rest_bounds_game": {
+    "min": [
+      -2.0450000762939453,
+      -2.0450000762939453,
+      -0.3800000101327896
+    ],
+    "max": [
+      2.0450000762939453,
+      2.0450000762939453,
+      0.25999999791383743
+    ],
+    "size": [
+      4.090000152587891,
+      4.090000152587891,
+      0.640000008046627
+    ]
+  },
+  "objects": [
+    {
+      "node": "core",
+      "triangles": 44,
+      "material_primitives": 1,
+      "vertices": 84,
+      "vertex_palette_srgb": [
+        "#162f2c",
+        "#1d3633",
+        "#25423e",
+        "#6c9186"
+      ],
+      "local_positive_Z_facing_normals": 6,
+      "bounds": {
+        "min": [
+          -1.4202816486358643,
+          -1.6399999856948853,
+          -0.3800000101327896
+        ],
+        "max": [
+          1.4202816486358643,
+          1.6399999856948853,
+          -0.2200000137090683
+        ],
+        "size": [
+          2.8405632972717285,
+          3.2799999713897705,
+          0.1599999964237213
+        ]
+      },
+      "matrix_world_row_major": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.30000001192092896
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "node": "shape",
+      "triangles": 116,
+      "material_primitives": 1,
+      "vertices": 192,
+      "vertex_palette_srgb": [
+        "#264b3e",
+        "#3c8f66",
+        "#52ffa8",
+        "#ddffeb"
+      ],
+      "local_positive_Z_facing_normals": 36,
+      "bounds": {
+        "min": [
+          -1.1399999856948853,
+          -1.1399999856948853,
+          0.06000000238418579
+        ],
+        "max": [
+          1.1399999856948853,
+          1.1399999856948853,
+          0.25999999791383743
+        ],
+        "size": [
+          2.2799999713897705,
+          2.2799999713897705,
+          0.19999999552965164
+        ]
+      },
+      "matrix_world_row_major": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10000000149011612
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "node": "shell",
+      "triangles": 768,
+      "material_primitives": 1,
+      "vertices": 1536,
+      "vertex_palette_srgb": [
+        "#16392f",
+        "#244d40",
+        "#39785f",
+        "#52ffa8",
+        "#5cbd8a",
+        "#baffd8",
+        "#c2ffde"
+      ],
+      "local_positive_Z_facing_normals": 0,
+      "bounds": {
+        "min": [
+          -2.0450000762939453,
+          -2.0450000762939453,
+          -0.06499999761581421
+        ],
+        "max": [
+          2.0450000762939453,
+          2.0450000762939453,
+          0.06499999761581421
+        ],
+        "size": [
+          4.090000152587891,
+          4.090000152587891,
+          0.12999999523162842
+        ]
+      },
+      "matrix_world_row_major": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "assertions": "PASS: exact named pivots; identity rotations/scales; game XY plane/+Z front; 3 primitives; budgets; shell unlit; no halo/texture/animation"
+}

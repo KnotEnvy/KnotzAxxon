@@ -1,0 +1,47 @@
+{
+  "blender": "5.2.1 LTS",
+  "build_hash": "9e2066aef7ef",
+  "objects": {
+    "shell": {
+      "triangles": 864,
+      "vertices": 448,
+      "polygons": 432,
+      "materials": [
+        "spread_shell_amber_unlit"
+      ],
+      "game_pivot": [
+        0,
+        0,
+        0
+      ]
+    },
+    "core": {
+      "triangles": 116,
+      "vertices": 72,
+      "polygons": 56,
+      "materials": [
+        "spread_core_titanium"
+      ],
+      "game_pivot": [
+        0.0,
+        0.0,
+        -0.3
+      ]
+    },
+    "shape": {
+      "triangles": 228,
+      "vertices": 120,
+      "polygons": 96,
+      "materials": [
+        "spread_shape_amber_unlit"
+      ],
+      "game_pivot": [
+        0.0,
+        0.0,
+        0.1
+      ]
+    }
+  },
+  "triangles": 1208,
+  "glb_material_normalization": "Deterministic unlit base factor #ffb43a, neutral COLOR_0; source gains applied by ownership recipe, not baked into glTF factors."
+}

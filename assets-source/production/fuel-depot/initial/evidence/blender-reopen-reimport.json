@@ -1,0 +1,194 @@
+{
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "reopenedBlend": {
+    "parts": [
+      {
+        "name": "port.continuous-shell-formed-heads",
+        "triangles": 192,
+        "materials": [
+          "shared.hull.runtime-proxy"
+        ]
+      },
+      {
+        "name": "starboard.continuous-shell-formed-heads",
+        "triangles": 192,
+        "materials": [
+          "shared.hull.runtime-proxy"
+        ]
+      },
+      {
+        "name": "port.fore.fitted-saddle",
+        "triangles": 24,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "port.fore.retaining-strap",
+        "triangles": 72,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "port.aft.fitted-saddle",
+        "triangles": 24,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "port.aft.retaining-strap",
+        "triangles": 72,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "port.riser-nozzle",
+        "triangles": 24,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "port.valve-flange",
+        "triangles": 32,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "port.valve-lever",
+        "triangles": 12,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "port.end-service-plate",
+        "triangles": 12,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "starboard.fore.fitted-saddle",
+        "triangles": 24,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "starboard.fore.retaining-strap",
+        "triangles": 72,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "starboard.aft.fitted-saddle",
+        "triangles": 24,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "starboard.aft.retaining-strap",
+        "triangles": 72,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "starboard.riser-nozzle",
+        "triangles": 24,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "starboard.valve-flange",
+        "triangles": 32,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "starboard.valve-lever",
+        "triangles": 12,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "starboard.end-service-plate",
+        "triangles": 12,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "center.longitudinal-manifold",
+        "triangles": 32,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      },
+      {
+        "name": "center.connected-cross-header",
+        "triangles": 32,
+        "materials": [
+          "shared.dark.runtime-proxy"
+        ]
+      }
+    ],
+    "triangles": 992,
+    "bounds": [
+      [
+        -2.9200000762939453,
+        0.0,
+        -4.0
+      ],
+      [
+        2.9200000762939453,
+        3.0999999046325684,
+        4.0
+      ]
+    ]
+  },
+  "cleanGLBReimport": {
+    "parts": [
+      {
+        "name": "fuel-depot.dark",
+        "triangles": 608,
+        "materials": [
+          "runtime.dark"
+        ]
+      },
+      {
+        "name": "fuel-depot.hull",
+        "triangles": 384,
+        "materials": [
+          "runtime.hull"
+        ]
+      }
+    ],
+    "triangles": 992,
+    "bounds": [
+      [
+        -2.9200000762939453,
+        0.0,
+        -4.0
+      ],
+      [
+        2.9200000762939453,
+        3.0999999046325684,
+        4.0
+      ]
+    ]
+  },
+  "packedNoExternalImageDependencies": true,
+  "passed": true
+}

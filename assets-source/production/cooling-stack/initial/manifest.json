@@ -1,0 +1,137 @@
+{
+  "asset": "reactor-cooling-stack",
+  "revision": "initial",
+  "review_status": "pending_deferred_opus_review",
+  "formal_review_rounds": 0,
+  "formal_fix_rounds": 0,
+  "implementation_validation_only": true,
+  "helpers_used": 0,
+  "claude_retries": 0,
+  "frozen_at_utc": "2026-11-14T19:53:58.979151+00:00",
+  "source_commit": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "scope": "asset-work/cooling-stack/ only; no production integration",
+  "execution": {
+    "machine": "NitroBliss",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "xhigh",
+    "authorized_speed": "available speed",
+    "speed_tier_observability": "No separately exposed speed-tier setting; no claim of an unobserved tier",
+    "runtime": "T3 Code through Codex harness"
+  },
+  "blender": {
+    "version": "5.2.1 LTS",
+    "build_hash": "9e2066aef7ef",
+    "platform": "native Linux x64",
+    "engine": "BLENDER_EEVEE",
+    "render_threads": 4,
+    "software_rasterizer_threads": 4,
+    "offline_samples": 16,
+    "view_transform": "AgX"
+  },
+  "asset_metrics": {
+    "evaluated_triangles": 460,
+    "maximum_source_height_triangles": 460,
+    "material_primitives": 3,
+    "triangles_per_bucket": {
+      "hull": 124,
+      "dark": 324,
+      "neon": 12
+    },
+    "glb_bytes": 69256,
+    "new_textures": 0,
+    "animations": 0,
+    "transformed_rest_bounds": {
+      "min": [
+        -2.0799999237060547,
+        0.0,
+        -2.0799999237060547
+      ],
+      "max": [
+        2.0799999237060547,
+        9.239999771118164,
+        2.0799999237060547
+      ]
+    },
+    "height_endpoints": {
+      "7": {
+        "min": [
+          -2.0799999237060547,
+          0.0,
+          -2.0799999237060547
+        ],
+        "max": [
+          2.0799999237060547,
+          7.239999771118164,
+          2.0799999237060547
+        ]
+      },
+      "11": {
+        "min": [
+          -2.0799999237060547,
+          0.0,
+          -2.0799999237060547
+        ],
+        "max": [
+          2.0799999237060547,
+          11.239999771118164,
+          2.0799999237060547
+        ]
+      }
+    },
+    "designed_half_footprint": 2.08,
+    "minimum_lane_gap": 2.42
+  },
+  "source_metrics": {
+    "measured_seed_triangles": [
+      84,
+      72,
+      84,
+      84
+    ],
+    "source_method_rng_draws": 2,
+    "emitter_wrapper_additional_draws": 1,
+    "caller_loop": "reevaluated rng.int(1,2), unchanged",
+    "source_placements": "X20.5..25; Zchunk+10..86, unchanged"
+  },
+  "proof": {
+    "paired_full_chunk_cases": 16,
+    "paired_selected_stack_calls": 24,
+    "full_rng_draws_compared_per_implementation": 7641,
+    "height_samples": 401,
+    "shader_clock_samples": 1025,
+    "downstream_buffers": "exact outside selected cooling geometry",
+    "surface_semantics": "exact original records when captured",
+    "real_gpu_test": false,
+    "receiver_verification": "orchestrator responsibility"
+  },
+  "core_sha256": {
+    "cooling-stack.blend": "69763d6686d5c141e21794dcb734683607a650520859b06100bc64b2c6a3f8a8",
+    "cooling-stack.glb": "96a0f506f1c3ce4644fc1814283b1a0e022691b4786eb7481fa68ceda1cc2002",
+    "cooling-stack.template.json": "dc71a4c9dfd70e10e217af3c3b358be983a1901e23a3fcf9d2f84e1ff3d20601"
+  },
+  "source_reference_sha256": {
+    "src/world/Fortress.js": "824a3d8d9e64bf775e5a486e52c29bef8ce94daebfa138bd4ab2067121790165",
+    "src/world/Level.js": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016",
+    "src/core/Utils.js": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972",
+    "src/core/Collision.js": "8c183663f626f06fea03b0ae64bceafaab3222223079b7e022127936b9a38cfc",
+    "src/render/GeoUtils.js": "eb138a5ad1280bc4db4731de456938390a20002b9caccd74ca6b041b9d9874c5",
+    "src/render/Materials.js": "8af35e4641253713d8d8d1770edebb3dd0bff77bf5caee4eaba7f0db58aebd52",
+    "src/game/CameraRig.js": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205",
+    "src/game/Game.js": "cbf9b335e16a44bc6b59f30e6a6a01240230a8b231fade31f4c1dbdfdea56b98",
+    "src/core/FlightCamera.js": "f691b3cef8a36de611762cb3129571f0684457e607be141dc1b5158401f4506e",
+    "src/core/Settings.js": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+    "src/render/ImportedModels.js": "212b8c8f4f438ae70b408e2ff218524850e3cf6b027e63961a813e58d6d42773",
+    "src/entities/Player.js": "70d34d33ca9e81a4c27f8a37d94ab6089d7e4c97cf4df2a6772bd24277aabe5b",
+    "public/models/player.glb": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57"
+  },
+  "PNG_count": 33,
+  "limitations": [
+    "Offline EEVEE evidence, not live WebGL or FPS or final acceptance.",
+    "Shared Three procedural texture maps, postprocessing, bloom, steam particles and fog are not reproduced. Proxy material response and original Batch linear colors are used.",
+    "The synthetic reactor chunk omits gameplay feature records; camera snap evidence is finite, no motion/boost/shake/portrait sweep.",
+    "CPU material objects are identity-test stand-ins, not a live Materials/WebGL instance. Shader/material mapping is source-verified, not rendered in WebGL.",
+    "Finite chunk seeds and source-camera snapshots, not every campaign chunk, portrait screen, boost, shake, bank or feature collision.",
+    "h=11 is a closed-envelope stress endpoint; mulberry32 does not generate the upper range endpoint. No live FPS or acceptance claim."
+  ],
+  "freeze": "SHA256SUMS covers every content file except itself. Content and directories read-only after sealing. Archive and sender receipt outside initial."
+}

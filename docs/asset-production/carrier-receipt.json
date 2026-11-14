@@ -1,0 +1,16 @@
+{
+  "archive": "carrier-initial-2026-11-14.tar.gz",
+  "sha256": "71e4d118dbf292ae2e332a840d81ebe06a9d4a8110b69c00917081db73a3b17f",
+  "contentHashesVerified": 42,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/carrier/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "senderExitStatus": 0,
+  "transferMethod": "Windows Taildrop",
+  "glbSha256": "f6dd09aa6324a6cf1bb9526bdfd94853f1ce59cafd243cecd10da813e2e96fe1",
+  "blendSha256": "d6c2c8a50b1c3c6261d8ff36b21f9cb2d8b267ed55d51f7b296e87162de71f26",
+  "formalReviewsCompleted": 0,
+  "fixPassesCompleted": 0
+}

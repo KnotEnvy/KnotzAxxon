@@ -1,0 +1,408 @@
+[
+  {
+    "file": "01-common-rest.png",
+    "label": "COMMON NEUTRAL / rest / world scale 1 / horizontal ortho span14",
+    "cameraGame": [
+      -16.0,
+      24.0,
+      -30.0
+    ],
+    "projection": "ORTHO",
+    "orthoHorizontalSpan": 14.0,
+    "resolution": [
+      800,
+      600
+    ]
+  },
+  {
+    "file": "02-front-rest.png",
+    "label": "FRONT / rest / twin recessed muzzles and charge eye",
+    "cameraGame": [
+      9.0,
+      6.5,
+      13.0
+    ],
+    "projection": "ORTHO",
+    "orthoHorizontalSpan": 10.0,
+    "resolution": [
+      800,
+      600
+    ]
+  },
+  {
+    "file": "03-side-rest.png",
+    "label": "SIDE / exact pivot at Y1.725 / low deck clearance",
+    "cameraGame": [
+      -11.0,
+      5.5,
+      1.0
+    ],
+    "projection": "ORTHO",
+    "orthoHorizontalSpan": 10.0,
+    "resolution": [
+      800,
+      600
+    ]
+  },
+  {
+    "file": "04-top-rest.png",
+    "label": "TOP / open twin weapon corridor",
+    "cameraGame": [
+      0.0,
+      18.0,
+      0.0010000000474974513
+    ],
+    "projection": "ORTHO",
+    "orthoHorizontalSpan": 10.0,
+    "resolution": [
+      800,
+      600
+    ]
+  },
+  {
+    "file": "05-action-charge.png",
+    "label": "ACTION + MAX CHARGE / yaw180 pitch32 / eye scale1.45",
+    "cameraGame": [
+      -16.0,
+      24.0,
+      -30.0
+    ],
+    "projection": "ORTHO",
+    "orthoHorizontalSpan": 14.0,
+    "resolution": [
+      800,
+      600
+    ]
+  },
+  {
+    "file": "06-full-elevation.png",
+    "label": "FULL SOURCE ELEVATION / pitch90 / no aim clamp / no detach",
+    "cameraGame": [
+      9.0,
+      6.5,
+      13.0
+    ],
+    "projection": "ORTHO",
+    "orthoHorizontalSpan": 10.0,
+    "resolution": [
+      800,
+      600
+    ]
+  },
+  {
+    "file": "07-lateral-low.png",
+    "label": "LATERAL LOW / yaw90 pitch5 / seated axles",
+    "cameraGame": [
+      -16.0,
+      24.0,
+      -30.0
+    ],
+    "projection": "ORTHO",
+    "orthoHorizontalSpan": 14.0,
+    "resolution": [
+      800,
+      600
+    ]
+  },
+  {
+    "file": "07b-rooftop-down.png",
+    "label": "ROOFTOP DOWN / source pitch-90 / open annular well / no clamp",
+    "cameraGame": [
+      9.0,
+      6.5,
+      13.0
+    ],
+    "projection": "ORTHO",
+    "orthoHorizontalSpan": 10.0,
+    "resolution": [
+      800,
+      600
+    ]
+  },
+  {
+    "file": "08-hit-flash.png",
+    "label": "HIT FLASH / diagnostic solid-white prototype / runtime additive shell deferred",
+    "cameraGame": [
+      9.0,
+      6.5,
+      13.0
+    ],
+    "projection": "ORTHO",
+    "orthoHorizontalSpan": 10.0,
+    "resolution": [
+      800,
+      600
+    ],
+    "limitation": "EEVEE diagnostic uses emission, runtime uses transparent additive opacity flash*.75"
+  },
+  {
+    "file": "09-shipped-standard-common.png",
+    "label": "SHIPPED STANDARD TURRET / identical common camera span14 / no normalization",
+    "cameraGame": [
+      -16.0,
+      24.0,
+      -30.0
+    ],
+    "projection": "ORTHO",
+    "orthoHorizontalSpan": 14.0,
+    "resolution": [
+      800,
+      600
+    ]
+  },
+  {
+    "file": "10-shared-scale-pair.png",
+    "label": "SHARED WORLD SCALE / heavy at X-5; shipped standard at X+5 / span18",
+    "cameraGame": [
+      -16.0,
+      24.0,
+      -30.0
+    ],
+    "projection": "ORTHO",
+    "orthoHorizontalSpan": 18.0,
+    "resolution": [
+      800,
+      600
+    ]
+  },
+  {
+    "file": "game-classic-15.png",
+    "label": "OFFLINE GAMEPLAY RECONSTRUCTION / CLASSIC / target distance 15 / heavy X-5, shipped standard X+5",
+    "cameraGame": [
+      -45.25483322143555,
+      54.255001068115234,
+      -32.25483322143555
+    ],
+    "projection": "ORTHO",
+    "orthoHorizontalSpan": 142.22222900390625,
+    "resolution": [
+      960,
+      540
+    ],
+    "sourceCamera": {
+      "mode": "classic",
+      "distance": 15,
+      "player": [
+        0,
+        11,
+        -15
+      ],
+      "position": [
+        -45.25483399593904,
+        54.255,
+        -32.254833995939045
+      ],
+      "target": [
+        0,
+        9,
+        13
+      ],
+      "classic": true,
+      "halfHeight": 40,
+      "fov": 52,
+      "aspect": 1.7777777777777777
+    },
+    "worldScale": 1,
+    "lighting": "Sky.js dusk keyDir, sun position/target, rim position/target/colors; hemisphere approximated by world ambient. No PMREM, postFX, fog, particles, renderer, or live gameplay."
+  },
+  {
+    "file": "game-classic-50.png",
+    "label": "OFFLINE GAMEPLAY RECONSTRUCTION / CLASSIC / target distance 50 / heavy X-5, shipped standard X+5",
+    "cameraGame": [
+      -45.25483322143555,
+      54.255001068115234,
+      -67.25483703613281
+    ],
+    "projection": "ORTHO",
+    "orthoHorizontalSpan": 142.22222900390625,
+    "resolution": [
+      960,
+      540
+    ],
+    "sourceCamera": {
+      "mode": "classic",
+      "distance": 50,
+      "player": [
+        0,
+        11,
+        -50
+      ],
+      "position": [
+        -45.25483399593904,
+        54.255,
+        -67.25483399593904
+      ],
+      "target": [
+        0,
+        9,
+        -22
+      ],
+      "classic": true,
+      "halfHeight": 40,
+      "fov": 52,
+      "aspect": 1.7777777777777777
+    },
+    "worldScale": 1,
+    "lighting": "Sky.js dusk keyDir, sun position/target, rim position/target/colors; hemisphere approximated by world ambient. No PMREM, postFX, fog, particles, renderer, or live gameplay."
+  },
+  {
+    "file": "game-modern-15.png",
+    "label": "OFFLINE GAMEPLAY RECONSTRUCTION / MODERN / target distance 15 / heavy X-5, shipped standard X+5",
+    "cameraGame": [
+      -9.918583869934082,
+      25.0,
+      -42.2510871887207
+    ],
+    "projection": "PERSP",
+    "orthoHorizontalSpan": null,
+    "resolution": [
+      960,
+      540
+    ],
+    "sourceCamera": {
+      "mode": "modern",
+      "distance": 15,
+      "player": [
+        0,
+        11,
+        -15
+      ],
+      "position": [
+        -9.918584156444393,
+        25,
+        -42.25108600279134
+      ],
+      "target": [
+        0,
+        12.2,
+        1
+      ],
+      "classic": false,
+      "halfHeight": 40,
+      "fov": 58,
+      "aspect": 1.7777777777777777
+    },
+    "worldScale": 1,
+    "lighting": "Sky.js dusk keyDir, sun position/target, rim position/target/colors; hemisphere approximated by world ambient. No PMREM, postFX, fog, particles, renderer, or live gameplay."
+  },
+  {
+    "file": "game-modern-50.png",
+    "label": "OFFLINE GAMEPLAY RECONSTRUCTION / MODERN / target distance 50 / heavy X-5, shipped standard X+5",
+    "cameraGame": [
+      -9.918583869934082,
+      25.0,
+      -77.25108337402344
+    ],
+    "projection": "PERSP",
+    "orthoHorizontalSpan": null,
+    "resolution": [
+      960,
+      540
+    ],
+    "sourceCamera": {
+      "mode": "modern",
+      "distance": 50,
+      "player": [
+        0,
+        11,
+        -50
+      ],
+      "position": [
+        -9.918584156444393,
+        25,
+        -77.25108600279134
+      ],
+      "target": [
+        0,
+        12.2,
+        -34
+      ],
+      "classic": false,
+      "halfHeight": 40,
+      "fov": 58,
+      "aspect": 1.7777777777777777
+    },
+    "worldScale": 1,
+    "lighting": "Sky.js dusk keyDir, sun position/target, rim position/target/colors; hemisphere approximated by world ambient. No PMREM, postFX, fog, particles, renderer, or live gameplay."
+  },
+  {
+    "file": "game-chase-15.png",
+    "label": "OFFLINE GAMEPLAY RECONSTRUCTION / CHASE / target distance 15 / heavy X-5, shipped standard X+5",
+    "cameraGame": [
+      -2.508683204650879,
+      20.5,
+      -38.868526458740234
+    ],
+    "projection": "PERSP",
+    "orthoHorizontalSpan": null,
+    "resolution": [
+      960,
+      540
+    ],
+    "sourceCamera": {
+      "mode": "chase",
+      "distance": 15,
+      "player": [
+        0,
+        11,
+        -15
+      ],
+      "position": [
+        -2.5086831184236833,
+        20.5,
+        -38.86852548883856
+      ],
+      "target": [
+        0,
+        12.2,
+        1
+      ],
+      "classic": false,
+      "halfHeight": 40,
+      "fov": 66,
+      "aspect": 1.7777777777777777
+    },
+    "worldScale": 1,
+    "lighting": "Sky.js dusk keyDir, sun position/target, rim position/target/colors; hemisphere approximated by world ambient. No PMREM, postFX, fog, particles, renderer, or live gameplay."
+  },
+  {
+    "file": "game-chase-50.png",
+    "label": "OFFLINE GAMEPLAY RECONSTRUCTION / CHASE / target distance 50 / heavy X-5, shipped standard X+5",
+    "cameraGame": [
+      -2.508683204650879,
+      20.5,
+      -73.86852264404297
+    ],
+    "projection": "PERSP",
+    "orthoHorizontalSpan": null,
+    "resolution": [
+      960,
+      540
+    ],
+    "sourceCamera": {
+      "mode": "chase",
+      "distance": 50,
+      "player": [
+        0,
+        11,
+        -50
+      ],
+      "position": [
+        -2.5086831184236833,
+        20.5,
+        -73.86852548883856
+      ],
+      "target": [
+        0,
+        12.2,
+        -34
+      ],
+      "classic": false,
+      "halfHeight": 40,
+      "fov": 66,
+      "aspect": 1.7777777777777777
+    },
+    "worldScale": 1,
+    "lighting": "Sky.js dusk keyDir, sun position/target, rim position/target/colors; hemisphere approximated by world ambient. No PMREM, postFX, fog, particles, renderer, or live gameplay."
+  }
+]

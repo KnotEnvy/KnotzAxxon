@@ -1,0 +1,159 @@
+{
+  "file": "fortress-bunker.glb",
+  "sha256": "0cd38bb1b315bf68f3a84139bb73dd5009644c942d56ac03370d0ef7a6986dbb",
+  "bytes": 51652,
+  "triangles": 468,
+  "primitives": 3,
+  "transformedBounds": [
+    [
+      -3.450000047683716,
+      0.0,
+      -3.950000047683716
+    ],
+    [
+      3.450000047683716,
+      3.930000066757202,
+      3.950000047683716
+    ]
+  ],
+  "finite": true,
+  "degenerateTriangles": 0,
+  "normalLengthRange": [
+    0.9999999731045951,
+    1.0000000672060039
+  ],
+  "minimumFaceNormalAlignment": 0.9999999986272838,
+  "textures": 0,
+  "images": 0,
+  "materials": [
+    {
+      "name": "BUNKER_Dark",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.46000000834465027
+      }
+    },
+    {
+      "name": "BUNKER_Hull",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.36000001430511475
+      }
+    },
+    {
+      "emissiveFactor": [
+        1,
+        0.4564110338687897,
+        0.0423114113509655
+      ],
+      "extensions": {
+        "KHR_materials_emissive_strength": {
+          "emissiveStrength": 1.100000023841858
+        }
+      },
+      "name": "BUNKER_Status",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.6000000238418579
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "node": "bunker-dark",
+      "material": "BUNKER_Dark",
+      "triangles": 224,
+      "transformedMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "attributes": [
+        "POSITION",
+        "NORMAL",
+        "COLOR_0"
+      ]
+    },
+    {
+      "node": "bunker-hull",
+      "material": "BUNKER_Hull",
+      "triangles": 242,
+      "transformedMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "attributes": [
+        "POSITION",
+        "NORMAL",
+        "COLOR_0"
+      ]
+    },
+    {
+      "node": "bunker-neon",
+      "material": "BUNKER_Status",
+      "triangles": 2,
+      "transformedMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "attributes": [
+        "POSITION",
+        "NORMAL",
+        "COLOR_0"
+      ]
+    }
+  ],
+  "nodes": [
+    "bunker-dark",
+    "bunker-hull",
+    "bunker-neon"
+  ],
+  "status": "PASS",
+  "limitations": "Independent stdlib binary/static-transform audit; not Khronos glTF Validator, not a renderer or GPU test."
+}

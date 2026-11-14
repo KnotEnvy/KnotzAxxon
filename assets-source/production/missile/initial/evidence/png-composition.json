@@ -1,0 +1,191 @@
+{
+  "sheets": [
+    {
+      "file": "sheet-multiview.png",
+      "source_pngs": [
+        "diagnostic-quarter.png",
+        "diagnostic-side.png",
+        "diagnostic-nose.png",
+        "diagnostic-aft.png"
+      ],
+      "composition": "Nearest-neighbor contact sheet of ACTUAL PNG renders, not rerendered geometry",
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "sheet-common-neutral.png",
+      "source_pngs": [
+        "common-neutral-missile.png",
+        "common-neutral-baseline.png",
+        "common-neutral-lineup.png"
+      ],
+      "composition": "Nearest-neighbor contact sheet of ACTUAL PNG renders, not rerendered geometry",
+      "dimensions": [
+        960,
+        1620
+      ]
+    },
+    {
+      "file": "sheet-extreme-orientations.png",
+      "source_pngs": [
+        "orientation-0.png",
+        "orientation-1.png",
+        "orientation-2.png",
+        "orientation-3.png",
+        "orientation-4.png",
+        "orientation-5.png",
+        "orientation-6.png",
+        "orientation-7.png"
+      ],
+      "composition": "Nearest-neighbor contact sheet of ACTUAL PNG renders, not rerendered geometry",
+      "dimensions": [
+        1920,
+        540
+      ]
+    },
+    {
+      "file": "sheet-source-cameras.png",
+      "source_pngs": [
+        "context-sentinel-heavy-0-classic-baseline.png",
+        "context-sentinel-heavy-0-classic-new.png",
+        "context-sentinel-heavy-1-modern-baseline.png",
+        "context-sentinel-heavy-1-modern-new.png",
+        "context-sentinel-heavy-2-chase-baseline.png",
+        "context-sentinel-heavy-2-chase-new.png",
+        "context-sentinel-salvo-0-classic-baseline.png",
+        "context-sentinel-salvo-0-classic-new.png",
+        "context-sentinel-salvo-2-classic-baseline.png",
+        "context-sentinel-salvo-2-classic-new.png",
+        "context-sentinel-salvo-3-chase-baseline.png",
+        "context-sentinel-salvo-3-chase-new.png",
+        "context-silo-0-classic-baseline.png",
+        "context-silo-0-classic-new.png",
+        "context-silo-0-modern-baseline.png",
+        "context-silo-0-modern-new.png",
+        "context-silo-1-chase-baseline.png",
+        "context-silo-1-chase-new.png"
+      ],
+      "composition": "Nearest-neighbor contact sheet of ACTUAL PNG renders, not rerendered geometry",
+      "dimensions": [
+        1920,
+        1350
+      ]
+    },
+    {
+      "file": "sheet-incoming-outgoing.png",
+      "source_pngs": [
+        "context-silo-0-modern-new.png",
+        "context-silo-0-modern-baseline.png",
+        "context-sentinel-heavy-2-chase-new.png",
+        "context-sentinel-heavy-2-chase-baseline.png"
+      ],
+      "composition": "Nearest-neighbor contact sheet of ACTUAL PNG renders, not rerendered geometry",
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "sheet-homing-and-launchers.png",
+      "source_pngs": [
+        "homing-attitudes-silo.png",
+        "homing-attitudes-sentinel-heavy.png",
+        "homing-attitudes-sentinel-salvo.png",
+        "launcher-detail-silo.png",
+        "launcher-detail-sentinel-heavy.png"
+      ],
+      "composition": "Nearest-neighbor contact sheet of ACTUAL PNG renders, not rerendered geometry",
+      "dimensions": [
+        1280,
+        1080
+      ]
+    },
+    {
+      "file": "sheet-CROPS-4X-DIAGNOSTIC.png",
+      "source_pngs": [
+        "CROP-4X-silo-new.png",
+        "CROP-4X-silo-baseline.png",
+        "CROP-4X-sentinel-heavy-new.png",
+        "CROP-4X-sentinel-heavy-baseline.png"
+      ],
+      "composition": "Nearest-neighbor contact sheet of ACTUAL PNG renders, not rerendered geometry",
+      "dimensions": [
+        512,
+        512
+      ]
+    }
+  ],
+  "crops": [
+    {
+      "file": "CROP-4X-silo-new.png",
+      "source_png": "context-silo-0-modern-new.png",
+      "source_crop_top_left": [
+        503,
+        289
+      ],
+      "source_crop_size": [
+        64,
+        64
+      ],
+      "resize": "4X nearest-neighbor diagnostic ONLY; not gameplay camera enlargement or model scaling",
+      "projected_subject_size_pixels": [
+        7.7457153454114405,
+        15.964032826048026
+      ]
+    },
+    {
+      "file": "CROP-4X-silo-baseline.png",
+      "source_png": "context-silo-0-modern-baseline.png",
+      "source_crop_top_left": [
+        503,
+        289
+      ],
+      "source_crop_size": [
+        64,
+        64
+      ],
+      "resize": "4X nearest-neighbor diagnostic ONLY; not gameplay camera enlargement or model scaling",
+      "projected_subject_size_pixels": [
+        7.7457153454114405,
+        15.964032826048026
+      ]
+    },
+    {
+      "file": "CROP-4X-sentinel-heavy-new.png",
+      "source_png": "context-sentinel-heavy-2-chase-new.png",
+      "source_crop_top_left": [
+        378,
+        208
+      ],
+      "source_crop_size": [
+        64,
+        64
+      ],
+      "resize": "4X nearest-neighbor diagnostic ONLY; not gameplay camera enlargement or model scaling",
+      "projected_subject_size_pixels": [
+        14.366345395597534,
+        17.170992428514495
+      ]
+    },
+    {
+      "file": "CROP-4X-sentinel-heavy-baseline.png",
+      "source_png": "context-sentinel-heavy-2-chase-baseline.png",
+      "source_crop_top_left": [
+        378,
+        208
+      ],
+      "source_crop_size": [
+        64,
+        64
+      ],
+      "resize": "4X nearest-neighbor diagnostic ONLY; not gameplay camera enlargement or model scaling",
+      "projected_subject_size_pixels": [
+        14.366345395597534,
+        17.170992428514495
+      ]
+    }
+  ],
+  "note": "Incoming = Sentinel heavy toward player. Outgoing = Silo upward/out of well before homing. Crops and attitude strips are explicitly diagnostic, not source full-frame screenshots."
+}

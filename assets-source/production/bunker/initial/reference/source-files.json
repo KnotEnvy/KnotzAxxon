@@ -1,0 +1,80 @@
+{
+  "commit": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "files": [
+    {
+      "source": "src/core/Engine.js",
+      "sha256": "9d6d580dcc55b6b6d072b877190ab9e0e675ca89101d4cceddb95aa46d7cd77c",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/core/FlightCamera.js",
+      "sha256": "f691b3cef8a36de611762cb3129571f0684457e607be141dc1b5158401f4506e",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/core/Settings.js",
+      "sha256": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/core/Utils.js",
+      "sha256": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/entities/Enemies.js",
+      "sha256": "9c7f88630d52e8dc721ec9380139f29aec747c30a3ad599adaacb8e55cea864c",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/entities/Player.js",
+      "sha256": "70d34d33ca9e81a4c27f8a37d94ab6089d7e4c97cf4df2a6772bd24277aabe5b",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/game/CameraRig.js",
+      "sha256": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/render/GeoUtils.js",
+      "sha256": "eb138a5ad1280bc4db4731de456938390a20002b9caccd74ca6b041b9d9874c5",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/render/ImportedModels.js",
+      "sha256": "212b8c8f4f438ae70b408e2ff218524850e3cf6b027e63961a813e58d6d42773",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/render/Materials.js",
+      "sha256": "8af35e4641253713d8d8d1770edebb3dd0bff77bf5caee4eaba7f0db58aebd52",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/render/PlayerShip.js",
+      "sha256": "b2c769f41fdd819d848a21e695ad88bdf793a14e9a82a7a365f2d33d24a6ae2f",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/render/Sky.js",
+      "sha256": "12314912081437f6c646031ee8d14b62753755b890ca104ae48f7f3083801ed5",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/render/Textures.js",
+      "sha256": "c94160c1d3980da63fc7822b88d049b2adccb5ea301e1705b8a1b48ae9dc8c05",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/world/Fortress.js",
+      "sha256": "824a3d8d9e64bf775e5a486e52c29bef8ce94daebfa138bd4ab2067121790165",
+      "identicalToLiveSource": true
+    },
+    {
+      "source": "src/world/Level.js",
+      "sha256": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016",
+      "identicalToLiveSource": true
+    }
+  ]
+}

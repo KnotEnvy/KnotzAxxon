@@ -1,0 +1,17 @@
+{
+  "archive": "missile-INITIAL.zip",
+  "sha256": "51cc3d88a2f21f746ecb2a69e7e357f07c9aefbb09bb59ea1f3ce567e9deb096",
+  "contentHashesVerified": 110,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/missile/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "senderExitStatus": 0,
+  "transferMethod": "Nitro Windows Tailscale CLI",
+  "target": "100.112.66.64:",
+  "glbSha256": "8e491aacae4e235d24bc6fcba44e84d0b9c2c75ef8b229ea5a93341f156de004",
+  "blendSha256": "700b7c0bf30f56768aca2d6885b9d00275120086710da1a6ba38e915872a3460",
+  "formalReviewsCompleted": 0,
+  "fixPassesCompleted": 0
+}

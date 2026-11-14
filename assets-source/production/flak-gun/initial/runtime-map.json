@@ -1,0 +1,355 @@
+{
+  "schema": "fortress-flak-gun-v1",
+  "root": "FORTRESS_ROOFTOP_FLAK",
+  "pivot": "barrel_elevation_pivot",
+  "yaw": "azimuth_turntable",
+  "materialMap": {
+    "hull": {
+      "name": "FG_hull_mapped_response",
+      "runtime": "materials.hull",
+      "maps": "existing shared hull map/normalMap/roughnessMap",
+      "normalScale": [
+        1.1,
+        1.1
+      ],
+      "metalness": 0.36,
+      "roughness": 1,
+      "vertexColors": true,
+      "envMapIntensity": 1.5
+    },
+    "dark": {
+      "name": "FG_darkMetal_unmapped_response",
+      "runtime": "materials.darkMetal",
+      "baseColor": "0x3a4a5e",
+      "metalness": 0.5,
+      "roughness": 0.46,
+      "vertexColors": true,
+      "maps": null
+    }
+  },
+  "vertexAttributes": {
+    "position": "Canonical template positions: motion0 roof frame, motion1 yaw about origin, motion2 pitch about Y2.1 then yaw; final x/roofY/z translation; no per-prop scale",
+    "normal": "Canonical per-triangle flat normals undergo matching orthonormal pitch/yaw transform, then existing shared hull normalMap perturbs them only in the hull bucket; dark stays unmapped",
+    "color": "Runtime uses per-part sRGB-decoded linearTint with source-style height/up/front/side AO. Reference GLB COLOR_0 = Batch color/1.1; decode using node.extras.GLB_COLOR0_decode_gain=1.1. Preview PBR factor includes this gain.",
+    "uv": "Runtime dominant-world-face box projection (u,v) = world coordinates/3. Reference GLB stores (u,1-v), decode V=1-GLB_V. Recompute after posing and placement rather than repeating local reference UVs."
+  },
+  "parts": [
+    {
+      "name": "roof_contact_shoe",
+      "bucket": "dark",
+      "motion": 0,
+      "tint": "0xffffff",
+      "linearTint": [
+        1,
+        1,
+        1
+      ],
+      "start": 0,
+      "count": 84,
+      "triangles": 28,
+      "uvScale": 3
+    },
+    {
+      "name": "sloped_armour_plinth",
+      "bucket": "hull",
+      "motion": 0,
+      "tint": "0x8a8e96",
+      "linearTint": [
+        0.2541520943200296,
+        0.2704977910022518,
+        0.3049873140591091
+      ],
+      "start": 84,
+      "count": 84,
+      "triangles": 28,
+      "uvScale": 3
+    },
+    {
+      "name": "fixed_azimuth_bearing",
+      "bucket": "dark",
+      "motion": 0,
+      "tint": "0xffffff",
+      "linearTint": [
+        1,
+        1,
+        1
+      ],
+      "start": 168,
+      "count": 132,
+      "triangles": 44,
+      "uvScale": 3
+    },
+    {
+      "name": "azimuth_split_ring",
+      "bucket": "hull",
+      "motion": 1,
+      "tint": "0x8a8e96",
+      "linearTint": [
+        0.2541520943200296,
+        0.2704977910022518,
+        0.3049873140591091
+      ],
+      "start": 300,
+      "count": 216,
+      "triangles": 72,
+      "uvScale": 3
+    },
+    {
+      "name": "rotating_cradle_deck",
+      "bucket": "hull",
+      "motion": 1,
+      "tint": "0x8a8e96",
+      "linearTint": [
+        0.2541520943200296,
+        0.2704977910022518,
+        0.3049873140591091
+      ],
+      "start": 516,
+      "count": 84,
+      "triangles": 28,
+      "uvScale": 3
+    },
+    {
+      "name": "trunnion_yoke_L",
+      "bucket": "hull",
+      "motion": 1,
+      "tint": "0x8a8e96",
+      "linearTint": [
+        0.2541520943200296,
+        0.2704977910022518,
+        0.3049873140591091
+      ],
+      "start": 600,
+      "count": 60,
+      "triangles": 20,
+      "uvScale": 3
+    },
+    {
+      "name": "bearing_cap_L",
+      "bucket": "dark",
+      "motion": 1,
+      "tint": "0xffffff",
+      "linearTint": [
+        1,
+        1,
+        1
+      ],
+      "start": 660,
+      "count": 84,
+      "triangles": 28,
+      "uvScale": 3
+    },
+    {
+      "name": "recoil_receiver_L",
+      "bucket": "hull",
+      "motion": 2,
+      "tint": "0x8a8e96",
+      "linearTint": [
+        0.2541520943200296,
+        0.2704977910022518,
+        0.3049873140591091
+      ],
+      "start": 744,
+      "count": 36,
+      "triangles": 12,
+      "uvScale": 3
+    },
+    {
+      "name": "jacket_and_recessed_bore_L",
+      "bucket": "dark",
+      "motion": 2,
+      "tint": "0xffffff",
+      "linearTint": [
+        1,
+        1,
+        1
+      ],
+      "start": 780,
+      "count": 336,
+      "triangles": 112,
+      "uvScale": 3
+    },
+    {
+      "name": "bore_shadow_floor_L",
+      "bucket": "dark",
+      "motion": 2,
+      "tint": "0x555c68",
+      "linearTint": [
+        0.09084171117479915,
+        0.10702310296918527,
+        0.13843161502267545
+      ],
+      "start": 1116,
+      "count": 84,
+      "triangles": 28,
+      "uvScale": 3
+    },
+    {
+      "name": "recoil_piston_L",
+      "bucket": "dark",
+      "motion": 2,
+      "tint": "0xffffff",
+      "linearTint": [
+        1,
+        1,
+        1
+      ],
+      "start": 1200,
+      "count": 60,
+      "triangles": 20,
+      "uvScale": 3
+    },
+    {
+      "name": "yoke_heel_brace_L",
+      "bucket": "dark",
+      "motion": 1,
+      "tint": "0xffffff",
+      "linearTint": [
+        1,
+        1,
+        1
+      ],
+      "start": 1260,
+      "count": 36,
+      "triangles": 12,
+      "uvScale": 3
+    },
+    {
+      "name": "trunnion_yoke_R",
+      "bucket": "hull",
+      "motion": 1,
+      "tint": "0x8a8e96",
+      "linearTint": [
+        0.2541520943200296,
+        0.2704977910022518,
+        0.3049873140591091
+      ],
+      "start": 1296,
+      "count": 60,
+      "triangles": 20,
+      "uvScale": 3
+    },
+    {
+      "name": "bearing_cap_R",
+      "bucket": "dark",
+      "motion": 1,
+      "tint": "0xffffff",
+      "linearTint": [
+        1,
+        1,
+        1
+      ],
+      "start": 1356,
+      "count": 84,
+      "triangles": 28,
+      "uvScale": 3
+    },
+    {
+      "name": "recoil_receiver_R",
+      "bucket": "hull",
+      "motion": 2,
+      "tint": "0x8a8e96",
+      "linearTint": [
+        0.2541520943200296,
+        0.2704977910022518,
+        0.3049873140591091
+      ],
+      "start": 1440,
+      "count": 36,
+      "triangles": 12,
+      "uvScale": 3
+    },
+    {
+      "name": "jacket_and_recessed_bore_R",
+      "bucket": "dark",
+      "motion": 2,
+      "tint": "0xffffff",
+      "linearTint": [
+        1,
+        1,
+        1
+      ],
+      "start": 1476,
+      "count": 336,
+      "triangles": 112,
+      "uvScale": 3
+    },
+    {
+      "name": "bore_shadow_floor_R",
+      "bucket": "dark",
+      "motion": 2,
+      "tint": "0x555c68",
+      "linearTint": [
+        0.09084171117479915,
+        0.10702310296918527,
+        0.13843161502267545
+      ],
+      "start": 1812,
+      "count": 84,
+      "triangles": 28,
+      "uvScale": 3
+    },
+    {
+      "name": "recoil_piston_R",
+      "bucket": "dark",
+      "motion": 2,
+      "tint": "0xffffff",
+      "linearTint": [
+        1,
+        1,
+        1
+      ],
+      "start": 1896,
+      "count": 60,
+      "triangles": 20,
+      "uvScale": 3
+    },
+    {
+      "name": "yoke_heel_brace_R",
+      "bucket": "dark",
+      "motion": 1,
+      "tint": "0xffffff",
+      "linearTint": [
+        1,
+        1,
+        1
+      ],
+      "start": 1956,
+      "count": 36,
+      "triangles": 12,
+      "uvScale": 3
+    },
+    {
+      "name": "paired_receiver_bridge",
+      "bucket": "dark",
+      "motion": 2,
+      "tint": "0xffffff",
+      "linearTint": [
+        1,
+        1,
+        1
+      ],
+      "start": 1992,
+      "count": 36,
+      "triangles": 12,
+      "uvScale": 3
+    },
+    {
+      "name": "elevation_cross_shaft",
+      "bucket": "dark",
+      "motion": 1,
+      "tint": "0xffffff",
+      "linearTint": [
+        1,
+        1,
+        1
+      ],
+      "start": 2028,
+      "count": 84,
+      "triangles": 28,
+      "uvScale": 3
+    }
+  ],
+  "draws": "No new draws: both buckets already present in every affected chunk; GLB nodes are authoring structure only, never instantiated per prop",
+  "lifetime": "prepare once at startup; stamp transformed vertices once per chunk build; chunk-owned merged geometry disposed exactly once by Fortress._disposeChunk; shared templates/materials/maps survive until application shutdown"
+}

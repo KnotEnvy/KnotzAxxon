@@ -1,0 +1,148 @@
+{
+  "triangles": 992,
+  "buckets": {
+    "hull": 384,
+    "dark": 608
+  },
+  "bounds": [
+    [
+      -2.92,
+      0,
+      -4
+    ],
+    [
+      2.92,
+      3.1,
+      4
+    ]
+  ],
+  "namedParts": [
+    {
+      "name": "port.continuous-shell-formed-heads",
+      "bucket": "hull",
+      "tintHex": "9aa2aa",
+      "triangles": 192
+    },
+    {
+      "name": "port.fore.fitted-saddle",
+      "bucket": "dark",
+      "tintHex": "a6b0b7",
+      "triangles": 24
+    },
+    {
+      "name": "port.fore.retaining-strap",
+      "bucket": "dark",
+      "tintHex": "d4dce1",
+      "triangles": 72
+    },
+    {
+      "name": "port.aft.fitted-saddle",
+      "bucket": "dark",
+      "tintHex": "a6b0b7",
+      "triangles": 24
+    },
+    {
+      "name": "port.aft.retaining-strap",
+      "bucket": "dark",
+      "tintHex": "d4dce1",
+      "triangles": 72
+    },
+    {
+      "name": "port.riser-nozzle",
+      "bucket": "dark",
+      "tintHex": "e4e9ec",
+      "triangles": 24
+    },
+    {
+      "name": "port.valve-flange",
+      "bucket": "dark",
+      "tintHex": "c3ccd2",
+      "triangles": 32
+    },
+    {
+      "name": "port.valve-lever",
+      "bucket": "dark",
+      "tintHex": "e0ded2",
+      "triangles": 12
+    },
+    {
+      "name": "port.end-service-plate",
+      "bucket": "dark",
+      "tintHex": "b4bdc3",
+      "triangles": 12
+    },
+    {
+      "name": "starboard.continuous-shell-formed-heads",
+      "bucket": "hull",
+      "tintHex": "9aa2aa",
+      "triangles": 192
+    },
+    {
+      "name": "starboard.fore.fitted-saddle",
+      "bucket": "dark",
+      "tintHex": "a6b0b7",
+      "triangles": 24
+    },
+    {
+      "name": "starboard.fore.retaining-strap",
+      "bucket": "dark",
+      "tintHex": "d4dce1",
+      "triangles": 72
+    },
+    {
+      "name": "starboard.aft.fitted-saddle",
+      "bucket": "dark",
+      "tintHex": "a6b0b7",
+      "triangles": 24
+    },
+    {
+      "name": "starboard.aft.retaining-strap",
+      "bucket": "dark",
+      "tintHex": "d4dce1",
+      "triangles": 72
+    },
+    {
+      "name": "starboard.riser-nozzle",
+      "bucket": "dark",
+      "tintHex": "e4e9ec",
+      "triangles": 24
+    },
+    {
+      "name": "starboard.valve-flange",
+      "bucket": "dark",
+      "tintHex": "c3ccd2",
+      "triangles": 32
+    },
+    {
+      "name": "starboard.valve-lever",
+      "bucket": "dark",
+      "tintHex": "e0ded2",
+      "triangles": 12
+    },
+    {
+      "name": "starboard.end-service-plate",
+      "bucket": "dark",
+      "tintHex": "b4bdc3",
+      "triangles": 12
+    },
+    {
+      "name": "center.longitudinal-manifold",
+      "bucket": "dark",
+      "tintHex": "e4e9ec",
+      "triangles": 32
+    },
+    {
+      "name": "center.connected-cross-header",
+      "bucket": "dark",
+      "tintHex": "e4e9ec",
+      "triangles": 32
+    }
+  ],
+  "templateSHA256": "84bb0fb34892052a5c423cf750ed07c2acff033b11a34963f8770970696b15a1",
+  "notes": [
+    "Shells each continuous and watertight with formed closed heads.",
+    "Retaining straps omit hidden inner faces against the shells; not individually watertight.",
+    "Pipe junctions intersect with fitted overlap; no boolean union.",
+    "No new textures, emitters, interactions or mechanics."
+  ]
+}

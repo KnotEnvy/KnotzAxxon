@@ -1,0 +1,803 @@
+{
+  "schema": 1,
+  "asset": "derelict-dreadnought",
+  "assignment": "sector2 scenery landmark only",
+  "status": "initial_unchanged",
+  "review_status": "pending_deferred_opus_review",
+  "formal_reviews": 0,
+  "formal_review_fix_passes": 0,
+  "final_acceptance": false,
+  "created_utc": "2026-11-14T18:37:06.778021+00:00",
+  "baseline_commit": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "builder": {
+    "provider": "Codex",
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "xhigh",
+    "speed": "available/default; no separate speed override",
+    "delegated_helpers": 0,
+    "blender_platform": "native Linux",
+    "blender": "5.2.1 LTS",
+    "build_hash": "9e2066aef7ef",
+    "engine": "BLENDER_EEVEE",
+    "render_threads": 4,
+    "eevee_samples": 32
+  },
+  "scope": {
+    "production_integration": false,
+    "production_files_modified": false,
+    "ordinary_void_props_included": false,
+    "geometry_reuse": "Original generated geometry only; reference vocabulary/axis/scale read from selected shipped assets. Shipped player appears only in offline evidence.",
+    "damage": "N/A",
+    "detach": "N/A",
+    "retraction": "N/A",
+    "launch_mechanics": "N/A",
+    "colliders": "none added",
+    "targeting": "unchanged",
+    "cover": "none added"
+  },
+  "files": {
+    "dreadnought.glb": {
+      "path": "asset/dreadnought.glb",
+      "bytes": 3378628,
+      "sha256": "67c5e604ea19b941a76b127a1221c87350161f3637ffbd19e87a16489ec69c6c"
+    },
+    "dreadnought.blend": {
+      "path": "asset/dreadnought.blend",
+      "bytes": 472370,
+      "sha256": "c41caba65498e0d7f748c79f981990ec51eab5db527c07fb26db0ac443c0ee33"
+    },
+    "module-map.json": {
+      "path": "asset/module-map.json",
+      "bytes": 240805,
+      "sha256": "902dc81807a1c4a96390ca114a05ad8d67b003aaa39d7880933eef4d3ba1b74b"
+    }
+  },
+  "geometry": {
+    "triangles_authored": 13426,
+    "triangles_evaluated": 16698,
+    "triangles_exported": 16698,
+    "exported_vertices": 50094,
+    "glb_material_primitives_full_landmark": 28,
+    "max_chunk_merged_landmark_primitives": 3,
+    "material_count": 3,
+    "texture_count": 0,
+    "bounds_world_rest": {
+      "min": [
+        -26.057600021362305,
+        -41.0,
+        3400.0
+      ],
+      "max": [
+        38.05759811401367,
+        12.83590316772461,
+        4229.0
+      ]
+    },
+    "size_world": [
+      64.11519813537598,
+      53.83590316772461,
+      829.0
+    ],
+    "body_length": 820,
+    "engine_overhang": 9,
+    "start": 3400,
+    "body_end": 4220,
+    "end_including_engines": 4229,
+    "all_named_construction_parts": 869,
+    "unique_section_bucket_nodes": 28,
+    "hierarchy": "DN_DERELICT_DREADNOUGHT__game_Y_up_Z_travel / DN_SECTION_0035__Z3360 ... DN_SECTION_0044__Z4224 / DN_####__hull|dark|neon",
+    "complete_part_hierarchy_material_map": "asset/module-map.json"
+  },
+  "budget": {
+    "wholeTarget": 24000,
+    "wholeCeiling": 32000,
+    "ordinaryChunkTarget": 3500,
+    "chunkCeiling": 5000,
+    "mergedBuckets": 3,
+    "glbBytes": 4194304,
+    "justification": "Approximately 2.5x source budget reserved for genuinely open armor, frames, section clipping, unique bridge and recessed engines; no debris/asteroid replacement.",
+    "all_pass": true,
+    "max_chunk_triangles": 2939,
+    "max_chunk_index": 43,
+    "ordinary_chunk_max_triangles_excluding_bridge_stern": 1969,
+    "special_bridge_chunks": {
+      "41": 2279,
+      "42": 2102
+    },
+    "special_stern_chunks": {
+      "43": 2939,
+      "44": 608
+    }
+  },
+  "chunks": [
+    {
+      "index": 35,
+      "z0": 3360,
+      "triangles": 566,
+      "primitives": 2,
+      "cueModes": []
+    },
+    {
+      "index": 36,
+      "z0": 3456,
+      "triangles": 1473,
+      "primitives": 3,
+      "cueModes": [
+        4
+      ]
+    },
+    {
+      "index": 37,
+      "z0": 3552,
+      "triangles": 1969,
+      "primitives": 3,
+      "cueModes": [
+        4
+      ]
+    },
+    {
+      "index": 38,
+      "z0": 3648,
+      "triangles": 1536,
+      "primitives": 3,
+      "cueModes": [
+        4
+      ]
+    },
+    {
+      "index": 39,
+      "z0": 3744,
+      "triangles": 1351,
+      "primitives": 3,
+      "cueModes": [
+        4
+      ]
+    },
+    {
+      "index": 40,
+      "z0": 3840,
+      "triangles": 1875,
+      "primitives": 3,
+      "cueModes": [
+        4
+      ]
+    },
+    {
+      "index": 41,
+      "z0": 3936,
+      "triangles": 2279,
+      "primitives": 3,
+      "cueModes": [
+        4,
+        1
+      ]
+    },
+    {
+      "index": 42,
+      "z0": 4032,
+      "triangles": 2102,
+      "primitives": 3,
+      "cueModes": [
+        4
+      ]
+    },
+    {
+      "index": 43,
+      "z0": 4128,
+      "triangles": 2939,
+      "primitives": 3,
+      "cueModes": [
+        4,
+        3
+      ]
+    },
+    {
+      "index": 44,
+      "z0": 4224,
+      "triangles": 608,
+      "primitives": 2,
+      "cueModes": []
+    }
+  ],
+  "visible_resident_samples": [
+    {
+      "drawDistance": 320,
+      "behind": 90,
+      "retention": "first-1 through last+2 inclusive (conservative capacity, not asserted simultaneous traversal state)",
+      "nominalVisibleSpan": 410,
+      "visibleMax": {
+        "playerZ": 3808,
+        "first": 38,
+        "last": 43,
+        "sections": [
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "triangles": 12082,
+        "primitives": 18
+      },
+      "residentMax": {
+        "playerZ": 3712,
+        "first": 36,
+        "last": 44,
+        "sections": [
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "triangles": 16132,
+        "primitives": 26
+      }
+    },
+    {
+      "drawDistance": 440,
+      "behind": 90,
+      "retention": "first-1 through last+2 inclusive (conservative capacity, not asserted simultaneous traversal state)",
+      "nominalVisibleSpan": 530,
+      "visibleMax": {
+        "playerZ": 3688,
+        "first": 37,
+        "last": 43,
+        "sections": [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "triangles": 14051,
+        "primitives": 21
+      },
+      "residentMax": {
+        "playerZ": 3592,
+        "first": 35,
+        "last": 44,
+        "sections": [
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "triangles": 16698,
+        "primitives": 28
+      }
+    },
+    {
+      "drawDistance": 560,
+      "behind": 90,
+      "retention": "first-1 through last+2 inclusive (conservative capacity, not asserted simultaneous traversal state)",
+      "nominalVisibleSpan": 650,
+      "visibleMax": {
+        "playerZ": 3568,
+        "first": 36,
+        "last": 43,
+        "sections": [
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "triangles": 15524,
+        "primitives": 24
+      },
+      "residentMax": {
+        "playerZ": 3472,
+        "first": 34,
+        "last": 44,
+        "sections": [
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "triangles": 16698,
+        "primitives": 28
+      }
+    },
+    {
+      "drawDistance": 700,
+      "behind": 90,
+      "retention": "first-1 through last+2 inclusive (conservative capacity, not asserted simultaneous traversal state)",
+      "nominalVisibleSpan": 790,
+      "visibleMax": {
+        "playerZ": 3524,
+        "first": 35,
+        "last": 44,
+        "sections": [
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "triangles": 16698,
+        "primitives": 28
+      },
+      "residentMax": {
+        "playerZ": 3332,
+        "first": 32,
+        "last": 44,
+        "sections": [
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "triangles": 16698,
+        "primitives": 28
+      }
+    }
+  ],
+  "coordinate_contract": {
+    "game": "X lateral, +Y up, +Z travel",
+    "blender": "(x,-gameZ,gameY)",
+    "unit_scale": 1,
+    "object_normalization": false,
+    "lane_x": [
+      -16,
+      16
+    ],
+    "lane_y": [
+      1.3,
+      25
+    ],
+    "clearance_conflicts": 0
+  },
+  "rng": {
+    "burner": "source/source_contract.mjs#burnOriginalDreadnought",
+    "strategy": "Reproduce original branch-conditioned draws at original call site; authored mesh/cues use no game RNG.",
+    "source_draw_state_comparisons": 1408,
+    "downstream_complete_void_buffer_hash_comparisons": 36,
+    "passed": true,
+    "full_report": "checks/source-contract.json"
+  },
+  "animation": {
+    "transport": "GLB _ANIM VEC3 -> Batch neon aAnim; raw GLTF is not shader preservation",
+    "materials": {
+      "DN_hull": "Materials.hull",
+      "DN_dark": "Materials.darkMetal",
+      "DN_neon": "Materials.neonVertex"
+    },
+    "clock": "Existing Materials.clock identity feeds uLightTime; never cloned per landmark",
+    "spin": "N/A static wreck; no authored aPivot/aSpin. Original unrelated rock attributes/clock unchanged.",
+    "cue_modes": [
+      1,
+      3,
+      4
+    ],
+    "cpu_sample_seconds": 20,
+    "cpu_sample_hz": 60,
+    "gpu_shader_compilation_tested": false,
+    "exported_cue_tuples": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.5,
+        0.413
+      ],
+      [
+        3.0,
+        0.2,
+        0.0
+      ],
+      [
+        3.0,
+        0.2,
+        0.5
+      ],
+      [
+        4.0,
+        0.7,
+        0.0
+      ],
+      [
+        4.0,
+        0.7,
+        0.17
+      ],
+      [
+        4.0,
+        0.7,
+        0.21
+      ],
+      [
+        4.0,
+        0.7,
+        0.34
+      ],
+      [
+        4.0,
+        0.7,
+        0.38
+      ],
+      [
+        4.0,
+        0.7,
+        0.42
+      ],
+      [
+        4.0,
+        0.7,
+        0.55
+      ],
+      [
+        4.0,
+        0.7,
+        0.59
+      ],
+      [
+        4.0,
+        0.7,
+        0.76
+      ],
+      [
+        4.0,
+        0.8,
+        0.0
+      ],
+      [
+        4.0,
+        0.8,
+        0.137
+      ],
+      [
+        4.0,
+        0.8,
+        0.274
+      ],
+      [
+        4.0,
+        0.8,
+        0.411
+      ],
+      [
+        4.0,
+        0.8,
+        0.548
+      ],
+      [
+        4.0,
+        0.8,
+        0.685
+      ],
+      [
+        4.0,
+        0.8,
+        0.822
+      ],
+      [
+        4.0,
+        0.9,
+        0.72
+      ]
+    ],
+    "runtime_samples": "checks/runtime-fixture.json"
+  },
+  "streaming": {
+    "prototype": "source/runtime_fixture.mjs#appendDreadnought",
+    "uses_actual_Batch": true,
+    "section_selection": "Only transformed section Z intersections with active96-unit chunk; global sections35..44, including engine overflow.",
+    "material_cloning": false,
+    "per_part_draws": false,
+    "per_frame_rebuild": false,
+    "whole_landmark_in_every_chunk": false,
+    "ordinary_props": "Unchanged original _voidProps after exact RNG burn; no duplicate landmark source decorations.",
+    "ownership": {
+      "chunkGeometriesDisposed": 28,
+      "sharedMaterialDisposalsBeforeShutdown": 0,
+      "templateDisposalsBeforeShutdown": 0,
+      "templateDisposalsAtShutdown": 28,
+      "materialDisposalsAtShutdown": 3
+    },
+    "offset_checks": [
+      {
+        "sectorStart": 3217,
+        "triangles": 20622,
+        "reason": "Offset and CPU reclip supported at build time; aligned current campaign uses pre-cut sections."
+      },
+      {
+        "sectorStart": 3288,
+        "triangles": 20852,
+        "reason": "Offset and CPU reclip supported at build time; aligned current campaign uses pre-cut sections."
+      }
+    ]
+  },
+  "validation": {
+    "independent_glb_parse": true,
+    "saved_blend_reopened": true,
+    "factory_clean_glb_reimport": true,
+    "section_boundary_matches": 1637,
+    "section_boundary_mismatches": 0,
+    "degenerate_triangles": 0,
+    "scope": "Initial technical self-checks, not formal reviews/fix passes or acceptance.",
+    "live_game_integration_tested": false,
+    "gpu_draw_calls_measured": false,
+    "frame_timing_measured": false
+  },
+  "evidence": {
+    "render_count": 12,
+    "files": [
+      "01_overview_isometric.png",
+      "02_bow_structure.png",
+      "03_open_breach_ribs.png",
+      "04_far_beam_ruined_bridge.png",
+      "05_stern_recessed_engines.png",
+      "06_engine_cue_t125.png",
+      "07_game_Classic.png",
+      "08_game_Modern.png",
+      "09_game_Chase.png",
+      "10_low_lane_Modern.png",
+      "11_high_lane_Chase.png",
+      "12_destroyed_gun_ring.png"
+    ],
+    "same_scale_player": "Original shipped player.glb at root scale1 in every scene; tight detail frames can crop it. All source game rigs retain visible player.",
+    "source_camera_modes": [
+      "Classic",
+      "Modern",
+      "Chase"
+    ],
+    "altitudes_sampled": [
+      1.3,
+      9,
+      25
+    ],
+    "motion_cue_times": [
+      0,
+      1.25
+    ],
+    "type": "Offline EEVEE images with appended limitation labels; no geometry/framing/exposure post-edit.",
+    "render_limitations": "Offline EEVEE. Source deepspace key/rim direction/intensity approximated in Blender; hemisphere represented by world fill. No live game, source textures, shader compile, sky, fog, bloom, targets, asteroids, HUD or collision test.",
+    "inspection_record": "checks/visual-inspection.json"
+  },
+  "references": {
+    "player": {
+      "path": "/home/knotzuni/code/KnotzAxxon/public/models/player.glb",
+      "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "bytes": 478292,
+      "triangles": 11556,
+      "vertices": 12906,
+      "material_primitives": 8,
+      "materials": [
+        "KZ_PlayerAccent",
+        "KZ_PlayerGlass",
+        "KZ_PlayerHull",
+        "KZ_NavPort",
+        "KZ_NavStarboard",
+        "KZ_NeonCyan",
+        "KZ_EngineGlow"
+      ],
+      "textures": 0,
+      "bounds": {
+        "min": [
+          -3.9522860050201416,
+          -0.5839999914169312,
+          -2.5370001047849655
+        ],
+        "max": [
+          3.9522860050201416,
+          1.4070836305618286,
+          3.190000057220459
+        ]
+      }
+    },
+    "sentinel": {
+      "path": "/home/knotzuni/code/KnotzAxxon/public/models/sentinel.glb",
+      "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef",
+      "bytes": 1140172,
+      "triangles": 34718,
+      "vertices": 28979,
+      "material_primitives": 38,
+      "materials": [
+        "SN_Frame",
+        "SN_Armor",
+        "SN_Charge",
+        "SN_Hazard",
+        "SN_Beacon",
+        "SN_Visor",
+        "SN_Metal",
+        "SN_PodEye",
+        "SN_Glow",
+        "SN_Core",
+        "SN_CoreShell",
+        "SN_Seam"
+      ],
+      "textures": 4,
+      "bounds": {
+        "min": [
+          -18.144999980926514,
+          -10.359999656677246,
+          -10.482443422079086
+        ],
+        "max": [
+          18.144999980926514,
+          14.530000001192093,
+          7.245537281036377
+        ]
+      }
+    },
+    "turret": {
+      "path": "/home/knotzuni/code/KnotzAxxon/public/models/turret.glb",
+      "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+      "bytes": 58452,
+      "triangles": 1194,
+      "vertices": 1853,
+      "material_primitives": 8,
+      "materials": [
+        "warm_armor",
+        "cool_slate",
+        "dark_structure",
+        "amber_eye"
+      ],
+      "textures": 0,
+      "bounds": {
+        "min": [
+          -1.899999976158142,
+          0.0,
+          -1.899999976158142
+        ],
+        "max": [
+          2.659999966621399,
+          2.149999976158142,
+          2.815000057220459
+        ]
+      }
+    },
+    "radar": {
+      "path": "/home/knotzuni/code/KnotzAxxon/public/models/radar.glb",
+      "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d",
+      "bytes": 55564,
+      "triangles": 1288,
+      "vertices": 1704,
+      "material_primitives": 9,
+      "materials": [
+        "warm_armor",
+        "cool_slate",
+        "dark_structure",
+        "dish_warm",
+        "radar_emitter"
+      ],
+      "textures": 0,
+      "bounds": {
+        "min": [
+          -2.3499999046325684,
+          0.0,
+          -2.200000047683716
+        ],
+        "max": [
+          2.3499999046325684,
+          9.659805297851562,
+          2.200000047683716
+        ]
+      }
+    },
+    "silo": {
+      "path": "/home/knotzuni/code/KnotzAxxon/public/models/silo.glb",
+      "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e",
+      "bytes": 1281700,
+      "triangles": 9928,
+      "vertices": 15268,
+      "material_primitives": 4,
+      "materials": [
+        "SILO_Hull",
+        "SILO_Glow"
+      ],
+      "textures": 2,
+      "bounds": {
+        "min": [
+          -2.5999999046325684,
+          0.0,
+          -2.5999999046325684
+        ],
+        "max": [
+          2.634999990463257,
+          2.7080001831054688,
+          2.5999999046325684
+        ]
+      }
+    },
+    "fuel": {
+      "path": "/home/knotzuni/code/KnotzAxxon/public/models/fuel.glb",
+      "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc",
+      "bytes": 1087156,
+      "triangles": 9592,
+      "vertices": 11694,
+      "material_primitives": 8,
+      "materials": [
+        "FUEL_Hull",
+        "FUEL_Band"
+      ],
+      "textures": 2,
+      "bounds": {
+        "min": [
+          -1.7000000476837158,
+          0.0,
+          -1.7000000476837158
+        ],
+        "max": [
+          1.7000000476837158,
+          4.870000004768372,
+          1.7000000476837158
+        ]
+      }
+    }
+  },
+  "source_read_sha256": {
+    "src/world/Fortress.js": "824a3d8d9e64bf775e5a486e52c29bef8ce94daebfa138bd4ab2067121790165",
+    "src/world/Level.js": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016",
+    "src/core/Utils.js": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972",
+    "src/core/Settings.js": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+    "src/game/CameraRig.js": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205",
+    "src/core/FlightCamera.js": "f691b3cef8a36de611762cb3129571f0684457e607be141dc1b5158401f4506e",
+    "src/render/Materials.js": "8af35e4641253713d8d8d1770edebb3dd0bff77bf5caee4eaba7f0db58aebd52",
+    "src/render/ImportedModels.js": "212b8c8f4f438ae70b408e2ff218524850e3cf6b027e63961a813e58d6d42773",
+    "src/render/Sky.js": "12314912081437f6c646031ee8d14b62753755b890ca104ae48f7f3083801ed5",
+    "assets-source/fighter/blender/build_player.py": "3edae3cb72ba8d570aed414dd2559a986bba072b4388a851adb1a6d3ab0e4398",
+    "assets-source/fighter/manifest.json": "3cddfa319f228bd00e65d6ff80e35f88e94c0fc76eef7b2cb5f848ccb6c26ab4",
+    "assets-source/sentinel/build/build_sentinel.py": "efbfd6023118b7b0bda4af22cd5c0af502a7dabdc808b3a8e7875f163baa8c80",
+    "assets-source/sentinel/manifest.json": "fe8b0a38db863314c83ddb5e27ea0bd0ba031924d1c9c96b8cd11763bddcdf07",
+    "assets-source/ground/scripts/build_assets.py": "648188dc28fd0bd2b6b12b9d427337d8e7047a5dfb76d8c92617a18cdcc6ce7e",
+    "assets-source/ground/contest-manifest.json": "5074c25f0b658691864784dc87121e931d58c847e2bf337c151c368d08471d84",
+    "assets-source/supplies/scripts/build.py": "20ab13b768e8886dc8c0200359324a0944146cd7f63e1f8a69a71f96dda06b5a",
+    "assets-source/supplies/manifest.json": "d75d12e94aca4a417a8aba22e02c7c5e8fea48ffdff0a461543c1d81105c4449"
+  },
+  "freeze": {
+    "tree": "initial/",
+    "checksum_file": "SHA256SUMS",
+    "coverage": "Every content file except SHA256SUMS itself, including assets, scripts, evidence, reports, README and this manifest.",
+    "archive": "Outside frozen initial; initial-only archive includes no runtime, sysroot, libraries, Blender, tools, caches, temp files, credentials or unrelated asset work.",
+    "transfer": "Authorized Windows Tailscale CLI file cp to100.112.66.64 only; archive path converted by wslpath -w; sender receipt outside frozen tree.",
+    "receiver_verification": "Orchestrator responsibility, not claimed by sender."
+  },
+  "limitations": [
+    "No production adapter is installed. The provided CPU prototype must be adapted at the existing source call site.",
+    "Reference source envelope measured across four requested seeds, not every seed.",
+    "Static glTF viewers do not reproduce original custom shader clocks; restore _ANIM as shown.",
+    "Offline images omit source textures, sky, fog, bloom, active targets, asteroids, HUD and real rendering performance.",
+    "This is intentionally sparse fitted geometry, not a texture-damage/photoreal surface treatment.",
+    "Open ruin topology is intentional; not watertight, not collision/cover geometry.",
+    "Initial only; Opus review and polish explicitly deferred."
+  ]
+}

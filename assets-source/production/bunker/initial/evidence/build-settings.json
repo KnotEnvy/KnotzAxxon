@@ -1,0 +1,16 @@
+{
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "engine": "BLENDER_EEVEE",
+  "threads": 4,
+  "samples": 24,
+  "viewTransform": "AgX",
+  "look": "AgX - Medium High Contrast",
+  "exposure": 0.6,
+  "geometryTriangles": 468,
+  "editableParts": 52,
+  "exportedBuckets": 3,
+  "textureCount": 0,
+  "packedBlend": "Self-contained mesh/material data; no external images exist to pack.",
+  "materialPreview": "Average source hull-map RGB proxy [.27,.30,.35] sRGB multiplied by source tint and baked height AO; dark exact source base color; source mapped PBR and shared unlit shader remain authoritative."
+}

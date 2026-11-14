@@ -1,0 +1,149 @@
+{
+  "status": "PASS",
+  "method": "Independent Python struct-based GLB2 JSON/BIN accessor/index/node audit; no Blender or Three loader.",
+  "bytes": 69256,
+  "sha256": "96a0f506f1c3ce4644fc1814283b1a0e022691b4786eb7481fa68ceda1cc2002",
+  "evaluatedTriangles": 460,
+  "meshNodes": 1,
+  "primitives": [
+    {
+      "material": "CS_Hull",
+      "bucket": "hull",
+      "triangles": 124,
+      "indexedVertices": 372,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_CS_HEIGHT"
+      ]
+    },
+    {
+      "material": "CS_Dark",
+      "bucket": "dark",
+      "triangles": 324,
+      "indexedVertices": 972,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_CS_HEIGHT"
+      ]
+    },
+    {
+      "material": "CS_Heat",
+      "bucket": "neon",
+      "triangles": 12,
+      "indexedVertices": 36,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_CS_HEIGHT"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "extras": {
+        "runtime_bucket": "hull"
+      },
+      "name": "CS_Hull",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.36000001430511475,
+        "roughnessFactor": 0.6399999856948853
+      }
+    },
+    {
+      "extras": {
+        "runtime_bucket": "dark"
+      },
+      "name": "CS_Dark",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.46000000834465027,
+        "baseColorFactor": [
+          0.042311410620809675,
+          0.06847816984440017,
+          0.1119324278369056,
+          1
+        ]
+      }
+    },
+    {
+      "emissiveFactor": [
+        1,
+        0.1441284716129303,
+        0.023153366521000862
+      ],
+      "extensions": {
+        "KHR_materials_emissive_strength": {
+          "emissiveStrength": 1.2000000476837158
+        }
+      },
+      "extras": {
+        "runtime_bucket": "neon"
+      },
+      "name": "CS_Heat",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "roughnessFactor": 0.46000000834465027
+      }
+    }
+  ],
+  "transformedRestBoundsGameYUp": {
+    "min": [
+      -2.0799999237060547,
+      0.0,
+      -2.0799999237060547
+    ],
+    "max": [
+      2.0799999237060547,
+      9.239999771118164,
+      2.0799999237060547
+    ]
+  },
+  "deformedEndpointBounds": {
+    "7": {
+      "min": [
+        -2.0799999237060547,
+        0.0,
+        -2.0799999237060547
+      ],
+      "max": [
+        2.0799999237060547,
+        7.239999771118164,
+        2.0799999237060547
+      ]
+    },
+    "11": {
+      "min": [
+        -2.0799999237060547,
+        0.0,
+        -2.0799999237060547
+      ],
+      "max": [
+        2.0799999237060547,
+        11.239999771118164,
+        2.0799999237060547
+      ]
+    }
+  },
+  "coordinateTransform": "Blender authoring (x,-z,y) exports glTF game (x,y,z); exported mesh node transform is identity.",
+  "parametricGeometryMatchesTemplateWithin1eMinus4": true,
+  "heightWeightsMatchWithin1eMinus5": true,
+  "maximumLinearVertexColorError": 7.490998209291888e-06,
+  "vertexColorTolerance": 0.0001,
+  "externalURIs": 0,
+  "textures": 0,
+  "animations": 0,
+  "skins": 0,
+  "nodeNames": [
+    "CS_CoolingStack",
+    "CS_HeatSurfacePivot",
+    "CS_SteamOrigin"
+  ]
+}

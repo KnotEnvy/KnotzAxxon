@@ -1,0 +1,269 @@
+{
+  "assertionsPassed": true,
+  "renderViewport": [
+    1280,
+    720
+  ],
+  "headerHeightExcluded": 56,
+  "scope": "camera math only; offline lighting/render limitations unchanged",
+  "rigs": [
+    {
+      "mode": "classic",
+      "matchesActualSourceCamera": true,
+      "points": [
+        {
+          "game": [
+            0,
+            13,
+            300
+          ],
+          "sourceViewport": [
+            0.36078835245389795,
+            0.3979375280409695
+          ],
+          "blenderViewport": [
+            0.36078840494155884,
+            0.3979375958442688
+          ],
+          "absoluteViewportError": 6.780329930844431e-08
+        },
+        {
+          "game": [
+            16,
+            1.3,
+            330
+          ],
+          "sourceViewport": [
+            0.43039417622694864,
+            0.5132683901625764
+          ],
+          "blenderViewport": [
+            0.4303942024707794,
+            0.5132685303688049
+          ],
+          "absoluteViewportError": 1.40206228516071e-07
+        },
+        {
+          "game": [
+            -16,
+            25,
+            330
+          ],
+          "sourceViewport": [
+            0.589493201993922,
+            0.5918554909699658
+          ],
+          "blenderViewport": [
+            0.5894932150840759,
+            0.5918555855751038
+          ],
+          "absoluteViewportError": 9.460513794579128e-08
+        },
+        {
+          "game": [
+            58,
+            0,
+            324
+          ],
+          "sourceViewport": [
+            0.19174563757648877,
+            0.6837125169154217
+          ],
+          "blenderViewport": [
+            0.19174574315547943,
+            0.6837127208709717
+          ],
+          "absoluteViewportError": 2.039555500044088e-07
+        },
+        {
+          "game": [
+            94,
+            39,
+            420
+          ],
+          "sourceViewport": [
+            0.4900563108895635,
+            1.755365439972685
+          ],
+          "blenderViewport": [
+            0.49005627632141113,
+            1.7553657293319702
+          ],
+          "absoluteViewportError": 2.8935928519935317e-07
+        }
+      ]
+    },
+    {
+      "mode": "modern",
+      "matchesActualSourceCamera": true,
+      "points": [
+        {
+          "game": [
+            0,
+            13,
+            300
+          ],
+          "sourceViewport": [
+            0.4424507056094472,
+            0.34336684468902556
+          ],
+          "blenderViewport": [
+            0.44245073199272156,
+            0.34336644411087036
+          ],
+          "absoluteViewportError": 4.0057815520189166e-07
+        },
+        {
+          "game": [
+            16,
+            1.3,
+            330
+          ],
+          "sourceViewport": [
+            0.4046083135343483,
+            0.3963188926247823
+          ],
+          "blenderViewport": [
+            0.4046083092689514,
+            0.39631861448287964
+          ],
+          "absoluteViewportError": 2.7814190267649863e-07
+        },
+        {
+          "game": [
+            -16,
+            25,
+            330
+          ],
+          "sourceViewport": [
+            0.67971539218056,
+            0.7246792444525146
+          ],
+          "blenderViewport": [
+            0.6797155141830444,
+            0.7246789932250977
+          ],
+          "absoluteViewportError": 2.5122741698080375e-07
+        },
+        {
+          "game": [
+            58,
+            0,
+            324
+          ],
+          "sourceViewport": [
+            0.10357190551575118,
+            0.3984347831302618
+          ],
+          "blenderViewport": [
+            0.10357183963060379,
+            0.3984345495700836
+          ],
+          "absoluteViewportError": 2.3356017819775587e-07
+        },
+        {
+          "game": [
+            94,
+            39,
+            420
+          ],
+          "sourceViewport": [
+            0.2788789771356462,
+            0.831999969907641
+          ],
+          "blenderViewport": [
+            0.27887895703315735,
+            0.831999659538269
+          ],
+          "absoluteViewportError": 3.1036937198081205e-07
+        }
+      ]
+    },
+    {
+      "mode": "chase",
+      "matchesActualSourceCamera": true,
+      "points": [
+        {
+          "game": [
+            0,
+            13,
+            300
+          ],
+          "sourceViewport": [
+            0.482874395310784,
+            0.365971706516501
+          ],
+          "blenderViewport": [
+            0.4828743636608124,
+            0.36597156524658203
+          ],
+          "absoluteViewportError": 1.4126991898510965e-07
+        },
+        {
+          "game": [
+            16,
+            1.3,
+            330
+          ],
+          "sourceViewport": [
+            0.38750063439282745,
+            0.3729766445590965
+          ],
+          "blenderViewport": [
+            0.3875006437301636,
+            0.3729765713214874
+          ],
+          "absoluteViewportError": 7.32376090883946e-08
+        },
+        {
+          "game": [
+            -16,
+            25,
+            330
+          ],
+          "sourceViewport": [
+            0.6422318878939586,
+            0.6982939245774245
+          ],
+          "blenderViewport": [
+            0.6422318816184998,
+            0.6982938051223755
+          ],
+          "absoluteViewportError": 1.1945504896360148e-07
+        },
+        {
+          "game": [
+            58,
+            0,
+            324
+          ],
+          "sourceViewport": [
+            0.04874395582812424,
+            0.3386968681115766
+          ],
+          "blenderViewport": [
+            0.048744019120931625,
+            0.33869683742523193
+          ],
+          "absoluteViewportError": 6.329280738404108e-08
+        },
+        {
+          "game": [
+            94,
+            39,
+            420
+          ],
+          "sourceViewport": [
+            0.23595017653803824,
+            0.7506059804107015
+          ],
+          "blenderViewport": [
+            0.23595018684864044,
+            0.7506060004234314
+          ],
+          "absoluteViewportError": 2.0012729917695538e-08
+        }
+      ]
+    }
+  ]
+}

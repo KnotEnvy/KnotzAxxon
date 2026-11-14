@@ -1,0 +1,306 @@
+{
+  "asset": "CARRIER landmark",
+  "snapshot": "initial",
+  "status": "pending_deferred_opus_review",
+  "finalAcceptance": false,
+  "model": "codex / gpt-6.1-sol",
+  "settings": {
+    "reasoningEffort": "xhigh",
+    "speed": "available speed"
+  },
+  "formalReviews": 0,
+  "formalFixPasses": 0,
+  "sourceCommit": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "authoringEnvironment": {
+    "machine": "NitroBliss",
+    "os": "native Linux Blender, not Windows Blender",
+    "blender": "5.2.1 LTS",
+    "buildHash": "9e2066aef7ef",
+    "engine": "BLENDER_EEVEE",
+    "renderThreads": 4
+  },
+  "files": {
+    "carrier.blend": {
+      "path": "carrier.blend",
+      "bytes": 421419,
+      "sha256": "d6c2c8a50b1c3c6261d8ff36b21f9cb2d8b267ed55d51f7b296e87162de71f26"
+    },
+    "carrier.glb": {
+      "path": "carrier.glb",
+      "bytes": 2389144,
+      "sha256": "f6dd09aa6324a6cf1bb9526bdfd94853f1ce59cafd243cecd10da813e2e96fe1"
+    },
+    "carrier-template.json": {
+      "path": "carrier-template.json",
+      "bytes": 140462,
+      "sha256": "44452e6b96683dd9e183efe1420dfd701322ea47b759300de1ee3015b4dba683"
+    },
+    "carrier-template.bin": {
+      "path": "carrier-template.bin",
+      "bytes": 2627736,
+      "sha256": "4dddc3fbadc5bda65c8dd80c012353440a9927772bac61b8ae836a4a8452b593"
+    }
+  },
+  "geometry": {
+    "evaluatedTriangles": 18898,
+    "glbTriangles": 18898,
+    "cleanReimportTriangles": 18898,
+    "editableMeshObjects": 292,
+    "editableMaterialPrimitives": 292,
+    "glbPrimitives": 6,
+    "materialBuckets": {
+      "hull": 8622,
+      "deck": 470,
+      "dark": 4258,
+      "paint": 2088,
+      "neon": 3280,
+      "spin": 180
+    },
+    "textures": 0,
+    "transformedRestGameBounds": {
+      "min": [
+        48.0,
+        -26.0,
+        0.0
+      ],
+      "max": [
+        108.55000305175781,
+        44.5,
+        987.0
+      ],
+      "size": [
+        60.55000305175781,
+        70.5,
+        987.0
+      ]
+    },
+    "worldSeed1Bounds": {
+      "min": [
+        48,
+        -26,
+        6510
+      ],
+      "max": [
+        108.55000305175781,
+        44.5,
+        7497
+      ]
+    },
+    "zeroAreaTriangles": 0
+  },
+  "placement": {
+    "translation": "[0,0,sector.zStart+160]",
+    "axes": "X across, +Y up, +Z travel",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "normalization": "NONE"
+  },
+  "sourceMeasured": {
+    "seeds": [
+      1,
+      7,
+      42,
+      123
+    ],
+    "triangles": 8492,
+    "maxChunkTriangles": 1352,
+    "affectedChunksSeed1": 12,
+    "discrepancy": "assignment summary said11; actual source has12 nonempty chunks67..78 inclusive"
+  },
+  "runtime": {
+    "prototype": "source/runtime_fixture.mjs",
+    "mapping": "source/runtime-mapping.md",
+    "method": "prepare local source triangles once into96-unit world modules, replay exact original RNG, append only matching module into real source Batch and shared material buckets",
+    "partitionedTrianglesSeed1": 21330,
+    "chunkCountSeed1": 12,
+    "maxChunkTrianglesSeed1": 3114,
+    "maxChunkPrimitives": 6,
+    "maximumAdditionalSampledAlignmentTriangles": 3142,
+    "rngReplayCases": 48,
+    "rngPreserved": true,
+    "sectionSeamsMatched": 11,
+    "qualityVisibleSpans": [
+      {
+        "drawDistance": 320,
+        "nominalRequestedSpan": 410,
+        "requestedChunkEnvelopeMax": 576,
+        "retentionExtra": {
+          "behind": 96,
+          "ahead": 192
+        },
+        "maxVisibleTriangles": 14427,
+        "maxVisiblePrimitives": 31,
+        "maxRetentionEnvelopeTriangles": 19539,
+        "maxRetentionEnvelopePrimitives": 46,
+        "worstVisible": {
+          "triangles": 14427,
+          "primitives": 31,
+          "chunks": 6,
+          "low": 69,
+          "high": 74,
+          "playerZ": 6784
+        },
+        "worstRetained": {
+          "triangles": 19539,
+          "primitives": 46,
+          "chunks": 9,
+          "low": 68,
+          "high": 76,
+          "playerZ": 6784
+        },
+        "note": "Requested chunks are a conservative rendered/span proxy, not camera-frustum/live GPU measurement. Retention envelope is an upper bound: forward +2 are not eagerly built in monotonic flight."
+      },
+      {
+        "drawDistance": 440,
+        "nominalRequestedSpan": 530,
+        "requestedChunkEnvelopeMax": 672,
+        "retentionExtra": {
+          "behind": 96,
+          "ahead": 192
+        },
+        "maxVisibleTriangles": 16717,
+        "maxVisiblePrimitives": 36,
+        "maxRetentionEnvelopeTriangles": 20652,
+        "maxRetentionEnvelopePrimitives": 51,
+        "worstVisible": {
+          "triangles": 16717,
+          "primitives": 36,
+          "chunks": 7,
+          "low": 69,
+          "high": 75,
+          "playerZ": 6760
+        },
+        "worstRetained": {
+          "triangles": 20652,
+          "primitives": 50,
+          "chunks": 10,
+          "low": 69,
+          "high": 78,
+          "playerZ": 6856
+        },
+        "note": "Requested chunks are a conservative rendered/span proxy, not camera-frustum/live GPU measurement. Retention envelope is an upper bound: forward +2 are not eagerly built in monotonic flight."
+      },
+      {
+        "drawDistance": 560,
+        "nominalRequestedSpan": 650,
+        "requestedChunkEnvelopeMax": 768,
+        "retentionExtra": {
+          "behind": 96,
+          "ahead": 192
+        },
+        "maxVisibleTriangles": 18905,
+        "maxVisiblePrimitives": 41,
+        "maxRetentionEnvelopeTriangles": 21286,
+        "maxRetentionEnvelopePrimitives": 55,
+        "worstVisible": {
+          "triangles": 18905,
+          "primitives": 41,
+          "chunks": 8,
+          "low": 69,
+          "high": 76,
+          "playerZ": 6736
+        },
+        "worstRetained": {
+          "triangles": 21286,
+          "primitives": 55,
+          "chunks": 11,
+          "low": 68,
+          "high": 78,
+          "playerZ": 6736
+        },
+        "note": "Requested chunks are a conservative rendered/span proxy, not camera-frustum/live GPU measurement. Retention envelope is an upper bound: forward +2 are not eagerly built in monotonic flight."
+      },
+      {
+        "drawDistance": 700,
+        "nominalRequestedSpan": 790,
+        "requestedChunkEnvelopeMax": 960,
+        "retentionExtra": {
+          "behind": 96,
+          "ahead": 192
+        },
+        "maxVisibleTriangles": 20652,
+        "maxVisiblePrimitives": 51,
+        "maxRetentionEnvelopeTriangles": 21330,
+        "maxRetentionEnvelopePrimitives": 57,
+        "worstVisible": {
+          "triangles": 20652,
+          "primitives": 50,
+          "chunks": 10,
+          "low": 69,
+          "high": 78,
+          "playerZ": 6788
+        },
+        "worstRetained": {
+          "triangles": 21330,
+          "primitives": 57,
+          "chunks": 12,
+          "low": 66,
+          "high": 78,
+          "playerZ": 6596
+        },
+        "note": "Requested chunks are a conservative rendered/span proxy, not camera-frustum/live GPU measurement. Retention envelope is an upper bound: forward +2 are not eagerly built in monotonic flight."
+      }
+    ],
+    "shaderAttributes": [
+      "aAnim",
+      "aPivot",
+      "aSpin"
+    ],
+    "sharedClockCPUProbe": {
+      "actualSourcePatchInvoked": true,
+      "sharedClockIdentity": true,
+      "sampleClockSeconds": 1.3,
+      "normalsAndPositionsRotate": true,
+      "gpuCompile": false,
+      "proceduralTexturesConstructed": false,
+      "note": "Prototype-created Materials receiver intentionally bypasses DOM texture build; invokes the original getter/addSpin/update methods. This is shader-string/uniform evidence, not WebGL compilation."
+    },
+    "lifetime": {
+      "uniqueBuffers": true,
+      "chunkGeometryDisposals": 57,
+      "sharedMaterialDisposalsBeforeShutdown": 0,
+      "templatesUnmodified": true
+    }
+  },
+  "gameplay": {
+    "sceneryOnly": true,
+    "collisionChanges": false,
+    "aimRestrictions": false,
+    "launchOriginChanges": false,
+    "launchVisualCaveat": "Original origins X56..60,Y0..6 at unsnapped featureZ can intersect scenery piers. No new bay targeting/doors/mechanics.",
+    "damage": "N/A",
+    "detach": "N/A",
+    "retraction": "N/A"
+  },
+  "evidence": {
+    "pngs": 13,
+    "offline": true,
+    "cameraProjectionSourceVerified": true,
+    "playerSameWorldScale": true,
+    "limitations": [
+      "AgX instead of game ACES",
+      "No game texture forge/PMREM/fog/nebula/bloom/HUD",
+      "Hemisphere approximate, extra fill only in craft presentations",
+      "Shader patch/clock and motion gains CPU only, not GPU compilation",
+      "No live game integration/profiler or final acceptance",
+      "No camera transition/portrait sweep",
+      "Opus review/polish deferred"
+    ]
+  },
+  "scope": {
+    "writes": "asset-work/carrier/ only",
+    "productionEdits": false,
+    "sourceGeometryReuse": "none; selected shipped assets read/rendered as references only",
+    "toolReuse": "authorized native Linux blender.sh sysroot wrapper only",
+    "helpersDelegated": 0
+  },
+  "freeze": {
+    "directory": "initial/",
+    "checksums": "SHA256SUMS covers every content file except itself",
+    "archiveAndReceipt": "outside frozen initial; no runtime/tools/libs/cache/temp/credentials/unrelated assets in archive",
+    "receiverVerification": "orchestrator responsibility"
+  }
+}

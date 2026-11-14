@@ -1,0 +1,1143 @@
+{
+  "sourceSha256": "824a3d8d9e64bf775e5a486e52c29bef8ce94daebfa138bd4ab2067121790165",
+  "chunkLength": 96,
+  "method": "Actual unmodified source methods with real Batch; CPU geometry only. Landmark isolated from other void props, called first as in _voidProps, using the real per-chunk RNG seed. World-space bounds include source chunk seam segmentation; shader-displaced bounds not evaluated.",
+  "samples": {
+    "carrier": [
+      {
+        "seed": 1,
+        "sectorStart": 6350,
+        "landmarkStart": 6510,
+        "landmarkEnd": 7490,
+        "triangles": 8492,
+        "primitivesAcrossWholeLandmark": 61,
+        "maxChunkTriangles": 1352,
+        "maxChunkPrimitives": 6,
+        "bounds": {
+          "min": [
+            48,
+            -26,
+            6510
+          ],
+          "max": [
+            108,
+            44.5,
+            7497
+          ]
+        },
+        "chunks": [
+          {
+            "z0": 6432,
+            "triangles": 240,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 24,
+              "neon": 144,
+              "deck": 24,
+              "paint": 24,
+              "dark": 24
+            }
+          },
+          {
+            "z0": 6528,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6624,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6720,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6816,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6912,
+            "triangles": 1352,
+            "primitives": 6,
+            "bucketTriangles": {
+              "hull": 84,
+              "neon": 552,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48,
+              "spin": 524
+            }
+          },
+          {
+            "z0": 7008,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7104,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7200,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7296,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7392,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7488,
+            "triangles": 204,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 12,
+              "neon": 120,
+              "deck": 12,
+              "paint": 12,
+              "dark": 48
+            }
+          }
+        ]
+      },
+      {
+        "seed": 7,
+        "sectorStart": 6350,
+        "landmarkStart": 6510,
+        "landmarkEnd": 7490,
+        "triangles": 8492,
+        "primitivesAcrossWholeLandmark": 61,
+        "maxChunkTriangles": 1352,
+        "maxChunkPrimitives": 6,
+        "bounds": {
+          "min": [
+            48,
+            -26,
+            6510
+          ],
+          "max": [
+            108,
+            44.5,
+            7497
+          ]
+        },
+        "chunks": [
+          {
+            "z0": 6432,
+            "triangles": 240,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 24,
+              "neon": 144,
+              "deck": 24,
+              "paint": 24,
+              "dark": 24
+            }
+          },
+          {
+            "z0": 6528,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6624,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6720,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6816,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6912,
+            "triangles": 1352,
+            "primitives": 6,
+            "bucketTriangles": {
+              "hull": 84,
+              "neon": 552,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48,
+              "spin": 524
+            }
+          },
+          {
+            "z0": 7008,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7104,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7200,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7296,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7392,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7488,
+            "triangles": 204,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 12,
+              "neon": 120,
+              "deck": 12,
+              "paint": 12,
+              "dark": 48
+            }
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "sectorStart": 6350,
+        "landmarkStart": 6510,
+        "landmarkEnd": 7490,
+        "triangles": 8492,
+        "primitivesAcrossWholeLandmark": 61,
+        "maxChunkTriangles": 1352,
+        "maxChunkPrimitives": 6,
+        "bounds": {
+          "min": [
+            48,
+            -26,
+            6510
+          ],
+          "max": [
+            108,
+            44.5,
+            7497
+          ]
+        },
+        "chunks": [
+          {
+            "z0": 6432,
+            "triangles": 240,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 24,
+              "neon": 144,
+              "deck": 24,
+              "paint": 24,
+              "dark": 24
+            }
+          },
+          {
+            "z0": 6528,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6624,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6720,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6816,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6912,
+            "triangles": 1352,
+            "primitives": 6,
+            "bucketTriangles": {
+              "hull": 84,
+              "neon": 552,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48,
+              "spin": 524
+            }
+          },
+          {
+            "z0": 7008,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7104,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7200,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7296,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7392,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7488,
+            "triangles": 204,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 12,
+              "neon": 120,
+              "deck": 12,
+              "paint": 12,
+              "dark": 48
+            }
+          }
+        ]
+      },
+      {
+        "seed": 123,
+        "sectorStart": 6350,
+        "landmarkStart": 6510,
+        "landmarkEnd": 7490,
+        "triangles": 8492,
+        "primitivesAcrossWholeLandmark": 61,
+        "maxChunkTriangles": 1352,
+        "maxChunkPrimitives": 6,
+        "bounds": {
+          "min": [
+            48,
+            -26,
+            6510
+          ],
+          "max": [
+            108,
+            44.5,
+            7497
+          ]
+        },
+        "chunks": [
+          {
+            "z0": 6432,
+            "triangles": 240,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 24,
+              "neon": 144,
+              "deck": 24,
+              "paint": 24,
+              "dark": 24
+            }
+          },
+          {
+            "z0": 6528,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6624,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6720,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6816,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 6912,
+            "triangles": 1352,
+            "primitives": 6,
+            "bucketTriangles": {
+              "hull": 84,
+              "neon": 552,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48,
+              "spin": 524
+            }
+          },
+          {
+            "z0": 7008,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7104,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7200,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7296,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7392,
+            "triangles": 744,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 72,
+              "neon": 480,
+              "deck": 72,
+              "paint": 72,
+              "dark": 48
+            }
+          },
+          {
+            "z0": 7488,
+            "triangles": 204,
+            "primitives": 5,
+            "bucketTriangles": {
+              "hull": 12,
+              "neon": 120,
+              "deck": 12,
+              "paint": 12,
+              "dark": 48
+            }
+          }
+        ]
+      }
+    ],
+    "dreadnought": [
+      {
+        "seed": 1,
+        "sectorStart": 3200,
+        "landmarkStart": 3400,
+        "landmarkEnd": 4220,
+        "triangles": 9384,
+        "primitivesAcrossWholeLandmark": 27,
+        "maxChunkTriangles": 1176,
+        "maxChunkPrimitives": 3,
+        "bounds": {
+          "min": [
+            -26.25,
+            -41,
+            3400
+          ],
+          "max": [
+            38.25,
+            14.44174861907959,
+            4229
+          ]
+        },
+        "chunks": [
+          {
+            "z0": 3360,
+            "triangles": 648,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 60,
+              "dark": 180,
+              "neon": 408
+            }
+          },
+          {
+            "z0": 3456,
+            "triangles": 1056,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 288,
+              "neon": 660
+            }
+          },
+          {
+            "z0": 3552,
+            "triangles": 1104,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 408,
+              "neon": 588
+            }
+          },
+          {
+            "z0": 3648,
+            "triangles": 1104,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 228,
+              "neon": 768
+            }
+          },
+          {
+            "z0": 3744,
+            "triangles": 1092,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 228,
+              "neon": 756
+            }
+          },
+          {
+            "z0": 3840,
+            "triangles": 1080,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 408,
+              "neon": 564
+            }
+          },
+          {
+            "z0": 3936,
+            "triangles": 1020,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 96,
+              "dark": 216,
+              "neon": 708
+            }
+          },
+          {
+            "z0": 4032,
+            "triangles": 1104,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 228,
+              "neon": 768
+            }
+          },
+          {
+            "z0": 4128,
+            "triangles": 1176,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 396,
+              "neon": 672
+            }
+          }
+        ]
+      },
+      {
+        "seed": 7,
+        "sectorStart": 3200,
+        "landmarkStart": 3400,
+        "landmarkEnd": 4220,
+        "triangles": 9528,
+        "primitivesAcrossWholeLandmark": 27,
+        "maxChunkTriangles": 1152,
+        "maxChunkPrimitives": 3,
+        "bounds": {
+          "min": [
+            -26.25,
+            -41,
+            3400
+          ],
+          "max": [
+            38.25,
+            12.136455535888672,
+            4229
+          ]
+        },
+        "chunks": [
+          {
+            "z0": 3360,
+            "triangles": 756,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 72,
+              "dark": 192,
+              "neon": 492
+            }
+          },
+          {
+            "z0": 3456,
+            "triangles": 1092,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 288,
+              "neon": 696
+            }
+          },
+          {
+            "z0": 3552,
+            "triangles": 1128,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 408,
+              "neon": 612
+            }
+          },
+          {
+            "z0": 3648,
+            "triangles": 1104,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 228,
+              "neon": 768
+            }
+          },
+          {
+            "z0": 3744,
+            "triangles": 1068,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 228,
+              "neon": 732
+            }
+          },
+          {
+            "z0": 3840,
+            "triangles": 1104,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 408,
+              "neon": 588
+            }
+          },
+          {
+            "z0": 3936,
+            "triangles": 1008,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 96,
+              "dark": 216,
+              "neon": 696
+            }
+          },
+          {
+            "z0": 4032,
+            "triangles": 1116,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 228,
+              "neon": 780
+            }
+          },
+          {
+            "z0": 4128,
+            "triangles": 1152,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 396,
+              "neon": 648
+            }
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "sectorStart": 3200,
+        "landmarkStart": 3400,
+        "landmarkEnd": 4220,
+        "triangles": 9588,
+        "primitivesAcrossWholeLandmark": 27,
+        "maxChunkTriangles": 1128,
+        "maxChunkPrimitives": 3,
+        "bounds": {
+          "min": [
+            -26.25,
+            -41,
+            3400
+          ],
+          "max": [
+            38.25,
+            15.11898136138916,
+            4229
+          ]
+        },
+        "chunks": [
+          {
+            "z0": 3360,
+            "triangles": 780,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 72,
+              "dark": 192,
+              "neon": 516
+            }
+          },
+          {
+            "z0": 3456,
+            "triangles": 1116,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 288,
+              "neon": 720
+            }
+          },
+          {
+            "z0": 3552,
+            "triangles": 1092,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 408,
+              "neon": 576
+            }
+          },
+          {
+            "z0": 3648,
+            "triangles": 1104,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 228,
+              "neon": 768
+            }
+          },
+          {
+            "z0": 3744,
+            "triangles": 1128,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 228,
+              "neon": 792
+            }
+          },
+          {
+            "z0": 3840,
+            "triangles": 1092,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 408,
+              "neon": 576
+            }
+          },
+          {
+            "z0": 3936,
+            "triangles": 1080,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 228,
+              "neon": 744
+            }
+          },
+          {
+            "z0": 4032,
+            "triangles": 1116,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 228,
+              "neon": 780
+            }
+          },
+          {
+            "z0": 4128,
+            "triangles": 1080,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 96,
+              "dark": 384,
+              "neon": 600
+            }
+          }
+        ]
+      },
+      {
+        "seed": 123,
+        "sectorStart": 3200,
+        "landmarkStart": 3400,
+        "landmarkEnd": 4220,
+        "triangles": 9264,
+        "primitivesAcrossWholeLandmark": 27,
+        "maxChunkTriangles": 1176,
+        "maxChunkPrimitives": 3,
+        "bounds": {
+          "min": [
+            -26.25,
+            -41,
+            3400
+          ],
+          "max": [
+            38.25,
+            13.02587604522705,
+            4229
+          ]
+        },
+        "chunks": [
+          {
+            "z0": 3360,
+            "triangles": 756,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 72,
+              "dark": 192,
+              "neon": 492
+            }
+          },
+          {
+            "z0": 3456,
+            "triangles": 996,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 96,
+              "dark": 276,
+              "neon": 624
+            }
+          },
+          {
+            "z0": 3552,
+            "triangles": 1056,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 408,
+              "neon": 540
+            }
+          },
+          {
+            "z0": 3648,
+            "triangles": 1104,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 228,
+              "neon": 768
+            }
+          },
+          {
+            "z0": 3744,
+            "triangles": 996,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 96,
+              "dark": 216,
+              "neon": 684
+            }
+          },
+          {
+            "z0": 3840,
+            "triangles": 1080,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 408,
+              "neon": 564
+            }
+          },
+          {
+            "z0": 3936,
+            "triangles": 1116,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 228,
+              "neon": 780
+            }
+          },
+          {
+            "z0": 4032,
+            "triangles": 984,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 96,
+              "dark": 216,
+              "neon": 672
+            }
+          },
+          {
+            "z0": 4128,
+            "triangles": 1176,
+            "primitives": 3,
+            "bucketTriangles": {
+              "hull": 108,
+              "dark": 396,
+              "neon": 672
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

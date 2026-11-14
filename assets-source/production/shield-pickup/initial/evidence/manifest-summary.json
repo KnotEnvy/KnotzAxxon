@@ -1,0 +1,17 @@
+{
+  "asset": "shield-pickup",
+  "status": "pending_deferred_opus_review",
+  "files": {
+    "asset/shield-pickup.glb": {
+      "bytes": 92808,
+      "sha256": "8619ec08a7fce0679408172052a009073e1dcd39356374ab3b2608993981d4ae"
+    },
+    "asset/shield-pickup.blend": {
+      "bytes": 109614,
+      "sha256": "17a73c5870b13f81cca418db29dfcee9213b7d54fb10d58535443985069400d7"
+    }
+  },
+  "triangles": 1238,
+  "primitives": 3,
+  "PNGs": 38
+}

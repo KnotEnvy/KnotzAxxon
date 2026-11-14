@@ -1,0 +1,494 @@
+[
+  {
+    "file": "rest_common.png",
+    "label": "REST / COMMON NEUTRAL / SPAN 14",
+    "offline": true,
+    "cameraGame": [
+      -16,
+      24,
+      -30
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ],
+    "orthoSpanHorizontal": 14,
+    "key": [
+      -12,
+      22,
+      -12
+    ],
+    "fill": [
+      14,
+      12,
+      8
+    ]
+  },
+  {
+    "file": "view_front.png",
+    "label": "MULTIVIEW / FRONT",
+    "offline": true,
+    "cameraGame": [
+      0,
+      0,
+      -30
+    ],
+    "orthoSpanHorizontal": 14
+  },
+  {
+    "file": "view_back.png",
+    "label": "MULTIVIEW / BACK",
+    "offline": true,
+    "cameraGame": [
+      0,
+      0,
+      30
+    ],
+    "orthoSpanHorizontal": 14
+  },
+  {
+    "file": "view_right.png",
+    "label": "MULTIVIEW / RIGHT",
+    "offline": true,
+    "cameraGame": [
+      30,
+      0,
+      0
+    ],
+    "orthoSpanHorizontal": 14
+  },
+  {
+    "file": "view_left.png",
+    "label": "MULTIVIEW / LEFT",
+    "offline": true,
+    "cameraGame": [
+      -30,
+      0,
+      0
+    ],
+    "orthoSpanHorizontal": 14
+  },
+  {
+    "file": "view_top.png",
+    "label": "MULTIVIEW / TOP",
+    "offline": true,
+    "cameraGame": [
+      0,
+      30,
+      0.001
+    ],
+    "orthoSpanHorizontal": 14
+  },
+  {
+    "file": "view_bottom.png",
+    "label": "MULTIVIEW / BOTTOM",
+    "offline": true,
+    "cameraGame": [
+      0,
+      -30,
+      0.001
+    ],
+    "orthoSpanHorizontal": 14
+  },
+  {
+    "file": "tumble_2.png",
+    "label": "SOURCE ACTION / T=2S / 60 HZ",
+    "offline": true,
+    "sourceSample": {
+      "t": 2,
+      "pos": [
+        0,
+        9.353690494022553,
+        0
+      ],
+      "rotation": [
+        0.9999999999999989,
+        1.4000000000000032,
+        0
+      ],
+      "scale": 1.0148403736993508,
+      "armed": 0
+    }
+  },
+  {
+    "file": "tumble_4.png",
+    "label": "SOURCE ACTION / T=4S / 60 HZ",
+    "offline": true,
+    "sourceSample": {
+      "t": 4,
+      "pos": [
+        0,
+        10.25965485569079,
+        0
+      ],
+      "rotation": [
+        1.9999999999999953,
+        2.8000000000000087,
+        0
+      ],
+      "scale": 1.02555739514168,
+      "armed": 0.4117643864463124
+    }
+  },
+  {
+    "file": "tumble_8.png",
+    "label": "SOURCE ACTION / T=8S / 60 HZ",
+    "offline": true,
+    "sourceSample": {
+      "t": 8,
+      "pos": [
+        0,
+        10.714373005497327,
+        0
+      ],
+      "rotation": [
+        3.9999999999999885,
+        5.60000000000002,
+        0
+      ],
+      "scale": 1.05610539797718,
+      "armed": 0.999855007477743
+    }
+  },
+  {
+    "file": "tumble_12.png",
+    "label": "SOURCE ACTION / T=12S / 60 HZ",
+    "offline": true,
+    "sourceSample": {
+      "t": 12,
+      "pos": [
+        0,
+        9.880804217661552,
+        0
+      ],
+      "rotation": [
+        6.000000000000088,
+        8.40000000000003,
+        0
+      ],
+      "scale": 1.0172746267558417,
+      "armed": 0.41176422916666644
+    }
+  },
+  {
+    "file": "proximity_far.png",
+    "label": "PROXIMITY FAR / EMISSION CONSTANT",
+    "offline": true,
+    "near": 0,
+    "time": 0.39269908169872414,
+    "lampScale": 1.015,
+    "neonIntensity": 3.2,
+    "charge": "N/A; proximity pulse only"
+  },
+  {
+    "file": "proximity_warning.png",
+    "label": "PROXIMITY WARNING / EMISSION CONSTANT",
+    "offline": true,
+    "near": 0.56,
+    "time": 0.08463342277989744,
+    "lampScale": 1.0402,
+    "neonIntensity": 3.2,
+    "charge": "N/A; proximity pulse only"
+  },
+  {
+    "file": "proximity_armed.png",
+    "label": "PROXIMITY ARMED / EMISSION CONSTANT",
+    "offline": true,
+    "near": 1,
+    "time": 0.05235987755982988,
+    "lampScale": 1.06,
+    "neonIntensity": 3.2,
+    "charge": "N/A; proximity pulse only"
+  },
+  {
+    "file": "pulse_0_94.png",
+    "label": "CLEARANCE / PULSE SCALE 0.94",
+    "offline": true,
+    "lampScale": 0.94
+  },
+  {
+    "file": "pulse_1_06.png",
+    "label": "CLEARANCE / PULSE SCALE 1.06",
+    "offline": true,
+    "lampScale": 1.06
+  },
+  {
+    "file": "reference_player_common.png",
+    "label": "SHIPPED PLAYER / SAME COMMON CAMERA / SPAN 14",
+    "offline": true,
+    "reference": "public/models/player.glb",
+    "noNormalization": true
+  },
+  {
+    "file": "reference_shared_scale.png",
+    "label": "MINE + SHIPPED PLAYER / SHARED WORLD SCALE",
+    "offline": true,
+    "noNormalization": true,
+    "orthoSpanHorizontal": 22
+  },
+  {
+    "file": "gameplay_classic_alt3.png",
+    "label": "OFFLINE CLASSIC / ALT 3 / SHARED WORLD UNITS",
+    "offline": true,
+    "cameraSource": {
+      "mode": "classic",
+      "altitude": 3,
+      "position": [
+        -45.25483399593904,
+        54.255,
+        -17.254833995939045
+      ],
+      "target": [
+        0,
+        9,
+        28
+      ],
+      "fov": 52,
+      "aspect": 1.7777777777777777,
+      "orthographic": true,
+      "halfHeight": 40
+    },
+    "sourceTime": 2.2,
+    "sourceNear": 0.3936609374091675,
+    "sourceLampScale": 0.9967821251790504,
+    "sourceEulerXYZ": [
+      1.1,
+      1.54,
+      0
+    ],
+    "mineWorld": [
+      -5,
+      3,
+      20
+    ],
+    "playerWorld": [
+      0,
+      3,
+      0
+    ],
+    "sourceLightPreset": "dusk",
+    "noNormalization": true,
+    "limits": "Offline reconstruction: Blender PBR/hemisphere approximation, no game postprocess/HUD/PMREM/streamed fortress."
+  },
+  {
+    "file": "gameplay_classic_alt22.png",
+    "label": "OFFLINE CLASSIC / ALT 22 / SHARED WORLD UNITS",
+    "offline": true,
+    "cameraSource": {
+      "mode": "classic",
+      "altitude": 22,
+      "position": [
+        -45.25483399593904,
+        54.255,
+        -17.254833995939045
+      ],
+      "target": [
+        0,
+        9,
+        28
+      ],
+      "fov": 52,
+      "aspect": 1.7777777777777777,
+      "orthographic": true,
+      "halfHeight": 40
+    },
+    "sourceTime": 2.2,
+    "sourceNear": 0.3936609374091675,
+    "sourceLampScale": 0.9967821251790504,
+    "sourceEulerXYZ": [
+      1.1,
+      1.54,
+      0
+    ],
+    "mineWorld": [
+      -5,
+      22,
+      20
+    ],
+    "playerWorld": [
+      0,
+      22,
+      0
+    ],
+    "sourceLightPreset": "dusk",
+    "noNormalization": true,
+    "limits": "Offline reconstruction: Blender PBR/hemisphere approximation, no game postprocess/HUD/PMREM/streamed fortress."
+  },
+  {
+    "file": "gameplay_modern_alt3.png",
+    "label": "OFFLINE MODERN / ALT 3 / SHARED WORLD UNITS",
+    "offline": true,
+    "cameraSource": {
+      "mode": "modern",
+      "altitude": 3,
+      "position": [
+        -9.918584156444393,
+        17,
+        -27.251086002791343
+      ],
+      "target": [
+        0,
+        4.2,
+        16
+      ],
+      "fov": 58,
+      "aspect": 1.7777777777777777,
+      "orthographic": false,
+      "halfHeight": 40
+    },
+    "sourceTime": 2.2,
+    "sourceNear": 0.3936609374091675,
+    "sourceLampScale": 0.9967821251790504,
+    "sourceEulerXYZ": [
+      1.1,
+      1.54,
+      0
+    ],
+    "mineWorld": [
+      -5,
+      3,
+      20
+    ],
+    "playerWorld": [
+      0,
+      3,
+      0
+    ],
+    "sourceLightPreset": "dusk",
+    "noNormalization": true,
+    "limits": "Offline reconstruction: Blender PBR/hemisphere approximation, no game postprocess/HUD/PMREM/streamed fortress."
+  },
+  {
+    "file": "gameplay_modern_alt22.png",
+    "label": "OFFLINE MODERN / ALT 22 / SHARED WORLD UNITS",
+    "offline": true,
+    "cameraSource": {
+      "mode": "modern",
+      "altitude": 22,
+      "position": [
+        -9.918584156444393,
+        36,
+        -27.251086002791343
+      ],
+      "target": [
+        0,
+        23.2,
+        16
+      ],
+      "fov": 58,
+      "aspect": 1.7777777777777777,
+      "orthographic": false,
+      "halfHeight": 40
+    },
+    "sourceTime": 2.2,
+    "sourceNear": 0.3936609374091675,
+    "sourceLampScale": 0.9967821251790504,
+    "sourceEulerXYZ": [
+      1.1,
+      1.54,
+      0
+    ],
+    "mineWorld": [
+      -5,
+      22,
+      20
+    ],
+    "playerWorld": [
+      0,
+      22,
+      0
+    ],
+    "sourceLightPreset": "dusk",
+    "noNormalization": true,
+    "limits": "Offline reconstruction: Blender PBR/hemisphere approximation, no game postprocess/HUD/PMREM/streamed fortress."
+  },
+  {
+    "file": "gameplay_chase_alt3.png",
+    "label": "OFFLINE CHASE / ALT 3 / SHARED WORLD UNITS",
+    "offline": true,
+    "cameraSource": {
+      "mode": "chase",
+      "altitude": 3,
+      "position": [
+        -2.508683118423683,
+        12.5,
+        -23.868525488838557
+      ],
+      "target": [
+        0,
+        4.2,
+        16
+      ],
+      "fov": 66,
+      "aspect": 1.7777777777777777,
+      "orthographic": false,
+      "halfHeight": 40
+    },
+    "sourceTime": 2.2,
+    "sourceNear": 0.3936609374091675,
+    "sourceLampScale": 0.9967821251790504,
+    "sourceEulerXYZ": [
+      1.1,
+      1.54,
+      0
+    ],
+    "mineWorld": [
+      -5,
+      3,
+      20
+    ],
+    "playerWorld": [
+      0,
+      3,
+      0
+    ],
+    "sourceLightPreset": "dusk",
+    "noNormalization": true,
+    "limits": "Offline reconstruction: Blender PBR/hemisphere approximation, no game postprocess/HUD/PMREM/streamed fortress."
+  },
+  {
+    "file": "gameplay_chase_alt22.png",
+    "label": "OFFLINE CHASE / ALT 22 / SHARED WORLD UNITS",
+    "offline": true,
+    "cameraSource": {
+      "mode": "chase",
+      "altitude": 22,
+      "position": [
+        -2.508683118423683,
+        31.5,
+        -23.868525488838557
+      ],
+      "target": [
+        0,
+        23.2,
+        16
+      ],
+      "fov": 66,
+      "aspect": 1.7777777777777777,
+      "orthographic": false,
+      "halfHeight": 40
+    },
+    "sourceTime": 2.2,
+    "sourceNear": 0.3936609374091675,
+    "sourceLampScale": 0.9967821251790504,
+    "sourceEulerXYZ": [
+      1.1,
+      1.54,
+      0
+    ],
+    "mineWorld": [
+      -5,
+      22,
+      20
+    ],
+    "playerWorld": [
+      0,
+      22,
+      0
+    ],
+    "sourceLightPreset": "dusk",
+    "noNormalization": true,
+    "limits": "Offline reconstruction: Blender PBR/hemisphere approximation, no game postprocess/HUD/PMREM/streamed fortress."
+  }
+]

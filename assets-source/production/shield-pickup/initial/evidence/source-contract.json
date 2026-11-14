@@ -1,0 +1,500 @@
+{
+  "harness": "Actual unmodified saved Pickup.js class and CameraRig._compute executed in node vm with minimal local THREE math/scene test doubles, NOT Three.js/WebGL. Geometry constructors are parameter-recording stubs; renderer and actual integration not tested here.",
+  "baseline": {
+    "visibleTriangles": 456,
+    "meshNodes": 3,
+    "materialPrimitives": 3,
+    "shell": {
+      "parameters": [
+        1.98,
+        0.065,
+        6,
+        32
+      ],
+      "triangles": 384
+    },
+    "core": {
+      "parameters": [
+        1.64,
+        1.64,
+        0.16,
+        6
+      ],
+      "triangles": 24
+    },
+    "shape": {
+      "parameters": [
+        1.55,
+        0.26,
+        4,
+        6
+      ],
+      "triangles": 48
+    }
+  },
+  "sourceState": {
+    "color": "0x45e0ff",
+    "label": "SHIELD",
+    "score": 250,
+    "radius": 2.2,
+    "playerRadius": 1.5,
+    "collectionCenterDistance": 3.7,
+    "despawnBehind": 55,
+    "timedLifetime": null,
+    "velocityRetained": [
+      0,
+      0,
+      0
+    ],
+    "detach": "N/A",
+    "charging": "N/A; pulse only"
+  },
+  "samples": [
+    {
+      "phase": 0,
+      "position": [
+        0,
+        6,
+        30
+      ],
+      "shellAngle": 0.005,
+      "shellScale": 1,
+      "shapeAngle": 0,
+      "haloScale": 7
+    },
+    {
+      "phase": 0.39269908169872414,
+      "position": [
+        0,
+        6.4114496766047315,
+        30
+      ],
+      "shellAngle": 0.005,
+      "shellScale": 1.025,
+      "shapeAngle": 0.06083247724800248,
+      "haloScale": 8.4
+    },
+    {
+      "phase": 0.7139983303613165,
+      "position": [
+        0,
+        6.636742396748163,
+        30
+      ],
+      "shellAngle": 0.005,
+      "shellScale": 1.0070433139210357,
+      "shapeAngle": 0.08,
+      "haloScale": 7.394425579578002
+    },
+    {
+      "phase": 1.1780972450961724,
+      "position": [
+        0,
+        6.665739561406608,
+        30
+      ],
+      "shellAngle": 0.005,
+      "shellScale": 0.975,
+      "shapeAngle": 0.04179988517727591,
+      "haloScale": 5.6000000000000005
+    },
+    {
+      "phase": 2.1419949910839495,
+      "position": [
+        0,
+        5.802787210210999,
+        30
+      ],
+      "shellAngle": 0.005,
+      "shellScale": 1.0188937393588564,
+      "shapeAngle": -0.08,
+      "haloScale": 8.058049404095964
+    },
+    {
+      "phase": 3,
+      "position": [
+        0,
+        5.302684773814912,
+        30
+      ],
+      "shellAngle": 0.005,
+      "shellScale": 0.9865856770499891,
+      "shapeAngle": 0.024923309081070294,
+      "haloScale": 6.248797914799391
+    },
+    {
+      "phase": 10,
+      "position": [
+        0,
+        5.798467678334454,
+        30
+      ],
+      "shellAngle": 0.005,
+      "shellScale": 1.0186278290119837,
+      "shapeAngle": -0.0007081047432323101,
+      "haloScale": 8.04315842467109
+    },
+    {
+      "phase": 20,
+      "position": [
+        0,
+        6.385998676869184,
+        30
+      ],
+      "shellAngle": 0.005,
+      "shellScale": 0.9751527836519156,
+      "shapeAngle": 0.0014161540084330862,
+      "haloScale": 5.6085558845072745
+    }
+  ],
+  "magnets": [
+    {
+      "alive": true,
+      "distanceBefore": 0,
+      "after": [
+        0,
+        6,
+        0
+      ],
+      "dt": 0.016666666666666666
+    },
+    {
+      "alive": true,
+      "distanceBefore": 3.7,
+      "after": [
+        0,
+        6,
+        3.0080785123966947
+      ],
+      "dt": 0.016666666666666666
+    },
+    {
+      "alive": true,
+      "distanceBefore": 5,
+      "after": [
+        0,
+        6,
+        4.402892561983471
+      ],
+      "dt": 0.016666666666666666
+    },
+    {
+      "alive": true,
+      "distanceBefore": 11,
+      "after": [
+        0,
+        6,
+        10.75
+      ],
+      "dt": 0.016666666666666666
+    },
+    {
+      "alive": true,
+      "distanceBefore": 21.999,
+      "after": [
+        0,
+        6,
+        21.998999997933883
+      ],
+      "dt": 0.016666666666666666
+    },
+    {
+      "alive": true,
+      "distanceBefore": 22,
+      "after": [
+        0,
+        6.018664454399648,
+        22
+      ],
+      "dt": 0.016666666666666666
+    },
+    {
+      "alive": true,
+      "distanceBefore": 30,
+      "after": [
+        0,
+        6.018664454399648,
+        30
+      ],
+      "dt": 0.016666666666666666
+    },
+    {
+      "alive": false,
+      "distanceBefore": 0,
+      "after": [
+        0,
+        6.018664454399648,
+        0
+      ],
+      "dt": 0.016666666666666666
+    },
+    {
+      "alive": false,
+      "distanceBefore": 3.7,
+      "after": [
+        0,
+        6.018664454399648,
+        3.7
+      ],
+      "dt": 0.016666666666666666
+    },
+    {
+      "alive": false,
+      "distanceBefore": 5,
+      "after": [
+        0,
+        6.018664454399648,
+        5
+      ],
+      "dt": 0.016666666666666666
+    },
+    {
+      "alive": false,
+      "distanceBefore": 11,
+      "after": [
+        0,
+        6.018664454399648,
+        11
+      ],
+      "dt": 0.016666666666666666
+    },
+    {
+      "alive": false,
+      "distanceBefore": 21.999,
+      "after": [
+        0,
+        6.018664454399648,
+        21.999
+      ],
+      "dt": 0.016666666666666666
+    },
+    {
+      "alive": false,
+      "distanceBefore": 22,
+      "after": [
+        0,
+        6.018664454399648,
+        22
+      ],
+      "dt": 0.016666666666666666
+    },
+    {
+      "alive": false,
+      "distanceBefore": 30,
+      "after": [
+        0,
+        6.018664454399648,
+        30
+      ],
+      "dt": 0.016666666666666666
+    }
+  ],
+  "rigs": [
+    {
+      "mode": "classic",
+      "settings": {
+        "yaw": 45,
+        "dist": 64,
+        "height": 45.255,
+        "fov": 52
+      },
+      "eye": [
+        -45.25483399593904,
+        54.255,
+        -17.254833995939045
+      ],
+      "target": [
+        0,
+        9,
+        28
+      ],
+      "halfHeight": 40,
+      "aspect": 1.7777777777777777,
+      "note": "Eye and target read directly from actual CameraRig._compute; zero velocity, zero boost, no shake/lag."
+    },
+    {
+      "mode": "modern",
+      "settings": {
+        "yaw": 20,
+        "dist": 29,
+        "height": 14,
+        "fov": 58
+      },
+      "eye": [
+        -9.918584156444393,
+        20,
+        -27.251086002791343
+      ],
+      "target": [
+        0,
+        7.2,
+        16
+      ],
+      "halfHeight": 40,
+      "aspect": 1.7777777777777777,
+      "note": "Eye and target read directly from actual CameraRig._compute; zero velocity, zero boost, no shake/lag."
+    },
+    {
+      "mode": "chase",
+      "settings": {
+        "yaw": 6,
+        "dist": 24,
+        "height": 9.5,
+        "fov": 66
+      },
+      "eye": [
+        -2.5086831184236833,
+        15.5,
+        -23.868525488838557
+      ],
+      "target": [
+        0,
+        7.2,
+        16
+      ],
+      "halfHeight": 40,
+      "aspect": 1.7777777777777777,
+      "note": "Eye and target read directly from actual CameraRig._compute; zero velocity, zero boost, no shake/lag."
+    }
+  ],
+  "denseProceduralBatch": {
+    "instances": 128,
+    "updates": 128,
+    "detached": 128,
+    "sharedHaloMaterials": 1,
+    "maxLiveClaim": false
+  },
+  "actualSourceGameMethods": {
+    "executed": [
+      "Game._dropPickup",
+      "Game._collideContact",
+      "Game._applyPickup",
+      "Game.update pickup-loop fragment",
+      "Player.addShield"
+    ],
+    "floorBaseY": 3,
+    "collection": "d=3.700001 not collected; d=3.7 collected",
+    "shieldIncrement": "1 -> 2",
+    "score": 250,
+    "hud": [
+      "SHIELD",
+      "#45e0ff",
+      1.15
+    ],
+    "fx": "pickup(pos,0x45e0ff)",
+    "postfx": [
+      0.18,
+      "0x45e0ff"
+    ],
+    "cull": "next pickup update detaches collected item; dZ<-55 detaches alive item",
+    "limitations": "No full Game/Engine/renderer, actual particle simulation or audio playback."
+  },
+  "collectionEffectContract": {
+    "effectCalls": [
+      {
+        "type": "sparks",
+        "parameters": {
+          "position": {
+            "x": 0,
+            "y": 6,
+            "z": 3.7
+          },
+          "count": 20,
+          "speed": 11,
+          "speedVar": 0.6,
+          "life": 0.6,
+          "lifeVar": 0.4,
+          "size": 2.6,
+          "sizeVar": 0.5,
+          "colorA": 16777215,
+          "colorB": 4579583,
+          "drag": 3.4,
+          "gravity": 6,
+          "fade": 1.6
+        }
+      },
+      {
+        "type": "ring",
+        "position": {
+          "x": 0,
+          "y": 6,
+          "z": 3.7
+        },
+        "parameters": {
+          "from": 0.5,
+          "to": 12,
+          "life": 0.42,
+          "color": 4579583,
+          "opacity": 0.85
+        }
+      },
+      {
+        "type": "light",
+        "parameters": [
+          {
+            "x": 0,
+            "y": 6,
+            "z": 3.7
+          },
+          4579583,
+          55,
+          26,
+          0.28
+        ]
+      }
+    ],
+    "ringSamples": [
+      {
+        "age": 0.01,
+        "visible": true,
+        "spriteWidth": 1.302025969117807,
+        "opacity": 0.8100056689342403
+      },
+      {
+        "age": 0.1,
+        "visible": true,
+        "spriteWidth": 6.913724219846671,
+        "opacity": 0.49342403628117903
+      },
+      {
+        "age": 0.2,
+        "visible": true,
+        "spriteWidth": 10.347208724759746,
+        "opacity": 0.233219954648526
+      },
+      {
+        "age": 0.419,
+        "visible": true,
+        "spriteWidth": 11.99999984477918,
+        "opacity": 0.000004818594104308355
+      },
+      {
+        "age": 0.42,
+        "visible": false,
+        "spriteWidth": 1,
+        "opacity": 0
+      }
+    ],
+    "executed": [
+      "actual Effects.pickup",
+      "actual RingField.update with scene/math test doubles"
+    ],
+    "limitation": "Effect spawn/timing math only; no particle pixels, real lights, postfx, HUD or audio reproduced in Blender context stills."
+  },
+  "importedAdapterOwnershipHarness": {
+    "instances": 128,
+    "geometryClones": 384,
+    "materialClones": 384,
+    "disposedOnce": true,
+    "neighborUnaffected": true,
+    "templatesRetained": true,
+    "haloRetained": true,
+    "templateTexturesRetained": true,
+    "executed": [
+      "actual ImportedModels.instantiate",
+      "actual Dispose.disposeModel",
+      "delivered attachImportedShield/releaseImportedShield recipe"
+    ],
+    "limitations": "Minimal THREE graph/material/geometry test doubles, not actual GLTFLoader/Three.js/GPU memory integration. Not an integrated production adapter. Recheck real dense batches/lifetime on receiver."
+  }
+}

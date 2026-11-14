@@ -1,0 +1,1601 @@
+[
+  {
+    "file": "clean-glb-import-proof.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 800,
+    "height": 600,
+    "cameraGame": {
+      "eye": [
+        -7.0,
+        5.0,
+        -8.0
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 9.399999618530273,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.1595744788646698,
+        0.21276596188545227
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "Factory-clean final GLB import beauty",
+    "variant": "candidate GLB without runtime reconstruction",
+    "limitations": "Authored GLB material factors; production runtime uses existing bucket materials and per-stamp AO."
+  },
+  {
+    "file": "candidate-front-quarter.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 800,
+    "height": 600,
+    "cameraGame": {
+      "eye": [
+        -7.0,
+        5.0,
+        -8.0
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 9.399999618530273,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.1595744788646698,
+        0.21276596188545227
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "multiview",
+    "variant": "candidate"
+  },
+  {
+    "file": "candidate-rear-quarter.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 800,
+    "height": 600,
+    "cameraGame": {
+      "eye": [
+        7.0,
+        4.599999904632568,
+        7.0
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 9.399999618530273,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.1595744788646698,
+        0.21276596188545227
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "multiview",
+    "variant": "candidate"
+  },
+  {
+    "file": "candidate-top.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 800,
+    "height": 600,
+    "cameraGame": {
+      "eye": [
+        0.0,
+        13.0,
+        -0.10000000149011612
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 9.100000381469727,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.1648351550102234,
+        0.21978020668029785
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "multiview",
+    "variant": "candidate"
+  },
+  {
+    "file": "candidate-profile.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 800,
+    "height": 600,
+    "cameraGame": {
+      "eye": [
+        -10.0,
+        2.5999999046325684,
+        -0.0
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 8.800000190734863,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.17045454680919647,
+        0.22727271914482117
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "multiview",
+    "variant": "candidate"
+  },
+  {
+    "file": "candidate-nose.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 800,
+    "height": 600,
+    "cameraGame": {
+      "eye": [
+        0.0,
+        2.700000047683716,
+        -11.0
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 8.600000381469727,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.1744185984134674,
+        0.23255813121795654
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "multiview",
+    "variant": "candidate"
+  },
+  {
+    "file": "candidate-rear.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 800,
+    "height": 600,
+    "cameraGame": {
+      "eye": [
+        0.0,
+        2.700000047683716,
+        10.0
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 8.600000381469727,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.1744185984134674,
+        0.23255813121795654
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "multiview",
+    "variant": "candidate"
+  },
+  {
+    "file": "structure-canvas-and-tiedowns.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 960,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        -3.700000047683716,
+        3.4000000953674316,
+        -3.4000000953674316
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 4.5,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.3333333432674408,
+        0.4444444477558136
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "structural closeup",
+    "variant": "candidate"
+  },
+  {
+    "file": "structure-attached-gear.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 960,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        -3.200000047683716,
+        1.100000023841858,
+        -2.700000047683716
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 3.0,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.5,
+        0.6666666269302368
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "structural closeup",
+    "variant": "candidate"
+  },
+  {
+    "file": "yaw--0.25-source.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 800,
+    "height": 600,
+    "cameraGame": {
+      "eye": [
+        -7.0,
+        5.0,
+        -8.0
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 9.5,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.15789474546909332,
+        0.21052631735801697
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "full yaw endpoints and zero; continuous envelope proved separately",
+    "variant": "source",
+    "yaw": -0.25
+  },
+  {
+    "file": "yaw--0.25-candidate.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 800,
+    "height": 600,
+    "cameraGame": {
+      "eye": [
+        -7.0,
+        5.0,
+        -8.0
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 9.5,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.15789474546909332,
+        0.21052631735801697
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "full yaw endpoints and zero; continuous envelope proved separately",
+    "variant": "candidate",
+    "yaw": -0.25
+  },
+  {
+    "file": "yaw-+0.00-source.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 800,
+    "height": 600,
+    "cameraGame": {
+      "eye": [
+        -7.0,
+        5.0,
+        -8.0
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 9.5,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.15789474546909332,
+        0.21052631735801697
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "full yaw endpoints and zero; continuous envelope proved separately",
+    "variant": "source",
+    "yaw": 0
+  },
+  {
+    "file": "yaw-+0.00-candidate.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 800,
+    "height": 600,
+    "cameraGame": {
+      "eye": [
+        -7.0,
+        5.0,
+        -8.0
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 9.5,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.15789474546909332,
+        0.21052631735801697
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "full yaw endpoints and zero; continuous envelope proved separately",
+    "variant": "candidate",
+    "yaw": 0
+  },
+  {
+    "file": "yaw-+0.25-source.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 800,
+    "height": 600,
+    "cameraGame": {
+      "eye": [
+        -7.0,
+        5.0,
+        -8.0
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 9.5,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.15789474546909332,
+        0.21052631735801697
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "full yaw endpoints and zero; continuous envelope proved separately",
+    "variant": "source",
+    "yaw": 0.25
+  },
+  {
+    "file": "yaw-+0.25-candidate.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 800,
+    "height": 600,
+    "cameraGame": {
+      "eye": [
+        -7.0,
+        5.0,
+        -8.0
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 9.5,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.15789474546909332,
+        0.21052631735801697
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "full yaw endpoints and zero; continuous envelope proved separately",
+    "variant": "candidate",
+    "yaw": 0.25
+  },
+  {
+    "file": "world-classic-source.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 1280,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        -45.25483322143555,
+        54.255001068115234,
+        -2.8765745162963867
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 80.0,
+      "verticalFovDegrees": 51.999999170302104,
+      "projectionDiagonal": [
+        0.01406249962747097,
+        0.02500000037252903
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "world-scale source/candidate pair",
+    "variant": "source",
+    "sourceChunk": "Actual _buildChunk seed42 chunk0; all merged geometry reconstructed",
+    "sourceCameraRig": {
+      "mode": "classic",
+      "sourceRig": {
+        "label": "CLASSIC 45",
+        "yaw": 45,
+        "dist": 64,
+        "height": 45.255,
+        "fov": 52
+      },
+      "eye": [
+        -45.254833995939045,
+        54.255,
+        -2.8765745019696567
+      ],
+      "lookAt": [
+        0,
+        9,
+        42.37825949396938
+      ],
+      "fov": 52,
+      "orthographic": true,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        14,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.34875712758422084,
+            -0.0813219586167195,
+            -0.8247877836571659
+          ],
+          "ndcMax": [
+            -0.27323922526031214,
+            0.013012065215912916,
+            -0.8149219270474106
+          ],
+          "pixelWidth": 48.33145748730157,
+          "pixelHeight": 33.96024857974767,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.3475307769509333,
+            -0.07951882710225827,
+            -0.8245647489932093
+          ],
+          "ndcMax": [
+            -0.2761301465017654,
+            0.007586235706690836,
+            -0.8152800393692029
+          ],
+          "pixelWidth": 45.69640348746745,
+          "pixelHeight": 31.357822611221682,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    "playerReference": "public/models/player.glb at scale 1",
+    "limitations": "No procedural production textures, sky shader, fog, postprocessing, dynamic enemies, HUD, motion or live GPU acceptance."
+  },
+  {
+    "file": "world-classic-candidate.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 1280,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        -45.25483322143555,
+        54.255001068115234,
+        -2.8765745162963867
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 80.0,
+      "verticalFovDegrees": 51.999999170302104,
+      "projectionDiagonal": [
+        0.01406249962747097,
+        0.02500000037252903
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "world-scale source/candidate pair",
+    "variant": "candidate",
+    "sourceChunk": "Actual _buildChunk seed42 chunk0; all merged geometry reconstructed",
+    "sourceCameraRig": {
+      "mode": "classic",
+      "sourceRig": {
+        "label": "CLASSIC 45",
+        "yaw": 45,
+        "dist": 64,
+        "height": 45.255,
+        "fov": 52
+      },
+      "eye": [
+        -45.254833995939045,
+        54.255,
+        -2.8765745019696567
+      ],
+      "lookAt": [
+        0,
+        9,
+        42.37825949396938
+      ],
+      "fov": 52,
+      "orthographic": true,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        14,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.34875712758422084,
+            -0.0813219586167195,
+            -0.8247877836571659
+          ],
+          "ndcMax": [
+            -0.27323922526031214,
+            0.013012065215912916,
+            -0.8149219270474106
+          ],
+          "pixelWidth": 48.33145748730157,
+          "pixelHeight": 33.96024857974767,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.3475307769509333,
+            -0.07951882710225827,
+            -0.8245647489932093
+          ],
+          "ndcMax": [
+            -0.2761301465017654,
+            0.007586235706690836,
+            -0.8152800393692029
+          ],
+          "pixelWidth": 45.69640348746745,
+          "pixelHeight": 31.357822611221682,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    "playerReference": "public/models/player.glb at scale 1",
+    "limitations": "No procedural production textures, sky shader, fog, postprocessing, dynamic enemies, HUD, motion or live GPU acceptance."
+  },
+  {
+    "file": "world-modern-source.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 1280,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        4.08141565322876,
+        23.0,
+        -12.87282657623291
+      ],
+      "ortho": false,
+      "orthoVerticalSpan": 80.0,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        1.0147769451141357,
+        1.8040478229522705
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "world-scale source/candidate pair",
+    "variant": "source",
+    "sourceChunk": "Actual _buildChunk seed42 chunk0; all merged geometry reconstructed",
+    "sourceCameraRig": {
+      "mode": "modern",
+      "sourceRig": {
+        "label": "MODERN 20",
+        "yaw": 20,
+        "dist": 29,
+        "height": 14,
+        "fov": 58
+      },
+      "eye": [
+        4.081415843555609,
+        23,
+        -12.872826508821962
+      ],
+      "lookAt": [
+        14,
+        10.2,
+        30.37825949396938
+      ],
+      "fov": 58,
+      "orthographic": false,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        14,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.19701313347172514,
+            -0.32412012429150255,
+            0.996118798550539
+          ],
+          "ndcMax": [
+            -0.08468377373698494,
+            -0.19988574374782894,
+            0.9965276262549615
+          ],
+          "pixelWidth": 71.89079023023373,
+          "pixelHeight": 44.7243769957225,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.19578180397361164,
+            -0.3218010426930827,
+            0.9961316274030805
+          ],
+          "ndcMax": [
+            -0.0880210732020696,
+            -0.2066557009931138,
+            0.9965218109696534
+          ],
+          "pixelWidth": 68.96686769378691,
+          "pixelHeight": 41.452323011988796,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    "playerReference": "public/models/player.glb at scale 1",
+    "limitations": "No procedural production textures, sky shader, fog, postprocessing, dynamic enemies, HUD, motion or live GPU acceptance."
+  },
+  {
+    "file": "world-modern-candidate.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 1280,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        4.08141565322876,
+        23.0,
+        -12.87282657623291
+      ],
+      "ortho": false,
+      "orthoVerticalSpan": 80.0,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        1.0147769451141357,
+        1.8040478229522705
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "world-scale source/candidate pair",
+    "variant": "candidate",
+    "sourceChunk": "Actual _buildChunk seed42 chunk0; all merged geometry reconstructed",
+    "sourceCameraRig": {
+      "mode": "modern",
+      "sourceRig": {
+        "label": "MODERN 20",
+        "yaw": 20,
+        "dist": 29,
+        "height": 14,
+        "fov": 58
+      },
+      "eye": [
+        4.081415843555609,
+        23,
+        -12.872826508821962
+      ],
+      "lookAt": [
+        14,
+        10.2,
+        30.37825949396938
+      ],
+      "fov": 58,
+      "orthographic": false,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        14,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.19701313347172514,
+            -0.32412012429150255,
+            0.996118798550539
+          ],
+          "ndcMax": [
+            -0.08468377373698494,
+            -0.19988574374782894,
+            0.9965276262549615
+          ],
+          "pixelWidth": 71.89079023023373,
+          "pixelHeight": 44.7243769957225,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.19578180397361164,
+            -0.3218010426930827,
+            0.9961316274030805
+          ],
+          "ndcMax": [
+            -0.0880210732020696,
+            -0.2066557009931138,
+            0.9965218109696534
+          ],
+          "pixelWidth": 68.96686769378691,
+          "pixelHeight": 41.452323011988796,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    "playerReference": "public/models/player.glb at scale 1",
+    "limitations": "No procedural production textures, sky shader, fog, postprocessing, dynamic enemies, HUD, motion or live GPU acceptance."
+  },
+  {
+    "file": "world-chase-source.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 1280,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        11.491316795349121,
+        18.5,
+        -9.490265846252441
+      ],
+      "ortho": false,
+      "orthoVerticalSpan": 80.0,
+      "verticalFovDegrees": 66.00000183661733,
+      "projectionDiagonal": [
+        0.8661739826202393,
+        1.5398648977279663
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "world-scale source/candidate pair",
+    "variant": "source",
+    "sourceChunk": "Actual _buildChunk seed42 chunk0; all merged geometry reconstructed",
+    "sourceCameraRig": {
+      "mode": "chase",
+      "sourceRig": {
+        "label": "CHASE",
+        "yaw": 6,
+        "dist": 24,
+        "height": 9.5,
+        "fov": 66
+      },
+      "eye": [
+        11.491316881576317,
+        18.5,
+        -9.49026599486918
+      ],
+      "lookAt": [
+        14,
+        10.2,
+        30.37825949396938
+      ],
+      "fov": 66,
+      "orthographic": false,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        14,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.20999072999494467,
+            -0.34301680732434775,
+            0.9954062363634308
+          ],
+          "ndcMax": [
+            -0.09706508387443559,
+            -0.22409134864346397,
+            0.9959669980595244
+          ],
+          "pixelWidth": 72.27241351712581,
+          "pixelHeight": 42.81316512511816,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.2078386808103822,
+            -0.3420930179585774,
+            0.9954241945839236
+          ],
+          "ndcMax": [
+            -0.10001982456266761,
+            -0.23049062823922276,
+            0.9959590694613109
+          ],
+          "pixelWidth": 69.00406799853734,
+          "pixelHeight": 40.17686029896767,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    "playerReference": "public/models/player.glb at scale 1",
+    "limitations": "No procedural production textures, sky shader, fog, postprocessing, dynamic enemies, HUD, motion or live GPU acceptance."
+  },
+  {
+    "file": "world-chase-candidate.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 1280,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        11.491316795349121,
+        18.5,
+        -9.490265846252441
+      ],
+      "ortho": false,
+      "orthoVerticalSpan": 80.0,
+      "verticalFovDegrees": 66.00000183661733,
+      "projectionDiagonal": [
+        0.8661739826202393,
+        1.5398648977279663
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "world-scale source/candidate pair",
+    "variant": "candidate",
+    "sourceChunk": "Actual _buildChunk seed42 chunk0; all merged geometry reconstructed",
+    "sourceCameraRig": {
+      "mode": "chase",
+      "sourceRig": {
+        "label": "CHASE",
+        "yaw": 6,
+        "dist": 24,
+        "height": 9.5,
+        "fov": 66
+      },
+      "eye": [
+        11.491316881576317,
+        18.5,
+        -9.49026599486918
+      ],
+      "lookAt": [
+        14,
+        10.2,
+        30.37825949396938
+      ],
+      "fov": 66,
+      "orthographic": false,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        14,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.20999072999494467,
+            -0.34301680732434775,
+            0.9954062363634308
+          ],
+          "ndcMax": [
+            -0.09706508387443559,
+            -0.22409134864346397,
+            0.9959669980595244
+          ],
+          "pixelWidth": 72.27241351712581,
+          "pixelHeight": 42.81316512511816,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.2078386808103822,
+            -0.3420930179585774,
+            0.9954241945839236
+          ],
+          "ndcMax": [
+            -0.10001982456266761,
+            -0.23049062823922276,
+            0.9959590694613109
+          ],
+          "pixelWidth": 69.00406799853734,
+          "pixelHeight": 40.17686029896767,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    "playerReference": "public/models/player.glb at scale 1",
+    "limitations": "No procedural production textures, sky shader, fog, postprocessing, dynamic enemies, HUD, motion or live GPU acceptance."
+  },
+  {
+    "file": "shipped-selected-craft-reference-board.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 1200,
+    "height": 700,
+    "cameraGame": {
+      "eye": [
+        -10.0,
+        15.0,
+        -15.0
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 18.0,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        0.06481481343507767,
+        0.1111111119389534
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "Selected shipped reference inspection only",
+    "normalizedForBoard": true,
+    "notWorldScale": true,
+    "references": [
+      "player",
+      "sentinel",
+      "turret",
+      "radar",
+      "silo",
+      "fuel"
+    ],
+    "reuse": "No imported reference geometry reused in candidate; references shown only here and player in common world evidence."
+  },
+  {
+    "file": "world-classic-source-centerlane.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 1280,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        -45.25483322143555,
+        54.255001068115234,
+        -2.8765745162963867
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 80.0,
+      "verticalFovDegrees": 51.999999170302104,
+      "projectionDiagonal": [
+        0.01406249962747097,
+        0.02500000037252903
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "world-scale source/candidate pair",
+    "variant": "source",
+    "sourceChunk": "Actual _buildChunk seed42 chunk0; all merged geometry reconstructed",
+    "sourceCameraRig": {
+      "mode": "classic",
+      "state": "centerlane",
+      "sourceRig": {
+        "label": "CLASSIC 45",
+        "yaw": 45,
+        "dist": 64,
+        "height": 45.255,
+        "fov": 52
+      },
+      "eye": [
+        -45.254833995939045,
+        54.255,
+        -2.8765745019696567
+      ],
+      "lookAt": [
+        0,
+        9,
+        42.37825949396938
+      ],
+      "fov": 52,
+      "orthographic": true,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        0,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.34875712758422084,
+            -0.0813219586167195,
+            -0.8247877836571659
+          ],
+          "ndcMax": [
+            -0.27323922526031214,
+            0.013012065215912916,
+            -0.8149219270474106
+          ],
+          "pixelWidth": 48.33145748730157,
+          "pixelHeight": 33.96024857974767,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.3475307769509333,
+            -0.07951882710225827,
+            -0.8245647489932093
+          ],
+          "ndcMax": [
+            -0.2761301465017654,
+            0.007586235706690836,
+            -0.8152800393692029
+          ],
+          "pixelWidth": 45.69640348746745,
+          "pixelHeight": 31.357822611221682,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    "playerReference": "public/models/player.glb at scale 1",
+    "limitations": "No procedural production textures, sky shader, fog, postprocessing, dynamic enemies, HUD, motion or live GPU acceptance."
+  },
+  {
+    "file": "world-classic-candidate-centerlane.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 1280,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        -45.25483322143555,
+        54.255001068115234,
+        -2.8765745162963867
+      ],
+      "ortho": true,
+      "orthoVerticalSpan": 80.0,
+      "verticalFovDegrees": 51.999999170302104,
+      "projectionDiagonal": [
+        0.01406249962747097,
+        0.02500000037252903
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "world-scale source/candidate pair",
+    "variant": "candidate",
+    "sourceChunk": "Actual _buildChunk seed42 chunk0; all merged geometry reconstructed",
+    "sourceCameraRig": {
+      "mode": "classic",
+      "state": "centerlane",
+      "sourceRig": {
+        "label": "CLASSIC 45",
+        "yaw": 45,
+        "dist": 64,
+        "height": 45.255,
+        "fov": 52
+      },
+      "eye": [
+        -45.254833995939045,
+        54.255,
+        -2.8765745019696567
+      ],
+      "lookAt": [
+        0,
+        9,
+        42.37825949396938
+      ],
+      "fov": 52,
+      "orthographic": true,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        0,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.34875712758422084,
+            -0.0813219586167195,
+            -0.8247877836571659
+          ],
+          "ndcMax": [
+            -0.27323922526031214,
+            0.013012065215912916,
+            -0.8149219270474106
+          ],
+          "pixelWidth": 48.33145748730157,
+          "pixelHeight": 33.96024857974767,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.3475307769509333,
+            -0.07951882710225827,
+            -0.8245647489932093
+          ],
+          "ndcMax": [
+            -0.2761301465017654,
+            0.007586235706690836,
+            -0.8152800393692029
+          ],
+          "pixelWidth": 45.69640348746745,
+          "pixelHeight": 31.357822611221682,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    "playerReference": "public/models/player.glb at scale 1",
+    "limitations": "No procedural production textures, sky shader, fog, postprocessing, dynamic enemies, HUD, motion or live GPU acceptance."
+  },
+  {
+    "file": "world-modern-source-centerlane.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 1280,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        -9.918583869934082,
+        23.0,
+        -12.87282657623291
+      ],
+      "ortho": false,
+      "orthoVerticalSpan": 80.0,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        1.0147769451141357,
+        1.8040478229522705
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "world-scale source/candidate pair",
+    "variant": "source",
+    "sourceChunk": "Actual _buildChunk seed42 chunk0; all merged geometry reconstructed",
+    "sourceCameraRig": {
+      "mode": "modern",
+      "state": "centerlane",
+      "sourceRig": {
+        "label": "MODERN 20",
+        "yaw": 20,
+        "dist": 29,
+        "height": 14,
+        "fov": 58
+      },
+      "eye": [
+        -9.91858415644439,
+        23,
+        -12.872826508821962
+      ],
+      "lookAt": [
+        0,
+        10.2,
+        30.37825949396938
+      ],
+      "fov": 58,
+      "orthographic": false,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        0,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.4312340430506143,
+            -0.27593772591275983,
+            0.9963547069873292
+          ],
+          "ndcMax": [
+            -0.3240179645864793,
+            -0.16195600248059921,
+            0.9967197511520697
+          ],
+          "pixelWidth": 68.6182902170464,
+          "pixelHeight": 41.033420435577824,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.4299590140418904,
+            -0.27506541299265536,
+            0.9963660976713676
+          ],
+          "ndcMax": [
+            -0.3277094912452335,
+            -0.1682216398962569,
+            0.9967145288479374
+          ],
+          "pixelWidth": 65.43969458986041,
+          "pixelHeight": 38.46375831470344,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    "playerReference": "public/models/player.glb at scale 1",
+    "limitations": "No procedural production textures, sky shader, fog, postprocessing, dynamic enemies, HUD, motion or live GPU acceptance."
+  },
+  {
+    "file": "world-modern-candidate-centerlane.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 1280,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        -9.918583869934082,
+        23.0,
+        -12.87282657623291
+      ],
+      "ortho": false,
+      "orthoVerticalSpan": 80.0,
+      "verticalFovDegrees": 57.99999933726732,
+      "projectionDiagonal": [
+        1.0147769451141357,
+        1.8040478229522705
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "world-scale source/candidate pair",
+    "variant": "candidate",
+    "sourceChunk": "Actual _buildChunk seed42 chunk0; all merged geometry reconstructed",
+    "sourceCameraRig": {
+      "mode": "modern",
+      "state": "centerlane",
+      "sourceRig": {
+        "label": "MODERN 20",
+        "yaw": 20,
+        "dist": 29,
+        "height": 14,
+        "fov": 58
+      },
+      "eye": [
+        -9.91858415644439,
+        23,
+        -12.872826508821962
+      ],
+      "lookAt": [
+        0,
+        10.2,
+        30.37825949396938
+      ],
+      "fov": 58,
+      "orthographic": false,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        0,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.4312340430506143,
+            -0.27593772591275983,
+            0.9963547069873292
+          ],
+          "ndcMax": [
+            -0.3240179645864793,
+            -0.16195600248059921,
+            0.9967197511520697
+          ],
+          "pixelWidth": 68.6182902170464,
+          "pixelHeight": 41.033420435577824,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.4299590140418904,
+            -0.27506541299265536,
+            0.9963660976713676
+          ],
+          "ndcMax": [
+            -0.3277094912452335,
+            -0.1682216398962569,
+            0.9967145288479374
+          ],
+          "pixelWidth": 65.43969458986041,
+          "pixelHeight": 38.46375831470344,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    "playerReference": "public/models/player.glb at scale 1",
+    "limitations": "No procedural production textures, sky shader, fog, postprocessing, dynamic enemies, HUD, motion or live GPU acceptance."
+  },
+  {
+    "file": "world-chase-source-centerlane.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 1280,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        -2.508683204650879,
+        18.5,
+        -9.490265846252441
+      ],
+      "ortho": false,
+      "orthoVerticalSpan": 80.0,
+      "verticalFovDegrees": 66.00000183661733,
+      "projectionDiagonal": [
+        0.8661739826202393,
+        1.5398648977279663
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "world-scale source/candidate pair",
+    "variant": "source",
+    "sourceChunk": "Actual _buildChunk seed42 chunk0; all merged geometry reconstructed",
+    "sourceCameraRig": {
+      "mode": "chase",
+      "state": "centerlane",
+      "sourceRig": {
+        "label": "CHASE",
+        "yaw": 6,
+        "dist": 24,
+        "height": 9.5,
+        "fov": 66
+      },
+      "eye": [
+        -2.5086831184236833,
+        18.5,
+        -9.49026599486918
+      ],
+      "lookAt": [
+        0,
+        10.2,
+        30.37825949396938
+      ],
+      "fov": 66,
+      "orthographic": false,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        0,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.4640847605634484,
+            -0.33026373666182424,
+            0.9955031361711257
+          ],
+          "ndcMax": [
+            -0.3480549841092061,
+            -0.21430183561079225,
+            0.9960427328126847
+          ],
+          "pixelWidth": 74.25905693071506,
+          "pixelHeight": 41.74628437837151,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.4627024008612748,
+            -0.3293524259706234,
+            0.9955203770327825
+          ],
+          "ndcMax": [
+            -0.3517655387546586,
+            -0.22053772739281044,
+            0.9960350856404566
+          ],
+          "pixelWidth": 70.99959174823437,
+          "pixelHeight": 39.17329148801267,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    "playerReference": "public/models/player.glb at scale 1",
+    "limitations": "No procedural production textures, sky shader, fog, postprocessing, dynamic enemies, HUD, motion or live GPU acceptance."
+  },
+  {
+    "file": "world-chase-candidate-centerlane.png",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "width": 1280,
+    "height": 720,
+    "cameraGame": {
+      "eye": [
+        -2.508683204650879,
+        18.5,
+        -9.490265846252441
+      ],
+      "ortho": false,
+      "orthoVerticalSpan": 80.0,
+      "verticalFovDegrees": 66.00000183661733,
+      "projectionDiagonal": [
+        0.8661739826202393,
+        1.5398648977279663
+      ]
+    },
+    "lighting": "Identical warm sun 3.4/cool rim .85/blue ambient .65, AgX; reconstruction, not production renderer",
+    "offlineReconstruction": true,
+    "kind": "world-scale source/candidate pair",
+    "variant": "candidate",
+    "sourceChunk": "Actual _buildChunk seed42 chunk0; all merged geometry reconstructed",
+    "sourceCameraRig": {
+      "mode": "chase",
+      "state": "centerlane",
+      "sourceRig": {
+        "label": "CHASE",
+        "yaw": 6,
+        "dist": 24,
+        "height": 9.5,
+        "fov": 66
+      },
+      "eye": [
+        -2.5086831184236833,
+        18.5,
+        -9.49026599486918
+      ],
+      "lookAt": [
+        0,
+        10.2,
+        30.37825949396938
+      ],
+      "fov": 66,
+      "orthographic": false,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        0,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.4640847605634484,
+            -0.33026373666182424,
+            0.9955031361711257
+          ],
+          "ndcMax": [
+            -0.3480549841092061,
+            -0.21430183561079225,
+            0.9960427328126847
+          ],
+          "pixelWidth": 74.25905693071506,
+          "pixelHeight": 41.74628437837151,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.4627024008612748,
+            -0.3293524259706234,
+            0.9955203770327825
+          ],
+          "ndcMax": [
+            -0.3517655387546586,
+            -0.22053772739281044,
+            0.9960350856404566
+          ],
+          "pixelWidth": 70.99959174823437,
+          "pixelHeight": 39.17329148801267,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    "playerReference": "public/models/player.glb at scale 1",
+    "limitations": "No procedural production textures, sky shader, fog, postprocessing, dynamic enemies, HUD, motion or live GPU acceptance."
+  }
+]

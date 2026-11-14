@@ -1,0 +1,167 @@
+{
+  "blend_reopened": {
+    "objects": {
+      "shell": {
+        "triangles": 768,
+        "vertices": 384,
+        "nonmanifold_edges_raw": 0,
+        "nonmanifold_edges_position_welded_1e_6": 0,
+        "material_primitives": 1,
+        "game_origin": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "core": {
+        "triangles": 44,
+        "vertices": 24,
+        "nonmanifold_edges_raw": 0,
+        "nonmanifold_edges_position_welded_1e_6": 0,
+        "material_primitives": 1,
+        "game_origin": [
+          0.0,
+          0.0,
+          -0.30000001192092896
+        ]
+      },
+      "shape": {
+        "triangles": 116,
+        "vertices": 60,
+        "nonmanifold_edges_raw": 0,
+        "nonmanifold_edges_position_welded_1e_6": 0,
+        "material_primitives": 1,
+        "game_origin": [
+          0.0,
+          0.0,
+          0.10000000149011612
+        ]
+      }
+    },
+    "triangles": 928,
+    "material_primitives": 3,
+    "bounds_game": {
+      "min": [
+        -2.0450000762939453,
+        -2.0450000762939453,
+        -0.3799999952316284
+      ],
+      "max": [
+        2.0450000762939453,
+        2.0450000762939453,
+        0.25999999046325684
+      ],
+      "size": [
+        4.090000152587891,
+        4.090000152587891,
+        0.6399999856948853
+      ]
+    }
+  },
+  "blend_packed_state": {
+    "linked_libraries": 0,
+    "image_datablocks": 2,
+    "external_images": [],
+    "pack_all_called_by_generator": true,
+    "self_contained": true
+  },
+  "glb_clean_scene_reimport": {
+    "objects": {
+      "core": {
+        "triangles": 44,
+        "vertices": 84,
+        "nonmanifold_edges_raw": 84,
+        "nonmanifold_edges_position_welded_1e_6": 0,
+        "material_primitives": 1,
+        "game_origin": [
+          0.0,
+          0.0,
+          -0.30000001192092896
+        ]
+      },
+      "shape": {
+        "triangles": 116,
+        "vertices": 192,
+        "nonmanifold_edges_raw": 192,
+        "nonmanifold_edges_position_welded_1e_6": 0,
+        "material_primitives": 1,
+        "game_origin": [
+          0.0,
+          0.0,
+          0.10000000149011612
+        ]
+      },
+      "shell": {
+        "triangles": 768,
+        "vertices": 1536,
+        "nonmanifold_edges_raw": 1536,
+        "nonmanifold_edges_position_welded_1e_6": 0,
+        "material_primitives": 1,
+        "game_origin": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      }
+    },
+    "triangles": 928,
+    "material_primitives": 3,
+    "bounds_game": {
+      "min": [
+        -2.0450000762939453,
+        -2.0450000762939453,
+        -0.3799999952316284
+      ],
+      "max": [
+        2.0450000762939453,
+        2.0450000762939453,
+        0.25999999046325684
+      ],
+      "size": [
+        4.090000152587891,
+        4.090000152587891,
+        0.6399999856948853
+      ]
+    }
+  },
+  "axis_conversion": "Blender (x,y,z) -> game/glTF (x,z,-y), exporter export_yup=True; no root normalization or corrective game rotation",
+  "clearance": {
+    "independent_pose_samples": 1080,
+    "ring_angles_degrees": "0..355 step 5",
+    "shape_wobbles_radians": [
+      -0.08,
+      -0.04,
+      0,
+      0.04,
+      0.08
+    ],
+    "ring_scales": [
+      0.975,
+      1,
+      1.025
+    ],
+    "triangle_overlap_pairs": 0,
+    "minimum_sampled_vertex_to_triangle_distance": 0.3393051326274872,
+    "minimum_sample_pose": {
+      "shell_degrees": 0,
+      "shell_scale": 0.975,
+      "shape_radians": -0.08
+    },
+    "shell_projected_inner_radius_mesh_edges": 1.9108998189582367,
+    "shape_max_radius": 1.1925183282499323,
+    "core_max_radius": 1.6399999856948853,
+    "continuous_conservative_radial_clearance_lower_bound": 0.22312733778939542,
+    "source_timeline_samples": 241,
+    "source_timeline_seconds": [
+      0,
+      20
+    ],
+    "source_timeline_overlap_pairs": 0,
+    "distance_sample_directions": [
+      "shell vertices -> shape triangles",
+      "shape vertices -> shell triangles",
+      "shell vertices -> core triangles"
+    ],
+    "method_limits": "Finite BVH overlap and vertex-to-triangle sampling do not find every triangle-interior distance minimum; core vertices -> shell triangles are not sampled. Conservative radial separating-cylinder bound covers all shell spin angles, pulse range and badge wobbles: all projected shell triangles stay outside its inner edge/chord radius; all core/shape triangles are inside their convex vertex radial maximum. Float tolerance, not collision/physics integration proof."
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "platform": "Linux",
+  "engine": "BLENDER_EEVEE",
+  "threads": 4,
+  "textures": 0,
+  "templates": [
+    {
+      "node": "AS_Talus_Basin",
+      "file": "assets/talus-basin.glb",
+      "evaluatedTriangles": 432,
+      "verticesEditable": 218,
+      "primitives": 1,
+      "materials": [
+        "AS_Regolith_RuntimeRock"
+      ],
+      "boundsGame": {
+        "min": [
+          -0.8719831705093384,
+          -0.8292713165283203,
+          -0.9150117039680481
+        ],
+        "max": [
+          0.8985510468482971,
+          0.9311781525611877,
+          0.8766337037086487
+        ]
+      },
+      "radiusAboutPivot": 1.0134939614576204,
+      "closedManifold": true,
+      "connectedComponents": 1,
+      "identityTransform": true,
+      "spec": {
+        "name": "AS_Talus_Basin",
+        "slug": "talus-basin",
+        "seed": 17411,
+        "description": "Broad off-axis impact bowl, stepped regolith terraces, blunt fractured back.",
+        "theta": [
+          0.1,
+          0.24,
+          0.4,
+          0.54,
+          0.67,
+          0.91,
+          1.31,
+          1.96,
+          2.61
+        ],
+        "radial": [
+          0.56,
+          0.57,
+          0.66,
+          0.92,
+          1.0,
+          0.96,
+          0.92,
+          0.91,
+          0.87
+        ],
+        "axis": [
+          0.18,
+          0.86,
+          -0.48
+        ],
+        "shape": [
+          1.0,
+          0.94,
+          0.97
+        ],
+        "planes": [
+          [
+            [
+              -0.8,
+              -0.3,
+              0.45
+            ],
+            0.77
+          ],
+          [
+            [
+              0.4,
+              -0.8,
+              0.3
+            ],
+            0.79
+          ]
+        ],
+        "phase": 0.4
+      }
+    },
+    {
+      "node": "AS_Keel_DoubleImpact",
+      "file": "assets/keel-double-impact.glb",
+      "evaluatedTriangles": 480,
+      "verticesEditable": 242,
+      "primitives": 1,
+      "materials": [
+        "AS_Regolith_RuntimeRock"
+      ],
+      "boundsGame": {
+        "min": [
+          -0.7699352502822876,
+          -0.763970673084259,
+          -1.0356165170669556
+        ],
+        "max": [
+          0.7390154600143433,
+          0.8961785435676575,
+          1.0151530504226685
+        ]
+      },
+      "radiusAboutPivot": 1.0486480846507884,
+      "closedManifold": true,
+      "connectedComponents": 1,
+      "identityTransform": true,
+      "spec": {
+        "name": "AS_Keel_DoubleImpact",
+        "slug": "keel-double-impact",
+        "seed": 29173,
+        "description": "Long intact keel mass, oblique excavated basin and subordinate weathered impact.",
+        "theta": [
+          0.1,
+          0.22,
+          0.36,
+          0.49,
+          0.61,
+          0.76,
+          1.01,
+          1.42,
+          2.04,
+          2.65
+        ],
+        "radial": [
+          0.59,
+          0.6,
+          0.66,
+          0.87,
+          0.98,
+          0.97,
+          0.93,
+          0.94,
+          0.9,
+          0.86
+        ],
+        "axis": [
+          -0.22,
+          0.76,
+          -0.61
+        ],
+        "shape": [
+          0.82,
+          0.89,
+          1.09
+        ],
+        "planes": [
+          [
+            [
+              0.8,
+              -0.3,
+              0.4
+            ],
+            0.71
+          ],
+          [
+            [
+              -0.6,
+              -0.7,
+              -0.2
+            ],
+            0.78
+          ]
+        ],
+        "phase": 2.1
+      }
+    },
+    {
+      "node": "AS_Scar_Cleaved",
+      "file": "assets/scar-cleaved.glb",
+      "evaluatedTriangles": 384,
+      "verticesEditable": 194,
+      "primitives": 1,
+      "materials": [
+        "AS_Regolith_RuntimeRock"
+      ],
+      "boundsGame": {
+        "min": [
+          -0.9518015384674072,
+          -0.7762361168861389,
+          -0.8625665307044983
+        ],
+        "max": [
+          0.9326685070991516,
+          0.9114342331886292,
+          0.7699951529502869
+        ]
+      },
+      "radiusAboutPivot": 1.0051049467971251,
+      "closedManifold": true,
+      "connectedComponents": 1,
+      "identityTransform": true,
+      "spec": {
+        "name": "AS_Scar_Cleaved",
+        "slug": "scar-cleaved",
+        "seed": 53657,
+        "description": "Angular shield-like mass, open shallow basin and a broad diagonal fracture shelf.",
+        "theta": [
+          0.12,
+          0.29,
+          0.46,
+          0.59,
+          0.81,
+          1.24,
+          1.88,
+          2.56
+        ],
+        "radial": [
+          0.63,
+          0.64,
+          0.79,
+          0.98,
+          0.97,
+          0.92,
+          0.93,
+          0.89
+        ],
+        "axis": [
+          0.34,
+          0.8,
+          -0.49
+        ],
+        "shape": [
+          1.03,
+          0.91,
+          0.9
+        ],
+        "planes": [
+          [
+            [
+              0.8,
+              0.15,
+              0.5
+            ],
+            0.66
+          ],
+          [
+            [
+              -0.3,
+              -0.8,
+              -0.2
+            ],
+            0.76
+          ],
+          [
+            [
+              -0.7,
+              0.2,
+              0.6
+            ],
+            0.78
+          ]
+        ],
+        "phase": 4.2
+      }
+    }
+  ]
+}

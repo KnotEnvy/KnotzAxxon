@@ -1,0 +1,272 @@
+{
+  "blender": "5.2.1 LTS",
+  "hash": "9e2066aef7ef",
+  "engine": "BLENDER_EEVEE",
+  "nodes": [
+    {
+      "name": "CF_01_Fuselage_Fitted_Lower_Cover",
+      "bucket": "hull",
+      "tint": 8291714,
+      "triangles": 212
+    },
+    {
+      "name": "CF_02_Cockpit_Tensioned_Canvas",
+      "bucket": "hull",
+      "tint": 9870225,
+      "triangles": 108
+    },
+    {
+      "name": "CF_03_Port_Wing_Draped_Pleats",
+      "bucket": "hull",
+      "tint": 9212812,
+      "triangles": 108
+    },
+    {
+      "name": "CF_04_Port_Wing_Reinforced_Seam",
+      "bucket": "hull",
+      "tint": 7634294,
+      "triangles": 10
+    },
+    {
+      "name": "CF_05_Port_Tailplane_Wrapped",
+      "bucket": "hull",
+      "tint": 8620932,
+      "triangles": 12
+    },
+    {
+      "name": "CF_03_Starboard_Wing_Draped_Pleats",
+      "bucket": "hull",
+      "tint": 9212812,
+      "triangles": 108
+    },
+    {
+      "name": "CF_04_Starboard_Wing_Reinforced_Seam",
+      "bucket": "hull",
+      "tint": 7634294,
+      "triangles": 10
+    },
+    {
+      "name": "CF_05_Starboard_Tailplane_Wrapped",
+      "bucket": "hull",
+      "tint": 8620932,
+      "triangles": 12
+    },
+    {
+      "name": "CF_06_Vertical_Fin_Fitted_Sock",
+      "bucket": "hull",
+      "tint": 9344396,
+      "triangles": 16
+    },
+    {
+      "name": "CF_07_Tail_Exhaust_Weather_Plug",
+      "bucket": "dark",
+      "tint": 11580845,
+      "triangles": 44
+    },
+    {
+      "name": "CF_08_Canvas_Cinch_Band_1",
+      "bucket": "hull",
+      "tint": 7502962,
+      "triangles": 16
+    },
+    {
+      "name": "CF_09_Port_Cinch_Clasp_1",
+      "bucket": "dark",
+      "tint": 11778480,
+      "triangles": 12
+    },
+    {
+      "name": "CF_09_Starboard_Cinch_Clasp_1",
+      "bucket": "dark",
+      "tint": 11778480,
+      "triangles": 12
+    },
+    {
+      "name": "CF_08_Canvas_Cinch_Band_2",
+      "bucket": "hull",
+      "tint": 7502962,
+      "triangles": 16
+    },
+    {
+      "name": "CF_09_Port_Cinch_Clasp_2",
+      "bucket": "dark",
+      "tint": 11778480,
+      "triangles": 12
+    },
+    {
+      "name": "CF_09_Starboard_Cinch_Clasp_2",
+      "bucket": "dark",
+      "tint": 11778480,
+      "triangles": 12
+    },
+    {
+      "name": "CF_08_Canvas_Cinch_Band_3",
+      "bucket": "hull",
+      "tint": 7502962,
+      "triangles": 16
+    },
+    {
+      "name": "CF_09_Port_Cinch_Clasp_3",
+      "bucket": "dark",
+      "tint": 11778480,
+      "triangles": 12
+    },
+    {
+      "name": "CF_09_Starboard_Cinch_Clasp_3",
+      "bucket": "dark",
+      "tint": 11778480,
+      "triangles": 12
+    },
+    {
+      "name": "CF_10_Nose_Attached_Strut",
+      "bucket": "dark",
+      "tint": 12830656,
+      "triangles": 28
+    },
+    {
+      "name": "CF_11_Nose_Torque_Brace",
+      "bucket": "dark",
+      "tint": 9214367,
+      "triangles": 20
+    },
+    {
+      "name": "CF_12_Nose_Bevelled_Tyre",
+      "bucket": "dark",
+      "tint": 6780026,
+      "triangles": 76
+    },
+    {
+      "name": "CF_13_Nose_Axle_Hub",
+      "bucket": "dark",
+      "tint": 12830656,
+      "triangles": 28
+    },
+    {
+      "name": "CF_14_Nose_Gear_Attachment",
+      "bucket": "dark",
+      "tint": 11252913,
+      "triangles": 12
+    },
+    {
+      "name": "CF_10_Port_Main_Attached_Strut",
+      "bucket": "dark",
+      "tint": 12830656,
+      "triangles": 28
+    },
+    {
+      "name": "CF_11_Port_Main_Torque_Brace",
+      "bucket": "dark",
+      "tint": 9214367,
+      "triangles": 20
+    },
+    {
+      "name": "CF_12_Port_Main_Bevelled_Tyre",
+      "bucket": "dark",
+      "tint": 6780026,
+      "triangles": 76
+    },
+    {
+      "name": "CF_13_Port_Main_Axle_Hub",
+      "bucket": "dark",
+      "tint": 12830656,
+      "triangles": 28
+    },
+    {
+      "name": "CF_14_Port_Main_Gear_Attachment",
+      "bucket": "dark",
+      "tint": 11252913,
+      "triangles": 12
+    },
+    {
+      "name": "CF_10_Starboard_Main_Attached_Strut",
+      "bucket": "dark",
+      "tint": 12830656,
+      "triangles": 28
+    },
+    {
+      "name": "CF_11_Starboard_Main_Torque_Brace",
+      "bucket": "dark",
+      "tint": 9214367,
+      "triangles": 20
+    },
+    {
+      "name": "CF_12_Starboard_Main_Bevelled_Tyre",
+      "bucket": "dark",
+      "tint": 6780026,
+      "triangles": 76
+    },
+    {
+      "name": "CF_13_Starboard_Main_Axle_Hub",
+      "bucket": "dark",
+      "tint": 12830656,
+      "triangles": 28
+    },
+    {
+      "name": "CF_14_Starboard_Main_Gear_Attachment",
+      "bucket": "dark",
+      "tint": 11252913,
+      "triangles": 12
+    },
+    {
+      "name": "CF_15_Port_Cover_Tiedown_1",
+      "bucket": "dark",
+      "tint": 12765111,
+      "triangles": 12
+    },
+    {
+      "name": "CF_16_Port_Tiedown_Return_1",
+      "bucket": "dark",
+      "tint": 10136477,
+      "triangles": 12
+    },
+    {
+      "name": "CF_15_Port_Cover_Tiedown_2",
+      "bucket": "dark",
+      "tint": 12765111,
+      "triangles": 12
+    },
+    {
+      "name": "CF_16_Port_Tiedown_Return_2",
+      "bucket": "dark",
+      "tint": 10136477,
+      "triangles": 12
+    },
+    {
+      "name": "CF_15_Starboard_Cover_Tiedown_1",
+      "bucket": "dark",
+      "tint": 12765111,
+      "triangles": 12
+    },
+    {
+      "name": "CF_16_Starboard_Tiedown_Return_1",
+      "bucket": "dark",
+      "tint": 10136477,
+      "triangles": 12
+    },
+    {
+      "name": "CF_15_Starboard_Cover_Tiedown_2",
+      "bucket": "dark",
+      "tint": 12765111,
+      "triangles": 12
+    },
+    {
+      "name": "CF_16_Starboard_Tiedown_Return_2",
+      "bucket": "dark",
+      "tint": 10136477,
+      "triangles": 12
+    },
+    {
+      "name": "CF_17_Unchanged_Fixed_Hardstand_24tri",
+      "bucket": "paint",
+      "tint": 10134702,
+      "triangles": 24
+    }
+  ],
+  "buckets": {
+    "hull": 644,
+    "dark": 704,
+    "paint": 24
+  },
+  "external_files": [],
+  "parts": 43
+}

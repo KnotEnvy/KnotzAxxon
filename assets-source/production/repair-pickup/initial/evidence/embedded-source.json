@@ -1,0 +1,11 @@
+{
+  "embedded_generator_matches_delivered_source": true,
+  "generator_sha256": "558ee07b16e914d3c5c2d5777ab29964be14d44269be3acadd8f4fa8677b148a",
+  "mesh_names": [
+    "core",
+    "shape",
+    "shell"
+  ],
+  "linked_libraries": 0,
+  "source_reopened_without_resave": true
+}

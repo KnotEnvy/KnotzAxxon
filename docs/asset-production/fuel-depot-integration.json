@@ -1,0 +1,1908 @@
+{
+  "selectedFighter": "hero-interceptor-imported",
+  "groundTargets": [
+    "turret",
+    "radar",
+    "silo",
+    "fuel"
+  ],
+  "productionPreview": true,
+  "fuelDepot": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 4,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 5,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 6,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 7,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 8,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 9,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 10,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 11,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 12,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 13,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 14,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 15,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 16,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 4,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 5,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 6,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 7,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 8,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 9,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 10,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 11,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 12,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 13,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 14,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 15,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 16,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 4,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 5,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 6,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 7,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 8,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 9,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 10,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 11,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 12,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 13,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 14,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 15,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 16,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 4,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 5,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 6,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 7,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 8,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 9,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 10,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 11,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 12,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 13,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 14,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 15,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 16,
+        "props": 0
+      }
+    ],
+    "props": 29,
+    "sourceParity": "RNG,surface records,zero method draws,all outside-prop geometry buffers"
+  },
+  "bunker": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 86,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 88,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 106,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 108,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 86,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 88,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 106,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 108,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 86,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 88,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 106,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 108,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 86,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 88,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 106,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 108,
+        "props": 1
+      }
+    ],
+    "props": 15,
+    "sourceParity": "RNG,surface records,warm tuples/colors,all outside-prop geometry buffers"
+  },
+  "flakGun": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 3
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 19,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 21,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 23,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 19,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 21,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 23,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 19,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 21,
+        "props": 5
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 23,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 19,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 21,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 23,
+        "props": 1
+      }
+    ],
+    "props": 22,
+    "sourceParity": "RNG,surface records,flak emitter position/direction/rate/owner and all outside-prop buffers"
+  },
+  "coolingStack": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 52,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 54,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 52,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 54,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 52,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 54,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 52,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 54,
+        "props": 2
+      }
+    ],
+    "props": 27,
+    "sourceParity": "RNG,surface records,heat tuples/colors,steam emitter ownership and all outside-prop buffers"
+  },
+  "antenna": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 83,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 86,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 103,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 106,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 83,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 86,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 103,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 106,
+        "props": 1
+      }
+    ],
+    "props": 11,
+    "sourceParity": "RNG,surface records,strobe tuples/colors,all outside-prop geometry buffers"
+  },
+  "wreckage": {
+    "trials": [
+      {
+        "seed": 1,
+        "index": 68,
+        "taken": false
+      },
+      {
+        "seed": 1,
+        "index": 70,
+        "taken": true
+      },
+      {
+        "seed": 1,
+        "index": 74,
+        "taken": true
+      },
+      {
+        "seed": 1,
+        "index": 77,
+        "taken": false
+      },
+      {
+        "seed": 7,
+        "index": 68,
+        "taken": true
+      },
+      {
+        "seed": 7,
+        "index": 70,
+        "taken": true
+      },
+      {
+        "seed": 7,
+        "index": 74,
+        "taken": false
+      },
+      {
+        "seed": 7,
+        "index": 77,
+        "taken": false
+      },
+      {
+        "seed": 42,
+        "index": 68,
+        "taken": false
+      },
+      {
+        "seed": 42,
+        "index": 70,
+        "taken": false
+      },
+      {
+        "seed": 42,
+        "index": 74,
+        "taken": true
+      },
+      {
+        "seed": 42,
+        "index": 77,
+        "taken": false
+      },
+      {
+        "seed": 123,
+        "index": 68,
+        "taken": true
+      },
+      {
+        "seed": 123,
+        "index": 70,
+        "taken": true
+      },
+      {
+        "seed": 123,
+        "index": 74,
+        "taken": false
+      },
+      {
+        "seed": 123,
+        "index": 77,
+        "taken": false
+      }
+    ],
+    "takenBranches": 7,
+    "sourceParity": "Original branch state and all outside-branch buffers"
+  },
+  "asteroids": {
+    "completeChunks": 42,
+    "chunks": [
+      {
+        "seed": 1,
+        "index": 67,
+        "rockMeshes": 1,
+        "rockTriangles": 2544
+      },
+      {
+        "seed": 1,
+        "index": 68,
+        "rockMeshes": 1,
+        "rockTriangles": 2640
+      },
+      {
+        "seed": 1,
+        "index": 69,
+        "rockMeshes": 1,
+        "rockTriangles": 2784
+      },
+      {
+        "seed": 1,
+        "index": 70,
+        "rockMeshes": 1,
+        "rockTriangles": 2496
+      },
+      {
+        "seed": 1,
+        "index": 71,
+        "rockMeshes": 1,
+        "rockTriangles": 3592
+      },
+      {
+        "seed": 1,
+        "index": 72,
+        "rockMeshes": 1,
+        "rockTriangles": 3072
+      },
+      {
+        "seed": 1,
+        "index": 73,
+        "rockMeshes": 1,
+        "rockTriangles": 2160
+      },
+      {
+        "seed": 1,
+        "index": 74,
+        "rockMeshes": 2,
+        "rockTriangles": 12836
+      },
+      {
+        "seed": 1,
+        "index": 75,
+        "rockMeshes": 1,
+        "rockTriangles": 2640
+      },
+      {
+        "seed": 1,
+        "index": 76,
+        "rockMeshes": 1,
+        "rockTriangles": 2928
+      },
+      {
+        "seed": 1,
+        "index": 77,
+        "rockMeshes": 1,
+        "rockTriangles": 2208
+      },
+      {
+        "seed": 1,
+        "index": 78,
+        "rockMeshes": 1,
+        "rockTriangles": 2832
+      },
+      {
+        "seed": 1,
+        "index": 79,
+        "rockMeshes": 1,
+        "rockTriangles": 3024
+      },
+      {
+        "seed": 1,
+        "index": 80,
+        "rockMeshes": 1,
+        "rockTriangles": 2160
+      },
+      {
+        "seed": 7,
+        "index": 67,
+        "rockMeshes": 2,
+        "rockTriangles": 14512
+      },
+      {
+        "seed": 7,
+        "index": 68,
+        "rockMeshes": 1,
+        "rockTriangles": 2208
+      },
+      {
+        "seed": 7,
+        "index": 69,
+        "rockMeshes": 1,
+        "rockTriangles": 2976
+      },
+      {
+        "seed": 7,
+        "index": 70,
+        "rockMeshes": 1,
+        "rockTriangles": 3456
+      },
+      {
+        "seed": 7,
+        "index": 71,
+        "rockMeshes": 1,
+        "rockTriangles": 2880
+      },
+      {
+        "seed": 7,
+        "index": 72,
+        "rockMeshes": 1,
+        "rockTriangles": 3264
+      },
+      {
+        "seed": 7,
+        "index": 73,
+        "rockMeshes": 1,
+        "rockTriangles": 2592
+      },
+      {
+        "seed": 7,
+        "index": 74,
+        "rockMeshes": 1,
+        "rockTriangles": 3264
+      },
+      {
+        "seed": 7,
+        "index": 75,
+        "rockMeshes": 1,
+        "rockTriangles": 3264
+      },
+      {
+        "seed": 7,
+        "index": 76,
+        "rockMeshes": 1,
+        "rockTriangles": 3360
+      },
+      {
+        "seed": 7,
+        "index": 77,
+        "rockMeshes": 2,
+        "rockTriangles": 14408
+      },
+      {
+        "seed": 7,
+        "index": 78,
+        "rockMeshes": 1,
+        "rockTriangles": 2928
+      },
+      {
+        "seed": 7,
+        "index": 79,
+        "rockMeshes": 1,
+        "rockTriangles": 4616
+      },
+      {
+        "seed": 7,
+        "index": 80,
+        "rockMeshes": 1,
+        "rockTriangles": 3216
+      },
+      {
+        "seed": 42,
+        "index": 67,
+        "rockMeshes": 1,
+        "rockTriangles": 3168
+      },
+      {
+        "seed": 42,
+        "index": 68,
+        "rockMeshes": 1,
+        "rockTriangles": 2928
+      },
+      {
+        "seed": 42,
+        "index": 69,
+        "rockMeshes": 1,
+        "rockTriangles": 5160
+      },
+      {
+        "seed": 42,
+        "index": 70,
+        "rockMeshes": 1,
+        "rockTriangles": 2640
+      },
+      {
+        "seed": 42,
+        "index": 71,
+        "rockMeshes": 1,
+        "rockTriangles": 2880
+      },
+      {
+        "seed": 42,
+        "index": 72,
+        "rockMeshes": 1,
+        "rockTriangles": 3456
+      },
+      {
+        "seed": 42,
+        "index": 73,
+        "rockMeshes": 1,
+        "rockTriangles": 2544
+      },
+      {
+        "seed": 42,
+        "index": 74,
+        "rockMeshes": 1,
+        "rockTriangles": 3840
+      },
+      {
+        "seed": 42,
+        "index": 75,
+        "rockMeshes": 1,
+        "rockTriangles": 2928
+      },
+      {
+        "seed": 42,
+        "index": 76,
+        "rockMeshes": 1,
+        "rockTriangles": 2112
+      },
+      {
+        "seed": 42,
+        "index": 77,
+        "rockMeshes": 1,
+        "rockTriangles": 3888
+      },
+      {
+        "seed": 42,
+        "index": 78,
+        "rockMeshes": 1,
+        "rockTriangles": 2160
+      },
+      {
+        "seed": 42,
+        "index": 79,
+        "rockMeshes": 1,
+        "rockTriangles": 3120
+      },
+      {
+        "seed": 42,
+        "index": 80,
+        "rockMeshes": 1,
+        "rockTriangles": 2064
+      }
+    ],
+    "sharedDisposals": 0,
+    "sourceParity": "RNG,all nonrock buffers,rock draw count and centers/axes/rates"
+  },
+  "carrier": {
+    "carrierTriangles": 21330,
+    "chunks": [
+      {
+        "z0": 6432,
+        "triangles": 44,
+        "buckets": 2
+      },
+      {
+        "z0": 6528,
+        "triangles": 634,
+        "buckets": 5
+      },
+      {
+        "z0": 6624,
+        "triangles": 2317,
+        "buckets": 5
+      },
+      {
+        "z0": 6720,
+        "triangles": 2334,
+        "buckets": 5
+      },
+      {
+        "z0": 6816,
+        "triangles": 2198,
+        "buckets": 5
+      },
+      {
+        "z0": 6912,
+        "triangles": 3114,
+        "buckets": 6
+      },
+      {
+        "z0": 7008,
+        "triangles": 2198,
+        "buckets": 5
+      },
+      {
+        "z0": 7104,
+        "triangles": 2266,
+        "buckets": 5
+      },
+      {
+        "z0": 7200,
+        "triangles": 2290,
+        "buckets": 5
+      },
+      {
+        "z0": 7296,
+        "triangles": 2188,
+        "buckets": 5
+      },
+      {
+        "z0": 7392,
+        "triangles": 471,
+        "buckets": 5
+      },
+      {
+        "z0": 7488,
+        "triangles": 1276,
+        "buckets": 4
+      }
+    ],
+    "radarVertices": 540,
+    "chunkGeometriesDisposed": 75
+  },
+  "dreadnought": {
+    "landmarkTriangles": 16698,
+    "chunks": [
+      {
+        "z0": 3360,
+        "added": [
+          {
+            "key": "dark",
+            "triangles": 204
+          },
+          {
+            "key": "hull",
+            "triangles": 362
+          }
+        ]
+      },
+      {
+        "z0": 3456,
+        "added": [
+          {
+            "key": "dark",
+            "triangles": 568
+          },
+          {
+            "key": "hull",
+            "triangles": 893
+          },
+          {
+            "key": "neon",
+            "triangles": 12
+          }
+        ]
+      },
+      {
+        "z0": 3552,
+        "added": [
+          {
+            "key": "dark",
+            "triangles": 917
+          },
+          {
+            "key": "hull",
+            "triangles": 1004
+          },
+          {
+            "key": "neon",
+            "triangles": 48
+          }
+        ]
+      },
+      {
+        "z0": 3648,
+        "added": [
+          {
+            "key": "dark",
+            "triangles": 661
+          },
+          {
+            "key": "hull",
+            "triangles": 863
+          },
+          {
+            "key": "neon",
+            "triangles": 12
+          }
+        ]
+      },
+      {
+        "z0": 3744,
+        "added": [
+          {
+            "key": "dark",
+            "triangles": 524
+          },
+          {
+            "key": "hull",
+            "triangles": 815
+          },
+          {
+            "key": "neon",
+            "triangles": 12
+          }
+        ]
+      },
+      {
+        "z0": 3840,
+        "added": [
+          {
+            "key": "dark",
+            "triangles": 816
+          },
+          {
+            "key": "hull",
+            "triangles": 1023
+          },
+          {
+            "key": "neon",
+            "triangles": 36
+          }
+        ]
+      },
+      {
+        "z0": 3936,
+        "added": [
+          {
+            "key": "dark",
+            "triangles": 1326
+          },
+          {
+            "key": "hull",
+            "triangles": 917
+          },
+          {
+            "key": "neon",
+            "triangles": 36
+          }
+        ]
+      },
+      {
+        "z0": 4032,
+        "added": [
+          {
+            "key": "dark",
+            "triangles": 1038
+          },
+          {
+            "key": "hull",
+            "triangles": 1028
+          },
+          {
+            "key": "neon",
+            "triangles": 36
+          }
+        ]
+      },
+      {
+        "z0": 4128,
+        "added": [
+          {
+            "key": "dark",
+            "triangles": 1408
+          },
+          {
+            "key": "hull",
+            "triangles": 1355
+          },
+          {
+            "key": "neon",
+            "triangles": 176
+          }
+        ]
+      },
+      {
+        "z0": 4224,
+        "added": [
+          {
+            "key": "dark",
+            "triangles": 384
+          },
+          {
+            "key": "hull",
+            "triangles": 224
+          }
+        ]
+      }
+    ],
+    "rngChecks": 10,
+    "chunkGeometriesDisposed": 50,
+    "sharedDisposals": 0
+  },
+  "missilePool": {
+    "triangles": 464,
+    "capacity": 40,
+    "drawCalls": 1,
+    "drawTriangles": 18560,
+    "baselineParityFrames": 120,
+    "launchesIncludingOverflow": 47,
+    "geometryDisposals": 1,
+    "ownedMaterialDisposals": 1,
+    "sourceDisposals": 0
+  },
+  "parkedFighter": {
+    "seedChecks": [
+      {
+        "seed": 1,
+        "scramble": false,
+        "yaw": -0.1989057115279138
+      },
+      {
+        "seed": 2,
+        "scramble": false,
+        "yaw": -0.07000062707811594
+      },
+      {
+        "seed": 3,
+        "scramble": false,
+        "yaw": -0.18453513579443098
+      },
+      {
+        "seed": 4,
+        "scramble": false,
+        "yaw": -0.06678164824843408
+      },
+      {
+        "seed": 5,
+        "scramble": false,
+        "yaw": 0.10909730931743983
+      },
+      {
+        "seed": 6,
+        "scramble": false,
+        "yaw": -0.19906258136034014
+      },
+      {
+        "seed": 7,
+        "scramble": true,
+        "yaw": -0.1752166969701648
+      },
+      {
+        "seed": 8,
+        "scramble": true,
+        "yaw": 0.05007690442726015
+      },
+      {
+        "seed": 9,
+        "scramble": true,
+        "yaw": 0.14048431850969795
+      },
+      {
+        "seed": 10,
+        "scramble": false,
+        "yaw": 0.1669947220012546
+      },
+      {
+        "seed": 11,
+        "scramble": false,
+        "yaw": 0.011978563293814665
+      },
+      {
+        "seed": 12,
+        "scramble": true,
+        "yaw": -0.1697329964488745
+      },
+      {
+        "seed": 13,
+        "scramble": false,
+        "yaw": -0.05595313534140586
+      },
+      {
+        "seed": 14,
+        "scramble": false,
+        "yaw": -0.029676135908812296
+      },
+      {
+        "seed": 15,
+        "scramble": true,
+        "yaw": -0.03835011301562191
+      },
+      {
+        "seed": 16,
+        "scramble": false,
+        "yaw": -0.14227124433964491
+      }
+    ],
+    "pulse": [
+      1.045,
+      0.995
+    ],
+    "roars": 1,
+    "resourcesDisposed": 12,
+    "rootAltitudeCap": 23
+  },
+  "pickupChecks": [
+    {
+      "kind": "shield",
+      "resourcesDisposed": 6,
+      "sharedHaloPreserved": true,
+      "collectionAward": 250,
+      "magnetSampleStep": 0.25
+    },
+    {
+      "kind": "spread",
+      "resourcesDisposed": 6,
+      "sharedHaloPreserved": true,
+      "collectionAward": 250,
+      "magnetSampleStep": 0.25
+    },
+    {
+      "kind": "repair",
+      "resourcesDisposed": 6,
+      "sharedHaloPreserved": true,
+      "collectionAward": 250,
+      "magnetSampleStep": 0.25
+    },
+    {
+      "kind": "fuel",
+      "resourcesDisposed": 6,
+      "sharedHaloPreserved": true,
+      "collectionAward": 150,
+      "magnetSampleStep": 0.25
+    }
+  ],
+  "flyers": [
+    {
+      "kind": "drone",
+      "contexts": [
+        {
+          "pattern": "weave",
+          "bank": 0.0703016702373307,
+          "position": [
+            -9.626239823590007,
+            6.6133019508774495,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "strafe",
+          "bank": 0,
+          "position": [
+            0,
+            9.314370395508865,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "orbit",
+          "bank": -0.04037866116013454,
+          "position": [
+            -6.217109197498349,
+            7.751584458045593,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "dive",
+          "bank": 0,
+          "position": [
+            0,
+            9,
+            82.00000000000017
+          ]
+        },
+        {
+          "pattern": "peel",
+          "bank": 0.8399999872068172,
+          "position": [
+            -19,
+            25,
+            19.999999999999957
+          ]
+        },
+        {
+          "pattern": "launch",
+          "bank": 0.016361059347587276,
+          "position": [
+            0.6504156647914032,
+            10.841569317751466,
+            114.39999999999925
+          ]
+        }
+      ],
+      "resourcesDisposed": 14
+    },
+    {
+      "kind": "interceptor",
+      "contexts": [
+        {
+          "pattern": "weave",
+          "bank": 0.0703016702373307,
+          "position": [
+            -9.626239823590007,
+            6.6133019508774495,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "strafe",
+          "bank": 0,
+          "position": [
+            0,
+            9.314370395508865,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "orbit",
+          "bank": -0.04037866116013454,
+          "position": [
+            -6.217109197498349,
+            7.751584458045593,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "dive",
+          "bank": 0,
+          "position": [
+            0,
+            9,
+            82.00000000000017
+          ]
+        },
+        {
+          "pattern": "peel",
+          "bank": 0.8399999872068172,
+          "position": [
+            -19,
+            25,
+            19.999999999999957
+          ]
+        },
+        {
+          "pattern": "launch",
+          "bank": 0.016361059347587276,
+          "position": [
+            0.6504156647914032,
+            10.841569317751466,
+            138.39999999999975
+          ]
+        }
+      ],
+      "resourcesDisposed": 14
+    }
+  ],
+  "heavyTurret": {
+    "shots": [
+      {
+        "origin": [
+          -0.545964612956519,
+          2.255978882523009,
+          38.69273840263036
+        ],
+        "direction": [
+          0.06193388987354609,
+          0.3318617866757194,
+          -0.9412927004017033
+        ]
+      },
+      {
+        "origin": [
+          0.6575260433406307,
+          2.2655197253516137,
+          38.295310472176794
+        ],
+        "direction": [
+          0.007792004116523737,
+          0.3378248134435972,
+          -0.9411767528438251
+        ]
+      },
+      {
+        "origin": [
+          0.3631694571085569,
+          2.2619000073175477,
+          39.040672344763934
+        ],
+        "direction": [
+          -0.01970877509626417,
+          0.3355624896723061,
+          -0.9418117538601483
+        ]
+      },
+      {
+        "origin": [
+          -0.3729540295055672,
+          2.2858748195716183,
+          37.95411432127623
+        ],
+        "direction": [
+          0.013593417348132743,
+          0.3505467473311002,
+          -0.9364465798647488
+        ]
+      },
+      {
+        "origin": [
+          0.7777178666228888,
+          2.2903575149343522,
+          38.71850606782655
+        ],
+        "direction": [
+          0.0849528360572259,
+          0.353348431932809,
+          -0.9316264816418968
+        ]
+      },
+      {
+        "origin": [
+          -0.41811749551860233,
+          2.2961553611970063,
+          38.31313965335686
+        ],
+        "direction": [
+          0.13979739588295315,
+          0.35697208584696777,
+          -0.9235949426184673
+        ]
+      }
+    ],
+    "resourcesDisposed": 9,
+    "chargeCue": "source shared neon",
+    "fullElevationDegrees": [
+      -90,
+      90
+    ]
+  },
+  "mine": {
+    "samples": [
+      {
+        "distance": 40,
+        "time": 0.39269908169872414,
+        "armed": 0,
+        "scale": 1.015
+      },
+      {
+        "distance": 13.6,
+        "time": 0.1,
+        "armed": 0.6000000000000001,
+        "scale": 1.038858883873103
+      },
+      {
+        "distance": 0,
+        "time": 0.05235987755982988,
+        "armed": 1,
+        "scale": 1.06
+      },
+      {
+        "distance": 0,
+        "time": 0.15707963267948966,
+        "armed": 1,
+        "scale": 0.94
+      },
+      {
+        "distance": 40,
+        "time": 0.3,
+        "armed": 0,
+        "scale": 1.0139805862895084
+      },
+      {
+        "distance": 0,
+        "time": 0.4,
+        "armed": 1,
+        "scale": 0.9678056249199739
+      }
+    ],
+    "warnings": 1,
+    "resourcesDisposed": 9
+  },
+  "batch": {
+    "copies": {
+      "drone": 18,
+      "interceptor": 18,
+      "heavyTurret": 11,
+      "mine": 24,
+      "parkedFighter": 10,
+      "shieldPickup": 24,
+      "spreadPickup": 24,
+      "repairPickup": 24,
+      "fuelPickup": 24
+    },
+    "cycles": 3,
+    "coldGeometryCount": 104,
+    "sharedHaloWarmupDelta": 1,
+    "geometryBaseline": 105,
+    "geometryAfterCycles": [
+      105,
+      105,
+      105
+    ],
+    "cpuRenderSubmitMedianMs": 10.100000001490116,
+    "caveat": "Synthetic 81-enemy plus96-pickup stress in actual scene with player/Sentinel. Pickup count is an explicit stress fixture, not a live maximum. CPU render submission timing in headless Chromium, not GPU frame-time or sustained hardware acceptance."
+  },
+  "iterations": [
+    {
+      "iteration": 0,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    },
+    {
+      "iteration": 1,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    },
+    {
+      "iteration": 2,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    }
+  ],
+  "asteroidTemplateShutdown": {
+    "geometries": 6,
+    "antennaGeometries": 5,
+    "bunkerGeometries": 3,
+    "fuelDepotGeometries": 2,
+    "disposedExactlyOnce": true
+  },
+  "errors": [],
+  "asset": "fuel-depot",
+  "stage": "initial_opt_in_integration_pending_deferred_opus_review",
+  "regressions": {
+    "passed": 104,
+    "failed": 0
+  },
+  "build": "passed",
+  "defaultModelQA": "passed",
+  "runtimeProcessExit": 0,
+  "visualInspection": {
+    "evidenceDirectory": "assets-source/production/integration-evidence/fuel-depot",
+    "actualPngsViewed": [
+      "fuel-depot-classic.png",
+      "fuel-depot-modern.png",
+      "fuel-depot-chase.png"
+    ],
+    "observations": [
+      "Twin-vessel silhouette reads beside existing covered fighters at unchanged source spawn.",
+      "Source mapped hull and unmapped dark-metal lighting are much darker than offline approximation;fitted straps/valves soften at game scale.",
+      "All three actual source rigs inspected at stationary valid player pose;not sustained gameplay."
+    ]
+  },
+  "limitations": [
+    "64 runtime trials use original depot method as control in the same accepted preview context;29 placements exercised.",
+    "Original 0.58 lane-edge gap does not guarantee clearance for the1.5-radius player;placement/flight/collision mechanics unchanged.",
+    "Actual direct-render captures retain startup HUD;no sustained GPU/hardware or final art acceptance.",
+    "Formal Opus review/fix remain deferred,zero rounds consumed."
+  ]
+}

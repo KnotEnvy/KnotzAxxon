@@ -1,0 +1,32 @@
+{
+  "assetSHA256": "681d691d277906ca960819d7f7a19536de041264fe76bd7a672a34c5fa24be55",
+  "files": {
+    "01_rest_common.png": "38020b24aa1e011d492b479fcc27f00e8f14e091c486c0fe91752f84181b8107",
+    "02_front_threequarter.png": "af77f68b4ec10bdc3b5a3a73527a69ccb0c8f641cb4b58ff6517c537cdb4f469",
+    "03_aft_threequarter.png": "25a4463fea3bf6c11b0ef80677812dbd52c4b883b141355221a628ae89ede703",
+    "04_top.png": "a601cfef1e6badb2d799a2c46f9c38a3dd0e9417696094cc3e6d21ca3b3a7c1e",
+    "05_side.png": "3babcc4eaf35e2e1a717f924afb38b8ba0b8e8f2612d1d371297eacac4c2dbd3",
+    "06_front.png": "b45935670e06785ef6e2cef97931be51bd17a268be3c1accd79891fb264011fa",
+    "07_aft_idle.png": "b6bf813dfbfc09f911b8bfba0296eb349d933a8353a4b9d472dc53a282d9dc9b",
+    "08_aft_pulse_min.png": "7f4fb35b1a147d4ae4e0067257ab74a9feba3a49ffb9578b06cc7666443ab485",
+    "09_aft_pulse_max.png": "e24f07a83cee158bd7476aa18300affa9fdc170d48233723fbc0469573e61ca0",
+    "10_beacon_off.png": "549fd4bd3b055c325a69770be0961fe854b252ccc6f0066e86896c893afa7088",
+    "11_yaw_98.png": "6cb8c1e7bcf31f1d886a01bfa539a5ac11e6fe3425362c1d7a0dbe0829a0c426",
+    "11_yaw_37.png": "f7b5368a72613e2e6325ad8f9c2a00a47bd58ca190ca8847743838e3bb20d256",
+    "12_lift_transition.png": "d35a3b4b2a716c8fcf9800e585b83678e03f2978f127b7681c7b0beaf58e27ee",
+    "12_full_launch.png": "a5e6d2d8c6592d3b77015dc56e647dc1a21ba0758d934a31907425ba6c5cac59",
+    "12_altitude_cap.png": "5a2ebaace3442a3a3991dcc47b6c07a011b76670b11f17428f6cea0a1c62aa2e",
+    "12_passing_outside_window.png": "82c1820d34db60aaa68d0032021dffbe99a92636928ce16dc3804d1135231f4d",
+    "13_source_common.png": "5dd398d42f2616ab8d4d2abaee7675de42241a9a148f54a4703514dd6b649ee2",
+    "14_airfield_coherence.png": "852c74436075fbecc51f531afeeaf6eeab1ee6f4e2bdd6063eb90804a16b7c15",
+    "15_game_classic_near.png": "7a318024617229c4e5743ba45ad5b1cf7b96881df8677ca46a886b583ef9e4a4",
+    "16_small_classic.png": "41adb5833b7853d753448762998a20ca94ddacd1dcd8d293212259e9e90a3143",
+    "15_game_classic_far.png": "c43fde5e29112a32f5d57723d17300c9522106b6de97d3266d8c2fb6e7477040",
+    "15_game_modern_near.png": "c4e329b7564c044cab41f90dd8ddcca77fd8cb2310736117e8b97b3ee41f245a",
+    "16_small_modern.png": "94a1e7cb5757c6fa0e4ef892436ad76800d5de85518023742d3ccf2a687bd6e4",
+    "15_game_modern_far.png": "d1624d979e77a5dcef1fc40b7d99f279b76dfd15f9fbc0023d7830cdf7dc1af2",
+    "15_game_chase_near.png": "7f60e2644c733751b2727fea8ed0bcd65696b937374edd8a910314205fd7ce43",
+    "15_game_chase_far.png": "5b94d811bdcc619bc6e5addf2033007e2e521092e3e4a105e836c5dec8a7620e",
+    "16_small_chase.png": "77053994e14076e9811a79df7a1ccacb5b16e4ac7a9ef8ffffd7e7e96d6194a6"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "archive": "mine-initial-20261114T155827-689539Z.tar.gz",
+  "sha256": "53ea6568bbe7545e00b3e1e4542f7d2a41b3a7133d261afb541bfcc44a1b095d",
+  "contentHashesVerified": 60,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/mine/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "glbSha256": "51276e4106087f0e890dd52986a79369a944495fbe72a8139eb0e5b4c40b5369",
+  "blendSha256": "81b46ec13c28df08ac1c1abffd78a8d64b94fe35b216b493c6d7bde59bb23380",
+  "builderCompletionHashesMatch": true,
+  "readOnly": true,
+  "executableModesRetained": true
+}

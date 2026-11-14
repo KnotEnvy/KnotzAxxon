@@ -1,0 +1,521 @@
+{
+  "assetKey": "heavy-turret",
+  "featureKind": "heavyTurret",
+  "coordinates": {
+    "game": "+X lateral / +Y up / +Z forward",
+    "Blender": "(gameX,-gameZ,gameY)",
+    "GLB": "+Y up / +Z forward; all scales1, all rest quaternions identity. No root rotation or normalization needed."
+  },
+  "bindings": {
+    "enemy.turntable": "turntable",
+    "enemy.barrels": [
+      "barrel-L",
+      "barrel-R"
+    ],
+    "enemy.eye": "eye",
+    "enemy._importedRoot": "instantiated gltf.scene",
+    "flashSource": "dome",
+    "flashParent": "turntable"
+  },
+  "pivots": {
+    "root": [
+      0,
+      0,
+      0
+    ],
+    "turntableLocal": [
+      0,
+      1.5,
+      0
+    ],
+    "barrelLocalUnderTurntable": [
+      [
+        -0.675,
+        0.225,
+        0
+      ],
+      [
+        0.675,
+        0.225,
+        0
+      ]
+    ],
+    "barrelRestWorld": [
+      [
+        -0.675,
+        1.725,
+        0
+      ],
+      [
+        0.675,
+        1.725,
+        0
+      ]
+    ],
+    "eyeLocalUnderTurntable": [
+      0,
+      0.87,
+      1.53
+    ],
+    "muzzleDiagnosticLocal": [
+      0,
+      0,
+      1.6
+    ]
+  },
+  "axes": {
+    "turntable": "Three rotation.y, +Y yaw, source damp6, no clamp or angle rewrite",
+    "barrels": "Three rotation.x, +X rotation, target negative source pitch, damp6, no clamp",
+    "eye": "uniform positive scale: source charging 1.25+sin(time*24)*.2 else1"
+  },
+  "ownership": {
+    "sceneRoot": "GLTFLoader gltf.scene, cloned by existing instantiate; attach clone under Enemy.group and assign enemy._importedRoot.",
+    "geometry": "Five per-instance cloned visible geometries. Generated flash geometry becomes a descendant and is disposed by disposeModel(_importedRoot). Template resources remain loader-owned.",
+    "materials": "Two per-instance cloned materials in root.userData.modelOwnedMaterials. No textures. Replace HT_Eye_Red_ff3d55 on the cloned lens with enemy.mats.neon(0xff3d55,3), matching source MeshBasicMaterial toneMapped=false and intensity3. Keep the now-unused cloned eye material in modelOwnedMaterials for disposal. Shared neon remains owned by the Materials library, never by Enemy. Enemy eye scaling controls charge.",
+    "flashMaterial": "Enemy.flashMat created once by _addFlashShell; Enemy.dispose disposes it exactly once, separately from modelOwnedMaterials.",
+    "flashHierarchy": "flashSource=dome; flashParent=turntable. Existing buildImportedGround bake-to-parent and _addFlashShell(geometry,1.06), followed by flashParent.add(enemy.flashMesh), are compatible. flash opacity=flash*.75; additive, toneMapped=false, depthWrite=false, renderOrder5, hidden unless flash>0.",
+    "hiddenPrototype": "Only packed blend contains hit-flash-prototype in HIDDEN_FLASH_PROTOTYPE_DO_NOT_EXPORT. Excluded from GLB because core glTF has no visibility. It is an art diagnostic, scale1.045, solid emission in evidence; runtime generated additive shell uses1.06. Do not instantiate prototype.",
+    "disposeEvidence": "verification/ownership.json executes actual instantiate/disposeModel functions against tracked CPU resources. No live WebGL assertion."
+  },
+  "nodes": [
+    {
+      "name": "heavy-turret",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "children": [
+        "foundation",
+        "turntable"
+      ]
+    },
+    {
+      "name": "foundation",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "children": [],
+      "primitives": [
+        {
+          "vertices": 2976,
+          "indices": 5568,
+          "triangles": 1856,
+          "material": "HT_Armor_VertexPalette",
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "turntable",
+      "translation": [
+        0,
+        1.5,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "children": [
+        "barrel-L",
+        "barrel-R",
+        "dome",
+        "eye",
+        "flash-anchor"
+      ]
+    },
+    {
+      "name": "barrel-L",
+      "translation": [
+        -0.675000011920929,
+        0.2250000238418579,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        -0.675000011920929,
+        1.725000023841858,
+        0.0
+      ],
+      "children": [
+        "muzzle-L",
+        "weapon-L"
+      ]
+    },
+    {
+      "name": "muzzle-L",
+      "translation": [
+        0,
+        0,
+        1.600000023841858
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        -0.675000011920929,
+        1.725000023841858,
+        1.600000023841858
+      ],
+      "children": []
+    },
+    {
+      "name": "weapon-L",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        -0.675000011920929,
+        1.725000023841858,
+        0.0
+      ],
+      "children": [],
+      "primitives": [
+        {
+          "vertices": 1392,
+          "indices": 2640,
+          "triangles": 880,
+          "material": "HT_Armor_VertexPalette",
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "barrel-R",
+      "translation": [
+        0.675000011920929,
+        0.2250000238418579,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.675000011920929,
+        1.725000023841858,
+        0.0
+      ],
+      "children": [
+        "muzzle-R",
+        "weapon-R"
+      ]
+    },
+    {
+      "name": "muzzle-R",
+      "translation": [
+        0,
+        0,
+        1.600000023841858
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.675000011920929,
+        1.725000023841858,
+        1.600000023841858
+      ],
+      "children": []
+    },
+    {
+      "name": "weapon-R",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.675000011920929,
+        1.725000023841858,
+        0.0
+      ],
+      "children": [],
+      "primitives": [
+        {
+          "vertices": 1392,
+          "indices": 2640,
+          "triangles": 880,
+          "material": "HT_Armor_VertexPalette",
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dome",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "children": [],
+      "primitives": [
+        {
+          "vertices": 2640,
+          "indices": 4848,
+          "triangles": 1616,
+          "material": "HT_Armor_VertexPalette",
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "eye",
+      "translation": [
+        0,
+        0.869999885559082,
+        1.5299999713897705
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.0,
+        2.369999885559082,
+        1.5299999713897705
+      ],
+      "children": [
+        "charge-lens"
+      ]
+    },
+    {
+      "name": "charge-lens",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.0,
+        2.369999885559082,
+        1.5299999713897705
+      ],
+      "children": [],
+      "primitives": [
+        {
+          "vertices": 48,
+          "indices": 84,
+          "triangles": 28,
+          "material": "HT_Eye_Red_ff3d55",
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "flash-anchor",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "children": []
+    }
+  ],
+  "materials": [
+    {
+      "name": "HT_Armor_VertexPalette",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.2800000011920929,
+        "roughnessFactor": 0.4699999988079071
+      }
+    },
+    {
+      "emissiveFactor": [
+        1,
+        0.04666508734226227,
+        0.09084171056747437
+      ],
+      "extensions": {
+        "KHR_materials_emissive_strength": {
+          "emissiveStrength": 3
+        }
+      },
+      "name": "HT_Eye_Red_ff3d55",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          0.04666508734226227,
+          0.09084171056747437,
+          1
+        ],
+        "metallicFactor": 0.2800000011920929,
+        "roughnessFactor": 0.4699999988079071
+      }
+    }
+  ],
+  "detach": "N/A; this source enemy has no detachable gameplay components."
+}

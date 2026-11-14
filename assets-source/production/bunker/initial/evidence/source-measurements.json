@@ -1,0 +1,1966 @@
+{
+  "method": "Actual unchanged Batch, Fortress._bunker and complete _buildChunk on Level campaigns seeds 1,7,42,123; CPU-only material doubles; no renderer.",
+  "sourceSHA256": "824a3d8d9e64bf775e5a486e52c29bef8ce94daebfa138bd4ab2067121790165",
+  "isolated": {
+    "bounds": [
+      [
+        -3.5,
+        0,
+        -4
+      ],
+      [
+        3.5,
+        4,
+        4
+      ]
+    ],
+    "buckets": {
+      "hull": 12,
+      "neon": 12,
+      "dark": 12
+    },
+    "triangles": 36,
+    "stateBefore": 42,
+    "stateAfter": 1831565855,
+    "methodDraws": 1,
+    "surfaces": [
+      {
+        "minX": -3.105,
+        "maxX": -2.9549999999999996,
+        "minZ": -2,
+        "maxZ": 2,
+        "top": 2.2
+      },
+      {
+        "minX": -1.2,
+        "maxX": 1.2,
+        "minZ": -1.2,
+        "maxZ": 1.2,
+        "top": 4
+      }
+    ]
+  },
+  "density": {
+    "eligibleChunks": 148,
+    "bunkerCount": 86,
+    "histogram": {
+      "zero": 62,
+      "one": 86
+    },
+    "observedMean": 0.581081081081081,
+    "theoreticalProbability": 0.6,
+    "maximumPerChunk": 1
+  },
+  "measured": {
+    "x": [
+      19.615780178806745,
+      23.982538019889034
+    ],
+    "localZ": [
+      13.580470271408558,
+      81.94956064224243
+    ]
+  },
+  "contract": {
+    "localBounds": [
+      [
+        -3.5,
+        0,
+        -4
+      ],
+      [
+        3.5,
+        4,
+        4
+      ]
+    ],
+    "centerX": [
+      19.5,
+      24
+    ],
+    "centerZInChunk": [
+      12,
+      84
+    ],
+    "worldX": [
+      16,
+      27.5
+    ],
+    "worldZInChunk": [
+      8,
+      88
+    ],
+    "laneX": [
+      -16,
+      16
+    ],
+    "minimumLaneClearance": 0,
+    "groundOrigin": [
+      0,
+      0,
+      0
+    ],
+    "caller": "rng.bool(.6), farX(), rng.range(12, CHUNK_LEN-12), then exactly one method rng.next()",
+    "surfaceContract": "Only source neon box then dark roof box are recorded if captureSurfaces is enabled; tapered hull was never recorded."
+  },
+  "budgetBeforeConstruction": {
+    "targetTriangles": [
+      400,
+      650
+    ],
+    "ceilingTriangles": 900,
+    "maxMergedBuckets": 3,
+    "maxGLBBytes": 524288,
+    "newTextures": 0,
+    "targetBounds": [
+      [
+        -3.45,
+        0,
+        -3.95
+      ],
+      [
+        3.45,
+        3.96,
+        3.95
+      ]
+    ]
+  },
+  "chunks": [
+    {
+      "seed": 1,
+      "index": 81,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 82,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 83,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 84,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 85,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 86,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 87,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 88,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 89,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 90,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 91,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 92,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 93,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 94,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 95,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 96,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 97,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 98,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 99,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 100,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 101,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 102,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 103,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 104,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 105,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 106,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 107,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 108,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 109,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 110,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 111,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 112,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 113,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 114,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 115,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 1,
+      "index": 116,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 1,
+      "index": 117,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 81,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 7,
+      "index": 82,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 7,
+      "index": 83,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 84,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 7,
+      "index": 85,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 86,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 7,
+      "index": 87,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 7,
+      "index": 88,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 7,
+      "index": 89,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 90,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 7,
+      "index": 91,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 92,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 93,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 94,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 95,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 96,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 7,
+      "index": 97,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 7,
+      "index": 98,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 7,
+      "index": 99,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 100,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 101,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 7,
+      "index": 102,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 103,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 104,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 105,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 106,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 107,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 108,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 109,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 110,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 111,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 112,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 7,
+      "index": 113,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 114,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 115,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 7,
+      "index": 116,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 7,
+      "index": 117,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 81,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 82,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 83,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 84,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 85,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 86,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 87,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 88,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 89,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 90,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 91,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 92,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 93,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 94,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 95,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 96,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 97,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 98,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 99,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 100,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 101,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 102,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 103,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 104,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 105,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 106,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 107,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 108,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 109,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 110,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 111,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 112,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 113,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 114,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 115,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 42,
+      "index": 116,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 42,
+      "index": 117,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 81,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 82,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 83,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 84,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 85,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 86,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 87,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 88,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 89,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 90,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 91,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 92,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 93,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 94,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 95,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 96,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 97,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 98,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 99,
+      "sector": 5,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 100,
+      "sector": 5,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 101,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 102,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 103,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 104,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 105,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 106,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 107,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 108,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 109,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 110,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 111,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 112,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 113,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 114,
+      "sector": 6,
+      "count": 1
+    },
+    {
+      "seed": 123,
+      "index": 115,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 116,
+      "sector": 6,
+      "count": 0
+    },
+    {
+      "seed": 123,
+      "index": 117,
+      "sector": 6,
+      "count": 1
+    }
+  ],
+  "placements": [
+    {
+      "seed": 1,
+      "chunk": 81,
+      "x": 21.40965635573957,
+      "z": 7829.293514035642,
+      "localZ": 53.29351403564215,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 159109145,
+      "stateAfter": 1990674958
+    },
+    {
+      "seed": 1,
+      "chunk": 83,
+      "x": 23.12486919912044,
+      "z": 8011.953524060547,
+      "localZ": 43.95352406054735,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 2756390696,
+      "stateAfter": 292989213
+    },
+    {
+      "seed": 1,
+      "chunk": 84,
+      "x": 23.592600837000646,
+      "z": 8130.687889952213,
+      "localZ": 66.68788995221257,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 2627718989,
+      "stateAfter": 164317506
+    },
+    {
+      "seed": 1,
+      "chunk": 88,
+      "x": 20.913667110493407,
+      "z": 8507.688040606678,
+      "localZ": 59.68804060667753,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 3072150116,
+      "stateAfter": 608748633
+    },
+    {
+      "seed": 1,
+      "chunk": 89,
+      "x": 22.17376956890803,
+      "z": 8604.218439359218,
+      "localZ": 60.21843935921788,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1254947590,
+      "stateAfter": 3086513403
+    },
+    {
+      "seed": 1,
+      "chunk": 90,
+      "x": 22.482365443138406,
+      "z": 8671.916691072285,
+      "localZ": 31.916691072285175,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 3717559760,
+      "stateAfter": 1254158277
+    },
+    {
+      "seed": 1,
+      "chunk": 92,
+      "x": 21.768912455881946,
+      "z": 8875.448075702414,
+      "localZ": 43.44807570241392,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 3076569164,
+      "stateAfter": 613167681
+    },
+    {
+      "seed": 1,
+      "chunk": 93,
+      "x": 22.11069792683702,
+      "z": 8957.131772076711,
+      "localZ": 29.13177207671106,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 492072274,
+      "stateAfter": 2323638087
+    },
+    {
+      "seed": 1,
+      "chunk": 95,
+      "x": 20.06931850325782,
+      "z": 9159.172501344234,
+      "localZ": 39.17250134423375,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 3153295022,
+      "stateAfter": 689893539
+    },
+    {
+      "seed": 1,
+      "chunk": 96,
+      "x": 22.224328168435022,
+      "z": 9278.739371856675,
+      "localZ": 62.73937185667455,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 2272481551,
+      "stateAfter": 4104047364
+    },
+    {
+      "seed": 1,
+      "chunk": 98,
+      "x": 21.455051652621478,
+      "z": 9464.213874662295,
+      "localZ": 56.213874662294984,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 2406361619,
+      "stateAfter": 4237927432
+    },
+    {
+      "seed": 1,
+      "chunk": 101,
+      "x": 20.354212371166795,
+      "z": 9720.482681840658,
+      "localZ": 24.482681840658188,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 3979794705,
+      "stateAfter": 1516393222
+    },
+    {
+      "seed": 1,
+      "chunk": 103,
+      "x": 19.615780178806745,
+      "z": 9959.118033109233,
+      "localZ": 71.11803310923278,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 3481839103,
+      "stateAfter": 1018437620
+    },
+    {
+      "seed": 1,
+      "chunk": 107,
+      "x": 19.623206353280693,
+      "z": 10300.519974248484,
+      "localZ": 28.519974248483777,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 1590751141,
+      "stateAfter": 3422316954
+    },
+    {
+      "seed": 1,
+      "chunk": 111,
+      "x": 21.99606654967647,
+      "z": 10729.531461060047,
+      "localZ": 73.53146106004715,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 3050665120,
+      "stateAfter": 587263637
+    },
+    {
+      "seed": 1,
+      "chunk": 112,
+      "x": 20.02555900812149,
+      "z": 10813.682119661942,
+      "localZ": 61.682119661942124,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 1538015979,
+      "stateAfter": 3369581792
+    },
+    {
+      "seed": 1,
+      "chunk": 113,
+      "x": 20.435158206964843,
+      "z": 10915.77883023955,
+      "localZ": 67.77883023954928,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2680591912,
+      "stateAfter": 217190429
+    },
+    {
+      "seed": 1,
+      "chunk": 115,
+      "x": 20.68480431230273,
+      "z": 11092.933609513566,
+      "localZ": 52.9336095135659,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 1791412828,
+      "stateAfter": 3622978641
+    },
+    {
+      "seed": 1,
+      "chunk": 117,
+      "x": 21.437544513959438,
+      "z": 11263.388959273696,
+      "localZ": 31.388959273695946,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 1868927999,
+      "stateAfter": 3700493812
+    },
+    {
+      "seed": 7,
+      "chunk": 83,
+      "x": 20.07318063173443,
+      "z": 7995.934115208685,
+      "localZ": 27.934115208685398,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1556660559,
+      "stateAfter": 3388226372
+    },
+    {
+      "seed": 7,
+      "chunk": 85,
+      "x": 23.326406412525102,
+      "z": 8235.603529332206,
+      "localZ": 75.60352933220565,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 3138459258,
+      "stateAfter": 675057775
+    },
+    {
+      "seed": 7,
+      "chunk": 89,
+      "x": 23.854675285751,
+      "z": 8599.827382642776,
+      "localZ": 55.827382642775774,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 2951054715,
+      "stateAfter": 487653232
+    },
+    {
+      "seed": 7,
+      "chunk": 91,
+      "x": 20.448512457311153,
+      "z": 8816.779345890507,
+      "localZ": 80.7793458905071,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 813356891,
+      "stateAfter": 2644922704
+    },
+    {
+      "seed": 7,
+      "chunk": 92,
+      "x": 20.85666509892326,
+      "z": 8867.983040722087,
+      "localZ": 35.983040722087026,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 2395944903,
+      "stateAfter": 4227510716
+    },
+    {
+      "seed": 7,
+      "chunk": 93,
+      "x": 21.231760878581554,
+      "z": 8979.058804471046,
+      "localZ": 51.05880447104573,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1563920029,
+      "stateAfter": 3395485842
+    },
+    {
+      "seed": 7,
+      "chunk": 94,
+      "x": 20.03346013475675,
+      "z": 9080.523789966479,
+      "localZ": 56.523789966478944,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1642224513,
+      "stateAfter": 3473790326
+    },
+    {
+      "seed": 7,
+      "chunk": 95,
+      "x": 23.617580241174437,
+      "z": 9162.86225473322,
+      "localZ": 42.86225473321974,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 3337542319,
+      "stateAfter": 874140836
+    },
+    {
+      "seed": 7,
+      "chunk": 99,
+      "x": 21.28629665344488,
+      "z": 9519.650525311008,
+      "localZ": 15.650525311008096,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 2270113618,
+      "stateAfter": 4101679431
+    },
+    {
+      "seed": 7,
+      "chunk": 100,
+      "x": 21.516831508255564,
+      "z": 9651.948591219261,
+      "localZ": 51.94859121926129,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1205052856,
+      "stateAfter": 3036618669
+    },
+    {
+      "seed": 7,
+      "chunk": 102,
+      "x": 22.464052028255537,
+      "z": 9854.599179698154,
+      "localZ": 62.59917969815433,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2715334058,
+      "stateAfter": 251932575
+    },
+    {
+      "seed": 7,
+      "chunk": 103,
+      "x": 19.997888538404368,
+      "z": 9904.82528308779,
+      "localZ": 16.825283087790012,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 1202684917,
+      "stateAfter": 3034250730
+    },
+    {
+      "seed": 7,
+      "chunk": 104,
+      "x": 20.179029877181165,
+      "z": 10029.333431817591,
+      "localZ": 45.33343181759119,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2288895953,
+      "stateAfter": 4120461766
+    },
+    {
+      "seed": 7,
+      "chunk": 105,
+      "x": 21.980349463876337,
+      "z": 10112.148383086547,
+      "localZ": 32.148383086547256,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2400836434,
+      "stateAfter": 4232402247
+    },
+    {
+      "seed": 7,
+      "chunk": 106,
+      "x": 20.713384297094308,
+      "z": 10238.581546084955,
+      "localZ": 62.581546084955335,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2855211800,
+      "stateAfter": 391810317
+    },
+    {
+      "seed": 7,
+      "chunk": 107,
+      "x": 23.248340823920444,
+      "z": 10322.395253503695,
+      "localZ": 50.39525350369513,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2790481290,
+      "stateAfter": 327079807
+    },
+    {
+      "seed": 7,
+      "chunk": 108,
+      "x": 22.035883447970264,
+      "z": 10439.896216610447,
+      "localZ": 71.89621661044657,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2861209474,
+      "stateAfter": 397807991
+    },
+    {
+      "seed": 7,
+      "chunk": 109,
+      "x": 22.963099368964322,
+      "z": 10491.723488761112,
+      "localZ": 27.723488761112094,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 4124091501,
+      "stateAfter": 1660690018
+    },
+    {
+      "seed": 7,
+      "chunk": 110,
+      "x": 23.104806498857215,
+      "z": 10621.23245245032,
+      "localZ": 61.232452450320125,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 204405774,
+      "stateAfter": 2035971587
+    },
+    {
+      "seed": 7,
+      "chunk": 111,
+      "x": 23.388566883048043,
+      "z": 10697.331394298002,
+      "localZ": 41.331394298002124,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2674594244,
+      "stateAfter": 211192761
+    },
+    {
+      "seed": 7,
+      "chunk": 113,
+      "x": 21.401608483982272,
+      "z": 10929.949560642242,
+      "localZ": 81.94956064224243,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 1480861775,
+      "stateAfter": 3312427588
+    },
+    {
+      "seed": 7,
+      "chunk": 114,
+      "x": 23.778324490995146,
+      "z": 11013.62621029839,
+      "localZ": 69.6262102983892,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 1416131265,
+      "stateAfter": 3247697078
+    },
+    {
+      "seed": 7,
+      "chunk": 116,
+      "x": 23.871938006021082,
+      "z": 11191.587690001354,
+      "localZ": 55.58769000135362,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 1550011333,
+      "stateAfter": 3381577146
+    },
+    {
+      "seed": 7,
+      "chunk": 117,
+      "x": 19.956820554099977,
+      "z": 11296.915245775133,
+      "localZ": 64.91524577513337,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 909810050,
+      "stateAfter": 2741375863
+    },
+    {
+      "seed": 42,
+      "chunk": 81,
+      "x": 21.014196675270796,
+      "z": 7829.1989279631525,
+      "localZ": 53.19892796315253,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 4269829191,
+      "stateAfter": 1806427708
+    },
+    {
+      "seed": 42,
+      "chunk": 82,
+      "x": 22.71990793570876,
+      "z": 7938.670038543642,
+      "localZ": 66.67003854364157,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1997461986,
+      "stateAfter": 3829027799
+    },
+    {
+      "seed": 42,
+      "chunk": 87,
+      "x": 23.790899232728407,
+      "z": 8424.219712710008,
+      "localZ": 72.21971271000803,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 3208398164,
+      "stateAfter": 744996681
+    },
+    {
+      "seed": 42,
+      "chunk": 88,
+      "x": 22.91014802630525,
+      "z": 8484.109960271046,
+      "localZ": 36.109960271045566,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 3576103433,
+      "stateAfter": 1112701950
+    },
+    {
+      "seed": 42,
+      "chunk": 91,
+      "x": 23.146501002134755,
+      "z": 8761.61572612077,
+      "localZ": 25.615726120769978,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 46062562,
+      "stateAfter": 1877628375
+    },
+    {
+      "seed": 42,
+      "chunk": 92,
+      "x": 23.19632519397419,
+      "z": 8860.417287737131,
+      "localZ": 28.41728773713112,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1260155992,
+      "stateAfter": 3091721805
+    },
+    {
+      "seed": 42,
+      "chunk": 93,
+      "x": 20.5660740241874,
+      "z": 8981.32827187702,
+      "localZ": 53.3282718770206,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 2579402916,
+      "stateAfter": 116001433
+    },
+    {
+      "seed": 42,
+      "chunk": 94,
+      "x": 19.886216062121093,
+      "z": 9086.081465296447,
+      "localZ": 62.08146529644728,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1066753775,
+      "stateAfter": 2898319588
+    },
+    {
+      "seed": 42,
+      "chunk": 95,
+      "x": 22.789428004296497,
+      "z": 9133.580470271409,
+      "localZ": 13.580470271408558,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 2585400590,
+      "stateAfter": 121999107
+    },
+    {
+      "seed": 42,
+      "chunk": 96,
+      "x": 21.14283961476758,
+      "z": 9242.430255532265,
+      "localZ": 26.43025553226471,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1760952016,
+      "stateAfter": 3592517829
+    },
+    {
+      "seed": 42,
+      "chunk": 97,
+      "x": 20.372491431771778,
+      "z": 9378.010081551969,
+      "localZ": 66.01008155196905,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 3967799398,
+      "stateAfter": 1504397915
+    },
+    {
+      "seed": 42,
+      "chunk": 98,
+      "x": 21.57147429487668,
+      "z": 9446.783241637051,
+      "localZ": 38.783241637051105,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 119631168,
+      "stateAfter": 1951196981
+    },
+    {
+      "seed": 42,
+      "chunk": 101,
+      "x": 21.74020361190196,
+      "z": 9748.140311328694,
+      "localZ": 52.140311328694224,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2212170130,
+      "stateAfter": 4043735943
+    },
+    {
+      "seed": 42,
+      "chunk": 104,
+      "x": 23.165802259929478,
+      "z": 10065.583596155047,
+      "localZ": 81.58359615504742,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2281319688,
+      "stateAfter": 4112885501
+    },
+    {
+      "seed": 42,
+      "chunk": 107,
+      "x": 22.738451909506693,
+      "z": 10325.64455806464,
+      "localZ": 53.64455806463957,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2222586852,
+      "stateAfter": 4054152665
+    },
+    {
+      "seed": 42,
+      "chunk": 108,
+      "x": 21.73562201752793,
+      "z": 10392.910608423874,
+      "localZ": 24.910608423873782,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2541503524,
+      "stateAfter": 78102041
+    },
+    {
+      "seed": 42,
+      "chunk": 109,
+      "x": 23.012667893897742,
+      "z": 10507.663458108902,
+      "localZ": 43.66345810890198,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 837030792,
+      "stateAfter": 2668596605
+    },
+    {
+      "seed": 42,
+      "chunk": 110,
+      "x": 22.19596533465665,
+      "z": 10600.802486820146,
+      "localZ": 40.80248682014644,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 3995419829,
+      "stateAfter": 1532018346
+    },
+    {
+      "seed": 42,
+      "chunk": 112,
+      "x": 23.67735611787066,
+      "z": 10794.078145511448,
+      "localZ": 42.07814551144838,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2169851690,
+      "stateAfter": 4001417503
+    },
+    {
+      "seed": 42,
+      "chunk": 113,
+      "x": 21.1268567671068,
+      "z": 10906.182336157188,
+      "localZ": 58.18233615718782,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 1984815086,
+      "stateAfter": 3816380899
+    },
+    {
+      "seed": 42,
+      "chunk": 115,
+      "x": 22.344459731597453,
+      "z": 11078.367096304893,
+      "localZ": 38.367096304893494,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2182636351,
+      "stateAfter": 4014202164
+    },
+    {
+      "seed": 123,
+      "chunk": 81,
+      "x": 23.982538019889034,
+      "z": 7852.735226992518,
+      "localZ": 76.73522699251771,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1558239301,
+      "stateAfter": 3389805114
+    },
+    {
+      "seed": 123,
+      "chunk": 82,
+      "x": 20.422245986759663,
+      "z": 7899.659882219508,
+      "localZ": 27.65988221950829,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 3821451580,
+      "stateAfter": 1358050097
+    },
+    {
+      "seed": 123,
+      "chunk": 84,
+      "x": 21.69987738621421,
+      "z": 8086.4741975124925,
+      "localZ": 22.474197512492537,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1243741677,
+      "stateAfter": 3075307490
+    },
+    {
+      "seed": 123,
+      "chunk": 85,
+      "x": 22.57203149877023,
+      "z": 8198.01806636341,
+      "localZ": 38.01806636340916,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 611116694,
+      "stateAfter": 2442682507
+    },
+    {
+      "seed": 123,
+      "chunk": 86,
+      "x": 20.90133446850814,
+      "z": 8297.239052664489,
+      "localZ": 41.239052664488554,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 922457066,
+      "stateAfter": 2754022879
+    },
+    {
+      "seed": 123,
+      "chunk": 89,
+      "x": 22.01802717684768,
+      "z": 8560.589538792148,
+      "localZ": 16.589538792148232,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 863724230,
+      "stateAfter": 2695290043
+    },
+    {
+      "seed": 123,
+      "chunk": 91,
+      "x": 22.57260721293278,
+      "z": 8794.539304448292,
+      "localZ": 58.53930444829166,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1253369086,
+      "stateAfter": 3084934899
+    },
+    {
+      "seed": 123,
+      "chunk": 92,
+      "x": 22.942636986030266,
+      "z": 8869.897604048252,
+      "localZ": 37.897604048252106,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 812567694,
+      "stateAfter": 2644133507
+    },
+    {
+      "seed": 123,
+      "chunk": 94,
+      "x": 21.52789163275156,
+      "z": 9094.885686619207,
+      "localZ": 70.88568661920726,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1762530723,
+      "stateAfter": 3594096536
+    },
+    {
+      "seed": 123,
+      "chunk": 95,
+      "x": 23.07638364646118,
+      "z": 9178.141955969855,
+      "localZ": 58.14195596985519,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 3401483632,
+      "stateAfter": 938082149
+    },
+    {
+      "seed": 123,
+      "chunk": 96,
+      "x": 23.06195118580945,
+      "z": 9263.985072869807,
+      "localZ": 47.98507286980748,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 2577035058,
+      "stateAfter": 113633575
+    },
+    {
+      "seed": 123,
+      "chunk": 97,
+      "x": 20.97625722165685,
+      "z": 9375.138434970751,
+      "localZ": 63.138434970751405,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1951986375,
+      "stateAfter": 3783552188
+    },
+    {
+      "seed": 123,
+      "chunk": 98,
+      "x": 23.204423398012295,
+      "z": 9473.82602481544,
+      "localZ": 65.82602481544018,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 3910645269,
+      "stateAfter": 1447243786
+    },
+    {
+      "seed": 123,
+      "chunk": 99,
+      "x": 22.666485124616884,
+      "z": 9529.702782763168,
+      "localZ": 25.702782763168216,
+      "theme": "citadel",
+      "warm": 16757818,
+      "stateBefore": 1134324788,
+      "stateAfter": 2965890601
+    },
+    {
+      "seed": 123,
+      "chunk": 103,
+      "x": 22.299446129822172,
+      "z": 9911.214638845995,
+      "localZ": 23.21463884599507,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 1146320136,
+      "stateAfter": 2977885949
+    },
+    {
+      "seed": 123,
+      "chunk": 105,
+      "x": 22.606020825449377,
+      "z": 10100.775233717635,
+      "localZ": 20.775233717635274,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 896553022,
+      "stateAfter": 2728118835
+    },
+    {
+      "seed": 123,
+      "chunk": 106,
+      "x": 21.879993924172595,
+      "z": 10235.517058063298,
+      "localZ": 59.517058063298464,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2279741143,
+      "stateAfter": 4111306956
+    },
+    {
+      "seed": 123,
+      "chunk": 108,
+      "x": 23.817327111493796,
+      "z": 10445.810881739482,
+      "localZ": 77.81088173948228,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 1413290959,
+      "stateAfter": 3244856772
+    },
+    {
+      "seed": 123,
+      "chunk": 109,
+      "x": 20.994122532662004,
+      "z": 10484.419152650982,
+      "localZ": 20.41915265098214,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2420408198,
+      "stateAfter": 4251974011
+    },
+    {
+      "seed": 123,
+      "chunk": 110,
+      "x": 22.243197975098155,
+      "z": 10585.25673655048,
+      "localZ": 25.256736550480127,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 339864584,
+      "stateAfter": 2171430397
+    },
+    {
+      "seed": 123,
+      "chunk": 114,
+      "x": 23.572933660936542,
+      "z": 10976.284012069926,
+      "localZ": 32.284012069925666,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 4199238849,
+      "stateAfter": 1735837366
+    },
+    {
+      "seed": 123,
+      "chunk": 117,
+      "x": 23.58754616382066,
+      "z": 11268.006109345704,
+      "localZ": 36.00610934570432,
+      "theme": "gauntlet",
+      "warm": 16738874,
+      "stateBefore": 2812893476,
+      "stateAfter": 349491993
+    }
+  ]
+}

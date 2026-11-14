@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 1,
+  "revision": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "method": "Actual procedural Three.js geometry at seed 1, root world origin; all rest geometry bounds including hidden hit shell; sprites excluded. Stub materials, no rendering. Primitive counts respect single versus array material; no shadow passes. GLB reference counts are per node instance.",
+  "densityCaveat": "355-unit static feature window (SPAWN_AHEAD 300 + DESPAWN_BEHIND 55), 100 seeds x loops 0,1,3. This is a layout proxy, NOT a measured live maximum: moving flyers, carrier launches, boss spawns and dropped pickups need runtime batch profiling.",
+  "models": {
+    "heavyTurret": {
+      "transformedRestBounds": {
+        "min": [
+          -2.8499999046325684,
+          0,
+          -2.8499999046325684
+        ],
+        "max": [
+          2.8499999046325684,
+          3.311250054836273,
+          4.237500190734863
+        ]
+      },
+      "trianglesIncludingHidden": 1736,
+      "visibleTriangles": 1616,
+      "meshNodes": 8,
+      "visiblePrimitives": 7,
+      "hp": 6,
+      "radius": 3.4,
+      "score": 400
+    },
+    "mine": {
+      "transformedRestBounds": {
+        "min": [
+          -1.850000023841858,
+          -1.850000023841858,
+          -1.850000023841858
+        ],
+        "max": [
+          1.850000023841858,
+          1.850000023841858,
+          1.850000023841858
+        ]
+      },
+      "trianglesIncludingHidden": 1220,
+      "visibleTriangles": 1200,
+      "meshNodes": 4,
+      "visiblePrimitives": 3,
+      "hp": 1,
+      "radius": 1.9,
+      "score": 80
+    },
+    "drone": {
+      "transformedRestBounds": {
+        "min": [
+          -2.9223384857177734,
+          -0.4300000071525574,
+          -1.9923081398010254
+        ],
+        "max": [
+          2.9223384857177734,
+          0.7699999809265137,
+          1.7135000109672545
+        ]
+      },
+      "trianglesIncludingHidden": 864,
+      "visibleTriangles": 788,
+      "meshNodes": 8,
+      "visiblePrimitives": 7,
+      "hp": 3,
+      "radius": 2.2,
+      "score": 250
+    },
+    "interceptor": {
+      "transformedRestBounds": {
+        "min": [
+          -2.904433250427246,
+          -0.4300000071525574,
+          -1.9923081398010254
+        ],
+        "max": [
+          2.904433250427246,
+          0.7699999809265137,
+          2.2079999506473538
+        ]
+      },
+      "trianglesIncludingHidden": 840,
+      "visibleTriangles": 764,
+      "meshNodes": 8,
+      "visiblePrimitives": 7,
+      "hp": 2,
+      "radius": 2.2,
+      "score": 320
+    },
+    "parked": {
+      "transformedRestBounds": {
+        "min": [
+          -3.8659708338322027,
+          1.1920929132713809e-8,
+          -4.742529405090391
+        ],
+        "max": [
+          4.193507188477543,
+          2.631999893188477,
+          3.117611632645903
+        ]
+      },
+      "trianglesIncludingHidden": 868,
+      "visibleTriangles": 692,
+      "meshNodes": 5,
+      "visiblePrimitives": 4,
+      "hp": 1,
+      "radius": 2.4,
+      "score": 150
+    },
+    "pickup:shield": {
+      "transformedRestBounds": {
+        "min": [
+          -2.0450000762939453,
+          -2.0450000762939453,
+          -0.37999999821186065
+        ],
+        "max": [
+          2.0450000762939453,
+          2.0450000762939453,
+          0.3599999904632568
+        ]
+      },
+      "trianglesIncludingHidden": 456,
+      "visibleTriangles": 456,
+      "meshNodes": 3,
+      "visiblePrimitives": 3,
+      "radius": 2.2,
+      "color": 4579583
+    },
+    "pickup:spread": {
+      "transformedRestBounds": {
+        "min": [
+          -2.0450000762939453,
+          -2.0450000762939453,
+          -0.37999999821186065
+        ],
+        "max": [
+          2.0450000762939453,
+          2.0450000762939453,
+          0.2550000011920929
+        ]
+      },
+      "trianglesIncludingHidden": 540,
+      "visibleTriangles": 540,
+      "meshNodes": 3,
+      "visiblePrimitives": 3,
+      "radius": 2.2,
+      "color": 16757818
+    },
+    "pickup:repair": {
+      "transformedRestBounds": {
+        "min": [
+          -2.0450000762939453,
+          -2.0450000762939453,
+          -0.37999999821186065
+        ],
+        "max": [
+          2.0450000762939453,
+          2.0450000762939453,
+          0.2599999964237213
+        ]
+      },
+      "trianglesIncludingHidden": 500,
+      "visibleTriangles": 500,
+      "meshNodes": 3,
+      "visiblePrimitives": 3,
+      "radius": 2.2,
+      "color": 5439400
+    },
+    "pickup:fuel": {
+      "transformedRestBounds": {
+        "min": [
+          -2.0450000762939453,
+          -2.0450000762939453,
+          -0.37999999821186065
+        ],
+        "max": [
+          2.0450000762939453,
+          2.0450000762939453,
+          0.30499999821186063
+        ]
+      },
+      "trianglesIncludingHidden": 640,
+      "visibleTriangles": 640,
+      "meshNodes": 3,
+      "visiblePrimitives": 3,
+      "radius": 2.2,
+      "color": 16766826
+    }
+  },
+  "references": {
+    "player": {
+      "bytes": 478292,
+      "triangleInstances": 11556,
+      "primitiveInstances": 8,
+      "materials": 7
+    },
+    "sentinel": {
+      "bytes": 1140172,
+      "triangleInstances": 34718,
+      "primitiveInstances": 38,
+      "materials": 12
+    },
+    "turret": {
+      "bytes": 58452,
+      "triangleInstances": 1194,
+      "primitiveInstances": 8,
+      "materials": 4
+    },
+    "radar": {
+      "bytes": 55564,
+      "triangleInstances": 1288,
+      "primitiveInstances": 9,
+      "materials": 5
+    },
+    "silo": {
+      "bytes": 1281700,
+      "triangleInstances": 9928,
+      "primitiveInstances": 4,
+      "materials": 2
+    },
+    "fuel": {
+      "bytes": 1087156,
+      "triangleInstances": 9592,
+      "primitiveInstances": 8,
+      "materials": 2
+    }
+  },
+  "layoutWindowPeaks": {
+    "deck": {
+      "count": 5,
+      "seed": 1,
+      "loop": 0,
+      "fromZ": 1152,
+      "toZ": 1500
+    },
+    "fuel": {
+      "count": 11,
+      "seed": 12,
+      "loop": 0,
+      "fromZ": 10716.474751888309,
+      "toZ": 11070.360151223373
+    },
+    "turret": {
+      "count": 8,
+      "seed": 22,
+      "loop": 3,
+      "fromZ": 2316.448087650351,
+      "toZ": 2652.2826516432688
+    },
+    "wall": {
+      "count": 5,
+      "seed": 6,
+      "loop": 1,
+      "fromZ": 7870,
+      "toZ": 8151.073361418676
+    },
+    "radar": {
+      "count": 3,
+      "seed": 4,
+      "loop": 0,
+      "fromZ": 8670.563500833232,
+      "toZ": 8972.791294651106
+    },
+    "drone": {
+      "count": 18,
+      "seed": 24,
+      "loop": 3,
+      "fromZ": 10019.377576028928,
+      "toZ": 10373.542570896447
+    },
+    "parked": {
+      "count": 10,
+      "seed": 53,
+      "loop": 0,
+      "fromZ": 8270.912309777923,
+      "toZ": 8498.73877093289
+    },
+    "heavyTurret": {
+      "count": 11,
+      "seed": 14,
+      "loop": 3,
+      "fromZ": 10796.520705604926,
+      "toZ": 11102.98631378077
+    },
+    "silo": {
+      "count": 3,
+      "seed": 2,
+      "loop": 1,
+      "fromZ": 8570.47866530018,
+      "toZ": 8884.894867357798
+    },
+    "mine": {
+      "count": 24,
+      "seed": 11,
+      "loop": 1,
+      "fromZ": 10108.664980875328,
+      "toZ": 10408.194242101163
+    },
+    "arch": {
+      "count": 3,
+      "seed": 22,
+      "loop": 3,
+      "fromZ": 10441.039814464748,
+      "toZ": 10756.004084045999
+    },
+    "debrisRing": {
+      "count": 3,
+      "seed": 21,
+      "loop": 0,
+      "fromZ": 3528.2795453071594,
+      "toZ": 3805.642001070082
+    },
+    "platform": {
+      "count": 6,
+      "seed": 3,
+      "loop": 0,
+      "fromZ": 3477.7315149689093,
+      "toZ": 3805.8261419762857
+    },
+    "interceptor": {
+      "count": 18,
+      "seed": 81,
+      "loop": 3,
+      "fromZ": 7057.681077603251,
+      "toZ": 7410.178575675935
+    },
+    "gate": {
+      "count": 3,
+      "seed": 1,
+      "loop": 0,
+      "fromZ": 4907.137559521943,
+      "toZ": 5244.944856930524
+    },
+    "fence": {
+      "count": 3,
+      "seed": 33,
+      "loop": 1,
+      "fromZ": 5327.790477348026,
+      "toZ": 5592.447885589208
+    },
+    "arena": {
+      "count": 4,
+      "seed": 1,
+      "loop": 0,
+      "fromZ": 11300,
+      "toZ": 11588
+    },
+    "boss": {
+      "count": 1,
+      "seed": 1,
+      "loop": 0,
+      "fromZ": 11720,
+      "toZ": 11720
+    }
+  },
+  "maxCampaignFeatures": {
+    "deck": 90,
+    "fuel": 67,
+    "turret": 36,
+    "wall": 26,
+    "radar": 11,
+    "drone": 42,
+    "parked": 24,
+    "heavyTurret": 32,
+    "silo": 12,
+    "mine": 137,
+    "arch": 6,
+    "debrisRing": 6,
+    "platform": 16,
+    "interceptor": 72,
+    "gate": 11,
+    "fence": 6,
+    "arena": 10,
+    "boss": 1
+  }
+}

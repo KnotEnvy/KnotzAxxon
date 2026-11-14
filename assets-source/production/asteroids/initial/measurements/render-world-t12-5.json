@@ -1,0 +1,249 @@
+{
+  "engine": "BLENDER_EEVEE",
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "threads": 4,
+  "frames": [
+    {
+      "file": "evidence/world-classic-source-t12-5.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "kind": "world-scale source comparison",
+      "worldScale": true,
+      "cameraSource": {
+        "mode": "classic",
+        "player": [
+          0,
+          9,
+          3648
+        ],
+        "eye": [
+          -45.254833995939045,
+          54.255,
+          3630.745166004061
+        ],
+        "target": [
+          0,
+          9,
+          3676
+        ],
+        "fov": 52,
+        "orthographic": true,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "near": 0.35,
+        "far": 1680
+      },
+      "asteroidsResident": 63,
+      "variant": "source",
+      "spinTime": 12.5,
+      "playerSha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "note": "Exact rock placements and source camera snap. Origin translated -playerZ only. Shipped player not resized. Neutral texture attenuation .74 approximates shared map; no actual Three.js rockTexture/addRim shader. No wreck/truss/landmark/gates/enemies."
+    },
+    {
+      "file": "evidence/world-classic-kit-t12-5.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "kind": "world-scale source comparison",
+      "worldScale": true,
+      "cameraSource": {
+        "mode": "classic",
+        "player": [
+          0,
+          9,
+          3648
+        ],
+        "eye": [
+          -45.254833995939045,
+          54.255,
+          3630.745166004061
+        ],
+        "target": [
+          0,
+          9,
+          3676
+        ],
+        "fov": 52,
+        "orthographic": true,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "near": 0.35,
+        "far": 1680
+      },
+      "asteroidsResident": 63,
+      "variant": "kit",
+      "spinTime": 12.5,
+      "playerSha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "note": "Exact rock placements and source camera snap. Origin translated -playerZ only. Shipped player not resized. Neutral texture attenuation .74 approximates shared map; no actual Three.js rockTexture/addRim shader. No wreck/truss/landmark/gates/enemies."
+    },
+    {
+      "file": "evidence/world-modern-source-t12-5.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "kind": "world-scale source comparison",
+      "worldScale": true,
+      "cameraSource": {
+        "mode": "modern",
+        "player": [
+          0,
+          9,
+          3648
+        ],
+        "eye": [
+          -9.91858415644439,
+          23,
+          3620.7489139972085
+        ],
+        "target": [
+          0,
+          10.2,
+          3664
+        ],
+        "fov": 58,
+        "orthographic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "near": 0.35,
+        "far": 1680
+      },
+      "asteroidsResident": 63,
+      "variant": "source",
+      "spinTime": 12.5,
+      "playerSha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "note": "Exact rock placements and source camera snap. Origin translated -playerZ only. Shipped player not resized. Neutral texture attenuation .74 approximates shared map; no actual Three.js rockTexture/addRim shader. No wreck/truss/landmark/gates/enemies."
+    },
+    {
+      "file": "evidence/world-modern-kit-t12-5.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "kind": "world-scale source comparison",
+      "worldScale": true,
+      "cameraSource": {
+        "mode": "modern",
+        "player": [
+          0,
+          9,
+          3648
+        ],
+        "eye": [
+          -9.91858415644439,
+          23,
+          3620.7489139972085
+        ],
+        "target": [
+          0,
+          10.2,
+          3664
+        ],
+        "fov": 58,
+        "orthographic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "near": 0.35,
+        "far": 1680
+      },
+      "asteroidsResident": 63,
+      "variant": "kit",
+      "spinTime": 12.5,
+      "playerSha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "note": "Exact rock placements and source camera snap. Origin translated -playerZ only. Shipped player not resized. Neutral texture attenuation .74 approximates shared map; no actual Three.js rockTexture/addRim shader. No wreck/truss/landmark/gates/enemies."
+    },
+    {
+      "file": "evidence/world-chase-source-t12-5.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "kind": "world-scale source comparison",
+      "worldScale": true,
+      "cameraSource": {
+        "mode": "chase",
+        "player": [
+          0,
+          9,
+          3648
+        ],
+        "eye": [
+          -2.5086831184236833,
+          18.5,
+          3624.1314745111613
+        ],
+        "target": [
+          0,
+          10.2,
+          3664
+        ],
+        "fov": 66,
+        "orthographic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "near": 0.35,
+        "far": 1680
+      },
+      "asteroidsResident": 63,
+      "variant": "source",
+      "spinTime": 12.5,
+      "playerSha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "note": "Exact rock placements and source camera snap. Origin translated -playerZ only. Shipped player not resized. Neutral texture attenuation .74 approximates shared map; no actual Three.js rockTexture/addRim shader. No wreck/truss/landmark/gates/enemies."
+    },
+    {
+      "file": "evidence/world-chase-kit-t12-5.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "kind": "world-scale source comparison",
+      "worldScale": true,
+      "cameraSource": {
+        "mode": "chase",
+        "player": [
+          0,
+          9,
+          3648
+        ],
+        "eye": [
+          -2.5086831184236833,
+          18.5,
+          3624.1314745111613
+        ],
+        "target": [
+          0,
+          10.2,
+          3664
+        ],
+        "fov": 66,
+        "orthographic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "near": 0.35,
+        "far": 1680
+      },
+      "asteroidsResident": 63,
+      "variant": "kit",
+      "spinTime": 12.5,
+      "playerSha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "note": "Exact rock placements and source camera snap. Origin translated -playerZ only. Shipped player not resized. Neutral texture attenuation .74 approximates shared map; no actual Three.js rockTexture/addRim shader. No wreck/truss/landmark/gates/enemies."
+    }
+  ],
+  "liveWebGL": false
+}

@@ -1,0 +1,1127 @@
+[
+  {
+    "context": "silo",
+    "time": 0,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      467.67793843083797,
+      324.5489919166563,
+      472.44598994239595,
+      336.1291684697105
+    ],
+    "size_pixels": [
+      4.768051511557985,
+      11.58017655305423
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.8485667482537398,
+      -0.8470368663356179
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 0,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      531.4157944903337,
+      313.0805314865831,
+      539.1615098357452,
+      329.0445643126311
+    ],
+    "size_pixels": [
+      7.7457153454114405,
+      15.964032826048026
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9963789746790473,
+      0.9964390544638801
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 0,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      521.5461326635017,
+      313.28533449855524,
+      528.6949723402395,
+      328.4325456776253
+    ],
+    "size_pixels": [
+      7.1488396767377935,
+      15.147211179070041
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9959728707345692,
+      0.9960457309211347
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 0.2,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      446.45075654713656,
+      280.07076028178756,
+      451.3386660305902,
+      291.4849936070971
+    ],
+    "size_pixels": [
+      4.8879094834536545,
+      11.414233325309567
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.8590462192696662,
+      -0.8571462710845171
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 0.2,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      516.3173874023066,
+      242.25337877951964,
+      524.6666579618377,
+      259.523615136616
+    ],
+    "size_pixels": [
+      8.349270559531078,
+      17.270236357096366
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9960421495055345,
+      0.9961123272229377
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 0.2,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      509.91613180602496,
+      244.2030539948672,
+      517.7545347619554,
+      260.6581956014485
+    ],
+    "size_pixels": [
+      7.838402955930405,
+      16.455141606581293
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9955883047834054,
+      0.995674298954385
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 0.5,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      385.86914628787076,
+      224.4836643113086,
+      393.3585783017295,
+      234.66156940297054
+    ],
+    "size_pixels": [
+      7.489432013858732,
+      10.177905091661955
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.8778836029525373,
+      -0.8757340261129136
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 0.5,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      458.61981887279046,
+      110.14529737427242,
+      472.3196153044726,
+      132.51450479570212
+    ],
+    "size_pixels": [
+      13.69979643168216,
+      22.369207421429707
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9948924671061545,
+      0.9950415383357025
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 0.5,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      469.16461529219197,
+      107.07886989292236,
+      481.365595601298,
+      129.6040513882614
+    ],
+    "size_pixels": [
+      12.200980309106058,
+      22.525181495339055
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9941420517001311,
+      0.994335073754842
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 1,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      251.21776432044535,
+      152.55556158909468,
+      260.53863644919244,
+      161.40908624071875
+    ],
+    "size_pixels": [
+      9.320872128747084,
+      8.85352465162407
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.9093786491746617,
+      -0.907334473284379
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 1,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      86.22793318137168,
+      -448.4134913182405,
+      139.94367533806584,
+      -374.11029976824017
+    ],
+    "size_pixels": [
+      53.71574215669416,
+      74.30319155000035
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      0.9883468307755682,
+      0.9891353990850501
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 1,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      118.4946064749113,
+      -690.5455073598555,
+      184.52233445225937,
+      -563.6430716681655
+    ],
+    "size_pixels": [
+      66.02772797734808,
+      126.90243569169002
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      0.9828587781903848,
+      0.9845398913326358
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 1.5,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      101.51983311995076,
+      87.24434494378873,
+      111.43692232523657,
+      96.06349766651645
+    ],
+    "size_pixels": [
+      9.917089205285805,
+      8.819152722727722
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.9371865251645174,
+      -0.9353987871429278
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 1.5,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      4098.209132824999,
+      4858.584638712043,
+      5459.415944072018,
+      6619.4021249004945
+    ],
+    "size_pixels": [
+      1361.2068112470188,
+      1760.8174861884518
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      1.0532617836868443,
+      1.0756423308847367
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "silo",
+    "time": 1.5,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      1340.7054541859331,
+      1818.0700593349784,
+      1425.8342955808848,
+      1973.4574110350595
+    ],
+    "size_pixels": [
+      85.12884139495168,
+      155.38735170008113
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      1.0196214388033364,
+      1.0221296678408078
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 0,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      443.12695962541693,
+      146.51085553441837,
+      452.97343656546417,
+      152.5142109027216
+    ],
+    "size_pixels": [
+      9.84647694004724,
+      6.003355368303232
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.8315429626089816,
+      -0.828953921306353
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 0,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      410.96414384184453,
+      152.49743213951578,
+      418.23846569405276,
+      158.89755711232394
+    ],
+    "size_pixels": [
+      7.274321852208232,
+      6.4001249728081575
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9970792764643205,
+      0.9971601705300301
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 0,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      391.06747140268277,
+      172.57889903194322,
+      397.2089036893685,
+      178.54500922425123
+    ],
+    "size_pixels": [
+      6.141432286685756,
+      5.966110192308008
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9967546249500658,
+      0.9968536255800786
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 0.2,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      394.8233784870445,
+      184.37598285313422,
+      401.9346113165755,
+      194.0118567787933
+    ],
+    "size_pixels": [
+      7.111232829530991,
+      9.63587392565907
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.8459650004055769,
+      -0.8435098821967033
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 0.2,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      388.93998244826633,
+      161.09454843235133,
+      395.9634971779191,
+      168.91810723852217
+    ],
+    "size_pixels": [
+      7.0235147296527884,
+      7.823558806170837
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9964165610121037,
+      0.9965317553213101
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 0.2,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      377.94706045336744,
+      173.40848188161823,
+      384.88639378064875,
+      180.3288963211192
+    ],
+    "size_pixels": [
+      6.939333327281304,
+      6.9204144395009735
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9959090555544587,
+      0.9960573952417723
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 0.5,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      352.015355969632,
+      269.8833837117387,
+      357.5015884092496,
+      281.4503432130361
+    ],
+    "size_pixels": [
+      5.486232439617595,
+      11.56695950129739
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.8633407772298103,
+      -0.8615244351141086
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 0.5,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      392.3885290365822,
+      236.01025126252046,
+      404.6516087294736,
+      253.92949278808143
+    ],
+    "size_pixels": [
+      12.263079692891381,
+      17.919241525560977
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9951148757801613,
+      0.9952570212453253
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 0.5,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      402.95012404610185,
+      232.3307340758667,
+      417.3164694416994,
+      249.5017265043812
+    ],
+    "size_pixels": [
+      14.366345395597534,
+      17.170992428514495
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9941652189579712,
+      0.9943532412599735
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 1,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      349.12726956269273,
+      421.7569810998398,
+      356.8732147230299,
+      432.9528027098131
+    ],
+    "size_pixels": [
+      7.745945160337158,
+      11.195821609973336
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.8778332010941184,
+      -0.8761608688456087
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 1,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      549.2650187693996,
+      538.3321554422746,
+      571.9223241852862,
+      565.0059196048097
+    ],
+    "size_pixels": [
+      22.65730541588664,
+      26.67376416253512
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      0.9929355406260559,
+      0.9931281812524477
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 1,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      617.6440299952774,
+      525.781129674175,
+      642.582492930385,
+      553.2159535177168
+    ],
+    "size_pixels": [
+      24.938462935107623,
+      27.434823843541835
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      0.9910903359556561,
+      0.991361444497645
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 1.5,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      377.5905960065405,
+      558.0103594130245,
+      386.9246667990026,
+      567.8807881501081
+    ],
+    "size_pixels": [
+      9.334070792462057,
+      9.870428737083557
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      -0.8832341639253458,
+      -0.8815591295078906
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 1.5,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      829.3057203991519,
+      970.5900071280951,
+      853.2571250695523,
+      996.631094592396
+    ],
+    "size_pixels": [
+      23.951404670400393,
+      26.041087464300972
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      0.9911544268354449,
+      0.9915204325501924
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-heavy",
+    "time": 1.5,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      972.138459222612,
+      969.1572363340972,
+      1002.8305444097201,
+      1003.5584695873155
+    ],
+    "size_pixels": [
+      30.69208518710809,
+      34.401233253218265
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      0.9886530714737677,
+      0.989266921129623
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 0,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      563.077536865299,
+      113.75789836863723,
+      568.7494109630319,
+      119.31744883878521
+    ],
+    "size_pixels": [
+      5.671874097732939,
+      5.5595504701479825
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.8533239453272328,
+      -0.849859939658049
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 0,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      541.5143125073851,
+      70.44274095898118,
+      549.455003601244,
+      82.76563800921886
+    ],
+    "size_pixels": [
+      7.940691093858959,
+      12.322897050237685
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9971535919108172,
+      0.9972212536636592
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 0,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      505.85517010675886,
+      102.03739551897775,
+      513.0738738539784,
+      113.10874793062368
+    ],
+    "size_pixels": [
+      7.218703747219536,
+      11.071352411645933
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9970425982051447,
+      0.9971090584727335
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 0.2,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      537.1232036104304,
+      120.28160147288907,
+      542.6672599550922,
+      125.90815139954931
+    ],
+    "size_pixels": [
+      5.544056344661726,
+      5.626549926660246
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.8760484003560609,
+      -0.8725988749095763
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 0.2,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      576.1747672357818,
+      5.986426133689852,
+      585.8243135949489,
+      20.15286864083042
+    ],
+    "size_pixels": [
+      9.649546359167061,
+      14.166442507140568
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9964718667684975,
+      0.9965858133017013
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 0.2,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      543.074125226021,
+      40.095708314920195,
+      552.4057129641924,
+      53.123101814926706
+    ],
+    "size_pixels": [
+      9.331587738171379,
+      13.02739350000651
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      0.9963566992979013,
+      0.9964735943678638
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 0.5,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      469.7337261363128,
+      162.13408509149332,
+      477.9094777827805,
+      169.74392797337916
+    ],
+    "size_pixels": [
+      8.175751646467745,
+      7.6098428818858395
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.9060872865118856,
+      -0.9032708655974697
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 0.5,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      644.4718720837662,
+      -110.01807009167553,
+      657.7924765452843,
+      -92.64292890355506
+    ],
+    "size_pixels": [
+      13.320604461518087,
+      17.375141188120466
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      0.9943669578709156,
+      0.9946470163711826
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 0.5,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      628.8500132883688,
+      -83.38734583222688,
+      644.0815352749978,
+      -65.03681332196554
+    ],
+    "size_pixels": [
+      15.23152198662899,
+      18.350532510261345
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      0.9941281746363405,
+      0.9944299328653587
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 1,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      324.5912447378587,
+      293.6880538518832,
+      333.6237973318799,
+      304.1160386033124
+    ],
+    "size_pixels": [
+      9.03255259402124,
+      10.427984751429221
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.9304547927157287,
+      -0.9288004846778883
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 1,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      838.7121375859016,
+      -326.18582849636994,
+      883.4920700351562,
+      -256.6629637977833
+    ],
+    "size_pixels": [
+      44.7799324492546,
+      69.52286469858666
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      0.9770988070625748,
+      0.979471962746693
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 1,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      1242.8465629371258,
+      -707.9219876443685,
+      1381.7670760478616,
+      -583.3876814219225
+    ],
+    "size_pixels": [
+      138.92051311073578,
+      124.53430622244605
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      0.9640201555271828,
+      0.9702472191227078
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 1.5,
+    "mode": "classic",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      212.85258681188034,
+      422.8732055016751,
+      218.0702275217671,
+      429.84015334951164
+    ],
+    "size_pixels": [
+      5.217640709886751,
+      6.966947847836536
+    ],
+    "inside_screen": true,
+    "ndc_depth": [
+      -0.9163962513158964,
+      -0.9130444818833933
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 1.5,
+    "mode": "modern",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      -1132.1053615576432,
+      3308.684934006633,
+      -354.39209005373027,
+      6884.423649499344
+    ],
+    "size_pixels": [
+      777.7132715039129,
+      3575.738715492711
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      0.7766959654663081,
+      0.9054323117809362
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  },
+  {
+    "context": "sentinel-salvo",
+    "time": 1.5,
+    "mode": "chase",
+    "resolution": [
+      960,
+      540
+    ],
+    "bbox_pixels_top_left": [
+      44.9196043344333,
+      -704.685634434358,
+      138.65306026108212,
+      -416.2917704182135
+    ],
+    "size_pixels": [
+      93.73345592664882,
+      288.3938640161445
+    ],
+    "inside_screen": false,
+    "ndc_depth": [
+      1.0387415681276218,
+      1.0480946225763974
+    ],
+    "note": "Projected geometry extent, NOT visible lit pixel segmentation or occlusion proof."
+  }
+]

@@ -1,0 +1,103 @@
+{
+  "blender": "5.2.1 LTS",
+  "build_hash": "9e2066aef7ef",
+  "reopened_packed_editable_blend": [
+    {
+      "name": "CargoCrate_Fitted",
+      "triangles": 156,
+      "primitives": 1,
+      "vertices": 80,
+      "bounds": {
+        "min": [
+          -0.5,
+          0.0,
+          -0.5
+        ],
+        "max": [
+          0.5,
+          1.0,
+          0.5
+        ]
+      },
+      "has_editable_part_ids": true,
+      "vertex_groups": 22
+    },
+    {
+      "name": "CargoDrum_Fitted",
+      "triangles": 180,
+      "primitives": 1,
+      "vertices": 92,
+      "bounds": {
+        "min": [
+          -0.9510565400123596,
+          0.0,
+          -1.0
+        ],
+        "max": [
+          0.9510565400123596,
+          1.0,
+          1.0
+        ]
+      },
+      "has_editable_part_ids": true,
+      "vertex_groups": 10
+    }
+  ],
+  "authoring_manifold": [
+    {
+      "name": "CargoCrate_Fitted",
+      "connected_closed": true,
+      "volume": 0.9070220969086928
+    },
+    {
+      "name": "CargoDrum_Fitted",
+      "connected_closed": true,
+      "volume": 2.565717508454704
+    }
+  ],
+  "clean_scene_glb_reimport": [
+    {
+      "name": "CargoCrate_Fitted",
+      "triangles": 156,
+      "primitives": 1,
+      "vertices": 288,
+      "bounds": {
+        "min": [
+          -0.5,
+          0.0,
+          -0.5
+        ],
+        "max": [
+          0.5,
+          1.0,
+          0.5
+        ]
+      },
+      "has_editable_part_ids": false,
+      "vertex_groups": 0
+    },
+    {
+      "name": "CargoDrum_Fitted",
+      "triangles": 180,
+      "primitives": 1,
+      "vertices": 342,
+      "bounds": {
+        "min": [
+          -0.9510565400123596,
+          0.0,
+          -1.0
+        ],
+        "max": [
+          0.9510565400123596,
+          1.0,
+          1.0
+        ]
+      },
+      "has_editable_part_ids": false,
+      "vertex_groups": 0
+    }
+  ],
+  "images": 0,
+  "external_asset_dependencies": 0,
+  "pass_status": true
+}

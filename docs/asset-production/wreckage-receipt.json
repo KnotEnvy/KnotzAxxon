@@ -1,0 +1,16 @@
+{
+  "archive": "drifting-wreckage-initial-ee221ad-20261114.tar.gz",
+  "sha256": "feacbc0ff9d87ceff2930e0e987163b1da92f7bf0debdadc25afffe2f42ecf8c",
+  "contentHashesVerified": 54,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/wreckage/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "senderExitStatus": 0,
+  "transferMethod": "Windows Taildrop",
+  "glbSha256": "f39cce1fbf0c6d15ee046c04b52d1ca5ec26c757beb65dc3eabfe700793aee89",
+  "blendSha256": "73cb8fabc3456cc19bc79c058b04190108d1610c311c39a2fd5ab8a7c385a31b",
+  "formalReviewsCompleted": 0,
+  "fixPassesCompleted": 0
+}

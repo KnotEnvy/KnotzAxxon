@@ -1,0 +1,17 @@
+{
+  "sha256": "99736efc61495d5770e47b0903f3aa06f2d80ecca1316e55bda4fab785ed36a5",
+  "secondRunIdentical": true,
+  "triangles": 468,
+  "bounds": [
+    [
+      -3.45,
+      0,
+      -3.95
+    ],
+    [
+      3.45,
+      3.93,
+      3.95
+    ]
+  ]
+}

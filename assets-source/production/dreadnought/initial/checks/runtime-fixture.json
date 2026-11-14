@@ -1,0 +1,464 @@
+{
+  "chunks": [
+    {
+      "index": 35,
+      "z0": 3360,
+      "triangles": 566,
+      "primitives": 2,
+      "cueModes": []
+    },
+    {
+      "index": 36,
+      "z0": 3456,
+      "triangles": 1473,
+      "primitives": 3,
+      "cueModes": [
+        4
+      ]
+    },
+    {
+      "index": 37,
+      "z0": 3552,
+      "triangles": 1969,
+      "primitives": 3,
+      "cueModes": [
+        4
+      ]
+    },
+    {
+      "index": 38,
+      "z0": 3648,
+      "triangles": 1536,
+      "primitives": 3,
+      "cueModes": [
+        4
+      ]
+    },
+    {
+      "index": 39,
+      "z0": 3744,
+      "triangles": 1351,
+      "primitives": 3,
+      "cueModes": [
+        4
+      ]
+    },
+    {
+      "index": 40,
+      "z0": 3840,
+      "triangles": 1875,
+      "primitives": 3,
+      "cueModes": [
+        4
+      ]
+    },
+    {
+      "index": 41,
+      "z0": 3936,
+      "triangles": 2279,
+      "primitives": 3,
+      "cueModes": [
+        4,
+        1
+      ]
+    },
+    {
+      "index": 42,
+      "z0": 4032,
+      "triangles": 2102,
+      "primitives": 3,
+      "cueModes": [
+        4
+      ]
+    },
+    {
+      "index": 43,
+      "z0": 4128,
+      "triangles": 2939,
+      "primitives": 3,
+      "cueModes": [
+        4,
+        3
+      ]
+    },
+    {
+      "index": 44,
+      "z0": 4224,
+      "triangles": 608,
+      "primitives": 2,
+      "cueModes": []
+    }
+  ],
+  "wholeTriangles": 16698,
+  "wholePrimitives": 28,
+  "quality": [
+    {
+      "drawDistance": 320,
+      "behind": 90,
+      "retention": "first-1 through last+2 inclusive (conservative capacity, not asserted simultaneous traversal state)",
+      "nominalVisibleSpan": 410,
+      "visibleMax": {
+        "playerZ": 3808,
+        "first": 38,
+        "last": 43,
+        "sections": [
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "triangles": 12082,
+        "primitives": 18
+      },
+      "residentMax": {
+        "playerZ": 3712,
+        "first": 36,
+        "last": 44,
+        "sections": [
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "triangles": 16132,
+        "primitives": 26
+      }
+    },
+    {
+      "drawDistance": 440,
+      "behind": 90,
+      "retention": "first-1 through last+2 inclusive (conservative capacity, not asserted simultaneous traversal state)",
+      "nominalVisibleSpan": 530,
+      "visibleMax": {
+        "playerZ": 3688,
+        "first": 37,
+        "last": 43,
+        "sections": [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "triangles": 14051,
+        "primitives": 21
+      },
+      "residentMax": {
+        "playerZ": 3592,
+        "first": 35,
+        "last": 44,
+        "sections": [
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "triangles": 16698,
+        "primitives": 28
+      }
+    },
+    {
+      "drawDistance": 560,
+      "behind": 90,
+      "retention": "first-1 through last+2 inclusive (conservative capacity, not asserted simultaneous traversal state)",
+      "nominalVisibleSpan": 650,
+      "visibleMax": {
+        "playerZ": 3568,
+        "first": 36,
+        "last": 43,
+        "sections": [
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "triangles": 15524,
+        "primitives": 24
+      },
+      "residentMax": {
+        "playerZ": 3472,
+        "first": 34,
+        "last": 44,
+        "sections": [
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "triangles": 16698,
+        "primitives": 28
+      }
+    },
+    {
+      "drawDistance": 700,
+      "behind": 90,
+      "retention": "first-1 through last+2 inclusive (conservative capacity, not asserted simultaneous traversal state)",
+      "nominalVisibleSpan": 790,
+      "visibleMax": {
+        "playerZ": 3524,
+        "first": 35,
+        "last": 44,
+        "sections": [
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "triangles": 16698,
+        "primitives": 28
+      },
+      "residentMax": {
+        "playerZ": 3332,
+        "first": 32,
+        "last": 44,
+        "sections": [
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "triangles": 16698,
+        "primitives": 28
+      }
+    }
+  ],
+  "shifted": [
+    {
+      "sectorStart": 3217,
+      "triangles": 20622,
+      "reason": "Offset and CPU reclip supported at build time; aligned current campaign uses pre-cut sections."
+    },
+    {
+      "sectorStart": 3288,
+      "triangles": 20852,
+      "reason": "Offset and CPU reclip supported at build time; aligned current campaign uses pre-cut sections."
+    }
+  ],
+  "ownership": {
+    "chunkGeometriesDisposed": 28,
+    "sharedMaterialDisposalsBeforeShutdown": 0,
+    "templateDisposalsBeforeShutdown": 0,
+    "templateDisposalsAtShutdown": 28,
+    "materialDisposalsAtShutdown": 3
+  },
+  "cueSamples": [
+    {
+      "aAnim": [
+        4,
+        0.800000011920929,
+        0
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.699999988079071,
+        0
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.699999988079071,
+        0.17000000178813934
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.699999988079071,
+        0.3400000035762787
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.800000011920929,
+        0.13699999451637268
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.800000011920929,
+        0.27399998903274536
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.800000011920929,
+        0.41100001335144043
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.699999988079071,
+        0.20999999344348907
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.699999988079071,
+        0.3799999952316284
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.699999988079071,
+        0.550000011920929
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.800000011920929,
+        0.5479999780654907
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        1,
+        0.5,
+        0.4129999876022339
+      ],
+      "min": 0.08,
+      "max": 1.53
+    },
+    {
+      "aAnim": [
+        4,
+        0.8999999761581421,
+        0.7200000286102295
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.699999988079071,
+        0.41999998688697815
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.699999988079071,
+        0.5899999737739563
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.800000011920929,
+        0.6850000023841858
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.699999988079071,
+        0.7599999904632568
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        4,
+        0.800000011920929,
+        0.8220000267028809
+      ],
+      "min": 0.25,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        3,
+        0.20000000298023224,
+        0.5
+      ],
+      "min": 0.10000000002743836,
+      "max": 0.9999999999968471
+    },
+    {
+      "aAnim": [
+        3,
+        0.20000000298023224,
+        0
+      ],
+      "min": 0.10000000002767157,
+      "max": 0.9999999999969255
+    }
+  ],
+  "sourcePrototype": "Actual current Batch._vertex + Batch.merge; source animation constants and clock semantics; no WebGL renderer, live game, bloom or gameplay simulation."
+}

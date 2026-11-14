@@ -1,0 +1,458 @@
+{
+  "bytes": 335976,
+  "triangles": 5260,
+  "materialPrimitives": 5,
+  "materials": [
+    {
+      "name": "HT_Armor_VertexPalette",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.2800000011920929,
+        "roughnessFactor": 0.4699999988079071
+      }
+    },
+    {
+      "emissiveFactor": [
+        1,
+        0.04666508734226227,
+        0.09084171056747437
+      ],
+      "extensions": {
+        "KHR_materials_emissive_strength": {
+          "emissiveStrength": 3
+        }
+      },
+      "name": "HT_Eye_Red_ff3d55",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          0.04666508734226227,
+          0.09084171056747437,
+          1
+        ],
+        "metallicFactor": 0.2800000011920929,
+        "roughnessFactor": 0.4699999988079071
+      }
+    }
+  ],
+  "images": 0,
+  "bounds": {
+    "min": [
+      -2.8499999046325684,
+      0.0,
+      -2.8499999046325684
+    ],
+    "max": [
+      2.8499999046325684,
+      2.690000057220459,
+      2.8499999046325684
+    ]
+  },
+  "nodes": [
+    {
+      "name": "heavy-turret",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "children": [
+        "foundation",
+        "turntable"
+      ]
+    },
+    {
+      "name": "foundation",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "children": [],
+      "primitives": [
+        {
+          "vertices": 2976,
+          "indices": 5568,
+          "triangles": 1856,
+          "material": "HT_Armor_VertexPalette",
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "turntable",
+      "translation": [
+        0,
+        1.5,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "children": [
+        "barrel-L",
+        "barrel-R",
+        "dome",
+        "eye",
+        "flash-anchor"
+      ]
+    },
+    {
+      "name": "barrel-L",
+      "translation": [
+        -0.675000011920929,
+        0.2250000238418579,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        -0.675000011920929,
+        1.725000023841858,
+        0.0
+      ],
+      "children": [
+        "muzzle-L",
+        "weapon-L"
+      ]
+    },
+    {
+      "name": "muzzle-L",
+      "translation": [
+        0,
+        0,
+        1.600000023841858
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        -0.675000011920929,
+        1.725000023841858,
+        1.600000023841858
+      ],
+      "children": []
+    },
+    {
+      "name": "weapon-L",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        -0.675000011920929,
+        1.725000023841858,
+        0.0
+      ],
+      "children": [],
+      "primitives": [
+        {
+          "vertices": 1392,
+          "indices": 2640,
+          "triangles": 880,
+          "material": "HT_Armor_VertexPalette",
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "barrel-R",
+      "translation": [
+        0.675000011920929,
+        0.2250000238418579,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.675000011920929,
+        1.725000023841858,
+        0.0
+      ],
+      "children": [
+        "muzzle-R",
+        "weapon-R"
+      ]
+    },
+    {
+      "name": "muzzle-R",
+      "translation": [
+        0,
+        0,
+        1.600000023841858
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.675000011920929,
+        1.725000023841858,
+        1.600000023841858
+      ],
+      "children": []
+    },
+    {
+      "name": "weapon-R",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.675000011920929,
+        1.725000023841858,
+        0.0
+      ],
+      "children": [],
+      "primitives": [
+        {
+          "vertices": 1392,
+          "indices": 2640,
+          "triangles": 880,
+          "material": "HT_Armor_VertexPalette",
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dome",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "children": [],
+      "primitives": [
+        {
+          "vertices": 2640,
+          "indices": 4848,
+          "triangles": 1616,
+          "material": "HT_Armor_VertexPalette",
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "eye",
+      "translation": [
+        0,
+        0.869999885559082,
+        1.5299999713897705
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.0,
+        2.369999885559082,
+        1.5299999713897705
+      ],
+      "children": [
+        "charge-lens"
+      ]
+    },
+    {
+      "name": "charge-lens",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.0,
+        2.369999885559082,
+        1.5299999713897705
+      ],
+      "children": [],
+      "primitives": [
+        {
+          "vertices": 48,
+          "indices": 84,
+          "triangles": 28,
+          "material": "HT_Eye_Red_ff3d55",
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "flash-anchor",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "children": []
+    }
+  ]
+}

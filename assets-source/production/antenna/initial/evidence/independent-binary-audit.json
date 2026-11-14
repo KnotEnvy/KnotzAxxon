@@ -1,0 +1,106 @@
+{
+  "bytes": 37252,
+  "sha256": "6cefc79edfd1b4f123550dc50ced9e441046e65ebb97d2629f48bb61c582beb5",
+  "triangles": 304,
+  "primitiveCount": 2,
+  "materialCount": 2,
+  "transformedBoundsGameAxes": [
+    [
+      -1.0018404722213745,
+      0.0,
+      -0.20000000298023224
+    ],
+    [
+      1.0018404722213745,
+      11.006622314453125,
+      0.20000000298023224
+    ]
+  ],
+  "degenerateTriangles": 0,
+  "primitives": [
+    {
+      "node": "obstruction_lamp_neon",
+      "mesh": "neon_editable_mesh",
+      "triangles": 28,
+      "vertices": 84,
+      "material": 0,
+      "attributes": [
+        "POSITION",
+        "NORMAL"
+      ],
+      "colorRange": null
+    },
+    {
+      "node": "structure_dark",
+      "mesh": "dark_editable_mesh",
+      "triangles": 276,
+      "vertices": 828,
+      "material": 1,
+      "attributes": [
+        "POSITION",
+        "NORMAL",
+        "COLOR_0"
+      ],
+      "colorRange": [
+        0.11381704432745861,
+        1.0
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "emissiveFactor": [
+        1,
+        0.04666508734226227,
+        0.09084171056747437
+      ],
+      "extensions": {
+        "KHR_materials_emissive_strength": {
+          "emissiveStrength": 1.600000023841858
+        }
+      },
+      "extras": {
+        "runtime_shared_material": "materials.neonVertex",
+        "no_maps": true
+      },
+      "name": "neonVertex_source_lamp_preview",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.46000000834465027
+      }
+    },
+    {
+      "extras": {
+        "runtime_shared_material": "materials.darkMetal",
+        "no_maps": true
+      },
+      "name": "darkMetal_shared_response",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.46000000834465027,
+        "baseColorFactor": [
+          0.04654255168289065,
+          0.07532598682884019,
+          0.12312567062059618,
+          1
+        ]
+      }
+    }
+  ],
+  "imageCount": 0,
+  "textureCount": 0,
+  "animationCount": 0,
+  "externalURIs": [],
+  "accessorCount": 8,
+  "darkDiffuseProductComparedVertices": 828,
+  "darkDiffuseProductMaxAbsoluteError": 8.404342417694943e-07,
+  "status": "PASS",
+  "method": "Independent Python standard-library GLB chunk/accessor/index/TRS hierarchy audit; no Blender or Three loader.",
+  "materialPortability": "The Blender glTF exporter omits a linked Multiply base factor and exports active white COLOR_0 plus used AO COLOR_1. Generator explicitly restores source dark factor *1.1 and remaps normalized AO/1.1 to COLOR_0. Product equals shared darkMetal response without clipping 1.1 top-face AO. Runtime uses original unnormalized Batch tints and shared material."
+}

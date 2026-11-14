@@ -1,0 +1,7 @@
+{
+  "method": "build-geometry.mjs executed twice from the same recipe and source; both serialized actual-Batch geometry JSON hashes matched.",
+  "firstSHA256": "abb33a7ebb1a8cb220bb7c926de8f85a25005bfb58899db96937ebff4b4653a5",
+  "repeatSHA256": "abb33a7ebb1a8cb220bb7c926de8f85a25005bfb58899db96937ebff4b4653a5",
+  "equal": true,
+  "claimScope": "Deterministic geometry and source RNG, not cross-version byte-identical Blender containers."
+}

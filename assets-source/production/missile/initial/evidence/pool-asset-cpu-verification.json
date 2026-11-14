@@ -1,0 +1,34 @@
+{
+  "mode": "CPU-only throwaway binding test, NOT production integration or renderer proof",
+  "mesh_count": 1,
+  "material_count": 1,
+  "primitives": 1,
+  "capacity": 40,
+  "triangles_per_instance": 464,
+  "triangles_at_capacity": 18560,
+  "active_update_range_floats": 640,
+  "source_instance_scale": 1,
+  "steady_60_frames_no_slot_resource_ownership": true,
+  "clear_and_reuse_pass": true,
+  "disposal_counters": {
+    "owned_geometry": 1,
+    "owned_material": 1,
+    "library_material": 0,
+    "template_geometry": 0,
+    "template_material": 0
+  },
+  "source_material_vertex_colors": false,
+  "owned_material_vertex_colors": true,
+  "owned_material_white_base": true,
+  "source_rim_reapplied_and_shader_patch_executed": true,
+  "hue": {
+    "authored_armor_srgb": "#995c48",
+    "wrong_double_tint_srgb": "#5a1c0d",
+    "explanation": "Unmodified shared enemyArmor has vertexColors=false and ignores all palette separation. Enabling COLOR_0 without whitening multiplies two linear brown tints. Owned white clone preserves authored absolute palette; uniform source emissive and rim still warm the final lit result."
+  },
+  "limits": [
+    "No WebGL context: one draw is the source InstancedMesh/one primitive contract, not a captured GPU draw.",
+    "No production adapter was written or applied. Test owns one geometry/material clone total, not one per missile.",
+    "Template resources remain undisposed; a real loader/cache retains ownership."
+  ]
+}

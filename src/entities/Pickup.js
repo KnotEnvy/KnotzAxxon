@@ -9,6 +9,8 @@
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { clamp01, damp, TAU } from '../core/Utils.js';
+import { buildImportedPickup } from '../render/ImportedModels.js';
+import { disposeModel } from '../render/Dispose.js';
 
 const _v = new THREE.Vector3();
 
@@ -69,23 +71,21 @@ export class Pickup {
     this.alive = true;
     this.radius = 2.2;
 
-    shellGeo ??= new THREE.TorusGeometry(1.98, .065, 6, 32);
-    coreGeo ??= new THREE.CylinderGeometry(1.64,1.64,.16,6).rotateX(Math.PI/2);
-
     this.group = new THREE.Group();
     this.pos = this.group.position;
     this.pos.set(x, y, z);
 
-    this.shell = new THREE.Mesh(
-      shellGeo,
-      mats.neon(def.color, 1.15),
-    );
-    this.core = new THREE.Mesh(coreGeo, mats.enemyMetal ?? mats.darkMetal);
-    this.core.position.z = -.30;
-    this.shape = new THREE.Mesh(shapeFor(kind), mats.neon(def.color, 1.35));
-    this.shape.position.z = .10;
-    if (kind === 'fuel') this.shape.scale.set(.82, .82, .25);
-    this.group.add(this.shell, this.core, this.shape);
+    if (!buildImportedPickup(this, mats)) {
+      shellGeo ??= new THREE.TorusGeometry(1.98, .065, 6, 32);
+      coreGeo ??= new THREE.CylinderGeometry(1.64,1.64,.16,6).rotateX(Math.PI/2);
+      this.shell = new THREE.Mesh(shellGeo, mats.neon(def.color, 1.15));
+      this.core = new THREE.Mesh(coreGeo, mats.enemyMetal ?? mats.darkMetal);
+      this.core.position.z = -.30;
+      this.shape = new THREE.Mesh(shapeFor(kind), mats.neon(def.color, 1.35));
+      this.shape.position.z = .10;
+      if (kind === 'fuel') this.shape.scale.set(.82, .82, .25);
+      this.group.add(this.shell, this.core, this.shape);
+    }
 
     const halos = (mats._pickupHalos ??= new Map());
     if (!halos.has(def.color)) halos.set(def.color, mats.sprite(mats.glow, def.color, { opacity: 0.35 }));
@@ -123,6 +123,10 @@ export class Pickup {
   }
 
   dispose() {
+    if (this._importedRoot) {
+      disposeModel(this._importedRoot);
+      this._importedRoot = null;
+    }
     this.group.parent?.remove(this.group);
   }
 }

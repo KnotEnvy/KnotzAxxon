@@ -1,0 +1,33 @@
+{
+  "shell": {
+    "glb": "spread_shell_amber_unlit",
+    "primitive_count": 1,
+    "nominal_srgb": "#ffb43a",
+    "runtime": "owned clone of untouched mats.neon(0xffb43a,1.15), vertexColors=true, toneMapped=false",
+    "vertex_color": "neutral multiplier; no replacement hue"
+  },
+  "core": {
+    "glb": "spread_core_titanium",
+    "primitive_count": 1,
+    "runtime": "per-instance cloned imported PBR material",
+    "metallic": 0.48,
+    "roughness": 0.4,
+    "vertex_color": "authored absolute slate/titanium"
+  },
+  "shape": {
+    "glb": "spread_shape_amber_unlit",
+    "primitive_count": 1,
+    "nominal_srgb": "#ffb43a",
+    "runtime": "owned clone of untouched mats.neon(0xffb43a,1.35), vertexColors=true, toneMapped=false",
+    "vertex_color": "neutral multiplier; no replacement hue"
+  },
+  "halo": {
+    "exported": false,
+    "source_material_owner": "Materials._pickupHalos color-keyed cache",
+    "source_texture_owner": "Materials/Textures glow; never per-instance disposed",
+    "opacity": 0.35,
+    "source_scale": "7*(1+sin(phase*4)*.2)"
+  },
+  "textures": 0,
+  "visible_material_primitives_including_shell_core_shape": 3
+}

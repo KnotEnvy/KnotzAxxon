@@ -1,0 +1,12 @@
+{
+  "actuallyViewed": {
+    "covered-fighter-classic.png": "74aec9be3fa2e997f36532c4b1f7edc17e74d8a700dbfd3f15da476ae8101430",
+    "covered-fighter-modern.png": "e3eda6fbe8457dd94e446da98e75a1d122a2491bfe2046918dcfcacf76f2e69a",
+    "covered-fighter-chase.png": "d6ec92ed0ec08e7926b66ceb7b181f72639c6c63fa4973dd9543a7822b1cacef"
+  },
+  "retained": [
+    "classic",
+    "modern"
+  ],
+  "note": "Chase also inspected;retained a compact two-image devlog set. Original source fuel/wall and edge occlusion remains."
+}

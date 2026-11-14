@@ -1,0 +1,426 @@
+{
+  "method": "Independent stdlib binary GLB parser, buffer/accessor bounds, topology, node TRS recursion, transformed game-space bounds, color/UV/normal equivalence to actual Batch reference; no Blender importer used",
+  "bytes": 109384,
+  "sha256": "97a07ec5317b98c095182aadbe08cbef02310f3f4a126db631b8f7e1453cbcdd",
+  "triangles": 704,
+  "primitives": 21,
+  "meshes": 21,
+  "nodes": 24,
+  "materials": [
+    {
+      "extras": {
+        "preview_base_color_linear": [
+          0.06517887322900157,
+          0.08193119565992178,
+          0.10922420511103023
+        ],
+        "runtime_material": "materials.hull",
+        "maps_not_embedded": true,
+        "offline_approximation": "hull averages source shared map; no actual canvas texture/normal/roughness maps in EEVEE. Runtime binds existing original shared mapped hull, not this preview material."
+      },
+      "name": "FG_hull_mapped_response",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.36000001430511475,
+        "roughnessFactor": 0.6499999761581421,
+        "baseColorFactor": [
+          0.06517887322900157,
+          0.08193119565992178,
+          0.10922420511103023,
+          1
+        ]
+      }
+    },
+    {
+      "extras": {
+        "preview_base_color_linear": [
+          0.04654255168289065,
+          0.07532598682884019,
+          0.12312567062059618
+        ],
+        "runtime_material": "materials.darkMetal",
+        "maps_not_embedded": true,
+        "offline_approximation": "original unmapped darkMetal response"
+      },
+      "name": "FG_darkMetal_unmapped_response",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.46000000834465027,
+        "baseColorFactor": [
+          0.04654255168289065,
+          0.07532598682884019,
+          0.12312567062059618,
+          1
+        ]
+      }
+    }
+  ],
+  "textures": 0,
+  "images": 0,
+  "animations": 0,
+  "skins": 0,
+  "bounds": [
+    [
+      -1.649999976158142,
+      0.0,
+      -1.649999976158142
+    ],
+    [
+      1.7172415300826747,
+      5.9899795111234235,
+      1.649999976158142
+    ]
+  ],
+  "maximumBoundsErrorVersusRuntimeReference": 7.09671254206512e-07,
+  "minimumTriangleArea": 0.00018369223037069475,
+  "maximumUnitNormalError": 7.787482769749943e-08,
+  "maximumLinearVertexColorErrorVersusBatch": 8.33796829091682e-06,
+  "maximumBoxProjectionUVErrorWithGLTFVDecode": 5.960464477539063e-08,
+  "maximumTransformedNormalErrorVersusBatch": 4.9042750534300517e-05,
+  "vertexMapping": {
+    "color": "COLOR_0 * node.extras.GLB_COLOR0_decode_gain (1.1) restores source linear tint/AO without glTF clipping; preview baseColorFactor carries this gain",
+    "uv": "glTF (u,1-v) -> source Batch (u,v), world dominant-axis box projection /3",
+    "normal": "flat normals, node world orthonormal transform; no nonuniform scale"
+  },
+  "parts": [
+    {
+      "node": "azimuth_split_ring",
+      "material": "FG_hull_mapped_response",
+      "triangles": 72,
+      "vertices": 216,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "bore_shadow_floor_L",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 28,
+      "vertices": 84,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "bore_shadow_floor_R",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 28,
+      "vertices": 84,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "jacket_and_recessed_bore_L",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 112,
+      "vertices": 336,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "jacket_and_recessed_bore_R",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 112,
+      "vertices": 336,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "paired_receiver_bridge",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 12,
+      "vertices": 36,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "recoil_piston_L",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 20,
+      "vertices": 60,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "recoil_piston_R",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 20,
+      "vertices": 60,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "recoil_receiver_L",
+      "material": "FG_hull_mapped_response",
+      "triangles": 12,
+      "vertices": 36,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "recoil_receiver_R",
+      "material": "FG_hull_mapped_response",
+      "triangles": 12,
+      "vertices": 36,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "bearing_cap_L",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 28,
+      "vertices": 84,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "bearing_cap_R",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 28,
+      "vertices": 84,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "elevation_cross_shaft",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 28,
+      "vertices": 84,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "rotating_cradle_deck",
+      "material": "FG_hull_mapped_response",
+      "triangles": 28,
+      "vertices": 84,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "trunnion_yoke_L",
+      "material": "FG_hull_mapped_response",
+      "triangles": 20,
+      "vertices": 60,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "trunnion_yoke_R",
+      "material": "FG_hull_mapped_response",
+      "triangles": 20,
+      "vertices": 60,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "yoke_heel_brace_L",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 12,
+      "vertices": 36,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "yoke_heel_brace_R",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 12,
+      "vertices": 36,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "fixed_azimuth_bearing",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 44,
+      "vertices": 132,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "roof_contact_shoe",
+      "material": "FG_darkMetal_unmapped_response",
+      "triangles": 28,
+      "vertices": 84,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "sloped_armour_plinth",
+      "material": "FG_hull_mapped_response",
+      "triangles": 28,
+      "vertices": 84,
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ]
+    }
+  ],
+  "shippedReferences": {
+    "player": {
+      "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "bytes": 478292,
+      "editableSourceSHA256": "245dae3c63d3e0354b38c6369aec9129331e3ba2b7dcf35dfdb904c134f462d3",
+      "meshes": 8,
+      "materials": [
+        "KZ_PlayerAccent",
+        "KZ_PlayerGlass",
+        "KZ_PlayerHull",
+        "KZ_NavPort",
+        "KZ_NavStarboard",
+        "KZ_NeonCyan",
+        "KZ_EngineGlow"
+      ],
+      "use": "style reference only; player rendered at unmodified actual scale in WORLD evidence"
+    },
+    "sentinel": {
+      "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef",
+      "bytes": 1140172,
+      "editableSourceSHA256": "93bd7a444a809388f7bb27b366d5c69fb4d9ffc9ea31e07d030fb0a1931f96d4",
+      "meshes": 25,
+      "materials": [
+        "SN_Frame",
+        "SN_Armor",
+        "SN_Charge",
+        "SN_Hazard",
+        "SN_Beacon",
+        "SN_Visor",
+        "SN_Metal",
+        "SN_PodEye",
+        "SN_Glow",
+        "SN_Core",
+        "SN_CoreShell",
+        "SN_Seam"
+      ],
+      "use": "style reference only; player rendered at unmodified actual scale in WORLD evidence"
+    },
+    "turret": {
+      "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+      "bytes": 58452,
+      "editableSourceSHA256": "0976b06002cfea11997f3fbdbdba4c71a77d5cd76fb753311d71d29d7a7a8f84",
+      "meshes": 8,
+      "materials": [
+        "warm_armor",
+        "cool_slate",
+        "dark_structure",
+        "amber_eye"
+      ],
+      "use": "style reference only; player rendered at unmodified actual scale in WORLD evidence"
+    },
+    "radar": {
+      "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d",
+      "bytes": 55564,
+      "editableSourceSHA256": "45e5212f9fb7548931709999b16ecbae30a7999cb341058c488ec8f08c381d4b",
+      "meshes": 9,
+      "materials": [
+        "warm_armor",
+        "cool_slate",
+        "dark_structure",
+        "dish_warm",
+        "radar_emitter"
+      ],
+      "use": "style reference only; player rendered at unmodified actual scale in WORLD evidence"
+    },
+    "silo": {
+      "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e",
+      "bytes": 1281700,
+      "editableSourceSHA256": "4f99139b631efb031f20b116bdbce4f59700e811d7e028dd366063fb927085ca",
+      "meshes": 3,
+      "materials": [
+        "SILO_Hull",
+        "SILO_Glow"
+      ],
+      "use": "style reference only; player rendered at unmodified actual scale in WORLD evidence"
+    },
+    "fuel": {
+      "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc",
+      "bytes": 1087156,
+      "editableSourceSHA256": "043f4268b519006ed8fbd793075678af4d407018dffdff4e36e0ae792fd3eeba",
+      "meshes": 6,
+      "materials": [
+        "FUEL_Hull",
+        "FUEL_Band"
+      ],
+      "use": "style reference only; player rendered at unmodified actual scale in WORLD evidence"
+    }
+  }
+}

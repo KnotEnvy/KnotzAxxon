@@ -1,0 +1,1739 @@
+{
+  "path": "/home/knotzuni/code/KnotzAxxon/asset-work/dreadnought/initial/asset/dreadnought.glb",
+  "sha256": "67c5e604ea19b941a76b127a1221c87350161f3637ffbd19e87a16489ec69c6c",
+  "bytes": 3378628,
+  "triangles": 16698,
+  "vertices": 50094,
+  "material_primitives": 28,
+  "materials": [
+    "DN_dark",
+    "DN_hull",
+    "DN_neon"
+  ],
+  "textures": 0,
+  "bounds": {
+    "min": [
+      -26.057600021362305,
+      -41.0,
+      3400.0
+    ],
+    "max": [
+      38.05759811401367,
+      12.83590316772461,
+      4229.0
+    ]
+  },
+  "nodes": [
+    {
+      "name": "DN_0035__dark",
+      "triangles": 204,
+      "world_bounds": {
+        "min": [
+          -10.699999809265137,
+          -32.849998474121094,
+          3406.0
+        ],
+        "max": [
+          19.700000762939453,
+          -23.225000381469727,
+          3456.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3360.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "dark",
+        "game_chunk": 35,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0035__hull",
+      "triangles": 362,
+      "world_bounds": {
+        "min": [
+          -17.12367820739746,
+          -41.0,
+          3400.0
+        ],
+        "max": [
+          29.12367820739746,
+          -14.880000114440918,
+          3456.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3360.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "hull",
+        "game_chunk": 35,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0036__dark",
+      "triangles": 568,
+      "world_bounds": {
+        "min": [
+          -25.345001220703125,
+          -32.849998474121094,
+          3456.0
+        ],
+        "max": [
+          37.345001220703125,
+          -10.067145347595215,
+          3552.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3456.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "dark",
+        "game_chunk": 36,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0036__hull",
+      "triangles": 893,
+      "world_bounds": {
+        "min": [
+          -26.057600021362305,
+          -41.0,
+          3456.0
+        ],
+        "max": [
+          38.05759811401367,
+          -11.550000190734863,
+          3552.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3456.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "hull",
+        "game_chunk": 36,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0036__neon",
+      "triangles": 12,
+      "world_bounds": {
+        "min": [
+          1.2000000476837158,
+          -14.164999961853027,
+          3476.875
+        ],
+        "max": [
+          2.799999952316284,
+          -14.035000801086426,
+          3477.125
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "COLOR_1",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3456.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "neon",
+        "game_chunk": 36,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0037__dark",
+      "triangles": 917,
+      "world_bounds": {
+        "min": [
+          -25.345001220703125,
+          -32.849998474121094,
+          3552.0
+        ],
+        "max": [
+          37.345001220703125,
+          -10.41490650177002,
+          3648.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3552.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "dark",
+        "game_chunk": 37,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0037__hull",
+      "triangles": 1004,
+      "world_bounds": {
+        "min": [
+          -26.057600021362305,
+          -41.0,
+          3552.0
+        ],
+        "max": [
+          38.05759811401367,
+          -11.550000190734863,
+          3648.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3552.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "hull",
+        "game_chunk": 37,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0037__neon",
+      "triangles": 48,
+      "world_bounds": {
+        "min": [
+          -7.800000190734863,
+          -26.469999313354492,
+          3562.449996948242
+        ],
+        "max": [
+          14.300000190734863,
+          -14.035000801086426,
+          3647.125
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "COLOR_1",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3552.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "neon",
+        "game_chunk": 37,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0038__dark",
+      "triangles": 661,
+      "world_bounds": {
+        "min": [
+          -25.345001220703125,
+          -32.849998474121094,
+          3648.0
+        ],
+        "max": [
+          37.345001220703125,
+          -10.059261322021484,
+          3744.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3648.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "dark",
+        "game_chunk": 38,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0038__hull",
+      "triangles": 863,
+      "world_bounds": {
+        "min": [
+          -26.057600021362305,
+          -41.0,
+          3648.0
+        ],
+        "max": [
+          38.05759811401367,
+          -11.550000190734863,
+          3744.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3648.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "hull",
+        "game_chunk": 38,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0038__neon",
+      "triangles": 12,
+      "world_bounds": {
+        "min": [
+          1.2000000476837158,
+          -14.164999961853027,
+          3730.875
+        ],
+        "max": [
+          2.799999952316284,
+          -14.035000801086426,
+          3731.125
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "COLOR_1",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3648.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "neon",
+        "game_chunk": 38,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0039__dark",
+      "triangles": 524,
+      "world_bounds": {
+        "min": [
+          -25.345001220703125,
+          -32.849998474121094,
+          3744.0
+        ],
+        "max": [
+          37.345001220703125,
+          -10.067147254943848,
+          3840.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3744.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "dark",
+        "game_chunk": 39,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0039__hull",
+      "triangles": 815,
+      "world_bounds": {
+        "min": [
+          -26.057600021362305,
+          -41.0,
+          3744.0
+        ],
+        "max": [
+          38.05759811401367,
+          -11.550000190734863,
+          3840.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3744.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "hull",
+        "game_chunk": 39,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0039__neon",
+      "triangles": 12,
+      "world_bounds": {
+        "min": [
+          -7.800000190734863,
+          -14.164999961853027,
+          3814.875
+        ],
+        "max": [
+          -6.199999809265137,
+          -14.035000801086426,
+          3815.125
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "COLOR_1",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3744.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "neon",
+        "game_chunk": 39,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0040__dark",
+      "triangles": 816,
+      "world_bounds": {
+        "min": [
+          -25.345001220703125,
+          -32.849998474121094,
+          3840.0
+        ],
+        "max": [
+          37.345001220703125,
+          -14.255000114440918,
+          3936.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3840.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "dark",
+        "game_chunk": 40,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0040__hull",
+      "triangles": 1023,
+      "world_bounds": {
+        "min": [
+          -26.057600021362305,
+          -41.0,
+          3840.0
+        ],
+        "max": [
+          38.05759811401367,
+          -14.600000381469727,
+          3936.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3840.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "hull",
+        "game_chunk": 40,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0040__neon",
+      "triangles": 36,
+      "world_bounds": {
+        "min": [
+          -4.300000190734863,
+          -26.469999313354492,
+          3888.4500122070312
+        ],
+        "max": [
+          14.300000190734863,
+          -26.329999923706055,
+          3911.5499877929688
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "COLOR_1",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3840.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "neon",
+        "game_chunk": 40,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0041__dark",
+      "triangles": 1326,
+      "world_bounds": {
+        "min": [
+          -25.345001220703125,
+          -32.849998474121094,
+          3936.0
+        ],
+        "max": [
+          37.345001220703125,
+          12.83590316772461,
+          4032.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3936.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "dark",
+        "game_chunk": 41,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0041__hull",
+      "triangles": 917,
+      "world_bounds": {
+        "min": [
+          -26.057600021362305,
+          -41.0,
+          3936.0
+        ],
+        "max": [
+          38.05759811401367,
+          10.149999618530273,
+          4032.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3936.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "hull",
+        "game_chunk": 41,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0041__neon",
+      "triangles": 36,
+      "world_bounds": {
+        "min": [
+          1.2000000476837158,
+          -14.164999961853027,
+          3961.875
+        ],
+        "max": [
+          34.125,
+          12.774999618530273,
+          4029.125
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "COLOR_1",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3936.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "neon",
+        "game_chunk": 41,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0042__dark",
+      "triangles": 1038,
+      "world_bounds": {
+        "min": [
+          -25.345001220703125,
+          -32.849998474121094,
+          4032.0
+        ],
+        "max": [
+          37.345001220703125,
+          1.5750000476837158,
+          4128.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          4032.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "dark",
+        "game_chunk": 42,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0042__hull",
+      "triangles": 1028,
+      "world_bounds": {
+        "min": [
+          -26.057600021362305,
+          -41.0,
+          4032.0
+        ],
+        "max": [
+          38.05759811401367,
+          4.5,
+          4128.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          4032.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "hull",
+        "game_chunk": 42,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0042__neon",
+      "triangles": 36,
+      "world_bounds": {
+        "min": [
+          -7.800000190734863,
+          -26.469999313354492,
+          4074.875
+        ],
+        "max": [
+          5.300000190734863,
+          -14.035000801086426,
+          4126.549987792969
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "COLOR_1",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          4032.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "neon",
+        "game_chunk": 42,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0043__dark",
+      "triangles": 1408,
+      "world_bounds": {
+        "min": [
+          -20.239999771118164,
+          -36.0,
+          4128.0
+        ],
+        "max": [
+          35.622657775878906,
+          -10.067147254943848,
+          4224.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          4128.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "dark",
+        "game_chunk": 43,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0043__hull",
+      "triangles": 1355,
+      "world_bounds": {
+        "min": [
+          -23.970731735229492,
+          -41.0,
+          4128.0
+        ],
+        "max": [
+          37.59375762939453,
+          -11.550000190734863,
+          4224.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          4128.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "hull",
+        "game_chunk": 43,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0043__neon",
+      "triangles": 176,
+      "world_bounds": {
+        "min": [
+          -11.0,
+          -32.0,
+          4136.450012207031
+        ],
+        "max": [
+          23.0,
+          -14.035000801086426,
+          4219.460021972656
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "COLOR_1",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          4128.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "neon",
+        "game_chunk": 43,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0044__dark",
+      "triangles": 384,
+      "world_bounds": {
+        "min": [
+          -16.0,
+          -37.0,
+          4224.0
+        ],
+        "max": [
+          28.0,
+          -21.0,
+          4229.0
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          4224.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "dark",
+        "game_chunk": 44,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    },
+    {
+      "name": "DN_0044__hull",
+      "triangles": 224,
+      "world_bounds": {
+        "min": [
+          -15.98798942565918,
+          -37.096824645996094,
+          4224.0
+        ],
+        "max": [
+          27.987987518310547,
+          -20.903175354003906,
+          4228.050231933594
+        ]
+      },
+      "attributes": [
+        "COLOR_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "_ANIM",
+        "_FACE",
+        "_PART"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          4224.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "extras": {
+        "runtime_bucket": "hull",
+        "game_chunk": 44,
+        "aAnim_mapping": "_ANIM -> aAnim (mode,Hz,phase); restore via fixture, not static glTF shading",
+        "lifecycle": "loader-owned template; chunk bake owns cloned/consumed geometry only"
+      }
+    }
+  ],
+  "cue_tuples": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.5,
+      0.413
+    ],
+    [
+      3.0,
+      0.2,
+      0.0
+    ],
+    [
+      3.0,
+      0.2,
+      0.5
+    ],
+    [
+      4.0,
+      0.7,
+      0.0
+    ],
+    [
+      4.0,
+      0.7,
+      0.17
+    ],
+    [
+      4.0,
+      0.7,
+      0.21
+    ],
+    [
+      4.0,
+      0.7,
+      0.34
+    ],
+    [
+      4.0,
+      0.7,
+      0.38
+    ],
+    [
+      4.0,
+      0.7,
+      0.42
+    ],
+    [
+      4.0,
+      0.7,
+      0.55
+    ],
+    [
+      4.0,
+      0.7,
+      0.59
+    ],
+    [
+      4.0,
+      0.7,
+      0.76
+    ],
+    [
+      4.0,
+      0.8,
+      0.0
+    ],
+    [
+      4.0,
+      0.8,
+      0.137
+    ],
+    [
+      4.0,
+      0.8,
+      0.274
+    ],
+    [
+      4.0,
+      0.8,
+      0.411
+    ],
+    [
+      4.0,
+      0.8,
+      0.548
+    ],
+    [
+      4.0,
+      0.8,
+      0.685
+    ],
+    [
+      4.0,
+      0.8,
+      0.822
+    ],
+    [
+      4.0,
+      0.9,
+      0.72
+    ]
+  ]
+}

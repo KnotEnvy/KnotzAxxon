@@ -1,0 +1,479 @@
+{
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "engine": "BLENDER_EEVEE",
+  "threads": 4,
+  "softwareMesa": true,
+  "views": [
+    {
+      "rig": "classic",
+      "variant": "source",
+      "player": {
+        "position": [
+          0,
+          8,
+          49.606974630616605
+        ],
+        "scale": 1,
+        "radius": 1.5
+      },
+      "placement": {
+        "x": 23.597259795293212,
+        "z": 74.6069746306166
+      },
+      "camera": {
+        "eye": [
+          -45.254833995939045,
+          54.255,
+          32.35214063467757
+        ],
+        "target": [
+          0,
+          9,
+          77.6069746306166
+        ],
+        "fov": 52,
+        "classic": true,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "cornerNDC": [
+          [
+            -0.2752140668331604,
+            -0.04411821646659071,
+            -0.9086189382363475
+          ],
+          [
+            -0.1956645539496739,
+            0.037531641297668374,
+            -0.9039999107790305
+          ],
+          [
+            -0.2752140668331604,
+            0.01916019118246517,
+            -0.9104088179416816
+          ],
+          [
+            -0.1956645539496739,
+            0.10081004894672425,
+            -0.9057897904843646
+          ],
+          [
+            -0.3332852112381056,
+            0.015486179701318471,
+            -0.9052470481925061
+          ],
+          [
+            -0.2537356983546191,
+            0.09713603746557756,
+            -0.9006280207351891
+          ],
+          [
+            -0.3332852112381056,
+            0.07876458735037435,
+            -0.9070369278978402
+          ],
+          [
+            -0.2537356983546191,
+            0.16041444511463326,
+            -0.9024179004405231
+          ]
+        ],
+        "source": "Actual source CameraRig.snap and FlightCamera; still player, zero boost, zero extra distance, no shake"
+      },
+      "limitations": "Offline EEVEE/source-lighting approximation. Actual source Batch colors/normals; no canvas hull/normal/roughness maps, Three rim shader, sky/fog/postFX, dynamic scene, HUD or runtime GPU. Raw unchanged player GLB at source scale 1."
+    },
+    {
+      "rig": "classic",
+      "variant": "candidate",
+      "player": {
+        "position": [
+          0,
+          8,
+          49.606974630616605
+        ],
+        "scale": 1,
+        "radius": 1.5
+      },
+      "placement": {
+        "x": 23.597259795293212,
+        "z": 74.6069746306166
+      },
+      "camera": {
+        "eye": [
+          -45.254833995939045,
+          54.255,
+          32.35214063467757
+        ],
+        "target": [
+          0,
+          9,
+          77.6069746306166
+        ],
+        "fov": 52,
+        "classic": true,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "cornerNDC": [
+          [
+            -0.2752140668331604,
+            -0.04411821646659071,
+            -0.9086189382363475
+          ],
+          [
+            -0.1956645539496739,
+            0.037531641297668374,
+            -0.9039999107790305
+          ],
+          [
+            -0.2752140668331604,
+            0.01916019118246517,
+            -0.9104088179416816
+          ],
+          [
+            -0.1956645539496739,
+            0.10081004894672425,
+            -0.9057897904843646
+          ],
+          [
+            -0.3332852112381056,
+            0.015486179701318471,
+            -0.9052470481925061
+          ],
+          [
+            -0.2537356983546191,
+            0.09713603746557756,
+            -0.9006280207351891
+          ],
+          [
+            -0.3332852112381056,
+            0.07876458735037435,
+            -0.9070369278978402
+          ],
+          [
+            -0.2537356983546191,
+            0.16041444511463326,
+            -0.9024179004405231
+          ]
+        ],
+        "source": "Actual source CameraRig.snap and FlightCamera; still player, zero boost, zero extra distance, no shake"
+      },
+      "limitations": "Offline EEVEE/source-lighting approximation. Actual source Batch colors/normals; no canvas hull/normal/roughness maps, Three rim shader, sky/fog/postFX, dynamic scene, HUD or runtime GPU. Raw unchanged player GLB at source scale 1."
+    },
+    {
+      "rig": "modern",
+      "variant": "source",
+      "player": {
+        "position": [
+          0,
+          8,
+          49.606974630616605
+        ],
+        "scale": 1,
+        "radius": 1.5
+      },
+      "placement": {
+        "x": 23.597259795293212,
+        "z": 74.6069746306166
+      },
+      "camera": {
+        "eye": [
+          -9.91858415644439,
+          22,
+          22.355888627825262
+        ],
+        "target": [
+          0,
+          9.2,
+          65.6069746306166
+        ],
+        "fov": 58,
+        "classic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "cornerNDC": [
+          [
+            -0.3338925670459486,
+            -0.19357110875218214,
+            0.9966429897574481
+          ],
+          [
+            -0.26784392444926647,
+            -0.11171600307828548,
+            0.997039332388388
+          ],
+          [
+            -0.3389257549292814,
+            -0.10221305385314189,
+            0.9965908777641009
+          ],
+          [
+            -0.27141240926715726,
+            -0.029881029745338676,
+            0.9969985550447523
+          ],
+          [
+            -0.42452911868455456,
+            -0.1784218474044672,
+            0.9967163425196238
+          ],
+          [
+            -0.34952859684634735,
+            -0.09981234593704362,
+            0.9970969699266982
+          ],
+          [
+            -0.4307907966479747,
+            -0.08880742057838704,
+            0.996666434506585
+          ],
+          [
+            -0.35409652585917034,
+            -0.01938303416415701,
+            0.997057723778707
+          ]
+        ],
+        "source": "Actual source CameraRig.snap and FlightCamera; still player, zero boost, zero extra distance, no shake"
+      },
+      "limitations": "Offline EEVEE/source-lighting approximation. Actual source Batch colors/normals; no canvas hull/normal/roughness maps, Three rim shader, sky/fog/postFX, dynamic scene, HUD or runtime GPU. Raw unchanged player GLB at source scale 1."
+    },
+    {
+      "rig": "modern",
+      "variant": "candidate",
+      "player": {
+        "position": [
+          0,
+          8,
+          49.606974630616605
+        ],
+        "scale": 1,
+        "radius": 1.5
+      },
+      "placement": {
+        "x": 23.597259795293212,
+        "z": 74.6069746306166
+      },
+      "camera": {
+        "eye": [
+          -9.91858415644439,
+          22,
+          22.355888627825262
+        ],
+        "target": [
+          0,
+          9.2,
+          65.6069746306166
+        ],
+        "fov": 58,
+        "classic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "cornerNDC": [
+          [
+            -0.3338925670459486,
+            -0.19357110875218214,
+            0.9966429897574481
+          ],
+          [
+            -0.26784392444926647,
+            -0.11171600307828548,
+            0.997039332388388
+          ],
+          [
+            -0.3389257549292814,
+            -0.10221305385314189,
+            0.9965908777641009
+          ],
+          [
+            -0.27141240926715726,
+            -0.029881029745338676,
+            0.9969985550447523
+          ],
+          [
+            -0.42452911868455456,
+            -0.1784218474044672,
+            0.9967163425196238
+          ],
+          [
+            -0.34952859684634735,
+            -0.09981234593704362,
+            0.9970969699266982
+          ],
+          [
+            -0.4307907966479747,
+            -0.08880742057838704,
+            0.996666434506585
+          ],
+          [
+            -0.35409652585917034,
+            -0.01938303416415701,
+            0.997057723778707
+          ]
+        ],
+        "source": "Actual source CameraRig.snap and FlightCamera; still player, zero boost, zero extra distance, no shake"
+      },
+      "limitations": "Offline EEVEE/source-lighting approximation. Actual source Batch colors/normals; no canvas hull/normal/roughness maps, Three rim shader, sky/fog/postFX, dynamic scene, HUD or runtime GPU. Raw unchanged player GLB at source scale 1."
+    },
+    {
+      "rig": "chase",
+      "variant": "source",
+      "player": {
+        "position": [
+          0,
+          8,
+          49.606974630616605
+        ],
+        "scale": 1,
+        "radius": 1.5
+      },
+      "placement": {
+        "x": 23.597259795293212,
+        "z": 74.6069746306166
+      },
+      "camera": {
+        "eye": [
+          -2.5086831184236833,
+          17.5,
+          25.738449141778045
+        ],
+        "target": [
+          0,
+          9.2,
+          65.6069746306166
+        ],
+        "fov": 66,
+        "classic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "cornerNDC": [
+          [
+            -0.36049671723521876,
+            -0.24371853350477754,
+            0.9960038927449338
+          ],
+          [
+            -0.30306580449151643,
+            -0.16593283396445743,
+            0.9965691593005309
+          ],
+          [
+            -0.3652134463611403,
+            -0.14993845106217965,
+            0.9959502993249275
+          ],
+          [
+            -0.30647773355615726,
+            -0.08436445650656474,
+            0.9965294088737685
+          ],
+          [
+            -0.46050064379890043,
+            -0.239603727846045,
+            0.9960337949253526
+          ],
+          [
+            -0.38971780593963745,
+            -0.16287227433331242,
+            0.9965914003038404
+          ],
+          [
+            -0.4664812656869024,
+            -0.14646370411899945,
+            0.995980986171874
+          ],
+          [
+            -0.3940773212765041,
+            -0.08178921197855284,
+            0.9965521518636822
+          ]
+        ],
+        "source": "Actual source CameraRig.snap and FlightCamera; still player, zero boost, zero extra distance, no shake"
+      },
+      "limitations": "Offline EEVEE/source-lighting approximation. Actual source Batch colors/normals; no canvas hull/normal/roughness maps, Three rim shader, sky/fog/postFX, dynamic scene, HUD or runtime GPU. Raw unchanged player GLB at source scale 1."
+    },
+    {
+      "rig": "chase",
+      "variant": "candidate",
+      "player": {
+        "position": [
+          0,
+          8,
+          49.606974630616605
+        ],
+        "scale": 1,
+        "radius": 1.5
+      },
+      "placement": {
+        "x": 23.597259795293212,
+        "z": 74.6069746306166
+      },
+      "camera": {
+        "eye": [
+          -2.5086831184236833,
+          17.5,
+          25.738449141778045
+        ],
+        "target": [
+          0,
+          9.2,
+          65.6069746306166
+        ],
+        "fov": 66,
+        "classic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "cornerNDC": [
+          [
+            -0.36049671723521876,
+            -0.24371853350477754,
+            0.9960038927449338
+          ],
+          [
+            -0.30306580449151643,
+            -0.16593283396445743,
+            0.9965691593005309
+          ],
+          [
+            -0.3652134463611403,
+            -0.14993845106217965,
+            0.9959502993249275
+          ],
+          [
+            -0.30647773355615726,
+            -0.08436445650656474,
+            0.9965294088737685
+          ],
+          [
+            -0.46050064379890043,
+            -0.239603727846045,
+            0.9960337949253526
+          ],
+          [
+            -0.38971780593963745,
+            -0.16287227433331242,
+            0.9965914003038404
+          ],
+          [
+            -0.4664812656869024,
+            -0.14646370411899945,
+            0.995980986171874
+          ],
+          [
+            -0.3940773212765041,
+            -0.08178921197855284,
+            0.9965521518636822
+          ]
+        ],
+        "source": "Actual source CameraRig.snap and FlightCamera; still player, zero boost, zero extra distance, no shake"
+      },
+      "limitations": "Offline EEVEE/source-lighting approximation. Actual source Batch colors/normals; no canvas hull/normal/roughness maps, Three rim shader, sky/fog/postFX, dynamic scene, HUD or runtime GPU. Raw unchanged player GLB at source scale 1."
+    }
+  ],
+  "studio": [
+    "craft-three-quarter.png",
+    "craft-opposite.png",
+    "craft-endcaps.png",
+    "craft-top.png",
+    "close-endcap-strap-saddle.png",
+    "close-manifold-valve-joints.png"
+  ]
+}

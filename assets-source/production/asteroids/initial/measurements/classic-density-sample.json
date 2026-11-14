@@ -1,0 +1,590 @@
+{
+  "method": "Additional honest visibility evidence: scan 116 seed42 source-camera positions, select by SOURCE rest geometry vertex/frustum intersection count, then vertex count; no camera/rock scaling or source placement changes. Not an unbiased density average or triangle clipping/occlusion test.",
+  "selected": {
+    "z": 6384,
+    "rockVertexIntersections": 7,
+    "verticesInside": 1791
+  },
+  "samples": [
+    {
+      "z": 6384,
+      "rockVertexIntersections": 7,
+      "verticesInside": 1791
+    },
+    {
+      "z": 6360,
+      "rockVertexIntersections": 6,
+      "verticesInside": 2135
+    },
+    {
+      "z": 6408,
+      "rockVertexIntersections": 6,
+      "verticesInside": 2060
+    },
+    {
+      "z": 6432,
+      "rockVertexIntersections": 6,
+      "verticesInside": 1830
+    },
+    {
+      "z": 7152,
+      "rockVertexIntersections": 6,
+      "verticesInside": 1705
+    },
+    {
+      "z": 3864,
+      "rockVertexIntersections": 6,
+      "verticesInside": 916
+    },
+    {
+      "z": 3840,
+      "rockVertexIntersections": 6,
+      "verticesInside": 881
+    },
+    {
+      "z": 6336,
+      "rockVertexIntersections": 5,
+      "verticesInside": 2100
+    },
+    {
+      "z": 7176,
+      "rockVertexIntersections": 5,
+      "verticesInside": 1679
+    },
+    {
+      "z": 7128,
+      "rockVertexIntersections": 5,
+      "verticesInside": 1377
+    },
+    {
+      "z": 3528,
+      "rockVertexIntersections": 5,
+      "verticesInside": 1161
+    },
+    {
+      "z": 4368,
+      "rockVertexIntersections": 5,
+      "verticesInside": 1142
+    },
+    {
+      "z": 7104,
+      "rockVertexIntersections": 5,
+      "verticesInside": 948
+    },
+    {
+      "z": 3816,
+      "rockVertexIntersections": 5,
+      "verticesInside": 856
+    },
+    {
+      "z": 6672,
+      "rockVertexIntersections": 5,
+      "verticesInside": 855
+    },
+    {
+      "z": 3912,
+      "rockVertexIntersections": 5,
+      "verticesInside": 693
+    },
+    {
+      "z": 7464,
+      "rockVertexIntersections": 4,
+      "verticesInside": 1626
+    },
+    {
+      "z": 7440,
+      "rockVertexIntersections": 4,
+      "verticesInside": 1590
+    },
+    {
+      "z": 3360,
+      "rockVertexIntersections": 4,
+      "verticesInside": 1437
+    },
+    {
+      "z": 3384,
+      "rockVertexIntersections": 4,
+      "verticesInside": 1402
+    },
+    {
+      "z": 7344,
+      "rockVertexIntersections": 4,
+      "verticesInside": 1353
+    },
+    {
+      "z": 7368,
+      "rockVertexIntersections": 4,
+      "verticesInside": 1343
+    },
+    {
+      "z": 7512,
+      "rockVertexIntersections": 4,
+      "verticesInside": 1209
+    },
+    {
+      "z": 4248,
+      "rockVertexIntersections": 4,
+      "verticesInside": 1179
+    },
+    {
+      "z": 4272,
+      "rockVertexIntersections": 4,
+      "verticesInside": 1134
+    },
+    {
+      "z": 6456,
+      "rockVertexIntersections": 4,
+      "verticesInside": 1056
+    },
+    {
+      "z": 4392,
+      "rockVertexIntersections": 4,
+      "verticesInside": 1026
+    },
+    {
+      "z": 7080,
+      "rockVertexIntersections": 4,
+      "verticesInside": 1026
+    },
+    {
+      "z": 6624,
+      "rockVertexIntersections": 4,
+      "verticesInside": 1020
+    },
+    {
+      "z": 3960,
+      "rockVertexIntersections": 4,
+      "verticesInside": 874
+    },
+    {
+      "z": 3936,
+      "rockVertexIntersections": 4,
+      "verticesInside": 829
+    },
+    {
+      "z": 4320,
+      "rockVertexIntersections": 4,
+      "verticesInside": 761
+    },
+    {
+      "z": 4344,
+      "rockVertexIntersections": 4,
+      "verticesInside": 758
+    },
+    {
+      "z": 6528,
+      "rockVertexIntersections": 4,
+      "verticesInside": 748
+    },
+    {
+      "z": 6552,
+      "rockVertexIntersections": 4,
+      "verticesInside": 738
+    },
+    {
+      "z": 6576,
+      "rockVertexIntersections": 4,
+      "verticesInside": 317
+    },
+    {
+      "z": 7536,
+      "rockVertexIntersections": 3,
+      "verticesInside": 1532
+    },
+    {
+      "z": 3408,
+      "rockVertexIntersections": 3,
+      "verticesInside": 1179
+    },
+    {
+      "z": 7560,
+      "rockVertexIntersections": 3,
+      "verticesInside": 1110
+    },
+    {
+      "z": 7488,
+      "rockVertexIntersections": 3,
+      "verticesInside": 1103
+    },
+    {
+      "z": 4416,
+      "rockVertexIntersections": 3,
+      "verticesInside": 1020
+    },
+    {
+      "z": 6696,
+      "rockVertexIntersections": 3,
+      "verticesInside": 891
+    },
+    {
+      "z": 3552,
+      "rockVertexIntersections": 3,
+      "verticesInside": 885
+    },
+    {
+      "z": 3504,
+      "rockVertexIntersections": 3,
+      "verticesInside": 796
+    },
+    {
+      "z": 3888,
+      "rockVertexIntersections": 3,
+      "verticesInside": 720
+    },
+    {
+      "z": 4296,
+      "rockVertexIntersections": 3,
+      "verticesInside": 720
+    },
+    {
+      "z": 6840,
+      "rockVertexIntersections": 3,
+      "verticesInside": 663
+    },
+    {
+      "z": 7272,
+      "rockVertexIntersections": 3,
+      "verticesInside": 630
+    },
+    {
+      "z": 6600,
+      "rockVertexIntersections": 3,
+      "verticesInside": 600
+    },
+    {
+      "z": 3744,
+      "rockVertexIntersections": 3,
+      "verticesInside": 569
+    },
+    {
+      "z": 3192,
+      "rockVertexIntersections": 3,
+      "verticesInside": 560
+    },
+    {
+      "z": 6936,
+      "rockVertexIntersections": 3,
+      "verticesInside": 394
+    },
+    {
+      "z": 4056,
+      "rockVertexIntersections": 3,
+      "verticesInside": 390
+    },
+    {
+      "z": 3240,
+      "rockVertexIntersections": 3,
+      "verticesInside": 384
+    },
+    {
+      "z": 3216,
+      "rockVertexIntersections": 3,
+      "verticesInside": 342
+    },
+    {
+      "z": 6768,
+      "rockVertexIntersections": 3,
+      "verticesInside": 309
+    },
+    {
+      "z": 6816,
+      "rockVertexIntersections": 3,
+      "verticesInside": 286
+    },
+    {
+      "z": 6792,
+      "rockVertexIntersections": 3,
+      "verticesInside": 274
+    },
+    {
+      "z": 3336,
+      "rockVertexIntersections": 2,
+      "verticesInside": 1080
+    },
+    {
+      "z": 7584,
+      "rockVertexIntersections": 2,
+      "verticesInside": 1080
+    },
+    {
+      "z": 7320,
+      "rockVertexIntersections": 2,
+      "verticesInside": 999
+    },
+    {
+      "z": 7416,
+      "rockVertexIntersections": 2,
+      "verticesInside": 945
+    },
+    {
+      "z": 3768,
+      "rockVertexIntersections": 2,
+      "verticesInside": 927
+    },
+    {
+      "z": 3432,
+      "rockVertexIntersections": 2,
+      "verticesInside": 780
+    },
+    {
+      "z": 3480,
+      "rockVertexIntersections": 2,
+      "verticesInside": 780
+    },
+    {
+      "z": 3576,
+      "rockVertexIntersections": 2,
+      "verticesInside": 780
+    },
+    {
+      "z": 4440,
+      "rockVertexIntersections": 2,
+      "verticesInside": 780
+    },
+    {
+      "z": 7392,
+      "rockVertexIntersections": 2,
+      "verticesInside": 780
+    },
+    {
+      "z": 7032,
+      "rockVertexIntersections": 2,
+      "verticesInside": 745
+    },
+    {
+      "z": 7608,
+      "rockVertexIntersections": 2,
+      "verticesInside": 710
+    },
+    {
+      "z": 3600,
+      "rockVertexIntersections": 2,
+      "verticesInside": 642
+    },
+    {
+      "z": 3720,
+      "rockVertexIntersections": 2,
+      "verticesInside": 634
+    },
+    {
+      "z": 3312,
+      "rockVertexIntersections": 2,
+      "verticesInside": 617
+    },
+    {
+      "z": 4224,
+      "rockVertexIntersections": 2,
+      "verticesInside": 617
+    },
+    {
+      "z": 3792,
+      "rockVertexIntersections": 2,
+      "verticesInside": 602
+    },
+    {
+      "z": 3168,
+      "rockVertexIntersections": 2,
+      "verticesInside": 562
+    },
+    {
+      "z": 7296,
+      "rockVertexIntersections": 2,
+      "verticesInside": 546
+    },
+    {
+      "z": 6504,
+      "rockVertexIntersections": 2,
+      "verticesInside": 528
+    },
+    {
+      "z": 6720,
+      "rockVertexIntersections": 2,
+      "verticesInside": 480
+    },
+    {
+      "z": 6960,
+      "rockVertexIntersections": 2,
+      "verticesInside": 480
+    },
+    {
+      "z": 4464,
+      "rockVertexIntersections": 2,
+      "verticesInside": 470
+    },
+    {
+      "z": 6744,
+      "rockVertexIntersections": 2,
+      "verticesInside": 463
+    },
+    {
+      "z": 7248,
+      "rockVertexIntersections": 2,
+      "verticesInside": 450
+    },
+    {
+      "z": 6912,
+      "rockVertexIntersections": 2,
+      "verticesInside": 441
+    },
+    {
+      "z": 6984,
+      "rockVertexIntersections": 2,
+      "verticesInside": 435
+    },
+    {
+      "z": 6648,
+      "rockVertexIntersections": 2,
+      "verticesInside": 434
+    },
+    {
+      "z": 6888,
+      "rockVertexIntersections": 2,
+      "verticesInside": 371
+    },
+    {
+      "z": 7008,
+      "rockVertexIntersections": 2,
+      "verticesInside": 357
+    },
+    {
+      "z": 3288,
+      "rockVertexIntersections": 2,
+      "verticesInside": 316
+    },
+    {
+      "z": 6864,
+      "rockVertexIntersections": 2,
+      "verticesInside": 309
+    },
+    {
+      "z": 3264,
+      "rockVertexIntersections": 2,
+      "verticesInside": 269
+    },
+    {
+      "z": 3984,
+      "rockVertexIntersections": 2,
+      "verticesInside": 257
+    },
+    {
+      "z": 7224,
+      "rockVertexIntersections": 2,
+      "verticesInside": 251
+    },
+    {
+      "z": 7200,
+      "rockVertexIntersections": 2,
+      "verticesInside": 201
+    },
+    {
+      "z": 3624,
+      "rockVertexIntersections": 1,
+      "verticesInside": 540
+    },
+    {
+      "z": 3648,
+      "rockVertexIntersections": 1,
+      "verticesInside": 540
+    },
+    {
+      "z": 3696,
+      "rockVertexIntersections": 1,
+      "verticesInside": 540
+    },
+    {
+      "z": 4032,
+      "rockVertexIntersections": 1,
+      "verticesInside": 540
+    },
+    {
+      "z": 7056,
+      "rockVertexIntersections": 1,
+      "verticesInside": 540
+    },
+    {
+      "z": 3456,
+      "rockVertexIntersections": 1,
+      "verticesInside": 240
+    },
+    {
+      "z": 4200,
+      "rockVertexIntersections": 1,
+      "verticesInside": 240
+    },
+    {
+      "z": 6480,
+      "rockVertexIntersections": 1,
+      "verticesInside": 240
+    },
+    {
+      "z": 7632,
+      "rockVertexIntersections": 1,
+      "verticesInside": 229
+    },
+    {
+      "z": 3672,
+      "rockVertexIntersections": 1,
+      "verticesInside": 200
+    },
+    {
+      "z": 4176,
+      "rockVertexIntersections": 1,
+      "verticesInside": 148
+    },
+    {
+      "z": 4488,
+      "rockVertexIntersections": 1,
+      "verticesInside": 35
+    },
+    {
+      "z": 4104,
+      "rockVertexIntersections": 1,
+      "verticesInside": 30
+    },
+    {
+      "z": 7704,
+      "rockVertexIntersections": 1,
+      "verticesInside": 23
+    },
+    {
+      "z": 4152,
+      "rockVertexIntersections": 1,
+      "verticesInside": 17
+    },
+    {
+      "z": 4008,
+      "rockVertexIntersections": 1,
+      "verticesInside": 11
+    },
+    {
+      "z": 7680,
+      "rockVertexIntersections": 1,
+      "verticesInside": 11
+    },
+    {
+      "z": 7728,
+      "rockVertexIntersections": 1,
+      "verticesInside": 6
+    },
+    {
+      "z": 4080,
+      "rockVertexIntersections": 0,
+      "verticesInside": 0
+    },
+    {
+      "z": 4128,
+      "rockVertexIntersections": 0,
+      "verticesInside": 0
+    },
+    {
+      "z": 7656,
+      "rockVertexIntersections": 0,
+      "verticesInside": 0
+    },
+    {
+      "z": 7752,
+      "rockVertexIntersections": 0,
+      "verticesInside": 0
+    }
+  ]
+}

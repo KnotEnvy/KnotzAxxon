@@ -1,0 +1,74 @@
+{
+  "engine": "EEVEE",
+  "samples": 20,
+  "game_to_blender": "(x,-z,y)",
+  "common_neutral": {
+    "camera_game": [
+      -16,
+      24,
+      -30
+    ],
+    "camera_blender": [
+      -16,
+      30,
+      24
+    ],
+    "target_game": [
+      0,
+      0,
+      0
+    ],
+    "ortho_span_width": 14,
+    "key_game": [
+      -12,
+      22,
+      -12
+    ],
+    "fill_game": [
+      14,
+      12,
+      8
+    ],
+    "background": "shared neutral dark"
+  },
+  "gameplay": {
+    "kind": "OFFLINE RECONSTRUCTED; not game screenshots",
+    "resolution": [
+      960,
+      540
+    ],
+    "model_position_game": [
+      0,
+      9,
+      32
+    ],
+    "player_position_game": [
+      0,
+      9,
+      0
+    ],
+    "rigs": {
+      "classic": [
+        45,
+        64,
+        45.255,
+        52
+      ],
+      "modern": [
+        20,
+        29,
+        14,
+        58
+      ],
+      "chase": [
+        6,
+        24,
+        9.5,
+        66
+      ]
+    },
+    "classic_ortho_half_height": 40,
+    "lighting": "Dusk key direction/intensity and cyan rim approximated with Blender SUN + world; no PMREM, actual fog, bloom, postfx, shadows from level or HUD",
+    "limitations": "EEVEE AgX differs from Three ACES exposure1.02. Rig static, no lag/shake, boost=0. Readability in actual moving carrier/boss context awaits integration."
+  }
+}

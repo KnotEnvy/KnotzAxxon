@@ -3,6 +3,9 @@ dist/
 .DS_Store
 *.log
 
+# Frozen production asset evidence is intentionally retained with its hashes.
+!assets-source/production/**/initial/**/*.log
+
 # Local assistant launch/permission settings
 .claude/
 

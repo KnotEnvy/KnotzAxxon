@@ -1,0 +1,104 @@
+{
+  "independent": "Python standard-library GLB binary parsing, accessors, normalized colors, scene transforms, indices, normals, tolerance-matched canonical position/normal/color multisets and shell edge manifold check; no Blender or glTF library",
+  "bytes": 103276,
+  "sha256": "14ea9f351088e35aeb304e6ed46699299864a063cd873571dd30d018216c67af",
+  "bounds": [
+    [
+      -2.9200000762939453,
+      0.0,
+      -4.0
+    ],
+    [
+      2.9200000762939453,
+      3.0999999046325684,
+      4.0
+    ]
+  ],
+  "triangles": 992,
+  "primitives": [
+    {
+      "bucket": "dark",
+      "triangles": 608,
+      "vertices": 1824,
+      "material": {
+        "baseColorFactor": [
+          0.0423114113509655,
+          0.06847816705703735,
+          0.1119324266910553,
+          1
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.46000000834465027
+      },
+      "degenerateTriangles": 0,
+      "nodeMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "bucket": "hull",
+      "triangles": 384,
+      "vertices": 1152,
+      "material": {
+        "metallicFactor": 0.36000001430511475
+      },
+      "degenerateTriangles": 0,
+      "nodeMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "materials": 2,
+  "textures": 0,
+  "embeddedImages": 0,
+  "maxCanonicalErrors": {
+    "position": 1.1444091807533141e-07,
+    "normal": 0.00010000129987020046,
+    "color": 7.491315632934814e-06
+  },
+  "continuousClosedShells": [
+    {
+      "name": "port.continuous-shell-formed-heads",
+      "closedWeldedEdges": true,
+      "boundaryEdges": 0,
+      "triangles": 192
+    },
+    {
+      "name": "starboard.continuous-shell-formed-heads",
+      "closedWeldedEdges": true,
+      "boundaryEdges": 0,
+      "triangles": 192
+    }
+  ],
+  "passed": true
+}

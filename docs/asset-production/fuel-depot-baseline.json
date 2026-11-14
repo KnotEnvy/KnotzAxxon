@@ -1,0 +1,99 @@
+{
+  "method": "Actual _fuelDepot and Batch; four CPU samples, not GPU profiling",
+  "sourceHeightRange": [
+    0,
+    3.1
+  ],
+  "sourceDraws": 0,
+  "sourceBuckets": 2,
+  "samples": [
+    {
+      "seed": 1,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "triangles": 272,
+      "bounds": {
+        "min": [
+          -2.9200000762939453,
+          0,
+          -4
+        ],
+        "max": [
+          2.9200000762939453,
+          3.0999999046325684,
+          4
+        ]
+      },
+      "emissions": [],
+      "rngState": 1
+    },
+    {
+      "seed": 7,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "triangles": 272,
+      "bounds": {
+        "min": [
+          -2.9200000762939453,
+          0,
+          -4
+        ],
+        "max": [
+          2.9200000762939453,
+          3.0999999046325684,
+          4
+        ]
+      },
+      "emissions": [],
+      "rngState": 7
+    },
+    {
+      "seed": 42,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "triangles": 272,
+      "bounds": {
+        "min": [
+          -2.9200000762939453,
+          0,
+          -4
+        ],
+        "max": [
+          2.9200000762939453,
+          3.0999999046325684,
+          4
+        ]
+      },
+      "emissions": [],
+      "rngState": 42
+    },
+    {
+      "seed": 123,
+      "buckets": {
+        "hull": 64,
+        "dark": 208
+      },
+      "triangles": 272,
+      "bounds": {
+        "min": [
+          -2.9200000762939453,
+          0,
+          -4
+        ],
+        "max": [
+          2.9200000762939453,
+          3.0999999046325684,
+          4
+        ]
+      },
+      "emissions": [],
+      "rngState": 123
+    }
+  ]
+}

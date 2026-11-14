@@ -1,0 +1,99 @@
+{
+  "method": "Actual _parkedFighter and Batch; four CPU samples, not GPU profiling",
+  "sourceDraws": 1,
+  "sourceBuckets": 3,
+  "samples": [
+    {
+      "seed": 1,
+      "buckets": {
+        "hull": 164,
+        "dark": 72,
+        "paint": 24
+      },
+      "triangles": 260,
+      "bounds": {
+        "min": [
+          -3.75,
+          1.1920929132713809e-8,
+          -3.75
+        ],
+        "max": [
+          3.75,
+          2.25,
+          3.75
+        ]
+      },
+      "emissions": [],
+      "rngState": 1831565814
+    },
+    {
+      "seed": 7,
+      "buckets": {
+        "hull": 164,
+        "dark": 72,
+        "paint": 24
+      },
+      "triangles": 260,
+      "bounds": {
+        "min": [
+          -3.75,
+          1.1920929132713809e-8,
+          -3.75
+        ],
+        "max": [
+          3.75,
+          2.25,
+          3.75
+        ]
+      },
+      "emissions": [],
+      "rngState": 1831565820
+    },
+    {
+      "seed": 42,
+      "buckets": {
+        "hull": 164,
+        "dark": 72,
+        "paint": 24
+      },
+      "triangles": 260,
+      "bounds": {
+        "min": [
+          -3.75,
+          1.1920929132713809e-8,
+          -3.75
+        ],
+        "max": [
+          3.75,
+          2.25,
+          3.75
+        ]
+      },
+      "emissions": [],
+      "rngState": 1831565855
+    },
+    {
+      "seed": 123,
+      "buckets": {
+        "hull": 164,
+        "dark": 72,
+        "paint": 24
+      },
+      "triangles": 260,
+      "bounds": {
+        "min": [
+          -3.75,
+          1.1920929132713809e-8,
+          -3.75
+        ],
+        "max": [
+          3.75,
+          2.25,
+          3.75
+        ]
+      },
+      "emissions": [],
+      "rngState": 1831565936
+    }
+  ]
+}

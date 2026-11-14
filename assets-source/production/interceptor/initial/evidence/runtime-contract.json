@@ -1,0 +1,683 @@
+{
+  "method": "Evaluate exact Enemy/Flyer source class definitions; execute original Flyer.update and Enemy.update/hit/_aimAt. Initialize state matching constructor using original Rng/Utils. Minimal Vector3 operations supplied by harness; graphics/audio stubbed. No node_modules in workspace. Not a live game or GLTFLoader test.",
+  "source_sha256": "9c7f88630d52e8dc721ec9380139f29aec747c30a3ad599adaacb8e55cea864c",
+  "source_commit": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "initial": {
+    "hp": 2,
+    "score": 320,
+    "radius": 2.2,
+    "drone_hp": 3,
+    "drone_score": 250
+  },
+  "contexts": {
+    "weave": {
+      "feature": {
+        "x": 0,
+        "y": 9,
+        "z": 55,
+        "seed": 7,
+        "pattern": "weave"
+      },
+      "dt": 0.008333333333333333,
+      "duration": 8,
+      "samples": 961,
+      "ranges": {
+        "vx": [
+          -14.999998532904769,
+          14.999839103239495
+        ],
+        "vy": [
+          -5.9999837849823106,
+          5.999999813779264
+        ],
+        "bank": [
+          -0.5072730952246536,
+          0.5072782852859407
+        ],
+        "pitch": [
+          -0.11803429924765797,
+          0.1180321421952865
+        ],
+        "yaw": [
+          -0.17143922786215998,
+          0.17143729598667465
+        ],
+        "engine": [
+          0.9700002263079276,
+          1.0299998868259033
+        ]
+      },
+      "selected_pose": {
+        "time": 2.05,
+        "position": [
+          -3.597645238608368,
+          18.230527289827595,
+          122.2399999999985
+        ],
+        "rotation_xyz": [
+          -0.09818839961396691,
+          -0.17125420595614138,
+          0.5072782852859407
+        ],
+        "velocity": [
+          -14.51086842772813,
+          4.327873948339104,
+          32.8
+        ],
+        "engine_scale": 1.029648676155735,
+        "launching": false,
+        "peeling": false
+      },
+      "first": {
+        "time": 0,
+        "position": [
+          0,
+          9,
+          55
+        ],
+        "rotation_xyz": [
+          0,
+          0,
+          0
+        ],
+        "velocity": [
+          0,
+          0,
+          0
+        ],
+        "engine_scale": 1,
+        "launching": false,
+        "peeling": false
+      },
+      "last": {
+        "time": 8,
+        "position": [
+          2.122079289087392,
+          19.11504572120099,
+          317.39999999999696
+        ],
+        "rotation_xyz": [
+          -0.07788740279614927,
+          0.17123837873769301,
+          -0.5048773736842508
+        ],
+        "velocity": [
+          14.0839005473874,
+          3.104762779134597,
+          32.8
+        ],
+        "engine_scale": 0.9700206098944602,
+        "launching": false,
+        "peeling": false
+      }
+    },
+    "strafe": {
+      "feature": {
+        "x": 12,
+        "y": 9,
+        "z": 55,
+        "seed": 7,
+        "pattern": "strafe"
+      },
+      "dt": 0.008333333333333333,
+      "duration": 8,
+      "samples": 961,
+      "ranges": {
+        "vx": [
+          -19,
+          -1.5517222727870818e-31
+        ],
+        "vy": [
+          -3.9999970202466844,
+          3.999985793079326
+        ],
+        "bank": [
+          5.712073830711885e-20,
+          0.6378931343543865
+        ],
+        "pitch": [
+          -0.07522432940696944,
+          0.07511097751144181
+        ],
+        "yaw": [
+          -0.2121839827487842,
+          -2.6815328401661883e-17
+        ],
+        "engine": [
+          0.9700002263079276,
+          1.0299998868259033
+        ]
+      },
+      "selected_pose": {
+        "time": 0.5333333333333333,
+        "position": [
+          1.8666666666666742,
+          10.383386524998516,
+          72.49333333333311
+        ],
+        "rotation_xyz": [
+          -0.06345876893635617,
+          -0.2121577731212013,
+          0.6378931343543865
+        ],
+        "velocity": [
+          -19,
+          3.889434246871829,
+          32.8
+        ],
+        "engine_scale": 0.9769485457774421,
+        "launching": false,
+        "peeling": false
+      },
+      "first": {
+        "time": 0,
+        "position": [
+          12,
+          9,
+          55
+        ],
+        "rotation_xyz": [
+          0,
+          0,
+          0
+        ],
+        "velocity": [
+          0,
+          0,
+          0
+        ],
+        "engine_scale": 1,
+        "launching": false,
+        "peeling": false
+      },
+      "last": {
+        "time": 8,
+        "position": [
+          1.5040816766927416e-32,
+          9.932474915382567,
+          317.39999999999696
+        ],
+        "rotation_xyz": [
+          0.07436911649047447,
+          -2.6815328401661883e-17,
+          5.712073830711885e-20
+        ],
+        "velocity": [
+          -1.5517222727870818e-31,
+          -3.5423568064004627,
+          32.8
+        ],
+        "engine_scale": 0.9700206098944602,
+        "launching": false,
+        "peeling": false
+      }
+    },
+    "orbit-displaced": {
+      "feature": {
+        "x": -12,
+        "y": 4,
+        "z": 55,
+        "seed": 7,
+        "pattern": "orbit",
+        "displace": true
+      },
+      "dt": 0.008333333333333333,
+      "duration": 8,
+      "samples": 961,
+      "ranges": {
+        "vx": [
+          -45.62428213118456,
+          9.929782828675373
+        ],
+        "vy": [
+          -40.9219455507848,
+          4.689049597261133
+        ],
+        "bank": [
+          -0.3371676373762472,
+          0.9563266510246087
+        ],
+        "pitch": [
+          -0.08979234063385043,
+          0.44837246390764457
+        ],
+        "yaw": [
+          -0.31006340445995023,
+          0.11413245551923834
+        ],
+        "engine": [
+          0.9700002263079276,
+          1.0299998868259033
+        ]
+      },
+      "selected_pose": {
+        "time": 0.2916666666666667,
+        "position": [
+          8.625263519536443,
+          16.339154915953948,
+          64.56666666666665
+        ],
+        "rotation_xyz": [
+          0.4433849810855355,
+          -0.308019815667279,
+          0.9563266510246087
+        ],
+        "velocity": [
+          -27.62548398866595,
+          -20.43566215188835,
+          32.8
+        ],
+        "engine_scale": 1.004524159452491,
+        "launching": false,
+        "peeling": false
+      },
+      "first": {
+        "time": 0,
+        "position": [
+          19,
+          25,
+          55
+        ],
+        "rotation_xyz": [
+          0,
+          0,
+          0
+        ],
+        "velocity": [
+          0,
+          0,
+          0
+        ],
+        "engine_scale": 1,
+        "launching": false,
+        "peeling": false
+      },
+      "last": {
+        "time": 8,
+        "position": [
+          -8.934287851325097,
+          2.3,
+          317.39999999999696
+        ],
+        "rotation_xyz": [
+          0.041391207401164955,
+          0.11207904028776676,
+          -0.3277853153702826
+        ],
+        "velocity": [
+          8.829374067318962,
+          -0.4756128906734878,
+          32.8
+        ],
+        "engine_scale": 0.9700206098944602,
+        "launching": false,
+        "peeling": false
+      }
+    },
+    "dive": {
+      "feature": {
+        "x": 12,
+        "y": 18,
+        "z": 55,
+        "seed": 7,
+        "pattern": "dive"
+      },
+      "dt": 0.008333333333333333,
+      "duration": 8,
+      "samples": 961,
+      "ranges": {
+        "vx": [
+          -24,
+          -0.28923304480401524
+        ],
+        "vy": [
+          -8,
+          8
+        ],
+        "bank": [
+          0.020483641709700115,
+          0.839999999999999
+        ],
+        "pitch": [
+          -0.15999999999999973,
+          0.15646518730186157
+        ],
+        "yaw": [
+          -0.28799999999999576,
+          -0.005876718176284105
+        ],
+        "engine": [
+          0.9700002263079276,
+          1.0299998868259033
+        ]
+      },
+      "selected_pose": {
+        "time": 0.7666666666666666,
+        "position": [
+          2.8000000000000274,
+          12.005888955633452,
+          65.73333333333328
+        ],
+        "rotation_xyz": [
+          0.14554463531809558,
+          -0.14088421861639303,
+          0.4157782289872538
+        ],
+        "velocity": [
+          -12,
+          -6.113672452135834,
+          14
+        ],
+        "engine_scale": 1.02980604889045,
+        "launching": false,
+        "peeling": false
+      },
+      "first": {
+        "time": 0,
+        "position": [
+          12,
+          18,
+          55
+        ],
+        "rotation_xyz": [
+          0,
+          0,
+          0
+        ],
+        "velocity": [
+          0,
+          0,
+          0
+        ],
+        "engine_scale": 1,
+        "launching": false,
+        "peeling": false
+      },
+      "last": {
+        "time": 8,
+        "position": [
+          -19,
+          25,
+          103.41666666666447
+        ],
+        "rotation_xyz": [
+          -0.15999999999999973,
+          -0.28799999999999576,
+          0.839999999999999
+        ],
+        "velocity": [
+          -24,
+          8,
+          4
+        ],
+        "engine_scale": 0.9700206098944602,
+        "launching": false,
+        "peeling": true
+      }
+    },
+    "peel": {
+      "feature": {
+        "x": 0,
+        "y": 9,
+        "z": 10,
+        "seed": 7,
+        "pattern": "dive"
+      },
+      "dt": 0.008333333333333333,
+      "duration": 4,
+      "samples": 481,
+      "ranges": {
+        "vx": [
+          -24,
+          -24
+        ],
+        "vy": [
+          8,
+          8
+        ],
+        "bank": [
+          0.04096728341940023,
+          0.8399999999682889
+        ],
+        "pitch": [
+          -0.1599999999939598,
+          -0.007803292079885758
+        ],
+        "yaw": [
+          -0.2879999994063879,
+          -0.01175343635256821
+        ],
+        "engine": [
+          0.9700004316649152,
+          1.0299998868259033
+        ]
+      },
+      "selected_pose": {
+        "time": 4,
+        "position": [
+          -19,
+          25,
+          26.000000000000476
+        ],
+        "rotation_xyz": [
+          -0.1599999999939598,
+          -0.2879999994063879,
+          0.8399999999682889
+        ],
+        "velocity": [
+          -24,
+          8,
+          4
+        ],
+        "engine_scale": 1.0208228364805443,
+        "launching": false,
+        "peeling": true
+      },
+      "first": {
+        "time": 0,
+        "position": [
+          0,
+          9,
+          10
+        ],
+        "rotation_xyz": [
+          0,
+          0,
+          0
+        ],
+        "velocity": [
+          0,
+          0,
+          0
+        ],
+        "engine_scale": 1,
+        "launching": false,
+        "peeling": false
+      },
+      "last": {
+        "time": 4,
+        "position": [
+          -19,
+          25,
+          26.000000000000476
+        ],
+        "rotation_xyz": [
+          -0.1599999999939598,
+          -0.2879999994063879,
+          0.8399999999682889
+        ],
+        "velocity": [
+          -24,
+          8,
+          4
+        ],
+        "engine_scale": 1.0208228364805443,
+        "launching": false,
+        "peeling": true
+      }
+    },
+    "carrier-launch": {
+      "feature": {
+        "x": 0,
+        "y": 9,
+        "z": 55,
+        "seed": 7,
+        "pattern": "weave",
+        "launch": true
+      },
+      "dt": 0.008333333333333333,
+      "duration": 8,
+      "samples": 961,
+      "ranges": {
+        "vx": [
+          -14.999998532904769,
+          14.999839103239495
+        ],
+        "vy": [
+          -5.9999837849823106,
+          5.999999813779264
+        ],
+        "bank": [
+          -1.0787975943924633,
+          0.5072767926041352
+        ],
+        "pitch": [
+          -0.11803287171539624,
+          0.11803325659492939
+        ],
+        "yaw": [
+          -0.17143676520603315,
+          0.1715297130023455
+        ],
+        "engine": [
+          0.9700002263079276,
+          1.06499977911447
+        ]
+      },
+      "selected_pose": {
+        "time": 0.8,
+        "position": [
+          19.183984269032027,
+          7.084304179135815,
+          81.23999999999955
+        ],
+        "rotation_xyz": [
+          0,
+          0,
+          -1.0787975943924633
+        ],
+        "velocity": [
+          0,
+          0,
+          0
+        ],
+        "engine_scale": 1.059841696596229,
+        "launching": true,
+        "peeling": false
+      },
+      "first": {
+        "time": 0,
+        "position": [
+          58.79611482284963,
+          3.1286716111935675,
+          55
+        ],
+        "rotation_xyz": [
+          0,
+          0,
+          0
+        ],
+        "velocity": [
+          0,
+          0,
+          0
+        ],
+        "engine_scale": 1,
+        "launching": true,
+        "peeling": false
+      },
+      "last": {
+        "time": 8,
+        "position": [
+          12.90972814826599,
+          12.434958804497576,
+          317.39999999999696
+        ],
+        "rotation_xyz": [
+          -0.07788740279614889,
+          0.1712383787379276,
+          -0.504877373684255
+        ],
+        "velocity": [
+          14.0839005473874,
+          3.104762779134597,
+          32.8
+        ],
+        "engine_scale": 0.9700206098944602,
+        "launching": false,
+        "peeling": false
+      }
+    },
+    "carrier-transition": {
+      "selected_pose": {
+        "time": 2.625,
+        "position": [
+          1.4904465578051167,
+          8.851165315715054,
+          141.0999999999987
+        ],
+        "rotation_xyz": [
+          0,
+          0,
+          -0.11588329965225318
+        ],
+        "velocity": [
+          0,
+          0,
+          0
+        ],
+        "engine_scale": 1.015049682852786,
+        "launching": false,
+        "peeling": false
+      },
+      "note": "Exact frame launching flips false; source early return retains launch bank/pulse this frame. Normal damp rates resume next frame."
+    }
+  },
+  "shot": {
+    "spawn": [
+      2.841666666666667,
+      8.98259824738978,
+      41.77333333333333
+    ],
+    "expected": [
+      2.841666666666667,
+      8.98259824738978,
+      41.77333333333333
+    ],
+    "muzzle": [
+      2.841666666666667,
+      8.98259824738978,
+      40.27333333333333
+    ],
+    "sample_rotation_xyz": [
+      0.15423357229490622,
+      0.25926824421144223,
+      1.0787847996578106
+    ],
+    "aim_origin": "root; original source lead unchanged",
+    "limitation": "Fixed world +Z shot offset does not follow rotating authored channel. Muzzle FX remain at root. Graphics mismatch measured in Blender verification."
+  },
+  "lifecycle": {
+    "hit_flash_on_off": true,
+    "hp_death": true,
+    "dispose": "Original Enemy.dispose/Dispose.js inspected; GPU disposal not exercised. Adapter must register per-instance material ownership and _importedRoot. Template textures live until shutdown.",
+    "detach": "N/A; keep existing explosions/wreck effects"
+  },
+  "limitations": [
+    "Finite scenario sampling is not a universal bound.",
+    "Orbit restoring force has NO fixed velocity cap; displaced orbit is a stress sample only.",
+    "Carrier launch starts near x58; pose images recenter solely for inspection.",
+    "No live GPU, wing/carrier/boss collision or camera profiling.",
+    "No gameplay source edits."
+  ]
+}

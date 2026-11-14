@@ -1,0 +1,46 @@
+{
+  "viewedUtc": "2026-11-14T15:48:45.778217+00:00",
+  "method": "Codex view_image inspected actual rendered PNGs; all17 current views viewed together in contact-sheet.png and the six gameplay frames in offline-gameplay-contact.png. Technical visual inspection during initial construction, not a formal review.",
+  "formalReview": false,
+  "formalReviewCount": 0,
+  "viewedContactSheets": [
+    "contact-sheet.png",
+    "offline-gameplay-contact.png"
+  ],
+  "allFramesViewedViaContact": [
+    "01-common-rest.png",
+    "02-front-rest.png",
+    "03-side-rest.png",
+    "04-top-rest.png",
+    "05-action-charge.png",
+    "06-full-elevation.png",
+    "07-lateral-low.png",
+    "07b-rooftop-down.png",
+    "08-hit-flash.png",
+    "09-shipped-standard-common.png",
+    "10-shared-scale-pair.png",
+    "game-classic-15.png",
+    "game-classic-50.png",
+    "game-modern-15.png",
+    "game-modern-50.png",
+    "game-chase-15.png",
+    "game-chase-50.png"
+  ],
+  "individualFramesAlsoViewed": [
+    "01-common-rest.png",
+    "02-front-rest.png",
+    "05-action-charge.png",
+    "07b-rooftop-down.png",
+    "game-classic-15.png",
+    "game-chase-15-small.png",
+    "game-classic-50-small.png"
+  ],
+  "observations": [
+    "Twin-weapon open yoke, full up/down elevations and annular well visible.",
+    "Fitted skirt plates seated on tapered base in final contact views.",
+    "Front/action red lens is visible; rear rest common view faces away.",
+    "Small Classic/Modern/Chase views preserve scale and show substantial loss of fine gun detail; no per-asset normalization.",
+    "Flash is a solid-white emission diagnostic, not live additive runtime proof."
+  ],
+  "deferred": "Opus formal review and art polish on SuperBeast; integration and live play validation."
+}

@@ -1,0 +1,53 @@
+{
+  "independent_binary_audit": true,
+  "bytes": 107828,
+  "textures": 0,
+  "variants": [
+    {
+      "name": "gutter-keel",
+      "triangles": 532,
+      "two_bucket_primitives": true,
+      "glb_sidecar_position_multisets_match_1e_6": true,
+      "continuous_shell_components": 1,
+      "shell_edges_incidence": 2,
+      "consistent_shell_winding": true,
+      "cavity_origin": [
+        0,
+        0,
+        0.9
+      ],
+      "opening_direction": [
+        0,
+        1,
+        0
+      ],
+      "opening_ray_shell_hits": 0,
+      "opposite_ray_shell_hits": 2,
+      "proof_scope": "Topology and explicit cavity rays, not a general solid/collision solver or gameplay feature."
+    },
+    {
+      "name": "sheared-chine",
+      "triangles": 480,
+      "two_bucket_primitives": true,
+      "glb_sidecar_position_multisets_match_1e_6": true,
+      "continuous_shell_components": 1,
+      "shell_edges_incidence": 2,
+      "consistent_shell_winding": true,
+      "cavity_origin": [
+        0,
+        0,
+        0.9
+      ],
+      "opening_direction": [
+        -1,
+        1,
+        0
+      ],
+      "opening_ray_shell_hits": 0,
+      "opposite_ray_shell_hits": 2,
+      "proof_scope": "Topology and explicit cavity rays, not a general solid/collision solver or gameplay feature."
+    }
+  ],
+  "formal_reviews": 0,
+  "formal_fix_passes": 0
+}

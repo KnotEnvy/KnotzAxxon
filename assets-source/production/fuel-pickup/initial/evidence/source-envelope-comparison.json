@@ -1,0 +1,70 @@
+{
+  "envelopes": {
+    "shape": {
+      "actual_source_rest_bounds_game": {
+        "min": [
+          -0.6723999941349029,
+          -0.6560000097751617,
+          -0.10499999821186065
+        ],
+        "max": [
+          0.6723999941349029,
+          0.6560000097751617,
+          0.30499999821186063
+        ]
+      },
+      "authored_rest_bounds_game": {
+        "min": [
+          -0.656000018119812,
+          -0.656000018119812,
+          -0.10000000149011612
+        ],
+        "max": [
+          0.656000018119812,
+          0.656000018119812,
+          0.30000000447034836
+        ],
+        "size": [
+          1.312000036239624,
+          1.312000036239624,
+          0.4000000059604645
+        ]
+      },
+      "within_original_axis_aligned_envelope_tolerance_1e_6": true
+    },
+    "whole_badge": {
+      "actual_source_rest_bounds_game": {
+        "min": [
+          -2.0450000762939453,
+          -2.0450000762939453,
+          -0.37999999821186065
+        ],
+        "max": [
+          2.0450000762939453,
+          2.0450000762939453,
+          0.30499999821186063
+        ]
+      },
+      "authored_rest_bounds_game": {
+        "min": [
+          -2.0450000762939453,
+          -2.0450000762939453,
+          -0.3800000101327896
+        ],
+        "max": [
+          2.0450000762939453,
+          2.0450000762939453,
+          0.30000000447034836
+        ],
+        "size": [
+          4.090000152587891,
+          4.090000152587891,
+          0.680000014603138
+        ]
+      },
+      "within_original_axis_aligned_envelope_tolerance_1e_6": true
+    }
+  },
+  "method": "Actual saved source constructor vertex arrays, static scale and mesh positions versus independently decoded transformed GLB. No halo in either geometric envelope.",
+  "limit": "Rest AABBs establish no badge/glyph detail enlargement; dynamic conservative sphere and separate continuous clearance proofs cover motion."
+}

@@ -1,0 +1,71 @@
+{
+  "engine": "BLENDER_EEVEE",
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "renderThreads": 4,
+  "softwareRasterizerThreads": 4,
+  "samples": 16,
+  "viewTransform": "AgX",
+  "worldResolution": [
+    960,
+    540
+  ],
+  "structureResolution": [
+    1000,
+    900
+  ],
+  "PNGs": [
+    "structure-close.png",
+    "structure-front.png",
+    "structure-rear.png",
+    "structure-side.png",
+    "structure-top.png",
+    "world-chase-h11-heat-max-prototype.png",
+    "world-chase-h11-heat-max-source.png",
+    "world-chase-h11-heat-min-prototype.png",
+    "world-chase-h11-heat-min-source.png",
+    "world-chase-h7-heat-max-prototype.png",
+    "world-chase-h7-heat-max-source.png",
+    "world-chase-h7-heat-min-prototype.png",
+    "world-chase-h7-heat-min-source.png",
+    "world-classic-h11-heat-max-prototype.png",
+    "world-classic-h11-heat-max-source.png",
+    "world-classic-h11-heat-min-prototype.png",
+    "world-classic-h11-heat-min-source.png",
+    "world-classic-h7-heat-max-prototype.png",
+    "world-classic-h7-heat-max-source.png",
+    "world-classic-h7-heat-min-prototype.png",
+    "world-classic-h7-heat-min-source.png",
+    "world-modern-h11-heat-max-prototype.png",
+    "world-modern-h11-heat-max-source.png",
+    "world-modern-h11-heat-min-prototype.png",
+    "world-modern-h11-heat-min-source.png",
+    "world-modern-h7-heat-max-prototype.png",
+    "world-modern-h7-heat-max-source.png",
+    "world-modern-h7-heat-min-prototype.png",
+    "world-modern-h7-heat-min-source.png"
+  ],
+  "cameraProjectionChecks": [
+    {
+      "mode": "classic",
+      "maximumNDCErrorVersusActualSourceCameraRigSnap": 2.977048265059845e-07
+    },
+    {
+      "mode": "modern",
+      "maximumNDCErrorVersusActualSourceCameraRigSnap": 8.384864538801828e-08
+    },
+    {
+      "mode": "chase",
+      "maximumNDCErrorVersusActualSourceCameraRigSnap": 7.960475068014006e-08
+    }
+  ],
+  "sourcePlayer": "public/models/player.glb, original transforms, world scale1, player source reset altitude9",
+  "fixture": "Actual Batch source chunk seed42/chunk0 in synthetic reactor sector, no feature obstacles. Source world and all source prop placements unchanged.",
+  "endpointPolicy": "Closed source height endpoints7/11; controlled geometry stubs only for endpoint evidence; seeded behavior proven separately.",
+  "heatPolicy": "Static samples of shared source BREATHE clock extrema gain0.1/1.0; vertex gain1.2 preserved. No glTF animation, flame, fan or duplicate steam.",
+  "limitations": [
+    "Offline EEVEE evidence, not live WebGL or FPS or final acceptance.",
+    "Shared Three procedural texture maps, postprocessing, bloom, steam particles and fog are not reproduced. Proxy material response and original Batch linear colors are used.",
+    "The synthetic reactor chunk omits gameplay feature records; camera snap evidence is finite, no motion/boost/shake/portrait sweep."
+  ]
+}

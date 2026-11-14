@@ -1,0 +1,37 @@
+{
+  "pixel_sizes": [
+    {
+      "mode": "classic",
+      "context": "near",
+      "native_badge_pixel_width": 28.29766273498535
+    },
+    {
+      "mode": "classic",
+      "context": "far",
+      "native_badge_pixel_width": 28.297748565673828
+    },
+    {
+      "mode": "modern",
+      "context": "near",
+      "native_badge_pixel_width": 46.57519340515137
+    },
+    {
+      "mode": "modern",
+      "context": "far",
+      "native_badge_pixel_width": 25.7080078125
+    },
+    {
+      "mode": "chase",
+      "context": "near",
+      "native_badge_pixel_width": 46.5498161315918
+    },
+    {
+      "mode": "chase",
+      "context": "far",
+      "native_badge_pixel_width": 23.37212562561035
+    }
+  ],
+  "grayscale": "Decode sRGB -> linear Rec709 luminance (.2126,.7152,.0722) -> encode sRGB; no contrast enhancement.",
+  "assessment": "Manual inspection recorded separately. The central cross silhouette is primary; bevels/rim facets are secondary. Far perspective images lose fine craft details. No tiny text or final art acceptance claimed.",
+  "sampling": "Contact sheets downsample whole frames with nearest-neighbor only for presentation. Native crop files and small-gameplay-readability.png do not resize assets or pixels."
+}

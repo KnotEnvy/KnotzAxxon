@@ -1,0 +1,1143 @@
+{
+  "file": "/home/knotzuni/code/KnotzAxxon/asset-work/covered-fighter/asset/covered-fighter.glb",
+  "bytes": 144424,
+  "sha256": "5234cd4ad177855ed5c6fd5b76584f409e5bfa669edf38243b272d50aedf12d3",
+  "triangles": 1372,
+  "primitives": 43,
+  "meshes": 43,
+  "nodes": 43,
+  "materials": [
+    "CF_HULL",
+    "CF_DARK",
+    "CF_PAINT"
+  ],
+  "textures": 0,
+  "animations": 0,
+  "bounds": {
+    "min": [
+      -3.75,
+      0.004000000189989805,
+      -3.75
+    ],
+    "max": [
+      3.75,
+      2.140000104904175,
+      3.75
+    ]
+  },
+  "aircraftBounds": {
+    "min": [
+      -2.8399999141693115,
+      0.004000000189989805,
+      -3.3399999141693115
+    ],
+    "max": [
+      2.8399999141693115,
+      2.140000104904175,
+      2.0450000762939453
+    ]
+  },
+  "degenerateTriangles": 0,
+  "minFaceNormalDot": 0.9999999279151857,
+  "entries": [
+    {
+      "node": "CF_01_Fuselage_Fitted_Lower_Cover",
+      "triangles": 212,
+      "vertices": 600,
+      "material": "CF_HULL",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.5249999761581421,
+          0.6700000166893005,
+          -3.3399999141693115
+        ],
+        "max": [
+          0.5249999761581421,
+          1.309999942779541,
+          2.0250000953674316
+        ]
+      }
+    },
+    {
+      "node": "CF_02_Cockpit_Tensioned_Canvas",
+      "triangles": 108,
+      "vertices": 304,
+      "material": "CF_HULL",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.5649999976158142,
+          0.9599999785423279,
+          -1.8600000143051147
+        ],
+        "max": [
+          0.5649999976158142,
+          1.4950000047683716,
+          1.1200000047683716
+        ]
+      }
+    },
+    {
+      "node": "CF_03_Port_Wing_Draped_Pleats",
+      "triangles": 108,
+      "vertices": 272,
+      "material": "CF_HULL",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -2.8399999141693115,
+          0.7730000019073486,
+          -0.24900877475738525
+        ],
+        "max": [
+          -0.2800000011920929,
+          1.0033777952194214,
+          1.4199999570846558
+        ]
+      }
+    },
+    {
+      "node": "CF_03_Starboard_Wing_Draped_Pleats",
+      "triangles": 108,
+      "vertices": 272,
+      "material": "CF_HULL",
+      "transform": {},
+      "bounds": {
+        "min": [
+          0.2800000011920929,
+          0.7730000019073486,
+          -0.24900877475738525
+        ],
+        "max": [
+          2.8399999141693115,
+          1.0033777952194214,
+          1.4199999570846558
+        ]
+      }
+    },
+    {
+      "node": "CF_04_Port_Wing_Reinforced_Seam",
+      "triangles": 10,
+      "vertices": 12,
+      "material": "CF_HULL",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -2.759999990463257,
+          0.8978028297424316,
+          0.5495387315750122
+        ],
+        "max": [
+          -0.6499999761581421,
+          0.9981021285057068,
+          1.2961095571517944
+        ]
+      }
+    },
+    {
+      "node": "CF_04_Starboard_Wing_Reinforced_Seam",
+      "triangles": 10,
+      "vertices": 12,
+      "material": "CF_HULL",
+      "transform": {},
+      "bounds": {
+        "min": [
+          0.6499999761581421,
+          0.8978028297424316,
+          0.5495387315750122
+        ],
+        "max": [
+          2.759999990463257,
+          0.9981021285057068,
+          1.2961095571517944
+        ]
+      }
+    },
+    {
+      "node": "CF_05_Port_Tailplane_Wrapped",
+      "triangles": 12,
+      "vertices": 30,
+      "material": "CF_HULL",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -1.0399999618530273,
+          0.9200000166893005,
+          1.2000000476837158
+        ],
+        "max": [
+          -0.23999999463558197,
+          1.1200000047683716,
+          1.9199999570846558
+        ]
+      }
+    },
+    {
+      "node": "CF_05_Starboard_Tailplane_Wrapped",
+      "triangles": 12,
+      "vertices": 30,
+      "material": "CF_HULL",
+      "transform": {},
+      "bounds": {
+        "min": [
+          0.23999999463558197,
+          0.9200000166893005,
+          1.2000000476837158
+        ],
+        "max": [
+          1.0399999618530273,
+          1.1200000047683716,
+          1.9199999570846558
+        ]
+      }
+    },
+    {
+      "node": "CF_06_Vertical_Fin_Fitted_Sock",
+      "triangles": 16,
+      "vertices": 30,
+      "material": "CF_HULL",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.06800000369548798,
+          1.1699999570846558,
+          0.6700000166893005
+        ],
+        "max": [
+          0.06800000369548798,
+          2.140000104904175,
+          2.015000104904175
+        ]
+      }
+    },
+    {
+      "node": "CF_07_Tail_Exhaust_Weather_Plug",
+      "triangles": 44,
+      "vertices": 96,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.25,
+          0.8100000023841858,
+          1.940000057220459
+        ],
+        "max": [
+          0.25,
+          1.159999966621399,
+          2.0450000762939453
+        ]
+      }
+    },
+    {
+      "node": "CF_08_Canvas_Cinch_Band_1",
+      "triangles": 16,
+      "vertices": 32,
+      "material": "CF_HULL",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.4440000057220459,
+          0.9750000238418579,
+          -1.4709999561309814
+        ],
+        "max": [
+          0.4440000057220459,
+          1.4049999713897705,
+          -1.4290000200271606
+        ]
+      }
+    },
+    {
+      "node": "CF_08_Canvas_Cinch_Band_2",
+      "triangles": 16,
+      "vertices": 32,
+      "material": "CF_HULL",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.5640000104904175,
+          0.9649999737739563,
+          -0.17100000381469727
+        ],
+        "max": [
+          0.5640000104904175,
+          1.4450000524520874,
+          -0.1289999932050705
+        ]
+      }
+    },
+    {
+      "node": "CF_08_Canvas_Cinch_Band_3",
+      "triangles": 16,
+      "vertices": 32,
+      "material": "CF_HULL",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.42399999499320984,
+          1.034999966621399,
+          0.9290000200271606
+        ],
+        "max": [
+          0.42399999499320984,
+          1.3049999475479126,
+          0.9710000157356262
+        ]
+      }
+    },
+    {
+      "node": "CF_09_Port_Cinch_Clasp_1",
+      "triangles": 12,
+      "vertices": 24,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.4650000035762787,
+          1.093999981880188,
+          -1.497499942779541
+        ],
+        "max": [
+          -0.4309999942779541,
+          1.1660000085830688,
+          -1.402500033378601
+        ]
+      }
+    },
+    {
+      "node": "CF_09_Port_Cinch_Clasp_2",
+      "triangles": 12,
+      "vertices": 24,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.5849999785423279,
+          1.093999981880188,
+          -0.19750000536441803
+        ],
+        "max": [
+          -0.5509999990463257,
+          1.1660000085830688,
+          -0.10249999910593033
+        ]
+      }
+    },
+    {
+      "node": "CF_09_Port_Cinch_Clasp_3",
+      "triangles": 12,
+      "vertices": 24,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.4449999928474426,
+          1.093999981880188,
+          0.9024999737739563
+        ],
+        "max": [
+          -0.41100001335144043,
+          1.1660000085830688,
+          0.9975000023841858
+        ]
+      }
+    },
+    {
+      "node": "CF_09_Starboard_Cinch_Clasp_1",
+      "triangles": 12,
+      "vertices": 24,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          0.4309999942779541,
+          1.093999981880188,
+          -1.497499942779541
+        ],
+        "max": [
+          0.4650000035762787,
+          1.1660000085830688,
+          -1.402500033378601
+        ]
+      }
+    },
+    {
+      "node": "CF_09_Starboard_Cinch_Clasp_2",
+      "triangles": 12,
+      "vertices": 24,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          0.5509999990463257,
+          1.093999981880188,
+          -0.19750000536441803
+        ],
+        "max": [
+          0.5849999785423279,
+          1.1660000085830688,
+          -0.10249999910593033
+        ]
+      }
+    },
+    {
+      "node": "CF_09_Starboard_Cinch_Clasp_3",
+      "triangles": 12,
+      "vertices": 24,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          0.41100001335144043,
+          1.093999981880188,
+          0.9024999737739563
+        ],
+        "max": [
+          0.4449999928474426,
+          1.1660000085830688,
+          0.9975000023841858
+        ]
+      }
+    },
+    {
+      "node": "CF_10_Nose_Attached_Strut",
+      "triangles": 28,
+      "vertices": 48,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.04699999839067459,
+          0.15603125095367432,
+          -1.4469060897827148
+        ],
+        "max": [
+          0.04699999839067459,
+          0.8729687333106995,
+          -1.3080939054489136
+        ]
+      }
+    },
+    {
+      "node": "CF_10_Port_Main_Attached_Strut",
+      "triangles": 28,
+      "vertices": 48,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -1.027000069618225,
+          0.18575887382030487,
+          0.7631118893623352
+        ],
+        "max": [
+          -0.9330000281333923,
+          0.8432410955429077,
+          0.9018881320953369
+        ]
+      }
+    },
+    {
+      "node": "CF_10_Starboard_Main_Attached_Strut",
+      "triangles": 28,
+      "vertices": 48,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          0.9330000281333923,
+          0.18575887382030487,
+          0.7631118893623352
+        ],
+        "max": [
+          1.027000069618225,
+          0.8432410955429077,
+          0.9018881320953369
+        ]
+      }
+    },
+    {
+      "node": "CF_11_Nose_Torque_Brace",
+      "triangles": 20,
+      "vertices": 36,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.02800000086426735,
+          0.2108306586742401,
+          -1.4628312587738037
+        ],
+        "max": [
+          0.02800000086426735,
+          0.7581693530082703,
+          -1.2271687984466553
+        ]
+      }
+    },
+    {
+      "node": "CF_11_Port_Main_Torque_Brace",
+      "triangles": 20,
+      "vertices": 36,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -1.0080000162124634,
+          0.2399284392595291,
+          0.7475120425224304
+        ],
+        "max": [
+          -0.9520000219345093,
+          0.7290716171264648,
+          0.9824879169464111
+        ]
+      }
+    },
+    {
+      "node": "CF_11_Starboard_Main_Torque_Brace",
+      "triangles": 20,
+      "vertices": 36,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          0.9520000219345093,
+          0.2399284392595291,
+          0.7475120425224304
+        ],
+        "max": [
+          1.0080000162124634,
+          0.7290716171264648,
+          0.9824879169464111
+        ]
+      }
+    },
+    {
+      "node": "CF_12_Nose_Bevelled_Tyre",
+      "triangles": 76,
+      "vertices": 140,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.10000000149011612,
+          0.004000000189989805,
+          -1.54741370677948
+        ],
+        "max": [
+          0.10000000149011612,
+          0.3140000104904175,
+          -1.2525862455368042
+        ]
+      }
+    },
+    {
+      "node": "CF_12_Port_Main_Bevelled_Tyre",
+      "triangles": 76,
+      "vertices": 140,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -1.0800000429153442,
+          0.004000000189989805,
+          0.6340545415878296
+        ],
+        "max": [
+          -0.8799999952316284,
+          0.37400001287460327,
+          0.985945463180542
+        ]
+      }
+    },
+    {
+      "node": "CF_12_Starboard_Main_Bevelled_Tyre",
+      "triangles": 76,
+      "vertices": 140,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          0.8799999952316284,
+          0.004000000189989805,
+          0.6340545415878296
+        ],
+        "max": [
+          1.0800000429153442,
+          0.37400001287460327,
+          0.985945463180542
+        ]
+      }
+    },
+    {
+      "node": "CF_13_Nose_Axle_Hub",
+      "triangles": 28,
+      "vertices": 48,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.10700000077486038,
+          0.09389999508857727,
+          -1.4650999307632446
+        ],
+        "max": [
+          0.10700000077486038,
+          0.2240999937057495,
+          -1.3349000215530396
+        ]
+      }
+    },
+    {
+      "node": "CF_13_Port_Main_Axle_Hub",
+      "triangles": 28,
+      "vertices": 48,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -1.0870000123977661,
+          0.11129999905824661,
+          0.7322999835014343
+        ],
+        "max": [
+          -0.8730000257492065,
+          0.26669999957084656,
+          0.8877000212669373
+        ]
+      }
+    },
+    {
+      "node": "CF_13_Starboard_Main_Axle_Hub",
+      "triangles": 28,
+      "vertices": 48,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          0.8730000257492065,
+          0.11129999905824661,
+          0.7322999835014343
+        ],
+        "max": [
+          1.0870000123977661,
+          0.26669999957084656,
+          0.8877000212669373
+        ]
+      }
+    },
+    {
+      "node": "CF_14_Nose_Gear_Attachment",
+      "triangles": 12,
+      "vertices": 24,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -0.08500000089406967,
+          0.7799999713897705,
+          -1.4500000476837158
+        ],
+        "max": [
+          0.08500000089406967,
+          0.9100000262260437,
+          -1.2200000286102295
+        ]
+      }
+    },
+    {
+      "node": "CF_14_Port_Main_Gear_Attachment",
+      "triangles": 12,
+      "vertices": 24,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -1.065000057220459,
+          0.75,
+          0.7599999904632568
+        ],
+        "max": [
+          -0.8949999809265137,
+          0.8799999952316284,
+          0.9900000095367432
+        ]
+      }
+    },
+    {
+      "node": "CF_14_Starboard_Main_Gear_Attachment",
+      "triangles": 12,
+      "vertices": 24,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          0.8949999809265137,
+          0.75,
+          0.7599999904632568
+        ],
+        "max": [
+          1.065000057220459,
+          0.8799999952316284,
+          0.9900000095367432
+        ]
+      }
+    },
+    {
+      "node": "CF_15_Port_Cover_Tiedown_1",
+      "triangles": 12,
+      "vertices": 24,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -1.4922667741775513,
+          0.6834896802902222,
+          0.531439483165741
+        ],
+        "max": [
+          -1.247733235359192,
+          0.9461581707000732,
+          0.7085605263710022
+        ]
+      }
+    },
+    {
+      "node": "CF_15_Port_Cover_Tiedown_2",
+      "triangles": 12,
+      "vertices": 24,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -2.3118112087249756,
+          0.682240903377533,
+          1.141439437866211
+        ],
+        "max": [
+          -2.0681886672973633,
+          0.9084280729293823,
+          1.3185604810714722
+        ]
+      }
+    },
+    {
+      "node": "CF_15_Starboard_Cover_Tiedown_1",
+      "triangles": 12,
+      "vertices": 24,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          1.247733235359192,
+          0.6834896802902222,
+          0.531439483165741
+        ],
+        "max": [
+          1.4922667741775513,
+          0.9461581707000732,
+          0.7085605263710022
+        ]
+      }
+    },
+    {
+      "node": "CF_15_Starboard_Cover_Tiedown_2",
+      "triangles": 12,
+      "vertices": 24,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          2.0681886672973633,
+          0.682240903377533,
+          1.141439437866211
+        ],
+        "max": [
+          2.3118112087249756,
+          0.9084280729293823,
+          1.3185604810714722
+        ]
+      }
+    },
+    {
+      "node": "CF_16_Port_Tiedown_Return_1",
+      "triangles": 12,
+      "vertices": 26,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -1.4123221635818481,
+          0.6879884600639343,
+          0.6734554171562195
+        ],
+        "max": [
+          -1.2476778030395508,
+          0.8820115327835083,
+          0.7665445804595947
+        ]
+      }
+    },
+    {
+      "node": "CF_16_Port_Tiedown_Return_2",
+      "triangles": 12,
+      "vertices": 28,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -2.2323222160339355,
+          0.6879884600639343,
+          1.2834553718566895
+        ],
+        "max": [
+          -2.0676777362823486,
+          0.8820115327835083,
+          1.3765445947647095
+        ]
+      }
+    },
+    {
+      "node": "CF_16_Starboard_Tiedown_Return_1",
+      "triangles": 12,
+      "vertices": 28,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          1.2476778030395508,
+          0.6879884600639343,
+          0.6734554171562195
+        ],
+        "max": [
+          1.4123221635818481,
+          0.8820115327835083,
+          0.7665445804595947
+        ]
+      }
+    },
+    {
+      "node": "CF_16_Starboard_Tiedown_Return_2",
+      "triangles": 12,
+      "vertices": 28,
+      "material": "CF_DARK",
+      "transform": {},
+      "bounds": {
+        "min": [
+          2.0676777362823486,
+          0.6879884600639343,
+          1.2834553718566895
+        ],
+        "max": [
+          2.2323222160339355,
+          0.8820115327835083,
+          1.3765445947647095
+        ]
+      }
+    },
+    {
+      "node": "CF_17_Unchanged_Fixed_Hardstand_24tri",
+      "triangles": 24,
+      "vertices": 72,
+      "material": "CF_PAINT",
+      "transform": {},
+      "bounds": {
+        "min": [
+          -3.75,
+          0.006000000052154064,
+          -3.75
+        ],
+        "max": [
+          3.75,
+          0.026000000536441803,
+          3.75
+        ]
+      }
+    }
+  ],
+  "recipeChecks": [
+    {
+      "node": "CF_01_Fuselage_Fitted_Lower_Cover",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 7.467785663828051e-05,
+      "maxColorQuantizationError": 4.156586884518365e-06
+    },
+    {
+      "node": "CF_02_Cockpit_Tensioned_Canvas",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 7.465056311894264e-05,
+      "maxColorQuantizationError": 5.24342061486438e-06
+    },
+    {
+      "node": "CF_03_Port_Wing_Draped_Pleats",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 7.744772702148199e-05,
+      "maxColorQuantizationError": 6.151808825183291e-06
+    },
+    {
+      "node": "CF_03_Starboard_Wing_Draped_Pleats",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 7.735445238785499e-05,
+      "maxColorQuantizationError": 6.151808825183291e-06
+    },
+    {
+      "node": "CF_04_Port_Wing_Reinforced_Seam",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 1.717152429257028e-05,
+      "maxColorQuantizationError": 7.360974002196263e-06
+    },
+    {
+      "node": "CF_04_Starboard_Wing_Reinforced_Seam",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 1.717152429257028e-05,
+      "maxColorQuantizationError": 7.360974002196263e-06
+    },
+    {
+      "node": "CF_05_Port_Tailplane_Wrapped",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 6.343375533344558e-05,
+      "maxColorQuantizationError": 6.880597494152152e-06
+    },
+    {
+      "node": "CF_05_Starboard_Tailplane_Wrapped",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 6.343375533344558e-05,
+      "maxColorQuantizationError": 6.880597494152152e-06
+    },
+    {
+      "node": "CF_06_Vertical_Fin_Fitted_Sock",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 3.493564662180249e-05,
+      "maxColorQuantizationError": 6.151808825183291e-06
+    },
+    {
+      "node": "CF_07_Tail_Exhaust_Weather_Plug",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 6.856234776179985e-05,
+      "maxColorQuantizationError": 5.9884234547974424e-06
+    },
+    {
+      "node": "CF_08_Canvas_Cinch_Band_1",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 3.4083464142459864e-05,
+      "maxColorQuantizationError": 7.093287077403199e-06
+    },
+    {
+      "node": "CF_08_Canvas_Cinch_Band_2",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 2.8577552452940864e-05,
+      "maxColorQuantizationError": 7.093287077403199e-06
+    },
+    {
+      "node": "CF_08_Canvas_Cinch_Band_3",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 4.9904431555114935e-05,
+      "maxColorQuantizationError": 7.093287077403199e-06
+    },
+    {
+      "node": "CF_09_Port_Cinch_Clasp_1",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 0.0,
+      "maxColorQuantizationError": 4.114189717845107e-06
+    },
+    {
+      "node": "CF_09_Port_Cinch_Clasp_2",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 0.0,
+      "maxColorQuantizationError": 4.114189717845107e-06
+    },
+    {
+      "node": "CF_09_Port_Cinch_Clasp_3",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 0.0,
+      "maxColorQuantizationError": 4.114189717845107e-06
+    },
+    {
+      "node": "CF_09_Starboard_Cinch_Clasp_1",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 0.0,
+      "maxColorQuantizationError": 4.114189717845107e-06
+    },
+    {
+      "node": "CF_09_Starboard_Cinch_Clasp_2",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 0.0,
+      "maxColorQuantizationError": 4.114189717845107e-06
+    },
+    {
+      "node": "CF_09_Starboard_Cinch_Clasp_3",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 0.0,
+      "maxColorQuantizationError": 4.114189717845107e-06
+    },
+    {
+      "node": "CF_10_Nose_Attached_Strut",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 5.292370357403374e-05,
+      "maxColorQuantizationError": 5.3619047177128065e-06
+    },
+    {
+      "node": "CF_10_Port_Main_Attached_Strut",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 4.182866164884006e-05,
+      "maxColorQuantizationError": 5.3619047177128065e-06
+    },
+    {
+      "node": "CF_10_Starboard_Main_Attached_Strut",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 4.182866164884006e-05,
+      "maxColorQuantizationError": 5.3619047177128065e-06
+    },
+    {
+      "node": "CF_11_Nose_Torque_Brace",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 6.070093135282239e-05,
+      "maxColorQuantizationError": 6.900936439385025e-06
+    },
+    {
+      "node": "CF_11_Port_Main_Torque_Brace",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 5.369791346491909e-05,
+      "maxColorQuantizationError": 6.900936439385025e-06
+    },
+    {
+      "node": "CF_11_Starboard_Main_Torque_Brace",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 5.369791346491909e-05,
+      "maxColorQuantizationError": 6.900936439385025e-06
+    },
+    {
+      "node": "CF_12_Nose_Bevelled_Tyre",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 4.76091727031269e-05,
+      "maxColorQuantizationError": 5.837006805675671e-06
+    },
+    {
+      "node": "CF_12_Port_Main_Bevelled_Tyre",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 5.3483678200002576e-05,
+      "maxColorQuantizationError": 5.837006805675671e-06
+    },
+    {
+      "node": "CF_12_Starboard_Main_Bevelled_Tyre",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 5.347536598475331e-05,
+      "maxColorQuantizationError": 5.837006805675671e-06
+    },
+    {
+      "node": "CF_13_Nose_Axle_Hub",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 8.601468616522439e-06,
+      "maxColorQuantizationError": 5.3619047177128065e-06
+    },
+    {
+      "node": "CF_13_Port_Main_Axle_Hub",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 7.3726873855906615e-06,
+      "maxColorQuantizationError": 5.3619047177128065e-06
+    },
+    {
+      "node": "CF_13_Starboard_Main_Axle_Hub",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 7.3726873855906615e-06,
+      "maxColorQuantizationError": 5.3619047177128065e-06
+    },
+    {
+      "node": "CF_14_Nose_Gear_Attachment",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 0.0,
+      "maxColorQuantizationError": 3.714719769939978e-06
+    },
+    {
+      "node": "CF_14_Port_Main_Gear_Attachment",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 0.0,
+      "maxColorQuantizationError": 3.714719769939978e-06
+    },
+    {
+      "node": "CF_14_Starboard_Main_Gear_Attachment",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 0.0,
+      "maxColorQuantizationError": 3.714719769939978e-06
+    },
+    {
+      "node": "CF_15_Port_Cover_Tiedown_1",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 4.3381753466340355e-05,
+      "maxColorQuantizationError": 6.312048034348705e-06
+    },
+    {
+      "node": "CF_15_Port_Cover_Tiedown_2",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 3.5279115151109465e-05,
+      "maxColorQuantizationError": 6.312048034348705e-06
+    },
+    {
+      "node": "CF_15_Starboard_Cover_Tiedown_1",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 4.3381753466340355e-05,
+      "maxColorQuantizationError": 6.312048034348705e-06
+    },
+    {
+      "node": "CF_15_Starboard_Cover_Tiedown_2",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 3.5279115151109465e-05,
+      "maxColorQuantizationError": 6.312048034348705e-06
+    },
+    {
+      "node": "CF_16_Port_Tiedown_Return_1",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 6.23789305213573e-05,
+      "maxColorQuantizationError": 6.427629084419795e-06
+    },
+    {
+      "node": "CF_16_Port_Tiedown_Return_2",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 6.189127298120278e-05,
+      "maxColorQuantizationError": 6.427629084419795e-06
+    },
+    {
+      "node": "CF_16_Starboard_Tiedown_Return_1",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 6.23789305213573e-05,
+      "maxColorQuantizationError": 6.427629084419795e-06
+    },
+    {
+      "node": "CF_16_Starboard_Tiedown_Return_2",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 6.189127298120278e-05,
+      "maxColorQuantizationError": 6.427629084419795e-06
+    },
+    {
+      "node": "CF_17_Unchanged_Fixed_Hardstand_24tri",
+      "positionTriangleMultisetEqualAt1e5": true,
+      "maxNormalDifference": 0.0,
+      "maxColorQuantizationError": 2.902406610605368e-06
+    }
+  ],
+  "emissiveFactors": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ]
+  ],
+  "doubleSidedMaterials": [
+    false,
+    false,
+    false
+  ]
+}

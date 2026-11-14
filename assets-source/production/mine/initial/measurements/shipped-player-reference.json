@@ -1,0 +1,813 @@
+{
+  "file": "player.glb",
+  "bytes": 478292,
+  "visibleTriangles": 11556,
+  "hiddenTriangles": 0,
+  "visibleMaterialPrimitives": 8,
+  "hiddenPrimitives": 0,
+  "totalInstantiatedTriangles": 11556,
+  "restBoundsGame": {
+    "min": [
+      -3.9522860050201416,
+      -0.5839999914169312,
+      -2.5370001047849655
+    ],
+    "max": [
+      3.9522860050201416,
+      1.4070836305618286,
+      3.190000057220459
+    ]
+  },
+  "allBoundsGame": {
+    "min": [
+      -3.9522860050201416,
+      -0.5839999914169312,
+      -2.5370001047849655
+    ],
+    "max": [
+      3.9522860050201416,
+      1.4070836305618286,
+      3.190000057220459
+    ]
+  },
+  "textures": 0,
+  "images": 0,
+  "animations": 1,
+  "nodes": [
+    {
+      "index": 10,
+      "name": "hero-interceptor",
+      "localTranslation": [
+        0,
+        0,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "hiddenByRuntimeContract": false
+    },
+    {
+      "index": 0,
+      "name": "airframe-accent",
+      "localTranslation": [
+        0,
+        0,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "hiddenByRuntimeContract": false,
+      "triangles": 3258,
+      "primitives": 1,
+      "accessorVertexCount": 4774,
+      "degenerateTriangles": 0,
+      "materials": [
+        "KZ_PlayerAccent"
+      ],
+      "bounds": {
+        "min": [
+          -1.649999976158142,
+          -0.568220317363739,
+          -2.5
+        ],
+        "max": [
+          1.649999976158142,
+          0.7782725691795349,
+          2.4200000762939453
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "name": "airframe-glass",
+      "localTranslation": [
+        0,
+        0,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "hiddenByRuntimeContract": false,
+      "triangles": 278,
+      "primitives": 1,
+      "accessorVertexCount": 168,
+      "degenerateTriangles": 0,
+      "materials": [
+        "KZ_PlayerGlass"
+      ],
+      "bounds": {
+        "min": [
+          -0.39500001072883606,
+          0.30000001192092896,
+          -0.6800000071525574
+        ],
+        "max": [
+          0.39500001072883606,
+          1.0,
+          1.559999942779541
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "name": "airframe-hull",
+      "localTranslation": [
+        0,
+        0,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "hiddenByRuntimeContract": false,
+      "triangles": 7608,
+      "primitives": 1,
+      "accessorVertexCount": 7514,
+      "degenerateTriangles": 0,
+      "materials": [
+        "KZ_PlayerHull"
+      ],
+      "bounds": {
+        "min": [
+          -3.9522860050201416,
+          -0.5839999914169312,
+          -2.478971242904663
+        ],
+        "max": [
+          3.9522860050201416,
+          1.4070836305618286,
+          3.190000057220459
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "name": "airframe-nav-port",
+      "localTranslation": [
+        0,
+        0,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "hiddenByRuntimeContract": false,
+      "triangles": 44,
+      "primitives": 1,
+      "accessorVertexCount": 96,
+      "degenerateTriangles": 0,
+      "materials": [
+        "KZ_NavPort"
+      ],
+      "bounds": {
+        "min": [
+          -3.8985373973846436,
+          0.22600001096725464,
+          -1.9293280839920044
+        ],
+        "max": [
+          -3.701462507247925,
+          0.29600000381469727,
+          -1.6306718587875366
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "name": "airframe-nav-starboard",
+      "localTranslation": [
+        0,
+        0,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "hiddenByRuntimeContract": false,
+      "triangles": 44,
+      "primitives": 1,
+      "accessorVertexCount": 96,
+      "degenerateTriangles": 0,
+      "materials": [
+        "KZ_NavStarboard"
+      ],
+      "bounds": {
+        "min": [
+          3.701462507247925,
+          0.22600001096725464,
+          -1.9293280839920044
+        ],
+        "max": [
+          3.8985373973846436,
+          0.29600000381469727,
+          -1.6306718587875366
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "name": "airframe-neon",
+      "localTranslation": [
+        0,
+        0,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "hiddenByRuntimeContract": false,
+      "triangles": 40,
+      "primitives": 1,
+      "accessorVertexCount": 64,
+      "degenerateTriangles": 0,
+      "materials": [
+        "KZ_NeonCyan"
+      ],
+      "bounds": {
+        "min": [
+          -3.3399999141693115,
+          0.13950000703334808,
+          -1.116326928138733
+        ],
+        "max": [
+          3.3399999141693115,
+          0.25130000710487366,
+          0.39871281385421753
+        ]
+      }
+    },
+    {
+      "index": 6,
+      "name": "engine-core-1",
+      "localTranslation": [
+        1.0499999523162842,
+        -0.10000018775463104,
+        -2.515000104904175
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1.0499999523162842,
+        -0.10000018775463104,
+        -2.515000104904175,
+        1.0
+      ],
+      "worldOrigin": [
+        1.0499999523162842,
+        -0.10000018775463104,
+        -2.515000104904175
+      ],
+      "hiddenByRuntimeContract": false,
+      "triangles": 142,
+      "primitives": 1,
+      "accessorVertexCount": 97,
+      "degenerateTriangles": 0,
+      "materials": [
+        "KZ_EngineGlow"
+      ],
+      "bounds": {
+        "min": [
+          0.7949999570846558,
+          -0.35500018298625946,
+          -2.5370001047849655
+        ],
+        "max": [
+          1.3049999475479126,
+          0.15499980747699738,
+          -2.515000104904175
+        ]
+      }
+    },
+    {
+      "index": 7,
+      "name": "engine-core--1",
+      "localTranslation": [
+        -1.0499999523162842,
+        -0.10000018775463104,
+        -2.515000104904175
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        -1.0499999523162842,
+        -0.10000018775463104,
+        -2.515000104904175,
+        1.0
+      ],
+      "worldOrigin": [
+        -1.0499999523162842,
+        -0.10000018775463104,
+        -2.515000104904175
+      ],
+      "hiddenByRuntimeContract": false,
+      "triangles": 142,
+      "primitives": 1,
+      "accessorVertexCount": 97,
+      "degenerateTriangles": 0,
+      "materials": [
+        "KZ_EngineGlow"
+      ],
+      "bounds": {
+        "min": [
+          -1.3049999475479126,
+          -0.35500018298625946,
+          -2.5370001047849655
+        ],
+        "max": [
+          -0.7949999570846558,
+          0.15499980747699738,
+          -2.515000104904175
+        ]
+      }
+    },
+    {
+      "index": 8,
+      "name": "muzzle-socket-1",
+      "localTranslation": [
+        1.600000023841858,
+        -0.0999998226761818,
+        2.4000000953674316
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1.600000023841858,
+        -0.0999998226761818,
+        2.4000000953674316,
+        1.0
+      ],
+      "worldOrigin": [
+        1.600000023841858,
+        -0.0999998226761818,
+        2.4000000953674316
+      ],
+      "hiddenByRuntimeContract": false
+    },
+    {
+      "index": 9,
+      "name": "muzzle-socket--1",
+      "localTranslation": [
+        -1.600000023841858,
+        -0.0999998226761818,
+        2.4000000953674316
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        -1.600000023841858,
+        -0.0999998226761818,
+        2.4000000953674316,
+        1.0
+      ],
+      "worldOrigin": [
+        -1.600000023841858,
+        -0.0999998226761818,
+        2.4000000953674316
+      ],
+      "hiddenByRuntimeContract": false
+    }
+  ],
+  "materials": [
+    {
+      "extras": {
+        "kz_runtime": "mats.playerAccent"
+      },
+      "name": "KZ_PlayerAccent",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.016807375475764275,
+          0.03560131415724754,
+          0.06480326503515244,
+          1
+        ],
+        "metallicFactor": 0.5799999833106995,
+        "roughnessFactor": 0.3799999952316284
+      }
+    },
+    {
+      "extensions": {
+        "KHR_materials_clearcoat": {
+          "clearcoatFactor": 1,
+          "clearcoatRoughnessFactor": 0.07999999821186066
+        }
+      },
+      "extras": {
+        "kz_runtime": "mats.glass"
+      },
+      "name": "KZ_PlayerGlass",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.006048833020031452,
+          0.04817182570695877,
+          0.08437620848417282,
+          1
+        ],
+        "metallicFactor": 0.5799999833106995,
+        "roughnessFactor": 0.1599999964237213
+      }
+    },
+    {
+      "extras": {
+        "kz_runtime": "mats.playerHull"
+      },
+      "name": "KZ_PlayerHull",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.5199999809265137,
+        "roughnessFactor": 0.3400000035762787
+      }
+    },
+    {
+      "emissiveFactor": [
+        1,
+        0.05951123684644699,
+        0.12477181851863861
+      ],
+      "extras": {
+        "kz_runtime": "player neon bucket (0xff4563, -X wingtip)"
+      },
+      "name": "KZ_NavPort",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.6000000238418579
+      }
+    },
+    {
+      "emissiveFactor": [
+        0.13013647496700287,
+        0.7379103899002075,
+        0.4125426113605499
+      ],
+      "extras": {
+        "kz_runtime": "player neon bucket (0x65dfac, +X wingtip)"
+      },
+      "name": "KZ_NavStarboard",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.6000000238418579
+      }
+    },
+    {
+      "emissiveFactor": [
+        0.08437620848417282,
+        0.5088813304901123,
+        0.6239603757858276
+      ],
+      "extras": {
+        "kz_runtime": "player neon bucket (MeshBasic vertex colour 0x52bdcf)"
+      },
+      "name": "KZ_NeonCyan",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.6000000238418579
+      }
+    },
+    {
+      "emissiveFactor": [
+        0.2746773064136505,
+        0.7758222222328186,
+        1
+      ],
+      "extensions": {
+        "KHR_materials_emissive_strength": {
+          "emissiveStrength": 1.350000023841858
+        }
+      },
+      "extras": {
+        "kz_runtime": "mats.neon(0x8fe4ff, 1.35)"
+      },
+      "name": "KZ_EngineGlow",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.6000000238418579
+      }
+    }
+  ]
+}

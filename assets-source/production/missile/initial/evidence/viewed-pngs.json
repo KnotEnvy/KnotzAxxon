@@ -1,0 +1,41 @@
+{
+  "method": "Actual PNGs opened with functions.view_image, including composed sheets of rendered files; implementation self-inspection, NOT formal review",
+  "formal_reviews": 0,
+  "actually_opened_pngs": [
+    "diagnostic-quarter.png",
+    "diagnostic-side.png",
+    "diagnostic-nose.png",
+    "diagnostic-aft.png",
+    "common-neutral-lineup.png",
+    "context-silo-0-modern-new.png",
+    "context-sentinel-heavy-2-chase-new.png",
+    "launcher-detail-silo.png",
+    "launcher-detail-sentinel-heavy.png",
+    "sheet-multiview.png",
+    "sheet-extreme-orientations.png",
+    "sheet-source-cameras.png",
+    "sheet-CROPS-4X-DIAGNOSTIC.png",
+    "sheet-homing-and-launchers.png"
+  ],
+  "construction_build1_opened": [
+    "construction-build1/diagnostic-quarter.png",
+    "construction-build1/diagnostic-side.png",
+    "construction-build1/diagnostic-aft.png"
+  ],
+  "source_camera_findings": [
+    "Silo launch is deliberately tiny (Modern about7.75x15.96px at960x540), partly against the existing luminous well; exact world scale preserved.",
+    "Heavy incoming missile at .5s Chase is about14.37x17.17px. Ivory identification band / graphite nose change the broad cue versus uniformly brown source; fins/nozzle are not individually resolved.",
+    "Common-neutral lineup uses unchanged scale1 for new, source, shipped fighter and selected silo. New silhouette remains a small munition, never enlarged into a prop.",
+    "Aft closeup resolves fitted lip and inset dark nozzle. Uniform source emission warms the cavity; no flame mesh or animated engine added.",
+    "Four cardinal fins are present in binary and visible across aft/extreme views; one thin fin is low-contrast in near-nose-on neutral lighting. Leave contrast/polish to deferred Opus review.",
+    "Source pose strips preserve sampled rotations and reset translations ONLY for explicitly labeled diagnostic arrangements. Extreme directions do not introduce flipped, nonuniform or corrective scales.",
+    "Launcher closeups preserve actual Silo source pose / sampled opening and actual Sentinel rest-hierarchy mouth root. The latter is not an animated boss replay.",
+    "Late salvo Chase frame can leave the viewport. Retained offscreen pair is negative evidence, not a successful visibility claim."
+  ],
+  "unresolved_limits": [
+    "No live WebGL/GPU/frame-time test, real shader/postprocessing/particle parity or full-game collision simulation.",
+    "Source camera snap rigs and synthetic trajectories, not a recording of a complete play session; source normalized-lerp turn slightly overshoots nominal angular cap in one sample.",
+    "Sentinel reference rest pose and first-salvo-slot-only offline visual. Actual receiver integrity and optional pool integration are orchestrator tasks.",
+    "Thin fin contrast and tiny-screen feature loss remain deferred polish considerations."
+  ]
+}

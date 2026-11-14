@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "geometryAndGlbByteDeterministic": [
+    {
+      "file": "covered-fighter.glb",
+      "sha256": "5234cd4ad177855ed5c6fd5b76584f409e5bfa669edf38243b272d50aedf12d3",
+      "bytes": 144424,
+      "regeneratedByteIdentical": true
+    },
+    {
+      "file": "covered-fighter.recipe.json",
+      "sha256": "af50af1d8684cf24902c5acd6a864211609085ad8f853a83b5fd20ddc9e7f71b",
+      "bytes": 426814,
+      "regeneratedByteIdentical": true
+    }
+  ],
+  "blend": "Editable saved geometry verified independently; Blender container bytes not asserted deterministic."
+}

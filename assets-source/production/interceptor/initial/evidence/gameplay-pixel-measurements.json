@@ -1,0 +1,41 @@
+{
+  "classic": {
+    "source_bbox": [
+      479,
+      252,
+      510,
+      271
+    ],
+    "pixel_extent": [
+      31,
+      19
+    ],
+    "note": "4x nearest-neighbour crop from full 960x540 offline reconstructed gameplay PNG; no rerender/normalization."
+  },
+  "modern": {
+    "source_bbox": [
+      484,
+      240,
+      530,
+      252
+    ],
+    "pixel_extent": [
+      46,
+      12
+    ],
+    "note": "4x nearest-neighbour crop from full 960x540 offline reconstructed gameplay PNG; no rerender/normalization."
+  },
+  "chase": {
+    "source_bbox": [
+      465,
+      250,
+      509,
+      261
+    ],
+    "pixel_extent": [
+      44,
+      11
+    ],
+    "note": "4x nearest-neighbour crop from full 960x540 offline reconstructed gameplay PNG; no rerender/normalization."
+  }
+}

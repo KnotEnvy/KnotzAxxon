@@ -1,0 +1,99 @@
+{
+  "saved_blend_reopened": {
+    "triangles": 16698,
+    "meshObjects": 28,
+    "bounds": {
+      "min": [
+        -26.057600021362305,
+        -41.0,
+        3400.0
+      ],
+      "max": [
+        38.05759811401367,
+        12.83590316772461,
+        4229.0
+      ]
+    },
+    "meshNames": [
+      "DN_0035__dark",
+      "DN_0035__hull",
+      "DN_0036__dark",
+      "DN_0036__hull",
+      "DN_0036__neon",
+      "DN_0037__dark",
+      "DN_0037__hull",
+      "DN_0037__neon",
+      "DN_0038__dark",
+      "DN_0038__hull",
+      "DN_0038__neon",
+      "DN_0039__dark",
+      "DN_0039__hull",
+      "DN_0039__neon",
+      "DN_0040__dark",
+      "DN_0040__hull",
+      "DN_0040__neon",
+      "DN_0041__dark",
+      "DN_0041__hull",
+      "DN_0041__neon",
+      "DN_0042__dark",
+      "DN_0042__hull",
+      "DN_0042__neon",
+      "DN_0043__dark",
+      "DN_0043__hull",
+      "DN_0043__neon",
+      "DN_0044__dark",
+      "DN_0044__hull"
+    ]
+  },
+  "clean_scene_glb_reimport": {
+    "triangles": 16698,
+    "meshObjects": 28,
+    "bounds": {
+      "min": [
+        -26.057600021362305,
+        -41.0,
+        3400.0
+      ],
+      "max": [
+        38.05759811401367,
+        12.83590316772461,
+        4229.0
+      ]
+    },
+    "meshNames": [
+      "DN_0035__dark",
+      "DN_0035__hull",
+      "DN_0036__dark",
+      "DN_0036__hull",
+      "DN_0036__neon",
+      "DN_0037__dark",
+      "DN_0037__hull",
+      "DN_0037__neon",
+      "DN_0038__dark",
+      "DN_0038__hull",
+      "DN_0038__neon",
+      "DN_0039__dark",
+      "DN_0039__hull",
+      "DN_0039__neon",
+      "DN_0040__dark",
+      "DN_0040__hull",
+      "DN_0040__neon",
+      "DN_0041__dark",
+      "DN_0041__hull",
+      "DN_0041__neon",
+      "DN_0042__dark",
+      "DN_0042__hull",
+      "DN_0042__neon",
+      "DN_0043__dark",
+      "DN_0043__hull",
+      "DN_0043__neon",
+      "DN_0044__dark",
+      "DN_0044__hull"
+    ]
+  },
+  "packed_external_files": 0,
+  "packed_note": "No image textures or external linked resources; geometry/material-only .blend is self-contained.",
+  "evaluated_triangle_scope": "All actual saved mesh objects, not a selection. Render fixtures and shipped player are not saved into the deliverable blend.",
+  "blender": "5.2.1 LTS",
+  "build_hash": "9e2066aef7ef"
+}

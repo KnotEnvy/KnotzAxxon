@@ -1,0 +1,470 @@
+{
+  "schema_version": 1,
+  "asset": "drone",
+  "design": "DR-3 broad clipped-shoulder unmanned enemy craft",
+  "stage": "pending_deferred_opus_review",
+  "frozen_at_utc": "2026-11-14T15:15:23.421752+00:00",
+  "repository_baseline": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "authorization": {
+    "requested_provider": "codex",
+    "requested_model": "gpt-6.1-sol",
+    "requested_reasoningEffort": "xhigh",
+    "requested_speed": "AVAILABLE SPEED; unavailable fast-mode toggle explicitly accepted",
+    "executed_provider": "codex",
+    "executed_model": "gpt-6.1-sol",
+    "executed_reasoningEffort": "xhigh",
+    "fast_mode_claimed": false,
+    "helpers_or_delegation": false,
+    "formal_reviews": 0,
+    "formal_fix_passes": 0,
+    "opus_review_polish": "deferred until SuperBeast free"
+  },
+  "runtime": {
+    "platform": "native Linux on NitroBliss",
+    "blender": "5.2.1 LTS",
+    "build_hash": "9e2066aef7ef",
+    "engine": "BLENDER_EEVEE",
+    "render_threads": 4,
+    "software_driver_threads_from_existing_wrapper": 8,
+    "runtime_tools_excluded": true,
+    "wrapper_sha256": "59f10b6132391c667f87dde2962b21bdc8c2d0a2808849d6ad0a189cb1227448"
+  },
+  "files": {
+    "drone.glb": {
+      "bytes": 155468,
+      "sha256": "7053c26483f863ec9c854cf57bd0efd1e7f5a775616c0d78200ae0c7f273b8ee"
+    },
+    "drone.blend": {
+      "bytes": 129787,
+      "sha256": "a9546453c572871037cda7a9a90e89fdcb3d66c144a3f346f478b08ce7b66768"
+    }
+  },
+  "measurements": {
+    "visible": {
+      "triangles": 2640,
+      "material_primitives": 6,
+      "bounds_game": {
+        "min": [
+          -2.799999952316284,
+          -0.41341304779052734,
+          -1.9500000476837158
+        ],
+        "max": [
+          2.799999952316284,
+          0.7200000286102295,
+          1.4900000095367432
+        ]
+      }
+    },
+    "hidden_flash": {
+      "triangles": 220,
+      "material_primitives": 1,
+      "bounds_game": {
+        "min": [
+          -2.911999843597414,
+          -0.3951999805450441,
+          -1.5911999118804943
+        ],
+        "max": [
+          2.911999843597414,
+          0.33279998035430935,
+          1.372800004196165
+        ]
+      }
+    },
+    "total_exported_triangles_all_scenes": 2860,
+    "rest_bounds_including_hidden_shell": {
+      "min": [
+        -2.911999843597414,
+        -0.41341304779052734,
+        -1.9500000476837158
+      ],
+      "max": [
+        2.911999843597414,
+        0.7200000286102295,
+        1.4900000095367432
+      ]
+    },
+    "approximate_procedural_baseline_including_shell": {
+      "min": [
+        -2.9223,
+        -0.43,
+        -1.9923
+      ],
+      "max": [
+        2.9223,
+        0.77,
+        1.7135
+      ]
+    },
+    "size_ratio_to_approximate_baseline": [
+      0.9964753254619355,
+      0.9445108970006307,
+      0.9282746120191211
+    ],
+    "textures": 0,
+    "packed_atlas_count": 0,
+    "engine_scale_clearance_min_vertex_proxy": 0.01778913475573063,
+    "clearance_samples": 96,
+    "clearance_triangle_intersections": 0
+  },
+  "hierarchy": [
+    {
+      "name": "drone_root",
+      "scene": 0,
+      "parent": null,
+      "local_translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "materials": [],
+      "mesh": null
+    },
+    {
+      "name": "axis_nose_plusZ",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        0,
+        2
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "materials": [],
+      "mesh": null
+    },
+    {
+      "name": "axis_up_plusY",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        1,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "materials": [],
+      "mesh": null
+    },
+    {
+      "name": "body",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "materials": [
+        "DR_Hull_Oxide",
+        "DR_Machinery_Slate",
+        "DR_Trim_Titanium",
+        "DR_Canopy_Obsidian"
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "engine",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        -0.03500000014901161,
+        -1.9500000476837158
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        -0.03500000014901161,
+        -1.9500000476837158
+      ],
+      "materials": [
+        "DR_Engine_Amber_ff9a3a"
+      ],
+      "mesh": 1
+    },
+    {
+      "name": "eye",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        0.4000000059604645,
+        1.2580000162124634
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        0.4000000059604645,
+        1.2580000162124634
+      ],
+      "materials": [
+        "DR_Cue_Red_ff3d55"
+      ],
+      "mesh": 2
+    },
+    {
+      "name": "shot_world_offset_reference",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        0,
+        1.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "materials": [],
+      "mesh": null
+    },
+    {
+      "name": "weapon_mouth_reference",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        -0.04500000178813934,
+        1.4900000095367432
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        -0.04500000178813934,
+        1.4900000095367432
+      ],
+      "materials": [],
+      "mesh": null
+    },
+    {
+      "name": "flash_shell",
+      "scene": 1,
+      "parent": null,
+      "local_translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1.0399999618530273,
+        1.0399999618530273,
+        1.0399999618530273
+      ],
+      "world_origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "materials": [
+        "DR_Flash_White"
+      ],
+      "mesh": 3
+    }
+  ],
+  "material_map": {
+    "hull": "DR_Hull_Oxide",
+    "machinery": "DR_Machinery_Slate",
+    "trim": "DR_Trim_Titanium",
+    "canopy_and_recesses": "DR_Canopy_Obsidian",
+    "dynamic_cue": "DR_Cue_Red_ff3d55",
+    "dynamic_emission": "DR_Engine_Amber_ff9a3a",
+    "flash": "DR_Flash_White"
+  },
+  "gameplay": {
+    "fast": false,
+    "hp": 3,
+    "score": 250,
+    "radius": 2.2,
+    "root_origin": [
+      0,
+      0,
+      0
+    ],
+    "up": "+Y",
+    "nose": "+Z",
+    "detach": "N/A",
+    "mechanics_modified": false,
+    "production_files_modified": false,
+    "integration_performed": false,
+    "flash_template": "scene 1; hide and reparent per RUNTIME_BINDINGS.md",
+    "shot_graphics_mismatch_report": "evidence/reports/shot_visual_ray_probe.json",
+    "shot_visual_ray_intersections": 12,
+    "shot_ray_samples": 15
+  },
+  "verification": {
+    "saved_and_reopened_blend": true,
+    "packed_external_assets": true,
+    "external_assets_present": false,
+    "clean_scene_glb_reimport": true,
+    "independent_binary_glb_audit": true,
+    "counts_and_transformed_bounds_agree": true,
+    "axis_markers_verified": true,
+    "actual_source_motion_and_lead_methods_sampled": true,
+    "png_pixels_inspected": true,
+    "camera_views": "offline reconstructed; not actual gameplay captures",
+    "formal_review": false
+  },
+  "density_proxy": {
+    "peak_drone": 18,
+    "meaning": "provided layout-window proxy, not live maximum",
+    "triangles_at_18": 47520,
+    "base_primitives_at_18": 108,
+    "live_profile_required": [
+      "moving wings",
+      "carrier",
+      "boss",
+      "actual populations",
+      "shadows and flashes",
+      "frame time"
+    ]
+  },
+  "initial_self_corrections": [
+    "Moved nozzle vanes outside the full animated thrust-face scale interval after BVH detected intersections",
+    "Matched supplied rest scale with fitted belly depth and flash envelope",
+    "Added fitted belly service hatch/heat rails after inspecting steep-bank underside",
+    "Stored hidden flash template outside default glTF scene because standard glTF has no generic visibility flag",
+    "Packed and saved editable scene with flash hidden; no formal review or deferred polish round spent"
+  ],
+  "limitations": [
+    "Opus review/polish remains deferred; zero formal reviews/fix passes. This initial freeze is not final user acceptance or deployment.",
+    "Existing shot spawn at world +1.5Z does not follow graphics rotation; muzzle FX/aim/lead remain at root. Mouth-to-shot mismatch reaches about .8125 units in sampled displaced orbit. Some ordinary poses put the spawn near the barrel lip. Source-led rays intersect static authored geometry in 12/15 deterministic probes; no gameplay self-collision or sphere-sweep result is claimed.",
+    "Gameplay camera PNGs are offline Blender reconstructions at static source rig values. Dusk lighting is approximated; AgX differs from game ACES exposure1.02. No full sky/PMREM, bloom/fog/HUD, shake, camera lag or live occlusion is included.",
+    "No live performance/population/obstacle validation. The supplied peak18 layout proxy is not a live maximum; moving wings, carrier and boss still need integration profiling.",
+    "Pulse clearance uses discrete triangle-overlap tests and an engine-vertex nearest-surface proxy, not an exact continuous minimum-distance proof. Rigid root motion does not alter internal clearance.",
+    "The independently parsed GLB and clean Blender reimport are verified. A production Three.js loader binding and runtime disposal check remain integration work; RUNTIME_BINDINGS.md records clone ownership and hidden flash scene handling.",
+    "Reference thumbnails are individually framed only for style. Only the explicitly labeled player comparison and gameplay reconstructions assert common world scale."
+  ],
+  "reference_source_sha256": {
+    "src/entities/Enemies.js": "9c7f88630d52e8dc721ec9380139f29aec747c30a3ad599adaacb8e55cea864c",
+    "src/render/ImportedModels.js": "212b8c8f4f438ae70b408e2ff218524850e3cf6b027e63961a813e58d6d42773",
+    "src/render/Dispose.js": "c2557155aa3786a0783c1df376171a10a03ae0323563afae663b51a61fbf97de",
+    "src/game/CameraRig.js": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205",
+    "src/core/Settings.js": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+    "src/render/Sky.js": "12314912081437f6c646031ee8d14b62753755b890ca104ae48f7f3083801ed5",
+    "src/render/Materials.js": "8af35e4641253713d8d8d1770edebb3dd0bff77bf5caee4eaba7f0db58aebd52",
+    "src/core/Engine.js": "9d6d580dcc55b6b6d072b877190ab9e0e675ca89101d4cceddb95aa46d7cd77c",
+    "public/models/player.glb": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+    "public/models/sentinel.glb": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef",
+    "public/models/turret.glb": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+    "public/models/radar.glb": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d",
+    "public/models/silo.glb": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e",
+    "public/models/fuel.glb": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc",
+    "assets-source/fighter/manifest.json": "3cddfa319f228bd00e65d6ff80e35f88e94c0fc76eef7b2cb5f848ccb6c26ab4",
+    "assets-source/sentinel/manifest.json": "fe8b0a38db863314c83ddb5e27ea0bd0ba031924d1c9c96b8cd11763bddcdf07",
+    "assets-source/ground/contest-manifest.json": "5074c25f0b658691864784dc87121e931d58c847e2bf337c151c368d08471d84",
+    "assets-source/supplies/manifest.json": "d75d12e94aca4a417a8aba22e02c7c5e8fea48ffdff0a461543c1d81105c4449"
+  },
+  "freeze": "Immutable initial snapshot. SHA256SUMS hashes every delivered file except itself; archive hash and transfer receipt are adjacent outside this directory."
+}

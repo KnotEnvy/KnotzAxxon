@@ -1,0 +1,341 @@
+{
+  "asset": "FORTRESS_ROOFTOP_FLAK",
+  "iteration": "initial",
+  "frozenAtUTC": "2026-11-14T20:32:10.422773+00:00",
+  "status": "pending_deferred_opus_review",
+  "formalReviews": 0,
+  "formalReviewFixRounds": 0,
+  "helpers": 0,
+  "claudeRetries": 0,
+  "implementation": {
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "xhigh",
+    "speed": "available; no requested unavailable speed/model fallback",
+    "host": "NitroBliss",
+    "baseCommit": "ee221ad",
+    "productionEdits": false,
+    "commitsPushesDeploys": false
+  },
+  "scope": [
+    "Fortress._flakGun static scenery",
+    "unchanged _skyline far battery roof callsites",
+    "original ambient flak emitter and actual consumers"
+  ],
+  "excluded": [
+    "enemy Turret/HeavyTurret/Silo mechanics",
+    "HP/colliders/targeting/gameplay projectiles",
+    "dynamic aiming or per-frame rebuild",
+    "new materials/textures/buckets/draws",
+    "production src/public/docs changes"
+  ],
+  "geometry": {
+    "triangles": 704,
+    "target": [
+      500,
+      750
+    ],
+    "ceiling": 1000,
+    "authoringGLBPrimitives": 21,
+    "authoringGLBNodes": 24,
+    "runtimeBuckets": {
+      "hull": 192,
+      "dark": 512
+    },
+    "authoringMaterials": 2,
+    "newRuntimeMaterials": 0,
+    "newRuntimeDraws": 0,
+    "textures": 0,
+    "images": 0,
+    "GLBBytes": 109384,
+    "GLBCeilingBytes": 524288,
+    "referencePose": {
+      "pitch": 1.15,
+      "yaw": -0.85,
+      "roofY": 0
+    },
+    "referenceBounds": [
+      [
+        -1.649999976158142,
+        0.0,
+        -1.649999976158142
+      ],
+      [
+        1.7172415300826747,
+        5.9899795111234235,
+        1.649999976158142
+      ]
+    ],
+    "sampledFullPoseBounds": [
+      [
+        -1.649999976158142,
+        0,
+        -2.249866008758545
+      ],
+      [
+        2.3439486026763916,
+        6.183859348297119,
+        1.649999976158142
+      ]
+    ],
+    "roofContactFootprint": [
+      3.3,
+      3.3
+    ]
+  },
+  "poseAndEffects": {
+    "pitch": [
+      1,
+      1.3
+    ],
+    "yaw": [
+      -1.1,
+      -0.6
+    ],
+    "pivotYAboveRoof": 2.1,
+    "barrelLength": 4.2,
+    "barrelLocalXOffsets": [
+      -0.45,
+      0.45
+    ],
+    "RNGDraws": "original pitch, yaw, rate; caller-owned emit draws fourth time phase",
+    "emitter": "exact original center-between-tips world point, direction/rate and original roofY argument; owner remains original chunk",
+    "rate": [
+      0.25,
+      0.45
+    ],
+    "VFXChanges": false
+  },
+  "placement": {
+    "fortressChunks": 356,
+    "batteryChunks": 68,
+    "batteryRoofs": 498,
+    "flakProps": 114,
+    "meanPerBatteryChunk": 1.6764705882352942,
+    "perBatteryChunk": [
+      0,
+      6
+    ],
+    "histogram": {
+      "0": 18,
+      "1": 17,
+      "2": 17,
+      "3": 6,
+      "4": 6,
+      "5": 3,
+      "6": 1,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0
+    }
+  },
+  "validation": {
+    "sourceSeeds": [
+      1,
+      7,
+      42,
+      123
+    ],
+    "actualFortressChunks": 356,
+    "actualFlakPlacements": 114,
+    "poseSamples": 10201,
+    "sourceMatchedProof": {
+      "all356RealFortressChunksCompared": true,
+      "all114ActualFlakPlacementsCompared": true,
+      "fullRngSequencesEqual": true,
+      "original4DrawEmitterTracesEqual": true,
+      "downstreamAllBucketFieldsByteEqual": true,
+      "deckSurfaceCapturesEqual": true,
+      "emittersOwnedByOriginalChunk": true,
+      "meshCountsUnchanged": true,
+      "materialIdentityRetained": true,
+      "chunkGeometryDisposeEvents": 6076,
+      "sharedMaterialDisposeEvents": 0,
+      "templateRetiredOnlyAtExplicitShutdown": true,
+      "unchangedFeatureMergedGeometryByteEqual": true
+    },
+    "minimumSampledEmitterTriangleClearance": 0.311732069418133,
+    "minimumSampledRoofMargin": 0.2742369854830293,
+    "maximumSampledAABBOvershoot": 0,
+    "continuousNearestSamplePadding": 0.0173,
+    "binaryAudit": "evidence/independent-binary-audit.json",
+    "separateBlenderReopenCleanReimport": "evidence/blender-reopen-clean-reimport.json",
+    "cameraProjectionChecks": [
+      {
+        "mode": "classic",
+        "maximumNDCDifferenceVersusActualSourceCameraRigSnap": 1.1127997994186956e-06,
+        "BlenderNDCBounds": [
+          [
+            -0.6600689589977264,
+            0.6241405010223389
+          ],
+          [
+            -0.6012008786201477,
+            0.7870182991027832
+          ]
+        ],
+        "sourceNDCBounds": [
+          [
+            -0.6600685677252328,
+            0.6241402340177076
+          ],
+          [
+            -0.6011998980620532,
+            0.7870194119025826
+          ]
+        ]
+      },
+      {
+        "mode": "modern",
+        "maximumNDCDifferenceVersusActualSourceCameraRigSnap": 1.7676784695996872e-06,
+        "BlenderNDCBounds": [
+          [
+            -0.7207525372505188,
+            -0.018238306045532227
+          ],
+          [
+            -0.5976107120513916,
+            0.2155611515045166
+          ]
+        ],
+        "sourceNDCBounds": [
+          [
+            -0.7207509742331958,
+            -0.018239459643921322
+          ],
+          [
+            -0.597608944372922,
+            0.2155594932314827
+          ]
+        ]
+      },
+      {
+        "mode": "chase",
+        "maximumNDCDifferenceVersusActualSourceCameraRigSnap": 7.669247887864827e-07,
+        "BlenderNDCBounds": [
+          [
+            -0.7856350392103195,
+            -0.0659746527671814
+          ],
+          [
+            -0.6442098617553711,
+            0.18416905403137207
+          ]
+        ],
+        "sourceNDCBounds": [
+          [
+            -0.7856352725135135,
+            -0.06597452583683115
+          ],
+          [
+            -0.6442106286801599,
+            0.1841688050733915
+          ]
+        ]
+      }
+    ],
+    "CPUOnlyNoGPUOrFPSClaim": true
+  },
+  "runtime": {
+    "recipe": "source/FlakGunRecipe.mjs",
+    "template": "asset/flak-gun.template.json",
+    "mapping": "runtime-map.json",
+    "cachedTypedGeometryBytes": 50688,
+    "reusableScratchBytes": 50688,
+    "plus": "small part/tint metadata; parsed startup JSON may be released",
+    "build": "single static posed stamp per chunk-build call into existing Batch hull/dark buckets, no per-part/prop roots/geometries/material clones",
+    "ownership": "chunk Batch-merged geometry disposes once; chunk emitters retire with owner; templates/materials/textures survive until explicit application shutdown",
+    "integrationPerformed": false
+  },
+  "render": {
+    "blender": "5.2.1 LTS",
+    "buildHash": "9e2066aef7ef",
+    "engine": "BLENDER_EEVEE",
+    "threads": 4,
+    "softwareGL": true,
+    "samples": 32,
+    "viewTransform": "AgX",
+    "exposure": 0.7,
+    "captions": {
+      "hardware-front.png": "FRONT / connected yoke, paired receivers and recoil pistons\nOFFLINE EEVEE / source-dusk lighting and mapped-hull average approximation / reference p1.15 y-.85",
+      "hardware-rear.png": "REAR / fitted bearing, cross-shaft and cradle\nOFFLINE EEVEE / source-dusk lighting and mapped-hull average approximation / reference p1.15 y-.85",
+      "hardware-side.png": "SIDE / original 4.2 barrel length and pivot Y=2.1\nOFFLINE EEVEE / source-dusk lighting and mapped-hull average approximation / reference p1.15 y-.85",
+      "hardware-top.png": "TOP / roof-contact footprint 3.3 x 3.3; no new roof cover\nOFFLINE EEVEE / source-dusk lighting and mapped-hull average approximation / reference p1.15 y-.85",
+      "hardware-bore-close.png": "MUZZLE CLOSE / real .27-deep recessed bores; two steel jackets\nOFFLINE EEVEE / source-dusk lighting and mapped-hull average approximation / reference p1.15 y-.85",
+      "hardware-mount-close.png": "MOUNT CLOSE / shoulder yokes, split race, receiver/recoil articulation\nOFFLINE EEVEE / source-dusk lighting and mapped-hull average approximation / reference p1.15 y-.85",
+      "pose-extreme-1.png": "FULL SOURCE EXTREME / pitch 1.000 yaw -1.100 / roofY 0\nOFFLINE EEVEE / analytic static Batch stamp / emitter remains at source center-between-tips",
+      "pose-extreme-2.png": "FULL SOURCE EXTREME / pitch 1.000 yaw -0.600 / roofY 0\nOFFLINE EEVEE / analytic static Batch stamp / emitter remains at source center-between-tips",
+      "pose-extreme-3.png": "FULL SOURCE EXTREME / pitch 1.300 yaw -1.100 / roofY 0\nOFFLINE EEVEE / analytic static Batch stamp / emitter remains at source center-between-tips",
+      "pose-extreme-4.png": "FULL SOURCE EXTREME / pitch 1.300 yaw -0.600 / roofY 0\nOFFLINE EEVEE / analytic static Batch stamp / emitter remains at source center-between-tips",
+      "world-classic-source.png": "WORLD CLASSIC / SOURCE / actual seed7 chunk24 roof(47.42,25.35,2340.02)\nCOMMON 1:1 world scale, shipped player at legal x16/y25 / source CameraRig.snap, no retarget\nOFFLINE EEVEE approximations / no live GPU, VFX, fog, bloom or acceptance claim",
+      "world-classic-candidate.png": "WORLD CLASSIC / CANDIDATE / actual seed7 chunk24 roof(47.42,25.35,2340.02)\nCOMMON 1:1 world scale, shipped player at legal x16/y25 / source CameraRig.snap, no retarget\nOFFLINE EEVEE approximations / no live GPU, VFX, fog, bloom or acceptance claim",
+      "world-modern-source.png": "WORLD MODERN / SOURCE / actual seed7 chunk24 roof(47.42,25.35,2340.02)\nCOMMON 1:1 world scale, shipped player at legal x16/y25 / source CameraRig.snap, no retarget\nOFFLINE EEVEE approximations / no live GPU, VFX, fog, bloom or acceptance claim",
+      "world-modern-candidate.png": "WORLD MODERN / CANDIDATE / actual seed7 chunk24 roof(47.42,25.35,2340.02)\nCOMMON 1:1 world scale, shipped player at legal x16/y25 / source CameraRig.snap, no retarget\nOFFLINE EEVEE approximations / no live GPU, VFX, fog, bloom or acceptance claim",
+      "world-chase-source.png": "WORLD CHASE / SOURCE / actual seed7 chunk24 roof(47.42,25.35,2340.02)\nCOMMON 1:1 world scale, shipped player at legal x16/y25 / source CameraRig.snap, no retarget\nOFFLINE EEVEE approximations / no live GPU, VFX, fog, bloom or acceptance claim",
+      "world-chase-candidate.png": "WORLD CHASE / CANDIDATE / actual seed7 chunk24 roof(47.42,25.35,2340.02)\nCOMMON 1:1 world scale, shipped player at legal x16/y25 / source CameraRig.snap, no retarget\nOFFLINE EEVEE approximations / no live GPU, VFX, fog, bloom or acceptance claim",
+      "reference-player.png": "SHIPPED PLAYER / style reference ONLY / original GLB, not copied geometry\nOFFLINE EEVEE / individually auto-framed, NOT common world scale",
+      "reference-sentinel.png": "SHIPPED SENTINEL / style reference ONLY / original GLB, not copied geometry\nOFFLINE EEVEE / individually auto-framed, NOT common world scale",
+      "reference-turret.png": "SHIPPED TURRET / style reference ONLY / original GLB, not copied geometry\nOFFLINE EEVEE / individually auto-framed, NOT common world scale",
+      "reference-radar.png": "SHIPPED RADAR / style reference ONLY / original GLB, not copied geometry\nOFFLINE EEVEE / individually auto-framed, NOT common world scale",
+      "reference-silo.png": "SHIPPED SILO / style reference ONLY / original GLB, not copied geometry\nOFFLINE EEVEE / individually auto-framed, NOT common world scale",
+      "reference-fuel.png": "SHIPPED FUEL / style reference ONLY / original GLB, not copied geometry\nOFFLINE EEVEE / individually auto-framed, NOT common world scale"
+    },
+    "limits": "Offline EEVEE on software GL, no live game renderer or GPU/FPS. Existing mapped hull represented by albedo average; original shared maps stay in runtime. No gameplay/VFX changes."
+  },
+  "inspection": "evidence/inspection.json",
+  "sourceHashes": {
+    "src/world/Fortress.js": "824a3d8d9e64bf775e5a486e52c29bef8ce94daebfa138bd4ab2067121790165",
+    "src/fx/Effects.js": "01afd73e640ace44b14f639e731d29b53ce62afb2acfdaa32cf050c2ca377fc3",
+    "src/core/Utils.js": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972",
+    "src/world/Level.js": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016",
+    "src/game/CameraRig.js": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205",
+    "src/core/FlightCamera.js": "f691b3cef8a36de611762cb3129571f0684457e607be141dc1b5158401f4506e",
+    "src/core/Settings.js": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+    "src/render/Materials.js": "8af35e4641253713d8d8d1770edebb3dd0bff77bf5caee4eaba7f0db58aebd52",
+    "src/render/Textures.js": "c94160c1d3980da63fc7822b88d049b2adccb5ea301e1705b8a1b48ae9dc8c05",
+    "src/render/Sky.js": "12314912081437f6c646031ee8d14b62753755b890ca104ae48f7f3083801ed5"
+  },
+  "assetSHA256": {
+    "asset/flak-gun.template.json": "60f0aeb6c958b7e6d93be7d063a6ecf141892cd27313c99d6eac0bcfe795b987",
+    "asset/fortress-rooftop-flak.blend": "ac4c4eabf40535e498c6320aca8767d4bef7c9ea17ea5837d2286073b73ffe93",
+    "asset/fortress-rooftop-flak.glb": "97a07ec5317b98c095182aadbe08cbef02310f3f4a126db631b8f7e1453cbcdd"
+  },
+  "limitations": [
+    "No production edits or loader integration. Recipe is an executable CPU-tested integration candidate.",
+    "Authored plinth sits at original roofY=0 contact; existing roof cap extends .22m above it, plus existing center HVAC intersects lower mount as in source. No roof surfaces or fixtures moved.",
+    "All-angle AABB containment sampled, not full topology intersection proof. Base3.3 vs source3.4; jacket eight-sided versus source six-sided produces intentionally different faceting.",
+    "No live GPU, real FPS, particle rendering, post-processing matching, or final acceptance.",
+    "No formal Opus review or fix rounds: pending_deferred_opus_review.",
+    "Grid samples are not an exhaustive continuous collision proof. Rotation is analytic and unquantized over full source ranges. Nearest-sample point displacement bound <= maxPivotRadius*(.0015+.0025)=0.0173m; retain this conservative padding for unsampled poses, not a claim of exact mesh containment in original hexagonal barrel volumes.",
+    "All 114 measured roofs fit by >=.274m. Other seeds/theoretical minimum 3.8-wide roof at extreme .4 yaw may leave up to .131m base overhang, still less than original square3.4 footprint; not a universal roof-containment guarantee.",
+    "Existing high wall masks much of mount in perspective WORLD cameras, even at selected legal high-altitude/edge player station.",
+    "GLB preview hull is source-map average only; runtime retains actual shared hull maps/normalScale and unmapped darkMetal. COLOR_0 gain1.1 and glTF V flip are explicit and independently audited.",
+    "Offline software EEVEE emitted nonfatal EGL_BAD_MATCH context warnings; no live game renderer, particle/postprocessing, GPU/FPS, or final acceptance claim."
+  ],
+  "freeze": {
+    "everyContentSHA256": "SHA256SUMS except itself",
+    "writeProtected": true,
+    "archiveOutsideInitial": true,
+    "transferContentsOnly": [
+      "asset",
+      "source",
+      "evidence",
+      "README.md",
+      "runtime-map.json",
+      "manifest.json",
+      "SHA256SUMS"
+    ],
+    "excludedFromArchive": [
+      "Blender executable",
+      "wrapper/tools",
+      "runtime",
+      "libraries",
+      "cache",
+      "temp",
+      "work",
+      "unrelated assets"
+    ],
+    "receiverVerification": "orchestrator responsibility; sender exit is not receiver verification"
+  }
+}

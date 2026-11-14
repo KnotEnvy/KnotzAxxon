@@ -1,0 +1,159 @@
+{
+  "formalReviews": 0,
+  "formalFixPasses": 0,
+  "method": "actual PNGs opened with view_image, not inferred from source",
+  "observations": [
+    "Overview port/starboard show single island and bow/stern taper, no repeated island.",
+    "Close hangar image visibly shows actual depth, inner frames, floor guidance and scale1 player.",
+    "Flightdeck image shows seams, lower catapult slots, rails, single bridge and scale1 reference fighter.",
+    "Stern image shows both hollow bells and recessed cores; bow close shows fitted taper.",
+    "Classic is deliberately partial carrier visibility; Modern/Chase keep the unchanged corridor framing.",
+    "Three radar views show distinct angular states; source shader/uniform/gain probes are CPU, not GPU proof.",
+    "Selected-reference gallery shares world scale1 and translations, not per-object normalization."
+  ],
+  "images": [
+    {
+      "image": "bow-taper.png",
+      "size": [
+        1100,
+        906
+      ],
+      "offlineHeaderPixels": 56,
+      "headerAddedWithoutViewportRescale": true,
+      "imageToolInspected": true,
+      "inspectionScope": "Required author self-check only, not a formal review; some underlying viewports inspected before adding the unchanged-size annotation header."
+    },
+    {
+      "image": "cue-radar-0.png",
+      "size": [
+        840,
+        756
+      ],
+      "offlineHeaderPixels": 56,
+      "headerAddedWithoutViewportRescale": true,
+      "imageToolInspected": true,
+      "inspectionScope": "Required author self-check only, not a formal review; some underlying viewports inspected before adding the unchanged-size annotation header."
+    },
+    {
+      "image": "cue-radar-1.png",
+      "size": [
+        840,
+        756
+      ],
+      "offlineHeaderPixels": 56,
+      "headerAddedWithoutViewportRescale": true,
+      "imageToolInspected": true,
+      "inspectionScope": "Required author self-check only, not a formal review; some underlying viewports inspected before adding the unchanged-size annotation header."
+    },
+    {
+      "image": "cue-radar-2.png",
+      "size": [
+        840,
+        756
+      ],
+      "offlineHeaderPixels": 56,
+      "headerAddedWithoutViewportRescale": true,
+      "imageToolInspected": true,
+      "inspectionScope": "Required author self-check only, not a formal review; some underlying viewports inspected before adding the unchanged-size annotation header."
+    },
+    {
+      "image": "flightdeck-island.png",
+      "size": [
+        1280,
+        876
+      ],
+      "offlineHeaderPixels": 56,
+      "headerAddedWithoutViewportRescale": true,
+      "imageToolInspected": true,
+      "inspectionScope": "Required author self-check only, not a formal review; some underlying viewports inspected before adding the unchanged-size annotation header."
+    },
+    {
+      "image": "game-chase.png",
+      "size": [
+        1280,
+        776
+      ],
+      "offlineHeaderPixels": 56,
+      "headerAddedWithoutViewportRescale": true,
+      "imageToolInspected": true,
+      "inspectionScope": "Required author self-check only, not a formal review; some underlying viewports inspected before adding the unchanged-size annotation header."
+    },
+    {
+      "image": "game-classic.png",
+      "size": [
+        1280,
+        776
+      ],
+      "offlineHeaderPixels": 56,
+      "headerAddedWithoutViewportRescale": true,
+      "imageToolInspected": true,
+      "inspectionScope": "Required author self-check only, not a formal review; some underlying viewports inspected before adding the unchanged-size annotation header."
+    },
+    {
+      "image": "game-modern.png",
+      "size": [
+        1280,
+        776
+      ],
+      "offlineHeaderPixels": 56,
+      "headerAddedWithoutViewportRescale": true,
+      "imageToolInspected": true,
+      "inspectionScope": "Required author self-check only, not a formal review; some underlying viewports inspected before adding the unchanged-size annotation header."
+    },
+    {
+      "image": "hangar-structure.png",
+      "size": [
+        1280,
+        876
+      ],
+      "offlineHeaderPixels": 56,
+      "headerAddedWithoutViewportRescale": true,
+      "imageToolInspected": true,
+      "inspectionScope": "Required author self-check only, not a formal review; some underlying viewports inspected before adding the unchanged-size annotation header."
+    },
+    {
+      "image": "overview-port.png",
+      "size": [
+        1600,
+        656
+      ],
+      "offlineHeaderPixels": 56,
+      "headerAddedWithoutViewportRescale": true,
+      "imageToolInspected": true,
+      "inspectionScope": "Required author self-check only, not a formal review; some underlying viewports inspected before adding the unchanged-size annotation header."
+    },
+    {
+      "image": "overview-starboard.png",
+      "size": [
+        1600,
+        656
+      ],
+      "offlineHeaderPixels": 56,
+      "headerAddedWithoutViewportRescale": true,
+      "imageToolInspected": true,
+      "inspectionScope": "Required author self-check only, not a formal review; some underlying viewports inspected before adding the unchanged-size annotation header."
+    },
+    {
+      "image": "selected-reference-scale.png",
+      "size": [
+        1440,
+        906
+      ],
+      "offlineHeaderPixels": 56,
+      "headerAddedWithoutViewportRescale": true,
+      "imageToolInspected": true,
+      "inspectionScope": "Required author self-check only, not a formal review; some underlying viewports inspected before adding the unchanged-size annotation header."
+    },
+    {
+      "image": "stern-bells.png",
+      "size": [
+        1100,
+        906
+      ],
+      "offlineHeaderPixels": 56,
+      "headerAddedWithoutViewportRescale": true,
+      "imageToolInspected": true,
+      "inspectionScope": "Required author self-check only, not a formal review; some underlying viewports inspected before adding the unchanged-size annotation header."
+    }
+  ]
+}

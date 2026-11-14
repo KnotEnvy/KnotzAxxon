@@ -1,0 +1,215 @@
+{
+  "method": "Actual source CameraRig.snap and FlightCamera matrices under deterministic stationary player, no shake/boost/boss framing. NDC projection is finite-frustum evidence only; rendered offline images are not live GPU acceptance.",
+  "cameras": [
+    {
+      "mode": "classic",
+      "sourceRig": {
+        "label": "CLASSIC 45",
+        "yaw": 45,
+        "dist": 64,
+        "height": 45.255,
+        "fov": 52
+      },
+      "eye": [
+        -45.254833995939045,
+        54.255,
+        -2.8765745019696567
+      ],
+      "lookAt": [
+        0,
+        9,
+        42.37825949396938
+      ],
+      "fov": 52,
+      "orthographic": true,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        14,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.34875712758422084,
+            -0.0813219586167195,
+            -0.8247877836571659
+          ],
+          "ndcMax": [
+            -0.27323922526031214,
+            0.013012065215912916,
+            -0.8149219270474106
+          ],
+          "pixelWidth": 48.33145748730157,
+          "pixelHeight": 33.96024857974767,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.3475307769509333,
+            -0.07951882710225827,
+            -0.8245647489932093
+          ],
+          "ndcMax": [
+            -0.2761301465017654,
+            0.007586235706690836,
+            -0.8152800393692029
+          ],
+          "pixelWidth": 45.69640348746745,
+          "pixelHeight": 31.357822611221682,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    {
+      "mode": "modern",
+      "sourceRig": {
+        "label": "MODERN 20",
+        "yaw": 20,
+        "dist": 29,
+        "height": 14,
+        "fov": 58
+      },
+      "eye": [
+        4.081415843555609,
+        23,
+        -12.872826508821962
+      ],
+      "lookAt": [
+        14,
+        10.2,
+        30.37825949396938
+      ],
+      "fov": 58,
+      "orthographic": false,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        14,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.19701313347172514,
+            -0.32412012429150255,
+            0.996118798550539
+          ],
+          "ndcMax": [
+            -0.08468377373698494,
+            -0.19988574374782894,
+            0.9965276262549615
+          ],
+          "pixelWidth": 71.89079023023373,
+          "pixelHeight": 44.7243769957225,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.19578180397361164,
+            -0.3218010426930827,
+            0.9961316274030805
+          ],
+          "ndcMax": [
+            -0.0880210732020696,
+            -0.2066557009931138,
+            0.9965218109696534
+          ],
+          "pixelWidth": 68.96686769378691,
+          "pixelHeight": 41.452323011988796,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    },
+    {
+      "mode": "chase",
+      "sourceRig": {
+        "label": "CHASE",
+        "yaw": 6,
+        "dist": 24,
+        "height": 9.5,
+        "fov": 66
+      },
+      "eye": [
+        11.491316881576317,
+        18.5,
+        -9.49026599486918
+      ],
+      "lookAt": [
+        14,
+        10.2,
+        30.37825949396938
+      ],
+      "fov": 66,
+      "orthographic": false,
+      "halfHeight": 40,
+      "width": 1280,
+      "height": 720,
+      "player": [
+        14,
+        9,
+        14.37825949396938
+      ],
+      "placement": {
+        "x": 22.2135263326345,
+        "z": 32.37825949396938,
+        "yaw": 0.1780333942733705,
+        "draws": 1
+      },
+      "projections": {
+        "source": {
+          "ndcMin": [
+            -0.20999072999494467,
+            -0.34301680732434775,
+            0.9954062363634308
+          ],
+          "ndcMax": [
+            -0.09706508387443559,
+            -0.22409134864346397,
+            0.9959669980595244
+          ],
+          "pixelWidth": 72.27241351712581,
+          "pixelHeight": 42.81316512511816,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        },
+        "candidate": {
+          "ndcMin": [
+            -0.2078386808103822,
+            -0.3420930179585774,
+            0.9954241945839236
+          ],
+          "ndcMax": [
+            -0.10001982456266761,
+            -0.23049062823922276,
+            0.9959590694613109
+          ],
+          "pixelWidth": 69.00406799853734,
+          "pixelHeight": 40.17686029896767,
+          "insideFrustum": true,
+          "occlusionChecked": false
+        }
+      }
+    }
+  ]
+}

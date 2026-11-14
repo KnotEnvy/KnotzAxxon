@@ -1,0 +1,24 @@
+{
+  "blender_version": "5.2.1 LTS",
+  "blender_build": "9e2066aef7ef",
+  "editable_parts": 103,
+  "export_nodes": [
+    "parked_fighter",
+    "airframe",
+    "engine",
+    "engine_lens",
+    "beacon",
+    "beacon_lens"
+  ],
+  "materials": [
+    "PF_Armor",
+    "PF_Mechanism",
+    "PF_Canopy",
+    "PF_EngineAmber",
+    "PF_BeaconRed"
+  ],
+  "removed_zero_area_tessellation_triangles": 62,
+  "nondegenerate_surface_sha256": "a848797211e863771cc5d9d4b2a9425718795621e356d556a8ef63f00b37d203",
+  "export_cleanup_preserves_surviving_triangle_positions_colors_normals": true,
+  "generator": "New procedural design; no shipped mesh copied. Shipped source geometry used solely in evidence."
+}

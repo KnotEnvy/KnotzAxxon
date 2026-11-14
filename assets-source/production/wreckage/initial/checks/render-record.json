@@ -1,0 +1,557 @@
+{
+  "blender": "5.2.1 LTS",
+  "build_hash": "9e2066aef7ef",
+  "environment": "Native Linux BLENDER_EEVEE, wrapper forces LIBGL_ALWAYS_SOFTWARE=1, Mesa llvmpipe where reported. Offline render, no live WebGL/GPU benchmark.",
+  "source_camera": [
+    {
+      "mode": "classic",
+      "position": [
+        -45.254833995939045,
+        54.255,
+        -17.254833995939038
+      ],
+      "lookAt": [
+        0,
+        9,
+        28
+      ],
+      "fov": 52,
+      "orthographic": true,
+      "halfHeight": 40,
+      "aspect": 1.7777777777777777,
+      "projection": [
+        0.014062499999999999,
+        0,
+        0,
+        0,
+        0,
+        0.025,
+        0,
+        0,
+        0,
+        0,
+        -0.0011111728429357185,
+        0,
+        0,
+        0,
+        -1.0001111172842934,
+        1
+      ],
+      "rig": {
+        "label": "CLASSIC 45",
+        "yaw": 45,
+        "dist": 64,
+        "height": 45.255,
+        "fov": 52
+      }
+    },
+    {
+      "mode": "modern",
+      "position": [
+        -9.91858415644439,
+        23,
+        -27.251086002791343
+      ],
+      "lookAt": [
+        0,
+        10.2,
+        16
+      ],
+      "fov": 58,
+      "orthographic": false,
+      "halfHeight": 40,
+      "aspect": 1.7777777777777777,
+      "projection": [
+        1.0147768623401758,
+        0,
+        0,
+        0,
+        0,
+        1.8040477552714236,
+        0,
+        0,
+        0,
+        0,
+        -1.0001111172842934,
+        -1,
+        0,
+        0,
+        -0.20001111172842934,
+        0
+      ],
+      "rig": {
+        "label": "MODERN 20",
+        "yaw": 20,
+        "dist": 29,
+        "height": 14,
+        "fov": 58
+      }
+    },
+    {
+      "mode": "chase",
+      "position": [
+        -2.5086831184236833,
+        18.5,
+        -23.86852548883856
+      ],
+      "lookAt": [
+        0,
+        10.2,
+        16
+      ],
+      "fov": 66,
+      "orthographic": false,
+      "halfHeight": 40,
+      "aspect": 1.7777777777777777,
+      "projection": [
+        0.8661740421457029,
+        0,
+        0,
+        0,
+        0,
+        1.539864963814583,
+        0,
+        0,
+        0,
+        0,
+        -1.0001111172842934,
+        -1,
+        0,
+        0,
+        -0.20001111172842934,
+        0
+      ],
+      "rig": {
+        "label": "CHASE",
+        "yaw": 6,
+        "dist": 24,
+        "height": 9.5,
+        "fov": 66
+      }
+    }
+  ],
+  "renders": [
+    {
+      "file": "01-kit-three-quarter.png",
+      "title": "DRIFTING WRECKAGE | gutter-keel 532 tris / sheared-chine 480 tris",
+      "footer": "OFFLINE EEVEE | studio lights, size 22 | two buckets / variant | no textures",
+      "engine": "BLENDER_EEVEE",
+      "threads": 4,
+      "seconds": 23.938,
+      "resolution": [
+        1120,
+        700
+      ],
+      "camera_frame": [
+        [
+          47.0,
+          29.375,
+          -1.0
+        ],
+        [
+          47.0,
+          -29.375,
+          -1.0
+        ],
+        [
+          -47.0,
+          -29.375,
+          -1.0
+        ],
+        [
+          -47.0,
+          29.375,
+          -1.0
+        ]
+      ],
+      "notes": "Both independent templates at identical scale; bright studio inspection lighting, not a game screenshot."
+    },
+    {
+      "file": "02-kit-torn-aft.png",
+      "title": "DRIFTING WRECKAGE | gutter-keel 532 tris / sheared-chine 480 tris",
+      "footer": "OFFLINE EEVEE | studio lights, size 22 | two buckets / variant | no textures",
+      "engine": "BLENDER_EEVEE",
+      "threads": 4,
+      "seconds": 21.839,
+      "resolution": [
+        1120,
+        700
+      ],
+      "camera_frame": [
+        [
+          46.0,
+          28.75,
+          -1.0
+        ],
+        [
+          46.0,
+          -28.75,
+          -1.0
+        ],
+        [
+          -46.0,
+          -28.75,
+          -1.0
+        ],
+        [
+          -46.0,
+          28.75,
+          -1.0
+        ]
+      ],
+      "notes": "Both independent templates at identical scale; bright studio inspection lighting, not a game screenshot."
+    },
+    {
+      "file": "03-kit-open-top.png",
+      "title": "DRIFTING WRECKAGE | gutter-keel 532 tris / sheared-chine 480 tris",
+      "footer": "OFFLINE EEVEE | studio lights, size 22 | two buckets / variant | no textures",
+      "engine": "BLENDER_EEVEE",
+      "threads": 4,
+      "seconds": 24.213,
+      "resolution": [
+        1120,
+        700
+      ],
+      "camera_frame": [
+        [
+          44.0,
+          27.5,
+          -1.0
+        ],
+        [
+          44.0,
+          -27.5,
+          -1.0
+        ],
+        [
+          -44.0,
+          -27.5,
+          -1.0
+        ],
+        [
+          -44.0,
+          27.5,
+          -1.0
+        ]
+      ],
+      "notes": "Both independent templates at identical scale; bright studio inspection lighting, not a game screenshot."
+    },
+    {
+      "file": "04-kit-underside.png",
+      "title": "DRIFTING WRECKAGE | gutter-keel 532 tris / sheared-chine 480 tris",
+      "footer": "OFFLINE EEVEE | studio lights, size 22 | two buckets / variant | no textures",
+      "engine": "BLENDER_EEVEE",
+      "threads": 4,
+      "seconds": 18.72,
+      "resolution": [
+        1120,
+        700
+      ],
+      "camera_frame": [
+        [
+          47.0,
+          29.375,
+          -1.0
+        ],
+        [
+          47.0,
+          -29.375,
+          -1.0
+        ],
+        [
+          -47.0,
+          -29.375,
+          -1.0
+        ],
+        [
+          -47.0,
+          29.375,
+          -1.0
+        ]
+      ],
+      "notes": "Both independent templates at identical scale; bright studio inspection lighting, not a game screenshot."
+    },
+    {
+      "file": "05-gutter-keel-structural-closeup.png",
+      "title": "GUTTER-KEEL | open torn end / fitted plates / attached exposed frames",
+      "footer": "OFFLINE EEVEE | structural closeup | static geometry, no damage or detached parts",
+      "engine": "BLENDER_EEVEE",
+      "threads": 4,
+      "seconds": 19.788,
+      "resolution": [
+        1120,
+        700
+      ],
+      "camera_frame": [
+        [
+          17.5,
+          10.9375,
+          -1.0
+        ],
+        [
+          17.5,
+          -10.9375,
+          -1.0
+        ],
+        [
+          -17.5,
+          -10.9375,
+          -1.0
+        ],
+        [
+          -17.5,
+          10.9375,
+          -1.0
+        ]
+      ],
+      "notes": "Canonical shell opening, thickness, torn end rims, exposed frames and fitted lap plates; no painted hole."
+    },
+    {
+      "file": "06-sheared-chine-structural-closeup.png",
+      "title": "SHEARED-CHINE | open torn end / fitted plates / attached exposed frames",
+      "footer": "OFFLINE EEVEE | structural closeup | static geometry, no damage or detached parts",
+      "engine": "BLENDER_EEVEE",
+      "threads": 4,
+      "seconds": 18.432,
+      "resolution": [
+        1120,
+        700
+      ],
+      "camera_frame": [
+        [
+          17.5,
+          10.9375,
+          -1.0
+        ],
+        [
+          17.5,
+          -10.9375,
+          -1.0
+        ],
+        [
+          -17.5,
+          -10.9375,
+          -1.0
+        ],
+        [
+          -17.5,
+          10.9375,
+          -1.0
+        ]
+      ],
+      "notes": "Canonical shell opening, thickness, torn end rims, exposed frames and fitted lap plates; no painted hole."
+    },
+    {
+      "file": "07-frame-conduit-isolation.png",
+      "title": "STRUCTURE ISOLATION | transverse frames / longerons / conduits",
+      "footer": "OFFLINE EEVEE | evidence-only visibility: shell, plates and embers hidden",
+      "engine": "BLENDER_EEVEE",
+      "threads": 4,
+      "seconds": 13.864,
+      "resolution": [
+        1120,
+        700
+      ],
+      "camera_frame": [
+        [
+          25.5,
+          15.9375,
+          -1.0
+        ],
+        [
+          25.5,
+          -15.9375,
+          -1.0
+        ],
+        [
+          -25.5,
+          -15.9375,
+          -1.0
+        ],
+        [
+          -25.5,
+          15.9375,
+          -1.0
+        ]
+      ],
+      "notes": "An inspection layer only, not a runtime state or a detach/damage feature."
+    },
+    {
+      "file": "00-shipped-vocabulary.png",
+      "title": "SHIPPED VOCABULARY | front: player / sentinel / turret; rear: radar / silo / fuel",
+      "footer": "OFFLINE EEVEE | reference sheet NORMALIZED FOR INSPECTION, not common world scale",
+      "engine": "BLENDER_EEVEE",
+      "threads": 4,
+      "seconds": 37.149,
+      "resolution": [
+        1120,
+        700
+      ],
+      "camera_frame": [
+        [
+          47.5,
+          29.6875,
+          -1.0
+        ],
+        [
+          47.5,
+          -29.6875,
+          -1.0
+        ],
+        [
+          -47.5,
+          -29.6875,
+          -1.0
+        ],
+        [
+          -47.5,
+          29.6875,
+          -1.0
+        ]
+      ],
+      "notes": "Six shipped GLBs used for bevelled plate vocabulary, exposed structure, low-key steel and restrained warm/cyan emissive accents. No reference design copied as wreckage."
+    },
+    {
+      "file": "world-classic.png",
+      "title": "WORLD SCALE | CLASSIC source camera | shipped player at 1:1",
+      "footer": "OFFLINE EEVEE | source light params / AO / t=0 flicker | sky, IBL and fog NOT WebGL",
+      "engine": "BLENDER_EEVEE",
+      "threads": 4,
+      "seconds": 6.981,
+      "resolution": [
+        1024,
+        576
+      ],
+      "camera_frame": [
+        [
+          71.11111450195312,
+          40.0,
+          -1.0
+        ],
+        [
+          71.11111450195312,
+          -40.0,
+          -1.0
+        ],
+        [
+          -71.11111450195312,
+          -40.0,
+          -1.0
+        ],
+        [
+          -71.11111450195312,
+          40.0,
+          -1.0
+        ]
+      ],
+      "notes": "Identical actual Batch scene across all three source cameras. Framing-selected source-legal seeded placements, not average gameplay: no individual placement/scale/rotation changed. Analytic environment replaces game PMREM; no game nebula, exp2 fog, bloom or tone-map equivalence claimed. Camera dimensions are source-exact."
+    },
+    {
+      "file": "world-modern.png",
+      "title": "WORLD SCALE | MODERN source camera | shipped player at 1:1",
+      "footer": "OFFLINE EEVEE | source light params / AO / t=0 flicker | sky, IBL and fog NOT WebGL",
+      "engine": "BLENDER_EEVEE",
+      "threads": 4,
+      "seconds": 11.614,
+      "resolution": [
+        1024,
+        576
+      ],
+      "camera_frame": [
+        [
+          0.8888888955116272,
+          0.5,
+          -0.9020238518714905
+        ],
+        [
+          0.8888888955116272,
+          -0.5,
+          -0.9020238518714905
+        ],
+        [
+          -0.8888888955116272,
+          -0.5,
+          -0.9020238518714905
+        ],
+        [
+          -0.8888888955116272,
+          0.5,
+          -0.9020238518714905
+        ]
+      ],
+      "notes": "Identical actual Batch scene across all three source cameras. Framing-selected source-legal seeded placements, not average gameplay: no individual placement/scale/rotation changed. Analytic environment replaces game PMREM; no game nebula, exp2 fog, bloom or tone-map equivalence claimed. Camera dimensions are source-exact."
+    },
+    {
+      "file": "world-chase.png",
+      "title": "WORLD SCALE | CHASE source camera | shipped player at 1:1",
+      "footer": "OFFLINE EEVEE | source light params / AO / t=0 flicker | sky, IBL and fog NOT WebGL",
+      "engine": "BLENDER_EEVEE",
+      "threads": 4,
+      "seconds": 11.997,
+      "resolution": [
+        1024,
+        576
+      ],
+      "camera_frame": [
+        [
+          0.8888888955116272,
+          0.5,
+          -0.7699325084686279
+        ],
+        [
+          0.8888888955116272,
+          -0.5,
+          -0.7699325084686279
+        ],
+        [
+          -0.8888888955116272,
+          -0.5,
+          -0.7699325084686279
+        ],
+        [
+          -0.8888888955116272,
+          0.5,
+          -0.7699325084686279
+        ]
+      ],
+      "notes": "Identical actual Batch scene across all three source cameras. Framing-selected source-legal seeded placements, not average gameplay: no individual placement/scale/rotation changed. Analytic environment replaces game PMREM; no game nebula, exp2 fog, bloom or tone-map equivalence claimed. Camera dimensions are source-exact."
+    },
+    {
+      "file": "world-classic-source-baseline.png",
+      "title": "WORLD SCALE | CLASSIC source baseline | original 120-triangle wrecks",
+      "footer": "OFFLINE EEVEE | same placements / source lights / player / camera as new kit",
+      "engine": "BLENDER_EEVEE",
+      "threads": 4,
+      "seconds": 12.586,
+      "resolution": [
+        1024,
+        576
+      ],
+      "camera_frame": [
+        [
+          71.11111450195312,
+          40.0,
+          -1.0
+        ],
+        [
+          71.11111450195312,
+          -40.0,
+          -1.0
+        ],
+        [
+          -71.11111450195312,
+          -40.0,
+          -1.0
+        ],
+        [
+          -71.11111450195312,
+          40.0,
+          -1.0
+        ]
+      ],
+      "notes": "Only original wreck branch geometry, not asteroids/stations/landmarks. Source-shader CPU t=0 flicker snapshot, not WebGL."
+    }
+  ],
+  "formal_reviews": 0,
+  "formal_fix_passes": 0
+}

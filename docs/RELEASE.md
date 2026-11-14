@@ -13,6 +13,8 @@ npm ci
 npx playwright install chromium
 npm test
 npm run build:pages
+npm run test:models
+npm run test:models:legacy
 npm run test:release
 ./start-user-testing.ps1
 ```
@@ -52,3 +54,5 @@ Their old image references are historical; tracked media remains recoverable fro
 history. Use the QA scripts to regenerate captures into artifacts/.
 
 Deployment follows [GitHub's custom workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [Vite's static deployment guide](https://vite.dev/guide/static-deploy.html#github-pages). Automated startup checks do not establish human gameplay, audio or physical-device acceptance.
+
+The production asset release loads the approved Blender upgrades by default. `?productionModels=0` is a QA fallback. Release smoke verifies that default startup fetched all27 runtime model/template resources and compares all served model/template bytes with dist during local validation or live `KZ_COMPARE_DIST=1` verification.

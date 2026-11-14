@@ -1,0 +1,829 @@
+{
+  "kind": "actual CPU source Batch, no WebGL/GPU claim",
+  "records": [
+    {
+      "seed": 1,
+      "sectorStart": 6350,
+      "start": 6510,
+      "end": 7490,
+      "bounds": {
+        "min": [
+          48,
+          -26,
+          6510
+        ],
+        "max": [
+          108,
+          44.5,
+          7497
+        ]
+      },
+      "triangles": 8492,
+      "maxChunkTriangles": 1352,
+      "chunks": [
+        {
+          "index": 67,
+          "z0": 6432,
+          "triangles": 240,
+          "primitives": 5,
+          "buckets": {
+            "hull": 24,
+            "neon": 144,
+            "deck": 24,
+            "paint": 24,
+            "dark": 24
+          },
+          "rngCalls": 0,
+          "stateAfter": 1753536852
+        },
+        {
+          "index": 68,
+          "z0": 6528,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 3648254549
+        },
+        {
+          "index": 69,
+          "z0": 6624,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 2007723014
+        },
+        {
+          "index": 70,
+          "z0": 6720,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 367191479
+        },
+        {
+          "index": 71,
+          "z0": 6816,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 3021627240
+        },
+        {
+          "index": 72,
+          "z0": 6912,
+          "triangles": 1352,
+          "primitives": 6,
+          "buckets": {
+            "hull": 84,
+            "neon": 552,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48,
+            "spin": 524
+          },
+          "rngCalls": 16,
+          "stateAfter": 1381095705
+        },
+        {
+          "index": 73,
+          "z0": 7008,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 4035531466
+        },
+        {
+          "index": 74,
+          "z0": 7104,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 2394999931
+        },
+        {
+          "index": 75,
+          "z0": 7200,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 754468396
+        },
+        {
+          "index": 76,
+          "z0": 7296,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 3408904157
+        },
+        {
+          "index": 77,
+          "z0": 7392,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 1768372622
+        },
+        {
+          "index": 78,
+          "z0": 7488,
+          "triangles": 204,
+          "primitives": 5,
+          "buckets": {
+            "hull": 12,
+            "neon": 120,
+            "deck": 12,
+            "paint": 12,
+            "dark": 48
+          },
+          "rngCalls": 8,
+          "stateAfter": 2655183767
+        }
+      ]
+    },
+    {
+      "seed": 7,
+      "sectorStart": 6350,
+      "start": 6510,
+      "end": 7490,
+      "bounds": {
+        "min": [
+          48,
+          -26,
+          6510
+        ],
+        "max": [
+          108,
+          44.5,
+          7497
+        ]
+      },
+      "triangles": 8492,
+      "maxChunkTriangles": 1352,
+      "chunks": [
+        {
+          "index": 67,
+          "z0": 6432,
+          "triangles": 240,
+          "primitives": 5,
+          "buckets": {
+            "hull": 24,
+            "neon": 144,
+            "deck": 24,
+            "paint": 24,
+            "dark": 24
+          },
+          "rngCalls": 0,
+          "stateAfter": 1753536858
+        },
+        {
+          "index": 68,
+          "z0": 6528,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 3648254555
+        },
+        {
+          "index": 69,
+          "z0": 6624,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 2007723020
+        },
+        {
+          "index": 70,
+          "z0": 6720,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 367191485
+        },
+        {
+          "index": 71,
+          "z0": 6816,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 3021627246
+        },
+        {
+          "index": 72,
+          "z0": 6912,
+          "triangles": 1352,
+          "primitives": 6,
+          "buckets": {
+            "hull": 84,
+            "neon": 552,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48,
+            "spin": 524
+          },
+          "rngCalls": 16,
+          "stateAfter": 1381095711
+        },
+        {
+          "index": 73,
+          "z0": 7008,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 4035531472
+        },
+        {
+          "index": 74,
+          "z0": 7104,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 2394999937
+        },
+        {
+          "index": 75,
+          "z0": 7200,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 754468402
+        },
+        {
+          "index": 76,
+          "z0": 7296,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 3408904163
+        },
+        {
+          "index": 77,
+          "z0": 7392,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 1768372628
+        },
+        {
+          "index": 78,
+          "z0": 7488,
+          "triangles": 204,
+          "primitives": 5,
+          "buckets": {
+            "hull": 12,
+            "neon": 120,
+            "deck": 12,
+            "paint": 12,
+            "dark": 48
+          },
+          "rngCalls": 8,
+          "stateAfter": 2655183773
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "sectorStart": 6350,
+      "start": 6510,
+      "end": 7490,
+      "bounds": {
+        "min": [
+          48,
+          -26,
+          6510
+        ],
+        "max": [
+          108,
+          44.5,
+          7497
+        ]
+      },
+      "triangles": 8492,
+      "maxChunkTriangles": 1352,
+      "chunks": [
+        {
+          "index": 67,
+          "z0": 6432,
+          "triangles": 240,
+          "primitives": 5,
+          "buckets": {
+            "hull": 24,
+            "neon": 144,
+            "deck": 24,
+            "paint": 24,
+            "dark": 24
+          },
+          "rngCalls": 0,
+          "stateAfter": 1753536893
+        },
+        {
+          "index": 68,
+          "z0": 6528,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 3648254590
+        },
+        {
+          "index": 69,
+          "z0": 6624,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 2007723055
+        },
+        {
+          "index": 70,
+          "z0": 6720,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 367191520
+        },
+        {
+          "index": 71,
+          "z0": 6816,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 3021627281
+        },
+        {
+          "index": 72,
+          "z0": 6912,
+          "triangles": 1352,
+          "primitives": 6,
+          "buckets": {
+            "hull": 84,
+            "neon": 552,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48,
+            "spin": 524
+          },
+          "rngCalls": 16,
+          "stateAfter": 1381095746
+        },
+        {
+          "index": 73,
+          "z0": 7008,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 4035531507
+        },
+        {
+          "index": 74,
+          "z0": 7104,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 2394999972
+        },
+        {
+          "index": 75,
+          "z0": 7200,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 754468437
+        },
+        {
+          "index": 76,
+          "z0": 7296,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 3408904198
+        },
+        {
+          "index": 77,
+          "z0": 7392,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 1768372663
+        },
+        {
+          "index": 78,
+          "z0": 7488,
+          "triangles": 204,
+          "primitives": 5,
+          "buckets": {
+            "hull": 12,
+            "neon": 120,
+            "deck": 12,
+            "paint": 12,
+            "dark": 48
+          },
+          "rngCalls": 8,
+          "stateAfter": 2655183808
+        }
+      ]
+    },
+    {
+      "seed": 123,
+      "sectorStart": 6350,
+      "start": 6510,
+      "end": 7490,
+      "bounds": {
+        "min": [
+          48,
+          -26,
+          6510
+        ],
+        "max": [
+          108,
+          44.5,
+          7497
+        ]
+      },
+      "triangles": 8492,
+      "maxChunkTriangles": 1352,
+      "chunks": [
+        {
+          "index": 67,
+          "z0": 6432,
+          "triangles": 240,
+          "primitives": 5,
+          "buckets": {
+            "hull": 24,
+            "neon": 144,
+            "deck": 24,
+            "paint": 24,
+            "dark": 24
+          },
+          "rngCalls": 0,
+          "stateAfter": 1753536974
+        },
+        {
+          "index": 68,
+          "z0": 6528,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 3648254671
+        },
+        {
+          "index": 69,
+          "z0": 6624,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 2007723136
+        },
+        {
+          "index": 70,
+          "z0": 6720,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 367191601
+        },
+        {
+          "index": 71,
+          "z0": 6816,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 3021627362
+        },
+        {
+          "index": 72,
+          "z0": 6912,
+          "triangles": 1352,
+          "primitives": 6,
+          "buckets": {
+            "hull": 84,
+            "neon": 552,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48,
+            "spin": 524
+          },
+          "rngCalls": 16,
+          "stateAfter": 1381095827
+        },
+        {
+          "index": 73,
+          "z0": 7008,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 4035531588
+        },
+        {
+          "index": 74,
+          "z0": 7104,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 2395000053
+        },
+        {
+          "index": 75,
+          "z0": 7200,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 754468518
+        },
+        {
+          "index": 76,
+          "z0": 7296,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 3408904279
+        },
+        {
+          "index": 77,
+          "z0": 7392,
+          "triangles": 744,
+          "primitives": 5,
+          "buckets": {
+            "hull": 72,
+            "neon": 480,
+            "deck": 72,
+            "paint": 72,
+            "dark": 48
+          },
+          "rngCalls": 16,
+          "stateAfter": 1768372744
+        },
+        {
+          "index": 78,
+          "z0": 7488,
+          "triangles": 204,
+          "primitives": 5,
+          "buckets": {
+            "hull": 12,
+            "neon": 120,
+            "deck": 12,
+            "paint": 12,
+            "dark": 48
+          },
+          "rngCalls": 8,
+          "stateAfter": 2655183889
+        }
+      ]
+    }
+  ],
+  "rngReplayVerified": true,
+  "sourceSHA256": {
+    "src/world/Fortress.js": "824a3d8d9e64bf775e5a486e52c29bef8ce94daebfa138bd4ab2067121790165",
+    "src/world/Level.js": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016",
+    "src/core/Utils.js": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972",
+    "src/core/Settings.js": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+    "src/game/CameraRig.js": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205",
+    "src/render/Materials.js": "8af35e4641253713d8d8d1770edebb3dd0bff77bf5caee4eaba7f0db58aebd52",
+    "src/render/Sky.js": "12314912081437f6c646031ee8d14b62753755b890ca104ae48f7f3083801ed5",
+    "src/entities/Enemies.js": "9c7f88630d52e8dc721ec9380139f29aec747c30a3ad599adaacb8e55cea864c",
+    "src/game/Game.js": "cbf9b335e16a44bc6b59f30e6a6a01240230a8b231fade31f4c1dbdfdea56b98"
+  }
+}

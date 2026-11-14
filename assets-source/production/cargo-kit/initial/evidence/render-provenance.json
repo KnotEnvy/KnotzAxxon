@@ -1,0 +1,546 @@
+{
+  "engine": "BLENDER_EEVEE",
+  "blender": "5.2.1 LTS",
+  "build_hash": "9e2066aef7ef",
+  "threads": 4,
+  "samples": 24,
+  "software_mesa_forced": true,
+  "source": "actual source Batch positions/normals/linear tint/AO; actual source CameraRig snap / aspect 16:9; shipped public/models/player.glb imported unscaled",
+  "approximation": "Offline EEVEE source-dusk-inspired SUN/fill/rim and no mapped hull textures/normal/roughness maps. Deck and lane marks are test doubles; no gameplay/collider claims. Player is shipped GLB, not a proxy. Not live WebGL/GPU/FPS or final acceptance.",
+  "world_scale": "one game unit = one Blender meter; no per-rig object scaling, only camera changes. Repeated source pile fixtures at Z18/42/68 are intentional layout test doubles, not a claimed live generated chunk.",
+  "inspection": "Inspection views focus actual source pile bounds; underside omits deck intentionally.",
+  "files": [
+    {
+      "file": "frames/front-quarter.png",
+      "eye": [
+        14.838821411132812,
+        6.821246528625489,
+        23.773761749267578
+      ],
+      "look": [
+        21.838821411132812,
+        1.4212465286254883,
+        31.773761749267578
+      ],
+      "pixels": [
+        960,
+        720
+      ],
+      "orthographic_width": 7.8,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/rear-quarter.png",
+      "eye": [
+        28.838821411132812,
+        6.221246528625488,
+        39.77376174926758
+      ],
+      "look": [
+        21.838821411132812,
+        1.4212465286254883,
+        31.773761749267578
+      ],
+      "pixels": [
+        960,
+        720
+      ],
+      "orthographic_width": 7.8,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/top.png",
+      "eye": [
+        21.82882141113281,
+        13.421246528625488,
+        31.773761749267578
+      ],
+      "look": [
+        21.838821411132812,
+        1.4212465286254883,
+        31.773761749267578
+      ],
+      "pixels": [
+        960,
+        720
+      ],
+      "orthographic_width": 7.8,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/underside.png",
+      "eye": [
+        27.838821411132812,
+        -3.0787534713745117,
+        24.773761749267578
+      ],
+      "look": [
+        21.838821411132812,
+        1.4212465286254883,
+        31.773761749267578
+      ],
+      "pixels": [
+        960,
+        720
+      ],
+      "orthographic_width": 7.8,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/crate-hardware.png",
+      "eye": [
+        -22.32529945373535,
+        2.6054894089698792,
+        28.22488441467285
+      ],
+      "look": [
+        -19.12529945373535,
+        0.5054894089698792,
+        31.82488441467285
+      ],
+      "pixels": [
+        960,
+        720
+      ],
+      "orthographic_width": 3.6,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/drum-hardware.png",
+      "eye": [
+        20.40000228881836,
+        3.050000011920929,
+        28.2
+      ],
+      "look": [
+        22.60000228881836,
+        0.550000011920929,
+        31.0
+      ],
+      "pixels": [
+        960,
+        720
+      ],
+      "orthographic_width": 2.3,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-1.9-1-source.png",
+      "eye": [
+        -25.878040313720703,
+        6.5,
+        23.92299461364746
+      ],
+      "look": [
+        -18.878040313720703,
+        1.25,
+        31.92299461364746
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-1.9-1-kit.png",
+      "eye": [
+        -25.866352081298828,
+        6.5,
+        23.922996520996094
+      ],
+      "look": [
+        -18.866352081298828,
+        1.25,
+        31.922996520996094
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-1.9-7-source.png",
+      "eye": [
+        -26.48284149169922,
+        6.5,
+        23.92441749572754
+      ],
+      "look": [
+        -19.48284149169922,
+        1.25,
+        31.92441749572754
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-1.9-7-kit.png",
+      "eye": [
+        -26.482845306396484,
+        6.5,
+        23.92441749572754
+      ],
+      "look": [
+        -19.482845306396484,
+        1.25,
+        31.92441749572754
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-1.9-42-source.png",
+      "eye": [
+        -25.664867401123047,
+        6.5,
+        23.9481201171875
+      ],
+      "look": [
+        -18.664867401123047,
+        1.25,
+        31.9481201171875
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-1.9-42-kit.png",
+      "eye": [
+        -25.661178588867188,
+        6.5,
+        23.94548988342285
+      ],
+      "look": [
+        -18.661178588867188,
+        1.25,
+        31.94548988342285
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-1.9-123-source.png",
+      "eye": [
+        -26.67931365966797,
+        6.5,
+        23.737281799316406
+      ],
+      "look": [
+        -19.67931365966797,
+        1.25,
+        31.737281799316406
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-1.9-123-kit.png",
+      "eye": [
+        -26.683490753173828,
+        6.5,
+        23.73241424560547
+      ],
+      "look": [
+        -19.683490753173828,
+        1.25,
+        31.73241424560547
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-3.2-1-source.png",
+      "eye": [
+        14.621959686279297,
+        6.5,
+        23.92299461364746
+      ],
+      "look": [
+        21.621959686279297,
+        1.25,
+        31.92299461364746
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-3.2-1-kit.png",
+      "eye": [
+        14.633647918701172,
+        6.5,
+        23.922996520996094
+      ],
+      "look": [
+        21.633647918701172,
+        1.25,
+        31.922996520996094
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-3.2-7-source.png",
+      "eye": [
+        14.211271286010742,
+        6.5,
+        23.985034942626953
+      ],
+      "look": [
+        21.211271286010742,
+        1.25,
+        31.985034942626953
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-3.2-7-kit.png",
+      "eye": [
+        14.211271286010742,
+        6.5,
+        23.98640251159668
+      ],
+      "look": [
+        21.211271286010742,
+        1.25,
+        31.98640251159668
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-3.2-42-source.png",
+      "eye": [
+        14.835132598876953,
+        6.5,
+        23.765914916992188
+      ],
+      "look": [
+        21.835132598876953,
+        1.25,
+        31.765914916992188
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-3.2-42-kit.png",
+      "eye": [
+        14.838821411132812,
+        6.5,
+        23.773761749267578
+      ],
+      "look": [
+        21.838821411132812,
+        1.25,
+        31.773761749267578
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-3.2-123-source.png",
+      "eye": [
+        13.820686340332031,
+        6.5,
+        23.737281799316406
+      ],
+      "look": [
+        20.82068634033203,
+        1.25,
+        31.737281799316406
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/stack-3.2-123-kit.png",
+      "eye": [
+        13.816509246826172,
+        6.5,
+        23.73241424560547
+      ],
+      "look": [
+        20.816509246826172,
+        1.25,
+        31.73241424560547
+      ],
+      "pixels": [
+        640,
+        500
+      ],
+      "orthographic_width": 8.4,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/world-classic-source.png",
+      "eye": [
+        -45.254833995939045,
+        54.255,
+        -17.254833995939038
+      ],
+      "look": [
+        0,
+        9,
+        28
+      ],
+      "pixels": [
+        1280,
+        720
+      ],
+      "orthographic_width": 142.22222222222223,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/world-classic-kit.png",
+      "eye": [
+        -45.254833995939045,
+        54.255,
+        -17.254833995939038
+      ],
+      "look": [
+        0,
+        9,
+        28
+      ],
+      "pixels": [
+        1280,
+        720
+      ],
+      "orthographic_width": 142.22222222222223,
+      "horizontal_fov": null
+    },
+    {
+      "file": "frames/world-modern-source.png",
+      "eye": [
+        -9.91858415644439,
+        20,
+        -27.251086002791343
+      ],
+      "look": [
+        0,
+        7.2,
+        16
+      ],
+      "pixels": [
+        1280,
+        720
+      ],
+      "orthographic_width": null,
+      "horizontal_fov": 89.15957277247843
+    },
+    {
+      "file": "frames/world-modern-kit.png",
+      "eye": [
+        -9.91858415644439,
+        20,
+        -27.251086002791343
+      ],
+      "look": [
+        0,
+        7.2,
+        16
+      ],
+      "pixels": [
+        1280,
+        720
+      ],
+      "orthographic_width": null,
+      "horizontal_fov": 89.15957277247843
+    },
+    {
+      "file": "frames/world-chase-source.png",
+      "eye": [
+        -2.5086831184236833,
+        15.5,
+        -23.86852548883856
+      ],
+      "look": [
+        0,
+        7.2,
+        16
+      ],
+      "pixels": [
+        1280,
+        720
+      ],
+      "orthographic_width": null,
+      "horizontal_fov": 98.20347844532299
+    },
+    {
+      "file": "frames/world-chase-kit.png",
+      "eye": [
+        -2.5086831184236833,
+        15.5,
+        -23.86852548883856
+      ],
+      "look": [
+        0,
+        7.2,
+        16
+      ],
+      "pixels": [
+        1280,
+        720
+      ],
+      "orthographic_width": null,
+      "horizontal_fov": 98.20347844532299
+    }
+  ]
+}

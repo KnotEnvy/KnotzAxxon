@@ -53,3 +53,10 @@ Model instances own geometry and cloned materials. Templates own shared textures
 Run `node scripts/qa/imported-models.cjs` to check boot, imported model bindings,
 reactor and charge states, shoulder destruction, and repeated boss creation/disposal
 in Chromium. `npm run build:pages` and `npm run test:release` check the deployable build.
+
+New production upgrades are tracked in [the production queue](../docs/asset-production/README.md).
+The first pair is drone and enemy interceptor; their sources will be retained here after
+verified delivery. The fuel pickup in that queue is separate from the shipped destructible fuel cell.
+Native Linux Blender on NitroBliss is the required runtime for this phase.
+
+Production asset release was user-approved on2026-11-14. The21 new submissions load by default after release;curated development evidence remains with editable source packs,and complete initial snapshots are preserved in the local archive according to docs/asset-production/retention.json. Formal Opus review/polish is still deferred.

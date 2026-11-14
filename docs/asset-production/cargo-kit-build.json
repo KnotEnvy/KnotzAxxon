@@ -1,0 +1,27 @@
+{
+  "taskId": "node:delegated-task:command%3Amcp%3A5804c46b-c218-4df6-87ce-ee28f95841db%3Aremote-delegate%3Anitro-sol-cargo-kit-production-20261114-01",
+  "childThreadId": null,
+  "remoteChild": {
+    "environmentId": "543fe9a3-cf00-4f96-8f57-b8d50dd01cd2",
+    "threadId": "mcp:launch:a413f32f5e1a0bf204205c25ef347e0345b203774f9d075cd79e357012027c55",
+    "label": "NitroBliss"
+  },
+  "link": "[Cargo crate and drum scenery kit \u2014 Sol XHigh](t3-thread://v2/543fe9a3-cf00-4f96-8f57-b8d50dd01cd2/mcp:launch:a413f32f5e1a0bf204205c25ef347e0345b203774f9d075cd79e357012027c55)",
+  "childRunId": null,
+  "childNodeId": "node:delegated-task:command%3Amcp%3A5804c46b-c218-4df6-87ce-ee28f95841db%3Aremote-delegate%3Anitro-sol-cargo-kit-production-20261114-01",
+  "status": "completed",
+  "workState": "working",
+  "hasPendingChildRuns": false,
+  "latestTerminalRunId": null,
+  "latestTerminalStatus": null,
+  "latestTerminalSummary": null,
+  "latestTerminalResultContextTransferId": null,
+  "providerInstanceId": "codex",
+  "model": "gpt-6.1-sol",
+  "executedModel": null,
+  "summary": null,
+  "resultContextTransferId": null,
+  "hasPendingQuestion": false,
+  "pendingApproval": null,
+  "waitTimedOut": false
+}

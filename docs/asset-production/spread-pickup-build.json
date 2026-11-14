@@ -1,0 +1,27 @@
+{
+  "taskId": "node:delegated-task:command%3Amcp%3A2f58fd8b-de15-4764-9b39-0bc19581fbe8%3Aremote-delegate%3Anitro-sol-spread-pickup-production-20261114-01",
+  "childThreadId": null,
+  "remoteChild": {
+    "environmentId": "543fe9a3-cf00-4f96-8f57-b8d50dd01cd2",
+    "threadId": "mcp:launch:09941684a2e84b844772bdaab38343cd247b1e7ede8975e99e9fb419065ee720",
+    "label": "NitroBliss"
+  },
+  "link": "[Spread-shot pickup production asset — Sol XHigh](t3-thread://v2/543fe9a3-cf00-4f96-8f57-b8d50dd01cd2/mcp:launch:09941684a2e84b844772bdaab38343cd247b1e7ede8975e99e9fb419065ee720)",
+  "childRunId": null,
+  "childNodeId": "node:delegated-task:command%3Amcp%3A2f58fd8b-de15-4764-9b39-0bc19581fbe8%3Aremote-delegate%3Anitro-sol-spread-pickup-production-20261114-01",
+  "status": "running",
+  "workState": "working",
+  "hasPendingChildRuns": false,
+  "latestTerminalRunId": null,
+  "latestTerminalStatus": null,
+  "latestTerminalSummary": null,
+  "latestTerminalResultContextTransferId": null,
+  "providerInstanceId": "codex",
+  "model": "gpt-6.1-sol",
+  "executedModel": null,
+  "summary": null,
+  "resultContextTransferId": null,
+  "hasPendingQuestion": false,
+  "pendingApproval": null,
+  "waitTimedOut": false
+}

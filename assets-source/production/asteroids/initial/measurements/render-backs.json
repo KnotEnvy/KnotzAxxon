@@ -1,0 +1,21 @@
+{
+  "engine": "BLENDER_EEVEE",
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "threads": 4,
+  "frames": [
+    {
+      "file": "evidence/scar-cleaved-back.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        900,
+        900
+      ],
+      "kind": "back",
+      "node": "AS_Scar_Cleaved",
+      "worldScale": false
+    }
+  ],
+  "liveWebGL": false
+}

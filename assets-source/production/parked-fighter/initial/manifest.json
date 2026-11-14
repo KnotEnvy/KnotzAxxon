@@ -1,0 +1,914 @@
+{
+  "asset": "parked-fighter",
+  "role": "grounded gameplay airfield enemy target",
+  "stage": "INITIAL",
+  "immutable": true,
+  "review_status": "pending_deferred_opus_review",
+  "formal_reviews": 0,
+  "formal_fix_or_polish_passes": 0,
+  "final_art_acceptance": false,
+  "frozenAtUTC": "2026-11-14T16:57:17.247763+00:00",
+  "host": "NitroBliss",
+  "sourceCommit": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "requestedRuntime": {
+    "provider": "codex",
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "xhigh",
+    "speed": "available speed; user accepted no exposed fast-mode toggle"
+  },
+  "actualRuntime": {
+    "provider": "codex",
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "xhigh",
+    "helpersOrDelegates": 0,
+    "claudeRetries": 0,
+    "fastModeClaim": false
+  },
+  "nativeRuntime": {
+    "blenderVersion": "5.2.1 LTS",
+    "build": "9e2066aef7ef",
+    "platform": "native Linux x64",
+    "renderEngine": "BLENDER_EEVEE",
+    "renderThreads": 4,
+    "llvmpipeThreads": 4,
+    "evidenceSamples": 16,
+    "savedStudioSamples": 24,
+    "viewTransform": "AgX",
+    "softwareRasterization": true
+  },
+  "deliverables": {
+    "blend": {
+      "path": "build/parked-fighter.blend",
+      "sha256": "b00fa0b5fd219d8de5c21d675859e9e5d9df27daacc3fb801c44dab6cb9433b3",
+      "bytes": 251304,
+      "packed": true,
+      "externalDependencies": 0,
+      "editableParts": 103
+    },
+    "glb": {
+      "path": "build/parked-fighter.glb",
+      "sha256": "681d691d277906ca960819d7f7a19536de041264fe76bd7a672a34c5fa24be55",
+      "bytes": 363432
+    },
+    "runtimeMap": "RUNTIME_MAP.md",
+    "generator": "scripts/build_fighter.py",
+    "binaryReport": "evidence/glb_binary_report.json",
+    "sourceContract": "source/source_contract.json",
+    "nativeVerification": "evidence/blender_verification.json",
+    "runtimeVerification": "evidence/runtime_verification.json",
+    "contactSheet": "evidence/contact-sheet.png",
+    "individualPNGs": [
+      "evidence/01_rest_common.png",
+      "evidence/02_front_threequarter.png",
+      "evidence/03_aft_threequarter.png",
+      "evidence/04_top.png",
+      "evidence/05_side.png",
+      "evidence/06_front.png",
+      "evidence/07_aft_idle.png",
+      "evidence/08_aft_pulse_min.png",
+      "evidence/09_aft_pulse_max.png",
+      "evidence/10_beacon_off.png",
+      "evidence/11_yaw_98.png",
+      "evidence/11_yaw_37.png",
+      "evidence/12_lift_transition.png",
+      "evidence/12_full_launch.png",
+      "evidence/12_altitude_cap.png",
+      "evidence/12_passing_outside_window.png",
+      "evidence/13_source_common.png",
+      "evidence/14_airfield_coherence.png",
+      "evidence/15_game_classic_near.png",
+      "evidence/16_small_classic.png",
+      "evidence/15_game_classic_far.png",
+      "evidence/15_game_modern_near.png",
+      "evidence/16_small_modern.png",
+      "evidence/15_game_modern_far.png",
+      "evidence/15_game_chase_near.png",
+      "evidence/16_small_chase.png",
+      "evidence/15_game_chase_far.png"
+    ]
+  },
+  "measurements": {
+    "evaluatedTrianglesVisible": 4698,
+    "zeroAreaTriangles": 0,
+    "visibleMaterialPrimitives": 5,
+    "materialCount": 5,
+    "textureCount": 0,
+    "triangleTarget": 5000,
+    "triangleCeiling": 7000,
+    "primitiveCeilingIncludingCues": 5,
+    "glbByteCeiling": 1048576,
+    "transformedRestBoundsGame": {
+      "min": [
+        -3.0368425846099854,
+        0.0,
+        -3.640000104904175
+      ],
+      "max": [
+        3.0368425846099854,
+        2.580000102519989,
+        2.299999952316284
+      ],
+      "size": [
+        6.073685169219971,
+        2.580000102519989,
+        5.940000057220459
+      ]
+    },
+    "restCondition": "Identity external yaw/pitch, engine scale .3, beacon visible; all authored node transforms applied, no hidden shell",
+    "sourceBaseline": {
+      "triangles": 692,
+      "visiblePrimitives": 4,
+      "unyawedBounds": {
+        "min": [
+          -3.073697805404663,
+          1.1920929132713809e-08,
+          -3.700000047683716
+        ],
+        "max": [
+          3.073697805404663,
+          2.5800000071525573,
+          2.3165738582611084
+        ],
+        "size": [
+          6.147395610809326,
+          2.579999995231628,
+          6.016573905944824
+        ]
+      },
+      "hiddenFlashTriangles": 176
+    },
+    "hiddenFlash": {
+      "triangles": 4554,
+      "primitives": 1,
+      "initiallyHidden": true,
+      "scale": 1.12,
+      "parent": "importedRoot",
+      "cleanedByExistingEnemyDispose": true
+    },
+    "seededYawBounds": {
+      "seeded_yaw_98": {
+        "min": [
+          -3.169314465975882,
+          0.0,
+          -3.5698591722529684
+        ],
+        "max": [
+          2.783356827906278,
+          2.580000102519989,
+          2.331043760548663
+        ],
+        "size": [
+          5.95267129388216,
+          2.580000102519989,
+          5.900902932801632
+        ]
+      },
+      "seeded_yaw_37": {
+        "min": [
+          -2.785092991393834,
+          0.0,
+          -3.5706516218244597
+        ],
+        "max": [
+          3.1689225088193163,
+          2.580000102519989,
+          2.3302155063183085
+        ],
+        "size": [
+          5.95401550021315,
+          2.580000102519989,
+          5.900867128142768
+        ]
+      }
+    },
+    "sourceMotionBounds": "evidence/glb_binary_report.json sourceMotionTransformedBounds; 12 named source update samples, 2 seeded yaw extrema, 420 natural approach frames",
+    "minimumNaturalApproachGroundClearance": 0.0,
+    "densityProxy": {
+      "window": 355,
+      "seeds": [
+        1,
+        100
+      ],
+      "loops": [
+        0,
+        1,
+        3
+      ],
+      "results": [
+        {
+          "count": 10,
+          "seed": 53,
+          "loop": 0,
+          "zStart": 8270.912309777923,
+          "zEnd": 8498.73877093289
+        },
+        {
+          "count": 10,
+          "seed": 99,
+          "loop": 1,
+          "zStart": 2434.0941312350333,
+          "zEnd": 2622.5201532859355
+        },
+        {
+          "count": 10,
+          "seed": 63,
+          "loop": 3,
+          "zStart": 1802.067209519446,
+          "zEnd": 2143.1320237563923
+        }
+      ],
+      "notLiveMaximum": true
+    },
+    "tenTargetProxy": {
+      "visibleTriangles": 46980,
+      "visiblePrimitives": 50,
+      "notLiveMaximum": true
+    },
+    "engineMaxRadius": 0.25079999999999997,
+    "nozzleInnerRadius": 0.277,
+    "engineFullPulseRadialClearance": 0.026200000000000057
+  },
+  "axes": {
+    "up": "+Y",
+    "gameTravel": "+Z",
+    "aircraftNose": "-Z",
+    "engineAft": "+Z"
+  },
+  "rootPivotGame": [
+    0,
+    0,
+    0
+  ],
+  "collisionSphere": {
+    "radius": 2.4,
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "unchanged": true
+  },
+  "integration": {
+    "installed": false,
+    "enemyKind": "parked",
+    "recommendedImportedKey": "parked-fighter",
+    "file": "parked-fighter.glb",
+    "existingGroundAdapterSupportsThisKind": false
+  },
+  "dynamicPivots": {
+    "engine": {
+      "position": [
+        0,
+        1,
+        2.3
+      ],
+      "initialUniformScale": 0.3,
+      "scaleMinMaxScrambleFullSpool": [
+        0.995,
+        1.045
+      ],
+      "facing": "+Z aft"
+    },
+    "beacon": {
+      "position": [
+        0,
+        2.4,
+        1.6
+      ],
+      "visible": "sin(time*5+pos.z)>.2"
+    }
+  },
+  "namedNodes": [
+    {
+      "index": 5,
+      "name": "parked_fighter",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "children": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "index": 0,
+      "name": "airframe",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "children": []
+    },
+    {
+      "index": 2,
+      "name": "beacon",
+      "translation": [
+        0,
+        2.4000000953674316,
+        1.600000023841858
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          2.4000000953674316
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          1.600000023841858
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "children": [
+        1
+      ]
+    },
+    {
+      "index": 1,
+      "name": "beacon_lens",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          2.4000000953674316
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          1.600000023841858
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "children": []
+    },
+    {
+      "index": 4,
+      "name": "engine",
+      "translation": [
+        0,
+        1,
+        2.299999952316284
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0.30000001192092896,
+        0.30000001192092896,
+        0.30000001192092896
+      ],
+      "worldMatrix": [
+        [
+          0.30000001192092896,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.30000001192092896,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.30000001192092896,
+          2.299999952316284
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "children": [
+        3
+      ]
+    },
+    {
+      "index": 3,
+      "name": "engine_lens",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix": [
+        [
+          0.30000001192092896,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.30000001192092896,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.30000001192092896,
+          2.299999952316284
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "children": []
+    }
+  ],
+  "materialPrimitives": [
+    {
+      "node": "airframe",
+      "triangles": 1122,
+      "vertices": 2485,
+      "material": "PF_Armor",
+      "bounds": {
+        "min": [
+          -3.0368425846099854,
+          0.6800000071525574,
+          -3.619999885559082
+        ],
+        "max": [
+          3.0368425846099854,
+          2.3399999141693115,
+          2.1600000858306885
+        ],
+        "size": [
+          6.073685169219971,
+          1.6599999070167542,
+          5.7799999713897705
+        ]
+      },
+      "attributes": [
+        "POSITION",
+        "NORMAL",
+        "COLOR_0"
+      ],
+      "zeroAreaTriangles": 0
+    },
+    {
+      "node": "airframe",
+      "triangles": 3356,
+      "vertices": 6376,
+      "material": "PF_Mechanism",
+      "bounds": {
+        "min": [
+          -2.9366261959075928,
+          0.0,
+          -3.640000104904175
+        ],
+        "max": [
+          2.9366261959075928,
+          2.3999998569488525,
+          2.2925000190734863
+        ],
+        "size": [
+          5.8732523918151855,
+          2.3999998569488525,
+          5.932500123977661
+        ]
+      },
+      "attributes": [
+        "POSITION",
+        "NORMAL",
+        "COLOR_0"
+      ],
+      "zeroAreaTriangles": 0
+    },
+    {
+      "node": "airframe",
+      "triangles": 76,
+      "vertices": 174,
+      "material": "PF_Canopy",
+      "bounds": {
+        "min": [
+          -0.3149999976158142,
+          1.3589999675750732,
+          -2.119999885559082
+        ],
+        "max": [
+          0.3149999976158142,
+          1.8910000324249268,
+          -0.07999999821186066
+        ],
+        "size": [
+          0.6299999952316284,
+          0.5320000648498535,
+          2.0399998873472214
+        ]
+      },
+      "attributes": [
+        "POSITION",
+        "NORMAL",
+        "COLOR_0"
+      ],
+      "zeroAreaTriangles": 0
+    },
+    {
+      "node": "beacon_lens",
+      "triangles": 120,
+      "vertices": 89,
+      "material": "PF_BeaconRed",
+      "bounds": {
+        "min": [
+          -0.18000000715255737,
+          2.2200000882148743,
+          1.4200000166893005
+        ],
+        "max": [
+          0.18000000715255737,
+          2.580000102519989,
+          1.7800000309944153
+        ],
+        "size": [
+          0.36000001430511475,
+          0.36000001430511475,
+          0.36000001430511475
+        ]
+      },
+      "attributes": [
+        "POSITION",
+        "NORMAL",
+        "TEXCOORD_0"
+      ],
+      "zeroAreaTriangles": 0
+    },
+    {
+      "node": "engine_lens",
+      "triangles": 24,
+      "vertices": 25,
+      "material": "PF_EngineAmber",
+      "bounds": {
+        "min": [
+          -0.07200000125169748,
+          0.9279999987483025,
+          2.299999952316284
+        ],
+        "max": [
+          0.07200000125169748,
+          1.0720000012516975,
+          2.299999952316284
+        ],
+        "size": [
+          0.14400000250339495,
+          0.14400000250339495,
+          0.0
+        ]
+      },
+      "attributes": [
+        "POSITION",
+        "NORMAL",
+        "COLOR_0",
+        "COLOR_1"
+      ],
+      "zeroAreaTriangles": 0
+    }
+  ],
+  "materialOwnership": "RUNTIME_MAP.md; per-enemy cloned static materials and geometries, shared mats.neon cues, flash geometry parented under importedRoot for existing Enemy.dispose",
+  "gameplayPreserved": {
+    "hp": 1,
+    "radius": 2.4,
+    "score": 150,
+    "scrambleProbability": 0.35,
+    "rngCallsInConstructor": 2,
+    "rngOrder": [
+      "bool(.35)",
+      "range(-.2,.2)"
+    ],
+    "pitchAxis": "+X Euler XYZ source convention",
+    "rootYawRange": [
+      -0.2,
+      0.2
+    ],
+    "launchWindowExclusive": [
+      -20,
+      60
+    ],
+    "liftRate": 0.55,
+    "maxVerticalSpeed": 9,
+    "forwardSpeedFactor": 0.75,
+    "rootAltitudeCap": 23,
+    "pitchTarget": -0.35,
+    "pitchDamping": 4,
+    "weapons": null,
+    "detach": "N/A",
+    "gearRetraction": "N/A"
+  },
+  "evidence": {
+    "mode": "offline reconstruction, NOT live gameplay proof",
+    "commonNeutral": {
+      "camera": [
+        -16,
+        24,
+        -30
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "vertical_span": 14,
+      "key": [
+        -12,
+        22,
+        -12
+      ],
+      "fill": [
+        14,
+        12,
+        8
+      ],
+      "commonExtraRim": false
+    },
+    "sourceCameraRigs": [
+      {
+        "mode": "classic",
+        "label": "CLASSIC 45",
+        "yaw": 45,
+        "dist": 64,
+        "height": 45.255,
+        "fov": 52,
+        "eye": [
+          -45.254833995939045,
+          54.255,
+          -45.25483399593904
+        ],
+        "target": [
+          0,
+          9,
+          0
+        ],
+        "classic": true,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "playerPos": [
+          0,
+          6,
+          -28
+        ]
+      },
+      {
+        "mode": "modern",
+        "label": "MODERN 20",
+        "yaw": 20,
+        "dist": 29,
+        "height": 14,
+        "fov": 58,
+        "eye": [
+          -9.91858415644439,
+          20,
+          -55.25108600279134
+        ],
+        "target": [
+          0,
+          7.2,
+          -12
+        ],
+        "classic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "playerPos": [
+          0,
+          6,
+          -28
+        ]
+      },
+      {
+        "mode": "chase",
+        "label": "CHASE",
+        "yaw": 6,
+        "dist": 24,
+        "height": 9.5,
+        "fov": 66,
+        "eye": [
+          -2.5086831184236833,
+          15.5,
+          -51.86852548883856
+        ],
+        "target": [
+          0,
+          7.2,
+          -12
+        ],
+        "classic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "playerPos": [
+          0,
+          6,
+          -28
+        ]
+      }
+    ],
+    "settings": "evidence/render_settings.json",
+    "viewed": "evidence/viewed_images.json",
+    "shippedReference": {
+      "path": "public/models/player.glb",
+      "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "copiedIntoDeliveredAsset": false
+    },
+    "noPerAssetNormalization": true
+  },
+  "constructionSelfChecks": [
+    "Actual procedural source geometry and dynamic update executed before design",
+    "Orthographic projection calibrated through Blender projection matrix, exact vertical span asserted",
+    "Canopy longitudinal crown fitted to curved glazing profile before freeze",
+    "Zero-area tessellation triangles removed from baked export while preserving surviving positions, corner colors and normals; final binary has zero degenerate triangles",
+    "All delivered PNGs rebound to final GLB SHA and final saved blend in bounded render batches",
+    "Hit-shell ownership verified with actual current Enemy.dispose source",
+    "Reopened native saved blend and clean-scene GLB reimport matched independent binary geometry bounds and triangle counts"
+  ],
+  "limitations": [
+    "No production parked-fighter adapter installed. Orchestrator integrates in its bound SuperBeast worktree; source/public/docs unchanged.",
+    "No live gameplay/WebGL proof, GPU frame-time measurement or final art acceptance. Formal Opus review/polish remains deferred.",
+    "Offline renders reconstruct source snap cameras and dusk sun/rim parameters; HemisphereLight, shader rims, fog, bloom and game postprocessing are not reproduced exactly.",
+    "Density proxy 10/355 units over seeds 1..100 and loops 0,1,3 is not a live maximum.",
+    "Canopy intentionally opaque stylized glazing. No textures/atlas, interior transparency, gear retract, detach or weapon mechanics.",
+    "Engine idle disk preserves source small radius/scale, front-occluded and only aft-readable. Small classic views may show only silhouette and broad cues.",
+    "Ground clearance is sampled over the actual 420-frame source approach plus named states, not continuous rigid-body certification.",
+    "Root cap is Y=23, not top-of-visual cap: upper surfaces may exceed Y=25 as with the source.",
+    "Source scramble translates +Z while nose remains -Z and source negative pitch is retained; no new turn-to-flight-direction correction is introduced.",
+    "Native software EEVEE emits EGL_BAD_MATCH fallback initialization warnings but successfully renders the supplied PNGs.",
+    "Blender studio is editable and packed with no external assets; source parts and baked export are separate collections and require deliberate rebuild after edits.",
+    "Receiver-side archive/hash verification and eventual acceptance are handled by orchestrator, not claimed here."
+  ],
+  "transfer": {
+    "mechanism": "Tailscale Taildrop",
+    "target": "100.112.66.64:",
+    "receiverAutoReceive": "/mnt/c/Users/Knotz2/Downloads",
+    "statusAtFreeze": "pending archive creation and sender attempt; final response/outer receipt records sender outcome",
+    "receiverVerified": false
+  },
+  "sourceFilesSHA256": {
+    "src/entities/Enemies.js": "9c7f88630d52e8dc721ec9380139f29aec747c30a3ad599adaacb8e55cea864c",
+    "src/world/Fortress.js": "824a3d8d9e64bf775e5a486e52c29bef8ce94daebfa138bd4ab2067121790165",
+    "src/render/GeoUtils.js": "eb138a5ad1280bc4db4731de456938390a20002b9caccd74ca6b041b9d9874c5",
+    "src/render/ImportedModels.js": "212b8c8f4f438ae70b408e2ff218524850e3cf6b027e63961a813e58d6d42773",
+    "src/render/Dispose.js": "c2557155aa3786a0783c1df376171a10a03ae0323563afae663b51a61fbf97de",
+    "src/game/CameraRig.js": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205",
+    "src/core/FlightCamera.js": "f691b3cef8a36de611762cb3129571f0684457e607be141dc1b5158401f4506e",
+    "src/core/Settings.js": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+    "src/render/Sky.js": "12314912081437f6c646031ee8d14b62753755b890ca104ae48f7f3083801ed5",
+    "src/world/Level.js": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016",
+    "src/core/Utils.js": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972"
+  }
+}

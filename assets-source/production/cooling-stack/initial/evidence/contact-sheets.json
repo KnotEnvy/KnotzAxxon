@@ -1,0 +1,70 @@
+{
+  "note": "Contact sheets only resize whole frames at identical factor; no objects normalized or moved. Left SOURCE, right PROTOTYPE. Rows h7 min/max then h11 min/max.",
+  "sheets": [
+    {
+      "file": "structure-contact.png",
+      "width": 1500,
+      "height": 900,
+      "columns": 3,
+      "scaleDenominator": 2,
+      "sourceFilesInRowMajorOrder": [
+        "structure-front.png",
+        "structure-rear.png",
+        "structure-side.png",
+        "structure-top.png",
+        "structure-close.png"
+      ]
+    },
+    {
+      "file": "world-classic-comparison.png",
+      "width": 960,
+      "height": 1080,
+      "columns": 2,
+      "scaleDenominator": 2,
+      "sourceFilesInRowMajorOrder": [
+        "world-classic-h7-heat-min-source.png",
+        "world-classic-h7-heat-min-prototype.png",
+        "world-classic-h7-heat-max-source.png",
+        "world-classic-h7-heat-max-prototype.png",
+        "world-classic-h11-heat-min-source.png",
+        "world-classic-h11-heat-min-prototype.png",
+        "world-classic-h11-heat-max-source.png",
+        "world-classic-h11-heat-max-prototype.png"
+      ]
+    },
+    {
+      "file": "world-modern-comparison.png",
+      "width": 960,
+      "height": 1080,
+      "columns": 2,
+      "scaleDenominator": 2,
+      "sourceFilesInRowMajorOrder": [
+        "world-modern-h7-heat-min-source.png",
+        "world-modern-h7-heat-min-prototype.png",
+        "world-modern-h7-heat-max-source.png",
+        "world-modern-h7-heat-max-prototype.png",
+        "world-modern-h11-heat-min-source.png",
+        "world-modern-h11-heat-min-prototype.png",
+        "world-modern-h11-heat-max-source.png",
+        "world-modern-h11-heat-max-prototype.png"
+      ]
+    },
+    {
+      "file": "world-chase-comparison.png",
+      "width": 960,
+      "height": 1080,
+      "columns": 2,
+      "scaleDenominator": 2,
+      "sourceFilesInRowMajorOrder": [
+        "world-chase-h7-heat-min-source.png",
+        "world-chase-h7-heat-min-prototype.png",
+        "world-chase-h7-heat-max-source.png",
+        "world-chase-h7-heat-max-prototype.png",
+        "world-chase-h11-heat-min-source.png",
+        "world-chase-h11-heat-min-prototype.png",
+        "world-chase-h11-heat-max-source.png",
+        "world-chase-h11-heat-max-prototype.png"
+      ]
+    }
+  ]
+}

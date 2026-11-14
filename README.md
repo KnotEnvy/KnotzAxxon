@@ -264,3 +264,9 @@ axis, flight assist, and a performance readout.
 
 The previous Phaser 3 prototype is preserved untouched in [`legacy/`](legacy/); nothing in
 the current build references it.
+
+Production Blender upgrades: [prioritized queue and protocol](docs/asset-production/README.md),
+with [machine-readable status](docs/asset-production/status.json). Six selected models remain shipped;
+new upgrades are prepared for review before publication.
+
+The approved production asset release enables21 new gameplay/scenery submissions by default. `?productionModels=0` is retained only as a procedural QA fallback. Editable sources and curated devlog evidence are under `assets-source/production/`;release progress is recorded in `docs/asset-production/status.json`.

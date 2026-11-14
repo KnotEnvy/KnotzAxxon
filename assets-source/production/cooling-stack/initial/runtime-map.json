@@ -1,0 +1,115 @@
+{
+  "schema": "cooling-stack-runtime-map-v1",
+  "materialMap": {
+    "CS_Hull": {
+      "bucket": "hull",
+      "sharedMaterial": "Materials.hull",
+      "linearVertexTint": "Per-face source warm hull/service tint, source Batch AO/lift convention",
+      "UV": "world dominant-axis box projection /4",
+      "maps": "Existing hull map, normalMap, roughnessMap; retained shared ownership"
+    },
+    "CS_Dark": {
+      "bucket": "dark",
+      "sharedMaterial": "Materials.darkMetal",
+      "linearVertexTint": "Per-face linear tint multiplied by shared material linear color 0x3a4a5e",
+      "UV": "world dominant-axis box projection /3",
+      "maps": "No new textures; original shared darkMetal response"
+    },
+    "CS_Heat": {
+      "bucket": "neon",
+      "sharedMaterial": "Materials.neonVertex",
+      "linearVertexTint": "linear(0xff6a2a)*1.2",
+      "UV": "world dominant-axis box projection /8",
+      "animationAttribute": "aAnim=[3,0.4,originalPhase]",
+      "clock": "Existing shared Materials.clock uniform; no GLB animation"
+    }
+  },
+  "nodes": {
+    "CS_CoolingStack": "One rest-height9 merged mesh, identity node transform; prepared parametric template is runtime authority",
+    "CS_HeatSurfacePivot": "Reference game (0,h+.19,0); original 2.7x.05x2.7 cue base",
+    "CS_SteamOrigin": "Reference game (0,h+.4,0); never create an emitter from this node"
+  },
+  "heightDeformation": {
+    "restHeight": 9,
+    "range": [
+      7,
+      11
+    ],
+    "rule": "gameY=restY+(sourceHeight-9)*_CS_HEIGHT",
+    "horizontal": "Constant; half-footprint2.08"
+  },
+  "editableParts": [
+    {
+      "name": "continuous_chamfered_shell_and_four_recessed_inlets",
+      "firstTriangle": 0,
+      "triangles": 92
+    },
+    {
+      "name": "octagonal_foundation",
+      "firstTriangle": 92,
+      "triangles": 28
+    },
+    {
+      "name": "separated_cooling_fins_0",
+      "firstTriangle": 120,
+      "triangles": 48
+    },
+    {
+      "name": "separated_cooling_fins_1",
+      "firstTriangle": 168,
+      "triangles": 48
+    },
+    {
+      "name": "separated_cooling_fins_2",
+      "firstTriangle": 216,
+      "triangles": 48
+    },
+    {
+      "name": "separated_cooling_fins_3",
+      "firstTriangle": 264,
+      "triangles": 48
+    },
+    {
+      "name": "four_fitted_corner_spines",
+      "firstTriangle": 312,
+      "triangles": 48
+    },
+    {
+      "name": "fitted_open_cap",
+      "firstTriangle": 360,
+      "triangles": 32
+    },
+    {
+      "name": "original_amber_heat_surface",
+      "firstTriangle": 392,
+      "triangles": 12
+    },
+    {
+      "name": "underplate_cap_support_-0.48",
+      "firstTriangle": 404,
+      "triangles": 12
+    },
+    {
+      "name": "underplate_cap_support_+0.48",
+      "firstTriangle": 416,
+      "triangles": 12
+    },
+    {
+      "name": "fitted_service_hatch_and_latch_0",
+      "firstTriangle": 428,
+      "triangles": 16
+    },
+    {
+      "name": "fitted_service_hatch_and_latch_2",
+      "firstTriangle": 444,
+      "triangles": 16
+    }
+  ],
+  "ownership": {
+    "startup": "prepare typed templates before any chunk build",
+    "chunk": "Only merged Batch BufferGeometry; retired once by Fortress._disposeChunk",
+    "shared": "Materials/textures retained until application shutdown; template typed arrays until adapter shutdown"
+  },
+  "RNG": "height, phase, then unchanged emitter callback own draw; dynamic caller loop untouched",
+  "productionEdits": false
+}

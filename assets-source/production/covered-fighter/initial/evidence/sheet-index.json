@@ -1,0 +1,142 @@
+[
+  {
+    "file": "multiview.png",
+    "frames": [
+      "candidate-front-quarter.png",
+      "candidate-rear-quarter.png",
+      "candidate-top.png",
+      "candidate-profile.png",
+      "candidate-nose.png",
+      "candidate-rear.png"
+    ],
+    "size": [
+      1600,
+      1998
+    ],
+    "resampling": "none; original pixels retained"
+  },
+  {
+    "file": "structure.png",
+    "frames": [
+      "structure-canvas-and-tiedowns.png",
+      "structure-attached-gear.png"
+    ],
+    "size": [
+      1920,
+      842
+    ],
+    "resampling": "none; original pixels retained"
+  },
+  {
+    "file": "full-yaw.png",
+    "frames": [
+      "yaw--0.25-source.png",
+      "yaw--0.25-candidate.png",
+      "yaw-+0.00-source.png",
+      "yaw-+0.00-candidate.png",
+      "yaw-+0.25-source.png",
+      "yaw-+0.25-candidate.png"
+    ],
+    "size": [
+      1600,
+      1998
+    ],
+    "resampling": "none; original pixels retained"
+  },
+  {
+    "file": "world-classic.png",
+    "frames": [
+      "world-classic-source.png",
+      "world-classic-candidate.png"
+    ],
+    "size": [
+      2560,
+      842
+    ],
+    "resampling": "none; original pixels retained"
+  },
+  {
+    "file": "world-classic-detail-4x.png",
+    "resampling": "explicit 4x nearest-neighbor; supporting crop only, not native world scale"
+  },
+  {
+    "file": "world-modern.png",
+    "frames": [
+      "world-modern-source.png",
+      "world-modern-candidate.png"
+    ],
+    "size": [
+      2560,
+      842
+    ],
+    "resampling": "none; original pixels retained"
+  },
+  {
+    "file": "world-modern-detail-4x.png",
+    "resampling": "explicit 4x nearest-neighbor; supporting crop only, not native world scale"
+  },
+  {
+    "file": "world-chase.png",
+    "frames": [
+      "world-chase-source.png",
+      "world-chase-candidate.png"
+    ],
+    "size": [
+      2560,
+      842
+    ],
+    "resampling": "none; original pixels retained"
+  },
+  {
+    "file": "world-chase-detail-4x.png",
+    "resampling": "explicit 4x nearest-neighbor; supporting crop only, not native world scale"
+  },
+  {
+    "file": "world-classic-centerlane.png",
+    "frames": [
+      "world-classic-source-centerlane.png",
+      "world-classic-candidate-centerlane.png"
+    ],
+    "size": [
+      2560,
+      842
+    ],
+    "resampling": "none; original pixels retained"
+  },
+  {
+    "file": "world-classic-centerlane-detail-4x.png",
+    "resampling": "explicit 4x nearest-neighbor; supporting crop only, not native world scale"
+  },
+  {
+    "file": "world-modern-centerlane.png",
+    "frames": [
+      "world-modern-source-centerlane.png",
+      "world-modern-candidate-centerlane.png"
+    ],
+    "size": [
+      2560,
+      842
+    ],
+    "resampling": "none; original pixels retained"
+  },
+  {
+    "file": "world-modern-centerlane-detail-4x.png",
+    "resampling": "explicit 4x nearest-neighbor; supporting crop only, not native world scale"
+  },
+  {
+    "file": "world-chase-centerlane.png",
+    "frames": [
+      "world-chase-source-centerlane.png",
+      "world-chase-candidate-centerlane.png"
+    ],
+    "size": [
+      2560,
+      842
+    ],
+    "resampling": "none; original pixels retained"
+  },
+  {
+    "file": "world-chase-centerlane-detail-4x.png",
+    "resampling": "explicit 4x nearest-neighbor; supporting crop only, not native world scale"
+  }
+]

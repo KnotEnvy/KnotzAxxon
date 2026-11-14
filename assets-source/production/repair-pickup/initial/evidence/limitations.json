@@ -1,0 +1,14 @@
+[
+  "Frozen INITIAL only; pending_deferred_opus_review; zero formal reviews or formal review/fix rounds; no final art approval.",
+  "No production adapter exists or is edited here. Integration must preload repair-pickup, use per-instance instantiate clones, retain full normal Pickup constructor and shared halo, bind named handles, and explicitly dispose only imported per-instance root resources.",
+  "Node harness executes actual source classes/methods with minimal THREE test doubles, not actual Three.js, GLTFLoader, renderer, physics or GPU memory. Real integrated dense-batch/material/lifetime testing remains required. 128 diagnostic instances and 36 Blender imports are not a hard live maximum.",
+  "Offline gameplay images are reconstruction, NOT live gameplay proof. Source Classic/Modern/Chase zero-boost rigs/projections and dusk key/rim are reconstructed; schematic deck, world/hemisphere and alpha-dithered halo are approximations. No exact game fog/IBL/bloom, camera shake/boost/lag/aspect sweep, live HUD/audio/particle/light/postfx simulation.",
+  "Collection context images do not render actual collection sparks, expanding ring, light flash, HUD, score or audio; source dispatch and ring timing are exercised numerically and must remain source driven in integration.",
+  "Finite BVH overlap and vertex-to-triangle samples are not an exact global minimum-distance solver. A separately measured conservative radial separating bound covers full spin/pulse/wobble ranges with float precision caveats.",
+  "GLB vertices intentionally split at normal/color seams. Raw reimport topology reports boundary edges; geometric position-welded components are closed. Editable blend is manifold before export.",
+  "Unlit authored palettes retain exact green #52ffa8 plus deliberate #ddffeb ceramic/front and mint/green/slate facets, not identical to source uniform neon gains1.15/1.35. Set cloned shell/shape toneMapped=false; verify receiver postfx.",
+  "Baseline is a 500-triangle Blender source-dimension reconstruction with analytic mitered cross bevel, not an actual Three.js geometry capture. Source kind-cue references approximate spread bevel offsets/materials; no other kinds are redesigned/exported.",
+  "Mechanical charge/detachment, targeting, projectiles and deployed healing bubble are N/A; normal collection/lifecycle detach is unchanged. No exported halo, tiny-text dependency or formal readability acceptance.",
+  "Native startup logs may contain software EGL_BAD_MATCH context-probe warnings or read-only global extension-cache warnings; successful saved PNGs and renderer identity are independently recorded.",
+  "Receiver-side Taildrop archive verification and real production integration are orchestrator responsibilities; transfer status is recorded outside immutable initial/."
+]

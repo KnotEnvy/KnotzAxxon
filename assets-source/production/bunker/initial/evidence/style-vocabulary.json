@@ -1,0 +1,2957 @@
+{
+  "method": "Independent binary GLB traversal of all six shipped files, not accessor bounds alone; static scene transforms; original geometry inspected but not reused.",
+  "assets": [
+    {
+      "file": "player.glb",
+      "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "bytes": 478292,
+      "triangles": 11556,
+      "primitives": 8,
+      "transformedBounds": [
+        [
+          -3.9522860050201416,
+          -0.5839999914169312,
+          -2.5370001047849655
+        ],
+        [
+          3.9522860050201416,
+          1.4070836305618286,
+          3.190000057220459
+        ]
+      ],
+      "finite": true,
+      "degenerateTriangles": 0,
+      "normalLengthRange": [
+        0.9999999411306271,
+        1.000000110631287
+      ],
+      "minimumFaceNormalAlignment": -0.17359324490944789,
+      "textures": 0,
+      "images": 0,
+      "materials": [
+        {
+          "extras": {
+            "kz_runtime": "mats.playerAccent"
+          },
+          "name": "KZ_PlayerAccent",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.016807375475764275,
+              0.03560131415724754,
+              0.06480326503515244,
+              1
+            ],
+            "metallicFactor": 0.5799999833106995,
+            "roughnessFactor": 0.3799999952316284
+          }
+        },
+        {
+          "extensions": {
+            "KHR_materials_clearcoat": {
+              "clearcoatFactor": 1,
+              "clearcoatRoughnessFactor": 0.07999999821186066
+            }
+          },
+          "extras": {
+            "kz_runtime": "mats.glass"
+          },
+          "name": "KZ_PlayerGlass",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.006048833020031452,
+              0.04817182570695877,
+              0.08437620848417282,
+              1
+            ],
+            "metallicFactor": 0.5799999833106995,
+            "roughnessFactor": 0.1599999964237213
+          }
+        },
+        {
+          "extras": {
+            "kz_runtime": "mats.playerHull"
+          },
+          "name": "KZ_PlayerHull",
+          "pbrMetallicRoughness": {
+            "metallicFactor": 0.5199999809265137,
+            "roughnessFactor": 0.3400000035762787
+          }
+        },
+        {
+          "emissiveFactor": [
+            1,
+            0.05951123684644699,
+            0.12477181851863861
+          ],
+          "extras": {
+            "kz_runtime": "player neon bucket (0xff4563, -X wingtip)"
+          },
+          "name": "KZ_NavPort",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.6000000238418579
+          }
+        },
+        {
+          "emissiveFactor": [
+            0.13013647496700287,
+            0.7379103899002075,
+            0.4125426113605499
+          ],
+          "extras": {
+            "kz_runtime": "player neon bucket (0x65dfac, +X wingtip)"
+          },
+          "name": "KZ_NavStarboard",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.6000000238418579
+          }
+        },
+        {
+          "emissiveFactor": [
+            0.08437620848417282,
+            0.5088813304901123,
+            0.6239603757858276
+          ],
+          "extras": {
+            "kz_runtime": "player neon bucket (MeshBasic vertex colour 0x52bdcf)"
+          },
+          "name": "KZ_NeonCyan",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.6000000238418579
+          }
+        },
+        {
+          "emissiveFactor": [
+            0.2746773064136505,
+            0.7758222222328186,
+            1
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 1.350000023841858
+            }
+          },
+          "extras": {
+            "kz_runtime": "mats.neon(0x8fe4ff, 1.35)"
+          },
+          "name": "KZ_EngineGlow",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.6000000238418579
+          }
+        }
+      ],
+      "meshes": [
+        {
+          "node": "airframe-accent",
+          "material": "KZ_PlayerAccent",
+          "triangles": 3258,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "airframe-glass",
+          "material": "KZ_PlayerGlass",
+          "triangles": 278,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "airframe-hull",
+          "material": "KZ_PlayerHull",
+          "triangles": 7608,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0"
+          ]
+        },
+        {
+          "node": "airframe-nav-port",
+          "material": "KZ_NavPort",
+          "triangles": 44,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "airframe-nav-starboard",
+          "material": "KZ_NavStarboard",
+          "triangles": 44,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "airframe-neon",
+          "material": "KZ_NeonCyan",
+          "triangles": 40,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "engine-core-1",
+          "material": "KZ_EngineGlow",
+          "triangles": 142,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1.0499999523162842,
+            -0.10000018775463104,
+            -2.515000104904175,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "engine-core--1",
+          "material": "KZ_EngineGlow",
+          "triangles": 142,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -1.0499999523162842,
+            -0.10000018775463104,
+            -2.515000104904175,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        }
+      ],
+      "nodes": [
+        "airframe-accent",
+        "airframe-glass",
+        "airframe-hull",
+        "airframe-nav-port",
+        "airframe-nav-starboard",
+        "airframe-neon",
+        "engine-core-1",
+        "engine-core--1",
+        "muzzle-socket-1",
+        "muzzle-socket--1",
+        "hero-interceptor"
+      ]
+    },
+    {
+      "file": "sentinel.glb",
+      "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef",
+      "bytes": 1140172,
+      "triangles": 34718,
+      "primitives": 38,
+      "transformedBounds": [
+        [
+          -18.144999980926514,
+          -10.359999656677246,
+          -10.482443422079086
+        ],
+        [
+          18.144999980926514,
+          14.530000001192093,
+          7.245537281036377
+        ]
+      ],
+      "finite": true,
+      "degenerateTriangles": 168,
+      "normalLengthRange": [
+        0.9999999254658393,
+        1.000000124679682
+      ],
+      "minimumFaceNormalAlignment": -1.0,
+      "textures": 4,
+      "images": 3,
+      "materials": [
+        {
+          "doubleSided": true,
+          "name": "SN_Frame",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 0
+            },
+            "metallicFactor": 0.5,
+            "roughnessFactor": 0.46000000834465027
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "SN_Armor",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 1
+            },
+            "metallicFactor": 0.47999998927116394,
+            "roughnessFactor": 0.41999998688697815
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.4564110338687897,
+            0.0423114113509655
+          ],
+          "name": "SN_Charge",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "emissiveTexture": {
+            "index": 2
+          },
+          "name": "SN_Hazard",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 3
+            },
+            "metallicFactor": 0.4000000059604645,
+            "roughnessFactor": 0.6499999761581421
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 3
+            }
+          },
+          "name": "SN_Beacon",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.200000047683716
+            }
+          },
+          "name": "SN_Visor",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "SN_Metal",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.08437620848417282,
+              0.13013647496700287,
+              0.19120168685913086,
+              1
+            ],
+            "metallicFactor": 0.5600000023841858,
+            "roughnessFactor": 0.3799999952316284
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.4564110338687897,
+            0.0423114113509655
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "SN_PodEye",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.1946178376674652,
+            0.0423114113509655
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2
+            }
+          },
+          "name": "SN_Glow",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 1.5
+            }
+          },
+          "name": "SN_Core",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "alphaMode": "BLEND",
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "name": "SN_CoreShell",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              0.3499999940395355
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 1.2000000476837158
+            }
+          },
+          "name": "SN_Seam",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        }
+      ],
+      "meshes": [
+        {
+          "node": "torso",
+          "material": "SN_Frame",
+          "triangles": 10534,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "torso",
+          "material": "SN_Hazard",
+          "triangles": 184,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "torso",
+          "material": "SN_Armor",
+          "triangles": 1592,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "torso",
+          "material": "SN_Glow",
+          "triangles": 680,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "torso",
+          "material": "SN_Seam",
+          "triangles": 1168,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "forearm-L",
+          "material": "SN_Frame",
+          "triangles": 636,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -10.399999618530273,
+            -2.5999999046325684,
+            0.4000000059604645,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "forearm-L",
+          "material": "SN_Armor",
+          "triangles": 276,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -10.399999618530273,
+            -2.5999999046325684,
+            0.4000000059604645,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "forearm-R",
+          "material": "SN_Frame",
+          "triangles": 1932,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            10.399999618530273,
+            -2.5999999046325684,
+            0.4000000059604645,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "forearm-R",
+          "material": "SN_Armor",
+          "triangles": 184,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            10.399999618530273,
+            -2.5999999046325684,
+            0.4000000059604645,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "forearm-R",
+          "material": "SN_Hazard",
+          "triangles": 88,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            10.399999618530273,
+            -2.5999999046325684,
+            0.4000000059604645,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "launcher-charge",
+          "material": "SN_Charge",
+          "triangles": 216,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            10.399999618530273,
+            -2.299999952316284,
+            -9.52000007033348,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "head",
+          "material": "SN_Armor",
+          "triangles": 468,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.0,
+            8.399999618530273,
+            -0.6000000238418579,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "head",
+          "material": "SN_Frame",
+          "triangles": 1084,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.0,
+            8.399999618530273,
+            -0.6000000238418579,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "head",
+          "material": "SN_Visor",
+          "triangles": 104,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.0,
+            8.399999618530273,
+            -0.6000000238418579,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "antenna-tip-L",
+          "material": "SN_Beacon",
+          "triangles": 80,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            -2.5999999046325684,
+            14.25,
+            1.100000023841858,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "antenna-tip-R",
+          "material": "SN_Beacon",
+          "triangles": 80,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            2.5999999046325684,
+            14.25,
+            1.100000023841858,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-L-barrel-0",
+          "material": "SN_Metal",
+          "triangles": 1288,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            -15.100000381469727,
+            5.599999904632568,
+            -3.600000023841858,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-L-barrel-1",
+          "material": "SN_Metal",
+          "triangles": 1288,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            -12.5,
+            5.599999904632568,
+            -3.600000023841858,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-L-body",
+          "material": "SN_Armor",
+          "triangles": 458,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            -13.800000190734863,
+            5.599999904632568,
+            -0.6000000238418579,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-L-body",
+          "material": "SN_Frame",
+          "triangles": 3412,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            -13.800000190734863,
+            5.599999904632568,
+            -0.6000000238418579,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-L-eye",
+          "material": "SN_PodEye",
+          "triangles": 168,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            -13.800000190734863,
+            7.800000190734863,
+            -3.0000001192092896,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-L-stump",
+          "material": "SN_Frame",
+          "triangles": 300,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            -13.800000190734863,
+            5.599999904632568,
+            -0.6000000238418579,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-L-stump",
+          "material": "SN_Glow",
+          "triangles": 118,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            -13.800000190734863,
+            5.599999904632568,
+            -0.6000000238418579,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-R-barrel-0",
+          "material": "SN_Metal",
+          "triangles": 1288,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            12.5,
+            5.599999904632568,
+            -3.600000023841858,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-R-barrel-1",
+          "material": "SN_Metal",
+          "triangles": 1288,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            15.100000381469727,
+            5.599999904632568,
+            -3.600000023841858,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-R-body",
+          "material": "SN_Armor",
+          "triangles": 458,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            13.800000190734863,
+            5.599999904632568,
+            -0.6000000238418579,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-R-body",
+          "material": "SN_Frame",
+          "triangles": 3412,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            13.800000190734863,
+            5.599999904632568,
+            -0.6000000238418579,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-R-eye",
+          "material": "SN_PodEye",
+          "triangles": 168,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            13.800000190734863,
+            7.800000190734863,
+            -3.0000001192092896,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-R-stump",
+          "material": "SN_Frame",
+          "triangles": 300,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            13.800000190734863,
+            5.599999904632568,
+            -0.6000000238418579,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "pod-R-stump",
+          "material": "SN_Glow",
+          "triangles": 118,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            13.800000190734863,
+            5.599999904632568,
+            -0.6000000238418579,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "reactor-core",
+          "material": "SN_Core",
+          "triangles": 20,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.30000001192092896,
+            0.0,
+            0.0,
+            1.0,
+            -5.599999904632568,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "reactor-shell",
+          "material": "SN_CoreShell",
+          "triangles": 20,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.30000001192092896,
+            0.0,
+            0.0,
+            1.0,
+            -5.599999904632568,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "shutter-0",
+          "material": "SN_Armor",
+          "triangles": 288,
+          "transformedMatrix": [
+            0.7071067450934194,
+            0.7071068487086123,
+            0.0,
+            0.0,
+            -0.7071068487086123,
+            0.7071067450934194,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            -2.404163353044246,
+            3.4041630007525803,
+            -7.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "shutter-1",
+          "material": "SN_Armor",
+          "triangles": 288,
+          "transformedMatrix": [
+            -0.707107117115811,
+            0.707106453787901,
+            0.0,
+            0.0,
+            -0.707106453787901,
+            -0.707107117115811,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            -2.404162178901106,
+            -1.404164434216221,
+            -7.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "shutter-2",
+          "material": "SN_Armor",
+          "triangles": 288,
+          "transformedMatrix": [
+            -0.707107117115811,
+            -0.707106453787901,
+            0.0,
+            0.0,
+            0.707106453787901,
+            -0.707107117115811,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            2.404162178901106,
+            -1.404164434216221,
+            -7.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "shutter-3",
+          "material": "SN_Armor",
+          "triangles": 288,
+          "transformedMatrix": [
+            0.7071063345184694,
+            -0.7071072530773215,
+            0.0,
+            0.0,
+            0.7071072530773215,
+            0.7071063345184694,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            2.4041647278978955,
+            3.404161604797711,
+            -7.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "thruster-L",
+          "material": "SN_Glow",
+          "triangles": 78,
+          "transformedMatrix": [
+            -1.0,
+            0.0,
+            -1.5099580252808664e-07,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            1.5099580252808664e-07,
+            0.0,
+            -1.0,
+            0.0,
+            -5.0,
+            0.0,
+            6.099999904632568,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "thruster-R",
+          "material": "SN_Glow",
+          "triangles": 78,
+          "transformedMatrix": [
+            -1.0,
+            0.0,
+            -1.5099580252808664e-07,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            1.5099580252808664e-07,
+            0.0,
+            -1.0,
+            0.0,
+            5.0,
+            0.0,
+            6.099999904632568,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        }
+      ],
+      "nodes": [
+        "forearm-L",
+        "launcher-charge",
+        "missile-mouth",
+        "forearm-R",
+        "antenna-tip-L",
+        "antenna-tip-R",
+        "head",
+        "hover-wash",
+        "pod-L-barrel-0",
+        "pod-L-barrel-1",
+        "pod-L-body",
+        "pod-L-eye",
+        "pod-L-stump",
+        "pod-L",
+        "pod-R-barrel-0",
+        "pod-R-barrel-1",
+        "pod-R-body",
+        "pod-R-eye",
+        "pod-R-stump",
+        "pod-R",
+        "reactor-core",
+        "reactor-shell",
+        "reactor",
+        "shutter-0",
+        "shutter-holder-0",
+        "shutter-1",
+        "shutter-holder-1",
+        "shutter-2",
+        "shutter-holder-2",
+        "shutter-3",
+        "shutter-holder-3",
+        "thruster-L",
+        "thruster-R",
+        "torso",
+        "iron-sentinel"
+      ]
+    },
+    {
+      "file": "turret.glb",
+      "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+      "bytes": 58452,
+      "triangles": 1194,
+      "primitives": 8,
+      "transformedBounds": [
+        [
+          -1.899999976158142,
+          0.0,
+          -1.899999976158142
+        ],
+        [
+          2.659999966621399,
+          2.149999976158142,
+          2.815000057220459
+        ]
+      ],
+      "finite": true,
+      "degenerateTriangles": 0,
+      "normalLengthRange": [
+        0.9999999455512402,
+        1.0000001014171385
+      ],
+      "minimumFaceNormalAlignment": -0.6357965037367381,
+      "textures": 0,
+      "images": 0,
+      "materials": [
+        {
+          "doubleSided": true,
+          "name": "warm_armor",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.31854677200317383,
+              0.10702310502529144,
+              0.06480326503515244,
+              1
+            ],
+            "metallicFactor": 0.47999998927116394,
+            "roughnessFactor": 0.41999998688697815
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "cool_slate",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.08437620848417282,
+              0.13013647496700287,
+              0.19120168685913086,
+              1
+            ],
+            "metallicFactor": 0.5600000023841858,
+            "roughnessFactor": 0.3799999952316284
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "dark_structure",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.0423114113509655,
+              0.06847816705703735,
+              0.1119324266910553,
+              1
+            ],
+            "metallicFactor": 0.5,
+            "roughnessFactor": 0.46000000834465027
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.2541520893573761,
+            0.0423114113509655
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 3
+            }
+          },
+          "name": "amber_eye",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              1,
+              0.2541520893573761,
+              0.0423114113509655,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.30000001192092896
+          }
+        }
+      ],
+      "meshes": [
+        {
+          "node": "base",
+          "material": "cool_slate",
+          "triangles": 32,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "base_armor",
+          "material": "warm_armor",
+          "triangles": 96,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "barrel_visual",
+          "material": "cool_slate",
+          "triangles": 172,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            2.299999952316284,
+            1.149999976158142,
+            0.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "bore",
+          "material": "dark_structure",
+          "triangles": 40,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            2.299999952316284,
+            1.149999976158142,
+            0.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "dome",
+          "material": "warm_armor",
+          "triangles": 226,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "port_plate",
+          "material": "dark_structure",
+          "triangles": 60,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "eye",
+          "material": "amber_eye",
+          "triangles": 120,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.0,
+            1.5799999237060547,
+            1.0199999809265137,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "trim",
+          "material": "cool_slate",
+          "triangles": 448,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        }
+      ],
+      "nodes": [
+        "base_armor",
+        "base",
+        "barrel_visual",
+        "bore",
+        "muzzle",
+        "barrel",
+        "port_plate",
+        "dome",
+        "eye",
+        "trim",
+        "turntable",
+        "turret"
+      ]
+    },
+    {
+      "file": "radar.glb",
+      "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d",
+      "bytes": 55564,
+      "triangles": 1288,
+      "primitives": 9,
+      "transformedBounds": [
+        [
+          -2.3499999046325684,
+          0.0,
+          -2.200000047683716
+        ],
+        [
+          2.3499999046325684,
+          9.659805297851562,
+          2.200000047683716
+        ]
+      ],
+      "finite": true,
+      "degenerateTriangles": 0,
+      "normalLengthRange": [
+        0.999999925672017,
+        1.0000001185148748
+      ],
+      "minimumFaceNormalAlignment": 0.5983768069123161,
+      "textures": 0,
+      "images": 0,
+      "materials": [
+        {
+          "doubleSided": true,
+          "name": "warm_armor",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.31854677200317383,
+              0.10702310502529144,
+              0.06480326503515244,
+              1
+            ],
+            "metallicFactor": 0.47999998927116394,
+            "roughnessFactor": 0.41999998688697815
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "cool_slate",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.08437620848417282,
+              0.13013647496700287,
+              0.19120168685913086,
+              1
+            ],
+            "metallicFactor": 0.5600000023841858,
+            "roughnessFactor": 0.3799999952316284
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "dark_structure",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.0423114113509655,
+              0.06847816705703735,
+              0.1119324266910553,
+              1
+            ],
+            "metallicFactor": 0.5,
+            "roughnessFactor": 0.46000000834465027
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "dish_warm",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.3324515223503113,
+              0.1441284716129303,
+              0.09084171056747437,
+              1
+            ],
+            "metallicFactor": 0.41999998688697815,
+            "roughnessFactor": 0.3400000035762787
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.08437620848417282,
+            1,
+            0.3915724754333496
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.200000047683716
+            }
+          },
+          "name": "radar_emitter",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.08437620848417282,
+              1,
+              0.3915724754333496,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.25
+          }
+        }
+      ],
+      "meshes": [
+        {
+          "node": "base",
+          "material": "warm_armor",
+          "triangles": 32,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "base_trim",
+          "material": "cool_slate",
+          "triangles": 64,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "dish_frame",
+          "material": "dark_structure",
+          "triangles": 360,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            7.199999809265137,
+            0.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "dish_shell",
+          "material": "dish_warm",
+          "triangles": 448,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            7.199999809265137,
+            0.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "emitter",
+          "material": "radar_emitter",
+          "triangles": 120,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.961055445819706,
+            -0.27635562765903643,
+            0.0,
+            0.0,
+            0.27635562765903643,
+            0.961055445819706,
+            0.0,
+            0.0,
+            8.059629440307617,
+            1.4696720838546753,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "feed_housing",
+          "material": "cool_slate",
+          "triangles": 128,
+          "transformedMatrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            7.199999809265137,
+            0.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "mast",
+          "material": "cool_slate",
+          "triangles": 32,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "mast_braces",
+          "material": "dark_structure",
+          "triangles": 72,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        },
+        {
+          "node": "mast_cap",
+          "material": "dark_structure",
+          "triangles": 32,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ]
+        }
+      ],
+      "nodes": [
+        "base",
+        "base_trim",
+        "dish_frame",
+        "dish_shell",
+        "emitter",
+        "feed_housing",
+        "dish",
+        "mast_braces",
+        "mast_cap",
+        "mast",
+        "radar"
+      ]
+    },
+    {
+      "file": "silo.glb",
+      "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e",
+      "bytes": 1281700,
+      "triangles": 9928,
+      "primitives": 4,
+      "transformedBounds": [
+        [
+          -2.5999999046325684,
+          0.0,
+          -2.5999999046325684
+        ],
+        [
+          2.634999990463257,
+          2.7080001831054688,
+          2.5999999046325684
+        ]
+      ],
+      "finite": true,
+      "degenerateTriangles": 0,
+      "normalLengthRange": [
+        0.9999999346054567,
+        1.0000001026040963
+      ],
+      "minimumFaceNormalAlignment": 0.9248997550657345,
+      "textures": 2,
+      "images": 2,
+      "materials": [
+        {
+          "doubleSided": true,
+          "name": "SILO_Hull",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 0
+            },
+            "metallicRoughnessTexture": {
+              "index": 1
+            }
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.4000000953674316
+            }
+          },
+          "name": "SILO_Glow",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.5
+          }
+        }
+      ],
+      "meshes": [
+        {
+          "node": "body",
+          "material": "SILO_Hull",
+          "triangles": 6590,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "body",
+          "material": "SILO_Glow",
+          "triangles": 290,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "glow",
+          "material": "SILO_Glow",
+          "triangles": 1344,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.0,
+            2.4149999618530273,
+            0.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "hatch",
+          "material": "SILO_Hull",
+          "triangles": 1704,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.0,
+            2.450000047683716,
+            0.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        }
+      ],
+      "nodes": [
+        "body",
+        "glow",
+        "hatch",
+        "launch-point",
+        "silo"
+      ]
+    },
+    {
+      "file": "fuel.glb",
+      "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc",
+      "bytes": 1087156,
+      "triangles": 9592,
+      "primitives": 8,
+      "transformedBounds": [
+        [
+          -1.7000000476837158,
+          0.0,
+          -1.7000000476837158
+        ],
+        [
+          1.7000000476837158,
+          4.870000004768372,
+          1.7000000476837158
+        ]
+      ],
+      "finite": true,
+      "degenerateTriangles": 0,
+      "normalLengthRange": [
+        0.9999999214521549,
+        1.0000001116289412
+      ],
+      "minimumFaceNormalAlignment": 0.9538851686937283,
+      "textures": 2,
+      "images": 2,
+      "materials": [
+        {
+          "doubleSided": true,
+          "name": "FUEL_Hull",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 0
+            },
+            "metallicRoughnessTexture": {
+              "index": 1
+            }
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.32314321398735046,
+            0.01599629409611225
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.200000047683716
+            }
+          },
+          "name": "FUEL_Band",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.5
+          }
+        }
+      ],
+      "meshes": [
+        {
+          "node": "band",
+          "material": "FUEL_Hull",
+          "triangles": 1128,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.0,
+            2.200000047683716,
+            0.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "band",
+          "material": "FUEL_Band",
+          "triangles": 96,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.0,
+            2.200000047683716,
+            0.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "body",
+          "material": "FUEL_Hull",
+          "triangles": 4512,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "body",
+          "material": "FUEL_Band",
+          "triangles": 396,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "cap",
+          "material": "FUEL_Hull",
+          "triangles": 3064,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.0,
+            3.759999990463257,
+            0.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "stave-0",
+          "material": "FUEL_Hull",
+          "triangles": 132,
+          "transformedMatrix": [
+            -0.49999994615530596,
+            0.0,
+            -0.8660254914790855,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.8660254914790855,
+            0.0,
+            -0.49999994615530596,
+            0.0,
+            -0.625,
+            0.9300000071525574,
+            -1.0825318098068237,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "stave-1",
+          "material": "FUEL_Hull",
+          "triangles": 132,
+          "transformedMatrix": [
+            -0.49999994615530596,
+            0.0,
+            0.8660254914790855,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            -0.8660254914790855,
+            0.0,
+            -0.49999994615530596,
+            0.0,
+            -0.625,
+            0.9300000071525574,
+            1.0825318098068237,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": "stave-2",
+          "material": "FUEL_Hull",
+          "triangles": 132,
+          "transformedMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1.25,
+            0.9300000071525574,
+            0.0,
+            1.0
+          ],
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ]
+        }
+      ],
+      "nodes": [
+        "band",
+        "body",
+        "cap",
+        "stave-0",
+        "stave-1",
+        "stave-2",
+        "fuel"
+      ]
+    }
+  ],
+  "vocabulary": [
+    "Shipped player: coherent swept silver/ivory airframe, slate hard-surface separation, cyan belongs to player.",
+    "Turret/radar: warm armor, dark slate supports, eye/barrel/dish silhouettes are active targets and intentionally not borrowed.",
+    "Silo/fuel/sentinel: strong broad material zones and fitted structural joins, not dense random greeble.",
+    "Bunker: existing mapped cold hull and unmapped darkMetal only, warm line stays passive; no red target telegraph, no cyan weapon light, no texture added."
+  ]
+}

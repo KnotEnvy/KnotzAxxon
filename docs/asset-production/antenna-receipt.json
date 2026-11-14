@@ -1,0 +1,16 @@
+{
+  "archive": "fortress-antenna-initial-ee221ad-20261114T195046Z.tar.gz",
+  "sha256": "b01eb8c024e750a5e605edafdde526c3abe3c55e03caf6b424d0ff7d506f2822",
+  "contentHashesVerified": 32,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/antenna/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "senderExitStatus": 0,
+  "transferMethod": "Windows Taildrop",
+  "glbSha256": "6cefc79edfd1b4f123550dc50ced9e441046e65ebb97d2629f48bb61c582beb5",
+  "blendSha256": "4cbcbc6e49867df3c3b3580b0673ced0b3d831bab78d97db2761f104f94e924f",
+  "formalReviewsCompleted": 0,
+  "fixPassesCompleted": 0
+}

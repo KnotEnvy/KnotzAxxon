@@ -1,0 +1,5743 @@
+{
+  "engine": "Blender Cycles CPU, 24 samples, AgX",
+  "proof_type": "OFFLINE reconstruction, NOT live WebGL",
+  "common_camera": {
+    "eye": [
+      -16,
+      24,
+      -30
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ],
+    "vertical_span": 14,
+    "key": [
+      -12,
+      22,
+      -12
+    ],
+    "fill": [
+      14,
+      12,
+      8
+    ]
+  },
+  "records": [
+    {
+      "file": "png/diagnostic-quarter.png",
+      "title": "Fitted body / graphite seeker / four tail fins",
+      "subtitle": "CLOSE-UP DIAGNOSTIC | unit world scale; camera tightened only | offline Blender",
+      "camera_position_blender": [
+        -2.0,
+        -2.5999999046325684,
+        1.399999976158142
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 2.3000001311302185,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "closeup",
+      "source_axes": "+Z forward / +Y up"
+    },
+    {
+      "file": "png/diagnostic-side.png",
+      "title": "Side silhouette | +Z nose to screen left",
+      "subtitle": "CLOSE-UP DIAGNOSTIC | unit world scale; camera tightened only | offline Blender",
+      "camera_position_blender": [
+        4.0,
+        0.0,
+        0.4000000059604645
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 2.3000001311302185,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "closeup",
+      "source_axes": "+Z forward / +Y up"
+    },
+    {
+      "file": "png/diagnostic-nose.png",
+      "title": "Nose-on diagnostic | four-control-fin silhouette",
+      "subtitle": "CLOSE-UP DIAGNOSTIC | unit world scale; camera tightened only | offline Blender",
+      "camera_position_blender": [
+        0.009999999776482582,
+        -4.0,
+        0.009999999776482582
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 2.3000001311302185,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "closeup",
+      "source_axes": "+Z forward / +Y up"
+    },
+    {
+      "file": "png/diagnostic-aft.png",
+      "title": "Aft diagnostic | recessed static nozzle; no flame geometry",
+      "subtitle": "CLOSE-UP DIAGNOSTIC | unit world scale; camera tightened only | offline Blender",
+      "camera_position_blender": [
+        0.009999999776482582,
+        4.0,
+        0.009999999776482582
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 2.3000001311302185,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "closeup",
+      "source_axes": "+Z forward / +Y up"
+    },
+    {
+      "file": "png/common-neutral-missile.png",
+      "title": "COMMON NEUTRAL | MISSILE",
+      "subtitle": "Camera (-16,24,-30), target origin, vertical span14 | ALL assets world scale1",
+      "camera_position_blender": [
+        -16.0,
+        30.0,
+        24.0
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 14.000000238418579,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "common_neutral",
+      "lineup": "missile"
+    },
+    {
+      "file": "png/common-neutral-baseline.png",
+      "title": "COMMON NEUTRAL | BASELINE",
+      "subtitle": "Camera (-16,24,-30), target origin, vertical span14 | ALL assets world scale1",
+      "camera_position_blender": [
+        -16.0,
+        30.0,
+        24.0
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 14.000000238418579,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "common_neutral",
+      "lineup": "baseline"
+    },
+    {
+      "file": "png/common-neutral-lineup.png",
+      "title": "COMMON NEUTRAL | LINEUP",
+      "subtitle": "Camera (-16,24,-30), target origin, vertical span14 | ALL assets world scale1",
+      "camera_position_blender": [
+        -16.0,
+        30.0,
+        24.0
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 14.000000238418579,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "common_neutral",
+      "lineup": "new x-7 / baseline x-5 / shipped player x0 / selected silo x6"
+    },
+    {
+      "file": "png/orientation-0.png",
+      "title": "SOURCE _drawMissiles | velocity [0, 0, 1]",
+      "subtitle": "CLOSE-UP | actual +Z-to-velocity matrix; unit scale; zero case explicitly labeled",
+      "camera_position_blender": [
+        -2.0,
+        3.0,
+        1.7000000476837158
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 2.400000125169754,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "extreme_orientation",
+      "source_matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "forward": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "file": "png/orientation-1.png",
+      "title": "SOURCE _drawMissiles | velocity [0, 0, -1]",
+      "subtitle": "CLOSE-UP | actual +Z-to-velocity matrix; unit scale; zero case explicitly labeled",
+      "camera_position_blender": [
+        -2.0,
+        3.0,
+        1.7000000476837158
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 2.400000125169754,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "extreme_orientation",
+      "source_matrix": [
+        -1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "forward": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "file": "png/orientation-2.png",
+      "title": "SOURCE _drawMissiles | velocity [1, 0, 0]",
+      "subtitle": "CLOSE-UP | actual +Z-to-velocity matrix; unit scale; zero case explicitly labeled",
+      "camera_position_blender": [
+        -2.0,
+        3.0,
+        1.7000000476837158
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 2.400000125169754,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "extreme_orientation",
+      "source_matrix": [
+        2.220446049250313e-16,
+        0,
+        -1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        2.220446049250313e-16,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "forward": [
+        1,
+        0,
+        2.220446049250313e-16
+      ]
+    },
+    {
+      "file": "png/orientation-3.png",
+      "title": "SOURCE _drawMissiles | velocity [-1, 0, 0]",
+      "subtitle": "CLOSE-UP | actual +Z-to-velocity matrix; unit scale; zero case explicitly labeled",
+      "camera_position_blender": [
+        -2.0,
+        3.0,
+        1.7000000476837158
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 2.400000125169754,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "extreme_orientation",
+      "source_matrix": [
+        2.220446049250313e-16,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        2.220446049250313e-16,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "forward": [
+        -1,
+        0,
+        2.220446049250313e-16
+      ]
+    },
+    {
+      "file": "png/orientation-4.png",
+      "title": "SOURCE _drawMissiles | velocity [0, 1, 0]",
+      "subtitle": "CLOSE-UP | actual +Z-to-velocity matrix; unit scale; zero case explicitly labeled",
+      "camera_position_blender": [
+        -2.0,
+        3.0,
+        1.7000000476837158
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 2.400000125169754,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "extreme_orientation",
+      "source_matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        2.220446049250313e-16,
+        -1,
+        0,
+        0,
+        1,
+        2.220446049250313e-16,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "forward": [
+        0,
+        1,
+        2.220446049250313e-16
+      ]
+    },
+    {
+      "file": "png/orientation-5.png",
+      "title": "SOURCE _drawMissiles | velocity [0, -1, 0]",
+      "subtitle": "CLOSE-UP | actual +Z-to-velocity matrix; unit scale; zero case explicitly labeled",
+      "camera_position_blender": [
+        -2.0,
+        3.0,
+        1.7000000476837158
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 2.400000125169754,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "extreme_orientation",
+      "source_matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        2.220446049250313e-16,
+        1,
+        0,
+        0,
+        -1,
+        2.220446049250313e-16,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "forward": [
+        0,
+        -1,
+        2.220446049250313e-16
+      ]
+    },
+    {
+      "file": "png/orientation-6.png",
+      "title": "SOURCE _drawMissiles | velocity [0.3, 0.8, -0.5]",
+      "subtitle": "CLOSE-UP | actual +Z-to-velocity matrix; unit scale; zero case explicitly labeled",
+      "camera_position_blender": [
+        -2.0,
+        3.0,
+        1.7000000476837158
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 2.400000125169754,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "extreme_orientation",
+      "source_matrix": [
+        0.8144426345825195,
+        -0.49481961131095886,
+        -0.30304577946662903,
+        0,
+        -0.49481961131095886,
+        -0.31951892375946045,
+        -0.8081220388412476,
+        0,
+        0.30304577946662903,
+        0.8081220388412476,
+        -0.5050762891769409,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "forward": [
+        0.30304576697151164,
+        0.8081220293155696,
+        -0.505076277626906
+      ]
+    },
+    {
+      "file": "png/orientation-7.png",
+      "title": "SOURCE _drawMissiles | velocity [0, 0, 0]",
+      "subtitle": "CLOSE-UP | actual +Z-to-velocity matrix; unit scale; zero case explicitly labeled",
+      "camera_position_blender": [
+        -2.0,
+        3.0,
+        1.7000000476837158
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 2.400000125169754,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "extreme_orientation",
+      "source_matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "forward": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "file": "png/context-sentinel-heavy-0-classic-new.png",
+      "title": "SENTINEL-HEAVY | t=0.00s | CLASSIC | NEW",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -45.25483322143555,
+        17.254833221435547,
+        54.255001068115234
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 80.00000381469727,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "sentinel-heavy-exit",
+        "time": 0,
+        "position": [
+          14.399999618530273,
+          19.700000762939453,
+          35.599998474121094
+        ],
+        "velocity": [
+          0,
+          3.9801487922668457,
+          -39.80148696899414
+        ],
+        "life": 8,
+        "radius": 1.899999976158142,
+        "damage": 1,
+        "turn": 2.299999952316284,
+        "matrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          -0.9950371980667114,
+          -0.09950371831655502,
+          0,
+          0,
+          0.09950371831655502,
+          -0.9950371980667114,
+          0,
+          14.399999618530273,
+          19.700000762939453,
+          35.599998474121094,
+          1
+        ],
+        "player_position": [
+          0,
+          9,
+          0
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -17.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              28
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -9.558584156444391,
+              23,
+              -27.251086002791343
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -2.1486831184236834,
+              18.5,
+              -23.86852548883856
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "new",
+      "boss_pose": "shipped rest hierarchy only",
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-sentinel-heavy-0-classic-baseline.png",
+      "title": "SENTINEL-HEAVY | t=0.00s | CLASSIC | BASELINE",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -45.25483322143555,
+        17.254833221435547,
+        54.255001068115234
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 80.00000381469727,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "sentinel-heavy-exit",
+        "time": 0,
+        "position": [
+          14.399999618530273,
+          19.700000762939453,
+          35.599998474121094
+        ],
+        "velocity": [
+          0,
+          3.9801487922668457,
+          -39.80148696899414
+        ],
+        "life": 8,
+        "radius": 1.899999976158142,
+        "damage": 1,
+        "turn": 2.299999952316284,
+        "matrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          -0.9950371980667114,
+          -0.09950371831655502,
+          0,
+          0,
+          0.09950371831655502,
+          -0.9950371980667114,
+          0,
+          14.399999618530273,
+          19.700000762939453,
+          35.599998474121094,
+          1
+        ],
+        "player_position": [
+          0,
+          9,
+          0
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -17.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              28
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -9.558584156444391,
+              23,
+              -27.251086002791343
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -2.1486831184236834,
+              18.5,
+              -23.86852548883856
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "baseline",
+      "boss_pose": "shipped rest hierarchy only",
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-sentinel-heavy-1-modern-new.png",
+      "title": "SENTINEL-HEAVY | t=0.20s | MODERN | NEW",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -8.95858383178711,
+        23.25108528137207,
+        23.0
+      ],
+      "projection": "PERSP",
+      "vertical_span": null,
+      "vertical_fov": 57.99999933726732,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "sentinel-heavy-frame12",
+        "time": 0.2,
+        "position": [
+          13.066085815429688,
+          19.128650665283203,
+          27.800247192382812
+        ],
+        "velocity": [
+          -12.169214248657227,
+          -8.663267135620117,
+          -37.10603713989258
+        ],
+        "life": 7.799997329711914,
+        "radius": 1.899999976158142,
+        "damage": 1,
+        "turn": 2.299999952316284,
+        "matrix": [
+          -0.27929940819740295,
+          -0.9107336401939392,
+          0.30423036217689514,
+          0,
+          -0.9107336401939392,
+          0.3516484797000885,
+          0.21658168733119965,
+          0,
+          -0.30423036217689514,
+          -0.21658168733119965,
+          -0.9276509284973145,
+          0,
+          13.066085815429688,
+          19.128650665283203,
+          27.800247192382812,
+          1
+        ],
+        "player_position": [
+          0.6000000000000001,
+          9,
+          4
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -13.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              32
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -8.958584156444392,
+              23,
+              -23.251086002791343
+            ],
+            "target": [
+              1.2600000000000002,
+              10.2,
+              20
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -1.5486831184236833,
+              18.5,
+              -19.86852548883856
+            ],
+            "target": [
+              1.2600000000000002,
+              10.2,
+              20
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "new",
+      "boss_pose": "shipped rest hierarchy only",
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-sentinel-heavy-1-modern-baseline.png",
+      "title": "SENTINEL-HEAVY | t=0.20s | MODERN | BASELINE",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -8.95858383178711,
+        23.25108528137207,
+        23.0
+      ],
+      "projection": "PERSP",
+      "vertical_span": null,
+      "vertical_fov": 57.99999933726732,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "sentinel-heavy-frame12",
+        "time": 0.2,
+        "position": [
+          13.066085815429688,
+          19.128650665283203,
+          27.800247192382812
+        ],
+        "velocity": [
+          -12.169214248657227,
+          -8.663267135620117,
+          -37.10603713989258
+        ],
+        "life": 7.799997329711914,
+        "radius": 1.899999976158142,
+        "damage": 1,
+        "turn": 2.299999952316284,
+        "matrix": [
+          -0.27929940819740295,
+          -0.9107336401939392,
+          0.30423036217689514,
+          0,
+          -0.9107336401939392,
+          0.3516484797000885,
+          0.21658168733119965,
+          0,
+          -0.30423036217689514,
+          -0.21658168733119965,
+          -0.9276509284973145,
+          0,
+          13.066085815429688,
+          19.128650665283203,
+          27.800247192382812,
+          1
+        ],
+        "player_position": [
+          0.6000000000000001,
+          9,
+          4
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -13.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              32
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -8.958584156444392,
+              23,
+              -23.251086002791343
+            ],
+            "target": [
+              1.2600000000000002,
+              10.2,
+              20
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -1.5486831184236833,
+              18.5,
+              -19.86852548883856
+            ],
+            "target": [
+              1.2600000000000002,
+              10.2,
+              20
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "baseline",
+      "boss_pose": "shipped rest hierarchy only",
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-sentinel-heavy-2-chase-new.png",
+      "title": "SENTINEL-HEAVY | t=0.50s | CHASE | NEW",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -0.6486831307411194,
+        13.868525505065918,
+        18.5
+      ],
+      "projection": "PERSP",
+      "vertical_span": null,
+      "vertical_fov": 65.99999500642815,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "sentinel-heavy-frame30",
+        "time": 0.5,
+        "position": [
+          7.197901248931885,
+          13.903762817382812,
+          18.99213218688965
+        ],
+        "velocity": [
+          -23.99765968322754,
+          -23.358701705932617,
+          -21.874269485473633
+        ],
+        "life": 7.499993324279785,
+        "radius": 1.899999976158142,
+        "damage": 1,
+        "turn": 2.299999952316284,
+        "matrix": [
+          0.20570442080497742,
+          -0.7731468081474304,
+          0.5999414324760437,
+          0,
+          -0.7731468081474304,
+          0.24743889272212982,
+          0.5839675068855286,
+          0,
+          -0.5999414324760437,
+          -0.5839675068855286,
+          -0.546856701374054,
+          0,
+          7.197901248931885,
+          13.903762817382812,
+          18.99213218688965,
+          1
+        ],
+        "player_position": [
+          1.5,
+          9,
+          10
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -7.2548339959390375
+            ],
+            "target": [
+              0,
+              9,
+              38
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -8.058584156444391,
+              23,
+              -17.251086002791343
+            ],
+            "target": [
+              2.16,
+              10.2,
+              26
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -0.6486831184236833,
+              18.5,
+              -13.86852548883856
+            ],
+            "target": [
+              2.16,
+              10.2,
+              26
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "new",
+      "boss_pose": "shipped rest hierarchy only",
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-sentinel-heavy-2-chase-baseline.png",
+      "title": "SENTINEL-HEAVY | t=0.50s | CHASE | BASELINE",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -0.6486831307411194,
+        13.868525505065918,
+        18.5
+      ],
+      "projection": "PERSP",
+      "vertical_span": null,
+      "vertical_fov": 65.99999500642815,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "sentinel-heavy-frame30",
+        "time": 0.5,
+        "position": [
+          7.197901248931885,
+          13.903762817382812,
+          18.99213218688965
+        ],
+        "velocity": [
+          -23.99765968322754,
+          -23.358701705932617,
+          -21.874269485473633
+        ],
+        "life": 7.499993324279785,
+        "radius": 1.899999976158142,
+        "damage": 1,
+        "turn": 2.299999952316284,
+        "matrix": [
+          0.20570442080497742,
+          -0.7731468081474304,
+          0.5999414324760437,
+          0,
+          -0.7731468081474304,
+          0.24743889272212982,
+          0.5839675068855286,
+          0,
+          -0.5999414324760437,
+          -0.5839675068855286,
+          -0.546856701374054,
+          0,
+          7.197901248931885,
+          13.903762817382812,
+          18.99213218688965,
+          1
+        ],
+        "player_position": [
+          1.5,
+          9,
+          10
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -7.2548339959390375
+            ],
+            "target": [
+              0,
+              9,
+              38
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -8.058584156444391,
+              23,
+              -17.251086002791343
+            ],
+            "target": [
+              2.16,
+              10.2,
+              26
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -0.6486831184236833,
+              18.5,
+              -13.86852548883856
+            ],
+            "target": [
+              2.16,
+              10.2,
+              26
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "baseline",
+      "boss_pose": "shipped rest hierarchy only",
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-sentinel-salvo-3-chase-new.png",
+      "title": "SENTINEL-SALVO | t=1.00s | CHASE | NEW",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        0.8513168692588806,
+        3.868525505065918,
+        18.5
+      ],
+      "projection": "PERSP",
+      "vertical_span": null,
+      "vertical_fov": 65.99999500642815,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "sentinel-salvo-frame60",
+        "time": 1,
+        "position": [
+          -10.726201057434082,
+          30.287309646606445,
+          5.527543067932129
+        ],
+        "velocity": [
+          9.662056922912598,
+          -32.96233367919922,
+          -30.596214294433594
+        ],
+        "life": 6.49998664855957,
+        "radius": 1.399999976158142,
+        "damage": 1,
+        "turn": 2.5999999046325684,
+        "matrix": [
+          0.8682488799095154,
+          0.44947195053100586,
+          -0.2100447565317154,
+          0,
+          0.44947195053100586,
+          -0.5333841443061829,
+          0.716572642326355,
+          0,
+          0.2100447565317154,
+          -0.716572642326355,
+          -0.6651352047920227,
+          0,
+          -10.726201057434082,
+          30.287309646606445,
+          5.527543067932129,
+          1
+        ],
+        "player_position": [
+          3,
+          9,
+          20
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              2.7451660040609625
+            ],
+            "target": [
+              0,
+              9,
+              48
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -6.5585841564443905,
+              23,
+              -7.251086002791343
+            ],
+            "target": [
+              3.66,
+              10.2,
+              36
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              0.8513168815763167,
+              18.5,
+              -3.8685254888385607
+            ],
+            "target": [
+              3.66,
+              10.2,
+              36
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "new",
+      "boss_pose": "shipped rest hierarchy only",
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-sentinel-salvo-3-chase-baseline.png",
+      "title": "SENTINEL-SALVO | t=1.00s | CHASE | BASELINE",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        0.8513168692588806,
+        3.868525505065918,
+        18.5
+      ],
+      "projection": "PERSP",
+      "vertical_span": null,
+      "vertical_fov": 65.99999500642815,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "sentinel-salvo-frame60",
+        "time": 1,
+        "position": [
+          -10.726201057434082,
+          30.287309646606445,
+          5.527543067932129
+        ],
+        "velocity": [
+          9.662056922912598,
+          -32.96233367919922,
+          -30.596214294433594
+        ],
+        "life": 6.49998664855957,
+        "radius": 1.399999976158142,
+        "damage": 1,
+        "turn": 2.5999999046325684,
+        "matrix": [
+          0.8682488799095154,
+          0.44947195053100586,
+          -0.2100447565317154,
+          0,
+          0.44947195053100586,
+          -0.5333841443061829,
+          0.716572642326355,
+          0,
+          0.2100447565317154,
+          -0.716572642326355,
+          -0.6651352047920227,
+          0,
+          -10.726201057434082,
+          30.287309646606445,
+          5.527543067932129,
+          1
+        ],
+        "player_position": [
+          3,
+          9,
+          20
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              2.7451660040609625
+            ],
+            "target": [
+              0,
+              9,
+              48
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -6.5585841564443905,
+              23,
+              -7.251086002791343
+            ],
+            "target": [
+              3.66,
+              10.2,
+              36
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              0.8513168815763167,
+              18.5,
+              -3.8685254888385607
+            ],
+            "target": [
+              3.66,
+              10.2,
+              36
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "baseline",
+      "boss_pose": "shipped rest hierarchy only",
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/homing-attitudes-sentinel-heavy.png",
+      "title": "SENTINEL-HEAVY | actual homing attitudes at 0 / .2 / .5 / 1.0s",
+      "subtitle": "DIAGNOSTIC STRIP | actual source rotations; translations reset for comparison; static snapshots, NO animation",
+      "camera_position_blender": [
+        -5.0,
+        9.0,
+        5.0
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 4.300000011920929,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "homing_attitudes",
+      "samples": [
+        {
+          "label": "sentinel-heavy-exit",
+          "time": 0,
+          "position": [
+            14.399999618530273,
+            19.700000762939453,
+            35.599998474121094
+          ],
+          "velocity": [
+            0,
+            3.9801487922668457,
+            -39.80148696899414
+          ],
+          "life": 8,
+          "radius": 1.899999976158142,
+          "damage": 1,
+          "turn": 2.299999952316284,
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -0.9950371980667114,
+            -0.09950371831655502,
+            0,
+            0,
+            0.09950371831655502,
+            -0.9950371980667114,
+            0,
+            14.399999618530273,
+            19.700000762939453,
+            35.599998474121094,
+            1
+          ],
+          "player_position": [
+            0,
+            9,
+            0
+          ],
+          "cameras": [
+            {
+              "mode": "classic",
+              "eye": [
+                -45.254833995939045,
+                54.255,
+                -17.254833995939038
+              ],
+              "target": [
+                0,
+                9,
+                28
+              ],
+              "fov": 52,
+              "orthographic": true,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.014062499999999999,
+                0,
+                0,
+                0,
+                0,
+                0.025,
+                0,
+                0,
+                0,
+                0,
+                -0.002000200020002,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                1
+              ]
+            },
+            {
+              "mode": "modern",
+              "eye": [
+                -9.558584156444391,
+                23,
+                -27.251086002791343
+              ],
+              "target": [
+                0.66,
+                10.2,
+                16
+              ],
+              "fov": 58,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                1.0147768623401758,
+                0,
+                0,
+                0,
+                0,
+                1.8040477552714236,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            },
+            {
+              "mode": "chase",
+              "eye": [
+                -2.1486831184236834,
+                18.5,
+                -23.86852548883856
+              ],
+              "target": [
+                0.66,
+                10.2,
+                16
+              ],
+              "fov": 66,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.8661740421457029,
+                0,
+                0,
+                0,
+                0,
+                1.539864963814583,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "label": "sentinel-heavy-frame12",
+          "time": 0.2,
+          "position": [
+            13.066085815429688,
+            19.128650665283203,
+            27.800247192382812
+          ],
+          "velocity": [
+            -12.169214248657227,
+            -8.663267135620117,
+            -37.10603713989258
+          ],
+          "life": 7.799997329711914,
+          "radius": 1.899999976158142,
+          "damage": 1,
+          "turn": 2.299999952316284,
+          "matrix": [
+            -0.27929940819740295,
+            -0.9107336401939392,
+            0.30423036217689514,
+            0,
+            -0.9107336401939392,
+            0.3516484797000885,
+            0.21658168733119965,
+            0,
+            -0.30423036217689514,
+            -0.21658168733119965,
+            -0.9276509284973145,
+            0,
+            13.066085815429688,
+            19.128650665283203,
+            27.800247192382812,
+            1
+          ],
+          "player_position": [
+            0.6000000000000001,
+            9,
+            4
+          ],
+          "cameras": [
+            {
+              "mode": "classic",
+              "eye": [
+                -45.254833995939045,
+                54.255,
+                -13.254833995939038
+              ],
+              "target": [
+                0,
+                9,
+                32
+              ],
+              "fov": 52,
+              "orthographic": true,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.014062499999999999,
+                0,
+                0,
+                0,
+                0,
+                0.025,
+                0,
+                0,
+                0,
+                0,
+                -0.002000200020002,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                1
+              ]
+            },
+            {
+              "mode": "modern",
+              "eye": [
+                -8.958584156444392,
+                23,
+                -23.251086002791343
+              ],
+              "target": [
+                1.2600000000000002,
+                10.2,
+                20
+              ],
+              "fov": 58,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                1.0147768623401758,
+                0,
+                0,
+                0,
+                0,
+                1.8040477552714236,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            },
+            {
+              "mode": "chase",
+              "eye": [
+                -1.5486831184236833,
+                18.5,
+                -19.86852548883856
+              ],
+              "target": [
+                1.2600000000000002,
+                10.2,
+                20
+              ],
+              "fov": 66,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.8661740421457029,
+                0,
+                0,
+                0,
+                0,
+                1.539864963814583,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "label": "sentinel-heavy-frame30",
+          "time": 0.5,
+          "position": [
+            7.197901248931885,
+            13.903762817382812,
+            18.99213218688965
+          ],
+          "velocity": [
+            -23.99765968322754,
+            -23.358701705932617,
+            -21.874269485473633
+          ],
+          "life": 7.499993324279785,
+          "radius": 1.899999976158142,
+          "damage": 1,
+          "turn": 2.299999952316284,
+          "matrix": [
+            0.20570442080497742,
+            -0.7731468081474304,
+            0.5999414324760437,
+            0,
+            -0.7731468081474304,
+            0.24743889272212982,
+            0.5839675068855286,
+            0,
+            -0.5999414324760437,
+            -0.5839675068855286,
+            -0.546856701374054,
+            0,
+            7.197901248931885,
+            13.903762817382812,
+            18.99213218688965,
+            1
+          ],
+          "player_position": [
+            1.5,
+            9,
+            10
+          ],
+          "cameras": [
+            {
+              "mode": "classic",
+              "eye": [
+                -45.254833995939045,
+                54.255,
+                -7.2548339959390375
+              ],
+              "target": [
+                0,
+                9,
+                38
+              ],
+              "fov": 52,
+              "orthographic": true,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.014062499999999999,
+                0,
+                0,
+                0,
+                0,
+                0.025,
+                0,
+                0,
+                0,
+                0,
+                -0.002000200020002,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                1
+              ]
+            },
+            {
+              "mode": "modern",
+              "eye": [
+                -8.058584156444391,
+                23,
+                -17.251086002791343
+              ],
+              "target": [
+                2.16,
+                10.2,
+                26
+              ],
+              "fov": 58,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                1.0147768623401758,
+                0,
+                0,
+                0,
+                0,
+                1.8040477552714236,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            },
+            {
+              "mode": "chase",
+              "eye": [
+                -0.6486831184236833,
+                18.5,
+                -13.86852548883856
+              ],
+              "target": [
+                2.16,
+                10.2,
+                26
+              ],
+              "fov": 66,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.8661740421457029,
+                0,
+                0,
+                0,
+                0,
+                1.539864963814583,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "label": "sentinel-heavy-frame60",
+          "time": 1,
+          "position": [
+            -5.978279113769531,
+            -0.3776841163635254,
+            15.59106731414795
+          ],
+          "velocity": [
+            -26.46859359741211,
+            -29.97957992553711,
+            0.7992209196090698
+          ],
+          "life": 6.99998664855957,
+          "radius": 1.899999976158142,
+          "damage": 1,
+          "turn": 2.299999952316284,
+          "matrix": [
+            0.5707110166549683,
+            -0.4862329959869385,
+            0.6617147326469421,
+            0,
+            -0.4862329959869385,
+            0.44926953315734863,
+            0.749489426612854,
+            0,
+            -0.6617147326469421,
+            -0.749489426612854,
+            0.019980520009994507,
+            0,
+            -5.978279113769531,
+            -0.3776841163635254,
+            15.59106731414795,
+            1
+          ],
+          "player_position": [
+            3,
+            9,
+            20
+          ],
+          "cameras": [
+            {
+              "mode": "classic",
+              "eye": [
+                -45.254833995939045,
+                54.255,
+                2.7451660040609625
+              ],
+              "target": [
+                0,
+                9,
+                48
+              ],
+              "fov": 52,
+              "orthographic": true,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.014062499999999999,
+                0,
+                0,
+                0,
+                0,
+                0.025,
+                0,
+                0,
+                0,
+                0,
+                -0.002000200020002,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                1
+              ]
+            },
+            {
+              "mode": "modern",
+              "eye": [
+                -6.5585841564443905,
+                23,
+                -7.251086002791343
+              ],
+              "target": [
+                3.66,
+                10.2,
+                36
+              ],
+              "fov": 58,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                1.0147768623401758,
+                0,
+                0,
+                0,
+                0,
+                1.8040477552714236,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            },
+            {
+              "mode": "chase",
+              "eye": [
+                0.8513168815763167,
+                18.5,
+                -3.8685254888385607
+              ],
+              "target": [
+                3.66,
+                10.2,
+                36
+              ],
+              "fov": 66,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.8661740421457029,
+                0,
+                0,
+                0,
+                0,
+                1.539864963814583,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "translation_override": "x=-3.3,-1.1,1.1,3.3; y=z=0 ONLY for diagnostic arrangement"
+    },
+    {
+      "file": "png/context-silo-0-classic-new.png",
+      "title": "SILO | t=0.00s | CLASSIC | NEW",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -45.25483322143555,
+        17.254833221435547,
+        54.255001068115234
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 80.00000381469727,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "silo-exit",
+        "time": 0,
+        "position": [
+          -4,
+          3,
+          22
+        ],
+        "velocity": [
+          8.606881141662598,
+          40.72747802734375,
+          14.254617691040039
+        ],
+        "life": 7,
+        "radius": 1.2999999523162842,
+        "damage": 1,
+        "turn": 2.4100000858306885,
+        "matrix": [
+          0.9710992574691772,
+          -0.13675722479820251,
+          -0.19561094045639038,
+          0,
+          -0.13675722479820251,
+          0.35286930203437805,
+          -0.9256244897842407,
+          0,
+          0.19561094045639038,
+          0.9256244897842407,
+          0.3239685893058777,
+          0,
+          -4,
+          3,
+          22,
+          1
+        ],
+        "player_position": [
+          0,
+          9,
+          0
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -17.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              28
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -9.558584156444391,
+              23,
+              -27.251086002791343
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -2.1486831184236834,
+              18.5,
+              -23.86852548883856
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "new",
+      "boss_pose": null,
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-silo-0-classic-baseline.png",
+      "title": "SILO | t=0.00s | CLASSIC | BASELINE",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -45.25483322143555,
+        17.254833221435547,
+        54.255001068115234
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 80.00000381469727,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "silo-exit",
+        "time": 0,
+        "position": [
+          -4,
+          3,
+          22
+        ],
+        "velocity": [
+          8.606881141662598,
+          40.72747802734375,
+          14.254617691040039
+        ],
+        "life": 7,
+        "radius": 1.2999999523162842,
+        "damage": 1,
+        "turn": 2.4100000858306885,
+        "matrix": [
+          0.9710992574691772,
+          -0.13675722479820251,
+          -0.19561094045639038,
+          0,
+          -0.13675722479820251,
+          0.35286930203437805,
+          -0.9256244897842407,
+          0,
+          0.19561094045639038,
+          0.9256244897842407,
+          0.3239685893058777,
+          0,
+          -4,
+          3,
+          22,
+          1
+        ],
+        "player_position": [
+          0,
+          9,
+          0
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -17.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              28
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -9.558584156444391,
+              23,
+              -27.251086002791343
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -2.1486831184236834,
+              18.5,
+              -23.86852548883856
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "baseline",
+      "boss_pose": null,
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-silo-0-modern-new.png",
+      "title": "SILO | t=0.00s | MODERN | NEW",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -9.558584213256836,
+        27.25108528137207,
+        23.0
+      ],
+      "projection": "PERSP",
+      "vertical_span": null,
+      "vertical_fov": 57.99999933726732,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "silo-exit",
+        "time": 0,
+        "position": [
+          -4,
+          3,
+          22
+        ],
+        "velocity": [
+          8.606881141662598,
+          40.72747802734375,
+          14.254617691040039
+        ],
+        "life": 7,
+        "radius": 1.2999999523162842,
+        "damage": 1,
+        "turn": 2.4100000858306885,
+        "matrix": [
+          0.9710992574691772,
+          -0.13675722479820251,
+          -0.19561094045639038,
+          0,
+          -0.13675722479820251,
+          0.35286930203437805,
+          -0.9256244897842407,
+          0,
+          0.19561094045639038,
+          0.9256244897842407,
+          0.3239685893058777,
+          0,
+          -4,
+          3,
+          22,
+          1
+        ],
+        "player_position": [
+          0,
+          9,
+          0
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -17.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              28
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -9.558584156444391,
+              23,
+              -27.251086002791343
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -2.1486831184236834,
+              18.5,
+              -23.86852548883856
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "new",
+      "boss_pose": null,
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-silo-0-modern-baseline.png",
+      "title": "SILO | t=0.00s | MODERN | BASELINE",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -9.558584213256836,
+        27.25108528137207,
+        23.0
+      ],
+      "projection": "PERSP",
+      "vertical_span": null,
+      "vertical_fov": 57.99999933726732,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "silo-exit",
+        "time": 0,
+        "position": [
+          -4,
+          3,
+          22
+        ],
+        "velocity": [
+          8.606881141662598,
+          40.72747802734375,
+          14.254617691040039
+        ],
+        "life": 7,
+        "radius": 1.2999999523162842,
+        "damage": 1,
+        "turn": 2.4100000858306885,
+        "matrix": [
+          0.9710992574691772,
+          -0.13675722479820251,
+          -0.19561094045639038,
+          0,
+          -0.13675722479820251,
+          0.35286930203437805,
+          -0.9256244897842407,
+          0,
+          0.19561094045639038,
+          0.9256244897842407,
+          0.3239685893058777,
+          0,
+          -4,
+          3,
+          22,
+          1
+        ],
+        "player_position": [
+          0,
+          9,
+          0
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -17.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              28
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -9.558584156444391,
+              23,
+              -27.251086002791343
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -2.1486831184236834,
+              18.5,
+              -23.86852548883856
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "baseline",
+      "boss_pose": null,
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-silo-1-chase-new.png",
+      "title": "SILO | t=0.20s | CHASE | NEW",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -1.5486831665039062,
+        19.8685245513916,
+        18.5
+      ],
+      "projection": "PERSP",
+      "vertical_span": null,
+      "vertical_fov": 65.99999500642815,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "silo-frame12",
+        "time": 0.2,
+        "position": [
+          -1.918224573135376,
+          11.396588325500488,
+          23.406967163085938
+        ],
+        "velocity": [
+          11.89137077331543,
+          42.34990310668945,
+          1.0397216081619263
+        ],
+        "life": 6.799997329711914,
+        "radius": 1.2999999523162842,
+        "damage": 1,
+        "turn": 2.4100000858306885,
+        "matrix": [
+          0.928646445274353,
+          -0.25411832332611084,
+          -0.27025842666625977,
+          0,
+          -0.25411832332611084,
+          0.09498357027769089,
+          -0.9624977707862854,
+          0,
+          0.27025842666625977,
+          0.9624977707862854,
+          0.023630036041140556,
+          0,
+          -1.918224573135376,
+          11.396588325500488,
+          23.406967163085938,
+          1
+        ],
+        "player_position": [
+          0.6000000000000001,
+          9,
+          4
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -13.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              32
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -8.958584156444392,
+              23,
+              -23.251086002791343
+            ],
+            "target": [
+              1.2600000000000002,
+              10.2,
+              20
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -1.5486831184236833,
+              18.5,
+              -19.86852548883856
+            ],
+            "target": [
+              1.2600000000000002,
+              10.2,
+              20
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "new",
+      "boss_pose": null,
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-silo-1-chase-baseline.png",
+      "title": "SILO | t=0.20s | CHASE | BASELINE",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -1.5486831665039062,
+        19.8685245513916,
+        18.5
+      ],
+      "projection": "PERSP",
+      "vertical_span": null,
+      "vertical_fov": 65.99999500642815,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "silo-frame12",
+        "time": 0.2,
+        "position": [
+          -1.918224573135376,
+          11.396588325500488,
+          23.406967163085938
+        ],
+        "velocity": [
+          11.89137077331543,
+          42.34990310668945,
+          1.0397216081619263
+        ],
+        "life": 6.799997329711914,
+        "radius": 1.2999999523162842,
+        "damage": 1,
+        "turn": 2.4100000858306885,
+        "matrix": [
+          0.928646445274353,
+          -0.25411832332611084,
+          -0.27025842666625977,
+          0,
+          -0.25411832332611084,
+          0.09498357027769089,
+          -0.9624977707862854,
+          0,
+          0.27025842666625977,
+          0.9624977707862854,
+          0.023630036041140556,
+          0,
+          -1.918224573135376,
+          11.396588325500488,
+          23.406967163085938,
+          1
+        ],
+        "player_position": [
+          0.6000000000000001,
+          9,
+          4
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -13.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              32
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -8.958584156444392,
+              23,
+              -23.251086002791343
+            ],
+            "target": [
+              1.2600000000000002,
+              10.2,
+              20
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -1.5486831184236833,
+              18.5,
+              -19.86852548883856
+            ],
+            "target": [
+              1.2600000000000002,
+              10.2,
+              20
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "baseline",
+      "boss_pose": null,
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-sentinel-salvo-0-classic-new.png",
+      "title": "SENTINEL-SALVO | t=0.00s | CLASSIC | NEW",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -45.25483322143555,
+        17.254833221435547,
+        54.255001068115234
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 80.00000381469727,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "sentinel-salvo-exit",
+        "time": 0,
+        "position": [
+          -2,
+          30,
+          44
+        ],
+        "velocity": [
+          -22.313278198242188,
+          33.46991729736328,
+          -22.313278198242188
+        ],
+        "life": 7.5,
+        "radius": 1.399999976158142,
+        "damage": 1,
+        "turn": 2.5999999046325684,
+        "matrix": [
+          0.54305499792099,
+          0.6854174733161926,
+          0.48507124185562134,
+          0,
+          0.6854174733161926,
+          -0.028126250952482224,
+          -0.7276068925857544,
+          0,
+          -0.48507124185562134,
+          0.7276068925857544,
+          -0.48507124185562134,
+          0,
+          -2,
+          30,
+          44,
+          1
+        ],
+        "player_position": [
+          0,
+          9,
+          0
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -17.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              28
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -9.558584156444391,
+              23,
+              -27.251086002791343
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -2.1486831184236834,
+              18.5,
+              -23.86852548883856
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "new",
+      "boss_pose": "shipped rest hierarchy only",
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-sentinel-salvo-0-classic-baseline.png",
+      "title": "SENTINEL-SALVO | t=0.00s | CLASSIC | BASELINE",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -45.25483322143555,
+        17.254833221435547,
+        54.255001068115234
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 80.00000381469727,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "sentinel-salvo-exit",
+        "time": 0,
+        "position": [
+          -2,
+          30,
+          44
+        ],
+        "velocity": [
+          -22.313278198242188,
+          33.46991729736328,
+          -22.313278198242188
+        ],
+        "life": 7.5,
+        "radius": 1.399999976158142,
+        "damage": 1,
+        "turn": 2.5999999046325684,
+        "matrix": [
+          0.54305499792099,
+          0.6854174733161926,
+          0.48507124185562134,
+          0,
+          0.6854174733161926,
+          -0.028126250952482224,
+          -0.7276068925857544,
+          0,
+          -0.48507124185562134,
+          0.7276068925857544,
+          -0.48507124185562134,
+          0,
+          -2,
+          30,
+          44,
+          1
+        ],
+        "player_position": [
+          0,
+          9,
+          0
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -17.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              28
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -9.558584156444391,
+              23,
+              -27.251086002791343
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -2.1486831184236834,
+              18.5,
+              -23.86852548883856
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "baseline",
+      "boss_pose": "shipped rest hierarchy only",
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-sentinel-salvo-2-classic-new.png",
+      "title": "SENTINEL-SALVO | t=0.50s | CLASSIC | NEW",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -45.25483322143555,
+        7.254834175109863,
+        54.255001068115234
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 80.00000381469727,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "sentinel-salvo-frame30",
+        "time": 0.5,
+        "position": [
+          -10.739852905273438,
+          39.193389892578125,
+          25.804115295410156
+        ],
+        "velocity": [
+          -10.418769836425781,
+          1.1604061126708984,
+          -44.78953552246094
+        ],
+        "life": 6.999993324279785,
+        "radius": 1.399999976158142,
+        "damage": 1,
+        "turn": 2.5999999046325684,
+        "matrix": [
+          -0.9495025873184204,
+          0.21712876856327057,
+          0.22649501264095306,
+          0,
+          0.21712876856327057,
+          0.9758169651031494,
+          -0.02522622048854828,
+          0,
+          -0.22649501264095306,
+          0.02522622048854828,
+          -0.973685622215271,
+          0,
+          -10.739852905273438,
+          39.193389892578125,
+          25.804115295410156,
+          1
+        ],
+        "player_position": [
+          1.5,
+          9,
+          10
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -7.2548339959390375
+            ],
+            "target": [
+              0,
+              9,
+              38
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -8.058584156444391,
+              23,
+              -17.251086002791343
+            ],
+            "target": [
+              2.16,
+              10.2,
+              26
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -0.6486831184236833,
+              18.5,
+              -13.86852548883856
+            ],
+            "target": [
+              2.16,
+              10.2,
+              26
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "new",
+      "boss_pose": "shipped rest hierarchy only",
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/context-sentinel-salvo-2-classic-baseline.png",
+      "title": "SENTINEL-SALVO | t=0.50s | CLASSIC | BASELINE",
+      "subtitle": "SOURCE CAMERA + CPU POSE | tiny missile is intentional | offline, no WebGL/FX/collision simulation",
+      "camera_position_blender": [
+        -45.25483322143555,
+        7.254834175109863,
+        54.255001068115234
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 80.00000381469727,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "source_camera",
+      "source_sample": {
+        "label": "sentinel-salvo-frame30",
+        "time": 0.5,
+        "position": [
+          -10.739852905273438,
+          39.193389892578125,
+          25.804115295410156
+        ],
+        "velocity": [
+          -10.418769836425781,
+          1.1604061126708984,
+          -44.78953552246094
+        ],
+        "life": 6.999993324279785,
+        "radius": 1.399999976158142,
+        "damage": 1,
+        "turn": 2.5999999046325684,
+        "matrix": [
+          -0.9495025873184204,
+          0.21712876856327057,
+          0.22649501264095306,
+          0,
+          0.21712876856327057,
+          0.9758169651031494,
+          -0.02522622048854828,
+          0,
+          -0.22649501264095306,
+          0.02522622048854828,
+          -0.973685622215271,
+          0,
+          -10.739852905273438,
+          39.193389892578125,
+          25.804115295410156,
+          1
+        ],
+        "player_position": [
+          1.5,
+          9,
+          10
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -7.2548339959390375
+            ],
+            "target": [
+              0,
+              9,
+              38
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -8.058584156444391,
+              23,
+              -17.251086002791343
+            ],
+            "target": [
+              2.16,
+              10.2,
+              26
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -0.6486831184236833,
+              18.5,
+              -13.86852548883856
+            ],
+            "target": [
+              2.16,
+              10.2,
+              26
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "variant": "baseline",
+      "boss_pose": "shipped rest hierarchy only",
+      "trail": "not rendered; original source burst behavior independently captured"
+    },
+    {
+      "file": "png/homing-attitudes-silo.png",
+      "title": "SILO | actual homing attitudes at 0 / .2 / .5 / 1.0s",
+      "subtitle": "DIAGNOSTIC STRIP | actual source rotations; translations reset for comparison; static snapshots, NO animation",
+      "camera_position_blender": [
+        -5.0,
+        9.0,
+        5.0
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 4.300000011920929,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "homing_attitudes",
+      "samples": [
+        {
+          "label": "silo-exit",
+          "time": 0,
+          "position": [
+            -4,
+            3,
+            22
+          ],
+          "velocity": [
+            8.606881141662598,
+            40.72747802734375,
+            14.254617691040039
+          ],
+          "life": 7,
+          "radius": 1.2999999523162842,
+          "damage": 1,
+          "turn": 2.4100000858306885,
+          "matrix": [
+            0.9710992574691772,
+            -0.13675722479820251,
+            -0.19561094045639038,
+            0,
+            -0.13675722479820251,
+            0.35286930203437805,
+            -0.9256244897842407,
+            0,
+            0.19561094045639038,
+            0.9256244897842407,
+            0.3239685893058777,
+            0,
+            -4,
+            3,
+            22,
+            1
+          ],
+          "player_position": [
+            0,
+            9,
+            0
+          ],
+          "cameras": [
+            {
+              "mode": "classic",
+              "eye": [
+                -45.254833995939045,
+                54.255,
+                -17.254833995939038
+              ],
+              "target": [
+                0,
+                9,
+                28
+              ],
+              "fov": 52,
+              "orthographic": true,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.014062499999999999,
+                0,
+                0,
+                0,
+                0,
+                0.025,
+                0,
+                0,
+                0,
+                0,
+                -0.002000200020002,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                1
+              ]
+            },
+            {
+              "mode": "modern",
+              "eye": [
+                -9.558584156444391,
+                23,
+                -27.251086002791343
+              ],
+              "target": [
+                0.66,
+                10.2,
+                16
+              ],
+              "fov": 58,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                1.0147768623401758,
+                0,
+                0,
+                0,
+                0,
+                1.8040477552714236,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            },
+            {
+              "mode": "chase",
+              "eye": [
+                -2.1486831184236834,
+                18.5,
+                -23.86852548883856
+              ],
+              "target": [
+                0.66,
+                10.2,
+                16
+              ],
+              "fov": 66,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.8661740421457029,
+                0,
+                0,
+                0,
+                0,
+                1.539864963814583,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "label": "silo-frame12",
+          "time": 0.2,
+          "position": [
+            -1.918224573135376,
+            11.396588325500488,
+            23.406967163085938
+          ],
+          "velocity": [
+            11.89137077331543,
+            42.34990310668945,
+            1.0397216081619263
+          ],
+          "life": 6.799997329711914,
+          "radius": 1.2999999523162842,
+          "damage": 1,
+          "turn": 2.4100000858306885,
+          "matrix": [
+            0.928646445274353,
+            -0.25411832332611084,
+            -0.27025842666625977,
+            0,
+            -0.25411832332611084,
+            0.09498357027769089,
+            -0.9624977707862854,
+            0,
+            0.27025842666625977,
+            0.9624977707862854,
+            0.023630036041140556,
+            0,
+            -1.918224573135376,
+            11.396588325500488,
+            23.406967163085938,
+            1
+          ],
+          "player_position": [
+            0.6000000000000001,
+            9,
+            4
+          ],
+          "cameras": [
+            {
+              "mode": "classic",
+              "eye": [
+                -45.254833995939045,
+                54.255,
+                -13.254833995939038
+              ],
+              "target": [
+                0,
+                9,
+                32
+              ],
+              "fov": 52,
+              "orthographic": true,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.014062499999999999,
+                0,
+                0,
+                0,
+                0,
+                0.025,
+                0,
+                0,
+                0,
+                0,
+                -0.002000200020002,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                1
+              ]
+            },
+            {
+              "mode": "modern",
+              "eye": [
+                -8.958584156444392,
+                23,
+                -23.251086002791343
+              ],
+              "target": [
+                1.2600000000000002,
+                10.2,
+                20
+              ],
+              "fov": 58,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                1.0147768623401758,
+                0,
+                0,
+                0,
+                0,
+                1.8040477552714236,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            },
+            {
+              "mode": "chase",
+              "eye": [
+                -1.5486831184236833,
+                18.5,
+                -19.86852548883856
+              ],
+              "target": [
+                1.2600000000000002,
+                10.2,
+                20
+              ],
+              "fov": 66,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.8661740421457029,
+                0,
+                0,
+                0,
+                0,
+                1.539864963814583,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "label": "silo-frame30",
+          "time": 0.5,
+          "position": [
+            2.327449321746826,
+            23.633371353149414,
+            21.22031593322754
+          ],
+          "velocity": [
+            15.970855712890625,
+            38.8489875793457,
+            -13.10300064086914
+          ],
+          "life": 6.499993324279785,
+          "radius": 1.2999999523162842,
+          "damage": 1,
+          "turn": 2.4100000858306885,
+          "matrix": [
+            0.8123764991760254,
+            -0.45639273524284363,
+            -0.3629739284515381,
+            0,
+            -0.45639273524284363,
+            -0.11017192900180817,
+            -0.8829313516616821,
+            0,
+            0.3629739284515381,
+            0.8829313516616821,
+            -0.2977954149246216,
+            0,
+            2.327449321746826,
+            23.633371353149414,
+            21.22031593322754,
+            1
+          ],
+          "player_position": [
+            1.5,
+            9,
+            10
+          ],
+          "cameras": [
+            {
+              "mode": "classic",
+              "eye": [
+                -45.254833995939045,
+                54.255,
+                -7.2548339959390375
+              ],
+              "target": [
+                0,
+                9,
+                38
+              ],
+              "fov": 52,
+              "orthographic": true,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.014062499999999999,
+                0,
+                0,
+                0,
+                0,
+                0.025,
+                0,
+                0,
+                0,
+                0,
+                -0.002000200020002,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                1
+              ]
+            },
+            {
+              "mode": "modern",
+              "eye": [
+                -8.058584156444391,
+                23,
+                -17.251086002791343
+              ],
+              "target": [
+                2.16,
+                10.2,
+                26
+              ],
+              "fov": 58,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                1.0147768623401758,
+                0,
+                0,
+                0,
+                0,
+                1.8040477552714236,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            },
+            {
+              "mode": "chase",
+              "eye": [
+                -0.6486831184236833,
+                18.5,
+                -13.86852548883856
+              ],
+              "target": [
+                2.16,
+                10.2,
+                26
+              ],
+              "fov": 66,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.8661740421457029,
+                0,
+                0,
+                0,
+                0,
+                1.539864963814583,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "label": "silo-frame60",
+          "time": 1,
+          "position": [
+            11.592061042785645,
+            41.536197662353516,
+            12.508503913879395
+          ],
+          "velocity": [
+            20.720876693725586,
+            33.58378982543945,
+            -19.462156295776367
+          ],
+          "life": 5.99998664855957,
+          "radius": 1.2999999523162842,
+          "damage": 1,
+          "turn": 2.4100000858306885,
+          "matrix": [
+            0.6023263335227966,
+            -0.6445378065109253,
+            -0.4709288775920868,
+            0,
+            -0.6445378065109253,
+            -0.044647958129644394,
+            -0.7632676959037781,
+            0,
+            0.4709288775920868,
+            0.7632676959037781,
+            -0.4423215985298157,
+            0,
+            11.592061042785645,
+            41.536197662353516,
+            12.508503913879395,
+            1
+          ],
+          "player_position": [
+            3,
+            9,
+            20
+          ],
+          "cameras": [
+            {
+              "mode": "classic",
+              "eye": [
+                -45.254833995939045,
+                54.255,
+                2.7451660040609625
+              ],
+              "target": [
+                0,
+                9,
+                48
+              ],
+              "fov": 52,
+              "orthographic": true,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.014062499999999999,
+                0,
+                0,
+                0,
+                0,
+                0.025,
+                0,
+                0,
+                0,
+                0,
+                -0.002000200020002,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                1
+              ]
+            },
+            {
+              "mode": "modern",
+              "eye": [
+                -6.5585841564443905,
+                23,
+                -7.251086002791343
+              ],
+              "target": [
+                3.66,
+                10.2,
+                36
+              ],
+              "fov": 58,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                1.0147768623401758,
+                0,
+                0,
+                0,
+                0,
+                1.8040477552714236,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            },
+            {
+              "mode": "chase",
+              "eye": [
+                0.8513168815763167,
+                18.5,
+                -3.8685254888385607
+              ],
+              "target": [
+                3.66,
+                10.2,
+                36
+              ],
+              "fov": 66,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.8661740421457029,
+                0,
+                0,
+                0,
+                0,
+                1.539864963814583,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "translation_override": "x=-3.3,-1.1,1.1,3.3; y=z=0 ONLY for diagnostic arrangement"
+    },
+    {
+      "file": "png/homing-attitudes-sentinel-salvo.png",
+      "title": "SENTINEL-SALVO | actual homing attitudes at 0 / .2 / .5 / 1.0s",
+      "subtitle": "DIAGNOSTIC STRIP | actual source rotations; translations reset for comparison; static snapshots, NO animation",
+      "camera_position_blender": [
+        -5.0,
+        9.0,
+        5.0
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 4.300000011920929,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "homing_attitudes",
+      "samples": [
+        {
+          "label": "sentinel-salvo-exit",
+          "time": 0,
+          "position": [
+            -2,
+            30,
+            44
+          ],
+          "velocity": [
+            -22.313278198242188,
+            33.46991729736328,
+            -22.313278198242188
+          ],
+          "life": 7.5,
+          "radius": 1.399999976158142,
+          "damage": 1,
+          "turn": 2.5999999046325684,
+          "matrix": [
+            0.54305499792099,
+            0.6854174733161926,
+            0.48507124185562134,
+            0,
+            0.6854174733161926,
+            -0.028126250952482224,
+            -0.7276068925857544,
+            0,
+            -0.48507124185562134,
+            0.7276068925857544,
+            -0.48507124185562134,
+            0,
+            -2,
+            30,
+            44,
+            1
+          ],
+          "player_position": [
+            0,
+            9,
+            0
+          ],
+          "cameras": [
+            {
+              "mode": "classic",
+              "eye": [
+                -45.254833995939045,
+                54.255,
+                -17.254833995939038
+              ],
+              "target": [
+                0,
+                9,
+                28
+              ],
+              "fov": 52,
+              "orthographic": true,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.014062499999999999,
+                0,
+                0,
+                0,
+                0,
+                0.025,
+                0,
+                0,
+                0,
+                0,
+                -0.002000200020002,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                1
+              ]
+            },
+            {
+              "mode": "modern",
+              "eye": [
+                -9.558584156444391,
+                23,
+                -27.251086002791343
+              ],
+              "target": [
+                0.66,
+                10.2,
+                16
+              ],
+              "fov": 58,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                1.0147768623401758,
+                0,
+                0,
+                0,
+                0,
+                1.8040477552714236,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            },
+            {
+              "mode": "chase",
+              "eye": [
+                -2.1486831184236834,
+                18.5,
+                -23.86852548883856
+              ],
+              "target": [
+                0.66,
+                10.2,
+                16
+              ],
+              "fov": 66,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.8661740421457029,
+                0,
+                0,
+                0,
+                0,
+                1.539864963814583,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "label": "sentinel-salvo-frame12",
+          "time": 0.2,
+          "position": [
+            -6.203524112701416,
+            35.630271911621094,
+            38.138343811035156
+          ],
+          "velocity": [
+            -19.490633010864258,
+            22.995946884155273,
+            -34.746253967285156
+          ],
+          "life": 7.299997329711914,
+          "radius": 1.399999976158142,
+          "damage": 1,
+          "turn": 2.5999999046325684,
+          "matrix": [
+            0.26616793870925903,
+            0.8658088445663452,
+            0.42370936274528503,
+            0,
+            0.8658088445663452,
+            -0.021521199494600296,
+            -0.4999118149280548,
+            0,
+            -0.42370936274528503,
+            0.4999118149280548,
+            -0.7553532719612122,
+            0,
+            -6.203524112701416,
+            35.630271911621094,
+            38.138343811035156,
+            1
+          ],
+          "player_position": [
+            0.6000000000000001,
+            9,
+            4
+          ],
+          "cameras": [
+            {
+              "mode": "classic",
+              "eye": [
+                -45.254833995939045,
+                54.255,
+                -13.254833995939038
+              ],
+              "target": [
+                0,
+                9,
+                32
+              ],
+              "fov": 52,
+              "orthographic": true,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.014062499999999999,
+                0,
+                0,
+                0,
+                0,
+                0.025,
+                0,
+                0,
+                0,
+                0,
+                -0.002000200020002,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                1
+              ]
+            },
+            {
+              "mode": "modern",
+              "eye": [
+                -8.958584156444392,
+                23,
+                -23.251086002791343
+              ],
+              "target": [
+                1.2600000000000002,
+                10.2,
+                20
+              ],
+              "fov": 58,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                1.0147768623401758,
+                0,
+                0,
+                0,
+                0,
+                1.8040477552714236,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            },
+            {
+              "mode": "chase",
+              "eye": [
+                -1.5486831184236833,
+                18.5,
+                -19.86852548883856
+              ],
+              "target": [
+                1.2600000000000002,
+                10.2,
+                20
+              ],
+              "fov": 66,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.8661740421457029,
+                0,
+                0,
+                0,
+                0,
+                1.539864963814583,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "label": "sentinel-salvo-frame30",
+          "time": 0.5,
+          "position": [
+            -10.739852905273438,
+            39.193389892578125,
+            25.804115295410156
+          ],
+          "velocity": [
+            -10.418769836425781,
+            1.1604061126708984,
+            -44.78953552246094
+          ],
+          "life": 6.999993324279785,
+          "radius": 1.399999976158142,
+          "damage": 1,
+          "turn": 2.5999999046325684,
+          "matrix": [
+            -0.9495025873184204,
+            0.21712876856327057,
+            0.22649501264095306,
+            0,
+            0.21712876856327057,
+            0.9758169651031494,
+            -0.02522622048854828,
+            0,
+            -0.22649501264095306,
+            0.02522622048854828,
+            -0.973685622215271,
+            0,
+            -10.739852905273438,
+            39.193389892578125,
+            25.804115295410156,
+            1
+          ],
+          "player_position": [
+            1.5,
+            9,
+            10
+          ],
+          "cameras": [
+            {
+              "mode": "classic",
+              "eye": [
+                -45.254833995939045,
+                54.255,
+                -7.2548339959390375
+              ],
+              "target": [
+                0,
+                9,
+                38
+              ],
+              "fov": 52,
+              "orthographic": true,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.014062499999999999,
+                0,
+                0,
+                0,
+                0,
+                0.025,
+                0,
+                0,
+                0,
+                0,
+                -0.002000200020002,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                1
+              ]
+            },
+            {
+              "mode": "modern",
+              "eye": [
+                -8.058584156444391,
+                23,
+                -17.251086002791343
+              ],
+              "target": [
+                2.16,
+                10.2,
+                26
+              ],
+              "fov": 58,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                1.0147768623401758,
+                0,
+                0,
+                0,
+                0,
+                1.8040477552714236,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            },
+            {
+              "mode": "chase",
+              "eye": [
+                -0.6486831184236833,
+                18.5,
+                -13.86852548883856
+              ],
+              "target": [
+                2.16,
+                10.2,
+                26
+              ],
+              "fov": 66,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.8661740421457029,
+                0,
+                0,
+                0,
+                0,
+                1.539864963814583,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "label": "sentinel-salvo-frame60",
+          "time": 1,
+          "position": [
+            -10.726201057434082,
+            30.287309646606445,
+            5.527543067932129
+          ],
+          "velocity": [
+            9.662056922912598,
+            -32.96233367919922,
+            -30.596214294433594
+          ],
+          "life": 6.49998664855957,
+          "radius": 1.399999976158142,
+          "damage": 1,
+          "turn": 2.5999999046325684,
+          "matrix": [
+            0.8682488799095154,
+            0.44947195053100586,
+            -0.2100447565317154,
+            0,
+            0.44947195053100586,
+            -0.5333841443061829,
+            0.716572642326355,
+            0,
+            0.2100447565317154,
+            -0.716572642326355,
+            -0.6651352047920227,
+            0,
+            -10.726201057434082,
+            30.287309646606445,
+            5.527543067932129,
+            1
+          ],
+          "player_position": [
+            3,
+            9,
+            20
+          ],
+          "cameras": [
+            {
+              "mode": "classic",
+              "eye": [
+                -45.254833995939045,
+                54.255,
+                2.7451660040609625
+              ],
+              "target": [
+                0,
+                9,
+                48
+              ],
+              "fov": 52,
+              "orthographic": true,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.014062499999999999,
+                0,
+                0,
+                0,
+                0,
+                0.025,
+                0,
+                0,
+                0,
+                0,
+                -0.002000200020002,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                1
+              ]
+            },
+            {
+              "mode": "modern",
+              "eye": [
+                -6.5585841564443905,
+                23,
+                -7.251086002791343
+              ],
+              "target": [
+                3.66,
+                10.2,
+                36
+              ],
+              "fov": 58,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                1.0147768623401758,
+                0,
+                0,
+                0,
+                0,
+                1.8040477552714236,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            },
+            {
+              "mode": "chase",
+              "eye": [
+                0.8513168815763167,
+                18.5,
+                -3.8685254888385607
+              ],
+              "target": [
+                3.66,
+                10.2,
+                36
+              ],
+              "fov": 66,
+              "orthographic": false,
+              "vertical_span": 80,
+              "aspect": 1.7777777777777777,
+              "projection": [
+                0.8661740421457029,
+                0,
+                0,
+                0,
+                0,
+                1.539864963814583,
+                0,
+                0,
+                0,
+                0,
+                -1.0002000200020003,
+                -1,
+                0,
+                0,
+                -0.20002000200020004,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "translation_override": "x=-3.3,-1.1,1.1,3.3; y=z=0 ONLY for diagnostic arrangement"
+    },
+    {
+      "file": "png/launcher-detail-silo.png",
+      "title": "SILO | SOURCE LAUNCH ROOT / EXIT ATTITUDE",
+      "subtitle": "CLOSE-UP DIAGNOSTIC | world scale1; source pose unchanged; rest Sentinel / sampled Silo hatch",
+      "camera_position_blender": [
+        -9.0,
+        -15.0,
+        7.0
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 5.499999940395355,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "launcher_detail",
+      "source_sample": {
+        "label": "silo-exit",
+        "time": 0,
+        "position": [
+          -4,
+          3,
+          22
+        ],
+        "velocity": [
+          8.606881141662598,
+          40.72747802734375,
+          14.254617691040039
+        ],
+        "life": 7,
+        "radius": 1.2999999523162842,
+        "damage": 1,
+        "turn": 2.4100000858306885,
+        "matrix": [
+          0.9710992574691772,
+          -0.13675722479820251,
+          -0.19561094045639038,
+          0,
+          -0.13675722479820251,
+          0.35286930203437805,
+          -0.9256244897842407,
+          0,
+          0.19561094045639038,
+          0.9256244897842407,
+          0.3239685893058777,
+          0,
+          -4,
+          3,
+          22,
+          1
+        ],
+        "player_position": [
+          0,
+          9,
+          0
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -17.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              28
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -9.558584156444391,
+              23,
+              -27.251086002791343
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -2.1486831184236834,
+              18.5,
+              -23.86852548883856
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "camera_not_gameplay": true
+    },
+    {
+      "file": "png/launcher-detail-sentinel-heavy.png",
+      "title": "SENTINEL-HEAVY | SOURCE LAUNCH ROOT / EXIT ATTITUDE",
+      "subtitle": "CLOSE-UP DIAGNOSTIC | world scale1; source pose unchanged; rest Sentinel / sampled Silo hatch",
+      "camera_position_blender": [
+        9.399999618530273,
+        -28.599998474121094,
+        23.700000762939453
+      ],
+      "projection": "ORTHO",
+      "vertical_span": 5.499999940395355,
+      "vertical_fov": 26.991466429975517,
+      "resolution": [
+        960,
+        540
+      ],
+      "subject_world_scale": 1,
+      "kind": "launcher_detail",
+      "source_sample": {
+        "label": "sentinel-heavy-exit",
+        "time": 0,
+        "position": [
+          14.399999618530273,
+          19.700000762939453,
+          35.599998474121094
+        ],
+        "velocity": [
+          0,
+          3.9801487922668457,
+          -39.80148696899414
+        ],
+        "life": 8,
+        "radius": 1.899999976158142,
+        "damage": 1,
+        "turn": 2.299999952316284,
+        "matrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          -0.9950371980667114,
+          -0.09950371831655502,
+          0,
+          0,
+          0.09950371831655502,
+          -0.9950371980667114,
+          0,
+          14.399999618530273,
+          19.700000762939453,
+          35.599998474121094,
+          1
+        ],
+        "player_position": [
+          0,
+          9,
+          0
+        ],
+        "cameras": [
+          {
+            "mode": "classic",
+            "eye": [
+              -45.254833995939045,
+              54.255,
+              -17.254833995939038
+            ],
+            "target": [
+              0,
+              9,
+              28
+            ],
+            "fov": 52,
+            "orthographic": true,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.014062499999999999,
+              0,
+              0,
+              0,
+              0,
+              0.025,
+              0,
+              0,
+              0,
+              0,
+              -0.002000200020002,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              1
+            ]
+          },
+          {
+            "mode": "modern",
+            "eye": [
+              -9.558584156444391,
+              23,
+              -27.251086002791343
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 58,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              1.0147768623401758,
+              0,
+              0,
+              0,
+              0,
+              1.8040477552714236,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          },
+          {
+            "mode": "chase",
+            "eye": [
+              -2.1486831184236834,
+              18.5,
+              -23.86852548883856
+            ],
+            "target": [
+              0.66,
+              10.2,
+              16
+            ],
+            "fov": 66,
+            "orthographic": false,
+            "vertical_span": 80,
+            "aspect": 1.7777777777777777,
+            "projection": [
+              0.8661740421457029,
+              0,
+              0,
+              0,
+              0,
+              1.539864963814583,
+              0,
+              0,
+              0,
+              0,
+              -1.0002000200020003,
+              -1,
+              0,
+              0,
+              -0.20002000200020004,
+              0
+            ]
+          }
+        ]
+      },
+      "camera_not_gameplay": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "archive": "dreadnought-initial-ee221ad-20261114.tar.gz",
+  "sha256": "e9ee8c977790daafd22e8853c78c29dd23f45c32234a18708c3764277edf5ccf",
+  "contentHashesVerified": 37,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/dreadnought/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "senderExitStatus": 0,
+  "transferMethod": "Windows Taildrop",
+  "glbSha256": "67c5e604ea19b941a76b127a1221c87350161f3637ffbd19e87a16489ec69c6c",
+  "blendSha256": "c41caba65498e0d7f748c79f981990ec51eab5db527c07fb26db0ac443c0ee33",
+  "formalReviewsCompleted": 0,
+  "fixPassesCompleted": 0
+}

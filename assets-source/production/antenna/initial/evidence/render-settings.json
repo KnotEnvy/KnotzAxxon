@@ -1,0 +1,368 @@
+{
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "engine": "BLENDER_EEVEE",
+  "threads": 4,
+  "samples": 24,
+  "viewTransform": "AgX",
+  "look": "AgX - Medium High Contrast",
+  "exposure": 0.6,
+  "world": [
+    {
+      "rig": "Classic",
+      "height": 7,
+      "strobe": "dim",
+      "gain": 0.08,
+      "hue": "0xff3d55",
+      "eyeGame": [
+        -45.25483399593904,
+        54.255,
+        -17.254833995939045
+      ],
+      "targetGame": [
+        0,
+        9,
+        28
+      ],
+      "verticalFov": null,
+      "orthoHalfHeight": 40,
+      "playerGame": [
+        12,
+        6,
+        0
+      ],
+      "antennaGame": [
+        19.5,
+        0,
+        30
+      ]
+    },
+    {
+      "rig": "Modern",
+      "height": 7,
+      "strobe": "dim",
+      "gain": 0.08,
+      "hue": "0xff3d55",
+      "eyeGame": [
+        2.0814158435556074,
+        20,
+        -27.251086002791343
+      ],
+      "targetGame": [
+        12,
+        7.2,
+        16
+      ],
+      "verticalFov": 58,
+      "orthoHalfHeight": null,
+      "playerGame": [
+        12,
+        6,
+        0
+      ],
+      "antennaGame": [
+        19.5,
+        0,
+        30
+      ]
+    },
+    {
+      "rig": "Chase",
+      "height": 7,
+      "strobe": "dim",
+      "gain": 0.08,
+      "hue": "0xff3d55",
+      "eyeGame": [
+        9.491316881576317,
+        15.5,
+        -23.868525488838557
+      ],
+      "targetGame": [
+        12,
+        7.2,
+        16
+      ],
+      "verticalFov": 66,
+      "orthoHalfHeight": null,
+      "playerGame": [
+        12,
+        6,
+        0
+      ],
+      "antennaGame": [
+        19.5,
+        0,
+        30
+      ]
+    },
+    {
+      "rig": "Classic",
+      "height": 7,
+      "strobe": "peak",
+      "gain": 1.53,
+      "hue": "0xff2a3a",
+      "eyeGame": [
+        -45.25483399593904,
+        54.255,
+        -17.254833995939045
+      ],
+      "targetGame": [
+        0,
+        9,
+        28
+      ],
+      "verticalFov": null,
+      "orthoHalfHeight": 40,
+      "playerGame": [
+        12,
+        6,
+        0
+      ],
+      "antennaGame": [
+        19.5,
+        0,
+        30
+      ]
+    },
+    {
+      "rig": "Modern",
+      "height": 7,
+      "strobe": "peak",
+      "gain": 1.53,
+      "hue": "0xff2a3a",
+      "eyeGame": [
+        2.0814158435556074,
+        20,
+        -27.251086002791343
+      ],
+      "targetGame": [
+        12,
+        7.2,
+        16
+      ],
+      "verticalFov": 58,
+      "orthoHalfHeight": null,
+      "playerGame": [
+        12,
+        6,
+        0
+      ],
+      "antennaGame": [
+        19.5,
+        0,
+        30
+      ]
+    },
+    {
+      "rig": "Chase",
+      "height": 7,
+      "strobe": "peak",
+      "gain": 1.53,
+      "hue": "0xff2a3a",
+      "eyeGame": [
+        9.491316881576317,
+        15.5,
+        -23.868525488838557
+      ],
+      "targetGame": [
+        12,
+        7.2,
+        16
+      ],
+      "verticalFov": 66,
+      "orthoHalfHeight": null,
+      "playerGame": [
+        12,
+        6,
+        0
+      ],
+      "antennaGame": [
+        19.5,
+        0,
+        30
+      ]
+    },
+    {
+      "rig": "Classic",
+      "height": 13,
+      "strobe": "dim",
+      "gain": 0.08,
+      "hue": "0xff3d55",
+      "eyeGame": [
+        -45.25483399593904,
+        54.255,
+        -17.254833995939045
+      ],
+      "targetGame": [
+        0,
+        9,
+        28
+      ],
+      "verticalFov": null,
+      "orthoHalfHeight": 40,
+      "playerGame": [
+        12,
+        6,
+        0
+      ],
+      "antennaGame": [
+        19.5,
+        0,
+        30
+      ]
+    },
+    {
+      "rig": "Modern",
+      "height": 13,
+      "strobe": "dim",
+      "gain": 0.08,
+      "hue": "0xff3d55",
+      "eyeGame": [
+        2.0814158435556074,
+        20,
+        -27.251086002791343
+      ],
+      "targetGame": [
+        12,
+        7.2,
+        16
+      ],
+      "verticalFov": 58,
+      "orthoHalfHeight": null,
+      "playerGame": [
+        12,
+        6,
+        0
+      ],
+      "antennaGame": [
+        19.5,
+        0,
+        30
+      ]
+    },
+    {
+      "rig": "Chase",
+      "height": 13,
+      "strobe": "dim",
+      "gain": 0.08,
+      "hue": "0xff3d55",
+      "eyeGame": [
+        9.491316881576317,
+        15.5,
+        -23.868525488838557
+      ],
+      "targetGame": [
+        12,
+        7.2,
+        16
+      ],
+      "verticalFov": 66,
+      "orthoHalfHeight": null,
+      "playerGame": [
+        12,
+        6,
+        0
+      ],
+      "antennaGame": [
+        19.5,
+        0,
+        30
+      ]
+    },
+    {
+      "rig": "Classic",
+      "height": 13,
+      "strobe": "peak",
+      "gain": 1.53,
+      "hue": "0xff2a3a",
+      "eyeGame": [
+        -45.25483399593904,
+        54.255,
+        -17.254833995939045
+      ],
+      "targetGame": [
+        0,
+        9,
+        28
+      ],
+      "verticalFov": null,
+      "orthoHalfHeight": 40,
+      "playerGame": [
+        12,
+        6,
+        0
+      ],
+      "antennaGame": [
+        19.5,
+        0,
+        30
+      ]
+    },
+    {
+      "rig": "Modern",
+      "height": 13,
+      "strobe": "peak",
+      "gain": 1.53,
+      "hue": "0xff2a3a",
+      "eyeGame": [
+        2.0814158435556074,
+        20,
+        -27.251086002791343
+      ],
+      "targetGame": [
+        12,
+        7.2,
+        16
+      ],
+      "verticalFov": 58,
+      "orthoHalfHeight": null,
+      "playerGame": [
+        12,
+        6,
+        0
+      ],
+      "antennaGame": [
+        19.5,
+        0,
+        30
+      ]
+    },
+    {
+      "rig": "Chase",
+      "height": 13,
+      "strobe": "peak",
+      "gain": 1.53,
+      "hue": "0xff2a3a",
+      "eyeGame": [
+        9.491316881576317,
+        15.5,
+        -23.868525488838557
+      ],
+      "targetGame": [
+        12,
+        7.2,
+        16
+      ],
+      "verticalFov": 66,
+      "orthoHalfHeight": null,
+      "playerGame": [
+        12,
+        6,
+        0
+      ],
+      "antennaGame": [
+        19.5,
+        0,
+        30
+      ]
+    }
+  ],
+  "limitations": [
+    "Offline CPU software EEVEE, not live game, GPU or FPS capture.",
+    "Dusk key/rim color and intensity approximations; hemisphere, PMREM, fog, tone mapping, bloom and screen-space lighting are NOT source-equivalent.",
+    "Deck/channel/edge markers are labeled test doubles, not source fortress geometry.",
+    "Common world cameras are exact no-boost source rig formulas at 3:2; Classic halfHeight40; player actual shipped GLB at original scale.",
+    "h7 and h13 are forced-height endpoint fixtures, with explicit widths/spacing, not claimed random source draws.",
+    "GLB is reference seed42 static preview only; source hue/gain/rate/phase are rebuilt through aAnim in the runtime recipe."
+  ]
+}

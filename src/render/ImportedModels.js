@@ -1,5 +1,13 @@
+import { prepareImportedCargo, disposeImportedCargo } from './ImportedCargo.js';
+import { loadImportedCoveredFighter, disposeCoveredFighterTemplates } from './ImportedCoveredFighter.js';
+import { loadImportedFuelDepot, disposeImportedFuelDepot } from './ImportedFuelDepot.js';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { loadImportedFlakGun, disposeImportedFlakGun } from './ImportedFlakGun.js';
+import { loadImportedCoolingStack, disposeImportedCoolingStack } from './ImportedCoolingStack.js';
+import { prepareImportedAntenna, disposeImportedAntenna } from './ImportedAntenna.js';
+import { loadImportedWreckage, disposeImportedWreckage } from './ImportedWreckage.js';
+import { loadImportedCarrier, disposeImportedCarrier } from './ImportedCarrier.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 
 const templates = new Map();
@@ -7,23 +15,188 @@ const templates = new Map();
 /** Load before Game construction so model creation and shader prewarming stay synchronous. */
 export async function loadImportedModels() {
   const loader = new GLTFLoader();
-  const results = await Promise.allSettled(['player', 'sentinel', 'turret', 'radar', 'silo', 'fuel'].map(async name => {
-    const gltf = await loader.loadAsync(`${import.meta.env.BASE_URL}models/${name}.glb`);
+  const names = ['player', 'sentinel', 'turret', 'radar', 'silo', 'fuel'];
+  // User-approved production assets. Explicit 0 retains the procedural QA fallback.
+  const productionPreview = new URLSearchParams(globalThis.location?.search ?? '').get('productionModels') !== '0';
+  const productionNames = ['drone', 'interceptor', 'heavy-turret', 'mine', 'shield-pickup', 'parked-fighter', 'spread-pickup', 'repair-pickup', 'fuel-pickup', 'missile', 'dreadnought', 'asteroids', 'bunker', 'cargo-kit'];
+  if (productionPreview) names.push(...productionNames, 'carrier-runtime', 'wreckage-runtime', 'antenna-runtime', 'cooling-runtime', 'flak-runtime', 'fuel-depot-runtime', 'covered-fighter-runtime');
+  const results = await Promise.allSettled(names.map(async name => {
+    if (name === 'covered-fighter-runtime') return loadImportedCoveredFighter(`${import.meta.env.BASE_URL}models/production/`);
+    if (name === 'fuel-depot-runtime') return loadImportedFuelDepot(`${import.meta.env.BASE_URL}models/production/`);
+    if (name === 'flak-runtime') return loadImportedFlakGun(`${import.meta.env.BASE_URL}models/production/`);
+    if (name === 'cooling-runtime') return loadImportedCoolingStack(`${import.meta.env.BASE_URL}models/production/`);
+    if (name === 'antenna-runtime') return prepareImportedAntenna();
+    if (name === 'wreckage-runtime') return loadImportedWreckage(`${import.meta.env.BASE_URL}models/production/`);
+    if (name === 'carrier-runtime') return loadImportedCarrier(`${import.meta.env.BASE_URL}models/production/`);
+    const folder = productionNames.includes(name) ? 'production/' : '';
+    const gltf = await loader.loadAsync(`${import.meta.env.BASE_URL}models/${folder}${name}.glb`);
+    if (name === 'cargo-kit') { prepareImportedCargo(gltf); return; }
+    if (name === 'drone') {
+      // The authored flash lives in a non-default scene to remain hidden in generic viewers.
+      const flash = node(gltf.scenes[1], 'flash_shell');
+      flash.visible = false;
+      node(gltf.scene, 'drone_root').add(flash);
+    }
+    if (name === 'dreadnought') {
+      const { prepareImportedDreadnought } = await import('./ImportedLandmarks.js');
+      prepareImportedDreadnought(gltf.scene);
+    }
+    if (name === 'asteroids') {
+      const { prepareImportedAsteroids } = await import('./ImportedLandmarks.js');
+      prepareImportedAsteroids(gltf.scene);
+    }
     templates.set(name, gltf.scene);
   }));
   const failure = results.find(result => result.status === 'rejected');
   if (failure) { disposeImportedModels(); throw failure.reason; }
 }
 
-export function disposeImportedModels() {
-  const resources = new Set();
-  for (const root of templates.values()) root.traverse(o => {
-    if (o.geometry) resources.add(o.geometry);
-    for (const m of [].concat(o.material ?? [])) {
-      resources.add(m);
-      for (const value of Object.values(m)) if (value?.isTexture) resources.add(value);
-    }
+/** One owned resource pair for the entire projectile pool; never clone per slot. */
+export function buildImportedMissile(materials) {
+  const template = templates.get('missile');
+  if (!template) return null;
+  const geometry = node(template, 'MISSILE_POOLED').geometry.clone();
+  geometry.clearGroups();
+  const material = materials.enemyArmor?.clone() ?? new THREE.MeshStandardMaterial({
+    metalness: .48, roughness: .42, envMapIntensity: 1.2,
+    emissive: 0x4b2419, emissiveIntensity: .16,
   });
+  material.color.set(0xffffff);
+  material.vertexColors = true;
+  // Material.clone does not retain onBeforeCompile or its live rim uniforms.
+  materials.addRim?.(material, 0xffb68a, .32, 2.8);
+  return { geometry, material };
+}
+
+/** Initial flyer integration: preserve the existing Flyer state and update method. */
+export function buildImportedFlyer(enemy, kind) {
+  const root = instantiate(kind);
+  if (!root) return false;
+  const owned = new Set(root.userData.modelOwnedMaterials);
+  const replaceOwned = (target, material, separatelyOwned = false) => {
+    for (const old of new Set([].concat(target.material))) {
+      owned.delete(old);
+      old.dispose();
+    }
+    target.material = material;
+    if (!separatelyOwned) owned.add(material);
+  };
+  enemy.body = node(root, 'body');
+  enemy.eye = node(root, 'eye');
+  enemy.engine = node(root, 'engine');
+  const cue = color => new THREE.MeshBasicMaterial({
+    color: new THREE.Color(color).multiplyScalar(3), toneMapped: false,
+  });
+  replaceOwned(enemy.eye, cue(0xff3d55));
+  replaceOwned(enemy.engine, cue(kind === 'drone' ? 0xff9a3a : 0xff5a3a));
+  enemy.flashMesh = node(root, kind === 'drone' ? 'flash_shell' : 'hit-flash-shell');
+  enemy.flashMat = new THREE.MeshBasicMaterial({
+    color: 0xffffff, transparent: true, opacity: 0, depthWrite: false,
+    toneMapped: false, blending: THREE.AdditiveBlending,
+  });
+  // Enemy.dispose owns flashMat separately; the imported root owns its geometry.
+  replaceOwned(enemy.flashMesh, enemy.flashMat, true);
+  if (kind === 'interceptor') enemy.flashMesh.scale.setScalar(1.018);
+  enemy.flashMesh.visible = false;
+  enemy.flashMesh.renderOrder = 5;
+  enemy.flashMesh.castShadow = enemy.flashMesh.receiveShadow = false;
+  root.userData.modelOwnedMaterials = [...owned];
+  enemy._importedRoot = root;
+  enemy.group.add(root);
+  return true;
+}
+
+/** Keep the mine's tumble, proximity pulse and warning entirely source-driven. */
+export function buildImportedMine(enemy) {
+  const root = instantiate('mine');
+  if (!root) return false;
+  enemy.core = node(root, 'core');
+  enemy.lamp = node(root, 'lamp');
+  // Replaced clones remain in modelOwnedMaterials; shared neon stays Materials-owned.
+  enemy.lamp.material = enemy.mats.neon(0xff3d55, 3.2);
+  enemy.lamp.castShadow = enemy.lamp.receiveShadow = false;
+  enemy.flashMesh = node(root, 'flashMesh');
+  enemy.flashMat = new THREE.MeshBasicMaterial({
+    color: 0xffffff, transparent: true, opacity: 0, depthWrite: false,
+    toneMapped: false, blending: THREE.AdditiveBlending,
+  });
+  enemy.flashMesh.material = enemy.flashMat;
+  enemy.flashMesh.visible = false;
+  enemy.flashMesh.renderOrder = 5;
+  enemy.flashMesh.castShadow = enemy.flashMesh.receiveShadow = false;
+  // The exported shell already carries its source 1.2 scale.
+  enemy._importedRoot = root;
+  enemy.group.add(root);
+  return true;
+}
+
+/** Camera-facing pickup art; shared halo and all collection state stay in Pickup. */
+export function buildImportedPickup(pickup, mats) {
+  const key = { shield: 'shield-pickup', spread: 'spread-pickup', repair: 'repair-pickup', fuel: 'fuel-pickup' }[pickup.kind];
+  if (!key) return false;
+  const root = instantiate(key);
+  if (!root) return false;
+  for (const name of ['shell', 'core', 'shape']) pickup[name] = node(root, name);
+  if (pickup.kind === 'spread' || pickup.kind === 'fuel') {
+    const owned = new Set(root.userData.modelOwnedMaterials);
+    for (const [name, strength] of [['shell', 1.15], ['shape', 1.35]]) {
+      const target = pickup[name], previous = target.material;
+      const material = mats.neon(pickup.color, strength).clone();
+      material.name = previous.name;
+      material.vertexColors = true;
+      target.material = material;
+      owned.delete(previous); previous.dispose(); owned.add(material);
+    }
+    root.userData.modelOwnedMaterials = [...owned];
+  }
+  for (const name of ['shell', 'shape']) pickup[name].traverse(o => {
+    if (o.isMesh) for (const material of [].concat(o.material)) material.toneMapped = false;
+  });
+  // Preserve the badge's authored facets; source neon clones retain spread/fuel hue and gains.
+  root.traverse(o => { if (o.isMesh) o.castShadow = o.receiveShadow = false; });
+  pickup._importedRoot = root;
+  pickup.group.add(root);
+  return true;
+}
+
+/** Parked targets keep their seeded yaw and original engine/beacon groups. */
+export function buildImportedParkedFighter(enemy) {
+  const root = instantiate('parked-fighter');
+  if (!root) return false;
+  enemy._importedRoot = root;
+  enemy.group.add(root);
+  enemy.engine = node(root, 'engine');
+  enemy.beacon = node(root, 'beacon');
+  enemy.engine.scale.setScalar(.3);
+  replaceMaterial(root, 'PF_EngineAmber', enemy.mats.neon(0xff9a3a, 2.2));
+  replaceMaterial(root, 'PF_BeaconRed', enemy.mats.neon(0xff3d55, 3));
+  for (const cue of [enemy.engine, enemy.beacon]) cue.traverse(o => {
+    if (o.isMesh) o.castShadow = o.receiveShadow = false;
+  });
+  addImportedFlash(enemy, node(root, 'airframe'), root, 1.12);
+  return true;
+}
+
+export function disposeImportedModels() {
+  disposeImportedCargo();
+  disposeCoveredFighterTemplates();
+  disposeImportedCarrier();
+  disposeImportedWreckage();
+  disposeImportedAntenna();
+  disposeImportedCoolingStack();
+  disposeImportedFuelDepot();
+  disposeImportedFlakGun();
+  const resources = new Set();
+  for (const root of templates.values()) {
+    for (const geometry of root.userData.templateGeometries ?? []) resources.add(geometry);
+    root.traverse(o => {
+      if (o.geometry) resources.add(o.geometry);
+      for (const m of [].concat(o.material ?? [])) {
+        resources.add(m);
+        for (const value of Object.values(m)) if (value?.isTexture) resources.add(value);
+      }
+    });
+  }
   for (const resource of resources) resource.dispose();
   templates.clear();
 }
@@ -133,6 +306,13 @@ export function buildImportedGround(enemy, kind) {
     enemy.eye = node(root, 'eye');
     flashSource = node(root, 'dome');
     flashParent = enemy.turntable;
+  } else if (kind === 'heavy-turret') {
+    enemy.turntable = node(root, 'turntable');
+    enemy.barrels = [node(root, 'barrel-L'), node(root, 'barrel-R')];
+    enemy.eye = node(root, 'eye');
+    replaceMaterial(root, 'HT_Eye_Red_ff3d55', enemy.mats.neon(0xff3d55, 3));
+    flashSource = node(root, 'dome');
+    flashParent = enemy.turntable;
   } else if (kind === 'radar') {
     enemy.dish = node(root, 'dish');
     enemy.emitter = node(root, 'emitter');
@@ -150,6 +330,11 @@ export function buildImportedGround(enemy, kind) {
   } else {
     throw new Error(`Unsupported imported ground target: ${kind}`);
   }
+  addImportedFlash(enemy, flashSource, flashParent, 1.06);
+  return true;
+}
+
+function addImportedFlash(enemy, flashSource, flashParent, scale) {
   enemy.group.updateMatrixWorld(true);
   const inverse = flashParent.matrixWorld.clone().invert(), parts = [];
   for (const source of [].concat(flashSource)) source.traverse(o => {
@@ -161,7 +346,9 @@ export function buildImportedGround(enemy, kind) {
   });
   const geometry = mergeGeometries(parts, false);
   parts.forEach(g => g.dispose());
-  enemy._addFlashShell(geometry, 1.06);
+  enemy._addFlashShell(geometry, scale);
   flashParent.add(enemy.flashMesh);
-  return true;
 }
+
+/** Read-only template access for chunk batching; callers never dispose or attach it. */
+export function importedTemplate(name) { return templates.get(name); }

@@ -1,0 +1,554 @@
+{
+  "kind": "CPU source-compatible prototype; no production integration, browser or GPU validation",
+  "fullUncutTriangles": 18898,
+  "partitionedTriangles": 21330,
+  "maxChunkTriangles": 3114,
+  "maxChunkPrimitives": 6,
+  "chunks": [
+    {
+      "index": 67,
+      "z0": 6432,
+      "triangles": 44,
+      "primitives": 2,
+      "bucketTriangles": {
+        "hull": 30,
+        "deck": 14
+      }
+    },
+    {
+      "index": 68,
+      "z0": 6528,
+      "triangles": 634,
+      "primitives": 5,
+      "bucketTriangles": {
+        "hull": 306,
+        "deck": 47,
+        "dark": 201,
+        "paint": 56,
+        "neon": 24
+      }
+    },
+    {
+      "index": 69,
+      "z0": 6624,
+      "triangles": 2317,
+      "primitives": 5,
+      "bucketTriangles": {
+        "hull": 989,
+        "deck": 60,
+        "dark": 504,
+        "paint": 392,
+        "neon": 372
+      }
+    },
+    {
+      "index": 70,
+      "z0": 6720,
+      "triangles": 2334,
+      "primitives": 5,
+      "bucketTriangles": {
+        "hull": 986,
+        "deck": 60,
+        "dark": 572,
+        "paint": 344,
+        "neon": 372
+      }
+    },
+    {
+      "index": 71,
+      "z0": 6816,
+      "triangles": 2198,
+      "primitives": 5,
+      "bucketTriangles": {
+        "hull": 986,
+        "deck": 60,
+        "dark": 504,
+        "paint": 276,
+        "neon": 372
+      }
+    },
+    {
+      "index": 72,
+      "z0": 6912,
+      "triangles": 3114,
+      "primitives": 6,
+      "bucketTriangles": {
+        "hull": 1222,
+        "deck": 60,
+        "dark": 972,
+        "paint": 248,
+        "neon": 432,
+        "spin": 180
+      }
+    },
+    {
+      "index": 73,
+      "z0": 7008,
+      "triangles": 2198,
+      "primitives": 5,
+      "bucketTriangles": {
+        "hull": 986,
+        "deck": 60,
+        "dark": 504,
+        "paint": 276,
+        "neon": 372
+      }
+    },
+    {
+      "index": 74,
+      "z0": 7104,
+      "triangles": 2266,
+      "primitives": 5,
+      "bucketTriangles": {
+        "hull": 986,
+        "deck": 60,
+        "dark": 572,
+        "paint": 276,
+        "neon": 372
+      }
+    },
+    {
+      "index": 75,
+      "z0": 7200,
+      "triangles": 2290,
+      "primitives": 5,
+      "bucketTriangles": {
+        "hull": 986,
+        "deck": 60,
+        "dark": 504,
+        "paint": 368,
+        "neon": 372
+      }
+    },
+    {
+      "index": 76,
+      "z0": 7296,
+      "triangles": 2188,
+      "primitives": 5,
+      "bucketTriangles": {
+        "hull": 986,
+        "deck": 60,
+        "dark": 494,
+        "paint": 276,
+        "neon": 372
+      }
+    },
+    {
+      "index": 77,
+      "z0": 7392,
+      "triangles": 471,
+      "primitives": 5,
+      "bucketTriangles": {
+        "hull": 297,
+        "deck": 55,
+        "dark": 39,
+        "paint": 56,
+        "neon": 24
+      }
+    },
+    {
+      "index": 78,
+      "z0": 7488,
+      "triangles": 1276,
+      "primitives": 4,
+      "bucketTriangles": {
+        "hull": 790,
+        "deck": 14,
+        "dark": 276,
+        "neon": 196
+      }
+    }
+  ],
+  "seams": [
+    {
+      "z": 6528,
+      "matchedSegments": 24,
+      "unmatched": 0
+    },
+    {
+      "z": 6624,
+      "matchedSegments": 124,
+      "unmatched": 0
+    },
+    {
+      "z": 6720,
+      "matchedSegments": 146,
+      "unmatched": 0
+    },
+    {
+      "z": 6816,
+      "matchedSegments": 132,
+      "unmatched": 0
+    },
+    {
+      "z": 6912,
+      "matchedSegments": 114,
+      "unmatched": 0
+    },
+    {
+      "z": 7008,
+      "matchedSegments": 116,
+      "unmatched": 0
+    },
+    {
+      "z": 7104,
+      "matchedSegments": 130,
+      "unmatched": 0
+    },
+    {
+      "z": 7200,
+      "matchedSegments": 116,
+      "unmatched": 0
+    },
+    {
+      "z": 7296,
+      "matchedSegments": 114,
+      "unmatched": 0
+    },
+    {
+      "z": 7392,
+      "matchedSegments": 96,
+      "unmatched": 0
+    },
+    {
+      "z": 7488,
+      "matchedSegments": 104,
+      "unmatched": 0
+    }
+  ],
+  "qualitySpans": [
+    {
+      "drawDistance": 320,
+      "nominalRequestedSpan": 410,
+      "requestedChunkEnvelopeMax": 576,
+      "retentionExtra": {
+        "behind": 96,
+        "ahead": 192
+      },
+      "maxVisibleTriangles": 14427,
+      "maxVisiblePrimitives": 31,
+      "maxRetentionEnvelopeTriangles": 19539,
+      "maxRetentionEnvelopePrimitives": 46,
+      "worstVisible": {
+        "triangles": 14427,
+        "primitives": 31,
+        "chunks": 6,
+        "low": 69,
+        "high": 74,
+        "playerZ": 6784
+      },
+      "worstRetained": {
+        "triangles": 19539,
+        "primitives": 46,
+        "chunks": 9,
+        "low": 68,
+        "high": 76,
+        "playerZ": 6784
+      },
+      "note": "Requested chunks are a conservative rendered/span proxy, not camera-frustum/live GPU measurement. Retention envelope is an upper bound: forward +2 are not eagerly built in monotonic flight."
+    },
+    {
+      "drawDistance": 440,
+      "nominalRequestedSpan": 530,
+      "requestedChunkEnvelopeMax": 672,
+      "retentionExtra": {
+        "behind": 96,
+        "ahead": 192
+      },
+      "maxVisibleTriangles": 16717,
+      "maxVisiblePrimitives": 36,
+      "maxRetentionEnvelopeTriangles": 20652,
+      "maxRetentionEnvelopePrimitives": 51,
+      "worstVisible": {
+        "triangles": 16717,
+        "primitives": 36,
+        "chunks": 7,
+        "low": 69,
+        "high": 75,
+        "playerZ": 6760
+      },
+      "worstRetained": {
+        "triangles": 20652,
+        "primitives": 50,
+        "chunks": 10,
+        "low": 69,
+        "high": 78,
+        "playerZ": 6856
+      },
+      "note": "Requested chunks are a conservative rendered/span proxy, not camera-frustum/live GPU measurement. Retention envelope is an upper bound: forward +2 are not eagerly built in monotonic flight."
+    },
+    {
+      "drawDistance": 560,
+      "nominalRequestedSpan": 650,
+      "requestedChunkEnvelopeMax": 768,
+      "retentionExtra": {
+        "behind": 96,
+        "ahead": 192
+      },
+      "maxVisibleTriangles": 18905,
+      "maxVisiblePrimitives": 41,
+      "maxRetentionEnvelopeTriangles": 21286,
+      "maxRetentionEnvelopePrimitives": 55,
+      "worstVisible": {
+        "triangles": 18905,
+        "primitives": 41,
+        "chunks": 8,
+        "low": 69,
+        "high": 76,
+        "playerZ": 6736
+      },
+      "worstRetained": {
+        "triangles": 21286,
+        "primitives": 55,
+        "chunks": 11,
+        "low": 68,
+        "high": 78,
+        "playerZ": 6736
+      },
+      "note": "Requested chunks are a conservative rendered/span proxy, not camera-frustum/live GPU measurement. Retention envelope is an upper bound: forward +2 are not eagerly built in monotonic flight."
+    },
+    {
+      "drawDistance": 700,
+      "nominalRequestedSpan": 790,
+      "requestedChunkEnvelopeMax": 960,
+      "retentionExtra": {
+        "behind": 96,
+        "ahead": 192
+      },
+      "maxVisibleTriangles": 20652,
+      "maxVisiblePrimitives": 51,
+      "maxRetentionEnvelopeTriangles": 21330,
+      "maxRetentionEnvelopePrimitives": 57,
+      "worstVisible": {
+        "triangles": 20652,
+        "primitives": 50,
+        "chunks": 10,
+        "low": 69,
+        "high": 78,
+        "playerZ": 6788
+      },
+      "worstRetained": {
+        "triangles": 21330,
+        "primitives": 57,
+        "chunks": 12,
+        "low": 66,
+        "high": 78,
+        "playerZ": 6596
+      },
+      "note": "Requested chunks are a conservative rendered/span proxy, not camera-frustum/live GPU measurement. Retention envelope is an upper bound: forward +2 are not eagerly built in monotonic flight."
+    }
+  ],
+  "alternatePlacements": [
+    {
+      "start": 0,
+      "modules": 11,
+      "maxChunkTriangles": 3140
+    },
+    {
+      "start": 6377.25,
+      "modules": 11,
+      "maxChunkTriangles": 2818
+    },
+    {
+      "start": 6511,
+      "modules": 12,
+      "maxChunkTriangles": 3128
+    },
+    {
+      "start": 6527,
+      "modules": 12,
+      "maxChunkTriangles": 3142
+    },
+    {
+      "start": 6559,
+      "modules": 11,
+      "maxChunkTriangles": 3076
+    },
+    {
+      "start": 6589,
+      "modules": 11,
+      "maxChunkTriangles": 3088
+    }
+  ],
+  "realBatchChecks": [
+    {
+      "index": 67,
+      "triangles": 44,
+      "primitives": 2
+    },
+    {
+      "index": 68,
+      "triangles": 634,
+      "primitives": 5
+    },
+    {
+      "index": 69,
+      "triangles": 2317,
+      "primitives": 5
+    },
+    {
+      "index": 70,
+      "triangles": 2334,
+      "primitives": 5
+    },
+    {
+      "index": 71,
+      "triangles": 2198,
+      "primitives": 5
+    },
+    {
+      "index": 72,
+      "triangles": 3114,
+      "primitives": 6
+    },
+    {
+      "index": 73,
+      "triangles": 2198,
+      "primitives": 5
+    },
+    {
+      "index": 74,
+      "triangles": 2266,
+      "primitives": 5
+    },
+    {
+      "index": 75,
+      "triangles": 2290,
+      "primitives": 5
+    },
+    {
+      "index": 76,
+      "triangles": 2188,
+      "primitives": 5
+    },
+    {
+      "index": 77,
+      "triangles": 471,
+      "primitives": 5
+    },
+    {
+      "index": 78,
+      "triangles": 1276,
+      "primitives": 4
+    }
+  ],
+  "rngReplayCases": 48,
+  "rngSourceMatch": true,
+  "lifecycle": {
+    "uniqueBuffers": true,
+    "chunkGeometryDisposals": 57,
+    "sharedMaterialDisposalsBeforeShutdown": 0,
+    "templatesUnmodified": true
+  },
+  "shaderProbe": {
+    "actualSourcePatchInvoked": true,
+    "sharedClockIdentity": true,
+    "sampleClockSeconds": 1.3,
+    "normalsAndPositionsRotate": true,
+    "gpuCompile": false,
+    "proceduralTexturesConstructed": false,
+    "note": "Prototype-created Materials receiver intentionally bypasses DOM texture build; invokes the original getter/addSpin/update methods. This is shader-string/uniform evidence, not WebGL compilation."
+  },
+  "runtimeNeonGains": {
+    "catapult": 1.3,
+    "amberHeader": 1.15,
+    "cyanDepth": 0.8,
+    "bridge": 1.05,
+    "strobe": 1.6,
+    "bell": 1.1
+  },
+  "cueRanges": [
+    {
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "sampledSeconds": [
+        0,
+        20
+      ],
+      "min": 1,
+      "max": 1
+    },
+    {
+      "aAnim": [
+        1,
+        0.7,
+        0
+      ],
+      "sampledSeconds": [
+        0,
+        20
+      ],
+      "min": 0.08,
+      "max": 1.53
+    },
+    {
+      "aAnim": [
+        2,
+        1.4,
+        0
+      ],
+      "sampledSeconds": [
+        0,
+        20
+      ],
+      "min": 0.18,
+      "max": 1.5138807843237356
+    },
+    {
+      "aAnim": [
+        2,
+        0.8,
+        0
+      ],
+      "sampledSeconds": [
+        0,
+        20
+      ],
+      "min": 0.18,
+      "max": 1.4664822586789399
+    },
+    {
+      "aAnim": [
+        3,
+        0.8,
+        0.26666666666666666
+      ],
+      "sampledSeconds": [
+        0,
+        20
+      ],
+      "min": 0.10009858907511326,
+      "max": 0.9999960452186882
+    },
+    {
+      "aAnim": [
+        3,
+        0.8,
+        0.8
+      ],
+      "sampledSeconds": [
+        0,
+        20
+      ],
+      "min": 0.10003559261473272,
+      "max": 0.9999644904935014
+    }
+  ],
+  "radarSampledLocalBounds": {
+    "min": [
+      89.15350157615732,
+      37.5,
+      415.15350158141337
+    ],
+    "max": [
+      98.84649841333058,
+      40.599998474121094,
+      424.8464984080745
+    ]
+  },
+  "zeroAreaAfterFloat32Partition": 0,
+  "collisionDamageDetachRetraction": "N/A: no gameplay geometry or mechanics"
+}

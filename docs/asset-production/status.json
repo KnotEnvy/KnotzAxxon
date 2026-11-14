@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 1,
+  "phase": "production_blender_upgrades",
+  "date": "2026-11-14",
+  "baseRevision": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "status": "approved_release_verified_ready_to_commit",
+  "maxConcurrentAssets": 2,
+  "orchestrator": {
+    "environmentId": "dd9d199e-852d-44e3-a2d3-62d31f3a5af2",
+    "projectId": "c2542942-8442-49d5-9242-58b82297aa03",
+    "checkout": "bound SuperBeast worktree"
+  },
+  "buildHost": {
+    "environmentId": "543fe9a3-cf00-4f96-8f57-b8d50dd01cd2",
+    "projectId": "mcp:700caca7-bd3f-4fdd-abd4-6a5045968739",
+    "root": "/home/knotzuni/code/KnotzAxxon",
+    "reachable": true,
+    "access": "full-access",
+    "rootPreparationVerified": true,
+    "nativeBlenderVerifiedThisThread": true,
+    "verifiedRevision": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+    "blenderVersion": "5.2.1 LTS",
+    "blenderBuild": "9e2066aef7ef",
+    "runtimeWrapper": "asset-work/drone/blender.sh",
+    "preparationProbe": "version and background bpy probe passed; no render"
+  },
+  "builder": {
+    "providerInstanceId": "codex",
+    "model": "gpt-6.1-sol",
+    "options": {
+      "reasoningEffort": "xhigh"
+    },
+    "speed": "available tool default; user explicitly approved because fast-mode option is unavailable"
+  },
+  "advisorReviewer": {
+    "providerInstanceId": "claudeAgent",
+    "model": "claude-opus-5-5",
+    "options": {
+      "effort": "medium"
+    },
+    "readOnly": true
+  },
+  "catalogSettingsVerified": true,
+  "formalReviewsPerAsset": 1,
+  "fixPassesPerAsset": 1,
+  "launchFailure": {
+    "taskId": "node:delegated-task:command%3Amcp%3A8a682b4d-77e8-4f58-955c-93313aefb304%3Aremote-delegate%3A39869644-5720-447f-a81f-e904f7121264",
+    "threadId": "mcp:launch:2eb0df4e9004d3a31a1bfe5c178ffe6e6fda0ef83eb02356f1b8a7e9cbce024b",
+    "requestedModel": "claude-sonnet-5-5",
+    "executedModel": null,
+    "providerMessage": "Invalid API key \u00b7 Fix external API key",
+    "remoteCommandsExecuted": false
+  },
+  "queue": [
+    {
+      "priority": 1,
+      "asset": "drone",
+      "status": "user_approved_release_verified",
+      "initialFrozen": true,
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "receipt": "drone-receipt.json",
+      "sources": "assets-source/production/drone/initial",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "priority": 2,
+      "asset": "interceptor",
+      "status": "user_approved_release_verified",
+      "initialFrozen": true,
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "receipt": "interceptor-receipt.json",
+      "sources": "assets-source/production/interceptor/initial",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "priority": 3,
+      "asset": "heavyTurret",
+      "status": "user_approved_release_verified",
+      "initialFrozen": true,
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "receipt": "heavy-turret-receipt.json",
+      "sources": "assets-source/production/heavy-turret/initial",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "priority": 4,
+      "asset": "mine",
+      "status": "user_approved_release_verified",
+      "initialFrozen": true,
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "sources": "assets-source/production/mine/initial",
+      "receipt": "mine-receipt.json",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "priority": 5,
+      "asset": "parked",
+      "status": "user_approved_release_verified",
+      "initialFrozen": true,
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "sources": "assets-source/production/parked-fighter/initial",
+      "receipt": "parked-fighter-receipt.json",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "priority": 6,
+      "asset": "pickup:shield",
+      "status": "user_approved_release_verified",
+      "initialFrozen": true,
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "sources": "assets-source/production/shield-pickup/initial",
+      "receipt": "shield-pickup-receipt.json",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "priority": 7,
+      "asset": "pickup:spread",
+      "status": "user_approved_release_verified",
+      "initialFrozen": true,
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "sources": "assets-source/production/spread-pickup/initial",
+      "receipt": "spread-pickup-receipt.json",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "priority": 8,
+      "asset": "pickup:repair",
+      "status": "user_approved_release_verified",
+      "initialFrozen": true,
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "builderTaskStatus": "completed",
+      "note": "Authorized transfer continuation completed successfully; no extra user permission was needed.",
+      "sources": "assets-source/production/repair-pickup/initial",
+      "receipt": "repair-pickup-receipt.json",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "priority": 9,
+      "asset": "pickup:fuel",
+      "status": "user_approved_release_verified",
+      "initialFrozen": true,
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "builderTaskStatus": "completed",
+      "note": "Windows Taildrop succeeded without sudo; receiver verified archive and109 content hashes.",
+      "receipt": "fuel-pickup-receipt.json",
+      "sources": "assets-source/production/fuel-pickup/initial",
+      "userApproved": true,
+      "releaseVerified": true
+    }
+  ],
+  "broaderScope": "README.md#broader-retained-inventory",
+  "deploymentAuthorized": true,
+  "resume": [
+    "Commit,push and merge approved21-asset release after CI;verify live startup and model hashes.",
+    "Keep deferred Opus polish and broader meaningful scenery queue recorded;no formal review completion claimed."
+  ],
+  "localValidation": {
+    "baselineGenerator": "passed; actual source geometry plus 300 seeded campaign plans",
+    "nodeSyntaxCheck": "passed",
+    "existingRegressionTests": {
+      "passed": 104,
+      "failed": 0
+    },
+    "gitDiffCheck": "passed",
+    "modelRuntimeQA": "Default production and legacy fallback passed",
+    "renders": "Offline evidence plus actual Three.js Classic/Modern/Chase posed captures inspected",
+    "releaseSmoke": "Desktop/portrait/landscape passed;27 default resources loaded,34 asset hashes matchdist"
+  },
+  "retryHistory": [
+    {
+      "reason": "User reported authentication restored; explicitly requested retry.",
+      "date": "2026-11-14",
+      "taskId": "node:delegated-task:command%3Amcp%3A27fbcb43-18ae-4941-8382-6b1d0c4d350b%3Aremote-delegate%3Aproduction-drone-nitro-auth-retry-20261114-01",
+      "threadId": "mcp:launch:fdd31370d0f6b64c1c71e05751ac918a5f06921d465452bb144a10b66697004e",
+      "providerInstanceId": "claudeAgent",
+      "requestedModel": "claude-sonnet-5-5",
+      "options": {
+        "effort": "high"
+      },
+      "executedModel": null,
+      "status": "failed_authentication_before_execution",
+      "remoteCommandsExecuted": false
+    },
+    {
+      "reason": "User reauthenticated on Nitro and requested one last retry.",
+      "date": "2026-11-14",
+      "taskId": "node:delegated-task:command%3Amcp%3A27fbcb43-18ae-4941-8382-6b1d0c4d350b%3Aremote-delegate%3Anitro-production-prep-final-auth-retry-20261114-03",
+      "threadId": "mcp:launch:749650414935c168ef5d7fe07d3e2e2bd062e8ed1cd24ba32ae218476c165ce2",
+      "providerInstanceId": "claudeAgent",
+      "requestedModel": "claude-sonnet-5-5",
+      "options": {
+        "effort": "high"
+      },
+      "executedModel": null,
+      "status": "failed_authentication_before_execution",
+      "remoteCommandsExecuted": false
+    },
+    {
+      "reason": "User requested one Opus attempt after reboot, then explicit Sol fallback.",
+      "requestedModel": "claude-opus-5-5",
+      "options": {
+        "effort": "medium"
+      },
+      "taskId": "node:delegated-task:command%3Amcp%3A2f58fd8b-de15-4764-9b39-0bc19581fbe8%3Aremote-delegate%3Anitro-opus-auth-after-reboot-20261114-01",
+      "status": "failed_authentication_before_execution",
+      "remoteCommandsExecuted": false
+    }
+  ],
+  "protocolAmendment": {
+    "authorization": "After reboot, try Opus once; on failure use Sol XHigh on Nitro. User then explicitly approved available speed. Defer Opus polish until SuperBeast is free.",
+    "initialBuilder": "Sol XHigh",
+    "formalOpusReview": "deferred; do not consume review count now",
+    "polishPass": "deferred until Opus review; preserve frozen initial and all evidence",
+    "noClaudeRetriesNow": true
+  },
+  "activePreparation": {
+    "taskId": "node:delegated-task:command%3Amcp%3A2f58fd8b-de15-4764-9b39-0bc19581fbe8%3Aremote-delegate%3Anitro-sol-xhigh-production-prep-20261114-01",
+    "threadId": "mcp:launch:8c81564f1069a75a0ce332453ae4c15b7e341290fd79a1d8fde2ce739c25c8ab",
+    "status": "completed"
+  },
+  "activeBuilds": "current-builds.json",
+  "integration": {
+    "optInQuery": "productionModels=1",
+    "defaultReleasePath": "six selected shipped templates; nine new types stay procedural without opt-in",
+    "regressionTests": {
+      "passed": 104,
+      "failed": 0
+    },
+    "build": "passed",
+    "initialModelBindings": "passed",
+    "deployment": "none",
+    "defaultModelRuntimeQA": "passed",
+    "previewModelRuntimeQA": "passed",
+    "mixedBatch": "81 enemies+96 pickups; three cycles return warmed geometry105",
+    "cameraPngs": "Classic/Modern/Chase actual in-engine posed screenshots inspected",
+    "report": "flyer-integration.json",
+    "heavyTurret": {
+      "adapter": "opt-in",
+      "sourcePivots": "preserved",
+      "neon": "source shared red cue",
+      "runtimeChecks": "twin source pivots,full elevation,3 paired volleys,predictive shot origins,charge pulse,hit/disposal passed",
+      "batchChecks": "passed:47 synthetic enemies/3 cycles,geometry returns to104",
+      "report": "heavy-turret-integration.json",
+      "cameraPngs": "Classic/Modern/Chase actual Three.js posed captures inspected"
+    },
+    "mine": {
+      "adapter": "opt-in",
+      "warningCue": "source shared neon; source warning/pulse/tumble unchanged",
+      "runtimeChecks": "passed: source tumble/bob,arming,pulse endpoints,one-time warning,flash,owned disposal and shared neon lifetime",
+      "batchChecks": "passed:71 synthetic enemies,3 cycles,geometry returns to104",
+      "report": "mine-integration.json",
+      "defaultModelQA": "passed"
+    },
+    "shieldPickup": {
+      "adapter": "opt-in",
+      "authoredPalette": "cyan unlit vertex facets, toneMapped false; source halo retained",
+      "runtimeChecks": "passed: source camera facing,pulse,wobble,halo,drift,magnet,collectionradius,shield+score award and idempotent owned disposal",
+      "batchChecks": "passed:71 enemies+24 shields,shared Sprite warmup104->105,three cycles return105",
+      "cameraPngs": "Classic/Modern/Chase actual Three.js posed captures inspected",
+      "report": "shield-pickup-integration.json",
+      "defaultModelQA": "passed"
+    },
+    "parkedFighter": {
+      "adapter": "opt-in",
+      "constructor": "original scramble/yaw RNG ordering preserved on imported and fallback branches",
+      "runtimeChecks": "passed:16 seed/RNG sequences,idle+beacon,spool endpoints,one-time roar,strict launch boundaries,root altitude cap,pitch and owned disposal",
+      "hiddenFlashTriangles": 4554,
+      "batchChecks": "passed:81 enemies+24 shields,3 cycles return warmed geometry105",
+      "report": "parked-fighter-integration.json",
+      "defaultModelQA": "passed",
+      "cameraPngs": "Classic/Modern/Chase inspected"
+    },
+    "spreadPickup": {
+      "adapter": "opt-in",
+      "materials": "owned clones of source amber neon1.15/1.35 with neutral vertex multipliers; shared cache unchanged",
+      "runtimeChecks": "passed:camera,pulse,wobble,magnet,collectionradius,14-second grant/score,owned source-neon clones,idempotent disposal and shared halo lifetime",
+      "batchChecks": "passed:81 enemies+48 pickups,3 cycles return warmed geometry105",
+      "cameraPngs": "Classic/Modern/Chase actual posed captures inspected",
+      "report": "spread-pickup-integration.json",
+      "defaultModelQA": "passed"
+    },
+    "repairPickup": {
+      "adapter": "opt-in",
+      "materials": "authored green unlit facet palette; source halo unchanged",
+      "runtimeChecks": "passed:camera,motion,magnet,collectionradius,+1 hull/cap/score,shared halo and idempotent owned disposal",
+      "batchChecks": "passed:81 enemies+72 pickups,3 cycles return warmed geometry105",
+      "cameraPngs": "Classic/Modern/Chase actual posed captures inspected",
+      "report": "repair-pickup-integration.json",
+      "defaultModelQA": "passed"
+    },
+    "latestReport": "covered-fighter-integration.json",
+    "fuelPickup": {
+      "adapter": "opt-in",
+      "materials": "owned source yellow neon1.15/1.35 clones; glyph static scale baked once",
+      "runtimeChecks": "passed:camera,motion,magnet,collectionradius,fuel+0.3/cap1/score150,shared halo and idempotent disposal",
+      "batchChecks": "passed:81 enemies+96 pickups,3 cycles return warmed geometry105",
+      "cameraPngs": "Classic/Modern/Chase inspected",
+      "report": "fuel-pickup-integration.json",
+      "defaultModelQA": "passed"
+    },
+    "missile": {
+      "adapter": "opt-in; one owned geometry/material pair per Projectiles, no slot clones",
+      "runtimeChecks": "120-frame exact typed-pool/matrix parity with frozen source,overflow/reuse,homing/target guards,kill/clear,source envelope,material/rim and exact-once shutdown passed",
+      "capacity": 40,
+      "triangles": 464,
+      "drawCallsAtCapacity": 1,
+      "trianglesAtCapacity": 18560,
+      "cameraPngs": "Classic/Modern/Chase inspected",
+      "report": "missile-integration.json",
+      "defaultModelQA": "passed"
+    },
+    "dreadnought": {
+      "adapter": "opt-in,preloaded CPU template records,existing chunk material buckets",
+      "triangles": 16698,
+      "sections": 10,
+      "maxChunkTriangles": 2939,
+      "maxChunkBuckets": 3,
+      "runtimeChecks": "10 chunk RNG comparisons,16698 triangles emitted once,aAnim buffers,50 full-scene chunk geometries retired,shared material disposals0",
+      "report": "dreadnought-integration.json",
+      "defaultModelQA": "passed",
+      "limitations": [
+        "Original RNG branch discard sink retains temporary source geometry build cost.",
+        "Shared fortress textures/material response darken the offline palette.",
+        "Posed engine captures are not a sustained gameplay or hardware streaming acceptance."
+      ],
+      "cameraPngs": "Classic/Modern/Chase inspected; direct-render capture limitations in report"
+    },
+    "carrier": {
+      "adapter": "opt-in; separate runtime source binary,prepartition at level preparation,shared source material buckets",
+      "sourceTriangles": 18898,
+      "runtimeTriangles": 21330,
+      "sections": 12,
+      "maxChunkTriangles": 3114,
+      "maxChunkBuckets": 6,
+      "runtimeChecks": "12 RNG comparisons,540 radar vertices at source world pivot/rate,custom animation/spin buffers,75 full-scene chunk geometries retired",
+      "report": "carrier-integration.json",
+      "cameraPngs": "Classic/Modern/Chase inspected with capture limitations recorded",
+      "defaultModelQA": "passed",
+      "processExitCheck": "passed:clean repeat exit0"
+    },
+    "asteroids": {
+      "adapter": "opt-in,three startup templates,only decorative void-rock callsite",
+      "triangles": [
+        432,
+        480,
+        384
+      ],
+      "runtimeChecks": "42 complete chunks:source RNG,nonrock buffers,shared materials,draw counts and rock pivots/axes/rates match;6 template geometries disposed exactly once at shutdown",
+      "report": "asteroids-integration.json",
+      "defaultModelQA": "passed",
+      "runtimeProcessExit": 0,
+      "cameraPngs": "Classic/Modern/Chase inspected;same Modern camera comparison with retained pre-kit capture"
+    },
+    "wreckage": {
+      "adapter": "opt-in,cached typed arrays into dark/neon chunk buckets",
+      "triangles": [
+        532,
+        480
+      ],
+      "runtimeChecks": "16 cases,7 taken/9 absent:original RNG and all outside-branch buffers exact;asteroid42-chunk checks retained",
+      "report": "wreckage-integration.json",
+      "defaultModelQA": "passed",
+      "runtimeProcessExit": 0,
+      "cameraPngs": "Classic/Modern/Chase inspected"
+    },
+    "antenna": {
+      "adapter": "opt-in,five cached parametric geometries,existing dark/neon buckets",
+      "runtimeChecks": "11 props in8 chunks:exact RNG,surface records,strobe tuples/colors and all outside-prop buffers;5 cached geometries disposed once",
+      "report": "antenna-integration.json",
+      "defaultModelQA": "passed",
+      "runtimeProcessExit": 0,
+      "cameraPngs": "Classic/Modern/Chase inspected with thin-hardware readability limitations"
+    },
+    "coolingStack": {
+      "adapter": "opt-in,cached height-weighted template into existing3 buckets",
+      "triangles": 460,
+      "runtimeChecks": "27 props/16 chunks:exact RNG,surfaces,steam emitter metadata/ownership and all outside-prop buffers;heat tuples exact/colors within cached precision",
+      "report": "cooling-stack-integration.json",
+      "defaultModelQA": "passed",
+      "runtimeProcessExit": 0,
+      "cameraPngs": "Classic/Modern/Chase inspected"
+    },
+    "flakGun": {
+      "adapter": "opt-in,cached posed arrays into existing hull/dark buckets",
+      "triangles": 704,
+      "runtimeChecks": "22 props/16 battery chunks:exact RNG,surfaces,emitter position/direction/rate/phase/ownership and all outside-prop buffers",
+      "report": "flak-gun-integration.json",
+      "defaultModelQA": "passed",
+      "runtimeProcessExit": 0,
+      "cameraPngs": "Classic/Modern/Chase inspected;source wall occlusion documented"
+    },
+    "bunker": {
+      "adapter": "opt-in,three audited GLB geometries,shared original3 material buckets",
+      "triangles": 468,
+      "runtimeChecks": "15 props/32 chunks:exact source phase/RNG,surface records,warm tuples/colors and all outside-prop buffers;3 GLB templates disposed once",
+      "report": "bunker-integration.json",
+      "defaultModelQA": "passed",
+      "runtimeProcessExit": 0,
+      "cameraPngs": "Classic/Modern/Chase inspected;fine-detail collapse/dark lighting documented"
+    },
+    "fuelDepot": {
+      "adapter": "opt-in,two startup-cached geometries into original hull/dark chunk buckets",
+      "triangles": 992,
+      "runtimeChecks": "29 placements/64 chunk trials:exact source RNG,surface records and outside-prop buffers;2 cached geometries disposed once",
+      "report": "fuel-depot-integration.json",
+      "defaultModelQA": "passed",
+      "runtimeProcessExit": 0,
+      "cameraPngs": "Classic/Modern/Chase inspected;source lighting darkens offline palette"
+    },
+    "cargoKit": {
+      "adapter": "default production;original merged chunk material buckets",
+      "runtimeChecks": "175 props/80 chunk trials preserve source arguments/RNG,surfaces,outside-prop buffers and merged hull retirement",
+      "templates": 2,
+      "report": "cargo-kit-integration.json",
+      "defaultModelQA": "passed",
+      "cameraPngs": "Classic/Modern/Chase inspected;Classic+Modern retained",
+      "legacyModelQA": "passed"
+    },
+    "coveredFighter": {
+      "adapter": "default production;original merged chunk material buckets",
+      "runtimeChecks": "24 props/16 chunk trials preserve source arguments/RNG,surfaces,outside-prop buffers and merged hull retirement",
+      "templates": 42,
+      "report": "covered-fighter-integration.json",
+      "defaultModelQA": "passed",
+      "cameraPngs": "Classic/Modern/Chase inspected;Classic+Modern retained",
+      "legacyModelQA": "passed"
+    }
+  },
+  "scheduling": "At most two assets being built concurrently; refill a completed build slot in queue order while retaining deferred Opus work.",
+  "freezePolicy": "All received initial content is hash-verified and read-only on SuperBeast; source executable modes retained. Regenerate/polish only in separate writable copies.",
+  "broaderQueue": [
+    {
+      "asset": "missile",
+      "status": "user_approved_release_verified",
+      "priority": 10,
+      "category": "projectile",
+      "baseline": "missile-baseline.json",
+      "budget": {
+        "targetTriangles": [
+          400,
+          600
+        ],
+        "ceilingTriangles": 800,
+        "visiblePrimitives": 1,
+        "poolCapacity": 40
+      },
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "initialFrozen": true,
+      "receipt": "missile-receipt.json",
+      "sources": "assets-source/production/missile/initial",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "asset": "carrier",
+      "status": "user_approved_release_verified",
+      "baseline": "landmark-baseline.json",
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "receipt": "carrier-receipt.json",
+      "sources": "assets-source/production/carrier/initial",
+      "initialFrozen": true,
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "asset": "derelict-dreadnought",
+      "status": "user_approved_release_verified",
+      "baseline": "landmark-baseline.json",
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "initialFrozen": true,
+      "receipt": "dreadnought-receipt.json",
+      "sources": "assets-source/production/dreadnought/initial",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "asset": "asteroids-wreckage",
+      "status": "split_asteroids_wreckage_initial_integrated"
+    },
+    {
+      "asset": "fortress-prop-kit",
+      "status": "queued_batch_contract_needed"
+    },
+    {
+      "asset": "barriers-gates",
+      "status": "queued_collision_motion_contract_needed"
+    },
+    {
+      "asset": "space-structures",
+      "status": "queued_streaming_contract_needed"
+    },
+    {
+      "asset": "asteroids",
+      "status": "user_approved_release_verified",
+      "category": "scenery_kit",
+      "builder": "Sol XHigh",
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "receipt": "asteroids-receipt.json",
+      "sources": "assets-source/production/asteroids/initial",
+      "initialFrozen": true,
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "asset": "wreckage",
+      "status": "user_approved_release_verified",
+      "category": "scenery_kit",
+      "builder": "Sol XHigh",
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "initialFrozen": true,
+      "receipt": "wreckage-receipt.json",
+      "sources": "assets-source/production/wreckage/initial",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "asset": "cooling-stack",
+      "status": "user_approved_release_verified",
+      "category": "fortress_prop",
+      "baseline": "cooling-stack-baseline.json",
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "initialFrozen": true,
+      "builderTaskStatus": "completed",
+      "receipt": "cooling-stack-receipt.json",
+      "sources": "assets-source/production/cooling-stack/initial",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "asset": "antenna",
+      "status": "user_approved_release_verified",
+      "category": "fortress_prop",
+      "baseline": "antenna-baseline.json",
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "initialFrozen": true,
+      "builderTaskStatus": "completed",
+      "receipt": "antenna-receipt.json",
+      "sources": "assets-source/production/antenna/initial",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "asset": "bunker",
+      "status": "user_approved_release_verified",
+      "category": "fortress_prop",
+      "baseline": "bunker-baseline.json",
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "initialFrozen": true,
+      "builderTaskStatus": "completed",
+      "receipt": "bunker-receipt.json",
+      "sources": "assets-source/production/bunker/initial",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "asset": "flak-gun",
+      "status": "user_approved_release_verified",
+      "category": "fortress_prop",
+      "baseline": "flak-gun-baseline.json",
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "initialFrozen": true,
+      "receipt": "flak-gun-receipt.json",
+      "sources": "assets-source/production/flak-gun/initial",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "asset": "fuel-depot",
+      "status": "user_approved_release_verified",
+      "category": "fortress_prop",
+      "baseline": "fuel-depot-baseline.json",
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "initialFrozen": true,
+      "receipt": "fuel-depot-receipt.json",
+      "sources": "assets-source/production/fuel-depot/initial",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "asset": "cargo-kit",
+      "status": "user_approved_release_verified",
+      "category": "fortress_prop_kit",
+      "baseline": "cargo-kit-baseline.json",
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "initialFrozen": true,
+      "receipt": "cargo-kit-receipt.json",
+      "sources": "assets-source/production/cargo-kit/initial",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    },
+    {
+      "asset": "covered-fighter",
+      "status": "user_approved_release_verified",
+      "category": "passive_fortress_prop",
+      "baseline": "covered-fighter-baseline.json",
+      "budget": {
+        "targetTriangles": [
+          900,
+          1500
+        ],
+        "ceilingTriangles": 2000,
+        "materialBuckets": 3
+      },
+      "formalReviewsCompleted": 0,
+      "fixPassesCompleted": 0,
+      "finalVerified": false,
+      "initialFrozen": true,
+      "receipt": "covered-fighter-receipt.json",
+      "sources": "assets-source/production/covered-fighter/initial",
+      "builderTaskStatus": "completed",
+      "userApproved": true,
+      "releaseVerified": true
+    }
+  ],
+  "releaseApproval": {
+    "date": "2026-11-14",
+    "scope": "All21 current submissions approved for release after verification;broader scenery queue retained for later work.",
+    "cleanup": "Luna XHigh cleanup authorized;retain source and curated devlog evidence,archive originals before trimming.",
+    "formalOpusStatus": "Deferred;approval does not claim formal review completion."
+  },
+  "cleanup": {
+    "status": "complete_verified",
+    "model": "gpt-6-luna",
+    "options": {
+      "reasoningEffort": "xhigh"
+    },
+    "retainedHashesVerified": 924,
+    "archiveHashesVerified": 22,
+    "originalArchivedContentHashesVerified": 1476,
+    "omittedFiles": 670,
+    "omittedBytes": 249327183,
+    "manifest": "retention.json",
+    "devlog": "DEVLOG.md"
+  },
+  "releaseWorkflow": "Existing Actions workflow retained unchanged: saved OAuth app cannot update workflows without workflow scope. Full model QA passed locally;CI still runs104 regressions,build and expanded public-UI/model-network/hash release smoke."
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "source": "src/entities/Pickup.js",
+    "sha256": "858eadd8572fe5c6e7151302abd022e003312a4debf39536bad4d31d99de15b0",
+    "bytes": 5236
+  },
+  {
+    "source": "src/game/Game.js",
+    "sha256": "cbf9b335e16a44bc6b59f30e6a6a01240230a8b231fade31f4c1dbdfdea56b98",
+    "bytes": 55051
+  },
+  {
+    "source": "src/entities/Player.js",
+    "sha256": "70d34d33ca9e81a4c27f8a37d94ab6089d7e4c97cf4df2a6772bd24277aabe5b",
+    "bytes": 17274
+  },
+  {
+    "source": "src/core/Utils.js",
+    "sha256": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972",
+    "bytes": 5006
+  },
+  {
+    "source": "src/core/FlightCamera.js",
+    "sha256": "f691b3cef8a36de611762cb3129571f0684457e607be141dc1b5158401f4506e",
+    "bytes": 842
+  },
+  {
+    "source": "src/core/Settings.js",
+    "sha256": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+    "bytes": 8622
+  },
+  {
+    "source": "src/game/CameraRig.js",
+    "sha256": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205",
+    "bytes": 5633
+  },
+  {
+    "source": "src/render/Materials.js",
+    "sha256": "8af35e4641253713d8d8d1770edebb3dd0bff77bf5caee4eaba7f0db58aebd52",
+    "bytes": 16831
+  },
+  {
+    "source": "src/render/ImportedModels.js",
+    "sha256": "212b8c8f4f438ae70b408e2ff218524850e3cf6b027e63961a813e58d6d42773",
+    "bytes": 7863
+  },
+  {
+    "source": "src/render/Dispose.js",
+    "sha256": "c2557155aa3786a0783c1df376171a10a03ae0323563afae663b51a61fbf97de",
+    "bytes": 704
+  },
+  {
+    "source": "src/entities/Enemies.js",
+    "sha256": "9c7f88630d52e8dc721ec9380139f29aec747c30a3ad599adaacb8e55cea864c",
+    "bytes": 32892
+  },
+  {
+    "source": "src/fx/Effects.js",
+    "sha256": "01afd73e640ace44b14f639e731d29b53ce62afb2acfdaa32cf050c2ca377fc3",
+    "bytes": 28795
+  },
+  {
+    "source": "src/render/Sky.js",
+    "sha256": "12314912081437f6c646031ee8d14b62753755b890ca104ae48f7f3083801ed5",
+    "bytes": 17265
+  },
+  {
+    "source": "src/render/Textures.js",
+    "sha256": "c94160c1d3980da63fc7822b88d049b2adccb5ea301e1705b8a1b48ae9dc8c05",
+    "bytes": 17474
+  },
+  {
+    "source": "src/core/Engine.js",
+    "sha256": "9d6d580dcc55b6b6d072b877190ab9e0e675ca89101d4cceddb95aa46d7cd77c",
+    "bytes": 11908
+  },
+  {
+    "source": "src/audio/Audio.js",
+    "sha256": "75ca5ff0a24854fb925b9332807e44e65185b9a18c006fe108a551ee501c612f",
+    "bytes": 61765
+  }
+]
