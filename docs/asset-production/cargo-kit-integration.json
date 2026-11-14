@@ -1,0 +1,514 @@
+{
+  "asset": "cargo-kit",
+  "stage": "user_approved_default_integration",
+  "formalReviewsCompleted": 0,
+  "fixPassesCompleted": 0,
+  "runtime": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 3
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 15,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 16,
+        "props": 4
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 4
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 18,
+        "props": 5
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 47,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 49,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 3
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 81,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 83,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 101,
+        "props": 3
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 103,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 15,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 16,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 4
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 18,
+        "props": 4
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 47,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 49,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 81,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 83,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 101,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 103,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 3
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 15,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 16,
+        "props": 3
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 4
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 18,
+        "props": 4
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 47,
+        "props": 3
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 3
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 49,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 81,
+        "props": 3
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 83,
+        "props": 3
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 101,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 103,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 15,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 16,
+        "props": 3
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 5
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 18,
+        "props": 4
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 47,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 49,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 81,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 83,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 101,
+        "props": 3
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 103,
+        "props": 3
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 2
+      }
+    ],
+    "props": 175,
+    "sourceParity": "Original arguments,RNG,surfaces,paint,emitters,outside-prop buffers and merged hull retirement"
+  },
+  "shutdown": {
+    "geometries": 6,
+    "antennaGeometries": 5,
+    "bunkerGeometries": 3,
+    "fuelDepotGeometries": 2,
+    "cargoGeometries": 2,
+    "coveredGeometries": 42,
+    "disposedExactlyOnce": true
+  },
+  "regressions": 104,
+  "build": "passed",
+  "defaultModelQA": "passed",
+  "legacyModelQA": "passed",
+  "runtimeProcessExit": 0,
+  "visualInspection": "assets-source/production/integration-evidence/cargo-kit/inspection.json",
+  "limitations": [
+    "Actual stationary Three.js source-rig captures are not sustained hardware/GPU acceptance.",
+    "Mapped material lighting darkens the offline palette;existing scenery and camera edge occlusion retained.",
+    "Full formal Opus review/polish remains deferred after user release approval."
+  ],
+  "limits": "Inherited near-drum player-sphere overlap unchanged;no new collider or flight restriction.",
+  "legacyRuntimeProcessExit": 0
+}

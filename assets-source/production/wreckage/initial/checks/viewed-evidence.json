@@ -1,0 +1,27 @@
+{
+  "method": "Actually opened each final PNG using functions.view_image in this implementation session; not inferred from render success or filenames.",
+  "purpose": "Initial implementation evidence inspection only, not a formal review or polish pass.",
+  "formal_reviews": 0,
+  "formal_fix_passes": 0,
+  "pending_deferred_opus_review": true,
+  "images": [
+    {"file": "00-shipped-vocabulary.png", "observed": "All six shipped reference models visible; faceted plate forms, steel/ivory and controlled emissive vocabulary. This sheet uses normalized reference scales."},
+    {"file": "01-kit-three-quarter.png", "observed": "Both complementary continuous hollow forms, exposed frames and fitted outer plates visible. Small orange ember faces remain restrained."},
+    {"file": "02-kit-torn-aft.png", "observed": "Open end rims and empty cavities visible from opposite angle. Jagged plate terminations do not form a black painted cap."},
+    {"file": "03-kit-open-top.png", "observed": "Open top and asymmetric flank differences readable; shell thickness, longitudinal framing, transverse bands and lap plates visible."},
+    {"file": "04-kit-underside.png", "observed": "Exterior mass is continuous; low-key underside facets remain darker than raised rims. No disconnected floating box cluster."},
+    {"file": "05-gutter-keel-structural-closeup.png", "observed": "Shell thickness at torn rim, attached crossframe, longeron and fitted side plates visible. Closeup deliberately crops the far end."},
+    {"file": "06-sheared-chine-structural-closeup.png", "observed": "Canted asymmetric chine leaves a real open cavity; exposed internal bars and side lap plates visible."},
+    {"file": "07-frame-conduit-isolation.png", "observed": "Transverse frame sections, continuous longerons and conduits visible with shell/plates/embers intentionally hidden for evidence only."},
+    {"file": "world-classic.png", "observed": "Final framing-selected source-legal sample contains both whole wrecks and shipped unscaled player. Source dark material is very dark; open silhouettes, rims and restrained embers visible. Not final readability acceptance."},
+    {"file": "world-modern.png", "observed": "Same two world-positioned wrecks and shipped player visible at actual perspective scale; wrecks are distant small dark silhouettes, not enlarged or relocated."},
+    {"file": "world-chase.png", "observed": "Same source-legal scene visible with chase camera; wrecks remain outside flight corridor and small/dark at distance. No live camera/gameplay behavior claimed."},
+    {"file": "world-classic-source-baseline.png", "observed": "Same original placements and camera show closed nominal tapered hull and separate original ribs/embers, contrasting with actual hollow replacement geometry."}
+  ],
+  "limitations": [
+    "Offline BLENDER_EEVEE images only; studio views use diagnostic lighting.",
+    "WORLD views use source camera math and source light numeric parameters but approximate sky/IBL, omit source fog/bloom and differ in tone mapping.",
+    "Dark world appearance and source-frustum placement sensitivity require deferred in-game acceptance; no geometry/material brightening or gameplay-range changes were applied.",
+    "No Opus reviewer, formal review or formal fix/polish pass was run."
+  ]
+}

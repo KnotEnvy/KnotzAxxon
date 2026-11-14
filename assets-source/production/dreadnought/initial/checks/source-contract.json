@@ -1,0 +1,1094 @@
+{
+  "source": "/home/knotzuni/code/KnotzAxxon/src/world/Fortress.js",
+  "sourceSHA256": "824a3d8d9e64bf775e5a486e52c29bef8ce94daebfa138bd4ab2067121790165",
+  "sectorStart": 3200,
+  "start": 3400,
+  "end": 4220,
+  "chunkLength": 96,
+  "seeds": [
+    {
+      "seed": 1,
+      "triangles": 9384,
+      "chunks": [
+        {
+          "index": 35,
+          "draws": 70,
+          "finalRNG": 2071526450,
+          "triangles": 648,
+          "buckets": {
+            "hull": 60,
+            "dark": 180,
+            "neon": 408
+          },
+          "bounds": {
+            "min": [
+              -16.371870040893555,
+              -41,
+              3400
+            ],
+            "max": [
+              28.441869735717773,
+              -11.661087989807129,
+              3456
+            ]
+          }
+        },
+        {
+          "index": 36,
+          "draws": 92,
+          "finalRNG": 2070737137,
+          "triangles": 1056,
+          "buckets": {
+            "hull": 108,
+            "dark": 288,
+            "neon": 660
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3456
+            ],
+            "max": [
+              38.25,
+              14.44174861907959,
+              3552
+            ]
+          }
+        },
+        {
+          "index": 37,
+          "draws": 102,
+          "finalRNG": 1565994548,
+          "triangles": 1104,
+          "buckets": {
+            "hull": 108,
+            "dark": 408,
+            "neon": 588
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3552
+            ],
+            "max": [
+              38.25,
+              13.395694732666016,
+              3648
+            ]
+          }
+        },
+        {
+          "index": 38,
+          "draws": 101,
+          "finalRNG": 2388864496,
+          "triangles": 1104,
+          "buckets": {
+            "hull": 108,
+            "dark": 228,
+            "neon": 768
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3648
+            ],
+            "max": [
+              38.25,
+              9.790122032165527,
+              3744
+            ]
+          }
+        },
+        {
+          "index": 39,
+          "draws": 97,
+          "finalRNG": 2012004301,
+          "triangles": 1092,
+          "buckets": {
+            "hull": 108,
+            "dark": 228,
+            "neon": 756
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3744
+            ],
+            "max": [
+              38.25,
+              11.994894027709961,
+              3840
+            ]
+          }
+        },
+        {
+          "index": 40,
+          "draws": 97,
+          "finalRNG": 371472766,
+          "triangles": 1080,
+          "buckets": {
+            "hull": 108,
+            "dark": 408,
+            "neon": 564
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3840
+            ],
+            "max": [
+              38.25,
+              6.925309181213379,
+              3936
+            ]
+          }
+        },
+        {
+          "index": 41,
+          "draws": 93,
+          "finalRNG": 4289579867,
+          "triangles": 1020,
+          "buckets": {
+            "hull": 96,
+            "dark": 216,
+            "neon": 708
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3936
+            ],
+            "max": [
+              38.25,
+              -11.609382629394531,
+              4032
+            ]
+          }
+        },
+        {
+          "index": 42,
+          "draws": 98,
+          "finalRNG": 3216942805,
+          "triangles": 1104,
+          "buckets": {
+            "hull": 108,
+            "dark": 228,
+            "neon": 768
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              4032
+            ],
+            "max": [
+              38.25,
+              9.083758354187012,
+              4128
+            ]
+          }
+        },
+        {
+          "index": 43,
+          "draws": 101,
+          "finalRNG": 2776141413,
+          "triangles": 1176,
+          "buckets": {
+            "hull": 108,
+            "dark": 396,
+            "neon": 672
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              4128
+            ],
+            "max": [
+              38.18000030517578,
+              7.202545642852783,
+              4229
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "seed": 7,
+      "triangles": 9528,
+      "chunks": [
+        {
+          "index": 35,
+          "draws": 82,
+          "finalRNG": 2575479732,
+          "triangles": 756,
+          "buckets": {
+            "hull": 72,
+            "dark": 192,
+            "neon": 492
+          },
+          "bounds": {
+            "min": [
+              -16.371870040893555,
+              -41,
+              3400
+            ],
+            "max": [
+              37,
+              6.187826633453369,
+              3456
+            ]
+          }
+        },
+        {
+          "index": 36,
+          "draws": 98,
+          "finalRNG": 175230133,
+          "triangles": 1092,
+          "buckets": {
+            "hull": 108,
+            "dark": 288,
+            "neon": 696
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3456
+            ],
+            "max": [
+              38.25,
+              10.009498596191406,
+              3552
+            ]
+          }
+        },
+        {
+          "index": 37,
+          "draws": 106,
+          "finalRNG": 302323214,
+          "triangles": 1128,
+          "buckets": {
+            "hull": 108,
+            "dark": 408,
+            "neon": 612
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3552
+            ],
+            "max": [
+              38.25,
+              11.037095069885254,
+              3648
+            ]
+          }
+        },
+        {
+          "index": 38,
+          "draws": 98,
+          "finalRNG": 1189134359,
+          "triangles": 1104,
+          "buckets": {
+            "hull": 108,
+            "dark": 228,
+            "neon": 768
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3648
+            ],
+            "max": [
+              38.25,
+              4.044469833374023,
+              3744
+            ]
+          }
+        },
+        {
+          "index": 39,
+          "draws": 91,
+          "finalRNG": 3907511317,
+          "triangles": 1068,
+          "buckets": {
+            "hull": 108,
+            "dark": 228,
+            "neon": 732
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3744
+            ],
+            "max": [
+              38.25,
+              5.186728000640869,
+              3840
+            ]
+          }
+        },
+        {
+          "index": 40,
+          "draws": 100,
+          "finalRNG": 1571202915,
+          "triangles": 1104,
+          "buckets": {
+            "hull": 108,
+            "dark": 408,
+            "neon": 588
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3840
+            ],
+            "max": [
+              38.25,
+              7.512325286865234,
+              3936
+            ]
+          }
+        },
+        {
+          "index": 41,
+          "draws": 89,
+          "finalRNG": 1258283917,
+          "triangles": 1008,
+          "buckets": {
+            "hull": 96,
+            "dark": 216,
+            "neon": 696
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3936
+            ],
+            "max": [
+              38.25,
+              -11.725425720214844,
+              4032
+            ]
+          }
+        },
+        {
+          "index": 42,
+          "draws": 100,
+          "finalRNG": 2585107141,
+          "triangles": 1116,
+          "buckets": {
+            "hull": 108,
+            "dark": 228,
+            "neon": 780
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              4032
+            ],
+            "max": [
+              38.25,
+              5.627858638763428,
+              4128
+            ]
+          }
+        },
+        {
+          "index": 43,
+          "draws": 96,
+          "finalRNG": 2208246946,
+          "triangles": 1152,
+          "buckets": {
+            "hull": 108,
+            "dark": 396,
+            "neon": 648
+          },
+          "bounds": {
+            "min": [
+              -26.18000030517578,
+              -41,
+              4128
+            ],
+            "max": [
+              38.25,
+              12.136455535888672,
+              4229
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "triangles": 9588,
+      "chunks": [
+        {
+          "index": 35,
+          "draws": 86,
+          "finalRNG": 1311808427,
+          "triangles": 780,
+          "buckets": {
+            "hull": 72,
+            "dark": 192,
+            "neon": 516
+          },
+          "bounds": {
+            "min": [
+              -16.441869735717773,
+              -41,
+              3400
+            ],
+            "max": [
+              37,
+              11.303947448730469,
+              3456
+            ]
+          }
+        },
+        {
+          "index": 36,
+          "draws": 103,
+          "finalRNG": 743124641,
+          "triangles": 1116,
+          "buckets": {
+            "hull": 108,
+            "dark": 288,
+            "neon": 720
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3456
+            ],
+            "max": [
+              38.25,
+              8.019515037536621,
+              3552
+            ]
+          }
+        },
+        {
+          "index": 37,
+          "draws": 102,
+          "finalRNG": 1565994589,
+          "triangles": 1092,
+          "buckets": {
+            "hull": 108,
+            "dark": 408,
+            "neon": 576
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3552
+            ],
+            "max": [
+              38.25,
+              15.11898136138916,
+              3648
+            ]
+          }
+        },
+        {
+          "index": 38,
+          "draws": 99,
+          "finalRNG": 3020700207,
+          "triangles": 1104,
+          "buckets": {
+            "hull": 108,
+            "dark": 228,
+            "neon": 768
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3648
+            ],
+            "max": [
+              38.25,
+              12.23946475982666,
+              3744
+            ]
+          }
+        },
+        {
+          "index": 39,
+          "draws": 103,
+          "finalRNG": 116497332,
+          "triangles": 1128,
+          "buckets": {
+            "hull": 108,
+            "dark": 228,
+            "neon": 792
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3744
+            ],
+            "max": [
+              38.25,
+              10.319631576538086,
+              3840
+            ]
+          }
+        },
+        {
+          "index": 40,
+          "draws": 102,
+          "finalRNG": 939367280,
+          "triangles": 1092,
+          "buckets": {
+            "hull": 108,
+            "dark": 408,
+            "neon": 576
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3840
+            ],
+            "max": [
+              38.25,
+              10.47843074798584,
+              3936
+            ]
+          }
+        },
+        {
+          "index": 41,
+          "draws": 95,
+          "finalRNG": 3657744238,
+          "triangles": 1080,
+          "buckets": {
+            "hull": 108,
+            "dark": 228,
+            "neon": 744
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3936
+            ],
+            "max": [
+              38.25,
+              13.817691802978516,
+              4032
+            ]
+          }
+        },
+        {
+          "index": 42,
+          "draws": 101,
+          "finalRNG": 121705693,
+          "triangles": 1116,
+          "buckets": {
+            "hull": 108,
+            "dark": 228,
+            "neon": 780
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              4032
+            ],
+            "max": [
+              38.25,
+              5.357146739959717,
+              4128
+            ]
+          }
+        },
+        {
+          "index": 43,
+          "draws": 90,
+          "finalRNG": 4103753991,
+          "triangles": 1080,
+          "buckets": {
+            "hull": 96,
+            "dark": 384,
+            "neon": 600
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              4128
+            ],
+            "max": [
+              38.18000030517578,
+              -11.913137435913086,
+              4229
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "seed": 123,
+      "triangles": 9264,
+      "chunks": [
+        {
+          "index": 35,
+          "draws": 80,
+          "finalRNG": 3207315518,
+          "triangles": 756,
+          "buckets": {
+            "hull": 72,
+            "dark": 192,
+            "neon": 492
+          },
+          "bounds": {
+            "min": [
+              -16.371870040893555,
+              -41,
+              3400
+            ],
+            "max": [
+              37,
+              6.958974361419678,
+              3456
+            ]
+          }
+        },
+        {
+          "index": 36,
+          "draws": 88,
+          "finalRNG": 3334408599,
+          "triangles": 996,
+          "buckets": {
+            "hull": 96,
+            "dark": 276,
+            "neon": 624
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3456
+            ],
+            "max": [
+              38.25,
+              -11.615021705627441,
+              3552
+            ]
+          }
+        },
+        {
+          "index": 37,
+          "draws": 92,
+          "finalRNG": 430205724,
+          "triangles": 1056,
+          "buckets": {
+            "hull": 108,
+            "dark": 408,
+            "neon": 540
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3552
+            ],
+            "max": [
+              38.25,
+              8.582229614257812,
+              3648
+            ]
+          }
+        },
+        {
+          "index": 38,
+          "draws": 98,
+          "finalRNG": 1189134475,
+          "triangles": 1104,
+          "buckets": {
+            "hull": 108,
+            "dark": 228,
+            "neon": 768
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3648
+            ],
+            "max": [
+              38.25,
+              6.491669178009033,
+              3744
+            ]
+          }
+        },
+        {
+          "index": 39,
+          "draws": 86,
+          "finalRNG": 3339616960,
+          "triangles": 996,
+          "buckets": {
+            "hull": 96,
+            "dark": 216,
+            "neon": 684
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3744
+            ],
+            "max": [
+              38.25,
+              -11.602237701416016,
+              3840
+            ]
+          }
+        },
+        {
+          "index": 40,
+          "draws": 96,
+          "finalRNG": 2834874371,
+          "triangles": 1080,
+          "buckets": {
+            "hull": 108,
+            "dark": 408,
+            "neon": 564
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3840
+            ],
+            "max": [
+              38.25,
+              6.803536891937256,
+              3936
+            ]
+          }
+        },
+        {
+          "index": 41,
+          "draws": 102,
+          "finalRNG": 3593803122,
+          "triangles": 1116,
+          "buckets": {
+            "hull": 108,
+            "dark": 228,
+            "neon": 780
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              3936
+            ],
+            "max": [
+              38.25,
+              10.168944358825684,
+              4032
+            ]
+          }
+        },
+        {
+          "index": 42,
+          "draws": 84,
+          "finalRNG": 3344825321,
+          "triangles": 984,
+          "buckets": {
+            "hull": 96,
+            "dark": 216,
+            "neon": 672
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              4032
+            ],
+            "max": [
+              38.25,
+              -11.634909629821777,
+              4128
+            ]
+          }
+        },
+        {
+          "index": 43,
+          "draws": 100,
+          "finalRNG": 944575722,
+          "triangles": 1176,
+          "buckets": {
+            "hull": 108,
+            "dark": 396,
+            "neon": 672
+          },
+          "bounds": {
+            "min": [
+              -26.25,
+              -41,
+              4128
+            ],
+            "max": [
+              38.25,
+              13.02587604522705,
+              4229
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "budget": {
+    "wholeTarget": 24000,
+    "wholeCeiling": 32000,
+    "ordinaryChunkTarget": 3500,
+    "chunkCeiling": 5000,
+    "mergedBuckets": 3,
+    "glbBytes": 4194304
+  },
+  "rationale": "Approximately 2.5x source budget reserved for genuinely open armor, frames, section clipping, unique bridge and recessed engines; no debris/asteroid replacement.",
+  "rng": {
+    "directComparisons": 1408,
+    "downstreamComparisons": 36,
+    "passed": true,
+    "downstream": [
+      {
+        "seed": 1,
+        "index": 35,
+        "geometrySHA256": "200875140b29b224e5e3349d5fd9a0e604120bfcd307d4f3fc65da6c6fc9d431",
+        "finalRNG": 976949801
+      },
+      {
+        "seed": 1,
+        "index": 36,
+        "geometrySHA256": "93c7d23a11059ff7b70b7cec4e8557232bb04ffd72466e34412c8479aa9f3fd9",
+        "finalRNG": 2311349325
+      },
+      {
+        "seed": 1,
+        "index": 37,
+        "geometrySHA256": "17d736a400d55de9a8d21a6b8244b096bd1d267934603eec47b46b71db1e6d0b",
+        "finalRNG": 2502383603
+      },
+      {
+        "seed": 1,
+        "index": 38,
+        "geometrySHA256": "566919bf9eaab3304dacaa3baa2cf51884da2997cae0d5b3490d41492225a0a6",
+        "finalRNG": 4084971615
+      },
+      {
+        "seed": 1,
+        "index": 39,
+        "geometrySHA256": "0b2ccc19cc439fbfbccc228dd24b17c6943656846878cfaa27f66cdb874ff8b3",
+        "finalRNG": 3708111420
+      },
+      {
+        "seed": 1,
+        "index": 40,
+        "geometrySHA256": "198121d722f2de9218add9637df7f56b95e7489a39a3420fb1515db251398bba",
+        "finalRNG": 2251827176
+      },
+      {
+        "seed": 1,
+        "index": 41,
+        "geometrySHA256": "f9454af72a05d4b995dba119e827fdb218c4e26b4adcd1e4115e82dc95d01cbc",
+        "finalRNG": 355530853
+      },
+      {
+        "seed": 1,
+        "index": 42,
+        "geometrySHA256": "5f502eafdce33105b0f977b76d0d7e02b53f378384db368eb513eaa6eb4ff5c8",
+        "finalRNG": 3393613796
+      },
+      {
+        "seed": 1,
+        "index": 43,
+        "geometrySHA256": "0bf84dc0565e39c202a8696401e5d0e472ac256a337f3c59ebc74010d6a295d2",
+        "finalRNG": 3960718956
+      },
+      {
+        "seed": 7,
+        "index": 35,
+        "geometrySHA256": "b1f1c3768c8c25e116177572c570f1086c48f809bf6f0130024e2a7bb80f735c",
+        "finalRNG": 3511868787
+      },
+      {
+        "seed": 7,
+        "index": 36,
+        "geometrySHA256": "e2fffd1c3593bab1ed881a30ce227209b716c9d85d1c6c1114bceba422e77d8e",
+        "finalRNG": 3887150356
+      },
+      {
+        "seed": 7,
+        "index": 37,
+        "geometrySHA256": "4427c442847c7085cdb3541ff777239700c66426a900b5ae92829535bafb4205",
+        "finalRNG": 478994205
+      },
+      {
+        "seed": 7,
+        "index": 38,
+        "geometrySHA256": "b2a6bcaa559b0fe1df3e28e411f89fdaa203c516470b94aab8d1ad14288ee2e3",
+        "finalRNG": 1365805350
+      },
+      {
+        "seed": 7,
+        "index": 39,
+        "geometrySHA256": "14fae56d05fb5b42007b2bbaf970f516e9b7d120849f8591066c1f0a6edb695c",
+        "finalRNG": 4084182308
+      },
+      {
+        "seed": 7,
+        "index": 40,
+        "geometrySHA256": "1baf36072fdecabd0c1a0d6e9d541028aa9831fd34229b319e5e076e7dbc4e30",
+        "finalRNG": 1747873906
+      },
+      {
+        "seed": 7,
+        "index": 41,
+        "geometrySHA256": "6272c3a2e809860a9e61823ba29bc9fd6d6f29555fdd4f8f76779e0565068f15",
+        "finalRNG": 739178041
+      },
+      {
+        "seed": 7,
+        "index": 42,
+        "geometrySHA256": "288c9a0561c054348bbb7752705b3cf20899b1a24b3cca5cff933b6e9ceac584",
+        "finalRNG": 2825719329
+      },
+      {
+        "seed": 7,
+        "index": 43,
+        "geometrySHA256": "e8d9f2f02b343bf964857e10478067a9e93b8e07d78c54386817f7b32f13e562",
+        "finalRNG": 4088601356
+      },
+      {
+        "seed": 42,
+        "index": 35,
+        "geometrySHA256": "c7f6372f2bc6854159771a621aa647db4eac7696318b18f16172403505c0413c",
+        "finalRNG": 1488479418
+      },
+      {
+        "seed": 42,
+        "index": 36,
+        "geometrySHA256": "382545908911a2f4e42e42201ce2ecde404756e2b2313822cef84ada723cac33",
+        "finalRNG": 3383197115
+      },
+      {
+        "seed": 42,
+        "index": 37,
+        "geometrySHA256": "20c4e1580d2ef25eae8b163f99e8f6a6a4ee7b65dbca91a269c5bd7ad46ba497",
+        "finalRNG": 1742665580
+      },
+      {
+        "seed": 42,
+        "index": 38,
+        "geometrySHA256": "c3af073e787253a1be5ef95d9916dc1444ea698a3f95d3256513488ba891fa27",
+        "finalRNG": 606087321
+      },
+      {
+        "seed": 42,
+        "index": 39,
+        "geometrySHA256": "947653c8974cd41c26ec2e8c2451a49843f4588d8574a4bf5c976459a4c4117c",
+        "finalRNG": 3132640688
+      },
+      {
+        "seed": 42,
+        "index": 40,
+        "geometrySHA256": "b0960f12d8db6e6f449f08caf05fadcc8cbca79a7b164296976ac1b9f957c8d9",
+        "finalRNG": 2060003626
+      },
+      {
+        "seed": 42,
+        "index": 41,
+        "geometrySHA256": "0c1ae0a24024858251112a9f6c763ddcb4c566ec73f6808860a27719d40bac6c",
+        "finalRNG": 3138638362
+      },
+      {
+        "seed": 42,
+        "index": 42,
+        "geometrySHA256": "e74d5565248ce82119d29d5e713c0aaccb1c9ada420b4ee6fe8d2d1f32ce85b9",
+        "finalRNG": 1242342039
+      },
+      {
+        "seed": 42,
+        "index": 43,
+        "geometrySHA256": "24768768f1703ca63281ca1e12173950a220d2df9b52e4fca55ea39e463d3fb8",
+        "finalRNG": 2448859169
+      },
+      {
+        "seed": 123,
+        "index": 35,
+        "geometrySHA256": "3a9ed9f722080715f4a5ebddf27197900acdd35f8bff785cb2580385ccfb8095",
+        "finalRNG": 608455341
+      },
+      {
+        "seed": 123,
+        "index": 36,
+        "geometrySHA256": "9efe97f3cf61549a1a0873d7b6f54c383bf7264e3c955dbdc64a9ff9cd4ba1fa",
+        "finalRNG": 3511079590
+      },
+      {
+        "seed": 123,
+        "index": 37,
+        "geometrySHA256": "e87963541b6b0edaa43cd78fa1f8136ad52f083e4155daa5294c01e1dbef4df7",
+        "finalRNG": 2310560134
+      },
+      {
+        "seed": 123,
+        "index": 38,
+        "geometrySHA256": "9cd07639adeae45089e56323b3c5ae0511a09a2a9fbfe72c92f64757d7f38c8e",
+        "finalRNG": 1550052757
+      },
+      {
+        "seed": 123,
+        "index": 39,
+        "geometrySHA256": "5fa6bd9aee5eec7b66fa741b94c7e0cf8dd21f5e9b83b22eace568fc1965a897",
+        "finalRNG": 740756783
+      },
+      {
+        "seed": 123,
+        "index": 40,
+        "geometrySHA256": "5355bfc6d86144926feefc44a2b03d91e67413317554754907099af01d53456e",
+        "finalRNG": 484202682
+      },
+      {
+        "seed": 123,
+        "index": 41,
+        "geometrySHA256": "991a654d11741821dc9afc9c023bf5bb50f600f8c33203c443245de73f714e9e",
+        "finalRNG": 3954721404
+      },
+      {
+        "seed": 123,
+        "index": 42,
+        "geometrySHA256": "66b16140ba2a9547f03c80bd841926be609da3b87bcbfe70853cc7715e66bcd7",
+        "finalRNG": 170494371
+      },
+      {
+        "seed": 123,
+        "index": 43,
+        "geometrySHA256": "56bf91fba59efeedcaeb979e0e6840e7616e4df73813430937c7a6a286111297",
+        "finalRNG": 2888871329
+      }
+    ]
+  }
+}

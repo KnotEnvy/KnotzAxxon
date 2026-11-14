@@ -1,0 +1,97 @@
+{
+  "method": "Lossless stdlib PNG decoding/filter reversal and pixel copy; no resampling or color grading. Explicit 5x7 pixel-font captions are composited into 50px top/bottom gutters OUTSIDE the original render; no render pixels are overwritten and captions cannot cast 3D shadows.",
+  "sheets": [
+    {
+      "file": "01-multiview.png",
+      "width": 1440,
+      "height": 1160,
+      "panels": [
+        {
+          "file": "frames/front-quarter.png",
+          "title": "BUNKER INITIAL | front-quarter | 468 tri"
+        },
+        {
+          "file": "frames/rear-quarter.png",
+          "title": "BUNKER INITIAL | rear-quarter | 468 tri"
+        },
+        {
+          "file": "frames/corridor-profile.png",
+          "title": "BUNKER INITIAL | corridor-profile | 468 tri"
+        },
+        {
+          "file": "frames/roof-plan.png",
+          "title": "BUNKER INITIAL | roof-plan | 468 tri"
+        }
+      ]
+    },
+    {
+      "file": "02-structure.png",
+      "width": 1440,
+      "height": 580,
+      "panels": [
+        {
+          "file": "frames/recess-and-sealed-panel.png",
+          "title": "STRUCTURE | recess-and-sealed-panel"
+        },
+        {
+          "file": "frames/roof-plant-and-joints.png",
+          "title": "STRUCTURE | roof-plant-and-joints"
+        }
+      ]
+    },
+    {
+      "file": "03-warm-cue.png",
+      "width": 1440,
+      "height": 1160,
+      "panels": [
+        {
+          "file": "frames/cue-citadel-MAX.png",
+          "title": "CITADEL #FFB43A | BREATHE MAX 1.0"
+        },
+        {
+          "file": "frames/cue-citadel-MIN.png",
+          "title": "CITADEL #FFB43A | BREATHE MIN 0.1"
+        },
+        {
+          "file": "frames/cue-gauntlet-MAX.png",
+          "title": "GAUNTLET #FF6A3A | BREATHE MAX 1.0"
+        },
+        {
+          "file": "frames/cue-gauntlet-MIN.png",
+          "title": "GAUNTLET #FF6A3A | BREATHE MIN 0.1"
+        }
+      ]
+    },
+    {
+      "file": "04-world-scale.png",
+      "width": 2700,
+      "height": 1400,
+      "panels": [
+        {
+          "file": "frames/world-citadel-classic.png",
+          "title": "WORLD 1:1 CLASSIC | citadel cue 1.0"
+        },
+        {
+          "file": "frames/world-citadel-modern.png",
+          "title": "WORLD 1:1 MODERN | citadel cue 1.0"
+        },
+        {
+          "file": "frames/world-citadel-chase.png",
+          "title": "WORLD 1:1 CHASE | citadel cue 1.0"
+        },
+        {
+          "file": "frames/world-gauntlet-classic.png",
+          "title": "WORLD 1:1 CLASSIC | gauntlet cue 0.1"
+        },
+        {
+          "file": "frames/world-gauntlet-modern.png",
+          "title": "WORLD 1:1 MODERN | gauntlet cue 0.1"
+        },
+        {
+          "file": "frames/world-gauntlet-chase.png",
+          "title": "WORLD 1:1 CHASE | gauntlet cue 0.1"
+        }
+      ]
+    }
+  ]
+}

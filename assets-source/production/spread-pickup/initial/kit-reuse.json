@@ -1,0 +1,44 @@
+[
+  {
+    "source": "asset-work/shield-pickup/initial/scripts/native-blender.sh",
+    "sha256": "9a4fa6dc910eefd3ead88a4cb5363f607929f1cde05bc3182315e524f89a8de3",
+    "delivered": "native-blender.sh",
+    "reuse": "Disclosed shield INITIAL diagnostic infrastructure adapted for spread; no shield asset geometry imported."
+  },
+  {
+    "source": "asset-work/shield-pickup/initial/scripts/inspect_glb.py",
+    "sha256": "1d15c6db084d960afbb15d9184f0354a473d672864d9cb06a6c0d37c0cd31b19",
+    "delivered": "inspect_glb.py",
+    "reuse": "Disclosed shield INITIAL diagnostic infrastructure adapted for spread; no shield asset geometry imported."
+  },
+  {
+    "source": "asset-work/shield-pickup/initial/scripts/verify_blender.py",
+    "sha256": "7eb69ad0f7c716f917d45fd8872fd174e089072c3ed4276b112430b6eb2a86ef",
+    "delivered": "verify_blender.py",
+    "reuse": "Disclosed shield INITIAL diagnostic infrastructure adapted for spread; no shield asset geometry imported."
+  },
+  {
+    "source": "asset-work/shield-pickup/initial/scripts/render_evidence.py",
+    "sha256": "64fb88dc13a2c8c9303540271393c61b8126d32ca7f2cf75dc433b5fc6afabb5",
+    "delivered": "render_evidence.py",
+    "reuse": "Disclosed shield INITIAL diagnostic infrastructure adapted for spread; no shield asset geometry imported."
+  },
+  {
+    "source": "asset-work/shield-pickup/initial/scripts/render_cues.py",
+    "sha256": "43b657cf03031ae9735b097131b34a18ca71c72ec689dab9199bed0961543635",
+    "delivered": "render_cues.py",
+    "reuse": "Disclosed shield INITIAL diagnostic infrastructure adapted for spread; no shield asset geometry imported."
+  },
+  {
+    "source": "asset-work/shield-pickup/initial/scripts/compose_evidence.py",
+    "sha256": "4c0a29dfa1eceaa75f2af28c928967e1406efae61727a68fe59f16fd80ff0c82",
+    "delivered": "compose_evidence.py",
+    "reuse": "Disclosed shield INITIAL diagnostic infrastructure adapted for spread; no shield asset geometry imported."
+  },
+  {
+    "source": "asset-work/shield-pickup/initial/scripts/build_shield.py",
+    "sha256": "05248ec5af59a48e9ab68048cc5f3bcc2235452e9739e07641251850e4bd0afc",
+    "delivered": "build_spread.py",
+    "reuse": "Deliberate loft/annulus builder conventions plus adapted shared rim/backplate geometric kit profile. Newly generated spread geometry, newly authored fitted chevrons. No shield GLB/blend geometry imported, merged, or exported."
+  }
+]

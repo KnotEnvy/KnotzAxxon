@@ -1,0 +1,16 @@
+{
+  "archive": "fortress-bunker-initial-ee221ad-20261114T203508Z.tar.gz",
+  "sha256": "9aaaede561f71e9763d58488c46a5cbfddd0d0b9a61a1ee0a8b186753ac8efae",
+  "contentHashesVerified": 73,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/bunker/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "senderExitStatus": 0,
+  "transferMethod": "Windows Taildrop",
+  "glbSha256": "0cd38bb1b315bf68f3a84139bb73dd5009644c942d56ac03370d0ef7a6986dbb",
+  "blendSha256": "1b09bd6b7af79c18f91c892ba476935fac5351a20d6cf3aa96cd9cb15c21516e",
+  "formalReviewsCompleted": 0,
+  "fixPassesCompleted": 0
+}

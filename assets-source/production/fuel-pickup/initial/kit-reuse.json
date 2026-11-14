@@ -1,0 +1,62 @@
+[
+  {
+    "source": "asset-work/spread-pickup/initial/scripts/native-blender.sh",
+    "sha256": "60ae2b156246530ea317c57fb950069a2bd458cb437ceb68b35098eeceede113",
+    "delivered": "scripts/native-blender.sh",
+    "reuse": "Frozen spread INITIAL infrastructure adapted locally for fuel. Deliberately shared generated rim/backplate profile; newly authored drum. No binary geometry imported into deliverable."
+  },
+  {
+    "source": "asset-work/spread-pickup/initial/scripts/build_spread.py",
+    "sha256": "c06c10a731ab1e99ae429198966e91e13ff141174a8363cc0d6170ce3abb4b64",
+    "delivered": "scripts/build_fuel.py",
+    "reuse": "Frozen spread INITIAL infrastructure adapted locally for fuel. Deliberately shared generated rim/backplate profile; newly authored drum. No binary geometry imported into deliverable."
+  },
+  {
+    "source": "asset-work/spread-pickup/initial/scripts/adapter_recipe.mjs",
+    "sha256": "783b3651296acab9a25a6e7c90af68b951d75fd720955dbeade8ce7dfd4d62d0",
+    "delivered": "scripts/adapter_recipe.mjs",
+    "reuse": "Frozen spread INITIAL infrastructure adapted locally for fuel. Deliberately shared generated rim/backplate profile; newly authored drum. No binary geometry imported into deliverable."
+  },
+  {
+    "source": "asset-work/spread-pickup/initial/scripts/source_probe.mjs",
+    "sha256": "1537fc5fa5c1d897d67d62f9db6f325a8283e58bb761391f5e02ed775562514c",
+    "delivered": "scripts/source_probe.mjs",
+    "reuse": "Frozen spread INITIAL infrastructure adapted locally for fuel. Deliberately shared generated rim/backplate profile; newly authored drum. No binary geometry imported into deliverable."
+  },
+  {
+    "source": "asset-work/spread-pickup/initial/scripts/inspect_glb.py",
+    "sha256": "71ccf5a490197015ab156d8f43999a52397cc320fd7cf454661ceb9f844b7bd7",
+    "delivered": "scripts/inspect_glb.py",
+    "reuse": "Frozen spread INITIAL infrastructure adapted locally for fuel. Deliberately shared generated rim/backplate profile; newly authored drum. No binary geometry imported into deliverable."
+  },
+  {
+    "source": "asset-work/spread-pickup/initial/scripts/verify_blender.py",
+    "sha256": "6e9c7514665d117e113fd5ab5bf7b35ff299cd80526f173a8e7a4b1f06d52fc2",
+    "delivered": "scripts/verify_blender.py",
+    "reuse": "Frozen spread INITIAL infrastructure adapted locally for fuel. Deliberately shared generated rim/backplate profile; newly authored drum. No binary geometry imported into deliverable."
+  },
+  {
+    "source": "asset-work/spread-pickup/initial/scripts/render_evidence.py",
+    "sha256": "24e9f7ce05adc60f11252beb6b2c47746f1fe142a4420045345fa1b707fefd41",
+    "delivered": "scripts/render_evidence.py",
+    "reuse": "Frozen spread INITIAL infrastructure adapted locally for fuel. Deliberately shared generated rim/backplate profile; newly authored drum. No binary geometry imported into deliverable."
+  },
+  {
+    "source": "asset-work/spread-pickup/initial/scripts/render_cues.py",
+    "sha256": "9ae19679af2c4fa42a19b8526846989f535bd520b993c854d15058048b206e84",
+    "delivered": "scripts/render_cues.py",
+    "reuse": "Frozen spread INITIAL infrastructure adapted locally for fuel. Deliberately shared generated rim/backplate profile; newly authored drum. No binary geometry imported into deliverable."
+  },
+  {
+    "source": "asset-work/spread-pickup/initial/scripts/render_extra.py",
+    "sha256": "d08f25e589c4fb1f909407eb27a12282d2d32497c608dc137d2a7fc874098432",
+    "delivered": "scripts/render_extra.py",
+    "reuse": "Frozen spread INITIAL infrastructure adapted locally for fuel. Deliberately shared generated rim/backplate profile; newly authored drum. No binary geometry imported into deliverable."
+  },
+  {
+    "source": "asset-work/spread-pickup/initial/scripts/compose_evidence.py",
+    "sha256": "c2ce28399113bf75789ccd23274e71edb90bd96744d069c529861a49ab2845e6",
+    "delivered": "scripts/compose_evidence.py",
+    "reuse": "Frozen spread INITIAL infrastructure adapted locally for fuel. Deliberately shared generated rim/backplate profile; newly authored drum. No binary geometry imported into deliverable."
+  }
+]

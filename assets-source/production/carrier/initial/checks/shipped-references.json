@@ -1,0 +1,2769 @@
+[
+  {
+    "path": "public/models/player.glb",
+    "bytes": 478292,
+    "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+    "triangles": 11556,
+    "materialPrimitives": 8,
+    "declaredMaterials": [
+      "KZ_PlayerAccent",
+      "KZ_PlayerGlass",
+      "KZ_PlayerHull",
+      "KZ_NavPort",
+      "KZ_NavStarboard",
+      "KZ_NeonCyan",
+      "KZ_EngineGlow"
+    ],
+    "images": 0,
+    "boundsTransformedGame": {
+      "min": [
+        -3.9522860050201416,
+        -0.5839999914169312,
+        -2.5370001047849655
+      ],
+      "max": [
+        3.9522860050201416,
+        1.4070836305618286,
+        3.190000057220459
+      ],
+      "size": [
+        7.904572010040283,
+        1.9910836219787598,
+        5.7270001620054245
+      ]
+    },
+    "zeroAreaTriangles": 0,
+    "nodes": [
+      {
+        "node": "airframe-accent",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 3258,
+            "vertices": 4774,
+            "material": "KZ_PlayerAccent",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "airframe-glass",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 278,
+            "vertices": 168,
+            "material": "KZ_PlayerGlass",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "airframe-hull",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 7608,
+            "vertices": 7514,
+            "material": "KZ_PlayerHull",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "COLOR_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "airframe-nav-port",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 44,
+            "vertices": 96,
+            "material": "KZ_NavPort",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "airframe-nav-starboard",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 44,
+            "vertices": 96,
+            "material": "KZ_NavStarboard",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "airframe-neon",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 40,
+            "vertices": 64,
+            "material": "KZ_NeonCyan",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "engine-core-1",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            1.0499999523162842
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.10000018775463104
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -2.515000104904175
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 142,
+            "vertices": 97,
+            "material": "KZ_EngineGlow",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "engine-core--1",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            -1.0499999523162842
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.10000018775463104
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -2.515000104904175
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 142,
+            "vertices": 97,
+            "material": "KZ_EngineGlow",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "public/models/sentinel.glb",
+    "bytes": 1140172,
+    "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef",
+    "triangles": 34718,
+    "materialPrimitives": 38,
+    "declaredMaterials": [
+      "SN_Frame",
+      "SN_Armor",
+      "SN_Charge",
+      "SN_Hazard",
+      "SN_Beacon",
+      "SN_Visor",
+      "SN_Metal",
+      "SN_PodEye",
+      "SN_Glow",
+      "SN_Core",
+      "SN_CoreShell",
+      "SN_Seam"
+    ],
+    "images": 3,
+    "boundsTransformedGame": {
+      "min": [
+        -18.144999980926514,
+        -10.359999656677246,
+        -10.482443422079086
+      ],
+      "max": [
+        18.144999980926514,
+        14.530000001192093,
+        7.245537281036377
+      ],
+      "size": [
+        36.28999996185303,
+        24.88999965786934,
+        17.727980703115463
+      ]
+    },
+    "zeroAreaTriangles": 240,
+    "nodes": [
+      {
+        "node": "torso",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 10534,
+            "vertices": 8159,
+            "material": "SN_Frame",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 184,
+            "vertices": 160,
+            "material": "SN_Hazard",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 1592,
+            "vertices": 1134,
+            "material": "SN_Armor",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 680,
+            "vertices": 669,
+            "material": "SN_Glow",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 1168,
+            "vertices": 1055,
+            "material": "SN_Seam",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "forearm-L",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            -10.399999618530273
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -2.5999999046325684
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.4000000059604645
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 636,
+            "vertices": 475,
+            "material": "SN_Frame",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 276,
+            "vertices": 181,
+            "material": "SN_Armor",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "forearm-R",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            10.399999618530273
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -2.5999999046325684
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.4000000059604645
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 1932,
+            "vertices": 1724,
+            "material": "SN_Frame",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 184,
+            "vertices": 112,
+            "material": "SN_Armor",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 88,
+            "vertices": 96,
+            "material": "SN_Hazard",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "launcher-charge",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            10.399999618530273
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -2.299999952316284
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -9.52000007033348
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 216,
+            "vertices": 228,
+            "material": "SN_Charge",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "head",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            8.399999618530273
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.6000000238418579
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 468,
+            "vertices": 349,
+            "material": "SN_Armor",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 1084,
+            "vertices": 703,
+            "material": "SN_Frame",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 104,
+            "vertices": 78,
+            "material": "SN_Visor",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "antenna-tip-L",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            -2.5999999046325684
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            14.25
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.100000023841858
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 80,
+            "vertices": 50,
+            "material": "SN_Beacon",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "antenna-tip-R",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            2.5999999046325684
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            14.25
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.100000023841858
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 80,
+            "vertices": 50,
+            "material": "SN_Beacon",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "pod-L-barrel-0",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            -15.100000381469727
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            5.599999904632568
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -3.600000023841858
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 1288,
+            "vertices": 1226,
+            "material": "SN_Metal",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "pod-L-barrel-1",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            -12.5
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            5.599999904632568
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -3.600000023841858
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 1288,
+            "vertices": 1226,
+            "material": "SN_Metal",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "pod-L-body",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            -13.800000190734863
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            5.599999904632568
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.6000000238418579
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 458,
+            "vertices": 335,
+            "material": "SN_Armor",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 3412,
+            "vertices": 3006,
+            "material": "SN_Frame",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "pod-L-eye",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            -13.800000190734863
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            7.800000190734863
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -3.0000001192092896
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 168,
+            "vertices": 86,
+            "material": "SN_PodEye",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "pod-L-stump",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            -13.800000190734863
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            5.599999904632568
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.6000000238418579
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 300,
+            "vertices": 223,
+            "material": "SN_Frame",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 118,
+            "vertices": 111,
+            "material": "SN_Glow",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "pod-R-barrel-0",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            12.5
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            5.599999904632568
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -3.600000023841858
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 1288,
+            "vertices": 1226,
+            "material": "SN_Metal",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "pod-R-barrel-1",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            15.100000381469727
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            5.599999904632568
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -3.600000023841858
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 1288,
+            "vertices": 1226,
+            "material": "SN_Metal",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "pod-R-body",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            13.800000190734863
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            5.599999904632568
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.6000000238418579
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 458,
+            "vertices": 335,
+            "material": "SN_Armor",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 3412,
+            "vertices": 3006,
+            "material": "SN_Frame",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "pod-R-eye",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            13.800000190734863
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            7.800000190734863
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -3.0000001192092896
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 168,
+            "vertices": 86,
+            "material": "SN_PodEye",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "pod-R-stump",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            13.800000190734863
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            5.599999904632568
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.6000000238418579
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 300,
+            "vertices": 223,
+            "material": "SN_Frame",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 118,
+            "vertices": 111,
+            "material": "SN_Glow",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "reactor-core",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.30000001192092896,
+            -5.599999904632568
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 20,
+            "vertices": 60,
+            "material": "SN_Core",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "reactor-shell",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.30000001192092896,
+            -5.599999904632568
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 20,
+            "vertices": 60,
+            "material": "SN_CoreShell",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "shutter-0",
+        "worldMatrix": [
+          [
+            0.7071067450934194,
+            -0.7071068487086123,
+            0.0,
+            -2.404163353044246
+          ],
+          [
+            0.7071068487086123,
+            0.7071067450934194,
+            0.0,
+            3.4041630007525803
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -7.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 288,
+            "vertices": 262,
+            "material": "SN_Armor",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "shutter-1",
+        "worldMatrix": [
+          [
+            -0.707107117115811,
+            -0.707106453787901,
+            0.0,
+            -2.404162178901106
+          ],
+          [
+            0.707106453787901,
+            -0.707107117115811,
+            0.0,
+            -1.404164434216221
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -7.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 288,
+            "vertices": 262,
+            "material": "SN_Armor",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "shutter-2",
+        "worldMatrix": [
+          [
+            -0.707107117115811,
+            0.707106453787901,
+            0.0,
+            2.404162178901106
+          ],
+          [
+            -0.707106453787901,
+            -0.707107117115811,
+            0.0,
+            -1.404164434216221
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -7.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 288,
+            "vertices": 262,
+            "material": "SN_Armor",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "shutter-3",
+        "worldMatrix": [
+          [
+            0.7071063345184694,
+            0.7071072530773215,
+            0.0,
+            2.4041647278978955
+          ],
+          [
+            -0.7071072530773215,
+            0.7071063345184694,
+            0.0,
+            3.404161604797711
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -7.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 288,
+            "vertices": 262,
+            "material": "SN_Armor",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "thruster-L",
+        "worldMatrix": [
+          [
+            -1.0,
+            0.0,
+            1.5099580252808664e-07,
+            -5.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            -1.5099580252808664e-07,
+            0.0,
+            -1.0,
+            6.099999904632568
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 78,
+            "vertices": 81,
+            "material": "SN_Glow",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "thruster-R",
+        "worldMatrix": [
+          [
+            -1.0,
+            0.0,
+            1.5099580252808664e-07,
+            5.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            -1.5099580252808664e-07,
+            0.0,
+            -1.0,
+            6.099999904632568
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 78,
+            "vertices": 81,
+            "material": "SN_Glow",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "public/models/turret.glb",
+    "bytes": 58452,
+    "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+    "triangles": 1194,
+    "materialPrimitives": 8,
+    "declaredMaterials": [
+      "warm_armor",
+      "cool_slate",
+      "dark_structure",
+      "amber_eye"
+    ],
+    "images": 0,
+    "boundsTransformedGame": {
+      "min": [
+        -1.899999976158142,
+        0.0,
+        -1.899999976158142
+      ],
+      "max": [
+        2.659999966621399,
+        2.149999976158142,
+        2.815000057220459
+      ],
+      "size": [
+        4.559999942779541,
+        2.149999976158142,
+        4.715000033378601
+      ]
+    },
+    "zeroAreaTriangles": 0,
+    "nodes": [
+      {
+        "node": "base",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 32,
+            "vertices": 50,
+            "material": "cool_slate",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "base_armor",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 96,
+            "vertices": 192,
+            "material": "warm_armor",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "barrel_visual",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            2.299999952316284
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            1.149999976158142
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 172,
+            "vertices": 276,
+            "material": "cool_slate",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "bore",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            2.299999952316284
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            1.149999976158142
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 40,
+            "vertices": 62,
+            "material": "dark_structure",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "dome",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 226,
+            "vertices": 115,
+            "material": "warm_armor",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "port_plate",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 60,
+            "vertices": 120,
+            "material": "dark_structure",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "eye",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            1.5799999237060547
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0199999809265137
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 120,
+            "vertices": 264,
+            "material": "amber_eye",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "trim",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 448,
+            "vertices": 774,
+            "material": "cool_slate",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "public/models/radar.glb",
+    "bytes": 55564,
+    "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d",
+    "triangles": 1288,
+    "materialPrimitives": 9,
+    "declaredMaterials": [
+      "warm_armor",
+      "cool_slate",
+      "dark_structure",
+      "dish_warm",
+      "radar_emitter"
+    ],
+    "images": 0,
+    "boundsTransformedGame": {
+      "min": [
+        -2.3499999046325684,
+        0.0,
+        -2.200000047683716
+      ],
+      "max": [
+        2.3499999046325684,
+        9.659805297851562,
+        2.200000047683716
+      ],
+      "size": [
+        4.699999809265137,
+        9.659805297851562,
+        4.400000095367432
+      ]
+    },
+    "zeroAreaTriangles": 0,
+    "nodes": [
+      {
+        "node": "base",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 32,
+            "vertices": 50,
+            "material": "warm_armor",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "base_trim",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 64,
+            "vertices": 100,
+            "material": "cool_slate",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "dish_frame",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            7.199999809265137
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 360,
+            "vertices": 658,
+            "material": "dark_structure",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "dish_shell",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            7.199999809265137
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 448,
+            "vertices": 226,
+            "material": "dish_warm",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "emitter",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.961055445819706,
+            0.27635562765903643,
+            8.059629440307617
+          ],
+          [
+            0.0,
+            -0.27635562765903643,
+            0.961055445819706,
+            1.4696720838546753
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 120,
+            "vertices": 264,
+            "material": "radar_emitter",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "feed_housing",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            7.199999809265137
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 128,
+            "vertices": 192,
+            "material": "cool_slate",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "mast",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 32,
+            "vertices": 50,
+            "material": "cool_slate",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "mast_braces",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 72,
+            "vertices": 114,
+            "material": "dark_structure",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "mast_cap",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 32,
+            "vertices": 50,
+            "material": "dark_structure",
+            "attributes": [
+              "POSITION",
+              "NORMAL"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "public/models/silo.glb",
+    "bytes": 1281700,
+    "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e",
+    "triangles": 9928,
+    "materialPrimitives": 4,
+    "declaredMaterials": [
+      "SILO_Hull",
+      "SILO_Glow"
+    ],
+    "images": 2,
+    "boundsTransformedGame": {
+      "min": [
+        -2.5999999046325684,
+        0.0,
+        -2.5999999046325684
+      ],
+      "max": [
+        2.634999990463257,
+        2.7080001831054688,
+        2.5999999046325684
+      ],
+      "size": [
+        5.234999895095825,
+        2.7080001831054688,
+        5.199999809265137
+      ]
+    },
+    "zeroAreaTriangles": 0,
+    "nodes": [
+      {
+        "node": "body",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 6590,
+            "vertices": 10765,
+            "material": "SILO_Hull",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 290,
+            "vertices": 247,
+            "material": "SILO_Glow",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "glow",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            2.4149999618530273
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 1344,
+            "vertices": 1314,
+            "material": "SILO_Glow",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "hatch",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            2.450000047683716
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 1704,
+            "vertices": 2942,
+            "material": "SILO_Hull",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "public/models/fuel.glb",
+    "bytes": 1087156,
+    "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc",
+    "triangles": 9592,
+    "materialPrimitives": 8,
+    "declaredMaterials": [
+      "FUEL_Hull",
+      "FUEL_Band"
+    ],
+    "images": 2,
+    "boundsTransformedGame": {
+      "min": [
+        -1.7000000476837158,
+        0.0,
+        -1.7000000476837158
+      ],
+      "max": [
+        1.7000000476837158,
+        4.870000004768372,
+        1.7000000476837158
+      ],
+      "size": [
+        3.4000000953674316,
+        4.870000004768372,
+        3.4000000953674316
+      ]
+    },
+    "zeroAreaTriangles": 0,
+    "nodes": [
+      {
+        "node": "band",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            2.200000047683716
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 1128,
+            "vertices": 1440,
+            "material": "FUEL_Hull",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 96,
+            "vertices": 96,
+            "material": "FUEL_Band",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "body",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 4512,
+            "vertices": 5572,
+            "material": "FUEL_Hull",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          },
+          {
+            "triangles": 396,
+            "vertices": 864,
+            "material": "FUEL_Band",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "cap",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            3.759999990463257
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 3064,
+            "vertices": 3290,
+            "material": "FUEL_Hull",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "stave-0",
+        "worldMatrix": [
+          [
+            -0.49999994615530596,
+            0.0,
+            0.8660254914790855,
+            -0.625
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.9300000071525574
+          ],
+          [
+            -0.8660254914790855,
+            0.0,
+            -0.49999994615530596,
+            -1.0825318098068237
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 132,
+            "vertices": 144,
+            "material": "FUEL_Hull",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "stave-1",
+        "worldMatrix": [
+          [
+            -0.49999994615530596,
+            0.0,
+            -0.8660254914790855,
+            -0.625
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.9300000071525574
+          ],
+          [
+            0.8660254914790855,
+            0.0,
+            -0.49999994615530596,
+            1.0825318098068237
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 132,
+            "vertices": 144,
+            "material": "FUEL_Hull",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "stave-2",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            1.25
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.9300000071525574
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 132,
+            "vertices": 144,
+            "material": "FUEL_Hull",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,87 @@
+{
+  "inspectionType": "Implementation-agent local PNG artifact inspection using view_image; not a formal review or acceptance pass.",
+  "reviewStatus": "pending_deferred_opus_review",
+  "formalReviewRounds": 0,
+  "formalFixRounds": 0,
+  "directlyViewedPNGs": [
+    {
+      "file": "structure-front.png",
+      "sha256": "ffe6a147c698a017d675504ee479a27b47d321ef7aefe2a09f6f56af666e580e"
+    },
+    {
+      "file": "structure-top.png",
+      "sha256": "4fa2b4642790e52c32c5c57c3ca895fdefed42e99f19e5b976227b22006043f3"
+    },
+    {
+      "file": "structure-close.png",
+      "sha256": "7b81b62e98827e42a036e994cd3c89109a4dd19ebbea1e54497f283302ddb592"
+    },
+    {
+      "file": "structure-contact.png",
+      "sha256": "97dbd99ae3362db2e4c66672ccfbebd31c3899f00f6d84abbd173177334209eb"
+    },
+    {
+      "file": "world-classic-comparison.png",
+      "sha256": "c2e912065a4d9485408292c5f173638da13de008563e5f6d06187e0dc9648cce"
+    },
+    {
+      "file": "world-modern-comparison.png",
+      "sha256": "9538b1ea1b46b6393f03b5e8bc5573e7a6a9bb10ef39183195bd1a0719f0baf3"
+    },
+    {
+      "file": "world-chase-comparison.png",
+      "sha256": "79bb5d992e2b0408ff75691afa6031ba9785a41a7fe3b4776f630510a8670232"
+    },
+    {
+      "file": "world-classic-h11-heat-max-prototype.png",
+      "sha256": "ef6c38b85582bbb7380c26bce006f3093f1e9c546920914115448f4c2197d4f9"
+    },
+    {
+      "file": "world-chase-h11-heat-max-prototype.png",
+      "sha256": "f3071eb7309b165f2a6ca800fa6705a6da1257aad76d19da04ccdd3cbfe907f2"
+    }
+  ],
+  "renderedFramesInspectedViaContactSheets": [
+    "structure-front.png",
+    "structure-rear.png",
+    "structure-side.png",
+    "structure-top.png",
+    "structure-close.png",
+    "world-classic-h7-heat-min-source.png",
+    "world-classic-h7-heat-min-prototype.png",
+    "world-classic-h7-heat-max-source.png",
+    "world-classic-h7-heat-max-prototype.png",
+    "world-classic-h11-heat-min-source.png",
+    "world-classic-h11-heat-min-prototype.png",
+    "world-classic-h11-heat-max-source.png",
+    "world-classic-h11-heat-max-prototype.png",
+    "world-modern-h7-heat-min-source.png",
+    "world-modern-h7-heat-min-prototype.png",
+    "world-modern-h7-heat-max-source.png",
+    "world-modern-h7-heat-max-prototype.png",
+    "world-modern-h11-heat-min-source.png",
+    "world-modern-h11-heat-min-prototype.png",
+    "world-modern-h11-heat-max-source.png",
+    "world-modern-h11-heat-max-prototype.png",
+    "world-chase-h7-heat-min-source.png",
+    "world-chase-h7-heat-min-prototype.png",
+    "world-chase-h7-heat-max-source.png",
+    "world-chase-h7-heat-max-prototype.png",
+    "world-chase-h11-heat-min-source.png",
+    "world-chase-h11-heat-min-prototype.png",
+    "world-chase-h11-heat-max-source.png",
+    "world-chase-h11-heat-max-prototype.png"
+  ],
+  "observations": [
+    "Front/top/close and the rear/side contact panels show a continuous tapered shell, actual inset inlet depth, four separated fin courses, service hatch/latch, corner spines, foundation and fitted cap.",
+    "Cap heat surface is clean and continuous; underplate supports remain below it. The heat surface preserves the original source bounds and vertical extent.",
+    "All 24 world comparison panels were viewed, SOURCE left and PROTOTYPE right, with native source placements and the same original-scale shipped player.",
+    "Height7/11 and heat-min/max differences are visible. The other original cooling stack and source world remain unchanged. Modern/Chase show the selected far-shoulder prop at small source-camera scale, not an enlarged comparison object.",
+    "No live WebGL, frame-rate, physical collision, or final visual acceptance inference is made from these offline PNGs."
+  ],
+  "limitations": [
+    "Dark rear/side faces are deliberately shadowed in the offline studio; these are material proxies, not Three mapped-material renders.",
+    "The fixture is a synthetic reactor sector descriptor with actual Batch source geometry and no gameplay feature records. Endpoint height/phase render inputs are labeled stubs.",
+    "No Opus formal review, fix or polish pass occurred; that work remains deferred."
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "asset": "passive_covered_mothballed_fighter_scenery_only",
+  "phase": "INITIAL",
+  "status": "pending_deferred_opus_review",
+  "finalAcceptance": false,
+  "formalReviews": 0,
+  "formalReviewFixRounds": 0,
+  "deferredReviewer": "Opus; not invoked",
+  "authoringRuntime": "T3 Code / Codex gpt-6.1-sol xhigh; authorized available speed",
+  "sourceRevision": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "frozenUtc": "2026-11-14T21:39:24.312100+00:00",
+  "writeScope": "asset-work/covered-fighter/",
+  "productionIntegrated": false,
+  "triangles": {
+    "source": {
+      "hull": 164,
+      "dark": 72,
+      "paint": 24,
+      "total": 260
+    },
+    "candidate": {
+      "hull": 644,
+      "dark": 704,
+      "paint": 24,
+      "airframe": 1348,
+      "total": 1372
+    }
+  },
+  "glb": {
+    "bytes": 144424,
+    "sha256": "5234cd4ad177855ed5c6fd5b76584f409e5bfa669edf38243b272d50aedf12d3",
+    "triangles": 1372,
+    "primitives": 43,
+    "meshes": 43,
+    "nodes": 43,
+    "materials": [
+      "CF_HULL",
+      "CF_DARK",
+      "CF_PAINT"
+    ],
+    "textures": 0,
+    "animations": 0,
+    "bounds": {
+      "min": [
+        -3.75,
+        0.004000000189989805,
+        -3.75
+      ],
+      "max": [
+        3.75,
+        2.140000104904175,
+        3.75
+      ]
+    },
+    "aircraftBounds": {
+      "min": [
+        -2.8399999141693115,
+        0.004000000189989805,
+        -3.3399999141693115
+      ],
+      "max": [
+        2.8399999141693115,
+        2.140000104904175,
+        2.0450000762939453
+      ]
+    },
+    "degenerateTriangles": 0,
+    "minFaceNormalDot": 0.9999999279151857
+  },
+  "assetHashes": {
+    "covered-fighter.blend": "a406556058d39e524c97e66e67aceea7a764b1b9c1269d88ea4cad6426baf699",
+    "covered-fighter.glb": "5234cd4ad177855ed5c6fd5b76584f409e5bfa669edf38243b272d50aedf12d3",
+    "covered-fighter.recipe.json": "af50af1d8684cf24902c5acd6a864211609085ad8f853a83b5fd20ddc9e7f71b"
+  },
+  "runtime": {
+    "existingBuckets": [
+      "hull",
+      "dark",
+      "paint"
+    ],
+    "mergedDraws": 3,
+    "cachedAircraftGeometries": 42,
+    "perPropRoots": 0,
+    "perPropMaterialClones": 0,
+    "perPropGeometryClones": 0,
+    "newMaterials": 0,
+    "newTextures": 0,
+    "newTargets": 0,
+    "newColliders": 0,
+    "newLightsOrGlow": 0,
+    "yawDrawsPerFighter": 1,
+    "yawRange": [
+      -0.25,
+      0.25
+    ],
+    "callerChanged": false,
+    "hardstandUnchanged": true,
+    "surfaceRecordsExact": true
+  },
+  "validation": {
+    "actualFullChunkComparisons": 128,
+    "seeds": [
+      1,
+      7,
+      42,
+      123
+    ],
+    "loops": [
+      0,
+      2
+    ],
+    "chunkIndices": [
+      0,
+      15
+    ],
+    "stressDensities": [
+      1,
+      2,
+      3,
+      8
+    ],
+    "guideProbesPerChunk": 640,
+    "downstreamRandomDrawsCompared": 16,
+    "continuousYawContainment": true,
+    "minimumSourcePlanInwardDistance": 0.048217706239698364,
+    "ownershipAndShutdownTested": true,
+    "savedBlendReopened": true,
+    "factoryCleanGlbReimport": true,
+    "independentBinaryAudit": true,
+    "glbRecipeByteDeterministicRebuild": true,
+    "actualPngViews": 16
+  },
+  "clearance": {
+    "method": "Analytic extrema of every candidate XZ vertex support over entire yaw interval; endpoints plus all stationary angles",
+    "minimumXYaw": -0.25,
+    "corridorMaxX": 16,
+    "playerRadius": 1.5,
+    "minimumPropX": 17.896975193980193,
+    "minimumCenterlineClearanceToFlightBoundary": 1.896975193980193,
+    "minimumHullClearanceUsingPlayerRadius": 0.3969751939801931,
+    "wallInnerX": 23.5,
+    "note": "Bounds never exceed source. Far-wall/deck-plate intersections already possible in source are not claimed eliminated; no gameplay constraints narrowed."
+  },
+  "blender": {
+    "version": "5.2.1 LTS",
+    "hash": "9e2066aef7ef",
+    "platform": "native Linux",
+    "engine": "BLENDER_EEVEE",
+    "samples": 24,
+    "heavySuperBeastRendering": false
+  },
+  "reuse": {
+    "candidateAircraft": "Original geometry/generator",
+    "sourceHardstand": "Exact intentional 24-triangle reuse",
+    "referenceGeometryInCandidate": false,
+    "shippedPlayerInEvidenceOnly": true
+  },
+  "limitations": [
+    "Offline Blender reconstruction only, not live GPU acceptance.",
+    "No production procedural textures, sky/fog/postprocessing, HUD or dynamic target occlusion validation.",
+    "Source wall/deck/neighbor intersections not claimed removed.",
+    "Two stationary common states per actual camera rig, not exhaustive camera or gameplay acceptance.",
+    "GLB is a named authoring/reference asset; runtime must use the merged Batch recipe, not per-prop GLTF roots.",
+    "Receiver verification/integration and deferred Opus review remain outstanding."
+  ],
+  "hashConvention": "SHA256SUMS covers every regular file except itself; its own SHA256 is external in package receipt."
+}

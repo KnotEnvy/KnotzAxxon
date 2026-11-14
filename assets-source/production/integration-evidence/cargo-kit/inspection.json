@@ -1,0 +1,12 @@
+{
+  "actuallyViewed": {
+    "cargo-kit-classic.png": "5e889b4fc84b2cbf7e5e4eefd6b9226e24e8da3c62db475678639c32ea8fce57",
+    "cargo-kit-modern.png": "4f39e2ecdf85e850920280f396f482e063519c4beec563110cd6e46a9852394c",
+    "cargo-kit-chase.png": "e8c215ee78e8006830a8f3c83f92a153f19a68b5b9dd04d54037984be1854829"
+  },
+  "retained": [
+    "classic",
+    "modern"
+  ],
+  "note": "Chase also inspected;retained a compact two-image devlog set. Original source fuel/wall and edge occlusion remains."
+}

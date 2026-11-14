@@ -1,0 +1,290 @@
+[
+  {
+    "path": "asset-work/carrier/initial/carrier.glb",
+    "bytes": 2389144,
+    "sha256": "f6dd09aa6324a6cf1bb9526bdfd94853f1ce59cafd243cecd10da813e2e96fe1",
+    "triangles": 18898,
+    "materialPrimitives": 6,
+    "declaredMaterials": [
+      "carrier-dark",
+      "carrier-deck",
+      "carrier-hull",
+      "carrier-neon",
+      "carrier-paint",
+      "carrier-spin"
+    ],
+    "images": 0,
+    "boundsTransformedGame": {
+      "min": [
+        48.0,
+        -26.0,
+        0.0
+      ],
+      "max": [
+        108.55000305175781,
+        44.5,
+        987.0
+      ],
+      "size": [
+        60.55000305175781,
+        70.5,
+        987.0
+      ]
+    },
+    "zeroAreaTriangles": 0,
+    "nodes": [
+      {
+        "node": "carrier-template-dark",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 4258,
+            "vertices": 12774,
+            "material": "carrier-dark",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0",
+              "COLOR_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "carrier-template-deck",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 470,
+            "vertices": 1410,
+            "material": "carrier-deck",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0",
+              "COLOR_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "carrier-template-hull",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 8622,
+            "vertices": 25866,
+            "material": "carrier-hull",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0",
+              "COLOR_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "carrier-template-neon",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 3280,
+            "vertices": 9840,
+            "material": "carrier-neon",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0",
+              "COLOR_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "carrier-template-paint",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 2088,
+            "vertices": 6264,
+            "material": "carrier-paint",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0",
+              "COLOR_0"
+            ]
+          }
+        ]
+      },
+      {
+        "node": "carrier-template-spin",
+        "worldMatrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "primitives": [
+          {
+            "triangles": 180,
+            "vertices": 540,
+            "material": "carrier-spin",
+            "attributes": [
+              "POSITION",
+              "NORMAL",
+              "TEXCOORD_0",
+              "COLOR_0"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,673 @@
+{
+  "asset": "ENEMY INTERCEPTOR",
+  "stage": "pending_deferred_opus_review",
+  "version": "frozen INITIAL",
+  "created_utc": "2026-11-14T15:13:57.538483+00:00",
+  "workspace_commit": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "authorization": {
+    "requested_provider": "codex",
+    "requested_model": "gpt-6.1-sol",
+    "requested_reasoningEffort": "xhigh",
+    "requested_speed": "AVAILABLE SPEED; unavailable fast toggle explicitly accepted",
+    "executed_provider": "codex",
+    "executed_model": "gpt-6.1-sol",
+    "executed_reasoningEffort": "xhigh",
+    "executed_speed": "available speed; no fast-mode claim",
+    "helpers_or_delegates": 0,
+    "formal_reviews": 0,
+    "formal_review_fix_passes": 0,
+    "deferred": "Opus review and polish later on SuperBeast",
+    "initial_self_correction": "Widened exhaust throat for pulse clearance; corrected orthographic sensor fit and comparison caption before freeze. Initial self-verification only."
+  },
+  "runtime": {
+    "platform": "native Linux",
+    "blender": "5.2.1 LTS",
+    "build_hash": "9e2066aef7ef",
+    "executable": "/home/knotzuni/code/KnotzAxxon-archive/2026-11-14/contest-entry/.cache/blender-5.2.1-linux-x64/blender",
+    "render_engine": "BLENDER_EEVEE",
+    "render_threads": 4,
+    "software_raster_threads": 4,
+    "samples": 20,
+    "runtime_excluded_from_delivery": true
+  },
+  "files": {
+    "interceptor.glb": {
+      "bytes": 149264,
+      "sha256": "2ebc37c7fb12624707a0e21d91ea610c06dc27b2dc4922d9e44d5531573d1152"
+    },
+    "interceptor.blend": {
+      "bytes": 135725,
+      "sha256": "0328b417f5c560a43f2d12aa37878dabb1a85ef9e0d3245c761931c24e7a5cc4"
+    }
+  },
+  "measurements": {
+    "visible_triangles": 2360,
+    "hidden_flash_triangles": 628,
+    "total_exported_triangles": 2988,
+    "visible_material_primitives": 6,
+    "hidden_flash_primitives": 1,
+    "glb_bytes": 149264,
+    "textures": 0,
+    "atlas_count": 0,
+    "rest_bounds_game": {
+      "min": [
+        -2.859999895095825,
+        -0.42500001192092896,
+        -1.8860000371932983
+      ],
+      "max": [
+        2.859999895095825,
+        0.7400000095367432,
+        1.9800000190734863
+      ]
+    },
+    "bounds_including_activated_shell": {
+      "min": [
+        -2.911479949951172,
+        -0.42500001192092896,
+        -1.9199481010437012
+      ],
+      "max": [
+        2.911479949951172,
+        0.753320038318634,
+        2.0156400203704834
+      ]
+    },
+    "engine_pivot_game": [
+      0.0,
+      -0.03500000014901161,
+      -1.840000033378601
+    ],
+    "engine_clearance": {
+      "samples": 401,
+      "scale_range": [
+        0.97,
+        1.065
+      ],
+      "intersecting_samples": 0,
+      "minimum_sampled_vertex_to_surface_distance": 0.02921576052904129,
+      "method": "Triangle BVH overlap each scale; nearest surface from vertices in both directions. Includes endpoints. Distance is a sampled estimate, not analytic minimum."
+    },
+    "zero_degenerate_triangles": true
+  },
+  "budget": {
+    "triangle_target": 4000,
+    "triangle_ceiling": 6000,
+    "visible_primitives_ceiling": 6,
+    "initial_glb_ceiling_bytes": 1048576,
+    "atlas_ceiling": "one packed 1024x1024, none used",
+    "passes_all": true,
+    "exceptions": [],
+    "procedural_visible_baseline": {
+      "triangles": 764,
+      "primitives": 7
+    },
+    "density_proxy": {
+      "input": "User-provided seeds1-100 loops0,1,3 / 355-unit spawn window",
+      "peak_interceptors": 18,
+      "is_live_maximum": false,
+      "visible_triangles_at18": 42480,
+      "base_primitives_at18": 108,
+      "additional_triangles_if18_flash": 11304,
+      "additional_primitives_if18_flash": 18,
+      "required_later": "Profile real moving wing/carrier/boss contexts at integration"
+    }
+  },
+  "design": "New authored fast swept-blade fighter with continuous fitted center airframe, narrow open-channel nose, recessed twin intakes, cooling beds, structural wing edges, inset blade panels, twin rear fins, dark canopy and orange-red single exhaust. Restrained oxide accents echo shipped enemy machinery. No source geometry imported or copied.",
+  "style_references": {
+    "selected_shipped": [
+      "player",
+      "sentinel",
+      "turret",
+      "radar",
+      "silo",
+      "fuel"
+    ],
+    "shipped_glb_sha256": {
+      "player": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "sentinel": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef",
+      "turret": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+      "radar": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d",
+      "silo": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e",
+      "fuel": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc"
+    },
+    "source_style_files": [
+      "assets-source/fighter/manifest.json",
+      "assets-source/sentinel/manifest.json",
+      "assets-source/ground/contest-manifest.json",
+      "assets-source/supplies/manifest.json"
+    ],
+    "reference_pngs": "renders/reference-*.png; style sheet is independently framed, not world scale",
+    "world_scale_comparison": "renders/world-scale-player-comparison.png; same units and unchanged scale; interceptor screen-left, player screen-right"
+  },
+  "hierarchy": [
+    {
+      "name": "interceptor",
+      "parent": null,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0,
+        0,
+        0
+      ],
+      "primitives": []
+    },
+    {
+      "name": "body",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0,
+        0,
+        0
+      ],
+      "primitives": [
+        {
+          "material": "INT_Hull",
+          "triangles": 628,
+          "vertices": 1204,
+          "bounds_local": {
+            "min": [
+              -2.859999895095825,
+              -0.39763253927230835,
+              -1.8860000371932983
+            ],
+            "max": [
+              2.859999895095825,
+              0.7400000095367432,
+              1.9800000190734863
+            ]
+          }
+        },
+        {
+          "material": "INT_Machinery",
+          "triangles": 1228,
+          "vertices": 2044,
+          "bounds_local": {
+            "min": [
+              -2.859999895095825,
+              -0.41999998688697815,
+              -1.8799999952316284
+            ],
+            "max": [
+              2.859999895095825,
+              0.7400000095367432,
+              1.4600000381469727
+            ]
+          }
+        },
+        {
+          "material": "INT_Accent",
+          "triangles": 324,
+          "vertices": 568,
+          "bounds_local": {
+            "min": [
+              -2.7300000190734863,
+              -0.42500001192092896,
+              -1.8300000429153442
+            ],
+            "max": [
+              2.7300000190734863,
+              0.7400000095367432,
+              1.7699999809265137
+            ]
+          }
+        },
+        {
+          "material": "INT_Canopy",
+          "triangles": 60,
+          "vertices": 112,
+          "bounds_local": {
+            "min": [
+              -0.257999986410141,
+              0.25699999928474426,
+              -0.5199999809265137
+            ],
+            "max": [
+              0.257999986410141,
+              0.5649999976158142,
+              0.6899999976158142
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "engine",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        -0.03500000014901161,
+        -1.840000033378601
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0.0,
+        -0.03500000014901161,
+        -1.840000033378601
+      ],
+      "primitives": [
+        {
+          "material": "INT_Emission",
+          "triangles": 76,
+          "vertices": 120,
+          "bounds_local": {
+            "min": [
+              -0.2680000066757202,
+              -0.2680000066757202,
+              0.0
+            ],
+            "max": [
+              0.2680000066757202,
+              0.2680000066757202,
+              0.03999999910593033
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "eye",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0.24500000476837158,
+        1.4630000591278076
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0.0,
+        0.24500000476837158,
+        1.4630000591278076
+      ],
+      "primitives": [
+        {
+          "material": "INT_Cue",
+          "triangles": 44,
+          "vertices": 72,
+          "bounds_local": {
+            "min": [
+              -0.14499999582767487,
+              -0.0430000014603138,
+              -0.02500000037252903
+            ],
+            "max": [
+              0.14499999582767487,
+              0.04500000178813934,
+              0.02500000037252903
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "gameplay-origin",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0,
+        0,
+        0
+      ],
+      "primitives": []
+    },
+    {
+      "name": "hit-flash-shell",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0,
+        0,
+        0
+      ],
+      "world_translation": [
+        0,
+        0,
+        0
+      ],
+      "primitives": [
+        {
+          "material": "INT_HitFlash",
+          "triangles": 628,
+          "vertices": 1204,
+          "bounds_local": {
+            "min": [
+              -2.859999895095825,
+              -0.39763253927230835,
+              -1.8860000371932983
+            ],
+            "max": [
+              2.859999895095825,
+              0.7400000095367432,
+              1.9800000190734863
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "nose-forward",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0,
+        1.9800000190734863
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0.0,
+        0.0,
+        1.9800000190734863
+      ],
+      "primitives": []
+    },
+    {
+      "name": "shot-spawn-rest",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0,
+        1.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "primitives": []
+    },
+    {
+      "name": "up-reference",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0.7400000095367432,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0.0,
+        0.7400000095367432,
+        0.0
+      ],
+      "primitives": []
+    }
+  ],
+  "material_map": {
+    "hull": "INT_Hull",
+    "machinery": "INT_Machinery",
+    "accent": "INT_Accent",
+    "canopy": "INT_Canopy",
+    "enemy_cue": "INT_Cue / #ff3d55",
+    "exhaust": "INT_Emission / #ff5a3a",
+    "flash": "INT_HitFlash / existing additive white Enemy flash"
+  },
+  "bindings": {
+    "root": "interceptor, identity; parent under gameplay-controlled Enemy.group",
+    "body": "body, four primitive rigid mesh",
+    "eye": "eye, one cue primitive; seated fixed sensor",
+    "engine": "engine, one emission primitive; pivot exhaust at (0,-.035,-1.84)",
+    "flash": "hit-flash-shell zero exported rest scale; adapter sets scale1.018, visiblefalse, renderOrder5 and binds flashMat/flashMesh",
+    "recipe": "scripts/binding-example.js; uninstalled integration example; clone per-instance geometry/materials and register modelOwnedMaterials/_importedRoot",
+    "current_loader_support": "NOT integrated; current ImportedModels.js loads only existing shipped assets",
+    "ownership": "Existing Enemy.dispose owns instance geometry/materials. Template textures survive until shutdown. No asset textures."
+  },
+  "gameplay_contract": {
+    "hp": 2,
+    "score": 320,
+    "collision_radius": 2.2,
+    "origin": "unchanged",
+    "axes": "+Y up / +Z nose independently verified",
+    "engine_scale_normal": [
+      0.97,
+      1.03
+    ],
+    "engine_scale_carrier_launch": [
+      1.015,
+      1.065
+    ],
+    "normal_targets": {
+      "bank": "-vx*.035, damp6",
+      "pitch": "-vy*.02, damp6",
+      "yaw": "vx*.012, damp5"
+    },
+    "launch_roll": "clamp(deltaX/dt*.04,-1.1,1.1), damp5",
+    "forward_trail": "0.82 player speed, except existing dive .35 / committed peel .1",
+    "shot_origin": "fixed WORLD pos+(0,0,1.5), not root transformed",
+    "muzzle_and_aim": "root; original lead/targeting unchanged",
+    "detach": "N/A; retain normal explosions/wreck effects",
+    "source_contexts": [
+      "weave",
+      "strafe",
+      "orbit-displaced",
+      "dive",
+      "peel",
+      "carrier-launch",
+      "carrier-transition"
+    ],
+    "motion_method": "Evaluate exact Enemy/Flyer source class definitions; execute original Flyer.update and Enemy.update/hit/_aimAt. Initialize state matching constructor using original Rng/Utils. Minimal Vector3 operations supplied by harness; graphics/audio stubbed. No node_modules in workspace. Not a live game or GLTFLoader test.",
+    "source_hashes": {
+      "src/entities/Enemies.js": "9c7f88630d52e8dc721ec9380139f29aec747c30a3ad599adaacb8e55cea864c",
+      "src/render/ImportedModels.js": "212b8c8f4f438ae70b408e2ff218524850e3cf6b027e63961a813e58d6d42773",
+      "src/game/CameraRig.js": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205",
+      "src/core/Settings.js": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+      "src/core/FlightCamera.js": "f691b3cef8a36de611762cb3129571f0684457e607be141dc1b5158401f4506e",
+      "src/render/Sky.js": "12314912081437f6c646031ee8d14b62753755b890ca104ae48f7f3083801ed5",
+      "src/render/Materials.js": "8af35e4641253713d8d8d1770edebb3dd0bff77bf5caee4eaba7f0db58aebd52",
+      "src/render/Dispose.js": "c2557155aa3786a0783c1df376171a10a03ae0323563afae663b51a61fbf97de",
+      "src/core/Utils.js": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972",
+      "src/world/Level.js": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016"
+    }
+  },
+  "verification": {
+    "blend_saved_reopened": true,
+    "clean_scene_glb_import": true,
+    "independent_glb_parse_agrees": true,
+    "axis_conversion_verified": true,
+    "projection_frames_verified": {
+      "rest": {
+        "frame_width": 8.399999618530273,
+        "frame_height": 6.299999713897705,
+        "sensor_fit": "HORIZONTAL",
+        "verified": true
+      },
+      "common-neutral": {
+        "frame_width": 14.0,
+        "frame_height": 10.5,
+        "sensor_fit": "HORIZONTAL",
+        "verified": true
+      },
+      "classic": {
+        "frame_width": 142.22222900390625,
+        "frame_height": 80.0,
+        "sensor_fit": "HORIZONTAL",
+        "verified": true
+      },
+      "modern": {
+        "requested_vertical_fov": 58,
+        "measured_vertical_fov": 57.999994966368355,
+        "sensor_fit": "VERTICAL",
+        "verified": true
+      },
+      "chase": {
+        "requested_vertical_fov": 66,
+        "measured_vertical_fov": 66.00000224638241,
+        "sensor_fit": "VERTICAL",
+        "verified": true
+      }
+    },
+    "runtime_source_sampling": "evidence/runtime-contract.json",
+    "pulse_bvh_clearance": "evidence/blender-verification.json",
+    "individual_pngs_and_contact_sheets_inspected": "evidence/visual-inspection.md",
+    "gameplay_pixel_extents_threshold7": {
+      "classic": {
+        "source_bbox": [
+          479,
+          252,
+          510,
+          271
+        ],
+        "pixel_extent": [
+          31,
+          19
+        ],
+        "note": "4x nearest-neighbour crop from full 960x540 offline reconstructed gameplay PNG; no rerender/normalization."
+      },
+      "modern": {
+        "source_bbox": [
+          484,
+          240,
+          530,
+          252
+        ],
+        "pixel_extent": [
+          46,
+          12
+        ],
+        "note": "4x nearest-neighbour crop from full 960x540 offline reconstructed gameplay PNG; no rerender/normalization."
+      },
+      "chase": {
+        "source_bbox": [
+          465,
+          250,
+          509,
+          261
+        ],
+        "pixel_extent": [
+          44,
+          11
+        ],
+        "note": "4x nearest-neighbour crop from full 960x540 offline reconstructed gameplay PNG; no rerender/normalization."
+      }
+    },
+    "code_syntax": "Python scripts compile; Node --check runtime harness and binding example; runtime harness assertions pass",
+    "source_geometry_deterministic": true,
+    "binary_repeatability": "No byte-identity claim for Blender save metadata or PNG renderer dithering"
+  },
+  "limitations": [
+    "Static airframe mating overlaps and seated sensor are intentional; not a watertight monolithic 3D-print mesh.",
+    "Thin nozzle heat petals are intentional open surfaces.",
+    "Rest collision radius2.2 remains gameplay-owned; 2.86 wing tips extend beyond it, comparable to baseline.",
+    "Extreme minimum-altitude banks can dip wing tips below deck, comparable to old wings; no gameplay restrictions added.",
+    "No live carrier/boss/wing contact, GPU performance or actual camera/fog/postfx integration verification.",
+    "Dispose ownership contract inspected; not tested with live WebGL resources.",
+    "Fixed world +Z shot offset does not follow rotating authored channel. Muzzle FX remain at root. Graphics mismatch measured in Blender verification.",
+    "Rest shot +Z ray is clear with point-to-surface distance0.15735; sampled rotated-channel offset0.44948.",
+    "Offline EEVEE reconstructions are not live gameplay screenshots; lighting/environment/postprocessing differ.",
+    "Source method harness uses minimal vector stubs, not installed Three runtime or GLTFLoader. No live WebGL disposal test.",
+    "Body/sensor intentional seating overlap is recorded; engine has zero intersecting samples.",
+    "Review/polish is deferred; no reviewed final, deployment or user acceptance claimed."
+  ],
+  "freeze": {
+    "directory": "asset-work/interceptor/initial",
+    "immutable_policy": "Do not modify after SHA256SUMS generation; subsequent polish must be a new directory/version",
+    "hash_manifest": "SHA256SUMS includes every delivered file except itself",
+    "transfer_records": "../transfer-record.json outside initial; archive and sidecar SHA in /tmp"
+  }
+}

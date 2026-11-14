@@ -1,0 +1,588 @@
+{
+  "axes": {
+    "game": "+Y up, +Z forward, +X right",
+    "blender": "+Z up, -Y forward",
+    "constructionMap": "(x,y,z) game -> (x,-z,y) Blender",
+    "rotation": "Three XYZ = Rx @ Ry @ Rz; evidence explicitly converts matrices"
+  },
+  "hierarchy": [
+    {
+      "index": 7,
+      "name": "mine",
+      "parent": null,
+      "localTranslation": [
+        0,
+        0,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "hiddenByRuntimeContract": false,
+      "runtime": {
+        "bind": "authored root under instantiate scene, then Enemy.group",
+        "pivotGame": [
+          0,
+          0,
+          0
+        ],
+        "owner": "Enemy._importedRoot / disposeModel",
+        "motion": "all nodes inherit Enemy.group tumble and bob"
+      }
+    },
+    {
+      "index": 0,
+      "name": "axis-game-forward-Z",
+      "parent": "mine",
+      "localTranslation": [
+        0,
+        0,
+        1
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        1
+      ],
+      "hiddenByRuntimeContract": false,
+      "runtime": {
+        "bind": "nonrendering axis proof only",
+        "gamePosition": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "name": "axis-game-right-X",
+      "parent": "mine",
+      "localTranslation": [
+        1,
+        0,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        1,
+        0,
+        0
+      ],
+      "hiddenByRuntimeContract": false,
+      "runtime": {
+        "bind": "nonrendering axis proof only",
+        "gamePosition": [
+          1,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "name": "axis-game-up-Y",
+      "parent": "mine",
+      "localTranslation": [
+        0,
+        1,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        1,
+        0
+      ],
+      "hiddenByRuntimeContract": false,
+      "runtime": {
+        "bind": "nonrendering axis proof only",
+        "gamePosition": [
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "name": "contacts",
+      "parent": "mine",
+      "localTranslation": [
+        0,
+        0,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "hiddenByRuntimeContract": false,
+      "triangles": 1280,
+      "primitives": 1,
+      "accessorVertexCount": 2368,
+      "degenerateTriangles": 0,
+      "materials": [
+        "MN_ContactMetal"
+      ],
+      "bounds": {
+        "min": [
+          -1.850000023841858,
+          -1.850000023841858,
+          -1.850000023841858
+        ],
+        "max": [
+          1.850000023841858,
+          1.850000023841858,
+          1.850000023841858
+        ]
+      },
+      "runtime": {
+        "bind": "rigid geometry, no independent animation",
+        "material": "MN_ContactMetal",
+        "visible": true,
+        "triangles": 1280,
+        "owner": "instance-cloned geometry/material",
+        "motion": "rigid root only"
+      }
+    },
+    {
+      "index": 4,
+      "name": "core",
+      "parent": "mine",
+      "localTranslation": [
+        0,
+        0,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "hiddenByRuntimeContract": false,
+      "triangles": 420,
+      "primitives": 1,
+      "accessorVertexCount": 792,
+      "degenerateTriangles": 0,
+      "materials": [
+        "MN_Armor"
+      ],
+      "bounds": {
+        "min": [
+          -0.9459999799728394,
+          -0.9459999799728394,
+          -0.9459999799728394
+        ],
+        "max": [
+          0.9459999799728394,
+          0.9459999799728394,
+          0.9459999799728394
+        ]
+      },
+      "runtime": {
+        "bind": "Enemy.core",
+        "material": "MN_Armor",
+        "visible": true,
+        "triangles": 420,
+        "owner": "instance-cloned geometry/material",
+        "motion": "rigid root only"
+      }
+    },
+    {
+      "index": 5,
+      "name": "flashMesh",
+      "parent": "mine",
+      "localTranslation": [
+        0,
+        0,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1.2000000476837158,
+        1.2000000476837158,
+        1.2000000476837158
+      ],
+      "worldMatrix_columnMajor": [
+        1.2000000476837158,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.2000000476837158,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.2000000476837158,
+        0.0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hiddenByRuntimeContract": true,
+      "triangles": 20,
+      "primitives": 1,
+      "accessorVertexCount": 60,
+      "degenerateTriangles": 0,
+      "materials": [
+        "MN_FlashPlaceholder"
+      ],
+      "bounds": {
+        "min": [
+          -1.2879720722823151,
+          -1.4400001144409202,
+          -1.2249217043289207
+        ],
+        "max": [
+          1.2879720722823151,
+          1.4400001144409202,
+          1.2249217043289207
+        ]
+      },
+      "runtime": {
+        "bind": "Enemy.flashMesh; assign Enemy.flashMat",
+        "material": "MN_FlashPlaceholder -> instance additive white MeshBasicMaterial",
+        "visible": false,
+        "triangles": 20,
+        "pivotGame": [
+          0,
+          0,
+          0
+        ],
+        "authoredScale": 1.2,
+        "owner": "cloned geometry and placeholder via disposeModel; flashMat via Enemy.dispose only",
+        "motion": "rigid root; visibility flash>0, opacity flash*.75",
+        "caution": "GLB visibility must be set false before first frame. Do not call _addFlashShell or multiply scale again."
+      }
+    },
+    {
+      "index": 6,
+      "name": "lamp",
+      "parent": "mine",
+      "localTranslation": [
+        0,
+        0,
+        0
+      ],
+      "localRotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "worldMatrix_columnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "worldOrigin": [
+        0,
+        0,
+        0
+      ],
+      "hiddenByRuntimeContract": false,
+      "triangles": 240,
+      "primitives": 1,
+      "accessorVertexCount": 384,
+      "degenerateTriangles": 0,
+      "materials": [
+        "MN_Danger"
+      ],
+      "bounds": {
+        "min": [
+          -1.1404361724853516,
+          -0.06499999761581421,
+          -1.1404361724853516
+        ],
+        "max": [
+          1.1404361724853516,
+          0.06499999761581421,
+          1.1404361724853516
+        ]
+      },
+      "runtime": {
+        "bind": "Enemy.lamp",
+        "material": "MN_Danger -> mats.neon(0xff3d55,3.2)",
+        "visible": true,
+        "triangles": 240,
+        "pivotGame": [
+          0,
+          0,
+          0
+        ],
+        "scaleRange": [
+          0.94,
+          1.06
+        ],
+        "owner": "cloned geometry via disposeModel; replaced cloned material retained in modelOwnedMaterials; cached neon owned by Materials",
+        "motion": "uniform scale, rigid root tumble"
+      }
+    }
+  ],
+  "materials": [
+    {
+      "name": "MN_ContactMetal",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.6499999761581421,
+        "roughnessFactor": 0.3400000035762787
+      }
+    },
+    {
+      "name": "MN_Armor",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.47999998927116394,
+        "roughnessFactor": 0.4399999976158142
+      }
+    },
+    {
+      "alphaMode": "MASK",
+      "doubleSided": true,
+      "name": "MN_FlashPlaceholder",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.5
+      }
+    },
+    {
+      "emissiveFactor": [
+        1,
+        0.04666508734226227,
+        0.09084171056747437
+      ],
+      "extensions": {
+        "KHR_materials_emissive_strength": {
+          "emissiveStrength": 3.200000047683716
+        }
+      },
+      "name": "MN_Danger",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          0.04666508734226227,
+          0.09084171056747437,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.30000001192092896
+      }
+    }
+  ],
+  "integrationRecipe": "source/runtime_binding_recipe.js",
+  "adapterIntegrated": false,
+  "ownershipFixture": "measurements/ownership-verification.json",
+  "noTextureOwnership": "zero textures / atlases",
+  "detach": "N/A",
+  "weaponShotOrigins": "N/A"
+}

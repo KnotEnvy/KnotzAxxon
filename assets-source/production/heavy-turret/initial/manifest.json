@@ -1,0 +1,703 @@
+{
+  "asset": "heavy-turret",
+  "state": "INITIAL",
+  "status": "pending_deferred_opus_review",
+  "formal_reviews": 0,
+  "formal_review_fix_rounds": 0,
+  "final_art_approval": false,
+  "createdUtc": "2026-11-14T15:48:45.821431+00:00",
+  "baseCommit": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "execution": {
+    "machine": "NitroBliss",
+    "requestedProvider": "codex",
+    "requestedModel": "gpt-6.1-sol",
+    "requestedOptions": {
+      "reasoningEffort": "xhigh",
+      "speed": "available speed"
+    },
+    "actualRuntimeModel": "gpt-6.1-sol",
+    "actualRuntimeReasoningEffort": "xhigh",
+    "fastMode": "No exposed fast-mode toggle; user accepted; no fast-mode claim.",
+    "helpers": 0,
+    "delegations": 0,
+    "blenderVersion": "5.2.1 LTS",
+    "blenderBuild": "9e2066aef7ef",
+    "blenderNativeExecutable": "/home/knotzuni/code/KnotzAxxon-archive/2026-11-14/contest-entry/.cache/blender-5.2.1-linux-x64/blender",
+    "renderEngine": "BLENDER_EEVEE",
+    "gpuBackend": "opengl / existing software Mesa runtime",
+    "renderThreads": 4,
+    "LP_NUM_THREADS": 4,
+    "eeveeTaaRenderSamples": 16,
+    "neutralResolution": [
+      800,
+      600
+    ],
+    "gameResolution": [
+      960,
+      540
+    ],
+    "smallGameResolution": [
+      640,
+      360
+    ],
+    "viewTransform": "AgX"
+  },
+  "files": {
+    "heavy-turret.glb": {
+      "sha256": "de95debb8de0d5813b60ee935980ebaf44d7fe387be03b2de934a9a70b535409",
+      "bytes": 335976
+    },
+    "heavy-turret.blend": {
+      "sha256": "b543d865663c59d5fc197fc7e2528e0f869506bb7fdc03476ad53623413a1d39",
+      "bytes": 151575
+    }
+  },
+  "geometry": {
+    "boundsFrame": "Entity root at world(0,0,0); spawn translation applied externally by Enemy. Rooftop root heights sampled separately.",
+    "visibleEvaluatedTriangles": 5260,
+    "visibleMaterialPrimitives": 5,
+    "uniqueVisibleMaterials": 2,
+    "textures": 0,
+    "restGameWorldBounds": {
+      "min": [
+        -2.8499999046325684,
+        0.0,
+        -2.8499999046325684
+      ],
+      "max": [
+        2.8499999046325684,
+        2.690000057220459,
+        2.8499999046325684
+      ]
+    },
+    "restDimensions": [
+      5.699999809265137,
+      2.690000057220459,
+      5.699999809265137
+    ],
+    "sampledMotionBounds": {
+      "min": [
+        -2.8499999046325684,
+        0.0,
+        -2.8499999046325684
+      ],
+      "max": [
+        2.8499999046325684,
+        3.3625593185424805,
+        2.8499999046325684
+      ]
+    },
+    "hiddenBlendFlashPrototypeTriangles": 1616,
+    "runtimeFlashAdditionalTriangles": 1616,
+    "visiblePlusFlashTriangles": 6876,
+    "targetTriangles": 6000,
+    "ceilingTriangles": 8000,
+    "GLBBudgetBytes": 1048576
+  },
+  "baseline": {
+    "visibleTriangles": 1616,
+    "visiblePrimitives": 7,
+    "visibleBounds": {
+      "min": [
+        -2.8499999999999996,
+        0,
+        -2.8499999999999996
+      ],
+      "max": [
+        2.8499999999999996,
+        3.21,
+        4.2375
+      ]
+    },
+    "includingHiddenFlashMaxY": 3.31125,
+    "note": "Requested approximate maxY3.31125 includes the hidden1.15x dome flash; visible rest constructor maxY is3.21."
+  },
+  "contract": {
+    "hp": 6,
+    "radius": 3.4,
+    "score": 400,
+    "turntable": [
+      0,
+      1.5,
+      0
+    ],
+    "barrels": [
+      [
+        -0.675,
+        0.22499999999999998,
+        0
+      ],
+      [
+        0.675,
+        0.22499999999999998,
+        0
+      ]
+    ],
+    "eye": [
+      0,
+      0.8699999999999999,
+      1.53
+    ],
+    "eyeColor": "0xff3d55",
+    "firstTelegraphSeconds": 0.45,
+    "salvoCount": 3,
+    "nominalGapTimer": 0.14,
+    "timerRateAfterFirst": ".6 + difficulty*.9",
+    "chargeScale": [
+      1.05,
+      1.45
+    ],
+    "shotSpeed": 92,
+    "shotRadius": 0.9,
+    "shotWidth": 1.35,
+    "shotDamage": 1,
+    "shotLife": 4,
+    "shotOrigin": "each exact barrel WORLD pivot + normalize(predictiveAim - pivot)*1.6",
+    "engagementDzOpenInterval": [
+      -75,
+      8
+    ],
+    "detach": "N/A"
+  },
+  "verification": {
+    "sourcePoseStates": 771,
+    "sourceTrajectoryCount": 6,
+    "sourceProjectileRecords": 90,
+    "binaryMotionStates": 201,
+    "reopenedPackedBlend": true,
+    "cleanSceneGLBReimport": true,
+    "independentBinaryCountsBoundsTransforms": true,
+    "clearance": {
+      "pitchSweepDegrees": [
+        -90,
+        90
+      ],
+      "steps": 361,
+      "minGunWorldY": 0.08744676411151886,
+      "maxGunWorldY": 3.362553358078003,
+      "annularWellMinInnerRadius": 1.9,
+      "annularSlewMaxY": 1.3375,
+      "radialSweepMeasurementYCutoff": 1.35,
+      "maxGunRadiusBelowSlewTop": 1.8026524813372924,
+      "minRadialGunToWell": 0.09734751866270752,
+      "minGunAbsXInTurntableSpace": 0.4399999976158142,
+      "maxChargedLensAbsX": 0.34075,
+      "minLensLateralSeparation": 0.09924999761581421,
+      "intentionalContacts": "Pitch bearings overlap seated axles; yoke feet overlap slew deck. No axis relocation or aim clamp. Roof root Y sampled up to8.398; negative pitch required an open annular well."
+    },
+    "ownership": {
+      "method": "Unmodified instantiate/disposeModel functions, tracked CPU resources and structural GLB hierarchy; no live WebGL lifecycle assertion.",
+      "cloneGeometries": 5,
+      "cloneMaterials": 2,
+      "independentInstances": true,
+      "originalTemplateUnchanged": true,
+      "firstCloneDisposedOnce": true,
+      "secondCloneSurvives": true,
+      "sharedSourceNeonNotDisposed": true,
+      "generatedFlashGeometryDisposedOnce": true,
+      "enemyOwnedFlashMaterialDisposedOnce": true
+    }
+  },
+  "densityProxy": {
+    "peak": {
+      "count": 11,
+      "seed": 14,
+      "loop": 3,
+      "minZ": 10796.520705604926,
+      "maxZ": 11102.98631378077
+    },
+    "worldWindow": 355,
+    "seeds": [
+      1,
+      100
+    ],
+    "loops": [
+      0,
+      1,
+      3
+    ],
+    "liveMax": false,
+    "sourceRootYRange": [
+      0,
+      8.398375383205712
+    ]
+  },
+  "referenceModels": {
+    "turret.glb": {
+      "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+      "use": "Style/craft and shared-scale evidence only; no geometry copied into new asset."
+    },
+    "player.glb": {
+      "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "use": "Style/craft and shared-scale evidence only; no geometry copied into new asset."
+    }
+  },
+  "evidence": {
+    "renderCount": 17,
+    "views": [
+      {
+        "file": "01-common-rest.png",
+        "label": "COMMON NEUTRAL / rest / world scale 1 / horizontal ortho span14",
+        "cameraGame": [
+          -16.0,
+          24.0,
+          -30.0
+        ],
+        "projection": "ORTHO",
+        "orthoHorizontalSpan": 14.0,
+        "resolution": [
+          800,
+          600
+        ]
+      },
+      {
+        "file": "02-front-rest.png",
+        "label": "FRONT / rest / twin recessed muzzles and charge eye",
+        "cameraGame": [
+          9.0,
+          6.5,
+          13.0
+        ],
+        "projection": "ORTHO",
+        "orthoHorizontalSpan": 10.0,
+        "resolution": [
+          800,
+          600
+        ]
+      },
+      {
+        "file": "03-side-rest.png",
+        "label": "SIDE / exact pivot at Y1.725 / low deck clearance",
+        "cameraGame": [
+          -11.0,
+          5.5,
+          1.0
+        ],
+        "projection": "ORTHO",
+        "orthoHorizontalSpan": 10.0,
+        "resolution": [
+          800,
+          600
+        ]
+      },
+      {
+        "file": "04-top-rest.png",
+        "label": "TOP / open twin weapon corridor",
+        "cameraGame": [
+          0.0,
+          18.0,
+          0.0010000000474974513
+        ],
+        "projection": "ORTHO",
+        "orthoHorizontalSpan": 10.0,
+        "resolution": [
+          800,
+          600
+        ]
+      },
+      {
+        "file": "05-action-charge.png",
+        "label": "ACTION + MAX CHARGE / yaw180 pitch32 / eye scale1.45",
+        "cameraGame": [
+          -16.0,
+          24.0,
+          -30.0
+        ],
+        "projection": "ORTHO",
+        "orthoHorizontalSpan": 14.0,
+        "resolution": [
+          800,
+          600
+        ]
+      },
+      {
+        "file": "06-full-elevation.png",
+        "label": "FULL SOURCE ELEVATION / pitch90 / no aim clamp / no detach",
+        "cameraGame": [
+          9.0,
+          6.5,
+          13.0
+        ],
+        "projection": "ORTHO",
+        "orthoHorizontalSpan": 10.0,
+        "resolution": [
+          800,
+          600
+        ]
+      },
+      {
+        "file": "07-lateral-low.png",
+        "label": "LATERAL LOW / yaw90 pitch5 / seated axles",
+        "cameraGame": [
+          -16.0,
+          24.0,
+          -30.0
+        ],
+        "projection": "ORTHO",
+        "orthoHorizontalSpan": 14.0,
+        "resolution": [
+          800,
+          600
+        ]
+      },
+      {
+        "file": "07b-rooftop-down.png",
+        "label": "ROOFTOP DOWN / source pitch-90 / open annular well / no clamp",
+        "cameraGame": [
+          9.0,
+          6.5,
+          13.0
+        ],
+        "projection": "ORTHO",
+        "orthoHorizontalSpan": 10.0,
+        "resolution": [
+          800,
+          600
+        ]
+      },
+      {
+        "file": "08-hit-flash.png",
+        "label": "HIT FLASH / diagnostic solid-white prototype / runtime additive shell deferred",
+        "cameraGame": [
+          9.0,
+          6.5,
+          13.0
+        ],
+        "projection": "ORTHO",
+        "orthoHorizontalSpan": 10.0,
+        "resolution": [
+          800,
+          600
+        ],
+        "limitation": "EEVEE diagnostic uses emission, runtime uses transparent additive opacity flash*.75"
+      },
+      {
+        "file": "09-shipped-standard-common.png",
+        "label": "SHIPPED STANDARD TURRET / identical common camera span14 / no normalization",
+        "cameraGame": [
+          -16.0,
+          24.0,
+          -30.0
+        ],
+        "projection": "ORTHO",
+        "orthoHorizontalSpan": 14.0,
+        "resolution": [
+          800,
+          600
+        ]
+      },
+      {
+        "file": "10-shared-scale-pair.png",
+        "label": "SHARED WORLD SCALE / heavy at X-5; shipped standard at X+5 / span18",
+        "cameraGame": [
+          -16.0,
+          24.0,
+          -30.0
+        ],
+        "projection": "ORTHO",
+        "orthoHorizontalSpan": 18.0,
+        "resolution": [
+          800,
+          600
+        ]
+      },
+      {
+        "file": "game-classic-15.png",
+        "label": "OFFLINE GAMEPLAY RECONSTRUCTION / CLASSIC / target distance 15 / heavy X-5, shipped standard X+5",
+        "cameraGame": [
+          -45.25483322143555,
+          54.255001068115234,
+          -32.25483322143555
+        ],
+        "projection": "ORTHO",
+        "orthoHorizontalSpan": 142.22222900390625,
+        "resolution": [
+          960,
+          540
+        ],
+        "sourceCamera": {
+          "mode": "classic",
+          "distance": 15,
+          "player": [
+            0,
+            11,
+            -15
+          ],
+          "position": [
+            -45.25483399593904,
+            54.255,
+            -32.254833995939045
+          ],
+          "target": [
+            0,
+            9,
+            13
+          ],
+          "classic": true,
+          "halfHeight": 40,
+          "fov": 52,
+          "aspect": 1.7777777777777777
+        },
+        "worldScale": 1,
+        "lighting": "Sky.js dusk keyDir, sun position/target, rim position/target/colors; hemisphere approximated by world ambient. No PMREM, postFX, fog, particles, renderer, or live gameplay."
+      },
+      {
+        "file": "game-classic-50.png",
+        "label": "OFFLINE GAMEPLAY RECONSTRUCTION / CLASSIC / target distance 50 / heavy X-5, shipped standard X+5",
+        "cameraGame": [
+          -45.25483322143555,
+          54.255001068115234,
+          -67.25483703613281
+        ],
+        "projection": "ORTHO",
+        "orthoHorizontalSpan": 142.22222900390625,
+        "resolution": [
+          960,
+          540
+        ],
+        "sourceCamera": {
+          "mode": "classic",
+          "distance": 50,
+          "player": [
+            0,
+            11,
+            -50
+          ],
+          "position": [
+            -45.25483399593904,
+            54.255,
+            -67.25483399593904
+          ],
+          "target": [
+            0,
+            9,
+            -22
+          ],
+          "classic": true,
+          "halfHeight": 40,
+          "fov": 52,
+          "aspect": 1.7777777777777777
+        },
+        "worldScale": 1,
+        "lighting": "Sky.js dusk keyDir, sun position/target, rim position/target/colors; hemisphere approximated by world ambient. No PMREM, postFX, fog, particles, renderer, or live gameplay."
+      },
+      {
+        "file": "game-modern-15.png",
+        "label": "OFFLINE GAMEPLAY RECONSTRUCTION / MODERN / target distance 15 / heavy X-5, shipped standard X+5",
+        "cameraGame": [
+          -9.918583869934082,
+          25.0,
+          -42.2510871887207
+        ],
+        "projection": "PERSP",
+        "orthoHorizontalSpan": null,
+        "resolution": [
+          960,
+          540
+        ],
+        "sourceCamera": {
+          "mode": "modern",
+          "distance": 15,
+          "player": [
+            0,
+            11,
+            -15
+          ],
+          "position": [
+            -9.918584156444393,
+            25,
+            -42.25108600279134
+          ],
+          "target": [
+            0,
+            12.2,
+            1
+          ],
+          "classic": false,
+          "halfHeight": 40,
+          "fov": 58,
+          "aspect": 1.7777777777777777
+        },
+        "worldScale": 1,
+        "lighting": "Sky.js dusk keyDir, sun position/target, rim position/target/colors; hemisphere approximated by world ambient. No PMREM, postFX, fog, particles, renderer, or live gameplay."
+      },
+      {
+        "file": "game-modern-50.png",
+        "label": "OFFLINE GAMEPLAY RECONSTRUCTION / MODERN / target distance 50 / heavy X-5, shipped standard X+5",
+        "cameraGame": [
+          -9.918583869934082,
+          25.0,
+          -77.25108337402344
+        ],
+        "projection": "PERSP",
+        "orthoHorizontalSpan": null,
+        "resolution": [
+          960,
+          540
+        ],
+        "sourceCamera": {
+          "mode": "modern",
+          "distance": 50,
+          "player": [
+            0,
+            11,
+            -50
+          ],
+          "position": [
+            -9.918584156444393,
+            25,
+            -77.25108600279134
+          ],
+          "target": [
+            0,
+            12.2,
+            -34
+          ],
+          "classic": false,
+          "halfHeight": 40,
+          "fov": 58,
+          "aspect": 1.7777777777777777
+        },
+        "worldScale": 1,
+        "lighting": "Sky.js dusk keyDir, sun position/target, rim position/target/colors; hemisphere approximated by world ambient. No PMREM, postFX, fog, particles, renderer, or live gameplay."
+      },
+      {
+        "file": "game-chase-15.png",
+        "label": "OFFLINE GAMEPLAY RECONSTRUCTION / CHASE / target distance 15 / heavy X-5, shipped standard X+5",
+        "cameraGame": [
+          -2.508683204650879,
+          20.5,
+          -38.868526458740234
+        ],
+        "projection": "PERSP",
+        "orthoHorizontalSpan": null,
+        "resolution": [
+          960,
+          540
+        ],
+        "sourceCamera": {
+          "mode": "chase",
+          "distance": 15,
+          "player": [
+            0,
+            11,
+            -15
+          ],
+          "position": [
+            -2.5086831184236833,
+            20.5,
+            -38.86852548883856
+          ],
+          "target": [
+            0,
+            12.2,
+            1
+          ],
+          "classic": false,
+          "halfHeight": 40,
+          "fov": 66,
+          "aspect": 1.7777777777777777
+        },
+        "worldScale": 1,
+        "lighting": "Sky.js dusk keyDir, sun position/target, rim position/target/colors; hemisphere approximated by world ambient. No PMREM, postFX, fog, particles, renderer, or live gameplay."
+      },
+      {
+        "file": "game-chase-50.png",
+        "label": "OFFLINE GAMEPLAY RECONSTRUCTION / CHASE / target distance 50 / heavy X-5, shipped standard X+5",
+        "cameraGame": [
+          -2.508683204650879,
+          20.5,
+          -73.86852264404297
+        ],
+        "projection": "PERSP",
+        "orthoHorizontalSpan": null,
+        "resolution": [
+          960,
+          540
+        ],
+        "sourceCamera": {
+          "mode": "chase",
+          "distance": 50,
+          "player": [
+            0,
+            11,
+            -50
+          ],
+          "position": [
+            -2.5086831184236833,
+            20.5,
+            -73.86852548883856
+          ],
+          "target": [
+            0,
+            12.2,
+            -34
+          ],
+          "classic": false,
+          "halfHeight": 40,
+          "fov": 66,
+          "aspect": 1.7777777777777777
+        },
+        "worldScale": 1,
+        "lighting": "Sky.js dusk keyDir, sun position/target, rim position/target/colors; hemisphere approximated by world ambient. No PMREM, postFX, fog, particles, renderer, or live gameplay."
+      }
+    ],
+    "contactSheet": "evidence/contact-sheet.png",
+    "offlineGameplayContact": "evidence/offline-gameplay-contact.png",
+    "actualEvidenceViewed": "Evidence viewing recorded separately in evidence/viewing-record.json before freeze.",
+    "neutralCamera": {
+      "position": [
+        -16,
+        24,
+        -30
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "horizontalOrthoSpan": 14,
+      "key": [
+        -12,
+        22,
+        -12
+      ],
+      "fill": [
+        14,
+        12,
+        8
+      ]
+    },
+    "worldScale": 1
+  },
+  "sourceHashes": {
+    "src/entities/Enemies.js": "9c7f88630d52e8dc721ec9380139f29aec747c30a3ad599adaacb8e55cea864c",
+    "src/core/Utils.js": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972",
+    "src/game/CameraRig.js": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205",
+    "src/core/Settings.js": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+    "src/core/FlightCamera.js": "f691b3cef8a36de611762cb3129571f0684457e607be141dc1b5158401f4506e",
+    "src/render/Sky.js": "12314912081437f6c646031ee8d14b62753755b890ca104ae48f7f3083801ed5",
+    "src/world/Level.js": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016",
+    "src/entities/Player.js": "70d34d33ca9e81a4c27f8a37d94ab6089d7e4c97cf4df2a6772bd24277aabe5b",
+    "src/render/ImportedModels.js": "212b8c8f4f438ae70b408e2ff218524850e3cf6b027e63961a813e58d6d42773",
+    "src/render/Dispose.js": "c2557155aa3786a0783c1df376171a10a03ae0323563afae663b51a61fbf97de",
+    "src/render/Materials.js": "8af35e4641253713d8d8d1770edebb3dd0bff77bf5caee4eaba7f0db58aebd52",
+    "src/render/PlayerShip.js": "b2c769f41fdd819d848a21e695ad88bdf793a14e9a82a7a365f2d33d24a6ae2f"
+  },
+  "limitations": [
+    "Exported lens is an offline PBR emissive approximation. Runtime must apply the documented source shared-neon material replacement to preserve unlit toneMapped=false behavior. Shared neon stays Materials-owned.",
+    "INITIAL only. Zero formal reviews and zero formal review/fix rounds. Opus review/polish on SuperBeast remains pending_deferred_opus_review; no final art acceptance.",
+    "Not integrated into production. No heavy-turret adapter exists in this checkout. Receiver must add the loader key and bindings documented in runtime-map.json; HP, radius, score, timing, targeting, hit handling, source pivots, projectile origins, lifecycle and camera contracts must remain unchanged.",
+    "Offline EEVEE reconstructions are not live gameplay proof. Actual CameraRig.snap and source dusk key/rim positions, targets and colors are used. Hemisphere ambient is approximated by world illumination; no Three PMREM, scene cubemap, live fog, bloom, tone mapper, particles, HUD, renderer or combat/occlusion integration is reproduced.",
+    "Source constructor/update/_shoot execute unchanged in a minimal CPU geometry/math harness because Three.js is not installed in this checkout; this is not a native Three/WebGL execution. The Level density sampler imports the actual dependency-free Level module. Independent binary GLB checks and Blender reimport are separate verifications.",
+    "Predictive shot direction differs from damped visual barrel aim. Across the deterministic sampled moving passages, peak shot-origin to diagnostic visual-muzzle offset is 1.961649 units and peak angular difference is 75.615693 degrees. These are sampled values, not global bounds; no clamp, shot-origin rewrite or hidden correction was applied.",
+    "Visible muzzle lip spans local Z1.5915..1.6265 near source pivot+aim1.6 when directions agree. The shot radius.9/width1.35 is a stylized source projectile wider than the bore; these values are preserved.",
+    "Clearance uses actual mesh vertices across361 elevation samples at0.5-degree intervals and all sampled source poses. Annular radial and lateral envelope gaps cover arbitrary yaw. Seated axle/bearing contact and structural assembly overlaps are intentional. This is not an exhaustive live triangle/world collider test.",
+    "Rooftop shots can point into the underlying roof/world surface; the annular art clears the weapons but cannot change the source world projectile trace. No terrain hole or production collider was edited.",
+    "Hit-flash evidence is a solid emissive diagnostic of the packed hidden prototype. Runtime must generate the existing transparent additive Enemy flash shell; its live blending/disposal still needs integration validation.",
+    "Common rest camera sees the rear of the source-rest +Z-facing eye; action/front views expose the charge cue. Gameplay views retain actual source camera orientation and common world scale, with the heavy on X-5 and shipped standard on X+5.",
+    "Density11 in355 units is a seeds1..100, loops0/1/3 feature-density proxy, not live maximum or measured FPS. Small camera views expose limited detail and modest cue size at distance; art polish remains deferred.",
+    "Native headless runtime logged EGL_BAD_MATCH attempts before successful software EEVEE renders. No Windows Blender, installation, tool binary, sysroot or cache is included."
+  ],
+  "immutability": "initial/ is frozen after SHA256SUMS creation. Every delivered regular file except SHA256SUMS is hashed. Regenerate only in a separate mutable copy."
+}

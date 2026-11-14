@@ -1,0 +1,430 @@
+{
+  "hierarchy": {
+    "axes": {
+      "plane": "game/glTF XY",
+      "front": "+Z",
+      "up": "+Y",
+      "meters_per_unit": 1,
+      "blender_to_game": "(x,z,-y)",
+      "runtime_correction": "NONE"
+    },
+    "root": {
+      "name": "fuel_pickup_root",
+      "local_matrix_row_major": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_origin": [
+        0,
+        0,
+        0
+      ]
+    },
+    "children": {
+      "shell": {
+        "local_matrix_row_major": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "rest_world_matrix_row_major": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "local_pivot": [
+          0,
+          0,
+          0
+        ],
+        "rotation_xyzw": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "motion": "rotation.z+=dt*.3; scale.setScalar(1+sin(phase*4)*.025)",
+        "transformed_rest_bounds": {
+          "min": [
+            -2.0450000762939453,
+            -2.0450000762939453,
+            -0.06499999761581421
+          ],
+          "max": [
+            2.0450000762939453,
+            2.0450000762939453,
+            0.10000000149011612
+          ],
+          "size": [
+            4.090000152587891,
+            4.090000152587891,
+            0.16499999910593033
+          ]
+        }
+      },
+      "core": {
+        "local_matrix_row_major": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.30000001192092896
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "rest_world_matrix_row_major": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.30000001192092896
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "local_pivot": [
+          0,
+          0,
+          -0.30000001192092896
+        ],
+        "rotation_xyzw": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "motion": "fixed",
+        "transformed_rest_bounds": {
+          "min": [
+            -1.4808409214019775,
+            -1.6399999856948853,
+            -0.3800000101327896
+          ],
+          "max": [
+            1.4808409214019775,
+            1.6399999856948853,
+            -0.1850000098347664
+          ],
+          "size": [
+            2.961681842803955,
+            3.2799999713897705,
+            0.19500000029802322
+          ]
+        }
+      },
+      "shape": {
+        "local_matrix_row_major": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.10000000149011612
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "rest_world_matrix_row_major": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.10000000149011612
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "local_pivot": [
+          0,
+          0,
+          0.10000000149011612
+        ],
+        "rotation_xyzw": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "motion": "rotation.z=sin(phase*2.2)*.08; static scale BAKED, never apply twice",
+        "transformed_rest_bounds": {
+          "min": [
+            -0.656000018119812,
+            -0.656000018119812,
+            -0.10000000149011612
+          ],
+          "max": [
+            0.656000018119812,
+            0.656000018119812,
+            0.30000000447034836
+          ],
+          "size": [
+            1.312000036239624,
+            1.312000036239624,
+            0.4000000059604645
+          ]
+        }
+      }
+    }
+  },
+  "material_map": {
+    "shell": {
+      "name": "fuel_shell_yellow_unlit",
+      "visible_primitives": 1,
+      "glb_base_color_linear": [
+        1.0,
+        0.6795424696330938,
+        0.14412847085805777,
+        1
+      ],
+      "glb_unlit": true,
+      "vertex_palette_srgb": [
+        "#626262",
+        "#777777",
+        "#969696",
+        "#999999",
+        "#b2b2b2",
+        "#b8b8b8",
+        "#bcbcbc",
+        "#e3e3e3",
+        "#ffffff"
+      ],
+      "runtime": "owned clone of untouched mats.neon(0xffd76a,1.15); vertexColors=true; toneMapped=false",
+      "nominal_srgb": "#ffd76a"
+    },
+    "core": {
+      "name": "fuel_core_titanium",
+      "visible_primitives": 1,
+      "glb_base_color_linear": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "glb_unlit": false,
+      "vertex_palette_srgb": [
+        "#1a2938",
+        "#263b4c",
+        "#344b5e",
+        "#3c5368",
+        "#526a7e",
+        "#81919b"
+      ],
+      "runtime": "owned imported PBR clone, kit titanium/slate",
+      "nominal_srgb": "authored kit PBR slate/titanium"
+    },
+    "shape": {
+      "name": "fuel_shape_yellow_unlit",
+      "visible_primitives": 1,
+      "glb_base_color_linear": [
+        1.0,
+        0.6795424696330938,
+        0.14412847085805777,
+        1
+      ],
+      "glb_unlit": true,
+      "vertex_palette_srgb": [
+        "#525252",
+        "#555555",
+        "#646464",
+        "#727272",
+        "#808080",
+        "#898989",
+        "#a5a5a5",
+        "#bbbbbb",
+        "#d8d8d8",
+        "#dedede",
+        "#ffffff"
+      ],
+      "runtime": "owned clone of untouched mats.neon(0xffd76a,1.35); vertexColors=true; toneMapped=false",
+      "nominal_srgb": "#ffd76a"
+    }
+  },
+  "shape_static_scale": {
+    "source": [
+      0.82,
+      0.82,
+      0.25
+    ],
+    "baked_into_geometry": true,
+    "exported_node": [
+      1,
+      1,
+      1
+    ],
+    "adapter_must_not_apply_again": true
+  },
+  "group": "original Pickup.group at original world position, copies source camera.quaternion; imported scene/root identity children",
+  "halo": {
+    "exported": false,
+    "placement": "existing sibling sprite under Pickup.group",
+    "cache_key": "0xffd76a",
+    "opacity": 0.35,
+    "scale": "7*(1+sin(phase*4)*.2)",
+    "owner": "shared Materials._pickupHalos and Textures glow; never imported instance"
+  },
+  "constructor": "Complete existing constructor including random phase/baseY/velocity/halo first; replace only visual handles afterward. No production edits.",
+  "cleanup": "releaseImportedFuel -> disposeModel(importedRoot) exactly once, then detach group; never dispose source shared geometry/materials, halo or textures",
+  "recipe": "scripts/adapter_recipe.mjs",
+  "ownership_evidence": {
+    "instances": 128,
+    "actualGlbParsed": true,
+    "geometryClones": 384,
+    "retainedMaterialClones": 384,
+    "shellShapeSourceGains": [
+      1.15,
+      1.35
+    ],
+    "replacedImportedMaterialsDisposedOnce": 256,
+    "totalMaterialAllocations": 640,
+    "disposedExactlyOnce": true,
+    "neighborUnaffected": true,
+    "templateResourcesRetained": true,
+    "materialsOwnedNeonCacheRetained": true,
+    "haloCacheRetained": true,
+    "templateTexturePolicy": "No asset textures. disposeModel does not dispose textures; existing halo glow remains externally owned.",
+    "limitation": "Recipe tests only: production Pickup.dispose remains detach-only and MUST explicitly gain releaseImportedFuel behavior on integration."
+  }
+}

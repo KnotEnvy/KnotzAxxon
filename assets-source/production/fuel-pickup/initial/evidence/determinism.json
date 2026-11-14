@@ -1,0 +1,14 @@
+{
+  "before_sha256": {
+    "fuel-pickup.glb": "152fac271b398f2a44183759b4c4250716a87fc28862221bde6035a84caa912f",
+    "fuel-pickup.blend": "116562cce500041a02fa05cca2f5c338431ff8fff14788972f523f75ecfc315d"
+  },
+  "after_sha256": {
+    "fuel-pickup.glb": "152fac271b398f2a44183759b4c4250716a87fc28862221bde6035a84caa912f",
+    "fuel-pickup.blend": "d1bf8ea29d314e877840ed486e68e464762fc20800d936a15acb18c5ac2ea5ae"
+  },
+  "glb_byte_identical_independent_factory_startup_build": true,
+  "blend_byte_identical": false,
+  "method": "One fresh independent Blender factory-startup rerun of delivered editable generator; complete GLB SHA256 comparison.",
+  "limits": "Demonstrates repeatability on this installed Blender/exporter, not across Blender versions/platforms. Blend session/serialization metadata may differ."
+}

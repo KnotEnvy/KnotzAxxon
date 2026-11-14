@@ -1,0 +1,3044 @@
+[
+  {
+    "file": "public/models/player.glb",
+    "bytes": 478292,
+    "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+    "triangles": 11556,
+    "primitive_count": 8,
+    "meshes": [
+      {
+        "name": "airframe-accent",
+        "primitives": [
+          {
+            "triangles": 3258,
+            "vertices": 4774,
+            "material": "KZ_PlayerAccent",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -1.649999976158142,
+              -0.568220317363739,
+              -2.5
+            ],
+            "max": [
+              1.649999976158142,
+              0.7782725691795349,
+              2.4200000762939453
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "airframe-glass",
+        "primitives": [
+          {
+            "triangles": 278,
+            "vertices": 168,
+            "material": "KZ_PlayerGlass",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -0.39500001072883606,
+              0.30000001192092896,
+              -0.6800000071525574
+            ],
+            "max": [
+              0.39500001072883606,
+              1.0,
+              1.559999942779541
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "airframe-hull",
+        "primitives": [
+          {
+            "triangles": 7608,
+            "vertices": 7514,
+            "material": "KZ_PlayerHull",
+            "attributes": [
+              "COLOR_0",
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -3.9522860050201416,
+              -0.5839999914169312,
+              -2.478971242904663
+            ],
+            "max": [
+              3.9522860050201416,
+              1.4070836305618286,
+              3.190000057220459
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "airframe-nav-port",
+        "primitives": [
+          {
+            "triangles": 44,
+            "vertices": 96,
+            "material": "KZ_NavPort",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -3.8985373973846436,
+              0.22600001096725464,
+              -1.9293280839920044
+            ],
+            "max": [
+              -3.701462507247925,
+              0.29600000381469727,
+              -1.6306718587875366
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "airframe-nav-starboard",
+        "primitives": [
+          {
+            "triangles": 44,
+            "vertices": 96,
+            "material": "KZ_NavStarboard",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              3.701462507247925,
+              0.22600001096725464,
+              -1.9293280839920044
+            ],
+            "max": [
+              3.8985373973846436,
+              0.29600000381469727,
+              -1.6306718587875366
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "airframe-neon",
+        "primitives": [
+          {
+            "triangles": 40,
+            "vertices": 64,
+            "material": "KZ_NeonCyan",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -3.3399999141693115,
+              0.13950000703334808,
+              -1.116326928138733
+            ],
+            "max": [
+              3.3399999141693115,
+              0.25130000710487366,
+              0.39871281385421753
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "engine-core-1",
+        "primitives": [
+          {
+            "triangles": 142,
+            "vertices": 97,
+            "material": "KZ_EngineGlow",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -0.2549999952316284,
+              -0.2549999952316284,
+              -0.02199999988079071
+            ],
+            "max": [
+              0.2549999952316284,
+              0.2549999952316284,
+              0.0
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "engine-core--1",
+        "primitives": [
+          {
+            "triangles": 142,
+            "vertices": 97,
+            "material": "KZ_EngineGlow",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -0.2549999952316284,
+              -0.2549999952316284,
+              -0.02199999988079071
+            ],
+            "max": [
+              0.2549999952316284,
+              0.2549999952316284,
+              0.0
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "name": "airframe-accent",
+        "mesh": 0,
+        "children": []
+      },
+      {
+        "name": "airframe-glass",
+        "mesh": 1,
+        "children": []
+      },
+      {
+        "name": "airframe-hull",
+        "mesh": 2,
+        "children": []
+      },
+      {
+        "name": "airframe-nav-port",
+        "mesh": 3,
+        "children": []
+      },
+      {
+        "name": "airframe-nav-starboard",
+        "mesh": 4,
+        "children": []
+      },
+      {
+        "name": "airframe-neon",
+        "mesh": 5,
+        "children": []
+      },
+      {
+        "name": "engine-core-1",
+        "mesh": 6,
+        "children": []
+      },
+      {
+        "name": "engine-core--1",
+        "mesh": 7,
+        "children": []
+      },
+      {
+        "name": "muzzle-socket-1",
+        "mesh": null,
+        "children": []
+      },
+      {
+        "name": "muzzle-socket--1",
+        "mesh": null,
+        "children": []
+      },
+      {
+        "name": "hero-interceptor",
+        "mesh": null,
+        "children": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "extras": {
+          "kz_runtime": "mats.playerAccent"
+        },
+        "name": "KZ_PlayerAccent",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0.016807375475764275,
+            0.03560131415724754,
+            0.06480326503515244,
+            1
+          ],
+          "metallicFactor": 0.5799999833106995,
+          "roughnessFactor": 0.3799999952316284
+        }
+      },
+      {
+        "extensions": {
+          "KHR_materials_clearcoat": {
+            "clearcoatFactor": 1,
+            "clearcoatRoughnessFactor": 0.07999999821186066
+          }
+        },
+        "extras": {
+          "kz_runtime": "mats.glass"
+        },
+        "name": "KZ_PlayerGlass",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0.006048833020031452,
+            0.04817182570695877,
+            0.08437620848417282,
+            1
+          ],
+          "metallicFactor": 0.5799999833106995,
+          "roughnessFactor": 0.1599999964237213
+        }
+      },
+      {
+        "extras": {
+          "kz_runtime": "mats.playerHull"
+        },
+        "name": "KZ_PlayerHull",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0.5199999809265137,
+          "roughnessFactor": 0.3400000035762787
+        }
+      },
+      {
+        "emissiveFactor": [
+          1,
+          0.05951123684644699,
+          0.12477181851863861
+        ],
+        "extras": {
+          "kz_runtime": "player neon bucket (0xff4563, -X wingtip)"
+        },
+        "name": "KZ_NavPort",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.6000000238418579
+        }
+      },
+      {
+        "emissiveFactor": [
+          0.13013647496700287,
+          0.7379103899002075,
+          0.4125426113605499
+        ],
+        "extras": {
+          "kz_runtime": "player neon bucket (0x65dfac, +X wingtip)"
+        },
+        "name": "KZ_NavStarboard",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.6000000238418579
+        }
+      },
+      {
+        "emissiveFactor": [
+          0.08437620848417282,
+          0.5088813304901123,
+          0.6239603757858276
+        ],
+        "extras": {
+          "kz_runtime": "player neon bucket (MeshBasic vertex colour 0x52bdcf)"
+        },
+        "name": "KZ_NeonCyan",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.6000000238418579
+        }
+      },
+      {
+        "emissiveFactor": [
+          0.2746773064136505,
+          0.7758222222328186,
+          1
+        ],
+        "extensions": {
+          "KHR_materials_emissive_strength": {
+            "emissiveStrength": 1.350000023841858
+          }
+        },
+        "extras": {
+          "kz_runtime": "mats.neon(0x8fe4ff, 1.35)"
+        },
+        "name": "KZ_EngineGlow",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.6000000238418579
+        }
+      }
+    ],
+    "images": 0,
+    "textures": 0,
+    "extensions_used": [
+      "KHR_materials_clearcoat",
+      "KHR_materials_emissive_strength"
+    ]
+  },
+  {
+    "file": "public/models/sentinel.glb",
+    "bytes": 1140172,
+    "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef",
+    "triangles": 34718,
+    "primitive_count": 38,
+    "meshes": [
+      {
+        "name": "forearm-L",
+        "primitives": [
+          {
+            "triangles": 636,
+            "vertices": 475,
+            "material": "SN_Frame",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.5,
+              -2.355278730392456,
+              -10.88244342803955
+            ],
+            "max": [
+              1.899999976158142,
+              1.899999976158142,
+              1.4136455059051514
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 276,
+            "vertices": 181,
+            "material": "SN_Armor",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.0999999046325684,
+              -1.850000023841858,
+              -9.399999618530273
+            ],
+            "max": [
+              2.0999999046325684,
+              2.049999952316284,
+              -1.2999999523162842
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "launcher-charge",
+        "primitives": [
+          {
+            "triangles": 216,
+            "vertices": 228,
+            "material": "SN_Charge",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -1.7200000286102295,
+              -1.7044553756713867,
+              -0.11999999731779099
+            ],
+            "max": [
+              1.7200000286102295,
+              1.7044553756713867,
+              0.05000000074505806
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "forearm-R",
+        "primitives": [
+          {
+            "triangles": 1932,
+            "vertices": 1724,
+            "material": "SN_Frame",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.5,
+              -1.9000000953674316,
+              -10.050000190734863
+            ],
+            "max": [
+              2.5,
+              3.4000000953674316,
+              1.4136455059051514
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 184,
+            "vertices": 112,
+            "material": "SN_Armor",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.4000000953674316,
+              -2.1000001430511475,
+              -9.399999618530273
+            ],
+            "max": [
+              2.4000000953674316,
+              2.700000047683716,
+              -1.2999999523162842
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 88,
+            "vertices": 96,
+            "material": "SN_Hazard",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.640000104904175,
+              -1.5,
+              -8.899999618530273
+            ],
+            "max": [
+              2.640000104904175,
+              2.0999999046325684,
+              -3.9000000953674316
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "antenna-tip-L",
+        "primitives": [
+          {
+            "triangles": 80,
+            "vertices": 50,
+            "material": "SN_Beacon",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -0.2800000011920929,
+              -0.2800000011920929,
+              -0.2800000011920929
+            ],
+            "max": [
+              0.2800000011920929,
+              0.2800000011920929,
+              0.2800000011920929
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "antenna-tip-R",
+        "primitives": [
+          {
+            "triangles": 80,
+            "vertices": 50,
+            "material": "SN_Beacon",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -0.2800000011920929,
+              -0.2800000011920929,
+              -0.2800000011920929
+            ],
+            "max": [
+              0.2800000011920929,
+              0.2800000011920929,
+              0.2800000011920929
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "head",
+        "primitives": [
+          {
+            "triangles": 468,
+            "vertices": 349,
+            "material": "SN_Armor",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -4.179999828338623,
+              -1.399999976158142,
+              -4.304130554199219
+            ],
+            "max": [
+              4.179999828338623,
+              4.787351131439209,
+              2.791895866394043
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 1084,
+            "vertices": 703,
+            "material": "SN_Frame",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -4.099999904632568,
+              -1.5,
+              -4.224999904632568
+            ],
+            "max": [
+              4.099999904632568,
+              5.83406400680542,
+              1.7482210397720337
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 104,
+            "vertices": 78,
+            "material": "SN_Visor",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -3.3478851318359375,
+              -0.1599999964237213,
+              -4.0236897468566895
+            ],
+            "max": [
+              3.3478851318359375,
+              0.25999999046325684,
+              -2.2691540718078613
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "pod-L-barrel-0",
+        "primitives": [
+          {
+            "triangles": 1288,
+            "vertices": 1226,
+            "material": "SN_Metal",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -0.7019481062889099,
+              -0.7200000286102295,
+              -6.0
+            ],
+            "max": [
+              0.7019481062889099,
+              0.7200000286102295,
+              0.3499999940395355
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "pod-L-barrel-1",
+        "primitives": [
+          {
+            "triangles": 1288,
+            "vertices": 1226,
+            "material": "SN_Metal",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -0.7019481062889099,
+              -0.7200000286102295,
+              -6.0
+            ],
+            "max": [
+              0.7019481062889099,
+              0.7200000286102295,
+              0.3499999940395355
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "pod-L-body",
+        "primitives": [
+          {
+            "triangles": 458,
+            "vertices": 335,
+            "material": "SN_Armor",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -4.0,
+              -4.0,
+              -3.3499999046325684
+            ],
+            "max": [
+              4.0,
+              4.696601390838623,
+              3.299999952316284
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 3412,
+            "vertices": 3006,
+            "material": "SN_Frame",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -4.34499979019165,
+              -4.059999942779541,
+              -3.5072243213653564
+            ],
+            "max": [
+              4.34499979019165,
+              4.059999942779541,
+              3.7838950157165527
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "pod-L-eye",
+        "primitives": [
+          {
+            "triangles": 168,
+            "vertices": 86,
+            "material": "SN_PodEye",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -0.8999999761581421,
+              -0.8999999761581421,
+              -0.8999999761581421
+            ],
+            "max": [
+              0.8999999761581421,
+              0.8999999761581421,
+              0.8999999761581421
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "pod-L-stump",
+        "primitives": [
+          {
+            "triangles": 300,
+            "vertices": 223,
+            "material": "SN_Frame",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.984314203262329,
+              -2.9135453701019287,
+              -1.3729534149169922
+            ],
+            "max": [
+              2.6966798305511475,
+              2.913545608520508,
+              1.7000001668930054
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 118,
+            "vertices": 111,
+            "material": "SN_Glow",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -1.5938197374343872,
+              -1.5216903686523438,
+              -0.7199999690055847
+            ],
+            "max": [
+              1.5938197374343872,
+              1.5216903686523438,
+              -0.47999998927116394
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "pod-R-barrel-0",
+        "primitives": [
+          {
+            "triangles": 1288,
+            "vertices": 1226,
+            "material": "SN_Metal",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -0.7019481062889099,
+              -0.7200000286102295,
+              -6.0
+            ],
+            "max": [
+              0.7019481062889099,
+              0.7200000286102295,
+              0.3499999940395355
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "pod-R-barrel-1",
+        "primitives": [
+          {
+            "triangles": 1288,
+            "vertices": 1226,
+            "material": "SN_Metal",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -0.7019481062889099,
+              -0.7200000286102295,
+              -6.0
+            ],
+            "max": [
+              0.7019481062889099,
+              0.7200000286102295,
+              0.3499999940395355
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "pod-R-body",
+        "primitives": [
+          {
+            "triangles": 458,
+            "vertices": 335,
+            "material": "SN_Armor",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -4.0,
+              -4.0,
+              -3.3499999046325684
+            ],
+            "max": [
+              4.0,
+              4.696601390838623,
+              3.299999952316284
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 3412,
+            "vertices": 3006,
+            "material": "SN_Frame",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -4.34499979019165,
+              -4.059999942779541,
+              -3.5072243213653564
+            ],
+            "max": [
+              4.34499979019165,
+              4.059999942779541,
+              3.7838950157165527
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "pod-R-eye",
+        "primitives": [
+          {
+            "triangles": 168,
+            "vertices": 86,
+            "material": "SN_PodEye",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -0.8999999761581421,
+              -0.8999999761581421,
+              -0.8999999761581421
+            ],
+            "max": [
+              0.8999999761581421,
+              0.8999999761581421,
+              0.8999999761581421
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "pod-R-stump",
+        "primitives": [
+          {
+            "triangles": 300,
+            "vertices": 223,
+            "material": "SN_Frame",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.984314203262329,
+              -2.9135453701019287,
+              -1.3729534149169922
+            ],
+            "max": [
+              2.6966798305511475,
+              2.913545608520508,
+              1.7000001668930054
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 118,
+            "vertices": 111,
+            "material": "SN_Glow",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -1.5938197374343872,
+              -1.5216903686523438,
+              -0.7199999690055847
+            ],
+            "max": [
+              1.5938197374343872,
+              1.5216903686523438,
+              -0.47999998927116394
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "reactor-core",
+        "primitives": [
+          {
+            "triangles": 20,
+            "vertices": 60,
+            "material": "SN_Core",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.7727174758911133,
+              -2.63698410987854,
+              -3.0999999046325684
+            ],
+            "max": [
+              2.7727174758911133,
+              2.63698410987854,
+              3.0999999046325684
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "reactor-shell",
+        "primitives": [
+          {
+            "triangles": 20,
+            "vertices": 60,
+            "material": "SN_CoreShell",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -3.1304874420166016,
+              -2.9772400856018066,
+              -3.5
+            ],
+            "max": [
+              3.1304874420166016,
+              2.9772400856018066,
+              3.5
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "shutter-0",
+        "primitives": [
+          {
+            "triangles": 288,
+            "vertices": 262,
+            "material": "SN_Armor",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.905313014984131,
+              -3.336789131164551,
+              -0.4111824631690979
+            ],
+            "max": [
+              2.905313014984131,
+              0.9121735692024231,
+              0.7581545114517212
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "shutter-1",
+        "primitives": [
+          {
+            "triangles": 288,
+            "vertices": 262,
+            "material": "SN_Armor",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.905313014984131,
+              -3.336789131164551,
+              -0.4111824631690979
+            ],
+            "max": [
+              2.905313014984131,
+              0.9121735692024231,
+              0.7581545114517212
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "shutter-2",
+        "primitives": [
+          {
+            "triangles": 288,
+            "vertices": 262,
+            "material": "SN_Armor",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.905313014984131,
+              -3.336789131164551,
+              -0.4111824631690979
+            ],
+            "max": [
+              2.905313014984131,
+              0.9121735692024231,
+              0.7581545114517212
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "shutter-3",
+        "primitives": [
+          {
+            "triangles": 288,
+            "vertices": 262,
+            "material": "SN_Armor",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.905313014984131,
+              -3.336789131164551,
+              -0.4111824631690979
+            ],
+            "max": [
+              2.905313014984131,
+              0.9121735692024231,
+              0.7581545114517212
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "thruster-L",
+        "primitives": [
+          {
+            "triangles": 78,
+            "vertices": 81,
+            "material": "SN_Glow",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.200000047683716,
+              -2.200000047683716,
+              -0.0
+            ],
+            "max": [
+              2.200000047683716,
+              2.200000047683716,
+              0.25
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "thruster-R",
+        "primitives": [
+          {
+            "triangles": 78,
+            "vertices": 81,
+            "material": "SN_Glow",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.200000047683716,
+              -2.200000047683716,
+              -0.0
+            ],
+            "max": [
+              2.200000047683716,
+              2.200000047683716,
+              0.25
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "torso",
+        "primitives": [
+          {
+            "triangles": 10534,
+            "vertices": 8159,
+            "material": "SN_Frame",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -13.0,
+              -10.300000190734863,
+              -6.809999942779541
+            ],
+            "max": [
+              13.0,
+              9.141257286071777,
+              7.245537281036377
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 184,
+            "vertices": 160,
+            "material": "SN_Hazard",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -6.75,
+              -5.550000190734863,
+              -4.75
+            ],
+            "max": [
+              6.75,
+              0.09999999403953552,
+              6.400000095367432
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 1592,
+            "vertices": 1134,
+            "material": "SN_Armor",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -12.306856155395508,
+              -8.29440975189209,
+              -5.678767204284668
+            ],
+            "max": [
+              12.306856155395508,
+              8.429465293884277,
+              6.100000381469727
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 680,
+            "vertices": 669,
+            "material": "SN_Glow",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -4.295466423034668,
+              -10.359999656677246,
+              -3.1807851791381836
+            ],
+            "max": [
+              4.295466423034668,
+              9.091697692871094,
+              7.024712562561035
+            ],
+            "degenerate_triangles": 128
+          },
+          {
+            "triangles": 1168,
+            "vertices": 1055,
+            "material": "SN_Seam",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -5.400000095367432,
+              -2.7300000190734863,
+              -6.076284408569336
+            ],
+            "max": [
+              5.400000095367432,
+              5.6468505859375,
+              -4.900000095367432
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "name": "forearm-L",
+        "mesh": 0,
+        "children": []
+      },
+      {
+        "name": "launcher-charge",
+        "mesh": 1,
+        "children": []
+      },
+      {
+        "name": "missile-mouth",
+        "mesh": null,
+        "children": []
+      },
+      {
+        "name": "forearm-R",
+        "mesh": 2,
+        "children": [
+          1,
+          2
+        ]
+      },
+      {
+        "name": "antenna-tip-L",
+        "mesh": 3,
+        "children": []
+      },
+      {
+        "name": "antenna-tip-R",
+        "mesh": 4,
+        "children": []
+      },
+      {
+        "name": "head",
+        "mesh": 5,
+        "children": [
+          4,
+          5
+        ]
+      },
+      {
+        "name": "hover-wash",
+        "mesh": null,
+        "children": []
+      },
+      {
+        "name": "pod-L-barrel-0",
+        "mesh": 6,
+        "children": []
+      },
+      {
+        "name": "pod-L-barrel-1",
+        "mesh": 7,
+        "children": []
+      },
+      {
+        "name": "pod-L-body",
+        "mesh": 8,
+        "children": []
+      },
+      {
+        "name": "pod-L-eye",
+        "mesh": 9,
+        "children": []
+      },
+      {
+        "name": "pod-L-stump",
+        "mesh": 10,
+        "children": []
+      },
+      {
+        "name": "pod-L",
+        "mesh": null,
+        "children": [
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "name": "pod-R-barrel-0",
+        "mesh": 11,
+        "children": []
+      },
+      {
+        "name": "pod-R-barrel-1",
+        "mesh": 12,
+        "children": []
+      },
+      {
+        "name": "pod-R-body",
+        "mesh": 13,
+        "children": []
+      },
+      {
+        "name": "pod-R-eye",
+        "mesh": 14,
+        "children": []
+      },
+      {
+        "name": "pod-R-stump",
+        "mesh": 15,
+        "children": []
+      },
+      {
+        "name": "pod-R",
+        "mesh": null,
+        "children": [
+          14,
+          15,
+          16,
+          17,
+          18
+        ]
+      },
+      {
+        "name": "reactor-core",
+        "mesh": 16,
+        "children": []
+      },
+      {
+        "name": "reactor-shell",
+        "mesh": 17,
+        "children": []
+      },
+      {
+        "name": "reactor",
+        "mesh": null,
+        "children": [
+          20,
+          21
+        ]
+      },
+      {
+        "name": "shutter-0",
+        "mesh": 18,
+        "children": []
+      },
+      {
+        "name": "shutter-holder-0",
+        "mesh": null,
+        "children": [
+          23
+        ]
+      },
+      {
+        "name": "shutter-1",
+        "mesh": 19,
+        "children": []
+      },
+      {
+        "name": "shutter-holder-1",
+        "mesh": null,
+        "children": [
+          25
+        ]
+      },
+      {
+        "name": "shutter-2",
+        "mesh": 20,
+        "children": []
+      },
+      {
+        "name": "shutter-holder-2",
+        "mesh": null,
+        "children": [
+          27
+        ]
+      },
+      {
+        "name": "shutter-3",
+        "mesh": 21,
+        "children": []
+      },
+      {
+        "name": "shutter-holder-3",
+        "mesh": null,
+        "children": [
+          29
+        ]
+      },
+      {
+        "name": "thruster-L",
+        "mesh": 22,
+        "children": []
+      },
+      {
+        "name": "thruster-R",
+        "mesh": 23,
+        "children": []
+      },
+      {
+        "name": "torso",
+        "mesh": 24,
+        "children": [
+          0,
+          3,
+          6,
+          7,
+          13,
+          19,
+          22,
+          24,
+          26,
+          28,
+          30,
+          31,
+          32
+        ]
+      },
+      {
+        "name": "iron-sentinel",
+        "mesh": null,
+        "children": [
+          33
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "doubleSided": true,
+        "name": "SN_Frame",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 0
+          },
+          "metallicFactor": 0.5,
+          "roughnessFactor": 0.46000000834465027
+        }
+      },
+      {
+        "doubleSided": true,
+        "name": "SN_Armor",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 1
+          },
+          "metallicFactor": 0.47999998927116394,
+          "roughnessFactor": 0.41999998688697815
+        }
+      },
+      {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          0.4564110338687897,
+          0.0423114113509655
+        ],
+        "name": "SN_Charge",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "metallicFactor": 0
+        }
+      },
+      {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.44999998807907104,
+          0.44999998807907104,
+          0.44999998807907104
+        ],
+        "emissiveTexture": {
+          "index": 2
+        },
+        "name": "SN_Hazard",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 3
+          },
+          "metallicFactor": 0.4000000059604645,
+          "roughnessFactor": 0.6499999761581421
+        }
+      },
+      {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          0.04666508734226227,
+          0.09084171056747437
+        ],
+        "extensions": {
+          "KHR_materials_emissive_strength": {
+            "emissiveStrength": 3
+          }
+        },
+        "name": "SN_Beacon",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "metallicFactor": 0
+        }
+      },
+      {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          0.04666508734226227,
+          0.09084171056747437
+        ],
+        "extensions": {
+          "KHR_materials_emissive_strength": {
+            "emissiveStrength": 2.200000047683716
+          }
+        },
+        "name": "SN_Visor",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "metallicFactor": 0
+        }
+      },
+      {
+        "doubleSided": true,
+        "name": "SN_Metal",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0.08437620848417282,
+            0.13013647496700287,
+            0.19120168685913086,
+            1
+          ],
+          "metallicFactor": 0.5600000023841858,
+          "roughnessFactor": 0.3799999952316284
+        }
+      },
+      {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          0.4564110338687897,
+          0.0423114113509655
+        ],
+        "extensions": {
+          "KHR_materials_emissive_strength": {
+            "emissiveStrength": 2.5
+          }
+        },
+        "name": "SN_PodEye",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "metallicFactor": 0
+        }
+      },
+      {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          0.1946178376674652,
+          0.0423114113509655
+        ],
+        "extensions": {
+          "KHR_materials_emissive_strength": {
+            "emissiveStrength": 2
+          }
+        },
+        "name": "SN_Glow",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "metallicFactor": 0
+        }
+      },
+      {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          0.04666508734226227,
+          0.09084171056747437
+        ],
+        "extensions": {
+          "KHR_materials_emissive_strength": {
+            "emissiveStrength": 1.5
+          }
+        },
+        "name": "SN_Core",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "metallicFactor": 0
+        }
+      },
+      {
+        "alphaMode": "BLEND",
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          0.04666508734226227,
+          0.09084171056747437
+        ],
+        "name": "SN_CoreShell",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            0.3499999940395355
+          ],
+          "metallicFactor": 0
+        }
+      },
+      {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          0.04666508734226227,
+          0.09084171056747437
+        ],
+        "extensions": {
+          "KHR_materials_emissive_strength": {
+            "emissiveStrength": 1.2000000476837158
+          }
+        },
+        "name": "SN_Seam",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "metallicFactor": 0
+        }
+      }
+    ],
+    "images": 3,
+    "textures": 4,
+    "extensions_used": [
+      "KHR_materials_emissive_strength"
+    ]
+  },
+  {
+    "file": "public/models/turret.glb",
+    "bytes": 58452,
+    "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+    "triangles": 1194,
+    "primitive_count": 8,
+    "meshes": [
+      {
+        "name": "base_armor_mesh",
+        "primitives": [
+          {
+            "triangles": 96,
+            "vertices": 192,
+            "material": "warm_armor",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -1.8157252073287964,
+              0.1100967526435852,
+              -1.8157252073287964
+            ],
+            "max": [
+              1.8157252073287964,
+              0.7615259885787964,
+              1.8157252073287964
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "base_mesh",
+        "primitives": [
+          {
+            "triangles": 32,
+            "vertices": 50,
+            "material": "cool_slate",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -1.899999976158142,
+              0.0,
+              -1.899999976158142
+            ],
+            "max": [
+              1.899999976158142,
+              0.8999999761581421,
+              1.899999976158142
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "barrel_visual_mesh",
+        "primitives": [
+          {
+            "triangles": 172,
+            "vertices": 276,
+            "material": "cool_slate",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -0.36000001430511475,
+              -0.3423803746700287,
+              0.25
+            ],
+            "max": [
+              0.36000001430511475,
+              0.3423803746700287,
+              2.799999952316284
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "bore_mesh",
+        "primitives": [
+          {
+            "triangles": 40,
+            "vertices": 62,
+            "material": "dark_structure",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -0.12999999523162842,
+              -0.12363734841346741,
+              2.7899999618530273
+            ],
+            "max": [
+              0.12999999523162842,
+              0.12363734841346741,
+              2.815000057220459
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "port_plate_mesh",
+        "primitives": [
+          {
+            "triangles": 60,
+            "vertices": 120,
+            "material": "dark_structure",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -0.4699999988079071,
+              -0.10000002384185791,
+              -1.0199999809265137
+            ],
+            "max": [
+              0.4699999988079071,
+              1.149999976158142,
+              1.2599999904632568
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "dome_mesh.001",
+        "primitives": [
+          {
+            "triangles": 226,
+            "vertices": 115,
+            "material": "warm_armor",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -1.2000000476837158,
+              -0.07999999821186066,
+              -1.2000000476837158
+            ],
+            "max": [
+              1.2000000476837158,
+              1.0499999523162842,
+              1.1220731735229492
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "eye_mesh",
+        "primitives": [
+          {
+            "triangles": 120,
+            "vertices": 264,
+            "material": "amber_eye",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -0.17000000178813934,
+              0.009999999776482582,
+              -0.17000000178813934
+            ],
+            "max": [
+              0.17000000178813934,
+              0.23000000417232513,
+              0.17000000178813934
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "trim_mesh",
+        "primitives": [
+          {
+            "triangles": 448,
+            "vertices": 774,
+            "material": "cool_slate",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -1.4199999570846558,
+              -0.09727469086647034,
+              -1.225000023841858
+            ],
+            "max": [
+              2.299999952316284,
+              1.1399999856948853,
+              1.225000023841858
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "name": "base_armor",
+        "mesh": 0,
+        "children": []
+      },
+      {
+        "name": "base",
+        "mesh": 1,
+        "children": [
+          0
+        ]
+      },
+      {
+        "name": "barrel_visual",
+        "mesh": 2,
+        "children": []
+      },
+      {
+        "name": "bore",
+        "mesh": 3,
+        "children": []
+      },
+      {
+        "name": "muzzle",
+        "mesh": null,
+        "children": []
+      },
+      {
+        "name": "barrel",
+        "mesh": null,
+        "children": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "name": "port_plate",
+        "mesh": 4,
+        "children": []
+      },
+      {
+        "name": "dome",
+        "mesh": 5,
+        "children": [
+          6
+        ]
+      },
+      {
+        "name": "eye",
+        "mesh": 6,
+        "children": []
+      },
+      {
+        "name": "trim",
+        "mesh": 7,
+        "children": []
+      },
+      {
+        "name": "turntable",
+        "mesh": null,
+        "children": [
+          5,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "name": "turret",
+        "mesh": null,
+        "children": [
+          1,
+          10
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "doubleSided": true,
+        "name": "warm_armor",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0.31854677200317383,
+            0.10702310502529144,
+            0.06480326503515244,
+            1
+          ],
+          "metallicFactor": 0.47999998927116394,
+          "roughnessFactor": 0.41999998688697815
+        }
+      },
+      {
+        "doubleSided": true,
+        "name": "cool_slate",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0.08437620848417282,
+            0.13013647496700287,
+            0.19120168685913086,
+            1
+          ],
+          "metallicFactor": 0.5600000023841858,
+          "roughnessFactor": 0.3799999952316284
+        }
+      },
+      {
+        "doubleSided": true,
+        "name": "dark_structure",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0.0423114113509655,
+            0.06847816705703735,
+            0.1119324266910553,
+            1
+          ],
+          "metallicFactor": 0.5,
+          "roughnessFactor": 0.46000000834465027
+        }
+      },
+      {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          0.2541520893573761,
+          0.0423114113509655
+        ],
+        "extensions": {
+          "KHR_materials_emissive_strength": {
+            "emissiveStrength": 3
+          }
+        },
+        "name": "amber_eye",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            1,
+            0.2541520893573761,
+            0.0423114113509655,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.30000001192092896
+        }
+      }
+    ],
+    "images": 0,
+    "textures": 0,
+    "extensions_used": [
+      "KHR_materials_emissive_strength"
+    ]
+  },
+  {
+    "file": "public/models/radar.glb",
+    "bytes": 55564,
+    "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d",
+    "triangles": 1288,
+    "primitive_count": 9,
+    "meshes": [
+      {
+        "name": "base_mesh",
+        "primitives": [
+          {
+            "triangles": 32,
+            "vertices": 50,
+            "material": "warm_armor",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -2.0999999046325684,
+              0.11999999731779099,
+              -2.0999999046325684
+            ],
+            "max": [
+              2.0999999046325684,
+              1.0,
+              2.0999999046325684
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "base_trim_mesh",
+        "primitives": [
+          {
+            "triangles": 64,
+            "vertices": 100,
+            "material": "cool_slate",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -2.200000047683716,
+              0.0,
+              -2.200000047683716
+            ],
+            "max": [
+              2.200000047683716,
+              1.159999966621399,
+              2.200000047683716
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "dish_frame_mesh",
+        "primitives": [
+          {
+            "triangles": 360,
+            "vertices": 658,
+            "material": "dark_structure",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -2.236544370651245,
+              -1.7555159330368042,
+              -0.5886777639389038
+            ],
+            "max": [
+              2.236544370651245,
+              2.0443131923675537,
+              1.5227009057998657
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "dish_shell_mesh",
+        "primitives": [
+          {
+            "triangles": 448,
+            "vertices": 226,
+            "material": "dish_warm",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -2.3499999046325684,
+              -2.057155132293701,
+              -0.20898304879665375
+            ],
+            "max": [
+              2.3499999046325684,
+              2.459805488586426,
+              1.426915168762207
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "emitter_mesh",
+        "primitives": [
+          {
+            "triangles": 120,
+            "vertices": 264,
+            "material": "radar_emitter",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -0.3400000035762787,
+              -0.3400000035762787,
+              -0.3400000035762787
+            ],
+            "max": [
+              0.3400000035762787,
+              0.3400000035762787,
+              0.3400000035762787
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "feed_housing_mesh",
+        "primitives": [
+          {
+            "triangles": 128,
+            "vertices": 192,
+            "material": "cool_slate",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -0.550000011920929,
+              0.2619607150554657,
+              1.0774126052856445
+            ],
+            "max": [
+              0.550000011920929,
+              1.4158461093902588,
+              1.717773199081421
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "mast_braces_mesh",
+        "primitives": [
+          {
+            "triangles": 72,
+            "vertices": 114,
+            "material": "dark_structure",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -1.4699074029922485,
+              1.136216163635254,
+              -0.8890477418899536
+            ],
+            "max": [
+              1.4699074029922485,
+              4.5237836837768555,
+              1.696382761001587
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "mast_cap_mesh",
+        "primitives": [
+          {
+            "triangles": 32,
+            "vertices": 50,
+            "material": "dark_structure",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -0.5199999809265137,
+              6.960000038146973,
+              -0.5199999809265137
+            ],
+            "max": [
+              0.5199999809265137,
+              7.199999809265137,
+              0.5199999809265137
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "mast_mesh",
+        "primitives": [
+          {
+            "triangles": 32,
+            "vertices": 50,
+            "material": "cool_slate",
+            "attributes": [
+              "NORMAL",
+              "POSITION"
+            ],
+            "min": [
+              -0.800000011920929,
+              1.159999966621399,
+              -0.800000011920929
+            ],
+            "max": [
+              0.800000011920929,
+              7.0,
+              0.800000011920929
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "name": "base",
+        "mesh": 0,
+        "children": []
+      },
+      {
+        "name": "base_trim",
+        "mesh": 1,
+        "children": []
+      },
+      {
+        "name": "dish_frame",
+        "mesh": 2,
+        "children": []
+      },
+      {
+        "name": "dish_shell",
+        "mesh": 3,
+        "children": []
+      },
+      {
+        "name": "emitter",
+        "mesh": 4,
+        "children": []
+      },
+      {
+        "name": "feed_housing",
+        "mesh": 5,
+        "children": []
+      },
+      {
+        "name": "dish",
+        "mesh": null,
+        "children": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "name": "mast_braces",
+        "mesh": 6,
+        "children": []
+      },
+      {
+        "name": "mast_cap",
+        "mesh": 7,
+        "children": []
+      },
+      {
+        "name": "mast",
+        "mesh": 8,
+        "children": [
+          7,
+          8
+        ]
+      },
+      {
+        "name": "radar",
+        "mesh": null,
+        "children": [
+          0,
+          1,
+          6,
+          9
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "doubleSided": true,
+        "name": "warm_armor",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0.31854677200317383,
+            0.10702310502529144,
+            0.06480326503515244,
+            1
+          ],
+          "metallicFactor": 0.47999998927116394,
+          "roughnessFactor": 0.41999998688697815
+        }
+      },
+      {
+        "doubleSided": true,
+        "name": "cool_slate",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0.08437620848417282,
+            0.13013647496700287,
+            0.19120168685913086,
+            1
+          ],
+          "metallicFactor": 0.5600000023841858,
+          "roughnessFactor": 0.3799999952316284
+        }
+      },
+      {
+        "doubleSided": true,
+        "name": "dark_structure",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0.0423114113509655,
+            0.06847816705703735,
+            0.1119324266910553,
+            1
+          ],
+          "metallicFactor": 0.5,
+          "roughnessFactor": 0.46000000834465027
+        }
+      },
+      {
+        "doubleSided": true,
+        "name": "dish_warm",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0.3324515223503113,
+            0.1441284716129303,
+            0.09084171056747437,
+            1
+          ],
+          "metallicFactor": 0.41999998688697815,
+          "roughnessFactor": 0.3400000035762787
+        }
+      },
+      {
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.08437620848417282,
+          1,
+          0.3915724754333496
+        ],
+        "extensions": {
+          "KHR_materials_emissive_strength": {
+            "emissiveStrength": 2.200000047683716
+          }
+        },
+        "name": "radar_emitter",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0.08437620848417282,
+            1,
+            0.3915724754333496,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.25
+        }
+      }
+    ],
+    "images": 0,
+    "textures": 0,
+    "extensions_used": [
+      "KHR_materials_emissive_strength"
+    ]
+  },
+  {
+    "file": "public/models/silo.glb",
+    "bytes": 1281700,
+    "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e",
+    "triangles": 9928,
+    "primitive_count": 4,
+    "meshes": [
+      {
+        "name": "body",
+        "primitives": [
+          {
+            "triangles": 6590,
+            "vertices": 10765,
+            "material": "SILO_Hull",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -2.5999999046325684,
+              0.0,
+              -2.5999999046325684
+            ],
+            "max": [
+              2.619999885559082,
+              2.6750001907348633,
+              2.5999999046325684
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 290,
+            "vertices": 247,
+            "material": "SILO_Glow",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -1.61807382106781,
+              0.8299999833106995,
+              -1.6180734634399414
+            ],
+            "max": [
+              2.634999990463257,
+              2.7080001831054688,
+              1.6180742979049683
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "glow",
+        "primitives": [
+          {
+            "triangles": 1344,
+            "vertices": 1314,
+            "material": "SILO_Glow",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -1.6200000047683716,
+              -1.4700000286102295,
+              -1.6200000047683716
+            ],
+            "max": [
+              1.6200000047683716,
+              -0.07999999821186066,
+              1.6200000047683716
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "hatch",
+        "primitives": [
+          {
+            "triangles": 1704,
+            "vertices": 2942,
+            "material": "SILO_Hull",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -1.7171217203140259,
+              -0.029999999329447746,
+              -1.7176191806793213
+            ],
+            "max": [
+              1.7171217203140259,
+              0.19200000166893005,
+              1.7176191806793213
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "name": "body",
+        "mesh": 0,
+        "children": []
+      },
+      {
+        "name": "glow",
+        "mesh": 1,
+        "children": []
+      },
+      {
+        "name": "hatch",
+        "mesh": 2,
+        "children": []
+      },
+      {
+        "name": "launch-point",
+        "mesh": null,
+        "children": []
+      },
+      {
+        "name": "silo",
+        "mesh": null,
+        "children": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "doubleSided": true,
+        "name": "SILO_Hull",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 0
+          },
+          "metallicRoughnessTexture": {
+            "index": 1
+          }
+        }
+      },
+      {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          0.04666508734226227,
+          0.09084171056747437
+        ],
+        "extensions": {
+          "KHR_materials_emissive_strength": {
+            "emissiveStrength": 2.4000000953674316
+          }
+        },
+        "name": "SILO_Glow",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.5
+        }
+      }
+    ],
+    "images": 2,
+    "textures": 2,
+    "extensions_used": [
+      "KHR_materials_emissive_strength"
+    ]
+  },
+  {
+    "file": "public/models/fuel.glb",
+    "bytes": 1087156,
+    "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc",
+    "triangles": 9592,
+    "primitive_count": 8,
+    "meshes": [
+      {
+        "name": "band",
+        "primitives": [
+          {
+            "triangles": 1128,
+            "vertices": 1440,
+            "material": "FUEL_Hull",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -1.4600000381469727,
+              -0.12999999523162842,
+              -1.4600000381469727
+            ],
+            "max": [
+              1.4600000381469727,
+              0.12999999523162842,
+              1.4600000381469727
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 96,
+            "vertices": 96,
+            "material": "FUEL_Band",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -1.4149999618530273,
+              -0.07999999821186066,
+              -1.4149999618530273
+            ],
+            "max": [
+              1.4149999618530273,
+              0.07999999821186066,
+              1.4149999618530273
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "body",
+        "primitives": [
+          {
+            "triangles": 4512,
+            "vertices": 5572,
+            "material": "FUEL_Hull",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -1.7000000476837158,
+              0.0,
+              -1.7000000476837158
+            ],
+            "max": [
+              1.7000000476837158,
+              3.759999990463257,
+              1.7000000476837158
+            ],
+            "degenerate_triangles": 0
+          },
+          {
+            "triangles": 396,
+            "vertices": 864,
+            "material": "FUEL_Band",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -0.7596665024757385,
+              1.2999999523162842,
+              -1.0866117477416992
+            ],
+            "max": [
+              1.125,
+              3.200000047683716,
+              1.0866117477416992
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "cap",
+        "primitives": [
+          {
+            "triangles": 3064,
+            "vertices": 3290,
+            "material": "FUEL_Hull",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -1.3600000143051147,
+              0.0,
+              -1.3600000143051147
+            ],
+            "max": [
+              1.3600000143051147,
+              1.1100000143051147,
+              1.3600000143051147
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "stave-0",
+        "primitives": [
+          {
+            "triangles": 132,
+            "vertices": 144,
+            "material": "FUEL_Hull",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -0.643908679485321,
+              0.0,
+              -1.0692051649093628
+            ],
+            "max": [
+              -2.9802322387695312e-08,
+              2.559999942779541,
+              1.0692055225372314
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "stave-1",
+        "primitives": [
+          {
+            "triangles": 132,
+            "vertices": 144,
+            "material": "FUEL_Hull",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -0.643908679485321,
+              0.0,
+              -1.0692055225372314
+            ],
+            "max": [
+              -2.9802322387695312e-08,
+              2.559999942779541,
+              1.0692051649093628
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      },
+      {
+        "name": "stave-2",
+        "primitives": [
+          {
+            "triangles": 132,
+            "vertices": 144,
+            "material": "FUEL_Hull",
+            "attributes": [
+              "NORMAL",
+              "POSITION",
+              "TEXCOORD_0"
+            ],
+            "min": [
+              -0.6439086198806763,
+              0.0,
+              -1.0692051649093628
+            ],
+            "max": [
+              0.0,
+              2.559999942779541,
+              1.069205403327942
+            ],
+            "degenerate_triangles": 0
+          }
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "name": "band",
+        "mesh": 0,
+        "children": []
+      },
+      {
+        "name": "body",
+        "mesh": 1,
+        "children": []
+      },
+      {
+        "name": "cap",
+        "mesh": 2,
+        "children": []
+      },
+      {
+        "name": "stave-0",
+        "mesh": 3,
+        "children": []
+      },
+      {
+        "name": "stave-1",
+        "mesh": 4,
+        "children": []
+      },
+      {
+        "name": "stave-2",
+        "mesh": 5,
+        "children": []
+      },
+      {
+        "name": "fuel",
+        "mesh": null,
+        "children": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "doubleSided": true,
+        "name": "FUEL_Hull",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 0
+          },
+          "metallicRoughnessTexture": {
+            "index": 1
+          }
+        }
+      },
+      {
+        "doubleSided": true,
+        "emissiveFactor": [
+          1,
+          0.32314321398735046,
+          0.01599629409611225
+        ],
+        "extensions": {
+          "KHR_materials_emissive_strength": {
+            "emissiveStrength": 2.200000047683716
+          }
+        },
+        "name": "FUEL_Band",
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.5
+        }
+      }
+    ],
+    "images": 2,
+    "textures": 2,
+    "extensions_used": [
+      "KHR_materials_emissive_strength"
+    ]
+  }
+]

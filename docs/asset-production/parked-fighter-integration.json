@@ -1,0 +1,433 @@
+{
+  "selectedFighter": "hero-interceptor-imported",
+  "groundTargets": [
+    "turret",
+    "radar",
+    "silo",
+    "fuel"
+  ],
+  "productionPreview": true,
+  "parkedFighter": {
+    "seedChecks": [
+      {
+        "seed": 1,
+        "scramble": false,
+        "yaw": -0.1989057115279138
+      },
+      {
+        "seed": 2,
+        "scramble": false,
+        "yaw": -0.07000062707811594
+      },
+      {
+        "seed": 3,
+        "scramble": false,
+        "yaw": -0.18453513579443098
+      },
+      {
+        "seed": 4,
+        "scramble": false,
+        "yaw": -0.06678164824843408
+      },
+      {
+        "seed": 5,
+        "scramble": false,
+        "yaw": 0.10909730931743983
+      },
+      {
+        "seed": 6,
+        "scramble": false,
+        "yaw": -0.19906258136034014
+      },
+      {
+        "seed": 7,
+        "scramble": true,
+        "yaw": -0.1752166969701648
+      },
+      {
+        "seed": 8,
+        "scramble": true,
+        "yaw": 0.05007690442726015
+      },
+      {
+        "seed": 9,
+        "scramble": true,
+        "yaw": 0.14048431850969795
+      },
+      {
+        "seed": 10,
+        "scramble": false,
+        "yaw": 0.1669947220012546
+      },
+      {
+        "seed": 11,
+        "scramble": false,
+        "yaw": 0.011978563293814665
+      },
+      {
+        "seed": 12,
+        "scramble": true,
+        "yaw": -0.1697329964488745
+      },
+      {
+        "seed": 13,
+        "scramble": false,
+        "yaw": -0.05595313534140586
+      },
+      {
+        "seed": 14,
+        "scramble": false,
+        "yaw": -0.029676135908812296
+      },
+      {
+        "seed": 15,
+        "scramble": true,
+        "yaw": -0.03835011301562191
+      },
+      {
+        "seed": 16,
+        "scramble": false,
+        "yaw": -0.14227124433964491
+      }
+    ],
+    "pulse": [
+      1.045,
+      0.995
+    ],
+    "roars": 1,
+    "resourcesDisposed": 12,
+    "rootAltitudeCap": 23
+  },
+  "shieldPickup": {
+    "resourcesDisposed": 6,
+    "sharedHaloPreserved": true,
+    "collectionAward": 250,
+    "magnetSampleStep": 0.25
+  },
+  "flyers": [
+    {
+      "kind": "drone",
+      "contexts": [
+        {
+          "pattern": "weave",
+          "bank": 0.0703016702373307,
+          "position": [
+            -9.626239823590007,
+            6.6133019508774495,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "strafe",
+          "bank": 0,
+          "position": [
+            0,
+            9.314370395508865,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "orbit",
+          "bank": -0.04037866116013454,
+          "position": [
+            -6.217109197498349,
+            7.751584458045593,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "dive",
+          "bank": 0,
+          "position": [
+            0,
+            9,
+            82.00000000000017
+          ]
+        },
+        {
+          "pattern": "peel",
+          "bank": 0.8399999872068172,
+          "position": [
+            -19,
+            25,
+            19.999999999999957
+          ]
+        },
+        {
+          "pattern": "launch",
+          "bank": 0.016361059347587276,
+          "position": [
+            0.6504156647914032,
+            10.841569317751466,
+            114.39999999999925
+          ]
+        }
+      ],
+      "resourcesDisposed": 14
+    },
+    {
+      "kind": "interceptor",
+      "contexts": [
+        {
+          "pattern": "weave",
+          "bank": 0.0703016702373307,
+          "position": [
+            -9.626239823590007,
+            6.6133019508774495,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "strafe",
+          "bank": 0,
+          "position": [
+            0,
+            9.314370395508865,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "orbit",
+          "bank": -0.04037866116013454,
+          "position": [
+            -6.217109197498349,
+            7.751584458045593,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "dive",
+          "bank": 0,
+          "position": [
+            0,
+            9,
+            82.00000000000017
+          ]
+        },
+        {
+          "pattern": "peel",
+          "bank": 0.8399999872068172,
+          "position": [
+            -19,
+            25,
+            19.999999999999957
+          ]
+        },
+        {
+          "pattern": "launch",
+          "bank": 0.016361059347587276,
+          "position": [
+            0.6504156647914032,
+            10.841569317751466,
+            138.39999999999975
+          ]
+        }
+      ],
+      "resourcesDisposed": 14
+    }
+  ],
+  "heavyTurret": {
+    "shots": [
+      {
+        "origin": [
+          -0.6078217187265424,
+          2.2711219806223215,
+          38.69535595741367
+        ],
+        "direction": [
+          0.023273198767281403,
+          0.34132622298778964,
+          -0.9396567286621367
+        ]
+      },
+      {
+        "origin": [
+          0.5948229037243525,
+          2.27970058127947,
+          38.30126539759038
+        ],
+        "direction": [
+          -0.031397458143650143,
+          0.34668784839850764,
+          -0.9374549244603343
+        ]
+      },
+      {
+        "origin": [
+          0.39964749044117187,
+          2.0670538845469797,
+          38.98456932326748
+        ],
+        "direction": [
+          0.0030899957366201745,
+          0.2137836629407012,
+          -0.9768761422954315
+        ]
+      },
+      {
+        "origin": [
+          -0.332649902756776,
+          2.0832574355061917,
+          37.89428861840134
+        ],
+        "direction": [
+          0.03878349656612724,
+          0.22391088229020847,
+          -0.973837644161554
+        ]
+      },
+      {
+        "origin": [
+          0.5685220488353827,
+          2.261204930905686,
+          38.70341404145473
+        ],
+        "direction": [
+          -0.045794550059965404,
+          0.33512806691489266,
+          -0.94105899812429
+        ]
+      },
+      {
+        "origin": [
+          -0.6284846689638541,
+          2.2707899284893625,
+          38.28691807123658
+        ],
+        "direction": [
+          0.008317912479670776,
+          0.34111869040469045,
+          -0.9399834314436449
+        ]
+      }
+    ],
+    "resourcesDisposed": 9,
+    "chargeCue": "source shared neon",
+    "fullElevationDegrees": [
+      -90,
+      90
+    ]
+  },
+  "mine": {
+    "samples": [
+      {
+        "distance": 40,
+        "time": 0.39269908169872414,
+        "armed": 0,
+        "scale": 1.015
+      },
+      {
+        "distance": 13.6,
+        "time": 0.1,
+        "armed": 0.6000000000000001,
+        "scale": 1.038858883873103
+      },
+      {
+        "distance": 0,
+        "time": 0.05235987755982988,
+        "armed": 1,
+        "scale": 1.06
+      },
+      {
+        "distance": 0,
+        "time": 0.15707963267948966,
+        "armed": 1,
+        "scale": 0.94
+      },
+      {
+        "distance": 40,
+        "time": 0.3,
+        "armed": 0,
+        "scale": 1.0139805862895084
+      },
+      {
+        "distance": 0,
+        "time": 0.4,
+        "armed": 1,
+        "scale": 0.9678056249199739
+      }
+    ],
+    "warnings": 1,
+    "resourcesDisposed": 9
+  },
+  "batch": {
+    "copies": {
+      "drone": 18,
+      "interceptor": 18,
+      "heavyTurret": 11,
+      "mine": 24,
+      "parkedFighter": 10,
+      "shieldPickup": 24
+    },
+    "cycles": 3,
+    "coldGeometryCount": 104,
+    "sharedHaloWarmupDelta": 1,
+    "geometryBaseline": 105,
+    "geometryAfterCycles": [
+      105,
+      105,
+      105
+    ],
+    "cpuRenderSubmitMedianMs": 4.799999997019768,
+    "caveat": "Synthetic 81-enemy plus24-shield stress in actual scene with player/Sentinel. Pickup count is an explicit stress fixture, not a live maximum. CPU render submission timing in headless Chromium, not GPU frame-time or sustained hardware acceptance."
+  },
+  "iterations": [
+    {
+      "iteration": 0,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    },
+    {
+      "iteration": 1,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    },
+    {
+      "iteration": 2,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    }
+  ],
+  "errors": [],
+  "asset": "parked-fighter",
+  "stage": "initial_opt_in_integration_pending_deferred_opus_review",
+  "defaultModelQA": "passed",
+  "regressions": {
+    "passed": 104,
+    "failed": 0
+  },
+  "build": "passed",
+  "visualInspection": {
+    "evidenceDirectory": "assets-source/production/integration-evidence/parked-fighter",
+    "actualPngsViewed": [
+      "production-classic.png",
+      "production-modern.png",
+      "production-chase.png"
+    ],
+    "observations": [
+      "Enemy copper/ivory airframe and -Z nose distinguish parked target from shipped blue player.",
+      "Root remains at deck with attached gear; default yaw and idle source engine scale preserved.",
+      "Frozen source multiview/action sheet reviewed; cockpit is opaque, idle glow and distant details are limited, and final art/hardware acceptance remains pending."
+    ]
+  },
+  "hiddenFlash": {
+    "triangles": 4554,
+    "primitives": 1,
+    "note": "Generated from static airframe, normally hidden; retained as deferred polish/performance consideration."
+  }
+}

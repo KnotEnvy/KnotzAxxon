@@ -1,0 +1,673 @@
+{
+  "render_engine": "BLENDER_EEVEE",
+  "samples": 16,
+  "render_threads": 4,
+  "software_raster_threads": 4,
+  "view_transform": "AgX",
+  "neutral": {
+    "camera": [
+      -16,
+      24,
+      -30
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ],
+    "vertical_span": 14,
+    "key": [
+      -12,
+      22,
+      -12
+    ],
+    "fill": [
+      14,
+      12,
+      8
+    ],
+    "commonExtraRim": false
+  },
+  "offline": "Actual source CameraRig snap at player Y=6, zero velocity/boost/shake and 16:9. Classic full vertical span 80; perspective exact source vertical FOV. Dusk sun/rim source positions/colors/intensities reconstructed; Blender world approximates Three HemisphereLight, no production shader/postprocessing/fog. Not live gameplay proof. Shipped player GLB unchanged scale=1. Procedural comparison at X=7; new at X=-5. Near dz=28; far dz=70.",
+  "renders": [
+    {
+      "file": "01_rest_common.png",
+      "label": "PARKED FIGHTER / INITIAL | common neutral | world units",
+      "eye_game": [
+        -16,
+        24,
+        -30
+      ],
+      "target_game": [
+        0,
+        0,
+        0
+      ],
+      "verticalSpan": 14,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "02_front_threequarter.png",
+      "label": "INITIAL / fitted nose, canopy and gear",
+      "eye_game": [
+        -10,
+        7,
+        -13
+      ],
+      "target_game": [
+        0,
+        1,
+        0
+      ],
+      "verticalSpan": 7.8,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "03_aft_threequarter.png",
+      "label": "INITIAL / aft turbine, attached gear",
+      "eye_game": [
+        10,
+        7,
+        13
+      ],
+      "target_game": [
+        0,
+        1,
+        0
+      ],
+      "verticalSpan": 7.8,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "04_top.png",
+      "label": "INITIAL / top / -Z nose at top",
+      "eye_game": [
+        0,
+        18,
+        0.001
+      ],
+      "target_game": [
+        0,
+        0,
+        0
+      ],
+      "verticalSpan": 8,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "05_side.png",
+      "label": "INITIAL / starboard / deck datum Y=0",
+      "eye_game": [
+        14,
+        4,
+        0
+      ],
+      "target_game": [
+        0,
+        1,
+        0
+      ],
+      "verticalSpan": 6.2,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "06_front.png",
+      "label": "INITIAL / front / grounded gear clearance",
+      "eye_game": [
+        0,
+        3,
+        -16
+      ],
+      "target_game": [
+        0,
+        1,
+        0
+      ],
+      "verticalSpan": 6.2,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "07_aft_idle.png",
+      "label": "NONSCRAMBLE IDLE / source scale 0.3",
+      "eye_game": [
+        8,
+        6,
+        12
+      ],
+      "target_game": [
+        0,
+        1,
+        0
+      ],
+      "verticalSpan": 8,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "08_aft_pulse_min.png",
+      "label": "SCRAMBLE CHARGE / min pulse 0.995",
+      "eye_game": [
+        8,
+        6,
+        12
+      ],
+      "target_game": [
+        0,
+        1,
+        0
+      ],
+      "verticalSpan": 8,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.9950000047683716
+    },
+    {
+      "file": "09_aft_pulse_max.png",
+      "label": "SCRAMBLE CHARGE / max pulse 1.045",
+      "eye_game": [
+        8,
+        6,
+        12
+      ],
+      "target_game": [
+        0,
+        1,
+        0
+      ],
+      "verticalSpan": 8,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 1.0449999570846558
+    },
+    {
+      "file": "10_beacon_off.png",
+      "label": "BEACON OFF / source visibility toggle",
+      "eye_game": [
+        -16,
+        24,
+        -30
+      ],
+      "target_game": [
+        0,
+        0,
+        0
+      ],
+      "verticalSpan": 14,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": false,
+      "engineUniformScale": 1.0449999570846558
+    },
+    {
+      "file": "11_yaw_98.png",
+      "label": "SEEDED YAW / seed 98 / -0.199954 rad",
+      "eye_game": [
+        -16,
+        24,
+        -30
+      ],
+      "target_game": [
+        0,
+        0,
+        0
+      ],
+      "verticalSpan": 14,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "11_yaw_37.png",
+      "label": "SEEDED YAW / seed 37 / 0.198837 rad",
+      "eye_game": [
+        -16,
+        24,
+        -30
+      ],
+      "target_game": [
+        0,
+        0,
+        0
+      ],
+      "verticalSpan": 14,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "12_lift_transition.png",
+      "label": "SOURCE ACTION / lift transition / Y=2.19",
+      "eye_game": [
+        -16,
+        26.194499999999998,
+        -22.685000000000002
+      ],
+      "target_game": [
+        0,
+        2.1944999999999992,
+        7.314999999999996
+      ],
+      "verticalSpan": 14,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.9954766035079956
+    },
+    {
+      "file": "12_full_launch.png",
+      "label": "SOURCE ACTION / full launch / Y=9.44",
+      "eye_game": [
+        -16,
+        33.443124999999995,
+        1.4770833333333115
+      ],
+      "target_game": [
+        0,
+        9.443124999999997,
+        31.47708333333331
+      ],
+      "verticalSpan": 14,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": false,
+      "engineUniformScale": 1.0440287590026855
+    },
+    {
+      "file": "12_altitude_cap.png",
+      "label": "SOURCE ACTION / altitude cap / Y=23.00",
+      "eye_game": [
+        -16,
+        47,
+        91.97708333333331
+      ],
+      "target_game": [
+        0,
+        23,
+        121.97708333333331
+      ],
+      "verticalSpan": 14,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": false,
+      "engineUniformScale": 0.9951120018959045
+    },
+    {
+      "file": "12_passing_outside_window.png",
+      "label": "SOURCE ACTION / passing outside window / Y=23.00",
+      "eye_game": [
+        -16,
+        47,
+        91.97708333333331
+      ],
+      "target_game": [
+        0,
+        23,
+        121.97708333333331
+      ],
+      "verticalSpan": 14,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": false,
+      "engineUniformScale": 1.0026779174804688
+    },
+    {
+      "file": "13_source_common.png",
+      "label": "PROCEDURAL BASELINE / same common camera / no normalization",
+      "eye_game": [
+        -16,
+        24,
+        -30
+      ],
+      "target_game": [
+        0,
+        0,
+        0
+      ],
+      "verticalSpan": 14,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "14_airfield_coherence.png",
+      "label": "NEW TARGET + decorative source parts / shared world scale",
+      "eye_game": [
+        -12,
+        24,
+        -30
+      ],
+      "target_game": [
+        4,
+        0,
+        0
+      ],
+      "verticalSpan": 14,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        640,
+        480
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "15_game_classic_near.png",
+      "label": "OFFLINE CLASSIC NEAR / new X=-5, source X=+7 / shipped player",
+      "eye_game": [
+        -45.254833995939045,
+        54.255,
+        -45.25483399593904
+      ],
+      "target_game": [
+        0,
+        9,
+        0
+      ],
+      "verticalSpan": 80,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        960,
+        540
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "16_small_classic.png",
+      "label": "OFFLINE SMALL CLASSIC / shared world scale",
+      "eye_game": [
+        -45.254833995939045,
+        54.255,
+        -45.25483399593904
+      ],
+      "target_game": [
+        0,
+        9,
+        0
+      ],
+      "verticalSpan": 80,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        480,
+        270
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "15_game_classic_far.png",
+      "label": "OFFLINE CLASSIC FAR / new X=-5, source X=+7 / shipped player",
+      "eye_game": [
+        -45.254833995939045,
+        54.255,
+        -87.25483399593904
+      ],
+      "target_game": [
+        0,
+        9,
+        -42
+      ],
+      "verticalSpan": 80,
+      "fovVertical": null,
+      "projection": "ORTHO",
+      "resolution": [
+        960,
+        540
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "15_game_modern_near.png",
+      "label": "OFFLINE MODERN NEAR / new X=-5, source X=+7 / shipped player",
+      "eye_game": [
+        -9.91858415644439,
+        20,
+        -55.25108600279134
+      ],
+      "target_game": [
+        0,
+        7.2,
+        -12
+      ],
+      "verticalSpan": null,
+      "fovVertical": 58,
+      "projection": "PERSP",
+      "resolution": [
+        960,
+        540
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "16_small_modern.png",
+      "label": "OFFLINE SMALL MODERN / shared world scale",
+      "eye_game": [
+        -9.91858415644439,
+        20,
+        -55.25108600279134
+      ],
+      "target_game": [
+        0,
+        7.2,
+        -12
+      ],
+      "verticalSpan": null,
+      "fovVertical": 58,
+      "projection": "PERSP",
+      "resolution": [
+        480,
+        270
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "15_game_modern_far.png",
+      "label": "OFFLINE MODERN FAR / new X=-5, source X=+7 / shipped player",
+      "eye_game": [
+        -9.91858415644439,
+        20,
+        -97.25108600279134
+      ],
+      "target_game": [
+        0,
+        7.2,
+        -54
+      ],
+      "verticalSpan": null,
+      "fovVertical": 58,
+      "projection": "PERSP",
+      "resolution": [
+        960,
+        540
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "15_game_chase_near.png",
+      "label": "OFFLINE CHASE NEAR / new X=-5, source X=+7 / shipped player",
+      "eye_game": [
+        -2.5086831184236833,
+        15.5,
+        -51.86852548883856
+      ],
+      "target_game": [
+        0,
+        7.2,
+        -12
+      ],
+      "verticalSpan": null,
+      "fovVertical": 66,
+      "projection": "PERSP",
+      "resolution": [
+        960,
+        540
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "16_small_chase.png",
+      "label": "OFFLINE SMALL CHASE / shared world scale",
+      "eye_game": [
+        -2.5086831184236833,
+        15.5,
+        -51.86852548883856
+      ],
+      "target_game": [
+        0,
+        7.2,
+        -12
+      ],
+      "verticalSpan": null,
+      "fovVertical": 66,
+      "projection": "PERSP",
+      "resolution": [
+        480,
+        270
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    },
+    {
+      "file": "15_game_chase_far.png",
+      "label": "OFFLINE CHASE FAR / new X=-5, source X=+7 / shipped player",
+      "eye_game": [
+        -2.5086831184236833,
+        15.5,
+        -93.86852548883856
+      ],
+      "target_game": [
+        0,
+        7.2,
+        -54
+      ],
+      "verticalSpan": null,
+      "fovVertical": 66,
+      "projection": "PERSP",
+      "resolution": [
+        960,
+        540
+      ],
+      "beaconVisible": true,
+      "engineUniformScale": 0.30000001192092896
+    }
+  ],
+  "boundGLBSHA256": "681d691d277906ca960819d7f7a19536de041264fe76bd7a672a34c5fa24be55",
+  "boundBlendSHA256": "b00fa0b5fd219d8de5c21d675859e9e5d9df27daacc3fb801c44dab6cb9433b3",
+  "detailAdditionalRim": {
+    "position": [
+      1,
+      10,
+      10
+    ],
+    "power": 1100,
+    "color_linear": [
+      1,
+      0.65,
+      0.4
+    ],
+    "notUsedInCommonOrGameplay": true
+  },
+  "actionRig": "Neutral camera/key/fill/detail-rim translate with sampled world root position; deck remains fixed; no scale normalization.",
+  "sourcePoseMatrix": "Explicit Three XYZ pitch/yaw matrix Rx @ Ry converted to Blender basis; native motion bounds checked independently."
+}

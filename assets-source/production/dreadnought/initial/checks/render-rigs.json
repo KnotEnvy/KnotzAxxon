@@ -1,0 +1,691 @@
+{
+  "renders": [
+    {
+      "file": "01_overview_isometric.png",
+      "eye_game": [
+        -360,
+        300,
+        3480
+      ],
+      "target_game": [
+        6,
+        -15,
+        3810
+      ],
+      "projection": "orthographic",
+      "ortho_vertical_span": 618.75,
+      "fov_vertical": null,
+      "player_game": [
+        0,
+        9,
+        3760
+      ],
+      "player_scale": [
+        1,
+        1,
+        1
+      ],
+      "time_seconds": 0,
+      "source_rig": false,
+      "visible_sections": [
+        "DN_0035__dark",
+        "DN_0035__hull",
+        "DN_0036__dark",
+        "DN_0036__hull",
+        "DN_0036__neon",
+        "DN_0037__dark",
+        "DN_0037__hull",
+        "DN_0037__neon",
+        "DN_0038__dark",
+        "DN_0038__hull",
+        "DN_0038__neon",
+        "DN_0039__dark",
+        "DN_0039__hull",
+        "DN_0039__neon",
+        "DN_0040__dark",
+        "DN_0040__hull",
+        "DN_0040__neon",
+        "DN_0041__dark",
+        "DN_0041__hull",
+        "DN_0041__neon",
+        "DN_0042__dark",
+        "DN_0042__hull",
+        "DN_0042__neon",
+        "DN_0043__dark",
+        "DN_0043__hull",
+        "DN_0043__neon",
+        "DN_0044__dark",
+        "DN_0044__hull"
+      ],
+      "limitations": "Offline EEVEE. Source deepspace key/rim direction/intensity approximated in Blender; hemisphere represented by world fill. No live game, source textures, shader compile, sky, fog, bloom, targets, asteroids, HUD or collision test."
+    },
+    {
+      "file": "02_bow_structure.png",
+      "eye_game": [
+        -74,
+        35,
+        3310
+      ],
+      "target_game": [
+        6,
+        -23,
+        3470
+      ],
+      "projection": "orthographic",
+      "ortho_vertical_span": 143.75,
+      "fov_vertical": null,
+      "player_game": [
+        0,
+        9,
+        3440
+      ],
+      "player_scale": [
+        1,
+        1,
+        1
+      ],
+      "time_seconds": 0,
+      "source_rig": false,
+      "visible_sections": [
+        "DN_0035__dark",
+        "DN_0035__hull",
+        "DN_0036__dark",
+        "DN_0036__hull",
+        "DN_0036__neon",
+        "DN_0037__dark",
+        "DN_0037__hull",
+        "DN_0037__neon",
+        "DN_0038__dark",
+        "DN_0038__hull",
+        "DN_0038__neon",
+        "DN_0039__dark",
+        "DN_0039__hull",
+        "DN_0039__neon",
+        "DN_0040__dark",
+        "DN_0040__hull",
+        "DN_0040__neon",
+        "DN_0041__dark",
+        "DN_0041__hull",
+        "DN_0041__neon",
+        "DN_0042__dark",
+        "DN_0042__hull",
+        "DN_0042__neon",
+        "DN_0043__dark",
+        "DN_0043__hull",
+        "DN_0043__neon",
+        "DN_0044__dark",
+        "DN_0044__hull"
+      ],
+      "limitations": "Offline EEVEE. Source deepspace key/rim direction/intensity approximated in Blender; hemisphere represented by world fill. No live game, source textures, shader compile, sky, fog, bloom, targets, asteroids, HUD or collision test."
+    },
+    {
+      "file": "03_open_breach_ribs.png",
+      "eye_game": [
+        -68,
+        22,
+        3514
+      ],
+      "target_game": [
+        4,
+        -24,
+        3572
+      ],
+      "projection": "orthographic",
+      "ortho_vertical_span": 74.375,
+      "fov_vertical": null,
+      "player_game": [
+        0,
+        9,
+        3567
+      ],
+      "player_scale": [
+        1,
+        1,
+        1
+      ],
+      "time_seconds": 0,
+      "source_rig": false,
+      "visible_sections": [
+        "DN_0035__dark",
+        "DN_0035__hull",
+        "DN_0036__dark",
+        "DN_0036__hull",
+        "DN_0036__neon",
+        "DN_0037__dark",
+        "DN_0037__hull",
+        "DN_0037__neon",
+        "DN_0038__dark",
+        "DN_0038__hull",
+        "DN_0038__neon",
+        "DN_0039__dark",
+        "DN_0039__hull",
+        "DN_0039__neon",
+        "DN_0040__dark",
+        "DN_0040__hull",
+        "DN_0040__neon",
+        "DN_0041__dark",
+        "DN_0041__hull",
+        "DN_0041__neon",
+        "DN_0042__dark",
+        "DN_0042__hull",
+        "DN_0042__neon",
+        "DN_0043__dark",
+        "DN_0043__hull",
+        "DN_0043__neon",
+        "DN_0044__dark",
+        "DN_0044__hull"
+      ],
+      "limitations": "Offline EEVEE. Source deepspace key/rim direction/intensity approximated in Blender; hemisphere represented by world fill. No live game, source textures, shader compile, sky, fog, bloom, targets, asteroids, HUD or collision test."
+    },
+    {
+      "file": "04_far_beam_ruined_bridge.png",
+      "eye_game": [
+        -67,
+        39,
+        3970
+      ],
+      "target_game": [
+        24,
+        -1,
+        4019
+      ],
+      "projection": "orthographic",
+      "ortho_vertical_span": 87.5,
+      "fov_vertical": null,
+      "player_game": [
+        0,
+        9,
+        4000
+      ],
+      "player_scale": [
+        1,
+        1,
+        1
+      ],
+      "time_seconds": 0,
+      "source_rig": false,
+      "visible_sections": [
+        "DN_0035__dark",
+        "DN_0035__hull",
+        "DN_0036__dark",
+        "DN_0036__hull",
+        "DN_0036__neon",
+        "DN_0037__dark",
+        "DN_0037__hull",
+        "DN_0037__neon",
+        "DN_0038__dark",
+        "DN_0038__hull",
+        "DN_0038__neon",
+        "DN_0039__dark",
+        "DN_0039__hull",
+        "DN_0039__neon",
+        "DN_0040__dark",
+        "DN_0040__hull",
+        "DN_0040__neon",
+        "DN_0041__dark",
+        "DN_0041__hull",
+        "DN_0041__neon",
+        "DN_0042__dark",
+        "DN_0042__hull",
+        "DN_0042__neon",
+        "DN_0043__dark",
+        "DN_0043__hull",
+        "DN_0043__neon",
+        "DN_0044__dark",
+        "DN_0044__hull"
+      ],
+      "limitations": "Offline EEVEE. Source deepspace key/rim direction/intensity approximated in Blender; hemisphere represented by world fill. No live game, source textures, shader compile, sky, fog, bloom, targets, asteroids, HUD or collision test."
+    },
+    {
+      "file": "05_stern_recessed_engines.png",
+      "eye_game": [
+        -61,
+        11,
+        4321
+      ],
+      "target_game": [
+        6,
+        -26,
+        4200
+      ],
+      "projection": "orthographic",
+      "ortho_vertical_span": 98.125,
+      "fov_vertical": null,
+      "player_game": [
+        0,
+        9,
+        4210
+      ],
+      "player_scale": [
+        1,
+        1,
+        1
+      ],
+      "time_seconds": 0,
+      "source_rig": false,
+      "visible_sections": [
+        "DN_0035__dark",
+        "DN_0035__hull",
+        "DN_0036__dark",
+        "DN_0036__hull",
+        "DN_0036__neon",
+        "DN_0037__dark",
+        "DN_0037__hull",
+        "DN_0037__neon",
+        "DN_0038__dark",
+        "DN_0038__hull",
+        "DN_0038__neon",
+        "DN_0039__dark",
+        "DN_0039__hull",
+        "DN_0039__neon",
+        "DN_0040__dark",
+        "DN_0040__hull",
+        "DN_0040__neon",
+        "DN_0041__dark",
+        "DN_0041__hull",
+        "DN_0041__neon",
+        "DN_0042__dark",
+        "DN_0042__hull",
+        "DN_0042__neon",
+        "DN_0043__dark",
+        "DN_0043__hull",
+        "DN_0043__neon",
+        "DN_0044__dark",
+        "DN_0044__hull"
+      ],
+      "limitations": "Offline EEVEE. Source deepspace key/rim direction/intensity approximated in Blender; hemisphere represented by world fill. No live game, source textures, shader compile, sky, fog, bloom, targets, asteroids, HUD or collision test."
+    },
+    {
+      "file": "06_engine_cue_t125.png",
+      "eye_game": [
+        -61,
+        11,
+        4321
+      ],
+      "target_game": [
+        6,
+        -26,
+        4200
+      ],
+      "projection": "orthographic",
+      "ortho_vertical_span": 98.125,
+      "fov_vertical": null,
+      "player_game": [
+        0,
+        9,
+        4210
+      ],
+      "player_scale": [
+        1,
+        1,
+        1
+      ],
+      "time_seconds": 1.25,
+      "source_rig": false,
+      "visible_sections": [
+        "DN_0035__dark",
+        "DN_0035__hull",
+        "DN_0036__dark",
+        "DN_0036__hull",
+        "DN_0036__neon",
+        "DN_0037__dark",
+        "DN_0037__hull",
+        "DN_0037__neon",
+        "DN_0038__dark",
+        "DN_0038__hull",
+        "DN_0038__neon",
+        "DN_0039__dark",
+        "DN_0039__hull",
+        "DN_0039__neon",
+        "DN_0040__dark",
+        "DN_0040__hull",
+        "DN_0040__neon",
+        "DN_0041__dark",
+        "DN_0041__hull",
+        "DN_0041__neon",
+        "DN_0042__dark",
+        "DN_0042__hull",
+        "DN_0042__neon",
+        "DN_0043__dark",
+        "DN_0043__hull",
+        "DN_0043__neon",
+        "DN_0044__dark",
+        "DN_0044__hull"
+      ],
+      "limitations": "Offline EEVEE. Source deepspace key/rim direction/intensity approximated in Blender; hemisphere represented by world fill. No live game, source textures, shader compile, sky, fog, bloom, targets, asteroids, HUD or collision test."
+    },
+    {
+      "file": "07_game_Classic.png",
+      "eye_game": [
+        -45.25483399593904,
+        54.255,
+        3522.745166004061
+      ],
+      "target_game": [
+        0,
+        9,
+        3568
+      ],
+      "projection": "orthographic",
+      "ortho_vertical_span": 80.0,
+      "fov_vertical": null,
+      "player_game": [
+        0,
+        9,
+        3540
+      ],
+      "player_scale": [
+        1,
+        1,
+        1
+      ],
+      "time_seconds": 0,
+      "source_rig": true,
+      "visible_sections": [
+        "DN_0035__dark",
+        "DN_0035__hull",
+        "DN_0036__dark",
+        "DN_0036__hull",
+        "DN_0036__neon",
+        "DN_0037__dark",
+        "DN_0037__hull",
+        "DN_0037__neon",
+        "DN_0038__dark",
+        "DN_0038__hull",
+        "DN_0038__neon",
+        "DN_0039__dark",
+        "DN_0039__hull",
+        "DN_0039__neon",
+        "DN_0040__dark",
+        "DN_0040__hull",
+        "DN_0040__neon",
+        "DN_0041__dark",
+        "DN_0041__hull",
+        "DN_0041__neon",
+        "DN_0042__dark",
+        "DN_0042__hull",
+        "DN_0042__neon"
+      ],
+      "limitations": "Offline EEVEE. Source deepspace key/rim direction/intensity approximated in Blender; hemisphere represented by world fill. No live game, source textures, shader compile, sky, fog, bloom, targets, asteroids, HUD or collision test."
+    },
+    {
+      "file": "08_game_Modern.png",
+      "eye_game": [
+        -9.918584156444393,
+        23,
+        3512.7489139972085
+      ],
+      "target_game": [
+        0,
+        10.2,
+        3556
+      ],
+      "projection": "perspective",
+      "ortho_vertical_span": null,
+      "fov_vertical": 58,
+      "player_game": [
+        0,
+        9,
+        3540
+      ],
+      "player_scale": [
+        1,
+        1,
+        1
+      ],
+      "time_seconds": 0,
+      "source_rig": true,
+      "visible_sections": [
+        "DN_0035__dark",
+        "DN_0035__hull",
+        "DN_0036__dark",
+        "DN_0036__hull",
+        "DN_0036__neon",
+        "DN_0037__dark",
+        "DN_0037__hull",
+        "DN_0037__neon",
+        "DN_0038__dark",
+        "DN_0038__hull",
+        "DN_0038__neon",
+        "DN_0039__dark",
+        "DN_0039__hull",
+        "DN_0039__neon",
+        "DN_0040__dark",
+        "DN_0040__hull",
+        "DN_0040__neon",
+        "DN_0041__dark",
+        "DN_0041__hull",
+        "DN_0041__neon",
+        "DN_0042__dark",
+        "DN_0042__hull",
+        "DN_0042__neon"
+      ],
+      "limitations": "Offline EEVEE. Source deepspace key/rim direction/intensity approximated in Blender; hemisphere represented by world fill. No live game, source textures, shader compile, sky, fog, bloom, targets, asteroids, HUD or collision test."
+    },
+    {
+      "file": "09_game_Chase.png",
+      "eye_game": [
+        -2.5086831184236833,
+        18.5,
+        3516.1314745111613
+      ],
+      "target_game": [
+        0,
+        10.2,
+        3556
+      ],
+      "projection": "perspective",
+      "ortho_vertical_span": null,
+      "fov_vertical": 66,
+      "player_game": [
+        0,
+        9,
+        3540
+      ],
+      "player_scale": [
+        1,
+        1,
+        1
+      ],
+      "time_seconds": 0,
+      "source_rig": true,
+      "visible_sections": [
+        "DN_0035__dark",
+        "DN_0035__hull",
+        "DN_0036__dark",
+        "DN_0036__hull",
+        "DN_0036__neon",
+        "DN_0037__dark",
+        "DN_0037__hull",
+        "DN_0037__neon",
+        "DN_0038__dark",
+        "DN_0038__hull",
+        "DN_0038__neon",
+        "DN_0039__dark",
+        "DN_0039__hull",
+        "DN_0039__neon",
+        "DN_0040__dark",
+        "DN_0040__hull",
+        "DN_0040__neon",
+        "DN_0041__dark",
+        "DN_0041__hull",
+        "DN_0041__neon",
+        "DN_0042__dark",
+        "DN_0042__hull",
+        "DN_0042__neon"
+      ],
+      "limitations": "Offline EEVEE. Source deepspace key/rim direction/intensity approximated in Blender; hemisphere represented by world fill. No live game, source textures, shader compile, sky, fog, bloom, targets, asteroids, HUD or collision test."
+    },
+    {
+      "file": "10_low_lane_Modern.png",
+      "eye_game": [
+        -9.918584156444393,
+        15.3,
+        3919.7489139972085
+      ],
+      "target_game": [
+        0,
+        2.5,
+        3963
+      ],
+      "projection": "perspective",
+      "ortho_vertical_span": null,
+      "fov_vertical": 58,
+      "player_game": [
+        0,
+        1.3,
+        3947
+      ],
+      "player_scale": [
+        1,
+        1,
+        1
+      ],
+      "time_seconds": 0,
+      "source_rig": true,
+      "visible_sections": [
+        "DN_0040__dark",
+        "DN_0040__hull",
+        "DN_0040__neon",
+        "DN_0041__dark",
+        "DN_0041__hull",
+        "DN_0041__neon",
+        "DN_0042__dark",
+        "DN_0042__hull",
+        "DN_0042__neon",
+        "DN_0043__dark",
+        "DN_0043__hull",
+        "DN_0043__neon",
+        "DN_0044__dark",
+        "DN_0044__hull"
+      ],
+      "limitations": "Offline EEVEE. Source deepspace key/rim direction/intensity approximated in Blender; hemisphere represented by world fill. No live game, source textures, shader compile, sky, fog, bloom, targets, asteroids, HUD or collision test."
+    },
+    {
+      "file": "11_high_lane_Chase.png",
+      "eye_game": [
+        -2.5086831184236833,
+        34.5,
+        3516.1314745111613
+      ],
+      "target_game": [
+        0,
+        26.2,
+        3556
+      ],
+      "projection": "perspective",
+      "ortho_vertical_span": null,
+      "fov_vertical": 66,
+      "player_game": [
+        0,
+        25,
+        3540
+      ],
+      "player_scale": [
+        1,
+        1,
+        1
+      ],
+      "time_seconds": 0,
+      "source_rig": true,
+      "visible_sections": [
+        "DN_0035__dark",
+        "DN_0035__hull",
+        "DN_0036__dark",
+        "DN_0036__hull",
+        "DN_0036__neon",
+        "DN_0037__dark",
+        "DN_0037__hull",
+        "DN_0037__neon",
+        "DN_0038__dark",
+        "DN_0038__hull",
+        "DN_0038__neon",
+        "DN_0039__dark",
+        "DN_0039__hull",
+        "DN_0039__neon",
+        "DN_0040__dark",
+        "DN_0040__hull",
+        "DN_0040__neon",
+        "DN_0041__dark",
+        "DN_0041__hull",
+        "DN_0041__neon",
+        "DN_0042__dark",
+        "DN_0042__hull",
+        "DN_0042__neon"
+      ],
+      "limitations": "Offline EEVEE. Source deepspace key/rim direction/intensity approximated in Blender; hemisphere represented by world fill. No live game, source textures, shader compile, sky, fog, bloom, targets, asteroids, HUD or collision test."
+    },
+    {
+      "file": "12_destroyed_gun_ring.png",
+      "eye_game": [
+        -28,
+        7,
+        3708
+      ],
+      "target_game": [
+        0,
+        -13,
+        3732
+      ],
+      "projection": "orthographic",
+      "ortho_vertical_span": 27.5,
+      "fov_vertical": null,
+      "player_game": [
+        0,
+        9,
+        3732
+      ],
+      "player_scale": [
+        1,
+        1,
+        1
+      ],
+      "time_seconds": 0,
+      "source_rig": false,
+      "visible_sections": [
+        "DN_0035__dark",
+        "DN_0035__hull",
+        "DN_0036__dark",
+        "DN_0036__hull",
+        "DN_0036__neon",
+        "DN_0037__dark",
+        "DN_0037__hull",
+        "DN_0037__neon",
+        "DN_0038__dark",
+        "DN_0038__hull",
+        "DN_0038__neon",
+        "DN_0039__dark",
+        "DN_0039__hull",
+        "DN_0039__neon",
+        "DN_0040__dark",
+        "DN_0040__hull",
+        "DN_0040__neon",
+        "DN_0041__dark",
+        "DN_0041__hull",
+        "DN_0041__neon",
+        "DN_0042__dark",
+        "DN_0042__hull",
+        "DN_0042__neon",
+        "DN_0043__dark",
+        "DN_0043__hull",
+        "DN_0043__neon",
+        "DN_0044__dark",
+        "DN_0044__hull"
+      ],
+      "limitations": "Offline EEVEE. Source deepspace key/rim direction/intensity approximated in Blender; hemisphere represented by world fill. No live game, source textures, shader compile, sky, fog, bloom, targets, asteroids, HUD or collision test."
+    }
+  ],
+  "resolution": [
+    1440,
+    900
+  ],
+  "renderer": "BLENDER_EEVEE",
+  "samples": 32,
+  "camera_contract": "src/game/CameraRig.js snap at zero boost, velocity, kick, shake and extraDist. Classic vertical halfheight40 at aspect1.6; anchored Y9/lead28. Modern/Chase use exact vertical FOV and game-space offsets.",
+  "no_normalization": true,
+  "all_shipped_player_import_root_scales": [
+    1,
+    1,
+    1
+  ]
+}

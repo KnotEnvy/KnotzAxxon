@@ -1,0 +1,89 @@
+{
+  "viewedByImplementationAgent": true,
+  "viewingTool": "functions.view_image, ten final finished PNGs opened after final generation; not inferred from file existence or render logs.",
+  "viewedUTC": "2026-11-14T20:34:55.148019+00:00",
+  "agent": "gpt-6.1-sol / xhigh / inherited available speed",
+  "formalReviewRounds": 0,
+  "formalFixRounds": 0,
+  "status": "pending_deferred_opus_review",
+  "reviewScope": "Implementation self-inspection only, not formal Opus review or final acceptance.",
+  "viewedFiles": [
+    {
+      "file": "evidence/01-multiview.png",
+      "sha256": "8025d3f5db278bc94fd8e6ad8818b153bffa9a526103549ed36943b9be9ff722",
+      "width": 1440,
+      "height": 1160,
+      "observation": "All four final views opened: broad raked armor, grounded octagonal footing and low fixed intake machinery read as passive bunker rather than an active turret/radar."
+    },
+    {
+      "file": "evidence/02-structure.png",
+      "sha256": "ac981745dea6dd419f88dea0487b04b37c701ebd521db2c18beb01f308e5734a",
+      "width": 1440,
+      "height": 580,
+      "observation": "Both final structural closeups opened: real setback walls/backplates at service and observation recesses; seated roof tray, five fixed louvers, fitted rails/anchors; no caption shadows."
+    },
+    {
+      "file": "evidence/03-warm-cue.png",
+      "sha256": "bc883e8e556568cf401935e3f60875096b8da40de024d15b63f4cc1b9327d211",
+      "width": 1440,
+      "height": 1160,
+      "observation": "All four final cue states opened: source citadel amber and gauntlet orange hues at BREATHE1.0/.1. Cue is a narrow static strip, with no barrel, weapon core or red strobe geometry. Offline emission is not source-shader color equivalence."
+    },
+    {
+      "file": "evidence/04-world-scale.png",
+      "sha256": "0bb3d7cfedc5b13fa2a05c6deef7cb483b5fffdfa86636df2ac5c64f5669123c",
+      "width": 2700,
+      "height": 1400,
+      "observation": "All six common WORLD 1:1 panels opened: identical ship/bunker placement across Classic/Modern/Chase; unscaled shipped player remains visually primary; no object-fitted world cameras."
+    },
+    {
+      "file": "evidence/frames/world-citadel-classic.png",
+      "sha256": "fd11b9e220e1da835a49f749a58a68d4b1833dab9eaedb6b7734df40e75976c4",
+      "width": 900,
+      "height": 700,
+      "observation": "Final full-resolution citadel/classic frame opened individually. Bunker remains on the far shoulder beside the lane x16 marker; player is separate, at original shipped dimensions. Detail collapses at Classic scale and body is dark under the lighting proxy; no live readability or occlusion acceptance claimed."
+    },
+    {
+      "file": "evidence/frames/world-citadel-modern.png",
+      "sha256": "c70168c908a68e6dc9610bac4c81a0fcf380706e615116379af16042769e1e5b",
+      "width": 900,
+      "height": 700,
+      "observation": "Final full-resolution citadel/modern frame opened individually. Bunker remains on the far shoulder beside the lane x16 marker; player is separate, at original shipped dimensions. Detail collapses at Classic scale and body is dark under the lighting proxy; no live readability or occlusion acceptance claimed."
+    },
+    {
+      "file": "evidence/frames/world-citadel-chase.png",
+      "sha256": "549b3f128dae8afa59bd5a2ef773260bf11e2dd62c9541221c530cf6e0b894c6",
+      "width": 900,
+      "height": 700,
+      "observation": "Final full-resolution citadel/chase frame opened individually. Bunker remains on the far shoulder beside the lane x16 marker; player is separate, at original shipped dimensions. Detail collapses at Classic scale and body is dark under the lighting proxy; no live readability or occlusion acceptance claimed."
+    },
+    {
+      "file": "evidence/frames/world-gauntlet-classic.png",
+      "sha256": "1049a48f8954db757a4e9ddbef6e5e794f6a9541190ebfc9794831d5a780906f",
+      "width": 900,
+      "height": 700,
+      "observation": "Final full-resolution gauntlet/classic frame opened individually. Bunker remains on the far shoulder beside the lane x16 marker; player is separate, at original shipped dimensions. Detail collapses at Classic scale and body is dark under the lighting proxy; no live readability or occlusion acceptance claimed."
+    },
+    {
+      "file": "evidence/frames/world-gauntlet-modern.png",
+      "sha256": "f08392a8b2a04e8dbe03c388d751e417b5a9ae1e80de35713c1df77a2daaef02",
+      "width": 900,
+      "height": 700,
+      "observation": "Final full-resolution gauntlet/modern frame opened individually. Bunker remains on the far shoulder beside the lane x16 marker; player is separate, at original shipped dimensions. Detail collapses at Classic scale and body is dark under the lighting proxy; no live readability or occlusion acceptance claimed."
+    },
+    {
+      "file": "evidence/frames/world-gauntlet-chase.png",
+      "sha256": "a5f23c4c7e766d5edafbf526bb56fae6252daba6c96e310b6e93303891a63f73",
+      "width": 900,
+      "height": 700,
+      "observation": "Final full-resolution gauntlet/chase frame opened individually. Bunker remains on the far shoulder beside the lane x16 marker; player is separate, at original shipped dimensions. Detail collapses at Classic scale and body is dark under the lighting proxy; no live readability or occlusion acceptance claimed."
+    }
+  ],
+  "limitations": [
+    "Offline native Linux software EEVEE; source-lighting, mapped-hull-average and deck test doubles, no live GPU/FPS evidence.",
+    "Specular sampling noise remains in some 24-sample studio highlights; no source texture-normal-map or bloom equivalence.",
+    "At Classic world scale the small bunker silhouette/status cue survives but fine seams/louvers are not individually legible; dark world body is intentionally subordinate to the player.",
+    "Pixel-space captions are outside original renders and proven not to crop/recolor original pixels or cast shadows.",
+    "Live renderer integration, gameplay/camera occlusion acceptance, receiver verification and deferred Opus polish belong to orchestrator."
+  ]
+}

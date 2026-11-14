@@ -1,0 +1,10 @@
+{
+  "state": "INITIAL",
+  "status": "pending_deferred_opus_review",
+  "frozenUtc": "20261114T154845Z",
+  "formal_reviews": 0,
+  "formal_review_fix_rounds": 0,
+  "final_art_approval": false,
+  "immutable": true,
+  "hashPolicy": "SHA256SUMS hashes every delivered regular file except SHA256SUMS. No post-freeze modifications."
+}

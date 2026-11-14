@@ -1,0 +1,382 @@
+{
+  "status": "PASS",
+  "blender": "5.2.1 LTS",
+  "build_hash": "9e2066aef7ef",
+  "blend_reopened": {
+    "visible_triangles": 2360,
+    "visible_primitives": 6,
+    "hidden_flash_triangles": 628,
+    "bounds": {
+      "min": [
+        -2.859999895095825,
+        -0.42500001192092896,
+        -1.8860000371932983
+      ],
+      "max": [
+        2.859999895095825,
+        0.7400000095367432,
+        1.9800000190734863
+      ]
+    },
+    "meshes": [
+      {
+        "name": "body",
+        "parent": "interceptor",
+        "triangles": 2240,
+        "materials": [
+          "INT_Hull",
+          "INT_Machinery",
+          "INT_Accent",
+          "INT_Canopy",
+          "INT_Cue",
+          "INT_Emission"
+        ]
+      },
+      {
+        "name": "eye",
+        "parent": "interceptor",
+        "triangles": 44,
+        "materials": [
+          "INT_Hull",
+          "INT_Machinery",
+          "INT_Accent",
+          "INT_Canopy",
+          "INT_Cue",
+          "INT_Emission"
+        ]
+      },
+      {
+        "name": "engine",
+        "parent": "interceptor",
+        "triangles": 76,
+        "materials": [
+          "INT_Hull",
+          "INT_Machinery",
+          "INT_Accent",
+          "INT_Canopy",
+          "INT_Cue",
+          "INT_Emission"
+        ]
+      }
+    ],
+    "packed": "No external textures or linked libraries; pack is vacuous for authored plain materials.",
+    "bounds_with_activated_shell": {
+      "min": [
+        -2.911479949951172,
+        -0.42500001192092896,
+        -1.9199481010437012
+      ],
+      "max": [
+        2.911479949951172,
+        0.753320038318634,
+        2.0156400203704834
+      ]
+    }
+  },
+  "glb_clean_reimport": {
+    "visible_triangles": 2360,
+    "visible_primitives": 6,
+    "hidden_flash_triangles": 628,
+    "bounds": {
+      "min": [
+        -2.859999895095825,
+        -0.42500001192092896,
+        -1.8860000371932983
+      ],
+      "max": [
+        2.859999895095825,
+        0.7400000095367432,
+        1.9800000190734863
+      ]
+    },
+    "meshes": [
+      {
+        "name": "body",
+        "parent": "interceptor",
+        "triangles": 2240,
+        "materials": [
+          "INT_Hull.001",
+          "INT_Machinery.001",
+          "INT_Accent.001",
+          "INT_Canopy.001"
+        ]
+      },
+      {
+        "name": "engine",
+        "parent": "interceptor",
+        "triangles": 76,
+        "materials": [
+          "INT_Emission.001"
+        ]
+      },
+      {
+        "name": "eye",
+        "parent": "interceptor",
+        "triangles": 44,
+        "materials": [
+          "INT_Cue.001"
+        ]
+      }
+    ]
+  },
+  "independent_binary_agreement": true,
+  "engine_pivot_game": [
+    0.0,
+    -0.03500000014901161,
+    -1.840000033378601
+  ],
+  "engine_local_geometry_bounds": {
+    "min": [
+      -0.2680000066757202,
+      -0.2680000066757202,
+      -0.0
+    ],
+    "max": [
+      0.2680000066757202,
+      0.2680000066757202,
+      0.039999961853027344
+    ]
+  },
+  "engine_pulse": {
+    "samples": 401,
+    "scale_range": [
+      0.97,
+      1.065
+    ],
+    "intersecting_samples": 0,
+    "minimum_sampled_vertex_to_surface_distance": 0.02921576052904129,
+    "method": "Triangle BVH overlap each scale; nearest surface from vertices in both directions. Includes endpoints. Distance is a sampled estimate, not analytic minimum."
+  },
+  "eye_seating": {
+    "triangle_intersections": 32,
+    "note": "Sensor back is intentionally seated into the fixed brow; no flyer eye scale animation in current source."
+  },
+  "shot": {
+    "rest_spawn_game": [
+      0,
+      0,
+      1.5
+    ],
+    "nearest_static_body_distance": 0.1573486626148224,
+    "ray_plusZ_from_rest_spawn_hits_body": false,
+    "rotated_channel_vs_fixed_spawn_offset_at_firing_sample": 0.44947915304208985,
+    "mismatch": "Actual targeting/lead and muzzle FX stay at root. Under root rotations fixed-world spawn diverges from weapon channel; muzzle FX occur inside central airframe. Projectile radius .9 exceeds the channel; no narrower aiming/collision is introduced."
+  },
+  "poses": {
+    "weave": {
+      "rotation_xyz_game": [
+        -0.09818839961396691,
+        -0.17125420595614138,
+        0.5072782852859407
+      ],
+      "bounds_local_game_after_rotation": {
+        "min": [
+          -2.3297131061553955,
+          -1.6330821514129639,
+          -1.9092515707015991
+        ],
+        "max": [
+          2.695920467376709,
+          1.3942162990570068,
+          1.9723498821258545
+        ]
+      },
+      "selected_root_game": [
+        -3.597645238608368,
+        18.230527289827595,
+        122.2399999999985
+      ]
+    },
+    "strafe": {
+      "rotation_xyz_game": [
+        -0.06345876893635617,
+        -0.2121577731212013,
+        0.6378931343543865
+      ],
+      "bounds_local_game_after_rotation": {
+        "min": [
+          -2.0803284645080566,
+          -1.8955810070037842,
+          -1.907439112663269
+        ],
+        "max": [
+          2.54319429397583,
+          1.7295219898223877,
+          1.969141960144043
+        ]
+      },
+      "selected_root_game": [
+        1.8666666666666742,
+        10.383386524998516,
+        72.49333333333311
+      ]
+    },
+    "orbit-displaced": {
+      "rotation_xyz_game": [
+        0.4433849810855355,
+        -0.308019815667279,
+        0.9563266510246087
+      ],
+      "bounds_local_game_after_rotation": {
+        "min": [
+          -1.328041434288025,
+          -1.5691399574279785,
+          -2.5785176753997803
+        ],
+        "max": [
+          2.0378119945526123,
+          2.4435606002807617,
+          1.8228269815444946
+        ]
+      },
+      "selected_root_game": [
+        8.625263519536443,
+        16.339154915953948,
+        64.56666666666665
+      ]
+    },
+    "dive": {
+      "rotation_xyz_game": [
+        0.14554463531809558,
+        -0.14088421861639303,
+        0.4157782289872538
+      ],
+      "bounds_local_game_after_rotation": {
+        "min": [
+          -2.480786085128784,
+          -1.0648062229156494,
+          -1.9178699254989624
+        ],
+        "max": [
+          2.782818078994751,
+          1.3233647346496582,
+          1.9846434593200684
+        ]
+      },
+      "selected_root_game": [
+        2.8000000000000274,
+        12.005888955633452,
+        65.73333333333328
+      ]
+    },
+    "peel": {
+      "rotation_xyz_game": [
+        -0.1599999999939598,
+        -0.2879999994063879,
+        0.8399999999682889
+      ],
+      "bounds_local_game_after_rotation": {
+        "min": [
+          -1.6012628078460693,
+          -2.422898769378662,
+          -1.8819122314453125
+        ],
+        "max": [
+          2.255388021469116,
+          2.0842478275299072,
+          1.9071595668792725
+        ]
+      },
+      "selected_root_game": [
+        -19,
+        25,
+        26.000000000000476
+      ]
+    },
+    "carrier-launch": {
+      "rotation_xyz_game": [
+        0,
+        0,
+        -1.0787975943924633
+      ],
+      "bounds_local_game_after_rotation": {
+        "min": [
+          -1.4656118154525757,
+          -2.5821869373321533,
+          -1.8860000371932983
+        ],
+        "max": [
+          1.418898105621338,
+          2.557150363922119,
+          1.9800000190734863
+        ]
+      },
+      "selected_root_game": [
+        19.183984269032027,
+        7.084304179135815,
+        81.23999999999955
+      ]
+    },
+    "carrier-transition": {
+      "rotation_xyz_game": [
+        0,
+        0,
+        -0.11588329965225318
+      ],
+      "bounds_local_game_after_rotation": {
+        "min": [
+          -2.855849027633667,
+          -0.4598131775856018,
+          -1.8860000371932983
+        ],
+        "max": [
+          2.8497209548950195,
+          0.8018676042556763,
+          1.9800000190734863
+        ]
+      },
+      "selected_root_game": [
+        1.4904465578051167,
+        8.851165315715054,
+        141.0999999999987
+      ]
+    }
+  },
+  "low_altitude_roll": [
+    {
+      "rootY": 2.3,
+      "roll": -1.1,
+      "minWorldY": -0.4807300567626953
+    },
+    {
+      "rootY": 2.3,
+      "roll": -0.84,
+      "minWorldY": -0.12289881706237793
+    },
+    {
+      "rootY": 2.3,
+      "roll": 0,
+      "minWorldY": 1.6100491285324097
+    },
+    {
+      "rootY": 2.3,
+      "roll": 0.84,
+      "minWorldY": 0.0411069393157959
+    },
+    {
+      "rootY": 2.3,
+      "roll": 1.1,
+      "minWorldY": -0.3738062381744385
+    }
+  ],
+  "baseline_rest_including_shell": {
+    "min": [
+      -2.9044,
+      -0.43,
+      -1.9923
+    ],
+    "max": [
+      2.9044,
+      0.77,
+      2.208
+    ]
+  },
+  "limitations": [
+    "Static airframe mating overlaps and seated sensor are intentional; not a watertight monolithic 3D-print mesh.",
+    "Thin nozzle heat petals are intentional open surfaces.",
+    "Rest collision radius2.2 remains gameplay-owned; 2.86 wing tips extend beyond it, comparable to baseline.",
+    "Extreme minimum-altitude banks can dip wing tips below deck, comparable to old wings; no gameplay restrictions added.",
+    "No live carrier/boss/wing contact, GPU performance or actual camera/fog/postfx integration verification.",
+    "Dispose ownership contract inspected; not tested with live WebGL resources."
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "defaultRuntimeResources": [
+    "/KnotzAxxon/models/fuel.glb",
+    "/KnotzAxxon/models/player.glb",
+    "/KnotzAxxon/models/production/asteroids.glb",
+    "/KnotzAxxon/models/production/bunker.glb",
+    "/KnotzAxxon/models/production/cargo-kit.glb",
+    "/KnotzAxxon/models/production/carrier-template.bin",
+    "/KnotzAxxon/models/production/carrier-template.json",
+    "/KnotzAxxon/models/production/cooling-stack.template.json",
+    "/KnotzAxxon/models/production/covered-fighter.recipe.json",
+    "/KnotzAxxon/models/production/dreadnought.glb",
+    "/KnotzAxxon/models/production/drone.glb",
+    "/KnotzAxxon/models/production/flak-gun.template.json",
+    "/KnotzAxxon/models/production/fuel-depot.template.json",
+    "/KnotzAxxon/models/production/fuel-pickup.glb",
+    "/KnotzAxxon/models/production/heavy-turret.glb",
+    "/KnotzAxxon/models/production/interceptor.glb",
+    "/KnotzAxxon/models/production/mine.glb",
+    "/KnotzAxxon/models/production/missile.glb",
+    "/KnotzAxxon/models/production/parked-fighter.glb",
+    "/KnotzAxxon/models/production/repair-pickup.glb",
+    "/KnotzAxxon/models/production/shield-pickup.glb",
+    "/KnotzAxxon/models/production/spread-pickup.glb",
+    "/KnotzAxxon/models/production/wreckage-templates.json",
+    "/KnotzAxxon/models/radar.glb",
+    "/KnotzAxxon/models/sentinel.glb",
+    "/KnotzAxxon/models/silo.glb",
+    "/KnotzAxxon/models/turret.glb"
+  ],
+  "servedAssets": [
+    {
+      "asset": "models/player.glb",
+      "bytes": 478292,
+      "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57"
+    },
+    {
+      "asset": "models/sentinel.glb",
+      "bytes": 1140172,
+      "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef"
+    },
+    {
+      "asset": "models/turret.glb",
+      "bytes": 58452,
+      "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2"
+    },
+    {
+      "asset": "models/radar.glb",
+      "bytes": 55564,
+      "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d"
+    },
+    {
+      "asset": "models/silo.glb",
+      "bytes": 1281700,
+      "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e"
+    },
+    {
+      "asset": "models/fuel.glb",
+      "bytes": 1087156,
+      "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc"
+    },
+    {
+      "asset": "models/production/antenna.glb",
+      "bytes": 37252,
+      "sha256": "6cefc79edfd1b4f123550dc50ced9e441046e65ebb97d2629f48bb61c582beb5"
+    },
+    {
+      "asset": "models/production/asteroids.glb",
+      "bytes": 179280,
+      "sha256": "0450b85240d589e4e2f65454f61b53af52d443a427d76f2c38a1008ae16272b2"
+    },
+    {
+      "asset": "models/production/bunker.glb",
+      "bytes": 51652,
+      "sha256": "0cd38bb1b315bf68f3a84139bb73dd5009644c942d56ac03370d0ef7a6986dbb"
+    },
+    {
+      "asset": "models/production/cargo-kit.glb",
+      "bytes": 19828,
+      "sha256": "c516490784e27f1c438df3ec731a4d025793f83522efd1215cec53d13da3e352"
+    },
+    {
+      "asset": "models/production/carrier-template.bin",
+      "bytes": 2627736,
+      "sha256": "4dddc3fbadc5bda65c8dd80c012353440a9927772bac61b8ae836a4a8452b593"
+    },
+    {
+      "asset": "models/production/carrier-template.json",
+      "bytes": 140462,
+      "sha256": "44452e6b96683dd9e183efe1420dfd701322ea47b759300de1ee3015b4dba683"
+    },
+    {
+      "asset": "models/production/carrier.glb",
+      "bytes": 2389144,
+      "sha256": "f6dd09aa6324a6cf1bb9526bdfd94853f1ce59cafd243cecd10da813e2e96fe1"
+    },
+    {
+      "asset": "models/production/cooling-stack.glb",
+      "bytes": 69256,
+      "sha256": "96a0f506f1c3ce4644fc1814283b1a0e022691b4786eb7481fa68ceda1cc2002"
+    },
+    {
+      "asset": "models/production/cooling-stack.template.json",
+      "bytes": 130968,
+      "sha256": "dc71a4c9dfd70e10e217af3c3b358be983a1901e23a3fcf9d2f84e1ff3d20601"
+    },
+    {
+      "asset": "models/production/covered-fighter.glb",
+      "bytes": 144424,
+      "sha256": "5234cd4ad177855ed5c6fd5b76584f409e5bfa669edf38243b272d50aedf12d3"
+    },
+    {
+      "asset": "models/production/covered-fighter.recipe.json",
+      "bytes": 426814,
+      "sha256": "af50af1d8684cf24902c5acd6a864211609085ad8f853a83b5fd20ddc9e7f71b"
+    },
+    {
+      "asset": "models/production/dreadnought.glb",
+      "bytes": 3378628,
+      "sha256": "67c5e604ea19b941a76b127a1221c87350161f3637ffbd19e87a16489ec69c6c"
+    },
+    {
+      "asset": "models/production/drone.glb",
+      "bytes": 155468,
+      "sha256": "7053c26483f863ec9c854cf57bd0efd1e7f5a775616c0d78200ae0c7f273b8ee"
+    },
+    {
+      "asset": "models/production/flak-gun.glb",
+      "bytes": 109384,
+      "sha256": "97a07ec5317b98c095182aadbe08cbef02310f3f4a126db631b8f7e1453cbcdd"
+    },
+    {
+      "asset": "models/production/flak-gun.template.json",
+      "bytes": 200385,
+      "sha256": "60f0aeb6c958b7e6d93be7d063a6ecf141892cd27313c99d6eac0bcfe795b987"
+    },
+    {
+      "asset": "models/production/fuel-depot.glb",
+      "bytes": 103276,
+      "sha256": "14ea9f351088e35aeb304e6ed46699299864a063cd873571dd30d018216c67af"
+    },
+    {
+      "asset": "models/production/fuel-depot.template.json",
+      "bytes": 238007,
+      "sha256": "84bb0fb34892052a5c423cf750ed07c2acff033b11a34963f8770970696b15a1"
+    },
+    {
+      "asset": "models/production/fuel-pickup.glb",
+      "bytes": 109876,
+      "sha256": "152fac271b398f2a44183759b4c4250716a87fc28862221bde6035a84caa912f"
+    },
+    {
+      "asset": "models/production/heavy-turret.glb",
+      "bytes": 335976,
+      "sha256": "de95debb8de0d5813b60ee935980ebaf44d7fe387be03b2de934a9a70b535409"
+    },
+    {
+      "asset": "models/production/interceptor.glb",
+      "bytes": 149264,
+      "sha256": "2ebc37c7fb12624707a0e21d91ea610c06dc27b2dc4922d9e44d5531573d1152"
+    },
+    {
+      "asset": "models/production/mine.glb",
+      "bytes": 145880,
+      "sha256": "51276e4106087f0e890dd52986a79369a944495fbe72a8139eb0e5b4c40b5369"
+    },
+    {
+      "asset": "models/production/missile.glb",
+      "bytes": 37904,
+      "sha256": "8e491aacae4e235d24bc6fcba44e84d0b9c2c75ef8b229ea5a93341f156de004"
+    },
+    {
+      "asset": "models/production/parked-fighter.glb",
+      "bytes": 363432,
+      "sha256": "681d691d277906ca960819d7f7a19536de041264fe76bd7a672a34c5fa24be55"
+    },
+    {
+      "asset": "models/production/repair-pickup.glb",
+      "bytes": 75676,
+      "sha256": "f063dc0d9daa554f982da33fc72a9222c1a396031a59fe5f2ba71eb9c0929caa"
+    },
+    {
+      "asset": "models/production/shield-pickup.glb",
+      "bytes": 92808,
+      "sha256": "8619ec08a7fce0679408172052a009073e1dcd39356374ab3b2608993981d4ae"
+    },
+    {
+      "asset": "models/production/spread-pickup.glb",
+      "bytes": 91232,
+      "sha256": "01df1ee78e1bbbead7cd7cd58121d571ab5a40f8259e2a4cf0dea2211883256f"
+    },
+    {
+      "asset": "models/production/wreckage-templates.json",
+      "bytes": 397490,
+      "sha256": "184b4a8fce26501a7f3938dc04498736d19df24c2c280ac28bdb69c1564d00c2"
+    },
+    {
+      "asset": "models/production/wreckage.glb",
+      "bytes": 107828,
+      "sha256": "f39cce1fbf0c6d15ee046c04b52d1ca5ec26c757beb65dc3eabfe700793aee89"
+    }
+  ],
+  "localStatus": "passed",
+  "liveStatus": "pending"
+}

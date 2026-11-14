@@ -1,0 +1,397 @@
+{
+  "method": "Independent Python standard-library GLB chunk/accessor/node transform/index/welded edge audit; not the Blender exporter or importer.",
+  "files": [
+    {
+      "file": "assets/asteroid-scenery-kit.glb",
+      "bytes": 179280,
+      "sha256": "0450b85240d589e4e2f65454f61b53af52d443a427d76f2c38a1008ae16272b2",
+      "textures": 0,
+      "materials": [
+        "AS_Regolith_RuntimeRock"
+      ],
+      "meshes": [
+        {
+          "node": "AS_Keel_DoubleImpact",
+          "triangles": 480,
+          "primitiveCount": 1,
+          "verticesExported": 1416,
+          "boundsTransformed": {
+            "min": [
+              -0.7699352502822876,
+              -0.763970673084259,
+              -1.0356165170669556
+            ],
+            "max": [
+              0.7390154600143433,
+              0.8961785435676575,
+              1.0151530504226685
+            ]
+          },
+          "maxRadiusAboutPivot": 1.0486480904888047,
+          "signedVolume": 2.162444671687557,
+          "minimumTriangleArea": 0.0003696177962338078,
+          "weldedClosedEdges": true,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "COLOR_0"
+          ],
+          "worldMatrixRowMajor": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "colorLinearRange": [
+            0.6177112460136414,
+            0.989472508430481
+          ]
+        },
+        {
+          "node": "AS_Scar_Cleaved",
+          "triangles": 384,
+          "primitiveCount": 1,
+          "verticesExported": 1103,
+          "boundsTransformed": {
+            "min": [
+              -0.9518015384674072,
+              -0.7762361168861389,
+              -0.8625665307044983
+            ],
+            "max": [
+              0.9326685070991516,
+              0.9114342331886292,
+              0.7699951529502869
+            ]
+          },
+          "maxRadiusAboutPivot": 1.0051049630099786,
+          "signedVolume": 2.174258726512191,
+          "minimumTriangleArea": 0.0006268514709104571,
+          "weldedClosedEdges": true,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "COLOR_0"
+          ],
+          "worldMatrixRowMajor": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "colorLinearRange": [
+            0.6185530424118042,
+            0.9892603754997253
+          ]
+        },
+        {
+          "node": "AS_Talus_Basin",
+          "triangles": 432,
+          "primitiveCount": 1,
+          "verticesExported": 1284,
+          "boundsTransformed": {
+            "min": [
+              -0.8719831705093384,
+              -0.8292713165283203,
+              -0.9150117039680481
+            ],
+            "max": [
+              0.8985510468482971,
+              0.9311781525611877,
+              0.8766337037086487
+            ]
+          },
+          "maxRadiusAboutPivot": 1.0134939562681355,
+          "signedVolume": 2.5604077313995193,
+          "minimumTriangleArea": 0.00038884169868141666,
+          "weldedClosedEdges": true,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "COLOR_0"
+          ],
+          "worldMatrixRowMajor": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "colorLinearRange": [
+            0.616502583026886,
+            0.9892671704292297
+          ]
+        }
+      ]
+    },
+    {
+      "file": "assets/keel-double-impact.glb",
+      "bytes": 66908,
+      "sha256": "7a44540cf9774ab45ced8c5b8784c8c14c93e2375dc62a786c1df59989f022eb",
+      "textures": 0,
+      "materials": [
+        "AS_Regolith_RuntimeRock"
+      ],
+      "meshes": [
+        {
+          "node": "AS_Keel_DoubleImpact",
+          "triangles": 480,
+          "primitiveCount": 1,
+          "verticesExported": 1416,
+          "boundsTransformed": {
+            "min": [
+              -0.7699352502822876,
+              -0.763970673084259,
+              -1.0356165170669556
+            ],
+            "max": [
+              0.7390154600143433,
+              0.8961785435676575,
+              1.0151530504226685
+            ]
+          },
+          "maxRadiusAboutPivot": 1.0486480904888047,
+          "signedVolume": 2.162444671687557,
+          "minimumTriangleArea": 0.0003696177962338078,
+          "weldedClosedEdges": true,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "COLOR_0"
+          ],
+          "worldMatrixRowMajor": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "colorLinearRange": [
+            0.6177112460136414,
+            0.989472508430481
+          ]
+        }
+      ]
+    },
+    {
+      "file": "assets/scar-cleaved.glb",
+      "bytes": 52548,
+      "sha256": "3386985e17394a0d38cb46d1f0f3b49aa02cec820685e01be441a5bd7aa5882a",
+      "textures": 0,
+      "materials": [
+        "AS_Regolith_RuntimeRock"
+      ],
+      "meshes": [
+        {
+          "node": "AS_Scar_Cleaved",
+          "triangles": 384,
+          "primitiveCount": 1,
+          "verticesExported": 1103,
+          "boundsTransformed": {
+            "min": [
+              -0.9518015384674072,
+              -0.7762361168861389,
+              -0.8625665307044983
+            ],
+            "max": [
+              0.9326685070991516,
+              0.9114342331886292,
+              0.7699951529502869
+            ]
+          },
+          "maxRadiusAboutPivot": 1.0051049630099786,
+          "signedVolume": 2.174258726512191,
+          "minimumTriangleArea": 0.0006268514709104571,
+          "weldedClosedEdges": true,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "COLOR_0"
+          ],
+          "worldMatrixRowMajor": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "colorLinearRange": [
+            0.6185530424118042,
+            0.9892603754997253
+          ]
+        }
+      ]
+    },
+    {
+      "file": "assets/talus-basin.glb",
+      "bytes": 60792,
+      "sha256": "9c64a5cb198a6f58226a30a05c992f7f315827e517c439a30a04d9f0f4591f8f",
+      "textures": 0,
+      "materials": [
+        "AS_Regolith_RuntimeRock"
+      ],
+      "meshes": [
+        {
+          "node": "AS_Talus_Basin",
+          "triangles": 432,
+          "primitiveCount": 1,
+          "verticesExported": 1284,
+          "boundsTransformed": {
+            "min": [
+              -0.8719831705093384,
+              -0.8292713165283203,
+              -0.9150117039680481
+            ],
+            "max": [
+              0.8985510468482971,
+              0.9311781525611877,
+              0.8766337037086487
+            ]
+          },
+          "maxRadiusAboutPivot": 1.0134939562681355,
+          "signedVolume": 2.5604077313995193,
+          "minimumTriangleArea": 0.00038884169868141666,
+          "weldedClosedEdges": true,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "COLOR_0"
+          ],
+          "worldMatrixRowMajor": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "colorLinearRange": [
+            0.616502583026886,
+            0.9892671704292297
+          ]
+        }
+      ]
+    }
+  ]
+}

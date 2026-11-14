@@ -1,0 +1,27 @@
+{
+  "taskId": "node:delegated-task:command%3Amcp%3A5804c46b-c218-4df6-87ce-ee28f95841db%3Aremote-delegate%3Anitro-sol-fuel-depot-production-20261114-01",
+  "childThreadId": null,
+  "remoteChild": {
+    "environmentId": "543fe9a3-cf00-4f96-8f57-b8d50dd01cd2",
+    "threadId": "mcp:launch:d0476d5b808dcf2cb213f71224b088a159818d5e0fc22c2aebed633c41c3d096",
+    "label": "NitroBliss"
+  },
+  "link": "[Bulk fuel depot production scenery \u2014 Sol XHigh](t3-thread://v2/543fe9a3-cf00-4f96-8f57-b8d50dd01cd2/mcp:launch:d0476d5b808dcf2cb213f71224b088a159818d5e0fc22c2aebed633c41c3d096)",
+  "childRunId": null,
+  "childNodeId": "node:delegated-task:command%3Amcp%3A5804c46b-c218-4df6-87ce-ee28f95841db%3Aremote-delegate%3Anitro-sol-fuel-depot-production-20261114-01",
+  "status": "completed",
+  "workState": "result_available",
+  "hasPendingChildRuns": false,
+  "latestTerminalRunId": null,
+  "latestTerminalStatus": "completed",
+  "latestTerminalSummary": null,
+  "latestTerminalResultContextTransferId": null,
+  "providerInstanceId": "codex",
+  "model": "gpt-6.1-sol",
+  "executedModel": null,
+  "summary": null,
+  "resultContextTransferId": null,
+  "hasPendingQuestion": false,
+  "pendingApproval": null,
+  "waitTimedOut": false
+}

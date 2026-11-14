@@ -1,0 +1,990 @@
+{
+  "methodology": "Exact source Flyer.update and Enemy._aimAt method bodies evaluated in numeric harness at 60Hz for 15s per case; Base housekeeping and audio/FX stubbed. Lead preserved; gaussian spread set to its deterministic zero mean and fire-timer RNG to midpoint. Explicit scenario positions/phase are fixtures. No browser or lifecycle integration. Orbit restore stress is a displaced-state probe, not a velocity cap or representative frequency.",
+  "source": "src/entities/Enemies.js",
+  "source_sha256": "9c7f88630d52e8dc721ec9380139f29aec747c30a3ad599adaacb8e55cea864c",
+  "method_sha256": "ae8daaff4010369eb40635016c9985462a8c2c85335f98004e58bf2795f8ef10",
+  "fast": false,
+  "hp": 3,
+  "score": 250,
+  "radius": 2.2,
+  "dt": 0.016666666666666666,
+  "summaries": [
+    {
+      "case": "weave",
+      "initial": {
+        "name": "weave",
+        "pattern": "weave",
+        "x": 0,
+        "y": 10,
+        "z": 60
+      },
+      "samples": 901,
+      "bank": [
+        -0.5072865760585902,
+        0.507288385003821
+      ],
+      "pitch": [
+        -0.11803583227948275,
+        0.11803394951815657
+      ],
+      "yaw": [
+        -0.17144464638135373,
+        0.171441397937017
+      ],
+      "vx": [
+        -14.999987391190128,
+        14.999892983828241
+      ],
+      "vy": [
+        -5.999998434788746,
+        5.99998591310362
+      ],
+      "engine_scale": [
+        0.9700003557222477,
+        1.0299999843599894
+      ],
+      "transition_t": null
+    },
+    {
+      "case": "strafe",
+      "initial": {
+        "name": "strafe",
+        "pattern": "strafe",
+        "x": -16,
+        "y": 8,
+        "z": 70
+      },
+      "samples": 901,
+      "bank": [
+        -0.6576125173020688,
+        -1.0239188375816845e-37
+      ],
+      "pitch": [
+        -0.07524969820900984,
+        0.0751142726730321
+      ],
+      "yaw": [
+        4.4657422758511026e-32,
+        0.2226379539448299
+      ],
+      "vx": [
+        1.6427476985063458e-63,
+        19
+      ],
+      "vy": [
+        -3.9999952785972357,
+        3.999982226277611
+      ],
+      "engine_scale": [
+        0.9700003557222477,
+        1.0299999843599894
+      ],
+      "transition_t": null
+    },
+    {
+      "case": "orbit",
+      "initial": {
+        "name": "orbit",
+        "pattern": "orbit",
+        "x": 8,
+        "y": 13,
+        "z": 75,
+        "homeX": 8,
+        "homeY": 13
+      },
+      "samples": 901,
+      "bank": [
+        -0.3384901325439698,
+        0.338187928101032
+      ],
+      "pitch": [
+        -0.10306553175127256,
+        0.10362412275798667
+      ],
+      "yaw": [
+        -0.1144795763416627,
+        0.11458755457219318
+      ],
+      "vx": [
+        -9.959744341466209,
+        16.494844018549095
+      ],
+      "vy": [
+        -5.337436252060417,
+        5.311869245787626
+      ],
+      "engine_scale": [
+        0.9700003557222477,
+        1.0299999843599894
+      ],
+      "transition_t": null
+    },
+    {
+      "case": "orbit_restore_stress",
+      "initial": {
+        "name": "orbit_restore_stress",
+        "pattern": "orbit",
+        "x": 19,
+        "y": 25,
+        "z": 75,
+        "homeX": -16,
+        "homeY": 5
+      },
+      "samples": 901,
+      "bank": [
+        -0.2926312026764343,
+        1.1119618607866324
+      ],
+      "pitch": [
+        -0.09793339502729276,
+        0.43793228628714453
+      ],
+      "yaw": [
+        -0.3596490839375196,
+        0.09839526976399464
+      ],
+      "vx": [
+        -53.505155981450905,
+        8.741243751063063
+      ],
+      "vy": [
+        -39.78002291595053,
+        5.0732338292596015
+      ],
+      "engine_scale": [
+        0.9700003557222477,
+        1.0299999843599894
+      ],
+      "transition_t": null
+    },
+    {
+      "case": "dive_and_committed_peel",
+      "initial": {
+        "name": "dive_and_committed_peel",
+        "pattern": "dive",
+        "x": -10,
+        "y": 18,
+        "z": 52
+      },
+      "samples": 901,
+      "bank": [
+        -0.8399999999999995,
+        -0.021030679429380875
+      ],
+      "pitch": [
+        -0.15999999999999986,
+        0.15297051359298658
+      ],
+      "yaw": [
+        0.009487445103198279,
+        0.2879999999999997
+      ],
+      "vx": [
+        0.20204701598141941,
+        24
+      ],
+      "vy": [
+        -8,
+        8
+      ],
+      "engine_scale": [
+        0.9700003557222477,
+        1.0299999843599894
+      ],
+      "transition_t": null
+    },
+    {
+      "case": "carrier_launch_transition",
+      "initial": {
+        "name": "carrier_launch_transition",
+        "pattern": "orbit",
+        "x": 58,
+        "y": 3,
+        "z": 60,
+        "homeX": -8,
+        "homeY": 12,
+        "launch": true
+      },
+      "samples": 901,
+      "bank": [
+        -1.0855790253564845,
+        0.3397246125911691
+      ],
+      "pitch": [
+        -0.10306553171864956,
+        0.10307739795431055
+      ],
+      "yaw": [
+        -0.11502614750715544,
+        0.11447723778130713
+      ],
+      "vx": [
+        -12.427710250216045,
+        9.959195049092889
+      ],
+      "vy": [
+        -6.79950469567355,
+        5.311861612445863
+      ],
+      "engine_scale": [
+        0.9700003557222477,
+        1.0649948225035668
+      ],
+      "transition_t": 2.7
+    }
+  ],
+  "chosen": {
+    "weave_bank": {
+      "case": "weave",
+      "t": 2.1,
+      "pos": [
+        -2.5207688166132876,
+        19.238618359915424,
+        112.49333333333259
+      ],
+      "velocity": [
+        -14.551790549633477,
+        4.359183716949648,
+        24.8
+      ],
+      "euler_xyz": [
+        -0.09839173179550402,
+        -0.1712184454828672,
+        0.507288385003821
+      ],
+      "engine_scale": 1.0248223312202462,
+      "launching": false,
+      "was_launch": false,
+      "peeling": false
+    },
+    "weave_pitch": {
+      "case": "weave",
+      "t": 1.5666666666666667,
+      "pos": [
+        5.129350612563827,
+        16.431129892620934,
+        99.26666666666613
+      ],
+      "velocity": [
+        -12.309659315594288,
+        5.91262288498886,
+        24.8
+      ],
+      "euler_xyz": [
+        -0.11803583227948275,
+        -0.10598173991532153,
+        0.33264143091576
+      ],
+      "engine_scale": 1.0007388233339958,
+      "launching": false,
+      "was_launch": false,
+      "peeling": false
+    },
+    "strafe_bank": {
+      "case": "strafe",
+      "t": 0.7333333333333333,
+      "pos": [
+        -1.7500000000000104,
+        9.995046988082839,
+        88.59999999999971
+      ],
+      "velocity": [
+        19,
+        3.9874601138156747,
+        24.8
+      ],
+      "euler_xyz": [
+        -0.07297333675224556,
+        0.2226379539448299,
+        -0.6576125173020688
+      ],
+      "engine_scale": 1.0262700014077866,
+      "launching": false,
+      "was_launch": false,
+      "peeling": false
+    },
+    "strafe_pitch": {
+      "case": "strafe",
+      "t": 0.85,
+      "pos": [
+        -0.5236232752160533,
+        10.448638132653898,
+        91.493333333333
+      ],
+      "velocity": [
+        5.91020330441882,
+        3.776495244241009,
+        24.8
+      ],
+      "euler_xyz": [
+        -0.07524969820900984,
+        0.17691423449178126,
+        -0.4995684077230207
+      ],
+      "engine_scale": 1.0236502944100074,
+      "launching": false,
+      "was_launch": false,
+      "peeling": false
+    },
+    "orbit_bank": {
+      "case": "orbit",
+      "t": 3.7,
+      "pos": [
+        9.573175432640063,
+        9.560925232820136,
+        167.1733333333319
+      ],
+      "velocity": [
+        9.709776168231402,
+        1.1939299587729408,
+        24.8
+      ],
+      "euler_xyz": [
+        0.0006386749485689765,
+        0.1144406358176752,
+        -0.3384901325439698
+      ],
+      "engine_scale": 0.9810792266544108,
+      "launching": false,
+      "was_launch": false,
+      "peeling": false
+    },
+    "orbit_pitch": {
+      "case": "orbit",
+      "t": 2.65,
+      "pos": [
+        1.5193761619674844,
+        12.183052422870063,
+        141.1333333333323
+      ],
+      "velocity": [
+        2.2511668260158757,
+        -5.199276004603297,
+        24.8
+      ],
+      "euler_xyz": [
+        0.10362412275798667,
+        -0.005452514724141231,
+        0.0007387043821166679
+      ],
+      "engine_scale": 1.029477711611935,
+      "launching": false,
+      "was_launch": false,
+      "peeling": false
+    },
+    "orbit_restore_stress_bank": {
+      "case": "orbit_restore_stress",
+      "t": 0.26666666666666666,
+      "pos": [
+        7.148429692613295,
+        16.703773885179377,
+        82.02666666666656
+      ],
+      "velocity": [
+        -32.34281409463969,
+        -20.461163680362013,
+        24.8
+      ],
+      "euler_xyz": [
+        0.43430233860841516,
+        -0.3574319110482547,
+        1.1119618607866324
+      ],
+      "engine_scale": 1.0132716308424379,
+      "launching": false,
+      "was_launch": false,
+      "peeling": false
+    },
+    "orbit_restore_stress_pitch": {
+      "case": "orbit_restore_stress",
+      "t": 0.23333333333333334,
+      "pos": [
+        8.24226015948948,
+        17.401046816876008,
+        81.1999999999999
+      ],
+      "velocity": [
+        -34.27359781802666,
+        -22.322995218408412,
+        24.8
+      ],
+      "euler_xyz": [
+        0.43793228628714453,
+        -0.3508827791396195,
+        1.1040501124020023
+      ],
+      "engine_scale": 1.0213442005837254,
+      "launching": false,
+      "was_launch": false,
+      "peeling": false
+    },
+    "dive_and_committed_peel_bank": {
+      "case": "dive_and_committed_peel",
+      "t": 15,
+      "pos": [
+        19,
+        25,
+        127.56666666666369
+      ],
+      "velocity": [
+        24,
+        8,
+        4
+      ],
+      "euler_xyz": [
+        -0.15999999999999986,
+        0.2879999999999997,
+        -0.8399999999999995
+      ],
+      "engine_scale": 0.9789062949110753,
+      "launching": false,
+      "was_launch": false,
+      "peeling": true
+    },
+    "dive_and_committed_peel_pitch": {
+      "case": "dive_and_committed_peel",
+      "t": 15,
+      "pos": [
+        19,
+        25,
+        127.56666666666369
+      ],
+      "velocity": [
+        24,
+        8,
+        4
+      ],
+      "euler_xyz": [
+        -0.15999999999999986,
+        0.2879999999999997,
+        -0.8399999999999995
+      ],
+      "engine_scale": 0.9789062949110753,
+      "launching": false,
+      "was_launch": false,
+      "peeling": true
+    },
+    "carrier_launch_transition_bank": {
+      "case": "carrier_launch_transition",
+      "t": 0.8666666666666667,
+      "pos": [
+        11.163129137466155,
+        9.386846026709161,
+        81.9066666666664
+      ],
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "euler_xyz": [
+        0,
+        0,
+        -1.0855790253564845
+      ],
+      "engine_scale": 1.0649635836343652,
+      "launching": true,
+      "was_launch": true,
+      "peeling": false
+    },
+    "carrier_launch_transition_pitch": {
+      "case": "carrier_launch_transition",
+      "t": 6.85,
+      "pos": [
+        -14.428214459386952,
+        11.116349344972958,
+        230.29333333333076
+      ],
+      "velocity": [
+        2.361510029437401,
+        -5.160345326757188,
+        24.8
+      ],
+      "euler_xyz": [
+        0.10307739795431055,
+        -0.004576965670608857,
+        -0.0022055193775813667
+      ],
+      "engine_scale": 0.9831010647507397,
+      "launching": false,
+      "was_launch": false,
+      "peeling": false
+    },
+    "launch_initial": {
+      "case": "carrier_launch_transition",
+      "t": 0.13333333333333333,
+      "pos": [
+        45.498560234032375,
+        4.704741786268313,
+        63.720000000000006
+      ],
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "euler_xyz": [
+        0,
+        0,
+        -0.5803967919848836
+      ],
+      "engine_scale": 1.0633009771491806,
+      "launching": true,
+      "was_launch": true,
+      "peeling": false
+    },
+    "launch_transition": {
+      "case": "carrier_launch_transition",
+      "t": 2.7,
+      "pos": [
+        -6.528442433791497,
+        11.799333059153387,
+        127.37333333333235
+      ],
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "euler_xyz": [
+        0,
+        0,
+        -0.11443070196684225
+      ],
+      "engine_scale": 1.0215055353730527,
+      "launching": false,
+      "was_launch": true,
+      "peeling": false
+    }
+  },
+  "shots": [
+    {
+      "case": "weave",
+      "args": [
+        1,
+        0.24991111637847596,
+        10.001833230634443,
+        61.913333333333334,
+        -0.008732758192473941,
+        -0.00006405941469757639,
+        -0.9999618666882969,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        0.24991111637847596,
+        10.001833230634443,
+        60.413333333333334
+      ],
+      "euler": [
+        -0.00020934595261088947,
+        0.014386888512489858,
+        -0.04994259290179233
+      ]
+    },
+    {
+      "case": "weave",
+      "args": [
+        1,
+        4.707968558621743,
+        16.627199462639133,
+        101.59333333333278,
+        -0.25445074493583186,
+        -0.3581790785366959,
+        -0.898310951786854,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        4.707968558621743,
+        16.627199462639133,
+        100.09333333333278
+      ],
+      "euler": [
+        -0.11796243272740342,
+        -0.11300820740570877,
+        0.35258067128224807
+      ]
+    },
+    {
+      "case": "weave",
+      "args": [
+        1,
+        -8.576659692005174,
+        20.465796535029693,
+        141.27333333333218,
+        0.6246270575923429,
+        -0.762210456027476,
+        -0.16993016108366152,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        -8.576659692005174,
+        20.465796535029693,
+        139.77333333333218
+      ],
+      "euler": [
+        0.026269200687331698,
+        0.023536823530917152,
+        -0.09420456147990278
+      ]
+    },
+    {
+      "case": "strafe",
+      "args": [
+        1,
+        -15.683333333333334,
+        8.002443896744637,
+        71.91333333333333,
+        0.43468879990064135,
+        0.05536547918756272,
+        -0.8988772502156632,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        -15.683333333333334,
+        8.002443896744637,
+        70.41333333333333
+      ],
+      "euler": [
+        -0.0002790810291278985,
+        0.01822987346451429,
+        -0.06328311700608692
+      ]
+    },
+    {
+      "case": "strafe",
+      "args": [
+        1,
+        -0.00022403954959876438,
+        11.468143371165635,
+        111.59333333333271,
+        0.00001024381507377293,
+        -0.06712827812295012,
+        -0.9977443531142194,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        -0.00022403954959876438,
+        11.468143371165635,
+        110.09333333333271
+      ],
+      "euler": [
+        0.006125291744527738,
+        0.005566676487238649,
+        -0.008351122718600524
+      ]
+    },
+    {
+      "case": "strafe",
+      "args": [
+        1,
+        -1.458065229531717e-11,
+        8.56666630601965,
+        151.2733333333321,
+        1.4035730611687994e-12,
+        0.13797658155407105,
+        -0.9904354915604816,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        -1.458065229531717e-11,
+        8.56666630601965,
+        149.7733333333321
+      ],
+      "euler": [
+        -0.0333511898357879,
+        0.0000018761505953388987,
+        -5.732041399069416e-7
+      ]
+    },
+    {
+      "case": "orbit",
+      "args": [
+        1,
+        8.274914066975818,
+        13.003666284734157,
+        76.91333333333333,
+        -0.22652873540039165,
+        -0.0822264400014838,
+        -0.9705274569029881,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        8.274914066975818,
+        13.003666284734157,
+        75.41333333333333
+      ],
+      "euler": [
+        -0.0004186717458213635,
+        0.01582625890921318,
+        -0.054939218106473446
+      ]
+    },
+    {
+      "case": "orbit",
+      "args": [
+        1,
+        6.277091852184381,
+        16.524189871688133,
+        116.59333333333271,
+        -0.24666221090261953,
+        -0.2563720805740732,
+        -0.9345753634751734,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        6.277091852184381,
+        16.524189871688133,
+        115.09333333333271
+      ],
+      "euler": [
+        0.003303653579436743,
+        -0.10608587938561055,
+        0.31653330054275636
+      ]
+    },
+    {
+      "case": "orbit",
+      "args": [
+        1,
+        4.748600858622927,
+        9.912921169511991,
+        156.2733333333321,
+        -0.35606176744182155,
+        0.006529384804794629,
+        -0.9344396100873921,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        4.748600858622927,
+        9.912921169511991,
+        154.7733333333321
+      ],
+      "euler": [
+        0.07085626945589774,
+        0.0799142592010116,
+        -0.24700448034604738
+      ]
+    },
+    {
+      "case": "orbit_restore_stress",
+      "args": [
+        1,
+        18.108247400309153,
+        24.33699961806749,
+        76.91333333333333,
+        -0.4414251357607495,
+        -0.34949334758366557,
+        -0.8264370814002522,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        18.108247400309153,
+        24.33699961806749,
+        75.41333333333333
+      ],
+      "euler": [
+        0.07571139382541102,
+        -0.05133643280215526,
+        0.17820910770542575
+      ]
+    },
+    {
+      "case": "orbit_restore_stress",
+      "args": [
+        1,
+        -16.41700149984822,
+        9.270422241955222,
+        116.59333333333271,
+        0.583366121728072,
+        0.02592501116684303,
+        -0.8117954556512049,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        -16.41700149984822,
+        9.270422241955222,
+        115.09333333333271
+      ],
+      "euler": [
+        0.04916981741448005,
+        -0.15939131820424868,
+        0.4569984272875764
+      ]
+    },
+    {
+      "case": "orbit_restore_stress",
+      "args": [
+        1,
+        -17.911509526444213,
+        2.3,
+        156.2733333333321,
+        0.8285068875728873,
+        0.35616780511394946,
+        -0.43211205936029945,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        -17.911509526444213,
+        2.3,
+        154.7733333333321
+      ],
+      "euler": [
+        0.07630161039237858,
+        0.03081367256127657,
+        -0.11104065542625007
+      ]
+    },
+    {
+      "case": "dive_and_committed_peel",
+      "args": [
+        1,
+        -9.8,
+        17.866666666666667,
+        53.733333333333334,
+        0.36224473561690884,
+        -0.2907814884543894,
+        -0.8855647223608704,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        -9.8,
+        17.866666666666667,
+        52.233333333333334
+      ],
+      "euler": [
+        0.015226013114246477,
+        0.011513604293377448,
+        -0.039968284424897006
+      ]
+    },
+    {
+      "case": "dive_and_committed_peel",
+      "args": [
+        1,
+        1.5552610178898285,
+        11.005934524183477,
+        75.46666666666674,
+        -0.31180708768567,
+        -0.20167515984788797,
+        -0.9284952719154308,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        1.5552610178898285,
+        11.005934524183477,
+        73.96666666666674
+      ],
+      "euler": [
+        -0.03336142334439461,
+        0.08843703402854022,
+        -0.2910284473333265
+      ]
+    },
+    {
+      "case": "carrier_launch_transition",
+      "args": [
+        1,
+        -6.735570937961764,
+        11.68600798089216,
+        129.28666666666567,
+        0.6174403737845013,
+        -0.15455399512735668,
+        -0.7712849327006382,
+        76,
+        {
+          "damage": 1,
+          "radius": 0.9,
+          "life": 4
+        }
+      ],
+      "root": [
+        -6.735570937961764,
+        11.68600798089216,
+        127.78666666666568
+      ],
+      "euler": [
+        0.012941168458338247,
+        -0.011923978174478194,
+        -0.06214832607581637
+      ]
+    }
+  ],
+  "source_method": "  update(dt, ctx) {\n    super.update(dt, ctx);\n    const p = ctx.player;\n    this.phase += dt;\n\n    if (this.launching) {\n      const prevX = this.pos.x;\n      this.pos.x = damp(this.pos.x, this.homeX, 1.4, dt);\n      this.pos.y = damp(this.pos.y, this.homeY, 1.4, dt);\n      this.pos.z += p.speed * (this.fast ? 0.82 : 0.62) * dt;\n      this.group.rotation.z = damp(this.group.rotation.z, clamp((this.pos.x - prevX) / dt * 0.04, -1.1, 1.1), 5, dt);\n      if (Math.abs(this.pos.x - this.homeX) < 1.5) this.launching = false;\n      this.engine.scale.setScalar(1.04 + Math.sin(ctx.time * 9) * 0.025);\n      return;\n    }\n\n    const trail = this.fast ? 0.82 : 0.62;\n    let vx = 0, vy = 0, vz = p.speed * trail;\n\n    switch (this.pattern) {\n      case 'weave':\n        vx = Math.cos(this.phase * 1.6) * 15;\n        vy = Math.sin(this.phase * 1.1) * 6;\n        break;\n      case 'dive': {\n        _v.copy(p.pos).sub(this.pos);\n        if (this.pos.z-p.pos.z < 12) this.peeling = true;\n        if (!this.peeling) {\n          // Slower forward motion closes the distance in scrolling world space.\n          vx=clamp(_v.x*0.35,-1,1)*12;\n          vy=clamp(_v.y*0.25,-1,1)*8;\n          vz=p.speed*0.35;\n        } else {\n          // Commit to one exit, so the fighter never oscillates across the threshold.\n          vx=this.peelDir*24; vy=8; vz=p.speed*0.1;\n        }\n        break;\n      }\n      case 'strafe':\n        vx = clamp((p.pos.x - this.pos.x) * 0.5, -1, 1) * 19;\n        vy = Math.sin(this.phase * 2.2) * 4;\n        break;\n      case 'orbit': {\n        const r = 11;\n        vx = Math.cos(this.phase * 1.5) * r * 1.5 - (this.pos.x - this.homeX) * 2;\n        vy = Math.sin(this.phase * 1.5) * r * 0.8 - (this.pos.y - this.homeY) * 2;\n        break;\n      }\n    }\n\n    this.velocity.set(vx, vy, vz);\n    this.pos.addScaledVector(this.velocity, dt);\n    this.pos.x = clamp(this.pos.x, -CORRIDOR_HALF - 3, CORRIDOR_HALF + 3);\n    this.pos.y = clamp(this.pos.y, ALT_MIN + 1, ALT_MAX);\n\n    // bank into the turn\n    this.group.rotation.z = damp(this.group.rotation.z, -vx * 0.035, 6, dt);\n    this.group.rotation.x = damp(this.group.rotation.x, -vy * 0.02, 6, dt);\n    this.group.rotation.y = damp(this.group.rotation.y, vx * 0.012, 5, dt);\n    this.engine.scale.setScalar(1 + Math.sin(ctx.time * 9 + this.phase) * 0.03);\n\n    // fire when roughly ahead of the player\n    const dz = this.pos.z - p.pos.z;\n    // Doppler fly-by as a fighter slides past the canopy.\n    if (!this._flewBy && this._lastDz > 3 && dz <= 3 && Math.abs(this.pos.x - p.pos.x) < 14 && Math.abs(this.pos.y - p.pos.y) < 10) {\n      this._flewBy = true;\n      audio.flyby(audio.panFor(this.pos.x, p.pos.x));\n    }\n    this._lastDz = dz;\n    if (dz > 4 && dz < 85 && p.alive) {\n      this.fireTimer -= dt * (0.7 + ctx.difficulty * 0.8);\n      if (this.fireTimer <= 0) {\n        this.fireTimer = lerp(2.8, 1.1, clamp01(ctx.difficulty)) * this.rng.range(0.8, 1.3);\n        const speed = 76;\n        const aim = this._aimAt(ctx, speed);\n        _v.copy(this.pos);\n        _v2.copy(aim).sub(_v).normalize();\n        ctx.projectiles.fire(SIDE.ENEMY, _v.x, _v.y, _v.z + 1.5, _v2.x, _v2.y, _v2.z, speed, {\n          damage: 1, radius: 0.9, life: 4,\n        });\n        ctx.fx.muzzle(_v, _v2, 0xff7a4a, 0.6);\n        audio.enemyShot(audio.panFor(this.pos.x, p.pos.x), dz, 'flyer');\n      }\n    }\n  }",
+  "source_aim_method": "  _aimAt(ctx, bulletSpeed) {\n    const p = ctx.player;\n    _aim.copy(p.pos);\n    if (!ctx.radarJammed) {\n      const dist = _aim.distanceTo(this.pos);\n      const lead = clamp(dist / bulletSpeed, 0, 1.4);\n      _aim.x += p.velocity.x * lead;\n      _aim.y += p.velocity.y * lead;\n      _aim.z += p.speed * lead;\n    }\n    // accuracy falls off with difficulty inverted: harder = tighter\n    const spread = lerp(3.4, 0.7, clamp01(ctx.difficulty));\n    _aim.x += rand.gauss() * spread;\n    _aim.y += rand.gauss() * spread * 0.6;\n    return _aim;\n  }\n",
+  "limitations": [
+    "No live frame time or actual population profiling",
+    "Does not simulate carrier geometry, boss, moving wings, HUD, bloom, shake, or camera lag",
+    "Extreme restoring-force transient depends on displacement; sampled ranges are not global mathematical limits",
+    "Carrier launch velocity property is stale by source behavior; record positions as authoritative during launch"
+  ]
+}

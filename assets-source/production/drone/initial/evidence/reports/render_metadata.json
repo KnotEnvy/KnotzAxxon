@@ -1,0 +1,178 @@
+{
+  "common_neutral": {
+    "camera_game": [
+      -16,
+      24,
+      -30
+    ],
+    "target_game": [
+      0,
+      0,
+      0
+    ],
+    "camera_blender": [
+      -16,
+      30,
+      24
+    ],
+    "target_blender": [
+      0,
+      0,
+      0
+    ],
+    "ortho_span": 14,
+    "key_game": [
+      -12,
+      22,
+      -12
+    ],
+    "key_blender": [
+      -12,
+      12,
+      22
+    ],
+    "fill_game": [
+      14,
+      12,
+      8
+    ],
+    "fill_blender": [
+      14,
+      -8,
+      12
+    ],
+    "background": "shared neutral dark",
+    "additional_rim": false
+  },
+  "offline_gameplay": {
+    "classic": {
+      "camera_game": [
+        -45.25483399593904,
+        54.255,
+        -17.254833995939045
+      ],
+      "target_game": [
+        0,
+        9,
+        28
+      ],
+      "drone_world": [
+        0,
+        10,
+        28
+      ],
+      "player_world": [
+        0,
+        10,
+        0
+      ],
+      "projection": "ORTHO",
+      "vertical_fov_degrees": null,
+      "vertical_ortho_span": 80,
+      "resolution": [
+        960,
+        540
+      ],
+      "limitations": "Offline reconstructed Blender EEVEE. Exact source static camera rig offsets, no boost; dusk key/rim directions and nominal intensities approximated, blue environment replaces hemisphere/PMREM. AgX differs from game ACES 1.02. No fog/bloom/HUD, animated camera lag, shake, walls, carrier or boss."
+    },
+    "modern": {
+      "camera_game": [
+        -9.918584156444393,
+        24,
+        -27.251086002791343
+      ],
+      "target_game": [
+        0,
+        11.2,
+        16
+      ],
+      "drone_world": [
+        0,
+        10,
+        28
+      ],
+      "player_world": [
+        0,
+        10,
+        0
+      ],
+      "projection": "PERSP",
+      "vertical_fov_degrees": 58,
+      "vertical_ortho_span": null,
+      "resolution": [
+        960,
+        540
+      ],
+      "limitations": "Offline reconstructed Blender EEVEE. Exact source static camera rig offsets, no boost; dusk key/rim directions and nominal intensities approximated, blue environment replaces hemisphere/PMREM. AgX differs from game ACES 1.02. No fog/bloom/HUD, animated camera lag, shake, walls, carrier or boss."
+    },
+    "chase": {
+      "camera_game": [
+        -2.5086831184236833,
+        19.5,
+        -23.868525488838557
+      ],
+      "target_game": [
+        0,
+        11.2,
+        16
+      ],
+      "drone_world": [
+        0,
+        10,
+        28
+      ],
+      "player_world": [
+        0,
+        10,
+        0
+      ],
+      "projection": "PERSP",
+      "vertical_fov_degrees": 66,
+      "vertical_ortho_span": null,
+      "resolution": [
+        960,
+        540
+      ],
+      "limitations": "Offline reconstructed Blender EEVEE. Exact source static camera rig offsets, no boost; dusk key/rim directions and nominal intensities approximated, blue environment replaces hemisphere/PMREM. AgX differs from game ACES 1.02. No fog/bloom/HUD, animated camera lag, shake, walls, carrier or boss."
+    }
+  },
+  "world_scale_comparison": {
+    "drone_world_position": [
+      -4,
+      0,
+      0
+    ],
+    "player_world_position": [
+      4.5,
+      0,
+      0
+    ],
+    "player_import_scale": 1,
+    "drone_import_scale": 1,
+    "normalization": false,
+    "player_bounds_placed": {
+      "min": [
+        0.5477139949798584,
+        -0.5839999914169312,
+        -2.5368540287017822
+      ],
+      "max": [
+        8.452285766601562,
+        1.4070836305618286,
+        3.190000057220459
+      ]
+    },
+    "drone_bounds_placed": {
+      "min": [
+        -6.800000190734863,
+        -0.41341304779052734,
+        -1.9500000476837158
+      ],
+      "max": [
+        -1.2000000476837158,
+        0.7200000286102295,
+        1.4900000095367432
+      ]
+    }
+  }
+}

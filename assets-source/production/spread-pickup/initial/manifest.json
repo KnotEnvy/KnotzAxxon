@@ -1,0 +1,792 @@
+{
+  "asset": "spread-shot-pickup",
+  "stage": "INITIAL",
+  "status": "pending_deferred_opus_review",
+  "formal_reviews": 0,
+  "formal_review_fix_passes": 0,
+  "helpers": 0,
+  "claude_retries": 0,
+  "production_edits": false,
+  "exclusive_write_scope": "asset-work/spread-pickup/",
+  "source_head": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "assets": {
+    "spread-pickup.blend": {
+      "bytes": 104778,
+      "sha256": "740de78496b3f5abda88b7d9b8c4d38860fe3abf1002afdc36c5546e974ebc50"
+    },
+    "spread-pickup.glb": {
+      "bytes": 91232,
+      "sha256": "01df1ee78e1bbbead7cd7cd58121d571ab5a40f8259e2a4cf0dea2211883256f"
+    }
+  },
+  "evaluated_counts": {
+    "blender": "5.2.1 LTS",
+    "build_hash": "9e2066aef7ef",
+    "objects": {
+      "shell": {
+        "triangles": 864,
+        "vertices": 448,
+        "polygons": 432,
+        "materials": [
+          "spread_shell_amber_unlit"
+        ],
+        "game_pivot": [
+          0,
+          0,
+          0
+        ]
+      },
+      "core": {
+        "triangles": 116,
+        "vertices": 72,
+        "polygons": 56,
+        "materials": [
+          "spread_core_titanium"
+        ],
+        "game_pivot": [
+          0.0,
+          0.0,
+          -0.3
+        ]
+      },
+      "shape": {
+        "triangles": 228,
+        "vertices": 120,
+        "polygons": 96,
+        "materials": [
+          "spread_shape_amber_unlit"
+        ],
+        "game_pivot": [
+          0.0,
+          0.0,
+          0.1
+        ]
+      }
+    },
+    "triangles": 1208,
+    "glb_material_normalization": "Deterministic unlit base factor #ffb43a, neutral COLOR_0; source gains applied by ownership recipe, not baked into glTF factors."
+  },
+  "independent_glb": {
+    "bytes": 91232,
+    "sha256": "01df1ee78e1bbbead7cd7cd58121d571ab5a40f8259e2a4cf0dea2211883256f",
+    "triangles": 1208,
+    "material_primitives": 3,
+    "mesh_nodes": 3,
+    "nodes": [
+      {
+        "extras": {
+          "game_pivot": [
+            0.0,
+            0.0,
+            -0.3
+          ],
+          "ownership": "instance-owned geometry/material; textures remain template-owned"
+        },
+        "mesh": 0,
+        "name": "core",
+        "translation": [
+          0,
+          0,
+          -0.30000001192092896
+        ]
+      },
+      {
+        "extras": {
+          "game_pivot": [
+            0.0,
+            0.0,
+            0.1
+          ],
+          "ownership": "instance-owned geometry/material; textures remain template-owned",
+          "source_motion": "GAME rotation.z=sin(phase*2.2)*.08; source pivot 0,0,+.10",
+          "identity": "Three discrete broad ascending chevrons; no gun, projectile, shield crest, or red mine spikes"
+        },
+        "mesh": 1,
+        "name": "shape",
+        "translation": [
+          0,
+          0,
+          0.10000000149011612
+        ]
+      },
+      {
+        "extras": {
+          "game_pivot": [
+            0,
+            0,
+            0
+          ],
+          "ownership": "instance-owned geometry/material; textures remain template-owned",
+          "source_motion": "GAME rotation.z+=dt*.3; uniform pulse .975..1.025; source pivot 0,0,0"
+        },
+        "mesh": 2,
+        "name": "shell"
+      },
+      {
+        "children": [
+          0,
+          1,
+          2
+        ],
+        "extras": {
+          "game_axes": "XY badge plane; +Z front; +Y up. No imported root scale/rotation correction.",
+          "kit_reuse": "Disclosed shield INITIAL loft/annulus utilities and adapted rim/backplate kit profile; freshly generated mesh and original spread symbol. No shield mesh/binary imported.",
+          "review_status": "INITIAL; zero formal reviews/fix passes; deferred Opus review"
+        },
+        "name": "spread_pickup_root"
+      }
+    ],
+    "materials": [
+      {
+        "extras": {
+          "identity_srgb": "#ffb43a",
+          "vertex_colors": "neutral multipliers for source-neon clones; core absolute slate colors"
+        },
+        "name": "spread_core_titanium",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0.47999998927116394,
+          "roughnessFactor": 0.4000000059604645
+        }
+      },
+      {
+        "extensions": {
+          "KHR_materials_unlit": {}
+        },
+        "extras": {
+          "identity_srgb": "#ffb43a",
+          "vertex_colors": "neutral multipliers for source-neon clones; core absolute slate colors",
+          "runtime_neon_strength": 1.35
+        },
+        "name": "spread_shape_amber_unlit",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.9,
+          "baseColorFactor": [
+            1.0,
+            0.45641102318040466,
+            0.042311410620809675,
+            1
+          ]
+        }
+      },
+      {
+        "extensions": {
+          "KHR_materials_unlit": {}
+        },
+        "extras": {
+          "identity_srgb": "#ffb43a",
+          "vertex_colors": "neutral multipliers for source-neon clones; core absolute slate colors",
+          "runtime_neon_strength": 1.15
+        },
+        "name": "spread_shell_amber_unlit",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "roughnessFactor": 0.9,
+          "baseColorFactor": [
+            1.0,
+            0.45641102318040466,
+            0.042311410620809675,
+            1
+          ]
+        }
+      }
+    ],
+    "images": 0,
+    "textures": 0,
+    "animations": 0,
+    "transformed_rest_bounds_game": {
+      "min": [
+        -2.0450000762939453,
+        -2.0450000762939453,
+        -0.3800000101327896
+      ],
+      "max": [
+        2.0450000762939453,
+        2.0450000762939453,
+        0.3150000050663948
+      ],
+      "size": [
+        4.090000152587891,
+        4.090000152587891,
+        0.6950000151991844
+      ]
+    },
+    "objects": [
+      {
+        "node": "core",
+        "triangles": 116,
+        "material_primitives": 1,
+        "vertices": 228,
+        "vertex_palette_srgb": [
+          "#1a2938",
+          "#263b4c",
+          "#344b5e",
+          "#3c5368",
+          "#526a7e",
+          "#81919b"
+        ],
+        "local_positive_Z_facing_normals": 30,
+        "bounds": {
+          "min": [
+            -1.4808409214019775,
+            -1.6399999856948853,
+            -0.3800000101327896
+          ],
+          "max": [
+            1.4808409214019775,
+            1.6399999856948853,
+            -0.1850000098347664
+          ],
+          "size": [
+            2.961681842803955,
+            3.2799999713897705,
+            0.19500000029802322
+          ]
+        },
+        "matrix_world_row_major": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.30000001192092896
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "maximum_origin_radius": 1.6738652756915906,
+        "maximum_projected_xy_radius": 1.6399999856948853
+      },
+      {
+        "node": "shape",
+        "triangles": 228,
+        "material_primitives": 1,
+        "vertices": 420,
+        "vertex_palette_srgb": [
+          "#555555",
+          "#9d9d9d",
+          "#e2e2e2",
+          "#ffffff"
+        ],
+        "local_positive_Z_facing_normals": 30,
+        "bounds": {
+          "min": [
+            -1.0199999809265137,
+            -1.1299999952316284,
+            0.07500000111758709
+          ],
+          "max": [
+            1.0199999809265137,
+            1.350000023841858,
+            0.3150000050663948
+          ],
+          "size": [
+            2.0399999618530273,
+            2.4800000190734863,
+            0.24000000394880772
+          ]
+        },
+        "matrix_world_row_major": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.10000000149011612
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "maximum_origin_radius": 1.437784710203888,
+        "maximum_projected_xy_radius": 1.4167568154804695
+      },
+      {
+        "node": "shell",
+        "triangles": 864,
+        "material_primitives": 1,
+        "vertices": 1552,
+        "vertex_palette_srgb": [
+          "#626262",
+          "#777777",
+          "#969696",
+          "#999999",
+          "#b2b2b2",
+          "#b8b8b8",
+          "#bcbcbc",
+          "#e3e3e3",
+          "#ffffff"
+        ],
+        "local_positive_Z_facing_normals": 144,
+        "bounds": {
+          "min": [
+            -2.0450000762939453,
+            -2.0450000762939453,
+            -0.06499999761581421
+          ],
+          "max": [
+            2.0450000762939453,
+            2.0450000762939453,
+            0.10000000149011612
+          ],
+          "size": [
+            4.090000152587891,
+            4.090000152587891,
+            0.16499999910593033
+          ]
+        },
+        "matrix_world_row_major": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "maximum_origin_radius": 2.0452995653577677,
+        "maximum_projected_xy_radius": 2.0450000762939453
+      }
+    ],
+    "visual_sphere_radius_at_all_motion_extrema": 2.0964320544917117,
+    "assertions": "PASS: exact named pivots; identity rotations/scales; game XY plane/+Z front; 3 primitives; budgets; shell unlit; no halo/texture/animation"
+  },
+  "saved_blend_and_clean_reimport": {
+    "blend_reopened": {
+      "objects": {
+        "shell": {
+          "triangles": 864,
+          "vertices": 448,
+          "nonmanifold_edges_raw": 0,
+          "nonmanifold_edges_position_welded_1e_6": 0,
+          "material_primitives": 1,
+          "game_origin": [
+            0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        "core": {
+          "triangles": 116,
+          "vertices": 72,
+          "nonmanifold_edges_raw": 0,
+          "nonmanifold_edges_position_welded_1e_6": 0,
+          "material_primitives": 1,
+          "game_origin": [
+            0.0,
+            0.0,
+            -0.30000001192092896
+          ]
+        },
+        "shape": {
+          "triangles": 228,
+          "vertices": 120,
+          "nonmanifold_edges_raw": 0,
+          "nonmanifold_edges_position_welded_1e_6": 0,
+          "material_primitives": 1,
+          "game_origin": [
+            0.0,
+            0.0,
+            0.10000000149011612
+          ]
+        }
+      },
+      "triangles": 1208,
+      "material_primitives": 3,
+      "bounds_game": {
+        "min": [
+          -2.0450000762939453,
+          -2.0450000762939453,
+          -0.3799999952316284
+        ],
+        "max": [
+          2.0450000762939453,
+          2.0450000762939453,
+          0.3149999976158142
+        ],
+        "size": [
+          4.090000152587891,
+          4.090000152587891,
+          0.6949999928474426
+        ]
+      }
+    },
+    "blend_packed_state": {
+      "linked_libraries": 0,
+      "image_datablocks": 0,
+      "external_images": [],
+      "pack_all_called_by_generator": true,
+      "self_contained": true
+    },
+    "glb_clean_scene_reimport": {
+      "objects": {
+        "core": {
+          "triangles": 116,
+          "vertices": 228,
+          "nonmanifold_edges_raw": 228,
+          "nonmanifold_edges_position_welded_1e_6": 0,
+          "material_primitives": 1,
+          "game_origin": [
+            0.0,
+            0.0,
+            -0.30000001192092896
+          ]
+        },
+        "shape": {
+          "triangles": 228,
+          "vertices": 420,
+          "nonmanifold_edges_raw": 420,
+          "nonmanifold_edges_position_welded_1e_6": 0,
+          "material_primitives": 1,
+          "game_origin": [
+            0.0,
+            0.0,
+            0.10000000149011612
+          ]
+        },
+        "shell": {
+          "triangles": 864,
+          "vertices": 1552,
+          "nonmanifold_edges_raw": 1552,
+          "nonmanifold_edges_position_welded_1e_6": 0,
+          "material_primitives": 1,
+          "game_origin": [
+            0.0,
+            0.0,
+            -0.0
+          ]
+        }
+      },
+      "triangles": 1208,
+      "material_primitives": 3,
+      "bounds_game": {
+        "min": [
+          -2.0450000762939453,
+          -2.0450000762939453,
+          -0.3799999952316284
+        ],
+        "max": [
+          2.0450000762939453,
+          2.0450000762939453,
+          0.3149999976158142
+        ],
+        "size": [
+          4.090000152587891,
+          4.090000152587891,
+          0.6949999928474426
+        ]
+      }
+    },
+    "axis_conversion": "Blender (x,y,z) -> game/glTF (x,z,-y), exporter export_yup=True; no root normalization or corrective game rotation",
+    "clearance": {
+      "independent_pose_samples": 1080,
+      "ring_angles_degrees": "0..355 step 5",
+      "shape_wobbles_radians": [
+        -0.08,
+        -0.04,
+        0,
+        0.04,
+        0.08
+      ],
+      "ring_scales": [
+        0.975,
+        1,
+        1.025
+      ],
+      "triangle_overlap_pairs": 0,
+      "minimum_sampled_vertex_to_triangle_distance": 0.3209924101829529,
+      "minimum_sample_pose": {
+        "shell_degrees": 0,
+        "shell_scale": 0.975,
+        "shape_radians": -0.08
+      },
+      "shell_projected_inner_radius_mesh_edges": 1.8959319132111294,
+      "shape_max_radius": 1.4167568154804695,
+      "core_max_radius": 1.6399999856948853,
+      "continuous_conservative_radial_clearance_lower_bound": 0.2085336296859659,
+      "source_timeline_samples": 241,
+      "source_timeline_seconds": [
+        0,
+        20
+      ],
+      "source_timeline_overlap_pairs": 0,
+      "method_limits": "Finite BVH overlap and bidirectional vertex-to-triangle distance do not find every triangle-interior distance minimum. Conservative radial separating-cylinder bound additionally covers all shell spin angles, pulse range and badge wobbles: all projected shell triangles stay outside its inner edge/chord radius; all core/shape triangles are inside their convex vertex radial maximum. Float tolerance, not collision/physics integration proof."
+    }
+  },
+  "source_contract": {
+    "color": "0xffb43a",
+    "label": "SPREAD",
+    "score": 250,
+    "radius": 2.2,
+    "playerRadius": 1.5,
+    "collectionCenterDistance": 3.7,
+    "timerGranted": 14,
+    "timerStacking": "max(existing,14)",
+    "timerDecay": "max(0,timer-dt) unchanged source",
+    "despawnBehind": 55,
+    "timedLifetime": null,
+    "baseY": 6,
+    "velocity": [
+      0,
+      0,
+      0
+    ],
+    "phaseInitialization": "Actual Math.random()*TAU, unseeded. Controlled phase ONLY diagnostics.",
+    "shellNeon": [
+      1.15,
+      0.5248726766462658,
+      0.04865812220658465
+    ],
+    "shapeNeon": [
+      1.35,
+      0.6161548812803991,
+      0.057120404329468945
+    ],
+    "haloOpacity": 0.35,
+    "charge": "N/A",
+    "detach": "N/A except normal collected/cull dispose"
+  },
+  "actual_source_baseline": {
+    "visibleTriangles": 540,
+    "meshNodes": 3,
+    "materialPrimitives": 3,
+    "objects": {
+      "shell": {
+        "triangles": 384
+      },
+      "core": {
+        "triangles": 24
+      },
+      "shape": {
+        "triangles": 132
+      }
+    }
+  },
+  "actual_three_ownership": {
+    "instances": 128,
+    "actualGlbParsed": true,
+    "geometryClones": 384,
+    "retainedMaterialClones": 384,
+    "shellShapeSourceGains": [
+      1.15,
+      1.35
+    ],
+    "replacedImportedMaterialsDisposedOnce": 256,
+    "totalMaterialAllocations": 640,
+    "disposedExactlyOnce": true,
+    "neighborUnaffected": true,
+    "templateResourcesRetained": true,
+    "materialsOwnedNeonCacheRetained": true,
+    "haloCacheRetained": true,
+    "templateTexturePolicy": "No asset textures. disposeModel does not dispose textures; existing halo glow remains externally owned.",
+    "limitation": "Recipe tests only: production Pickup.dispose remains detach-only and MUST explicitly gain releaseImportedSpread behavior on integration."
+  },
+  "budget": {
+    "target_triangles": 1500,
+    "ceiling_triangles": 2500,
+    "visible_primitives_ceiling": 3,
+    "glb_bytes_ceiling": 524288,
+    "atlas": null,
+    "textures_required": false,
+    "passed": true
+  },
+  "hierarchy": {
+    "coordinates": {
+      "badge_plane": "XY",
+      "front": "+Z",
+      "up": "+Y",
+      "unit_scale": 1,
+      "authoring_to_game": "(BlenderX,BlenderZ,-BlenderY)",
+      "corrective_import_transform": "NONE"
+    },
+    "root": "Pickup.group: original gameplay position and camera.quaternion",
+    "children": {
+      "halo": "EXISTING sibling sprite; externally shared material and texture, unchanged",
+      "imported_scene": {
+        "transform": "identity",
+        "owned": true,
+        "children": {
+          "spread_pickup_root": {
+            "transform": "identity",
+            "children": {
+              "shell": {
+                "pivot": [
+                  0,
+                  0,
+                  0
+                ],
+                "motion": "rotation.z+=dt*.3; uniform1+sin(phase*4)*.025"
+              },
+              "core": {
+                "pivot": [
+                  0,
+                  0,
+                  -0.3
+                ],
+                "motion": "static"
+              },
+              "shape": {
+                "pivot": [
+                  0,
+                  0,
+                  0.1
+                ],
+                "motion": "rotation.z=sin(phase*2.2)*.08"
+              }
+            }
+          }
+        }
+      }
+    },
+    "integration": "RECIPE ONLY, no production edits; imported teardown MUST be added specifically to Pickup.dispose"
+  },
+  "material_map": {
+    "shell": {
+      "glb": "spread_shell_amber_unlit",
+      "primitive_count": 1,
+      "nominal_srgb": "#ffb43a",
+      "runtime": "owned clone of untouched mats.neon(0xffb43a,1.15), vertexColors=true, toneMapped=false",
+      "vertex_color": "neutral multiplier; no replacement hue"
+    },
+    "core": {
+      "glb": "spread_core_titanium",
+      "primitive_count": 1,
+      "runtime": "per-instance cloned imported PBR material",
+      "metallic": 0.48,
+      "roughness": 0.4,
+      "vertex_color": "authored absolute slate/titanium"
+    },
+    "shape": {
+      "glb": "spread_shape_amber_unlit",
+      "primitive_count": 1,
+      "nominal_srgb": "#ffb43a",
+      "runtime": "owned clone of untouched mats.neon(0xffb43a,1.35), vertexColors=true, toneMapped=false",
+      "vertex_color": "neutral multiplier; no replacement hue"
+    },
+    "halo": {
+      "exported": false,
+      "source_material_owner": "Materials._pickupHalos color-keyed cache",
+      "source_texture_owner": "Materials/Textures glow; never per-instance disposed",
+      "opacity": 0.35,
+      "source_scale": "7*(1+sin(phase*4)*.2)"
+    },
+    "textures": 0,
+    "visible_material_primitives_including_shell_core_shape": 3
+  },
+  "read_only_references": [
+    {
+      "path": "public/models/player.glb",
+      "bytes": 478292,
+      "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "purpose": "Read-only evidence reference; no reference mesh merged/exported"
+    },
+    {
+      "path": "asset-work/shield-pickup/initial/asset/shield-pickup.glb",
+      "bytes": 92808,
+      "sha256": "8619ec08a7fce0679408172052a009073e1dcd39356374ab3b2608993981d4ae",
+      "purpose": "Read-only evidence reference; no reference mesh merged/exported"
+    }
+  ],
+  "deliberate_kit_reuse": [
+    {
+      "source": "asset-work/shield-pickup/initial/scripts/native-blender.sh",
+      "sha256": "9a4fa6dc910eefd3ead88a4cb5363f607929f1cde05bc3182315e524f89a8de3",
+      "delivered": "native-blender.sh",
+      "reuse": "Disclosed shield INITIAL diagnostic infrastructure adapted for spread; no shield asset geometry imported."
+    },
+    {
+      "source": "asset-work/shield-pickup/initial/scripts/inspect_glb.py",
+      "sha256": "1d15c6db084d960afbb15d9184f0354a473d672864d9cb06a6c0d37c0cd31b19",
+      "delivered": "inspect_glb.py",
+      "reuse": "Disclosed shield INITIAL diagnostic infrastructure adapted for spread; no shield asset geometry imported."
+    },
+    {
+      "source": "asset-work/shield-pickup/initial/scripts/verify_blender.py",
+      "sha256": "7eb69ad0f7c716f917d45fd8872fd174e089072c3ed4276b112430b6eb2a86ef",
+      "delivered": "verify_blender.py",
+      "reuse": "Disclosed shield INITIAL diagnostic infrastructure adapted for spread; no shield asset geometry imported."
+    },
+    {
+      "source": "asset-work/shield-pickup/initial/scripts/render_evidence.py",
+      "sha256": "64fb88dc13a2c8c9303540271393c61b8126d32ca7f2cf75dc433b5fc6afabb5",
+      "delivered": "render_evidence.py",
+      "reuse": "Disclosed shield INITIAL diagnostic infrastructure adapted for spread; no shield asset geometry imported."
+    },
+    {
+      "source": "asset-work/shield-pickup/initial/scripts/render_cues.py",
+      "sha256": "43b657cf03031ae9735b097131b34a18ca71c72ec689dab9199bed0961543635",
+      "delivered": "render_cues.py",
+      "reuse": "Disclosed shield INITIAL diagnostic infrastructure adapted for spread; no shield asset geometry imported."
+    },
+    {
+      "source": "asset-work/shield-pickup/initial/scripts/compose_evidence.py",
+      "sha256": "4c0a29dfa1eceaa75f2af28c928967e1406efae61727a68fe59f16fd80ff0c82",
+      "delivered": "compose_evidence.py",
+      "reuse": "Disclosed shield INITIAL diagnostic infrastructure adapted for spread; no shield asset geometry imported."
+    },
+    {
+      "source": "asset-work/shield-pickup/initial/scripts/build_shield.py",
+      "sha256": "05248ec5af59a48e9ab68048cc5f3bcc2235452e9739e07641251850e4bd0afc",
+      "delivered": "build_spread.py",
+      "reuse": "Deliberate loft/annulus builder conventions plus adapted shared rim/backplate geometric kit profile. Newly generated spread geometry, newly authored fitted chevrons. No shield GLB/blend geometry imported, merged, or exported."
+    }
+  ],
+  "charge": "N/A",
+  "special_detach": "N/A; source normal pickup removal remains",
+  "pngs": 47,
+  "evidence_limitations": [
+    "Offline Blender Eevee, not live browser/Three WebGL or pixel-equivalent postfx.",
+    "Exact source geometry and actual source motion/camera/collection methods execute with Three.js; render normals/rim shader/world/halo pixels are approximate.",
+    "Finite BVH overlap and vertex-to-triangle distances do not prove exact global surface minima. Separate radial bound covers all motion ranges.",
+    "Collection visual context stills do not simulate source particles/HUD/audio; source dispatch/timers are separately verified.",
+    "Native far-camera pixel size limits guaranteed three-chevron separation; no per-asset enlargement or collider changes.",
+    "Ownership recipe is tested but not integrated; Pickup.dispose remains detach-only until explicit integration.",
+    "Sender Taildrop success is not receiver-side hash verification; transfer receipt is external to immutable INITIAL."
+  ]
+}

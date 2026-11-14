@@ -1,0 +1,1052 @@
+{
+  "asset": "DRIFTING WRECKAGE SCENERY KIT",
+  "delivery": "initial / best effort \u2014 frozen",
+  "status": "pending_deferred_opus_review",
+  "pending_deferred_opus_review": true,
+  "formal_reviews": 0,
+  "formal_fix_passes": 0,
+  "baseline": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "date": "2026-11-14",
+  "execution_host": "NitroBliss",
+  "execution": {
+    "requested_model": "Sol",
+    "requested_reasoning_effort": "XHigh",
+    "requested_speed": "available speed",
+    "executed_harness": "T3 Code / Codex",
+    "executed_model": "gpt-6.1-sol",
+    "executed_reasoning_effort": "xhigh",
+    "executed_speed": "No service-tier/speed parameter exposed or overridden; not asserted as a named tier.",
+    "helpers": 0,
+    "delegates": 0,
+    "claude_retries": 0,
+    "opus_review": "DEFERRED",
+    "implementation_validation": "Source measurement, authoring/debugging and asset validation only; no formal reviewer or formal polish/fix pass."
+  },
+  "scope": "ONLY Fortress._voidProps rng.bool(0.5) drifting wreck branch. No production source installed; no asteroids, stations, gates, dreadnought, carrier or gameplay edits.",
+  "static": true,
+  "axes": "Game +Y up, +Z forward. Blender uses (x,-z,y). Origin exactly source tapered hull origin: shell extends forward, not centered on Z.",
+  "toolchain": {
+    "blender": "5.2.1 LTS",
+    "build_hash": "9e2066aef7ef",
+    "platform": "native Linux",
+    "engine": "BLENDER_EEVEE",
+    "render_threads": 4,
+    "three_cpu": "185",
+    "new_installs": false,
+    "tooling_distributed": false
+  },
+  "files": {
+    "asset/drifting-wreckage-kit.glb": {
+      "bytes": 107828,
+      "sha256": "f39cce1fbf0c6d15ee046c04b52d1ca5ec26c757beb65dc3eabfe700793aee89"
+    },
+    "asset/drifting-wreckage-kit.blend": {
+      "bytes": 131274,
+      "sha256": "73cb8fabc3456cc19bc79c058b04190108d1610c311c39a2fd5ab8a7c385a31b"
+    },
+    "asset/runtime-templates.json": {
+      "bytes": 397490,
+      "sha256": "184b4a8fce26501a7f3938dc04498736d19df24c2c280ac28bdb69c1564d00c2"
+    }
+  },
+  "budget": {
+    "target_triangles_each": [
+      400,
+      700
+    ],
+    "ceiling_triangles_each": 1000,
+    "max_merged_primitives_per_wreck": 2,
+    "kit_glb_ceiling_bytes": 524288,
+    "kit_glb_bytes": 107828,
+    "kit_glb_triangles": 1012,
+    "kit_glb_primitives": 4,
+    "new_textures": 0,
+    "materials": 2,
+    "all_budget_checks_pass": true
+  },
+  "variants": [
+    {
+      "name": "gutter-keel",
+      "parts": [
+        {
+          "name": "gutter-keel--continuous-torn-shell",
+          "bucket": "dark",
+          "tint_hex": "0x6a7482",
+          "slot": null,
+          "triangles": 124,
+          "first_vertex": 0,
+          "vertex_count": 372
+        },
+        {
+          "name": "gutter-keel--frame-00-web-00",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 372,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-00-web-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 408,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-00-web-02",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 444,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-00-web-03",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 480,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-00-web-04",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 516,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-00-web-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 552,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-00-web-06",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 588,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-00",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 624,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 660,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-02",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 696,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-03",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 732,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-04",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 768,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 804,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-06",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 840,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-00",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 876,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 912,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-02",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 948,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-03",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 984,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-04",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1020,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1056,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-06",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1092,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--longeron-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1128,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--longeron-06",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1164,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--keel-spline",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1200,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--fitted-lap-plate-00",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1236,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--fitted-lap-plate-01",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1272,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--fitted-lap-plate-02",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1308,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--fitted-lap-plate-03",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1344,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--exposed-conduit-00",
+          "bucket": "dark",
+          "tint_hex": "0x7e8a94",
+          "slot": null,
+          "triangles": 20,
+          "first_vertex": 1380,
+          "vertex_count": 60
+        },
+        {
+          "name": "gutter-keel--exposed-conduit-01",
+          "bucket": "dark",
+          "tint_hex": "0x7e8a94",
+          "slot": null,
+          "triangles": 20,
+          "first_vertex": 1440,
+          "vertex_count": 60
+        },
+        {
+          "name": "gutter-keel--diagonal-gusset-00",
+          "bucket": "dark",
+          "tint_hex": "0x667482",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1500,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--diagonal-gusset-01",
+          "bucket": "dark",
+          "tint_hex": "0x667482",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1536,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--ember-face-0",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 0,
+          "triangles": 2,
+          "first_vertex": 0,
+          "vertex_count": 6
+        },
+        {
+          "name": "gutter-keel--ember-face-1",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 1,
+          "triangles": 2,
+          "first_vertex": 6,
+          "vertex_count": 6
+        },
+        {
+          "name": "gutter-keel--ember-face-2",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 2,
+          "triangles": 2,
+          "first_vertex": 12,
+          "vertex_count": 6
+        },
+        {
+          "name": "gutter-keel--ember-face-3",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 3,
+          "triangles": 2,
+          "first_vertex": 18,
+          "vertex_count": 6
+        }
+      ],
+      "bounds": {
+        "min": [
+          -0.2644444406032562,
+          -0.20863083004951477,
+          0.05000000074505806
+        ],
+        "max": [
+          0.2690722346305847,
+          0.19235700368881226,
+          1.7300000190734863
+        ]
+      },
+      "triangles": 532
+    },
+    {
+      "name": "sheared-chine",
+      "parts": [
+        {
+          "name": "sheared-chine--continuous-torn-shell",
+          "bucket": "dark",
+          "tint_hex": "0x6a7482",
+          "slot": null,
+          "triangles": 108,
+          "first_vertex": 0,
+          "vertex_count": 324
+        },
+        {
+          "name": "sheared-chine--frame-00-web-00",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 324,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-00-web-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 360,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-00-web-02",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 396,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-00-web-03",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 432,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-00-web-04",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 468,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-00-web-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 504,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-01-web-00",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 540,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-01-web-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 576,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-01-web-02",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 612,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-01-web-03",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 648,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-01-web-04",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 684,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-01-web-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 720,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-02-web-00",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 756,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-02-web-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 792,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-02-web-02",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 828,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-02-web-03",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 864,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-02-web-04",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 900,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-02-web-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 936,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--longeron-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 972,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--longeron-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1008,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--keel-spline",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1044,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--fitted-lap-plate-00",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1080,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--fitted-lap-plate-01",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1116,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--fitted-lap-plate-02",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1152,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--fitted-lap-plate-03",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1188,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--exposed-conduit-00",
+          "bucket": "dark",
+          "tint_hex": "0x7e8a94",
+          "slot": null,
+          "triangles": 20,
+          "first_vertex": 1224,
+          "vertex_count": 60
+        },
+        {
+          "name": "sheared-chine--exposed-conduit-01",
+          "bucket": "dark",
+          "tint_hex": "0x7e8a94",
+          "slot": null,
+          "triangles": 20,
+          "first_vertex": 1284,
+          "vertex_count": 60
+        },
+        {
+          "name": "sheared-chine--diagonal-gusset-00",
+          "bucket": "dark",
+          "tint_hex": "0x667482",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1344,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--diagonal-gusset-01",
+          "bucket": "dark",
+          "tint_hex": "0x667482",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1380,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--ember-face-0",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 0,
+          "triangles": 2,
+          "first_vertex": 0,
+          "vertex_count": 6
+        },
+        {
+          "name": "sheared-chine--ember-face-1",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 1,
+          "triangles": 2,
+          "first_vertex": 6,
+          "vertex_count": 6
+        },
+        {
+          "name": "sheared-chine--ember-face-2",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 2,
+          "triangles": 2,
+          "first_vertex": 12,
+          "vertex_count": 6
+        },
+        {
+          "name": "sheared-chine--ember-face-3",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 3,
+          "triangles": 2,
+          "first_vertex": 18,
+          "vertex_count": 6
+        }
+      ],
+      "bounds": {
+        "min": [
+          -0.25116175413131714,
+          -0.21665404736995697,
+          0.05000000074505806
+        ],
+        "max": [
+          0.2690722346305847,
+          0.19625170528888702,
+          1.7300000190734863
+        ]
+      },
+      "triangles": 480
+    }
+  ],
+  "named_node_map": [
+    {
+      "variant_root": "gutter-keel",
+      "dark_node": "gutter-keel--dark",
+      "neon_node": "gutter-keel--neon",
+      "runtime": "Never instantiate the root per wreck. Select only one cached variant and append all its vertices to the existing two chunk buckets."
+    },
+    {
+      "variant_root": "sheared-chine",
+      "dark_node": "sheared-chine--dark",
+      "neon_node": "sheared-chine--neon",
+      "runtime": "Never instantiate the root per wreck. Select only one cached variant and append all its vertices to the existing two chunk buckets."
+    }
+  ],
+  "material_runtime_map": {
+    "WR_Dark__bind_shared_darkMetal": {
+      "bucket": "dark",
+      "shared_runtime_material": "materials.darkMetal",
+      "source_color": "0x3a4a5e",
+      "metalness": 0.5,
+      "roughness": 0.46,
+      "vertexColors": true,
+      "textures_at_baseline": [],
+      "response": "Retain shared source material, source AO, front/side lift, and world box-projected UV reconstruction; do not clone it."
+    },
+    "WR_Ember__reconstruct_aAnim": {
+      "bucket": "neon",
+      "shared_runtime_material": "materials.neonVertex",
+      "gain": 1.4,
+      "color": "0xff7a2a",
+      "mode": 4,
+      "mode_name": "FLICKER",
+      "rate_and_phase": "Exact original four random pairs. Vertex-to-slot association explicit in sidecar.",
+      "clock": "Existing uLightTime, controlled by game.",
+      "GLB_fallback": "Static warm emissive glTF material, not the game shader."
+    }
+  },
+  "material_requirement_correction": "At ee221ad darkMetal has no texture map/normal/roughness maps. Retain the exact shared MeshStandardMaterial (color 0x3a4a5e, metalness .5, roughness .46, vertexColors true), source AO and world box-projected UVs. Do not claim a source texture exists.",
+  "random_contract": {
+    "absent": 1,
+    "present_including_branch": 32,
+    "present_after_branch": 31,
+    "ordering": [
+      "branch bool",
+      "side bool",
+      "abs X",
+      "Y",
+      "Z",
+      "size",
+      "yaw",
+      "bank",
+      "4 x (ember width, X offset, Y offset, Z offset, flicker rate, phase)"
+    ]
+  },
+  "deterministic_selection": "Avalanche hash of existing branch-entry rng._s XOR chunk index; no call to rng.next, bool, range, int or a separate random generator.",
+  "legacy_ember_geometry": "Consumes every original width/offset draw in order but fits four static emissive faces to torn shell. Original four rates/phases and flicker mode/gain retained. Wreck placement, s, yaw and bank retained. Exact old individual ember box positions are deliberately not retained.",
+  "shader_sidecar": {
+    "required": true,
+    "file": "asset/runtime-templates.json",
+    "cached_typed_array_bytes": 112332,
+    "reconstruction": "Float32 p/n/linear c, Int8 ember slot. Append helper reconstructs bank/yaw/scale, source world projected UVs, AO/front/side lift, neon gain and per-vertex aAnim. Ordinary GLB alone cannot carry source material clocks, GLSL hooks, or this complete Batch behavior."
+  },
+  "ownership": "Prepare immutable typed-array templates before Game construction. No per-frame mesh generation; no per-wreck GLTF roots, material/texture clones or parts draws. Actual Batch merges two existing chunk buckets. Chunk owns merged BufferGeometry; source _disposeChunk disposes each exactly once. Shared materials/textures retained until existing shutdown, template array references released only then. Pools reuse CPU buffers. Do not render whole kit per wreck.",
+  "source_placement": {
+    "absX": [
+      60,
+      150
+    ],
+    "Y": [
+      -50,
+      70
+    ],
+    "localChunkZ": [
+      10,
+      86
+    ],
+    "size": [
+      10,
+      22
+    ],
+    "yaw": [
+      -0.8,
+      0.8
+    ],
+    "bank": [
+      -0.6,
+      0.6
+    ],
+    "static_geometry": true
+  },
+  "continuous_clearance": {
+    "method": "Convex source hull containment; per-endpoint radial XY support bounds bank continuously, then exact maximum yaw support over [-0.8,0.8]. Ribs and embers are smaller in X.",
+    "hull_absX_offset_upper": 31.940126363907336,
+    "nearest_possible_absX_lower": 28.059873636092664,
+    "flight_absX_limit": 16,
+    "clearance_lower": 12.059873636092664,
+    "no_flight_or_aim_changes": true
+  },
+  "bounds": {
+    "canonical_evaluated": "variants[*].bounds",
+    "transformed_evaluated": "checks/transformed-bounds.json (36 actual Batch evaluations; samples explicitly NOT continuous extrema)",
+    "proof": "Every template vertex/triangle inside original convex source hull, hence every allowed size/bank/yaw/translation stays inside its full transformed envelope. No flight, player, aim or altitude range narrowed.",
+    "common_world_sample": "checks/world-scene.json"
+  },
+  "validation": {
+    "source_random_geometry_trials": 64,
+    "rng_and_downstream_geometry": "Exact full next() sequences/state + next 32 draws + per-operation binary attribute hashes outside the wreck; actual source _voidProps including untouched carrier/dreadnought/rocks/station in sector 2/4 trials.",
+    "source_batch_fixture_max_attr_error": 5.960464477539063e-08,
+    "neon_all_vertices_checked": true,
+    "chunk_geometry_dispose_events": 2,
+    "shared_material_dispose_events": 0,
+    "blend_reopened": true,
+    "glb_clean_scene_reimport": true,
+    "independent_binary_audit": true,
+    "manifold_thickness_shells_with_real_open_cavity_rays": [
+      {
+        "name": "gutter-keel",
+        "triangles": 532,
+        "two_bucket_primitives": true,
+        "glb_sidecar_position_multisets_match_1e_6": true,
+        "continuous_shell_components": 1,
+        "shell_edges_incidence": 2,
+        "consistent_shell_winding": true,
+        "cavity_origin": [
+          0,
+          0,
+          0.9
+        ],
+        "opening_direction": [
+          0,
+          1,
+          0
+        ],
+        "opening_ray_shell_hits": 0,
+        "opposite_ray_shell_hits": 2,
+        "proof_scope": "Topology and explicit cavity rays, not a general solid/collision solver or gameplay feature."
+      },
+      {
+        "name": "sheared-chine",
+        "triangles": 480,
+        "two_bucket_primitives": true,
+        "glb_sidecar_position_multisets_match_1e_6": true,
+        "continuous_shell_components": 1,
+        "shell_edges_incidence": 2,
+        "consistent_shell_winding": true,
+        "cavity_origin": [
+          0,
+          0,
+          0.9
+        ],
+        "opening_direction": [
+          -1,
+          1,
+          0
+        ],
+        "opening_ray_shell_hits": 0,
+        "opposite_ray_shell_hits": 2,
+        "proof_scope": "Topology and explicit cavity rays, not a general solid/collision solver or gameplay feature."
+      }
+    ]
+  },
+  "density_proxy": [
+    {
+      "ahead": 320,
+      "behind": 90,
+      "sampled_windows": 624,
+      "mean_wrecks": 2.394230769230769,
+      "maximum_observed_wrecks": 6,
+      "maximum_observed_triangles": 3088,
+      "maximum_observed_wreck_attribute_bytes": 409344,
+      "maximum_observed_occupied_wreck_chunk_buckets": 12
+    },
+    {
+      "ahead": 440,
+      "behind": 90,
+      "sampled_windows": 624,
+      "mean_wrecks": 2.983974358974359,
+      "maximum_observed_wrecks": 6,
+      "maximum_observed_triangles": 3140,
+      "maximum_observed_wreck_attribute_bytes": 416208,
+      "maximum_observed_occupied_wreck_chunk_buckets": 12
+    },
+    {
+      "ahead": 560,
+      "behind": 90,
+      "sampled_windows": 624,
+      "mean_wrecks": 3.5833333333333335,
+      "maximum_observed_wrecks": 7,
+      "maximum_observed_triangles": 3672,
+      "maximum_observed_wreck_attribute_bytes": 486720,
+      "maximum_observed_occupied_wreck_chunk_buckets": 14
+    },
+    {
+      "ahead": 700,
+      "behind": 90,
+      "sampled_windows": 624,
+      "mean_wrecks": 4.326923076923077,
+      "maximum_observed_wrecks": 9,
+      "maximum_observed_triangles": 4632,
+      "maximum_observed_wreck_attribute_bytes": 614016,
+      "maximum_observed_occupied_wreck_chunk_buckets": 18
+    }
+  ],
+  "density_proxy_limitations": "Finite synthetic void-only seeds/windows, landmarks excluded. Not an asserted live maximum, measured GPU memory or measured draw-call performance. Existing dark/neon buckets may already exist; never creates per-part draws.",
+  "memory_scope": "Float32 p/n/c (36 bytes/vertex) + Int8 slot (1 byte/vertex). Chunk merged dark is 44 bytes/vertex, neon 56 bytes/vertex. No index, driver allocations, geometry objects, shared buffers, allocator capacity, unrelated source geometry or textures included.",
+  "evidence": {
+    "rendered_pngs": [
+      "01-kit-three-quarter.png",
+      "02-kit-torn-aft.png",
+      "03-kit-open-top.png",
+      "04-kit-underside.png",
+      "05-gutter-keel-structural-closeup.png",
+      "06-sheared-chine-structural-closeup.png",
+      "07-frame-conduit-isolation.png",
+      "00-shipped-vocabulary.png",
+      "world-classic.png",
+      "world-modern.png",
+      "world-chase.png",
+      "world-classic-source-baseline.png"
+    ],
+    "actually_viewed": {
+      "method": "Actually opened each final PNG using functions.view_image in this implementation session; not inferred from render success or filenames.",
+      "purpose": "Initial implementation evidence inspection only, not a formal review or polish pass.",
+      "formal_reviews": 0,
+      "formal_fix_passes": 0,
+      "pending_deferred_opus_review": true,
+      "images": [
+        {
+          "file": "00-shipped-vocabulary.png",
+          "observed": "All six shipped reference models visible; faceted plate forms, steel/ivory and controlled emissive vocabulary. This sheet uses normalized reference scales."
+        },
+        {
+          "file": "01-kit-three-quarter.png",
+          "observed": "Both complementary continuous hollow forms, exposed frames and fitted outer plates visible. Small orange ember faces remain restrained."
+        },
+        {
+          "file": "02-kit-torn-aft.png",
+          "observed": "Open end rims and empty cavities visible from opposite angle. Jagged plate terminations do not form a black painted cap."
+        },
+        {
+          "file": "03-kit-open-top.png",
+          "observed": "Open top and asymmetric flank differences readable; shell thickness, longitudinal framing, transverse bands and lap plates visible."
+        },
+        {
+          "file": "04-kit-underside.png",
+          "observed": "Exterior mass is continuous; low-key underside facets remain darker than raised rims. No disconnected floating box cluster."
+        },
+        {
+          "file": "05-gutter-keel-structural-closeup.png",
+          "observed": "Shell thickness at torn rim, attached crossframe, longeron and fitted side plates visible. Closeup deliberately crops the far end."
+        },
+        {
+          "file": "06-sheared-chine-structural-closeup.png",
+          "observed": "Canted asymmetric chine leaves a real open cavity; exposed internal bars and side lap plates visible."
+        },
+        {
+          "file": "07-frame-conduit-isolation.png",
+          "observed": "Transverse frame sections, continuous longerons and conduits visible with shell/plates/embers intentionally hidden for evidence only."
+        },
+        {
+          "file": "world-classic.png",
+          "observed": "Final framing-selected source-legal sample contains both whole wrecks and shipped unscaled player. Source dark material is very dark; open silhouettes, rims and restrained embers visible. Not final readability acceptance."
+        },
+        {
+          "file": "world-modern.png",
+          "observed": "Same two world-positioned wrecks and shipped player visible at actual perspective scale; wrecks are distant small dark silhouettes, not enlarged or relocated."
+        },
+        {
+          "file": "world-chase.png",
+          "observed": "Same source-legal scene visible with chase camera; wrecks remain outside flight corridor and small/dark at distance. No live camera/gameplay behavior claimed."
+        },
+        {
+          "file": "world-classic-source-baseline.png",
+          "observed": "Same original placements and camera show closed nominal tapered hull and separate original ribs/embers, contrasting with actual hollow replacement geometry."
+        }
+      ],
+      "limitations": [
+        "Offline BLENDER_EEVEE images only; studio views use diagnostic lighting.",
+        "WORLD views use source camera math and source light numeric parameters but approximate sky/IBL, omit source fog/bloom and differ in tone mapping.",
+        "Dark world appearance and source-frustum placement sensitivity require deferred in-game acceptance; no geometry/material brightening or gameplay-range changes were applied.",
+        "No Opus reviewer, formal review or formal fix/polish pass was run."
+      ]
+    },
+    "source_cameras": "Actual source FlightCamera + CameraRig.snap CPU math, 16:9. Classic ortho, Modern58deg/Chase66deg; same geometry, source positions, unit-scale shipped player. Examples are framing-selected original-seed placements, not an average gameplay composition. No placement/scale/rotation edited.",
+    "lighting": "Studio diagnostic lighting in kit views. Source deepspace key/rim numeric parameters in WORLD views. Analytic Blender world is a hemisphere/IBL approximation. Source PMREM, procedural sky, FogExp2, bloom and tone-mapping are NOT reproduced. Static source t=0 flicker snapshot only.",
+    "not_live_acceptance": true
+  },
+  "vocabulary": {
+    "six_shipped_GLBs": "checks/shipped-vocabulary-audit.json and evidence/00-shipped-vocabulary.png; NOT redistributed",
+    "selected_assets_source_inspected": {
+      "assets-source/fighter/blender/build_player.py": "3edae3cb72ba8d570aed414dd2559a986bba072b4388a851adb1a6d3ab0e4398",
+      "assets-source/fighter/blender/kzlib.py": "0172ba352c09632d0703095ad116027b8b6b68f25f4ae862e51dd5a3da910073",
+      "assets-source/supplies/scripts/kit.py": "35a024289983bd0997a9c64168fc12998ffd6b4a32564295c260a0e583962a54",
+      "assets-source/sentinel/manifest.json": "fe8b0a38db863314c83ddb5e27ea0bd0ba031924d1c9c96b8cd11763bddcdf07"
+    },
+    "use": "Plate bevel/chine language, attached exposed structure and restrained steel/ember contrast; new hull-fragment templates authored from scratch, not old contest design disguises."
+  },
+  "limitations": [
+    "Offline Blender EEVEE with software graphics requested by existing wrapper; not live WebGL/GPU or final acceptance.",
+    "localStorage empty stand-in",
+    "matchMedia non-coarse stand-in",
+    "navigator hardwareConcurrency/deviceMemory stand-in; no renderer or WebGL context",
+    "CPU protocol/buffer/disposal checks do not validate shader compilation, renderer scheduling or driver memory.",
+    "Finite aggregate density proxy, not a live scene maximum. Excludes unrelated geometry/materials/driver/CPU allocator overhead.",
+    "No formal Opus review/polish; pending_deferred_opus_review, 0 formal reviews/fix passes.",
+    "Transfer receipt is sender-side only; receiver verification belongs to orchestrator."
+  ],
+  "transfer_policy": "Only assigned asset/source/reference snapshots/evidence/checksums packaged. No wrapper, executable, runtime, libs, node_modules, caches, temporary data or unrelated asset work. Initial frozen bytes unchanged; archive/receipt outside initial."
+}

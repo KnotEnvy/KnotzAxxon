@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "savedBlendReopened": {
+    "evaluatedTriangles": 460,
+    "materialPrimitives": 3,
+    "objectNames": [
+      "CS_CoolingStack",
+      "CS_HeatSurfacePivot",
+      "CS_SteamOrigin"
+    ],
+    "materialNames": [
+      "CS_Dark",
+      "CS_Heat",
+      "CS_Hull"
+    ],
+    "transformedBoundsGameYUp": {
+      "min": [
+        -2.0799999237060547,
+        0.0,
+        -2.0799999237060547
+      ],
+      "max": [
+        2.0799999237060547,
+        9.239999771118164,
+        2.0799999237060547
+      ]
+    },
+    "externalImages": [],
+    "packedImageCount": 0,
+    "fileImagesUsed": 0,
+    "actionCount": 0
+  },
+  "cleanGLBReimport": {
+    "evaluatedTriangles": 460,
+    "materialPrimitives": 3,
+    "objectNames": [
+      "CS_CoolingStack",
+      "CS_HeatSurfacePivot",
+      "CS_SteamOrigin"
+    ],
+    "materialNames": [
+      "CS_Dark",
+      "CS_Heat",
+      "CS_Hull"
+    ],
+    "transformedBoundsGameYUp": {
+      "min": [
+        -2.0799999237060547,
+        0.0,
+        -2.0799999237060547
+      ],
+      "max": [
+        2.0799999237060547,
+        9.239999771118164,
+        2.0799999237060547
+      ]
+    },
+    "externalImages": [],
+    "packedImageCount": 0,
+    "fileImagesUsed": 0,
+    "actionCount": 0
+  },
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "packedBlend": "Self-contained zero-image .blend; no external files to pack."
+}

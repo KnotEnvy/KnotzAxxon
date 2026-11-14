@@ -1,0 +1,2485 @@
+{
+  "auditor": "independent Python stdlib binary parser; no Blender/Three geometry path",
+  "cargo": {
+    "file": "asset-work/cargo-kit/initial/asset/cargo-kit.glb",
+    "bytes": 19828,
+    "sha256": "c516490784e27f1c438df3ec731a4d025793f83522efd1215cec53d13da3e352",
+    "primitives": 2,
+    "materials": 1,
+    "textures": 0,
+    "images": 0,
+    "meshes": [
+      {
+        "name": "CargoCrate_Fitted_EditableTopology",
+        "triangles": 156,
+        "vertices": 288,
+        "attributes": [
+          "POSITION",
+          "NORMAL"
+        ],
+        "bounds": {
+          "min": [
+            -0.5,
+            0.0,
+            -0.5
+          ],
+          "max": [
+            0.5,
+            1.0,
+            0.5
+          ]
+        },
+        "continuous_containment": "Every linear triangle vertex lies in convex source unit box; therefore full triangles lie inside for all affine placements",
+        "topology": {
+          "welded_vertices": 80,
+          "edges": 234,
+          "faces": 156,
+          "euler": 2,
+          "connected_components": 1,
+          "nonmanifold_edges": 0,
+          "orientation_errors": 0,
+          "minimum_triangle_area": 0.0013856402399845908,
+          "signed_volume": 0.9070220969086927
+        }
+      },
+      {
+        "name": "CargoDrum_Fitted_EditableTopology",
+        "triangles": 180,
+        "vertices": 342,
+        "attributes": [
+          "POSITION",
+          "NORMAL"
+        ],
+        "bounds": {
+          "min": [
+            -0.9510565400123596,
+            0.0,
+            -1.0
+          ],
+          "max": [
+            0.9510565400123596,
+            1.0,
+            1.0
+          ]
+        },
+        "ten_source_halfplanes_max_error": 2.4011930555012384e-08,
+        "continuous_containment": "Every vertex satisfies all ten source cylinder halfplanes and 0<=Y<=1; convexity proves full triangle containment, preserved by original affine scale/yaw",
+        "topology": {
+          "welded_vertices": 92,
+          "edges": 270,
+          "faces": 180,
+          "euler": 2,
+          "connected_components": 1,
+          "nonmanifold_edges": 0,
+          "orientation_errors": 0,
+          "minimum_triangle_area": 0.01872664449702828,
+          "signed_volume": 2.565717508454704
+        }
+      }
+    ],
+    "nodes": [
+      "CargoCrate_Fitted",
+      "CargoDrum_Fitted"
+    ],
+    "node_transforms": "identity baked and verified",
+    "material_definitions": [
+      {
+        "doubleSided": true,
+        "name": "Cargo_Neutral_UseExistingHull",
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0.36000001430511475
+        }
+      }
+    ]
+  },
+  "shipped_vocabulary_only": [
+    {
+      "file": "public/models/player.glb",
+      "bytes": 478292,
+      "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "primitives": 8,
+      "materials": 7,
+      "textures": 0,
+      "images": 0,
+      "meshes": [
+        {
+          "name": "airframe-accent",
+          "triangles": 3258,
+          "vertices": 4774,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -1.649999976158142,
+              -0.568220317363739,
+              -2.5
+            ],
+            "max": [
+              1.649999976158142,
+              0.7782725691795349,
+              2.4200000762939453
+            ]
+          }
+        },
+        {
+          "name": "airframe-glass",
+          "triangles": 278,
+          "vertices": 168,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -0.39500001072883606,
+              0.30000001192092896,
+              -0.6800000071525574
+            ],
+            "max": [
+              0.39500001072883606,
+              1.0,
+              1.559999942779541
+            ]
+          }
+        },
+        {
+          "name": "airframe-hull",
+          "triangles": 7608,
+          "vertices": 7514,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0"
+          ],
+          "bounds": {
+            "min": [
+              -3.9522860050201416,
+              -0.5839999914169312,
+              -2.478971242904663
+            ],
+            "max": [
+              3.9522860050201416,
+              1.4070836305618286,
+              3.190000057220459
+            ]
+          }
+        },
+        {
+          "name": "airframe-nav-port",
+          "triangles": 44,
+          "vertices": 96,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -3.8985373973846436,
+              0.22600001096725464,
+              -1.9293280839920044
+            ],
+            "max": [
+              -3.701462507247925,
+              0.29600000381469727,
+              -1.6306718587875366
+            ]
+          }
+        },
+        {
+          "name": "airframe-nav-starboard",
+          "triangles": 44,
+          "vertices": 96,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              3.701462507247925,
+              0.22600001096725464,
+              -1.9293280839920044
+            ],
+            "max": [
+              3.8985373973846436,
+              0.29600000381469727,
+              -1.6306718587875366
+            ]
+          }
+        },
+        {
+          "name": "airframe-neon",
+          "triangles": 40,
+          "vertices": 64,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -3.3399999141693115,
+              0.13950000703334808,
+              -1.116326928138733
+            ],
+            "max": [
+              3.3399999141693115,
+              0.25130000710487366,
+              0.39871281385421753
+            ]
+          }
+        },
+        {
+          "name": "engine-core-1",
+          "triangles": 142,
+          "vertices": 97,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -0.2549999952316284,
+              -0.2549999952316284,
+              -0.02199999988079071
+            ],
+            "max": [
+              0.2549999952316284,
+              0.2549999952316284,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "engine-core--1",
+          "triangles": 142,
+          "vertices": 97,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -0.2549999952316284,
+              -0.2549999952316284,
+              -0.02199999988079071
+            ],
+            "max": [
+              0.2549999952316284,
+              0.2549999952316284,
+              0.0
+            ]
+          }
+        }
+      ],
+      "nodes": [
+        "airframe-accent",
+        "airframe-glass",
+        "airframe-hull",
+        "airframe-nav-port",
+        "airframe-nav-starboard",
+        "airframe-neon",
+        "engine-core-1",
+        "engine-core--1",
+        "muzzle-socket-1",
+        "muzzle-socket--1",
+        "hero-interceptor"
+      ],
+      "node_transforms": "reference bounds are primitive local-space only",
+      "material_definitions": [
+        {
+          "extras": {
+            "kz_runtime": "mats.playerAccent"
+          },
+          "name": "KZ_PlayerAccent",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.016807375475764275,
+              0.03560131415724754,
+              0.06480326503515244,
+              1
+            ],
+            "metallicFactor": 0.5799999833106995,
+            "roughnessFactor": 0.3799999952316284
+          }
+        },
+        {
+          "extensions": {
+            "KHR_materials_clearcoat": {
+              "clearcoatFactor": 1,
+              "clearcoatRoughnessFactor": 0.07999999821186066
+            }
+          },
+          "extras": {
+            "kz_runtime": "mats.glass"
+          },
+          "name": "KZ_PlayerGlass",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.006048833020031452,
+              0.04817182570695877,
+              0.08437620848417282,
+              1
+            ],
+            "metallicFactor": 0.5799999833106995,
+            "roughnessFactor": 0.1599999964237213
+          }
+        },
+        {
+          "extras": {
+            "kz_runtime": "mats.playerHull"
+          },
+          "name": "KZ_PlayerHull",
+          "pbrMetallicRoughness": {
+            "metallicFactor": 0.5199999809265137,
+            "roughnessFactor": 0.3400000035762787
+          }
+        },
+        {
+          "emissiveFactor": [
+            1,
+            0.05951123684644699,
+            0.12477181851863861
+          ],
+          "extras": {
+            "kz_runtime": "player neon bucket (0xff4563, -X wingtip)"
+          },
+          "name": "KZ_NavPort",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.6000000238418579
+          }
+        },
+        {
+          "emissiveFactor": [
+            0.13013647496700287,
+            0.7379103899002075,
+            0.4125426113605499
+          ],
+          "extras": {
+            "kz_runtime": "player neon bucket (0x65dfac, +X wingtip)"
+          },
+          "name": "KZ_NavStarboard",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.6000000238418579
+          }
+        },
+        {
+          "emissiveFactor": [
+            0.08437620848417282,
+            0.5088813304901123,
+            0.6239603757858276
+          ],
+          "extras": {
+            "kz_runtime": "player neon bucket (MeshBasic vertex colour 0x52bdcf)"
+          },
+          "name": "KZ_NeonCyan",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.6000000238418579
+          }
+        },
+        {
+          "emissiveFactor": [
+            0.2746773064136505,
+            0.7758222222328186,
+            1
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 1.350000023841858
+            }
+          },
+          "extras": {
+            "kz_runtime": "mats.neon(0x8fe4ff, 1.35)"
+          },
+          "name": "KZ_EngineGlow",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.6000000238418579
+          }
+        }
+      ]
+    },
+    {
+      "file": "public/models/sentinel.glb",
+      "bytes": 1140172,
+      "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef",
+      "primitives": 38,
+      "materials": 12,
+      "textures": 4,
+      "images": 3,
+      "meshes": [
+        {
+          "name": "forearm-L",
+          "triangles": 636,
+          "vertices": 475,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.5,
+              -2.355278730392456,
+              -10.88244342803955
+            ],
+            "max": [
+              1.899999976158142,
+              1.899999976158142,
+              1.4136455059051514
+            ]
+          }
+        },
+        {
+          "name": "forearm-L",
+          "triangles": 276,
+          "vertices": 181,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.0999999046325684,
+              -1.850000023841858,
+              -9.399999618530273
+            ],
+            "max": [
+              2.0999999046325684,
+              2.049999952316284,
+              -1.2999999523162842
+            ]
+          }
+        },
+        {
+          "name": "launcher-charge",
+          "triangles": 216,
+          "vertices": 228,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -1.7200000286102295,
+              -1.7044553756713867,
+              -0.11999999731779099
+            ],
+            "max": [
+              1.7200000286102295,
+              1.7044553756713867,
+              0.05000000074505806
+            ]
+          }
+        },
+        {
+          "name": "forearm-R",
+          "triangles": 1932,
+          "vertices": 1724,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.5,
+              -1.9000000953674316,
+              -10.050000190734863
+            ],
+            "max": [
+              2.5,
+              3.4000000953674316,
+              1.4136455059051514
+            ]
+          }
+        },
+        {
+          "name": "forearm-R",
+          "triangles": 184,
+          "vertices": 112,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.4000000953674316,
+              -2.1000001430511475,
+              -9.399999618530273
+            ],
+            "max": [
+              2.4000000953674316,
+              2.700000047683716,
+              -1.2999999523162842
+            ]
+          }
+        },
+        {
+          "name": "forearm-R",
+          "triangles": 88,
+          "vertices": 96,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.640000104904175,
+              -1.5,
+              -8.899999618530273
+            ],
+            "max": [
+              2.640000104904175,
+              2.0999999046325684,
+              -3.9000000953674316
+            ]
+          }
+        },
+        {
+          "name": "antenna-tip-L",
+          "triangles": 80,
+          "vertices": 50,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -0.2800000011920929,
+              -0.2800000011920929,
+              -0.2800000011920929
+            ],
+            "max": [
+              0.2800000011920929,
+              0.2800000011920929,
+              0.2800000011920929
+            ]
+          }
+        },
+        {
+          "name": "antenna-tip-R",
+          "triangles": 80,
+          "vertices": 50,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -0.2800000011920929,
+              -0.2800000011920929,
+              -0.2800000011920929
+            ],
+            "max": [
+              0.2800000011920929,
+              0.2800000011920929,
+              0.2800000011920929
+            ]
+          }
+        },
+        {
+          "name": "head",
+          "triangles": 468,
+          "vertices": 349,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -4.179999828338623,
+              -1.399999976158142,
+              -4.304130554199219
+            ],
+            "max": [
+              4.179999828338623,
+              4.787351131439209,
+              2.791895866394043
+            ]
+          }
+        },
+        {
+          "name": "head",
+          "triangles": 1084,
+          "vertices": 703,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -4.099999904632568,
+              -1.5,
+              -4.224999904632568
+            ],
+            "max": [
+              4.099999904632568,
+              5.83406400680542,
+              1.7482210397720337
+            ]
+          }
+        },
+        {
+          "name": "head",
+          "triangles": 104,
+          "vertices": 78,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -3.3478851318359375,
+              -0.1599999964237213,
+              -4.0236897468566895
+            ],
+            "max": [
+              3.3478851318359375,
+              0.25999999046325684,
+              -2.2691540718078613
+            ]
+          }
+        },
+        {
+          "name": "pod-L-barrel-0",
+          "triangles": 1288,
+          "vertices": 1226,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -0.7019481062889099,
+              -0.7200000286102295,
+              -6.0
+            ],
+            "max": [
+              0.7019481062889099,
+              0.7200000286102295,
+              0.3499999940395355
+            ]
+          }
+        },
+        {
+          "name": "pod-L-barrel-1",
+          "triangles": 1288,
+          "vertices": 1226,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -0.7019481062889099,
+              -0.7200000286102295,
+              -6.0
+            ],
+            "max": [
+              0.7019481062889099,
+              0.7200000286102295,
+              0.3499999940395355
+            ]
+          }
+        },
+        {
+          "name": "pod-L-body",
+          "triangles": 458,
+          "vertices": 335,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -4.0,
+              -4.0,
+              -3.3499999046325684
+            ],
+            "max": [
+              4.0,
+              4.696601390838623,
+              3.299999952316284
+            ]
+          }
+        },
+        {
+          "name": "pod-L-body",
+          "triangles": 3412,
+          "vertices": 3006,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -4.34499979019165,
+              -4.059999942779541,
+              -3.5072243213653564
+            ],
+            "max": [
+              4.34499979019165,
+              4.059999942779541,
+              3.7838950157165527
+            ]
+          }
+        },
+        {
+          "name": "pod-L-eye",
+          "triangles": 168,
+          "vertices": 86,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -0.8999999761581421,
+              -0.8999999761581421,
+              -0.8999999761581421
+            ],
+            "max": [
+              0.8999999761581421,
+              0.8999999761581421,
+              0.8999999761581421
+            ]
+          }
+        },
+        {
+          "name": "pod-L-stump",
+          "triangles": 300,
+          "vertices": 223,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.984314203262329,
+              -2.9135453701019287,
+              -1.3729534149169922
+            ],
+            "max": [
+              2.6966798305511475,
+              2.913545608520508,
+              1.7000001668930054
+            ]
+          }
+        },
+        {
+          "name": "pod-L-stump",
+          "triangles": 118,
+          "vertices": 111,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -1.5938197374343872,
+              -1.5216903686523438,
+              -0.7199999690055847
+            ],
+            "max": [
+              1.5938197374343872,
+              1.5216903686523438,
+              -0.47999998927116394
+            ]
+          }
+        },
+        {
+          "name": "pod-R-barrel-0",
+          "triangles": 1288,
+          "vertices": 1226,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -0.7019481062889099,
+              -0.7200000286102295,
+              -6.0
+            ],
+            "max": [
+              0.7019481062889099,
+              0.7200000286102295,
+              0.3499999940395355
+            ]
+          }
+        },
+        {
+          "name": "pod-R-barrel-1",
+          "triangles": 1288,
+          "vertices": 1226,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -0.7019481062889099,
+              -0.7200000286102295,
+              -6.0
+            ],
+            "max": [
+              0.7019481062889099,
+              0.7200000286102295,
+              0.3499999940395355
+            ]
+          }
+        },
+        {
+          "name": "pod-R-body",
+          "triangles": 458,
+          "vertices": 335,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -4.0,
+              -4.0,
+              -3.3499999046325684
+            ],
+            "max": [
+              4.0,
+              4.696601390838623,
+              3.299999952316284
+            ]
+          }
+        },
+        {
+          "name": "pod-R-body",
+          "triangles": 3412,
+          "vertices": 3006,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -4.34499979019165,
+              -4.059999942779541,
+              -3.5072243213653564
+            ],
+            "max": [
+              4.34499979019165,
+              4.059999942779541,
+              3.7838950157165527
+            ]
+          }
+        },
+        {
+          "name": "pod-R-eye",
+          "triangles": 168,
+          "vertices": 86,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -0.8999999761581421,
+              -0.8999999761581421,
+              -0.8999999761581421
+            ],
+            "max": [
+              0.8999999761581421,
+              0.8999999761581421,
+              0.8999999761581421
+            ]
+          }
+        },
+        {
+          "name": "pod-R-stump",
+          "triangles": 300,
+          "vertices": 223,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.984314203262329,
+              -2.9135453701019287,
+              -1.3729534149169922
+            ],
+            "max": [
+              2.6966798305511475,
+              2.913545608520508,
+              1.7000001668930054
+            ]
+          }
+        },
+        {
+          "name": "pod-R-stump",
+          "triangles": 118,
+          "vertices": 111,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -1.5938197374343872,
+              -1.5216903686523438,
+              -0.7199999690055847
+            ],
+            "max": [
+              1.5938197374343872,
+              1.5216903686523438,
+              -0.47999998927116394
+            ]
+          }
+        },
+        {
+          "name": "reactor-core",
+          "triangles": 20,
+          "vertices": 60,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.7727174758911133,
+              -2.63698410987854,
+              -3.0999999046325684
+            ],
+            "max": [
+              2.7727174758911133,
+              2.63698410987854,
+              3.0999999046325684
+            ]
+          }
+        },
+        {
+          "name": "reactor-shell",
+          "triangles": 20,
+          "vertices": 60,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -3.1304874420166016,
+              -2.9772400856018066,
+              -3.5
+            ],
+            "max": [
+              3.1304874420166016,
+              2.9772400856018066,
+              3.5
+            ]
+          }
+        },
+        {
+          "name": "shutter-0",
+          "triangles": 288,
+          "vertices": 262,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.905313014984131,
+              -3.336789131164551,
+              -0.4111824631690979
+            ],
+            "max": [
+              2.905313014984131,
+              0.9121735692024231,
+              0.7581545114517212
+            ]
+          }
+        },
+        {
+          "name": "shutter-1",
+          "triangles": 288,
+          "vertices": 262,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.905313014984131,
+              -3.336789131164551,
+              -0.4111824631690979
+            ],
+            "max": [
+              2.905313014984131,
+              0.9121735692024231,
+              0.7581545114517212
+            ]
+          }
+        },
+        {
+          "name": "shutter-2",
+          "triangles": 288,
+          "vertices": 262,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.905313014984131,
+              -3.336789131164551,
+              -0.4111824631690979
+            ],
+            "max": [
+              2.905313014984131,
+              0.9121735692024231,
+              0.7581545114517212
+            ]
+          }
+        },
+        {
+          "name": "shutter-3",
+          "triangles": 288,
+          "vertices": 262,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.905313014984131,
+              -3.336789131164551,
+              -0.4111824631690979
+            ],
+            "max": [
+              2.905313014984131,
+              0.9121735692024231,
+              0.7581545114517212
+            ]
+          }
+        },
+        {
+          "name": "thruster-L",
+          "triangles": 78,
+          "vertices": 81,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.200000047683716,
+              -2.200000047683716,
+              -0.0
+            ],
+            "max": [
+              2.200000047683716,
+              2.200000047683716,
+              0.25
+            ]
+          }
+        },
+        {
+          "name": "thruster-R",
+          "triangles": 78,
+          "vertices": 81,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.200000047683716,
+              -2.200000047683716,
+              -0.0
+            ],
+            "max": [
+              2.200000047683716,
+              2.200000047683716,
+              0.25
+            ]
+          }
+        },
+        {
+          "name": "torso",
+          "triangles": 10534,
+          "vertices": 8159,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -13.0,
+              -10.300000190734863,
+              -6.809999942779541
+            ],
+            "max": [
+              13.0,
+              9.141257286071777,
+              7.245537281036377
+            ]
+          }
+        },
+        {
+          "name": "torso",
+          "triangles": 184,
+          "vertices": 160,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -6.75,
+              -5.550000190734863,
+              -4.75
+            ],
+            "max": [
+              6.75,
+              0.09999999403953552,
+              6.400000095367432
+            ]
+          }
+        },
+        {
+          "name": "torso",
+          "triangles": 1592,
+          "vertices": 1134,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -12.306856155395508,
+              -8.29440975189209,
+              -5.678767204284668
+            ],
+            "max": [
+              12.306856155395508,
+              8.429465293884277,
+              6.100000381469727
+            ]
+          }
+        },
+        {
+          "name": "torso",
+          "triangles": 680,
+          "vertices": 669,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -4.295466423034668,
+              -10.359999656677246,
+              -3.1807851791381836
+            ],
+            "max": [
+              4.295466423034668,
+              9.091697692871094,
+              7.024712562561035
+            ]
+          }
+        },
+        {
+          "name": "torso",
+          "triangles": 1168,
+          "vertices": 1055,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -5.400000095367432,
+              -2.7300000190734863,
+              -6.076284408569336
+            ],
+            "max": [
+              5.400000095367432,
+              5.6468505859375,
+              -4.900000095367432
+            ]
+          }
+        }
+      ],
+      "nodes": [
+        "forearm-L",
+        "launcher-charge",
+        "missile-mouth",
+        "forearm-R",
+        "antenna-tip-L",
+        "antenna-tip-R",
+        "head",
+        "hover-wash",
+        "pod-L-barrel-0",
+        "pod-L-barrel-1",
+        "pod-L-body",
+        "pod-L-eye",
+        "pod-L-stump",
+        "pod-L",
+        "pod-R-barrel-0",
+        "pod-R-barrel-1",
+        "pod-R-body",
+        "pod-R-eye",
+        "pod-R-stump",
+        "pod-R",
+        "reactor-core",
+        "reactor-shell",
+        "reactor",
+        "shutter-0",
+        "shutter-holder-0",
+        "shutter-1",
+        "shutter-holder-1",
+        "shutter-2",
+        "shutter-holder-2",
+        "shutter-3",
+        "shutter-holder-3",
+        "thruster-L",
+        "thruster-R",
+        "torso",
+        "iron-sentinel"
+      ],
+      "node_transforms": "reference bounds are primitive local-space only",
+      "material_definitions": [
+        {
+          "doubleSided": true,
+          "name": "SN_Frame",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 0
+            },
+            "metallicFactor": 0.5,
+            "roughnessFactor": 0.46000000834465027
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "SN_Armor",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 1
+            },
+            "metallicFactor": 0.47999998927116394,
+            "roughnessFactor": 0.41999998688697815
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.4564110338687897,
+            0.0423114113509655
+          ],
+          "name": "SN_Charge",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "emissiveTexture": {
+            "index": 2
+          },
+          "name": "SN_Hazard",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 3
+            },
+            "metallicFactor": 0.4000000059604645,
+            "roughnessFactor": 0.6499999761581421
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 3
+            }
+          },
+          "name": "SN_Beacon",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.200000047683716
+            }
+          },
+          "name": "SN_Visor",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "SN_Metal",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.08437620848417282,
+              0.13013647496700287,
+              0.19120168685913086,
+              1
+            ],
+            "metallicFactor": 0.5600000023841858,
+            "roughnessFactor": 0.3799999952316284
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.4564110338687897,
+            0.0423114113509655
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "SN_PodEye",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.1946178376674652,
+            0.0423114113509655
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2
+            }
+          },
+          "name": "SN_Glow",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 1.5
+            }
+          },
+          "name": "SN_Core",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "alphaMode": "BLEND",
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "name": "SN_CoreShell",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              0.3499999940395355
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 1.2000000476837158
+            }
+          },
+          "name": "SN_Seam",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        }
+      ]
+    },
+    {
+      "file": "public/models/turret.glb",
+      "bytes": 58452,
+      "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+      "primitives": 8,
+      "materials": 4,
+      "textures": 0,
+      "images": 0,
+      "meshes": [
+        {
+          "name": "base_armor_mesh",
+          "triangles": 96,
+          "vertices": 192,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -1.8157252073287964,
+              0.1100967526435852,
+              -1.8157252073287964
+            ],
+            "max": [
+              1.8157252073287964,
+              0.7615259885787964,
+              1.8157252073287964
+            ]
+          }
+        },
+        {
+          "name": "base_mesh",
+          "triangles": 32,
+          "vertices": 50,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -1.899999976158142,
+              0.0,
+              -1.899999976158142
+            ],
+            "max": [
+              1.899999976158142,
+              0.8999999761581421,
+              1.899999976158142
+            ]
+          }
+        },
+        {
+          "name": "barrel_visual_mesh",
+          "triangles": 172,
+          "vertices": 276,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -0.36000001430511475,
+              -0.3423803746700287,
+              0.25
+            ],
+            "max": [
+              0.36000001430511475,
+              0.3423803746700287,
+              2.799999952316284
+            ]
+          }
+        },
+        {
+          "name": "bore_mesh",
+          "triangles": 40,
+          "vertices": 62,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -0.12999999523162842,
+              -0.12363734841346741,
+              2.7899999618530273
+            ],
+            "max": [
+              0.12999999523162842,
+              0.12363734841346741,
+              2.815000057220459
+            ]
+          }
+        },
+        {
+          "name": "port_plate_mesh",
+          "triangles": 60,
+          "vertices": 120,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -0.4699999988079071,
+              -0.10000002384185791,
+              -1.0199999809265137
+            ],
+            "max": [
+              0.4699999988079071,
+              1.149999976158142,
+              1.2599999904632568
+            ]
+          }
+        },
+        {
+          "name": "dome_mesh.001",
+          "triangles": 226,
+          "vertices": 115,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -1.2000000476837158,
+              -0.07999999821186066,
+              -1.2000000476837158
+            ],
+            "max": [
+              1.2000000476837158,
+              1.0499999523162842,
+              1.1220731735229492
+            ]
+          }
+        },
+        {
+          "name": "eye_mesh",
+          "triangles": 120,
+          "vertices": 264,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -0.17000000178813934,
+              0.009999999776482582,
+              -0.17000000178813934
+            ],
+            "max": [
+              0.17000000178813934,
+              0.23000000417232513,
+              0.17000000178813934
+            ]
+          }
+        },
+        {
+          "name": "trim_mesh",
+          "triangles": 448,
+          "vertices": 774,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -1.4199999570846558,
+              -0.09727469086647034,
+              -1.225000023841858
+            ],
+            "max": [
+              2.299999952316284,
+              1.1399999856948853,
+              1.225000023841858
+            ]
+          }
+        }
+      ],
+      "nodes": [
+        "base_armor",
+        "base",
+        "barrel_visual",
+        "bore",
+        "muzzle",
+        "barrel",
+        "port_plate",
+        "dome",
+        "eye",
+        "trim",
+        "turntable",
+        "turret"
+      ],
+      "node_transforms": "reference bounds are primitive local-space only",
+      "material_definitions": [
+        {
+          "doubleSided": true,
+          "name": "warm_armor",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.31854677200317383,
+              0.10702310502529144,
+              0.06480326503515244,
+              1
+            ],
+            "metallicFactor": 0.47999998927116394,
+            "roughnessFactor": 0.41999998688697815
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "cool_slate",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.08437620848417282,
+              0.13013647496700287,
+              0.19120168685913086,
+              1
+            ],
+            "metallicFactor": 0.5600000023841858,
+            "roughnessFactor": 0.3799999952316284
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "dark_structure",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.0423114113509655,
+              0.06847816705703735,
+              0.1119324266910553,
+              1
+            ],
+            "metallicFactor": 0.5,
+            "roughnessFactor": 0.46000000834465027
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.2541520893573761,
+            0.0423114113509655
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 3
+            }
+          },
+          "name": "amber_eye",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              1,
+              0.2541520893573761,
+              0.0423114113509655,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.30000001192092896
+          }
+        }
+      ]
+    },
+    {
+      "file": "public/models/radar.glb",
+      "bytes": 55564,
+      "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d",
+      "primitives": 9,
+      "materials": 5,
+      "textures": 0,
+      "images": 0,
+      "meshes": [
+        {
+          "name": "base_mesh",
+          "triangles": 32,
+          "vertices": 50,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -2.0999999046325684,
+              0.11999999731779099,
+              -2.0999999046325684
+            ],
+            "max": [
+              2.0999999046325684,
+              1.0,
+              2.0999999046325684
+            ]
+          }
+        },
+        {
+          "name": "base_trim_mesh",
+          "triangles": 64,
+          "vertices": 100,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -2.200000047683716,
+              0.0,
+              -2.200000047683716
+            ],
+            "max": [
+              2.200000047683716,
+              1.159999966621399,
+              2.200000047683716
+            ]
+          }
+        },
+        {
+          "name": "dish_frame_mesh",
+          "triangles": 360,
+          "vertices": 658,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -2.236544370651245,
+              -1.7555159330368042,
+              -0.5886777639389038
+            ],
+            "max": [
+              2.236544370651245,
+              2.0443131923675537,
+              1.5227009057998657
+            ]
+          }
+        },
+        {
+          "name": "dish_shell_mesh",
+          "triangles": 448,
+          "vertices": 226,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -2.3499999046325684,
+              -2.057155132293701,
+              -0.20898304879665375
+            ],
+            "max": [
+              2.3499999046325684,
+              2.459805488586426,
+              1.426915168762207
+            ]
+          }
+        },
+        {
+          "name": "emitter_mesh",
+          "triangles": 120,
+          "vertices": 264,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -0.3400000035762787,
+              -0.3400000035762787,
+              -0.3400000035762787
+            ],
+            "max": [
+              0.3400000035762787,
+              0.3400000035762787,
+              0.3400000035762787
+            ]
+          }
+        },
+        {
+          "name": "feed_housing_mesh",
+          "triangles": 128,
+          "vertices": 192,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -0.550000011920929,
+              0.2619607150554657,
+              1.0774126052856445
+            ],
+            "max": [
+              0.550000011920929,
+              1.4158461093902588,
+              1.717773199081421
+            ]
+          }
+        },
+        {
+          "name": "mast_braces_mesh",
+          "triangles": 72,
+          "vertices": 114,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -1.4699074029922485,
+              1.136216163635254,
+              -0.8890477418899536
+            ],
+            "max": [
+              1.4699074029922485,
+              4.5237836837768555,
+              1.696382761001587
+            ]
+          }
+        },
+        {
+          "name": "mast_cap_mesh",
+          "triangles": 32,
+          "vertices": 50,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -0.5199999809265137,
+              6.960000038146973,
+              -0.5199999809265137
+            ],
+            "max": [
+              0.5199999809265137,
+              7.199999809265137,
+              0.5199999809265137
+            ]
+          }
+        },
+        {
+          "name": "mast_mesh",
+          "triangles": 32,
+          "vertices": 50,
+          "attributes": [
+            "POSITION",
+            "NORMAL"
+          ],
+          "bounds": {
+            "min": [
+              -0.800000011920929,
+              1.159999966621399,
+              -0.800000011920929
+            ],
+            "max": [
+              0.800000011920929,
+              7.0,
+              0.800000011920929
+            ]
+          }
+        }
+      ],
+      "nodes": [
+        "base",
+        "base_trim",
+        "dish_frame",
+        "dish_shell",
+        "emitter",
+        "feed_housing",
+        "dish",
+        "mast_braces",
+        "mast_cap",
+        "mast",
+        "radar"
+      ],
+      "node_transforms": "reference bounds are primitive local-space only",
+      "material_definitions": [
+        {
+          "doubleSided": true,
+          "name": "warm_armor",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.31854677200317383,
+              0.10702310502529144,
+              0.06480326503515244,
+              1
+            ],
+            "metallicFactor": 0.47999998927116394,
+            "roughnessFactor": 0.41999998688697815
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "cool_slate",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.08437620848417282,
+              0.13013647496700287,
+              0.19120168685913086,
+              1
+            ],
+            "metallicFactor": 0.5600000023841858,
+            "roughnessFactor": 0.3799999952316284
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "dark_structure",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.0423114113509655,
+              0.06847816705703735,
+              0.1119324266910553,
+              1
+            ],
+            "metallicFactor": 0.5,
+            "roughnessFactor": 0.46000000834465027
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "dish_warm",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.3324515223503113,
+              0.1441284716129303,
+              0.09084171056747437,
+              1
+            ],
+            "metallicFactor": 0.41999998688697815,
+            "roughnessFactor": 0.3400000035762787
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.08437620848417282,
+            1,
+            0.3915724754333496
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.200000047683716
+            }
+          },
+          "name": "radar_emitter",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.08437620848417282,
+              1,
+              0.3915724754333496,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "file": "public/models/silo.glb",
+      "bytes": 1281700,
+      "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e",
+      "primitives": 4,
+      "materials": 2,
+      "textures": 2,
+      "images": 2,
+      "meshes": [
+        {
+          "name": "body",
+          "triangles": 6590,
+          "vertices": 10765,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -2.5999999046325684,
+              0.0,
+              -2.5999999046325684
+            ],
+            "max": [
+              2.619999885559082,
+              2.6750001907348633,
+              2.5999999046325684
+            ]
+          }
+        },
+        {
+          "name": "body",
+          "triangles": 290,
+          "vertices": 247,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -1.61807382106781,
+              0.8299999833106995,
+              -1.6180734634399414
+            ],
+            "max": [
+              2.634999990463257,
+              2.7080001831054688,
+              1.6180742979049683
+            ]
+          }
+        },
+        {
+          "name": "glow",
+          "triangles": 1344,
+          "vertices": 1314,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -1.6200000047683716,
+              -1.4700000286102295,
+              -1.6200000047683716
+            ],
+            "max": [
+              1.6200000047683716,
+              -0.07999999821186066,
+              1.6200000047683716
+            ]
+          }
+        },
+        {
+          "name": "hatch",
+          "triangles": 1704,
+          "vertices": 2942,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -1.7171217203140259,
+              -0.029999999329447746,
+              -1.7176191806793213
+            ],
+            "max": [
+              1.7171217203140259,
+              0.19200000166893005,
+              1.7176191806793213
+            ]
+          }
+        }
+      ],
+      "nodes": [
+        "body",
+        "glow",
+        "hatch",
+        "launch-point",
+        "silo"
+      ],
+      "node_transforms": "reference bounds are primitive local-space only",
+      "material_definitions": [
+        {
+          "doubleSided": true,
+          "name": "SILO_Hull",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 0
+            },
+            "metallicRoughnessTexture": {
+              "index": 1
+            }
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.4000000953674316
+            }
+          },
+          "name": "SILO_Glow",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "file": "public/models/fuel.glb",
+      "bytes": 1087156,
+      "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc",
+      "primitives": 8,
+      "materials": 2,
+      "textures": 2,
+      "images": 2,
+      "meshes": [
+        {
+          "name": "band",
+          "triangles": 1128,
+          "vertices": 1440,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -1.4600000381469727,
+              -0.12999999523162842,
+              -1.4600000381469727
+            ],
+            "max": [
+              1.4600000381469727,
+              0.12999999523162842,
+              1.4600000381469727
+            ]
+          }
+        },
+        {
+          "name": "band",
+          "triangles": 96,
+          "vertices": 96,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -1.4149999618530273,
+              -0.07999999821186066,
+              -1.4149999618530273
+            ],
+            "max": [
+              1.4149999618530273,
+              0.07999999821186066,
+              1.4149999618530273
+            ]
+          }
+        },
+        {
+          "name": "body",
+          "triangles": 4512,
+          "vertices": 5572,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -1.7000000476837158,
+              0.0,
+              -1.7000000476837158
+            ],
+            "max": [
+              1.7000000476837158,
+              3.759999990463257,
+              1.7000000476837158
+            ]
+          }
+        },
+        {
+          "name": "body",
+          "triangles": 396,
+          "vertices": 864,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -0.7596665024757385,
+              1.2999999523162842,
+              -1.0866117477416992
+            ],
+            "max": [
+              1.125,
+              3.200000047683716,
+              1.0866117477416992
+            ]
+          }
+        },
+        {
+          "name": "cap",
+          "triangles": 3064,
+          "vertices": 3290,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -1.3600000143051147,
+              0.0,
+              -1.3600000143051147
+            ],
+            "max": [
+              1.3600000143051147,
+              1.1100000143051147,
+              1.3600000143051147
+            ]
+          }
+        },
+        {
+          "name": "stave-0",
+          "triangles": 132,
+          "vertices": 144,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -0.643908679485321,
+              0.0,
+              -1.0692051649093628
+            ],
+            "max": [
+              -2.9802322387695312e-08,
+              2.559999942779541,
+              1.0692055225372314
+            ]
+          }
+        },
+        {
+          "name": "stave-1",
+          "triangles": 132,
+          "vertices": 144,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -0.643908679485321,
+              0.0,
+              -1.0692055225372314
+            ],
+            "max": [
+              -2.9802322387695312e-08,
+              2.559999942779541,
+              1.0692051649093628
+            ]
+          }
+        },
+        {
+          "name": "stave-2",
+          "triangles": 132,
+          "vertices": 144,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0"
+          ],
+          "bounds": {
+            "min": [
+              -0.6439086198806763,
+              0.0,
+              -1.0692051649093628
+            ],
+            "max": [
+              0.0,
+              2.559999942779541,
+              1.069205403327942
+            ]
+          }
+        }
+      ],
+      "nodes": [
+        "band",
+        "body",
+        "cap",
+        "stave-0",
+        "stave-1",
+        "stave-2",
+        "fuel"
+      ],
+      "node_transforms": "reference bounds are primitive local-space only",
+      "material_definitions": [
+        {
+          "doubleSided": true,
+          "name": "FUEL_Hull",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 0
+            },
+            "metallicRoughnessTexture": {
+              "index": 1
+            }
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.32314321398735046,
+            0.01599629409611225
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.200000047683716
+            }
+          },
+          "name": "FUEL_Band",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.5
+          }
+        }
+      ]
+    }
+  ]
+}

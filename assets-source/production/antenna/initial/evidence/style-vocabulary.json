@@ -1,0 +1,639 @@
+{
+  "readOnlyReferences": {
+    "player": {
+      "path": "public/models/player.glb",
+      "bytes": 478292,
+      "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "materials": [
+        {
+          "extras": {
+            "kz_runtime": "mats.playerAccent"
+          },
+          "name": "KZ_PlayerAccent",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.016807375475764275,
+              0.03560131415724754,
+              0.06480326503515244,
+              1
+            ],
+            "metallicFactor": 0.5799999833106995,
+            "roughnessFactor": 0.3799999952316284
+          }
+        },
+        {
+          "extensions": {
+            "KHR_materials_clearcoat": {
+              "clearcoatFactor": 1,
+              "clearcoatRoughnessFactor": 0.07999999821186066
+            }
+          },
+          "extras": {
+            "kz_runtime": "mats.glass"
+          },
+          "name": "KZ_PlayerGlass",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.006048833020031452,
+              0.04817182570695877,
+              0.08437620848417282,
+              1
+            ],
+            "metallicFactor": 0.5799999833106995,
+            "roughnessFactor": 0.1599999964237213
+          }
+        },
+        {
+          "extras": {
+            "kz_runtime": "mats.playerHull"
+          },
+          "name": "KZ_PlayerHull",
+          "pbrMetallicRoughness": {
+            "metallicFactor": 0.5199999809265137,
+            "roughnessFactor": 0.3400000035762787
+          }
+        },
+        {
+          "emissiveFactor": [
+            1,
+            0.05951123684644699,
+            0.12477181851863861
+          ],
+          "extras": {
+            "kz_runtime": "player neon bucket (0xff4563, -X wingtip)"
+          },
+          "name": "KZ_NavPort",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.6000000238418579
+          }
+        },
+        {
+          "emissiveFactor": [
+            0.13013647496700287,
+            0.7379103899002075,
+            0.4125426113605499
+          ],
+          "extras": {
+            "kz_runtime": "player neon bucket (0x65dfac, +X wingtip)"
+          },
+          "name": "KZ_NavStarboard",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.6000000238418579
+          }
+        },
+        {
+          "emissiveFactor": [
+            0.08437620848417282,
+            0.5088813304901123,
+            0.6239603757858276
+          ],
+          "extras": {
+            "kz_runtime": "player neon bucket (MeshBasic vertex colour 0x52bdcf)"
+          },
+          "name": "KZ_NeonCyan",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.6000000238418579
+          }
+        },
+        {
+          "emissiveFactor": [
+            0.2746773064136505,
+            0.7758222222328186,
+            1
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 1.350000023841858
+            }
+          },
+          "extras": {
+            "kz_runtime": "mats.neon(0x8fe4ff, 1.35)"
+          },
+          "name": "KZ_EngineGlow",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.6000000238418579
+          }
+        }
+      ]
+    },
+    "sentinel": {
+      "path": "public/models/sentinel.glb",
+      "bytes": 1140172,
+      "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef",
+      "materials": [
+        {
+          "doubleSided": true,
+          "name": "SN_Frame",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 0
+            },
+            "metallicFactor": 0.5,
+            "roughnessFactor": 0.46000000834465027
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "SN_Armor",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 1
+            },
+            "metallicFactor": 0.47999998927116394,
+            "roughnessFactor": 0.41999998688697815
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.4564110338687897,
+            0.0423114113509655
+          ],
+          "name": "SN_Charge",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "emissiveTexture": {
+            "index": 2
+          },
+          "name": "SN_Hazard",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 3
+            },
+            "metallicFactor": 0.4000000059604645,
+            "roughnessFactor": 0.6499999761581421
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 3
+            }
+          },
+          "name": "SN_Beacon",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.200000047683716
+            }
+          },
+          "name": "SN_Visor",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "SN_Metal",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.08437620848417282,
+              0.13013647496700287,
+              0.19120168685913086,
+              1
+            ],
+            "metallicFactor": 0.5600000023841858,
+            "roughnessFactor": 0.3799999952316284
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.4564110338687897,
+            0.0423114113509655
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "SN_PodEye",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.1946178376674652,
+            0.0423114113509655
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2
+            }
+          },
+          "name": "SN_Glow",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 1.5
+            }
+          },
+          "name": "SN_Core",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "alphaMode": "BLEND",
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "name": "SN_CoreShell",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              0.3499999940395355
+            ],
+            "metallicFactor": 0
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 1.2000000476837158
+            }
+          },
+          "name": "SN_Seam",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0
+          }
+        }
+      ]
+    },
+    "turret": {
+      "path": "public/models/turret.glb",
+      "bytes": 58452,
+      "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+      "materials": [
+        {
+          "doubleSided": true,
+          "name": "warm_armor",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.31854677200317383,
+              0.10702310502529144,
+              0.06480326503515244,
+              1
+            ],
+            "metallicFactor": 0.47999998927116394,
+            "roughnessFactor": 0.41999998688697815
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "cool_slate",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.08437620848417282,
+              0.13013647496700287,
+              0.19120168685913086,
+              1
+            ],
+            "metallicFactor": 0.5600000023841858,
+            "roughnessFactor": 0.3799999952316284
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "dark_structure",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.0423114113509655,
+              0.06847816705703735,
+              0.1119324266910553,
+              1
+            ],
+            "metallicFactor": 0.5,
+            "roughnessFactor": 0.46000000834465027
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.2541520893573761,
+            0.0423114113509655
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 3
+            }
+          },
+          "name": "amber_eye",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              1,
+              0.2541520893573761,
+              0.0423114113509655,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.30000001192092896
+          }
+        }
+      ]
+    },
+    "radar": {
+      "path": "public/models/radar.glb",
+      "bytes": 55564,
+      "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d",
+      "materials": [
+        {
+          "doubleSided": true,
+          "name": "warm_armor",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.31854677200317383,
+              0.10702310502529144,
+              0.06480326503515244,
+              1
+            ],
+            "metallicFactor": 0.47999998927116394,
+            "roughnessFactor": 0.41999998688697815
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "cool_slate",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.08437620848417282,
+              0.13013647496700287,
+              0.19120168685913086,
+              1
+            ],
+            "metallicFactor": 0.5600000023841858,
+            "roughnessFactor": 0.3799999952316284
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "dark_structure",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.0423114113509655,
+              0.06847816705703735,
+              0.1119324266910553,
+              1
+            ],
+            "metallicFactor": 0.5,
+            "roughnessFactor": 0.46000000834465027
+          }
+        },
+        {
+          "doubleSided": true,
+          "name": "dish_warm",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.3324515223503113,
+              0.1441284716129303,
+              0.09084171056747437,
+              1
+            ],
+            "metallicFactor": 0.41999998688697815,
+            "roughnessFactor": 0.3400000035762787
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.08437620848417282,
+            1,
+            0.3915724754333496
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.200000047683716
+            }
+          },
+          "name": "radar_emitter",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0.08437620848417282,
+              1,
+              0.3915724754333496,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.25
+          }
+        }
+      ]
+    },
+    "silo": {
+      "path": "public/models/silo.glb",
+      "bytes": 1281700,
+      "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e",
+      "materials": [
+        {
+          "doubleSided": true,
+          "name": "SILO_Hull",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 0
+            },
+            "metallicRoughnessTexture": {
+              "index": 1
+            }
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.04666508734226227,
+            0.09084171056747437
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.4000000953674316
+            }
+          },
+          "name": "SILO_Glow",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.5
+          }
+        }
+      ]
+    },
+    "fuel": {
+      "path": "public/models/fuel.glb",
+      "bytes": 1087156,
+      "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc",
+      "materials": [
+        {
+          "doubleSided": true,
+          "name": "FUEL_Hull",
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": 0
+            },
+            "metallicRoughnessTexture": {
+              "index": 1
+            }
+          }
+        },
+        {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.32314321398735046,
+            0.01599629409611225
+          ],
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.200000047683716
+            }
+          },
+          "name": "FUEL_Band",
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.5
+          }
+        }
+      ]
+    }
+  },
+  "sourceVocabulary": [
+    "assets-source/fighter",
+    "assets-source/sentinel",
+    "assets-source/ground",
+    "assets-source/supplies"
+  ],
+  "interpretation": "Slender fitted hardware, slate structure, angular tapered mounting, clamped functional elements, restrained red point warning. All antenna geometry is new; only the unchanged shipped player is imported into labeled world-scale evidence.",
+  "copiedReferenceGeometryIntoAntenna": false
+}

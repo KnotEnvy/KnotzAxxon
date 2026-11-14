@@ -1,0 +1,233 @@
+{
+  "asset": "floating-mine",
+  "release": "INITIAL",
+  "status": "pending_deferred_opus_review",
+  "frozenAtUTC": "2026-11-14T15:57:58.923698+00:00",
+  "finalArtAcceptance": false,
+  "formalReviewCount": 0,
+  "formalReviewFixPassCount": 0,
+  "helpersOrDelegation": false,
+  "requestedModelOptions": {
+    "provider": "codex",
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "xhigh",
+    "speed": "available speed; no exposed fast-mode toggle used or claimed"
+  },
+  "actualAgentRuntime": {
+    "provider": "codex",
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "xhigh"
+  },
+  "environment": {
+    "host": "NitroBliss",
+    "OS": "native Linux",
+    "blenderVersion": "5.2.1 LTS",
+    "blenderBuild": "9e2066aef7ef",
+    "engine": "BLENDER_EEVEE",
+    "renderThreads": 4,
+    "LP_NUM_THREADS": 4,
+    "renderSamples": 32,
+    "colorManagement": "AgX / Medium High Contrast / exposure 0",
+    "runtimeBinary": "/home/knotzuni/code/KnotzAxxon-archive/2026-11-14/contest-entry/.cache/blender-5.2.1-linux-x64/blender",
+    "runtimeSource": "Only runtime wrapper copied from asset-work/drone/blender.sh; no geometry/generator copied",
+    "diagnostics": [
+      "Software EGL BAD_MATCH warnings preceded successful EEVEE PNGs",
+      "Read-only extension cache and material API deprecation warnings; verification completed",
+      "One render process ended SIGTERM; missing frames resumed in bounded batches"
+    ]
+  },
+  "sourceCommit": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "files": {
+    "assets/mine.blend": {
+      "bytes": 122458,
+      "sha256": "81b46ec13c28df08ac1c1abffd78a8d64b94fe35b216b493c6d7bde59bb23380"
+    },
+    "assets/mine.glb": {
+      "bytes": 145880,
+      "sha256": "51276e4106087f0e890dd52986a79369a944495fbe72a8139eb0e5b4c40b5369"
+    }
+  },
+  "geometry": {
+    "file": "mine.glb",
+    "bytes": 145880,
+    "visibleTriangles": 1940,
+    "hiddenTriangles": 20,
+    "visibleMaterialPrimitives": 3,
+    "hiddenPrimitives": 1,
+    "totalInstantiatedTriangles": 1960,
+    "restBoundsGame": {
+      "min": [
+        -1.850000023841858,
+        -1.850000023841858,
+        -1.850000023841858
+      ],
+      "max": [
+        1.850000023841858,
+        1.850000023841858,
+        1.850000023841858
+      ]
+    },
+    "allBoundsGame": {
+      "min": [
+        -1.850000023841858,
+        -1.850000023841858,
+        -1.850000023841858
+      ],
+      "max": [
+        1.850000023841858,
+        1.850000023841858,
+        1.850000023841858
+      ]
+    },
+    "textures": 0,
+    "images": 0,
+    "animations": 0
+  },
+  "sourceContract": {
+    "hp": 1,
+    "radius": 1.9,
+    "score": 80,
+    "rootEulerOrder": "XYZ",
+    "angularRate": [
+      0.5,
+      0.7,
+      0
+    ],
+    "phaseRate": 1,
+    "bob": "pos.y += sin(phase*1.3)*dt*1.6; integrated increment, not absolute offset",
+    "lampScaleBound": [
+      0.94,
+      1.06
+    ],
+    "lampPivot": [
+      0,
+      0,
+      0
+    ],
+    "lampColor": "0xff3d55",
+    "neonIntensity": 3.2,
+    "warning": "once when near>0.55; exact boundary d<15.3",
+    "brightness": "constant; proximity changes scale and frequency only",
+    "weapon": "N/A",
+    "detach": "N/A",
+    "lifecycle": "Game._killEnemy ordinary 1.0 explosion; mine excluded from GROUND_KINDS so no burning ground wreck"
+  },
+  "densityProxy": {
+    "peak": 24,
+    "seed": 11,
+    "loop": 1,
+    "zStart": 10108.664980875328,
+    "zEnd": 10408.194242101163,
+    "window": 355,
+    "seeds": "1..100",
+    "loops": [
+      0,
+      1,
+      3
+    ],
+    "meaning": "layout density proxy, NOT live maximum"
+  },
+  "lampClearance": {
+    "samples": 61,
+    "scaleRange": [
+      0.94,
+      1.06
+    ],
+    "triangleIntersections": 0,
+    "minimumSampledVertexSurfaceGap": 0.051100000739097595,
+    "analyticBounds": {
+      "coreEquatorialRadiusUpperBound": 1.026,
+      "measuredClippedCoreEquatorialRadius": 1.0109089629405843,
+      "lampInnerRadialMin": 1.0698384376727994,
+      "lampChordCorrection": true,
+      "coreGapLowerBound": 0.04383843767279938,
+      "collarTransverseUpperBound": 0.35,
+      "lampTransverseMinAtSegmentEnd": 0.40142842550449126,
+      "collarGapLowerBound": 0.05142842550449128,
+      "housingVerticalGapLowerBound": 0.05109999999999999,
+      "notes": "Bounds apply to moving lamp vs fixed solids, not intentional seated fitting overlaps. BVH sampled at 61 full-range scales. Rigid root tumble preserves clearance."
+    },
+    "limits": "finite geometry samples; not live gameplay proof"
+  },
+  "radialBounds": {
+    "maxVisibleVertexRadius": 1.8500389545951452,
+    "collisionRadius": 1.9,
+    "fullTumbleSamples": 64
+  },
+  "resources": {
+    "externalTextures": 0,
+    "atlases": 0,
+    "editableEmbeddedBlend": true,
+    "glbAnimationTracks": 0,
+    "visibleMaterials": 3,
+    "hiddenMaterials": 1
+  },
+  "verification": {
+    "savedBlendReopened": true,
+    "cleanSceneGlbReimported": true,
+    "independentBinaryCountsBoundsTransformsAxes": true,
+    "actualSourceUpdateMethodsExecuted": true,
+    "actualCameraRigComputeExecuted": true,
+    "actualLevelDensityScanExecuted": true,
+    "ownershipCpuFixturePassed": true,
+    "realGLTFLoaderGameplayIntegration": false,
+    "formalReview": false
+  },
+  "evidence": {
+    "individualFullRenders": 24,
+    "halfResolutionGameplayPNGs": 6,
+    "contactSheets": 3,
+    "totalPNGs": 33,
+    "commonNeutral": {
+      "cameraGame": [
+        -16,
+        24,
+        -30
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "orthoSpanHorizontal": 14,
+      "key": [
+        -12,
+        22,
+        -12
+      ],
+      "fill": [
+        14,
+        12,
+        8
+      ]
+    },
+    "gameplay": "offline Classic/Modern/Chase source rig reconstruction with shipped player at shared WORLD scale, altitude3/22, no per-asset normalization",
+    "viewed": "All full renders via contact sheet, small gameplay sheet, overview and representative original PNGs; implementation inspection only"
+  },
+  "referenceOnly": {
+    "path": "public/models/player.glb",
+    "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+    "incorporatedInMineGeometry": false
+  },
+  "preFreezeConstructionCorrections": [
+    "Corrected coordinate permutation scoping",
+    "Fitted open warning-window support rails for full-tumble readability; reduced contact and vent tessellation",
+    "Used explicit Three XYZ rotation matrices for action evidence"
+  ],
+  "pending": [
+    "deferred Opus formal review/polish on SuperBeast",
+    "orchestrator adapter integration and live gameplay/GLTFLoader checks",
+    "receiver-side archive verification"
+  ],
+  "limitations": [
+    "INITIAL only: no formal review or final art approval",
+    "Offline Blender evidence is not live gameplay proof",
+    "Blender emissive PBR/ambient world approximates source unlit neon/hemisphere/PMREM; no sky/fog/postprocessing/HUD/streaming reconstruction",
+    "Source update and camera methods use vector/audio stubs, not installed Three; baseline topology analytically measured from source parameters",
+    "Layout density24 is a proxy for355-unit windows, seeds1..100, loops0,1,3; not live maximum or measured performance",
+    "Audio warning callback verified, no audio capture",
+    "Separate charge/weapon aiming/shot origins/detach are N/A; ordinary explosion and no burning ground wreck retained",
+    "Flash shell requires explicit runtime hide and per-instance flash material before first frame"
+  ],
+  "scope": "Only assigned asset-work/mine output; no production integration, git mutations, commit, push, publish, checkout, worktree or helper"
+}

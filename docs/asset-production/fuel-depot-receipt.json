@@ -1,0 +1,16 @@
+{
+  "archive": "fuel-depot-initial-2026-11-14.tar.gz",
+  "sha256": "ecbc18f8626d408ebb5cb17336e4ddb549dce344e8f3fbd72301a1914d4c07b7",
+  "contentHashesVerified": 47,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/fuel-depot/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "glbSha256": "14ea9f351088e35aeb304e6ed46699299864a063cd873571dd30d018216c67af",
+  "blendSha256": "b4752cfc86f4fd3d40d2299d44278de8ed93ce74d6778de9276f5080799fd4a6",
+  "triangles": 992,
+  "materialPrimitives": 2,
+  "senderRoute": "Authorized Windows Tailscale to100.112.66.64",
+  "senderExit": 0
+}

@@ -1,0 +1,182 @@
+{
+  "GLTFLoaderParse": true,
+  "actualInstantiateSourceExecuted": true,
+  "actualDisposeModelSourceExecuted": true,
+  "actualEnemyDisposeSourceExecuted": true,
+  "clonedGeometryAndMaterialsIndependent": true,
+  "namedBindingVerified": true,
+  "sourceMotionSamplesVerified": 12,
+  "flash": {
+    "triangles": 4554,
+    "primitives": 1,
+    "initiallyHidden": true,
+    "scale": 1.12,
+    "parent": "importedRoot",
+    "cleanedByExistingEnemyDispose": true
+  },
+  "disposed": {
+    "ownedMaterials": 5,
+    "clonedGeometries": 5,
+    "sharedNeonMaterials": 0,
+    "flashGeometry": 1
+  },
+  "status": "candidate binding example and isolated source execution only; production adapter not installed; flash parent must be importedRoot for existing lifecycle ownership",
+  "samples": [
+    {
+      "label": "static_nonscramble_beacon_off",
+      "min": [
+        -3.168946829063829,
+        0,
+        -3.570602812603883
+      ],
+      "max": [
+        2.7849858739455273,
+        2.3999998569488525,
+        2.33026674010693
+      ]
+    },
+    {
+      "label": "static_nonscramble_beacon_on",
+      "min": [
+        -3.168946829063829,
+        0,
+        -3.570602812603883
+      ],
+      "max": [
+        2.7849858739455273,
+        2.580000102519989,
+        2.33026674010693
+      ]
+    },
+    {
+      "label": "approaching_spool_zero",
+      "min": [
+        -3.159711650567568,
+        0,
+        -3.5863591465333746
+      ],
+      "max": [
+        2.820978031812238,
+        2.3999998569488525,
+        2.3180629506398076
+      ]
+    },
+    {
+      "label": "approaching_spool_half",
+      "min": [
+        -3.159711650567568,
+        0,
+        -3.5863591465333746
+      ],
+      "max": [
+        2.820978031812238,
+        2.3999998569488525,
+        2.3180629506398076
+      ]
+    },
+    {
+      "label": "minimum_engine_pulse",
+      "min": [
+        -3.159711650567568,
+        0,
+        -3.5863591465333746
+      ],
+      "max": [
+        2.820978031812238,
+        2.580000102519989,
+        2.3180629506398076
+      ]
+    },
+    {
+      "label": "maximum_engine_pulse",
+      "min": [
+        -3.159711650567568,
+        0,
+        -3.5863591465333746
+      ],
+      "max": [
+        2.820978031812238,
+        2.580000102519989,
+        2.3180629506398076
+      ]
+    },
+    {
+      "label": "window_upper_exclusive",
+      "min": [
+        -3.159711650567568,
+        0,
+        -3.5863591465333746
+      ],
+      "max": [
+        2.820978031812238,
+        2.3999998569488525,
+        2.3180629506398076
+      ]
+    },
+    {
+      "label": "lift_first_frame",
+      "min": [
+        -3.159711650567568,
+        0.0010870490196860409,
+        -3.5819888589620525
+      ],
+      "max": [
+        2.820978031812238,
+        2.581701042442559,
+        2.3224393192623225
+      ]
+    },
+    {
+      "label": "lift_transition",
+      "min": [
+        -3.159711650567568,
+        2.008245806013988,
+        3.6220035317779047
+      ],
+      "max": [
+        2.820978031812238,
+        4.962150550831102,
+        9.493695542117294
+      ]
+    },
+    {
+      "label": "full_launch",
+      "min": [
+        -3.159711650567568,
+        8.993494666024223,
+        27.745226495809998
+      ],
+      "max": [
+        2.820978031812238,
+        12.253021814930758,
+        33.42538787768673
+      ]
+    },
+    {
+      "label": "altitude_cap",
+      "min": [
+        -3.159711650567568,
+        22.512423257873483,
+        118.25060788901894
+      ],
+      "max": [
+        2.820978031812238,
+        25.83178604919189,
+        123.88655928610775
+      ]
+    },
+    {
+      "label": "passing_outside_window",
+      "min": [
+        -3.159711650567568,
+        22.512423257873483,
+        118.25060788901894
+      ],
+      "max": [
+        2.820978031812238,
+        25.83178604919189,
+        123.88655928610775
+      ]
+    }
+  ]
+}

@@ -84,6 +84,13 @@
     "round_3_choice": "C: Opus 5.5 High solo, silo and fuel",
     "sources": "assets-source/supplies/",
     "archive": "../KnotzAxxon-archive/2026-11-14/",
-    "future_assignments": "User and orchestrator will choose together; none scheduled."
+    "future_assignments": "Contests remain closed. New production queue authorized 2026-11-14: docs/asset-production/README.md; exact status in docs/asset-production/status.json."
+  },
+  "asset_production": {
+    "status": "approved_release_verified_ready_to_commit",
+    "queue": "docs/asset-production/status.json",
+    "protocol": "docs/asset-production/README.md",
+    "baseline": "docs/asset-production/baseline.json",
+    "note": "All21 submissions are user-approved and enabled by default.104 regressions,build,default+legacy model QA and desktop/touch release smoke pass;27 runtime resources and34 served hashes verified locally. Luna cleanup archived full originals and omitted670 redundant files/249327183 bytes;924 retained hashes and1476 archived original hashes independently verified. Ready for commit/merge/deploy;formal Opus polish remains deferred."
   }
 }

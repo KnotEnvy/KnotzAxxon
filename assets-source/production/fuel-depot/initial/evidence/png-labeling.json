@@ -1,0 +1,26 @@
+{
+  "method": "Python standard-library lossless PNG decode/re-encode, bitmap label bands, nearest-neighbor contact sheets; no scene retouching",
+  "files": [
+    "craft-endcaps.png",
+    "craft-opposite.png",
+    "craft-three-quarter.png",
+    "craft-top.png",
+    "close-endcap-strap-saddle.png",
+    "close-manifold-valve-joints.png",
+    "world-chase-candidate.png",
+    "world-chase-source.png",
+    "world-classic-candidate.png",
+    "world-classic-source.png",
+    "world-modern-candidate.png",
+    "world-modern-source.png"
+  ],
+  "sourceImagePixelsUnchanged": true,
+  "labelBands": {
+    "top": 30,
+    "bottom": 32
+  },
+  "sheets": [
+    "contact-craft.png",
+    "contact-world.png"
+  ]
+}

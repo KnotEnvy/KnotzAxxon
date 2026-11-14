@@ -1,0 +1,376 @@
+{
+  "method": "Exact source firing events and lead, zero-mean spread and midpoint fire timer in numeric harness. Transform world shot and direction through inverse THREE XYZ root rotation, then cast a zero-radius ray through the visible static authored body BVH. Not a gameplay collision test.",
+  "shots": [
+    {
+      "case": "weave",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        -0.008732758462429047,
+        -6.405941530829296e-05,
+        -0.9999618530273438
+      ],
+      "euler_xyz": [
+        -0.00020934595261088947,
+        0.014386888512489858,
+        -0.04994259290179233
+      ],
+      "ray_intersects_authored_static_body_within_8_units": true,
+      "first_visual_intersection_distance": 0.17984749376773834,
+      "first_visual_intersection_local_game": [
+        -0.020522721111774445,
+        -0.001314061344601214,
+        1.3200000524520874
+      ]
+    },
+    {
+      "case": "weave",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        -0.2544507384300232,
+        -0.35817909240722656,
+        -0.8983109593391418
+      ],
+      "euler_xyz": [
+        -0.11796243272740342,
+        -0.11300820740570877,
+        0.35258067128224807
+      ],
+      "ray_intersects_authored_static_body_within_8_units": false,
+      "first_visual_intersection_distance": null,
+      "first_visual_intersection_local_game": null
+    },
+    {
+      "case": "weave",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        0.6246270537376404,
+        -0.7622104287147522,
+        -0.16993016004562378
+      ],
+      "euler_xyz": [
+        0.026269200687331698,
+        0.023536823530917152,
+        -0.09420456147990278
+      ],
+      "ray_intersects_authored_static_body_within_8_units": true,
+      "first_visual_intersection_distance": 0.2032584398984909,
+      "first_visual_intersection_local_game": [
+        0.10289044678211212,
+        -0.1071770042181015,
+        1.4716049432754517
+      ]
+    },
+    {
+      "case": "strafe",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        0.4346888065338135,
+        0.05536548048257828,
+        -0.8988772630691528
+      ],
+      "euler_xyz": [
+        -0.0002790810291278985,
+        0.01822987346451429,
+        -0.06328311700608692
+      ],
+      "ray_intersects_authored_static_body_within_8_units": true,
+      "first_visual_intersection_distance": 0.2017882764339447,
+      "first_visual_intersection_local_game": [
+        0.0628528892993927,
+        0.01480861846357584,
+        1.3200000524520874
+      ]
+    },
+    {
+      "case": "strafe",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        1.0243815268040635e-05,
+        -0.06712827831506729,
+        -0.9977443814277649
+      ],
+      "euler_xyz": [
+        0.006125291744527738,
+        0.005566676487238649,
+        -0.008351122718600524
+      ],
+      "ray_intersects_authored_static_body_within_8_units": true,
+      "first_visual_intersection_distance": 0.180435910820961,
+      "first_visual_intersection_local_game": [
+        -0.007312355097383261,
+        -0.004088176414370537,
+        1.3200000524520874
+      ]
+    },
+    {
+      "case": "strafe",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        1.4035731127695628e-12,
+        0.13797658681869507,
+        -0.9904354810714722
+      ],
+      "euler_xyz": [
+        -0.0333511898357879,
+        1.8761505953388987e-06,
+        -5.732041399069416e-07
+      ],
+      "ray_intersects_authored_static_body_within_8_units": true,
+      "first_visual_intersection_distance": 0.18184170126914978,
+      "first_visual_intersection_local_game": [
+        -2.465664465489681e-06,
+        -0.018936041742563248,
+        1.3200000524520874
+      ]
+    },
+    {
+      "case": "orbit",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        -0.22652873396873474,
+        -0.08222644031047821,
+        -0.9705274701118469
+      ],
+      "euler_xyz": [
+        -0.0004186717458213635,
+        0.01582625890921318,
+        -0.054939218106473446
+      ],
+      "ray_intersects_authored_static_body_within_8_units": true,
+      "first_visual_intersection_distance": 0.18460705876350403,
+      "first_visual_intersection_local_game": [
+        -0.061757925897836685,
+        -0.019152700901031494,
+        1.3200000524520874
+      ]
+    },
+    {
+      "case": "orbit",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        -0.2466622143983841,
+        -0.2563720941543579,
+        -0.9345753788948059
+      ],
+      "euler_xyz": [
+        0.003303653579436743,
+        -0.10608587938561055,
+        0.31653330054275636
+      ],
+      "ray_intersects_authored_static_body_within_8_units": true,
+      "first_visual_intersection_distance": 0.0017277210718020797,
+      "first_visual_intersection_local_game": [
+        0.15177693963050842,
+        -0.04497116804122925,
+        1.4900000095367432
+      ]
+    },
+    {
+      "case": "orbit",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        -0.35606175661087036,
+        0.006529384758323431,
+        -0.9344395995140076
+      ],
+      "euler_xyz": [
+        0.07085626945589774,
+        0.0799142592010116,
+        -0.24700448034604738
+      ],
+      "ray_intersects_authored_static_body_within_8_units": true,
+      "first_visual_intersection_distance": 0.17897698283195496,
+      "first_visual_intersection_local_game": [
+        -0.18784895539283752,
+        0.051143959164619446,
+        1.3200000524520874
+      ]
+    },
+    {
+      "case": "orbit_restore_stress",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        -0.4414251446723938,
+        -0.3494933545589447,
+        -0.8264370560646057
+      ],
+      "euler_xyz": [
+        0.07571139382541102,
+        -0.05133643280215526,
+        0.17820910770542575
+      ],
+      "ray_intersects_authored_static_body_within_8_units": true,
+      "first_visual_intersection_distance": 0.02207815647125244,
+      "first_visual_intersection_local_game": [
+        0.08357054740190506,
+        0.09101147204637527,
+        1.4766454696655273
+      ]
+    },
+    {
+      "case": "orbit_restore_stress",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        0.5833660960197449,
+        0.025925010442733765,
+        -0.8117954730987549
+      ],
+      "euler_xyz": [
+        0.04916981741448005,
+        -0.15939131820424868,
+        0.4569984272875764
+      ],
+      "ray_intersects_authored_static_body_within_8_units": false,
+      "first_visual_intersection_distance": null,
+      "first_visual_intersection_local_game": null
+    },
+    {
+      "case": "orbit_restore_stress",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        0.8285068869590759,
+        0.3561677932739258,
+        -0.43211206793785095
+      ],
+      "euler_xyz": [
+        0.07630161039237858,
+        0.03081367256127657,
+        -0.11104065542625007
+      ],
+      "ray_intersects_authored_static_body_within_8_units": false,
+      "first_visual_intersection_distance": null,
+      "first_visual_intersection_local_game": null
+    },
+    {
+      "case": "dive_and_committed_peel",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        0.36224472522735596,
+        -0.29078149795532227,
+        -0.8855647444725037
+      ],
+      "euler_xyz": [
+        0.015226013114246477,
+        0.011513604293377448,
+        -0.039968284424897006
+      ],
+      "ray_intersects_authored_static_body_within_8_units": true,
+      "first_visual_intersection_distance": 0.2049787938594818,
+      "first_visual_intersection_local_game": [
+        0.060590848326683044,
+        -0.037131328135728836,
+        1.3200000524520874
+      ]
+    },
+    {
+      "case": "dive_and_committed_peel",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        -0.3118070960044861,
+        -0.2016751617193222,
+        -0.9284952878952026
+      ],
+      "euler_xyz": [
+        -0.03336142334439461,
+        0.08843703402854022,
+        -0.2910284473333265
+      ],
+      "ray_intersects_authored_static_body_within_8_units": true,
+      "first_visual_intersection_distance": 0.022263480350375175,
+      "first_visual_intersection_local_game": [
+        -0.11625833809375763,
+        -0.09101705998182297,
+        1.471964955329895
+      ]
+    },
+    {
+      "case": "carrier_launch_transition",
+      "spawn_minus_root_game": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "aim_direction_world": [
+        0.617440402507782,
+        -0.15455399453639984,
+        -0.7712849378585815
+      ],
+      "euler_xyz": [
+        0.012941168458338247,
+        -0.011923978174478194,
+        -0.06214832607581637
+      ],
+      "ray_intersects_authored_static_body_within_8_units": true,
+      "first_visual_intersection_distance": 0.15679198503494263,
+      "first_visual_intersection_local_game": [
+        0.11342667043209076,
+        0.0006614811718463898,
+        1.3780144453048706
+      ]
+    }
+  ],
+  "ray_intersection_count": 12,
+  "samples": 15,
+  "graphics_mismatch": "Enemy ahead of player can aim predominantly -Z while spawn is at +Z. The zero-radius rendered path can cross the airframe. Existing root muzzle FX is also inside the silhouette. Preserve mechanics; the authored opening minimizes rest obstruction but cannot reconcile these source contracts at all angles.",
+  "limitations": [
+    "Actual projectile radius .9 is not treated as a sphere sweep here",
+    "Random spread, full player maneuvers and live obstacles not sampled",
+    "Visual self-intersection does not imply gameplay self-collision"
+  ]
+}

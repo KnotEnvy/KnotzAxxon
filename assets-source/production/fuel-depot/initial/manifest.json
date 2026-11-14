@@ -1,0 +1,179 @@
+{
+  "asset": "Fortress passive bulk fuel depot",
+  "revision": "INITIAL",
+  "reviewStatus": "pending_deferred_opus_review",
+  "formalReviews": 0,
+  "formalReviewFixRounds": 0,
+  "implementation": {
+    "host": "NitroBliss",
+    "platform": "Linux",
+    "provider": "Codex harness in T3 Code",
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "xhigh",
+    "requestedSpeed": "available speed",
+    "speedOverride": "none requested or changed",
+    "helpers": 0,
+    "claudeRetries": 0,
+    "formalReviewProvider": "Opus deferred; not run"
+  },
+  "sourceCommit": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "scope": "asset-work/fuel-depot/ exclusively; no production edits, commit/push/deploy, checkout/reset/fetch/worktree",
+  "tools": {
+    "blender": "5.2.1 LTS",
+    "buildHash": "9e2066aef7ef",
+    "engine": "BLENDER_EEVEE",
+    "threads": 4,
+    "renderBackend": "Native Linux / software Mesa sysroot; not a live game GPU",
+    "three": "0.185.1 read from existing local tooling; not bundled",
+    "python": "standard library only"
+  },
+  "assetFiles": {
+    "asset/fortress-fuel-depot.blend": {
+      "bytes": 123586,
+      "sha256": "b4752cfc86f4fd3d40d2299d44278de8ed93ce74d6778de9276f5080799fd4a6"
+    },
+    "asset/fortress-fuel-depot.glb": {
+      "bytes": 103276,
+      "sha256": "14ea9f351088e35aeb304e6ed46699299864a063cd873571dd30d018216c67af"
+    },
+    "asset/fuel-depot.template.json": {
+      "bytes": 238007,
+      "sha256": "84bb0fb34892052a5c423cf750ed07c2acff033b11a34963f8770970696b15a1"
+    }
+  },
+  "metrics": {
+    "evaluatedTriangles": 992,
+    "hullTriangles": 384,
+    "darkTriangles": 608,
+    "GLBPrimitives": 2,
+    "existingRuntimeBuckets": 2,
+    "newDrawBuckets": 0,
+    "GLBBytes": 103276,
+    "GLBByteCeiling": 786432,
+    "triangleTarget": [
+      700,
+      1000
+    ],
+    "triangleCeiling": 1400,
+    "namedAuthoringParts": 20,
+    "sourceNominalBounds": [
+      [
+        -2.92,
+        0,
+        -4
+      ],
+      [
+        2.92,
+        3.1,
+        4
+      ]
+    ],
+    "transformedGLBBounds": [
+      [
+        -2.9200000762939453,
+        0.0,
+        -4.0
+      ],
+      [
+        2.9200000762939453,
+        3.0999999046325684,
+        4.0
+      ]
+    ],
+    "newTextures": 0,
+    "newEmitters": 0
+  },
+  "sourceContract": {
+    "caller": "rng.bool(.6), farX = rng.range(19.5,24), z = chunkZ + rng.range(10,86)",
+    "methodGameRngDraws": 0,
+    "surfaces": "four original saddle boxes; axis-aligned guide surfaces only, not collision",
+    "inheritedEnvelope": [
+      [
+        -2.9200001,
+        0,
+        -4
+      ],
+      [
+        2.9200001,
+        3.0999999,
+        4
+      ]
+    ],
+    "minSourceXSupport": 16.58,
+    "nominalLaneGap": 0.58,
+    "playerRadius": 1.5,
+    "fullSphereClearance": false,
+    "flightX": [
+      -16,
+      16
+    ],
+    "flightY": [
+      1.3,
+      25
+    ],
+    "warning": "Player 1.5-radius envelope can overlap passive decorative scenery at near placement. Do not change or narrow flight/aim ranges."
+  },
+  "density": {
+    "eligibleAirfieldChunks": 64,
+    "observedDepots": 32,
+    "mean": 0.5,
+    "callerProbability": 0.6,
+    "maximumPerChunk": 1
+  },
+  "runtimeProof": {
+    "fullAirfieldChunks": 64,
+    "seeds": [
+      1,
+      7,
+      42,
+      123
+    ],
+    "callerAndDownstreamBuffersExact": true,
+    "surfaceRecordsExact": true,
+    "gameRngDraws": 0,
+    "lifecycle": {
+      "chunkGeometryDisposals": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "templateDisposals": [
+        1,
+        1
+      ],
+      "materialDisposals": 0,
+      "textureDisposals": 0
+    }
+  },
+  "proofs": [
+    "evidence/source-measurement.json",
+    "evidence/runtime-proof.json",
+    "evidence/blender-reopen-reimport.json",
+    "evidence/binary-audit.json",
+    "evidence/render-settings.json",
+    "evidence/inspection.json",
+    "evidence/reference-provenance.json",
+    "evidence/camera-projection-proof.json",
+    "evidence/generator-determinism.json",
+    "evidence/png-labeling.json"
+  ],
+  "limitations": [
+    "Inherited 0.58 nominal lane-edge gap is not full 1.5-radius player clearance.",
+    "Finite source-camera/dusk-lighting probes only; isolated source deck fixture, not neighboring scenery.",
+    "Offline EEVEE does not reproduce mapped hull/normal/roughness textures or Three sky/fog/rim/postFX/HUD.",
+    "CPU material/texture doubles prove source behavior and ownership, not GPU rendering or FPS.",
+    "Shells are closed; straps omit hidden inner faces and overlapping pipe junctions are not boolean unions.",
+    "No live GPU/FPS/final acceptance or formal Opus review."
+  ],
+  "freeze": "Every content file except SHA256SUMS is covered; archive/receipt outside immutable initial",
+  "receiverVerification": "pending; orchestrator owns verification"
+}

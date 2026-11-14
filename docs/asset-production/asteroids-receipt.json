@@ -1,0 +1,16 @@
+{
+  "archive": "asteroid-scenery-kit-initial-2026-11-14.tar.gz",
+  "sha256": "ed9ea955946fd322ecc39b4af8a8411f61d313edae9c37ba711228cc36768ec0",
+  "contentHashesVerified": 74,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/asteroids/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "senderExitStatus": 0,
+  "transferMethod": "Windows Taildrop",
+  "glbSha256": "0450b85240d589e4e2f65454f61b53af52d443a427d76f2c38a1008ae16272b2",
+  "blendSha256": "fec5fd97ddc309666cf6ed707686725a37834e117f0ef594341790d6bb63b419",
+  "formalReviewsCompleted": 0,
+  "fixPassesCompleted": 0
+}

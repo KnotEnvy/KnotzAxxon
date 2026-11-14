@@ -1,0 +1,14 @@
+{
+  "blender": "5.2.1 LTS",
+  "build_hash": "9e2066aef7ef",
+  "platform": "linux",
+  "engine": "BLENDER_EEVEE",
+  "threads": 4,
+  "generated_by": "gpt-6.1-sol",
+  "reasoning": "xhigh",
+  "speed": "available/default; no alternate speed override",
+  "review": "pending_deferred_opus_review",
+  "formal_review_rounds": 0,
+  "formal_fix_rounds": 0,
+  "export": "glTF 2.0 GLB / no UV or COLOR_0 / one neutral material / two nodes"
+}

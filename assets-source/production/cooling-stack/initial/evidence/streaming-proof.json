@@ -1,0 +1,432 @@
+{
+  "status": "PASS",
+  "actualBatch": true,
+  "actualBuildChunk": true,
+  "fixture": "Synthetic reactor sector index3; no physical feature records; real _deck/_wallDressing/_deckProps/_skyline/_sectorEdges and actual source dynamic loops.",
+  "chunkCases": [
+    {
+      "seed": 1,
+      "chunkIndex": 0,
+      "stacks": 2,
+      "rngDraws": 465,
+      "rngTraceSHA256": "49eec50f290016e83f4bff515294b760c62b416813c55b7126e5eecb5631d14c",
+      "downstreamBufferSHA256": "56e753b6e3d3d1ed1cd6edf4390c079b06c5c7809d9d8b5658e05a0c3f1417be",
+      "emitters": 5,
+      "surfaces": 32,
+      "exactEquality": true
+    },
+    {
+      "seed": 1,
+      "chunkIndex": 1,
+      "stacks": 1,
+      "rngDraws": 388,
+      "rngTraceSHA256": "ecd73e1f9e963f42398a8d6f4412c47bb6f8b55680a0a898ac7c0e9c1733b5cb",
+      "downstreamBufferSHA256": "b5ad96c5455211edb58903086cdefe84a12e88d8b37389d3614d706832698191",
+      "emitters": 3,
+      "surfaces": 31,
+      "exactEquality": true
+    },
+    {
+      "seed": 1,
+      "chunkIndex": 4,
+      "stacks": 1,
+      "rngDraws": 473,
+      "rngTraceSHA256": "09605c6519a3f8458b0eb48123ec20e1d1f03cd32a8f4d509b86a0613f4b4937",
+      "downstreamBufferSHA256": "61d4a06544cf7d6b52f40fe13b3e09e4cf9097e207d89c6e46f223309373acc3",
+      "emitters": 6,
+      "surfaces": 35,
+      "exactEquality": true
+    },
+    {
+      "seed": 1,
+      "chunkIndex": 9,
+      "stacks": 1,
+      "rngDraws": 522,
+      "rngTraceSHA256": "e267bd37d7de9f3f4eb098752ca4a03805be9bbf39d7deaf9644df1e0be0c473",
+      "downstreamBufferSHA256": "0093983eaf0b0b43c4046e579f4deca3a2174c4efafdc1c3a671b5144b659fe7",
+      "emitters": 3,
+      "surfaces": 34,
+      "exactEquality": true
+    },
+    {
+      "seed": 7,
+      "chunkIndex": 0,
+      "stacks": 2,
+      "rngDraws": 527,
+      "rngTraceSHA256": "0b97c507f0df28b0d3006f29da471821b6b02fc4e7e3086cc0d62a4bce7017d5",
+      "downstreamBufferSHA256": "3db1f6b4690a5edd5953b04299b36d1bed5802c72acb9285c5c961fdf9f8683c",
+      "emitters": 4,
+      "surfaces": 35,
+      "exactEquality": true
+    },
+    {
+      "seed": 7,
+      "chunkIndex": 1,
+      "stacks": 1,
+      "rngDraws": 508,
+      "rngTraceSHA256": "33aa3ce3f26fbf341620e7a3a65afd630631382f799b5fb713d571ec7241869c",
+      "downstreamBufferSHA256": "b178dadbb511f6cff5365af729c14b00c90b25c31de1f33ad7198bf34037185d",
+      "emitters": 4,
+      "surfaces": 33,
+      "exactEquality": true
+    },
+    {
+      "seed": 7,
+      "chunkIndex": 4,
+      "stacks": 2,
+      "rngDraws": 433,
+      "rngTraceSHA256": "ee7363666c5e9baa77b8460301803aea6265404be136f79bf052385e4862623f",
+      "downstreamBufferSHA256": "670d1927bebc62df0d0d6d9ebbef80cb3c1ed9985799309b6eaebcd0d5c0e66a",
+      "emitters": 3,
+      "surfaces": 35,
+      "exactEquality": true
+    },
+    {
+      "seed": 7,
+      "chunkIndex": 9,
+      "stacks": 2,
+      "rngDraws": 395,
+      "rngTraceSHA256": "be5148e8c137a63137fbf3827a4236a8372360501b30b8d5d0169a963b39ebc3",
+      "downstreamBufferSHA256": "87f78f282b4105d28076101868f8acd319c96bd2c57a08b99f0ffe1200b93678",
+      "emitters": 4,
+      "surfaces": 35,
+      "exactEquality": true
+    },
+    {
+      "seed": 42,
+      "chunkIndex": 0,
+      "stacks": 2,
+      "rngDraws": 482,
+      "rngTraceSHA256": "492194a0160bba5d0a6a3493a9f670806e197384791b18072941b86ba69cb2e5",
+      "downstreamBufferSHA256": "6675f12947ca660e59b66dc22ede4d0f6d8abadb1dc794d71a6b82f406812c3c",
+      "emitters": 6,
+      "surfaces": 34,
+      "exactEquality": true
+    },
+    {
+      "seed": 42,
+      "chunkIndex": 1,
+      "stacks": 1,
+      "rngDraws": 521,
+      "rngTraceSHA256": "028afe9f0705fcaf9b84ce7f0945b6e92d54814a94aaeccbf39e0955bde429bf",
+      "downstreamBufferSHA256": "03c48e996d3ade63639b4f8fb8b0809c0c43c67c3e7732741951b53a4c28a28f",
+      "emitters": 6,
+      "surfaces": 32,
+      "exactEquality": true
+    },
+    {
+      "seed": 42,
+      "chunkIndex": 4,
+      "stacks": 1,
+      "rngDraws": 465,
+      "rngTraceSHA256": "f342480b04d367b39879e2a9d60147513f7280f67e84ebd7f0ebe5fa6284c571",
+      "downstreamBufferSHA256": "162ec5d3078f7be8fb88c999dcb7d36a3273531fac075147e0256bc1c37919d5",
+      "emitters": 6,
+      "surfaces": 39,
+      "exactEquality": true
+    },
+    {
+      "seed": 42,
+      "chunkIndex": 9,
+      "stacks": 1,
+      "rngDraws": 479,
+      "rngTraceSHA256": "bb37b4ab2d4f2f7310259a51000d94adfd2a350663cd5f5b075bfbdb40900ad8",
+      "downstreamBufferSHA256": "3035ddc517eb080894fcd670313fc10e3dbfb3894c656adce154d9fdec8ec9fa",
+      "emitters": 4,
+      "surfaces": 31,
+      "exactEquality": true
+    },
+    {
+      "seed": 123,
+      "chunkIndex": 0,
+      "stacks": 2,
+      "rngDraws": 539,
+      "rngTraceSHA256": "2545dd29f8b9c7967687994e4c974cf45930f76f85c7348e4ba1b0e435ea6706",
+      "downstreamBufferSHA256": "f3a2775f232e6a0328e7fb5aec56fda8fb149b80972d1ea05aa9f3f1c8be4016",
+      "emitters": 6,
+      "surfaces": 29,
+      "exactEquality": true
+    },
+    {
+      "seed": 123,
+      "chunkIndex": 1,
+      "stacks": 2,
+      "rngDraws": 460,
+      "rngTraceSHA256": "f743db775f27321a475f450013137367bc0295cd872ddaccd8079ac8c508ff4c",
+      "downstreamBufferSHA256": "fcf425b40263992d16781240307698be7d29c3b57ebc30ecae790680d1ef8bc2",
+      "emitters": 5,
+      "surfaces": 33,
+      "exactEquality": true
+    },
+    {
+      "seed": 123,
+      "chunkIndex": 4,
+      "stacks": 2,
+      "rngDraws": 524,
+      "rngTraceSHA256": "5bb191134824afacb669ab385a8e2ea5a0388c57f27cd3ec9d2cc78470f73708",
+      "downstreamBufferSHA256": "ececaf62fd5f1ad533d7ace0f92be3ab523652137a41fa537be63ae9b2788e8a",
+      "emitters": 10,
+      "surfaces": 41,
+      "exactEquality": true
+    },
+    {
+      "seed": 123,
+      "chunkIndex": 9,
+      "stacks": 1,
+      "rngDraws": 460,
+      "rngTraceSHA256": "472d88140c409b8d12fc6475c6001e597877f44d259e2350b1b82e8121db7231",
+      "downstreamBufferSHA256": "42ba26ef634367db1368f848043ec4b8e247c97fd396a3f0fada0aa5d367e2d2",
+      "emitters": 3,
+      "surfaces": 30,
+      "exactEquality": true
+    }
+  ],
+  "directSurfaceCaptureCases": [
+    {
+      "height": 7,
+      "exactRNGEmitterSurfaceDownstreamEquality": true
+    },
+    {
+      "height": 7.0001,
+      "exactRNGEmitterSurfaceDownstreamEquality": true
+    },
+    {
+      "height": 7.1,
+      "exactRNGEmitterSurfaceDownstreamEquality": true
+    },
+    {
+      "height": 8.1,
+      "exactRNGEmitterSurfaceDownstreamEquality": true
+    },
+    {
+      "height": 8.100001,
+      "exactRNGEmitterSurfaceDownstreamEquality": true
+    },
+    {
+      "height": 9,
+      "exactRNGEmitterSurfaceDownstreamEquality": true
+    },
+    {
+      "height": 9.0999999,
+      "exactRNGEmitterSurfaceDownstreamEquality": true
+    },
+    {
+      "height": 9.1,
+      "exactRNGEmitterSurfaceDownstreamEquality": true
+    },
+    {
+      "height": 9.100001,
+      "exactRNGEmitterSurfaceDownstreamEquality": true
+    },
+    {
+      "height": 10.3,
+      "exactRNGEmitterSurfaceDownstreamEquality": true
+    },
+    {
+      "height": 10.300001,
+      "exactRNGEmitterSurfaceDownstreamEquality": true
+    },
+    {
+      "height": 10.9999,
+      "exactRNGEmitterSurfaceDownstreamEquality": true
+    },
+    {
+      "height": 11,
+      "exactRNGEmitterSurfaceDownstreamEquality": true
+    }
+  ],
+  "heightSweep": {
+    "samples": 401,
+    "range": [
+      7,
+      11
+    ],
+    "step": 0.01,
+    "min": [
+      -2.0799999237060547,
+      0,
+      -2.0799999237060547
+    ],
+    "max": [
+      2.0799999237060547,
+      11.239999771118164,
+      2.0799999237060547
+    ],
+    "minimumNormalLength": 0.9999999586630725,
+    "maximumNormalLength": 1.0000000420673152,
+    "trianglesAtEverySample": 460,
+    "materialBucketsAtEverySample": 3
+  },
+  "analyticEnvelope": "Each vertex y is affine in h. Therefore coordinate extrema on closed h=[7,11] occur at endpoints; horizontal positions do not depend on h.",
+  "laneClearance": {
+    "laneX": [
+      -16,
+      16
+    ],
+    "altitude": [
+      1.3,
+      25
+    ],
+    "centerX": [
+      20.5,
+      25
+    ],
+    "halfFootprint": 2.08,
+    "minimumGap": 2.4200000000000017,
+    "sourcePlayerRadius": 1.5,
+    "minimumFullPlayerSphereGap": 0.9200000000000017,
+    "sourceStaticTraceRadius": 1.08,
+    "minimumStaticTraceSphereGap": 1.3400000000000016,
+    "physicalCollisionChanges": 0
+  },
+  "cue": {
+    "mode": 3,
+    "rate": 0.4,
+    "gain": 1.2,
+    "color": "0xff6a2a",
+    "shader": "0.55 + 0.45 * sin(fract(time * 0.4 + originalPhase) * 6.2832)",
+    "samples": 1025,
+    "sampledGain": [
+      0.10001257878178743,
+      0.9999873964881063
+    ],
+    "analyticGain": [
+      0.1,
+      1
+    ],
+    "analyticGainIncludingVertexGain": [
+      0.12,
+      1.2
+    ],
+    "steam": "Exactly one source callback, y=h+.4, rate1, original owner and callback RNG draw"
+  },
+  "cameraFixture": {
+    "player": [
+      0,
+      9,
+      16.25124005973339
+    ],
+    "selectedSourcePlacement": {
+      "x": 23.875489095575176,
+      "z": 60.25124005973339,
+      "height": 10.185533710755408,
+      "phase": 0.5488082428928465
+    },
+    "aspect": 1.7777777777777777,
+    "sourceSnapCameras": [
+      {
+        "mode": "classic",
+        "eye": [
+          -45.254833995939045,
+          54.255,
+          -1.0035939362056467
+        ],
+        "lookAt": [
+          0,
+          9,
+          44.25124005973339
+        ],
+        "fov": 52,
+        "orthographic": true,
+        "halfHeight": 40,
+        "ndcMin": [
+          -0.11723101433727298,
+          0.1836668145231772
+        ],
+        "ndcMax": [
+          -0.039391815980781404,
+          0.4841374539724318
+        ],
+        "minimumEyeToVertexDistance": 99.87241551563346
+      },
+      {
+        "mode": "modern",
+        "eye": [
+          -9.91858415644439,
+          23,
+          -10.999845943057952
+        ],
+        "lookAt": [
+          0,
+          10.2,
+          32.25124005973339
+        ],
+        "fov": 58,
+        "orthographic": false,
+        "halfHeight": null,
+        "ndcMin": [
+          -0.2524039110162142,
+          -0.03307802770536029
+        ],
+        "ndcMax": [
+          -0.18135640915380838,
+          0.24017866890113562
+        ],
+        "minimumEyeToVertexDistance": 77.63661851165749
+      },
+      {
+        "mode": "chase",
+        "eye": [
+          -2.5086831184236833,
+          18.5,
+          -7.61728542910517
+        ],
+        "lookAt": [
+          0,
+          10.2,
+          32.25124005973339
+        ],
+        "fov": 66,
+        "orthographic": false,
+        "halfHeight": null,
+        "ndcMin": [
+          -0.30290236088908296,
+          -0.0983375424622516
+        ],
+        "ndcMax": [
+          -0.23481910602379188,
+          0.15871374028630428
+        ],
+        "minimumEyeToVertexDistance": 71.12914355450935
+      }
+    ]
+  },
+  "analyticCameraEyeClearance": {
+    "sourceConstantRigs": [
+      {
+        "mode": "classic",
+        "maximumBaseCameraX": -45.25483399593904,
+        "maximumSourceShakeX": 2.9399999999999995,
+        "minimumHorizontalEyeGapToAnyStack": 60.73483399593904
+      },
+      {
+        "mode": "modern",
+        "maximumBaseCameraX": 6.081415843555607,
+        "maximumSourceShakeX": 2.9399999999999995,
+        "minimumHorizontalEyeGapToAnyStack": 9.398584156444395
+      },
+      {
+        "mode": "chase",
+        "maximumBaseCameraX": 13.491316881576317,
+        "maximumSourceShakeX": 2.9399999999999995,
+        "minimumHorizontalEyeGapToAnyStack": 1.988683118423685
+      }
+    ],
+    "reason": "Source X offset is -dist*sin(yaw), independent of altitude/Z; Classic is lane-anchored. noise1 is bounded [-1,1] and trauma<=1.4, so shakeX<=2.94. Snapped constant rigs with lane-bounded player X remain separated. This is an eye envelope, not a near-frustum or occlusion acceptance proof.",
+    "minimumAcrossRigs": 1.988683118423685
+  },
+  "lifecycle": {
+    "geometryDisposalsObserved": 246,
+    "eachChunkGeometryDisposedExactlyOnce": true,
+    "sharedMaterialIdentityPreserved": true,
+    "templateUsableAfterChunkRetirement": true,
+    "shutdownRejectsFurtherStamps": true,
+    "asyncStartupInstallerBuildClearShutdownRestoration": true,
+    "lateInstallRejected": true
+  },
+  "limitations": [
+    "CPU material objects are identity-test stand-ins, not a live Materials/WebGL instance. Shader/material mapping is source-verified, not rendered in WebGL.",
+    "Finite chunk seeds and source-camera snapshots, not every campaign chunk, portrait screen, boost, shake, bank or feature collision.",
+    "h=11 is a closed-envelope stress endpoint; mulberry32 does not generate the upper range endpoint. No live FPS or acceptance claim."
+  ]
+}

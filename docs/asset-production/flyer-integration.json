@@ -1,0 +1,213 @@
+{
+  "selectedFighter": "hero-interceptor-imported",
+  "groundTargets": [
+    "turret",
+    "radar",
+    "silo",
+    "fuel"
+  ],
+  "productionPreview": true,
+  "flyers": [
+    {
+      "kind": "drone",
+      "contexts": [
+        {
+          "pattern": "weave",
+          "bank": 0.0703016702373307,
+          "position": [
+            -9.626239823590007,
+            6.6133019508774495,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "strafe",
+          "bank": 0,
+          "position": [
+            0,
+            9.314370395508865,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "orbit",
+          "bank": -0.04037866116013454,
+          "position": [
+            -6.217109197498349,
+            7.751584458045593,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "dive",
+          "bank": 0,
+          "position": [
+            0,
+            9,
+            82.00000000000017
+          ]
+        },
+        {
+          "pattern": "peel",
+          "bank": 0.8399999872068172,
+          "position": [
+            -19,
+            25,
+            19.999999999999957
+          ]
+        },
+        {
+          "pattern": "launch",
+          "bank": 0.016361059347587276,
+          "position": [
+            0.6504156647914032,
+            10.841569317751466,
+            114.39999999999925
+          ]
+        }
+      ],
+      "resourcesDisposed": 14
+    },
+    {
+      "kind": "interceptor",
+      "contexts": [
+        {
+          "pattern": "weave",
+          "bank": 0.0703016702373307,
+          "position": [
+            -9.626239823590007,
+            6.6133019508774495,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "strafe",
+          "bank": 0,
+          "position": [
+            0,
+            9.314370395508865,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "orbit",
+          "bank": -0.04037866116013454,
+          "position": [
+            -6.217109197498349,
+            7.751584458045593,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "dive",
+          "bank": 0,
+          "position": [
+            0,
+            9,
+            82.00000000000017
+          ]
+        },
+        {
+          "pattern": "peel",
+          "bank": 0.8399999872068172,
+          "position": [
+            -19,
+            25,
+            19.999999999999957
+          ]
+        },
+        {
+          "pattern": "launch",
+          "bank": 0.016361059347587276,
+          "position": [
+            0.6504156647914032,
+            10.841569317751466,
+            138.39999999999975
+          ]
+        }
+      ],
+      "resourcesDisposed": 14
+    }
+  ],
+  "batch": {
+    "copiesPerKind": 18,
+    "cycles": 3,
+    "geometryBaseline": 104,
+    "geometryAfterCycles": [
+      104,
+      104,
+      104
+    ],
+    "cpuRenderSubmitMedianMs": 6.5,
+    "caveat": "Synthetic 36-flyer stress in actual scene with player/Sentinel; CPU render submission timing in headless Chromium, not GPU frame-time or sustained hardware acceptance."
+  },
+  "iterations": [
+    {
+      "iteration": 0,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    },
+    {
+      "iteration": 1,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    },
+    {
+      "iteration": 2,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    }
+  ],
+  "errors": [],
+  "defaultPathValidation": {
+    "productionPreview": false,
+    "selectedFighter": "hero-interceptor-imported",
+    "groundTargets": [
+      "turret",
+      "radar",
+      "silo",
+      "fuel"
+    ],
+    "passed": true
+  },
+  "regressions": {
+    "passed": 104,
+    "failed": 0
+  },
+  "build": "npm run build:pages passed",
+  "stage": "opt_in_initial_integration_pending_deferred_opus_review",
+  "previewQuery": "productionModels=1",
+  "visualInspection": {
+    "actualPngsViewed": [
+      "production-classic.png",
+      "production-modern.png",
+      "production-chase.png"
+    ],
+    "observations": [
+      "Copper drone broad profile and grey swept interceptor remain distinct at the same in-engine distance/world scale.",
+      "Rear exhaust cues remain readable; forward red sensors naturally occlude from rear views.",
+      "Screenshots are static posed QA scenes rendered by Three.js; HUD/sector intro may show stale values because the engine is stopped.",
+      "Blender multiview and gameplay contact sheets were also inspected; fixed world shot mismatch and extreme bank deck clipping remain deferred graphics-polish items."
+    ],
+    "evidenceDirectory": "assets-source/production/integration-evidence"
+  },
+  "frozenAssetHashes": {
+    "drone": "7053c26483f863ec9c854cf57bd0efd1e7f5a775616c0d78200ae0c7f273b8ee",
+    "interceptor": "2ebc37c7fb12624707a0e21d91ea610c06dc27b2dc4922d9e44d5531573d1152"
+  }
+}

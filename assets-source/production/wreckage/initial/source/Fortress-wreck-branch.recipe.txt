@@ -1,0 +1,5 @@
+Inside the EXISTING rng.bool(0.5) branch, replace only its body with:
+  emitReplacement(batch, rng, z0, preparedWreckageTemplates);
+Keep the if test itself. Import the helper once; prepare Float32 templates before Game construction.
+No other source change, spawn logic, RNG call, shader clock, material clone or per-wreck root.
+This is a CPU-proven integration recipe, not installed production code.

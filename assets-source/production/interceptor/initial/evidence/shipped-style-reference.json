@@ -1,0 +1,320 @@
+{
+  "player": {
+    "materials": {
+      "KZ_PlayerHull": {
+        "base": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "metallic": 0.5199999809265137
+      },
+      "KZ_NavStarboard": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallic": 0.0
+      },
+      "KZ_PlayerAccent": {
+        "base": [
+          0.016807375475764275,
+          0.03560131415724754,
+          0.06480326503515244,
+          1.0
+        ],
+        "metallic": 0.5799999833106995
+      },
+      "KZ_PlayerGlass": {
+        "base": [
+          0.006048833020031452,
+          0.04817182570695877,
+          0.08437620848417282,
+          1.0
+        ],
+        "metallic": 0.5799999833106995
+      },
+      "KZ_NavPort": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallic": 0.0
+      },
+      "KZ_NeonCyan": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallic": 0.0
+      },
+      "KZ_EngineGlow": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallic": 0.0
+      }
+    },
+    "display": "Style reference only: independently framed; not size-comparison evidence"
+  },
+  "sentinel": {
+    "materials": {
+      "SN_CoreShell": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          0.3499999940395355
+        ],
+        "metallic": 0.0
+      },
+      "SN_Armor": {
+        "base": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "metallic": 0.47999998927116394
+      },
+      "SN_Frame": {
+        "base": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "metallic": 0.5
+      },
+      "SN_Hazard": {
+        "base": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "metallic": 0.4000000059604645
+      },
+      "SN_Glow": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallic": 0.0
+      },
+      "SN_Core": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallic": 0.0
+      },
+      "SN_Seam": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallic": 0.0
+      },
+      "SN_Beacon": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallic": 0.0
+      },
+      "SN_Charge": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallic": 0.0
+      },
+      "SN_Visor": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallic": 0.0
+      },
+      "SN_Metal": {
+        "base": [
+          0.08437620848417282,
+          0.13013647496700287,
+          0.19120168685913086,
+          1.0
+        ],
+        "metallic": 0.5600000023841858
+      },
+      "SN_PodEye": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallic": 0.0
+      }
+    },
+    "display": "Style reference only: independently framed; not size-comparison evidence"
+  },
+  "turret": {
+    "materials": {
+      "warm_armor": {
+        "base": [
+          0.31854677200317383,
+          0.10702310502529144,
+          0.06480326503515244,
+          1.0
+        ],
+        "metallic": 0.47999998927116394
+      },
+      "cool_slate": {
+        "base": [
+          0.08437620848417282,
+          0.13013647496700287,
+          0.19120168685913086,
+          1.0
+        ],
+        "metallic": 0.5600000023841858
+      },
+      "dark_structure": {
+        "base": [
+          0.0423114113509655,
+          0.06847816705703735,
+          0.1119324266910553,
+          1.0
+        ],
+        "metallic": 0.5
+      },
+      "amber_eye": {
+        "base": [
+          1.0,
+          0.2541520893573761,
+          0.0423114113509655,
+          1.0
+        ],
+        "metallic": 0.0
+      }
+    },
+    "display": "Style reference only: independently framed; not size-comparison evidence"
+  },
+  "radar": {
+    "materials": {
+      "warm_armor.001": {
+        "base": [
+          0.31854677200317383,
+          0.10702310502529144,
+          0.06480326503515244,
+          1.0
+        ],
+        "metallic": 0.47999998927116394
+      },
+      "dish_warm": {
+        "base": [
+          0.3324515223503113,
+          0.1441284716129303,
+          0.09084171056747437,
+          1.0
+        ],
+        "metallic": 0.41999998688697815
+      },
+      "cool_slate.001": {
+        "base": [
+          0.08437620848417282,
+          0.13013647496700287,
+          0.19120168685913086,
+          1.0
+        ],
+        "metallic": 0.5600000023841858
+      },
+      "dark_structure.001": {
+        "base": [
+          0.0423114113509655,
+          0.06847816705703735,
+          0.1119324266910553,
+          1.0
+        ],
+        "metallic": 0.5
+      },
+      "radar_emitter": {
+        "base": [
+          0.08437620848417282,
+          1.0,
+          0.3915724754333496,
+          1.0
+        ],
+        "metallic": 0.0
+      }
+    },
+    "display": "Style reference only: independently framed; not size-comparison evidence"
+  },
+  "silo": {
+    "materials": {
+      "SILO_Hull": {
+        "base": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "metallic": 0.0
+      },
+      "SILO_Glow": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallic": 0.0
+      }
+    },
+    "display": "Style reference only: independently framed; not size-comparison evidence"
+  },
+  "fuel": {
+    "materials": {
+      "FUEL_Hull": {
+        "base": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "metallic": 0.0
+      },
+      "FUEL_Band": {
+        "base": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallic": 0.0
+      }
+    },
+    "display": "Style reference only: independently framed; not size-comparison evidence"
+  }
+}

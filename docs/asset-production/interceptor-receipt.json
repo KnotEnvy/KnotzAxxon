@@ -1,0 +1,10 @@
+{
+  "archive": "enemy-interceptor-initial-ee221ad-20261114T151425Z.tar.gz",
+  "sha256": "03801d4997d0b017dd2500e9d165dd78ca194526f599a10047d8d55af89d71c8",
+  "contentHashesVerified": 67,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/interceptor/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true
+}

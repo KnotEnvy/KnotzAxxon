@@ -1,0 +1,16 @@
+{
+  "sourceFile": "src/world/Fortress.js",
+  "sourceSHA256": "824a3d8d9e64bf775e5a486e52c29bef8ce94daebfa138bd4ab2067121790165",
+  "originalAntennaMethod": "_antenna(batch, rng, x, z, theme) {\n    const h = rng.range(7, 13);\n    batch.box('dark', 0.35, h, 0.35, x, 0, z, 3, 0xffffff);\n    for (let y = 2; y < h; y += rng.range(1.8, 2.6)) batch.box('dark', rng.range(1.2, 2.4), 0.12, 0.12, x, y, z, 3, 0xffffff);\n    batch.lamp(x, h, z, 0.4, theme.name === 'gauntlet' ? 0xff2a3a : 0xff3d55, 1.6, [STROBE, rng.range(0.6, 1), rng.next()]);\n  }",
+  "unchangedCallerLines": [
+    "const farX = () => rng.range(CORRIDOR_HALF + 3.5, DECK_HALF - 3);",
+    "for (let k = 0; k < rng.int(1, 3); k++) this._antenna(batch, rng, farX(), z0 + rng.range(6, CHUNK_LEN - 6), theme);"
+  ],
+  "sourceSharedMaterialMap": {
+    "dark": "materials.darkMetal",
+    "neon": "materials.neonVertex"
+  },
+  "sourceLightClock": "Materials.clock.value -> uLightTime -> lightGain(aAnim, uLightTime)",
+  "sourceLightGainGLSL": ".08 + 1.45 * smoothstep(0,.03,c) * (1-smoothstep(.12,.2,c)), c=fract(time*rate+phase)",
+  "productionModified": false
+}

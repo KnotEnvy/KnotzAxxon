@@ -1,0 +1,113 @@
+[
+  {
+    "name": "player",
+    "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+    "bytes": 478292,
+    "triangles": 11556,
+    "primitives": 8,
+    "materials": [
+      "KZ_PlayerAccent",
+      "KZ_PlayerGlass",
+      "KZ_PlayerHull",
+      "KZ_NavPort",
+      "KZ_NavStarboard",
+      "KZ_NeonCyan",
+      "KZ_EngineGlow"
+    ],
+    "editableSourceHashes": {
+      "assets-source/fighter/player.blend": "245dae3c63d3e0354b38c6369aec9129331e3ba2b7dcf35dfdb904c134f462d3",
+      "assets-source/fighter/blender/build_player.py": "3edae3cb72ba8d570aed414dd2559a986bba072b4388a851adb1a6d3ab0e4398",
+      "assets-source/fighter/blender/kzlib.py": "0172ba352c09632d0703095ad116027b8b6b68f25f4ae862e51dd5a3da910073"
+    }
+  },
+  {
+    "name": "sentinel",
+    "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef",
+    "bytes": 1140172,
+    "triangles": 34718,
+    "primitives": 38,
+    "materials": [
+      "SN_Frame",
+      "SN_Armor",
+      "SN_Charge",
+      "SN_Hazard",
+      "SN_Beacon",
+      "SN_Visor",
+      "SN_Metal",
+      "SN_PodEye",
+      "SN_Glow",
+      "SN_Core",
+      "SN_CoreShell",
+      "SN_Seam"
+    ],
+    "editableSourceHashes": {
+      "assets-source/sentinel/sentinel.blend": "93bd7a444a809388f7bb27b366d5c69fb4d9ffc9ea31e07d030fb0a1931f96d4",
+      "assets-source/sentinel/build/build_sentinel.py": "efbfd6023118b7b0bda4af22cd5c0af502a7dabdc808b3a8e7875f163baa8c80"
+    }
+  },
+  {
+    "name": "turret",
+    "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+    "bytes": 58452,
+    "triangles": 1194,
+    "primitives": 8,
+    "materials": [
+      "warm_armor",
+      "cool_slate",
+      "dark_structure",
+      "amber_eye"
+    ],
+    "editableSourceHashes": {
+      "assets-source/ground/turret.blend": "0976b06002cfea11997f3fbdbdba4c71a77d5cd76fb753311d71d29d7a7a8f84",
+      "assets-source/ground/scripts/build_assets.py": "648188dc28fd0bd2b6b12b9d427337d8e7047a5dfb76d8c92617a18cdcc6ce7e"
+    }
+  },
+  {
+    "name": "radar",
+    "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d",
+    "bytes": 55564,
+    "triangles": 1288,
+    "primitives": 9,
+    "materials": [
+      "warm_armor",
+      "cool_slate",
+      "dark_structure",
+      "dish_warm",
+      "radar_emitter"
+    ],
+    "editableSourceHashes": {
+      "assets-source/ground/radar.blend": "45e5212f9fb7548931709999b16ecbae30a7999cb341058c488ec8f08c381d4b",
+      "assets-source/ground/scripts/build_assets.py": "648188dc28fd0bd2b6b12b9d427337d8e7047a5dfb76d8c92617a18cdcc6ce7e"
+    }
+  },
+  {
+    "name": "silo",
+    "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e",
+    "bytes": 1281700,
+    "triangles": 9928,
+    "primitives": 4,
+    "materials": [
+      "SILO_Hull",
+      "SILO_Glow"
+    ],
+    "editableSourceHashes": {
+      "assets-source/supplies/silo.blend": "4f99139b631efb031f20b116bdbce4f59700e811d7e028dd366063fb927085ca",
+      "assets-source/supplies/scripts/build.py": "20ab13b768e8886dc8c0200359324a0944146cd7f63e1f8a69a71f96dda06b5a"
+    }
+  },
+  {
+    "name": "fuel",
+    "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc",
+    "bytes": 1087156,
+    "triangles": 9592,
+    "primitives": 8,
+    "materials": [
+      "FUEL_Hull",
+      "FUEL_Band"
+    ],
+    "editableSourceHashes": {
+      "assets-source/supplies/fuel.blend": "043f4268b519006ed8fbd793075678af4d407018dffdff4e36e0ae792fd3eeba",
+      "assets-source/supplies/scripts/build.py": "20ab13b768e8886dc8c0200359324a0944146cd7f63e1f8a69a71f96dda06b5a"
+    }
+  }
+]

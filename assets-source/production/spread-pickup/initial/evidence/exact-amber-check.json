@@ -1,0 +1,6 @@
+{
+  "identity_srgb": "#ffb43a",
+  "exact_rgb_pixels_in_nominal_glb_diagnostic": 24448,
+  "source_gain_render": "view-front.png preserves runtime 1.15/1.35 response; not falsely called nominal #ffb43a pixels",
+  "gain_one_is_diagnostic_only": true
+}

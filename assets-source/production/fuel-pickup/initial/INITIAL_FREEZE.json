@@ -1,0 +1,10 @@
+{
+  "revision": "INITIAL",
+  "immutable": true,
+  "formal_reviews": 0,
+  "formal_fix_passes": 0,
+  "opus_review_polish": "deferred",
+  "helpers": 0,
+  "claude_retries": 0,
+  "hash_policy": "SHA256SUMS covers every payload file except itself. Its digest and archive digest/transfer receipt remain outside INITIAL."
+}

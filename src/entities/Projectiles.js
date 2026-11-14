@@ -12,6 +12,7 @@
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { airframePanel } from '../render/GeoUtils.js';
+import { buildImportedMissile } from '../render/ImportedModels.js';
 import { rand, clamp } from '../core/Utils.js';
 
 const _v = new THREE.Vector3();
@@ -88,17 +89,24 @@ export class Projectiles {
     this.playerMesh = this._instanced(boltGeo, materials.neon(0x9ff4ff, 3.4), this.player.capacity);
     this.enemyMesh = this._instanced(boltGeo, materials.neon(0xff6a4a, 3.0), this.enemy.capacity);
 
-    // A continuous body, nose and four tail fins, still one instanced draw.
-    const missileParts = [
-      new THREE.CylinderGeometry(.20,.20,.98,10).rotateX(Math.PI/2).translate(0,0,-.18),
-      new THREE.ConeGeometry(.20,.62,10).rotateX(Math.PI/2).translate(0,0,.62),
-      new THREE.TorusGeometry(.19,.04,4,12).translate(0,0,-.68),
-    ];
-    for (let i=0;i<4;i++) missileParts.push(airframePanel([[.12,-.22],[.42,-.65],[.38,-.76],[.12,-.68]],.025,.05,0).rotateZ(i*Math.PI/2));
-    const missileFlat = missileParts.map(g => g.index ? g.toNonIndexed() : g);
-    const missileGeo = mergeGeometries(missileFlat, false);
-    for (const g of new Set([...missileParts,...missileFlat])) g.dispose();
-    this.missileMesh = this._instanced(missileGeo, materials.enemyArmor ?? materials.enemyHull, this.missile.capacity);
+    const importedMissile = buildImportedMissile(materials);
+    let missileGeo;
+    if (importedMissile) {
+      missileGeo = importedMissile.geometry;
+      this._ownedMissileMaterial = importedMissile.material;
+    } else {
+      // A continuous body, nose and four tail fins, still one instanced draw.
+      const missileParts = [
+        new THREE.CylinderGeometry(.20,.20,.98,10).rotateX(Math.PI/2).translate(0,0,-.18),
+        new THREE.ConeGeometry(.20,.62,10).rotateX(Math.PI/2).translate(0,0,.62),
+        new THREE.TorusGeometry(.19,.04,4,12).translate(0,0,-.68),
+      ];
+      for (let i=0;i<4;i++) missileParts.push(airframePanel([[.12,-.22],[.42,-.65],[.38,-.76],[.12,-.68]],.025,.05,0).rotateZ(i*Math.PI/2));
+      const missileFlat = missileParts.map(g => g.index ? g.toNonIndexed() : g);
+      missileGeo = mergeGeometries(missileFlat, false);
+      for (const g of new Set([...missileParts,...missileFlat])) g.dispose();
+    }
+    this.missileMesh = this._instanced(missileGeo, this._ownedMissileMaterial ?? materials.enemyArmor ?? materials.enemyHull, this.missile.capacity);
     this.missileMesh.castShadow = false;
 
     // glowing halo around each bolt so they read against bright geometry
@@ -332,6 +340,7 @@ export class Projectiles {
       mesh.removeFromParent(); mesh.dispose(); geometry.add(mesh.geometry);
     }
     for (const g of geometry) g.dispose();
+    this._ownedMissileMaterial?.dispose();
     this.playerHalo.material.dispose(); this.enemyHalo.material.dispose();
   }
 

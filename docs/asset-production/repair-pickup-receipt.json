@@ -1,0 +1,13 @@
+{
+  "archive": "repair-pickup-initial-20261114T172123356465Z.tar.gz",
+  "sha256": "e1fffb6a6788944287f5d513d3549f85cdeadc4f7c332a91cce1ee1939cdcb80",
+  "contentHashesVerified": 109,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/repair-pickup/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "glbSha256": "f063dc0d9daa554f982da33fc72a9222c1a396031a59fe5f2ba71eb9c0929caa",
+  "blendSha256": "945d073ee6cf22057b89e9dc42139bc5bbc69b9b3b19e7c35217d536a2a1d386",
+  "builderCompletionHashesMatch": true
+}

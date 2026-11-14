@@ -1,0 +1,92 @@
+{
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "engine": "BLENDER_EEVEE",
+  "threads": 4,
+  "restHeight": 9.0,
+  "evaluatedTriangles": 460,
+  "meshObjects": 1,
+  "materialPrimitives": 3,
+  "materials": [
+    "CS_Hull",
+    "CS_Dark",
+    "CS_Heat"
+  ],
+  "parts": [
+    {
+      "name": "continuous_chamfered_shell_and_four_recessed_inlets",
+      "firstTriangle": 0,
+      "triangles": 92
+    },
+    {
+      "name": "octagonal_foundation",
+      "firstTriangle": 92,
+      "triangles": 28
+    },
+    {
+      "name": "separated_cooling_fins_0",
+      "firstTriangle": 120,
+      "triangles": 48
+    },
+    {
+      "name": "separated_cooling_fins_1",
+      "firstTriangle": 168,
+      "triangles": 48
+    },
+    {
+      "name": "separated_cooling_fins_2",
+      "firstTriangle": 216,
+      "triangles": 48
+    },
+    {
+      "name": "separated_cooling_fins_3",
+      "firstTriangle": 264,
+      "triangles": 48
+    },
+    {
+      "name": "four_fitted_corner_spines",
+      "firstTriangle": 312,
+      "triangles": 48
+    },
+    {
+      "name": "fitted_open_cap",
+      "firstTriangle": 360,
+      "triangles": 32
+    },
+    {
+      "name": "original_amber_heat_surface",
+      "firstTriangle": 392,
+      "triangles": 12
+    },
+    {
+      "name": "underplate_cap_support_-0.48",
+      "firstTriangle": 404,
+      "triangles": 12
+    },
+    {
+      "name": "underplate_cap_support_+0.48",
+      "firstTriangle": 416,
+      "triangles": 12
+    },
+    {
+      "name": "fitted_service_hatch_and_latch_0",
+      "firstTriangle": 428,
+      "triangles": 16
+    },
+    {
+      "name": "fitted_service_hatch_and_latch_2",
+      "firstTriangle": 444,
+      "triangles": 16
+    }
+  ],
+  "trianglesPerBucket": {
+    "hull": 124,
+    "dark": 324,
+    "neon": 12
+  },
+  "textures": 0,
+  "images": 0,
+  "animations": 0,
+  "templateBytes": 130968,
+  "glbBytes": 69256
+}

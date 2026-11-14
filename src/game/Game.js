@@ -1,3 +1,4 @@
+import { prepareImportedCarrier } from '../render/ImportedCarrier.js';
 import { findAltitudeEcho } from './AltitudeEcho.js';
 import { inCombatView } from './CombatVisibility.js';
 import { Lifetime } from '../core/Lifetime.js';
@@ -164,6 +165,7 @@ export class Game {
 
     this.fortress?.clear();
     this.level = new Level(seed, loop);
+    prepareImportedCarrier(this.level);
     if (!this.fortress) {
       this.fortress = new Fortress(this.scene, this.materials, this.level, settings.quality);
     } else {

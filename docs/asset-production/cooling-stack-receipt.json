@@ -1,0 +1,16 @@
+{
+  "archive": "cooling-stack-initial-ee221ad-20261114.tar.gz",
+  "sha256": "b4ac43290f7352a93403a74a1a98522c1df930958123d4609720f5364dc88818",
+  "contentHashesVerified": 63,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/cooling-stack/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "senderExitStatus": 0,
+  "transferMethod": "Windows Taildrop",
+  "glbSha256": "96a0f506f1c3ce4644fc1814283b1a0e022691b4786eb7481fa68ceda1cc2002",
+  "blendSha256": "69763d6686d5c141e21794dcb734683607a650520859b06100bc64b2c6a3f8a8",
+  "formalReviewsCompleted": 0,
+  "fixPassesCompleted": 0
+}

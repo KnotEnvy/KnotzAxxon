@@ -1,0 +1,10 @@
+{
+  "triangles": 456,
+  "mesh_nodes": 3,
+  "objects": {
+    "baseline_core.003": 24,
+    "baseline_shape": 48,
+    "baseline_shell.003": 384
+  },
+  "method": "Native Blender reconstruction from exact Pickup.js shield constructor radii, segments, cylinder rotation and pivots; actual evaluated triangle counts. Not a shipped baseline GLB, because no pickup GLB exists."
+}

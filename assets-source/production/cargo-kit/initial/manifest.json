@@ -1,0 +1,375 @@
+{
+  "schema": "cargo-kit-initial-v1",
+  "assignment": "Fortress._crates decorative scenery only; all _deckProps callsites; no production integration installed",
+  "source_commit": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "current_date": "2026-11-14",
+  "host_label_from_assignment": "NitroBliss",
+  "model": {
+    "name": "gpt-6.1-sol",
+    "reasoning_effort": "xhigh",
+    "speed": "available/default; no speed override",
+    "helpers": 0,
+    "provider_retries": 0
+  },
+  "status": "pending_deferred_opus_review",
+  "formal_review_rounds": 0,
+  "formal_fix_rounds": 0,
+  "blender": {
+    "blender": "5.2.1 LTS",
+    "build_hash": "9e2066aef7ef",
+    "platform": "linux",
+    "engine": "BLENDER_EEVEE",
+    "threads": 4,
+    "generated_by": "gpt-6.1-sol",
+    "reasoning": "xhigh",
+    "speed": "available/default; no alternate speed override",
+    "review": "pending_deferred_opus_review",
+    "formal_review_rounds": 0,
+    "formal_fix_rounds": 0,
+    "export": "glTF 2.0 GLB / no UV or COLOR_0 / one neutral material / two nodes"
+  },
+  "artifacts": {
+    "asset/cargo-kit.glb": {
+      "sha256": "c516490784e27f1c438df3ec731a4d025793f83522efd1215cec53d13da3e352",
+      "bytes": 19828
+    },
+    "asset/cargo-kit.blend": {
+      "sha256": "8d1a1fad15c91260b6add6373a0a4cb629bcba2ec091d3580873af66a7f98021",
+      "bytes": 96663
+    },
+    "asset/cargo-topology.json": {
+      "sha256": "3bae1289c51b882d0acb1d98bd4df768991e3663c3025b6b828a19d705c69a74",
+      "bytes": 44084
+    },
+    "asset/part-runtime-map.json": {
+      "sha256": "87eda201146a7234dbfb80271c2d5eaff54164bbe3f6e011d6901a5b4557e2bd",
+      "bytes": 1743
+    }
+  },
+  "geometry": {
+    "crate_triangles": 156,
+    "drum_triangles": 180,
+    "primitives_in_glb": 2,
+    "template_nodes": [
+      "CargoCrate_Fitted",
+      "CargoDrum_Fitted"
+    ],
+    "runtime_buckets": [
+      "hull"
+    ],
+    "additional_draw_calls": 0,
+    "new_textures": 0,
+    "new_live_materials": 0,
+    "color_0": false,
+    "uv_0": false,
+    "authored_vertex_multiplier_used": false,
+    "reconstructed_neutral_multiplier": 1,
+    "crate_bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1,
+        0.5
+      ]
+    },
+    "drum_bounds": {
+      "min": [
+        -0.9510565400123596,
+        0.0,
+        -1.0
+      ],
+      "max": [
+        0.9510565400123596,
+        1.0,
+        1.0
+      ]
+    },
+    "actual_source_ten_halfplanes_max_error": 7.56873359364458e-17
+  },
+  "measured": {
+    "roots": [
+      {
+        "seed": 1,
+        "crates": 2,
+        "drums": 3,
+        "originalTriangles": 144,
+        "kitTriangles": 852,
+        "leafDraws": 21
+      },
+      {
+        "seed": 7,
+        "crates": 2,
+        "drums": 0,
+        "originalTriangles": 24,
+        "kitTriangles": 312,
+        "leafDraws": 18
+      },
+      {
+        "seed": 42,
+        "crates": 3,
+        "drums": 3,
+        "originalTriangles": 156,
+        "kitTriangles": 1008,
+        "leafDraws": 29
+      },
+      {
+        "seed": 123,
+        "crates": 2,
+        "drums": 0,
+        "originalTriangles": 24,
+        "kitTriangles": 312,
+        "leafDraws": 18
+      }
+    ],
+    "crate_seed_samples": 40000,
+    "deck_density_samples": 50000,
+    "actual_deck_parity_pairs": 240,
+    "actual_generated_chunk_pairs": 20,
+    "finite_camera_poses": 54,
+    "memory": {
+      "floatsPerExpandedVertex": 11,
+      "bytesPerTriangle": 132,
+      "templateBytes": 24192,
+      "sourceWorstTriangles": 744,
+      "kitWorstTriangles": 4572,
+      "sourceWorstMergedBytes": 98208,
+      "kitWorstMergedBytes": 603504,
+      "addedWorstMergedBytes": 505296,
+      "residentChunkBounds": [
+        {
+          "ahead": 320,
+          "behind": 90,
+          "conservativeChunks": 6,
+          "cargoBytesAtDeclaredWorst": 3621024
+        },
+        {
+          "ahead": 440,
+          "behind": 90,
+          "conservativeChunks": 7,
+          "cargoBytesAtDeclaredWorst": 4224528
+        },
+        {
+          "ahead": 560,
+          "behind": 90,
+          "conservativeChunks": 8,
+          "cargoBytesAtDeclaredWorst": 4828032
+        },
+        {
+          "ahead": 700,
+          "behind": 90,
+          "conservativeChunks": 10,
+          "cargoBytesAtDeclaredWorst": 6035040
+        }
+      ],
+      "excludes": "JS growable scratch buffer capacity, GL driver copies, unchanged other scenery; merged buffers retain CPU arrays as well as uploaded GPU copies; shadow pass submits hull again",
+      "scratchMeasurements": [
+        {
+          "version": "source",
+          "seed": 2738,
+          "cargoOnlyReplayOfActualBatteryArguments": true,
+          "crates": 12,
+          "drums": 15,
+          "triangles": 744,
+          "usedBytes": 98208,
+          "reservedBytes": 131072,
+          "pool": "fresh actual source Bucket installed before replay; live shared pool may retain a larger high-water capacity from unrelated geometry"
+        },
+        {
+          "version": "kit",
+          "seed": 2738,
+          "cargoOnlyReplayOfActualBatteryArguments": true,
+          "crates": 12,
+          "drums": 15,
+          "triangles": 4572,
+          "usedBytes": 603504,
+          "reservedBytes": 917504,
+          "pool": "fresh actual source Bucket installed before replay; live shared pool may retain a larger high-water capacity from unrelated geometry"
+        }
+      ],
+      "tenWorstCargoChunksCpuPlusGpuPlusFreshScratchAndTemplates": 13011776
+    },
+    "clearance": {
+      "legalPlayerX": [
+        -16,
+        16
+      ],
+      "legalPlayerY": [
+        1.3,
+        25
+      ],
+      "playerSphereRadius": 1.5,
+      "controlsAndAim": "No production edits; unchanged movement bounds, aim, collisions, rewards, targets, damage and spawn data",
+      "nearCrateWorstSourceSupportX": -17.529014298237875,
+      "nearCrateConservativeSphereXGap": 0.02901429823787538,
+      "nearDrumK1SourceCenterX": -17,
+      "nearDrumRightX": -16.600556263156037,
+      "inheritedNearDrumWitness": {
+        "playerCenter": [
+          -16,
+          1.3,
+          31.92978713763748
+        ],
+        "drumSurfacePoint": [
+          -16.600556263156037,
+          1.1,
+          31.92978713763748
+        ],
+        "distance": 0.6329832740412205,
+        "sphereSignedGap": -0.8670167259587795
+      },
+      "warning": "Source optional near-side drums already intersect possible player-radius envelope. This kit does not enlarge them or claim complete original clearance. Decorative cargo is not a gameplay collider. Unrotated surface boxes and possible stacked overhang/intersection are inherited."
+    }
+  },
+  "verified": {
+    "source_rng_and_next8": true,
+    "pose_tint_arguments": true,
+    "enabled_surface_records": true,
+    "non_cargo_downstream_buffers": true,
+    "full_chunk_emitter_and_collider_parity": true,
+    "single_hull_bucket": true,
+    "chunk_merged_geometry_retires_once": true,
+    "shared_templates_shutdown_only": true,
+    "continuous_source_envelopes": true,
+    "reopened_editable_blend": true,
+    "clean_glb_reimport": true,
+    "independent_binary_audit": true,
+    "viewed_pngs": [
+      "evidence/frames/front-quarter.png",
+      "evidence/frames/crate-hardware.png",
+      "evidence/frames/drum-hardware.png",
+      "evidence/boards/multiview.png",
+      "evidence/boards/hardware.png",
+      "evidence/boards/stacks-1.9.png",
+      "evidence/boards/stacks-3.2.png",
+      "evidence/boards/world-rigs.png"
+    ]
+  },
+  "limitations": [
+    "Offline software EEVEE/source-lighting approximation; no live GPU/FPS/final acceptance",
+    "Runtime mapped hull response retained by unchanged source Batch/material mapping but not rendered with original maps offline",
+    "Inherited near-side optional drum/player sphere clearance violation, signed witness gap -0.8670167259587795",
+    "Original unrotated surface boxes and random stack overhang/intersection preserved",
+    "Headless material/matchMedia and layout/deck marks are explicit test doubles",
+    "Unrelated preexisting gate post shared geometry may be disposed repeatedly; unchanged and disclosed; all merged cargo geometry retires once",
+    "Formal Opus review/polish deferred with zero formal review/fix rounds"
+  ],
+  "source_inputs": {
+    "src/world/Fortress.js": {
+      "sha256": "824a3d8d9e64bf775e5a486e52c29bef8ce94daebfa138bd4ab2067121790165",
+      "bytes": 75793,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "src/core/Utils.js": {
+      "sha256": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972",
+      "bytes": 5006,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "src/world/Level.js": {
+      "sha256": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016",
+      "bytes": 27008,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "src/game/CameraRig.js": {
+      "sha256": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205",
+      "bytes": 5633,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "src/core/FlightCamera.js": {
+      "sha256": "f691b3cef8a36de611762cb3129571f0684457e607be141dc1b5158401f4506e",
+      "bytes": 842,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "src/core/Settings.js": {
+      "sha256": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+      "bytes": 8622,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "src/render/Materials.js": {
+      "sha256": "8af35e4641253713d8d8d1770edebb3dd0bff77bf5caee4eaba7f0db58aebd52",
+      "bytes": 16831,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "src/render/Textures.js": {
+      "sha256": "c94160c1d3980da63fc7822b88d049b2adccb5ea301e1705b8a1b48ae9dc8c05",
+      "bytes": 17474,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "src/render/Sky.js": {
+      "sha256": "12314912081437f6c646031ee8d14b62753755b890ca104ae48f7f3083801ed5",
+      "bytes": 17265,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "src/render/ImportedModels.js": {
+      "sha256": "212b8c8f4f438ae70b408e2ff218524850e3cf6b027e63961a813e58d6d42773",
+      "bytes": 7863,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "src/entities/Player.js": {
+      "sha256": "70d34d33ca9e81a4c27f8a37d94ab6089d7e4c97cf4df2a6772bd24277aabe5b",
+      "bytes": 17274,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "assets-source/fighter/blender/build_player.py": {
+      "sha256": "3edae3cb72ba8d570aed414dd2559a986bba072b4388a851adb1a6d3ab0e4398",
+      "bytes": 17356,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "assets-source/sentinel/build/build_sentinel.py": {
+      "sha256": "efbfd6023118b7b0bda4af22cd5c0af502a7dabdc808b3a8e7875f163baa8c80",
+      "bytes": 26780,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "assets-source/ground/scripts/build_assets.py": {
+      "sha256": "648188dc28fd0bd2b6b12b9d427337d8e7047a5dfb76d8c92617a18cdcc6ce7e",
+      "bytes": 20750,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "assets-source/supplies/scripts/build.py": {
+      "sha256": "20ab13b768e8886dc8c0200359324a0944146cd7f63e1f8a69a71f96dda06b5a",
+      "bytes": 30190,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "public/models/player.glb": {
+      "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "bytes": 478292,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "public/models/sentinel.glb": {
+      "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef",
+      "bytes": 1140172,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "public/models/turret.glb": {
+      "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+      "bytes": 58452,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "public/models/radar.glb": {
+      "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d",
+      "bytes": 55564,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "public/models/silo.glb": {
+      "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e",
+      "bytes": 1281700,
+      "purpose": "read-only vocabulary or exact source contract"
+    },
+    "public/models/fuel.glb": {
+      "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc",
+      "bytes": 1087156,
+      "purpose": "read-only vocabulary or exact source contract"
+    }
+  },
+  "freeze": {
+    "tree": "initial/",
+    "checksums": "SHA256SUMS covers every regular content file except itself",
+    "immutable_read_only": true,
+    "archive_and_sender_receipt": "outside initial",
+    "transfer": "Only Windows Tailscale file cp, wslpath -w archive argument, destination 100.112.66.64:",
+    "receiver_verification_owner": "orchestrator"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "triangles": 500,
+  "mesh_nodes": 3,
+  "bounds_game": {
+    "min": [
+      -2.0450000762939453,
+      -2.0450000762939453,
+      -0.3799999952316284
+    ],
+    "max": [
+      2.0450000762939453,
+      2.0450000762939453,
+      0.25999999046325684
+    ]
+  },
+  "objects": {
+    "baseline_core.003": 24,
+    "baseline_shape": 92,
+    "baseline_shell.003": 384
+  },
+  "method": "Native Blender reconstruction from exact Pickup.js repair constructor radii, segments, cylinder rotation and pivots; actual evaluated triangle counts. Not a shipped baseline GLB, because no pickup GLB exists. Analytic mitered cross bevel reconstruction, not an actual Three.js geometry capture."
+}

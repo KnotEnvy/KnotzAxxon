@@ -1,0 +1,298 @@
+{
+  "renderer": "offline Blender EEVEE; source-rig camera transforms exact at steady no-boost/no-trauma sample",
+  "scale": "Every imported asset world scale1; carrier remains x48..108.55, y-26..44.5, z0..987",
+  "lighting": "Source void sun color/intensity/direction and cyan rim used; World background approximates hemisphere; presentation shots add soft fill; no game PMREM/nebula/fog/bloom/ACES",
+  "images": [
+    {
+      "image": "overview-port.png",
+      "note": "Whole 980-unit carrier, -X corridor-facing hangars; not gameplay framing",
+      "rig": null,
+      "offline": true,
+      "engine": "native Linux Blender 5.2.1 LTS BLENDER_EEVEE",
+      "limitations": "AgX instead of game ACES; plain vertex palette instead of source procedural textures; sky/fog/bloom/hemisphere/PMREM not identical; no production GPU claim"
+    },
+    {
+      "image": "overview-starboard.png",
+      "note": "Whole opposite side, keel exchangers, single island; not gameplay framing",
+      "rig": null,
+      "offline": true,
+      "engine": "native Linux Blender 5.2.1 LTS BLENDER_EEVEE",
+      "limitations": "AgX instead of game ACES; plain vertex palette instead of source procedural textures; sky/fog/bloom/hemisphere/PMREM not identical; no production GPU claim"
+    },
+    {
+      "image": "hangar-structure.png",
+      "note": "Actual 15-unit recesses; open portals, ribs, decks; shipped player at world scale1, no normalization",
+      "rig": null,
+      "offline": true,
+      "engine": "native Linux Blender 5.2.1 LTS BLENDER_EEVEE",
+      "limitations": "AgX instead of game ACES; plain vertex palette instead of source procedural textures; sky/fog/bloom/hemisphere/PMREM not identical; no production GPU claim"
+    },
+    {
+      "image": "flightdeck-island.png",
+      "note": "Recessed catapult channels, seams, rails, bridge; shipped player scale1 displayed above deck, not a new launch origin",
+      "rig": null,
+      "offline": true,
+      "engine": "native Linux Blender 5.2.1 LTS BLENDER_EEVEE",
+      "limitations": "AgX instead of game ACES; plain vertex palette instead of source procedural textures; sky/fog/bloom/hemisphere/PMREM not identical; no production GPU claim"
+    },
+    {
+      "image": "stern-bells.png",
+      "note": "Hollow stern bells, tapered afterbody, blue cores 6.5 units behind mouths",
+      "rig": null,
+      "offline": true,
+      "engine": "native Linux Blender 5.2.1 LTS BLENDER_EEVEE",
+      "limitations": "AgX instead of game ACES; plain vertex palette instead of source procedural textures; sky/fog/bloom/hemisphere/PMREM not identical; no production GPU claim"
+    },
+    {
+      "image": "bow-taper.png",
+      "note": "Bow taper and fitted deck lip, no per-object normalization",
+      "rig": null,
+      "offline": true,
+      "engine": "native Linux Blender 5.2.1 LTS BLENDER_EEVEE",
+      "limitations": "AgX instead of game ACES; plain vertex palette instead of source procedural textures; sky/fog/bloom/hemisphere/PMREM not identical; no production GPU claim"
+    },
+    {
+      "image": "game-classic.png",
+      "note": "SOURCE CAMERA / HIGH STREAMING SNAPSHOT / OFFLINE LIGHTING APPROXIMATION / shipped player unchanged scale1",
+      "rig": {
+        "mode": "classic",
+        "playerGame": [
+          0,
+          13,
+          300
+        ],
+        "playerScale": [
+          1,
+          1,
+          1
+        ],
+        "eyeGame": [
+          -45.25483399593904,
+          54.255,
+          282.74516600406093
+        ],
+        "targetGame": [
+          0,
+          9,
+          328
+        ],
+        "verticalFov": 52,
+        "orthographicHalfHeight": 40,
+        "steadyVelocity": [
+          0,
+          0,
+          40
+        ],
+        "boostTraumaFraming": [
+          0,
+          0,
+          0
+        ],
+        "quality": "high drawDistance560",
+        "fixtureGeometry": {
+          "triangles": 16588,
+          "primitives": 36,
+          "chunkIndices": [
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76
+          ]
+        }
+      },
+      "offline": true,
+      "engine": "native Linux Blender 5.2.1 LTS BLENDER_EEVEE",
+      "limitations": "AgX instead of game ACES; plain vertex palette instead of source procedural textures; sky/fog/bloom/hemisphere/PMREM not identical; no production GPU claim"
+    },
+    {
+      "image": "game-modern.png",
+      "note": "SOURCE CAMERA / HIGH STREAMING SNAPSHOT / OFFLINE LIGHTING APPROXIMATION / shipped player unchanged scale1",
+      "rig": {
+        "mode": "modern",
+        "playerGame": [
+          0,
+          13,
+          300
+        ],
+        "playerScale": [
+          1,
+          1,
+          1
+        ],
+        "eyeGame": [
+          -9.918584156444393,
+          27,
+          272.74891399720866
+        ],
+        "targetGame": [
+          0,
+          14.2,
+          316
+        ],
+        "verticalFov": 58,
+        "orthographicHalfHeight": null,
+        "steadyVelocity": [
+          0,
+          0,
+          40
+        ],
+        "boostTraumaFraming": [
+          0,
+          0,
+          0
+        ],
+        "quality": "high drawDistance560",
+        "fixtureGeometry": {
+          "triangles": 16588,
+          "primitives": 36,
+          "chunkIndices": [
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76
+          ]
+        }
+      },
+      "offline": true,
+      "engine": "native Linux Blender 5.2.1 LTS BLENDER_EEVEE",
+      "limitations": "AgX instead of game ACES; plain vertex palette instead of source procedural textures; sky/fog/bloom/hemisphere/PMREM not identical; no production GPU claim"
+    },
+    {
+      "image": "game-chase.png",
+      "note": "SOURCE CAMERA / HIGH STREAMING SNAPSHOT / OFFLINE LIGHTING APPROXIMATION / shipped player unchanged scale1",
+      "rig": {
+        "mode": "chase",
+        "playerGame": [
+          0,
+          13,
+          300
+        ],
+        "playerScale": [
+          1,
+          1,
+          1
+        ],
+        "eyeGame": [
+          -2.5086831184236833,
+          22.5,
+          276.13147451116146
+        ],
+        "targetGame": [
+          0,
+          14.2,
+          316
+        ],
+        "verticalFov": 66,
+        "orthographicHalfHeight": null,
+        "steadyVelocity": [
+          0,
+          0,
+          40
+        ],
+        "boostTraumaFraming": [
+          0,
+          0,
+          0
+        ],
+        "quality": "high drawDistance560",
+        "fixtureGeometry": {
+          "triangles": 16588,
+          "primitives": 36,
+          "chunkIndices": [
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76
+          ]
+        }
+      },
+      "offline": true,
+      "engine": "native Linux Blender 5.2.1 LTS BLENDER_EEVEE",
+      "limitations": "AgX instead of game ACES; plain vertex palette instead of source procedural textures; sky/fog/bloom/hemisphere/PMREM not identical; no production GPU claim"
+    },
+    {
+      "image": "cue-radar-0.png",
+      "note": "CPU reconstruction of source radar and neon cues at t=0s; no glTF animation claim",
+      "rig": {
+        "timeSeconds": 0,
+        "radarPivotGame": [
+          94,
+          39,
+          420
+        ],
+        "axisRate": [
+          0,
+          1,
+          0,
+          0.6
+        ],
+        "phaseNote": "Local phase shown for authored effects; world module preparation subtracts landmarkStart/period."
+      },
+      "offline": true,
+      "engine": "native Linux Blender 5.2.1 LTS BLENDER_EEVEE",
+      "limitations": "AgX instead of game ACES; plain vertex palette instead of source procedural textures; sky/fog/bloom/hemisphere/PMREM not identical; no production GPU claim"
+    },
+    {
+      "image": "cue-radar-1.png",
+      "note": "CPU reconstruction of source radar and neon cues at t=1.3s; no glTF animation claim",
+      "rig": {
+        "timeSeconds": 1.3,
+        "radarPivotGame": [
+          94,
+          39,
+          420
+        ],
+        "axisRate": [
+          0,
+          1,
+          0,
+          0.6
+        ],
+        "phaseNote": "Local phase shown for authored effects; world module preparation subtracts landmarkStart/period."
+      },
+      "offline": true,
+      "engine": "native Linux Blender 5.2.1 LTS BLENDER_EEVEE",
+      "limitations": "AgX instead of game ACES; plain vertex palette instead of source procedural textures; sky/fog/bloom/hemisphere/PMREM not identical; no production GPU claim"
+    },
+    {
+      "image": "cue-radar-2.png",
+      "note": "CPU reconstruction of source radar and neon cues at t=2.6s; no glTF animation claim",
+      "rig": {
+        "timeSeconds": 2.6,
+        "radarPivotGame": [
+          94,
+          39,
+          420
+        ],
+        "axisRate": [
+          0,
+          1,
+          0,
+          0.6
+        ],
+        "phaseNote": "Local phase shown for authored effects; world module preparation subtracts landmarkStart/period."
+      },
+      "offline": true,
+      "engine": "native Linux Blender 5.2.1 LTS BLENDER_EEVEE",
+      "limitations": "AgX instead of game ACES; plain vertex palette instead of source procedural textures; sky/fog/bloom/hemisphere/PMREM not identical; no production GPU claim"
+    },
+    {
+      "image": "selected-reference-scale.png",
+      "note": "Selected shipped references at shared world scale1: Sentinel worldX27, player worldX-16, turret/radar/silo/fuel worldZ17. Gallery translations only; source files not modified/repackaged.",
+      "rig": null,
+      "offline": true,
+      "engine": "native Linux Blender 5.2.1 LTS BLENDER_EEVEE",
+      "limitations": "AgX instead of game ACES; plain vertex palette instead of source procedural textures; sky/fog/bloom/hemisphere/PMREM not identical; no production GPU claim"
+    }
+  ],
+  "annotation": "56px offline header added without resizing/cropping the original camera viewport; image dimensions include header."
+}

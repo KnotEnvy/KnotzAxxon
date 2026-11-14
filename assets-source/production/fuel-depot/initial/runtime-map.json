@@ -1,0 +1,157 @@
+{
+  "method": "Fortress._fuelDepot(batch, rng, x, z)",
+  "initialOnly": true,
+  "installedInProduction": false,
+  "startup": "createFuelDepotRecipe(parsed template JSON) once before Game/chunk builds",
+  "recipe": "source/FuelDepotRecipe.mjs",
+  "template": "asset/fuel-depot.template.json",
+  "materialMap": {
+    "hull": {
+      "existing": "materials.hull",
+      "mapped": true,
+      "clone": false,
+      "uv": "Actual Batch dominant-axis world projection, scale 3"
+    },
+    "dark": {
+      "existing": "materials.darkMetal",
+      "mapped": false,
+      "color": "0x3a4a5e",
+      "metalness": 0.5,
+      "roughness": 0.46,
+      "clone": false
+    }
+  },
+  "mergedBuckets": 2,
+  "cachedTemplateGeometries": 2,
+  "methodGameRngDraws": 0,
+  "perPropRoots": 0,
+  "newDrawBuckets": 0,
+  "newTextures": 0,
+  "newEmitters": 0,
+  "perFrameRebuild": false,
+  "surfaceRecords": "Original four saddle-box captures when captureSurfaces enabled, exact float expression order",
+  "chunkRetirement": "Existing Fortress._disposeChunk once; template/material/texture resources survive",
+  "shutdown": "Recipe.dispose idempotent, cached geometry only; shared materials/textures keep original shutdown owner",
+  "parts": [
+    {
+      "name": "port.continuous-shell-formed-heads",
+      "bucket": "hull",
+      "tintHex": "9aa2aa",
+      "triangles": 192
+    },
+    {
+      "name": "port.fore.fitted-saddle",
+      "bucket": "dark",
+      "tintHex": "a6b0b7",
+      "triangles": 24
+    },
+    {
+      "name": "port.fore.retaining-strap",
+      "bucket": "dark",
+      "tintHex": "d4dce1",
+      "triangles": 72
+    },
+    {
+      "name": "port.aft.fitted-saddle",
+      "bucket": "dark",
+      "tintHex": "a6b0b7",
+      "triangles": 24
+    },
+    {
+      "name": "port.aft.retaining-strap",
+      "bucket": "dark",
+      "tintHex": "d4dce1",
+      "triangles": 72
+    },
+    {
+      "name": "port.riser-nozzle",
+      "bucket": "dark",
+      "tintHex": "e4e9ec",
+      "triangles": 24
+    },
+    {
+      "name": "port.valve-flange",
+      "bucket": "dark",
+      "tintHex": "c3ccd2",
+      "triangles": 32
+    },
+    {
+      "name": "port.valve-lever",
+      "bucket": "dark",
+      "tintHex": "e0ded2",
+      "triangles": 12
+    },
+    {
+      "name": "port.end-service-plate",
+      "bucket": "dark",
+      "tintHex": "b4bdc3",
+      "triangles": 12
+    },
+    {
+      "name": "starboard.continuous-shell-formed-heads",
+      "bucket": "hull",
+      "tintHex": "9aa2aa",
+      "triangles": 192
+    },
+    {
+      "name": "starboard.fore.fitted-saddle",
+      "bucket": "dark",
+      "tintHex": "a6b0b7",
+      "triangles": 24
+    },
+    {
+      "name": "starboard.fore.retaining-strap",
+      "bucket": "dark",
+      "tintHex": "d4dce1",
+      "triangles": 72
+    },
+    {
+      "name": "starboard.aft.fitted-saddle",
+      "bucket": "dark",
+      "tintHex": "a6b0b7",
+      "triangles": 24
+    },
+    {
+      "name": "starboard.aft.retaining-strap",
+      "bucket": "dark",
+      "tintHex": "d4dce1",
+      "triangles": 72
+    },
+    {
+      "name": "starboard.riser-nozzle",
+      "bucket": "dark",
+      "tintHex": "e4e9ec",
+      "triangles": 24
+    },
+    {
+      "name": "starboard.valve-flange",
+      "bucket": "dark",
+      "tintHex": "c3ccd2",
+      "triangles": 32
+    },
+    {
+      "name": "starboard.valve-lever",
+      "bucket": "dark",
+      "tintHex": "e0ded2",
+      "triangles": 12
+    },
+    {
+      "name": "starboard.end-service-plate",
+      "bucket": "dark",
+      "tintHex": "b4bdc3",
+      "triangles": 12
+    },
+    {
+      "name": "center.longitudinal-manifold",
+      "bucket": "dark",
+      "tintHex": "e4e9ec",
+      "triangles": 32
+    },
+    {
+      "name": "center.connected-cross-header",
+      "bucket": "dark",
+      "tintHex": "e4e9ec",
+      "triangles": 32
+    }
+  ]
+}

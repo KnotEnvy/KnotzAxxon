@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "method": "CPU fixture exercises delivered binding recipe and exact current source disposeModel / Enemy.dispose; NOT a real GLTFLoader integration test",
+  "disposalCounts": {
+    "geometries": 4,
+    "clonedMaterials": 4,
+    "flash": 1,
+    "sharedNeon": 0
+  },
+  "noDoubleDispose": true,
+  "sharedNeonPreserved": true,
+  "flashScalePreserved": 1.2,
+  "adapterIntegrated": false
+}

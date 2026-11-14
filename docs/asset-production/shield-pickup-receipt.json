@@ -1,0 +1,13 @@
+{
+  "archive": "shield-pickup-initial-20261114T163604542678Z.tar.gz",
+  "sha256": "f8edd3c789847f46a627d5c734ae2a1bf3648c31362925c20bfe98702403c601",
+  "contentHashesVerified": 91,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/shield-pickup/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "glbSha256": "8619ec08a7fce0679408172052a009073e1dcd39356374ab3b2608993981d4ae",
+  "blendSha256": "17a73c5870b13f81cca418db29dfcee9213b7d54fb10d58535443985069400d7",
+  "builderCompletionHashesMatch": true,
+  "readOnly": true,
+  "executableModesRetained": true
+}

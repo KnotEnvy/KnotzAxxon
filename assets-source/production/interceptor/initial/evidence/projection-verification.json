@@ -1,0 +1,32 @@
+{
+  "rest": {
+    "frame_width": 8.399999618530273,
+    "frame_height": 6.299999713897705,
+    "sensor_fit": "HORIZONTAL",
+    "verified": true
+  },
+  "common-neutral": {
+    "frame_width": 14.0,
+    "frame_height": 10.5,
+    "sensor_fit": "HORIZONTAL",
+    "verified": true
+  },
+  "classic": {
+    "frame_width": 142.22222900390625,
+    "frame_height": 80.0,
+    "sensor_fit": "HORIZONTAL",
+    "verified": true
+  },
+  "modern": {
+    "requested_vertical_fov": 58,
+    "measured_vertical_fov": 57.999994966368355,
+    "sensor_fit": "VERTICAL",
+    "verified": true
+  },
+  "chase": {
+    "requested_vertical_fov": 66,
+    "measured_vertical_fov": 66.00000224638241,
+    "sensor_fit": "VERTICAL",
+    "verified": true
+  }
+}

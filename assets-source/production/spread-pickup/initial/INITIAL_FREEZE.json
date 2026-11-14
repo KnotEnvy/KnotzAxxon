@@ -1,0 +1,8 @@
+{
+  "frozen_at_utc": "20261114T170011058096Z",
+  "status": "pending_deferred_opus_review",
+  "formal_reviews": 0,
+  "formal_review_fix_passes": 0,
+  "mutation_policy": "Never edit INITIAL; authorized future revisions use another folder",
+  "filesystem_protection": "Read-only 0444 files / 0555 directories, not OS immutable-flag protection"
+}

@@ -1,0 +1,48 @@
+{
+  "clean_scene": true,
+  "visible": {
+    "triangles": 2640,
+    "material_primitives": 6,
+    "bounds_game": {
+      "min": [
+        -2.799999952316284,
+        -0.41341304779052734,
+        -1.9500000476837158
+      ],
+      "max": [
+        2.799999952316284,
+        0.7200000286102295,
+        1.4900000095367432
+      ]
+    }
+  },
+  "hidden_flash": {
+    "triangles": 220,
+    "material_primitives": 1,
+    "bounds_game": {
+      "min": [
+        -2.9119999408721924,
+        -0.3951999843120575,
+        -1.5911998748779297
+      ],
+      "max": [
+        2.9119999408721924,
+        0.3327999711036682,
+        1.3727999925613403
+      ]
+    }
+  },
+  "axes": "Independent binary reader verifies nose marker (0,0,2), up marker (0,1,0); Blender reimport bounds converted with (x,z,-y).",
+  "bounds_and_counts_match_blend": true,
+  "all_imported_nodes": [
+    "axis_nose_plusZ",
+    "axis_up_plusY",
+    "body",
+    "drone_root",
+    "engine",
+    "eye",
+    "flash_shell",
+    "shot_world_offset_reference",
+    "weapon_mouth_reference"
+  ]
+}

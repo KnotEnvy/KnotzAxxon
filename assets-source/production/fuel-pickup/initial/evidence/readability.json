@@ -1,0 +1,37 @@
+{
+  "pixel_sizes": [
+    {
+      "mode": "classic",
+      "context": "near",
+      "native_badge_pixel_width": 28.297691345214844
+    },
+    {
+      "mode": "classic",
+      "context": "far",
+      "native_badge_pixel_width": 28.297691345214844
+    },
+    {
+      "mode": "modern",
+      "context": "near",
+      "native_badge_pixel_width": 46.65962219238281
+    },
+    {
+      "mode": "modern",
+      "context": "far",
+      "native_badge_pixel_width": 25.719337463378906
+    },
+    {
+      "mode": "chase",
+      "context": "near",
+      "native_badge_pixel_width": 46.63905143737793
+    },
+    {
+      "mode": "chase",
+      "context": "far",
+      "native_badge_pixel_width": 23.38362693786621
+    }
+  ],
+  "grayscale": "Decode sRGB -> linear Rec709 luminance (.2126,.7152,.0722) -> encode sRGB; no contrast enhancement.",
+  "assessment": "Manual visual inspection required; Drum silhouette and two rolled bands are the primary non-color cues; small/far views require recorded manual assessment, not a text-readability guarantee. Far perspective views are smaller; no claim of text readability or final art approval.",
+  "sampling": "Contact sheets downsample whole frames with nearest-neighbor only for presentation. Native crop files and small-gameplay-readability.png do not resize assets or pixels."
+}

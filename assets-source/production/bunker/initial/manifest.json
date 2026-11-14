@@ -1,0 +1,270 @@
+{
+  "schema": 1,
+  "asset": "Fortress._bunker armoured service bunker passive scenery",
+  "delivery": "INITIAL / best effort",
+  "status": "pending_deferred_opus_review",
+  "formalReviewRounds": 0,
+  "formalFixRounds": 0,
+  "opusReviewPolish": "DEFERRED",
+  "implementationAgent": {
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "xhigh",
+    "harness": "Codex in T3 Code",
+    "speedSetting": "Inherited available speed; no explicit speed override exposed or invented.",
+    "helpers": 0,
+    "alternateProviderRetries": 0
+  },
+  "host": "NitroBliss",
+  "frozenUTC": "2026-11-14T20:34:55.195413+00:00",
+  "sourceCommit": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+  "productionFilesChanged": [],
+  "scope": "Only proposed passive _bunker geometry recipe; original caller/gameplay/collision/camera untouched; no production integration.",
+  "sourceMeasurements": {
+    "triangles": 36,
+    "buckets": {
+      "hull": 12,
+      "neon": 12,
+      "dark": 12
+    },
+    "bounds": [
+      [
+        -3.5,
+        0,
+        -4
+      ],
+      [
+        3.5,
+        4,
+        4
+      ]
+    ],
+    "rngDraws": 1,
+    "density": {
+      "eligibleChunks": 148,
+      "bunkerCount": 86,
+      "histogram": {
+        "zero": 62,
+        "one": 86
+      },
+      "observedMean": 0.581081081081081,
+      "theoreticalProbability": 0.6,
+      "maximumPerChunk": 1
+    },
+    "placementContract": {
+      "localBounds": [
+        [
+          -3.5,
+          0,
+          -4
+        ],
+        [
+          3.5,
+          4,
+          4
+        ]
+      ],
+      "centerX": [
+        19.5,
+        24
+      ],
+      "centerZInChunk": [
+        12,
+        84
+      ],
+      "worldX": [
+        16,
+        27.5
+      ],
+      "worldZInChunk": [
+        8,
+        88
+      ],
+      "laneX": [
+        -16,
+        16
+      ],
+      "minimumLaneClearance": 0,
+      "groundOrigin": [
+        0,
+        0,
+        0
+      ],
+      "caller": "rng.bool(.6), farX(), rng.range(12, CHUNK_LEN-12), then exactly one method rng.next()",
+      "surfaceContract": "Only source neon box then dark roof box are recorded if captureSurfaces is enabled; tapered hull was never recorded."
+    },
+    "preconstructionBudget": {
+      "targetTriangles": [
+        400,
+        650
+      ],
+      "ceilingTriangles": 900,
+      "maxMergedBuckets": 3,
+      "maxGLBBytes": 524288,
+      "newTextures": 0,
+      "targetBounds": [
+        [
+          -3.45,
+          0,
+          -3.95
+        ],
+        [
+          3.45,
+          3.96,
+          3.95
+        ]
+      ]
+    },
+    "measurementUTC": "2026-11-14T19:59:48.739918+00:00"
+  },
+  "geometry": {
+    "triangles": 468,
+    "glbPrimitives": 3,
+    "runtimeBuckets": 3,
+    "bucketTriangles": {
+      "dark": 224,
+      "hull": 242,
+      "neon": 2
+    },
+    "evaluatedBounds": [
+      [
+        -3.450000047683716,
+        0.0,
+        -3.950000047683716
+      ],
+      [
+        3.450000047683716,
+        3.930000066757202,
+        3.950000047683716
+      ]
+    ],
+    "independentBinaryTransformedBounds": [
+      [
+        -3.450000047683716,
+        0.0,
+        -3.950000047683716
+      ],
+      [
+        3.450000047683716,
+        3.930000066757202,
+        3.950000047683716
+      ]
+    ],
+    "sourceEnvelopePreserved": true,
+    "minimumWorldXAtCallerMinimum": 16.05,
+    "minimumLaneClearance": 0.05,
+    "newTextures": 0,
+    "glbBytes": 51652,
+    "triangleCeiling": 900,
+    "targetTriangleRange": [
+      400,
+      650
+    ],
+    "glbByteCeiling": 524288,
+    "editableNamedParts": 52,
+    "generatedDataSHA256": "99736efc61495d5770e47b0903f3aa06f2d80ecca1316e55bda4fab785ed36a5"
+  },
+  "runtime": {
+    "module": "source/BunkerRecipe.mjs",
+    "loadGLB": "createBunkerRecipeFromGLTF(gltf.scene), once before streaming; do not mount scene",
+    "alternateJSON": "createBunkerRecipe(data), once",
+    "stamp": "recipe.stamp(actualBatch,rng,x,z,theme)",
+    "phaseDraws": 1,
+    "aAnim": [
+      3,
+      0.3,
+      "exact original phase draw"
+    ],
+    "gain": 1.1,
+    "hue": "shared theme.warm; citadel #ffb43a, gauntlet #ff6a3a",
+    "materials": {
+      "hull": "existing mapped materials.hull",
+      "dark": "existing unmapped materials.darkMetal",
+      "neon": "existing shared materials.neonVertex"
+    },
+    "perPropRoots": 0,
+    "perPartRuntimeRoots": 0,
+    "materialClones": 0,
+    "perFrameRebuilds": 0,
+    "captureSurfaces": "Exact source neon/dark records and arithmetic/order when enabled",
+    "retirement": "Actual chunk-owned Batch merged geometry disposed once; loader templates and shared materials/textures survive chunks; idempotent loader-template/GLB-preview-resource shutdown; existing shared resources remain managed by their original owners."
+  },
+  "proof": {
+    "sourceChunksCompared": 148,
+    "isolatedBothTemplatePaths": 30,
+    "finiteSourceCameraProbes": 486,
+    "nonBunkerBuffers": "Bitwise identical for all compared attributes after excising only bunker spans",
+    "glbVsJSONMaxAbsoluteBufferErrors": {
+      "pos": 0,
+      "nrm": 4.9620866775512695e-05,
+      "uv": 0,
+      "col": 0,
+      "anim": 0
+    },
+    "lifecycle": {
+      "props": 8,
+      "mergedMeshes": 3,
+      "chunkDisposals": 3,
+      "templateDisposalsAtShutdown": 3,
+      "glbTemplateDisposalsAtShutdown": 3,
+      "glbPreviewMaterialDisposalsAtShutdown": 3,
+      "sharedMaterialDisposals": 0,
+      "sharedTextureDisposals": 0
+    },
+    "blenderReopen": "PASS",
+    "cleanGLBReimport": "PASS",
+    "independentBinaryAudit": "PASS; not Khronos Validator",
+    "viewedEvidence": "evidence/visual-inspection.json"
+  },
+  "authoring": {
+    "blender": "5.2.1 LTS",
+    "buildHash": "9e2066aef7ef",
+    "engine": "BLENDER_EEVEE",
+    "threads": 4,
+    "samples": 24,
+    "viewTransform": "AgX",
+    "look": "AgX - Medium High Contrast",
+    "exposure": 0.6,
+    "geometryTriangles": 468,
+    "editableParts": 52,
+    "exportedBuckets": 3,
+    "textureCount": 0,
+    "packedBlend": "Self-contained mesh/material data; no external images exist to pack.",
+    "materialPreview": "Average source hull-map RGB proxy [.27,.30,.35] sRGB multiplied by source tint and baked height AO; dark exact source base color; source mapped PBR and shared unlit shader remain authoritative."
+  },
+  "limits": [
+    "Offline EEVEE/source-lighting approximations only; CPU materials/DataTexture/deck doubles explicitly labeled.",
+    "No live WebGL/GPU/FPS/hitch/occlusion verification, no final acceptance claim.",
+    "Source procedural hull textures, PMREM, hemisphere, fog, post-FX and rim shaders are not reproduced in PNGs.",
+    "Packed-normal quantization in Blender GLB changes normal components by at most the recorded ~4.9621e-5; no position/UV/color/aAnim buffer error.",
+    "Production integration, receiver verification, formal Opus polish and final adoption are deferred to the orchestrator."
+  ],
+  "assetHashes": {
+    "fortress-bunker.glb": "0cd38bb1b315bf68f3a84139bb73dd5009644c942d56ac03370d0ef7a6986dbb",
+    "fortress-bunker.blend": "1b09bd6b7af79c18f91c892ba476935fac5351a20d6cf3aa96cd9cb15c21516e",
+    "bunker-geometry.json": "99736efc61495d5770e47b0903f3aa06f2d80ecca1316e55bda4fab785ed36a5",
+    "part-runtime-map.json": "125c1e5784d2c791adb882a06cd55a75401150a1f81892bc89f9d6fcf23d3a77"
+  },
+  "freeze": {
+    "policy": "Read-only initial snapshot; no writes after final SHA256SUMS. Archive and sender receipts outside initial.",
+    "checksums": "Every regular file under initial except SHA256SUMS itself; no hidden-file omission.",
+    "transferAllowlist": [
+      "asset",
+      "source",
+      "reference source snapshots",
+      "evidence",
+      "manifest.json",
+      "README.md",
+      "SHA256SUMS"
+    ],
+    "excluded": [
+      "runtime",
+      "tools",
+      "libs",
+      "cache",
+      "temp",
+      "node_modules",
+      "external wrapper",
+      "unrelated asset work"
+    ]
+  }
+}

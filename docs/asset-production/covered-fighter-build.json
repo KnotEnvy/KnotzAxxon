@@ -1,0 +1,15 @@
+{
+  "taskId": "node:delegated-task:command%3Amcp%3A5804c46b-c218-4df6-87ce-ee28f95841db%3Aremote-delegate%3Anitro-sol-covered-fighter-production-20261114-01",
+  "remoteChild": {
+    "environmentId": "543fe9a3-cf00-4f96-8f57-b8d50dd01cd2",
+    "threadId": "mcp:launch:88712d87ae84743c8e768aa914cfef65562ca712445c05bebf1ae32816681430",
+    "label": "NitroBliss"
+  },
+  "link": "[Covered mothballed fighter scenery \u2014 Sol XHigh](t3-thread://v2/543fe9a3-cf00-4f96-8f57-b8d50dd01cd2/mcp:launch:88712d87ae84743c8e768aa914cfef65562ca712445c05bebf1ae32816681430)",
+  "status": "completed",
+  "providerInstanceId": "codex",
+  "model": "gpt-6.1-sol",
+  "options": {
+    "reasoningEffort": "xhigh"
+  }
+}

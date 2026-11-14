@@ -1,4 +1,4 @@
-import { buildImportedGround } from '../render/ImportedModels.js';
+import { buildImportedGround, buildImportedFlyer, buildImportedMine, buildImportedParkedFighter } from '../render/ImportedModels.js';
 import { disposeModel } from '../render/Dispose.js';
 /**
  * Enemies and destructible props.
@@ -173,7 +173,7 @@ export class Turret extends Enemy {
     this.fireTimer = this.rng.range(0.6, 2.2);
     this.burst = 0;
 
-    if (!heavy && buildImportedGround(this, 'turret')) return;
+    if (buildImportedGround(this, heavy ? 'heavy-turret' : 'turret')) return;
     const s = heavy ? 1.5 : 1;
     const baseGeo = geo(`turretBase${heavy}`, () => {
       const g = new THREE.CylinderGeometry(1.5 * s, 1.9 * s, 1.0 * s, 8);
@@ -517,6 +517,8 @@ export class Mine extends Enemy {
     this.phase = this.rng.next() * TAU;
     this.armed = 0;
 
+    if (buildImportedMine(this)) return;
+
     const coreGeo = geo('mineCore', () => new THREE.IcosahedronGeometry(1.2, 0));
     this.core = this.add(coreGeo, (mats.enemyArmor ?? mats.enemyHull));
 
@@ -590,6 +592,8 @@ class Flyer extends Enemy {
     // bank into formation.
     this.launching = !!feature.launch;
     if (this.launching) this.pos.set(58 + this.rng.range(-2, 2), 2 + this.rng.range(-2, 4), this.pos.z);
+
+    if (buildImportedFlyer(this, fast ? 'interceptor' : 'drone')) return;
 
     const bodyGeo = geo(`flyBody${fast}`, () => facetedHull([
       [-1.70, .36, .16, -.22], [-1.05, fast ? .62 : .86, .31, -.30],
@@ -763,6 +767,8 @@ export class ParkedFighter extends Enemy {
     this.scramble = this.rng.bool(0.35);
     this.lift = 0;
     this.velocity = new THREE.Vector3();
+    this.group.rotation.y = this.rng.range(-0.2, 0.2);
+    if (buildImportedParkedFighter(this)) return;
 
     const fuselage = geo('parkedBody', () => mergeParts([
       facetedHull([[-3.7,.025,1.00,.95],[-2.0,.40,1.24,.72],[-.70,.58,1.39,.63],[1.30,.54,1.26,.65],[2.22,.35,1.22,.75]]),
@@ -787,7 +793,6 @@ export class ParkedFighter extends Enemy {
     this.beacon = new THREE.Mesh(geo('parkedBeacon', () => new THREE.SphereGeometry(0.18, 6, 4)), mats.neon(0xff3d55, 3));
     this.beacon.position.set(0, 2.4, 1.6);
     this.group.add(this.beacon);
-    this.group.rotation.y = this.rng.range(-0.2, 0.2);
     this._addFlashShell(fuselage, 1.12);
   }
 

@@ -1,0 +1,13 @@
+{
+  "contract_roll_minus_1p1": {
+    "bank_radians": -1.1,
+    "engine_scale": 1.065,
+    "type": "synthetic exact clamp-endpoint stress pose; sampled real launch approaches the negative endpoint"
+  },
+  "contract_roll_plus_1p1": {
+    "bank_radians": 1.1,
+    "engine_scale": 1.065,
+    "type": "synthetic opposite clamp-endpoint stress pose; not claimed to occur on the standard +58 carrier launch"
+  },
+  "hit_flash": "Opaque emissive-white shell geometry demonstration only. Live runtime must use additive opacity flash*0.75 and hide at zero, per Enemy._addFlashShell contract."
+}

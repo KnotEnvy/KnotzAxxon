@@ -1,0 +1,1463 @@
+{
+  "status": "PASS",
+  "method": "Actual source Batch/Fortress/Level and GLTFLoader with CPU-only materials/DataTexture doubles and no renderer; original production files never modified.",
+  "assertions": [
+    "60 isolated fixtures through BOTH generated-JSON and actual GLTFLoader-parsed GLB templates: exact source surfaces and one-draw RNG state; next 32 source/JSON draws identical; exact neon hue/gain/aAnim; GLB/JSON normals agree within 2e-4 (Blender packed-normal quantization), other buffers within 2e-5 and all bounds exactly.",
+    "148 complete actual source chunks: all non-bunker position/normal/UV/color/animation/pivot/spin buffers bitwise identical after excising only bunker spans; placements, caller RNG states, emitted steam/heat data and deck surfaces identical.",
+    "Eight props merge into three actual Batch meshes; chunk geometry receives exactly one disposal each; templates/materials survive retirement; loader shutdown disposes each template once idempotently and no shared materials/textures."
+  ],
+  "glbMaxAbsoluteError": {
+    "pos": 0,
+    "nrm": 0.000049620866775512695,
+    "uv": 0,
+    "col": 0,
+    "anim": 0
+  },
+  "isolated": [
+    {
+      "seed": 1,
+      "theme": "citadel",
+      "x": 0,
+      "triangles": 468,
+      "bounds": [
+        [
+          -3.450000047683716,
+          0,
+          12341.2998046875
+        ],
+        [
+          3.450000047683716,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "theme": "citadel",
+      "x": 19.5,
+      "triangles": 468,
+      "bounds": [
+        [
+          16.049999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          22.950000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "theme": "citadel",
+      "x": 24,
+      "triangles": 468,
+      "bounds": [
+        [
+          20.549999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          27.450000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "theme": "gauntlet",
+      "x": 0,
+      "triangles": 468,
+      "bounds": [
+        [
+          -3.450000047683716,
+          0,
+          12341.2998046875
+        ],
+        [
+          3.450000047683716,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "theme": "gauntlet",
+      "x": 19.5,
+      "triangles": 468,
+      "bounds": [
+        [
+          16.049999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          22.950000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "theme": "gauntlet",
+      "x": 24,
+      "triangles": 468,
+      "bounds": [
+        [
+          20.549999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          27.450000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "theme": "citadel",
+      "x": 0,
+      "triangles": 468,
+      "bounds": [
+        [
+          -3.450000047683716,
+          0,
+          12341.2998046875
+        ],
+        [
+          3.450000047683716,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "theme": "citadel",
+      "x": 19.5,
+      "triangles": 468,
+      "bounds": [
+        [
+          16.049999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          22.950000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "theme": "citadel",
+      "x": 24,
+      "triangles": 468,
+      "bounds": [
+        [
+          20.549999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          27.450000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "theme": "gauntlet",
+      "x": 0,
+      "triangles": 468,
+      "bounds": [
+        [
+          -3.450000047683716,
+          0,
+          12341.2998046875
+        ],
+        [
+          3.450000047683716,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "theme": "gauntlet",
+      "x": 19.5,
+      "triangles": 468,
+      "bounds": [
+        [
+          16.049999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          22.950000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "theme": "gauntlet",
+      "x": 24,
+      "triangles": 468,
+      "bounds": [
+        [
+          20.549999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          27.450000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 42,
+      "theme": "citadel",
+      "x": 0,
+      "triangles": 468,
+      "bounds": [
+        [
+          -3.450000047683716,
+          0,
+          12341.2998046875
+        ],
+        [
+          3.450000047683716,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 42,
+      "theme": "citadel",
+      "x": 19.5,
+      "triangles": 468,
+      "bounds": [
+        [
+          16.049999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          22.950000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 42,
+      "theme": "citadel",
+      "x": 24,
+      "triangles": 468,
+      "bounds": [
+        [
+          20.549999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          27.450000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 42,
+      "theme": "gauntlet",
+      "x": 0,
+      "triangles": 468,
+      "bounds": [
+        [
+          -3.450000047683716,
+          0,
+          12341.2998046875
+        ],
+        [
+          3.450000047683716,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 42,
+      "theme": "gauntlet",
+      "x": 19.5,
+      "triangles": 468,
+      "bounds": [
+        [
+          16.049999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          22.950000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 42,
+      "theme": "gauntlet",
+      "x": 24,
+      "triangles": 468,
+      "bounds": [
+        [
+          20.549999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          27.450000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "theme": "citadel",
+      "x": 0,
+      "triangles": 468,
+      "bounds": [
+        [
+          -3.450000047683716,
+          0,
+          12341.2998046875
+        ],
+        [
+          3.450000047683716,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "theme": "citadel",
+      "x": 19.5,
+      "triangles": 468,
+      "bounds": [
+        [
+          16.049999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          22.950000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "theme": "citadel",
+      "x": 24,
+      "triangles": 468,
+      "bounds": [
+        [
+          20.549999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          27.450000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "theme": "gauntlet",
+      "x": 0,
+      "triangles": 468,
+      "bounds": [
+        [
+          -3.450000047683716,
+          0,
+          12341.2998046875
+        ],
+        [
+          3.450000047683716,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "theme": "gauntlet",
+      "x": 19.5,
+      "triangles": 468,
+      "bounds": [
+        [
+          16.049999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          22.950000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "theme": "gauntlet",
+      "x": 24,
+      "triangles": 468,
+      "bounds": [
+        [
+          20.549999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          27.450000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 4294967295,
+      "theme": "citadel",
+      "x": 0,
+      "triangles": 468,
+      "bounds": [
+        [
+          -3.450000047683716,
+          0,
+          12341.2998046875
+        ],
+        [
+          3.450000047683716,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 4294967295,
+      "theme": "citadel",
+      "x": 19.5,
+      "triangles": 468,
+      "bounds": [
+        [
+          16.049999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          22.950000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 4294967295,
+      "theme": "citadel",
+      "x": 24,
+      "triangles": 468,
+      "bounds": [
+        [
+          20.549999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          27.450000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 4294967295,
+      "theme": "gauntlet",
+      "x": 0,
+      "triangles": 468,
+      "bounds": [
+        [
+          -3.450000047683716,
+          0,
+          12341.2998046875
+        ],
+        [
+          3.450000047683716,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 4294967295,
+      "theme": "gauntlet",
+      "x": 19.5,
+      "triangles": 468,
+      "bounds": [
+        [
+          16.049999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          22.950000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    },
+    {
+      "seed": 4294967295,
+      "theme": "gauntlet",
+      "x": 24,
+      "triangles": 468,
+      "bounds": [
+        [
+          20.549999237060547,
+          0,
+          12341.2998046875
+        ],
+        [
+          27.450000762939453,
+          3.930000066757202,
+          12349.2001953125
+        ]
+      ]
+    }
+  ],
+  "chunks": [
+    {
+      "seed": 1,
+      "index": 81,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "f7440a314566263eb445691b53548719d9d8f30523035095a3ab0283591a2d95"
+    },
+    {
+      "seed": 1,
+      "index": 82,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "84a8dd256a662ddce391dcffa54987725460fcba44572a2531e5d0dfa1331f61"
+    },
+    {
+      "seed": 1,
+      "index": 83,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "ba805ee20af48952b4c6c5db9b822ecc6b6e3aef164af3991db41065e1c66e38"
+    },
+    {
+      "seed": 1,
+      "index": 84,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "a47ecb287ef668f58c1b176dbc2095b1b5e7fbf85a2b3c7d769dab7706c2c34f"
+    },
+    {
+      "seed": 1,
+      "index": 85,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "e2234adf0213200a03428b357baa0c96ac8deaad894c6dc3c4c834cd6b05e5d6"
+    },
+    {
+      "seed": 1,
+      "index": 86,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "b37988cbf6f4aed6a96e2f5204c7a24ec12b783b41d187db052f4d4a7cfc46bb"
+    },
+    {
+      "seed": 1,
+      "index": 87,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "ddb4f0fcf2de206a511d28ff0a048e26bf459139312eb1d7f22a0985e317e471"
+    },
+    {
+      "seed": 1,
+      "index": 88,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "2522ba92977b4c1e388f64197dddb095b0305d5fd901cda4ec9d0778de9a68c0"
+    },
+    {
+      "seed": 1,
+      "index": 89,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "17e3dd6d9d119c65fb239901c8f107cab37531a2041def642196d3ecdd20f5ec"
+    },
+    {
+      "seed": 1,
+      "index": 90,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "24a69e61d70bbe863bb6845e2ad289e055046c0217b43c3f333dab4a58565b05"
+    },
+    {
+      "seed": 1,
+      "index": 91,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "e0e190781d2e5b131f0e45db4f0b30ccecfd795999ec970bcb7afb138fdf930c"
+    },
+    {
+      "seed": 1,
+      "index": 92,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "ae7f1573f778050d34cbf873860098042b25f9fe674b1bfc8c385b2fceb1aa19"
+    },
+    {
+      "seed": 1,
+      "index": 93,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "78a57fe403029da5c8cd47957a77f1a9ae8778109d891e26aba5322cda3a1e96"
+    },
+    {
+      "seed": 1,
+      "index": 94,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "674b01ccdb5265ee569720be3a6042f23359b040eee4387653838e5d38cc3ca7"
+    },
+    {
+      "seed": 1,
+      "index": 95,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "465ac8af3741f3067e2733306294f7ef2766c26d6dd538f79aad80fb8a549115"
+    },
+    {
+      "seed": 1,
+      "index": 96,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "471768c7fe7268652e1bfeef3c06970dc16075d1cecb265f34b8c98246db7b8e"
+    },
+    {
+      "seed": 1,
+      "index": 97,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "a179ac37b8374c72ca9b50084b5695eeada21624267e74227e193b37e5558312"
+    },
+    {
+      "seed": 1,
+      "index": 98,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "ee12f14659000eaa2b06c380ba50cc6b246313494809b2b1fdef2fabc0456236"
+    },
+    {
+      "seed": 1,
+      "index": 99,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "6589981f865e926ba353458c32fe1c796cd2f3d900807067dc0618ccbafd5bfa"
+    },
+    {
+      "seed": 1,
+      "index": 100,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "ad0ae231d7b0dee4ad5517d4bbe2542dd20d09e791cfe965e8def98fbfdb5683"
+    },
+    {
+      "seed": 1,
+      "index": 101,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "6a89b020978b277ca8c06934963ab14269ad11b67c784c35eb2fb6be837b0efa"
+    },
+    {
+      "seed": 1,
+      "index": 102,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "69b179bbbbd273274cd482d41216bd648a4f7e3c5bd5c73cb8f333720a16a0c2"
+    },
+    {
+      "seed": 1,
+      "index": 103,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "4131190cc50df245cb09472d46d607a4bdaca7bc5c2eebff0815cbf05403ec65"
+    },
+    {
+      "seed": 1,
+      "index": 104,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "741ba9e11976eec95b05f0846c496de83d0a8ced3f0e432f00b623abba6305d9"
+    },
+    {
+      "seed": 1,
+      "index": 105,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "cdc0e461270683b730132d75f380277c3340576fbc02f95dfbb1a52f159d88fa"
+    },
+    {
+      "seed": 1,
+      "index": 106,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "ca8409c7486ec01e81d86e7e5c679b2adea6df065b161048ad618d4d479240f3"
+    },
+    {
+      "seed": 1,
+      "index": 107,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "c82b397e74fa80aca9ab219b27ae541656423a7fcef3d0ee4e884164a7ccf277"
+    },
+    {
+      "seed": 1,
+      "index": 108,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "7c80bb0ab5a96dd8a6725e5ecc9bdae84a4a60b8827f2bc18e7e990ee43b7b23"
+    },
+    {
+      "seed": 1,
+      "index": 109,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "c30191e359bc8eff63b23cd0acf24dd9f32837a1085e9c00986408b68bbca725"
+    },
+    {
+      "seed": 1,
+      "index": 110,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "67a774fab12a02de26d23a422c6974cd7c5c8bc9df0c1d557870ac05ed4468ae"
+    },
+    {
+      "seed": 1,
+      "index": 111,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "8101f4c862a1bde9eb09c323dee3f38f21f68fc0de8e938f64cc13fab80f808d"
+    },
+    {
+      "seed": 1,
+      "index": 112,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "8ff4f9c98b68066e9a0ac23de1802253b9ee0f2c223f94164c83ee6031f66ea6"
+    },
+    {
+      "seed": 1,
+      "index": 113,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "2836b0fa80d9f2d85b6d61a01b1f4fc3b293eafe4f446f0305425c62a9974b6a"
+    },
+    {
+      "seed": 1,
+      "index": 114,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "9fece2d01fe8e17744ed5850548e9bc1670994a4d2eb307aadcbadc8ab6857d1"
+    },
+    {
+      "seed": 1,
+      "index": 115,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "7d421552122e1c250ab40d4d75ccaafca16b1499f76eb14828b6a6d0dfb92e42"
+    },
+    {
+      "seed": 1,
+      "index": 116,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "1b0a084f0985d9aa4b5f675134e95fe8d8df227fc768235ad9b6b6ebd9b79e62"
+    },
+    {
+      "seed": 1,
+      "index": 117,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "afd086a0989eb117e3b195c61ebb8c0e7ae2d03f2d6f38fbbbf6345f6b05dbb6"
+    },
+    {
+      "seed": 7,
+      "index": 81,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "07bd3c0930f42860e5232b4870d3660e673622ef266bb11a52200928f0441075"
+    },
+    {
+      "seed": 7,
+      "index": 82,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "a57a1572c3ba166ac649a4c15f2397b02f40abc960af5d43578cbd961f0edb3d"
+    },
+    {
+      "seed": 7,
+      "index": 83,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "60b068e1cab8a931ccd39b6eb40d1f8c919106e978c261a016e5df759c337d67"
+    },
+    {
+      "seed": 7,
+      "index": 84,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "7793297dcc89dadcea6e12437f18185b96a628c6778658dcfd32558b590ff0fd"
+    },
+    {
+      "seed": 7,
+      "index": 85,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "bc7a8d57e644860145a11120a6d2222416bdf6319f2273ce37ca2b934d0d07bb"
+    },
+    {
+      "seed": 7,
+      "index": 86,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "c6fd9119f452a7035678752334c3264a8727fadf7cd1f8e8fb89ceddc4c36445"
+    },
+    {
+      "seed": 7,
+      "index": 87,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "42005b783ae69fc0d7d1889238d249365834aab7ecf8a021b2648f6704f43143"
+    },
+    {
+      "seed": 7,
+      "index": 88,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "b838bb187a805ddd3c227b416a0f8d5e44c4798516188bac6300d316ed5718c0"
+    },
+    {
+      "seed": 7,
+      "index": 89,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "b98379078fcb472d07269e1c3ef8317f0118bb330334bac13136470b74c396e5"
+    },
+    {
+      "seed": 7,
+      "index": 90,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "a9b064fef30a5decee3ae87fa1709b5343921dd0f7f5cb82eb1d16c936f24a58"
+    },
+    {
+      "seed": 7,
+      "index": 91,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "0ad82d543501c9b2f374466600465aba668c82365c0e48dbf33eff55ef359f8c"
+    },
+    {
+      "seed": 7,
+      "index": 92,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "db7bea0dfead001be6a4c5cc40d78a69c3d176e0d6615b9344c394fa4dab4ce0"
+    },
+    {
+      "seed": 7,
+      "index": 93,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "7e407cc49299e4aa382c166a7ed553b33d93a15982eb0d7618ea604aced549b5"
+    },
+    {
+      "seed": 7,
+      "index": 94,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "f481a52f6e4ca233613168222635dad0f779feba87d3a6346e13ace3decfdefd"
+    },
+    {
+      "seed": 7,
+      "index": 95,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "887227952886496cba38caec173bab695ead6954f8e16dc96017964f8f438a91"
+    },
+    {
+      "seed": 7,
+      "index": 96,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "b343b80a520e814aa84fe80dbcbd80e6218e75f64c9e99152cfcc8c0a6d3e0fb"
+    },
+    {
+      "seed": 7,
+      "index": 97,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "0eca55669f3cb9ecf10e9241dc9607431ecdb843601cdf0b7d2e2a87557a3929"
+    },
+    {
+      "seed": 7,
+      "index": 98,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "9ce88416c8ca746eaf252a67518401757f39a472f1bc81c2220529ce2649c108"
+    },
+    {
+      "seed": 7,
+      "index": 99,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "77b46b815f1227445f8ba688418da38554b69f7e3825b0696f97eb3226b66d55"
+    },
+    {
+      "seed": 7,
+      "index": 100,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "918872ca7ecb4b2b9c64884cb084b50c79bb751bb688338f23b4791016b5c756"
+    },
+    {
+      "seed": 7,
+      "index": 101,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "0b8fcba49e09fb8f796ca355db89b8d5be07e5783a8095c6772d2f8f2fb67a4e"
+    },
+    {
+      "seed": 7,
+      "index": 102,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "715d55fef96420d9c4e436c9d3b838efcb4b90c84409c1c03b1c05e08ee5c884"
+    },
+    {
+      "seed": 7,
+      "index": 103,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "949ffb5367ef10eca473a1761368aa3157b4a3c479c06f1109d63aa37186b5e1"
+    },
+    {
+      "seed": 7,
+      "index": 104,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "20d40ddf453c524f5e806b81dcc49a129b37c79c6dcb82c3aca7c875c71f29aa"
+    },
+    {
+      "seed": 7,
+      "index": 105,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "6a8638144b10dbf7e00ad07f3515424d4c195fc7881e1bb9ea8aaab14fe2d808"
+    },
+    {
+      "seed": 7,
+      "index": 106,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "d1cf36f3c50d20d0fc19a78f4fc0128a2a7c42ab412a86cf09e6e9773f787993"
+    },
+    {
+      "seed": 7,
+      "index": 107,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "b57c05898bc29449c9aad6d51cd337ff0aa6e42ca965df0fb4e6e81316e734a3"
+    },
+    {
+      "seed": 7,
+      "index": 108,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "c2089dac86516210ed1bc7f8a5ccb0aedb95066d13b6e0cff79e256c832922cf"
+    },
+    {
+      "seed": 7,
+      "index": 109,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "5f29496d9a2309f904fe814cdf161363f5e70040e7c71942c862e591aa8f5b60"
+    },
+    {
+      "seed": 7,
+      "index": 110,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "59a7cd07d7e9573992ed217db7e43501978ecc20317486fa5105751034325b33"
+    },
+    {
+      "seed": 7,
+      "index": 111,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "a0544983f52defae9dd70a9e930c75ef998845880ce23a109e4074ed75f5f97e"
+    },
+    {
+      "seed": 7,
+      "index": 112,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "03f3b30029740418ece7f53457ad5018ec2074b046e0856c9c9743a347309556"
+    },
+    {
+      "seed": 7,
+      "index": 113,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "bd5f8b4eeec951d2765cb8c0e7bcf35dc4cca38fc0b09a9f6031343b14d2b7c2"
+    },
+    {
+      "seed": 7,
+      "index": 114,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "ab163a6334520530884d6b3517686e2a32d47c9377ba1fe8a0e31272309f0658"
+    },
+    {
+      "seed": 7,
+      "index": 115,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "d5a11244aedbbe489c5c6b241fe83a61807726702ed3a28f76e854cd833bacee"
+    },
+    {
+      "seed": 7,
+      "index": 116,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "3f119b1f2ed551efece50542735d0945282f53ca48def68a259a8db3350ca64f"
+    },
+    {
+      "seed": 7,
+      "index": 117,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "5e4ab6695aed4f62d0527c922bd09e4033a3c61b73423f4951a6378230e97fa9"
+    },
+    {
+      "seed": 42,
+      "index": 81,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "eafc0de8bea3b336b88654f63a0cca51bc59d26878be907b24e000b33f49c234"
+    },
+    {
+      "seed": 42,
+      "index": 82,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "6a6fed2a28d2a9dd75cd3f57cc9caa8f877fcb7147ef20822f18b5b0a42f6464"
+    },
+    {
+      "seed": 42,
+      "index": 83,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "8a8e630369fab424117b73aad0d26eb39e18997ec5ffa6024ad9d8012bb230a0"
+    },
+    {
+      "seed": 42,
+      "index": 84,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "5a50fda3d4c37f2020df4aa8f4827df2a0d8255fea30d29ce19991fb3d5ae7ea"
+    },
+    {
+      "seed": 42,
+      "index": 85,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "6e636940ce6b326db0cd3785121f4379cf46b3b4afc9f01f132b99ffc282ade7"
+    },
+    {
+      "seed": 42,
+      "index": 86,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "a412a1510d728212a2c79a21e3ec739a20bfce888145f6f73f304da791387199"
+    },
+    {
+      "seed": 42,
+      "index": 87,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "31bcbc9313dc37d53c99fa69b1154ed0d1a6fa95dd3b53a36296189258137bb5"
+    },
+    {
+      "seed": 42,
+      "index": 88,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "ed43b21bdfadbf1eb04a113a703083667d45ab6b9d91f23a245a655588001138"
+    },
+    {
+      "seed": 42,
+      "index": 89,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "90f62ccfbf2ee00eb5e8b6f6a384933932f9b7e1dd8e7390da97bd2333e740f6"
+    },
+    {
+      "seed": 42,
+      "index": 90,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "6ca9105e16900b9509ae6819d78f51d6359df98181a821c1362ecb0000c147c8"
+    },
+    {
+      "seed": 42,
+      "index": 91,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "100ccf717c4a9dadf47ca471ca80fd1170b9553321ddb0c3474d073daeee3850"
+    },
+    {
+      "seed": 42,
+      "index": 92,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "6d9d87623ab6376e2e6855709957af52ec44ce130842a1460f9a8a6a3f3eacad"
+    },
+    {
+      "seed": 42,
+      "index": 93,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "de0e8ee7a91e833aa5210f109bf10055a8f1e4f2a57e9526c42dce4443b5b70d"
+    },
+    {
+      "seed": 42,
+      "index": 94,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "276be6b70dfd6ff8976ee2f363f150b8e297ab701620ce4d1a38be89fcf1eaf8"
+    },
+    {
+      "seed": 42,
+      "index": 95,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "c7116b91e31c29bae4d3e711c28154fd73444c4cce037739c18ff6d108a47c17"
+    },
+    {
+      "seed": 42,
+      "index": 96,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "462fb4d1ba97a2736590eafa67b4b86b34a6dad726bd075d4c4381e7fa6eb6a9"
+    },
+    {
+      "seed": 42,
+      "index": 97,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "dbe41be2039c75b011f920218f503729096822342cea25c812687803d78d17e8"
+    },
+    {
+      "seed": 42,
+      "index": 98,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "c4c4b233d35ee96ad78596db0c0ec1cbc354c00db832a80377ef45c6fff5f418"
+    },
+    {
+      "seed": 42,
+      "index": 99,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "0cad11d22d91dcfbeddbbe75df8a57719f162a4f8a15dba8cb660303b51c05f9"
+    },
+    {
+      "seed": 42,
+      "index": 100,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "6cb6aa616797f9912397098df39be486cb1e3b444243fc11b1bbfaa9ea72983b"
+    },
+    {
+      "seed": 42,
+      "index": 101,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "1bac21f9712750fb0d902152d26320eb5a9b1721fe7d28266fc303adc50b7e9e"
+    },
+    {
+      "seed": 42,
+      "index": 102,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "78444af5351f806df2b013a160f8c95c1b0a881407b46864da09e909836d17e3"
+    },
+    {
+      "seed": 42,
+      "index": 103,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "308795eddbc99cb5714e9ad7508b131cbc95f171b492f9d91476470208d2b526"
+    },
+    {
+      "seed": 42,
+      "index": 104,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "c157691bd9b89f2be99584017859a10805f805349487ba45b48bf9bde1b76fad"
+    },
+    {
+      "seed": 42,
+      "index": 105,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "2ce86b9d2189e986ec90f33c429c659790d990d8ca0777592bd2a411f4b0682c"
+    },
+    {
+      "seed": 42,
+      "index": 106,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "4cc8a7eabfe5718676d4e3a0a0d9163d74c6245f5683526c2bfede728fe83869"
+    },
+    {
+      "seed": 42,
+      "index": 107,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "53b43dc989f9bc17ffc0f31218213f39b0477b5c03a70a98648dadb76e602ad0"
+    },
+    {
+      "seed": 42,
+      "index": 108,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "1f89ef91484d24d7b3bb68d5b262d27b6e1659477a6b2abbddf810d0f55b5269"
+    },
+    {
+      "seed": 42,
+      "index": 109,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "6d461aaf352c5b7373e6a6a0d4e272a3cf1f8a3fcf214cec63b603012689c2c0"
+    },
+    {
+      "seed": 42,
+      "index": 110,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "ca8fc50bcdc6186db99c16c7773d19f42d8da70bc9be2578943f9e209667b574"
+    },
+    {
+      "seed": 42,
+      "index": 111,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "4684c654ea630240977b54d36a110a5d1f6471e8ba3491826a0d23e4853e110e"
+    },
+    {
+      "seed": 42,
+      "index": 112,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "b9bdeddca7209b695b622ce13126815f8b2aae498eb936aee15e43cdf638ef80"
+    },
+    {
+      "seed": 42,
+      "index": 113,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "fb1a9590ee28f6f69b7b3b61072d7dd3774551b25d7dd7e5a4b68e6a30c996fb"
+    },
+    {
+      "seed": 42,
+      "index": 114,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "dc3e15fe33a322a8395f7caa2bd3e9160cd96d0eb5c910de7475344522b84ac8"
+    },
+    {
+      "seed": 42,
+      "index": 115,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "aafc4b18af18e8a3df35e930e1dd19dc00f87a334aa9aac8271871d3ee1a66e5"
+    },
+    {
+      "seed": 42,
+      "index": 116,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "2a5cfc3382624739c69bc8c5f78a09837973d43bfedcd0c0aed52de0ee0522d5"
+    },
+    {
+      "seed": 42,
+      "index": 117,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "046ef88c002336041e178bc21bd631da531c3b683c892b35335bdd6921f3e731"
+    },
+    {
+      "seed": 123,
+      "index": 81,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "ba8bd78bf92b257390fb42a01562403f443b960604f09f553b5cca27ff79ec1d"
+    },
+    {
+      "seed": 123,
+      "index": 82,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "787dbf6dbc065961faa13d06e33f85f82207d6f36afb699ff981243b6a0b1fce"
+    },
+    {
+      "seed": 123,
+      "index": 83,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "a3e021facca2e8d3af3e988e21ba31544525d3e956c41d679775222422530608"
+    },
+    {
+      "seed": 123,
+      "index": 84,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "48805a938b10428f2ceead4c8e778eab11be29ac2f9428452f040a1b234ab222"
+    },
+    {
+      "seed": 123,
+      "index": 85,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "2c468170f86aa745f89708502555476897f158be9b70b2ad36fa42a5e0223c23"
+    },
+    {
+      "seed": 123,
+      "index": 86,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "20be0d8b3b3788d2c563f50e7c8d1834753739eeffe19409359204d56af39653"
+    },
+    {
+      "seed": 123,
+      "index": 87,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "35ad30446175d28b04494ca5c5377a1cceb6382a156b6f4063f28e9adfe1162b"
+    },
+    {
+      "seed": 123,
+      "index": 88,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "f53280834797a91563825e7c621ba554e397674bfc1a323b03a09efa12b76430"
+    },
+    {
+      "seed": 123,
+      "index": 89,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "0d2b4b9ecf46474ce1516a4eb61a2b06c92458dd610b8066310026b966b0b9a4"
+    },
+    {
+      "seed": 123,
+      "index": 90,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "1d07e420b86893fcd3a531fe73dc280bb03788efa3c519e114c2320983bb4207"
+    },
+    {
+      "seed": 123,
+      "index": 91,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "4e8ea5f530840600be9e008b2a015fbafa93029459a21448d9895398bf2f8e42"
+    },
+    {
+      "seed": 123,
+      "index": 92,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "691170e7e1a1e07d91cdee47c0e93bd5c8cd977ec953d046913d9f8b8efff2f7"
+    },
+    {
+      "seed": 123,
+      "index": 93,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "7ff0d7439b967fc69117367f298dfab41e22697c3d844b6d5663762602e94073"
+    },
+    {
+      "seed": 123,
+      "index": 94,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "5b515da2d557daea4eb65a576979debd2329a9a971aa9d9c7426738ca7b9e3ac"
+    },
+    {
+      "seed": 123,
+      "index": 95,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "5f5f38a8a22d53b6557db9ccbee6988841f22afbf2f537688f8c24b9e43d118a"
+    },
+    {
+      "seed": 123,
+      "index": 96,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "36ee9951847fc748551a44960326d8a7cd24ae3e93e07d962e367479ce5363b1"
+    },
+    {
+      "seed": 123,
+      "index": 97,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "7a5158ae7c9aa7ebbc918882807f87654b85f444d4f8ba55c5efb43beaa6b27a"
+    },
+    {
+      "seed": 123,
+      "index": 98,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "ca8b25119f0c40e9133e6a14bf25145a61b0ae73c25f3b30825e149552ac91d6"
+    },
+    {
+      "seed": 123,
+      "index": 99,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "8bb8554fd2b53b95b964dc354b082b21767f9fd3b163b62f08cf9f8751ef6164"
+    },
+    {
+      "seed": 123,
+      "index": 100,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "595e8b4c50fe7ab78928704600bb8aa0dc8aab9ae153f810deba04522cebc6cc"
+    },
+    {
+      "seed": 123,
+      "index": 101,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "05ec93fb418ff903efe46958a66a8c69359a50edddaad7f11af77983db4c07b4"
+    },
+    {
+      "seed": 123,
+      "index": 102,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "940b66dd95dc10fe9edad9e114c37a302b25a1cda7db6f85be4f9917e8323de5"
+    },
+    {
+      "seed": 123,
+      "index": 103,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "2e831199f995e9c95741832110d5d9d31a309c5ef9d8f48847b357f7dc5ae4d1"
+    },
+    {
+      "seed": 123,
+      "index": 104,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "edceace7c87f6ba021fc235311d1556a3047cc402d305e0b91be2b2df6312ea5"
+    },
+    {
+      "seed": 123,
+      "index": 105,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "7642618b743dfa7955ec1a7e0a940e0afa1fc8846bbff4e4321677da1ed49fc2"
+    },
+    {
+      "seed": 123,
+      "index": 106,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "db2bf38d5f666e967f3831e107da4bdb432ca6e3073296a38bf8e2533e19b24a"
+    },
+    {
+      "seed": 123,
+      "index": 107,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "18b948def9f95509a2e868547a5cdc20f5b0d86513297f1939406825bde1702e"
+    },
+    {
+      "seed": 123,
+      "index": 108,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "4acc6741d3ae9e07a25e4fc74c2ced8aa024a1dde2591cbac2421c14dc020841"
+    },
+    {
+      "seed": 123,
+      "index": 109,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "71dc98818bf83d6b9908d60bdb63f0b3a670ba186b43b0b6ec616c27e56d64b8"
+    },
+    {
+      "seed": 123,
+      "index": 110,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "f31057cd8cc9ce821ed50d4dd2dfb585e74fba43d19c94daa475f6cab41158ba"
+    },
+    {
+      "seed": 123,
+      "index": 111,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "8dec4f6a757fd6b901cbdc5a9eee118d086a03c0f601bbbb7c4920f28d6922cb"
+    },
+    {
+      "seed": 123,
+      "index": 112,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "a5bb9fc55af4b7839d315bbbddff0a3487db502f904a8f802a54bee2afe8b216"
+    },
+    {
+      "seed": 123,
+      "index": 113,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "7ceba3b88df02e890d376eba89cf4ac498d32b857e1dfbb6e71ee202318cbaa9"
+    },
+    {
+      "seed": 123,
+      "index": 114,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "e718177881612143f403341c7bc739a0c80a6f8ca7e3aaec83c036f6066779e9"
+    },
+    {
+      "seed": 123,
+      "index": 115,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "5697c982903371a82908232ffb59ac71e2317d05c6da3c20aea20e26c10745b3"
+    },
+    {
+      "seed": 123,
+      "index": 116,
+      "bunkers": 0,
+      "nonBunkerBufferHash": "aaddaf886ddbff47f135cb0abc08e995d9d5fb35a67ae9a2d7f25e6d740a9f58"
+    },
+    {
+      "seed": 123,
+      "index": 117,
+      "bunkers": 1,
+      "nonBunkerBufferHash": "9f8839efd56820bf5ffb2f7fd9c51ae7543f30d46388faeccc4423e9fde2bbf1"
+    }
+  ],
+  "lifecycle": {
+    "props": 8,
+    "mergedMeshes": 3,
+    "chunkDisposals": 3,
+    "templateDisposalsAtShutdown": 3,
+    "glbTemplateDisposalsAtShutdown": 3,
+    "glbPreviewMaterialDisposalsAtShutdown": 3,
+    "sharedMaterialDisposals": 0,
+    "sharedTextureDisposals": 0
+  },
+  "limitations": [
+    "No live WebGL shader compilation, GPU lighting, FPS or streaming hitch measurement.",
+    "No production integration performed; recipe requires explicit loader initialization and shutdown hook.",
+    "CPU doubles do not instantiate mapped procedural hull textures or exercise source material shader patches."
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "coordinate_contract": {
+    "game": "+Y up / +Z forward",
+    "local_badge_plane": "XY",
+    "front_normal": "+Z",
+    "blender_from_game": "(x,-z,y)",
+    "gltf_from_blender": "(x,z,-y)",
+    "export_yup": true,
+    "post_load_correction": "NONE; no scaling, normalization or extra rotation"
+  },
+  "root": {
+    "name": "repair_pickup_root",
+    "translation": [
+      0,
+      0,
+      0
+    ],
+    "rotation_xyzw": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "parent": "existing Pickup.group (pos pointer retained, quaternion copies ctx.camera.quaternion every frame)",
+    "source_local_matrix_row_major": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  "handles": {
+    "shell": {
+      "type": "Mesh",
+      "game_pivot": [
+        0,
+        0,
+        0
+      ],
+      "axis": "local +Z",
+      "material": "repair_shell_green_unlit",
+      "motion": "rotation.z+=dt*.3; scale.setScalar(1+sin(phase*4)*.025)",
+      "owned_per_clone": true,
+      "toneMapped": false,
+      "source_local_matrix_row_major": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "authored_local_rotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "authored_local_scale": [
+        1,
+        1,
+        1
+      ],
+      "authored_world_matrix_row_major": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "core": {
+      "type": "Mesh",
+      "game_pivot": [
+        0,
+        0,
+        -0.3
+      ],
+      "axis": "static",
+      "material": "repair_core_titanium",
+      "motion": "none relative to billboard root",
+      "owned_per_clone": true,
+      "toneMapped": true,
+      "source_local_matrix_row_major": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        -0.3,
+        0,
+        0,
+        0,
+        1
+      ],
+      "authored_local_rotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "authored_local_scale": [
+        1,
+        1,
+        1
+      ],
+      "authored_world_matrix_row_major": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.30000001192092896
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "shape": {
+      "type": "Mesh",
+      "game_pivot": [
+        0,
+        0,
+        0.1
+      ],
+      "axis": "local +Z",
+      "material": "repair_shape_ceramic",
+      "motion": "rotation.z=sin(phase*2.2)*.08",
+      "owned_per_clone": true,
+      "toneMapped": false,
+      "source_local_matrix_row_major": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0.1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "authored_local_rotation_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "authored_local_scale": [
+        1,
+        1,
+        1
+      ],
+      "authored_world_matrix_row_major": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10000000149011612
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  },
+  "halo": {
+    "exported": false,
+    "runtime_handle": "Pickup.halo",
+    "type": "existing THREE.Sprite",
+    "color": "0x52ffa8",
+    "shared_cache": "mats._pickupHalos.get(def.color)",
+    "owner": "Materials (not imported asset, instance or adapter)",
+    "opacity": 0.35,
+    "motion": "scale.setScalar(7*(1+sin(phase*4)*.2))",
+    "dispose_by_pickup": false
+  },
+  "per_instance": {
+    "geometries": 3,
+    "materials": 3,
+    "visible_material_primitives": 3,
+    "additional_unchanged_halo_sprite": 1,
+    "textures_created_by_asset": 0,
+    "material_owner_list": "importedRoot.userData.modelOwnedMaterials",
+    "dispose": "disposeModel(this._importedRoot) once; null pointer; detach group. Never dispose halo/template/shared caches.",
+    "geometry_owner": "Per-instance importedRoot; instantiate() clones; disposeModel(importedRoot) frees geometry once. Never procedural/template caches.",
+    "material_owner": "Per-instance modelOwnedMaterials array only; template textures remain global. No asset textures."
+  },
+  "integration": "scripts/adapter_recipe.mjs; recipe only, source unchanged. Invoke after full normal constructor. Existing instantiate() cloning semantics; do not return early before state/halo initialization.",
+  "not_applicable": [
+    "charge",
+    "mechanical detach",
+    "targeting",
+    "shot origins",
+    "healing bubble"
+  ],
+  "source_behavior": {
+    "kind": "repair",
+    "color": "0x52ffa8",
+    "label": "HULL +1",
+    "score": 250,
+    "radius": 2.2,
+    "playerRadius": 1.5,
+    "collectionCenterDistance": 3.7,
+    "despawnBehind": 55,
+    "timedLifetime": null,
+    "velocityRetained": [
+      0,
+      0,
+      0
+    ],
+    "detach": "N/A",
+    "charging": "N/A; pulse only"
+  }
+}

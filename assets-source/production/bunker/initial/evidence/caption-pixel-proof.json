@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "originalRenderPixelsPreservedExactly": true,
+  "pngRoundTripIdentical": true,
+  "topAndBottomGuttersPixels": 50,
+  "captionShadowGeometry": 0,
+  "method": "Pure stdlib PNG filter reversal, opaque caption gutter extension and 5x7 bitmap glyphs; no resizing, cropping or recoloring of render pixels."
+}

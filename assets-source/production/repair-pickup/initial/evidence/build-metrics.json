@@ -1,0 +1,48 @@
+{
+  "blender": "5.2.1 LTS",
+  "build_hash": "9e2066aef7ef",
+  "threads": 4,
+  "engine": "BLENDER_EEVEE",
+  "objects": {
+    "shell": {
+      "triangles": 768,
+      "vertices": 384,
+      "polygons": 384,
+      "materials": [
+        "repair_shell_green_unlit"
+      ],
+      "game_pivot": [
+        0,
+        0,
+        0
+      ]
+    },
+    "core": {
+      "triangles": 44,
+      "vertices": 24,
+      "polygons": 20,
+      "materials": [
+        "repair_core_titanium"
+      ],
+      "game_pivot": [
+        0.0,
+        0.0,
+        -0.3
+      ]
+    },
+    "shape": {
+      "triangles": 116,
+      "vertices": 60,
+      "polygons": 50,
+      "materials": [
+        "repair_shape_ceramic"
+      ],
+      "game_pivot": [
+        0.0,
+        0.0,
+        0.1
+      ]
+    }
+  },
+  "triangles": 928
+}

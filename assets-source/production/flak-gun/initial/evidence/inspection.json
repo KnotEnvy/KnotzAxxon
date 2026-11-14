@@ -1,0 +1,137 @@
+{
+  "performedBy": "Implementation agent gpt-6.1-sol xhigh; direct functions.view_image calls, not a formal reviewer",
+  "recordedAtUTC": "2026-11-14T20:32:10.422773+00:00",
+  "actualViewedPNGs": [
+    {
+      "path": "evidence/hardware-front.png",
+      "sha256": "485cf3685b124aad17f6ce440b5142afe417f4a42903e8f1c1842a69851052e8",
+      "dimensions": [
+        1000,
+        900
+      ]
+    },
+    {
+      "path": "evidence/hardware-bore-close.png",
+      "sha256": "2e791405fd8def21a1d047e7326e45c1e3b1bbd5435124ba6ae9257202cfc4f0",
+      "dimensions": [
+        1000,
+        900
+      ]
+    },
+    {
+      "path": "evidence/hardware-mount-close.png",
+      "sha256": "f3353e1e7d50bf6fc476a436945ab824f7767cd7ec4fb7d25a97efeb07d3e6e6",
+      "dimensions": [
+        1000,
+        900
+      ]
+    },
+    {
+      "path": "evidence/world-classic-source.png",
+      "sha256": "27213a302baeab5ececce91f4e528b796c0afa05ef5ff61190ead6d4c3333754",
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/world-classic-candidate.png",
+      "sha256": "ddf24e4808afd1c1dbe4de99d15fc57eed04bf974f09a6ea0ac7e6af24065a03",
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/world-modern-candidate.png",
+      "sha256": "3d3d3c27ee6168e88ce0b54499b4357c9b6b589bf8eefcf689610f34328c82c1",
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/world-chase-candidate.png",
+      "sha256": "82af192f3001846d81f4b8e41bd898c240496a563c5ffecd87e692aad5e504a9",
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/inspection-hardware-sheet.png",
+      "sha256": "357948d8f4e2f38b7c0134e19b6bc3f3bc95191b3f2dcdc1679018d517f8f25d",
+      "dimensions": [
+        1500,
+        900
+      ]
+    },
+    {
+      "path": "evidence/inspection-pose-extrema-sheet.png",
+      "sha256": "0b42650edfc38a7fd59b983f2ffb2e93d000a07e7218c99cfa46bea9d1ba39a6",
+      "dimensions": [
+        1000,
+        900
+      ]
+    },
+    {
+      "path": "evidence/inspection-world-sheet.png",
+      "sha256": "7863321e452e05879021a0c318227f4b6d382ebfa89fdf73d95a9bcca3c805ac",
+      "dimensions": [
+        1280,
+        1080
+      ]
+    },
+    {
+      "path": "evidence/inspection-shipped-references-sheet.png",
+      "sha256": "9e4630039b9f577b9dcc6ecdb367427e4f37dbf3798cc91a6ff8855828086354",
+      "dimensions": [
+        1500,
+        900
+      ]
+    }
+  ],
+  "contactSheetCoverage": {
+    "inspection-hardware-sheet.png": [
+      "hardware-front.png",
+      "hardware-rear.png",
+      "hardware-side.png",
+      "hardware-top.png",
+      "hardware-bore-close.png",
+      "hardware-mount-close.png"
+    ],
+    "inspection-pose-extrema-sheet.png": [
+      "pose-extreme-1.png",
+      "pose-extreme-2.png",
+      "pose-extreme-3.png",
+      "pose-extreme-4.png"
+    ],
+    "inspection-world-sheet.png": [
+      "world-classic-source.png",
+      "world-classic-candidate.png",
+      "world-modern-source.png",
+      "world-modern-candidate.png",
+      "world-chase-source.png",
+      "world-chase-candidate.png"
+    ],
+    "inspection-shipped-references-sheet.png": [
+      "reference-player.png",
+      "reference-sentinel.png",
+      "reference-turret.png",
+      "reference-radar.png",
+      "reference-silo.png",
+      "reference-fuel.png"
+    ]
+  },
+  "observations": [
+    "Six hardware angles and two full-resolution closeups show coherent connected base/azimuth/yokes/receivers and real dark recessed bores; no new neon or enemy telegraph.",
+    "All four full-source pitch/yaw extrema remain visually connected. No aim range narrowing, discontinuity or alternate elevation origin.",
+    "Classic full-resolution source/candidate comparison retains the original actual roof, existing red warning beacon, wall and shipped player at unchanged common world scale; the gun is a small scenery silhouette.",
+    "Modern and Chase are dominated by existing high wall occlusion: barrel tips remain visible but much of mount is masked. Do not treat projected bounds as visible pixel coverage; no camera/roof/emitter displacement used to conceal it.",
+    "Selected shipped references exhibit metal edge/facet language; no reference meshes or enemy accent/emission palette copied.",
+    "No particle render, live GPU/FPS or final acceptance conclusion. Offline source-lighting proxies and source-material map averages are explicitly labelled."
+  ],
+  "status": "pending_deferred_opus_review",
+  "formalReviews": 0,
+  "formalReviewFixRounds": 0
+}

@@ -1,0 +1,719 @@
+{
+  "status": "PASS — CPU Three.js actual source Batch; not a WebGL/GPU test",
+  "three_version": "185",
+  "changed_source_region_only": {
+    "prefix_sha256": "a8fa4bbd0c5bd45fc6193f8cdf7f9bdc18b22d00c32df33ff5333fd3f2d666fd",
+    "suffix_sha256": "343fcf78e7c4a236e2dcd4ed275a06f0c362236cd58fe299369048cd97176f7f",
+    "production_files_modified": false
+  },
+  "exact_rng_and_unchanged_geometry_trials": [
+    {
+      "sector": 2,
+      "seed": 7919,
+      "z0": 3360,
+      "draws": 182,
+      "finalState": 2632504093,
+      "unchanged_geometry_operations": 70,
+      "unchanged_geometry_hash": "8656dada1babfea46e343a60007fdbf0afea906b08e17cee997b9b36ee5df470",
+      "downstream_32_draw_hash": "48b204b4e1ec435423381879ae6d1a51fcf9efac30ea5f9d26f0a2ad3fb12557"
+    },
+    {
+      "sector": 2,
+      "seed": 15838,
+      "z0": 3456,
+      "draws": 227,
+      "finalState": 3448594973,
+      "unchanged_geometry_operations": 97,
+      "unchanged_geometry_hash": "9cd990d3b7f92a8172996b50994495b97ad3bd7938510d5d814b40d56ec54886",
+      "downstream_32_draw_hash": "1fb7e726c250b783f34f8c73c29bde56ae6582b0009d4bdf37f5e66c01371688"
+    },
+    {
+      "sector": 2,
+      "seed": 23757,
+      "z0": 3552,
+      "draws": 221,
+      "finalState": 1049142606,
+      "unchanged_geometry_operations": 90,
+      "unchanged_geometry_hash": "7f32925ad648228139cb0a2cb3d81dd8cdc6651acbd9b98b2eda3193d0e16e8b",
+      "downstream_32_draw_hash": "f1aa0bc6393763020e54716101f44c4ae9ff3d240d1cebfd36e60535ea8bd4be"
+    },
+    {
+      "sector": 2,
+      "seed": 31676,
+      "z0": 3648,
+      "draws": 216,
+      "finalState": 481256052,
+      "unchanged_geometry_operations": 121,
+      "unchanged_geometry_hash": "5aa0268958bbb96ff683806ab5d3c40a5791ae81138387b4e7163bd09c043538",
+      "downstream_32_draw_hash": "148ae233a5d6001abaa8f626b2715ef7a45017abb7396a82f391f0efbacedcb8"
+    },
+    {
+      "sector": 2,
+      "seed": 39595,
+      "z0": 3744,
+      "draws": 221,
+      "finalState": 1049158444,
+      "unchanged_geometry_operations": 102,
+      "unchanged_geometry_hash": "d8a9e99f6dbb8558129486ba62998ebf7b68dfbf92145991be06f39080583057",
+      "downstream_32_draw_hash": "121337e4c36de577e2b299f3e83e5ea9926f997dc446efec2fe08ca78fbacfe9"
+    },
+    {
+      "sector": 2,
+      "seed": 47514,
+      "z0": 3840,
+      "draws": 239,
+      "finalState": 3952579925,
+      "unchanged_geometry_operations": 123,
+      "unchanged_geometry_hash": "d78d971d1af8123660831bda019d49cb49bdc7ebed66ac692990d061e9bf48b4",
+      "downstream_32_draw_hash": "f73eb63d15f02bb3b33acd6a78ad3964f37700a3ddd325ff72fcbdaf63d94423"
+    },
+    {
+      "sector": 2,
+      "seed": 55433,
+      "z0": 3936,
+      "draws": 217,
+      "finalState": 2312845622,
+      "unchanged_geometry_operations": 101,
+      "unchanged_geometry_hash": "7e854e90aa9d085bba42f33419f8e8d404c3d2ffd0689dd444574a86d733188d",
+      "downstream_32_draw_hash": "193f196c1f8c6bda9afe6753155d441a9cebf7924ec5ac04f60f4abe2da80ad9"
+    },
+    {
+      "sector": 2,
+      "seed": 63352,
+      "z0": 4032,
+      "draws": 250,
+      "finalState": 2624983226,
+      "unchanged_geometry_operations": 123,
+      "unchanged_geometry_hash": "434d618d19d3cd5c6bbd3f9b3d6cdaebdf53fa0d9d6850a03a611c4865819b7f",
+      "downstream_32_draw_hash": "cb3363af34ea6dcf26572de5f87b4c4f0e7ea5fe14ce22cbee8cdae55644e891"
+    },
+    {
+      "sector": 2,
+      "seed": 71271,
+      "z0": 4128,
+      "draws": 217,
+      "finalState": 2312861460,
+      "unchanged_geometry_operations": 125,
+      "unchanged_geometry_hash": "2e2eba050f6bb0899557ffb809321e2133e736c721324281fe3b976e86a7b56b",
+      "downstream_32_draw_hash": "5b8f19b547554383769f1d4e3409f9b3bfdfc82beb304d489cf14f8d0dc66abd"
+    },
+    {
+      "sector": 2,
+      "seed": 79190,
+      "z0": 4224,
+      "draws": 114,
+      "finalState": 2640151664,
+      "unchanged_geometry_operations": 5,
+      "unchanged_geometry_hash": "bc79ed7bb792b09281b108c362201207c27df9e3eaad5765eed20d89a1f8404c",
+      "downstream_32_draw_hash": "f4a88a2a6581897a839f4e37392e8934b1efb17e25351e842b1450980a336760"
+    },
+    {
+      "sector": 2,
+      "seed": 87109,
+      "z0": 4320,
+      "draws": 115,
+      "finalState": 176758100,
+      "unchanged_geometry_operations": 7,
+      "unchanged_geometry_hash": "935127e0de461803aab56ac4280082609fe49e35041010fb7a149858b89f2c8d",
+      "downstream_32_draw_hash": "c98b7504bf09cde05df07ad2a0f6dace8c1fec4f2528603f3c6cc4be326fc4e4"
+    },
+    {
+      "sector": 2,
+      "seed": 95028,
+      "z0": 3264,
+      "draws": 115,
+      "finalState": 176766019,
+      "unchanged_geometry_operations": 7,
+      "unchanged_geometry_hash": "e7cdcbdc6570c80635b5c382891f83558eaa4ee21c89d8b11d7104c4ee44e1da",
+      "downstream_32_draw_hash": "fee98b0b1d2479e60ea539fc50eebb70d5c43f20f3ac6c7195c06e35df492d39"
+    },
+    {
+      "sector": 2,
+      "seed": 102947,
+      "z0": 3360,
+      "draws": 178,
+      "finalState": 3896270461,
+      "unchanged_geometry_operations": 85,
+      "unchanged_geometry_hash": "b0889a9c41584e1098527d9e737a38b7b330d1c95fbe7cf0c37cc16564ac1e08",
+      "downstream_32_draw_hash": "5dc4f91daf40bcee1f535c4c5f0f3f73714d4d7f7683539506dfc1098abb6d3c"
+    },
+    {
+      "sector": 2,
+      "seed": 110866,
+      "z0": 3456,
+      "draws": 201,
+      "finalState": 3072619119,
+      "unchanged_geometry_operations": 99,
+      "unchanged_geometry_hash": "cbdd6360ec144430f1a3e11040b832c7e99b4ff4adeadaaa8a058562fe6fd0bf",
+      "downstream_32_draw_hash": "f8ba59b79451e4772ce6b8c701359c8a4522e17949dba9e59005d71e95a13347"
+    },
+    {
+      "sector": 2,
+      "seed": 118785,
+      "z0": 3552,
+      "draws": 190,
+      "finalState": 105272279,
+      "unchanged_geometry_operations": 117,
+      "unchanged_geometry_hash": "f2cf64568cbcdb453bfbbca6fb47443fb5d54b9f2a13de95f51c3cb25ee2e603",
+      "downstream_32_draw_hash": "cdf2c7f81bafabf2dd2abcd02d1aa9ac31cd72972ef0d1e1eb439cdf12af8c83"
+    },
+    {
+      "sector": 2,
+      "seed": 126704,
+      "z0": 3648,
+      "draws": 203,
+      "finalState": 2440799287,
+      "unchanged_geometry_operations": 98,
+      "unchanged_geometry_hash": "a585e016b05fc373b66c228758a8a0f8e70543920b8720cff272abdaf673287e",
+      "downstream_32_draw_hash": "8fbf2767b1c0b8c25a8acef3407574e6a61a1afbecd2e8d99df430e05699f03b"
+    },
+    {
+      "sector": 2,
+      "seed": 134623,
+      "z0": 3744,
+      "draws": 203,
+      "finalState": 2440807206,
+      "unchanged_geometry_operations": 121,
+      "unchanged_geometry_hash": "548e5c41423e5754d341812aa81193c5f0bdc6bf3364da20becfd38c706feb51",
+      "downstream_32_draw_hash": "83f1502be392a4cb3184609b0d6f155d08d9bdf4baceab2be6083c905d24aae0"
+    },
+    {
+      "sector": 2,
+      "seed": 142542,
+      "z0": 3840,
+      "draws": 243,
+      "finalState": 2689003613,
+      "unchanged_geometry_operations": 98,
+      "unchanged_geometry_hash": "35bb4abecd437de90d75dd5e1da2babaa462e3870825835c95f1edafad98968c",
+      "downstream_32_draw_hash": "4c275c2d56905c55b0330048e48348d0c64af7ae8432264e9a0c5623b8df749a"
+    },
+    {
+      "sector": 2,
+      "seed": 150461,
+      "z0": 3936,
+      "draws": 226,
+      "finalState": 1617163783,
+      "unchanged_geometry_operations": 97,
+      "unchanged_geometry_hash": "4b0bf129c6623a9d3813d641661df678181484d4ccbf9ee5a541bd8c2d533b99",
+      "downstream_32_draw_hash": "00699a45248a7ff433c05176313815e3e7b5b48be725eec2a14a71f7d5590fea"
+    },
+    {
+      "sector": 2,
+      "seed": 158380,
+      "z0": 4032,
+      "draws": 220,
+      "finalState": 3512678712,
+      "unchanged_geometry_operations": 89,
+      "unchanged_geometry_hash": "21c1e51c044c870a6e8515d1d629a187ad9ab511917dfddfd603f591544d5156",
+      "downstream_32_draw_hash": "03e566baa14967298a67764655773605eafdcbc058c68c6916abb22cff3dff4b"
+    },
+    {
+      "sector": 2,
+      "seed": 166299,
+      "z0": 4128,
+      "draws": 229,
+      "finalState": 2816909764,
+      "unchanged_geometry_operations": 103,
+      "unchanged_geometry_hash": "ad08d76c12f9e236461cb4c010dfd0a6ee8af629d30ca360515b1963ad0791a1",
+      "downstream_32_draw_hash": "c19bc0f42ec76e41b5410a902f0c0f1340efd85445a32b48a49809e302e5cd2c"
+    },
+    {
+      "sector": 2,
+      "seed": 174218,
+      "z0": 4224,
+      "draws": 108,
+      "finalState": 240786406,
+      "unchanged_geometry_operations": 31,
+      "unchanged_geometry_hash": "d3c99f91f76c7c81b97befbbf70dc9d68fda02b509b0d5cb51cafbe7b6e99029",
+      "downstream_32_draw_hash": "6ef3a8d7b1dba3d2406b158695d1b9dd6b385d651e129d9b60cc5781ad59b4f3"
+    },
+    {
+      "sector": 2,
+      "seed": 182137,
+      "z0": 4320,
+      "draws": 92,
+      "finalState": 1000512389,
+      "unchanged_geometry_operations": 30,
+      "unchanged_geometry_hash": "8bed7e2a917a85896a907278e145d4c13a10d29bd8e25f7f153e42c5f310d147",
+      "downstream_32_draw_hash": "4e745bf8550bb93c5f0e2fdea3e68c104270861d464bfba4938c51774606c37c"
+    },
+    {
+      "sector": 2,
+      "seed": 190056,
+      "z0": 3264,
+      "draws": 155,
+      "finalState": 425049535,
+      "unchanged_geometry_operations": 32,
+      "unchanged_geometry_hash": "4bb95aa12ff62e25d034c4e023d3c6dbef2e860c367ad92e61d106a754df2f72",
+      "downstream_32_draw_hash": "f1fe6255d4cfe334952c92996be0220d53d87fdda2c964a283c923cb4a177b24"
+    },
+    {
+      "sector": 2,
+      "seed": 197975,
+      "z0": 3360,
+      "draws": 170,
+      "finalState": 2128740873,
+      "unchanged_geometry_operations": 92,
+      "unchanged_geometry_hash": "a5a92119dec88d0008b2f2f9f3450d24fdfed484e9756d35fdcf21b1d067f8a4",
+      "downstream_32_draw_hash": "f2799cd1cc664e4245c0129f808fd2902e537653ecdce03a16f2ea0743e46302"
+    },
+    {
+      "sector": 2,
+      "seed": 205894,
+      "z0": 3456,
+      "draws": 205,
+      "finalState": 1809042807,
+      "unchanged_geometry_operations": 95,
+      "unchanged_geometry_hash": "fdbb73900b42fc03fe1474dc08ea9db8dcb0a17002d9ae77eae9dd450983707b",
+      "downstream_32_draw_hash": "47f3a64a3a33a7547ed2789d772f6c7b1a2daeb955a8feaf1b07b6e6e57daab0"
+    },
+    {
+      "sector": 2,
+      "seed": 213813,
+      "z0": 3552,
+      "draws": 237,
+      "finalState": 289614598,
+      "unchanged_geometry_operations": 91,
+      "unchanged_geometry_hash": "3e0e562ad378bc02a39995f753cdc91277bd7f4908d0b368b2ded8c8e05baf6b",
+      "downstream_32_draw_hash": "a9fec1bcbc365d0f0039e30bf1d7252b99e8917a6d47d052e433b6522a829daf"
+    },
+    {
+      "sector": 2,
+      "seed": 221732,
+      "z0": 3648,
+      "draws": 233,
+      "finalState": 1553293857,
+      "unchanged_geometry_operations": 102,
+      "unchanged_geometry_hash": "cf2cdf70128118844e7a2254378f2a50171787b9651bf382278d8fd63d858f31",
+      "downstream_32_draw_hash": "9990c4087d46e29e50d451df7bffe497c09277c15bb5fb484a4aca2cef4d2320"
+    },
+    {
+      "sector": 2,
+      "seed": 229651,
+      "z0": 3744,
+      "draws": 214,
+      "finalState": 1113289697,
+      "unchanged_geometry_operations": 98,
+      "unchanged_geometry_hash": "b93c52c1f2f9c5be2a7ce2db485dc118cf9449016d6cb90171cd04e512ff96fb",
+      "downstream_32_draw_hash": "1e33755549f2901df2f5225341a1539d429ebdba6296902b5bb9394efd94858c"
+    },
+    {
+      "sector": 2,
+      "seed": 237570,
+      "z0": 3840,
+      "draws": 263,
+      "finalState": 665709237,
+      "unchanged_geometry_operations": 100,
+      "unchanged_geometry_hash": "26a103f370e718d62b0598298b14fb352cac6b7fec93a6be4924592733bc8436",
+      "downstream_32_draw_hash": "03bf1f7f7492fb01163a08f42a23a4ba474be2a428f3b8b75c6856896d4feba5"
+    },
+    {
+      "sector": 2,
+      "seed": 245489,
+      "z0": 3936,
+      "draws": 206,
+      "finalState": 3640648215,
+      "unchanged_geometry_operations": 123,
+      "unchanged_geometry_hash": "01f8a95cb7ae513999fedc4c5be9a774f831e39efe1e33c55e9d9beaec898052",
+      "downstream_32_draw_hash": "96de90a0b2381d78917542f127308abad3963f04829c0d96c506b58537bdab8b"
+    },
+    {
+      "sector": 2,
+      "seed": 253408,
+      "z0": 4032,
+      "draws": 245,
+      "finalState": 2057278809,
+      "unchanged_geometry_operations": 121,
+      "unchanged_geometry_hash": "c6ab3d9d0a6dd695866828fa08bd6d891219ff54b666d1ef7a03182b1367ee0a",
+      "downstream_32_draw_hash": "165aa3831158561dd058dabd87fe04bd6399569ae2a54c5a5e9c92996cd4eabb"
+    },
+    {
+      "sector": 4,
+      "seed": 7919,
+      "z0": 6432,
+      "draws": 115,
+      "finalState": 176678910,
+      "unchanged_geometry_operations": 27,
+      "unchanged_geometry_hash": "1c47646f5a3aa0658158f82adfa823927ce85b3a99db4cae999936fbfb4fb3c6",
+      "downstream_32_draw_hash": "1e3a85c00f1bcfa1e7c86ba4de3bc1bd94850860c4be6e55e0b79b6ef1dc220b"
+    },
+    {
+      "sector": 4,
+      "seed": 15838,
+      "z0": 6528,
+      "draws": 178,
+      "finalState": 3896183352,
+      "unchanged_geometry_operations": 70,
+      "unchanged_geometry_hash": "0bf7257b807d8c304f0a5a2282c625ecbe5ad0aa7c0563c87b2732dc683ec898",
+      "downstream_32_draw_hash": "7813698a708e40a2714a920eebcac887738713171263d2331854118b91e7d933"
+    },
+    {
+      "sector": 4,
+      "seed": 23757,
+      "z0": 6624,
+      "draws": 163,
+      "finalState": 2192507852,
+      "unchanged_geometry_operations": 71,
+      "unchanged_geometry_hash": "450011e7c719cc364191977936749f7cc27d14087701d4fff1c97e831fc79ee5",
+      "downstream_32_draw_hash": "f4c67e629f7e971e11440e439f9382fb3eaaeca540ac48496eb691a59dc9eda2"
+    },
+    {
+      "sector": 4,
+      "seed": 31676,
+      "z0": 6720,
+      "draws": 139,
+      "finalState": 1184609219,
+      "unchanged_geometry_operations": 92,
+      "unchanged_geometry_hash": "72e5b689480a4fc9d25f381d7bf2b7f8272a3a17aa99f28adc0199faaf7c079c",
+      "downstream_32_draw_hash": "2e7ac441cd7213ef031db37e00783523609dc65d85bd4fee87c9e1312c6e9c59"
+    },
+    {
+      "sector": 4,
+      "seed": 39595,
+      "z0": 6816,
+      "draws": 108,
+      "finalState": 240651783,
+      "unchanged_geometry_operations": 92,
+      "unchanged_geometry_hash": "44a345932e1e0e2a29401369badb4c93a812d9758f30e3b22ec54a4476a2cf27",
+      "downstream_32_draw_hash": "18a2829cb68daf054bcf7e33fea5abef5797a123298fa0256767e775ad18effd"
+    },
+    {
+      "sector": 4,
+      "seed": 47514,
+      "z0": 6912,
+      "draws": 162,
+      "finalState": 360965796,
+      "unchanged_geometry_operations": 77,
+      "unchanged_geometry_hash": "c958dfe6a14fdd45883135d7e72fef7dd3953b32c650d423bf658c1e1f919dfa",
+      "downstream_32_draw_hash": "a594e04d7300e5314c8dbe0247160b6765d59b84286a4cb9dae347c8b4795ac6"
+    },
+    {
+      "sector": 4,
+      "seed": 55433,
+      "z0": 7008,
+      "draws": 162,
+      "finalState": 360973715,
+      "unchanged_geometry_operations": 69,
+      "unchanged_geometry_hash": "75b058dcd3a5f5106839bc6ba5d35009b0768d9d04d1c99eeaa28ecead4d3c0c",
+      "downstream_32_draw_hash": "576d2da98eee2ed0a762d249373ba00728c0feb2955098e628d610f5fe2ed809"
+    },
+    {
+      "sector": 4,
+      "seed": 63352,
+      "z0": 7104,
+      "draws": 115,
+      "finalState": 176734343,
+      "unchanged_geometry_operations": 68,
+      "unchanged_geometry_hash": "4a2a15b2bf5459ac57f4eef5858f7ce0e39df209d868c2d1f436c4e9ec728b98",
+      "downstream_32_draw_hash": "a20e796a9d29e2a6536ca7f7394e49ba07b2d25c8bd8e3e6d6a9a6fda68fec76"
+    },
+    {
+      "sector": 4,
+      "seed": 71271,
+      "z0": 7200,
+      "draws": 130,
+      "finalState": 1880425681,
+      "unchanged_geometry_operations": 67,
+      "unchanged_geometry_hash": "89c118f853abee4ffe09db7ac0b53bbc2a7977b3df2307432719c4c52625db63",
+      "downstream_32_draw_hash": "1294c6492afa13068e251871556d263657dd0ebd81c4cd167012d20fed6f5c98"
+    },
+    {
+      "sector": 4,
+      "seed": 79190,
+      "z0": 7296,
+      "draws": 108,
+      "finalState": 240691378,
+      "unchanged_geometry_operations": 92,
+      "unchanged_geometry_hash": "aa8f7f2b108f80f7df0dced231fa605507ec663272a0acd9819056d694c02011",
+      "downstream_32_draw_hash": "d6e344ad803410bf8eb342509acccde0afd2403d4f99d03b47de1d8ecc143b2d"
+    },
+    {
+      "sector": 4,
+      "seed": 87109,
+      "z0": 7392,
+      "draws": 115,
+      "finalState": 176758100,
+      "unchanged_geometry_operations": 68,
+      "unchanged_geometry_hash": "e7fe37c12e32235cff62d034210da8ae8d4a21e205ff94214ebb2b525dd99f98",
+      "downstream_32_draw_hash": "c98b7504bf09cde05df07ad2a0f6dace8c1fec4f2528603f3c6cc4be326fc4e4"
+    },
+    {
+      "sector": 4,
+      "seed": 95028,
+      "z0": 6336,
+      "draws": 115,
+      "finalState": 176766019,
+      "unchanged_geometry_operations": 7,
+      "unchanged_geometry_hash": "4f2fc58c3f3b882c2594da9a86fbb09a31d5614647ddd6bc4f97af4fd155211e",
+      "downstream_32_draw_hash": "fee98b0b1d2479e60ea539fc50eebb70d5c43f20f3ac6c7195c06e35df492d39"
+    },
+    {
+      "sector": 4,
+      "seed": 102947,
+      "z0": 6432,
+      "draws": 124,
+      "finalState": 3775964367,
+      "unchanged_geometry_operations": 52,
+      "unchanged_geometry_hash": "65d9505f1dd64d802b9585cb6cdf4e1f6fd3f0c1583cff0ead30ad3e2ff42a5d",
+      "downstream_32_draw_hash": "b3cb9020475c17e83b656f6eddc6f86f3244cab6cf2099c17af438fd3a1ddb9c"
+    },
+    {
+      "sector": 4,
+      "seed": 110866,
+      "z0": 6528,
+      "draws": 124,
+      "finalState": 3775972286,
+      "unchanged_geometry_operations": 93,
+      "unchanged_geometry_hash": "dd5e532b820657b327f0ed4ace7866380cf6a2fe373c02faab1a8fb221257ba4",
+      "downstream_32_draw_hash": "ba03690dd7b7c66137a54e565de0b37413acd01a450e8d2ec2695d5ca7847fb1"
+    },
+    {
+      "sector": 4,
+      "seed": 118785,
+      "z0": 6624,
+      "draws": 146,
+      "finalState": 1120755131,
+      "unchanged_geometry_operations": 68,
+      "unchanged_geometry_hash": "ff917d99cbe30e93fad998491a596e7f1d3a719f386130ad33c594d6e17346ec",
+      "downstream_32_draw_hash": "49723e871093e9aa4693fab83224ba480b53ab6d35cc3b9c26b4e29bdbffd35c"
+    },
+    {
+      "sector": 4,
+      "seed": 126704,
+      "z0": 6720,
+      "draws": 131,
+      "finalState": 3712046927,
+      "unchanged_geometry_operations": 69,
+      "unchanged_geometry_hash": "117abbbea333c637815f16146b03410af03eb076ce53f48f50d97687cdcdc4cb",
+      "downstream_32_draw_hash": "7be6503a756a00b18e83420b97da763130b972fbd429bdc8375db75f8122ce35"
+    },
+    {
+      "sector": 4,
+      "seed": 134623,
+      "z0": 6816,
+      "draws": 99,
+      "finalState": 936523678,
+      "unchanged_geometry_operations": 67,
+      "unchanged_geometry_hash": "6f4cd91a0bf3bd83129effaea5f88cd366cf6427e329081f892ebd70d3abc5d7",
+      "downstream_32_draw_hash": "d8fae2251944fa0c7a3c211fca7faacb8a24aa61728a1a356af3d9c340fd9b49"
+    },
+    {
+      "sector": 4,
+      "seed": 142542,
+      "z0": 6912,
+      "draws": 178,
+      "finalState": 3896310056,
+      "unchanged_geometry_operations": 78,
+      "unchanged_geometry_hash": "33153d762dbea3a22515ce43213e3b802856567f4415ac2dbb62b6ac91107daa",
+      "downstream_32_draw_hash": "2377a563768cb5f24c2b4cf6b79e6a76a5d6c51089bb3db5d00667a0f90f232b"
+    },
+    {
+      "sector": 4,
+      "seed": 150461,
+      "z0": 7008,
+      "draws": 162,
+      "finalState": 361068743,
+      "unchanged_geometry_operations": 69,
+      "unchanged_geometry_hash": "5eeaf1e6fbc0be050601e6611af7ccec42685bbc9372265b8d2ff5000a4d386b",
+      "downstream_32_draw_hash": "eb962ba6645283ab39062814587e45e5c9b2183b35a93d2844333085adee68ab"
+    },
+    {
+      "sector": 4,
+      "seed": 158380,
+      "z0": 7104,
+      "draws": 140,
+      "finalState": 3016301736,
+      "unchanged_geometry_operations": 94,
+      "unchanged_geometry_hash": "87addf7e29f7beab66449ef77716eaa980763863b7e10a2e16fc759053f26735",
+      "downstream_32_draw_hash": "18f731fde46e01fc57d97b2d46dbe08f2fca552e3e657ec7f510815a52fc6077"
+    },
+    {
+      "sector": 4,
+      "seed": 166299,
+      "z0": 7200,
+      "draws": 171,
+      "finalState": 3960275010,
+      "unchanged_geometry_operations": 94,
+      "unchanged_geometry_hash": "5e8275badfdd1121cd1dbf08c2187005171f117ad7a05dfd56687fb434260064",
+      "downstream_32_draw_hash": "74f2b9441dfd53aba0f030987595901da29a714dc70b4f7d43017e84e483e6db"
+    },
+    {
+      "sector": 4,
+      "seed": 174218,
+      "z0": 7296,
+      "draws": 172,
+      "finalState": 1496881446,
+      "unchanged_geometry_operations": 96,
+      "unchanged_geometry_hash": "6da38e29da83366019c303e0e96b7d264b9b2a8c4efafa9cb815f6065a128fea",
+      "downstream_32_draw_hash": "e5116d5b7e168c5246f886b2d34887740517acd2ffef7d6bfb35bb5a4343eef7"
+    },
+    {
+      "sector": 4,
+      "seed": 182137,
+      "z0": 7392,
+      "draws": 155,
+      "finalState": 425041616,
+      "unchanged_geometry_operations": 93,
+      "unchanged_geometry_hash": "f1f075b4bdad814d480b8891107310055be8b6e010d74235aff58c7868e9e853",
+      "downstream_32_draw_hash": "63bfb5fcb55ad7afbe6273a1901a163e475c0ba4efa60f9990961c41a9254455"
+    },
+    {
+      "sector": 4,
+      "seed": 190056,
+      "z0": 6336,
+      "draws": 155,
+      "finalState": 425049535,
+      "unchanged_geometry_operations": 32,
+      "unchanged_geometry_hash": "8c9843008adca44e364474062502af9397d327b830a737830deda82be73fb269",
+      "downstream_32_draw_hash": "f1fe6255d4cfe334952c92996be0220d53d87fdda2c964a283c923cb4a177b24"
+    },
+    {
+      "sector": 4,
+      "seed": 197975,
+      "z0": 6432,
+      "draws": 146,
+      "finalState": 1120834321,
+      "unchanged_geometry_operations": 27,
+      "unchanged_geometry_hash": "6459c52d214ed75681a468862dbdb2781c6a89efbc9fe010fa96f322b264e9bc",
+      "downstream_32_draw_hash": "1dda7c238cb479c4c881aa3e4f79f6ab9b1d21802b50cbe462efc4a53e463e38"
+    },
+    {
+      "sector": 4,
+      "seed": 205894,
+      "z0": 6528,
+      "draws": 115,
+      "finalState": 176876885,
+      "unchanged_geometry_operations": 68,
+      "unchanged_geometry_hash": "d7d5fbab2c09a1c9f2b8142a99c72c658595bf79bb72af56e0fc4c565bfa86ec",
+      "downstream_32_draw_hash": "d7887b5105105dae912c73fe405dba527b695fc93da7c81f337d88db91e89432"
+    },
+    {
+      "sector": 4,
+      "seed": 213813,
+      "z0": 6624,
+      "draws": 172,
+      "finalState": 1496921041,
+      "unchanged_geometry_operations": 96,
+      "unchanged_geometry_hash": "e72dcf61cf45f11537fdf5357663efef44a8681af7a6293af7fe8e203fa63341",
+      "downstream_32_draw_hash": "8f00f65d7fe3f89a30ede3195e7a156b0fcc9ebadec506f1ed0942be314b366e"
+    },
+    {
+      "sector": 4,
+      "seed": 221732,
+      "z0": 6720,
+      "draws": 124,
+      "finalState": 3776083152,
+      "unchanged_geometry_operations": 93,
+      "unchanged_geometry_hash": "5aad96a6151988499e4b704582dfba9602a2b6d3451e515dcb4961ac04bd8ff5",
+      "downstream_32_draw_hash": "7e2aad4a11506b964b00fece3abaf3f37c24e5de087129017b8bcf8245cdc2e5"
+    },
+    {
+      "sector": 4,
+      "seed": 229651,
+      "z0": 6816,
+      "draws": 187,
+      "finalState": 3200620298,
+      "unchanged_geometry_operations": 95,
+      "unchanged_geometry_hash": "b0989f1d12060ca2ea2c0e9daa37bcaf4e82152b874a7ac65ed002d959fe732b",
+      "downstream_32_draw_hash": "d0929cbf8f6bd704c952ac4cb06888edcaacd1405ba97233ae8923c2a2b25c0e"
+    },
+    {
+      "sector": 4,
+      "seed": 237570,
+      "z0": 6912,
+      "draws": 147,
+      "finalState": 2952439729,
+      "unchanged_geometry_operations": 78,
+      "unchanged_geometry_hash": "e6338379393dbb14a70da6e1d0dbf7450cc6e78e8cc80920d259252c720022cc",
+      "downstream_32_draw_hash": "0dadcca299ac68d217eb491f172ff2cd5c39b46e14d3ca35fe5a1b585f0c233d"
+    },
+    {
+      "sector": 4,
+      "seed": 245489,
+      "z0": 7008,
+      "draws": 99,
+      "finalState": 936634544,
+      "unchanged_geometry_operations": 67,
+      "unchanged_geometry_hash": "2f643416faa0345c10164953e23336c4590ba6985a6b3057badbddd6fbedd8f8",
+      "downstream_32_draw_hash": "3d0210a4c4c674da40b5ecbab299c558cf96a3eb85e236e21fc4df1798304ee9"
+    },
+    {
+      "sector": 4,
+      "seed": 253408,
+      "z0": 7104,
+      "draws": 155,
+      "finalState": 425112887,
+      "unchanged_geometry_operations": 93,
+      "unchanged_geometry_hash": "fabfda66d5647b35c0237583b61ab8dac43d1b4875d7c60ca328f3083d0294fe",
+      "downstream_32_draw_hash": "9de7721e0b779140f46ba4392202c0b2e3d553484feed8624c1e2d6033bda2d4"
+    }
+  ],
+  "selected_variants": [
+    15,
+    12
+  ],
+  "envelope": {
+    "contained_template_vertices": 3036,
+    "proof": "Each vertex lies in convex nominal source tapered hull; triangle interiors and all uniform-size/bank/yaw/translations therefore remain in its transformed volume. Original rib/ember envelope is not expanded. Continuous source clearance is in source-measurements.json."
+  },
+  "source_batch_transform_uv_ao_fixture_maximum_attribute_error": 5.960464477539063e-8,
+  "merged_wreck_primitives": 2,
+  "chunk_geometry_disposal_events": 2,
+  "shared_material_disposal_events": 0,
+  "cached_template_typed_array_bytes": 112332,
+  "retained_typed_array_packing": "Float32 p/n/c (36 bytes/vertex) + Int8 slot (1 byte/vertex). Chunk merged dark is 44 bytes/vertex, neon 56 bytes/vertex. No index, driver allocations, geometry objects, shared buffers, allocator capacity, unrelated source geometry or textures included.",
+  "density_proxy": [
+    {
+      "ahead": 320,
+      "behind": 90,
+      "sampled_windows": 624,
+      "mean_wrecks": 2.394230769230769,
+      "maximum_observed_wrecks": 6,
+      "maximum_observed_triangles": 3088,
+      "maximum_observed_wreck_attribute_bytes": 409344,
+      "maximum_observed_occupied_wreck_chunk_buckets": 12
+    },
+    {
+      "ahead": 440,
+      "behind": 90,
+      "sampled_windows": 624,
+      "mean_wrecks": 2.983974358974359,
+      "maximum_observed_wrecks": 6,
+      "maximum_observed_triangles": 3140,
+      "maximum_observed_wreck_attribute_bytes": 416208,
+      "maximum_observed_occupied_wreck_chunk_buckets": 12
+    },
+    {
+      "ahead": 560,
+      "behind": 90,
+      "sampled_windows": 624,
+      "mean_wrecks": 3.5833333333333335,
+      "maximum_observed_wrecks": 7,
+      "maximum_observed_triangles": 3672,
+      "maximum_observed_wreck_attribute_bytes": 486720,
+      "maximum_observed_occupied_wreck_chunk_buckets": 14
+    },
+    {
+      "ahead": 700,
+      "behind": 90,
+      "sampled_windows": 624,
+      "mean_wrecks": 4.326923076923077,
+      "maximum_observed_wrecks": 9,
+      "maximum_observed_triangles": 4632,
+      "maximum_observed_wreck_attribute_bytes": 614016,
+      "maximum_observed_occupied_wreck_chunk_buckets": 18
+    }
+  ],
+  "density_limit": "Finite synthetic void-only seeds/windows, landmarks excluded. Not an asserted live maximum, measured GPU memory or measured draw-call performance. Existing dark/neon buckets may already exist; never creates per-part draws.",
+  "neon_aAnim": "All 24 emitted neon vertices independently checked against original four FLICKER mode/rate/phase draws; gain 1.4. Legacy width/offset draws consumed, not used: ember faces are fitted to torn shell instead of floating boxes.",
+  "camera_test_doubles": [
+    "localStorage empty stand-in",
+    "matchMedia non-coarse stand-in",
+    "navigator hardwareConcurrency/deviceMemory stand-in; no renderer or WebGL context"
+  ],
+  "source_lighting": "deepspace for sector 2 and void for sector 4; render scripts label analytic environment/hemisphere/fog approximations",
+  "formal_reviews": 0,
+  "formal_fix_passes": 0,
+  "pending_deferred_opus_review": true,
+  "shutdown_cache_release": true
+}

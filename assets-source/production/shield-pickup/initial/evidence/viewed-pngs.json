@@ -1,0 +1,28 @@
+{
+  "method": "Actual PNG files opened through functions.view_image, not merely generated or text-described. Contact sheets include the individual multiview and source action images.",
+  "viewed": [
+    "png/view-front.png",
+    "png/common-neutral-rest.png",
+    "png/world-scale-comparison.png",
+    "png/offline-classic-near.png",
+    "png/contact-sheet.png",
+    "png/offline-gameplay-sheet.png",
+    "png/small-gameplay-readability.png",
+    "png/grayscale-kind-silhouette-cues.png",
+    "png/contexts-sheet.png",
+    "png/dense-batch-36.png",
+    "png/exact-source-color-swatches.png"
+  ],
+  "observations": [
+    "Central protected shield silhouette and enclosing hex remain recognizable in the native 23.4 to 46.6 pixel gameplay crops, including linear Rec709 grayscale. No small text is needed.",
+    "Rear and edge views expose the fitted thin layered badge geometry; source action sheet shows full spin/pulse/wobble without intersecting the ring.",
+    "Shared-world-scale style comparison correctly reads shipped player left, source baseline center, NEW shield right. Gameplay comparison reads NEW left, baseline right.",
+    "Offline reconstructions are explicitly not live gameplay proof and approximate halo/world rendering; the full game is not running in these PNGs.",
+    "No formal art approval. Fine bevels naturally disappear at small sizes; final postfx/readability integration and deferred Opus review remain pending."
+  ],
+  "charge": "N/A - no source charge mechanic",
+  "detach": "N/A - no break-off mechanics; ordinary collection removal is preserved",
+  "formal_reviews": 0,
+  "formal_review_fix_rounds": 0,
+  "status": "pending_deferred_opus_review"
+}

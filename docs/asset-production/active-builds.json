@@ -1,0 +1,56 @@
+{
+  "drone": {
+    "taskId": "node:delegated-task:command%3Amcp%3A2f58fd8b-de15-4764-9b39-0bc19581fbe8%3Aremote-delegate%3Anitro-sol-drone-initial-production-20261114-01",
+    "childThreadId": null,
+    "remoteChild": {
+      "environmentId": "543fe9a3-cf00-4f96-8f57-b8d50dd01cd2",
+      "threadId": "mcp:launch:c1c2e81fc7a3112c9809672f407fbd07ba3c7338a32ee39b49ab1a6d330a7c3a",
+      "label": "NitroBliss"
+    },
+    "link": "[Drone production asset — Sol XHigh](t3-thread://v2/543fe9a3-cf00-4f96-8f57-b8d50dd01cd2/mcp:launch:c1c2e81fc7a3112c9809672f407fbd07ba3c7338a32ee39b49ab1a6d330a7c3a)",
+    "childRunId": null,
+    "childNodeId": "node:delegated-task:command%3Amcp%3A2f58fd8b-de15-4764-9b39-0bc19581fbe8%3Aremote-delegate%3Anitro-sol-drone-initial-production-20261114-01",
+    "status": "running",
+    "workState": "working",
+    "hasPendingChildRuns": false,
+    "latestTerminalRunId": null,
+    "latestTerminalStatus": null,
+    "latestTerminalSummary": null,
+    "latestTerminalResultContextTransferId": null,
+    "providerInstanceId": "codex",
+    "model": "gpt-6.1-sol",
+    "executedModel": null,
+    "summary": null,
+    "resultContextTransferId": null,
+    "hasPendingQuestion": false,
+    "pendingApproval": null,
+    "waitTimedOut": false
+  },
+  "interceptor": {
+    "taskId": "node:delegated-task:command%3Amcp%3A2f58fd8b-de15-4764-9b39-0bc19581fbe8%3Aremote-delegate%3Anitro-sol-interceptor-initial-production-20261114-01",
+    "childThreadId": null,
+    "remoteChild": {
+      "environmentId": "543fe9a3-cf00-4f96-8f57-b8d50dd01cd2",
+      "threadId": "mcp:launch:d8e882497d3a23d55f5168ac4146f917149949213ee1c3e0f6910212cb818975",
+      "label": "NitroBliss"
+    },
+    "link": "[Enemy interceptor production asset — Sol XHigh](t3-thread://v2/543fe9a3-cf00-4f96-8f57-b8d50dd01cd2/mcp:launch:d8e882497d3a23d55f5168ac4146f917149949213ee1c3e0f6910212cb818975)",
+    "childRunId": null,
+    "childNodeId": "node:delegated-task:command%3Amcp%3A2f58fd8b-de15-4764-9b39-0bc19581fbe8%3Aremote-delegate%3Anitro-sol-interceptor-initial-production-20261114-01",
+    "status": "running",
+    "workState": "working",
+    "hasPendingChildRuns": false,
+    "latestTerminalRunId": null,
+    "latestTerminalStatus": null,
+    "latestTerminalSummary": null,
+    "latestTerminalResultContextTransferId": null,
+    "providerInstanceId": "codex",
+    "model": "gpt-6.1-sol",
+    "executedModel": null,
+    "summary": null,
+    "resultContextTransferId": null,
+    "hasPendingQuestion": false,
+    "pendingApproval": null,
+    "waitTimedOut": false
+  }
+}

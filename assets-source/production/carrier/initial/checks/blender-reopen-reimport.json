@@ -1,0 +1,3425 @@
+{
+  "savedBlendReopened": {
+    "triangles": 18898,
+    "materialPrimitivesBeforeBatch": 292,
+    "meshObjects": 292,
+    "boundsTransformedGame": {
+      "min": [
+        48.0,
+        -26.0,
+        -0.0
+      ],
+      "max": [
+        108.55000305175781,
+        44.5,
+        987.0
+      ]
+    },
+    "meshes": [
+      {
+        "name": "bow-fitted-shell",
+        "triangles": 60,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "midbody-fitted-shell",
+        "triangles": 378,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "stern-fitted-shell",
+        "triangles": 60,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "port-lower-chine-strakes",
+        "triangles": 52,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "starboard-service-plating",
+        "triangles": 192,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bow-buttress-fitted-plates",
+        "triangles": 180,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "keel-service-spine",
+        "triangles": 1008,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "starboard-heat-exchangers",
+        "triangles": 1344,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "island-aft-machinery",
+        "triangles": 288,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bow-shielded-machinery-and-keel",
+        "triangles": 96,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-01-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-02-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-03-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-04-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-05-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-06-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-07-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-08-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-09-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-10-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-11-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-12-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-13-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-14-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-15-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-16-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-17-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-18-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-19-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-20-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-21-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-22-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-23-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-24-structural-frame",
+        "triangles": 62,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-01-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-01-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-01-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-02-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-02-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-02-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-03-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-03-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-03-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-04-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-04-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-04-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-05-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-05-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-05-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-06-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-06-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-06-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-07-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-07-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-07-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-08-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-08-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-08-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-09-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-09-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-09-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-10-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-10-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-10-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-11-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-11-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-11-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-12-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-12-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-12-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-13-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-13-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-13-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-14-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-14-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-14-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-15-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-15-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-15-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-16-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-16-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-16-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-17-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-17-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-17-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-18-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-18-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-18-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-19-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-19-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-19-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-20-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-20-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-20-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-21-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-21-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-21-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-22-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-22-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-22-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-23-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-23-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-23-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-24-recess-and-deck",
+        "triangles": 34,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "bay-24-internal-structure",
+        "triangles": 168,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "bay-24-deck-guides",
+        "triangles": 24,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "bay-01-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-01-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-02-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-02-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-03-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-03-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-04-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-04-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-05-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-05-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-06-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-06-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-07-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-07-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-08-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-08-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-09-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-09-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-10-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-10-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-11-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-11-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-12-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-12-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-13-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-13-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-14-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-14-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-15-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-15-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-16-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-16-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-17-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-17-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-18-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-18-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-19-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-19-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-20-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-20-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-21-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-21-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-22-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-22-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-23-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-23-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-24-amber-header",
+        "triangles": 36,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bay-24-cyan-depth-chase",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "bow-flightdeck",
+        "triangles": 28,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "stern-flightdeck",
+        "triangles": 28,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "midbody-flightdeck-soffit",
+        "triangles": 6,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-00",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "engraved-deck-seam-beds",
+        "triangles": 306,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "deck-panel-01",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-02",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-03",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-04",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-05",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-06",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-07",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-08",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-09",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-10",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-11",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-12",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-13",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-14",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-15",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-16",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-17",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-18",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-19",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-20",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-21",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-22",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-23",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-24",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-25",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-26",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-27",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-28",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-29",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-30",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-31",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-32",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-33",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-34",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-35",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-36",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-37",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-38",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-39",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-40",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-41",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-42",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-43",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-44",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-45",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-46",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-47",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-48",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-49",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "deck-panel-50",
+        "triangles": 8,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "flightdeck-operating-markings",
+        "triangles": 1512,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "recessed-catapult-channel-liners",
+        "triangles": 12,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "catapult-chase-00",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-01",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-02",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-03",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-04",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-05",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-06",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-07",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-08",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-09",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-10",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-11",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-12",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-13",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-14",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-15",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-16",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-17",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-18",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-19",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-20",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-21",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-22",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-23",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-24",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-25",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-26",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-27",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-28",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-29",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-30",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-31",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-32",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-33",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-34",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-35",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-36",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-37",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-38",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-39",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-40",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-41",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-42",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-43",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-44",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-45",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-46",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-47",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-48",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-49",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-50",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-51",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-52",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-53",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-54",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-55",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-56",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-57",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-58",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-59",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-60",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-61",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-62",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-63",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-64",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "catapult-chase-65",
+        "triangles": 24,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "port-continuous-safety-rail",
+        "triangles": 624,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "cantilever-deck-web-frames",
+        "triangles": 600,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "island-single-tiered-bridge",
+        "triangles": 92,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "island-recessed-wrap-glazing",
+        "triangles": 16,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "island-bridge-mullions-and-platforms",
+        "triangles": 144,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "island-mast-and-ladder",
+        "triangles": 96,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "island-amber-bridge-ribbons",
+        "triangles": 48,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "island-red-strobe",
+        "triangles": 12,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "island-rotating-open-radar",
+        "triangles": 180,
+        "bucket": "spin",
+        "materials": [
+          "carrier-spin"
+        ]
+      },
+      {
+        "name": "stern-bell-0-housing",
+        "triangles": 360,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "stern-bell-0-recess",
+        "triangles": 138,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "stern-bell-1-housing",
+        "triangles": 360,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "stern-bell-1-recess",
+        "triangles": 138,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "stern-bell-0-breathe-core",
+        "triangles": 98,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "stern-bell-1-breathe-core",
+        "triangles": 98,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      }
+    ]
+  },
+  "cleanSceneGlbReimport": {
+    "triangles": 18898,
+    "materialPrimitivesBeforeBatch": 6,
+    "meshObjects": 6,
+    "boundsTransformedGame": {
+      "min": [
+        48.0,
+        -26.0,
+        -0.0
+      ],
+      "max": [
+        108.55000305175781,
+        44.5,
+        987.0
+      ]
+    },
+    "meshes": [
+      {
+        "name": "carrier-template-dark",
+        "triangles": 4258,
+        "bucket": "dark",
+        "materials": [
+          "carrier-dark"
+        ]
+      },
+      {
+        "name": "carrier-template-deck",
+        "triangles": 470,
+        "bucket": "deck",
+        "materials": [
+          "carrier-deck"
+        ]
+      },
+      {
+        "name": "carrier-template-hull",
+        "triangles": 8622,
+        "bucket": "hull",
+        "materials": [
+          "carrier-hull"
+        ]
+      },
+      {
+        "name": "carrier-template-neon",
+        "triangles": 3280,
+        "bucket": "neon",
+        "materials": [
+          "carrier-neon"
+        ]
+      },
+      {
+        "name": "carrier-template-paint",
+        "triangles": 2088,
+        "bucket": "paint",
+        "materials": [
+          "carrier-paint"
+        ]
+      },
+      {
+        "name": "carrier-template-spin",
+        "triangles": 180,
+        "bucket": "spin",
+        "materials": [
+          "carrier-spin"
+        ]
+      }
+    ]
+  },
+  "packedNoExternalDependencies": true,
+  "apertureRayChecks": [
+    {
+      "bay": 1,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          132
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          132.0
+        ],
+        "object": "bay-01-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          147
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          147.0
+        ],
+        "object": "bay-01-structural-frame"
+      }
+    },
+    {
+      "bay": 2,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          164
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          164.0
+        ],
+        "object": "bay-02-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          179
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          179.0
+        ],
+        "object": "bay-02-structural-frame"
+      }
+    },
+    {
+      "bay": 3,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          196
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          196.0
+        ],
+        "object": "bay-03-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          211
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          211.0
+        ],
+        "object": "bay-03-structural-frame"
+      }
+    },
+    {
+      "bay": 4,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          228
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          228.0
+        ],
+        "object": "bay-04-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          243
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          243.0
+        ],
+        "object": "bay-04-structural-frame"
+      }
+    },
+    {
+      "bay": 5,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          260
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          260.0
+        ],
+        "object": "bay-05-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          275
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          275.0
+        ],
+        "object": "bay-05-structural-frame"
+      }
+    },
+    {
+      "bay": 6,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          292
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          292.0
+        ],
+        "object": "bay-06-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          307
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          307.0
+        ],
+        "object": "bay-06-structural-frame"
+      }
+    },
+    {
+      "bay": 7,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          324
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          324.0
+        ],
+        "object": "bay-07-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          339
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          339.0
+        ],
+        "object": "bay-07-structural-frame"
+      }
+    },
+    {
+      "bay": 8,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          356
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          356.0
+        ],
+        "object": "bay-08-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          371
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          371.0
+        ],
+        "object": "bay-08-structural-frame"
+      }
+    },
+    {
+      "bay": 9,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          388
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          388.0
+        ],
+        "object": "bay-09-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          403
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          403.0
+        ],
+        "object": "bay-09-structural-frame"
+      }
+    },
+    {
+      "bay": 10,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          420
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          420.0
+        ],
+        "object": "bay-10-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          435
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          435.0
+        ],
+        "object": "bay-10-structural-frame"
+      }
+    },
+    {
+      "bay": 11,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          452
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          452.0
+        ],
+        "object": "bay-11-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          467
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          467.0
+        ],
+        "object": "bay-11-structural-frame"
+      }
+    },
+    {
+      "bay": 12,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          484
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          484.0
+        ],
+        "object": "bay-12-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          499
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          499.0
+        ],
+        "object": "bay-12-structural-frame"
+      }
+    },
+    {
+      "bay": 13,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          516
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          516.0
+        ],
+        "object": "bay-13-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          531
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          531.0
+        ],
+        "object": "bay-13-structural-frame"
+      }
+    },
+    {
+      "bay": 14,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          548
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          548.0
+        ],
+        "object": "bay-14-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          563
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          563.0
+        ],
+        "object": "bay-14-structural-frame"
+      }
+    },
+    {
+      "bay": 15,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          580
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          580.0
+        ],
+        "object": "bay-15-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          595
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          595.0
+        ],
+        "object": "bay-15-structural-frame"
+      }
+    },
+    {
+      "bay": 16,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          612
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          612.0
+        ],
+        "object": "bay-16-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          627
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          627.0
+        ],
+        "object": "bay-16-structural-frame"
+      }
+    },
+    {
+      "bay": 17,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          644
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          644.0
+        ],
+        "object": "bay-17-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          659
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          659.0
+        ],
+        "object": "bay-17-structural-frame"
+      }
+    },
+    {
+      "bay": 18,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          676
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          676.0
+        ],
+        "object": "bay-18-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          691
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          691.0
+        ],
+        "object": "bay-18-structural-frame"
+      }
+    },
+    {
+      "bay": 19,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          708
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          708.0
+        ],
+        "object": "bay-19-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          723
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          723.0
+        ],
+        "object": "bay-19-structural-frame"
+      }
+    },
+    {
+      "bay": 20,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          740
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          740.0
+        ],
+        "object": "bay-20-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          755
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          755.0
+        ],
+        "object": "bay-20-structural-frame"
+      }
+    },
+    {
+      "bay": 21,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          772
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          772.0
+        ],
+        "object": "bay-21-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          787
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          787.0
+        ],
+        "object": "bay-21-structural-frame"
+      }
+    },
+    {
+      "bay": 22,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          804
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          804.0
+        ],
+        "object": "bay-22-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          819
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          819.0
+        ],
+        "object": "bay-22-structural-frame"
+      }
+    },
+    {
+      "bay": 23,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          836
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          836.0
+        ],
+        "object": "bay-23-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          851
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          851.0
+        ],
+        "object": "bay-23-structural-frame"
+      }
+    },
+    {
+      "bay": 24,
+      "opening": {
+        "originGame": [
+          40,
+          0,
+          868
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          73.5,
+          0.0,
+          868.0
+        ],
+        "object": "bay-24-recess-and-deck"
+      },
+      "pier": {
+        "originGame": [
+          40,
+          0,
+          883
+        ],
+        "directionGame": [
+          1,
+          0,
+          0
+        ],
+        "hitGame": [
+          58.0,
+          0.0,
+          883.0
+        ],
+        "object": "bay-24-structural-frame"
+      }
+    }
+  ],
+  "catapultRecessRayCheck": {
+    "originGame": [
+      51.35,
+      28,
+      300
+    ],
+    "directionGame": [
+      0,
+      -1,
+      0
+    ],
+    "hitGame": [
+      51.349998474121094,
+      14.9399995803833,
+      300.0
+    ],
+    "object": "recessed-catapult-channel-liners"
+  },
+  "sternRecessRayChecks": [
+    {
+      "originGame": [
+        83,
+        -18,
+        1000
+      ],
+      "directionGame": [
+        0,
+        0,
+        -1
+      ],
+      "hitGame": [
+        83.0,
+        -18.0,
+        980.2000122070312
+      ],
+      "object": "stern-bell-0-breathe-core"
+    },
+    {
+      "originGame": [
+        83,
+        -2,
+        1000
+      ],
+      "directionGame": [
+        0,
+        0,
+        -1
+      ],
+      "hitGame": [
+        83.0,
+        -2.0,
+        980.2000122070312
+      ],
+      "object": "stern-bell-1-breathe-core"
+    }
+  ],
+  "assertionsPassed": true,
+  "notProofOf": [
+    "production GPU render",
+    "collision or aim integration",
+    "formal visual acceptance"
+  ]
+}

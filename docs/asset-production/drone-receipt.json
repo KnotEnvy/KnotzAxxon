@@ -1,0 +1,14 @@
+{
+  "archive": "knotzaxxon-drone-initial-20261114T151523Z.tar.gz",
+  "sha256": "f34d84687dac783d4f9c3ed34f41d7f66441e013065299ad62f740f83a273259",
+  "contentHashesVerified": 71,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/drone/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "builderCompletionReceived": true,
+  "glbSha256": "7053c26483f863ec9c854cf57bd0efd1e7f5a775616c0d78200ae0c7f273b8ee",
+  "blendSha256": "a9546453c572871037cda7a9a90e89fdcb3d66c144a3f346f478b08ce7b66768",
+  "builderCompletionHashesMatch": true,
+  "readOnly": true,
+  "executableModesRetained": true
+}

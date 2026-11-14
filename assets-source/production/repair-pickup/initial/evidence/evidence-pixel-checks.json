@@ -1,0 +1,62 @@
+{
+  "exact_source_green_rgba_center": [
+    82,
+    255,
+    168,
+    255
+  ],
+  "grayscale_channels_equal": [
+    "grayscale-classic-near.png",
+    "grayscale-danger-mine-distinction.png",
+    "grayscale-exact-green-front.png",
+    "grayscale-front.png",
+    "grayscale-frozen-kit-comparison.png",
+    "grayscale-kind-silhouette-cues.png"
+  ],
+  "native_crops": [
+    {
+      "mode": "classic",
+      "context": "near",
+      "native_pixel_width": 28.29766273498535,
+      "unresized_pixel_identical_crop": true,
+      "billboard_normal_dot": 0.9999999701976776
+    },
+    {
+      "mode": "classic",
+      "context": "far",
+      "native_pixel_width": 28.297748565673828,
+      "unresized_pixel_identical_crop": true,
+      "billboard_normal_dot": 0.9999999701976776
+    },
+    {
+      "mode": "modern",
+      "context": "near",
+      "native_pixel_width": 46.57519340515137,
+      "unresized_pixel_identical_crop": true,
+      "billboard_normal_dot": 0.9999997541308403
+    },
+    {
+      "mode": "modern",
+      "context": "far",
+      "native_pixel_width": 25.7080078125,
+      "unresized_pixel_identical_crop": true,
+      "billboard_normal_dot": 0.9999997541308403
+    },
+    {
+      "mode": "chase",
+      "context": "near",
+      "native_pixel_width": 46.5498161315918,
+      "unresized_pixel_identical_crop": true,
+      "billboard_normal_dot": 0.9999999913852662
+    },
+    {
+      "mode": "chase",
+      "context": "far",
+      "native_pixel_width": 23.37212562561035,
+      "unresized_pixel_identical_crop": true,
+      "billboard_normal_dot": 0.9999999913852662
+    }
+  ],
+  "formal_review": false,
+  "limits": "Offline Blender evidence pixel checks, not real Three.js output/postfx or integrated gameplay acceptance."
+}

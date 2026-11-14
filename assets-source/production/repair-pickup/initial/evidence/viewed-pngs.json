@@ -1,0 +1,84 @@
+{
+  "viewed_at_utc": "2026-11-14T17:21:09.387366+00:00",
+  "method": "Actual saved PNGs opened with functions.view_image; contact sheets also display underlying source phase/action/rest/rear/combined extreme renders. Technical implementation inspection only, not a formal review.",
+  "formal_reviews": 0,
+  "formal_review_fix_rounds": 0,
+  "viewed": [
+    {
+      "path": "evidence/png/view-front.png",
+      "sha256": "48cf7204fa0ce4daab5acd975d4e3534639a9fbc1a1216ea8eb7d680a968e527"
+    },
+    {
+      "path": "evidence/png/offline-classic-near.png",
+      "sha256": "9bae279e8b47313d648410998e63c2360d4a730138c5abf3833c1c4176940e2c"
+    },
+    {
+      "path": "evidence/png/exact-green-front.png",
+      "sha256": "724367db4e71958ede71ebbf9d1e571c42ff5a904ee1bbba1450fe669bfa0242"
+    },
+    {
+      "path": "evidence/png/frozen-kit-comparison.png",
+      "sha256": "5242de0f444a30dd4c4edb62a6ed5b4b75a63084e2fe20930da2368afe80cdf6"
+    },
+    {
+      "path": "evidence/png/danger-mine-distinction.png",
+      "sha256": "21900cb53a10661b4f85f259eb93224378120b26123e450d31ce0bab3c9daccf"
+    },
+    {
+      "path": "evidence/png/contact-sheet.png",
+      "sha256": "ab201beb07dfbc024a979c6e0f096bccb719aca517b26d98c843a1325dbb9e89"
+    },
+    {
+      "path": "evidence/png/identity-sheet.png",
+      "sha256": "500d87fd399d98c235a47cfb73e330c52a712a47d359a50695042a750bb2cfd6"
+    },
+    {
+      "path": "evidence/png/offline-gameplay-sheet.png",
+      "sha256": "b8cb3d1d983bec2c86490e7c2da50d59f63794b810159bc4d095be2e4720ed59"
+    },
+    {
+      "path": "evidence/png/small-gameplay-readability.png",
+      "sha256": "5a619f4f0b1ab2aadad2112291aeb283d70a58d86786f6d23a65cf0e744164dd"
+    },
+    {
+      "path": "evidence/png/contexts-sheet.png",
+      "sha256": "78761b826b1421abe727eefaefe96efc21dfc776990afed21c49d15259d21e8a"
+    },
+    {
+      "path": "evidence/png/drift-context-sheet.png",
+      "sha256": "0f97fb84e1684008c5774208fb3fc81a44060bd6139b616467341c652ab9dbe2"
+    },
+    {
+      "path": "evidence/png/dense-batch-36.png",
+      "sha256": "2a75a7872a176b8aea9b09a58a548ad3dd90719b4944374415924303dfe41c7e"
+    },
+    {
+      "path": "evidence/png/exact-source-color-swatches.png",
+      "sha256": "3ca77b62a7c3405c6772a51153b25b696677ce4981808ed528917d3994b102e4"
+    },
+    {
+      "path": "evidence/png/world-scale-comparison.png",
+      "sha256": "d6a8db828de483659ffdb8559b7b5509fa4d5516b355c39e596b8bd9b37af16b"
+    },
+    {
+      "path": "evidence/png/view-quarter.png",
+      "sha256": "cafa13b5de9f772d9a59ea480b58d1d01a673d831e2cc90d6cf686085ac4c1ac"
+    },
+    {
+      "path": "evidence/png/view-edge.png",
+      "sha256": "f5f56b73f7268cda5d7fa5eb73472d6649653ea38739b54a3ab9f980ea3261b3"
+    },
+    {
+      "path": "evidence/png/grayscale-front.png",
+      "sha256": "853e69c241dc4ca5c443d568449119e05928b03ca64a975814be92aa023d1dc0"
+    }
+  ],
+  "findings": [
+    "Source-sized cross is distinct from shield emblem, triple chevrons, fuel drum and danger-mine silhouette, including grayscale.",
+    "Camera-facing near/far reconstructions retain cross cue; finest bevel/rim faceting is secondary at small scale.",
+    "Flat source-depth badge, no charge, machinery, deployed bubble or mechanical detach.",
+    "Source root/shape/shell motions are uncapped; static diagnostic edge/quarter deliberately disable billboarding.",
+    "Offline reconstruction and source-double harness limitations are disclosed; no live game acceptance claimed."
+  ],
+  "pending": "Deferred Opus formal review/polish; receiver live integration and real GLTFLoader/GPU lifecycle verification."
+}

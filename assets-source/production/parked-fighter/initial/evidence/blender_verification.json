@@ -1,0 +1,539 @@
+{
+  "savedBlendReopened": true,
+  "cleanSceneGLBReimported": true,
+  "noExternalDependencies": true,
+  "sourceMotionSamplesMatchedIndependentGLB": [
+    {
+      "label": "static_nonscramble_beacon_off",
+      "bounds_game": {
+        "min": [
+          -3.1689467430114746,
+          0.0,
+          -3.5706026554107666
+        ],
+        "max": [
+          2.7849860191345215,
+          2.3999998569488525,
+          2.3302667140960693
+        ],
+        "size": [
+          5.953932762145996,
+          2.3999998569488525,
+          5.900869369506836
+        ]
+      },
+      "maximumDeltaFromIndependentGLB": 1.5719311630135735e-07
+    },
+    {
+      "label": "static_nonscramble_beacon_on",
+      "bounds_game": {
+        "min": [
+          -3.1689467430114746,
+          0.0,
+          -3.5706026554107666
+        ],
+        "max": [
+          2.7849860191345215,
+          2.580000162124634,
+          2.3302667140960693
+        ],
+        "size": [
+          5.953932762145996,
+          2.580000162124634,
+          5.900869369506836
+        ]
+      },
+      "maximumDeltaFromIndependentGLB": 1.5719311630135735e-07
+    },
+    {
+      "label": "approaching_spool_zero",
+      "bounds_game": {
+        "min": [
+          -3.1597118377685547,
+          0.0,
+          -3.5863592624664307
+        ],
+        "max": [
+          2.8209781646728516,
+          2.3999998569488525,
+          2.3180630207061768
+        ],
+        "size": [
+          5.980690002441406,
+          2.3999998569488525,
+          5.904422283172607
+        ]
+      },
+      "maximumDeltaFromIndependentGLB": 1.872009867120994e-07
+    },
+    {
+      "label": "approaching_spool_half",
+      "bounds_game": {
+        "min": [
+          -3.1597118377685547,
+          0.0,
+          -3.5863592624664307
+        ],
+        "max": [
+          2.8209781646728516,
+          2.3999998569488525,
+          2.3180630207061768
+        ],
+        "size": [
+          5.980690002441406,
+          2.3999998569488525,
+          5.904422283172607
+        ]
+      },
+      "maximumDeltaFromIndependentGLB": 1.872009867120994e-07
+    },
+    {
+      "label": "minimum_engine_pulse",
+      "bounds_game": {
+        "min": [
+          -3.1597118377685547,
+          0.0,
+          -3.5863592624664307
+        ],
+        "max": [
+          2.8209781646728516,
+          2.580000162124634,
+          2.3180630207061768
+        ],
+        "size": [
+          5.980690002441406,
+          2.580000162124634,
+          5.904422283172607
+        ]
+      },
+      "maximumDeltaFromIndependentGLB": 1.872009867120994e-07
+    },
+    {
+      "label": "maximum_engine_pulse",
+      "bounds_game": {
+        "min": [
+          -3.1597118377685547,
+          0.0,
+          -3.5863592624664307
+        ],
+        "max": [
+          2.8209781646728516,
+          2.580000162124634,
+          2.3180630207061768
+        ],
+        "size": [
+          5.980690002441406,
+          2.580000162124634,
+          5.904422283172607
+        ]
+      },
+      "maximumDeltaFromIndependentGLB": 1.872009867120994e-07
+    },
+    {
+      "label": "window_upper_exclusive",
+      "bounds_game": {
+        "min": [
+          -3.1597118377685547,
+          0.0,
+          -3.5863592624664307
+        ],
+        "max": [
+          2.8209781646728516,
+          2.3999998569488525,
+          2.3180630207061768
+        ],
+        "size": [
+          5.980690002441406,
+          2.3999998569488525,
+          5.904422283172607
+        ]
+      },
+      "maximumDeltaFromIndependentGLB": 1.872009867120994e-07
+    },
+    {
+      "label": "lift_first_frame",
+      "bounds_game": {
+        "min": [
+          -3.1597118377685547,
+          0.0010870040860027075,
+          -3.58198881149292
+        ],
+        "max": [
+          2.8209781646728516,
+          2.5817012786865234,
+          2.322439432144165
+        ],
+        "size": [
+          5.980690002441406,
+          2.5806142746005207,
+          5.904428243637085
+        ]
+      },
+      "maximumDeltaFromIndependentGLB": 2.3624396439103634e-07
+    },
+    {
+      "label": "lift_transition",
+      "bounds_game": {
+        "min": [
+          -3.1597118377685547,
+          2.0082457065582275,
+          3.6220035552978516
+        ],
+        "max": [
+          2.8209781646728516,
+          4.9621500968933105,
+          9.493696212768555
+        ],
+        "size": [
+          5.980690002441406,
+          2.953904390335083,
+          5.871692657470703
+        ]
+      },
+      "maximumDeltaFromIndependentGLB": 6.706512607479453e-07
+    },
+    {
+      "label": "full_launch",
+      "bounds_game": {
+        "min": [
+          -3.1597118377685547,
+          8.993494033813477,
+          27.74522590637207
+        ],
+        "max": [
+          2.8209781646728516,
+          12.253021240234375,
+          33.42538833618164
+        ],
+        "size": [
+          5.980690002441406,
+          3.2595272064208984,
+          5.68016242980957
+        ]
+      },
+      "maximumDeltaFromIndependentGLB": 6.322107459766357e-07
+    },
+    {
+      "label": "altitude_cap",
+      "bounds_game": {
+        "min": [
+          -3.1597118377685547,
+          22.512422561645508,
+          118.25060272216797
+        ],
+        "max": [
+          2.8209781646728516,
+          25.831785202026367,
+          123.88655853271484
+        ],
+        "size": [
+          5.980690002441406,
+          3.3193626403808594,
+          5.635955810546875
+        ]
+      },
+      "maximumDeltaFromIndependentGLB": 5.1668509684077435e-06
+    },
+    {
+      "label": "passing_outside_window",
+      "bounds_game": {
+        "min": [
+          -3.1597118377685547,
+          22.512422561645508,
+          118.25060272216797
+        ],
+        "max": [
+          2.8209781646728516,
+          25.831785202026367,
+          123.88655853271484
+        ],
+        "size": [
+          5.980690002441406,
+          3.3193626403808594,
+          5.635955810546875
+        ]
+      },
+      "maximumDeltaFromIndependentGLB": 5.1668509684077435e-06
+    }
+  ],
+  "sourceEulerOrderVerified": "Three XYZ with pitch/yaw is Rx @ Ry; explicitly converted to Blender basis, not Mathutils Euler XYZ angles.",
+  "axisConversionVerified": "Blender (x,-gameZ,gameY), glTF exports (x,gameY,gameZ). Engine/beacon local transforms confirmed independently by binary parser.",
+  "reopened": {
+    "triangles": 4698,
+    "materialPrimitives": 5,
+    "bounds_game": {
+      "min": [
+        -3.0368425846099854,
+        0.0,
+        -3.640000104904175
+      ],
+      "max": [
+        3.0368425846099854,
+        2.580000162124634,
+        2.299999952316284
+      ],
+      "size": [
+        6.073685169219971,
+        2.580000162124634,
+        5.940000057220459
+      ]
+    },
+    "nodes": [
+      {
+        "name": "parked_fighter",
+        "location_blender": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_blender_euler": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "parent": null
+      },
+      {
+        "name": "airframe",
+        "location_blender": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_blender_euler": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "parent": "parked_fighter"
+      },
+      {
+        "name": "engine",
+        "location_blender": [
+          0.0,
+          -2.299999952316284,
+          1.0
+        ],
+        "rotation_blender_euler": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          0.30000001192092896,
+          0.30000001192092896,
+          0.30000001192092896
+        ],
+        "parent": "parked_fighter"
+      },
+      {
+        "name": "engine_lens",
+        "location_blender": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_blender_euler": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "parent": "engine"
+      },
+      {
+        "name": "beacon",
+        "location_blender": [
+          0.0,
+          -1.600000023841858,
+          2.4000000953674316
+        ],
+        "rotation_blender_euler": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "parent": "parked_fighter"
+      },
+      {
+        "name": "beacon_lens",
+        "location_blender": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_blender_euler": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "parent": "beacon"
+      }
+    ],
+    "editablePartCount": 103,
+    "externalImages": [],
+    "version": "5.2.1 LTS",
+    "build": "9e2066aef7ef"
+  },
+  "reimport": {
+    "triangles": 4698,
+    "materialPrimitives": 5,
+    "bounds_game": {
+      "min": [
+        -3.0368425846099854,
+        0.0,
+        -3.640000104904175
+      ],
+      "max": [
+        3.0368425846099854,
+        2.580000162124634,
+        2.299999952316284
+      ],
+      "size": [
+        6.073685169219971,
+        2.580000162124634,
+        5.940000057220459
+      ]
+    },
+    "nodes": [
+      {
+        "name": "airframe",
+        "location_blender": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_blender_euler": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "parent": "parked_fighter"
+      },
+      {
+        "name": "beacon",
+        "location_blender": [
+          0.0,
+          -1.600000023841858,
+          2.4000000953674316
+        ],
+        "rotation_blender_euler": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "parent": "parked_fighter"
+      },
+      {
+        "name": "beacon_lens",
+        "location_blender": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_blender_euler": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "parent": "beacon"
+      },
+      {
+        "name": "engine",
+        "location_blender": [
+          0.0,
+          -2.299999952316284,
+          1.0
+        ],
+        "rotation_blender_euler": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          0.30000001192092896,
+          0.30000001192092896,
+          0.30000001192092896
+        ],
+        "parent": "parked_fighter"
+      },
+      {
+        "name": "engine_lens",
+        "location_blender": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_blender_euler": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "parent": "engine"
+      },
+      {
+        "name": "parked_fighter",
+        "location_blender": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_blender_euler": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "parent": null
+      }
+    ]
+  }
+}

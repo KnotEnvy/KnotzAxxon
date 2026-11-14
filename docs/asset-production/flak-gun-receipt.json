@@ -1,0 +1,16 @@
+{
+  "archive": "flak-gun-initial-2026-11-14.tar.gz",
+  "sha256": "6cf8a5ef51dc3e2f78dd55e286604d3efd352c3d3fbd935bed08b6f8d16c7874",
+  "contentHashesVerified": 53,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/flak-gun/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "senderExitStatus": 0,
+  "transferMethod": "Windows Taildrop",
+  "glbSha256": "97a07ec5317b98c095182aadbe08cbef02310f3f4a126db631b8f7e1453cbcdd",
+  "blendSha256": "ac4c4eabf40535e498c6320aca8767d4bef7c9ea17ea5837d2286073b73ffe93",
+  "formalReviewsCompleted": 0,
+  "fixPassesCompleted": 0
+}

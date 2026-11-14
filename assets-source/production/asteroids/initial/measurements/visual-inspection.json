@@ -1,0 +1,59 @@
+{
+  "status": "initial_implementation_inspection_not_formal_review",
+  "formalReviewPasses": 0,
+  "formalReviewFixPasses": 0,
+  "nextStage": "pending_deferred_opus_review",
+  "tool": "functions.view_image; actual local PNG pixels, not a filename-only check",
+  "directlyViewedFinalRenderFiles": [
+    "evidence/kit-three-quarter.png",
+    "evidence/talus-basin-crater.png",
+    "evidence/keel-double-impact-crater.png",
+    "evidence/scar-cleaved-crater.png",
+    "evidence/talus-basin-back.png",
+    "evidence/keel-double-impact-back.png",
+    "evidence/scar-cleaved-back.png",
+    "evidence/world-classic-source-density.png",
+    "evidence/world-classic-kit-density.png"
+  ],
+  "directlyViewedContactFiles": [
+    "evidence/studio-details-contact.png",
+    "evidence/actual-radius-spin-contact.png",
+    "evidence/world-rest-contact.png",
+    "evidence/world-spin-contact.png"
+  ],
+  "sourceRenderFilesInspectedThroughContacts": [
+    "evidence/talus-basin-crater.png",
+    "evidence/keel-double-impact-crater.png",
+    "evidence/scar-cleaved-crater.png",
+    "evidence/talus-basin-back.png",
+    "evidence/keel-double-impact-back.png",
+    "evidence/scar-cleaved-back.png",
+    "evidence/actual-radius-spin-000.png",
+    "evidence/actual-radius-spin-090.png",
+    "evidence/actual-radius-spin-180.png",
+    "evidence/actual-radius-spin-270.png",
+    "evidence/world-classic-source.png",
+    "evidence/world-classic-kit.png",
+    "evidence/world-modern-source.png",
+    "evidence/world-modern-kit.png",
+    "evidence/world-chase-source.png",
+    "evidence/world-chase-kit.png",
+    "evidence/world-classic-source-t12-5.png",
+    "evidence/world-classic-kit-t12-5.png",
+    "evidence/world-modern-source-t12-5.png",
+    "evidence/world-modern-kit-t12-5.png",
+    "evidence/world-chase-source-t12-5.png",
+    "evidence/world-chase-kit-t12-5.png"
+  ],
+  "observations": [
+    "Three connected substantial bodies, broad concave bowls and blunt/elongated/cleaved outlines visible in the authored-scale and actual-radius frames.",
+    "Opposite-side final frames show closed substantial backs, with dark-side shading retained. Initial back-camera sign and overview tint/framing were technically corrected before freeze, not as a formal polish pass.",
+    "Source/kit matched-radius spin frames keep original placement radius parameter and anisotropy; only the side-by-side translation changes.",
+    "Modern and Chase source/kit frames show the same shipped player size and same seeded peripheral field; the authored impact basins are visible at shared game scale.",
+    "Canonical Classic Z3648 truthfully shows no asteroid surface. Additional source-selected Classic Z6384 shows visible impact shapes without moving or enlarging rocks or changing the source rig.",
+    "Both rest and shared-clock 12.5-second world frames were inspected. Four standalone axis-angle pictures supplement, but do not replace, analytic full-spin envelope measurements.",
+    "All evidence is offline EEVEE, with neutral map attenuation, simple lighting/grid and omitted non-asteroid scenery. No live WebGL shader, depth behavior or performance proof is claimed.",
+    "Minor camera-parented label shadowing is visible in the Keel crater closeup and remains an evidence-only known limitation; no label mesh is exported in the kit.",
+    "A supplemental multi-frame render process ended with status 143 before its last back image; that final back image and the Classic evidence were completed in fresh native Blender invocations before final inspection and freeze. No asset geometry or formal review pass was changed."
+  ]
+}

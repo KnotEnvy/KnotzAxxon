@@ -1,0 +1,17 @@
+{
+  "asset": "repair-pickup",
+  "status": "pending_deferred_opus_review",
+  "files": {
+    "asset/repair-pickup.glb": {
+      "bytes": 75676,
+      "sha256": "f063dc0d9daa554f982da33fc72a9222c1a396031a59fe5f2ba71eb9c0929caa"
+    },
+    "asset/repair-pickup.blend": {
+      "bytes": 113252,
+      "sha256": "945d073ee6cf22057b89e9dc42139bc5bbc69b9b3b19e7c35217d536a2a1d386"
+    }
+  },
+  "triangles": 928,
+  "primitives": 3,
+  "PNGs": 48
+}

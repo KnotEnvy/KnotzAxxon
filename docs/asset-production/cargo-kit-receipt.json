@@ -1,0 +1,14 @@
+{
+  "archive": "cargo-kit-initial-2026-11-14.tar.gz",
+  "sha256": "6075e4944a3b13c49daea135ace6ece97faa2a0edca8dac9be2e2ea92dccdd7e",
+  "contentHashesVerified": 58,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/cargo-kit/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "glbSha256": "c516490784e27f1c438df3ec731a4d025793f83522efd1215cec53d13da3e352",
+  "blendSha256": "8d1a1fad15c91260b6add6373a0a4cb629bcba2ec091d3580873af66a7f98021",
+  "senderExit": 0,
+  "senderRoute": "Authorized Windows Tailscale to100.112.66.64"
+}

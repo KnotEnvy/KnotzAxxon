@@ -1,0 +1,113 @@
+{
+  "shipped": [
+    {
+      "path": "public/models/fuel.glb",
+      "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc",
+      "bytes": 1087156,
+      "meshes": 6,
+      "materials": [
+        "FUEL_Hull",
+        "FUEL_Band"
+      ],
+      "use": "Vocabulary/provenance only; no geometry used in depot"
+    },
+    {
+      "path": "public/models/player.glb",
+      "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "bytes": 478292,
+      "meshes": 8,
+      "materials": [
+        "KZ_PlayerAccent",
+        "KZ_PlayerGlass",
+        "KZ_PlayerHull",
+        "KZ_NavPort",
+        "KZ_NavStarboard",
+        "KZ_NeonCyan",
+        "KZ_EngineGlow"
+      ],
+      "use": "Player only: unchanged shipped GLB in WORLD evidence"
+    },
+    {
+      "path": "public/models/radar.glb",
+      "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d",
+      "bytes": 55564,
+      "meshes": 9,
+      "materials": [
+        "warm_armor",
+        "cool_slate",
+        "dark_structure",
+        "dish_warm",
+        "radar_emitter"
+      ],
+      "use": "Vocabulary/provenance only; no geometry used in depot"
+    },
+    {
+      "path": "public/models/sentinel.glb",
+      "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef",
+      "bytes": 1140172,
+      "meshes": 25,
+      "materials": [
+        "SN_Frame",
+        "SN_Armor",
+        "SN_Charge",
+        "SN_Hazard",
+        "SN_Beacon",
+        "SN_Visor",
+        "SN_Metal",
+        "SN_PodEye",
+        "SN_Glow",
+        "SN_Core",
+        "SN_CoreShell",
+        "SN_Seam"
+      ],
+      "use": "Vocabulary/provenance only; no geometry used in depot"
+    },
+    {
+      "path": "public/models/silo.glb",
+      "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e",
+      "bytes": 1281700,
+      "meshes": 3,
+      "materials": [
+        "SILO_Hull",
+        "SILO_Glow"
+      ],
+      "use": "Vocabulary/provenance only; no geometry used in depot"
+    },
+    {
+      "path": "public/models/turret.glb",
+      "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2",
+      "bytes": 58452,
+      "meshes": 8,
+      "materials": [
+        "warm_armor",
+        "cool_slate",
+        "dark_structure",
+        "amber_eye"
+      ],
+      "use": "Vocabulary/provenance only; no geometry used in depot"
+    }
+  ],
+  "sourceFamilies": [
+    {
+      "path": "assets-source/fighter/manifest.json",
+      "sha256": "3cddfa319f228bd00e65d6ff80e35f88e94c0fc76eef7b2cb5f848ccb6c26ab4",
+      "use": "Vocabulary/provenance only; no geometry reused"
+    },
+    {
+      "path": "assets-source/sentinel/manifest.json",
+      "sha256": "fe8b0a38db863314c83ddb5e27ea0bd0ba031924d1c9c96b8cd11763bddcdf07",
+      "use": "Vocabulary/provenance only; no geometry reused"
+    },
+    {
+      "path": "assets-source/supplies/manifest.json",
+      "sha256": "d75d12e94aca4a417a8aba22e02c7c5e8fea48ffdff0a461543c1d81105c4449",
+      "use": "Vocabulary/provenance only; no geometry reused"
+    }
+  ],
+  "activeFuelDistinction": {
+    "source": "src/entities/Enemies.js:386 FuelCell and src/game/Game.js:817 reward/explosion branch",
+    "character": "Active safety-yellow vertical tank and emissive moving band",
+    "depot": "Passive muted twin horizontal steel vessels; no active cue, state or mechanics"
+  },
+  "sourceHashesStillExact": true
+}

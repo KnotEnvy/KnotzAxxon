@@ -1,0 +1,130 @@
+{
+  "blender": "5.2.1 LTS",
+  "build_hash": "9e2066aef7ef",
+  "blend": {
+    "reopened": true,
+    "variants": [
+      {
+        "name": "gutter-keel",
+        "objects": 37,
+        "evaluated_triangles": 532
+      },
+      {
+        "name": "sheared-chine",
+        "objects": 34,
+        "evaluated_triangles": 480
+      }
+    ],
+    "unpacked_external_images": [],
+    "modifiers": 0,
+    "mesh_objects_named": [
+      "gutter-keel--continuous-torn-shell",
+      "gutter-keel--diagonal-gusset-00",
+      "gutter-keel--diagonal-gusset-01",
+      "gutter-keel--ember-face-0",
+      "gutter-keel--ember-face-1",
+      "gutter-keel--ember-face-2",
+      "gutter-keel--ember-face-3",
+      "gutter-keel--exposed-conduit-00",
+      "gutter-keel--exposed-conduit-01",
+      "gutter-keel--fitted-lap-plate-00",
+      "gutter-keel--fitted-lap-plate-01",
+      "gutter-keel--fitted-lap-plate-02",
+      "gutter-keel--fitted-lap-plate-03",
+      "gutter-keel--frame-00-web-00",
+      "gutter-keel--frame-00-web-01",
+      "gutter-keel--frame-00-web-02",
+      "gutter-keel--frame-00-web-03",
+      "gutter-keel--frame-00-web-04",
+      "gutter-keel--frame-00-web-05",
+      "gutter-keel--frame-00-web-06",
+      "gutter-keel--frame-01-web-00",
+      "gutter-keel--frame-01-web-01",
+      "gutter-keel--frame-01-web-02",
+      "gutter-keel--frame-01-web-03",
+      "gutter-keel--frame-01-web-04",
+      "gutter-keel--frame-01-web-05",
+      "gutter-keel--frame-01-web-06",
+      "gutter-keel--frame-02-web-00",
+      "gutter-keel--frame-02-web-01",
+      "gutter-keel--frame-02-web-02",
+      "gutter-keel--frame-02-web-03",
+      "gutter-keel--frame-02-web-04",
+      "gutter-keel--frame-02-web-05",
+      "gutter-keel--frame-02-web-06",
+      "gutter-keel--keel-spline",
+      "gutter-keel--longeron-01",
+      "gutter-keel--longeron-06",
+      "sheared-chine--continuous-torn-shell",
+      "sheared-chine--diagonal-gusset-00",
+      "sheared-chine--diagonal-gusset-01",
+      "sheared-chine--ember-face-0",
+      "sheared-chine--ember-face-1",
+      "sheared-chine--ember-face-2",
+      "sheared-chine--ember-face-3",
+      "sheared-chine--exposed-conduit-00",
+      "sheared-chine--exposed-conduit-01",
+      "sheared-chine--fitted-lap-plate-00",
+      "sheared-chine--fitted-lap-plate-01",
+      "sheared-chine--fitted-lap-plate-02",
+      "sheared-chine--fitted-lap-plate-03",
+      "sheared-chine--frame-00-web-00",
+      "sheared-chine--frame-00-web-01",
+      "sheared-chine--frame-00-web-02",
+      "sheared-chine--frame-00-web-03",
+      "sheared-chine--frame-00-web-04",
+      "sheared-chine--frame-00-web-05",
+      "sheared-chine--frame-01-web-00",
+      "sheared-chine--frame-01-web-01",
+      "sheared-chine--frame-01-web-02",
+      "sheared-chine--frame-01-web-03",
+      "sheared-chine--frame-01-web-04",
+      "sheared-chine--frame-01-web-05",
+      "sheared-chine--frame-02-web-00",
+      "sheared-chine--frame-02-web-01",
+      "sheared-chine--frame-02-web-02",
+      "sheared-chine--frame-02-web-03",
+      "sheared-chine--frame-02-web-04",
+      "sheared-chine--frame-02-web-05",
+      "sheared-chine--keel-spline",
+      "sheared-chine--longeron-01",
+      "sheared-chine--longeron-05"
+    ]
+  },
+  "clean_scene_glb_reimport": [
+    {
+      "name": "gutter-keel",
+      "triangles": 532,
+      "primitives": 2,
+      "min": [
+        -0.2644444406032562,
+        -0.20863083004951477,
+        0.05000000074505806
+      ],
+      "max": [
+        0.2690722346305847,
+        0.19235700368881226,
+        1.7300000190734863
+      ]
+    },
+    {
+      "name": "sheared-chine",
+      "triangles": 480,
+      "primitives": 2,
+      "min": [
+        -0.25116175413131714,
+        -0.21665404736995697,
+        0.05000000074505806
+      ],
+      "max": [
+        0.2690722346305847,
+        0.19625170528888702,
+        1.7300000190734863
+      ]
+    }
+  ],
+  "sidecar_bounds_match_tolerance": 1e-06,
+  "formal_reviews": 0,
+  "formal_fix_passes": 0,
+  "limitation": "Blender evaluation and glTF import only; not Three.js GPU shader acceptance."
+}

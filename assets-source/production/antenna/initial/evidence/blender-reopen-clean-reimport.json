@@ -1,0 +1,205 @@
+{
+  "status": "PASS",
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "reopenedBlend": {
+    "triangles": 304,
+    "worldBoundsGameAxes": [
+      [
+        -1.0018404722213745,
+        0.0,
+        -0.20000000298023224
+      ],
+      [
+        1.0018404722213745,
+        11.006622314453125,
+        0.20000000298023224
+      ]
+    ],
+    "meshes": [
+      {
+        "name": "structure_dark",
+        "triangles": 276,
+        "materials": [
+          "darkMetal_shared_response"
+        ],
+        "vertexGroups": [
+          "continuous_spine",
+          "mount_flange",
+          "tapered_mount_shoe",
+          "socket_clamp",
+          "anchor_bolt_L_rear",
+          "anchor_bolt_L_front",
+          "anchor_bolt_R_rear",
+          "anchor_bolt_R_front",
+          "continuous_rear_conduit",
+          "conduit_lower_elbow",
+          "conduit_upper_elbow",
+          "sealed_base_terminal",
+          "beacon_socket",
+          "beacon_cap",
+          "rear_cable_clip",
+          "aerial_01_rod",
+          "aerial_01_clamp",
+          "aerial_02_rod",
+          "aerial_02_clamp",
+          "aerial_03_rod",
+          "aerial_03_clamp",
+          "aerial_04_rod",
+          "aerial_04_clamp"
+        ],
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "obstruction_lamp_neon",
+        "triangles": 28,
+        "materials": [
+          "neonVertex_source_lamp_preview"
+        ],
+        "vertexGroups": [
+          "red_obstruction_lens"
+        ],
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "packedImages": [],
+    "sceneObjects": 3
+  },
+  "cleanGLBReimport": {
+    "triangles": 304,
+    "worldBoundsGameAxes": [
+      [
+        -1.0018404722213745,
+        0.0,
+        -0.20000000298023224
+      ],
+      [
+        1.0018404722213745,
+        11.006622314453125,
+        0.20000000298023224
+      ]
+    ],
+    "meshes": [
+      {
+        "name": "obstruction_lamp_neon",
+        "triangles": 28,
+        "materials": [
+          "neonVertex_source_lamp_preview"
+        ],
+        "vertexGroups": [],
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "structure_dark",
+        "triangles": 276,
+        "materials": [
+          "darkMetal_shared_response"
+        ],
+        "vertexGroups": [],
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "packedImages": [],
+    "sceneObjects": 3
+  }
+}

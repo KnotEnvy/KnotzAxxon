@@ -1,0 +1,54 @@
+{
+  "CargoCrate_Fitted": {
+    "triangles": 156,
+    "vertices": 80,
+    "parts": {
+      "frame_rib_x_negative": 8,
+      "inset_panel_x_negative": 8,
+      "captive_latch_bevel_x_negative": 8,
+      "captive_latch_x_negative": 2,
+      "frame_rib_x_positive": 8,
+      "inset_panel_x_positive": 8,
+      "captive_latch_bevel_x_positive": 8,
+      "captive_latch_x_positive": 2,
+      "shell_bottom": 2,
+      "frame_rib_y_positive": 8,
+      "inset_panel_y_positive": 8,
+      "lid_hinge_strap_y_positive": 2,
+      "frame_rib_z_negative": 8,
+      "inset_panel_z_negative": 8,
+      "captive_latch_bevel_z_negative": 8,
+      "captive_latch_z_negative": 2,
+      "frame_rib_z_positive": 8,
+      "inset_panel_z_positive": 8,
+      "captive_latch_bevel_z_positive": 8,
+      "captive_latch_z_positive": 2,
+      "shell_edge_bevel": 24,
+      "shell_corner_bevel": 8
+    },
+    "runtime": "single cached template stamped into existing hull",
+    "imported_material": "Cargo_Neutral_UseExistingHull",
+    "live_material": "existing Materials.hull; imported material is not used live",
+    "neutral_vertex_multiplier": 1
+  },
+  "CargoDrum_Fitted": {
+    "triangles": 180,
+    "vertices": 92,
+    "parts": {
+      "rolled_foot": 20,
+      "foot_seam": 20,
+      "lower_wall": 20,
+      "retaining_hoop_rise": 20,
+      "retaining_hoop_return": 20,
+      "upper_wall": 20,
+      "rolled_lid_rim": 20,
+      "recessed_lid_shoulder": 20,
+      "closed_bottom": 10,
+      "recessed_lid": 10
+    },
+    "runtime": "single cached template stamped into existing hull",
+    "imported_material": "Cargo_Neutral_UseExistingHull",
+    "live_material": "existing Materials.hull; imported material is not used live",
+    "neutral_vertex_multiplier": 1
+  }
+}

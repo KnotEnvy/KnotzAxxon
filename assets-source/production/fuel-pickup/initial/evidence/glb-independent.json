@@ -1,0 +1,339 @@
+{
+  "bytes": 109876,
+  "sha256": "152fac271b398f2a44183759b4c4250716a87fc28862221bde6035a84caa912f",
+  "triangles": 1480,
+  "material_primitives": 3,
+  "mesh_nodes": 3,
+  "nodes": [
+    {
+      "extras": {
+        "game_pivot": [
+          0.0,
+          0.0,
+          -0.3
+        ],
+        "ownership": "instance-owned geometry/material; textures remain template-owned"
+      },
+      "mesh": 0,
+      "name": "core",
+      "translation": [
+        0,
+        0,
+        -0.30000001192092896
+      ]
+    },
+    {
+      "extras": {
+        "game_pivot": [
+          0.0,
+          0.0,
+          0.1
+        ],
+        "ownership": "instance-owned geometry/material; textures remain template-owned",
+        "source_motion": "GAME rotation.z=sin(phase*2.2)*.08; source pivot 0,0,+.10",
+        "identity": "Upright drum with two broad rolled hoops, shouldered lid and offset cap. No text, cross, hex crest, chevrons, or mine spikes.",
+        "source_static_scale": "BAKED into geometry: game (.82,.82,.25); exported node scale is (1,1,1). NEVER apply source fuel scale a second time."
+      },
+      "mesh": 1,
+      "name": "shape",
+      "translation": [
+        0,
+        0,
+        0.10000000149011612
+      ]
+    },
+    {
+      "extras": {
+        "game_pivot": [
+          0,
+          0,
+          0
+        ],
+        "ownership": "instance-owned geometry/material; textures remain template-owned",
+        "source_motion": "GAME rotation.z+=dt*.3; uniform pulse .975..1.025; source pivot 0,0,0"
+      },
+      "mesh": 2,
+      "name": "shell"
+    },
+    {
+      "children": [
+        0,
+        1,
+        2
+      ],
+      "extras": {
+        "game_axes": "XY badge plane; +Z front; +Y up. No imported root scale/rotation correction.",
+        "kit_reuse": "Disclosed shield INITIAL loft/annulus utilities and adapted rim/backplate kit profile; freshly generated mesh and original fuel symbol. No shield mesh/binary imported.",
+        "review_status": "INITIAL; zero formal reviews/fix passes; deferred Opus review"
+      },
+      "name": "fuel_pickup_root"
+    }
+  ],
+  "materials": [
+    {
+      "extras": {
+        "identity_srgb": "#ffd76a",
+        "vertex_colors": "neutral multipliers for source-neon clones; core absolute slate colors"
+      },
+      "name": "fuel_core_titanium",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.47999998927116394,
+        "roughnessFactor": 0.4000000059604645
+      }
+    },
+    {
+      "extensions": {
+        "KHR_materials_unlit": {}
+      },
+      "extras": {
+        "identity_srgb": "#ffd76a",
+        "vertex_colors": "neutral multipliers for source-neon clones; core absolute slate colors",
+        "runtime_neon_strength": 1.35
+      },
+      "name": "fuel_shape_yellow_unlit",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "roughnessFactor": 0.9,
+        "baseColorFactor": [
+          1.0,
+          0.6795424696330938,
+          0.14412847085805777,
+          1
+        ]
+      }
+    },
+    {
+      "extensions": {
+        "KHR_materials_unlit": {}
+      },
+      "extras": {
+        "identity_srgb": "#ffd76a",
+        "vertex_colors": "neutral multipliers for source-neon clones; core absolute slate colors",
+        "runtime_neon_strength": 1.15
+      },
+      "name": "fuel_shell_yellow_unlit",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "roughnessFactor": 0.9,
+        "baseColorFactor": [
+          1.0,
+          0.6795424696330938,
+          0.14412847085805777,
+          1
+        ]
+      }
+    }
+  ],
+  "images": 0,
+  "textures": 0,
+  "animations": 0,
+  "transformed_rest_bounds_game": {
+    "min": [
+      -2.0450000762939453,
+      -2.0450000762939453,
+      -0.3800000101327896
+    ],
+    "max": [
+      2.0450000762939453,
+      2.0450000762939453,
+      0.30000000447034836
+    ],
+    "size": [
+      4.090000152587891,
+      4.090000152587891,
+      0.680000014603138
+    ]
+  },
+  "objects": [
+    {
+      "node": "core",
+      "triangles": 116,
+      "material_primitives": 1,
+      "vertices": 228,
+      "vertex_palette_srgb": [
+        "#1a2938",
+        "#263b4c",
+        "#344b5e",
+        "#3c5368",
+        "#526a7e",
+        "#81919b"
+      ],
+      "local_positive_Z_facing_normals": 30,
+      "bounds": {
+        "min": [
+          -1.4808409214019775,
+          -1.6399999856948853,
+          -0.3800000101327896
+        ],
+        "max": [
+          1.4808409214019775,
+          1.6399999856948853,
+          -0.1850000098347664
+        ],
+        "size": [
+          2.961681842803955,
+          3.2799999713897705,
+          0.19500000029802322
+        ]
+      },
+      "matrix_world_row_major": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.30000001192092896
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "maximum_origin_radius": 1.6738652756915906,
+      "maximum_projected_xy_radius": 1.6399999856948853
+    },
+    {
+      "node": "shape",
+      "triangles": 500,
+      "material_primitives": 1,
+      "vertices": 888,
+      "vertex_palette_srgb": [
+        "#525252",
+        "#555555",
+        "#646464",
+        "#727272",
+        "#808080",
+        "#898989",
+        "#a5a5a5",
+        "#bbbbbb",
+        "#d8d8d8",
+        "#dedede",
+        "#ffffff"
+      ],
+      "local_positive_Z_facing_normals": 6,
+      "bounds": {
+        "min": [
+          -0.656000018119812,
+          -0.656000018119812,
+          -0.10000000149011612
+        ],
+        "max": [
+          0.656000018119812,
+          0.656000018119812,
+          0.30000000447034836
+        ],
+        "size": [
+          1.312000036239624,
+          1.312000036239624,
+          0.4000000059604645
+        ]
+      },
+      "matrix_world_row_major": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10000000149011612
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "maximum_origin_radius": 0.8531437396832844,
+      "maximum_projected_xy_radius": 0.8472627929177324
+    },
+    {
+      "node": "shell",
+      "triangles": 864,
+      "material_primitives": 1,
+      "vertices": 1552,
+      "vertex_palette_srgb": [
+        "#626262",
+        "#777777",
+        "#969696",
+        "#999999",
+        "#b2b2b2",
+        "#b8b8b8",
+        "#bcbcbc",
+        "#e3e3e3",
+        "#ffffff"
+      ],
+      "local_positive_Z_facing_normals": 144,
+      "bounds": {
+        "min": [
+          -2.0450000762939453,
+          -2.0450000762939453,
+          -0.06499999761581421
+        ],
+        "max": [
+          2.0450000762939453,
+          2.0450000762939453,
+          0.10000000149011612
+        ],
+        "size": [
+          4.090000152587891,
+          4.090000152587891,
+          0.16499999910593033
+        ]
+      },
+      "matrix_world_row_major": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "maximum_origin_radius": 2.0452995653577677,
+      "maximum_projected_xy_radius": 2.0450000762939453
+    }
+  ],
+  "visual_sphere_radius_at_all_motion_extrema": 2.0964320544917117,
+  "assertions": "PASS: exact named pivots; identity rotations/scales; game XY plane/+Z front; 3 primitives; budgets; shell unlit; no halo/texture/animation"
+}

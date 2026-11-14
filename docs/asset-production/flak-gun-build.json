@@ -1,0 +1,27 @@
+{
+  "taskId": "node:delegated-task:command%3Amcp%3A3b4881af-bcb7-44a0-a2c5-c620fa21e143%3Aremote-delegate%3Anitro-sol-flak-gun-production-20261114-01",
+  "childThreadId": null,
+  "remoteChild": {
+    "environmentId": "543fe9a3-cf00-4f96-8f57-b8d50dd01cd2",
+    "threadId": "mcp:launch:6567a64d4ccad5d4c3b4413848ef7c3db17e532020c8ed70be4de55839e73812",
+    "label": "NitroBliss"
+  },
+  "link": "[Rooftop flak gun production prop \u2014 Sol XHigh](t3-thread://v2/543fe9a3-cf00-4f96-8f57-b8d50dd01cd2/mcp:launch:6567a64d4ccad5d4c3b4413848ef7c3db17e532020c8ed70be4de55839e73812)",
+  "childRunId": null,
+  "childNodeId": "node:delegated-task:command%3Amcp%3A3b4881af-bcb7-44a0-a2c5-c620fa21e143%3Aremote-delegate%3Anitro-sol-flak-gun-production-20261114-01",
+  "status": "running",
+  "workState": "working",
+  "hasPendingChildRuns": false,
+  "latestTerminalRunId": null,
+  "latestTerminalStatus": null,
+  "latestTerminalSummary": null,
+  "latestTerminalResultContextTransferId": null,
+  "providerInstanceId": "codex",
+  "model": "gpt-6.1-sol",
+  "executedModel": null,
+  "summary": null,
+  "resultContextTransferId": null,
+  "hasPendingQuestion": false,
+  "pendingApproval": null,
+  "waitTimedOut": false
+}

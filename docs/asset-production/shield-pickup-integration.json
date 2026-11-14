@@ -1,0 +1,338 @@
+{
+  "selectedFighter": "hero-interceptor-imported",
+  "groundTargets": [
+    "turret",
+    "radar",
+    "silo",
+    "fuel"
+  ],
+  "productionPreview": true,
+  "shieldPickup": {
+    "resourcesDisposed": 6,
+    "sharedHaloPreserved": true,
+    "collectionAward": 250,
+    "magnetSampleStep": 0.25
+  },
+  "flyers": [
+    {
+      "kind": "drone",
+      "contexts": [
+        {
+          "pattern": "weave",
+          "bank": 0.0703016702373307,
+          "position": [
+            -9.626239823590007,
+            6.6133019508774495,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "strafe",
+          "bank": 0,
+          "position": [
+            0,
+            9.314370395508865,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "orbit",
+          "bank": -0.04037866116013454,
+          "position": [
+            -6.217109197498349,
+            7.751584458045593,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "dive",
+          "bank": 0,
+          "position": [
+            0,
+            9,
+            82.00000000000017
+          ]
+        },
+        {
+          "pattern": "peel",
+          "bank": 0.8399999872068172,
+          "position": [
+            -19,
+            25,
+            19.999999999999957
+          ]
+        },
+        {
+          "pattern": "launch",
+          "bank": 0.016361059347587276,
+          "position": [
+            0.6504156647914032,
+            10.841569317751466,
+            114.39999999999925
+          ]
+        }
+      ],
+      "resourcesDisposed": 14
+    },
+    {
+      "kind": "interceptor",
+      "contexts": [
+        {
+          "pattern": "weave",
+          "bank": 0.0703016702373307,
+          "position": [
+            -9.626239823590007,
+            6.6133019508774495,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "strafe",
+          "bank": 0,
+          "position": [
+            0,
+            9.314370395508865,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "orbit",
+          "bank": -0.04037866116013454,
+          "position": [
+            -6.217109197498349,
+            7.751584458045593,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "dive",
+          "bank": 0,
+          "position": [
+            0,
+            9,
+            82.00000000000017
+          ]
+        },
+        {
+          "pattern": "peel",
+          "bank": 0.8399999872068172,
+          "position": [
+            -19,
+            25,
+            19.999999999999957
+          ]
+        },
+        {
+          "pattern": "launch",
+          "bank": 0.016361059347587276,
+          "position": [
+            0.6504156647914032,
+            10.841569317751466,
+            138.39999999999975
+          ]
+        }
+      ],
+      "resourcesDisposed": 14
+    }
+  ],
+  "heavyTurret": {
+    "shots": [
+      {
+        "origin": [
+          -0.6850515665019483,
+          2.2876661600024506,
+          38.70154008009111
+        ],
+        "direction": [
+          -0.02499545609234721,
+          0.3516663351003703,
+          -0.935791651988737
+        ]
+      },
+      {
+        "origin": [
+          0.5171014066600113,
+          2.294904430552869,
+          38.3116175440785
+        ],
+        "direction": [
+          -0.07997339380886338,
+          0.356190254194382,
+          -0.9309848329052595
+        ]
+      },
+      {
+        "origin": [
+          0.4218949205125711,
+          2.1545640551321297,
+          39.006553510053706
+        ],
+        "direction": [
+          0.016994639531244703,
+          0.2684775195564199,
+          -0.9631360255540415
+        ]
+      },
+      {
+        "origin": [
+          -0.31030594129539685,
+          2.174075635556522,
+          37.91906387374904
+        ],
+        "direction": [
+          0.052748472479489196,
+          0.28067225732166484,
+          -0.9583531095692452
+        ]
+      },
+      {
+        "origin": [
+          0.6892976110125852,
+          2.225739011521371,
+          38.69022601726305
+        ],
+        "direction": [
+          0.029690176300786193,
+          0.31296186729969566,
+          -0.9493015132440882
+        ]
+      },
+      {
+        "origin": [
+          -0.5053201180974205,
+          2.2326821370325627,
+          38.279721837567365
+        ],
+        "direction": [
+          0.08529575677119178,
+          0.31730132074419043,
+          -0.9444810774869035
+        ]
+      }
+    ],
+    "resourcesDisposed": 9,
+    "chargeCue": "source shared neon",
+    "fullElevationDegrees": [
+      -90,
+      90
+    ]
+  },
+  "mine": {
+    "samples": [
+      {
+        "distance": 40,
+        "time": 0.39269908169872414,
+        "armed": 0,
+        "scale": 1.015
+      },
+      {
+        "distance": 13.6,
+        "time": 0.1,
+        "armed": 0.6000000000000001,
+        "scale": 1.038858883873103
+      },
+      {
+        "distance": 0,
+        "time": 0.05235987755982988,
+        "armed": 1,
+        "scale": 1.06
+      },
+      {
+        "distance": 0,
+        "time": 0.15707963267948966,
+        "armed": 1,
+        "scale": 0.94
+      },
+      {
+        "distance": 40,
+        "time": 0.3,
+        "armed": 0,
+        "scale": 1.0139805862895084
+      },
+      {
+        "distance": 0,
+        "time": 0.4,
+        "armed": 1,
+        "scale": 0.9678056249199739
+      }
+    ],
+    "warnings": 1,
+    "resourcesDisposed": 9
+  },
+  "batch": {
+    "copies": {
+      "drone": 18,
+      "interceptor": 18,
+      "heavyTurret": 11,
+      "mine": 24,
+      "shieldPickup": 24
+    },
+    "cycles": 3,
+    "coldGeometryCount": 104,
+    "sharedHaloWarmupDelta": 1,
+    "geometryBaseline": 105,
+    "geometryAfterCycles": [
+      105,
+      105,
+      105
+    ],
+    "cpuRenderSubmitMedianMs": 5.100000001490116,
+    "caveat": "Synthetic 71-enemy plus24-shield stress in actual scene with player/Sentinel. Pickup count is an explicit stress fixture, not a live maximum. CPU render submission timing in headless Chromium, not GPU frame-time or sustained hardware acceptance."
+  },
+  "iterations": [
+    {
+      "iteration": 0,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    },
+    {
+      "iteration": 1,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    },
+    {
+      "iteration": 2,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    }
+  ],
+  "errors": [],
+  "asset": "shield-pickup",
+  "stage": "initial_opt_in_integration_pending_deferred_opus_review",
+  "regressions": {
+    "passed": 104,
+    "failed": 0
+  },
+  "build": "passed",
+  "visualInspection": {
+    "evidenceDirectory": "assets-source/production/integration-evidence/shield-pickup",
+    "actualPngsViewed": [
+      "production-classic.png",
+      "production-modern.png",
+      "production-chase.png"
+    ],
+    "observations": [
+      "Cyan shield emblem remains front-facing and readable in all three actual game rigs.",
+      "Pickup remains visibly distinct from the spiked red contact mine at common world scale.",
+      "Authored unlit cyan facet palette intentionally replaces uniform source neon gains; shared halo opacity and pulse remain source-driven.",
+      "Posed Three.js snapshots are separate from frozen offline reconstructions; sustained target-hardware performance and final art acceptance remain pending."
+    ]
+  },
+  "sharedResourceDiagnosis": "Cold baseline104 becomes105 after warming one visible pickup halo. All stressed halos reference the same shared Sprite geometry. Three disposal cycles return to warmed baseline105; no per-instance growth. The shared halo geometry/material must not be disposed by a pickup.",
+  "defaultModelQA": "passed"
+}

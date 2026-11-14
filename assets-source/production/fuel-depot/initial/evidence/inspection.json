@@ -1,0 +1,36 @@
+{
+  "actuallyViewed": true,
+  "inspector": "Implementation agent, gpt-6.1-sol / xhigh; not a formal reviewer",
+  "formalReviews": 0,
+  "formalReviewFixRounds": 0,
+  "reviewStatus": "pending_deferred_opus_review",
+  "viewedPNGFiles": [
+    "craft-three-quarter.png",
+    "close-endcap-strap-saddle.png",
+    "close-manifold-valve-joints.png",
+    "contact-craft.png",
+    "contact-world.png",
+    "world-classic-candidate.png",
+    "world-modern-candidate.png",
+    "world-chase-candidate.png"
+  ],
+  "inspectionMethod": "Opened actual PNG files with image viewer. Contact-craft includes all six full craft/endcap/top/opposite/closeup renders; contact-world includes paired source/candidate Classic/Modern/Chase. Three-quarter and both closeups were also inspected full-size before label bands; label script preserves source image pixels. Candidate WORLD frames were also opened full-size after labeling.",
+  "observations": [
+    "Twin horizontal vessels read as a single static bulk-storage installation with steel shells and restrained dark straps/supports.",
+    "Formed ends are present on both sides; silhouette facets and interpolated low-poly head shading remain visible in closeups.",
+    "Four fitted saddle supports and four retaining straps remain within the original footprint; support interfaces deliberately overlap fitted shells slightly.",
+    "Cross-header visibly joins the longitudinal manifold and both riser/valve/flange assemblies; pipe junctions are overlapping meshes, not boolean unions.",
+    "Small end service plates are restrained; no luminous fuel/reward/active-target cue is introduced.",
+    "At unchanged measured source placement X 23.597259795293212 / Z 74.6069746306166, the depot remains on the shoulder and small in the full WORLD-scale cameras. Closeup craft detail is not claimed to be fully legible at Classic scale.",
+    "Source and candidate WORLD frames share identical actual source camera transforms, source deck geometry, shipped player model at scale 1 and chosen stationary player pose.",
+    "No geometry polishing or formal review/fix pass followed image inspection."
+  ],
+  "limitations": [
+    "Offline native Linux EEVEE/software Mesa; no live renderer, GPU/FPS or final acceptance.",
+    "Single measured source placement and one still valid player pose, three camera modes, one dusk-light approximation; not exhaustive camera/lighting/player-input testing.",
+    "Isolated source deck fixture omits neighboring props, trench/walls, targets and HUD.",
+    "Source procedural hull maps, normal/roughness maps, Three hemisphere/environment/rim response, exact Sky.follow light offsets/targets, fog/sky/postFX are not reproduced.",
+    "Inherited nominal 0.58 lane-edge gap does not provide 1.5-radius player-sphere clearance; no flight/aim range changes were made.",
+    "Formal Opus review/polish remains deferred."
+  ]
+}

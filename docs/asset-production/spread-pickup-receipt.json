@@ -1,0 +1,12 @@
+{
+  "archive": "spread-pickup-initial-20261114T170011058096Z.tar.gz",
+  "sha256": "b2364f16bb4d900b73340a24338b684e87fc190f4f9b61e34c8b52e327435255",
+  "contentHashesVerified": 105,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/spread-pickup/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "glbSha256": "01df1ee78e1bbbead7cd7cd58121d571ab5a40f8259e2a4cf0dea2211883256f",
+  "builderCompletionHashesMatch": true,
+  "readOnly": true,
+  "executableModesRetained": true
+}

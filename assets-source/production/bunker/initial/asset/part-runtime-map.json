@@ -1,0 +1,391 @@
+{
+  "parts": [
+    {
+      "name": "ground-contact-skirt",
+      "bucket": "dark",
+      "triangleOffset": 0,
+      "triangles": 28,
+      "purpose": "Broad continuous ground footing; furthest extent remains inset from source envelope."
+    },
+    {
+      "name": "lower-armored-plinth",
+      "bucket": "hull",
+      "triangleOffset": 0,
+      "triangles": 28,
+      "purpose": "Sloped bolted foundation belt without corridor overhang."
+    },
+    {
+      "name": "raked-armor-face-1",
+      "bucket": "hull",
+      "triangleOffset": 28,
+      "triangles": 2,
+      "purpose": "Continuous octagonal raked shell, broad planar armor instead of box pile."
+    },
+    {
+      "name": "raked-armor-face-2",
+      "bucket": "hull",
+      "triangleOffset": 30,
+      "triangles": 2,
+      "purpose": "Continuous octagonal raked shell, broad planar armor instead of box pile."
+    },
+    {
+      "name": "raked-armor-face-3",
+      "bucket": "hull",
+      "triangleOffset": 32,
+      "triangles": 2,
+      "purpose": "Continuous octagonal raked shell, broad planar armor instead of box pile."
+    },
+    {
+      "name": "raked-armor-face-4",
+      "bucket": "hull",
+      "triangleOffset": 34,
+      "triangles": 2,
+      "purpose": "Continuous octagonal raked shell, broad planar armor instead of box pile."
+    },
+    {
+      "name": "raked-armor-face-5",
+      "bucket": "hull",
+      "triangleOffset": 36,
+      "triangles": 2,
+      "purpose": "Continuous octagonal raked shell, broad planar armor instead of box pile."
+    },
+    {
+      "name": "raked-armor-face-7",
+      "bucket": "hull",
+      "triangleOffset": 38,
+      "triangles": 2,
+      "purpose": "Continuous octagonal raked shell, broad planar armor instead of box pile."
+    },
+    {
+      "name": "sealed-service-recess-shell",
+      "bucket": "hull",
+      "triangleOffset": 40,
+      "triangles": 16,
+      "purpose": "Genuine omitted shell patch surrounding recessed static hardware."
+    },
+    {
+      "name": "sealed-service-recess-reveal",
+      "bucket": "dark",
+      "triangleOffset": 28,
+      "triangles": 8,
+      "purpose": "Four real setback reveal walls, not a coplanar painted rectangle."
+    },
+    {
+      "name": "sealed-service-recess-backplate",
+      "bucket": "dark",
+      "triangleOffset": 36,
+      "triangles": 2,
+      "purpose": "Closed static backing; no interior, door, collision or mechanics."
+    },
+    {
+      "name": "observation-service-recess-shell",
+      "bucket": "hull",
+      "triangleOffset": 56,
+      "triangles": 16,
+      "purpose": "Genuine omitted shell patch surrounding recessed static hardware."
+    },
+    {
+      "name": "observation-service-recess-reveal",
+      "bucket": "dark",
+      "triangleOffset": 38,
+      "triangles": 8,
+      "purpose": "Four real setback reveal walls, not a coplanar painted rectangle."
+    },
+    {
+      "name": "observation-service-recess-backplate",
+      "bucket": "dark",
+      "triangleOffset": 46,
+      "triangles": 2,
+      "purpose": "Closed static backing; no interior, door, collision or mechanics."
+    },
+    {
+      "name": "sealed-service-cover",
+      "bucket": "hull",
+      "triangleOffset": 72,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "service-cover-tool-inset",
+      "bucket": "dark",
+      "triangleOffset": 48,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "cover-fixed-clamp--0.29",
+      "bucket": "dark",
+      "triangleOffset": 50,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "cover-fixed-clamp-upper--0.29",
+      "bucket": "dark",
+      "triangleOffset": 52,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "cover-fixed-clamp-0.29",
+      "bucket": "dark",
+      "triangleOffset": 54,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "cover-fixed-clamp-upper-0.29",
+      "bucket": "dark",
+      "triangleOffset": 56,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "warm-status-strip",
+      "bucket": "neon",
+      "triangleOffset": 0,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "observation-mullion--0.24",
+      "bucket": "hull",
+      "triangleOffset": 74,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "observation-mullion-0.24",
+      "bucket": "hull",
+      "triangleOffset": 76,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "recess-shadow-brow",
+      "bucket": "hull",
+      "triangleOffset": 78,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "fitted-panel-seam-0",
+      "bucket": "dark",
+      "triangleOffset": 58,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "lower-belt-joint-0",
+      "bucket": "dark",
+      "triangleOffset": 60,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "fitted-panel-seam-2",
+      "bucket": "dark",
+      "triangleOffset": 62,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "lower-belt-joint-2",
+      "bucket": "dark",
+      "triangleOffset": 64,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "fitted-panel-seam-4",
+      "bucket": "dark",
+      "triangleOffset": 66,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "lower-belt-joint-4",
+      "bucket": "dark",
+      "triangleOffset": 68,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "fitted-panel-seam-6",
+      "bucket": "dark",
+      "triangleOffset": 70,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "lower-belt-joint-6",
+      "bucket": "dark",
+      "triangleOffset": 72,
+      "triangles": 2,
+      "purpose": "Fitted structural panel on the raked plane."
+    },
+    {
+      "name": "roof-perimeter-bevel",
+      "bucket": "hull",
+      "triangleOffset": 80,
+      "triangles": 22,
+      "purpose": "Shallow roof chamfer terminates the shell and catches a readable sky edge."
+    },
+    {
+      "name": "roof-plant-isolation-seat",
+      "bucket": "dark",
+      "triangleOffset": 74,
+      "triangles": 28,
+      "purpose": "Low broad machinery seat, never a turret turntable."
+    },
+    {
+      "name": "roof-air-handler-armor",
+      "bucket": "hull",
+      "triangleOffset": 102,
+      "triangles": 32,
+      "purpose": "Fixed broad roof machinery hood with tapered chamfers and a real vent opening."
+    },
+    {
+      "name": "roof-vent-recess",
+      "bucket": "dark",
+      "triangleOffset": 102,
+      "triangles": 22,
+      "purpose": "Setback intake tray inside hood, no dish, barrel, beacon or weapon emission."
+    },
+    {
+      "name": "roof-fixed-louver-0",
+      "bucket": "hull",
+      "triangleOffset": 134,
+      "triangles": 12,
+      "purpose": "Five static structural slats are readable without fine greeble."
+    },
+    {
+      "name": "roof-fixed-louver-1",
+      "bucket": "hull",
+      "triangleOffset": 146,
+      "triangles": 12,
+      "purpose": "Five static structural slats are readable without fine greeble."
+    },
+    {
+      "name": "roof-fixed-louver-2",
+      "bucket": "hull",
+      "triangleOffset": 158,
+      "triangles": 12,
+      "purpose": "Five static structural slats are readable without fine greeble."
+    },
+    {
+      "name": "roof-fixed-louver-3",
+      "bucket": "hull",
+      "triangleOffset": 170,
+      "triangles": 12,
+      "purpose": "Five static structural slats are readable without fine greeble."
+    },
+    {
+      "name": "roof-fixed-louver-4",
+      "bucket": "hull",
+      "triangleOffset": 182,
+      "triangles": 12,
+      "purpose": "Five static structural slats are readable without fine greeble."
+    },
+    {
+      "name": "roof-load-spreader--1",
+      "bucket": "dark",
+      "triangleOffset": 124,
+      "triangles": 12,
+      "purpose": "Fitted roof support rails, visibly attached and contained by roof."
+    },
+    {
+      "name": "roof-anchor--1--1",
+      "bucket": "hull",
+      "triangleOffset": 194,
+      "triangles": 12,
+      "purpose": "Broad restrained anchor shoes instead of decorative rivet clouds."
+    },
+    {
+      "name": "roof-anchor--1-1",
+      "bucket": "hull",
+      "triangleOffset": 206,
+      "triangles": 12,
+      "purpose": "Broad restrained anchor shoes instead of decorative rivet clouds."
+    },
+    {
+      "name": "roof-load-spreader-1",
+      "bucket": "dark",
+      "triangleOffset": 136,
+      "triangles": 12,
+      "purpose": "Fitted roof support rails, visibly attached and contained by roof."
+    },
+    {
+      "name": "roof-anchor-1--1",
+      "bucket": "hull",
+      "triangleOffset": 218,
+      "triangles": 12,
+      "purpose": "Broad restrained anchor shoes instead of decorative rivet clouds."
+    },
+    {
+      "name": "roof-anchor-1-1",
+      "bucket": "hull",
+      "triangleOffset": 230,
+      "triangles": 12,
+      "purpose": "Broad restrained anchor shoes instead of decorative rivet clouds."
+    },
+    {
+      "name": "aft-sealed-access-cap",
+      "bucket": "dark",
+      "triangleOffset": 148,
+      "triangles": 28,
+      "purpose": "Flush static maintenance cap, not an opening door."
+    },
+    {
+      "name": "foundation-key--1--1",
+      "bucket": "dark",
+      "triangleOffset": 176,
+      "triangles": 12,
+      "purpose": "Four fitted foundation keys stop short of source bounds."
+    },
+    {
+      "name": "foundation-key--1-1",
+      "bucket": "dark",
+      "triangleOffset": 188,
+      "triangles": 12,
+      "purpose": "Four fitted foundation keys stop short of source bounds."
+    },
+    {
+      "name": "foundation-key-1--1",
+      "bucket": "dark",
+      "triangleOffset": 200,
+      "triangles": 12,
+      "purpose": "Four fitted foundation keys stop short of source bounds."
+    },
+    {
+      "name": "foundation-key-1-1",
+      "bucket": "dark",
+      "triangleOffset": 212,
+      "triangles": 12,
+      "purpose": "Four fitted foundation keys stop short of source bounds."
+    }
+  ],
+  "materials": {
+    "hull": "materials.hull: existing mapped PBR; source tint 0x8a929c; world UV /4",
+    "dark": "materials.darkMetal: existing unmapped PBR; source tint white; world UV /3",
+    "neon": "materials.neonVertex: existing shared unlit; theme.warm; gain1.1; aAnim [3,.3,sourcePhase]; world UV /8"
+  },
+  "bounds": [
+    [
+      -3.45,
+      0,
+      -3.95
+    ],
+    [
+      3.45,
+      3.93,
+      3.95
+    ]
+  ],
+  "triangles": 468,
+  "buckets": {
+    "dark": 224,
+    "hull": 242,
+    "neon": 2
+  }
+}

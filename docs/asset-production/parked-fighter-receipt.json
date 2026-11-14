@@ -1,0 +1,13 @@
+{
+  "archive": "parked-fighter-initial-20261114T165717Z.tar.gz",
+  "sha256": "717be17bd0ca02dc769718f9436d5b9b1024999e4e4555424f1785b9c101aff4",
+  "contentHashesVerified": 59,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/parked-fighter/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "glbSha256": "681d691d277906ca960819d7f7a19536de041264fe76bd7a672a34c5fa24be55",
+  "blendSha256": "b00fa0b5fd219d8de5c21d675859e9e5d9df27daacc3fb801c44dab6cb9433b3",
+  "builderCompletionHashesMatch": true,
+  "readOnly": true,
+  "executableModesRetained": true
+}

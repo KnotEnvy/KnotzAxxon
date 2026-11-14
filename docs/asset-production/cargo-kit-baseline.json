@@ -1,0 +1,95 @@
+{
+  "method": "Actual _crates(maxH=3.2) and Batch; four CPU samples, not GPU profiling",
+  "sourceHeightRange": [
+    0,
+    3.2
+  ],
+  "sourceDraws": "variable loop and optional drums",
+  "sourceBuckets": 1,
+  "samples": [
+    {
+      "seed": 1,
+      "buckets": {
+        "hull": 144
+      },
+      "triangles": 144,
+      "bounds": {
+        "min": [
+          -1.655526876449585,
+          0,
+          -1.6925033330917358
+        ],
+        "max": [
+          2.8994438648223877,
+          1.9930872917175293,
+          1.5384950637817383
+        ]
+      },
+      "emissions": [],
+      "rngState": 4103143706
+    },
+    {
+      "seed": 7,
+      "buckets": {
+        "hull": 24
+      },
+      "triangles": 24,
+      "bounds": {
+        "min": [
+          -0.8633943200111389,
+          0,
+          -1.2044929265975952
+        ],
+        "max": [
+          1.2859381437301636,
+          2.0938892364501953,
+          1.1745654344558716
+        ]
+      },
+      "emissions": [],
+      "rngState": 2903413569
+    },
+    {
+      "seed": 42,
+      "buckets": {
+        "hull": 156
+      },
+      "triangles": 156,
+      "bounds": {
+        "min": [
+          -1.2291778326034546,
+          0,
+          -1.7844059467315674
+        ],
+        "max": [
+          2.8994438648223877,
+          2.8424930572509766,
+          1.3162364959716797
+        ]
+      },
+      "emissions": [],
+      "rngState": 1575801067
+    },
+    {
+      "seed": 123,
+      "buckets": {
+        "hull": 24
+      },
+      "triangles": 24,
+      "bounds": {
+        "min": [
+          -1.2289413213729858,
+          0,
+          -1.8380893468856812
+        ],
+        "max": [
+          0.8703112006187439,
+          2.0438947677612305,
+          1.3126511573791504
+        ]
+      },
+      "emissions": [],
+      "rngState": 2903413685
+    }
+  ]
+}

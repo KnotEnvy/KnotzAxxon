@@ -1,0 +1,482 @@
+{
+  "reader": "independent Python stdlib, binary accessor positions and indices, full node TRS traversal, all scene roots",
+  "file_bytes": 155468,
+  "sha256": "7053c26483f863ec9c854cf57bd0efd1e7f5a775616c0d78200ae0c7f273b8ee",
+  "visible": {
+    "triangles": 2640,
+    "material_primitives": 6,
+    "bounds_game": {
+      "min": [
+        -2.799999952316284,
+        -0.41341304779052734,
+        -1.9500000476837158
+      ],
+      "max": [
+        2.799999952316284,
+        0.7200000286102295,
+        1.4900000095367432
+      ]
+    }
+  },
+  "hidden_flash": {
+    "triangles": 220,
+    "material_primitives": 1,
+    "bounds_game": {
+      "min": [
+        -2.911999843597414,
+        -0.3951999805450441,
+        -1.5911999118804943
+      ],
+      "max": [
+        2.911999843597414,
+        0.33279998035430935,
+        1.372800004196165
+      ]
+    }
+  },
+  "all_bounds": {
+    "min": [
+      -2.911999843597414,
+      -0.41341304779052734,
+      -1.9500000476837158
+    ],
+    "max": [
+      2.911999843597414,
+      0.7200000286102295,
+      1.4900000095367432
+    ]
+  },
+  "nodes": [
+    {
+      "name": "drone_root",
+      "scene": 0,
+      "parent": null,
+      "local_translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "materials": [],
+      "mesh": null
+    },
+    {
+      "name": "axis_nose_plusZ",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        0,
+        2
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "materials": [],
+      "mesh": null
+    },
+    {
+      "name": "axis_up_plusY",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        1,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "materials": [],
+      "mesh": null
+    },
+    {
+      "name": "body",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "materials": [
+        "DR_Hull_Oxide",
+        "DR_Machinery_Slate",
+        "DR_Trim_Titanium",
+        "DR_Canopy_Obsidian"
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "engine",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        -0.03500000014901161,
+        -1.9500000476837158
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        -0.03500000014901161,
+        -1.9500000476837158
+      ],
+      "materials": [
+        "DR_Engine_Amber_ff9a3a"
+      ],
+      "mesh": 1
+    },
+    {
+      "name": "eye",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        0.4000000059604645,
+        1.2580000162124634
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        0.4000000059604645,
+        1.2580000162124634
+      ],
+      "materials": [
+        "DR_Cue_Red_ff3d55"
+      ],
+      "mesh": 2
+    },
+    {
+      "name": "shot_world_offset_reference",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        0,
+        1.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "materials": [],
+      "mesh": null
+    },
+    {
+      "name": "weapon_mouth_reference",
+      "scene": 0,
+      "parent": "drone_root",
+      "local_translation": [
+        0,
+        -0.04500000178813934,
+        1.4900000095367432
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_origin": [
+        0.0,
+        -0.04500000178813934,
+        1.4900000095367432
+      ],
+      "materials": [],
+      "mesh": null
+    },
+    {
+      "name": "flash_shell",
+      "scene": 1,
+      "parent": null,
+      "local_translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1.0399999618530273,
+        1.0399999618530273,
+        1.0399999618530273
+      ],
+      "world_origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "materials": [
+        "DR_Flash_White"
+      ],
+      "mesh": 3
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "DR_Hull_Oxide",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.31854677200317383,
+          0.10702310502529144,
+          0.06480326503515244,
+          1
+        ],
+        "metallicFactor": 0.47999998927116394,
+        "roughnessFactor": 0.41999998688697815
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "DR_Machinery_Slate",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.040915198624134064,
+          0.0666259378194809,
+          0.10224173218011856,
+          1
+        ],
+        "metallicFactor": 0.6200000047683716,
+        "roughnessFactor": 0.36000001430511475
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "DR_Trim_Titanium",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.46207699179649353,
+          0.4564110338687897,
+          0.3762621283531189,
+          1
+        ],
+        "metallicFactor": 0.6000000238418579,
+        "roughnessFactor": 0.4000000059604645
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "DR_Canopy_Obsidian",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.007499032188206911,
+          0.011612244881689548,
+          0.022173885256052017,
+          1
+        ],
+        "metallicFactor": 0.5199999809265137,
+        "roughnessFactor": 0.23999999463558197
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1,
+        0.32314321398735046,
+        0.0423114113509655
+      ],
+      "extensions": {
+        "KHR_materials_emissive_strength": {
+          "emissiveStrength": 2.299999952316284
+        }
+      },
+      "name": "DR_Engine_Amber_ff9a3a",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          0.32314321398735046,
+          0.0423114113509655,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.3199999928474426
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1,
+        0.04666508734226227,
+        0.09084171056747437
+      ],
+      "extensions": {
+        "KHR_materials_emissive_strength": {
+          "emissiveStrength": 2.299999952316284
+        }
+      },
+      "name": "DR_Cue_Red_ff3d55",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          0.04666508734226227,
+          0.09084171056747437,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.2800000011920929
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1,
+        1,
+        1
+      ],
+      "name": "DR_Flash_White",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "roughnessFactor": 0.5
+      }
+    }
+  ],
+  "axis_proof": {
+    "nose_world": [
+      0.0,
+      0.0,
+      2.0
+    ],
+    "up_world": [
+      0.0,
+      1.0,
+      0.0
+    ]
+  },
+  "images": [],
+  "textures": [],
+  "default_scene": 0,
+  "external_uris": [],
+  "checks": {
+    "visible_triangle_ceiling": true,
+    "visible_primitives": true,
+    "under_1MiB": true,
+    "no_textures": true,
+    "identity_root": true,
+    "flash_separate_from_default_scene": true,
+    "axes_correct": true
+  },
+  "dynamic_front_face_normals": {
+    "eye": {
+      "cap_center_normals_local_game": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "expected_front_z_sign": 1,
+      "front_side_material_compatible": true
+    },
+    "engine": {
+      "cap_center_normals_local_game": [
+        [
+          0.0,
+          0.0,
+          -1.0
+        ]
+      ],
+      "expected_front_z_sign": -1,
+      "front_side_material_compatible": true
+    }
+  }
+}

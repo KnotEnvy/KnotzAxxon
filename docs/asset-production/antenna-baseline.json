@@ -1,0 +1,99 @@
+{
+  "method": "Actual _antenna and Batch; four CPU samples, not GPU profiling",
+  "sourceHeightRange": [
+    7,
+    13
+  ],
+  "sourceDraws": "variable rung branches",
+  "sourceBuckets": 2,
+  "samples": [
+    {
+      "seed": 1,
+      "buckets": {
+        "dark": 60,
+        "neon": 12
+      },
+      "triangles": 72,
+      "bounds": {
+        "min": [
+          -1.1886305809020996,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          1.1886305809020996,
+          11.162444114685059,
+          0.20000000298023224
+        ]
+      },
+      "emissions": [],
+      "rngState": 2967354760
+    },
+    {
+      "seed": 7,
+      "buckets": {
+        "dark": 48,
+        "neon": 12
+      },
+      "triangles": 60,
+      "bounds": {
+        "min": [
+          -1.0194171667099,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          1.0194171667099,
+          7.470228672027588,
+          0.20000000298023224
+        ]
+      },
+      "emissions": [],
+      "rngState": 3599190436
+    },
+    {
+      "seed": 42,
+      "buckets": {
+        "dark": 60,
+        "neon": 12
+      },
+      "triangles": 72,
+      "bounds": {
+        "min": [
+          -1.0018404722213745,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          1.0018404722213745,
+          11.006622314453125,
+          0.20000000298023224
+        ]
+      },
+      "emissions": [],
+      "rngState": 2967354801
+    },
+    {
+      "seed": 123,
+      "buckets": {
+        "dark": 72,
+        "neon": 12
+      },
+      "triangles": 84,
+      "bounds": {
+        "min": [
+          -1.1574561595916748,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          1.1574561595916748,
+          12.123509407043457,
+          0.20000000298023224
+        ]
+      },
+      "emissions": [],
+      "rngState": 2335519212
+    }
+  ]
+}

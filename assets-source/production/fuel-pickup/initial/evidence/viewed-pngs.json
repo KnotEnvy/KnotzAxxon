@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-14",
+  "tool": "functions.view_image",
+  "formal_art_review": false,
+  "formal_reviews": 0,
+  "formal_fix_passes": 0,
+  "opus_polish": "deferred",
+  "views": [
+    {
+      "file": "evidence/png/view-front.png",
+      "sha256": "d1c026459938098576eb9b6dd496f2342ff486f32a768a5ff3f46098873d0a82",
+      "coverage": "Direct runtime-gain front view; drum body, two rolled hoops, panel and small cap inspected."
+    },
+    {
+      "file": "evidence/png/contact-sheet.png",
+      "sha256": "05c85440921dd709d260b6521c171661a7f0328e5ae4feb2a40f16ef6d6b7faa",
+      "coverage": "Rest, static front/rear/edge/quarter, combined extremes, source pulse/wobble/spin, and world-scale baseline/player comparison viewed in one contact sheet."
+    },
+    {
+      "file": "evidence/png/spin-endpoints-sheet.png",
+      "sha256": "9014dc40d49f133174d97f79b740f13f6266046f888bc80ad16d843e89d395f4",
+      "coverage": "Independent shell0/90/180/270 degree and .975/1.025 scale and +/- .08 wobble combinations viewed."
+    },
+    {
+      "file": "evidence/png/offline-gameplay-sheet.png",
+      "sha256": "2543c6669229fa0deade6cc1ca1052d5d4b941c8a6a96654b02a1d91858443a9",
+      "coverage": "All six actual-source Classic/Modern/Chase near/far billboard reconstructions viewed. Offline, not live gameplay."
+    },
+    {
+      "file": "evidence/png/small-gameplay-readability.png",
+      "sha256": "e416c91ba7776841e54705c0dda511fafa77419d2e6f6bff41ccd640eead02c6",
+      "coverage": "Native geometric badge widths23.38..46.66px, color and linear Rec709 grayscale crops viewed without internal pixel resizing."
+    },
+    {
+      "file": "evidence/png/contexts-sheet.png",
+      "sha256": "9ebda8530e3ac9241312eec6ae6923cef82e351f136f26914a5c5a8206d63f1a",
+      "coverage": "Drift outside magnet, d11 attraction context, precontact3.8, source contact3.7 and next-update removed context viewed."
+    },
+    {
+      "file": "evidence/png/view-exact-yellow.png",
+      "sha256": "c0100f3a9f7877eddedddf5dc526a631c1414f46c65152956b52fca4d274c4a3",
+      "coverage": "Nominal #ffd76a gain1 diagnostic viewed separately from runtime1.15/1.35 response."
+    },
+    {
+      "file": "evidence/png/grayscale-kind-silhouette-cues.png",
+      "sha256": "c5cd603bd0797a7a7bfb98ba8d2e24066d4070c1897747da33e7165ac0229b16",
+      "coverage": "New drum versus actual-source shield hex, triple spread chevrons, repair cross and danger mine in grayscale viewed; repair reference is source procedural only."
+    },
+    {
+      "file": "evidence/png/kit-reference-comparison.png",
+      "sha256": "55bd7a74eef7e8da21deeab48b4224a5f37e2ab4496c14b8b60a0722cdcf79d7",
+      "coverage": "Fuel plus read-only frozen shield/spread INITIAL imports at shared world scale viewed; no binary reference geometry included in deliverable."
+    },
+    {
+      "file": "evidence/png/action-full-source-spin.png",
+      "sha256": "bf61e9329c0edeb5e4f8ca574e8e7ca2c2a6d62759c7f3810454d8195dec866a",
+      "coverage": "Actual-source one-full-spin phase20.9439510239 seconds with coupled pulse/wobble viewed."
+    }
+  ],
+  "assessment": {
+    "large": "Drum/canister shape and two hoops distinguish it without text or color alone; original compressed source envelope preserved.",
+    "native_small": "At Classic28.30px and perspective near46.64..46.66px badge widths, central body/hoops/panel contrast remain present. At perspective far23.38..25.72px, bands/cap/bevel detail soften or merge; drum silhouette/neutral center panel survive but universal recognition is not claimed.",
+    "kit": "Common ring and slate backplate language is deliberate. Frozen shield/spread symbols remain distinct from the compact source-scale fuel drum.",
+    "limits": "No human recognition study, formal art approval, final live-game rasterization, HDR/postFX equivalence, or unseen-pixel inspection is claimed. Source collection particles/HUD/audio are numerically sampled, not recreated in these stills."
+  }
+}

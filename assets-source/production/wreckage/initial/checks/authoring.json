@@ -1,0 +1,685 @@
+{
+  "blender": "5.2.1 LTS",
+  "build": "9e2066aef7ef",
+  "engine": "BLENDER_EEVEE",
+  "threads": 4,
+  "variants": [
+    {
+      "name": "gutter-keel",
+      "parts": [
+        {
+          "name": "gutter-keel--continuous-torn-shell",
+          "bucket": "dark",
+          "tint_hex": "0x6a7482",
+          "slot": null,
+          "triangles": 124,
+          "first_vertex": 0,
+          "vertex_count": 372
+        },
+        {
+          "name": "gutter-keel--frame-00-web-00",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 372,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-00-web-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 408,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-00-web-02",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 444,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-00-web-03",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 480,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-00-web-04",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 516,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-00-web-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 552,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-00-web-06",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 588,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-00",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 624,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 660,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-02",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 696,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-03",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 732,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-04",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 768,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 804,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-01-web-06",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 840,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-00",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 876,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 912,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-02",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 948,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-03",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 984,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-04",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1020,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1056,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--frame-02-web-06",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1092,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--longeron-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1128,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--longeron-06",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1164,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--keel-spline",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1200,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--fitted-lap-plate-00",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1236,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--fitted-lap-plate-01",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1272,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--fitted-lap-plate-02",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1308,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--fitted-lap-plate-03",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1344,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--exposed-conduit-00",
+          "bucket": "dark",
+          "tint_hex": "0x7e8a94",
+          "slot": null,
+          "triangles": 20,
+          "first_vertex": 1380,
+          "vertex_count": 60
+        },
+        {
+          "name": "gutter-keel--exposed-conduit-01",
+          "bucket": "dark",
+          "tint_hex": "0x7e8a94",
+          "slot": null,
+          "triangles": 20,
+          "first_vertex": 1440,
+          "vertex_count": 60
+        },
+        {
+          "name": "gutter-keel--diagonal-gusset-00",
+          "bucket": "dark",
+          "tint_hex": "0x667482",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1500,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--diagonal-gusset-01",
+          "bucket": "dark",
+          "tint_hex": "0x667482",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1536,
+          "vertex_count": 36
+        },
+        {
+          "name": "gutter-keel--ember-face-0",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 0,
+          "triangles": 2,
+          "first_vertex": 0,
+          "vertex_count": 6
+        },
+        {
+          "name": "gutter-keel--ember-face-1",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 1,
+          "triangles": 2,
+          "first_vertex": 6,
+          "vertex_count": 6
+        },
+        {
+          "name": "gutter-keel--ember-face-2",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 2,
+          "triangles": 2,
+          "first_vertex": 12,
+          "vertex_count": 6
+        },
+        {
+          "name": "gutter-keel--ember-face-3",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 3,
+          "triangles": 2,
+          "first_vertex": 18,
+          "vertex_count": 6
+        }
+      ],
+      "bounds": {
+        "min": [
+          -0.2644444406032562,
+          -0.20863083004951477,
+          0.05000000074505806
+        ],
+        "max": [
+          0.2690722346305847,
+          0.19235700368881226,
+          1.7300000190734863
+        ]
+      },
+      "triangles": 532
+    },
+    {
+      "name": "sheared-chine",
+      "parts": [
+        {
+          "name": "sheared-chine--continuous-torn-shell",
+          "bucket": "dark",
+          "tint_hex": "0x6a7482",
+          "slot": null,
+          "triangles": 108,
+          "first_vertex": 0,
+          "vertex_count": 324
+        },
+        {
+          "name": "sheared-chine--frame-00-web-00",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 324,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-00-web-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 360,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-00-web-02",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 396,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-00-web-03",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 432,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-00-web-04",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 468,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-00-web-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 504,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-01-web-00",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 540,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-01-web-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 576,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-01-web-02",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 612,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-01-web-03",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 648,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-01-web-04",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 684,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-01-web-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 720,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-02-web-00",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 756,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-02-web-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 792,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-02-web-02",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 828,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-02-web-03",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 864,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-02-web-04",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 900,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--frame-02-web-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 936,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--longeron-01",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 972,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--longeron-05",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1008,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--keel-spline",
+          "bucket": "dark",
+          "tint_hex": "0x4a5462",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1044,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--fitted-lap-plate-00",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1080,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--fitted-lap-plate-01",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1116,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--fitted-lap-plate-02",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1152,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--fitted-lap-plate-03",
+          "bucket": "dark",
+          "tint_hex": "0x89949f",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1188,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--exposed-conduit-00",
+          "bucket": "dark",
+          "tint_hex": "0x7e8a94",
+          "slot": null,
+          "triangles": 20,
+          "first_vertex": 1224,
+          "vertex_count": 60
+        },
+        {
+          "name": "sheared-chine--exposed-conduit-01",
+          "bucket": "dark",
+          "tint_hex": "0x7e8a94",
+          "slot": null,
+          "triangles": 20,
+          "first_vertex": 1284,
+          "vertex_count": 60
+        },
+        {
+          "name": "sheared-chine--diagonal-gusset-00",
+          "bucket": "dark",
+          "tint_hex": "0x667482",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1344,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--diagonal-gusset-01",
+          "bucket": "dark",
+          "tint_hex": "0x667482",
+          "slot": null,
+          "triangles": 12,
+          "first_vertex": 1380,
+          "vertex_count": 36
+        },
+        {
+          "name": "sheared-chine--ember-face-0",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 0,
+          "triangles": 2,
+          "first_vertex": 0,
+          "vertex_count": 6
+        },
+        {
+          "name": "sheared-chine--ember-face-1",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 1,
+          "triangles": 2,
+          "first_vertex": 6,
+          "vertex_count": 6
+        },
+        {
+          "name": "sheared-chine--ember-face-2",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 2,
+          "triangles": 2,
+          "first_vertex": 12,
+          "vertex_count": 6
+        },
+        {
+          "name": "sheared-chine--ember-face-3",
+          "bucket": "neon",
+          "tint_hex": "0xff7a2a",
+          "slot": 3,
+          "triangles": 2,
+          "first_vertex": 18,
+          "vertex_count": 6
+        }
+      ],
+      "bounds": {
+        "min": [
+          -0.25116175413131714,
+          -0.21665404736995697,
+          0.05000000074505806
+        ],
+        "max": [
+          0.2690722346305847,
+          0.19625170528888702,
+          1.7300000190734863
+        ]
+      },
+      "triangles": 480
+    }
+  ],
+  "packed_external_images": 0,
+  "new_textures": 0
+}

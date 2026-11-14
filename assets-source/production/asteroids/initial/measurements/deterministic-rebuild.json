@@ -1,0 +1,30 @@
+{
+  "method": "Separate factory-empty native Blender invocation, same analytic generator/specs, separate regeneration directory; GLB binaries compared independently.",
+  "glbs": [
+    {
+      "file": "assets/asteroid-scenery-kit.glb",
+      "originalSha256": "0450b85240d589e4e2f65454f61b53af52d443a427d76f2c38a1008ae16272b2",
+      "regeneratedSha256": "0450b85240d589e4e2f65454f61b53af52d443a427d76f2c38a1008ae16272b2",
+      "byteIdentical": true
+    },
+    {
+      "file": "assets/keel-double-impact.glb",
+      "originalSha256": "7a44540cf9774ab45ced8c5b8784c8c14c93e2375dc62a786c1df59989f022eb",
+      "regeneratedSha256": "7a44540cf9774ab45ced8c5b8784c8c14c93e2375dc62a786c1df59989f022eb",
+      "byteIdentical": true
+    },
+    {
+      "file": "assets/scar-cleaved.glb",
+      "originalSha256": "3386985e17394a0d38cb46d1f0f3b49aa02cec820685e01be441a5bd7aa5882a",
+      "regeneratedSha256": "3386985e17394a0d38cb46d1f0f3b49aa02cec820685e01be441a5bd7aa5882a",
+      "byteIdentical": true
+    },
+    {
+      "file": "assets/talus-basin.glb",
+      "originalSha256": "9c64a5cb198a6f58226a30a05c992f7f315827e517c439a30a04d9f0f4591f8f",
+      "regeneratedSha256": "9c64a5cb198a6f58226a30a05c992f7f315827e517c439a30a04d9f0f4591f8f",
+      "byteIdentical": true
+    }
+  ],
+  "blendByteIdentityPromised": false
+}

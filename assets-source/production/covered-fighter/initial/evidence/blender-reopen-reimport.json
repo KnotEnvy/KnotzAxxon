@@ -1,0 +1,143 @@
+{
+  "status": "pass",
+  "reopenedSavedBlend": {
+    "objects": 43,
+    "triangles": 1372,
+    "materials": [
+      "CF_DARK",
+      "CF_HULL",
+      "CF_PAINT"
+    ],
+    "gameBounds": {
+      "min": [
+        -3.75,
+        0.004000000189989805,
+        -3.75
+      ],
+      "max": [
+        3.75,
+        2.140000104904175,
+        3.75
+      ]
+    },
+    "meshNames": [
+      "CF_01_Fuselage_Fitted_Lower_Cover",
+      "CF_02_Cockpit_Tensioned_Canvas",
+      "CF_03_Port_Wing_Draped_Pleats",
+      "CF_03_Starboard_Wing_Draped_Pleats",
+      "CF_04_Port_Wing_Reinforced_Seam",
+      "CF_04_Starboard_Wing_Reinforced_Seam",
+      "CF_05_Port_Tailplane_Wrapped",
+      "CF_05_Starboard_Tailplane_Wrapped",
+      "CF_06_Vertical_Fin_Fitted_Sock",
+      "CF_07_Tail_Exhaust_Weather_Plug",
+      "CF_08_Canvas_Cinch_Band_1",
+      "CF_08_Canvas_Cinch_Band_2",
+      "CF_08_Canvas_Cinch_Band_3",
+      "CF_09_Port_Cinch_Clasp_1",
+      "CF_09_Port_Cinch_Clasp_2",
+      "CF_09_Port_Cinch_Clasp_3",
+      "CF_09_Starboard_Cinch_Clasp_1",
+      "CF_09_Starboard_Cinch_Clasp_2",
+      "CF_09_Starboard_Cinch_Clasp_3",
+      "CF_10_Nose_Attached_Strut",
+      "CF_10_Port_Main_Attached_Strut",
+      "CF_10_Starboard_Main_Attached_Strut",
+      "CF_11_Nose_Torque_Brace",
+      "CF_11_Port_Main_Torque_Brace",
+      "CF_11_Starboard_Main_Torque_Brace",
+      "CF_12_Nose_Bevelled_Tyre",
+      "CF_12_Port_Main_Bevelled_Tyre",
+      "CF_12_Starboard_Main_Bevelled_Tyre",
+      "CF_13_Nose_Axle_Hub",
+      "CF_13_Port_Main_Axle_Hub",
+      "CF_13_Starboard_Main_Axle_Hub",
+      "CF_14_Nose_Gear_Attachment",
+      "CF_14_Port_Main_Gear_Attachment",
+      "CF_14_Starboard_Main_Gear_Attachment",
+      "CF_15_Port_Cover_Tiedown_1",
+      "CF_15_Port_Cover_Tiedown_2",
+      "CF_15_Starboard_Cover_Tiedown_1",
+      "CF_15_Starboard_Cover_Tiedown_2",
+      "CF_16_Port_Tiedown_Return_1",
+      "CF_16_Port_Tiedown_Return_2",
+      "CF_16_Starboard_Tiedown_Return_1",
+      "CF_16_Starboard_Tiedown_Return_2",
+      "CF_17_Unchanged_Fixed_Hardstand_24tri"
+    ],
+    "externalImages": [],
+    "transformsIdentity": true
+  },
+  "factoryCleanGlbImport": {
+    "objects": 43,
+    "triangles": 1372,
+    "materials": [
+      "CF_DARK",
+      "CF_HULL",
+      "CF_PAINT"
+    ],
+    "gameBounds": {
+      "min": [
+        -3.75,
+        0.004000000189989805,
+        -3.75
+      ],
+      "max": [
+        3.75,
+        2.140000104904175,
+        3.75
+      ]
+    },
+    "meshNames": [
+      "CF_01_Fuselage_Fitted_Lower_Cover",
+      "CF_02_Cockpit_Tensioned_Canvas",
+      "CF_03_Port_Wing_Draped_Pleats",
+      "CF_03_Starboard_Wing_Draped_Pleats",
+      "CF_04_Port_Wing_Reinforced_Seam",
+      "CF_04_Starboard_Wing_Reinforced_Seam",
+      "CF_05_Port_Tailplane_Wrapped",
+      "CF_05_Starboard_Tailplane_Wrapped",
+      "CF_06_Vertical_Fin_Fitted_Sock",
+      "CF_07_Tail_Exhaust_Weather_Plug",
+      "CF_08_Canvas_Cinch_Band_1",
+      "CF_08_Canvas_Cinch_Band_2",
+      "CF_08_Canvas_Cinch_Band_3",
+      "CF_09_Port_Cinch_Clasp_1",
+      "CF_09_Port_Cinch_Clasp_2",
+      "CF_09_Port_Cinch_Clasp_3",
+      "CF_09_Starboard_Cinch_Clasp_1",
+      "CF_09_Starboard_Cinch_Clasp_2",
+      "CF_09_Starboard_Cinch_Clasp_3",
+      "CF_10_Nose_Attached_Strut",
+      "CF_10_Port_Main_Attached_Strut",
+      "CF_10_Starboard_Main_Attached_Strut",
+      "CF_11_Nose_Torque_Brace",
+      "CF_11_Port_Main_Torque_Brace",
+      "CF_11_Starboard_Main_Torque_Brace",
+      "CF_12_Nose_Bevelled_Tyre",
+      "CF_12_Port_Main_Bevelled_Tyre",
+      "CF_12_Starboard_Main_Bevelled_Tyre",
+      "CF_13_Nose_Axle_Hub",
+      "CF_13_Port_Main_Axle_Hub",
+      "CF_13_Starboard_Main_Axle_Hub",
+      "CF_14_Nose_Gear_Attachment",
+      "CF_14_Port_Main_Gear_Attachment",
+      "CF_14_Starboard_Main_Gear_Attachment",
+      "CF_15_Port_Cover_Tiedown_1",
+      "CF_15_Port_Cover_Tiedown_2",
+      "CF_15_Starboard_Cover_Tiedown_1",
+      "CF_15_Starboard_Cover_Tiedown_2",
+      "CF_16_Port_Tiedown_Return_1",
+      "CF_16_Port_Tiedown_Return_2",
+      "CF_16_Starboard_Tiedown_Return_1",
+      "CF_16_Starboard_Tiedown_Return_2",
+      "CF_17_Unchanged_Fixed_Hardstand_24tri"
+    ],
+    "externalImages": [],
+    "transformsIdentity": true
+  },
+  "blender": "5.2.1 LTS",
+  "hash": "9e2066aef7ef",
+  "renderer": "BLENDER_EEVEE",
+  "packedAssetNoExternalDependencies": true
+}

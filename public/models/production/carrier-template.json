@@ -1,0 +1,7407 @@
+{
+  "format": "carrier-nonindexed-f32le-v1",
+  "axes": "game X across, +Y up, +Z travel",
+  "anchor": "translation [0,0,sector.zStart+160]",
+  "buckets": [
+    {
+      "key": "hull",
+      "vertices": 25866,
+      "triangles": 8622,
+      "attributes": {
+        "position": {
+          "byteOffset": 0,
+          "count": 77598,
+          "itemSize": 3
+        },
+        "normal": {
+          "byteOffset": 310392,
+          "count": 77598,
+          "itemSize": 3
+        },
+        "uv": {
+          "byteOffset": 620784,
+          "count": 51732,
+          "itemSize": 2
+        },
+        "color": {
+          "byteOffset": 827712,
+          "count": 77598,
+          "itemSize": 3
+        }
+      }
+    },
+    {
+      "key": "deck",
+      "vertices": 1410,
+      "triangles": 470,
+      "attributes": {
+        "position": {
+          "byteOffset": 1138104,
+          "count": 4230,
+          "itemSize": 3
+        },
+        "normal": {
+          "byteOffset": 1155024,
+          "count": 4230,
+          "itemSize": 3
+        },
+        "uv": {
+          "byteOffset": 1171944,
+          "count": 2820,
+          "itemSize": 2
+        },
+        "color": {
+          "byteOffset": 1183224,
+          "count": 4230,
+          "itemSize": 3
+        }
+      }
+    },
+    {
+      "key": "dark",
+      "vertices": 12774,
+      "triangles": 4258,
+      "attributes": {
+        "position": {
+          "byteOffset": 1200144,
+          "count": 38322,
+          "itemSize": 3
+        },
+        "normal": {
+          "byteOffset": 1353432,
+          "count": 38322,
+          "itemSize": 3
+        },
+        "uv": {
+          "byteOffset": 1506720,
+          "count": 25548,
+          "itemSize": 2
+        },
+        "color": {
+          "byteOffset": 1608912,
+          "count": 38322,
+          "itemSize": 3
+        }
+      }
+    },
+    {
+      "key": "paint",
+      "vertices": 6264,
+      "triangles": 2088,
+      "attributes": {
+        "position": {
+          "byteOffset": 1762200,
+          "count": 18792,
+          "itemSize": 3
+        },
+        "normal": {
+          "byteOffset": 1837368,
+          "count": 18792,
+          "itemSize": 3
+        },
+        "uv": {
+          "byteOffset": 1912536,
+          "count": 12528,
+          "itemSize": 2
+        },
+        "color": {
+          "byteOffset": 1962648,
+          "count": 18792,
+          "itemSize": 3
+        }
+      }
+    },
+    {
+      "key": "neon",
+      "vertices": 9840,
+      "triangles": 3280,
+      "attributes": {
+        "position": {
+          "byteOffset": 2037816,
+          "count": 29520,
+          "itemSize": 3
+        },
+        "normal": {
+          "byteOffset": 2155896,
+          "count": 29520,
+          "itemSize": 3
+        },
+        "uv": {
+          "byteOffset": 2273976,
+          "count": 19680,
+          "itemSize": 2
+        },
+        "color": {
+          "byteOffset": 2352696,
+          "count": 29520,
+          "itemSize": 3
+        },
+        "aAnim": {
+          "byteOffset": 2470776,
+          "count": 29520,
+          "itemSize": 3
+        }
+      }
+    },
+    {
+      "key": "spin",
+      "vertices": 540,
+      "triangles": 180,
+      "attributes": {
+        "position": {
+          "byteOffset": 2588856,
+          "count": 1620,
+          "itemSize": 3
+        },
+        "normal": {
+          "byteOffset": 2595336,
+          "count": 1620,
+          "itemSize": 3
+        },
+        "uv": {
+          "byteOffset": 2601816,
+          "count": 1080,
+          "itemSize": 2
+        },
+        "color": {
+          "byteOffset": 2606136,
+          "count": 1620,
+          "itemSize": 3
+        },
+        "aPivot": {
+          "byteOffset": 2612616,
+          "count": 1620,
+          "itemSize": 3
+        },
+        "aSpin": {
+          "byteOffset": 2619096,
+          "count": 2160,
+          "itemSize": 4
+        }
+      }
+    }
+  ],
+  "parts": [
+    {
+      "name": "bow-fitted-shell",
+      "bucket": "hull",
+      "role": "primary-hull",
+      "firstVertex": 0,
+      "vertexCount": 180,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58,
+          -26,
+          0
+        ],
+        "max": [
+          108,
+          14,
+          98
+        ]
+      }
+    },
+    {
+      "name": "midbody-fitted-shell",
+      "bucket": "hull",
+      "role": "primary-hull",
+      "firstVertex": 180,
+      "vertexCount": 1134,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58,
+          -26,
+          98
+        ],
+        "max": [
+          108,
+          14,
+          901.6
+        ]
+      }
+    },
+    {
+      "name": "stern-fitted-shell",
+      "bucket": "hull",
+      "role": "primary-hull",
+      "firstVertex": 1314,
+      "vertexCount": 180,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.00000000000001,
+          -26,
+          901.6
+        ],
+        "max": [
+          108.0,
+          14,
+          980
+        ]
+      }
+    },
+    {
+      "name": "port-lower-chine-strakes",
+      "bucket": "hull",
+      "role": "primary-hull",
+      "firstVertex": 1494,
+      "vertexCount": 156,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58,
+          -17,
+          98
+        ],
+        "max": [
+          58.015,
+          7,
+          901.6
+        ]
+      }
+    },
+    {
+      "name": "starboard-service-plating",
+      "bucket": "hull",
+      "role": "primary-hull",
+      "firstVertex": 1650,
+      "vertexCount": 576,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          107.67500000000001,
+          -9.2,
+          123.5
+        ],
+        "max": [
+          108.125,
+          3.8,
+          876.5
+        ]
+      }
+    },
+    {
+      "name": "bay-01-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 2226,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          116
+        ],
+        "max": [
+          68.8,
+          7.3,
+          148
+        ]
+      }
+    },
+    {
+      "name": "bay-01-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 2412,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          121.69999694824219
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          142.3000030517578
+        ]
+      }
+    },
+    {
+      "name": "bay-02-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 2916,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          148
+        ],
+        "max": [
+          68.8,
+          7.3,
+          180
+        ]
+      }
+    },
+    {
+      "name": "bay-02-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 3102,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          153.6999969482422
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          174.3000030517578
+        ]
+      }
+    },
+    {
+      "name": "bay-03-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 3606,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          180
+        ],
+        "max": [
+          68.8,
+          7.3,
+          212
+        ]
+      }
+    },
+    {
+      "name": "bay-03-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 3792,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          185.6999969482422
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          206.3000030517578
+        ]
+      }
+    },
+    {
+      "name": "bay-04-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 4296,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          212
+        ],
+        "max": [
+          68.8,
+          7.3,
+          244
+        ]
+      }
+    },
+    {
+      "name": "bay-04-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 4482,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          217.6999969482422
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          238.3000030517578
+        ]
+      }
+    },
+    {
+      "name": "bay-05-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 4986,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          244
+        ],
+        "max": [
+          68.8,
+          7.3,
+          276
+        ]
+      }
+    },
+    {
+      "name": "bay-05-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 5172,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          249.6999969482422
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          270.29998779296875
+        ]
+      }
+    },
+    {
+      "name": "bay-06-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 5676,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          276
+        ],
+        "max": [
+          68.8,
+          7.3,
+          308
+        ]
+      }
+    },
+    {
+      "name": "bay-06-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 5862,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          281.70001220703125
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          302.29998779296875
+        ]
+      }
+    },
+    {
+      "name": "bay-07-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 6366,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          308
+        ],
+        "max": [
+          68.8,
+          7.3,
+          340
+        ]
+      }
+    },
+    {
+      "name": "bay-07-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 6552,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          313.70001220703125
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          334.29998779296875
+        ]
+      }
+    },
+    {
+      "name": "bay-08-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 7056,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          340
+        ],
+        "max": [
+          68.8,
+          7.3,
+          372
+        ]
+      }
+    },
+    {
+      "name": "bay-08-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 7242,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          345.70001220703125
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          366.29998779296875
+        ]
+      }
+    },
+    {
+      "name": "bay-09-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 7746,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          372
+        ],
+        "max": [
+          68.8,
+          7.3,
+          404
+        ]
+      }
+    },
+    {
+      "name": "bay-09-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 7932,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          377.70001220703125
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          398.29998779296875
+        ]
+      }
+    },
+    {
+      "name": "bay-10-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 8436,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          404
+        ],
+        "max": [
+          68.8,
+          7.3,
+          436
+        ]
+      }
+    },
+    {
+      "name": "bay-10-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 8622,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          409.70001220703125
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          430.29998779296875
+        ]
+      }
+    },
+    {
+      "name": "bay-11-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 9126,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          436
+        ],
+        "max": [
+          68.8,
+          7.3,
+          468
+        ]
+      }
+    },
+    {
+      "name": "bay-11-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 9312,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          441.70001220703125
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          462.29998779296875
+        ]
+      }
+    },
+    {
+      "name": "bay-12-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 9816,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          468
+        ],
+        "max": [
+          68.8,
+          7.3,
+          500
+        ]
+      }
+    },
+    {
+      "name": "bay-12-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 10002,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          473.70001220703125
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          494.29998779296875
+        ]
+      }
+    },
+    {
+      "name": "bay-13-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 10506,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          500
+        ],
+        "max": [
+          68.8,
+          7.3,
+          532
+        ]
+      }
+    },
+    {
+      "name": "bay-13-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 10692,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          505.70001220703125
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          526.2999877929688
+        ]
+      }
+    },
+    {
+      "name": "bay-14-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 11196,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          532
+        ],
+        "max": [
+          68.8,
+          7.3,
+          564
+        ]
+      }
+    },
+    {
+      "name": "bay-14-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 11382,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          537.7000122070312
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          558.2999877929688
+        ]
+      }
+    },
+    {
+      "name": "bay-15-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 11886,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          564
+        ],
+        "max": [
+          68.8,
+          7.3,
+          596
+        ]
+      }
+    },
+    {
+      "name": "bay-15-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 12072,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          569.7000122070312
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          590.2999877929688
+        ]
+      }
+    },
+    {
+      "name": "bay-16-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 12576,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          596
+        ],
+        "max": [
+          68.8,
+          7.3,
+          628
+        ]
+      }
+    },
+    {
+      "name": "bay-16-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 12762,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          601.7000122070312
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          622.2999877929688
+        ]
+      }
+    },
+    {
+      "name": "bay-17-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 13266,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          628
+        ],
+        "max": [
+          68.8,
+          7.3,
+          660
+        ]
+      }
+    },
+    {
+      "name": "bay-17-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 13452,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          633.7000122070312
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          654.2999877929688
+        ]
+      }
+    },
+    {
+      "name": "bay-18-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 13956,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          660
+        ],
+        "max": [
+          68.8,
+          7.3,
+          692
+        ]
+      }
+    },
+    {
+      "name": "bay-18-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 14142,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          665.7000122070312
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          686.2999877929688
+        ]
+      }
+    },
+    {
+      "name": "bay-19-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 14646,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          692
+        ],
+        "max": [
+          68.8,
+          7.3,
+          724
+        ]
+      }
+    },
+    {
+      "name": "bay-19-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 14832,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          697.7000122070312
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          718.2999877929688
+        ]
+      }
+    },
+    {
+      "name": "bay-20-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 15336,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          724
+        ],
+        "max": [
+          68.8,
+          7.3,
+          756
+        ]
+      }
+    },
+    {
+      "name": "bay-20-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 15522,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          729.7000122070312
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          750.2999877929688
+        ]
+      }
+    },
+    {
+      "name": "bay-21-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 16026,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          756
+        ],
+        "max": [
+          68.8,
+          7.3,
+          788
+        ]
+      }
+    },
+    {
+      "name": "bay-21-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 16212,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          761.7000122070312
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          782.2999877929688
+        ]
+      }
+    },
+    {
+      "name": "bay-22-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 16716,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          788
+        ],
+        "max": [
+          68.8,
+          7.3,
+          820
+        ]
+      }
+    },
+    {
+      "name": "bay-22-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 16902,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          793.7000122070312
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          814.2999877929688
+        ]
+      }
+    },
+    {
+      "name": "bay-23-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 17406,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          820
+        ],
+        "max": [
+          68.8,
+          7.3,
+          852
+        ]
+      }
+    },
+    {
+      "name": "bay-23-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 17592,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          825.7000122070312
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          846.2999877929688
+        ]
+      }
+    },
+    {
+      "name": "bay-24-structural-frame",
+      "bucket": "hull",
+      "role": "hangar-frame",
+      "firstVertex": 18096,
+      "vertexCount": 186,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.6,
+          -5.8,
+          852
+        ],
+        "max": [
+          68.8,
+          7.3,
+          884
+        ]
+      }
+    },
+    {
+      "name": "bay-24-internal-structure",
+      "bucket": "hull",
+      "role": "hangar-interior",
+      "firstVertex": 18282,
+      "vertexCount": 504,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          61.0,
+          -4.55,
+          857.7000122070312
+        ],
+        "max": [
+          73.30999755859375,
+          5.900000095367432,
+          878.2999877929688
+        ]
+      }
+    },
+    {
+      "name": "port-continuous-safety-rail",
+      "bucket": "hull",
+      "role": "flightdeck-rail",
+      "firstVertex": 18786,
+      "vertexCount": 1872,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.21,
+          15.399999999999999,
+          104.0
+        ],
+        "max": [
+          48.589999999999996,
+          16.970001220703125,
+          899.0
+        ]
+      }
+    },
+    {
+      "name": "cantilever-deck-web-frames",
+      "bucket": "hull",
+      "role": "flightdeck-structure",
+      "firstVertex": 20658,
+      "vertexCount": 1800,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.23305892944336,
+          6.53772497177124,
+          115.67500305175781
+        ],
+        "max": [
+          58.26694107055664,
+          14.262274742126465,
+          884.3250122070312
+        ]
+      }
+    },
+    {
+      "name": "island-single-tiered-bridge",
+      "bucket": "hull",
+      "role": "island",
+      "firstVertex": 22458,
+      "vertexCount": 276,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          87.5,
+          15.4,
+          404.5
+        ],
+        "max": [
+          100.5,
+          35.5,
+          435.5
+        ]
+      }
+    },
+    {
+      "name": "island-bridge-mullions-and-platforms",
+      "bucket": "hull",
+      "role": "island",
+      "firstVertex": 22734,
+      "vertexCount": 432,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          87.45,
+          22.4,
+          406.0
+        ],
+        "max": [
+          100.55,
+          35.79,
+          434.0
+        ]
+      }
+    },
+    {
+      "name": "stern-bell-0-housing",
+      "bucket": "hull",
+      "role": "stern-engine",
+      "firstVertex": 23166,
+      "vertexCount": 1080,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          75.5,
+          -25.5,
+          972
+        ],
+        "max": [
+          90.5,
+          -10.5,
+          987
+        ]
+      }
+    },
+    {
+      "name": "stern-bell-1-housing",
+      "bucket": "hull",
+      "role": "stern-engine",
+      "firstVertex": 24246,
+      "vertexCount": 1080,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          75.5,
+          -9.5,
+          972
+        ],
+        "max": [
+          90.5,
+          5.5,
+          987
+        ]
+      }
+    },
+    {
+      "name": "bow-buttress-fitted-plates",
+      "bucket": "hull",
+      "role": "primary-hull",
+      "firstVertex": 25326,
+      "vertexCount": 540,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          68.61224489795919,
+          13.299999999999999,
+          26.5
+        ],
+        "max": [
+          97.38775510204081,
+          13.9,
+          97.5
+        ]
+      }
+    },
+    {
+      "name": "bow-flightdeck",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 0,
+      "vertexCount": 84,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.0,
+          14,
+          0
+        ],
+        "max": [
+          108.0,
+          15.4,
+          98
+        ]
+      }
+    },
+    {
+      "name": "stern-flightdeck",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 84,
+      "vertexCount": 84,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.00000000000001,
+          14,
+          901.6
+        ],
+        "max": [
+          108.0,
+          15.4,
+          980
+        ]
+      }
+    },
+    {
+      "name": "midbody-flightdeck-soffit",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 168,
+      "vertexCount": 18,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48,
+          14,
+          98
+        ],
+        "max": [
+          108,
+          15.4,
+          901.6
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-00",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 186,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          98.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          113.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-01",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 210,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          114.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          129.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-02",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 234,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          130.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          145.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-03",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 258,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          146.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          161.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-04",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 282,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          162.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          177.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-05",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 306,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          178.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          193.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-06",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 330,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          194.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          209.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-07",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 354,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          210.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          225.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-08",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 378,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          226.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          241.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-09",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 402,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          242.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          257.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-10",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 426,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          258.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          273.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-11",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 450,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          274.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          289.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-12",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 474,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          290.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          305.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-13",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 498,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          306.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          321.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-14",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 522,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          322.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          337.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-15",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 546,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          338.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          353.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-16",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 570,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          354.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          369.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-17",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 594,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          370.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          385.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-18",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 618,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          386.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          401.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-19",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 642,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          402.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          417.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-20",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 666,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          418.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          433.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-21",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 690,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          434.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          449.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-22",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 714,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          450.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          465.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-23",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 738,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          466.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          481.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-24",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 762,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          482.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          497.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-25",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 786,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          498.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          513.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-26",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 810,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          514.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          529.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-27",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 834,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          530.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          545.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-28",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 858,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          546.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          561.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-29",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 882,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          562.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          577.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-30",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 906,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          578.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          593.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-31",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 930,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          594.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          609.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-32",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 954,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          610.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          625.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-33",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 978,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          626.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          641.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-34",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1002,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          642.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          657.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-35",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1026,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          658.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          673.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-36",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1050,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          674.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          689.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-37",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1074,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          690.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          705.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-38",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1098,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          706.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          721.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-39",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1122,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          722.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          737.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-40",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1146,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          738.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          753.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-41",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1170,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          754.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          769.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-42",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1194,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          770.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          785.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-43",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1218,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          786.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          801.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-44",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1242,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          802.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          817.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-45",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1266,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          818.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          833.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-46",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1290,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          834.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          849.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-47",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1314,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          850.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          865.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-48",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1338,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          866.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          881.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-49",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1362,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          882.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          897.955
+        ]
+      }
+    },
+    {
+      "name": "deck-panel-50",
+      "bucket": "deck",
+      "role": "flightdeck",
+      "firstVertex": 1386,
+      "vertexCount": 24,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48.035,
+          15.4,
+          898.045
+        ],
+        "max": [
+          107.965,
+          15.4,
+          901.5550000000001
+        ]
+      }
+    },
+    {
+      "name": "keel-service-spine",
+      "bucket": "dark",
+      "role": "machinery",
+      "firstVertex": 0,
+      "vertexCount": 3024,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          65.46011352539062,
+          -25.95,
+          106.0
+        ],
+        "max": [
+          100.53988647460938,
+          -23.450000762939453,
+          854.0
+        ]
+      }
+    },
+    {
+      "name": "starboard-heat-exchangers",
+      "bucket": "dark",
+      "role": "machinery",
+      "firstVertex": 3024,
+      "vertexCount": 4032,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          107.94999694824219,
+          -8.040793418884277,
+          127.72804260253906
+        ],
+        "max": [
+          108.55000305175781,
+          2.0407936573028564,
+          873.77197265625
+        ]
+      }
+    },
+    {
+      "name": "bay-01-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 7056,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          120
+        ],
+        "max": [
+          73.5,
+          6.5,
+          144
+        ]
+      }
+    },
+    {
+      "name": "bay-02-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 7158,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          152
+        ],
+        "max": [
+          73.5,
+          6.5,
+          176
+        ]
+      }
+    },
+    {
+      "name": "bay-03-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 7260,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          184
+        ],
+        "max": [
+          73.5,
+          6.5,
+          208
+        ]
+      }
+    },
+    {
+      "name": "bay-04-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 7362,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          216
+        ],
+        "max": [
+          73.5,
+          6.5,
+          240
+        ]
+      }
+    },
+    {
+      "name": "bay-05-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 7464,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          248
+        ],
+        "max": [
+          73.5,
+          6.5,
+          272
+        ]
+      }
+    },
+    {
+      "name": "bay-06-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 7566,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          280
+        ],
+        "max": [
+          73.5,
+          6.5,
+          304
+        ]
+      }
+    },
+    {
+      "name": "bay-07-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 7668,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          312
+        ],
+        "max": [
+          73.5,
+          6.5,
+          336
+        ]
+      }
+    },
+    {
+      "name": "bay-08-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 7770,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          344
+        ],
+        "max": [
+          73.5,
+          6.5,
+          368
+        ]
+      }
+    },
+    {
+      "name": "bay-09-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 7872,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          376
+        ],
+        "max": [
+          73.5,
+          6.5,
+          400
+        ]
+      }
+    },
+    {
+      "name": "bay-10-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 7974,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          408
+        ],
+        "max": [
+          73.5,
+          6.5,
+          432
+        ]
+      }
+    },
+    {
+      "name": "bay-11-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 8076,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          440
+        ],
+        "max": [
+          73.5,
+          6.5,
+          464
+        ]
+      }
+    },
+    {
+      "name": "bay-12-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 8178,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          472
+        ],
+        "max": [
+          73.5,
+          6.5,
+          496
+        ]
+      }
+    },
+    {
+      "name": "bay-13-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 8280,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          504
+        ],
+        "max": [
+          73.5,
+          6.5,
+          528
+        ]
+      }
+    },
+    {
+      "name": "bay-14-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 8382,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          536
+        ],
+        "max": [
+          73.5,
+          6.5,
+          560
+        ]
+      }
+    },
+    {
+      "name": "bay-15-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 8484,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          568
+        ],
+        "max": [
+          73.5,
+          6.5,
+          592
+        ]
+      }
+    },
+    {
+      "name": "bay-16-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 8586,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          600
+        ],
+        "max": [
+          73.5,
+          6.5,
+          624
+        ]
+      }
+    },
+    {
+      "name": "bay-17-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 8688,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          632
+        ],
+        "max": [
+          73.5,
+          6.5,
+          656
+        ]
+      }
+    },
+    {
+      "name": "bay-18-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 8790,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          664
+        ],
+        "max": [
+          73.5,
+          6.5,
+          688
+        ]
+      }
+    },
+    {
+      "name": "bay-19-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 8892,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          696
+        ],
+        "max": [
+          73.5,
+          6.5,
+          720
+        ]
+      }
+    },
+    {
+      "name": "bay-20-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 8994,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          728
+        ],
+        "max": [
+          73.5,
+          6.5,
+          752
+        ]
+      }
+    },
+    {
+      "name": "bay-21-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 9096,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          760
+        ],
+        "max": [
+          73.5,
+          6.5,
+          784
+        ]
+      }
+    },
+    {
+      "name": "bay-22-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 9198,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          792
+        ],
+        "max": [
+          73.5,
+          6.5,
+          816
+        ]
+      }
+    },
+    {
+      "name": "bay-23-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 9300,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          824
+        ],
+        "max": [
+          73.5,
+          6.5,
+          848
+        ]
+      }
+    },
+    {
+      "name": "bay-24-recess-and-deck",
+      "bucket": "dark",
+      "role": "hangar-interior",
+      "firstVertex": 9402,
+      "vertexCount": 102,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          58.55,
+          -5,
+          856
+        ],
+        "max": [
+          73.5,
+          6.5,
+          880
+        ]
+      }
+    },
+    {
+      "name": "recessed-catapult-channel-liners",
+      "bucket": "dark",
+      "role": "catapult",
+      "firstVertex": 9504,
+      "vertexCount": 36,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          51.0,
+          14.94,
+          98
+        ],
+        "max": [
+          59.7,
+          15.4,
+          901.6
+        ]
+      }
+    },
+    {
+      "name": "engraved-deck-seam-beds",
+      "bucket": "dark",
+      "role": "flightdeck",
+      "firstVertex": 9540,
+      "vertexCount": 918,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          48,
+          15.21,
+          113.88
+        ],
+        "max": [
+          108,
+          15.21,
+          901.72
+        ]
+      }
+    },
+    {
+      "name": "island-recessed-wrap-glazing",
+      "bucket": "dark",
+      "role": "island",
+      "firstVertex": 10458,
+      "vertexCount": 48,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          87.785,
+          30.7,
+          406.65
+        ],
+        "max": [
+          100.215,
+          33.7,
+          433.35
+        ]
+      }
+    },
+    {
+      "name": "island-mast-and-ladder",
+      "bucket": "dark",
+      "role": "island",
+      "firstVertex": 10506,
+      "vertexCount": 288,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          90.62039947509766,
+          18.920000076293945,
+          416.8174743652344
+        ],
+        "max": [
+          99.69999694824219,
+          43.0,
+          427.0799865722656
+        ]
+      }
+    },
+    {
+      "name": "island-aft-machinery",
+      "bucket": "dark",
+      "role": "machinery",
+      "firstVertex": 10794,
+      "vertexCount": 864,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          91.5,
+          15.4,
+          435.75
+        ],
+        "max": [
+          100.5,
+          19.79,
+          452.25
+        ]
+      }
+    },
+    {
+      "name": "stern-bell-0-recess",
+      "bucket": "dark",
+      "role": "stern-engine",
+      "firstVertex": 11658,
+      "vertexCount": 414,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          76.92,
+          -24.08,
+          980.1
+        ],
+        "max": [
+          89.08,
+          -11.92,
+          986.9
+        ]
+      }
+    },
+    {
+      "name": "stern-bell-1-recess",
+      "bucket": "dark",
+      "role": "stern-engine",
+      "firstVertex": 12072,
+      "vertexCount": 414,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          76.92,
+          -8.08,
+          980.1
+        ],
+        "max": [
+          89.08,
+          4.08,
+          986.9
+        ]
+      }
+    },
+    {
+      "name": "bow-shielded-machinery-and-keel",
+      "bucket": "dark",
+      "role": "machinery",
+      "firstVertex": 12486,
+      "vertexCount": 288,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          65.80204010009766,
+          -21.088226318359375,
+          19.713266372680664
+        ],
+        "max": [
+          100.19795989990234,
+          5.088225841522217,
+          96.28673553466797
+        ]
+      }
+    },
+    {
+      "name": "bay-01-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 0,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          126.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          137.08
+        ]
+      }
+    },
+    {
+      "name": "bay-02-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 72,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          158.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          169.08
+        ]
+      }
+    },
+    {
+      "name": "bay-03-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 144,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          190.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          201.08
+        ]
+      }
+    },
+    {
+      "name": "bay-04-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 216,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          222.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          233.08
+        ]
+      }
+    },
+    {
+      "name": "bay-05-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 288,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          254.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          265.08
+        ]
+      }
+    },
+    {
+      "name": "bay-06-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 360,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          286.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          297.08
+        ]
+      }
+    },
+    {
+      "name": "bay-07-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 432,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          318.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          329.08
+        ]
+      }
+    },
+    {
+      "name": "bay-08-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 504,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          350.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          361.08
+        ]
+      }
+    },
+    {
+      "name": "bay-09-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 576,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          382.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          393.08
+        ]
+      }
+    },
+    {
+      "name": "bay-10-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 648,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          414.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          425.08
+        ]
+      }
+    },
+    {
+      "name": "bay-11-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 720,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          446.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          457.08
+        ]
+      }
+    },
+    {
+      "name": "bay-12-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 792,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          478.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          489.08
+        ]
+      }
+    },
+    {
+      "name": "bay-13-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 864,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          510.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          521.08
+        ]
+      }
+    },
+    {
+      "name": "bay-14-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 936,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          542.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          553.08
+        ]
+      }
+    },
+    {
+      "name": "bay-15-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 1008,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          574.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          585.08
+        ]
+      }
+    },
+    {
+      "name": "bay-16-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 1080,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          606.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          617.08
+        ]
+      }
+    },
+    {
+      "name": "bay-17-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 1152,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          638.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          649.08
+        ]
+      }
+    },
+    {
+      "name": "bay-18-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 1224,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          670.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          681.08
+        ]
+      }
+    },
+    {
+      "name": "bay-19-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 1296,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          702.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          713.08
+        ]
+      }
+    },
+    {
+      "name": "bay-20-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 1368,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          734.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          745.08
+        ]
+      }
+    },
+    {
+      "name": "bay-21-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 1440,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          766.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          777.08
+        ]
+      }
+    },
+    {
+      "name": "bay-22-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 1512,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          798.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          809.08
+        ]
+      }
+    },
+    {
+      "name": "bay-23-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 1584,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          830.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          841.08
+        ]
+      }
+    },
+    {
+      "name": "bay-24-deck-guides",
+      "bucket": "paint",
+      "role": "hangar-interior",
+      "firstVertex": 1656,
+      "vertexCount": 72,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          60.25,
+          -4.7525,
+          862.92
+        ],
+        "max": [
+          71.75,
+          -4.7275,
+          873.08
+        ]
+      }
+    },
+    {
+      "name": "flightdeck-operating-markings",
+      "bucket": "paint",
+      "role": "flightdeck",
+      "firstVertex": 1728,
+      "vertexCount": 4536,
+      "aAnim": null,
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          53.6932258605957,
+          15.4075,
+          108.0
+        ],
+        "max": [
+          98.21249999999999,
+          15.475000000000001,
+          884.042724609375
+        ]
+      }
+    },
+    {
+      "name": "bay-01-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 0,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          123.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          140.5
+        ]
+      }
+    },
+    {
+      "name": "bay-01-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 108,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.96875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          121.50999999999999
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          142.49
+        ]
+      }
+    },
+    {
+      "name": "bay-02-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 180,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          155.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          172.5
+        ]
+      }
+    },
+    {
+      "name": "bay-02-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 288,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.71875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          153.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          174.49
+        ]
+      }
+    },
+    {
+      "name": "bay-03-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 360,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          187.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          204.5
+        ]
+      }
+    },
+    {
+      "name": "bay-03-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 468,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.46875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          185.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          206.49
+        ]
+      }
+    },
+    {
+      "name": "bay-04-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 540,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          219.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          236.5
+        ]
+      }
+    },
+    {
+      "name": "bay-04-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 648,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.21875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          217.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          238.49
+        ]
+      }
+    },
+    {
+      "name": "bay-05-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 720,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          251.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          268.5
+        ]
+      }
+    },
+    {
+      "name": "bay-05-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 828,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.96875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          249.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          270.48999999999995
+        ]
+      }
+    },
+    {
+      "name": "bay-06-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 900,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          283.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          300.5
+        ]
+      }
+    },
+    {
+      "name": "bay-06-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 1008,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.71875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          281.51000000000005
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          302.48999999999995
+        ]
+      }
+    },
+    {
+      "name": "bay-07-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 1080,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          315.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          332.5
+        ]
+      }
+    },
+    {
+      "name": "bay-07-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 1188,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.46875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          313.51000000000005
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          334.48999999999995
+        ]
+      }
+    },
+    {
+      "name": "bay-08-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 1260,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          347.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          364.5
+        ]
+      }
+    },
+    {
+      "name": "bay-08-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 1368,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.21875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          345.51000000000005
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          366.48999999999995
+        ]
+      }
+    },
+    {
+      "name": "bay-09-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 1440,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          379.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          396.5
+        ]
+      }
+    },
+    {
+      "name": "bay-09-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 1548,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.96875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          377.51000000000005
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          398.48999999999995
+        ]
+      }
+    },
+    {
+      "name": "bay-10-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 1620,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          411.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          428.5
+        ]
+      }
+    },
+    {
+      "name": "bay-10-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 1728,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.71875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          409.51000000000005
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          430.48999999999995
+        ]
+      }
+    },
+    {
+      "name": "bay-11-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 1800,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          443.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          460.5
+        ]
+      }
+    },
+    {
+      "name": "bay-11-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 1908,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.46875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          441.51000000000005
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          462.48999999999995
+        ]
+      }
+    },
+    {
+      "name": "bay-12-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 1980,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          475.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          492.5
+        ]
+      }
+    },
+    {
+      "name": "bay-12-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 2088,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.21875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          473.51000000000005
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          494.48999999999995
+        ]
+      }
+    },
+    {
+      "name": "bay-13-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 2160,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          507.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          524.5
+        ]
+      }
+    },
+    {
+      "name": "bay-13-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 2268,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.96875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          505.51000000000005
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          526.49
+        ]
+      }
+    },
+    {
+      "name": "bay-14-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 2340,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          539.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          556.5
+        ]
+      }
+    },
+    {
+      "name": "bay-14-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 2448,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.71875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          537.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          558.49
+        ]
+      }
+    },
+    {
+      "name": "bay-15-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 2520,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          571.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          588.5
+        ]
+      }
+    },
+    {
+      "name": "bay-15-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 2628,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.46875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          569.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          590.49
+        ]
+      }
+    },
+    {
+      "name": "bay-16-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 2700,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          603.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          620.5
+        ]
+      }
+    },
+    {
+      "name": "bay-16-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 2808,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.21875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          601.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          622.49
+        ]
+      }
+    },
+    {
+      "name": "bay-17-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 2880,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          635.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          652.5
+        ]
+      }
+    },
+    {
+      "name": "bay-17-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 2988,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.96875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          633.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          654.49
+        ]
+      }
+    },
+    {
+      "name": "bay-18-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 3060,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          667.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          684.5
+        ]
+      }
+    },
+    {
+      "name": "bay-18-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 3168,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.71875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          665.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          686.49
+        ]
+      }
+    },
+    {
+      "name": "bay-19-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 3240,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          699.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          716.5
+        ]
+      }
+    },
+    {
+      "name": "bay-19-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 3348,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.46875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          697.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          718.49
+        ]
+      }
+    },
+    {
+      "name": "bay-20-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 3420,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          731.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          748.5
+        ]
+      }
+    },
+    {
+      "name": "bay-20-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 3528,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.21875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          729.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          750.49
+        ]
+      }
+    },
+    {
+      "name": "bay-21-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 3600,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          763.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          780.5
+        ]
+      }
+    },
+    {
+      "name": "bay-21-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 3708,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.96875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          761.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          782.49
+        ]
+      }
+    },
+    {
+      "name": "bay-22-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 3780,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          795.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          812.5
+        ]
+      }
+    },
+    {
+      "name": "bay-22-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 3888,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.71875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          793.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          814.49
+        ]
+      }
+    },
+    {
+      "name": "bay-23-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 3960,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          827.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          844.5
+        ]
+      }
+    },
+    {
+      "name": "bay-23-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 4068,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.46875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          825.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          846.49
+        ]
+      }
+    },
+    {
+      "name": "bay-24-amber-header",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 4140,
+      "vertexCount": 108,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          57.440000000000005,
+          5.6000000000000005,
+          859.5
+        ],
+        "max": [
+          67.60000000000001,
+          7.11,
+          876.5
+        ]
+      }
+    },
+    {
+      "name": "bay-24-cyan-depth-chase",
+      "bucket": "neon",
+      "role": "hangar-effect",
+      "firstVertex": 4248,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        0.8,
+        0.21875
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 128,
+      "bounds": {
+        "min": [
+          60.0,
+          -4.18,
+          857.51
+        ],
+        "max": [
+          71.0,
+          -4.02,
+          878.49
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-00",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 4320,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.8541666666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          109.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          110.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-01",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 4392,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.7291666666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          121.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          122.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-02",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 4464,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.6041666666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          133.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          134.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-03",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 4536,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.47916666666666674
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          145.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          146.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-04",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 4608,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.35416666666666674
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          157.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          158.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-05",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 4680,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.22916666666666674
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          169.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          170.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-06",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 4752,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.10416666666666674
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          181.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          182.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-07",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 4824,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.9791666666666665
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          193.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          194.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-08",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 4896,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.8541666666666665
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          205.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          206.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-09",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 4968,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.7291666666666665
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          217.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          218.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-10",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5040,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.6041666666666665
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          229.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          230.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-11",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5112,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.4791666666666665
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          241.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          242.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-12",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5184,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.3541666666666665
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          253.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          254.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-13",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5256,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.22916666666666652
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          265.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          266.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-14",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5328,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.10416666666666652
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          277.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          278.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-15",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5400,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.9791666666666665
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          289.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          290.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-16",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5472,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.8541666666666665
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          301.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          302.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-17",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5544,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.7291666666666665
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          313.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          314.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-18",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5616,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.6041666666666665
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          325.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          326.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-19",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5688,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.4791666666666665
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          337.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          338.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-20",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5760,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.3541666666666665
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          349.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          350.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-21",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5832,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.22916666666666652
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          361.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          362.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-22",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5904,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.10416666666666652
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          373.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          374.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-23",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 5976,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.979166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          385.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          386.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-24",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6048,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.854166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          397.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          398.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-25",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6120,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.729166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          409.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          410.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-26",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6192,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.604166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          421.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          422.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-27",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6264,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.47916666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          433.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          434.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-28",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6336,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.35416666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          445.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          446.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-29",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6408,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.22916666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          457.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          458.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-30",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6480,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.10416666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          469.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          470.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-31",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6552,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.979166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          481.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          482.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-32",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6624,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.854166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          493.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          494.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-33",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6696,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.729166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          505.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          506.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-34",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6768,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.604166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          517.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          518.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-35",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6840,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.47916666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          529.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          530.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-36",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6912,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.35416666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          541.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          542.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-37",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 6984,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.22916666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          553.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          554.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-38",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7056,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.10416666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          565.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          566.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-39",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7128,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.979166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          577.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          578.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-40",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7200,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.854166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          589.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          590.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-41",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7272,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.729166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          601.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          602.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-42",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7344,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.604166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          613.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          614.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-43",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7416,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.47916666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          625.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          626.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-44",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7488,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.35416666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          637.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          638.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-45",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7560,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.22916666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          649.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          650.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-46",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7632,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.10416666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          661.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          662.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-47",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7704,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.979166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          673.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          674.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-48",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7776,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.854166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          685.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          686.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-49",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7848,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.729166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          697.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          698.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-50",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7920,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.604166666666667
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          709.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          710.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-51",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 7992,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.47916666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          721.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          722.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-52",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 8064,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.35416666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          733.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          734.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-53",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 8136,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.22916666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          745.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          746.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-54",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 8208,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.10416666666666696
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          757.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          758.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-55",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 8280,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.9791666666666661
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          769.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          770.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-56",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 8352,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.8541666666666661
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          781.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          782.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-57",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 8424,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.7291666666666661
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          793.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          794.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-58",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 8496,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.6041666666666661
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          805.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          806.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-59",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 8568,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.4791666666666661
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          817.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          818.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-60",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 8640,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.3541666666666661
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          829.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          830.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-61",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 8712,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.22916666666666607
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          841.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          842.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-62",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 8784,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.10416666666666607
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          853.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          854.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-63",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 8856,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.9791666666666661
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          865.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          866.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-64",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 8928,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.8541666666666661
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          877.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          878.6
+        ]
+      }
+    },
+    {
+      "name": "catapult-chase-65",
+      "bucket": "neon",
+      "role": "catapult-effect",
+      "firstVertex": 9000,
+      "vertexCount": 72,
+      "aAnim": [
+        2,
+        1.4,
+        0.7291666666666661
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": 96,
+      "bounds": {
+        "min": [
+          51.190000000000005,
+          14.969999999999999,
+          889.4
+        ],
+        "max": [
+          59.51,
+          15.07,
+          890.6
+        ]
+      }
+    },
+    {
+      "name": "island-amber-bridge-ribbons",
+      "bucket": "neon",
+      "role": "island-effect",
+      "firstVertex": 9072,
+      "vertexCount": 144,
+      "aAnim": [
+        0,
+        0,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          87.78999999999999,
+          18.46,
+          409.5
+        ],
+        "max": [
+          88.926,
+          31.18,
+          430.5
+        ]
+      }
+    },
+    {
+      "name": "island-red-strobe",
+      "bucket": "neon",
+      "role": "island-effect",
+      "firstVertex": 9216,
+      "vertexCount": 36,
+      "aAnim": [
+        1,
+        0.7,
+        0
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          93.65,
+          43.5,
+          419.65
+        ],
+        "max": [
+          94.35,
+          44.5,
+          420.35
+        ]
+      }
+    },
+    {
+      "name": "stern-bell-0-breathe-core",
+      "bucket": "neon",
+      "role": "stern-effect",
+      "firstVertex": 9252,
+      "vertexCount": 294,
+      "aAnim": [
+        3,
+        0.8,
+        0.26666666666666666
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          79.8,
+          -21.2,
+          980.2
+        ],
+        "max": [
+          86.2,
+          -14.8,
+          980.55
+        ]
+      }
+    },
+    {
+      "name": "stern-bell-1-breathe-core",
+      "bucket": "neon",
+      "role": "stern-effect",
+      "firstVertex": 9546,
+      "vertexCount": 294,
+      "aAnim": [
+        3,
+        0.8,
+        0.8
+      ],
+      "aPivot": null,
+      "aSpin": null,
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          79.8,
+          -5.2,
+          980.2
+        ],
+        "max": [
+          86.2,
+          1.2000000000000002,
+          980.55
+        ]
+      }
+    },
+    {
+      "name": "island-rotating-open-radar",
+      "bucket": "spin",
+      "role": "radar",
+      "firstVertex": 0,
+      "vertexCount": 540,
+      "aAnim": null,
+      "aPivot": [
+        94,
+        39,
+        420
+      ],
+      "aSpin": [
+        0,
+        1,
+        0,
+        0.6
+      ],
+      "phase_period": null,
+      "bounds": {
+        "min": [
+          89.19999694824219,
+          37.5,
+          418.4507751464844
+        ],
+        "max": [
+          98.80000305175781,
+          40.599998474121094,
+          420.69921875
+        ]
+      }
+    }
+  ],
+  "phase": "stored local phase; subtract start/phase_period modulo 1 at module preparation",
+  "runtimeMaterials": {
+    "hull": "Materials.hull",
+    "deck": "Materials.deck",
+    "dark": "Materials.darkMetal",
+    "paint": "Materials.paint ?? Materials.deck",
+    "neon": "Materials.neonVertex",
+    "spin": "Materials.spinMetal ?? Materials.darkMetal"
+  },
+  "bounds": {
+    "min": [
+      48.0,
+      -26.0,
+      -0.0
+    ],
+    "max": [
+      108.55000305175781,
+      44.5,
+      987.0
+    ]
+  },
+  "triangles": 18898,
+  "binary": "carrier-template.bin",
+  "binarySHA256": "4dddc3fbadc5bda65c8dd80c012353440a9927772bac61b8ae836a4a8452b593"
+}

@@ -1,0 +1,13 @@
+{
+  "archive": "heavy-turret-initial-20261114T154845Z.tar.gz",
+  "sha256": "e3c2abadec8ce4a33958ccc9c5c3ede6ec9c1d0670d3e7238796683660f4bf25",
+  "contentHashesVerified": 71,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/heavy-turret/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "glbSha256": "de95debb8de0d5813b60ee935980ebaf44d7fe387be03b2de934a9a70b535409",
+  "blendSha256": "b543d865663c59d5fc197fc7e2528e0f869506bb7fdc03476ad53623413a1d39",
+  "builderCompletionHashesMatch": true,
+  "readOnly": true,
+  "executableModesRetained": true
+}

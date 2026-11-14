@@ -1,0 +1,100 @@
+{
+  "coordinate_contract": {
+    "game": "+Y up / +Z forward",
+    "local_badge_plane": "XY",
+    "front_normal": "+Z",
+    "blender_from_game": "(x,-z,y)",
+    "gltf_from_blender": "(x,z,-y)",
+    "export_yup": true,
+    "post_load_correction": "NONE; no scaling, normalization or extra rotation"
+  },
+  "root": {
+    "name": "shield_pickup_root",
+    "translation": [
+      0,
+      0,
+      0
+    ],
+    "rotation_xyzw": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "parent": "existing Pickup.group (pos pointer retained, quaternion copies ctx.camera.quaternion every frame)"
+  },
+  "handles": {
+    "shell": {
+      "type": "Mesh",
+      "game_pivot": [
+        0,
+        0,
+        0
+      ],
+      "axis": "local +Z",
+      "material": "shield_shell_cyan_unlit",
+      "motion": "rotation.z+=dt*.3; scale.setScalar(1+sin(phase*4)*.025)",
+      "owned_per_clone": true,
+      "toneMapped": false
+    },
+    "core": {
+      "type": "Mesh",
+      "game_pivot": [
+        0,
+        0,
+        -0.3
+      ],
+      "axis": "static",
+      "material": "shield_core_titanium",
+      "motion": "none relative to billboard root",
+      "owned_per_clone": true,
+      "toneMapped": true
+    },
+    "shape": {
+      "type": "Mesh",
+      "game_pivot": [
+        0,
+        0,
+        0.1
+      ],
+      "axis": "local +Z",
+      "material": "shield_shape_ceramic",
+      "motion": "rotation.z=sin(phase*2.2)*.08",
+      "owned_per_clone": true,
+      "toneMapped": false
+    }
+  },
+  "halo": {
+    "exported": false,
+    "runtime_handle": "Pickup.halo",
+    "type": "existing THREE.Sprite",
+    "color": "0x45e0ff",
+    "shared_cache": "mats._pickupHalos.get(def.color)",
+    "owner": "Materials (not imported asset, instance or adapter)",
+    "opacity": 0.35,
+    "motion": "scale.setScalar(7*(1+sin(phase*4)*.2))",
+    "dispose_by_pickup": false
+  },
+  "per_instance": {
+    "geometries": 3,
+    "materials": 3,
+    "visible_material_primitives": 3,
+    "additional_unchanged_halo_sprite": 1,
+    "textures_created_by_asset": 0,
+    "material_owner_list": "importedRoot.userData.modelOwnedMaterials",
+    "dispose": "disposeModel(this._importedRoot) once; null pointer; detach group. Never dispose halo/template/shared caches."
+  },
+  "integration": "scripts/adapter_recipe.mjs; recipe only, source unchanged. Invoke after full normal constructor. Existing instantiate() cloning semantics; do not return early before state/halo initialization.",
+  "not_applicable": [
+    "charge",
+    "detach",
+    "targeting",
+    "shot origins",
+    "shield bubble"
+  ]
+}

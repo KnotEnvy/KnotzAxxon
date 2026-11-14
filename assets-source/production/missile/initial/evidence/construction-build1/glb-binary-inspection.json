@@ -1,0 +1,210 @@
+{
+  "independent_reader": "Python stdlib binary GLB parser, no Blender/Three normalization",
+  "bytes": 37924,
+  "sha256": "058110e6e59b8ad29cc3638bb4c1a9cc65aa1bca61471c68a5b40d53c0578381",
+  "triangles": 464,
+  "visible_primitives": 1,
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0.011257614940404892,
+        0.0028227127622812986,
+        0.0015553947305306792
+      ],
+      "extras": {
+        "runtime_recipe": "One enemyArmor clone per Projectiles pool; white baseColor, vertexColors=true; source rim reapplication; source emissive retained; dispose owned clone only at pool shutdown."
+      },
+      "name": "MISSILE_ARMOR_VERTEX_PBR",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.47999998927116394,
+        "roughnessFactor": 0.41999998688697815
+      }
+    }
+  ],
+  "images": 0,
+  "textures": 0,
+  "animations": 0,
+  "nodes": [
+    {
+      "name": "MISSILE_ROOT",
+      "local_matrix": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": null
+    },
+    {
+      "name": "MISSILE_POOLED",
+      "local_matrix": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mesh": 0
+    }
+  ],
+  "world_bounds": {
+    "min": [
+      -0.41999998688697815,
+      -0.41999998688697815,
+      -0.7599999904632568
+    ],
+    "max": [
+      0.41999998688697815,
+      0.41999998688697815,
+      0.9300000071525574
+    ],
+    "size": [
+      0.8399999737739563,
+      0.8399999737739563,
+      1.6899999976158142
+    ]
+  },
+  "source_axes": "+Z nose verified from unique tip; +Y up from identity scene transforms and author coordinate conversion",
+  "color_0_unique_linear_values": [
+    [
+      0.002732,
+      0.004777,
+      0.008568
+    ],
+    [
+      0.014444,
+      0.024158,
+      0.036889
+    ],
+    [
+      0.019382,
+      0.031896,
+      0.048172
+    ],
+    [
+      0.084376,
+      0.130136,
+      0.191202
+    ],
+    [
+      0.116971,
+      0.165132,
+      0.205079
+    ],
+    [
+      0.238398,
+      0.313989,
+      0.3564
+    ],
+    [
+      0.318547,
+      0.107023,
+      0.064803
+    ],
+    [
+      0.456411,
+      0.177888,
+      0.090842
+    ],
+    [
+      0.584078,
+      0.473531,
+      0.266356
+    ]
+  ],
+  "degenerate_triangles": 0,
+  "triangles_at_capacity40": 18560,
+  "draw_call_contract": "One primitive -> ONE InstancedMesh draw, provided adapter uses one material; CPU contract only, not measured GPU submission."
+}

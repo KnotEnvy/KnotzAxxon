@@ -1,0 +1,103 @@
+{
+  "blend_reopened": {
+    "parts": [
+      {
+        "name": "01_continuous_fitted_body_nose",
+        "triangles": 300,
+        "material_slots": 1,
+        "vertex_color_layers": [
+          "Palette"
+        ],
+        "modifiers": 0
+      },
+      {
+        "name": "02_recessed_aft_nozzle",
+        "triangles": 84,
+        "material_slots": 1,
+        "vertex_color_layers": [
+          "Palette"
+        ],
+        "modifiers": 0
+      },
+      {
+        "name": "03_fitted_control_fin_0",
+        "triangles": 20,
+        "material_slots": 1,
+        "vertex_color_layers": [
+          "Palette"
+        ],
+        "modifiers": 0
+      },
+      {
+        "name": "04_fitted_control_fin_1",
+        "triangles": 20,
+        "material_slots": 1,
+        "vertex_color_layers": [
+          "Palette"
+        ],
+        "modifiers": 0
+      },
+      {
+        "name": "05_fitted_control_fin_2",
+        "triangles": 20,
+        "material_slots": 1,
+        "vertex_color_layers": [
+          "Palette"
+        ],
+        "modifiers": 0
+      },
+      {
+        "name": "06_fitted_control_fin_3",
+        "triangles": 20,
+        "material_slots": 1,
+        "vertex_color_layers": [
+          "Palette"
+        ],
+        "modifiers": 0
+      }
+    ],
+    "triangles": 464,
+    "bounds_source": {
+      "min": [
+        -0.41999998688697815,
+        -0.41999998688697815,
+        -0.7599999904632568
+      ],
+      "max": [
+        0.41999998688697815,
+        0.41999998688697815,
+        0.9300000071525574
+      ]
+    },
+    "external_images": []
+  },
+  "glb_clean_scene_reimport": {
+    "parts": [
+      {
+        "name": "MISSILE_POOLED",
+        "triangles": 464,
+        "material_slots": 1,
+        "vertex_color_layers": [
+          "Color"
+        ],
+        "modifiers": 0
+      }
+    ],
+    "triangles": 464,
+    "bounds_source": {
+      "min": [
+        -0.41999998688697815,
+        -0.41999998688697815,
+        -0.7599999904632568
+      ],
+      "max": [
+        0.41999998688697815,
+        0.41999998688697815,
+        0.9300000071525574
+      ]
+    },
+    "external_images": []
+  },
+  "save_reopen_pass": true,
+  "no_corrective_normalization": true
+}

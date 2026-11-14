@@ -1,0 +1,461 @@
+{
+  "engine": "BLENDER_EEVEE",
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "threads": 4,
+  "frames": [
+    {
+      "file": "evidence/kit-three-quarter.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1400,
+        700
+      ],
+      "kind": "studio comparison",
+      "worldScale": false,
+      "note": "One common camera; common authored units, no per-template normalization."
+    },
+    {
+      "file": "evidence/talus-basin-crater.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        900,
+        900
+      ],
+      "kind": "crater",
+      "node": "AS_Talus_Basin",
+      "worldScale": false
+    },
+    {
+      "file": "evidence/talus-basin-back.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        900,
+        900
+      ],
+      "kind": "back",
+      "node": "AS_Talus_Basin",
+      "worldScale": false
+    },
+    {
+      "file": "evidence/keel-double-impact-crater.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        900,
+        900
+      ],
+      "kind": "crater",
+      "node": "AS_Keel_DoubleImpact",
+      "worldScale": false
+    },
+    {
+      "file": "evidence/keel-double-impact-back.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        900,
+        900
+      ],
+      "kind": "back",
+      "node": "AS_Keel_DoubleImpact",
+      "worldScale": false
+    },
+    {
+      "file": "evidence/scar-cleaved-crater.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        900,
+        900
+      ],
+      "kind": "crater",
+      "node": "AS_Scar_Cleaved",
+      "worldScale": false
+    },
+    {
+      "file": "evidence/scar-cleaved-back.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        900,
+        900
+      ],
+      "kind": "back",
+      "node": "AS_Scar_Cleaved",
+      "worldScale": false
+    },
+    {
+      "file": "evidence/actual-radius-spin-000.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1000,
+        700
+      ],
+      "kind": "rest/full-spin",
+      "worldScale": true,
+      "placement": [
+        54.80657437071204,
+        -7.867836402729154,
+        6646.865446977317
+      ],
+      "s": 15.262426063258193,
+      "shape": {
+        "sx": 1.2947285659145564,
+        "sy": 0.7509966998826713,
+        "sz": 1.2654009538237005,
+        "seed": 8.738142130896449
+      },
+      "axis": [
+        -0.5723577492257753,
+        0.6551776100173251,
+        0.4931013143697655
+      ],
+      "angleRadians": 0,
+      "radiusAuthored": 18.880248392858245,
+      "radiusSource": 19.759908442969927,
+      "note": "Selected source rock and corresponding kit rock at exact sampled radius/aniso. Translation offsets only for side-by-side comparison; common fixed ortho camera."
+    },
+    {
+      "file": "evidence/actual-radius-spin-090.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1000,
+        700
+      ],
+      "kind": "rest/full-spin",
+      "worldScale": true,
+      "placement": [
+        54.80657437071204,
+        -7.867836402729154,
+        6646.865446977317
+      ],
+      "s": 15.262426063258193,
+      "shape": {
+        "sx": 1.2947285659145564,
+        "sy": 0.7509966998826713,
+        "sz": 1.2654009538237005,
+        "seed": 8.738142130896449
+      },
+      "axis": [
+        -0.5723577492257753,
+        0.6551776100173251,
+        0.4931013143697655
+      ],
+      "angleRadians": 1.5707963267948966,
+      "radiusAuthored": 18.880248392858245,
+      "radiusSource": 19.759908442969927,
+      "note": "Selected source rock and corresponding kit rock at exact sampled radius/aniso. Translation offsets only for side-by-side comparison; common fixed ortho camera."
+    },
+    {
+      "file": "evidence/actual-radius-spin-180.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1000,
+        700
+      ],
+      "kind": "rest/full-spin",
+      "worldScale": true,
+      "placement": [
+        54.80657437071204,
+        -7.867836402729154,
+        6646.865446977317
+      ],
+      "s": 15.262426063258193,
+      "shape": {
+        "sx": 1.2947285659145564,
+        "sy": 0.7509966998826713,
+        "sz": 1.2654009538237005,
+        "seed": 8.738142130896449
+      },
+      "axis": [
+        -0.5723577492257753,
+        0.6551776100173251,
+        0.4931013143697655
+      ],
+      "angleRadians": 3.141592653589793,
+      "radiusAuthored": 18.880248392858245,
+      "radiusSource": 19.759908442969927,
+      "note": "Selected source rock and corresponding kit rock at exact sampled radius/aniso. Translation offsets only for side-by-side comparison; common fixed ortho camera."
+    },
+    {
+      "file": "evidence/actual-radius-spin-270.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1000,
+        700
+      ],
+      "kind": "rest/full-spin",
+      "worldScale": true,
+      "placement": [
+        54.80657437071204,
+        -7.867836402729154,
+        6646.865446977317
+      ],
+      "s": 15.262426063258193,
+      "shape": {
+        "sx": 1.2947285659145564,
+        "sy": 0.7509966998826713,
+        "sz": 1.2654009538237005,
+        "seed": 8.738142130896449
+      },
+      "axis": [
+        -0.5723577492257753,
+        0.6551776100173251,
+        0.4931013143697655
+      ],
+      "angleRadians": 4.71238898038469,
+      "radiusAuthored": 18.880248392858245,
+      "radiusSource": 19.759908442969927,
+      "note": "Selected source rock and corresponding kit rock at exact sampled radius/aniso. Translation offsets only for side-by-side comparison; common fixed ortho camera."
+    },
+    {
+      "file": "evidence/world-classic-source.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "kind": "world-scale source comparison",
+      "worldScale": true,
+      "cameraSource": {
+        "mode": "classic",
+        "player": [
+          0,
+          9,
+          3648
+        ],
+        "eye": [
+          -45.254833995939045,
+          54.255,
+          3630.745166004061
+        ],
+        "target": [
+          0,
+          9,
+          3676
+        ],
+        "fov": 52,
+        "orthographic": true,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "near": 0.35,
+        "far": 1680
+      },
+      "asteroidsResident": 63,
+      "variant": "source",
+      "spinTime": 0.0,
+      "playerSha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "note": "Exact rock placements and source camera snap. Origin translated -playerZ only. Shipped player not resized. Neutral texture attenuation .74 approximates shared map; no actual Three.js rockTexture/addRim shader. No wreck/truss/landmark/gates/enemies."
+    },
+    {
+      "file": "evidence/world-classic-kit.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "kind": "world-scale source comparison",
+      "worldScale": true,
+      "cameraSource": {
+        "mode": "classic",
+        "player": [
+          0,
+          9,
+          3648
+        ],
+        "eye": [
+          -45.254833995939045,
+          54.255,
+          3630.745166004061
+        ],
+        "target": [
+          0,
+          9,
+          3676
+        ],
+        "fov": 52,
+        "orthographic": true,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "near": 0.35,
+        "far": 1680
+      },
+      "asteroidsResident": 63,
+      "variant": "kit",
+      "spinTime": 0.0,
+      "playerSha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "note": "Exact rock placements and source camera snap. Origin translated -playerZ only. Shipped player not resized. Neutral texture attenuation .74 approximates shared map; no actual Three.js rockTexture/addRim shader. No wreck/truss/landmark/gates/enemies."
+    },
+    {
+      "file": "evidence/world-modern-source.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "kind": "world-scale source comparison",
+      "worldScale": true,
+      "cameraSource": {
+        "mode": "modern",
+        "player": [
+          0,
+          9,
+          3648
+        ],
+        "eye": [
+          -9.91858415644439,
+          23,
+          3620.7489139972085
+        ],
+        "target": [
+          0,
+          10.2,
+          3664
+        ],
+        "fov": 58,
+        "orthographic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "near": 0.35,
+        "far": 1680
+      },
+      "asteroidsResident": 63,
+      "variant": "source",
+      "spinTime": 0.0,
+      "playerSha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "note": "Exact rock placements and source camera snap. Origin translated -playerZ only. Shipped player not resized. Neutral texture attenuation .74 approximates shared map; no actual Three.js rockTexture/addRim shader. No wreck/truss/landmark/gates/enemies."
+    },
+    {
+      "file": "evidence/world-modern-kit.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "kind": "world-scale source comparison",
+      "worldScale": true,
+      "cameraSource": {
+        "mode": "modern",
+        "player": [
+          0,
+          9,
+          3648
+        ],
+        "eye": [
+          -9.91858415644439,
+          23,
+          3620.7489139972085
+        ],
+        "target": [
+          0,
+          10.2,
+          3664
+        ],
+        "fov": 58,
+        "orthographic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "near": 0.35,
+        "far": 1680
+      },
+      "asteroidsResident": 63,
+      "variant": "kit",
+      "spinTime": 0.0,
+      "playerSha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "note": "Exact rock placements and source camera snap. Origin translated -playerZ only. Shipped player not resized. Neutral texture attenuation .74 approximates shared map; no actual Three.js rockTexture/addRim shader. No wreck/truss/landmark/gates/enemies."
+    },
+    {
+      "file": "evidence/world-chase-source.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "kind": "world-scale source comparison",
+      "worldScale": true,
+      "cameraSource": {
+        "mode": "chase",
+        "player": [
+          0,
+          9,
+          3648
+        ],
+        "eye": [
+          -2.5086831184236833,
+          18.5,
+          3624.1314745111613
+        ],
+        "target": [
+          0,
+          10.2,
+          3664
+        ],
+        "fov": 66,
+        "orthographic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "near": 0.35,
+        "far": 1680
+      },
+      "asteroidsResident": 63,
+      "variant": "source",
+      "spinTime": 0.0,
+      "playerSha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "note": "Exact rock placements and source camera snap. Origin translated -playerZ only. Shipped player not resized. Neutral texture attenuation .74 approximates shared map; no actual Three.js rockTexture/addRim shader. No wreck/truss/landmark/gates/enemies."
+    },
+    {
+      "file": "evidence/world-chase-kit.png",
+      "engine": "BLENDER_EEVEE",
+      "samples": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "kind": "world-scale source comparison",
+      "worldScale": true,
+      "cameraSource": {
+        "mode": "chase",
+        "player": [
+          0,
+          9,
+          3648
+        ],
+        "eye": [
+          -2.5086831184236833,
+          18.5,
+          3624.1314745111613
+        ],
+        "target": [
+          0,
+          10.2,
+          3664
+        ],
+        "fov": 66,
+        "orthographic": false,
+        "halfHeight": 40,
+        "aspect": 1.7777777777777777,
+        "near": 0.35,
+        "far": 1680
+      },
+      "asteroidsResident": 63,
+      "variant": "kit",
+      "spinTime": 0.0,
+      "playerSha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57",
+      "note": "Exact rock placements and source camera snap. Origin translated -playerZ only. Shipped player not resized. Neutral texture attenuation .74 approximates shared map; no actual Three.js rockTexture/addRim shader. No wreck/truss/landmark/gates/enemies."
+    }
+  ],
+  "liveWebGL": false
+}

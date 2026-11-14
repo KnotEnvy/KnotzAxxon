@@ -1,0 +1,86 @@
+{
+  "blender_version": "5.2.1 LTS",
+  "build_hash": "9e2066aef7ef",
+  "objects": {
+    "core": {
+      "evaluated_triangles": 420,
+      "vertices": 288,
+      "materials": [
+        "MN_Armor"
+      ],
+      "restBoundsGame": {
+        "min": [
+          -0.9459999799728394,
+          -0.9459999799728394,
+          -0.9459999799728394
+        ],
+        "max": [
+          0.9459999799728394,
+          0.9459999799728394,
+          0.9459999799728394
+        ]
+      },
+      "hidden": false
+    },
+    "contacts": {
+      "evaluated_triangles": 1280,
+      "vertices": 744,
+      "materials": [
+        "MN_ContactMetal"
+      ],
+      "restBoundsGame": {
+        "min": [
+          -1.850000023841858,
+          -1.850000023841858,
+          -1.850000023841858
+        ],
+        "max": [
+          1.850000023841858,
+          1.850000023841858,
+          1.850000023841858
+        ]
+      },
+      "hidden": false
+    },
+    "lamp": {
+      "evaluated_triangles": 240,
+      "vertices": 128,
+      "materials": [
+        "MN_Danger"
+      ],
+      "restBoundsGame": {
+        "min": [
+          -1.1404361724853516,
+          -0.06499999761581421,
+          -1.1404361724853516
+        ],
+        "max": [
+          1.1404361724853516,
+          0.06499999761581421,
+          1.1404361724853516
+        ]
+      },
+      "hidden": false
+    },
+    "flashMesh": {
+      "evaluated_triangles": 20,
+      "vertices": 12,
+      "materials": [
+        "MN_FlashPlaceholder"
+      ],
+      "restBoundsGame": {
+        "min": [
+          -1.287972092628479,
+          -1.440000057220459,
+          -1.224921703338623
+        ],
+        "max": [
+          1.287972092628479,
+          1.440000057220459,
+          1.224921703338623
+        ]
+      },
+      "hidden": true
+    }
+  }
+}

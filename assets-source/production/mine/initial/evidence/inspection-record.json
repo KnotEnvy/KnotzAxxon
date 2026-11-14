@@ -1,0 +1,19 @@
+{
+  "viewedAtUTC": "2026-11-14T15:57:58.892080+00:00",
+  "method": "Assistant view_image at original detail for contact sheets, plus representative native PNGs",
+  "sheetsViewed": [
+    "contact_sheet.png",
+    "small_gameplay_sheet.png",
+    "overview.png"
+  ],
+  "nativeFinalPNGsViewed": [
+    "tumble_4.png",
+    "gameplay_classic_alt3.png",
+    "gameplay_modern_alt3.png"
+  ],
+  "fullRendersCoveredViaSheet": 24,
+  "smallPNGsCoveredViaSheet": 6,
+  "formalReview": false,
+  "formalArtAcceptance": false,
+  "status": "construction evidence inspected; pending_deferred_opus_review"
+}

@@ -1,0 +1,2178 @@
+{
+  "pass": true,
+  "runtime": "v24.14.0",
+  "three": "185",
+  "actualSourceBatch": true,
+  "gpuBenchmark": false,
+  "formalReview": "pending_deferred_opus_review",
+  "formalReviewRounds": 0,
+  "formalFixRounds": 0,
+  "roots": [
+    {
+      "seed": 1,
+      "crates": 2,
+      "drums": 3,
+      "height": 1.9930872668512167,
+      "originalTriangles": 144,
+      "kitTriangles": 852,
+      "leafDraws": 21,
+      "loopTests": [
+        {
+          "draw": 1,
+          "lo": 1,
+          "hi": 3,
+          "result": 2
+        },
+        {
+          "draw": 9,
+          "lo": 1,
+          "hi": 3,
+          "result": 2
+        },
+        {
+          "draw": 17,
+          "lo": 1,
+          "hi": 3,
+          "result": 2
+        }
+      ],
+      "downstream": [
+        0.19087357842363417,
+        0.042729709995910525,
+        0.42738195578567684,
+        0.590382493333891,
+        0.7986842156387866,
+        0.29486987087875605,
+        0.2054697866551578,
+        0.6581296445801854
+      ],
+      "bucket": [
+        "hull"
+      ],
+      "surfaces": [
+        {
+          "minX": 20.673608030099423,
+          "maxX": 22.075796607043593,
+          "minZ": 30.71110297589848,
+          "maxZ": 32.93866262883594,
+          "top": 1.010978815983981
+        },
+        {
+          "minX": 19.613217688445,
+          "maxX": 21.809076044987886,
+          "minZ": 30.50307366038355,
+          "maxZ": 33.34291796376315,
+          "top": 1.9930872668512167
+        }
+      ],
+      "records": [
+        {
+          "kind": "crate",
+          "args": [
+            "hull",
+            1.4021885769441722,
+            1.010978815983981,
+            2.227559652937458,
+            21.374702318571508,
+            0,
+            31.82488280236721,
+            3,
+            8162980,
+            0.1324458846822381
+          ]
+        },
+        {
+          "kind": "crate",
+          "args": [
+            "hull",
+            2.1958583565428853,
+            0.9821084508672356,
+            2.8398443033795973,
+            20.711146866716444,
+            1.010978815983981,
+            31.92299581207335,
+            3,
+            9411178,
+            -0.20730411903932688
+          ]
+        },
+        {
+          "kind": "drum",
+          "args": [
+            "hull",
+            null,
+            22.6,
+            0,
+            31,
+            2,
+            13148224,
+            {
+              "sx": 0.42,
+              "sy": 1.1,
+              "sz": 0.42
+            }
+          ]
+        },
+        {
+          "kind": "drum",
+          "args": [
+            "hull",
+            null,
+            23.5,
+            0,
+            31.8,
+            2,
+            6978186,
+            {
+              "sx": 0.42,
+              "sy": 1.1,
+              "sz": 0.42
+            }
+          ]
+        },
+        {
+          "kind": "drum",
+          "args": [
+            "hull",
+            null,
+            22.6,
+            0,
+            32.6,
+            2,
+            11553338,
+            {
+              "sx": 0.42,
+              "sy": 1.1,
+              "sz": 0.42
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 7,
+      "crates": 2,
+      "drums": 0,
+      "height": 2.0938892775215208,
+      "originalTriangles": 24,
+      "kitTriangles": 312,
+      "leafDraws": 18,
+      "loopTests": [
+        {
+          "draw": 1,
+          "lo": 1,
+          "hi": 3,
+          "result": 1
+        },
+        {
+          "draw": 9,
+          "lo": 1,
+          "hi": 3,
+          "result": 2
+        },
+        {
+          "draw": 17,
+          "lo": 1,
+          "hi": 3,
+          "result": 1
+        }
+      ],
+      "downstream": [
+        0.29633024823851883,
+        0.9779461044818163,
+        0.2475335942581296,
+        0.877779595553875,
+        0.19079170934855938,
+        0.14365738607011735,
+        0.1546440301463008,
+        0.2909512131009251
+      ],
+      "bucket": [
+        "hull"
+      ],
+      "surfaces": [
+        {
+          "minX": 20.292372911795976,
+          "maxX": 21.741939517855645,
+          "minZ": 30.895647446868036,
+          "maxZ": 32.953187254014395,
+          "top": 1.190763053111732
+        },
+        {
+          "minX": 20.21934307329357,
+          "maxX": 22.20320074521005,
+          "minZ": 30.929979393142712,
+          "maxZ": 33.099464679997915,
+          "top": 2.0938892775215208
+        }
+      ],
+      "records": [
+        {
+          "kind": "crate",
+          "args": [
+            "hull",
+            1.4495666060596704,
+            1.190763053111732,
+            2.057539807146362,
+            21.01715621482581,
+            0,
+            31.924417350441217,
+            3,
+            11041368,
+            -0.1560448884498328
+          ]
+        },
+        {
+          "kind": "crate",
+          "args": [
+            "hull",
+            1.983857671916485,
+            0.9031262244097888,
+            2.169485286855202,
+            21.21127190925181,
+            1.190763053111732,
+            32.01472203657031,
+            3,
+            9411178,
+            -0.07922484395094215
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "crates": 3,
+      "drums": 3,
+      "height": 2.842492991872132,
+      "originalTriangles": 156,
+      "kitTriangles": 1008,
+      "leafDraws": 29,
+      "loopTests": [
+        {
+          "draw": 1,
+          "lo": 1,
+          "hi": 3,
+          "result": 2
+        },
+        {
+          "draw": 9,
+          "lo": 1,
+          "hi": 3,
+          "result": 3
+        },
+        {
+          "draw": 17,
+          "lo": 1,
+          "hi": 3,
+          "result": 3
+        },
+        {
+          "draw": 25,
+          "lo": 1,
+          "hi": 3,
+          "result": 1
+        }
+      ],
+      "downstream": [
+        0.027123609324917197,
+        0.17300523445010185,
+        0.8426881253253669,
+        0.4877399173565209,
+        0.8090229837689549,
+        0.3194617456756532,
+        0.44989572861231863,
+        0.03743921360000968
+      ],
+      "bucket": [
+        "hull"
+      ],
+      "surfaces": [
+        {
+          "minX": 19.860534895397723,
+          "maxX": 21.619167342595755,
+          "minZ": 30.788613005268097,
+          "maxZ": 33.253935062227136,
+          "top": 1.1409863173961639
+        },
+        {
+          "minX": 20.307663229946048,
+          "maxX": 22.085516874026506,
+          "minZ": 30.486222935277336,
+          "maxZ": 33.20497948620904,
+          "top": 2.0409558110870423
+        },
+        {
+          "minX": 20.325621581356973,
+          "maxX": 22.214118300098928,
+          "minZ": 30.42999801820072,
+          "maxZ": 32.85193680787531,
+          "top": 2.842492991872132
+        }
+      ],
+      "records": [
+        {
+          "kind": "crate",
+          "args": [
+            "hull",
+            1.7586324471980332,
+            1.1409863173961639,
+            2.4653220569590415,
+            20.73985111899674,
+            0,
+            32.021274033747616,
+            3,
+            11041368,
+            0.07484679236076774
+          ]
+        },
+        {
+          "kind": "crate",
+          "args": [
+            "hull",
+            1.77785364408046,
+            0.8999694936908782,
+            2.718756550931708,
+            21.196590051986277,
+            1.1409863173961639,
+            31.84560121074319,
+            3,
+            9411178,
+            0.00043769264593718216
+          ]
+        },
+        {
+          "kind": "crate",
+          "args": [
+            "hull",
+            1.8884967187419535,
+            0.8015371807850897,
+            2.42193878967459,
+            21.26986994072795,
+            2.0409558110870423,
+            31.640967413038016,
+            3,
+            8162980,
+            -0.2810772266238928
+          ]
+        },
+        {
+          "kind": "drum",
+          "args": [
+            "hull",
+            null,
+            22.6,
+            0,
+            31,
+            2,
+            11553338,
+            {
+              "sx": 0.42,
+              "sy": 1.1,
+              "sz": 0.42
+            }
+          ]
+        },
+        {
+          "kind": "drum",
+          "args": [
+            "hull",
+            null,
+            23.5,
+            0,
+            31.8,
+            2,
+            6978186,
+            {
+              "sx": 0.42,
+              "sy": 1.1,
+              "sz": 0.42
+            }
+          ]
+        },
+        {
+          "kind": "drum",
+          "args": [
+            "hull",
+            null,
+            22.6,
+            0,
+            32.6,
+            2,
+            13148224,
+            {
+              "sx": 0.42,
+              "sy": 1.1,
+              "sz": 0.42
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 123,
+      "crates": 2,
+      "drums": 0,
+      "height": 2.0438947682268918,
+      "originalTriangles": 24,
+      "kitTriangles": 312,
+      "leafDraws": 18,
+      "loopTests": [
+        {
+          "draw": 1,
+          "lo": 1,
+          "hi": 3,
+          "result": 3
+        },
+        {
+          "draw": 9,
+          "lo": 1,
+          "hi": 3,
+          "result": 3
+        },
+        {
+          "draw": 17,
+          "lo": 1,
+          "hi": 3,
+          "result": 2
+        }
+      ],
+      "downstream": [
+        0.21075262036174536,
+        0.5081956922076643,
+        0.680944137275219,
+        0.1528729829005897,
+        0.04082533158361912,
+        0.11254164483398199,
+        0.5299855601042509,
+        0.8197856494225562
+      ],
+      "bucket": [
+        "hull"
+      ],
+      "surfaces": [
+        {
+          "minX": 20.12921585543081,
+          "maxX": 21.672050707880405,
+          "minZ": 31.38817965914037,
+          "maxZ": 33.14518649126861,
+          "top": 0.9981262056156993
+        },
+        {
+          "minX": 19.887111443746836,
+          "maxX": 21.614386147540063,
+          "minZ": 30.231555287551878,
+          "maxZ": 32.98560349977315,
+          "top": 2.0438947682268918
+        }
+      ],
+      "records": [
+        {
+          "kind": "crate",
+          "args": [
+            "hull",
+            1.5428348524495958,
+            0.9981262056156993,
+            1.7570068321282426,
+            20.900633281655608,
+            0,
+            32.26668307520449,
+            3,
+            10133672,
+            0.2574561755172908
+          ]
+        },
+        {
+          "kind": "crate",
+          "args": [
+            "hull",
+            1.7272747037932277,
+            1.0457685626111926,
+            2.754048212221273,
+            20.75074879564345,
+            0.9981262056156993,
+            31.608579393662513,
+            3,
+            8162980,
+            -0.08674489078111947
+          ]
+        }
+      ]
+    }
+  ],
+  "deckParity": [
+    {
+      "theme": "airfield",
+      "seeds": 48,
+      "actualBuilders": true,
+      "actualBatch": true,
+      "exact": [
+        "leaf RNG trace",
+        "loop-test int order",
+        "post-call RNG state and next 8 draws",
+        "all pose/tint arguments",
+        "surface records",
+        "emitter arguments and RNG",
+        "all non-cargo downstream pos/nrm/uv/col/anim/pivot/spin bytes"
+      ],
+      "pass": true
+    },
+    {
+      "theme": "battery",
+      "seeds": 48,
+      "actualBuilders": true,
+      "actualBatch": true,
+      "exact": [
+        "leaf RNG trace",
+        "loop-test int order",
+        "post-call RNG state and next 8 draws",
+        "all pose/tint arguments",
+        "surface records",
+        "emitter arguments and RNG",
+        "all non-cargo downstream pos/nrm/uv/col/anim/pivot/spin bytes"
+      ],
+      "pass": true
+    },
+    {
+      "theme": "reactor",
+      "seeds": 48,
+      "actualBuilders": true,
+      "actualBatch": true,
+      "exact": [
+        "leaf RNG trace",
+        "loop-test int order",
+        "post-call RNG state and next 8 draws",
+        "all pose/tint arguments",
+        "surface records",
+        "emitter arguments and RNG",
+        "all non-cargo downstream pos/nrm/uv/col/anim/pivot/spin bytes"
+      ],
+      "pass": true
+    },
+    {
+      "theme": "citadel",
+      "seeds": 48,
+      "actualBuilders": true,
+      "actualBatch": true,
+      "exact": [
+        "leaf RNG trace",
+        "loop-test int order",
+        "post-call RNG state and next 8 draws",
+        "all pose/tint arguments",
+        "surface records",
+        "emitter arguments and RNG",
+        "all non-cargo downstream pos/nrm/uv/col/anim/pivot/spin bytes"
+      ],
+      "pass": true
+    },
+    {
+      "theme": "gauntlet",
+      "seeds": 48,
+      "actualBuilders": true,
+      "actualBatch": true,
+      "exact": [
+        "leaf RNG trace",
+        "loop-test int order",
+        "post-call RNG state and next 8 draws",
+        "all pose/tint arguments",
+        "surface records",
+        "emitter arguments and RNG",
+        "all non-cargo downstream pos/nrm/uv/col/anim/pivot/spin bytes"
+      ],
+      "pass": true
+    }
+  ],
+  "exactDeckDensity": {
+    "airfield": {
+      "samples": 48,
+      "averageCrates": 2.8125,
+      "averageDrums": 2.9375,
+      "maxCrates": 5,
+      "maxDrums": 6
+    },
+    "battery": {
+      "samples": 48,
+      "averageCrates": 6.541666666666667,
+      "averageDrums": 6.0625,
+      "maxCrates": 11,
+      "maxDrums": 12
+    },
+    "reactor": {
+      "samples": 48,
+      "averageCrates": 2.8125,
+      "averageDrums": 2.9375,
+      "maxCrates": 5,
+      "maxDrums": 6
+    },
+    "citadel": {
+      "samples": 48,
+      "averageCrates": 2.8125,
+      "averageDrums": 2.9375,
+      "maxCrates": 5,
+      "maxDrums": 6
+    },
+    "gauntlet": {
+      "samples": 48,
+      "averageCrates": 2.8125,
+      "averageDrums": 2.9375,
+      "maxCrates": 5,
+      "maxDrums": 6
+    }
+  },
+  "transformed": [
+    {
+      "seed": 1,
+      "maxH": 1.9,
+      "kind": "crate",
+      "scale": [
+        1.4021885769441722,
+        1.010978815983981,
+        2.227559652937458
+      ],
+      "position": [
+        -19.125297681428492,
+        0,
+        31.82488280236721
+      ],
+      "yaw": 0.1324458846822381,
+      "bounds": {
+        "min": [
+          -19.955569565522904,
+          0,
+          30.63567867148887
+        ],
+        "max": [
+          -18.29502579733408,
+          1.010978815983981,
+          33.01408693324555
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "maxH": 1.9,
+      "kind": "crate",
+      "scale": [
+        2.1958583565428853,
+        0.8890211840160189,
+        2.8398443033795973
+      ],
+      "position": [
+        -19.788853133283556,
+        1.010978815983981,
+        31.92299581207335
+      ],
+      "yaw": -0.20730411903932688,
+      "bounds": {
+        "min": [
+          -21.132146692079093,
+          1.010978815983981,
+          30.325574886138984
+        ],
+        "max": [
+          -18.44555957448802,
+          1.9,
+          33.52041673800771
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "maxH": 1.9,
+      "kind": "drum",
+      "scale": [
+        0.42,
+        1.1,
+        0.42
+      ],
+      "position": [
+        -17.9,
+        0,
+        31
+      ],
+      "yaw": 0,
+      "bounds": {
+        "min": [
+          -18.29944374680519,
+          0,
+          30.58
+        ],
+        "max": [
+          -17.50055625319481,
+          1.1,
+          31.42
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "maxH": 1.9,
+      "kind": "drum",
+      "scale": [
+        0.42,
+        1.1,
+        0.42
+      ],
+      "position": [
+        -17,
+        0,
+        31.8
+      ],
+      "yaw": 0,
+      "bounds": {
+        "min": [
+          -17.39944374680519,
+          0,
+          31.38
+        ],
+        "max": [
+          -16.60055625319481,
+          1.1,
+          32.22
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "maxH": 1.9,
+      "kind": "drum",
+      "scale": [
+        0.42,
+        1.1,
+        0.42
+      ],
+      "position": [
+        -17.9,
+        0,
+        32.6
+      ],
+      "yaw": 0,
+      "bounds": {
+        "min": [
+          -18.29944374680519,
+          0,
+          32.18
+        ],
+        "max": [
+          -17.50055625319481,
+          1.1,
+          33.02
+        ]
+      }
+    },
+    {
+      "seed": 7,
+      "maxH": 1.9,
+      "kind": "crate",
+      "scale": [
+        1.4495666060596704,
+        1.190763053111732,
+        2.057539807146362
+      ],
+      "position": [
+        -19.48284378517419,
+        0,
+        31.924417350441217
+      ],
+      "yaw": -0.1560448884498328,
+      "bounds": {
+        "min": [
+          -20.345913632569918,
+          0,
+          30.80451825497567
+        ],
+        "max": [
+          -18.61977393777846,
+          1.190763053111732,
+          33.044316445906766
+        ]
+      }
+    },
+    {
+      "seed": 42,
+      "maxH": 1.9,
+      "kind": "crate",
+      "scale": [
+        1.7586324471980332,
+        1.1409863173961639,
+        2.4653220569590415
+      ],
+      "position": [
+        -19.76014888100326,
+        0,
+        32.021274033747616
+      ],
+      "yaw": 0.07484679236076774,
+      "bounds": {
+        "min": [
+          -20.721803910606297,
+          0,
+          30.731571740409176
+        ],
+        "max": [
+          -18.798493851400224,
+          1.1409863173961639,
+          33.31097632708605
+        ]
+      }
+    },
+    {
+      "seed": 42,
+      "maxH": 1.9,
+      "kind": "drum",
+      "scale": [
+        0.42,
+        1.1,
+        0.42
+      ],
+      "position": [
+        -17.9,
+        0,
+        31
+      ],
+      "yaw": 0,
+      "bounds": {
+        "min": [
+          -18.29944374680519,
+          0,
+          30.58
+        ],
+        "max": [
+          -17.50055625319481,
+          1.1,
+          31.42
+        ]
+      }
+    },
+    {
+      "seed": 42,
+      "maxH": 1.9,
+      "kind": "drum",
+      "scale": [
+        0.42,
+        1.1,
+        0.42
+      ],
+      "position": [
+        -17,
+        0,
+        31.8
+      ],
+      "yaw": 0,
+      "bounds": {
+        "min": [
+          -17.39944374680519,
+          0,
+          31.38
+        ],
+        "max": [
+          -16.60055625319481,
+          1.1,
+          32.22
+        ]
+      }
+    },
+    {
+      "seed": 42,
+      "maxH": 1.9,
+      "kind": "drum",
+      "scale": [
+        0.42,
+        1.1,
+        0.42
+      ],
+      "position": [
+        -17.9,
+        0,
+        32.6
+      ],
+      "yaw": 0,
+      "bounds": {
+        "min": [
+          -18.29944374680519,
+          0,
+          32.18
+        ],
+        "max": [
+          -17.50055625319481,
+          1.1,
+          33.02
+        ]
+      }
+    },
+    {
+      "seed": 123,
+      "maxH": 1.9,
+      "kind": "crate",
+      "scale": [
+        1.5428348524495958,
+        0.9981262056156993,
+        1.7570068321282426
+      ],
+      "position": [
+        -19.599366718344392,
+        0,
+        32.26668307520449
+      ],
+      "yaw": 0.2574561755172908,
+      "bounds": {
+        "min": [
+          -20.551149766416717,
+          0,
+          31.23642857784104
+        ],
+        "max": [
+          -18.647583670272066,
+          0.9981262056156993,
+          33.29693757256794
+        ]
+      }
+    },
+    {
+      "seed": 123,
+      "maxH": 1.9,
+      "kind": "crate",
+      "scale": [
+        1.7272747037932277,
+        0.9018737943843006,
+        2.754048212221273
+      ],
+      "position": [
+        -19.74925120435655,
+        0.9981262056156993,
+        31.608579393662513
+      ],
+      "yaw": -0.08674489078111947,
+      "bounds": {
+        "min": [
+          -20.719397353405213,
+          0.9981262056156993,
+          30.16789643556575
+        ],
+        "max": [
+          -18.779105055307888,
+          1.9,
+          33.049262351759275
+        ]
+      }
+    },
+    {
+      "seed": 2738,
+      "maxH": 1.9,
+      "kind": "crate",
+      "scale": [
+        2.125656959041953,
+        1.1194164932705462,
+        2.3897723807113724
+      ],
+      "position": [
+        -19.46616528816521,
+        0,
+        32.10643146112561
+      ],
+      "yaw": 0.1552565562073141,
+      "bounds": {
+        "min": [
+          -20.686197915196235,
+          0,
+          30.774716439551018
+        ],
+        "max": [
+          -18.246132661134187,
+          1.1194164932705462,
+          33.438146482700205
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "maxH": 3.2,
+      "kind": "crate",
+      "scale": [
+        1.4021885769441722,
+        1.010978815983981,
+        2.227559652937458
+      ],
+      "position": [
+        21.374702318571508,
+        0,
+        31.82488280236721
+      ],
+      "yaw": 0.1324458846822381,
+      "bounds": {
+        "min": [
+          20.544430434477096,
+          0,
+          30.63567867148887
+        ],
+        "max": [
+          22.20497420266592,
+          1.010978815983981,
+          33.01408693324555
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "maxH": 3.2,
+      "kind": "crate",
+      "scale": [
+        2.1958583565428853,
+        0.9821084508672356,
+        2.8398443033795973
+      ],
+      "position": [
+        20.711146866716444,
+        1.010978815983981,
+        31.92299581207335
+      ],
+      "yaw": -0.20730411903932688,
+      "bounds": {
+        "min": [
+          19.367853307920907,
+          1.010978815983981,
+          30.325574886138984
+        ],
+        "max": [
+          22.05444042551198,
+          1.9930872668512167,
+          33.52041673800771
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "maxH": 3.2,
+      "kind": "drum",
+      "scale": [
+        0.42,
+        1.1,
+        0.42
+      ],
+      "position": [
+        22.6,
+        0,
+        31
+      ],
+      "yaw": 0,
+      "bounds": {
+        "min": [
+          22.20055625319481,
+          0,
+          30.58
+        ],
+        "max": [
+          22.99944374680519,
+          1.1,
+          31.42
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "maxH": 3.2,
+      "kind": "drum",
+      "scale": [
+        0.42,
+        1.1,
+        0.42
+      ],
+      "position": [
+        23.5,
+        0,
+        31.8
+      ],
+      "yaw": 0,
+      "bounds": {
+        "min": [
+          23.10055625319481,
+          0,
+          31.38
+        ],
+        "max": [
+          23.89944374680519,
+          1.1,
+          32.22
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "maxH": 3.2,
+      "kind": "drum",
+      "scale": [
+        0.42,
+        1.1,
+        0.42
+      ],
+      "position": [
+        22.6,
+        0,
+        32.6
+      ],
+      "yaw": 0,
+      "bounds": {
+        "min": [
+          22.20055625319481,
+          0,
+          32.18
+        ],
+        "max": [
+          22.99944374680519,
+          1.1,
+          33.02
+        ]
+      }
+    },
+    {
+      "seed": 7,
+      "maxH": 3.2,
+      "kind": "crate",
+      "scale": [
+        1.4495666060596704,
+        1.190763053111732,
+        2.057539807146362
+      ],
+      "position": [
+        21.01715621482581,
+        0,
+        31.924417350441217
+      ],
+      "yaw": -0.1560448884498328,
+      "bounds": {
+        "min": [
+          20.154086367430082,
+          0,
+          30.80451825497567
+        ],
+        "max": [
+          21.88022606222154,
+          1.190763053111732,
+          33.044316445906766
+        ]
+      }
+    },
+    {
+      "seed": 7,
+      "maxH": 3.2,
+      "kind": "crate",
+      "scale": [
+        1.983857671916485,
+        0.9031262244097888,
+        2.169485286855202
+      ],
+      "position": [
+        21.21127190925181,
+        1.190763053111732,
+        32.01472203657031
+      ],
+      "yaw": -0.07922484395094215,
+      "bounds": {
+        "min": [
+          20.14347360300518,
+          1.190763053111732,
+          30.861158879249814
+        ],
+        "max": [
+          22.27907021549844,
+          2.0938892775215208,
+          33.16828519389081
+        ]
+      }
+    },
+    {
+      "seed": 42,
+      "maxH": 3.2,
+      "kind": "crate",
+      "scale": [
+        1.7586324471980332,
+        1.1409863173961639,
+        2.4653220569590415
+      ],
+      "position": [
+        20.73985111899674,
+        0,
+        32.021274033747616
+      ],
+      "yaw": 0.07484679236076774,
+      "bounds": {
+        "min": [
+          19.778196089393703,
+          0,
+          30.731571740409176
+        ],
+        "max": [
+          21.701506148599776,
+          1.1409863173961639,
+          33.31097632708605
+        ]
+      }
+    },
+    {
+      "seed": 42,
+      "maxH": 3.2,
+      "kind": "crate",
+      "scale": [
+        1.77785364408046,
+        0.8999694936908782,
+        2.718756550931708
+      ],
+      "position": [
+        21.196590051986277,
+        1.1409863173961639,
+        31.84560121074319
+      ],
+      "yaw": 0.00043769264593718216,
+      "bounds": {
+        "min": [
+          20.307115924417324,
+          1.1409863173961639,
+          30.485865114899454
+        ],
+        "max": [
+          22.08606417955523,
+          2.0409558110870423,
+          33.20533730658693
+        ]
+      }
+    },
+    {
+      "seed": 42,
+      "maxH": 3.2,
+      "kind": "crate",
+      "scale": [
+        1.8884967187419535,
+        0.8015371807850897,
+        2.42193878967459
+      ],
+      "position": [
+        21.26986994072795,
+        2.0409558110870423,
+        31.640967413038016
+      ],
+      "yaw": -0.2810772266238928,
+      "bounds": {
+        "min": [
+          20.053637755309655,
+          2.0409558110870423,
+          30.236548153444843
+        ],
+        "max": [
+          22.486102126146246,
+          2.842492991872132,
+          33.04538667263119
+        ]
+      }
+    },
+    {
+      "seed": 42,
+      "maxH": 3.2,
+      "kind": "drum",
+      "scale": [
+        0.42,
+        1.1,
+        0.42
+      ],
+      "position": [
+        22.6,
+        0,
+        31
+      ],
+      "yaw": 0,
+      "bounds": {
+        "min": [
+          22.20055625319481,
+          0,
+          30.58
+        ],
+        "max": [
+          22.99944374680519,
+          1.1,
+          31.42
+        ]
+      }
+    },
+    {
+      "seed": 42,
+      "maxH": 3.2,
+      "kind": "drum",
+      "scale": [
+        0.42,
+        1.1,
+        0.42
+      ],
+      "position": [
+        23.5,
+        0,
+        31.8
+      ],
+      "yaw": 0,
+      "bounds": {
+        "min": [
+          23.10055625319481,
+          0,
+          31.38
+        ],
+        "max": [
+          23.89944374680519,
+          1.1,
+          32.22
+        ]
+      }
+    },
+    {
+      "seed": 42,
+      "maxH": 3.2,
+      "kind": "drum",
+      "scale": [
+        0.42,
+        1.1,
+        0.42
+      ],
+      "position": [
+        22.6,
+        0,
+        32.6
+      ],
+      "yaw": 0,
+      "bounds": {
+        "min": [
+          22.20055625319481,
+          0,
+          32.18
+        ],
+        "max": [
+          22.99944374680519,
+          1.1,
+          33.02
+        ]
+      }
+    },
+    {
+      "seed": 123,
+      "maxH": 3.2,
+      "kind": "crate",
+      "scale": [
+        1.5428348524495958,
+        0.9981262056156993,
+        1.7570068321282426
+      ],
+      "position": [
+        20.900633281655608,
+        0,
+        32.26668307520449
+      ],
+      "yaw": 0.2574561755172908,
+      "bounds": {
+        "min": [
+          19.948850233583283,
+          0,
+          31.23642857784104
+        ],
+        "max": [
+          21.852416329727934,
+          0.9981262056156993,
+          33.29693757256794
+        ]
+      }
+    },
+    {
+      "seed": 123,
+      "maxH": 3.2,
+      "kind": "crate",
+      "scale": [
+        1.7272747037932277,
+        1.0457685626111926,
+        2.754048212221273
+      ],
+      "position": [
+        20.75074879564345,
+        0.9981262056156993,
+        31.608579393662513
+      ],
+      "yaw": -0.08674489078111947,
+      "bounds": {
+        "min": [
+          19.780602646594787,
+          0.9981262056156993,
+          30.16789643556575
+        ],
+        "max": [
+          21.720894944692112,
+          2.0438947682268918,
+          33.049262351759275
+        ]
+      }
+    },
+    {
+      "seed": 2738,
+      "maxH": 3.2,
+      "kind": "crate",
+      "scale": [
+        2.125656959041953,
+        1.1194164932705462,
+        2.3897723807113724
+      ],
+      "position": [
+        21.03383471183479,
+        0,
+        32.10643146112561
+      ],
+      "yaw": 0.1552565562073141,
+      "bounds": {
+        "min": [
+          19.813802084803765,
+          0,
+          30.774716439551018
+        ],
+        "max": [
+          22.253867338865813,
+          1.1194164932705462,
+          33.438146482700205
+        ]
+      }
+    },
+    {
+      "seed": 2738,
+      "maxH": 3.2,
+      "kind": "crate",
+      "scale": [
+        1.8628953371196986,
+        0.9183049537241459,
+        2.503287276171868
+      ],
+      "position": [
+        21.148058786429466,
+        1.1194164932705462,
+        32.131483152322474
+      ],
+      "yaw": -0.009125078888610028,
+      "bounds": {
+        "min": [
+          20.20614240350642,
+          1.1194164932705462,
+          30.872072161817623
+        ],
+        "max": [
+          22.089975169352513,
+          2.0377214469946923,
+          33.39089414282732
+        ]
+      }
+    }
+  ],
+  "uvNormalProbe": {
+    "uvMaxError": 3.178914393942023e-7,
+    "normalLengthMaxError": 4.019528965226726e-8,
+    "AO": "actual Batch._emit unmodified, same source tint and source front/side lifts; neutral authored multiplier 1; detailed normals intentionally change per-face response",
+    "worldProjection": true
+  },
+  "lifetime": {
+    "chunks": 3,
+    "hullDraws": 3,
+    "chunkGeometryDisposeEvents": 3,
+    "templateDisposeEvents": 2,
+    "materialDisposeEvents": 1
+  },
+  "ownership": "One startup copy per template, imported GLTF geometries/materials disposed once after extraction; no per-unit roots/material clones; Batch.merge creates one chunk-owned hull mesh; templates/shared mapped hull live until application shutdown",
+  "memory": {
+    "floatsPerExpandedVertex": 11,
+    "bytesPerTriangle": 132,
+    "templateBytes": 24192,
+    "sourceWorstTriangles": 744,
+    "kitWorstTriangles": 4572,
+    "sourceWorstMergedBytes": 98208,
+    "kitWorstMergedBytes": 603504,
+    "addedWorstMergedBytes": 505296,
+    "residentChunkBounds": [
+      {
+        "ahead": 320,
+        "behind": 90,
+        "conservativeChunks": 6,
+        "cargoBytesAtDeclaredWorst": 3621024
+      },
+      {
+        "ahead": 440,
+        "behind": 90,
+        "conservativeChunks": 7,
+        "cargoBytesAtDeclaredWorst": 4224528
+      },
+      {
+        "ahead": 560,
+        "behind": 90,
+        "conservativeChunks": 8,
+        "cargoBytesAtDeclaredWorst": 4828032
+      },
+      {
+        "ahead": 700,
+        "behind": 90,
+        "conservativeChunks": 10,
+        "cargoBytesAtDeclaredWorst": 6035040
+      }
+    ],
+    "excludes": "JS growable scratch buffer capacity, GL driver copies, unchanged other scenery; merged buffers retain CPU arrays as well as uploaded GPU copies; shadow pass submits hull again",
+    "scratchMeasurements": [
+      {
+        "version": "source",
+        "seed": 2738,
+        "cargoOnlyReplayOfActualBatteryArguments": true,
+        "crates": 12,
+        "drums": 15,
+        "triangles": 744,
+        "usedBytes": 98208,
+        "reservedBytes": 131072,
+        "pool": "fresh actual source Bucket installed before replay; live shared pool may retain a larger high-water capacity from unrelated geometry"
+      },
+      {
+        "version": "kit",
+        "seed": 2738,
+        "cargoOnlyReplayOfActualBatteryArguments": true,
+        "crates": 12,
+        "drums": 15,
+        "triangles": 4572,
+        "usedBytes": 603504,
+        "reservedBytes": 917504,
+        "pool": "fresh actual source Bucket installed before replay; live shared pool may retain a larger high-water capacity from unrelated geometry"
+      }
+    ],
+    "tenWorstCargoChunksCpuPlusGpuPlusFreshScratchAndTemplates": 13011776
+  },
+  "camera": {
+    "poses": 54,
+    "projectedCornersPerPose": 60,
+    "finite": true,
+    "allCargoVisibleClaim": false,
+    "settingsDouble": "headless matchMedia false, no DOM/rendering; real CameraRig and FlightCamera snap/projection",
+    "rigs": [
+      {
+        "mode": "classic",
+        "aspect": 1.7777777777777777,
+        "player": [
+          0,
+          6,
+          0
+        ],
+        "eye": [
+          -45.254833995939045,
+          54.255,
+          -17.254833995939038
+        ],
+        "look": [
+          0,
+          9,
+          28
+        ],
+        "fov": 52,
+        "classic": true,
+        "halfHeight": 40,
+        "near": 0.1,
+        "far": 1500,
+        "testedBoundsCorners": 60
+      },
+      {
+        "mode": "modern",
+        "aspect": 1.7777777777777777,
+        "player": [
+          0,
+          6,
+          0
+        ],
+        "eye": [
+          -9.91858415644439,
+          20,
+          -27.251086002791343
+        ],
+        "look": [
+          0,
+          7.2,
+          16
+        ],
+        "fov": 58,
+        "classic": false,
+        "halfHeight": 40,
+        "near": 0.1,
+        "far": 1500,
+        "testedBoundsCorners": 60
+      },
+      {
+        "mode": "chase",
+        "aspect": 1.7777777777777777,
+        "player": [
+          0,
+          6,
+          0
+        ],
+        "eye": [
+          -2.5086831184236833,
+          15.5,
+          -23.86852548883856
+        ],
+        "look": [
+          0,
+          7.2,
+          16
+        ],
+        "fov": 66,
+        "classic": false,
+        "halfHeight": 40,
+        "near": 0.1,
+        "far": 1500,
+        "testedBoundsCorners": 60
+      }
+    ]
+  },
+  "clearance": {
+    "legalPlayerX": [
+      -16,
+      16
+    ],
+    "legalPlayerY": [
+      1.3,
+      25
+    ],
+    "playerSphereRadius": 1.5,
+    "controlsAndAim": "No production edits; unchanged movement bounds, aim, collisions, rewards, targets, damage and spawn data",
+    "nearCrateWorstSourceSupportX": -17.529014298237875,
+    "nearCrateConservativeSphereXGap": 0.02901429823787538,
+    "nearDrumK1SourceCenterX": -17,
+    "nearDrumRightX": -16.600556263156037,
+    "inheritedNearDrumWitness": {
+      "playerCenter": [
+        -16,
+        1.3,
+        31.92978713763748
+      ],
+      "drumSurfacePoint": [
+        -16.600556263156037,
+        1.1,
+        31.92978713763748
+      ],
+      "distance": 0.6329832740412205,
+      "sphereSignedGap": -0.8670167259587795
+    },
+    "warning": "Source optional near-side drums already intersect possible player-radius envelope. This kit does not enlarge them or claim complete original clearance. Decorative cargo is not a gameplay collider. Unrotated surface boxes and possible stacked overhang/intersection are inherited."
+  },
+  "fullChunkParity": [
+    {
+      "seed": 1,
+      "theme": "airfield",
+      "chunkIndex": 1,
+      "cargo": {
+        "crates": 4,
+        "drums": 0,
+        "height": 1.9
+      },
+      "originalTriangles": 5964,
+      "kitTriangles": 6540,
+      "originalBytes": 950256,
+      "kitBytes": 1026288,
+      "meshesBoth": 7,
+      "retiredGeometryEvents": 7,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "96cc0864991f71fca0152e6ec17f2fb30295ce4a6a23c843dc9b339fb66ed813",
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "theme": "battery",
+      "chunkIndex": 17,
+      "cargo": {
+        "crates": 7,
+        "drums": 12,
+        "height": 1.9877563987858593
+      },
+      "originalTriangles": 5248,
+      "kitTriangles": 7936,
+      "originalBytes": 805680,
+      "kitBytes": 1160496,
+      "meshesBoth": 8,
+      "retiredGeometryEvents": 8,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "96cc0864991f71fca0152e6ec17f2fb30295ce4a6a23c843dc9b339fb66ed813",
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "theme": "reactor",
+      "chunkIndex": 48,
+      "cargo": {
+        "crates": 3,
+        "drums": 3,
+        "height": 1.9
+      },
+      "originalTriangles": 6584,
+      "kitTriangles": 7436,
+      "originalBytes": 1060848,
+      "kitBytes": 1173312,
+      "meshesBoth": 12,
+      "retiredGeometryEvents": 12,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "96cc0864991f71fca0152e6ec17f2fb30295ce4a6a23c843dc9b339fb66ed813",
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "theme": "citadel",
+      "chunkIndex": 82,
+      "cargo": {
+        "crates": 2,
+        "drums": 3,
+        "height": 1.7348660914227367
+      },
+      "originalTriangles": 7340,
+      "kitTriangles": 8048,
+      "originalBytes": 1213920,
+      "kitBytes": 1307376,
+      "meshesBoth": 12,
+      "retiredGeometryEvents": 12,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "96cc0864991f71fca0152e6ec17f2fb30295ce4a6a23c843dc9b339fb66ed813",
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "theme": "gauntlet",
+      "chunkIndex": 102,
+      "cargo": {
+        "crates": 2,
+        "drums": 3,
+        "height": 1.9
+      },
+      "originalTriangles": 5760,
+      "kitTriangles": 6468,
+      "originalBytes": 905040,
+      "kitBytes": 998496,
+      "meshesBoth": 12,
+      "retiredGeometryEvents": 12,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "96cc0864991f71fca0152e6ec17f2fb30295ce4a6a23c843dc9b339fb66ed813",
+      "pass": true
+    },
+    {
+      "seed": 7,
+      "theme": "airfield",
+      "chunkIndex": 1,
+      "cargo": {
+        "crates": 3,
+        "drums": 0,
+        "height": 1.1291563044302166
+      },
+      "originalTriangles": 5848,
+      "kitTriangles": 6280,
+      "originalBytes": 980928,
+      "kitBytes": 1037952,
+      "meshesBoth": 7,
+      "retiredGeometryEvents": 7,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "b67fdfb7dd43b068fc7ead1040799f2e313501052f29ec33dde0dc40e55cb24a",
+      "pass": true
+    },
+    {
+      "seed": 7,
+      "theme": "battery",
+      "chunkIndex": 17,
+      "cargo": {
+        "crates": 6,
+        "drums": 9,
+        "height": 1.8473053916357458
+      },
+      "originalTriangles": 5724,
+      "kitTriangles": 7848,
+      "originalBytes": 891216,
+      "kitBytes": 1171584,
+      "meshesBoth": 12,
+      "retiredGeometryEvents": 12,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "b67fdfb7dd43b068fc7ead1040799f2e313501052f29ec33dde0dc40e55cb24a",
+      "pass": true
+    },
+    {
+      "seed": 7,
+      "theme": "reactor",
+      "chunkIndex": 48,
+      "cargo": {
+        "crates": 4,
+        "drums": 3,
+        "height": 1.80788802402094
+      },
+      "originalTriangles": 6392,
+      "kitTriangles": 7388,
+      "originalBytes": 1035504,
+      "kitBytes": 1166976,
+      "meshesBoth": 12,
+      "retiredGeometryEvents": 12,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "b67fdfb7dd43b068fc7ead1040799f2e313501052f29ec33dde0dc40e55cb24a",
+      "pass": true
+    },
+    {
+      "seed": 7,
+      "theme": "citadel",
+      "chunkIndex": 82,
+      "cargo": {
+        "crates": 2,
+        "drums": 3,
+        "height": 0.8926584413275123
+      },
+      "originalTriangles": 4872,
+      "kitTriangles": 5580,
+      "originalBytes": 789264,
+      "kitBytes": 882720,
+      "meshesBoth": 8,
+      "retiredGeometryEvents": 8,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "b67fdfb7dd43b068fc7ead1040799f2e313501052f29ec33dde0dc40e55cb24a",
+      "pass": true
+    },
+    {
+      "seed": 7,
+      "theme": "gauntlet",
+      "chunkIndex": 102,
+      "cargo": {
+        "crates": 3,
+        "drums": 3,
+        "height": 1.9
+      },
+      "originalTriangles": 5468,
+      "kitTriangles": 6320,
+      "originalBytes": 924912,
+      "kitBytes": 1037376,
+      "meshesBoth": 8,
+      "retiredGeometryEvents": 8,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "b67fdfb7dd43b068fc7ead1040799f2e313501052f29ec33dde0dc40e55cb24a",
+      "pass": true
+    },
+    {
+      "seed": 42,
+      "theme": "airfield",
+      "chunkIndex": 1,
+      "cargo": {
+        "crates": 3,
+        "drums": 6,
+        "height": 1.9
+      },
+      "originalTriangles": 5244,
+      "kitTriangles": 6516,
+      "originalBytes": 811440,
+      "kitBytes": 979344,
+      "meshesBoth": 8,
+      "retiredGeometryEvents": 8,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "c3d43bcae3d1efd930f22106cb7dd38ba0625140c764585539fc1890b73e6a96",
+      "pass": true
+    },
+    {
+      "seed": 42,
+      "theme": "battery",
+      "chunkIndex": 17,
+      "cargo": {
+        "crates": 6,
+        "drums": 6,
+        "height": 2.0473981551826
+      },
+      "originalTriangles": 3632,
+      "kitTriangles": 5336,
+      "originalBytes": 537552,
+      "kitBytes": 762480,
+      "meshesBoth": 7,
+      "retiredGeometryEvents": 7,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "c3d43bcae3d1efd930f22106cb7dd38ba0625140c764585539fc1890b73e6a96",
+      "pass": true
+    },
+    {
+      "seed": 42,
+      "theme": "reactor",
+      "chunkIndex": 48,
+      "cargo": {
+        "crates": 5,
+        "drums": 3,
+        "height": 1.9
+      },
+      "originalTriangles": 6364,
+      "kitTriangles": 7504,
+      "originalBytes": 1070208,
+      "kitBytes": 1220688,
+      "meshesBoth": 11,
+      "retiredGeometryEvents": 11,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "c3d43bcae3d1efd930f22106cb7dd38ba0625140c764585539fc1890b73e6a96",
+      "pass": true
+    },
+    {
+      "seed": 42,
+      "theme": "citadel",
+      "chunkIndex": 82,
+      "cargo": {
+        "crates": 1,
+        "drums": 3,
+        "height": 1.0307932217605411
+      },
+      "originalTriangles": 5348,
+      "kitTriangles": 5912,
+      "originalBytes": 801648,
+      "kitBytes": 876096,
+      "meshesBoth": 14,
+      "retiredGeometryEvents": 14,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [
+        {
+          "references": 2,
+          "events": 2
+        }
+      ],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "c3d43bcae3d1efd930f22106cb7dd38ba0625140c764585539fc1890b73e6a96",
+      "pass": true
+    },
+    {
+      "seed": 42,
+      "theme": "gauntlet",
+      "chunkIndex": 102,
+      "cargo": {
+        "crates": 3,
+        "drums": 3,
+        "height": 1.8909266549162567
+      },
+      "originalTriangles": 4896,
+      "kitTriangles": 5748,
+      "originalBytes": 772848,
+      "kitBytes": 885312,
+      "meshesBoth": 15,
+      "retiredGeometryEvents": 15,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [
+        {
+          "references": 2,
+          "events": 2
+        }
+      ],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "c3d43bcae3d1efd930f22106cb7dd38ba0625140c764585539fc1890b73e6a96",
+      "pass": true
+    },
+    {
+      "seed": 123,
+      "theme": "airfield",
+      "chunkIndex": 1,
+      "cargo": {
+        "crates": 2,
+        "drums": 3,
+        "height": 1.861049495730549
+      },
+      "originalTriangles": 3852,
+      "kitTriangles": 4560,
+      "originalBytes": 599808,
+      "kitBytes": 693264,
+      "meshesBoth": 8,
+      "retiredGeometryEvents": 8,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "5a07041fb7ced08866982ba973df04ad0455d9509cd750b4d3b70a2b68c83039",
+      "pass": true
+    },
+    {
+      "seed": 123,
+      "theme": "battery",
+      "chunkIndex": 17,
+      "cargo": {
+        "crates": 7,
+        "drums": 6,
+        "height": 2.2141704057343303
+      },
+      "originalTriangles": 3520,
+      "kitTriangles": 5368,
+      "originalBytes": 526464,
+      "kitBytes": 770400,
+      "meshesBoth": 8,
+      "retiredGeometryEvents": 8,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "5a07041fb7ced08866982ba973df04ad0455d9509cd750b4d3b70a2b68c83039",
+      "pass": true
+    },
+    {
+      "seed": 123,
+      "theme": "reactor",
+      "chunkIndex": 48,
+      "cargo": {
+        "crates": 3,
+        "drums": 0,
+        "height": 1.9
+      },
+      "originalTriangles": 4808,
+      "kitTriangles": 5240,
+      "originalBytes": 727344,
+      "kitBytes": 784368,
+      "meshesBoth": 12,
+      "retiredGeometryEvents": 12,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "5a07041fb7ced08866982ba973df04ad0455d9509cd750b4d3b70a2b68c83039",
+      "pass": true
+    },
+    {
+      "seed": 123,
+      "theme": "citadel",
+      "chunkIndex": 82,
+      "cargo": {
+        "crates": 4,
+        "drums": 3,
+        "height": 1.9
+      },
+      "originalTriangles": 6008,
+      "kitTriangles": 7004,
+      "originalBytes": 967104,
+      "kitBytes": 1098576,
+      "meshesBoth": 15,
+      "retiredGeometryEvents": 15,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [
+        {
+          "references": 2,
+          "events": 2
+        }
+      ],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "5a07041fb7ced08866982ba973df04ad0455d9509cd750b4d3b70a2b68c83039",
+      "pass": true
+    },
+    {
+      "seed": 123,
+      "theme": "gauntlet",
+      "chunkIndex": 102,
+      "cargo": {
+        "crates": 3,
+        "drums": 0,
+        "height": 1.9
+      },
+      "originalTriangles": 4612,
+      "kitTriangles": 5044,
+      "originalBytes": 732960,
+      "kitBytes": 789984,
+      "meshesBoth": 12,
+      "retiredGeometryEvents": 12,
+      "allMergedGeometriesDisposedExactlyOnce": true,
+      "inheritedRepeatedNonCargoDisposals": [],
+      "exactNonCargoBuffers": true,
+      "exactEmitterRecords": true,
+      "exactSurfaceRecords": true,
+      "colliderHash": "5a07041fb7ced08866982ba973df04ad0455d9509cd750b4d3b70a2b68c83039",
+      "pass": true
+    }
+  ],
+  "actualSourceDrumContinuousContainment": {
+    "actualSourceFloat32Ring": [
+      [
+        -0.5877852439880371,
+        -0.80901700258255
+      ],
+      [
+        -0.9510565400123596,
+        -0.30901700258255005
+      ],
+      [
+        -0.9510565400123596,
+        0.30901700258255005
+      ],
+      [
+        -0.5877852439880371,
+        0.80901700258255
+      ],
+      [
+        -2.4492937051703357e-16,
+        1
+      ],
+      [
+        0.5877852439880371,
+        0.80901700258255
+      ],
+      [
+        0.9510565400123596,
+        0.30901700258255005
+      ],
+      [
+        0.9510565400123596,
+        -0.30901700258255005
+      ],
+      [
+        0.5877852439880371,
+        -0.80901700258255
+      ],
+      [
+        1.2246468525851679e-16,
+        -1
+      ]
+    ],
+    "maxHalfplaneError": 7.56873359364458e-17,
+    "source": "actual THREE.CylinderGeometry(1,1,1,10) TPL.drum positions, not assumed circular radius",
+    "proof": "closed convex ten-halfplane prism; all detailed vertices inside including exact shared rim vertices; affine transforms preserve containment for every original placement"
+  }
+}

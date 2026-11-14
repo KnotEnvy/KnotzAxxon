@@ -1,0 +1,514 @@
+{
+  "format": "glTF2 GLB",
+  "bytes": 149264,
+  "sha256": "2ebc37c7fb12624707a0e21d91ea610c06dc27b2dc4922d9e44d5531573d1152",
+  "visible_triangles": 2360,
+  "visible_primitives": 6,
+  "visible_materials": [
+    "INT_Accent",
+    "INT_Canopy",
+    "INT_Cue",
+    "INT_Emission",
+    "INT_Hull",
+    "INT_Machinery"
+  ],
+  "hidden_flash_triangles": 628,
+  "hidden_flash_primitives": 1,
+  "total_exported_triangles": 2988,
+  "rest_bounds_game": {
+    "min": [
+      -2.859999895095825,
+      -0.42500001192092896,
+      -1.8860000371932983
+    ],
+    "max": [
+      2.859999895095825,
+      0.7400000095367432,
+      1.9800000190734863
+    ]
+  },
+  "hidden_shell_local_bounds": {
+    "min": [
+      -2.859999895095825,
+      -0.39763253927230835,
+      -1.8860000371932983
+    ],
+    "max": [
+      2.859999895095825,
+      0.7400000095367432,
+      1.9800000190734863
+    ]
+  },
+  "nodes": [
+    {
+      "name": "interceptor",
+      "parent": null,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0,
+        0,
+        0
+      ],
+      "primitives": []
+    },
+    {
+      "name": "body",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0,
+        0,
+        0
+      ],
+      "primitives": [
+        {
+          "material": "INT_Hull",
+          "triangles": 628,
+          "vertices": 1204,
+          "bounds_local": {
+            "min": [
+              -2.859999895095825,
+              -0.39763253927230835,
+              -1.8860000371932983
+            ],
+            "max": [
+              2.859999895095825,
+              0.7400000095367432,
+              1.9800000190734863
+            ]
+          }
+        },
+        {
+          "material": "INT_Machinery",
+          "triangles": 1228,
+          "vertices": 2044,
+          "bounds_local": {
+            "min": [
+              -2.859999895095825,
+              -0.41999998688697815,
+              -1.8799999952316284
+            ],
+            "max": [
+              2.859999895095825,
+              0.7400000095367432,
+              1.4600000381469727
+            ]
+          }
+        },
+        {
+          "material": "INT_Accent",
+          "triangles": 324,
+          "vertices": 568,
+          "bounds_local": {
+            "min": [
+              -2.7300000190734863,
+              -0.42500001192092896,
+              -1.8300000429153442
+            ],
+            "max": [
+              2.7300000190734863,
+              0.7400000095367432,
+              1.7699999809265137
+            ]
+          }
+        },
+        {
+          "material": "INT_Canopy",
+          "triangles": 60,
+          "vertices": 112,
+          "bounds_local": {
+            "min": [
+              -0.257999986410141,
+              0.25699999928474426,
+              -0.5199999809265137
+            ],
+            "max": [
+              0.257999986410141,
+              0.5649999976158142,
+              0.6899999976158142
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "engine",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        -0.03500000014901161,
+        -1.840000033378601
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0.0,
+        -0.03500000014901161,
+        -1.840000033378601
+      ],
+      "primitives": [
+        {
+          "material": "INT_Emission",
+          "triangles": 76,
+          "vertices": 120,
+          "bounds_local": {
+            "min": [
+              -0.2680000066757202,
+              -0.2680000066757202,
+              0.0
+            ],
+            "max": [
+              0.2680000066757202,
+              0.2680000066757202,
+              0.03999999910593033
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "eye",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0.24500000476837158,
+        1.4630000591278076
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0.0,
+        0.24500000476837158,
+        1.4630000591278076
+      ],
+      "primitives": [
+        {
+          "material": "INT_Cue",
+          "triangles": 44,
+          "vertices": 72,
+          "bounds_local": {
+            "min": [
+              -0.14499999582767487,
+              -0.0430000014603138,
+              -0.02500000037252903
+            ],
+            "max": [
+              0.14499999582767487,
+              0.04500000178813934,
+              0.02500000037252903
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "gameplay-origin",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0,
+        0,
+        0
+      ],
+      "primitives": []
+    },
+    {
+      "name": "hit-flash-shell",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0,
+        0,
+        0
+      ],
+      "world_translation": [
+        0,
+        0,
+        0
+      ],
+      "primitives": [
+        {
+          "material": "INT_HitFlash",
+          "triangles": 628,
+          "vertices": 1204,
+          "bounds_local": {
+            "min": [
+              -2.859999895095825,
+              -0.39763253927230835,
+              -1.8860000371932983
+            ],
+            "max": [
+              2.859999895095825,
+              0.7400000095367432,
+              1.9800000190734863
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "nose-forward",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0,
+        1.9800000190734863
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0.0,
+        0.0,
+        1.9800000190734863
+      ],
+      "primitives": []
+    },
+    {
+      "name": "shot-spawn-rest",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0,
+        1.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "primitives": []
+    },
+    {
+      "name": "up-reference",
+      "parent": "interceptor",
+      "translation": [
+        0,
+        0.7400000095367432,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "world_translation": [
+        0.0,
+        0.7400000095367432,
+        0.0
+      ],
+      "primitives": []
+    }
+  ],
+  "material_definitions": [
+    {
+      "name": "INT_Hull",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.17144110798835754,
+          0.22696587443351746,
+          0.2581828534603119,
+          1
+        ],
+        "metallicFactor": 0.5600000023841858,
+        "roughnessFactor": 0.3400000035762787
+      }
+    },
+    {
+      "name": "INT_Machinery",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.014443843625485897,
+          0.024157632142305374,
+          0.03560131415724754,
+          1
+        ],
+        "metallicFactor": 0.7200000286102295,
+        "roughnessFactor": 0.36000001430511475
+      }
+    },
+    {
+      "name": "INT_Accent",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.3277781009674072,
+          0.08228270709514618,
+          0.05126945674419403,
+          1
+        ],
+        "metallicFactor": 0.47999998927116394,
+        "roughnessFactor": 0.3799999952316284
+      }
+    },
+    {
+      "name": "INT_Canopy",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.006995410192757845,
+          0.011612244881689548,
+          0.02955683507025242,
+          1
+        ],
+        "metallicFactor": 0.699999988079071,
+        "roughnessFactor": 0.20000000298023224
+      }
+    },
+    {
+      "emissiveFactor": [
+        1,
+        0.10224173218011856,
+        0.0423114113509655
+      ],
+      "extensions": {
+        "KHR_materials_emissive_strength": {
+          "emissiveStrength": 3
+        }
+      },
+      "name": "INT_Emission",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          0.10224173218011856,
+          0.0423114113509655,
+          1
+        ],
+        "metallicFactor": 0.05000000074505806,
+        "roughnessFactor": 0.27000001072883606
+      }
+    },
+    {
+      "emissiveFactor": [
+        1,
+        0.04666508734226227,
+        0.09084171056747437
+      ],
+      "extensions": {
+        "KHR_materials_emissive_strength": {
+          "emissiveStrength": 3
+        }
+      },
+      "name": "INT_Cue",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          0.04666508734226227,
+          0.09084171056747437,
+          1
+        ],
+        "metallicFactor": 0.05000000074505806,
+        "roughnessFactor": 0.25
+      }
+    },
+    {
+      "name": "INT_HitFlash",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0
+      }
+    }
+  ],
+  "textures": [],
+  "degenerate_triangles": 0,
+  "axis_verified": true,
+  "target4000": true,
+  "ceiling6000": true,
+  "under1MiB": true,
+  "method": "Independently read raw POSITION/index buffers, compose glTF TRS/quaternion matrices recursively. Hidden shell reported separately at activation scale by Blender verifier. No accessor min/max trusted."
+}

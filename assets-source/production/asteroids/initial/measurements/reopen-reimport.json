@@ -1,0 +1,183 @@
+{
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "savedBlendReopen": [
+    {
+      "node": "AS_Keel_DoubleImpact",
+      "evaluatedTriangles": 480,
+      "materialSlots": 1,
+      "boundsGame": {
+        "min": [
+          -0.7699352502822876,
+          -0.763970673084259,
+          -1.0356165170669556
+        ],
+        "max": [
+          0.7390154600143433,
+          0.8961785435676575,
+          1.0151530504226685
+        ]
+      }
+    },
+    {
+      "node": "AS_Scar_Cleaved",
+      "evaluatedTriangles": 384,
+      "materialSlots": 1,
+      "boundsGame": {
+        "min": [
+          -0.9518015384674072,
+          -0.7762361168861389,
+          -0.8625665307044983
+        ],
+        "max": [
+          0.9326685070991516,
+          0.9114342331886292,
+          0.7699951529502869
+        ]
+      }
+    },
+    {
+      "node": "AS_Talus_Basin",
+      "evaluatedTriangles": 432,
+      "materialSlots": 1,
+      "boundsGame": {
+        "min": [
+          -0.8719831705093384,
+          -0.8292713165283203,
+          -0.9150117039680481
+        ],
+        "max": [
+          0.8985510468482971,
+          0.9311781525611877,
+          0.8766337037086487
+        ]
+      }
+    }
+  ],
+  "externalImages": 0,
+  "packedSelfContained": true,
+  "cleanFactoryReimports": [
+    {
+      "file": "assets/asteroid-scenery-kit.glb",
+      "meshes": [
+        {
+          "node": "AS_Keel_DoubleImpact",
+          "evaluatedTriangles": 480,
+          "materialSlots": 1,
+          "boundsGame": {
+            "min": [
+              -0.7699352502822876,
+              -0.763970673084259,
+              -1.0356165170669556
+            ],
+            "max": [
+              0.7390154600143433,
+              0.8961785435676575,
+              1.0151530504226685
+            ]
+          }
+        },
+        {
+          "node": "AS_Scar_Cleaved",
+          "evaluatedTriangles": 384,
+          "materialSlots": 1,
+          "boundsGame": {
+            "min": [
+              -0.9518015384674072,
+              -0.7762361168861389,
+              -0.8625665307044983
+            ],
+            "max": [
+              0.9326685070991516,
+              0.9114342331886292,
+              0.7699951529502869
+            ]
+          }
+        },
+        {
+          "node": "AS_Talus_Basin",
+          "evaluatedTriangles": 432,
+          "materialSlots": 1,
+          "boundsGame": {
+            "min": [
+              -0.8719831705093384,
+              -0.8292713165283203,
+              -0.9150117039680481
+            ],
+            "max": [
+              0.8985510468482971,
+              0.9311781525611877,
+              0.8766337037086487
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "file": "assets/keel-double-impact.glb",
+      "meshes": [
+        {
+          "node": "AS_Keel_DoubleImpact",
+          "evaluatedTriangles": 480,
+          "materialSlots": 1,
+          "boundsGame": {
+            "min": [
+              -0.7699352502822876,
+              -0.763970673084259,
+              -1.0356165170669556
+            ],
+            "max": [
+              0.7390154600143433,
+              0.8961785435676575,
+              1.0151530504226685
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "file": "assets/scar-cleaved.glb",
+      "meshes": [
+        {
+          "node": "AS_Scar_Cleaved",
+          "evaluatedTriangles": 384,
+          "materialSlots": 1,
+          "boundsGame": {
+            "min": [
+              -0.9518015384674072,
+              -0.7762361168861389,
+              -0.8625665307044983
+            ],
+            "max": [
+              0.9326685070991516,
+              0.9114342331886292,
+              0.7699951529502869
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "file": "assets/talus-basin.glb",
+      "meshes": [
+        {
+          "node": "AS_Talus_Basin",
+          "evaluatedTriangles": 432,
+          "materialSlots": 1,
+          "boundsGame": {
+            "min": [
+              -0.8719831705093384,
+              -0.8292713165283203,
+              -0.9150117039680481
+            ],
+            "max": [
+              0.8985510468482971,
+              0.9311781525611877,
+              0.8766337037086487
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

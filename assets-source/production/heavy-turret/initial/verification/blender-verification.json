@@ -1,0 +1,78 @@
+{
+  "version": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "threads": 4,
+  "engine": "BLENDER_EEVEE",
+  "reopenedBlend": {
+    "triangles": 5260,
+    "meshObjects": 5,
+    "bounds": {
+      "min": [
+        -2.8499999046325684,
+        0.0,
+        -2.8499999046325684
+      ],
+      "max": [
+        2.8499999046325684,
+        2.690000057220459,
+        2.8499999046325684
+      ]
+    }
+  },
+  "sourceMotion": {
+    "states": 771,
+    "allPivotMatches": true,
+    "bounds": {
+      "min": [
+        -2.8499999046325684,
+        0.0,
+        -2.8499999046325684
+      ],
+      "max": [
+        2.8499999046325684,
+        3.3625593185424805,
+        2.8499999046325684
+      ]
+    },
+    "sampledPitchDegrees": [
+      -89.99770816542318,
+      89.99192903180001
+    ]
+  },
+  "clearance": {
+    "pitchSweepDegrees": [
+      -90,
+      90
+    ],
+    "steps": 361,
+    "minGunWorldY": 0.08744676411151886,
+    "maxGunWorldY": 3.362553358078003,
+    "annularWellMinInnerRadius": 1.9,
+    "annularSlewMaxY": 1.3375,
+    "radialSweepMeasurementYCutoff": 1.35,
+    "maxGunRadiusBelowSlewTop": 1.8026524813372924,
+    "minRadialGunToWell": 0.09734751866270752,
+    "minGunAbsXInTurntableSpace": 0.4399999976158142,
+    "maxChargedLensAbsX": 0.34075,
+    "minLensLateralSeparation": 0.09924999761581421,
+    "intentionalContacts": "Pitch bearings overlap seated axles; yoke feet overlap slew deck. No axis relocation or aim clamp. Roof root Y sampled up to8.398; negative pitch required an open annular well."
+  },
+  "cleanSceneReimport": {
+    "triangles": 5260,
+    "meshObjects": 5,
+    "bounds": {
+      "min": [
+        -2.8499999046325684,
+        0.0,
+        -2.8499999046325684
+      ],
+      "max": [
+        2.8499999046325684,
+        2.690000057220459,
+        2.8499999046325684
+      ]
+    }
+  },
+  "packedImageCount": 0,
+  "textures": "None required; vertex colors are embedded. Saved blend is self-contained."
+}

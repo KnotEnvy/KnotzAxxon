@@ -1,0 +1,288 @@
+{
+  "selectedFighter": "hero-interceptor-imported",
+  "groundTargets": [
+    "turret",
+    "radar",
+    "silo",
+    "fuel"
+  ],
+  "productionPreview": true,
+  "flyers": [
+    {
+      "kind": "drone",
+      "contexts": [
+        {
+          "pattern": "weave",
+          "bank": 0.0703016702373307,
+          "position": [
+            -9.626239823590007,
+            6.6133019508774495,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "strafe",
+          "bank": 0,
+          "position": [
+            0,
+            9.314370395508865,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "orbit",
+          "bank": -0.04037866116013454,
+          "position": [
+            -6.217109197498349,
+            7.751584458045593,
+            114.39999999999925
+          ]
+        },
+        {
+          "pattern": "dive",
+          "bank": 0,
+          "position": [
+            0,
+            9,
+            82.00000000000017
+          ]
+        },
+        {
+          "pattern": "peel",
+          "bank": 0.8399999872068172,
+          "position": [
+            -19,
+            25,
+            19.999999999999957
+          ]
+        },
+        {
+          "pattern": "launch",
+          "bank": 0.016361059347587276,
+          "position": [
+            0.6504156647914032,
+            10.841569317751466,
+            114.39999999999925
+          ]
+        }
+      ],
+      "resourcesDisposed": 14
+    },
+    {
+      "kind": "interceptor",
+      "contexts": [
+        {
+          "pattern": "weave",
+          "bank": 0.0703016702373307,
+          "position": [
+            -9.626239823590007,
+            6.6133019508774495,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "strafe",
+          "bank": 0,
+          "position": [
+            0,
+            9.314370395508865,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "orbit",
+          "bank": -0.04037866116013454,
+          "position": [
+            -6.217109197498349,
+            7.751584458045593,
+            138.39999999999975
+          ]
+        },
+        {
+          "pattern": "dive",
+          "bank": 0,
+          "position": [
+            0,
+            9,
+            82.00000000000017
+          ]
+        },
+        {
+          "pattern": "peel",
+          "bank": 0.8399999872068172,
+          "position": [
+            -19,
+            25,
+            19.999999999999957
+          ]
+        },
+        {
+          "pattern": "launch",
+          "bank": 0.016361059347587276,
+          "position": [
+            0.6504156647914032,
+            10.841569317751466,
+            138.39999999999975
+          ]
+        }
+      ],
+      "resourcesDisposed": 14
+    }
+  ],
+  "heavyTurret": {
+    "shots": [
+      {
+        "origin": [
+          -0.55438364301783,
+          2.0745695070747376,
+          38.64009597857631
+        ],
+        "direction": [
+          0.05667199608522669,
+          0.21848092702054983,
+          -0.9741942154354833
+        ]
+      },
+      {
+        "origin": [
+          0.6458662709440265,
+          2.0811561475957405,
+          38.2413368206507
+        ],
+        "direction": [
+          0.0005046463686460672,
+          0.22259757734617666,
+          -0.9749102850476323
+        ]
+      },
+      {
+        "origin": [
+          0.4855425984935423,
+          2.241446914239484,
+          39.035939295266914
+        ],
+        "direction": [
+          0.05677443826935169,
+          0.3227793064985164,
+          -0.9447699097957853
+        ]
+      },
+      {
+        "origin": [
+          -0.24531090016534254,
+          2.2631889445051523,
+          37.95308414632873
+        ],
+        "direction": [
+          0.09337037318577315,
+          0.336368075414559,
+          -0.9370904392069395
+        ]
+      },
+      {
+        "origin": [
+          0.6681191537316155,
+          2.1329232287388566,
+          38.66220649913903
+        ],
+        "direction": [
+          0.016453640500180063,
+          0.2549520030606241,
+          -0.9668137120715998
+        ]
+      },
+      {
+        "origin": [
+          -0.5250105765468023,
+          2.1391203635196634,
+          38.24983149360271
+        ],
+        "direction": [
+          0.07298922024032818,
+          0.25882521229862837,
+          -0.9631625424648108
+        ]
+      }
+    ],
+    "resourcesDisposed": 9,
+    "chargeCue": "source shared neon",
+    "fullElevationDegrees": [
+      -90,
+      90
+    ]
+  },
+  "batch": {
+    "copies": {
+      "drone": 18,
+      "interceptor": 18,
+      "heavyTurret": 11
+    },
+    "cycles": 3,
+    "geometryBaseline": 104,
+    "geometryAfterCycles": [
+      104,
+      104,
+      104
+    ],
+    "cpuRenderSubmitMedianMs": 3.9000000059604645,
+    "caveat": "Synthetic 47-enemy stress in actual scene with player/Sentinel; CPU render submission timing in headless Chromium, not GPU frame-time or sustained hardware acceptance."
+  },
+  "iterations": [
+    {
+      "iteration": 0,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    },
+    {
+      "iteration": 1,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    },
+    {
+      "iteration": 2,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    }
+  ],
+  "errors": [],
+  "asset": "heavy-turret",
+  "stage": "initial_opt_in_integration_pending_deferred_opus_review",
+  "regressions": {
+    "passed": 104,
+    "failed": 0
+  },
+  "build": "passed",
+  "defaultModelQA": "passed",
+  "visualInspection": {
+    "actualPngsViewed": [
+      "production-classic.png",
+      "production-modern.png",
+      "production-chase.png"
+    ],
+    "directory": "assets-source/production/integration-evidence/heavy-turret",
+    "observations": [
+      "Annular heavy base and two weapons distinguish it from the shipped standard turret at common game scale.",
+      "Static early tracking pose shows the rear/side; Modern and Chase foregrounds partially overlap the player. These are posed integration views, not full playthrough acceptance.",
+      "Frozen contact sheet reviewed, including full elevation and downward rooftop aim; initial source pivots and aim ranges remain unchanged."
+    ],
+    "deferredLimits": [
+      "Predictive projectile direction differs from damped visual barrel direction; do not clamp aim or move shot origins to conceal it.",
+      "Sustained target-hardware frame time and final human art acceptance remain pending."
+    ]
+  }
+}

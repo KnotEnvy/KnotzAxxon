@@ -1,0 +1,50 @@
+{
+  "status": "implementation self-inspection only; not formal review or final acceptance",
+  "actual_open_method": "functions.view_image returned decoded PNGs, individually opened for model viewing",
+  "viewed": [
+    {
+      "file": "evidence/frames/front-quarter.png",
+      "sha256": "daae29a3dfe50d8ff3217c741af198034307ed534e04de472f90d32098dad449"
+    },
+    {
+      "file": "evidence/frames/crate-hardware.png",
+      "sha256": "deb23cad46b2ae75ae9778131ed017a3168eaf34604b5bb3cffdd8267a65b292"
+    },
+    {
+      "file": "evidence/frames/drum-hardware.png",
+      "sha256": "1364301f39cef61ad2c5b3d0197f44c080b9b970bb56f57a7f028c7bdbf8a31d"
+    },
+    {
+      "file": "evidence/boards/multiview.png",
+      "sha256": "ac1c740ae8f212c4ee8b192e14d523eb807243a4485b7fc33e2319cf5d23623b"
+    },
+    {
+      "file": "evidence/boards/hardware.png",
+      "sha256": "de6e0bf8966b933479551125e1a167198e11e633188646fa0ff084cb450561fc"
+    },
+    {
+      "file": "evidence/boards/stacks-1.9.png",
+      "sha256": "96ecaf03fdf4c3bd28239aa9221c798266c99dbeb1fdedb880ceada44a4ad17c"
+    },
+    {
+      "file": "evidence/boards/stacks-3.2.png",
+      "sha256": "494669e75d3d373679295bcf1ca6c3f19ae11a19bf56c3de1d4dd47c9ab9f957"
+    },
+    {
+      "file": "evidence/boards/world-rigs.png",
+      "sha256": "13c6d074f2d68c2d2003fa79947212e013eaed162e26f0eb7cf27d7b2b87cd3e"
+    }
+  ],
+  "coverage": "All 28 final rendered frames are represented in the five actually viewed comparison boards; front and hardware also opened individually",
+  "observations": [
+    "Crate shell, beveled frame, recessed lid/panels and integral latch forms read as one manufactured object",
+    "Drum has connected closed foot/wall/hoop and a recessed closed lid, without expanded source footprint",
+    "Seed 1/7/42/123 stack heights, scatter, yaw, tints and optional drums visually match source arrangements",
+    "World rigs preserve common object scale and shipped player; detail is necessarily subtle at Classic distance",
+    "Rear/underside are darker with source-inspired lighting; no unearned screen-space detail or live gameplay claim"
+  ],
+  "html_delivery": "Two html_render frames shown in thread. html_preview unavailable because host browser libraries are missing; no installation/sudo attempted. PNG inspection is independent of that unavailable preview.",
+  "pending_deferred_opus_review": true,
+  "formal_review_rounds": 0,
+  "formal_fix_rounds": 0
+}

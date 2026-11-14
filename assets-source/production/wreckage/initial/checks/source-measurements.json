@@ -1,0 +1,375 @@
+{
+  "baseline": "ee221ad",
+  "source_sha256": "824a3d8d9e64bf775e5a486e52c29bef8ce94daebfa138bd4ab2067121790165",
+  "source_branch": "if (rng.bool(0.5)) {\n      const [x, y] = place(60, 150);\n      const z = z0 + rng.range(10, CHUNK_LEN - 10);\n      const s = rng.range(10, 22);\n      const rot = rng.range(-0.8, 0.8);\n      batch.add('dark', taperedBox(s * 0.6, s * 0.35, s * 1.8, s * 0.5, s * 0.3).rotateX(Math.PI / 2).rotateZ(rng.range(-0.6, 0.6)), x, y, z, 12, 0x6a7482, rot);\n      for (let k = 0; k < 5; k++) {\n        batch.box('dark', s * 0.9, 0.5, 0.6, x, y - s * 0.2 + k * s * 0.12, z - s * 0.6 + k * s * 0.3, 4, 0x4a5462, rot);\n      }\n      for (let k = 0; k < 4; k++) {\n        batch.box('neon', rng.range(1, 3), 0.25, 0.25, x + rng.range(-s * 0.2, s * 0.2), y + rng.range(-s * 0.2, s * 0.2),\n          z + rng.range(-s * 0.6, s * 0.6), 8, 0xff7a2a, rot, 1.4, { anim: [FLICKER, rng.range(0.8, 1.6), rng.next()] });\n      }\n    }",
+  "branch_probability": 0.5,
+  "random_draws": {
+    "absent": 1,
+    "present_including_branch": 32,
+    "present_after_branch": 31,
+    "ordering": [
+      "branch bool",
+      "side bool",
+      "abs X",
+      "Y",
+      "Z",
+      "size",
+      "yaw",
+      "bank",
+      "4 x (ember width, X offset, Y offset, Z offset, flicker rate, phase)"
+    ]
+  },
+  "parts": {
+    "dark": {
+      "triangles": 72,
+      "vertices": 216
+    },
+    "neon": {
+      "triangles": 48,
+      "vertices": 144
+    }
+  },
+  "triangles_total": 120,
+  "placement": {
+    "absX": [
+      60,
+      150
+    ],
+    "Y": [
+      -50,
+      70
+    ],
+    "localChunkZ": [
+      10,
+      86
+    ],
+    "size": [
+      10,
+      22
+    ],
+    "yaw": [
+      -0.8,
+      0.8
+    ],
+    "bank": [
+      -0.6,
+      0.6
+    ],
+    "static_geometry": true
+  },
+  "source_hull_unit_bounds": {
+    "min": [
+      -0.30000001192092896,
+      -0.25,
+      -1.5308085657314598e-17
+    ],
+    "max": [
+      0.30000001192092896,
+      0.25,
+      1.7999999523162842
+    ]
+  },
+  "source_hull_transform_samples": [
+    {
+      "size": 10,
+      "bank": -0.6,
+      "yaw": -0.8,
+      "min": [
+        -14.508774757385254,
+        -3.7572665214538574,
+        -2.7888028621673584
+      ],
+      "max": [
+        2.708526134490967,
+        3.7572665214538574,
+        14.184399604797363
+      ]
+    },
+    {
+      "size": 10,
+      "bank": -0.6,
+      "yaw": 0,
+      "min": [
+        -3.88761305809021,
+        -3.7572665214538574,
+        -1.5308084995570108e-16
+      ],
+      "max": [
+        3.88761305809021,
+        3.7572665214538574,
+        18
+      ]
+    },
+    {
+      "size": 10,
+      "bank": -0.6,
+      "yaw": 0.8,
+      "min": [
+        -2.708526134490967,
+        -3.7572665214538574,
+        -2.7888028621673584
+      ],
+      "max": [
+        14.508774757385254,
+        3.7572665214538574,
+        14.184399604797363
+      ]
+    },
+    {
+      "size": 10,
+      "bank": 0,
+      "yaw": -0.8,
+      "min": [
+        -14.131646156311035,
+        -2.5,
+        -2.1520683765411377
+      ],
+      "max": [
+        2.0901200771331787,
+        2.5,
+        13.796093940734863
+      ]
+    },
+    {
+      "size": 10,
+      "bank": 0,
+      "yaw": 0,
+      "min": [
+        -3,
+        -2.5,
+        -1.5308084995570108e-16
+      ],
+      "max": [
+        3,
+        2.5,
+        18
+      ]
+    },
+    {
+      "size": 10,
+      "bank": 0,
+      "yaw": 0.8,
+      "min": [
+        -2.0901200771331787,
+        -2.5,
+        -2.1520683765411377
+      ],
+      "max": [
+        14.131646156311035,
+        2.5,
+        13.796093940734863
+      ]
+    },
+    {
+      "size": 10,
+      "bank": 0.6,
+      "yaw": -0.8,
+      "min": [
+        -14.508774757385254,
+        -3.7572665214538574,
+        -2.7888028621673584
+      ],
+      "max": [
+        2.708526134490967,
+        3.7572665214538574,
+        14.184399604797363
+      ]
+    },
+    {
+      "size": 10,
+      "bank": 0.6,
+      "yaw": 0,
+      "min": [
+        -3.88761305809021,
+        -3.7572665214538574,
+        -1.5308084995570108e-16
+      ],
+      "max": [
+        3.88761305809021,
+        3.7572665214538574,
+        18
+      ]
+    },
+    {
+      "size": 10,
+      "bank": 0.6,
+      "yaw": 0.8,
+      "min": [
+        -2.708526134490967,
+        -3.7572665214538574,
+        -2.7888028621673584
+      ],
+      "max": [
+        14.508774757385254,
+        3.7572665214538574,
+        14.184399604797363
+      ]
+    },
+    {
+      "size": 22,
+      "bank": -0.6,
+      "yaw": -0.8,
+      "min": [
+        -31.919301986694336,
+        -8.265986442565918,
+        -6.135366439819336
+      ],
+      "max": [
+        5.958757400512695,
+        8.265986442565918,
+        31.205677032470703
+      ]
+    },
+    {
+      "size": 22,
+      "bank": -0.6,
+      "yaw": 0,
+      "min": [
+        -8.552748680114746,
+        -8.265986442565918,
+        -3.3677789107836606e-16
+      ],
+      "max": [
+        8.552748680114746,
+        8.265986442565918,
+        39.599998474121094
+      ]
+    },
+    {
+      "size": 22,
+      "bank": -0.6,
+      "yaw": 0.8,
+      "min": [
+        -5.958757400512695,
+        -8.265986442565918,
+        -6.135366439819336
+      ],
+      "max": [
+        31.919301986694336,
+        8.265986442565918,
+        31.205677032470703
+      ]
+    },
+    {
+      "size": 22,
+      "bank": 0,
+      "yaw": -0.8,
+      "min": [
+        -31.08962059020996,
+        -5.5,
+        -4.734550476074219
+      ],
+      "max": [
+        4.598264694213867,
+        5.5,
+        30.35140609741211
+      ]
+    },
+    {
+      "size": 22,
+      "bank": 0,
+      "yaw": 0,
+      "min": [
+        -6.600000381469727,
+        -5.5,
+        -3.3677789107836606e-16
+      ],
+      "max": [
+        6.600000381469727,
+        5.5,
+        39.599998474121094
+      ]
+    },
+    {
+      "size": 22,
+      "bank": 0,
+      "yaw": 0.8,
+      "min": [
+        -4.598264694213867,
+        -5.5,
+        -4.734550476074219
+      ],
+      "max": [
+        31.08962059020996,
+        5.5,
+        30.35140609741211
+      ]
+    },
+    {
+      "size": 22,
+      "bank": 0.6,
+      "yaw": -0.8,
+      "min": [
+        -31.919301986694336,
+        -8.265986442565918,
+        -6.135366439819336
+      ],
+      "max": [
+        5.958757400512695,
+        8.265986442565918,
+        31.205677032470703
+      ]
+    },
+    {
+      "size": 22,
+      "bank": 0.6,
+      "yaw": 0,
+      "min": [
+        -8.552748680114746,
+        -8.265986442565918,
+        -3.3677789107836606e-16
+      ],
+      "max": [
+        8.552748680114746,
+        8.265986442565918,
+        39.599998474121094
+      ]
+    },
+    {
+      "size": 22,
+      "bank": 0.6,
+      "yaw": 0.8,
+      "min": [
+        -5.958757400512695,
+        -8.265986442565918,
+        -6.135366439819336
+      ],
+      "max": [
+        31.919301986694336,
+        8.265986442565918,
+        31.205677032470703
+      ]
+    }
+  ],
+  "continuous_clearance": {
+    "method": "Convex source hull containment; per-endpoint radial XY support bounds bank continuously, then exact maximum yaw support over [-0.8,0.8]. Ribs and embers are smaller in X.",
+    "hull_absX_offset_upper": 31.940126363907336,
+    "nearest_possible_absX_lower": 28.059873636092664,
+    "flight_absX_limit": 16,
+    "clearance_lower": 12.059873636092664,
+    "no_flight_or_aim_changes": true
+  },
+  "streaming": {
+    "chunkLength": 96,
+    "ahead": [
+      320,
+      440,
+      560,
+      700
+    ],
+    "behind": 90
+  },
+  "material_correction": "At ee221ad darkMetal has no texture map/normal/roughness maps. Retain the exact shared MeshStandardMaterial (color 0x3a4a5e, metalness .5, roughness .46, vertexColors true), source AO and world box-projected UVs. Do not claim a source texture exists.",
+  "neon": {
+    "bucket": "neon",
+    "color": "0xff7a2a",
+    "gain": 1.4,
+    "aAnim": [
+      "FLICKER=4",
+      "original rng.range(.8,1.6)",
+      "original rng.next()"
+    ],
+    "clock": "existing Materials.uLightTime; no new clock"
+  },
+  "asteroid_loop_note": "rng.int(5,9) is reevaluated for every loop condition, including the terminating test. Replacement leaves the entire loop and rockGeometry untouched."
+}

@@ -1,0 +1,17 @@
+{
+  "archive": "fuel-pickup-INITIAL.zip",
+  "sha256": "092fb84515a33aeae2f71af858921ef7ee79af3bfb80a4e3a99db1dfab4055c1",
+  "contentHashesVerified": 109,
+  "receiver": "SuperBeast",
+  "destination": "assets-source/production/fuel-pickup/initial",
+  "stage": "frozen_initial_pending_deferred_opus_review",
+  "readOnly": true,
+  "executableModesRetained": true,
+  "senderExitStatus": 0,
+  "transferMethod": "Nitro Windows Tailscale CLI",
+  "target": "100.112.66.64:",
+  "glbSha256": "152fac271b398f2a44183759b4c4250716a87fc28862221bde6035a84caa912f",
+  "blendSha256": "d1bf8ea29d314e877840ed486e68e464762fc20800d936a15acb18c5ac2ea5ae",
+  "formalReviewsCompleted": 0,
+  "fixPassesCompleted": 0
+}

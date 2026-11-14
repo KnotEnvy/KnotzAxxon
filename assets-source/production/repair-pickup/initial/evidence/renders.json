@@ -1,0 +1,977 @@
+[
+  {
+    "file": "common-neutral-rest.png",
+    "note": "Required common neutral camera, span 14 GAME units vertically; key(-12,22,-12), fill(14,12,8); no halo proxy.",
+    "resolution": [
+      800,
+      600
+    ],
+    "camera_blender_location": [
+      -16.0,
+      30.0,
+      24.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 14.0,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      312.35711574554443,
+      212.35713958740234,
+      487.64281272888184,
+      387.64286041259766
+    ],
+    "camera_facing_normal_dot": 0.9999996274709702
+  },
+  {
+    "file": "view-front.png",
+    "note": "Static diagnostic view; billboard deliberately disabled ONLY for geometry inspection, not gameplay.",
+    "resolution": [
+      600,
+      600
+    ],
+    "camera_blender_location": [
+      0.0,
+      -12.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 5.699999809265137,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      84.73682999610901,
+      84.7369909286499,
+      515.2631878852844,
+      515.2633488178253
+    ],
+    "camera_facing_normal_dot": 0.9999999403953552
+  },
+  {
+    "file": "view-rear.png",
+    "note": "Static diagnostic view; billboard deliberately disabled ONLY for geometry inspection, not gameplay.",
+    "resolution": [
+      600,
+      600
+    ],
+    "camera_blender_location": [
+      0.0,
+      12.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 5.699999809265137,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      84.73682999610901,
+      84.7369909286499,
+      515.2631878852844,
+      515.2633488178253
+    ],
+    "camera_facing_normal_dot": -0.9999999403953552
+  },
+  {
+    "file": "view-edge.png",
+    "note": "Static diagnostic view; billboard deliberately disabled ONLY for geometry inspection, not gameplay.",
+    "resolution": [
+      600,
+      600
+    ],
+    "camera_blender_location": [
+      12.0,
+      0.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 5.699999809265137,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      272.63157963752747,
+      84.73681211471558,
+      339.9999976158142,
+      515.263170003891
+    ],
+    "camera_facing_normal_dot": 0.0
+  },
+  {
+    "file": "view-quarter.png",
+    "note": "Static diagnostic view; billboard deliberately disabled ONLY for geometry inspection, not gameplay.",
+    "resolution": [
+      600,
+      600
+    ],
+    "camera_blender_location": [
+      8.0,
+      -10.0,
+      6.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 5.699999809265137,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      130.45029938220978,
+      96.94690704345703,
+      469.5497989654541,
+      503.0534952878952
+    ],
+    "camera_facing_normal_dot": 0.70710688829422
+  },
+  {
+    "file": "action-pulse-max.png",
+    "note": "Actual source-coupled phase/spin/pulse/wobble. No charge or detach mechanics exist.",
+    "resolution": [
+      600,
+      600
+    ],
+    "camera_blender_location": [
+      0.0,
+      -12.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 5.699999809265137,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      79.35524582862854,
+      79.35540676116943,
+      520.6447720527649,
+      520.6449329853058
+    ],
+    "camera_facing_normal_dot": 0.9999998211860657,
+    "phase": 0.39269908169872414
+  },
+  {
+    "file": "action-pulse-min.png",
+    "note": "Actual source-coupled phase/spin/pulse/wobble. No charge or detach mechanics exist.",
+    "resolution": [
+      600,
+      600
+    ],
+    "camera_blender_location": [
+      0.0,
+      -12.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 5.699999809265137,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      90.11839628219604,
+      90.11857509613037,
+      509.88160371780396,
+      509.88177359104156
+    ],
+    "camera_facing_normal_dot": 0.9999998211860657,
+    "phase": 1.1780972450961724
+  },
+  {
+    "file": "action-wobble-max.png",
+    "note": "Actual source-coupled phase/spin/pulse/wobble. No charge or detach mechanics exist.",
+    "resolution": [
+      600,
+      600
+    ],
+    "camera_blender_location": [
+      0.0,
+      -12.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 5.699999809265137,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      83.22065770626068,
+      83.22082757949829,
+      516.779351234436,
+      516.7795121669769
+    ],
+    "camera_facing_normal_dot": 0.9999998211860657,
+    "phase": 0.7139983303613165
+  },
+  {
+    "file": "action-wobble-min.png",
+    "note": "Actual source-coupled phase/spin/pulse/wobble. No charge or detach mechanics exist.",
+    "resolution": [
+      600,
+      600
+    ],
+    "camera_blender_location": [
+      0.0,
+      -12.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 5.699999809265137,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      80.66970705986023,
+      80.66986799240112,
+      519.3303108215332,
+      519.3304717540741
+    ],
+    "camera_facing_normal_dot": 0.9999998211860657,
+    "phase": 2.1419949910839495
+  },
+  {
+    "file": "action-spin-10sec.png",
+    "note": "Actual source-coupled phase/spin/pulse/wobble. No charge or detach mechanics exist.",
+    "resolution": [
+      600,
+      600
+    ],
+    "camera_blender_location": [
+      0.0,
+      -12.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 5.699999809265137,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      80.7269275188446,
+      80.7270884513855,
+      519.2730903625488,
+      519.2732512950897
+    ],
+    "camera_facing_normal_dot": 0.9999998211860657,
+    "phase": 10
+  },
+  {
+    "file": "combined-extremes.png",
+    "note": "Independent endpoint clearance diagnostic; not claimed to be a coupled source phase.",
+    "resolution": [
+      600,
+      600
+    ],
+    "camera_blender_location": [
+      0.0,
+      -12.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 5.699999809265137,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      90.11839628219604,
+      90.11857509613037,
+      509.88160371780396,
+      509.88177359104156
+    ],
+    "camera_facing_normal_dot": 0.9999998211860657
+  },
+  {
+    "file": "combined-maxpulse-negativewobble.png",
+    "note": "Independent spin135deg / pulse1.025 / wobble-.08 endpoint combination; not a coupled source phase.",
+    "resolution": [
+      600,
+      600
+    ],
+    "camera_blender_location": [
+      0.0,
+      -12.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 5.699999809265137,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      79.35524582862854,
+      79.35540676116943,
+      520.6447720527649,
+      520.6449329853058
+    ],
+    "camera_facing_normal_dot": 0.9999998211860657
+  },
+  {
+    "file": "world-scale-comparison.png",
+    "note": "Left shipped player.glb / middle actual-source baseline / right NEW. Shared WORLD scale 1, no separate normalization; required neutral camera/light geometry.",
+    "resolution": [
+      1100,
+      660
+    ],
+    "camera_blender_location": [
+      -16.0,
+      30.0,
+      24.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 14.0,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      678.2146692276001,
+      302.678507566452,
+      871.0290014743805,
+      495.49282014369965
+    ],
+    "camera_facing_normal_dot": 0.9999996274709702
+  },
+  {
+    "file": "offline-classic-near.png",
+    "note": "OFFLINE reconstruction, NOT live gameplay proof. Actual zero-boost rig eye/target/projection and dusk key/rim directions/intensities; NEW left, baseline right, shipped player world scale 1. Both badges share the same phase/pulse and equivalent halo proxy. Schematic deck; world approximates hemisphere, proxy halo alpha rather than Three additive postfx.",
+    "resolution": [
+      960,
+      540
+    ],
+    "camera_blender_location": [
+      -45.25483322143555,
+      17.254833221435547,
+      54.255001068115234
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 80.0,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      365.6187343597412,
+      302.6977425813675,
+      393.91639709472656,
+      330.9954285621643
+    ],
+    "camera_facing_normal_dot": 0.9999999701976776,
+    "rig": "classic",
+    "world_badge_position": [
+      5,
+      6,
+      12
+    ],
+    "source_rig": {
+      "mode": "classic",
+      "settings": {
+        "yaw": 45,
+        "dist": 64,
+        "height": 45.255,
+        "fov": 52
+      },
+      "eye": [
+        -45.25483399593904,
+        54.255,
+        -17.254833995939045
+      ],
+      "target": [
+        0,
+        9,
+        28
+      ],
+      "halfHeight": 40,
+      "aspect": 1.7777777777777777,
+      "note": "Eye and target read directly from actual CameraRig._compute; zero velocity, zero boost, no shake/lag."
+    }
+  },
+  {
+    "file": "offline-classic-far.png",
+    "note": "OFFLINE reconstruction, NOT live gameplay proof. Actual zero-boost rig eye/target/projection and dusk key/rim directions/intensities; NEW left, baseline right, shipped player world scale 1. Both badges share the same phase/pulse and equivalent halo proxy. Schematic deck; world approximates hemisphere, proxy halo alpha rather than Three additive postfx.",
+    "resolution": [
+      960,
+      540
+    ],
+    "camera_blender_location": [
+      -45.25483322143555,
+      17.254833221435547,
+      54.255001068115234
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 80.0,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      546.9915390014648,
+      197.98178672790527,
+      575.2892875671387,
+      226.27948880195618
+    ],
+    "camera_facing_normal_dot": 0.9999999701976776,
+    "rig": "classic",
+    "world_badge_position": [
+      5,
+      6,
+      50
+    ],
+    "source_rig": {
+      "mode": "classic",
+      "settings": {
+        "yaw": 45,
+        "dist": 64,
+        "height": 45.255,
+        "fov": 52
+      },
+      "eye": [
+        -45.25483399593904,
+        54.255,
+        -17.254833995939045
+      ],
+      "target": [
+        0,
+        9,
+        28
+      ],
+      "halfHeight": 40,
+      "aspect": 1.7777777777777777,
+      "note": "Eye and target read directly from actual CameraRig._compute; zero velocity, zero boost, no shake/lag."
+    }
+  },
+  {
+    "file": "offline-modern-near.png",
+    "note": "OFFLINE reconstruction, NOT live gameplay proof. Actual zero-boost rig eye/target/projection and dusk key/rim directions/intensities; NEW left, baseline right, shipped player world scale 1. Both badges share the same phase/pulse and equivalent halo proxy. Schematic deck; world approximates hemisphere, proxy halo alpha rather than Three additive postfx.",
+    "resolution": [
+      960,
+      540
+    ],
+    "camera_blender_location": [
+      -9.918583869934082,
+      27.25108528137207,
+      20.0
+    ],
+    "camera_projection": "PERSP",
+    "orthographic_vertical_span": null,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      392.6355171203613,
+      268.085675239563,
+      439.2107105255127,
+      314.66085612773895
+    ],
+    "camera_facing_normal_dot": 0.9999997541308403,
+    "rig": "modern",
+    "world_badge_position": [
+      5,
+      6,
+      12
+    ],
+    "source_rig": {
+      "mode": "modern",
+      "settings": {
+        "yaw": 20,
+        "dist": 29,
+        "height": 14,
+        "fov": 58
+      },
+      "eye": [
+        -9.918584156444393,
+        20,
+        -27.251086002791343
+      ],
+      "target": [
+        0,
+        7.2,
+        16
+      ],
+      "halfHeight": 40,
+      "aspect": 1.7777777777777777,
+      "note": "Eye and target read directly from actual CameraRig._compute; zero velocity, zero boost, no shake/lag."
+    }
+  },
+  {
+    "file": "offline-modern-far.png",
+    "note": "OFFLINE reconstruction, NOT live gameplay proof. Actual zero-boost rig eye/target/projection and dusk key/rim directions/intensities; NEW left, baseline right, shipped player world scale 1. Both badges share the same phase/pulse and equivalent halo proxy. Schematic deck; world approximates hemisphere, proxy halo alpha rather than Three additive postfx.",
+    "resolution": [
+      960,
+      540
+    ],
+    "camera_blender_location": [
+      -9.918583869934082,
+      27.25108528137207,
+      20.0
+    ],
+    "camera_projection": "PERSP",
+    "orthographic_vertical_span": null,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      483.86444091796875,
+      205.9923005104065,
+      509.57244873046875,
+      231.70034050941467
+    ],
+    "camera_facing_normal_dot": 0.9999997541308403,
+    "rig": "modern",
+    "world_badge_position": [
+      5,
+      6,
+      50
+    ],
+    "source_rig": {
+      "mode": "modern",
+      "settings": {
+        "yaw": 20,
+        "dist": 29,
+        "height": 14,
+        "fov": 58
+      },
+      "eye": [
+        -9.918584156444393,
+        20,
+        -27.251086002791343
+      ],
+      "target": [
+        0,
+        7.2,
+        16
+      ],
+      "halfHeight": 40,
+      "aspect": 1.7777777777777777,
+      "note": "Eye and target read directly from actual CameraRig._compute; zero velocity, zero boost, no shake/lag."
+    }
+  },
+  {
+    "file": "offline-chase-near.png",
+    "note": "OFFLINE reconstruction, NOT live gameplay proof. Actual zero-boost rig eye/target/projection and dusk key/rim directions/intensities; NEW left, baseline right, shipped player world scale 1. Both badges share the same phase/pulse and equivalent halo proxy. Schematic deck; world approximates hemisphere, proxy halo alpha rather than Three additive postfx.",
+    "resolution": [
+      960,
+      540
+    ],
+    "camera_blender_location": [
+      -2.508683204650879,
+      23.8685245513916,
+      15.5
+    ],
+    "camera_projection": "PERSP",
+    "orthographic_vertical_span": null,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      398.5265350341797,
+      268.0791413784027,
+      445.0763511657715,
+      314.62895929813385
+    ],
+    "camera_facing_normal_dot": 0.9999999913852662,
+    "rig": "chase",
+    "world_badge_position": [
+      5,
+      6,
+      12
+    ],
+    "source_rig": {
+      "mode": "chase",
+      "settings": {
+        "yaw": 6,
+        "dist": 24,
+        "height": 9.5,
+        "fov": 66
+      },
+      "eye": [
+        -2.5086831184236833,
+        15.5,
+        -23.868525488838557
+      ],
+      "target": [
+        0,
+        7.2,
+        16
+      ],
+      "halfHeight": 40,
+      "aspect": 1.7777777777777777,
+      "note": "Eye and target read directly from actual CameraRig._compute; zero velocity, zero boost, no shake/lag."
+    }
+  },
+  {
+    "file": "offline-chase-far.png",
+    "note": "OFFLINE reconstruction, NOT live gameplay proof. Actual zero-boost rig eye/target/projection and dusk key/rim directions/intensities; NEW left, baseline right, shipped player world scale 1. Both badges share the same phase/pulse and equivalent halo proxy. Schematic deck; world approximates hemisphere, proxy halo alpha rather than Three additive postfx.",
+    "resolution": [
+      960,
+      540
+    ],
+    "camera_blender_location": [
+      -2.508683204650879,
+      23.8685245513916,
+      15.5
+    ],
+    "camera_projection": "PERSP",
+    "orthographic_vertical_span": null,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      452.39742279052734,
+      226.0236382484436,
+      475.7695484161377,
+      249.39574241638184
+    ],
+    "camera_facing_normal_dot": 0.9999999913852662,
+    "rig": "chase",
+    "world_badge_position": [
+      5,
+      6,
+      50
+    ],
+    "source_rig": {
+      "mode": "chase",
+      "settings": {
+        "yaw": 6,
+        "dist": 24,
+        "height": 9.5,
+        "fov": 66
+      },
+      "eye": [
+        -2.5086831184236833,
+        15.5,
+        -23.868525488838557
+      ],
+      "target": [
+        0,
+        7.2,
+        16
+      ],
+      "halfHeight": 40,
+      "aspect": 1.7777777777777777,
+      "note": "Eye and target read directly from actual CameraRig._compute; zero velocity, zero boost, no shake/lag."
+    }
+  },
+  {
+    "file": "dense-batch-36.png",
+    "note": "OFFLINE 36 independent imports at true world scale, same geometry. Render density diagnostic ONLY, not GPU memory/lifetime proof, not a claimed live maximum; no halo in this density frame.",
+    "resolution": [
+      800,
+      600
+    ],
+    "camera_blender_location": [
+      -16.0,
+      30.0,
+      24.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 42.0,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "file": "kind-silhouette-cues.png",
+    "note": "OFFLINE source cue reconstruction: NEW repair / source shield ring / source triple spread chevrons / source fuel drum, all at world scale 1. Core/shell exact source dimensions, spread outer contours and depth from source with approximate bevel offsets; fuel source cylinder/torus and .82,.82,.25 scale. Not exported, other kinds remain procedural.",
+    "resolution": [
+      1200,
+      400
+    ],
+    "camera_blender_location": [
+      0.0,
+      -20.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 8.0,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "file": "exact-green-front.png",
+    "note": "Diagnostic ONLY: shell/shape palette replaced in memory by exact unlit sRGB #52ffa8. Exported palette remains green rim / mint ceramic. No resizing, bloom or glow.",
+    "resolution": [
+      600,
+      600
+    ],
+    "camera_blender_location": [
+      0.0,
+      -12.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 5.699999809265137,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      84.73682999610901,
+      84.7369909286499,
+      515.2631878852844,
+      515.2633488178253
+    ],
+    "camera_facing_normal_dot": 0.9999998211860657
+  },
+  {
+    "file": "danger-mine-distinction.png",
+    "note": "Repair LEFT / static source Mine ico radius1.2 with six5-sided .22x1.1 spikes at1.3 RIGHT, common scale1. Mine materials and lamp omission are approximations. No other-worker model used; not a mine asset delivery.",
+    "resolution": [
+      1000,
+      600
+    ],
+    "camera_blender_location": [
+      0.0,
+      -16.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 7.0,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      24.714253842830658,
+      124.71445798873901,
+      375.28571486473083,
+      475.28590857982635
+    ],
+    "camera_facing_normal_dot": 0.9999998211860657
+  },
+  {
+    "file": "frozen-kit-comparison.png",
+    "note": "NEW repair LEFT / approved-to-read frozen shield INITIAL RIGHT, common scale1. Shared frame/ceramic/slate visual language; distinct CROSS versus shield emblem; imported only into evidence, not source asset.",
+    "resolution": [
+      1000,
+      600
+    ],
+    "camera_blender_location": [
+      0.0,
+      -16.0,
+      0.0
+    ],
+    "camera_projection": "ORTHO",
+    "orthographic_vertical_span": 7.0,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      24.714253842830658,
+      124.71445798873901,
+      375.28571486473083,
+      475.28590857982635
+    ],
+    "camera_facing_normal_dot": 0.9999998211860657
+  },
+  {
+    "file": "offline-magnet-d11.png",
+    "note": "OFFLINE actual-source context, original shell/shape/halo phase equations and camera-facing root; halo is an approximate alpha proxy, not live additive postfx. D>22 bobs .7 about baseY6; d11 magnet strength15; collection at d<=3.7. No beam/bubble or fabricated collection VFX.",
+    "resolution": [
+      960,
+      540
+    ],
+    "camera_blender_location": [
+      -9.918583869934082,
+      27.25108528137207,
+      20.0
+    ],
+    "camera_projection": "PERSP",
+    "orthographic_vertical_span": null,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      442.58008003234863,
+      274.7459006309509,
+      491.3935089111328,
+      323.55931520462036
+    ],
+    "camera_facing_normal_dot": 0.9999997541308403,
+    "center_distance": 11.0,
+    "phase": 0.39269908169872414,
+    "baseY": 6,
+    "world_position_game": [
+      0,
+      6,
+      11
+    ],
+    "halo_width": 8.4,
+    "halo_opacity_source": 0.35
+  },
+  {
+    "file": "offline-precollection-d3-8.png",
+    "note": "OFFLINE actual-source context, original shell/shape/halo phase equations and camera-facing root; halo is an approximate alpha proxy, not live additive postfx. D>22 bobs .7 about baseY6; d11 magnet strength15; collection at d<=3.7. No beam/bubble or fabricated collection VFX.",
+    "resolution": [
+      960,
+      540
+    ],
+    "camera_blender_location": [
+      -9.918583869934082,
+      27.25108528137207,
+      20.0
+    ],
+    "camera_projection": "PERSP",
+    "orthographic_vertical_span": null,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      413.04957389831543,
+      302.65741288661957,
+      471.24292373657227,
+      360.85076451301575
+    ],
+    "camera_facing_normal_dot": 0.9999997541308403,
+    "center_distance": 3.8,
+    "phase": 0.39269908169872414,
+    "baseY": 6,
+    "world_position_game": [
+      0,
+      6,
+      3.8
+    ],
+    "halo_width": 8.4,
+    "halo_opacity_source": 0.35
+  },
+  {
+    "file": "offline-collection-threshold-d3-7.png",
+    "note": "OFFLINE actual-source context, original shell/shape/halo phase equations and camera-facing root; halo is an approximate alpha proxy, not live additive postfx. D>22 bobs .7 about baseY6; d11 magnet strength15; collection at d<=3.7. No beam/bubble or fabricated collection VFX.",
+    "resolution": [
+      960,
+      540
+    ],
+    "camera_blender_location": [
+      -9.918583869934082,
+      27.25108528137207,
+      20.0
+    ],
+    "camera_projection": "PERSP",
+    "orthographic_vertical_span": null,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      412.5593090057373,
+      303.12080204486847,
+      470.9083843231201,
+      361.46987199783325
+    ],
+    "camera_facing_normal_dot": 0.9999997541308403,
+    "center_distance": 3.7,
+    "phase": 0.39269908169872414,
+    "baseY": 6,
+    "world_position_game": [
+      0,
+      6,
+      3.7
+    ],
+    "halo_width": 8.4,
+    "halo_opacity_source": 0.35
+  },
+  {
+    "file": "offline-drift-outside-magnet.png",
+    "note": "OFFLINE actual-source context, original shell/shape/halo phase equations and camera-facing root; halo is an approximate alpha proxy, not live additive postfx. D>22 bobs .7 about baseY6; d11 magnet strength15; collection at d<=3.7. No beam/bubble or fabricated collection VFX.",
+    "resolution": [
+      960,
+      540
+    ],
+    "camera_blender_location": [
+      -9.918583869934082,
+      27.25108528137207,
+      20.0
+    ],
+    "camera_projection": "PERSP",
+    "orthographic_vertical_span": null,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ],
+    "badge_pixel_bounds": [
+      489.2039108276367,
+      226.50028824806213,
+      522.0899963378906,
+      259.38640236854553
+    ],
+    "camera_facing_normal_dot": 0.9999997541308403,
+    "center_distance": 30.008158594290148,
+    "phase": 1,
+    "baseY": 6,
+    "world_position_game": [
+      0,
+      6.699701522129054,
+      30
+    ],
+    "halo_width": 5.9404765065689,
+    "halo_opacity_source": 0.35
+  },
+  {
+    "file": "offline-collected-next-update.png",
+    "note": "OFFLINE source lifecycle: alive=false at collection, next pickup loop detaches badge AND shared halo sprite. Original sparks/ring/light/HUD/audio/postfx dispatch/timing are tested numerically, not rendered here.",
+    "resolution": [
+      960,
+      540
+    ],
+    "camera_blender_location": [
+      -9.918583869934082,
+      27.25108528137207,
+      20.0
+    ],
+    "camera_projection": "PERSP",
+    "orthographic_vertical_span": null,
+    "asset_scale": [
+      1,
+      1,
+      1
+    ]
+  }
+]
