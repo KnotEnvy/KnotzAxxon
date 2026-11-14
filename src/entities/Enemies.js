@@ -307,6 +307,7 @@ export class Silo extends Enemy {
     this.score = 300;
     this.fireTimer = this.rng.range(1.4, 3.4);
     this.doors = 0;
+    if (buildImportedGround(this, 'silo')) return;
 
     const bodyGeo = geo('siloBody', () => {
       // A real open well: the former cylinder cap hid the launch glow.
@@ -390,6 +391,7 @@ export class FuelCell extends Enemy {
     this.score = 100;
     this.fuelValue = 0.16;
     this.contactDamage = 1;
+    if (buildImportedGround(this, 'fuel')) return;
 
     // A tall safety-yellow drum with a FUEL stencil: never mistaken for the
     // squat brown gun domes it often stands beside.

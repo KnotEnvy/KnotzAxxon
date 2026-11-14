@@ -9,7 +9,7 @@ raked isometric angle, which means you cannot tell how high you are by looking a
 ship — you read it off the shadow on the deck and the altimeter on the right. Walls have
 gaps. Some of those gaps are at your altitude and some are not.
 
-The fighter, Iron Sentinel, standard ground turret and radar tower use Blender-authored models, selected through the asset
+The fighter, Iron Sentinel, standard ground turret, radar tower, missile silo and fuel cell use Blender-authored models, selected through the asset
 contest. Their GLBs load during boot; editable sources live in `assets-source/`.
 The fortress, other entities, textures, sound effects and music are generated in code.
 

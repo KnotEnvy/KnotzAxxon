@@ -7,7 +7,7 @@ const templates = new Map();
 /** Load before Game construction so model creation and shader prewarming stay synchronous. */
 export async function loadImportedModels() {
   const loader = new GLTFLoader();
-  const results = await Promise.allSettled(['player', 'sentinel', 'turret', 'radar'].map(async name => {
+  const results = await Promise.allSettled(['player', 'sentinel', 'turret', 'radar', 'silo', 'fuel'].map(async name => {
     const gltf = await loader.loadAsync(`${import.meta.env.BASE_URL}models/${name}.glb`);
     templates.set(name, gltf.scene);
   }));
@@ -133,15 +133,26 @@ export function buildImportedGround(enemy, kind) {
     enemy.eye = node(root, 'eye');
     flashSource = node(root, 'dome');
     flashParent = enemy.turntable;
-  } else {
+  } else if (kind === 'radar') {
     enemy.dish = node(root, 'dish');
     enemy.emitter = node(root, 'emitter');
     flashSource = node(root, 'dish_shell');
     flashParent = enemy.dish;
+  } else if (kind === 'silo') {
+    enemy.hatch = node(root, 'hatch');
+    enemy.glow = node(root, 'glow');
+    flashSource = node(root, 'body');
+    flashParent = root;
+  } else if (kind === 'fuel') {
+    enemy.band = node(root, 'band');
+    flashSource = ['body', 'cap', 'stave-0', 'stave-1', 'stave-2'].map(name => node(root, name));
+    flashParent = root;
+  } else {
+    throw new Error(`Unsupported imported ground target: ${kind}`);
   }
   enemy.group.updateMatrixWorld(true);
   const inverse = flashParent.matrixWorld.clone().invert(), parts = [];
-  flashSource.traverse(o => {
+  for (const source of [].concat(flashSource)) source.traverse(o => {
     if (!o.isMesh) return;
     const g = o.geometry.index ? o.geometry.toNonIndexed() : o.geometry.clone();
     g.applyMatrix4(inverse.clone().multiply(o.matrixWorld));

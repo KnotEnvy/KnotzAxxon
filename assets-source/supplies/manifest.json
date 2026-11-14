@@ -1,0 +1,857 @@
+{
+ "snapshot": "final",
+ "coordinate_convention": "glTF Y up, X across, +Z forward; Blender Z up exported with export_yup (Blender (x,y,z) -> glTF (x,z,-y)); root nodes identity; ground Y=0",
+ "assets": {
+  "silo": {
+   "files": {
+    "glb": {
+     "path": "silo.glb",
+     "bytes": 1281700,
+     "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e"
+    },
+    "blend": {
+     "path": "silo.blend",
+     "bytes": 987698,
+     "sha256": "4f99139b631efb031f20b116bdbce4f59700e811d7e028dd366063fb927085ca"
+    }
+   },
+   "triangles": {
+    "glb_accessors": 9928,
+    "blend_evaluated": 9928,
+    "glb_reimported_blender": 9928,
+    "budget": 15000
+   },
+   "primitives": {
+    "glb": 4,
+    "blend_used_material_slots": 4,
+    "glb_reimported_blender": 4,
+    "budget": 10
+   },
+   "bounds_gltf": {
+    "glb_transformed": {
+     "min": [
+      -2.6,
+      0.0,
+      -2.6
+     ],
+     "max": [
+      2.635,
+      2.708,
+      2.6
+     ],
+     "size": [
+      5.235,
+      2.708,
+      5.2
+     ]
+    },
+    "blend_rest": {
+     "min": [
+      -2.6,
+      0.0,
+      -2.6
+     ],
+     "max": [
+      2.635,
+      2.708,
+      2.6
+     ],
+     "size": [
+      5.235,
+      2.708,
+      5.2
+     ]
+    },
+    "glb_reimported_blender": {
+     "min": [
+      -2.6,
+      0.0,
+      -2.6
+     ],
+     "max": [
+      2.635,
+      2.708,
+      2.6
+     ],
+     "size": [
+      5.235,
+      2.708,
+      5.2
+     ]
+    },
+    "baseline": {
+     "min": [
+      -2.5999999046325684,
+      0,
+      -2.5999999046325684
+     ],
+     "max": [
+      2.5999999046325684,
+      2.6405255794525146,
+      2.5999999046325684
+     ],
+     "size": [
+      5.199999809265137,
+      2.6405255794525146,
+      5.199999809265137
+     ]
+    },
+    "size_ratio_vs_baseline": [
+     1.0067,
+     1.0256,
+     1.0
+    ],
+    "within_10_percent": true,
+    "grounded_min_y": 0.0
+   },
+   "root": {
+    "names": [
+     "silo"
+    ],
+    "identity_transform_glb": true,
+    "identity_world_blend": true,
+    "identity_world_reimport": true
+   },
+   "nodes": [
+    {
+     "name": "silo",
+     "parent": null,
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "world_translation": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "body",
+     "parent": "silo",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "world_translation": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "glow",
+     "parent": "silo",
+     "translation": [
+      0,
+      2.4149999618530273,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "world_translation": [
+      0.0,
+      2.415,
+      0.0
+     ]
+    },
+    {
+     "name": "hatch",
+     "parent": "silo",
+     "translation": [
+      0,
+      2.450000047683716,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "world_translation": [
+      0.0,
+      2.45,
+      0.0
+     ]
+    },
+    {
+     "name": "launch-point",
+     "parent": "silo",
+     "translation": [
+      0,
+      3,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "world_translation": [
+      0,
+      3,
+      0
+     ]
+    }
+   ],
+   "pivots_gltf_blend": {
+    "hatch": [
+     0.0,
+     2.45,
+     -0.0
+    ],
+    "glow": [
+     0.0,
+     2.415,
+     -0.0
+    ],
+    "launch-point": [
+     0.0,
+     3.0,
+     -0.0
+    ]
+   },
+   "material_mapping": {
+    "silo": [],
+    "body": [
+     "SILO_Hull",
+     "SILO_Glow"
+    ],
+    "glow": [
+     "SILO_Glow"
+    ],
+    "hatch": [
+     "SILO_Hull"
+    ],
+    "launch-point": []
+   },
+   "materials": [
+    {
+     "name": "SILO_Hull",
+     "doubleSided": true,
+     "baseColorTexture": true,
+     "metallicRoughnessTexture": true,
+     "metallicFactor": 1,
+     "roughnessFactor": 1,
+     "emissiveFactor": null,
+     "emissiveStrength": null
+    },
+    {
+     "name": "SILO_Glow",
+     "doubleSided": true,
+     "baseColorTexture": false,
+     "metallicRoughnessTexture": false,
+     "metallicFactor": 0,
+     "roughnessFactor": 0.5,
+     "emissiveFactor": [
+      1,
+      0.04666508734226227,
+      0.09084171056747437
+     ],
+     "emissiveStrength": 2.4000000953674316
+    }
+   ],
+   "textures": [
+    {
+     "name": "SILO_BaseColor",
+     "mimeType": "image/png",
+     "bytes": 420415,
+     "width": 1024,
+     "height": 1024,
+     "embedded": true
+    },
+    {
+     "name": "SILO_MetalRough",
+     "mimeType": "image/png",
+     "bytes": 308503,
+     "width": 1024,
+     "height": 1024,
+     "embedded": true
+    }
+   ],
+   "extensions": [
+    "KHR_materials_emissive_strength"
+   ],
+   "clearance": {
+    "all_clear": true,
+    "method": "BVHTree.overlap triangle intersections + bidirectional vertex-to-surface nearest distance",
+    "checks": [
+     {
+      "check": "hatch vs body over doors 0..1 (101 samples)",
+      "samples": 101,
+      "intersecting_samples": 0,
+      "total_triangle_overlaps": 0,
+      "min_distance_m": 0.06395
+     },
+     {
+      "check": "glow vs body over doors 0..1",
+      "samples": 101,
+      "intersecting_samples": 0,
+      "total_triangle_overlaps": 0,
+      "min_distance_m": 0.08698
+     },
+     {
+      "check": "hatch vs glow over doors 0..1",
+      "samples": 101,
+      "intersecting_samples": 0,
+      "total_triangle_overlaps": 0,
+      "min_distance_m": 0.037
+     },
+     {
+      "check": "detached hatch vs body",
+      "samples": 1,
+      "intersecting_samples": 0,
+      "total_triangle_overlaps": 0,
+      "min_distance_m": 0.64877
+     },
+     {
+      "check": "detached hatch vs glow",
+      "samples": 1,
+      "intersecting_samples": 0,
+      "total_triangle_overlaps": 0,
+      "min_distance_m": 1.0909
+     }
+    ]
+   },
+   "checks": {
+    "triangles_within_budget": true,
+    "primitives_within_budget": true,
+    "glb_under_16MiB": true,
+    "textures_max_2048_embedded": true,
+    "no_external_buffers": true,
+    "blend_glb_reimport_triangles_agree": true
+   },
+   "gameplay_contract": {
+    "hatch_pivot_gltf": [
+     0,
+     2.45,
+     0
+    ],
+    "glow_pivot_gltf": [
+     0,
+     2.415,
+     0
+    ],
+    "hatch_motion": "position.y = 2.45 + doors*0.1; uniform scale = 1 - doors*0.85 (doors 0..1)",
+    "glow_motion": "uniform scale = 0.4 + doors*0.55",
+    "launch_point": {
+     "gltf": [
+      0.0,
+      3.0,
+      0.0
+     ],
+     "nearest_surface_m_by_group_open": {
+      "hatch": 0.4215,
+      "glow": 1.5681,
+      "body": 1.771
+     },
+     "highest_geometry_inside_mouth_radius_1p7_open_gltf_y": 2.5788
+    },
+    "launch_point_note": "Existing gameplay spawn is entity position + (0, 3, 0); exported as empty node \"launch-point\"."
+   }
+  },
+  "fuel": {
+   "files": {
+    "glb": {
+     "path": "fuel.glb",
+     "bytes": 1087156,
+     "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc"
+    },
+    "blend": {
+     "path": "fuel.blend",
+     "bytes": 862511,
+     "sha256": "043f4268b519006ed8fbd793075678af4d407018dffdff4e36e0ae792fd3eeba"
+    }
+   },
+   "triangles": {
+    "glb_accessors": 9592,
+    "blend_evaluated": 9592,
+    "glb_reimported_blender": 9592,
+    "budget": 12000
+   },
+   "primitives": {
+    "glb": 8,
+    "blend_used_material_slots": 8,
+    "glb_reimported_blender": 8,
+    "budget": 8
+   },
+   "bounds_gltf": {
+    "glb_transformed": {
+     "min": [
+      -1.7,
+      0.0,
+      -1.7
+     ],
+     "max": [
+      1.7,
+      4.87,
+      1.7
+     ],
+     "size": [
+      3.4,
+      4.87,
+      3.4
+     ]
+    },
+    "blend_rest": {
+     "min": [
+      -1.7,
+      0.0,
+      -1.7
+     ],
+     "max": [
+      1.7,
+      4.87,
+      1.7
+     ],
+     "size": [
+      3.4,
+      4.87,
+      3.4
+     ]
+    },
+    "glb_reimported_blender": {
+     "min": [
+      -1.7,
+      0.0,
+      -1.7
+     ],
+     "max": [
+      1.7,
+      4.87,
+      1.7
+     ],
+     "size": [
+      3.4,
+      4.87,
+      3.4
+     ]
+    },
+    "baseline": {
+     "min": [
+      -1.7000000476837158,
+      0,
+      -1.7000000476837158
+     ],
+     "max": [
+      1.7000000476837158,
+      4.871329307556152,
+      1.7000000476837158
+     ],
+     "size": [
+      3.4000000953674316,
+      4.871329307556152,
+      3.4000000953674316
+     ]
+    },
+    "size_ratio_vs_baseline": [
+     1.0,
+     0.9997,
+     1.0
+    ],
+    "within_10_percent": true,
+    "grounded_min_y": 0.0
+   },
+   "root": {
+    "names": [
+     "fuel"
+    ],
+    "identity_transform_glb": true,
+    "identity_world_blend": true,
+    "identity_world_reimport": true
+   },
+   "nodes": [
+    {
+     "name": "fuel",
+     "parent": null,
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "world_translation": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "band",
+     "parent": "fuel",
+     "translation": [
+      0,
+      2.200000047683716,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "world_translation": [
+      0.0,
+      2.2,
+      0.0
+     ]
+    },
+    {
+     "name": "body",
+     "parent": "fuel",
+     "translation": [
+      0,
+      0,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "world_translation": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "cap",
+     "parent": "fuel",
+     "translation": [
+      0,
+      3.759999990463257,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "world_translation": [
+      0.0,
+      3.76,
+      0.0
+     ]
+    },
+    {
+     "name": "stave-0",
+     "parent": "fuel",
+     "translation": [
+      -0.625,
+      0.9300000071525574,
+      -1.0825318098068237
+     ],
+     "rotation": [
+      0,
+      0.8660253882408142,
+      0,
+      0.5000000596046448
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "world_translation": [
+      -0.625,
+      0.93,
+      -1.08253
+     ]
+    },
+    {
+     "name": "stave-1",
+     "parent": "fuel",
+     "translation": [
+      -0.625,
+      0.9300000071525574,
+      1.0825318098068237
+     ],
+     "rotation": [
+      0,
+      -0.8660253882408142,
+      0,
+      0.5000000596046448
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "world_translation": [
+      -0.625,
+      0.93,
+      1.08253
+     ]
+    },
+    {
+     "name": "stave-2",
+     "parent": "fuel",
+     "translation": [
+      1.25,
+      0.9300000071525574,
+      0
+     ],
+     "rotation": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "world_translation": [
+      1.25,
+      0.93,
+      0.0
+     ]
+    }
+   ],
+   "pivots_gltf_blend": {
+    "band": [
+     0.0,
+     2.2,
+     -0.0
+    ],
+    "cap": [
+     0.0,
+     3.76,
+     -0.0
+    ],
+    "stave-0": [
+     -0.625,
+     0.93,
+     -1.08253
+    ],
+    "stave-1": [
+     -0.625,
+     0.93,
+     1.08253
+    ],
+    "stave-2": [
+     1.25,
+     0.93,
+     0.0
+    ]
+   },
+   "material_mapping": {
+    "fuel": [],
+    "band": [
+     "FUEL_Hull",
+     "FUEL_Band"
+    ],
+    "body": [
+     "FUEL_Hull",
+     "FUEL_Band"
+    ],
+    "cap": [
+     "FUEL_Hull"
+    ],
+    "stave-0": [
+     "FUEL_Hull"
+    ],
+    "stave-1": [
+     "FUEL_Hull"
+    ],
+    "stave-2": [
+     "FUEL_Hull"
+    ]
+   },
+   "materials": [
+    {
+     "name": "FUEL_Hull",
+     "doubleSided": true,
+     "baseColorTexture": true,
+     "metallicRoughnessTexture": true,
+     "metallicFactor": 1,
+     "roughnessFactor": 1,
+     "emissiveFactor": null,
+     "emissiveStrength": null
+    },
+    {
+     "name": "FUEL_Band",
+     "doubleSided": true,
+     "baseColorTexture": false,
+     "metallicRoughnessTexture": false,
+     "metallicFactor": 0,
+     "roughnessFactor": 0.5,
+     "emissiveFactor": [
+      1,
+      0.32314321398735046,
+      0.01599629409611225
+     ],
+     "emissiveStrength": 2.200000047683716
+    }
+   ],
+   "textures": [
+    {
+     "name": "FUEL_BaseColor",
+     "mimeType": "image/png",
+     "bytes": 387128,
+     "width": 1024,
+     "height": 1024,
+     "embedded": true
+    },
+    {
+     "name": "FUEL_MetalRough",
+     "mimeType": "image/png",
+     "bytes": 262117,
+     "width": 1024,
+     "height": 1024,
+     "embedded": true
+    }
+   ],
+   "extensions": [
+    "KHR_materials_emissive_strength"
+   ],
+   "clearance": {
+    "all_clear": true,
+    "method": "BVHTree.overlap triangle intersections + bidirectional vertex-to-surface nearest distance",
+    "checks": [
+     {
+      "check": "band vs body: Y offset -1.1..+1.1 (45) x rotation 0..355 deg (72)",
+      "samples": 3240,
+      "intersecting_samples": 0,
+      "total_triangle_overlaps": 0,
+      "min_distance_m": 0.07
+     },
+     {
+      "check": "band vs cap: Y offset -1.1..+1.1 (45) x rotation 0..355 deg (72)",
+      "samples": 3240,
+      "intersecting_samples": 0,
+      "total_triangle_overlaps": 0,
+      "min_distance_m": 0.33
+     },
+     {
+      "check": "band vs stave-0: Y offset -1.1..+1.1 (45) x rotation 0..355 deg (72)",
+      "samples": 3240,
+      "intersecting_samples": 0,
+      "total_triangle_overlaps": 0,
+      "min_distance_m": 0.06
+     },
+     {
+      "check": "band vs stave-1: Y offset -1.1..+1.1 (45) x rotation 0..355 deg (72)",
+      "samples": 3240,
+      "intersecting_samples": 0,
+      "total_triangle_overlaps": 0,
+      "min_distance_m": 0.06
+     },
+     {
+      "check": "band vs stave-2: Y offset -1.1..+1.1 (45) x rotation 0..355 deg (72)",
+      "samples": 3240,
+      "intersecting_samples": 0,
+      "total_triangle_overlaps": 0,
+      "min_distance_m": 0.06
+     },
+     {
+      "check": "stave blow-out sweep (slide 0.62 m then tilt 22 deg, 31 samples) vs body and neighbouring stave",
+      "samples": 186,
+      "intersecting_samples": 0,
+      "total_triangle_overlaps": 0,
+      "min_distance_m": 0.01
+     },
+     {
+      "check": "ruptured pose: all rigid-group pairs",
+      "samples": 15,
+      "intersecting_samples": 0,
+      "total_triangle_overlaps": 0,
+      "min_distance_m": 0.30477
+     }
+    ]
+   },
+   "checks": {
+    "triangles_within_budget": true,
+    "primitives_within_budget": true,
+    "glb_under_16MiB": true,
+    "textures_max_2048_embedded": true,
+    "no_external_buffers": true,
+    "blend_glb_reimport_triangles_agree": true
+   },
+   "gameplay_contract": {
+    "band_pivot_gltf": [
+     0,
+     2.2,
+     0
+    ],
+    "band_motion": "position.y = 2.2 + sin(t*2.4 + z*0.2)*1.1; rotation.y += dt*1.2",
+    "rupture": "demonstration only: band and cap ejected, three staves slide 0.62 m out then tilt 22 deg (poses.py)"
+   }
+  }
+ },
+ "all_checks_pass": true
+}

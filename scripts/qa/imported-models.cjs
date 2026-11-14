@@ -23,7 +23,7 @@ const fs = require('node:fs');
    const engineNodes=game.player.model.userData.engines;
    check(Math.abs(engineNodes[0].position.x+1.05)<1e-4&&Math.abs(engineNodes[1].position.x-1.05)<1e-4,'Engine pivots');
    const { createEnemy } = await import('/src/entities/Enemies.js');
-   for (const kind of ['turret', 'radar']) {
+   for (const kind of ['turret', 'radar', 'silo', 'fuel']) {
     const enemy = createEnemy(kind, game.materials, {x:0,y:0,z:80,seed:1});
     game.scene.add(enemy.group);
     check(!!enemy._importedRoot, kind+' imported model');
@@ -38,13 +38,40 @@ const fs = require('node:fs');
       enemy.group.updateMatrixWorld(true);
       check(Number.isFinite(barrel.matrixWorld.elements[0]),'Valid pitch transform');
      }
-    } else {
+    } else if (kind === 'radar') {
      check(Math.abs(enemy.dish.position.y-7.2)<1e-5,'Radar pivot');
      const y=enemy.emitter.position.y;
      check(Math.abs(y-.8596301042)<1e-4,'Radar feed position');
     }
+    if (kind === 'silo') {
+     check(Math.abs(enemy.hatch.position.y-2.45)<1e-5,'Silo hatch pivot');
+     check(Math.abs(enemy.glow.position.y-2.415)<1e-5,'Silo glow pivot');
+     enemy.pos.z=game.player.pos.z+30;enemy.hasEngaged=true;
+     for(let frame=0;frame<30;frame++) {
+      enemy.fireTimer=.2;enemy.update(1/60,game._ctx(1/60,10));
+     }
+     check(enemy.doors>.95,'Silo opens on approach');
+     check(Math.abs(enemy.hatch.scale.x-(1-enemy.doors*.85))<1e-6,'Hatch scale follows gameplay');
+     const projectiles=game.projectiles,original=projectiles.launchMissile;
+     let launch;
+     projectiles.launchMissile=function(...args){launch=args;return original.apply(this,args);};
+     try {enemy.fireTimer=-.01;enemy.update(1/60,game._ctx(1/60,10));}
+     finally {projectiles.launchMissile=original;}
+     check(launch&&Math.abs(launch[1]-(enemy.pos.y+3))<1e-6,'Missile launches at exported socket height');
+     check(enemy.hp===5&&enemy.radius===3.2,'Silo gameplay values');
+    }
+    if (kind === 'fuel') {
+     for(const phase of [-Math.PI/2,Math.PI/2]) {
+      const time=(phase-enemy.pos.z*.2)/2.4;
+      enemy.update(1/60,{...game._ctx(1/60,time),time});
+      check(Math.abs(enemy.band.position.y-(phase<0?1.1:3.3))<1e-6,'Fuel band full travel');
+     }
+     check(enemy.fuelValue===.16&&enemy.hp===1&&enemy.radius===2.2,'Fuel gameplay values');
+     const meshes=[];enemy.flashMesh.traverse(o=>{if(o.isMesh)meshes.push(o);});
+     check(meshes.length>0&&meshes[0].geometry.attributes.position.count>0,'Fuel hit shell covers composite body');
+    }
     enemy.hit(1,game._ctx(1/60,10));enemy.update(1/60,game._ctx(1/60,10));
-    check(enemy.flashMesh.parent===(kind==='turret'?enemy.turntable:enemy.dish),'Moving damage flash');
+    check(enemy.flashMesh.parent===(kind==='turret'?enemy.turntable:kind==='radar'?enemy.dish:enemy._importedRoot),'Moving damage flash');
     enemy.dispose();
    }
    const results=[];
@@ -75,7 +102,7 @@ const fs = require('node:fs');
    }
    game.player.model.userData.silhouette.visible=true;
    engine.renderer.render(game.scene,engine.camera);
-   return {selectedFighter:game.player.model.name,iterations:results};
+   return {selectedFighter:game.player.model.name,groundTargets:['turret','radar','silo','fuel'],iterations:results};
   });
   if(errors.length)throw Error(errors.join('\n'));
   fs.mkdirSync('artifacts/imported-models',{recursive:true});

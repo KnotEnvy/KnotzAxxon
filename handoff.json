@@ -1,22 +1,23 @@
 {
   "schema_version": 3,
   "project": "KnotzAxxon",
-  "updated_at": "2026-10-13T03:52:58.418081+00:00",
-  "status": "github_pages_tester_release_live_verified",
+  "updated_at": "2026-11-14T05:40:12.809875+00:00",
+  "status": "selected_blender_models_validated_deployment_pending",
   "production_ready": false,
-  "production_ready_basis": "The requested tester build is merged and live. 104 tests, local and CI production checks, full scripted campaign and public desktop/portrait/landscape browser verification passed; served assets match the tested build. Human audio, balance, physical-device and sustained-performance acceptance remain open.",
+  "production_ready_basis": "Six selected Blender models are integrated; regression, runtime model and local desktop/touch production checks pass. Live deployment verification is pending. Human audio, balance, physical-device and sustained-performance acceptance remain open.",
   "release_scope": [
     "Hero ship: continuous closed airframe, fitted canopy/wings/engines and corrected Classic silhouette depth ordering.",
     "Model catalogue: nine enemy types, Sentinel shutters and details, pickup badges, missiles and scenery; repaired inward tapered-box face winding.",
     "Atmosphere: procedural planet/rings, quieter nebulae, detailed city and skyline, refined asteroids, smoke, dust and grain.",
     "Combat feedback: damage/weak-point/kill/armor confirmations and actionable boss status. Armor ricochets no longer inflate successful-hit counts.",
     "Audio: distinct damage confirmations, shorter/softer laser transient and a duckable weapon bus giving pilot warnings space.",
-    "Repository: remove generated screenshots and rendered audio; retain historical text evidence, current JSON validation and all source/test generators."
+    "Repository: remove generated screenshots and rendered audio; retain historical text evidence, current JSON validation and all source/test generators.",
+    "Selected Blender assets: fighter, Sentinel, standard turret, radar, missile silo and fuel cell. Round 3 entry C (Opus High) supplies the silo/fuel exports and packed sources."
   ],
   "constraints": [
     "Preserve the eight-sector campaign and accepted Classic, Modern and Chase camera rigs.",
     "Preserve the gentle opening, level forward fire, Flight Assist opt-in, hit volumes, HP, enemy timings and seeded fortress rules.",
-    "Keep handoff in JSON. All game visuals/audio remain procedurally generated."
+    "Keep handoff in JSON. Six selected models use embedded GLBs; remaining visuals and audio are generated in code."
   ],
   "validation": {
     "report": "docs/release-validation.json",
@@ -31,7 +32,8 @@
     "campaign_victory": true,
     "loop_2_playing": true,
     "public_site": "passed, assets match local dist byte-for-byte",
-    "ci": "passed on PR and merged main"
+    "ci": "passed on PR and merged main",
+    "imported_model_runtime": "passed"
   },
   "remaining_acceptance": [
     "Human full-campaign playtest of opening pace, fuel, gates, boss vulnerabilities and Loop 2.",

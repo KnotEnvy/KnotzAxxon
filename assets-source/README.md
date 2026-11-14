@@ -5,6 +5,22 @@ The Iron Sentinel is entry A (Opus 5.5 High, initial submission).
 The editable Blender files, original generators and manifests are preserved here.
 Only the selected GLBs in `public/models/` ship in the web build.
 
+The missile silo and fuel cell are round 3 entry C, built by Opus 5.5 High solo.
+Their selected final GLBs ship byte-for-byte in `public/models/silo.glb` and
+`public/models/fuel.glb`; editable packed Blender files, generators and verification
+helpers are in `supplies/`. Rebuild with Blender 5.2.1:
+
+```text
+blender --background --factory-startup --python assets-source/supplies/scripts/build.py -- --out OUTPUT_DIRECTORY --asset both
+```
+
+The game drives `hatch`/`glow` using the existing silo opening curves and `band` using
+the existing fuel travel and rotation. Hit flashes merge the fuel body, cap and three
+staves. The authored textures and amber band color are preserved. Destruction keeps
+the game's explosion and wreck effects; the contest's detached/ruptured demonstration
+poses are reproducible in the source scripts. Health, fuel rewards, scoring and missile
+launch behavior are unchanged.
+
 The standard turret and radar tower come from round 2 entry A (Haiku High with Terra
 Medium advice). Their sources are in `ground/`. Integration moves the turret gun to a
 side trunnion at local (2.30, 0.15, 0) under the turntable, with an extended axle.
