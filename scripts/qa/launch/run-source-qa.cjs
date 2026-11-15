@@ -5,7 +5,7 @@ const {acquireGPU}=require('./gpu-lease.cjs');
 const {fingerprint}=require('./fingerprint.cjs');
 const root=path.resolve(__dirname,'../../..'),name=process.argv[2];
 const scriptByName={'audio-render':'audio-render','audio-lifecycle':'audio-lifecycle','context-recovery':'context-recovery',
-  'models-default':'imported-models','models-legacy':'imported-models','ui-nav':'opus-ui-nav'};
+  'models-default':'imported-models','models-legacy':'imported-models','ui-nav':'opus-ui-nav','prewarm-retention':'prewarm-retention'};
 if(!Object.hasOwn(scriptByName,name))throw Error('Expected '+Object.keys(scriptByName).join(', '));
 const out=path.join(root,'artifacts/launch',name.startsWith('audio-')?'audio':'functional',name+'-'+new Date().toISOString().replace(/[:.]/g,'-'));
 const win=p=>execFileSync('wslpath',['-w',p],{encoding:'utf8'}).trim();

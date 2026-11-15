@@ -79,3 +79,20 @@ Evidence: `artifacts/launch/pages/f35524e9b88d6938/manifest.json` and
 touch-portrait.png,touch-landscape.png}`. Hash index:
 `docs/launch/pages-production-checkpoint.sha256`. The verifier exited0, closed its
 owned Chrome/server and released its own GPU lease. Nothing was deployed.
+
+
+## Clock-fix Pages package — 21:16:59 UTC checkpoint
+
+The source ff570c6627faed397553b73c28a06da45fe8f9cd975aec8f612b3a272a991da7
+(96 runtime files; committed clock correction9b36398) has a new immutable Pages
+package under artifacts/launch/pages/ff570c6627faed39/. All46 package files matched
+HTTP bytes/hashes. All28 default resources and35 served model/template hashes matched.
+Desktop1280×720, touch-emulated portrait390×844 and landscape844×390 passed
+layout/start/pause where applicable; shared fortress, Daily and settings persistence
+passed too. No debug API, page errors or failed requests. Renderer/device/browser
+remain NVIDIA GTX1650Ti/D3D11, NitroBliss Windows Chrome157.0.8103.52, Low/Classic/DPR1.
+Buffers were960×540,292×633,633×292 with adaptive resolution active. Actual presentation
+draws were236/67/69, total372; draw calls14,989/4,063/4,373. These counts are production
+render-path diagnostics, not gameplay credit, sustained FPS or physical-device claims.
+Verifier exit0 and all-file receipt are retained in browser-qa/; the shared GPU lease
+was released. Hash index: cleanup-takeover-evidence.sha256. Nothing was deployed.

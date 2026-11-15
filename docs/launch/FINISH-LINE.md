@@ -26,7 +26,7 @@ be stated precisely; they do not justify fabricated evidence or scores.
 | P0 | Sol Low, Nitro: live observed gameplay and hardware pilot | `scripts/qa/live-sol-low/`, `docs/launch/live-sol-low/`, `artifacts/launch/live-sol-low/` | Verify Windows Chrome/local-pipe GPU first; normal gameplay; pilots separate from final trials |
 | P1 | Opus High, Nitro: title and actual-game marketing | `src/style.css`, `src/ui/Screens.js`, `index.html`, title-only hunks in `src/game/Game.js`, `public/brand/`, `assets-source/launch-marketing/`, `scripts/brand/launch/` | CPU work first; coordinate GPU slot; no gameplay or model replacement |
 | P1 | Spark 1.3, SuperBeast: audio | `src/audio/` and audio content are reserved for Spark's replacement/patch delivery; owned remote output only | Read exact base; no dirty-root edits; no heavy GPU; coordinate Hydrogen |
-| P1 | Hydrogen High, existing SuperBeast thread: code cleanup | Core/entities/render/lifecycle/tests/docs outside leases; audit entire codebase | Existing worktree/branch; no duplicate launch; UI/attract/audio/world writes reserved |
+| P1 | Sol XHigh, same former-Hydrogen SuperBeast thread: code cleanup | Core/entities/render/lifecycle/tests/docs outside leases; audit entire codebase | Existing worktree/branch; no duplicate launch; UI/attract/audio/world writes reserved |
 | P1 | Fable High, Nitro: restrained ambient/environment additions and graphical judge fixes | `src/world/`, graphical assets/lighting/ambient/background rendering hunks, coordinated before edits | Explicit user owner; preserve RNG, envelopes, accepted art, draw/triangle budgets; primary integrates only |
 | P2 | Primary: portable Itch HTML5 archive | Packaging tooling and `artifacts/launch/distribution/` | Relative base; nested iframe/WebGL2/fullscreen/responsive/assets QA; inspect live listing first |
 | P3 | Luna / Terra / Haiku: seven-lens judges, Nitro | Readonly; isolated reports supplied as responses | Only after integration, frozen candidate and proof packet |
@@ -39,7 +39,7 @@ Graphical corrections from every judging round go to **Fable High**
 (`claudeAgent/claude-fable-5-2`, effort high), including 3D/spatial/assets/environment/
 lighting/ambient/background art. **Opus High** owns UI/HUD/title/menu, branded interface,
 typography/layout/compositing and promotional presentation. For mixed marketing/title
-findings Fable fixes the rendered world and Opus fixes presentation. Hydrogen must not
+findings Fable fixes the rendered world and Opus fixes presentation. The cleanup owner must not
 clean up either owner's visual changes concurrently. Judges remain readonly. Primary
 coordinates precise candidate/evidence/acceptance criteria and integrates; primary does
 not implement graphical fixes itself. At most two geometry builds and one Nitro render
@@ -320,3 +320,34 @@ credit rejects changed coordinators/recipes or different freeze bytes. Missing-
 freeze CLI rejection occurs before GPU reservation or run creation. Startup and
 per-episode non-WebSocket network failures are explicit errors; final batches stop
 on a runtime/network failure and retain the failed row. No final campaign has begun.
+
+
+## 21:26 UTC user-authorized cleanup takeover and rejected proposal
+
+The user replaced quota-limited Hydrogen with **Sol XHigh** (`codex/gpt-6.1-sol`,
+reasoningEffort xhigh) in the SAME SuperBeast thread, worktree and
+`cleanup/public-launch-hydrogen` branch. This is an explicit owner replacement;
+historical Hydrogen records remain attributed to their original model. No new
+checkout/helper was created. The active lease covers nonvisual code cleanup,
+Game.prewarm retention/teardown, startup, imported disposal, Input and relevant tests.
+UI/presentation remains Opus, graphics remains Fable, audio remains Spark.
+
+Primary recovered the original dirty five-file Hydrogen proposal byte-for-byte,
+verified patch SHA256 `b49fde3ccd1013cc820b739972c88e942d1cdd94268a425325ffb8bcf02e8055`,
+and observed 47/47 focused tests pass. The takeover owner found that temporary
+cached-template attachment mutates template flags and misses the actual replaced
+flyer/neon materials. The proposal is **not accepted**. After verifying all five
+after-hashes, primary restored only those recovered files to committed daacde8;
+the exact patch, tests and rejection receipt remain retained. Corrected retention
+must own the actual staged material variants, replace one bounded detached set only
+after successful compile, roll back failures and release all owners on final teardown.
+Hardware program/resource/stall evidence is required before any performance claim.
+
+The clock-fix source ff570c66 checkpoint was packaged for both bases. Its local Pages
+hardware smoke passed: 46/46 file hashes, 28 default resources/35 served model hashes,
+372 actual presentation frames at desktop/portrait/landscape, no page/network errors.
+The portable ZIP is 7,356,344 bytes, SHA256
+`950a71dcd816c6b13a6ab6cb36b4d91977d11a674d6af2268359e84c5989b762`;
+this particular ZIP has not yet had nested iframe verification. All are development
+checkpoints, not final freeze, gameplay credit, deployment or Itch upload. Final
+bot/live credit remains **0/1000 and 0/60**, and no judging round has occurred.

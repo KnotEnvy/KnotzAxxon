@@ -54,14 +54,21 @@
     },
     {
       "role": "code cleanup",
-      "model": "antigravity/gemini-4-hydrogen",
+      "model": "codex/gpt-6.1-sol",
       "options": {
-        "thinking_level": "high"
+        "reasoningEffort": "xhigh"
       },
       "environment": "SuperBeast",
       "environmentId": "dd9d199e-852d-44e3-a2d3-62d31f3a5af2",
       "threadId": "mcp:launch:e6dc10d61c1ad387c31372427a764fefdaf151f3f50db2873d625391886f4613",
-      "checkpoint": "ordinal5 failed21:00UTC provider quota4h20; existing authored changes being recovered read-only, no completed whole-module handoff; primary timing fix verified while worker idle"
+      "checkpoint": "Sol XHigh ordinal7 active on same SuperBeast thread/worktree; original recovered template-prewarm proposal rejected and safely reverted onNitro; actual-material ownership, Input aliases/suspension and fault-tolerant disposal tranche underway CPU-only; whole-path audit pending",
+      "previousModel": {
+        "model": "antigravity/gemini-4-hydrogen",
+        "options": {
+          "thinking_level": "high"
+        },
+        "reason": "user-authorized takeover after provider quota limit; same existing thread/worktree/branch"
+      }
     }
   ],
   "judging": {

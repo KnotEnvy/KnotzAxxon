@@ -64,7 +64,7 @@ criteria to the existing correct owner, then integrates sequentially:
 - Fable High:3D/assets/environment/lighting/ambient/background art.
 - Opus High:UI/HUD/title/menu/typography/layout/compositing/promotional presentation.
 - Spark1.3 on SuperBeast:audio/content and actual-measurement follow-up.
-- Hydrogen High on SuperBeast:code cleanup/reliability, excluding other owners' leases.
+- Sol XHigh on SuperBeast (user-authorized takeover of the same Hydrogen thread):code cleanup/reliability, excluding other owners' leases.
 - Primary:bot/QA/integration/package/distribution and coordination.
 
 Mixed marketing findings are split between underlying world rendering (Fable) and
