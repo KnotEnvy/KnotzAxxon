@@ -56,3 +56,12 @@ image specifications and current upload inspection belong in Opus's
 Publication remains blocked on required final gameplay evidence and all21 independent
 judge scores>=9 on the same candidate. Prepare the complete reviewable result before
 requesting any account-only secret/action. Never place credentials in chat or Git.
+
+
+Actual public browser inspection now supplements Opus's raw HTTP audit:
+`artifacts/launch/public-inspection/2026-11-15T19-40-49-304Z/` retains DOM, screenshots,
+HTML and status/error report for Itch, Pages and the official creator specs.
+Itch still publicly links out to Pages and has no iframe or public upload controls.
+No account dashboard was accessed. All four pages returned200 without page errors;
+Pages rendered through the actual GTX1650Ti adapter. This is baseline inspection,
+not evidence of final publication or account upload preservation.

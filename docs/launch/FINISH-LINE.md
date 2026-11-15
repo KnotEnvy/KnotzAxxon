@@ -89,8 +89,8 @@ findings. All reviewers receive the same packet and are initially blind to one a
 ## Distribution and acceptance status
 
 - Existing Pages: https://knotenvy.github.io/KnotzAxxon/ (baseline live verification historical).
-- Existing Itch: https://hacktivatenation.itch.io/knotzaxxon (current inspection pending;
-  no assertion that it matches Pages; preserve the previous upload).
+- Existing Itch: https://hacktivatenation.itch.io/knotzaxxon (actual browser inspected 19:40 UTC: external Pages link, no public iframe/upload;
+  preserve previous account uploads; hidden dashboard contents not observed).
 - New publication: **none**. New judging rounds: **none**. Final candidate: **not frozen**.
 - Gunner/all art are explicitly accepted by the user. Historical optional 21-asset
   formal review backlog is closed by acceptance; formal review counts remain historical 0.
@@ -119,3 +119,30 @@ model loads, nested paths/iframe fullscreen and four responsive/reduced-motion f
 Actual public browser inspection tooling is ready; Fable currently owns the render slot.
 Primary tooling checkpoint committed as `cd7514d`; no runtime/publishing claim attaches
 to that tooling-only commit. Finalbot0/1000, finallive0/60, judgingrounds0 remain unchanged.
+
+
+## Integration checkpoint after completed art/audio tranches
+
+- Opus title/HUD/source integrated `e748dc5`; Spark exact cue patch integrated
+  `cadcf1b`; Fable ambient traffic integrated `c21915e`. Fable source and retained
+  evidence manifest hashes checked; no production graphical edits by primary.
+- Current regression checkpoint259/259 passed (audio integration tree including
+  Fable). Tests are still required on the final frozen candidate.
+- Nitro actual Chrome lifecycle:3 trusted-gesture context checks passed, hardware
+  renderer recorded; headless visibility and Escape blocking not established.
+  `artifacts/launch/audio/audio-lifecycle-2026-11-15T19-35-12-168Z/report.json`.
+- Nitro32s OfflineAudioContext render: peak -5.31dBFS; zero clipped/nonfinite
+  samples/errors. `artifacts/launch/audio/audio-render-2026-11-15T19-40-09-674Z/`.
+  Measurement only; no listening or physical phone interruption claimed.
+- Actual rendered public inspection completed at19:40UTC, Chrome157/GTX1650Ti:
+  Itch has no public iframe and links to Pages; existing live title loaded with
+  no page errors. Official Itch HTML5/image specs also captured. Evidence:
+  `artifacts/launch/public-inspection/2026-11-15T19-40-49-304Z/`.
+- Realtime bot pilot `pilot-realtime-06`: seed170101, loop30 fixture, keyboard,
+  Chase/High/960x540, normal initial hull3/shield1/fuel1, genuine death in sector2
+  (index1),838actual renders, no page errors, stable source fingerprint
+  `233e6bab12c008325de2a1d69c93379730ebe6338facbbbaa35af7fbe416a877`.
+  Actual rAF timestamps and original Engine step law, not accelerated. It was
+  bot-operated, not observed by SolLow, and earns no final credit.
+- Final counts remain bot0/1000 and live0/60; no candidate freeze, panel round,
+  PR, push, publication or replacement of an existing live build.

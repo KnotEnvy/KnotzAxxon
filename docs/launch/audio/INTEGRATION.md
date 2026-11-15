@@ -20,3 +20,18 @@ perception or physical phone interruption is claimed by either form of measureme
 Original/candidate clips and full spectral analysis remain on SuperBeast under the
 manifest path/hash in `REPORT.json`; the portable patch and received report are retained
 on Nitro. Nothing was uploaded or replaced in the live release.
+
+
+Nitro's actual Chrome lifecycle run passed3 trusted-gesture checks on the
+GTX1650Ti; see `artifacts/launch/audio/audio-lifecycle-2026-11-15T19-35-12-168Z/`.
+Tabs stayed visible in headless Chrome; `escapeFirstState` was `running`, so
+neither actual hidden-tab policy nor Escape blocking is established by this run.
+
+The32second actual OfflineAudioContext render completed with peak -5.31dBFS,
+zero clipped/nonfinite samples and zero page errors, including dense fire under
+MISSILE LOCK. WAV, spectrum and JSON remain in
+`artifacts/launch/audio/audio-render-2026-11-15T19-40-09-674Z/`. The source receipt
+is stable at fingerprint `233e6bab12c008325de2a1d69c93379730ebe6338facbbbaa35af7fbe416a877`.
+The initial render report has no adapter/frame span, so it is only Chrome audio
+measurement; final QA instrumentation now records actual render spans/device too.
+No person or agent listened, and no physical speaker/phone verdict is claimed.

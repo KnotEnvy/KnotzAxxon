@@ -12,7 +12,9 @@ const args = process.argv.slice(2);
 function arg(name, fallback) { const i=args.indexOf(name); return i<0?fallback:args[i+1]; }
 const count=Number(arg('--count','3')), loops=arg('--loops','0,1,2,3,7,30').split(',').map(Number);
 const seed=Number(arg('--seed','170001')), final=args.includes('--final');
+const offset=Number(arg('--offset','0'));
 if(!Number.isInteger(count)||count<1||!loops.length||loops.some(l=>!Number.isInteger(l)||l<0))throw Error('Invalid count/loops');
+if(!Number.isInteger(offset)||offset<0||offset+count>1000&&args.includes('--matrix'))throw Error('Invalid campaign offset/range');
 const runId=arg('--run-id',`pilot-${new Date().toISOString().replace(/[:.]/g,'-')}`);
 if(!/^[a-zA-Z0-9_-]+$/.test(runId))throw Error('Invalid run id');
 const out=path.join(root,'artifacts/launch/bot',runId);
@@ -52,7 +54,7 @@ for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>cleanup().final
     playwright:win('/home/knotzuni/code/KnotzAxxon/asset-work/studio-opus-code/tools/node_modules/playwright'),
     chrome:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
     lease:{...lease},harnessHash:sha256(fs.readFileSync(path.join(__dirname,'pilot-browser.js')))};
-  if(args.includes('--matrix'))config.plan=campaignPlan(seed).slice(0,count);
+  if(args.includes('--matrix'))config.plan=campaignPlan(seed).slice(offset,offset+count);
   fs.writeFileSync(path.join(out,'config.json'),JSON.stringify(config,null,2)+'\n');
   child=spawn('node.exe',[win(path.join(__dirname,'windows-bot.cjs')),win(path.join(out,'config.json'))],{stdio:['ignore','pipe','pipe']});
   child.stdout.on('data',b=>process.stdout.write(b));child.stderr.on('data',b=>process.stderr.write(b));

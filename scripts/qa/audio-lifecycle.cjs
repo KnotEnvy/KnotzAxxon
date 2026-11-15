@@ -36,8 +36,12 @@ let server, browser;
   await page.goto(url);
   await page.waitForFunction(() => !!window.KZ);
   report.browser = browser.version();
+  report.device = { host: require('node:os').hostname(), platform: process.platform };
   report.rendering = await page.evaluate(() => {
    const e = KZ.engine, gl = e.renderer.getContext(), ext = gl.getExtension('WEBGL_debug_renderer_info');
+   const original = e.postfx.render;
+   window.__audioQARenders = 0;
+   e.postfx.render = function (...args) { const result = original.apply(this, args); window.__audioQARenders++; return result; };
    return { renderer: ext && gl.getParameter(ext.UNMASKED_RENDERER_WEBGL),
     vendor: ext && gl.getParameter(ext.UNMASKED_VENDOR_WEBGL), frame: e.frame,
     viewport: [innerWidth, innerHeight], canvas: [e.canvas.width, e.canvas.height], settings: { ...KZ.settings.values } };
@@ -77,6 +81,8 @@ let server, browser;
   }
   await other.close();
   await page.screenshot({ path: out + '/after-recovery.png' });
+  Object.assign(report.rendering, await page.evaluate(() => { const e = KZ.engine; e.renderer.getContext().finish();
+   return { endFrame: e.frame, renderedFrames: window.__audioQARenders, finalCanvas: [e.canvas.width, e.canvas.height] }; }));
   assert.deepEqual(report.errors, []);
   report.status = 'passed';
  } catch (error) { report.status = 'failed'; report.failure = error.stack; process.exitCode = 1; }

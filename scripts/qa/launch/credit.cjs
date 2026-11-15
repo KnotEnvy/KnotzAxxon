@@ -11,7 +11,7 @@ function auditEpisodes(rows,receipts,candidate) {
     else if(!row.completed||!['over','victory'].includes(row.outcome))reason='not-completed';
     else if(!row.creditEligible||row.errors?.length)reason='runtime-errors-or-ineligible';
     else if(!(row.renderedFrames>0)||!(row.frames>=row.renderedFrames))reason='no-rendered-frames';
-    else if(!row.initial||row.initial.hull!==3||row.initial.fuel!==1||row.initial.z!==0||row.initial.loop!==row.loop)reason='invalid-initial-state';
+    else if(!row.initial||row.initial.hull!==3||row.initial.shields!==1||row.initial.fuel!==1||row.initial.z!==0||row.initial.loop!==row.loop)reason='invalid-initial-state';
     else if(seen.has(`${row.seed}:${row.loop}`))reason='duplicate-seed-and-loop';
     if(reason)excluded.push({id:row.id,reason});
     else{seen.add(`${row.seed}:${row.loop}`);credited.push(row);}

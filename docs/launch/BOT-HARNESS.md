@@ -84,7 +84,8 @@ their receipts explicitly mark `stableSource:false`, so neither is frozen eviden
 Realtime support is now implemented via `--realtime`: the normal Engine loop receives
 actual requestAnimationFrame timestamps and renders every frame, with recorded actual
 rAF intervals. It rejects accelerated chunk calls during a realtime trial. This path
-still needs its own pilot and SolLow's visual observations before any live credit.
+passed its first hardware pilot (below); SolLow visual observations on the frozen
+candidate are still required before any live credit.
 `KZBot.startRealtime` / `observeRealtime` are available for the live tester's controls.
 Per-seed replay can supply `--time-origin` from the logged initial engine clock; default
 trials retain the normal clock. `summarize.cjs <candidate-hash>` audits all receipts
@@ -98,3 +99,19 @@ It never uploads/replaces the existing Itch version. The first development packa
 contains43 files / 5,487,065 bytes; source fingerprint and archive hash are recorded
 in its generated manifest. This is a packaging pilot, pending actual nested-path,
 iframe, WebGL2, responsive/fullscreen and complete browser asset-load verification.
+
+
+`pilot-realtime-06` completed a genuine loop30 death (seed170101) via keyboard,
+Chase/High at960x540. It rendered838/838frames using actual rAF timestamps and
+normal resources, reaching sector2(index1). Stable source fingerprint
+`233e6bab12c008325de2a1d69c93379730ebe6338facbbbaa35af7fbe416a877`; no page errors.
+Actual rAF interval p50 17.6ms, p95 18.1ms, maximum233ms in this short headless
+pilot. This is bot-operated realtime evidence, not a human/visual-agent playtest
+or a sustained FPS benchmark. Final credit remains zero.
+
+Large campaigns may be split without changing the matrix:
+`--matrix --offset N --count M` takes the corresponding contiguous slice of the
+same1000seed plan. Preserve the same `--seed` and candidate fingerprint in every
+slice. Offsets outside the matrix fail. A row records the source commit and that
+it ran the Vite development graph; the exact production bundles are verified
+separately. No debug API is shipped in those production packages.

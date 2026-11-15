@@ -10,7 +10,9 @@
     {
       "role": "live tester",
       "model": "codex/gpt-6.1-sol",
-      "options": {"reasoningEffort": "low"},
+      "options": {
+        "reasoningEffort": "low"
+      },
       "environment": "NitroBliss",
       "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Ae5cfe017-b35d-4c5a-8fda-5f4124577460",
       "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Ae5cfe017-b35d-4c5a-8fda-5f4124577460",
@@ -20,42 +22,56 @@
     {
       "role": "UI/title/marketing presentation",
       "model": "claudeAgent/claude-opus-5-5",
-      "options": {"effort": "high"},
+      "options": {
+        "effort": "high"
+      },
       "environment": "NitroBliss",
       "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3A8f8280fd-4003-4d56-bf24-496d7dbceb2d",
-      "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3A8f8280fd-4003-4d56-bf24-496d7dbceb2d"
+      "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3A8f8280fd-4003-4d56-bf24-496d7dbceb2d",
+      "checkpoint": "title/HUD integrated e748dc5; marketing exports/metadata/native screenshots remain"
     },
     {
       "role": "3D/environment/lighting/ambient/background art",
       "model": "claudeAgent/claude-fable-5-2",
-      "options": {"effort": "high"},
+      "options": {
+        "effort": "high"
+      },
       "environment": "NitroBliss",
       "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Aca8dfe55-6251-456f-9956-4ee284cae092",
-      "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Aca8dfe55-6251-456f-9956-4ee284cae092"
+      "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Aca8dfe55-6251-456f-9956-4ee284cae092",
+      "checkpoint": "integrated c21915e; 37 staged hardware pairs; exclusive source and retained evidence hashes verified; no active GPU lease"
     },
     {
       "role": "audio",
       "model": "muse/muse-spark-1.3",
-      "options": {"reasoningEffort": "max"},
+      "options": {
+        "reasoningEffort": "max"
+      },
       "environment": "SuperBeast",
       "environmentId": "dd9d199e-852d-44e3-a2d3-62d31f3a5af2",
       "threadId": "mcp:launch:85b0de1fdd1ca1d19e869858df6177eb16640d58fc76a673dfbea34f30cce4f5",
-      "checkpoint": "measured tranche delivered remotely; byte-exact patch transport requested; no audition claimed"
+      "checkpoint": "integrated cadcf1b; 16 focused policy/cue checks and actual Chrome lifecycle passed; measured 32s render peak -5.31 dBFS, zero clips/nonfinite/errors; nothing heard"
     },
     {
       "role": "code cleanup",
       "model": "antigravity/gemini-4-hydrogen",
-      "options": {"thinking_level": "high"},
+      "options": {
+        "thinking_level": "high"
+      },
       "environment": "SuperBeast",
       "environmentId": "dd9d199e-852d-44e3-a2d3-62d31f3a5af2",
       "threadId": "mcp:launch:e6dc10d61c1ad387c31372427a764fefdaf151f3f50db2873d625391886f4613",
-      "checkpoint": "initial work did not implement cleanup; provider quota reported; concrete work and visual ownership instructions sent to existing thread"
+      "checkpoint": "no implementation delivered; existing thread ordinal4 provider quota reset1h19 at19:01UTC (about20:20UTC); no substitute or duplicate"
     }
   ],
   "judging": {
     "status": "not started; integrated frozen candidate and evidence required",
     "gate": "all21 independent scores>=9 on same candidate",
     "freshDelegatePerJudgePerRound": true,
-    "models": ["codex/gpt-6-luna high", "codex/gpt-6.1-terra high", "claudeAgent/claude-haiku-5-5 high"]
+    "models": [
+      "codex/gpt-6-luna high",
+      "codex/gpt-6.1-terra high",
+      "claudeAgent/claude-haiku-5-5 high"
+    ]
   }
 }

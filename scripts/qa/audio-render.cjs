@@ -25,6 +25,15 @@ const URL = process.env.KZ_TEST_URL || 'http://localhost:5177';
     page.on('pageerror', e => errors.push(e.message));
     await page.goto(URL);
     await page.waitForFunction(() => window.KZ, { timeout: 90000 });
+    const rendering = await page.evaluate(() => {
+      const e = KZ.engine, gl = e.renderer.getContext(), ext = gl.getExtension('WEBGL_debug_renderer_info');
+      const original = e.postfx.render;
+      window.__audioQARenders = 0;
+      e.postfx.render = function (...args) { const result = original.apply(this, args); window.__audioQARenders++; return result; };
+      return { webgl2: gl instanceof WebGL2RenderingContext, renderer: ext && gl.getParameter(ext.UNMASKED_RENDERER_WEBGL),
+        vendor: ext && gl.getParameter(ext.UNMASKED_VENDOR_WEBGL), viewport: [innerWidth, innerHeight, devicePixelRatio],
+        canvas: [e.canvas.width, e.canvas.height], settings: { ...KZ.settings.values }, startFrame: e.frame };
+    });
     const result = await page.evaluate(async () => {
       const { Audio } = await import('/src/audio/Audio.js');
       const RATE = 44100, SECONDS = 32;
@@ -206,7 +215,11 @@ const URL = process.env.KZ_TEST_URL || 'http://localhost:5177';
     });
     fs.writeFileSync(path.join(OUT, 'audition.wav'), Buffer.from(result.wavB64, 'base64'));
     fs.writeFileSync(path.join(OUT, 'audition-spectrum.png'), Buffer.from(result.pngB64, 'base64'));
-    fs.writeFileSync(path.join(OUT, 'audition.json'), JSON.stringify({ ...result.stats, errors }, null, 2));
+    const renderEnd = await page.evaluate(() => { const e = KZ.engine; e.renderer.getContext().finish();
+      return { endFrame: e.frame, renderedFrames: window.__audioQARenders, canvas: [e.canvas.width, e.canvas.height] }; });
+    const device = { browser: browser.version(), host: require('node:os').hostname(), platform: process.platform };
+    fs.writeFileSync(path.join(OUT, 'audition.json'), JSON.stringify({ ...result.stats, errors,
+      rendering: { ...rendering, ...renderEnd, ...device }, method: 'OfflineAudioContext measurement; no audible perception' }, null, 2));
     console.log(JSON.stringify({ ...result.stats, events: result.stats.events.length, errors }, null, 2));
     if (errors.length || result.stats.clippedSamples || result.stats.nonFiniteSamples || !Number.isFinite(result.stats.peakDbfs)) process.exitCode = 1;
   } finally {

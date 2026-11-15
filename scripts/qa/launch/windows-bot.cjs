@@ -62,6 +62,7 @@ const append=(name,value)=>fs.appendFileSync(path.join(config.out,name),JSON.str
       }
       const result=await page.evaluate(()=>{KZ.engine.renderer.getContext().finish();return KZBot.end()});
       const row={...result,runId:config.runId,initial:initial.initial,sourceHash:config.source.sourceHash,harnessHash:config.harnessHash,
+        sourceCommit:config.source.head,servedBuild:'Vite development graph of fingerprinted candidate source; production bundle verified separately',
         hardware:{...hardware,viewport:initial.initial.viewport,canvas:initial.initial.canvas,settings:initial.initial.settings},
         errors:errors.slice(errorStart),kind:config.final?'final-candidate':'development-pilot',
         creditEligible:config.final&&result.completed&&errors.length===errorStart&&result.renderedFrames>0};
