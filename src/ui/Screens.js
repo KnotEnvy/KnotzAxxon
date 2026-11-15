@@ -87,6 +87,7 @@ export class Screens extends EventTarget {
 
   show(name, { push = false, restore = false } = {}) {
     if (this.current) this._selection?.set(this.current, this.selIndex);
+    for (const el of this.screens.values()) el.classList.remove('cut');
     this._callsignEditing = false;
     if (push && this.current) this.stack.push(this.current);
     for (const [id, el] of this.screens) {
@@ -105,6 +106,9 @@ export class Screens extends EventTarget {
     if (name === 'title') this._refreshTitle();
     this.selIndex = restore ? (this._selection?.get(name) ?? 0) : 0;
     if (name === 'over' && !restore) this.selIndex = Math.max(0, this._items().findIndex(n => n.classList.contains('mi')));
+    // A freshly opened panel starts at its heading; its sticky actions stay in view.
+    const panel = this.screens.get(name)?.querySelector?.('.panel');
+    if (panel && !restore) panel.scrollTop = 0;
     this._refreshSelection({ focus: name !== 'boot' });
     this.dispatchEvent(new CustomEvent('shown', { detail: name }));
   }
@@ -112,7 +116,11 @@ export class Screens extends EventTarget {
   hide() {
     for (const animation of this._cardAnimations ?? []) animation.cancel();
     this._cardAnimations = [];
-    for (const el of this.screens.values()) { el.classList.remove('is-active'); el.inert = true; el.setAttribute('aria-hidden', 'true'); }
+    // Leaving for flight: cut, do not fade, so no panel lingers over the new run.
+    for (const [id, el] of this.screens) {
+      el.classList.remove('is-active'); el.inert = true; el.setAttribute('aria-hidden', 'true');
+      if (id !== 'sector') el.classList.add('cut');
+    }
     this._cardDone();
     document.activeElement?.blur?.();
     this.current = null;
@@ -138,7 +146,9 @@ export class Screens extends EventTarget {
     this.selIndex = clamp(this.selIndex, 0, Math.max(0, items.length - 1));
     items.forEach((n, i) => n.classList.toggle('sel', i === this.selIndex));
     const selected = items[this.selIndex];
-    selected?.scrollIntoView?.({ block: 'nearest' });
+    // The sticky action bar is always visible; scrolling to its static
+    // position would push the panel heading off a short screen.
+    if (!selected?.closest?.('.panel > .menu:last-child')) selected?.scrollIntoView?.({ block: 'nearest' });
     if (focus) (selected?.matches('button, input') ? selected : selected?.querySelector('input, button'))?.focus({ preventScroll: true });
   }
 
@@ -467,6 +477,18 @@ export class Screens extends EventTarget {
 
   results({ title, rows, rank, entry, canContinue = false, continueLabel = 'CONTINUE: LOOP 2' }) {
     document.getElementById('over-title').textContent = title;
+    const over = this.screens.get('over');
+    if (over?.dataset) over.dataset.outcome = canContinue ? 'victory' : 'defeat';
+    // Outcome context leads: sector, total and any record sit under the heading.
+    const summary = document.getElementById('over-summary');
+    if (summary) {
+      const sector = rows.find(r => r.label === 'SECTOR REACHED')?.value;
+      const total = rows.find(r => r.total)?.value;
+      // Each part stays on one line; a narrow screen wraps only between parts.
+      summary.textContent = [sector && `SECTOR ${sector}`, total && `TOTAL ${total}`,
+        rank >= 0 && `NEW RECORD · RANK ${String(rank + 1).padStart(2, '0')}`].filter(Boolean)
+        .map(part => part.replace(/ /g, '\u00a0')).join('  ·  ');
+    }
     const cont = document.getElementById('btn-continue');
     if (cont) { cont.hidden = !canContinue; cont.textContent = continueLabel; }
     const host = document.getElementById('over-results');

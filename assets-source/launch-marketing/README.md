@@ -52,6 +52,17 @@ Raw captures, all external, under `/home/knotzuni/code/KnotzAxxon/asset-work/pub
   Modern and Chase rigs, and five vignettes.
 - **Warning contrast**: `captures/final-r1-*/base-warn-*` versus `final-warn-*`, both pulse phases (staged `hud.warn()`).
 
+## Legacy link art (superseded, kept on purpose)
+
+- `public/og-image.png` (1200x630) and `public/social-preview.png` (1280x640) are the pre-launch cards. They show an empty
+  pre-environment deck with no ship or action. `index.html` no longer references them. They stay deployed so links that
+  social sites have already cached keep resolving. Do not regenerate them for launch.
+- `scripts/brand/render-link-art.cjs` generated those legacy cards and the app icons from one title frame, with the
+  dynamic resolution left on. It is superseded for link art by `scripts/brand/launch/compose.cjs` (sources here, receipts
+  in `export-manifest.json`). It is not deleted, because it still documents how `apple-touch-icon.png` and `icon-512.png`
+  were made. Re-running it would overwrite the retained legacy cards.
+- The current link art lives in `public/brand/`, and the itch-only banner in `exports/`.
+
 ## Limits (stated, not hidden)
 
 - Every gameplay frame is **staged** (seed 7, sector teleport, hull/fuel top-up, fire held), so HUD scores are low. The frames

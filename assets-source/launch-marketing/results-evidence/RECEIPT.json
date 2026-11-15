@@ -1,0 +1,29 @@
+{
+  "tranche": "short-viewport results presentation (Opus High, UI/Screens/style lease)",
+  "base_head": "67125f611de95155878a22dab1ed577116af4fa3",
+  "base_runtime_source_hash": "e1623af9d9da402d89b80adfb0cef43a9a4e1b6c98c9df7f01eb0c7764c7236a",
+  "after_runtime_source_hash": "f35524e9b88d693884763838c8691da2b2c28d22e2a4a7bba6f6f440b5b22790",
+  "verdict": "defect confirmed; fixed",
+  "mechanism": [
+    "Screens.show('over') selected the first action, and _refreshSelection's scrollIntoView({block:'nearest'}) scrolled the panel to the sticky action bar's static position at the end of content, pushing the heading, fortress code and grades above the fold (base scrollTop 81-152 at 960x540, 667x375 and 390x844).",
+    "Screens.hide() faded the outgoing screen over 0.35 s, so the results panel stayed at 0.13-1.0 opacity 60 ms into the new flight."
+  ],
+  "patch": "results-shortview.patch (sha256 b6338bea5d7ec6f016ec538e98c1ae031cca719a4b922d8faff48af695789fbb); applied, and the production files are byte-identical to the GPU-tested stage copies",
+  "captures": {
+    "main": "captures-20261115T201834Z (16 jobs: base vs patched x 960x540, 667x375 touch DPR2, 390x844 touch DPR2, 1280x720 x victory/defeat)",
+    "r2": "captures-r2-20261115T202145Z (patched non-breaking summary parts, 960x540 and 390x844)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11); Chrome 157.0.8103.52 Windows headless, Playwright local pipe",
+    "staging": "Results opened through Game._finish on a seed-170001 start with kills/score/time/sector set: instrumentation, not gameplay. Screens, CSS and DOM are real. Each job starts with fresh storage, so every run is a new record."
+  },
+  "leases": [
+    {"ownerPID": 188803, "acquired": "2026-11-15T20:18:34.155Z", "released": "2026-11-15T20:20:57.807Z"},
+    {"ownerPID": 191668, "acquired": "2026-11-15T20:21:45.122Z", "released": "2026-11-15T20:22:08.629Z"}
+  ],
+  "cleanup": "localhost servers 5251/5252 (vite pids 188703/188701) stopped; no browser or capture process left; reservation file absent",
+  "limits": [
+    "No normal-play replay was run: the mechanism is deterministic UI code, and the staged results use the same Screens path as the live pilot frames.",
+    "Menu walk uses Screens.handleControl (the keyboard and gamepad menu path); no physical gamepad. Touch was emulated in Chrome (hasTouch/isMobile), not a physical phone.",
+    "On short screens the TOTAL row and the callsign field sit under the sticky action bar until scrolled or walked to; the total is also in the summary line under the heading.",
+    "Vite websocket console errors are the deliberately blocked HMR socket."
+  ]
+}

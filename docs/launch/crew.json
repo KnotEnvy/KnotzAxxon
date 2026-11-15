@@ -28,7 +28,7 @@
       "environment": "NitroBliss",
       "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3A8f8280fd-4003-4d56-bf24-496d7dbceb2d",
       "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3A8f8280fd-4003-4d56-bf24-496d7dbceb2d",
-      "checkpoint": "title/HUD e748dc5 and complete native marketing exports/metadata/listing source db04eb9 integrated; all22handoff hashes and13manifest records checked; no publication"
+      "checkpoint": "title/marketing db04eb9 integrated; shortscreen results+transition fix265tests/18stagedhardware comparisons f35524e9 ready integration; GPU released"
     },
     {
       "role": "3D/environment/lighting/ambient/background art",

@@ -935,3 +935,27 @@ html, body {
   #title-menu .mi-cta::after { display: none; }
   #title-hint { opacity: 1; }
 }
+
+/* ==========================================================================
+   Results on short screens: the outcome and its context lead. The panel opens
+   at its heading (Screens.show), the sticky actions stay reachable, and screens
+   cut rather than fade when flight begins so no result lingers over a new run.
+   ========================================================================== */
+.screen.cut { transition: none; }
+.over-summary { margin: -0.7em 0 1em; text-align: center; font-size: var(--fs-sm); letter-spacing: .18em; color: #c9dce6; }
+.over-summary:empty { display: none; }
+#screen-over[data-outcome="victory"] .panel-title { color: #ffe6b3; text-shadow: 0 0 26px rgba(255, 180, 58, .55); }
+#screen-over[data-outcome="defeat"] .panel-title { color: #ffc2c9; text-shadow: 0 0 26px rgba(255, 61, 85, .5); }
+@media (max-height: 600px) {
+  #screen-over .panel-title { font-size: clamp(18px, 4.6vh, 26px); padding-bottom: .35em; margin-bottom: .55em; }
+  #screen-over .over-summary { margin: -.2em 0 .7em; }
+  #screen-over .result-row { padding-top: .3em; padding-bottom: .3em; }
+  #screen-over .result-row.total { margin-top: .3em; }
+  #screen-over .pilot-entry { margin: 10px 0; }
+  #screen-over .callsign-help { margin: -4px 0 10px; }
+}
+@media (max-height: 500px) {
+  #screen-over .panel > .menu:last-child { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: .2em .4em; }
+  #screen-over .panel > .menu:last-child .mi { padding-left: 1.1em; padding-right: 1.1em; letter-spacing: .2em; }
+  #screen-over .panel { scroll-padding-bottom: calc(64px + var(--panel-pad)); }
+}

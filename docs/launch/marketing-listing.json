@@ -176,6 +176,12 @@
       "itch cover/screenshots/banner/theme/tags/description",
       "optional itch HTML5 upload",
       "GitHub repository social preview"
-    ]
+    ],
+    "legacy": {
+      "public/og-image.png": "superseded, retained for cached links; unreferenced by index.html",
+      "public/social-preview.png": "superseded by public/brand/social-preview-1280x640.png; retained",
+      "scripts/brand/render-link-art.cjs": "legacy generator for the retained cards and icons; superseded by scripts/brand/launch/compose.cjs; re-running would overwrite the legacy cards",
+      "docs/RELEASE.md": "outside this lease; still describes the legacy generator (suggested text in the Opus handoff)"
+    }
   }
 }
