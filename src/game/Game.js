@@ -167,7 +167,8 @@ export class Game {
   dispose() {
     if (this._disposed) return;
     this._disposed = true;
-    const entities = [...this.enemies, ...this.pickups], boss = this.boss;
+    const entities = [...this.enemies, ...this.pickups, ...(this._prewarmEntities ?? [])], boss = this.boss;
+    this._prewarmEntities = [];
     this.enemies.length = this.pickups.length = 0;
     this.boss = null;
     const f = this.fortress;
@@ -264,6 +265,8 @@ export class Game {
     this.engine.setTimeScale?.(1, true);
     this.engine.postfx?.resetTransient?.();
     this.engine.input.reset?.();
+    audio.setProximity?.(0, 0);
+    audio.setBossPhase?.(0);
     this.player.reset(0);
     this.rig.setFraming(0);
     this.rig.snap(this.player);
@@ -275,7 +278,9 @@ export class Game {
   /**
    * Compile every shader program the campaign will need before the first
    * frame: one chunk of each sector, one of each enemy, the boss and each
-   * pickup are staged, compiled, and torn down again.
+   * pickup are staged and compiled. Keep one detached set of these actual
+   * owners alive: disposing the last material for a variant evicts its program
+   * from Three.js, even if a different template material remains alive.
    */
   prewarm(compile) {
     const f = this.fortress;
@@ -320,19 +325,28 @@ export class Game {
       // A builder may attach its group before throwing, without returning it.
       const chunks = new Set([...groups, ...f.root.children.filter(g => !originalChunks.has(g))]);
       const staged = this.enemies.splice(enemyStart);
+      const owners = [...staged, ...(boss ? [boss] : []), ...pickups];
       try {
         runCleanups([
           () => this.fx.clear(),
           ...[...chunks].map(group => () => f._disposeChunk(group)),
-          ...staged.map(enemy => () => enemy.dispose()),
-          () => boss?.dispose(),
-          ...pickups.map(pickup => () => pickup.dispose()),
+          ...owners.map(owner => () => failed ? owner.dispose() : owner.group.removeFromParent()),
           ...fields.map(field => () => field.removeFromParent()),
           ...fieldGeometries.map(geometry => () => geometry.dispose()),
           () => { if (silhouette) silhouette.visible = silhouetteShown; },
         ]);
       } catch (error) {
-        if (!failed) throw error;
+        if (!failed) {
+          // A teardown failure must not strand the newly detached owners or
+          // replace the last successful warm set.
+          try { runCleanups(owners.map(owner => () => owner.dispose())); } catch { /* preserve teardown error */ }
+          throw error;
+        }
+      }
+      if (!failed) {
+        const previous = this._prewarmEntities ?? [];
+        this._prewarmEntities = owners;
+        runCleanups(previous.map(owner => () => owner.dispose()));
       }
     }
   }
@@ -447,6 +461,7 @@ export class Game {
     this.hud.setControlsLive(false);
     this.engine.setTimeScale(0, true);
     this.engine.input.reset();
+    audio.setProximity?.(0, 0);
     audio.setPaused(true);
     this.screens.show('pause');
   }

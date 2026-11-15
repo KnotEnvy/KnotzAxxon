@@ -11,6 +11,7 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { clamp01, damp, TAU } from '../core/Utils.js';
 import { buildImportedPickup } from '../render/ImportedModels.js';
 import { disposeModel } from '../render/Dispose.js';
+import { runCleanups } from '../core/Lifetime.js';
 
 const _v = new THREE.Vector3();
 
@@ -123,11 +124,12 @@ export class Pickup {
   }
 
   dispose() {
-    if (this._importedRoot) {
-      disposeModel(this._importedRoot);
-      this._importedRoot = null;
-    }
-    this.group.parent?.remove(this.group);
+    const root = this._importedRoot;
+    this._importedRoot = null;
+    runCleanups([
+      () => { if (root) disposeModel(root); },
+      () => this.group.removeFromParent(),
+    ]);
   }
 }
 

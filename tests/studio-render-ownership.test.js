@@ -6,6 +6,7 @@ import { Sky } from '../src/render/Sky.js';
 import { Underlay } from '../src/render/Underlay.js';
 import { PostFX } from '../src/render/PostFX.js';
 import { disposeTextures } from '../src/render/Textures.js';
+import { disposeModel } from '../src/render/Dispose.js';
 
 // Real CPU-side Three owners; canvas drawing is stubbed. No GPU-memory claim.
 globalThis.document = { createElement() {
@@ -26,6 +27,24 @@ const observe = resources => {
   return counts;
 };
 const exactlyOnce = counts => { for (const n of counts.values()) assert.equal(n, 1); };
+
+test('model retirement releases all unique owned resources and detaches after throwing disposers', () => {
+  const root = new THREE.Group(), scene = new THREE.Scene(); scene.add(root);
+  const geometry = new THREE.BoxGeometry(), texture = new THREE.Texture();
+  const material = new THREE.MeshBasicMaterial({ map: texture }), replaced = new THREE.MeshBasicMaterial();
+  const mesh = new THREE.InstancedMesh(geometry, material, 1);
+  root.add(mesh, new THREE.Mesh(geometry, material));
+  root.userData.modelOwnedMaterials = [material, replaced];
+  const counts = observe([mesh, geometry, material, replaced, texture]);
+  mesh.addEventListener('dispose', () => { throw Error('instance cleanup'); });
+  geometry.addEventListener('dispose', () => { throw Error('geometry cleanup'); });
+  assert.throws(() => disposeModel(root), e => e instanceof AggregateError && e.errors.length === 2);
+  for (const owner of [mesh, geometry, material, replaced]) assert.equal(counts.get(owner), 1);
+  assert.equal(counts.get(texture), 0); assert.equal(scene.children.length, 0);
+  disposeModel(root);
+  for (const owner of [mesh, geometry, material, replaced]) assert.equal(counts.get(owner), 1);
+  texture.dispose();
+});
 
 test('studio: failed Sky final apply rolls back private targets, lights and bodies without shared-texture disposal', () => {
   const original = Sky.prototype.apply, fault = Error('sky-final-apply'), scene = new THREE.Scene();

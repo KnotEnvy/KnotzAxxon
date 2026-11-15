@@ -1,4 +1,5 @@
 import { disposeModel } from '../render/Dispose.js';
+import { runCleanups } from '../core/Lifetime.js';
 import { buildImportedBoss } from '../render/ImportedModels.js';
 /**
  * THE IRON SENTINEL — the fortress core guardian, and this game's answer to
@@ -871,8 +872,10 @@ export class Boss {
   dispose() {
     if (this._disposed) return;
     this._disposed = true;
-    disposeModel(this.group);
-    for (const m of [this.visorMat, this.chargeMat, this.seamMat]) m.dispose();
-    for (const pod of this.pods) pod.flashMat.dispose();
+    runCleanups([
+      () => disposeModel(this.group),
+      ...[this.visorMat, this.chargeMat, this.seamMat, ...this.pods.map(p => p.flashMat)]
+        .map(material => () => material.dispose()),
+    ]);
   }
 }

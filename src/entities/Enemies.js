@@ -1,5 +1,6 @@
 import { buildImportedGround, buildImportedFlyer, buildImportedMine, buildImportedParkedFighter } from '../render/ImportedModels.js';
 import { disposeModel } from '../render/Dispose.js';
+import { runCleanups } from '../core/Lifetime.js';
 /**
  * Enemies and destructible props.
  *
@@ -153,9 +154,13 @@ class Enemy {
   }
 
   dispose() {
-    if (this._importedRoot) disposeModel(this._importedRoot);
-    this.flashMat?.dispose();
-    this.group.parent?.remove(this.group);
+    if (this._disposed) return;
+    this._disposed = true;
+    runCleanups([
+      () => { if (this._importedRoot) disposeModel(this._importedRoot); },
+      () => this.flashMat?.dispose(),
+      () => this.group.removeFromParent(),
+    ]);
   }
 }
 
