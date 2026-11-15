@@ -29,6 +29,7 @@
 
 import * as THREE from 'three';
 import { Rng, damp } from '../core/Utils.js';
+import { runCleanups } from '../core/Lifetime.js';
 
 /** Lane window length along Z. Craft speeds are whole units per second, so the clock can wrap at this period. */
 export const TRAFFIC_SPAN = 480;
@@ -286,8 +287,7 @@ function sharedResources() {
 export function disposeAmbientTraffic() {
   const s = shared;
   shared = null;
-  s?.geometry.dispose();
-  s?.material.dispose();
+  if (s) runCleanups([() => s.geometry.dispose(), () => s.material.dispose()]);
 }
 
 export class AmbientTraffic {
