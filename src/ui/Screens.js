@@ -1,4 +1,4 @@
-import { Lifetime } from '../core/Lifetime.js';
+import { Lifetime, runCleanups } from '../core/Lifetime.js';
 /**
  * Screens and menus.
  *
@@ -67,20 +67,26 @@ export class Screens extends EventTarget {
   constructor() {
     super();
     this._lifetime = new Lifetime();
-    this.screens = new Map();
-    for (const el of document.querySelectorAll('.screen')) {
-      this.screens.set(el.id.replace('screen-', ''), el);
-    }
-    this.current = 'boot';
-    this.stack = [];
-    this._selection = new Map();
-    this.selIndex = 0;
+    try {
+      this.screens = new Map();
+      for (const el of document.querySelectorAll('.screen')) {
+        this.screens.set(el.id.replace('screen-', ''), el);
+      }
+      this.current = 'boot';
+      this.stack = [];
+      this._selection = new Map();
+      this.selIndex = 0;
 
-    this._bindPointer();
-    this._bindKeys();
-    this._lifetime.listen(settings, 'change', e => this._settingChanged(e.detail?.id));
-    this._buildSettings();
-    this.show('boot');
+      this._bindPointer();
+      this._bindKeys();
+      this._lifetime.listen(settings, 'change', e => this._settingChanged(e.detail?.id));
+      this._buildSettings();
+      this.show('boot');
+    } catch (error) {
+      // The caller never receives a failed instance: release what was bound here.
+      try { this.dispose(); } catch { /* keep the construction error */ }
+      throw error;
+    }
   }
 
   /* ------------------------------------------------------------------ */
@@ -555,8 +561,15 @@ export class Screens extends EventTarget {
     if (barEl) barEl.style.width = '100%';
     await this._lifetime.delay(260);
   }
+  /** Attempts every owner even if one fails, then reports all failures. */
   dispose() {
-    for (const animation of this._cardAnimations ?? []) animation.cancel();
-    this._cardAnimations = []; this._lifetime.dispose(); this._cardDone(); }
+    const animations = this._cardAnimations ?? [];
+    this._cardAnimations = [];
+    runCleanups([
+      ...animations.map(animation => () => animation.cancel()),
+      () => this._lifetime.dispose(),
+      () => this._cardDone(),
+    ]);
+  }
 
 }

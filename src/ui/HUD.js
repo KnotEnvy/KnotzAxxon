@@ -13,6 +13,7 @@ import * as THREE from 'three';
 import { inCombatView } from '../game/CombatVisibility.js';
 import { CORRIDOR_HALF, ALT_MIN, ALT_MAX } from '../world/Level.js';
 import { clamp, clamp01, pad, commafy, lerp } from '../core/Utils.js';
+import { runCleanups } from '../core/Lifetime.js';
 
 const _p = new THREE.Vector3();
 
@@ -588,7 +589,18 @@ export class HUD {
     });
   }
 
-  dispose() { clearTimeout(this._bumpT); this._layoutObserver?.disconnect(); this._layoutObserver = null; this.reset(); this.setLive(false); }
+  /** Attempts every owner even if one fails (e.g. the layout observer), then reports all failures. */
+  dispose() {
+    const observer = this._layoutObserver;
+    this._layoutObserver = null;
+    runCleanups([
+      () => clearTimeout(this._bumpT),
+      () => { if (this._damageRaf != null) cancelAnimationFrame(this._damageRaf); this._damageRaf = null; },
+      () => observer?.disconnect(),
+      () => this.reset(),
+      () => this.setLive(false),
+    ]);
+  }
 
   reset() {
     clearTimeout(this._bumpT);
