@@ -1,0 +1,16 @@
+ℹ tests 259
+ℹ pass 259
+ℹ fail 0
+ℹ duration_ms 14602.677982
+✔ traffic is one indexed draw of 64 quads with a fixed, private layout (7.9407ms)
+✔ no lane can cross a Classic sight line through the flight corridor (4.9054ms)
+✔ lanes stay outside the playfield, the skyline masses and the landscape HUD blocks (0.7876ms)
+✔ craft keep station through the clock wrap and never leave the lane window (0.9786ms)
+✔ only fortress sectors carry traffic; every look stays under the bloom gate (1.5821ms)
+✔ lanes follow the sector under the ship and change only while dark (3.4182ms)
+✔ traffic changes no chunk, emitter, animation or obstacle (141.2148ms)
+✔ streaming attaches the mesh, a reset detaches it, shutdown disposes the program once (24.8268ms)
+✔ a frame of traffic costs a few uniform writes and no allocation-heavy work (7.8555ms)
+ℹ tests 9
+ℹ pass 9
+ℹ fail 0

@@ -1,0 +1,44 @@
+{
+ "head": "e748dc5f1e26bd9a57b43a566312aa6c2e9e7a29",
+ "status": [
+  "M scripts/qa/audio-lifecycle.cjs",
+  " M scripts/qa/audio-render.cjs",
+  " M scripts/qa/launch/package-itch.mjs",
+  " M scripts/qa/launch/windows-itch.cjs",
+  " M src/audio/Audio.js",
+  " M src/game/Game.js",
+  " M src/world/Fortress.js",
+  "?? assets-source/launch-environment/",
+  "?? docs/launch/audio/",
+  "?? scripts/qa/launch/run-source-qa.cjs",
+  "?? scripts/qa/launch/windows-source-qa.cjs",
+  "?? src/world/AmbientTraffic.js",
+  "?? tests/ambient-traffic.test.js",
+  "?? tests/missile-lock-cue.test.js"
+ ],
+ "sha256": {
+  "src/world/AmbientTraffic.js": "720550fd6eb8c6c7c29a60af96d5bf304a12ac6ac563c6667fa633d3c138788c",
+  "src/world/Fortress.js": "794ade4427894c413ef2960401900ceea4b592b238feb3df535c48437ac647c5",
+  "src/world/Level.js": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016",
+  "src/world/FortressKit.js": "f06d615580a4069ef7bc378d7ab73bf8d9b53c9ab37dc8d9c7cc4a4686bc9cdc",
+  "src/world/EnvironmentKit.js": "5f9f413334c9fcfa4706f4de44dca165a9077fcfbba87fbaa1b3f913f67dd05d",
+  "src/fx/Ambience.js": "4e7f5cda8923ae8a7d486a8d846d2a575e3fedd00dc671dd5131c31d34222d9c",
+  "src/render/Underlay.js": "a108b4d9607784e4baaa08a44b228942067e356dda0f39b294e5021d8aa33e90",
+  "src/render/Sky.js": "d86b693eb05de496a1fa65e2235421ca4c650ff11b748cd437c0159874d7c424",
+  "src/render/PostFX.js": "2f89dfbd0b755e31776ba8b8e2328187af0a8f97a364177be47129b582ef41cd",
+  "src/render/Materials.js": "0cd27e17956004cf7c6dd2ecd694d70c62e40a0c0f43ef7621aec554029e3161",
+  "src/game/Game.js": "d15be3a1e2018d4b85c7b9f0719aeefe937628e988c5b9bdcea56b29bf9f8a33",
+  "index.html": "c423b528c9583adc179863382abe621232e589c13d9beed1839cb6cc8763a059",
+  "src/style.css": "4af6e09227b3b0a9304697b9fb1272ac95cf30943c592a04b56a052e07f951e4",
+  "src/ui/Screens.js": "4f80fed897e59329be4da12869b644d32e9a6fe2e82476a56d67f8aaa4f73e02"
+ },
+ "lease": {
+  "owner": "Fable High ambient traffic capture",
+  "pid": 153571,
+  "host": "NitroBliss",
+  "platform": "linux",
+  "acquiredAt": "2026-11-15T19:32:39.747Z",
+  "ownerPID": 153571,
+  "token": "0dccfba8…"
+ }
+}

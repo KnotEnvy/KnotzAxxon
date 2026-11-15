@@ -29,6 +29,7 @@ import { Rng, clamp, lerp, TAU } from '../core/Utils.js';
 import { CHUNK_LEN, DECK_HALF, CORRIDOR_HALF, ALT_MAX, SECTOR_KINDS } from './Level.js';
 import { wallRecordFor, gateKitFor, composeFarWall, composeNearParapet, composeGateOrnament } from './FortressKit.js';
 import { environmentKitReady, kitPart, put } from './EnvironmentKit.js';
+import { AmbientTraffic, disposeAmbientTraffic } from './AmbientTraffic.js';
 
 const _c = new THREE.Color();
 const { STROBE, CHASE, BREATHE, FLICKER } = LIGHT_ANIM;
@@ -387,6 +388,7 @@ const TPL = {
 export function disposeFortressTemplates() {
   for (const key of ['_pipeZ', '_drum', '_fan', '_dish', '_pad', '_padSmall']) { TPL[key]?.dispose(); TPL[key] = null; }
   if (TPL._fighter) { TPL._fighter.hull.dispose(); TPL._fighter.dark.dispose(); TPL._fighter = null; }
+  disposeAmbientTraffic();
 }
 
 function mergeFlat(parts) {
@@ -451,6 +453,8 @@ export class Fortress {
     this.rearObstacles = [];
     /** Ambient smoke/steam/flak sources, read by the effects director. */
     this.emitters = [];
+    /** Distant service craft on fixed lanes: one draw, outside every chunk and seeded stream. */
+    this.traffic = new AmbientTraffic(scene);
   }
 
   /* ------------------------------------------------------------------ */
@@ -504,6 +508,7 @@ export class Fortress {
       // them so they cannot obscure the next encounter. Collision data is intact.
       obstacle.group.visible = obstacle.endZ >= playerZ - 4;
     }
+    this.traffic.update(this.level, playerZ, dt || 0);
   }
 
   _disposeChunk(group) {
@@ -541,6 +546,7 @@ export class Fortress {
     this.animated.length = 0;
     this.rearObstacles.length = 0;
     this.emitters.length = 0;
+    this.traffic.detach();
   }
 
   /* ------------------------------------------------------------------ */
