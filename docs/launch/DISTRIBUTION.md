@@ -1,0 +1,58 @@
+# Portable HTML5 distribution
+
+The previously verified Pages runtime and the current live Itch upload are separate
+deliveries. Nothing in this release work has uploaded or replaced an Itch build.
+Keep the previous live upload available until the new, judged package is ready.
+
+Build a separately fingerprinted relative-base package:
+
+```sh
+node scripts/qa/launch/package-itch.mjs
+```
+
+Outputs live under `artifacts/launch/distribution/<source-hash-prefix>/`:
+`html5/`, `knotzaxxon-html5.zip` and `manifest.json`. The ZIP has `index.html` at
+its root, all production assets, deterministic entry timestamps and full hashes.
+The tool refuses to overwrite an earlier package, checks source stability during
+the build and reads the ZIP back. It does not alter `dist/` or upload anything.
+For a frozen candidate use `--candidate <full-source-fingerprint>`.
+
+When the Nitro GPU slot is free, verify the actual packaged bytes:
+
+```sh
+node scripts/qa/launch/verify-itch.cjs artifacts/launch/distribution/<source-hash-prefix>
+```
+
+The verifier owns a localhost-only HTTP server and Windows Chrome launched through
+local Playwright pipes. It serves the upload beneath an arbitrary nested path,
+fetches and hashes **every** packaged file, and exercises the production UI inside
+a sandboxed iframe as well as directly. Desktop/portrait/landscape/short-screen,
+reduced-motion, touch start, keyboard start, help/settings, iframe fullscreen,
+WebGL2 renderer, actual draw calls, required default models and absence of the
+development debug API are checked. It never credits these smoke fixtures as bot
+or live-agent gameplay episodes. Failed network requests and page errors fail QA.
+
+This local fixture establishes portable path/layout behavior, not the live Itch
+upload, physical mobile hardware or actual Itch account configuration. Final live
+verification must inspect the listing, the actual served build and complete assets
+after account publication. A successful Pages deployment is not an Itch update.
+
+## Current receipts
+
+The first development packaging pilot used source
+`3cae253d41356ad907ec501e0f1d1f2293e1f5e678aa33bdee16a160d0614f34`.
+Its ZIP is5,487,065bytes across43files, SHA256
+`8f0274399a34c21e00ae600a200b39af13e98ae39c6e9e6dd4b26df79c454781`.
+This changing-release checkpoint is **not** the final distribution candidate.
+The browser verifier passed on NitroWindowsChrome157 / GTX1650Ti D3D11: all43files
+were fetched/hash-matched at the nested upload path; all28default models loaded;
+iframe fullscreen, desktop/portrait/landscape/short-screen and reduced-motion UI
+checks passed without page/network errors. Actual engine callbacks and draw calls
+are recorded in `browser-qa/report.json` beside the package. These are package-smoke
+fixtures, not gameplay episodes or physical mobile-device proof. Official listing/
+image specifications and current upload inspection belong in Opus's
+`marketing-listing.json` receipt.
+
+Publication remains blocked on required final gameplay evidence and all21 independent
+judge scores>=9 on the same candidate. Prepare the complete reviewable result before
+requesting any account-only secret/action. Never place credentials in chat or Git.

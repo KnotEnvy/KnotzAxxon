@@ -1,0 +1,61 @@
+{
+  "primary": {
+    "model": "codex/gpt-6.1-sol",
+    "reasoningEffort": "xhigh",
+    "environment": "NitroBliss",
+    "threadId": "mcp:launch:26c2e18351d2cf1d866f28dfe694d0262a5845c38368927b23f9f5a6d5627fe0",
+    "branch": "release/final-public-launch"
+  },
+  "roles": [
+    {
+      "role": "live tester",
+      "model": "codex/gpt-6.1-sol",
+      "options": {"reasoningEffort": "low"},
+      "environment": "NitroBliss",
+      "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Ae5cfe017-b35d-4c5a-8fda-5f4124577460",
+      "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Ae5cfe017-b35d-4c5a-8fda-5f4124577460",
+      "checkpoint": "two completed normal realtime visual-agent pilots; final0/60",
+      "handoff": "docs/launch/live-sol-low/PILOT-HANDOFF.md"
+    },
+    {
+      "role": "UI/title/marketing presentation",
+      "model": "claudeAgent/claude-opus-5-5",
+      "options": {"effort": "high"},
+      "environment": "NitroBliss",
+      "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3A8f8280fd-4003-4d56-bf24-496d7dbceb2d",
+      "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3A8f8280fd-4003-4d56-bf24-496d7dbceb2d"
+    },
+    {
+      "role": "3D/environment/lighting/ambient/background art",
+      "model": "claudeAgent/claude-fable-5-2",
+      "options": {"effort": "high"},
+      "environment": "NitroBliss",
+      "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Aca8dfe55-6251-456f-9956-4ee284cae092",
+      "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Aca8dfe55-6251-456f-9956-4ee284cae092"
+    },
+    {
+      "role": "audio",
+      "model": "muse/muse-spark-1.3",
+      "options": {"reasoningEffort": "max"},
+      "environment": "SuperBeast",
+      "environmentId": "dd9d199e-852d-44e3-a2d3-62d31f3a5af2",
+      "threadId": "mcp:launch:85b0de1fdd1ca1d19e869858df6177eb16640d58fc76a673dfbea34f30cce4f5",
+      "checkpoint": "measured tranche delivered remotely; byte-exact patch transport requested; no audition claimed"
+    },
+    {
+      "role": "code cleanup",
+      "model": "antigravity/gemini-4-hydrogen",
+      "options": {"thinking_level": "high"},
+      "environment": "SuperBeast",
+      "environmentId": "dd9d199e-852d-44e3-a2d3-62d31f3a5af2",
+      "threadId": "mcp:launch:e6dc10d61c1ad387c31372427a764fefdaf151f3f50db2873d625391886f4613",
+      "checkpoint": "initial work did not implement cleanup; provider quota reported; concrete work and visual ownership instructions sent to existing thread"
+    }
+  ],
+  "judging": {
+    "status": "not started; integrated frozen candidate and evidence required",
+    "gate": "all21 independent scores>=9 on same candidate",
+    "freshDelegatePerJudgePerRound": true,
+    "models": ["codex/gpt-6-luna high", "codex/gpt-6.1-terra high", "claudeAgent/claude-haiku-5-5 high"]
+  }
+}
