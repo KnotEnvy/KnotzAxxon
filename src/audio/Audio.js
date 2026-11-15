@@ -1,4 +1,4 @@
-import { Lifetime } from '../core/Lifetime.js';
+import { Lifetime, runCleanups } from '../core/Lifetime.js';
 /**
  * Procedural audio.
  *
@@ -247,21 +247,33 @@ export class Audio {
     return this;
   }
 
+  /**
+   * Retire every independent resource exactly once, even when one step
+   * throws: a failing listener removal must not strand the scheduler timer
+   * or an owned context. Failures are reported together through the shared
+   * runCleanups AggregateError contract. Safe to call repeatedly; a borrowed
+   * offline context is retired but never closed.
+   */
   dispose() {
-    this.stopMusic(); this.stopEngine();
-    this._lifetime.dispose();
-    clearInterval(this._schedTimer);
-    this._schedTimer = null;
-    this.ready = false;
-    if (this.ctx) {
-      this._releaseGraph();
-      if (!this._offline) this.ctx.close().catch(() => {});
-    }
-    this.ctx = this.noise = this.pink = this.brown = this._rooms = null;
-    this._lastSfx.clear();
-    // A fresh entry may try the device again.
-    this.enabled = true;
-    this._offline = this._hiddenSuspend = false;
+    runCleanups([
+      () => { this.stopMusic(); },
+      () => { this.stopEngine(); },
+      () => { this._lifetime.dispose(); },
+      () => {
+        clearInterval(this._schedTimer);
+        this._schedTimer = null;
+      },
+      () => { if (this.ctx) this._releaseGraph(); },
+      () => { if (this.ctx && !this._offline) this.ctx.close().catch(() => {}); },
+      () => {
+        this.ready = false;
+        this.ctx = this.noise = this.pink = this.brown = this._rooms = null;
+        this._lastSfx.clear();
+        // A fresh entry may try the device again.
+        this.enabled = true;
+        this._offline = this._hiddenSuspend = false;
+      },
+    ]);
   }
 
   _releaseGraph() {
