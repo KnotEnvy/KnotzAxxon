@@ -208,25 +208,29 @@ export class Game {
     this.seed = seed;
     this.loop = loop;
 
-    this.fortress?.clear();
-    this.level = new Level(seed, loop);
-    prepareImportedCarrier(this.level);
-    if (!this.fortress) {
-      this.fortress = new Fortress(this.scene, this.materials, this.level, settings.quality);
-    } else {
-      this.fortress.level = this.level;
-    }
-
-    for (const e of this.enemies) e.dispose();
-    this.enemies.length = 0;
-    for (const p of this.pickups) p.dispose();
-    this.pickups.length = 0;
-    this.boss?.dispose();
+    // Give up the previous sortie before retirement so one failed owner cannot
+    // leave other entities live or prevent independent pools from clearing.
+    const enemies = [...this.enemies], pickups = [...this.pickups], boss = this.boss;
+    this.enemies.length = this.pickups.length = 0;
     this.boss = null;
-
-    this.projectiles.clear();
-    this.fx.clear();
-    this.hud.reset();
+    runCleanups([
+      () => this.fortress?.clear(),
+      () => {
+        this.level = new Level(seed, loop);
+        prepareImportedCarrier(this.level);
+        if (!this.fortress) {
+          this.fortress = new Fortress(this.scene, this.materials, this.level, settings.quality);
+        } else {
+          this.fortress.level = this.level;
+        }
+      },
+      ...enemies.map(enemy => () => enemy.dispose()),
+      ...pickups.map(pickup => () => pickup.dispose()),
+      () => boss?.dispose(),
+      () => this.projectiles.clear(),
+      () => this.fx.clear(),
+      () => this.hud.reset(),
+    ]);
 
     this.featureCursor = 0;
     this._hudCursor = 0;
