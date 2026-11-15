@@ -16,7 +16,9 @@ const URL = process.env.KZ_TEST_URL || 'http://localhost:5177';
 
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
-  const browser = await chromium.launch({ channel: 'msedge', headless: true });
+  const browser = await chromium.launch({ headless: true,
+    ...(process.env.KZ_CHROME_EXE ? { executablePath: process.env.KZ_CHROME_EXE,
+      args: ['--use-angle=d3d11', '--enable-gpu', '--ignore-gpu-blocklist'] } : { channel: 'msedge' }) });
   try {
     const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
     const errors = [];
@@ -76,6 +78,7 @@ const URL = process.env.KZ_TEST_URL || 'http://localhost:5177';
           }
         }],
         [14.4, 'LOW FUEL', () => { a.at(14.4).lowFuel(false); a.at(15.4).lowFuel(true); }],
+        [14.8, 'MISSILE LOCK (dense mix)', () => { a.at(14.8).alarm(); a.at(14.8).missileLock(); }],
         [16.4, 'SHIELD HIT', () => a.at(16.4).shield(0)],
         [17.4, 'HULL HIT', () => a.at(17.4).hurt()],
         [18.6, 'CHAIN x4 / x8', () => { a.at(18.6).chain(4); a.at(19.0).chain(8); }],

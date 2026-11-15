@@ -1209,6 +1209,7 @@ export class Game {
     this._warnCooldown = 1.2;
     this.hud.warn(label);
     audio.alarm();
+    if (critical) audio.missileLock();
   }
 
   /* ------------------------------------------------------------------ */

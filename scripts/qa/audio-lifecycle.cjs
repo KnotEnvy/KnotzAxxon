@@ -1,20 +1,23 @@
 /** Actual Chromium AudioContext checks; not an audition or physical-device proof. */
 const fs = require('node:fs');
 const { spawn } = require('node:child_process');
-const { chromium } = require('playwright');
+const { chromium } = require(process.env.KZ_PLAYWRIGHT_PATH || 'playwright');
 const assert = require('node:assert/strict');
 const out = process.env.KZ_OUT || 'artifacts/audio-lifecycle';
-const report = { status: 'running', checks: [], errors: [], limitations: ['Software-rendered Chromium; no audible mix, mobile OS interruption or hardware performance verdict.'] };
+const report = { status: 'running', checks: [], errors: [], limitations: ['Browser AudioContext state checks; no audible mix, mobile OS interruption or sustained hardware performance verdict.'] };
 let server, browser;
 (async () => {
  fs.mkdirSync(out, { recursive: true });
  try {
-  const listener = require('node:net').createServer();
-  await new Promise((resolve, reject) => { listener.once('error', reject); listener.listen(0, '127.0.0.1', resolve); });
-  const port = listener.address().port;
-  await new Promise(resolve => listener.close(resolve));
-  const url = `http://127.0.0.1:${port}`;
-  server = spawn(process.execPath, ['node_modules/vite/bin/vite.js', '--host', '127.0.0.1', '--port', String(port), '--strictPort'], { stdio: 'ignore' });
+  let url = process.env.KZ_TEST_URL;
+  if (!url) {
+   const listener = require('node:net').createServer();
+   await new Promise((resolve, reject) => { listener.once('error', reject); listener.listen(0, '127.0.0.1', resolve); });
+   const port = listener.address().port;
+   await new Promise(resolve => listener.close(resolve));
+   url = `http://127.0.0.1:${port}`;
+   server = spawn(process.execPath, ['node_modules/vite/bin/vite.js', '--host', '127.0.0.1', '--port', String(port), '--strictPort'], { stdio: 'ignore' });
+  }
   let ready = false;
   for (let n = 0; n < 100; n++) {
    try { ready = (await fetch(url)).ok; } catch {}
@@ -22,13 +25,23 @@ let server, browser;
    await new Promise(resolve => setTimeout(resolve, 100));
   }
   assert.ok(ready, 'local QA server readiness');
-  browser = await chromium.launch({ headless: true, args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'], env: { ...process.env, DISPLAY: '', WAYLAND_DISPLAY: '' } });
+  browser = await chromium.launch({ headless: true,
+    ...(process.env.KZ_CHROME_EXE ? { executablePath: process.env.KZ_CHROME_EXE,
+      args: ['--use-angle=d3d11', '--enable-gpu', '--ignore-gpu-blocklist'] } : {
+      args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'], env: { ...process.env, DISPLAY: '', WAYLAND_DISPLAY: '' } }) });
   const page = await browser.newPage({ viewport: { width: 800, height: 450 }, hasTouch: true });
   page.setDefaultTimeout(90000);
   page.on('pageerror', error => report.errors.push(error.message));
   await page.addInitScript(() => localStorage.setItem('knotzaxxon.settings.v2', JSON.stringify({ quality: 'low', camera: 'classic', shake: 0, master: 0 })));
   await page.goto(url);
   await page.waitForFunction(() => !!window.KZ);
+  report.browser = browser.version();
+  report.rendering = await page.evaluate(() => {
+   const e = KZ.engine, gl = e.renderer.getContext(), ext = gl.getExtension('WEBGL_debug_renderer_info');
+   return { renderer: ext && gl.getParameter(ext.UNMASKED_RENDERER_WEBGL),
+    vendor: ext && gl.getParameter(ext.UNMASKED_VENDOR_WEBGL), frame: e.frame,
+    viewport: [innerWidth, innerHeight], canvas: [e.canvas.width, e.canvas.height], settings: { ...KZ.settings.values } };
+  });
   await page.evaluate(async () => { window.__qaAudio = (await import('/src/audio/Audio.js')).audio; });
   await page.keyboard.press('Escape');
   report.escapeFirstState = await page.evaluate(() => window.__qaAudio.ctx?.state ?? null);

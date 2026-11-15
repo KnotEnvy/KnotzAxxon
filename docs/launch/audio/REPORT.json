@@ -1,0 +1,80 @@
+{
+ "tranche": "superbeast-audio-2026-11-15",
+ "base": "2a77036cbc6a64b1b1656c8df8949a5650098dab",
+ "audio_identical_runtime_1b3ff18": true,
+ "heard": false,
+ "method": "real Chromium OfflineAudioContext renders of actual Audio.js, deterministic seed 0xC10C, 44100Hz stereo; dual meters agree on all peaks",
+ "base_peaks_dbfs": {
+  "audition": -5.32,
+  "title": -7.7,
+  "warnings": -5.41,
+  "stereo": -8.93,
+  "dense": -5.4
+ },
+ "cand_peaks_dbfs": {
+  "audition": -5.32,
+  "title": -7.7,
+  "warnings": -5.41,
+  "stereo": -8.93,
+  "dense": -5.4
+ },
+ "clipped_any": false,
+ "repo_handoff_peak_dbfs": -5.32,
+ "narrowband_800_1200_lift_over_dense_db": {
+  "alarm": 8.8,
+  "lowfuel_pip": 17.0,
+  "hull": 7.5
+ },
+ "lock_cue_isolated": {
+  "rmsDb_py": -34.5,
+  "spec": {
+   "sub": -56.1,
+   "low": -45.3,
+   "mid": -0.8,
+   "presence": -9.0,
+   "air": -14.6,
+   "centroidHz": 1884,
+   "peakHz": 1163
+  }
+ },
+ "lock_pip_peaks_hz": [
+  1163,
+  1314,
+  1572
+ ],
+ "lock_over_dense": {
+  "mid_lift_db": 5.6,
+  "presence_lift_db": 28.0,
+  "centroid_event": 766,
+  "centroid_bed": 154
+ },
+ "regression": {
+  "sfx_programs_bit_identical": true,
+  "music_programs_max_lsb_churn": 1,
+  "churn_cause": "chromium multithread render, proven by base-vs-base control"
+ },
+ "lifecycle_fixture": {
+  "base": "13/13",
+  "candidate": "13/13"
+ },
+ "new_test": {
+  "partA_scheduling_base": "FAIL(authentic)",
+  "partA_scheduling_candidate": "PASS",
+  "partB_dispatch": "NOT-RUN-HERE needs full tree"
+ },
+ "files": {
+  "delivery.patch": "02d63b5a2bb7928a89d5327d2d8219428dd9247e7b8ba418c730d04bf02e5e50",
+  "Audio.js_base": "42a261cde0372e132bd7bd3e7fc50a23fda9a10da14d38c55b2d0a8d35979452",
+  "Audio.js_candidate": "0189e50169302e86e0af7ace8041132ab98372fdcd48fab0cf4803d869f244ea",
+  "Game.js_base": "3ac668b63f82a3530f449d90c5802d98bb91da206dacdd659e24e2bb736f3b4d",
+  "Game.js_candidate": "204eac86c4d7504383712fc6e595ac81c53221e5a6a48776851c735c67e3c7f8",
+  "tests/missile-lock-cue.test.js": "2fb675f7f1ef2c6980a967149a5f5e8944d6aad014d0c59f7fbb9cd3bdd02494",
+  "TRANCHE.md": "5e8f15b46ee4861eff1324629833358a0e58709d79ae34808426c995140d27c5",
+  "MANIFEST.sha256": "1695d7b9b6c44f2712130442b7c2acdf574c9002a881bb217d3b53895ad38797"
+ },
+ "retained_clips": {
+  "host": "superbeast",
+  "dir": "/home/knotz2/.local/share/knotzaxxon-launch-audio/20261115/clips + clips-cand",
+  "manifest": "/home/knotz2/.local/share/knotzaxxon-launch-audio/20261115/MANIFEST.sha256"
+ }
+}

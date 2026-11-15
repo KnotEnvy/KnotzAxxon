@@ -26,6 +26,10 @@ function inventory(dir,prefix=''){
   });
 }
 const files=inventory(out);
+const totalBytes=files.reduce((total,file)=>total+file.bytes,0);
+if(files.length>1000||totalBytes>500000000||files.some(file=>file.bytes>200000000||file.path.length>240)) {
+  throw Error('Package exceeds published Itch HTML5 file-count/size/path limits');
+}
 if(!files.some(f=>f.path==='index.html'))throw Error('Missing root index.html');
 const html=fs.readFileSync(path.join(out,'index.html'),'utf8');
 const runtimeAssets=[...html.matchAll(/(?:src|href)="([^\"]*assets\/[^\"]+)"/g)].map(m=>m[1]);
@@ -49,7 +53,7 @@ const result=spawnSync('python3',['-c',py,out,zip],{encoding:'utf8'});
 if(result.status!==0)throw Error('Archive creation/readback failed: '+result.stderr);
 const report={createdAt:new Date().toISOString(),source,format:'Itch HTML5 ZIP; index.html at root; relative Vite base',
   archive:{file:path.basename(zip),bytes:fs.statSync(zip).size,sha256:sha256(fs.readFileSync(zip))},
-  fileCount:files.length,files,browserVerification:'pending nested-path/iframe/WebGL2/responsive/fullscreen/asset checks',
+  fileCount:files.length,totalBytes,files,browserVerification:'pending nested-path/iframe/WebGL2/responsive/fullscreen/asset checks',
   publication:'not uploaded; previous live Itch upload preserved'};
 fs.writeFileSync(path.join(base,'manifest.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({directory:base,sourceHash:source.sourceHash,archive:report.archive,fileCount:files.length}));

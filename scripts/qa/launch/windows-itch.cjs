@@ -77,6 +77,15 @@ const frames=frame=>frame.evaluate(()=>new Promise(resolve=>{let n=0;function ti
   }
   report.loadedModels=[...loaded].sort();
   for(const file of ['models/environment/environment-kit.glb','models/player.glb','models/sentinel.glb','models/production/carrier-template.bin','models/production/covered-fighter.recipe.json'])assert.ok(loaded.has(file),'Default required resource missing: '+file);
+  await browser.close();
+  browser=await chromium.launch({executablePath:config.chrome,headless:true,args:['--disable-webgl']});
+  const unsupported=await browser.newPage();
+  await unsupported.goto(config.url+config.prefix);
+  await unsupported.waitForFunction(()=>document.getElementById('boot-log')?.textContent.includes('This build needs WebGL 2.'),{},{timeout:120000});
+  assert.equal(await unsupported.evaluate(()=>!!window.KZ),false);
+  report.checks.push({webglDisabledShowsExplicitWebgl2Requirement:true,
+    bootMessage:await unsupported.locator('#boot-log').innerText()});
+  await unsupported.screenshot({path:path.join(config.out,'webgl2-required.png'),timeout:120000});
   assert.deepEqual(report.errors,[]);assert.deepEqual(report.networkFailures,[]);
   report.status='passed';
 })().catch(e=>{report.status='failed';report.failure=e.stack;process.exitCode=1}).finally(async()=>{
