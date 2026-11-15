@@ -1,12 +1,20 @@
 import * as THREE from 'three';
+import { runCleanups } from '../core/Lifetime.js';
 
 export function createFuelDepotRecipe(document) {
-  const templates = document.buckets.map(bucket => {
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute('position', new THREE.Float32BufferAttribute(bucket.position, 3));
-    geometry.setAttribute('normal', new THREE.Float32BufferAttribute(bucket.normal, 3));
-    return { key: bucket.key, geometry, color: new Float32Array(bucket.color) };
-  });
+  const templates = [];
+  try {
+    for (const bucket of document.buckets) {
+      const geometry = new THREE.BufferGeometry();
+      const template = { key: bucket.key, geometry }; templates.push(template);
+      geometry.setAttribute('position', new THREE.Float32BufferAttribute(bucket.position, 3));
+      geometry.setAttribute('normal', new THREE.Float32BufferAttribute(bucket.normal, 3));
+      template.color = new Float32Array(bucket.color);
+    }
+  } catch (error) {
+    try { runCleanups(templates.map(template => () => template.geometry.dispose())); } catch { /* preserve preparation error */ }
+    throw error;
+  }
   let disposed = false;
   function stamp(batch, rng, worldX, worldZ) {
     if (disposed) throw new Error('Fuel depot templates disposed at application shutdown');
@@ -25,7 +33,7 @@ export function createFuelDepotRecipe(document) {
   function dispose() {
     if (disposed) return;
     disposed = true;
-    for (const template of templates) template.geometry.dispose();
+    runCleanups(templates.map(template => () => template.geometry.dispose()));
   }
   return { stamp, dispose, templates };
 }
@@ -42,4 +50,4 @@ export function appendImportedFuelDepot(batch, rng, x, z) {
   return true;
 }
 export function importedFuelDepotTemplates() { return recipe?.templates.map(t => t.geometry) ?? []; }
-export function disposeImportedFuelDepot() { recipe?.dispose(); recipe = undefined; }
+export function disposeImportedFuelDepot() { const owned = recipe; recipe = undefined; owned?.dispose(); }

@@ -35,9 +35,10 @@ export async function loadImportedModels() {
     if (name === 'carrier-runtime') return loadImportedCarrier(`${import.meta.env.BASE_URL}models/production/`);
     const folder = productionNames.includes(name) ? 'production/' : '';
     const gltf = await loader.loadAsync(`${import.meta.env.BASE_URL}models/${folder}${name}.glb`);
+    // Cargo preparation consumes its input on both success and failure.
+    if (name === 'cargo-kit') { prepareImportedCargo(gltf); return; }
     // Own the parsed root before preparation can fail (e.g. a missing node).
     templates.set(name, gltf.scene);
-    if (name === 'cargo-kit') { prepareImportedCargo(gltf); templates.delete(name); return; }
     if (name === 'drone') {
       // The authored flash lives in a non-default scene to remain hidden in generic viewers.
       const flash = node(gltf.scenes[1], 'flash_shell');

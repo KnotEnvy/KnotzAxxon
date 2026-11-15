@@ -137,8 +137,8 @@ export const PICKUP_KINDS = Object.keys(KINDS);
 
 /** Called once after all pickups are detached during application shutdown. */
 export function disposePickupGeometry() {
-  shellGeo?.dispose(); coreGeo?.dispose();
+  const geometries = new Set([shellGeo, coreGeo, ...shapeGeo.values()].filter(Boolean));
   shellGeo = coreGeo = null;
-  for (const g of shapeGeo.values()) g.dispose();
   shapeGeo.clear();
+  runCleanups([...geometries].map(geometry => () => geometry.dispose()));
 }

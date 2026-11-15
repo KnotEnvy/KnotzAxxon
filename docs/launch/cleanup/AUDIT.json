@@ -1,0 +1,1068 @@
+{
+  "schema": "knotzaxxon.cleanup-audit.v1",
+  "updatedAt": "2026-11-15T21:46:50.351723+00:00",
+  "base": "62d85e2",
+  "tranche1": "effe59628ff49ee72fd3e8009c9435b0394661e8",
+  "tranche2Base": "effe59628ff49ee72fd3e8009c9435b0394661e8",
+  "scope": "50 production paths examined at ownership/contracts and relevant update/error boundaries. This is not a formal proof or a claim of exhaustive malicious-asset/OOM fault coverage. Reserved paths reviewed without mutation.",
+  "productionPaths": [
+    {
+      "path": "src/audio/Audio.js",
+      "sha256": "0189e50169302e86e0af7ace8041132ab98372fdcd48fab0cf4803d869f244ea",
+      "status": "reserved-readonly",
+      "findingIds": [
+        "D04"
+      ],
+      "examined": "Activation/visibility/init rollback, node graph, scheduler and continuous proximity/boss-state API reviewed. Throwing subscription retirement skips later scheduler/context cleanup; routed to Spark.",
+      "validation": "tests/opus-code-audio-lifecycle.test.js, tests/missile-lock-cue.test.js; reserved-path-probe.mjs",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/core/Collision.js",
+      "sha256": "8c183663f626f06fea03b0ae64bceafaab3222223079b7e022127936b9a38cfc",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "Swept sphere, expanded slab and moving-face contacts; scratch-free queries and contact ordering preserved.",
+      "validation": "tests/collision.test.js, tests/game-collision.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/core/Engine.js",
+      "sha256": "29f04c730bf3021711bd30e7d6529cfb20c37e0776f2102960d9db5af6a61388",
+      "status": "reserved",
+      "findingIds": [
+        "H01"
+      ],
+      "examined": "Renderer/scene rollback, hook ownership, RAF, hitstop/substeps, resize/anisotropy, visibility/context restoration; older local clock defect already fixed by primary 9b36398. No duplicate edit.",
+      "validation": "tests/lifecycle.test.js, tests/context-resume.test.js, tests/frame-budget.test.js, tests/studio-feel.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/core/FlightCamera.js",
+      "sha256": "f691b3cef8a36de611762cb3129571f0684457e607be141dc1b5158401f4506e",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "Stable camera identity, orthographic/perspective projection and inverse updates; three accepted rigs retained.",
+      "validation": "tests/camera.test.js, tests/visibility.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/core/Input.js",
+      "sha256": "c0e4d5979f27fc130106069c6363e6111b6c75403e3fb45f5a5aa3b6f96b8c60",
+      "status": "implemented",
+      "findingIds": [
+        "C02",
+        "C03"
+      ],
+      "examined": "Physical keyboard alias lifetime, device ownership, touch hold/cancel, blur/suspension, gamepad edge learning and optional haptics.",
+      "validation": "tests/lifecycle.test.js, tests/performance.test.js, tests/studio-feel.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/core/Lifetime.js",
+      "sha256": "118766236d21e0d992de1cdf14f7304bbf6c2bbd47c431196d6fdcb3ef52bba0",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "Subscription removal and cancellation finish all owners before AggregateError; delays settle false on retirement. Used rather than another lifetime abstraction.",
+      "validation": "tests/lifecycle.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/core/Settings.js",
+      "sha256": "d60210acc5e42d9c6e11b4dbe2d4da5e670df47f6845788c14a340da6264b32a",
+      "status": "implemented",
+      "findingIds": [
+        "C08"
+      ],
+      "examined": "Finite/type normalization, loaded precision, schema, score sanitation/session fallback, and actual settings payload write status; schema/keys unchanged.",
+      "validation": "tests/studio-settings-quality.test.js, tests/ux.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/core/Utils.js",
+      "sha256": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "Seeded RNG law, damping, angle/array helpers and pool APIs; no speculative utility/API deletion or RNG change.",
+      "validation": "tests/authenticity.test.js, tests/sector-refinement.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/entities/Boss.js",
+      "sha256": "a785a38179c7794cc41dd156a64da5fe9d1692a512d260dca82e8ec9aa3b60d9",
+      "status": "implemented",
+      "findingIds": [
+        "C04",
+        "C06"
+      ],
+      "examined": "Construction boundary, private versus shared materials/geometry, launcher and phase lifecycle; gameplay and model definitions unchanged.",
+      "validation": "tests/component-lifecycle.test.js, tests/game-startup-lifecycle.test.js, tests/combat-polish.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/entities/Enemies.js",
+      "sha256": "ffa90bb1b16489699e204ff4211bbca984527375a858df66c8ae29db6b541f5f",
+      "status": "implemented",
+      "findingIds": [
+        "C04"
+      ],
+      "examined": "Imported private clones versus cached geometry/materials, flash ownership, idempotent detach and cache shutdown; behavior/kinds/aim unchanged.",
+      "validation": "tests/template-lifecycle.test.js, tests/imported-prewarm-lifecycle.test.js, tests/visual.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/entities/Pickup.js",
+      "sha256": "83987aac65a68b94e68509a3371d9b388ceca55f64c73c3ca5d7bdbd4e1debe5",
+      "status": "implemented",
+      "findingIds": [
+        "C04"
+      ],
+      "examined": "Imported clone retirement and global procedural cache distinction, camera-facing shape/halo sharing; pickup/magnet law retained.",
+      "validation": "tests/template-lifecycle.test.js, tests/imported-prewarm-lifecycle.test.js, tests/performance.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/entities/Player.js",
+      "sha256": "30f8214d5e8595e8caccd5d60d8ca8a3ec899badc35f6917d30921abdde7b64f",
+      "status": "implemented",
+      "findingIds": [
+        "C06"
+      ],
+      "examined": "Scene model/guide/trail construction rollback and independent final retirement; partial trail allocation tracked before next construction.",
+      "validation": "tests/component-lifecycle.test.js, tests/combat-polish.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/entities/Projectiles.js",
+      "sha256": "79e97d9a8ab7b913a8411f911a8eb3fd3091d50693bb769d39c797035b10a443",
+      "status": "implemented",
+      "findingIds": [
+        "C06"
+      ],
+      "examined": "Typed slot pools, sparse rendering, borrowed versus private materials, shared-within-pool geometry, attachment rollback and target release.",
+      "validation": "tests/component-lifecycle.test.js, tests/performance.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/fx/Ambience.js",
+      "sha256": "33c061a5f4b33ec90451969567cb64ed1be4b2be7c099e9de65b3287c24706e6",
+      "status": "implemented",
+      "findingIds": [
+        "C06"
+      ],
+      "examined": "Single-draw mote owner, shader-only per-vertex motion, private material/geometry rollback; all visual constants unchanged.",
+      "validation": "tests/component-lifecycle.test.js, tests/atmosphere.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/fx/Effects.js",
+      "sha256": "84b4ade2de9d8458c084d0225db8b28059b4bbc156d3f9bc00c759395baabd82",
+      "status": "implemented",
+      "findingIds": [
+        "C06"
+      ],
+      "examined": "Nested particle/debris/ring/wreck/light owners and attachment registration before failures; attempt-all final teardown. Pool laws/appearance unchanged.",
+      "validation": "tests/component-lifecycle.test.js, tests/performance.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/fx/Particles.js",
+      "sha256": "73439e3605009151ef32f37b144150778269983aa7f644cf72e60f39210af361",
+      "status": "implemented",
+      "findingIds": [
+        "C06"
+      ],
+      "examined": "Private points/material/attributes, shared sprite texture, ranged dirty upload and partial attachment rollback.",
+      "validation": "tests/component-lifecycle.test.js, tests/frame-budget.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/fx/Trail.js",
+      "sha256": "ab3bd00309bbb979cec1b6b1f210e149880405d37218d34b2407814fcf69ec52",
+      "status": "implemented",
+      "findingIds": [
+        "C06"
+      ],
+      "examined": "Private mesh/material ownership, sampled ribbon updates and detach after disposal faults; sample/timing constants unchanged.",
+      "validation": "tests/component-lifecycle.test.js, tests/visual.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/game/AltitudeEcho.js",
+      "sha256": "47854f49cd151b488aef52850788921f83fe4e41db9e9eb7c9fd08348acb1c07",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "Visible forward-lane sphere section, borrowed collider scratch and caller-owned output; no envelope change.",
+      "validation": "tests/combat-feedback.test.js, tests/combat-polish.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/game/CameraRig.js",
+      "sha256": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "Rig persistence, seeded shake/noise, framing/snap and screen-relative axes; accepted views untouched.",
+      "validation": "tests/camera.test.js, tests/title-attract.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/game/CombatVisibility.js",
+      "sha256": "0afefd22a7b5f729acf38b4e6461456fd71768143080ce9cd6a19a4b1096a5f9",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "Clip-space test and near-plane ray, cleared obstacle cutoff, independent gate-face scratch; no visibility reward change.",
+      "validation": "tests/visibility.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/game/Game.js",
+      "sha256": "6295e49a74a6b64ef34585ccd80a26e57692013a08c8adf8cb41d973f78dee2d",
+      "status": "implemented/reserved",
+      "findingIds": [
+        "C01",
+        "D02"
+      ],
+      "examined": "Prewarm and retained final ownership implemented only in leased hunks; reset/score/grade/sector/endings read-only audited. Reset cleanup failure routed to primary. Attract/UI hunks untouched.",
+      "validation": "tests/game-startup-lifecycle.test.js, tests/imported-prewarm-lifecycle.test.js, tests/warning-priority.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/game/WorldCollision.js",
+      "sha256": "7cb145c8b3b920d526675cd4ce0b9c71c896ec773e0ff991ffb14f9a4da5be23",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "Common swept world/gate contract, previous/current face boxes and scratch ownership; physics untouched.",
+      "validation": "tests/game-collision.test.js, tests/collision.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/main.js",
+      "sha256": "c80f6d813187dafd29aab141bec68a5ce9d6296d925c680d74bdb39fa73a0959",
+      "status": "implemented",
+      "findingIds": [
+        "C01",
+        "C04"
+      ],
+      "examined": "Boot ownership, HMR shutdown, actual composer-target prewarm, texture upload, quality-before-sortie orchestration; original error wins over failed target restoration.",
+      "validation": "tests/lifecycle.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/CelestialMaterials.js",
+      "sha256": "4d366b9765599d7d18d2a25d8f835bb8d76ad9644d854edea3d1e3848bdb0ee6",
+      "status": "examined-readonly",
+      "findingIds": [],
+      "examined": "Shader material ownership follows Sky; normal/view projection paths and fixed draw count inspected, no art review or shader edit.",
+      "validation": "tests/visual.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/Dispose.js",
+      "sha256": "4fd5c005beda831f9c5fd647352bad0ad5c128431c9260a7591983a48fc90c3c",
+      "status": "implemented",
+      "findingIds": [
+        "C04"
+      ],
+      "examined": "Unique private geometry/material/instance release, borrowed textures excluded, detach despite faults, idempotent root retirement.",
+      "validation": "tests/studio-render-ownership.test.js, tests/component-lifecycle.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/GeoUtils.js",
+      "sha256": "eb138a5ad1280bc4db4731de456938390a20002b9caccd74ca6b041b9d9874c5",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "Transient geometry construction and ownership transfers in hull/panel/reflector/strut helpers; no topology change.",
+      "validation": "tests/model-integrity.test.js, tests/visual.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/ImportedAntenna.js",
+      "sha256": "2c1e1e4d6b3b1a830da625d29a82f0eb9c2d4fe2debc7cc2001b25cb91e35299",
+      "status": "implemented",
+      "findingIds": [
+        "C04"
+      ],
+      "examined": "Startup geometry cache, seeded stamp contract and attempt-all shutdown; no per-prop roots/materials added.",
+      "validation": "tests/template-lifecycle.test.js, tests/imported-prewarm-lifecycle.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/ImportedCargo.js",
+      "sha256": "a4b253d1fccfefc7760e57a06b78a5086c1ff486860be68a5506741c217e55a4",
+      "status": "implemented",
+      "findingIds": [
+        "C07"
+      ],
+      "examined": "Partial clone ownership before validation, consume loader resources on both outcomes, preserve original error and clear cache before final disposal.",
+      "validation": "tests/template-lifecycle.test.js, tests/imported-prewarm-lifecycle.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/ImportedCarrier.js",
+      "sha256": "c68a2497517f6e880158ba1a4444edce2de1992aa3606b01d8470e29806713bd",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "One-time module preparation/cache and CPU-only retirement; aAnim/aPivot/aSpin copying and original seeded draws retained.",
+      "validation": "tests/model-integrity.test.js, tests/imported-prewarm-lifecycle.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/ImportedCoolingStack.js",
+      "sha256": "d7ce95a7d90e2f210874fa045a17a66445a93e653687fc3c99230882e2251b14",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "Validated typed-buffer lengths, reused scratch, seeded source height/phase, shutdown drops CPU arrays. No GPU owner here.",
+      "validation": "tests/imported-prewarm-lifecycle.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/ImportedCoveredFighter.js",
+      "sha256": "624a758e43ab0d935bfa783a1bffab68bdcd3cda32498d565c0eee3acde28c06",
+      "status": "implemented",
+      "findingIds": [
+        "C07"
+      ],
+      "examined": "Partial geometry preparation and all-template shutdown; frozen records retained. Narrow named runtime constructors avoid whole Three namespace retention by bundler.",
+      "validation": "tests/template-lifecycle.test.js, tests/imported-prewarm-lifecycle.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/ImportedFlakGun.js",
+      "sha256": "c9b1f9b3a5087d37ded257d69d048b99c1bf4da9b714d08d238aec2782f6a9a1",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "Bounded CPU pose/scratch cache, source pose/RNG contract and final retained-array release; appearance unchanged.",
+      "validation": "tests/imported-prewarm-lifecycle.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/ImportedFuelDepot.js",
+      "sha256": "a008d2f91ff549a3258211d155287e5a16b195c43112ba9b8076d24787b1b7d6",
+      "status": "implemented",
+      "findingIds": [
+        "C07"
+      ],
+      "examined": "Partial geometry rollback and independent template retirement; CPU tint/stamping/surface data preserved.",
+      "validation": "tests/template-lifecycle.test.js, tests/imported-prewarm-lifecycle.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/ImportedLandmarks.js",
+      "sha256": "55a3558f4c5419793c6ab38be11bf92a398c088bf6f85d57cdb57fd3ed4aa76b",
+      "status": "examined-readonly",
+      "findingIds": [],
+      "examined": "Startup dreadnought/asteroid/bunker records and template ownership, seeded batch append, clipping/custom attributes; no authored geometry change. Malformed alternate landmark shapes are not exhaustively fault-injected.",
+      "validation": "tests/model-integrity.test.js, tests/imported-prewarm-lifecycle.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/ImportedModels.js",
+      "sha256": "972ee916c1c1324a90b7610a9681b9cbdd334b5bed1aa355e238475807311967",
+      "status": "implemented",
+      "findingIds": [
+        "C01",
+        "C05",
+        "C07"
+      ],
+      "examined": "allSettled loading, pre-preparation parsed-root ownership, clone geometry/material ownership, startup/global retirement and original load-error preservation. No template staging/mutation.",
+      "validation": "tests/imported-prewarm-lifecycle.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/ImportedWreckage.js",
+      "sha256": "947963758df53c3363e1eebe33ae565db7cb5fd2fc0736555a9a7aca60ef810b",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "Schema/typed CPU cache, preserved source RNG consumption, scratch/batch append and array retirement; no per-frame GLTF work.",
+      "validation": "tests/imported-prewarm-lifecycle.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/Materials.js",
+      "sha256": "0cd27e17956004cf7c6dd2ecd694d70c62e40a0c0f43ef7621aec554029e3161",
+      "status": "examined",
+      "findingIds": [],
+      "examined": "Construction rollback, tracked materials removed on early disposal, shared texture sampling and final attempt-all cleanup; existing ownership helper retained.",
+      "validation": "tests/studio-render-ownership.test.js, tests/studio-settings-quality.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/PlayerShip.js",
+      "sha256": "b2c769f41fdd819d848a21e695ad88bdf793a14e9a82a7a365f2d33d24a6ae2f",
+      "status": "examined-readonly",
+      "findingIds": [],
+      "examined": "Imported/source fallback and procedural merge-input ownership, nozzle/pivot and silhouette metadata; accepted art untouched.",
+      "validation": "tests/visual.test.js, tests/model-integrity.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/PostFX.js",
+      "sha256": "2f89dfbd0b755e31776ba8b8e2328187af0a8f97a364177be47129b582ef41cd",
+      "status": "examined-readonly",
+      "findingIds": [],
+      "examined": "Pass/composer/initial-target rollback, transient reset and attempt-all idempotent teardown. Quality and compositing definitions unchanged.",
+      "validation": "tests/studio-render-ownership.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/Sky.js",
+      "sha256": "d86b693eb05de496a1fa65e2235421ca4c650ff11b748cd437c0159874d7c424",
+      "status": "examined-readonly",
+      "findingIds": [],
+      "examined": "PMREM/cube target construction, bake state restoration/error preservation, retained prior environment and shared versus private textures/lights. No lighting changes.",
+      "validation": "tests/studio-render-ownership.test.js, tests/atmosphere.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/Textures.js",
+      "sha256": "521e2145ec81318dae369f69b4c032ce48e6af876e5bd1f7afe360a900b2429b",
+      "status": "implemented",
+      "findingIds": [
+        "C04"
+      ],
+      "examined": "Memoization, anisotropy in place and unique texture cache retirement after a throwing disposer; source maps remain shared until global shutdown.",
+      "validation": "tests/template-lifecycle.test.js, tests/studio-settings-quality.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/render/Underlay.js",
+      "sha256": "a108b4d9607784e4baaa08a44b228942067e356dda0f39b294e5021d8aa33e90",
+      "status": "examined-readonly",
+      "findingIds": [],
+      "examined": "Private texture/material/geometry rollback and attempt-all shutdown already present; shared world appearance preserved.",
+      "validation": "tests/studio-render-ownership.test.js, tests/atmosphere.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/style.css",
+      "sha256": "76ff550a9a1d812063fe117eca6f78525a51f2a7144a2ffa18cf977ee7ba77d2",
+      "status": "reserved-readonly",
+      "findingIds": [],
+      "examined": "Responsive/touch/reduced-motion selectors and owner references inspected only. No layout, marketing or compositor edits.",
+      "validation": "Existing UI suites; hardware layout belongs Nitro/Opus",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/ui/HUD.js",
+      "sha256": "32f1ad403971b74bec0815c30e56ed27b95d2afcd3d2d21442a1253f7b0b4e8c",
+      "status": "reserved-readonly",
+      "findingIds": [
+        "D03"
+      ],
+      "examined": "Cached DOM writes, layout observer, damage RAF/bump timer and warning/grade/floater lifetimes; throwing observer skips later cleanup. Routed to Opus.",
+      "validation": "tests/studio-hud-feedback.test.js, tests/warning-priority.test.js; reserved-path-probe.mjs",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/ui/Screens.js",
+      "sha256": "1f2348d5b8b90885808f21a783e056c5ac5981d44732ded6448b3e494b09f6cd",
+      "status": "reserved-readonly",
+      "findingIds": [
+        "C08",
+        "D03"
+      ],
+      "examined": "Focus/menu input ownership, boot delays, sector animation/timer, settings status and sanitized score callsigns; constructor/dispose faults routed to Opus.",
+      "validation": "tests/ux.test.js, tests/opus-ui-feedback.test.js; reserved-path-probe.mjs",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/world/AmbientTraffic.js",
+      "sha256": "720550fd6eb8c6c7c29a60af96d5bf304a12ac6ac563c6667fa633d3c138788c",
+      "status": "reserved-readonly",
+      "findingIds": [
+        "D01"
+      ],
+      "examined": "Shared batched geometry/material, deterministic lanes/shader clock and source fallback; thrown shared geometry disposal skips material. Routed to Fable.",
+      "validation": "tests/ambient-traffic.test.js; world-disposal-probe.mjs",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/world/EnvironmentKit.js",
+      "sha256": "5f9f413334c9fcfa4706f4de44dca165a9077fcfbba87fbaa1b3f913f67dd05d",
+      "status": "reserved-readonly",
+      "findingIds": [
+        "D01"
+      ],
+      "examined": "175-part signature, cloned template/input ownership and malformed-kit fallback examined. First thrown template disposer skips remaining174; error preservation routed to Fable.",
+      "validation": "tests/environment-kit.test.js; world-disposal-probe.mjs",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/world/Fortress.js",
+      "sha256": "794ade4427894c413ef2960401900ceea4b592b238feb3df535c48437ac647c5",
+      "status": "reserved-readonly",
+      "findingIds": [
+        "D01"
+      ],
+      "examined": "Streaming frame budgets, shared Batch attributes/cached templates, chunk detach/animated ownership. Throwing geometry leaves chunk + owner records; routed to Fable.",
+      "validation": "tests/environment-kit.test.js, tests/frame-budget.test.js; world-disposal-probe.mjs",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/world/FortressKit.js",
+      "sha256": "f06d615580a4069ef7bc378d7ab73bf8d9b53c9ab37dc8d9c7cc4a4686bc9cdc",
+      "status": "examined-readonly",
+      "findingIds": [],
+      "examined": "Template composers and first/last chunk sector boundary references; authored bucket/tint/pivot attributes and source fallback retained.",
+      "validation": "tests/environment-kit.test.js, tests/sector-refinement.test.js",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    },
+    {
+      "path": "src/world/Level.js",
+      "sha256": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016",
+      "status": "reserved-readonly",
+      "findingIds": [
+        "H01"
+      ],
+      "examined": "Eight-sector generation, colliders/cursors, RNG and boundary lookup. Negative entrance fallback flaw is primary clock/Level fix; not duplicated.",
+      "validation": "tests/authenticity.test.js, tests/sector-refinement.test.js; Nitro primary clock regressions",
+      "limits": "CPU source/behavior coverage only; no physical-device, allocation-OOM, visual acceptance or sustained-FPS claim."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C01",
+      "severity": "P1",
+      "status": "implemented; Nitro program-lifetime verification reported",
+      "paths": "Game.prewarm/main",
+      "reproduction": "Last exact imported variant material disposed after compile; repeated variant IDs recreated. Original proposal attached unmatched mutable templates.",
+      "action": "One detached actual owner set, replace transactionally; quality-before-sortie rewarm. Nitro reported same program IDs retained, no FPS conclusion."
+    },
+    {
+      "id": "C02",
+      "severity": "P2",
+      "status": "implemented",
+      "paths": "Input",
+      "reproduction": "Hold Left+A, release A: moveX became0 while Left remained held.",
+      "action": "Map physical keys to actions; keep action until last alias releases."
+    },
+    {
+      "id": "C03",
+      "severity": "P1",
+      "status": "implemented",
+      "paths": "Input",
+      "reproduction": "setSuspended(true), send Escape: pause press dispatched immediately.",
+      "action": "Gate inactive keyboard/pointer/touch starts and clear canceled mouse hold."
+    },
+    {
+      "id": "C04",
+      "severity": "P2",
+      "status": "implemented",
+      "paths": "Dispose/entity/cache owners",
+      "reproduction": "First geometry/material/instance dispose listener throws: later resources and detach skipped.",
+      "action": "Snapshot/clear private registries, deduplicate and run all cleanup actions; retained borrowed textures unaffected."
+    },
+    {
+      "id": "C05",
+      "severity": "P2",
+      "status": "implemented",
+      "paths": "ImportedModels",
+      "reproduction": "A parsed root may fail node preparation before cache ownership; rollback may throw over load error.",
+      "action": "Register parsed roots before preparation, finish all global owners and preserve original rejection."
+    },
+    {
+      "id": "C06",
+      "severity": "P2",
+      "status": "implemented",
+      "paths": "Player/Projectiles/Boss/fx",
+      "reproduction": "Throw after each actual Scene.add attachment; all seven component types originally left resources attached.",
+      "action": "Component initialization boundaries own rollback; nested owners register before risky attachment. Every attachment and failed disposer covered on CPU."
+    },
+    {
+      "id": "C07",
+      "severity": "P2",
+      "status": "implemented",
+      "paths": "ImportedCargo/FuelDepot/CoveredFighter",
+      "reproduction": "Missing second cargo node or failing later normal attribute strands earlier clones; first shutdown disposer prevents later templates.",
+      "action": "Register partial geometry immediately, rollback all loader/cloned resources, clear global caches before final attempts. Source recipes preserved."
+    },
+    {
+      "id": "C08",
+      "severity": "P2",
+      "status": "API implemented; UI seam delegated",
+      "paths": "Settings/Screens",
+      "reproduction": "Small probe key can save while actual settings payload fails, causing false SAVED UI feedback.",
+      "action": "save() returns boolean and stores persistent=null/true/false; primary/Opus consume status and save actual payload once on menu open."
+    },
+    {
+      "id": "D01",
+      "severity": "P2",
+      "status": "delegated to Fable; not fixed in this branch",
+      "paths": "world owners",
+      "reproduction": "See retained world-disposal-before.json: second chunk geometry0, owner records remain; kit1/175 attempted; traffic material0.",
+      "action": "Fable owns world cleanup-only implementation/tests; no world source edits here."
+    },
+    {
+      "id": "D02",
+      "severity": "P2",
+      "status": "delegated to primary; not fixed in this branch",
+      "paths": "Game.reset",
+      "reproduction": "Fortress.clear throw prevents enemy/pickup/boss/projectile/fx/HUD cleanup.",
+      "action": "Primary owns reset transaction/fault regressions; retained reserved-path-before.json."
+    },
+    {
+      "id": "D03",
+      "severity": "P2",
+      "status": "delegated to Opus; not fixed in this branch",
+      "paths": "HUD/Screens",
+      "reproduction": "Throwing animation/observer skips pending ownership; Screens constructor failure leaves5 root listeners.",
+      "action": "Opus owns constructor rollback/attempt-all dispose and Settings seam."
+    },
+    {
+      "id": "D04",
+      "severity": "P2",
+      "status": "delegated to Spark; not fixed in this branch",
+      "paths": "Audio.dispose",
+      "reproduction": "Lifetime.dispose throws after listener cleanup: scheduler/context retirement not attempted.",
+      "action": "Spark owns attempt-all audio cleanup; mix/content untouched here."
+    },
+    {
+      "id": "H01",
+      "severity": "P1",
+      "status": "fixed independently by Nitro primary",
+      "paths": "Engine/Level",
+      "reproduction": "Stale first RAF produced negative flight and future grades on older local base.",
+      "action": "Primary9b36398 verified; preserve it when integrating these base-relative tranches."
+    },
+    {
+      "id": "H02",
+      "severity": "P3",
+      "status": "primary owns active documentation updates",
+      "paths": "docs/PLAYTEST.md, docs/RELEASE.md, handoff.json",
+      "reproduction": "Older human-acceptance language,27-vs28 resource count and retired link-art generator references.",
+      "action": "Primary updating active guides; preserve prior evidence/JSON handoff and editable sources, delete nothing here."
+    }
+  ],
+  "toolingInventory": [
+    {
+      "path": "scripts/brand/launch/capture-frames.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/brand/launch/capture.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/brand/launch/compose.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/brand/launch/results-plan.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/brand/launch/with-gpu-lease.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/brand/render-link-art.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/antenna-baseline.mjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/asset-baseline.mjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/audio-lifecycle.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/audio-render.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/browser-smoke.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/bunker-baseline.mjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/campaign-smoke.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/cargo-kit-baseline.mjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/context-recovery.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/cooling-stack-baseline.mjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/covered-fighter-baseline.mjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/flak-gun-baseline.mjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/fuel-depot-baseline.mjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/imported-models.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/landmark-baseline.mjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/browser-evidence.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/campaign-report.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/credit.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/fingerprint.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/freeze-candidate.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/gpu-lease.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/inspect-public.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/judge-gate.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/matrix.mjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/model-dependencies.js",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/package-itch.mjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/pilot-browser.js",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/plan.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/run-bot.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/run-source-qa.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/summarize.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/verify-itch.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/windows-bot.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/windows-itch.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/windows-public.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/launch/windows-source-qa.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/live-sol-low/contact-sheet-test.py",
+      "check": "Python parse only; not execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/live-sol-low/contact-sheet.py",
+      "check": "Python parse only; not execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/live-sol-low/final-live.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/live-sol-low/launch.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/live-sol-low/mode-guard.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/live-sol-low/pilot.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/live-sol-low/prepare.test.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/live-sol-low/trial-plan.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/live-sol-low/visual-notes.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/live-sol-low/visual-notes.test.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/live-sol-low/windows-live.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/model-capture.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/motion-capture.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/opus-ui-audit.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/opus-ui-compare.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/opus-ui-nav.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/receive-asset.py",
+      "check": "Python parse only; not execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/release-smoke.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/ship-capture.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "scripts/qa/showcase-capture.cjs",
+      "check": "syntax only; not runtime execution",
+      "passed": true,
+      "error": null
+    }
+  ],
+  "buildAndReferenceReview": [
+    {
+      "paths": [
+        "package.json",
+        "package-lock.json",
+        ".nvmrc",
+        "vite.config.js",
+        ".github/workflows/pages.yml",
+        "index.html",
+        ".gitignore"
+      ],
+      "result": "Examined pinned/runtime dependency references, relative/Pages base, dist-only artifact publishing, validation commands and ignored generated evidence. No configuration change. No dependency/standard currentness claim requiring external lookup."
+    },
+    {
+      "paths": [
+        "scripts/qa/launch",
+        "scripts/qa/live-sol-low"
+      ],
+      "result": "Inventoried all scripts; focused static review of fingerprint/freeze/credit/judge/package/campaign/cleanup boundaries. Primary owns newer harness hardening not present on this historical base. 62 JS/Python tooling paths parsed; parsing is not behavioral execution."
+    },
+    {
+      "paths": [
+        "tests"
+      ],
+      "result": "292 behavioral tests pass on this local branch. Existing goldens and test laws unchanged. Added component/template/Settings tests and shipped-GLB VM fixture; tests/fixtures intentionally substitute I/O/DOM/image decoding, never claim GPU validation."
+    },
+    {
+      "paths": [
+        "handoff.json",
+        "docs/release-validation.json",
+        "docs/studio-polish/FINISH-LINE.md",
+        "docs/studio-polish/RELEASE-CLOSEOUT.md",
+        "docs/environment-scenes/ENVIRONMENT-KIT.md",
+        "docs/launch/FINISH-LINE.md",
+        "docs/launch/HARDWARE-QA.md",
+        "docs/launch/PERFORMANCE-INVESTIGATION.md",
+        "docs/launch/JUDGING-PROTOCOL.md",
+        "docs/PLAYTEST.md",
+        "docs/RELEASE.md",
+        "docs/testing/README.md"
+      ],
+      "result": "Authority, old-vs-current status, retention, file leases and evidence limits reviewed. Historical asset/source/receipt records preserved; primary owns active broader release doc updates."
+    }
+  ],
+  "validation": {
+    "localFullTests": 292,
+    "pagesBuild": "passed",
+    "portableBuild": "passed;46files/35model-files read back byte-equal to public; relative bundle URLs",
+    "gpuHere": "not run",
+    "nitroReported": "Tranche1 integrated as1cdcc68;277 tests including5 primary checks, actual GTX program lifetime comparison plus default/legacy/context/UI jobs passed. Tranche2 still needs integrated validation.",
+    "retention": "No unique source, media, evidence or archive deleted. No new checkout/helpers/PR/merge/deployment."
+  },
+  "remaining": [
+    "Integrate tranche2 on Nitro with primary clock/evidence patches, then run applicable combined hardware/package checks.",
+    "Fable, Opus, Spark and primary own delegated D01-D04 and Settings UI seam; no release-complete claim from this branch.",
+    "Physical phones/controllers, human audio/feel and sustained hardware FPS remain separate evidence; primary owns final campaign, frozen candidate and21-score judge gate."
+  ]
+}

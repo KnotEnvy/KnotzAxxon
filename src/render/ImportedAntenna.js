@@ -1,5 +1,6 @@
 // Adapted from the frozen antenna initial parametric geometry recipe.
 import * as THREE from 'three';
+import { runCleanups } from '../core/Lifetime.js';
 
 function tapered(bottomWidth, topWidth, bottomDepth, topDepth) {
   const vertices = [
@@ -46,7 +47,7 @@ export function createAntennaTemplates() {
 }
 
 export function disposeAntennaTemplates(templates) {
-  for (const geometry of new Set(Object.values(templates))) geometry.dispose();
+  runCleanups([...new Set(Object.values(templates))].map(geometry => () => geometry.dispose()));
 }
 
 function capture(batch, width, height, depth, x, y, z) {
@@ -105,6 +106,7 @@ export function appendImportedAntenna(batch, rng, x, z, theme) {
 export function importedAntennaTemplates() { return loadedTemplates; }
 export function disposeImportedAntenna() {
   if (!loadedTemplates) return;
-  disposeAntennaTemplates(loadedTemplates);
+  const owned = loadedTemplates;
   loadedTemplates = undefined;
+  disposeAntennaTemplates(owned);
 }

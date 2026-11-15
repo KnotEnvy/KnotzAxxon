@@ -1,3 +1,4 @@
+import { disposeModel } from '../render/Dispose.js';
 /**
  * GPU particle system.
  *
@@ -108,6 +109,14 @@ export class ParticleSystem {
    * @param {number} capacity max simultaneous particles
    */
   constructor(scene, sprite, capacity = 4000, opts = {}) {
+    try { this._initialize(scene, sprite, capacity, opts); }
+    catch (error) {
+      try { this.dispose(); } catch { /* preserve the construction error */ }
+      throw error;
+    }
+  }
+
+  _initialize(scene, sprite, capacity, opts) {
     this.capacity = capacity;
     this.cursor = 0;
     this.live = 0;
@@ -333,8 +342,6 @@ export class ParticleSystem {
   }
 
   dispose() {
-    this.points.geometry.dispose();
-    this.material.dispose();
-    this.points.parent?.remove(this.points);
+    if (this.points) disposeModel(this.points, true);
   }
 }

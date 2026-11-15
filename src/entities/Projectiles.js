@@ -1,3 +1,4 @@
+import { runCleanups } from '../core/Lifetime.js';
 /**
  * Projectiles.
  *
@@ -73,8 +74,17 @@ class Pool {
 
 export class Projectiles {
   constructor(scene, materials, quality) {
+    try { this._initialize(scene, materials, quality); }
+    catch (error) {
+      try { this.dispose(); } catch { /* preserve the construction error */ }
+      throw error;
+    }
+  }
+
+  _initialize(scene, materials, quality) {
     this.scene = scene;
     this.materials = materials;
+    this._meshes = [];
 
     this.player = new Pool(140);
     this.enemy = new Pool(260);
@@ -127,6 +137,7 @@ export class Projectiles {
     _m.makeScale(0, 0, 0);
     for (let i = 0; i < count; i++) m.setMatrixAt(i, _m);
     m.instanceMatrix.needsUpdate = true;
+    this._meshes.push(m);
     this.scene.add(m);
     return m;
   }
@@ -334,14 +345,15 @@ export class Projectiles {
   dispose() {
     if (this._disposed) return;
     this._disposed = true;
-    this.clear();
-    const geometry = new Set();
-    for (const mesh of [this.playerMesh, this.enemyMesh, this.missileMesh, this.playerHalo, this.enemyHalo]) {
-      mesh.removeFromParent(); mesh.dispose(); geometry.add(mesh.geometry);
-    }
-    for (const g of geometry) g.dispose();
-    this._ownedMissileMaterial?.dispose();
-    this.playerHalo.material.dispose(); this.enemyHalo.material.dispose();
+    const meshes = this._meshes.splice(0), geometries = new Set(meshes.map(mesh => mesh.geometry));
+    // Geometry is shared between bolt/halo meshes, but never with another pool.
+    runCleanups([
+      ...[this.player, this.enemy, this.missile].map(pool => () => pool?.clear()),
+      ...meshes.flatMap(mesh => [() => mesh.removeFromParent(), () => mesh.dispose()]),
+      ...[...geometries].map(geometry => () => geometry.dispose()),
+      ...[this._ownedMissileMaterial, this.playerHalo?.material, this.enemyHalo?.material]
+        .filter(Boolean).map(material => () => material.dispose()),
+    ]);
   }
 
 }

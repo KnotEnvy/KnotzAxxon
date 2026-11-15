@@ -1,3 +1,5 @@
+import { runCleanups } from '../core/Lifetime.js';
+import { disposeModel } from '../render/Dispose.js';
 /**
  * Effects director.
  *
@@ -31,6 +33,14 @@ const _e = new THREE.Euler();
  */
 class DebrisField {
   constructor(scene, material, capacity = 400, geometry = null) {
+    try { this._initialize(scene, material, capacity, geometry); }
+    catch (error) {
+      try { this.dispose(); } catch { /* preserve the construction error */ }
+      throw error;
+    }
+  }
+
+  _initialize(scene, material, capacity, geometry) {
     this.capacity = capacity;
     // A squashed tetra reads as a torn plate far better than a cube does.
     const geo = geometry ?? new THREE.TetrahedronGeometry(0.5, 0).scale(1, 0.55, 1.35);
@@ -136,7 +146,7 @@ class DebrisField {
   }
 
   dispose() {
-    this.mesh.removeFromParent(); this.mesh.dispose(); this.mesh.geometry.dispose();
+    if (this.mesh) disposeModel(this.mesh);
   }
 }
 
@@ -146,9 +156,17 @@ class DebrisField {
 
 class RingField {
   constructor(scene, texture, capacity = 24) {
+    try { this._initialize(scene, texture, capacity); }
+    catch (error) {
+      try { this.dispose(); } catch { /* preserve the construction error */ }
+      throw error;
+    }
+  }
+
+  _initialize(scene, texture, capacity) {
     this.capacity = capacity;
     this.items = [];
-    const geo = new THREE.PlaneGeometry(1, 1);
+    const geo = this._geometry = new THREE.PlaneGeometry(1, 1);
     for (let i = 0; i < capacity; i++) {
       const mat = new THREE.MeshBasicMaterial({
         map: texture,
@@ -163,8 +181,8 @@ class RingField {
       mesh.visible = false;
       mesh.frustumCulled = false;
       mesh.renderOrder = 9;
-      scene.add(mesh);
       this.items.push({ mesh, mat, life: 0, maxLife: 1, from: 1, to: 10, billboard: true, spin: 0 });
+      scene.add(mesh);
     }
     this.cursor = 0;
   }
@@ -211,9 +229,13 @@ class RingField {
   }
 
   dispose() {
-    this.items[0]?.mesh.geometry.dispose();
-    for (const it of this.items) { it.mesh.removeFromParent(); it.mat.dispose(); }
-    this.items.length = 0;
+    if (this._disposed) return;
+    this._disposed = true;
+    const items = this.items.splice(0);
+    runCleanups([
+      () => this._geometry?.dispose(),
+      ...items.flatMap(it => [() => it.mesh.removeFromParent(), () => it.mat.dispose()]),
+    ]);
   }
 }
 
@@ -229,6 +251,14 @@ class RingField {
  */
 class WreckField {
   constructor(scene, materials, capacity = 24) {
+    try { this._initialize(scene, materials, capacity); }
+    catch (error) {
+      try { this.dispose(); } catch { /* preserve the construction error */ }
+      throw error;
+    }
+  }
+
+  _initialize(scene, materials, capacity) {
     this.capacity = capacity;
     const decalGeo = new THREE.PlaneGeometry(1, 1).rotateX(-Math.PI / 2);
     this.decalMat = new THREE.MeshBasicMaterial({
@@ -321,8 +351,12 @@ class WreckField {
   }
 
   dispose() {
-    for (const mesh of [this.decals, this.slabs]) { mesh.removeFromParent(); mesh.dispose(); mesh.geometry.dispose(); }
-    this.decalMat.dispose();
+    if (this._disposed) return;
+    this._disposed = true;
+    runCleanups([
+      ...[this.decals, this.slabs].filter(Boolean).map(mesh => () => disposeModel(mesh)),
+      () => this.decalMat?.dispose(),
+    ]);
   }
 }
 
@@ -337,11 +371,20 @@ class WreckField {
  */
 class LightPool {
   constructor(scene, count = 6) {
+    try { this._initialize(scene, count); }
+    catch (error) {
+      try { this.dispose(); } catch { /* preserve the construction error */ }
+      throw error;
+    }
+  }
+
+  _initialize(scene, count) {
+    this.scene = scene;
     this.lights = [];
     for (let i = 0; i < count; i++) {
       const l = new THREE.PointLight(0xffffff, 0, 60, 2);
-      scene.add(l);
       this.lights.push({ light: l, life: 0, maxLife: 1, peak: 0 });
+      scene.add(l);
     }
     this.cursor = 0;
   }
@@ -377,14 +420,19 @@ class LightPool {
     }
     while (this.lights.length < count) {
       const l = new THREE.PointLight(0xffffff, 0, 60, 2);
-      scene.add(l);
       this.lights.push({ light: l, life: 0, maxLife: 1, peak: 0 });
+      scene.add(l);
     }
     this.cursor = 0;
   }
 
   clear() {
     for (const it of this.lights) { it.life = 0; it.light.intensity = 0; }
+  }
+
+  dispose() {
+    const lights = this.lights.splice(0);
+    runCleanups(lights.flatMap(it => [() => it.light.removeFromParent(), () => it.light.dispose?.()]));
   }
 }
 
@@ -399,6 +447,14 @@ export class Effects {
    * @param {object} quality
    */
   constructor(scene, materials, quality) {
+    try { this._initialize(scene, materials, quality); }
+    catch (error) {
+      try { this.dispose(); } catch { /* preserve the construction error */ }
+      throw error;
+    }
+  }
+
+  _initialize(scene, materials, quality) {
     this.scene = scene;
     this.materials = materials;
 
@@ -803,8 +859,8 @@ export class Effects {
   dispose() {
     if (this._disposed) return;
     this._disposed = true;
-    this.sparks.dispose(); this.smoke.dispose(); this.debris.dispose(); this.rings.dispose(); this.wrecks.dispose(); this.chunks.dispose();
-    this.lights.resize(this.scene, 0);
+    runCleanups([this.sparks, this.smoke, this.debris, this.rings, this.wrecks, this.chunks, this.lights]
+      .map(owner => () => owner?.dispose()));
   }
 
 }

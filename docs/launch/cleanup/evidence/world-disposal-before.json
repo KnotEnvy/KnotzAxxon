@@ -1,0 +1,23 @@
+[
+  {
+    "path": "src/world/Fortress.js",
+    "method": "_disposeChunk",
+    "secondGeometryDisposals": 0,
+    "attached": true,
+    "rearObstacles": 1,
+    "emitters": 1,
+    "animated": 1
+  },
+  {
+    "path": "src/world/AmbientTraffic.js",
+    "method": "disposeAmbientTraffic",
+    "materialDisposals": 0
+  },
+  {
+    "path": "src/world/EnvironmentKit.js",
+    "method": "disposeEnvironmentKit",
+    "attempted": 1,
+    "owned": 175,
+    "mapSize": 175
+  }
+]

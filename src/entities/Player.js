@@ -1,5 +1,6 @@
 import { inCombatView } from '../game/CombatVisibility.js';
 import { disposeModel } from '../render/Dispose.js';
+import { runCleanups } from '../core/Lifetime.js';
 /**
  * The player ship.
  *
@@ -34,6 +35,14 @@ const _euler = new THREE.Euler();
 
 export class Player {
   constructor(scene, materials, projectiles, fx) {
+    try { this._initialize(scene, materials, projectiles, fx); }
+    catch (error) {
+      try { this.dispose(); } catch { /* preserve the construction error */ }
+      throw error;
+    }
+  }
+
+  _initialize(scene, materials, projectiles, fx) {
     this.scene = scene;
     this.materials = materials;
     this.projectiles = projectiles;
@@ -97,7 +106,8 @@ export class Player {
     scene.add(this.reticle);
 
     /** One ribbon per nozzle. This is the flame; the sparks are seasoning. */
-    this.trails = [1, -1].map(() => new Trail(scene, {
+    this.trails = [];
+    for (let i = 0; i < 2; i++) this.trails.push(new Trail(scene, {
       samples: 18, width: 0.46, hot: 0xe8f8ff, cool: 0x1f6fc8,
     }));
     this._nozzle = [new THREE.Vector3(), new THREE.Vector3()];
@@ -479,9 +489,11 @@ export class Player {
   dispose() {
     if (this._disposed) return;
     this._disposed = true;
-    disposeModel(this.group);
-    for (const guide of [this.shadow, this.dropLine, this.reticle]) disposeModel(guide, true);
-    for (const trail of this.trails) trail.dispose();
+    runCleanups([
+      () => { if (this.group) disposeModel(this.group); },
+      ...[this.shadow, this.dropLine, this.reticle].filter(Boolean).map(guide => () => disposeModel(guide, true)),
+      ...(this.trails ?? []).map(trail => () => trail.dispose()),
+    ]);
   }
 
 }

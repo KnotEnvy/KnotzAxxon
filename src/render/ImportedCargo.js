@@ -1,24 +1,8 @@
-import * as THREE from 'three';
+import { runCleanups } from '../core/Lifetime.js';
 // Adapted frozen cargo recipe: pass the unchanged procedural method at each call.
-export function prepareCargoKit({ THREE, gltf }) {
+export function prepareCargoKit({ gltf }) {
   const templates = new Map(), adapters = new WeakMap();
   let disposed = false;
-  gltf.scene.updateMatrixWorld(true);
-  for (const name of ['CargoCrate_Fitted', 'CargoDrum_Fitted']) {
-    const object = gltf.scene.getObjectByName(name);
-    if (!object?.isMesh) throw new Error(`Missing cargo template ${name}`);
-    const geometry = object.geometry.index ? object.geometry.toNonIndexed() : object.geometry.clone();
-    geometry.applyMatrix4(object.matrixWorld);
-    if (!geometry.attributes.normal) throw new Error('Cargo normals are required');
-    const color = geometry.attributes.color;
-    if (color && Array.from(color.array).some(value => value !== 1)) throw new Error('Batch.stamp ignores COLOR_0; cargo must remain neutral');
-    for (const attribute of Object.keys(geometry.attributes)) if (!['position', 'normal'].includes(attribute)) geometry.deleteAttribute(attribute);
-    geometry.clearGroups();
-    geometry.computeBoundingBox();
-    geometry.computeBoundingSphere();
-    geometry.userData.neutralVertexMultiplier = 1;
-    templates.set(name, geometry);
-  }
   const importedResources = new Set();
   gltf.scene.traverse(object => {
     if (object.geometry) importedResources.add(object.geometry);
@@ -27,8 +11,38 @@ export function prepareCargoKit({ THREE, gltf }) {
       for (const value of Object.values(material)) if (value?.isTexture) importedResources.add(value);
     }
   });
-  for (const resource of importedResources) resource.dispose();
-  gltf.scene.clear();
+  const releaseInputs = () => runCleanups([
+    ...[...importedResources].map(resource => () => resource.dispose()),
+    () => gltf.scene.clear(),
+  ]);
+  try {
+    gltf.scene.updateMatrixWorld(true);
+    for (const name of ['CargoCrate_Fitted', 'CargoDrum_Fitted']) {
+      const object = gltf.scene.getObjectByName(name);
+      if (!object?.isMesh) throw new Error(`Missing cargo template ${name}`);
+      const geometry = object.geometry.index ? object.geometry.toNonIndexed() : object.geometry.clone();
+      templates.set(name, geometry);
+      geometry.applyMatrix4(object.matrixWorld);
+      if (!geometry.attributes.normal) throw new Error('Cargo normals are required');
+      const color = geometry.attributes.color;
+      if (color && Array.from(color.array).some(value => value !== 1)) throw new Error('Batch.stamp ignores COLOR_0; cargo must remain neutral');
+      for (const attribute of Object.keys(geometry.attributes)) if (!['position', 'normal'].includes(attribute)) geometry.deleteAttribute(attribute);
+      geometry.clearGroups();
+      geometry.computeBoundingBox();
+      geometry.computeBoundingSphere();
+      geometry.userData.neutralVertexMultiplier = 1;
+    }
+  } catch (error) {
+    try { runCleanups([...templates.values()].map(geometry => () => geometry.dispose()).concat(releaseInputs)); }
+    catch { /* preserve the preparation error */ }
+    throw error;
+  }
+  try { releaseInputs(); }
+  catch (error) {
+    try { runCleanups([...templates.values()].map(geometry => () => geometry.dispose())); }
+    catch { /* preserve the input retirement error */ }
+    throw error;
+  }
   const crate = templates.get('CargoCrate_Fitted'), drum = templates.get('CargoDrum_Fitted');
   function adapterFor(batch) {
     if (!adapters.has(batch)) adapters.set(batch, {
@@ -51,18 +65,19 @@ export function prepareCargoKit({ THREE, gltf }) {
     dispose() {
       if (disposed) return;
       disposed = true;
-      for (const template of templates.values()) template.dispose();
+      const owned = [...templates.values()];
       templates.clear();
+      runCleanups(owned.map(template => () => template.dispose()));
     },
   };
 }
 
 let kit;
-export function prepareImportedCargo(gltf) { kit = prepareCargoKit({ THREE, gltf }); }
+export function prepareImportedCargo(gltf) { kit = prepareCargoKit({ gltf }); }
 export function appendImportedCargo(owner, batch, rng, x, z, maxH, originalCrates) {
   if (!kit) return false;
   kit.crates.call(owner, batch, rng, x, z, maxH, originalCrates);
   return true;
 }
 export function importedCargoTemplates() { return kit ? [...kit.templates.values()] : []; }
-export function disposeImportedCargo() { kit?.dispose(); kit = undefined; }
+export function disposeImportedCargo() { const owned = kit; kit = undefined; owned?.dispose(); }

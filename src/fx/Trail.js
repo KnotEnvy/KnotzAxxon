@@ -1,3 +1,4 @@
+import { disposeModel } from '../render/Dispose.js';
 /**
  * Camera-facing ribbon trail.
  *
@@ -57,6 +58,14 @@ export class Trail {
    * @param {number} [o.width] width at the nozzle, in world units
    */
   constructor(scene, o = {}) {
+    try { this._initialize(scene, o); }
+    catch (error) {
+      try { this.dispose(); } catch { /* preserve the construction error */ }
+      throw error;
+    }
+  }
+
+  _initialize(scene, o) {
     this.samples = o.samples ?? 16;
     this.width = o.width ?? 0.5;
     this.interval = o.interval ?? 1 / 90;
@@ -185,8 +194,6 @@ export class Trail {
   }
 
   dispose() {
-    this.mesh.geometry.dispose();
-    this.material.dispose();
-    this.mesh.parent?.remove(this.mesh);
+    if (this.mesh) disposeModel(this.mesh, true);
   }
 }

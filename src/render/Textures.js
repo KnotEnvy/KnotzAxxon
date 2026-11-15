@@ -8,6 +8,7 @@
  */
 
 import * as THREE from 'three';
+import { runCleanups } from '../core/Lifetime.js';
 import { Rng, clamp01, lerp, smoothstep } from '../core/Utils.js';
 
 const cache = new Map();
@@ -45,12 +46,14 @@ function once(key, build) {
 }
 
 export function disposeTextures() {
+  const textures = new Set();
   for (const v of cache.values()) {
-    if (v?.isTexture) v.dispose();
-    else if (v && typeof v === 'object') for (const t of Object.values(v)) t?.isTexture && t.dispose();
+    if (v?.isTexture) textures.add(v);
+    else if (v && typeof v === 'object') for (const t of Object.values(v)) if (t?.isTexture) textures.add(t);
   }
   cache.clear();
   samplingAnisotropy = null;
+  runCleanups([...textures].map(texture => () => texture.dispose()));
 }
 
 /* ------------------------------------------------------------------ */

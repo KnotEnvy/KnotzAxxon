@@ -82,6 +82,14 @@ const cyl = (rt, rb, h, seg = 10) => new THREE.CylinderGeometry(rt, rb, h, seg);
 
 export class Boss {
   constructor(scene, mats, feature) {
+    try { this._initialize(scene, mats, feature); }
+    catch (error) {
+      try { this.dispose(); } catch { /* preserve the construction error */ }
+      throw error;
+    }
+  }
+
+  _initialize(scene, mats, feature) {
     this.mats = mats;
     this.rng = new Rng(feature.seed ?? 7);
     this.group = new THREE.Group();
@@ -873,8 +881,8 @@ export class Boss {
     if (this._disposed) return;
     this._disposed = true;
     runCleanups([
-      () => disposeModel(this.group),
-      ...[this.visorMat, this.chargeMat, this.seamMat, ...this.pods.map(p => p.flashMat)]
+      () => { if (this.group) disposeModel(this.group); },
+      ...[this.visorMat, this.chargeMat, this.seamMat, ...(this.pods ?? []).map(p => p.flashMat)].filter(Boolean)
         .map(material => () => material.dispose()),
     ]);
   }

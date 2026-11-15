@@ -1,3 +1,4 @@
+import { disposeModel } from '../render/Dispose.js';
 /**
  * Ambient motes.
  *
@@ -59,6 +60,14 @@ const PRESETS = {
 
 export class AmbientDust {
   constructor(scene, count = 480) {
+    try { this._initialize(scene, count); }
+    catch (error) {
+      try { this.dispose(); } catch { /* preserve the construction error */ }
+      throw error;
+    }
+  }
+
+  _initialize(scene, count) {
     const seeds = new Float32Array(count * 2 * 3);
     const tails = new Float32Array(count * 2);
     const positions = new Float32Array(count * 2 * 3);
@@ -134,8 +143,6 @@ export class AmbientDust {
   }
 
   dispose() {
-    this.mesh.removeFromParent();
-    this.mesh.geometry.dispose();
-    this.material.dispose();
+    if (this.mesh) disposeModel(this.mesh, true);
   }
 }

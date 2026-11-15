@@ -61,10 +61,10 @@ const mat = (key, build) => {
 };
 
 export function disposeEnemyGeometry() {
-  for (const g of geoCache.values()) g.dispose();
+  const resources = new Set([...geoCache.values(), ...matCache.values()]);
   geoCache.clear();
-  for (const m of matCache.values()) m.dispose();
   matCache.clear();
+  runCleanups([...resources].map(resource => () => resource.dispose()));
 }
 
 /* ------------------------------------------------------------------ */
