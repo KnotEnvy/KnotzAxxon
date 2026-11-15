@@ -33,4 +33,5 @@ test('release evidence refuses pilots, software, timeouts, changing builds and d
   assert.deepEqual(result.excluded.map(e=>e.reason),['development-pilot','no-hardware-proof','not-completed',
     'unverified-or-changing-source','duplicate-seed-and-loop','invalid-initial-state','invalid-initial-state']);
   assert.equal(auditEpisodes([good],receipts,'other').total,0);
+  assert.equal(auditEpisodes([good],receipts,'candidate','another-harness').total,0);
 });

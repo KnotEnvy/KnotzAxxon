@@ -3,6 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),os=require('node:os');
 const config=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
 const {chromium}=require(config.playwright);
 const append=(name,value)=>fs.appendFileSync(path.join(config.out,name),JSON.stringify(value)+'\n');
+let currentEpisode=null;
 (async()=>{
   const browser=await chromium.launch({executablePath:config.chrome,headless:true,
     args:['--use-angle=d3d11','--enable-gpu','--ignore-gpu-blocklist']});
@@ -37,6 +38,7 @@ const append=(name,value)=>fs.appendFileSync(path.join(config.out,name),JSON.str
       const episode={id:`${config.runId}-${index}`,seed:config.seed+index,loop:config.loops[index%config.loops.length],
         profile:config.profile,camera:config.camera,quality:config.quality,renderEvery:config.renderEvery,maxSeconds:config.maxSeconds,timeOrigin:config.timeOrigin};
       Object.assign(episode,config.plan?.[index]??{});
+      currentEpisode=episode;
       if(episode.width)await page.setViewportSize({width:episode.width,height:episode.height});
       await page.evaluate(spec=>{KZ.settings.set('quality',spec.quality);KZ.settings.set('camera',spec.camera)},episode);
       // Seed the existing shared PRNG once at the episode boundary. This keeps
@@ -89,4 +91,5 @@ const append=(name,value)=>fs.appendFileSync(path.join(config.out,name),JSON.str
     }
     await context.close();
   }finally{await browser.close()}
-})().catch(e=>{append('failures.jsonl',{message:e.stack,at:new Date().toISOString()});console.error(e.stack);process.exitCode=1});
+})().catch(e=>{append('failures.jsonl',{message:e.stack,episode:currentEpisode,sourceHash:config.source.sourceHash,
+  harnessHash:config.harnessHash,at:new Date().toISOString()});console.error(e.stack);process.exitCode=1});

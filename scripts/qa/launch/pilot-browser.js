@@ -32,6 +32,9 @@ window.KZBot = (() => {
       if(run.frames%spec.renderEvery!==0)return;
       const start=performance.now();original.render.call(this,dt);
       run.renderCpuMs.push(performance.now()-start);run.renderedFrames++;
+      run.lastRenderStats={frame:run.frames,calls:e.renderer.info.render.calls,
+        triangles:e.renderer.info.render.triangles,points:e.renderer.info.render.points,
+        lines:e.renderer.info.render.lines,canvas:{width:e.canvas.width,height:e.canvas.height}};
     };
     // Observational wrappers invoke the originals unchanged and return exactly
     // their result. No health/fuel/aim/cadence/invulnerability override is used.
@@ -40,8 +43,9 @@ window.KZBot = (() => {
       if(result!=='none')run.events.push({type:'damage',frame:run.frames,z:this.pos.z,amount,result,before,hull:this.hull,source:opts?.source??'combat'});
       return result;
     };
-    g._crash=function(ctx,c,tag){const before=p.hull;const result=original.crash.call(this,ctx,c,tag);
-      if(p.hull!==before)run.events.push({type:'collision',frame:run.frames,z:p.pos.z,tag,hull:p.hull,decision:run.decision});return result;
+    g._crash=function(ctx,c,tag){const before={hull:p.hull,shields:p.shields,invuln:p.invuln};const result=original.crash.call(this,ctx,c,tag);
+      run.events.push({type:'collision',frame:run.frames,z:p.pos.z,tag,before,hull:p.hull,shields:p.shields,
+        damaging:p.hull!==before.hull||p.shields!==before.shields,decision:run.decision});return result;
     };
     g.warn=function(label){run.events.push({type:'warning',frame:run.frames,z:p.pos.z,label});return original.warn.call(this,label)};
     g.projectiles.fire=function(side,...args){
@@ -186,7 +190,8 @@ window.KZBot = (() => {
       pos:p.pos.toArray(),state:g.state,sector:g.sectorIndex,hull:p.hull,shield:p.shields,fuel:p.fuel,heat:p.heat,
       shots:run.observedShots,gameShotsCounter:g.shotsFired,hits:g.shotsHit,kills:g.kills,score:g.score,threads:g.threads,grazes:g.grazes,
       boss:b?{hp:b.hp,phase:b.phase,coreOpen:b.coreOpen,rackHits:b.launcher.hits,charging:b.launcher.charging}:null,
-      memory:{...e.renderer.info.memory},programs:e.renderer.info.programs.length,canvas:{width:e.canvas.width,height:e.canvas.height},decision:run.decision});
+      memory:{...e.renderer.info.memory},programs:e.renderer.info.programs.length,lastRender:run.lastRenderStats,
+      canvas:{width:e.canvas.width,height:e.canvas.height},decision:run.decision});
     if(g.state==='over'||g.state==='victory'){run.done=true;run.outcome=g.state;out.checkpoint='terminal';}
     if(run.rawSeconds>=run.spec.maxSeconds&&!run.done){run.done=true;run.outcome='timeout';out.checkpoint='timeout';}
     run.previousZ=p.pos.z;

@@ -1,0 +1,44 @@
+// Freeze identity only. This never grants publication or manufactures QA results.
+const fs = require('node:fs');
+const path = require('node:path');
+const {execFileSync} = require('node:child_process');
+const {fingerprint, sha256} = require('./fingerprint.cjs');
+const {allocations} = require('./plan.cjs');
+const root = path.resolve(__dirname, '../../..');
+const name = process.argv[2];
+if (!name || !/^[a-z0-9][a-z0-9_-]*$/.test(name)) throw Error('Expected a unique candidate name, e.g. rc01');
+const file = path.join(root, 'docs/launch/candidates', name + '.json');
+if (fs.existsSync(file)) throw Error('Candidate identities are immutable; use a new name');
+const dirty = execFileSync('git', ['status', '--porcelain', '--', 'src', 'public', 'index.html',
+  'package.json', 'package-lock.json', 'vite.config.js', 'scripts/qa/launch', 'scripts/qa/live-sol-low'],
+{cwd: root, encoding: 'utf8'}).trim();
+if (dirty) throw Error('Commit candidate runtime and harness before freezing:\n' + dirty);
+const source = fingerprint(root);
+const exportsFile = path.join(root, 'assets-source/launch-marketing/export-manifest.json');
+if (!fs.existsSync(exportsFile)) throw Error('Complete marketing exports before freezing public asset identity');
+function treeHashes(dir) {
+  const records = [];
+  function walk(rel) {
+    for (const entry of fs.readdirSync(path.join(root, rel), {withFileTypes: true}).sort((a,b)=>a.name.localeCompare(b.name))) {
+      const file = path.join(rel, entry.name);
+      if (entry.isDirectory()) walk(file);
+      else if (entry.isFile()) records.push({file, sha256: sha256(fs.readFileSync(path.join(root, file)))});
+    }
+  }
+  walk(dir); return records;
+}
+const harnessFiles = [...treeHashes('scripts/qa/launch'), ...treeHashes('scripts/qa/live-sol-low')];
+const candidate = {schema: 'knotzaxxon.frozen-candidate.v1', name, frozenAt: new Date().toISOString(),
+  commit: source.head, sourceHash: source.sourceHash, sourceFiles: source.files,
+  harnessHash: sha256(JSON.stringify(harnessFiles)), harnessFiles,
+  browserPilotHash: sha256(fs.readFileSync(path.join(root, 'scripts/qa/launch/pilot-browser.js'))),
+  marketingManifest: {file: path.relative(root, exportsFile), sha256: sha256(fs.readFileSync(exportsFile))},
+  dependencies: {node: process.version, vite: require('vite/package.json').version,
+    three: JSON.parse(fs.readFileSync(path.join(root, 'node_modules/three/package.json'))).version,
+    playwright: require('playwright/package.json').version},
+  gameplayRequirements: allocations.map(a=>({...a, liveEpisodes:10})),
+  judgingRequirement: 'Luna, Terra and Haiku independently >=9 in each of the seven unchanged lenses; all21 on this candidate',
+  status: 'identity frozen; gameplay, package and judging results must be attached separately'};
+fs.mkdirSync(path.dirname(file), {recursive:true});
+fs.writeFileSync(file, JSON.stringify(candidate,null,2)+'\n', {flag:'wx'});
+console.log(JSON.stringify({file, commit:candidate.commit, sourceHash:candidate.sourceHash, harnessHash:candidate.harnessHash},null,2));
