@@ -10,7 +10,12 @@ Raw captures live outside the checkout under
 |---|---|
 | `template.html` | One composition: a real-engine frame, a scrim, and live-text title, copy and CTA layers. Layouts: `card`, `cover`, `banner`. |
 | `compositions.json` | Every export: size, layout, source frame, placement and copy toggles. Also the capture facts for each source frame and the itch screenshot selection. |
-| `frames/*.png` | The two unretouched GPU frames the compositions use. |
+| `frames/*.png` | The two unretouched native GPU frames the compositions use (Interceptor Screen / Chase, Iron Sentinel / Classic). |
+| `screenshots/0[1-5]-*.png` | The five curated native itch screenshots (1:1 copies of the capture PNGs). |
+| `exports/itch-banner-1200x260.png` | Transparent (RGBA) itch banner. The other exports live in `public/brand/`. |
+| `export-manifest.json` | Every export, screenshot, source frame and retained legacy file: dimensions, format, bytes, sha256, drawing buffer, scaling, renderer, staging, plus the font resolution and screen-RGB print limit. |
+| `ITCH-LISTING.md` | Ready-to-apply itch copy, tags, alt text, upload mapping and the account-only checklist. |
+| `../../scripts/brand/launch/with-gpu-lease.cjs` | Runs any one browser job under its own cooperative-reservation token and releases it on exit or signal. |
 | `../../scripts/brand/launch/compose.cjs` | Renders the exports and writes `export-manifest.json` (dimensions, bytes, sha256, source frame, renderer, scaling). |
 | `../../scripts/brand/launch/capture.cjs` + `capture-frames.cjs` | WSL launcher and Windows Node/Chrome driver for real-GPU captures over Playwright's local pipe (no debugging port). Shots record the unmasked renderer, browser, viewport, DPR, drawing buffer, render scale, settings, engine frame and state. The launcher verifies a held lease token or acquires and releases its own. |
 
@@ -28,17 +33,33 @@ Raw captures live outside the checkout under
 - The scattered title overrides in `style.css` are consolidated into one "Title / attract" section.
 - **HUD warnings** (Sol Low's faint HULL SCRAPE): a near-solid plate with tone-coloured rules, a dark glyph outline, a brighter alert red, and a step pulse floored at 60% instead of 15%. Text, tones, durations and priorities are unchanged.
 
-## Evidence (all hardware: ANGLE NVIDIA GTX 1650 Ti D3D11, Chrome 157.0.8103.52 Windows headless)
+## Evidence (hardware: ANGLE NVIDIA GTX 1650 Ti D3D11, Chrome 157.0.8103.52 Windows headless)
 
-- Before/after title: `captures/title-20261115T185647Z/` (before) and `captures/final-r1-20261115T190627Z/final-title-*` (after). Covered: 1280x720 and 1920x1080 desktop, 390x844 and 844x390 touch at DPR 2, gamepad legend (lastDevice staged), reduced motion, Modern and Chase rigs, and five vignettes.
-- Layout measures: no horizontal scroll at 390 or 844. Every touch target is at least 44 px. Short landscape has no overflow. Portrait hint is "TAP ENGAGE TO LAUNCH".
-- Warning contrast: `base-warn-hull-scrape-*` versus `final-warn-hull-scrape-*`, both pulse phases. These are a staged `hud.warn()` call over Reactor Spine walls.
-- Marketing sources: `hero-*-1920x1080-{clean,hud}.png` are staged real-engine frames at seed 7 with sector teleport, hull top-up and fire held. They are not gameplay evidence.
+Raw captures, all external, under `/home/knotzuni/code/KnotzAxxon/asset-work/public-launch/opus-high-marketing/`
+(index: `INDEX.json` there):
+
+- **Native screenshots and source frames**: `captures/native-cdbdf6a-20261115T194659Z/`. Source was a `git archive` of
+  HEAD `cdbdf6a` (runtime source hash `233e6bab…`, all 93 files verified equal to the worktree). It covers all eight sectors in
+  clean and HUD versions across the Classic, Modern and Chase rigs: 16 shots. Every shot passed a 1920x1080 drawing-buffer
+  check at render scale 1.0 and DPR 1, and records engine frame numbers, the PNG sha256 and pixel statistics measured from the
+  saved PNG. Adaptive resolution was held at 1.0 **only in the capture page** (instance `_adaptResolution` no-op, logged in
+  `capture.jsonl` as `instrumentation`). Lease receipt: `lease.jsonl` (acquired 19:46:59Z, released 19:48:19Z, owner PID 166063).
+- **Composition evidence**: `compose/final-*/` holds the 315x250 cover, 600x315 OG and 640x320 GitHub previews of the
+  exports themselves, plus the lease receipt. Earlier rounds `r1` to `r4` show the fixed defects: an overflowing card, a
+  placement reset, and a banner that was not transparent.
+- **Before/after title**: `captures/title-20261115T185647Z/` (before) and `captures/final-r1-20261115T190627Z/final-title-*` (after).
+  Covered: 1280x720 and 1920x1080, 390x844 and 844x390 touch at DPR 2, gamepad legend (lastDevice staged), reduced motion,
+  Modern and Chase rigs, and five vignettes.
+- **Warning contrast**: `captures/final-r1-*/base-warn-*` versus `final-warn-*`, both pulse phases (staged `hud.warn()`).
 
 ## Limits (stated, not hidden)
 
-- **Dynamic resolution was active.** The hero frames are 1920x1080 CSS pixels, but the 3D drew at 1536x864 to 1824x1026 (render scale 0.8 to 0.95). The compositions are net downscales of those buffers. The 1920x1080 itch screenshots are **browser-upscaled** and must not be called native until recaptured with the render scale pinned to 1.0.
-- Exports are not yet rendered: `compose.cjs` needs one short browser slot (static HTML, no WebGL). `index.html` meta still points at the old `og-image.png` until the new files exist.
-- No audible audio, physical gamepad, physical phone, or hardware frame-time claim is made by any of this. Frame counts in the logs are capture bookkeeping, not FPS.
-- The composition font is the Linux fallback mono (DejaVu Sans Mono) unless the slot runs on Windows Chrome, where the game itself uses Cascadia Mono or Consolas.
-- Itch listing images, tags, uploads and the GitHub social preview are account-only actions. Nothing was uploaded or published.
+- Every gameplay frame is **staged** (seed 7, sector teleport, hull/fuel top-up, fire held), so HUD scores are low. The frames
+  show the game's real look. They are not gameplay, difficulty or progression evidence.
+- Native means a 1920x1080 drawing buffer on this GPU. No 4K or high-DPI master exists, and nothing is upscaled.
+  Compositions are net downscales (frame placement scale 0.59 to 0.62 of a 1920x1080 buffer).
+- Type renders in DejaVu Sans Mono, because the Linux composer's private fontconfig has only DejaVu and Liberation. The
+  in-game title uses the platform mono stack.
+- Screen RGB only. No CMYK, bleed or print profile is claimed.
+- No audible audio, physical gamepad, physical phone, or hardware frame-time claim. Engine frame numbers are capture bookkeeping.
+- Listing images, tags, uploads, the theme and the GitHub social preview are account-only. Nothing was uploaded or published.

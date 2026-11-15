@@ -25,13 +25,23 @@ if (leaseFile) {
   const held = JSON.parse(fs.readFileSync(leaseFile, 'utf8'));
   const current = JSON.parse(fs.readFileSync(RESERVATION, 'utf8'));
   if (held.token !== current.token) throw Error(`GPU reservation is not ours: ${JSON.stringify(current)}`);
-} else lease = acquireGPU(RESERVATION, 'Opus High marketing capture');
+} else {
+  try { lease = acquireGPU(RESERVATION, 'Opus High marketing capture'); }
+  catch (error) { console.error(error.message); process.exit(75); }
+}
 
 fs.mkdirSync(outDir, { recursive: true });
+const receipt = (event) => lease && fs.appendFileSync(path.join(outDir, 'lease.jsonl'), JSON.stringify({ event, at: new Date().toISOString(),
+  owner: lease.owner, ownerPID: lease.pid, platform: lease.platform, token: lease.token }) + '\n');
+receipt('acquired');
 const env = { ...process.env, KZ_PLAYWRIGHT_PATH: win(PLAYWRIGHT), KZ_CHROME_EXE: CHROME,
   KZ_CAPTURE_PLAN: win(planFile), KZ_CAPTURE_OUT: win(outDir) };
 env.WSLENV = 'KZ_PLAYWRIGHT_PATH:KZ_CHROME_EXE:KZ_CAPTURE_PLAN:KZ_CAPTURE_OUT';
 const child = spawn('node.exe', [win(path.join(__dirname, 'capture-frames.cjs'))], { env, stdio: 'inherit' });
-const done = code => { try { lease?.release(); } finally { process.exitCode = code ?? 1; } };
+let released = false;
+const release = () => { if (released || !lease) return; released = true; try { lease.release(); receipt('released'); } catch (e) { console.error(e.message); } };
+const done = code => { try { release(); } finally { process.exitCode = code ?? 1; } };
+// A stopped launcher still releases its own token; the Windows child is ended with it.
+for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, () => { child.kill(signal); release(); process.exit(1); });
 child.on('error', e => { console.error(e); done(1); });
 child.on('exit', done);

@@ -156,25 +156,26 @@
     "public_repo_art_policy": "New link art is added under public/brand/ with new filenames; the old public/og-image.png and social-preview.png stay so existing cached links keep resolving."
   },
   "deliverables": {
-    "status": "sources_captured_exports_pending_slot",
-    "editable_sources": [
-      "assets-source/launch-marketing/template.html",
-      "assets-source/launch-marketing/compositions.json",
-      "assets-source/launch-marketing/frames/",
-      "scripts/brand/launch/compose.cjs"
-    ],
-    "export_manifest": "assets-source/launch-marketing/export-manifest.json (written by compose.cjs; not yet run)",
-    "planned_exports": {
-      "itch_cover": "public/brand/itch-cover-630x500.png (315:250, Void Gap / Chase)",
-      "open_graph": "public/brand/og-1200x630.png (Sentinel fight)",
-      "github_social": "public/brand/social-preview-1280x640.png (<1 MB enforced)",
-      "itch_banner": "assets-source/launch-marketing/exports/itch-banner-1200x260.png (transparent; size is a design choice)",
-      "itch_screenshots": "5 GPU HUD frames, 1920x1080 CSS px; currently browser-upscaled from 1536x864-1824x1026 buffers, recapture with render scale 1.0 before calling them native"
+    "status": "exports_and_native_screenshots_complete_not_published",
+    "source_candidate": {
+      "head": "cdbdf6a2eb78198d77492b7353396089877aa2b4",
+      "runtime_source_hash": "233e6bab12c008325de2a1d69c93379730ebe6338facbbbaa35af7fbe416a877"
     },
-    "remaining_gpu_or_browser_needs": [
-      "One short browser slot to run compose.cjs (static HTML, --disable-gpu)",
-      "One bounded GPU slot to recapture the 5 screenshots with engine render scale pinned to 1.0 (capture staging only), on the frozen candidate"
-    ],
-    "pending_code": "index.html og:image/twitter:image switch to public/brand/og-1200x630.png once the export exists; old public/og-image.png kept for cached links"
+    "export_manifest": "assets-source/launch-marketing/export-manifest.json",
+    "listing_source": "assets-source/launch-marketing/ITCH-LISTING.md",
+    "exports": {
+      "itch_cover": "public/brand/itch-cover-630x500.png",
+      "open_graph": "public/brand/og-1200x630.png",
+      "github_social": "public/brand/social-preview-1280x640.png",
+      "itch_banner": "assets-source/launch-marketing/exports/itch-banner-1200x260.png"
+    },
+    "itch_screenshots": "assets-source/launch-marketing/screenshots/01..05-*-1920x1080.png (native 1920x1080 drawing buffer)",
+    "index_html": "og:image and twitter:image now point at brand/og-1200x630.png; legacy public/og-image.png and social-preview.png retained",
+    "browser_inspection": "artifacts/launch/public-inspection/2026-11-15T19-40-49-304Z/ (primary, 19:40 UTC)",
+    "account_only": [
+      "itch cover/screenshots/banner/theme/tags/description",
+      "optional itch HTML5 upload",
+      "GitHub repository social preview"
+    ]
   }
 }

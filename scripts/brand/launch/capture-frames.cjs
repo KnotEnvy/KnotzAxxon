@@ -30,6 +30,34 @@ const PROBE = async () => {
     userAgent: navigator.userAgent, viewport: { width: innerWidth, height: innerHeight, dpr: devicePixelRatio } };
 };
 
+/** Capture instrumentation only: hold the engine's adaptive resolution at 1.0
+ * so the drawing buffer equals the viewport. The shipped game is unchanged. */
+const PIN = () => {
+  const e = window.KZ.engine;
+  e._adaptResolution = function pinnedForCapture() { this.stats.scale = this._renderScale; };
+  e._renderScale = 1; e._onResize();
+  const c = e.renderer.domElement;
+  return { pinned: true, renderScale: e._renderScale, pixelRatio: e.renderer.getPixelRatio(), buffer: [c.width, c.height],
+    method: 'instance _adaptResolution replaced with a no-op in the capture page; _renderScale=1; _onResize()' };
+};
+
+/** Pixel proof from the saved PNG itself: size and luminance statistics. */
+const PIXELS = async (b64) => {
+  const img = new Image(); img.src = 'data:image/png;base64,' + b64; await img.decode();
+  const c = document.createElement('canvas'); c.width = img.naturalWidth; c.height = img.naturalHeight;
+  const g = c.getContext('2d', { willReadFrequently: true }); g.drawImage(img, 0, 0);
+  const d = g.getImageData(0, 0, c.width, c.height).data;
+  let sum = 0, sq = 0, dark = 0, bright = 0; const bins = new Set();
+  for (let i = 0; i < d.length; i += 4) {
+    const y = 0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2];
+    sum += y; sq += y * y; if (y < 16) dark++; if (y > 200) bright++;
+    bins.add((d[i] >> 4) << 8 | (d[i + 1] >> 4) << 4 | (d[i + 2] >> 4));
+  }
+  const n = d.length / 4, mean = sum / n;
+  return { width: c.width, height: c.height, meanLuma: +mean.toFixed(2), stdLuma: +Math.sqrt(sq / n - mean * mean).toFixed(2),
+    darkFraction: +(dark / n).toFixed(4), brightFraction: +(bright / n).toFixed(4), colorBins12bit: bins.size };
+};
+
 const STATE = () => {
   const k = window.KZ, canvas = document.getElementById('viewport');
   const base = { activeScreen: document.querySelector('.screen.is-active')?.id ?? null,
@@ -68,6 +96,7 @@ const STATE = () => {
       log({ op: 'job', job: job.name, url: job.url, probe, renderClass: software ? 'software-diagnostic' : 'hardware' });
       for (const step of job.steps) {
         if (step.wait) await page.waitForTimeout(step.wait);
+        if (step.pin) log({ op: 'instrumentation', job: job.name, pin: await page.evaluate(PIN) });
         if (step.eval) await page.evaluate(step.eval);
         if (step.down) for (const k of step.down) await page.keyboard.down(k);
         if (step.up) for (const k of step.up) await page.keyboard.up(k);
@@ -77,12 +106,16 @@ const STATE = () => {
           if (step.hideUi) await page.addStyleTag({ content: '.screen,#hud,.hud,#touch,.attract-cut,.perf{visibility:hidden!important}' }).then(h => (step._style = h));
           const state = await page.evaluate(STATE);
           const file = `${step.shot}.png`;
-          await page.screenshot({ path: path.join(out, file), type: 'png', timeout: 120000 });
+          const png = await page.screenshot({ path: path.join(out, file), type: 'png', timeout: 120000 });
           const after = await page.evaluate(() => window.KZ?.engine.frame ?? null);
+          const pixels = step.proof ? await page.evaluate(PIXELS, png.toString('base64')) : null;
+          const sha256 = require('node:crypto').createHash('sha256').update(png).digest('hex');
+          if (step.expectBuffer && (state.canvas?.width !== step.expectBuffer[0] || state.canvas?.height !== step.expectBuffer[1]))
+            throw Error(`${file}: drawing buffer ${state.canvas?.width}x${state.canvas?.height}, expected ${step.expectBuffer.join('x')}`);
           if (step._style) await step._style.evaluate(n => n.remove());
           log({ op: 'shot', job: job.name, file, hideUi: !!step.hideUi, viewport: job.viewport, dpr: job.dpr ?? 1, touch: !!job.touch,
             reducedMotion: !!job.reducedMotion, renderer: probe.renderer, renderClass: software ? 'software-diagnostic' : 'hardware',
-            browser: browser.version(), state, frameAfterShot: after, note: step.note ?? null });
+            browser: browser.version(), state, frameAfterShot: after, sha256, bytes: png.length, pixels, note: step.note ?? null });
         }
         if (step.measure) log({ op: 'measure', job: job.name, name: step.measure, value: await page.evaluate(step.fn) });
       }
