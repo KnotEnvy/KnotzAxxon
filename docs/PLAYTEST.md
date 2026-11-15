@@ -1,6 +1,11 @@
-# Pages playtest and next-team intake
+# Player verification and issue intake
 
-Play https://knotenvy.github.io/KnotzAxxon/ in a fresh browser first. Read handoff.json before making changes. This is a playtest candidate; human acceptance remains open.
+Play https://knotenvy.github.io/KnotzAxxon/ in a fresh browser first. Read handoff.json
+for the published revision and [launch/FINISH-LINE.md](launch/FINISH-LINE.md) for the
+separate public-launch candidate. The user has reported successful earlier cross-device
+play and accepted the art/gunner. New-architecture physical-device play and audible
+perception require their own evidence; automated GPU/agent trials are labelled as such.
+Use this guide for actual player reports without overwriting earlier acceptance.
 
 ## Before the run
 
@@ -33,8 +38,17 @@ Screenshot/video and telemetry if relevant:
 Severity: blocker / gameplay issue / visual or audio polish
 ```
 
-Report in GitHub Issues or return the collected notes to the next team. Never treat the invulnerable campaign autopilot as a balance verdict. Current automated evidence is in release-validation.json; historical text reviews remain under docs/reviews/.
+Report in GitHub Issues or return the collected notes to the next team. Historical invulnerable scenario/autopilot tools are diagnostics, not balance evidence.
+The new launch bot uses normal resources, damage, collisions and weapons; its accelerated
+GPU coverage still differs from realtime visually observed agent trials and human play.
+Published-release evidence is in release-validation.json; candidate evidence and limits
+are indexed in [launch/PROOF-PACKET.md](launch/PROOF-PACKET.md). Historical text reviews
+remain under docs/reviews/.
 
 ## Next team after playtesting
 
-Reproduce reported blockers on the deployed revision first. Prioritize input, progression, altitude/collision and fuel defects, then balance and readability, then optional scenery. Preserve the eight-sector structure, accepted camera rigs, level forward fire and seeded reproducibility. Run npm test, build:pages and test:release before merging a fix; use development capture scripts for specific scenes and campaign progression. Update handoff.json with evidence and unresolved items after each accepted pass. The open items already list lighting exposure and deferred stage-design ideas; they are optional polish, not release blockers by themselves.
+Reproduce reported blockers on the deployed revision first. Prioritize input, progression, altitude/collision and fuel defects, then balance and readability, then optional scenery. Preserve the eight-sector structure, accepted camera rigs, level forward fire and seeded reproducibility. Run npm test, build:pages and test:release before merging a fix; use development capture scripts for specific scenes and campaign progression. Update handoff.json with evidence and unresolved items after each accepted pass. The accepted art/gunner and earlier optional asset-review backlog are closed by user
+acceptance. Additional targeted world/lighting/ambient findings go to Fable High;
+UI/HUD/title/layout findings go to Opus High. Preserve all seven stable judging lenses
+and the all21 individual >=9 gate for the final launch. Do not treat deferred next-month
+stage ideas as current-release requirements.
