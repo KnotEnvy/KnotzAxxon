@@ -26,13 +26,13 @@ const BOOT_LINES = [
   'PILOT AUTHORISATION ACCEPTED.',
 ];
 
-/** True when this browser will keep a write to local storage. */
-export function storageWritable() {
-  try {
-    const key = 'knotzaxxon.probe';
-    localStorage.setItem(key, '1'); localStorage.removeItem(key);
-    return true;
-  } catch { return false; }
+/**
+ * True when the settings themselves were just written to browser storage.
+ * A thin wrapper over SettingsStore.save(): the real payload, never a probe key,
+ * because a tiny probe can pass where the settings do not (and the reverse).
+ */
+export function storageWritable(store = settings) {
+  return store.save() === true;
 }
 
 const HINT_ENGAGE = /ENTER(?: \/ CLICK)? TO ENGAGE/;
@@ -108,7 +108,11 @@ export class Screens extends EventTarget {
     if (name !== 'sector') this._cardDone();
     this.current = name;
     if (name === 'scores') this._renderScores();
-    if (name === 'settings') { this._refreshSettings(); this._settingsStatus(); }
+    if (name === 'settings') {
+      // Establish where changes go by saving the actual settings once on open.
+      if (!restore) settings.save();
+      this._refreshSettings(); this._settingsStatus();
+    }
     if (name === 'title') this._refreshTitle();
     this.selIndex = restore ? (this._selection?.get(name) ?? 0) : 0;
     if (name === 'over' && !restore) this.selIndex = Math.max(0, this._items().findIndex(n => n.classList.contains('mi')));
@@ -389,15 +393,22 @@ export class Screens extends EventTarget {
     this._refreshSettings();
   }
 
-  /** Persistence state, or the change just made, in one polite status line. */
+  /**
+   * Persistence state, or the change just made, in one polite status line.
+   * Reads SettingsStore.persistent, set by the store's last actual save
+   * (set() saves before it announces a change). Unknown claims nothing.
+   */
   _settingsStatus(id) {
     const el = document.getElementById('settings-status');
     if (!el) return;
-    const saved = storageWritable();
+    const persistent = settings.persistent;
+    const known = persistent === true || persistent === false;
     const spec = id && SCHEMA.find(s => s.id === id);
-    const where = saved ? 'SAVED ON THIS DEVICE' : 'THIS SESSION ONLY: BROWSER STORAGE UNAVAILABLE';
-    el.textContent = spec ? `${spec.name} ${settings.display(id)} · ${where}` : saved ? 'CHANGES SAVE ON THIS DEVICE' : 'BROWSER STORAGE UNAVAILABLE: CHANGES LAST THIS SESSION';
-    el.classList.toggle('session', !saved);
+    const change = spec && `${spec.name} ${settings.display(id)}`;
+    if (!known) el.textContent = change || 'CHANGES APPLY NOW';
+    else if (persistent) el.textContent = change ? `${change} · SAVED ON THIS DEVICE` : 'CHANGES SAVE ON THIS DEVICE';
+    else el.textContent = change ? `${change} · THIS SESSION ONLY: BROWSER STORAGE UNAVAILABLE` : 'BROWSER STORAGE UNAVAILABLE: CHANGES LAST THIS SESSION';
+    el.classList.toggle('session', persistent === false);
     el.classList.toggle('changed', !!spec);
   }
 
