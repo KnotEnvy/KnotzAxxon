@@ -34,3 +34,10 @@ required independent scores precede publication; live account/URL proof verifies
 approved upload afterwards. A judge who still requires prior publication for9 creates
 a gate conflict to resolve explicitly with the user, not an exception to assume.
 No score is reinterpreted as passing and no early publication is authorized here.
+
+Primary also inspected an original RC02 production-pilot failure PNG at960x540.
+Heading, summary and actions are visible, only slot1is graded, and the callsign is
+partly behind the sticky action area. The450ms capture intersects staggered result
+row animation, so blank lower rows at that moment do not prove persistent absence.
+Facts/hash/limits are in ui/RC02-STATIC-RESULTS-TRIAGE.json; it is static triage with
+zero player credit, not a physical-device or realtime-use verdict.

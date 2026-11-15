@@ -25,13 +25,6 @@ The smoke script owns a temporary preview on an available local port and stops i
 
 The portable build remains npm run build (relative asset paths). The Pages build uses /KnotzAxxon/; publish only dist, never the repository root. No server, backend, API keys or external assets are required. WebGL 2 is required. Browser storage holds local settings, records and grades; it is specific to the browser and origin.
 
-## Link preview art" section of docs/RELEASE.md
-
-docs/RELEASE.md is outside the Opus marketing lease, and Hydrogen may be cleaning docs, so this is not applied.
-Primary or Hydrogen can paste it in place of the current section, which still describes the legacy generator.
-
----
-
 ## Link preview art
 
 Launch link art is composed from real engine frames by `scripts/brand/launch/compose.cjs`. Editable sources, capture
@@ -56,6 +49,13 @@ The legacy `public/og-image.png` and `public/social-preview.png` stay deployed f
 
 
 ## Deploy and rollback
+
+For the final public launch, first close the applicable local evidence and all21
+independent-score gates on the same frozen candidate recorded in FINISH-LINE.
+Then publish the approved artifact and perform live URL/account smoke checks.
+Postupload proof remains pending until that authorized publication; it does not
+permit early upload or reinterpret a failing judge score. Preserve the previous
+Itch build and record the uploaded artifact identity.
 
 Merge a reviewed change into main or manually run GitHub Pages release in Actions. Check both validate and deploy jobs, then test the public URL in a fresh browser. Pages is configured to build from GitHub Actions; the environment allows main.
 

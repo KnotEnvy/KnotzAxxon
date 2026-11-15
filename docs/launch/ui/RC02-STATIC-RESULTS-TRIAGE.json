@@ -1,0 +1,26 @@
+{
+  "kind": "primary static results triage; no player credit",
+  "sourceHash": "8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28",
+  "image": "artifacts/launch/bot/pilot-production-provenance-01/episode-0-frame-718-terminal.png",
+  "sha256": "97c15d7450b33bde29db6efd0ef5480dacca4757c6706ce1131f9e6e761f354f",
+  "inspectionMethod": "functions.view_image on retained original PNG",
+  "noteRecordedAt": "2026-11-15T23:23:46.382131+00:00",
+  "facts": [
+    "MISSION FAILED heading is visible at the top.",
+    "Summary reads SECTOR 242, TOTAL 5,880, NEW RECORD, RANK 01.",
+    "Only the first sector-grade slot has C; the other seven display ungraded dashes.",
+    "RE-ENGAGE and MAIN MENU are visible at the bottom.",
+    "The callsign input is only partially visible above the sticky action area.",
+    "Lower score rows are not fully visible in this captured moment."
+  ],
+  "interpretations": [
+    "Code schedules result-row animation delays in 70ms steps with 400ms fades; the 450ms terminal-capture wait is not proof that lower rows remain absent after animations finish.",
+    "Partial callsign visibility is the known short-screen scroll behavior already disclosed by Opus. Actual-use discoverability still needs targeted UI review; this still is not a physical-device failure."
+  ],
+  "limits": [
+    "Static review after capture, not realtime viewing and not Terra Medium player credit.",
+    "No keyboard traversal, scrolling or new gameplay occurred during this inspection.",
+    "Does not establish motion readability, fairness or subjective font quality."
+  ],
+  "owner": "Opus for any demonstrated presentation change; accepted art is unchanged"
+}
