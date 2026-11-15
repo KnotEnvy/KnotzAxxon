@@ -7,7 +7,7 @@ Previous deployed runtime: `1b3ff18bbabdedf30295846f3594c831ef5c30a5` (PR 5).
 Historical validation: 241 regressions; 28 default resources / 35 served model hashes.
 These are baseline facts, not new-candidate results.
 
-## Current status — 2026-11-15, RC02 preparation after Round 01
+## Current status — 2026-11-15, RC02 frozen; evidence gates open
 
 Owner implementation tranches have been handed off and integrated. **Primary release
 work remains active.** RC02 is frozen at `22ef1c0067c0aa7ec9461991d0abf9c2a674586e`
@@ -22,11 +22,11 @@ Neither identity freeze grants approval for publication.
 
 | Requirement | Actual state | Next acceptance / owner |
 |---|---|---|
-| Final production hardware bot episodes | **0/1000** | Primary: run and audit exact production bytes across the prescribed matrix |
+| Final production hardware bot episodes | **0/1000 audited**; first100 production batch active | Primary: closing source/harness/package audit required before credit |
 | Source-level RC01 hardware batch | **100 completed**, excluded from final credit | Retain raw records and historical audit; Vite DEV execution is source evidence |
 | Actually observed Terra Medium player episodes | **0/60** | Primary/Terra Medium: first demonstrate timely actual viewing and notes; then ten qualifying trials per band |
 | Independent judging gate | **0/21 scores >=9**, Round 01 preserved | Fresh readonly Luna/Terra High/Haiku review of one next frozen candidate after material evidence improves |
-| Sustained frame time / resource behavior | Two-run realtime diagnostic active | Primary: candidate-bound real-rAF distributions, worst stalls, repeated runs and pause/resume |
+| Sustained frame time / resource behavior | Two completed normal-resource realtime victories | Primary: candidate-bound real-rAF distributions, worst stalls, repeated runs and pause/resume |
 | Physical input and assistive operation | Open | Opus: phone/controller/keyboard/assistive walkthrough, explicit supported-device limits |
 | Audible quality and recovery | Open; synthesis/lifecycle measured, nothing heard | Spark: actual listening, output devices and interruption/recovery evidence |
 | Public account / live distribution proof | Open; nothing newly published | Primary with Opus store review: only after applicable prepublication gates pass |
@@ -37,7 +37,7 @@ normal-resource loop30 death on GTX1650Ti/D3D11 Chrome157, 718 simulation frames
 source, full harness and package remained stable; debugger detached before play.
 This completed pilot is **uncredited** and does not establish realtime observation
 or sustained performance. Both new46-file packages passed fresh hardware checks; exact reports are in
-RC02-PACKAGES.json. Realtime lifecycle checks are running.
+RC02-PACKAGES.json. Realtime lifecycle checks passed; see RC02-SUSTAINED.json for all timings and limits.
 
 Round 01 scores (lenses 1–7, unchanged):
 
@@ -455,3 +455,29 @@ earns no final credit. All100 old RC01 DEV rows are explicitly excluded by the
 current production auditor; the original historical source-only audit is retained.
 
 Round01 disposition, targeted questions and ownership are indexed in ROUND01-TRIAGE.md.
+
+## Sustained RC02 and image-return prerequisite
+
+Two uncredited High/Classic/keyboard1280x720 realtime runs completed genuine
+eight-sector/all-three-boss-phase victories:39,333actualframes, about11minutes
+combined episode wall time. Real rAFp50=16.7ms,p95=16.9ms,p99=17ms; maxima109.4/
+283.4ms. CPU submission maxima33/41.7ms. Both keyboard pauses held position/time,
+menu resume worked, and both terminal snapshots were77geometries/45textures/
+55programs. No multi-second CPU submission stall recurred in this bounded pair;
+that does not establish every configuration or unlimited-session leak freedom.
+Exact candidate/source/harness/package proof and limits:RC02-SUSTAINED.json.
+
+An attempted static HTML image-return check failed before rendering: T3's browser
+requires missing libnspr4/libnss3/libgbm and other host libraries. Its supplied
+`t3 browser setup` command was attempted with noninteractive sudo and required the
+host password. The secure credential card timed out unanswered. No library install,
+new player pilot or player credit occurred. This is a concrete host prerequisite;
+the existing Windows production bot/package path remains functional. Do not treat
+the potential image adapter as implemented or proven.
+
+First final production batch `rc02-production-0000` is running the first100 rows
+of the prescribed matrix with fresh seed base8000001, exact RC02 Pages package,
+frozen identity and hardware proof. In-flight rows are provisional; audited final
+production credit remains0 until a stable closing receipt passes audit. The1000
+requirement and all21score/player gates remain unchanged. Image-return host details
+are preserved in live-sol-low/IMAGE-RETURN-HOST.md; no repair or pilot is implied.

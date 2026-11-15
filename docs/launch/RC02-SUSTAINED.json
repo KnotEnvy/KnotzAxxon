@@ -1,0 +1,286 @@
+{
+  "candidate": {
+    "name": "rc02",
+    "commit": "22ef1c0067c0aa7ec9461991d0abf9c2a674586e",
+    "sourceHash": "8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28",
+    "harnessHash": "c429e9a0477a68b90c3924f28d7d88cad3a5f06240aaf62482b5a7190969015d"
+  },
+  "frozenCandidateSHA256": "bff23ff4bdcf99253fa35c2b9d1fca0f7b974b4567da0b3d8ee094ad3ced8e40",
+  "receipt": "artifacts/launch/bot/pilot-rc02-sustained-01/receipt.json",
+  "receiptSHA256": "119abe4a56839c37eff283da5cb122f26ecd1159c8ee6f7ebe83c28e91635f8b",
+  "hardware": {
+    "webgl2": true,
+    "vendor": "Google Inc. (NVIDIA)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "dpr": 1
+    },
+    "canvas": {
+      "width": 1280,
+      "height": 720
+    },
+    "settings": {
+      "quality": "high",
+      "camera": "classic",
+      "master": 0.8,
+      "music": 0.6,
+      "sfx": 0.9,
+      "shake": 0,
+      "scanlines": false,
+      "shadowLine": true,
+      "invertY": false,
+      "assist": false,
+      "perf": false
+    },
+    "browser": "157.0.8103.52",
+    "host": "NitroBliss",
+    "platform": "win32",
+    "arch": "x64",
+    "chrome": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+    "automation": "Playwright local child-process pipes",
+    "at": "2026-11-15T23:01:10.555Z"
+  },
+  "kind": "noncredited actual-rAF lifecycle/performance diagnostic",
+  "rows": [
+    {
+      "id": "pilot-rc02-sustained-01-0",
+      "seed": 170001,
+      "loop": 0,
+      "profile": "keyboard",
+      "camera": "classic",
+      "quality": "high",
+      "outcome": "victory",
+      "rawSeconds": 327.5707333333835,
+      "wallMs": 329582.299999997,
+      "frames": 19620,
+      "renderedFrames": 19620,
+      "sectors": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "bossPhases": [
+        0,
+        1,
+        2
+      ],
+      "actualRafIntervalsMs": {
+        "samples": 19620,
+        "p50": 16.69999999999709,
+        "p95": 16.900000000001455,
+        "p99": 17,
+        "max": 109.40000000074542
+      },
+      "renderSubmissionCpuMs": {
+        "samples": 19620,
+        "p50": 2.099999997764826,
+        "p95": 4.699999999254942,
+        "max": 33
+      },
+      "memory": {
+        "geometries": 77,
+        "textures": 45
+      },
+      "programs": 55,
+      "errors": []
+    },
+    {
+      "id": "pilot-rc02-sustained-01-1",
+      "seed": 170002,
+      "loop": 0,
+      "profile": "keyboard",
+      "camera": "classic",
+      "quality": "high",
+      "outcome": "victory",
+      "rawSeconds": 329.3681333333851,
+      "wallMs": 330866.6000000015,
+      "frames": 19713,
+      "renderedFrames": 19713,
+      "sectors": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "bossPhases": [
+        0,
+        1,
+        2
+      ],
+      "actualRafIntervalsMs": {
+        "samples": 19713,
+        "p50": 16.699999999953434,
+        "p95": 16.900000000023283,
+        "p99": 17,
+        "max": 283.4000000000233
+      },
+      "renderSubmissionCpuMs": {
+        "samples": 19713,
+        "p50": 2.600000001490116,
+        "p95": 5.5,
+        "max": 41.69999999925494
+      },
+      "memory": {
+        "geometries": 77,
+        "textures": 45
+      },
+      "programs": 55,
+      "errors": []
+    }
+  ],
+  "totalActualFrames": 39333,
+  "totalEpisodeWallMs": 660448.8999999985,
+  "resourceSamples": 327,
+  "maxGeometries": 155,
+  "maxTextures": 45,
+  "maxPrograms": 55,
+  "lifecycle": [
+    {
+      "id": "pilot-rc02-sustained-01-0",
+      "stage": "initial",
+      "at": "2026-11-15T23:01:10.914Z",
+      "state": "playing",
+      "z": 0,
+      "runTime": 0,
+      "memory": {
+        "geometries": 41,
+        "textures": 45
+      },
+      "programs": 55
+    },
+    {
+      "id": "pilot-rc02-sustained-01-0",
+      "stage": "pause-resume",
+      "at": "2026-11-15T23:01:18.063Z",
+      "paused": {
+        "state": "paused",
+        "z": 163.4487759480475,
+        "runTime": 4.508429263632001,
+        "memory": {
+          "geometries": 83,
+          "textures": 45
+        },
+        "programs": 55
+      },
+      "still": {
+        "state": "paused",
+        "z": 163.4487759480475,
+        "runTime": 4.508429263632001,
+        "memory": {
+          "geometries": 83,
+          "textures": 45
+        },
+        "programs": 55
+      },
+      "resumed": {
+        "state": "playing",
+        "z": 163.4487759480475,
+        "runTime": 4.508429263632001,
+        "memory": {
+          "geometries": 83,
+          "textures": 45
+        },
+        "programs": 55
+      },
+      "pauseMs": 2000
+    },
+    {
+      "id": "pilot-rc02-sustained-01-0",
+      "stage": "terminal",
+      "at": "2026-11-15T23:06:40.498Z",
+      "state": "victory",
+      "z": 13282.184750620943,
+      "runTime": 297.3105564002305,
+      "memory": {
+        "geometries": 77,
+        "textures": 45
+      },
+      "programs": 55
+    },
+    {
+      "id": "pilot-rc02-sustained-01-1",
+      "stage": "initial",
+      "at": "2026-11-15T23:06:42.648Z",
+      "state": "playing",
+      "z": 0,
+      "runTime": 0,
+      "memory": {
+        "geometries": 52,
+        "textures": 45
+      },
+      "programs": 55
+    },
+    {
+      "id": "pilot-rc02-sustained-01-1",
+      "stage": "pause-resume",
+      "at": "2026-11-15T23:06:51.453Z",
+      "paused": {
+        "state": "paused",
+        "z": 222.03774391594686,
+        "runTime": 6.093033411706389,
+        "memory": {
+          "geometries": 85,
+          "textures": 45
+        },
+        "programs": 55
+      },
+      "still": {
+        "state": "paused",
+        "z": 222.03774391594686,
+        "runTime": 6.093033411706389,
+        "memory": {
+          "geometries": 85,
+          "textures": 45
+        },
+        "programs": 55
+      },
+      "resumed": {
+        "state": "playing",
+        "z": 222.03774391594686,
+        "runTime": 6.093033411706389,
+        "memory": {
+          "geometries": 85,
+          "textures": 45
+        },
+        "programs": 55
+      },
+      "pauseMs": 2000
+    },
+    {
+      "id": "pilot-rc02-sustained-01-1",
+      "stage": "terminal",
+      "at": "2026-11-15T23:12:13.514Z",
+      "state": "victory",
+      "z": 13391.215607656408,
+      "runTime": 299.1316223922117,
+      "memory": {
+        "geometries": 77,
+        "textures": 45
+      },
+      "programs": 55
+    }
+  ],
+  "stableSource": true,
+  "stableHarness": true,
+  "stablePackage": true,
+  "creditEligible": false,
+  "limits": [
+    "Two High/Classic/keyboard episodes on one desktop GPU/browser; not all configurations.",
+    "rAF interval distributions include actual browser, instrumentation and screenshot overhead; CPU submission durations are not GPU execution timing.",
+    "No historical multi-second CPU submission stall recurred here; absence in this bounded sample does not prove elimination.",
+    "Two equal terminal resource snapshots do not prove unlimited-session leak freedom.",
+    "No physical devices, audible perception or timely agent viewing were established."
+  ]
+}
