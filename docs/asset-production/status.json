@@ -193,9 +193,9 @@
   "broaderScope": "README.md#broader-retained-inventory",
   "deploymentAuthorized": true,
   "resume": [
-    "Current21 user-approved assets are committed,merged and live-verified.",
-    "Formal Opus review/polish remains deferred at0 formal reviews/fixes;retain verified initial archives.",
-    "Broader scenery/gates/space-structure inventory remains recorded for a later scoped pass;no new builders running."
+    "The 21 approved production submissions remain live and unchanged.",
+    "The authored environment queue is now implemented and validated by the Fable High pass; PR5 merged at 1b3ff18bbabdedf30295846f3594c831ef5c30a5. Publication verification is recorded in docs/release-validation.json.",
+    "Formal Opus art review/polish remains explicitly deferred; optional wall/arch decoration and deliberate procedural effects are not unimplemented release requirements."
   ],
   "localValidation": {
     "baselineGenerator": "passed; actual source geometry plus 300 seeded campaign plans",
@@ -534,15 +534,21 @@
     },
     {
       "asset": "fortress-prop-kit",
-      "status": "queued_batch_contract_needed"
+      "status": "props_shipped_authored_architecture_merged",
+      "environmentSources": "assets-source/environment/",
+      "environmentEvidence": "docs/environment-scenes/ENVIRONMENT-KIT.md"
     },
     {
       "asset": "barriers-gates",
-      "status": "queued_collision_motion_contract_needed"
+      "status": "gate_fence_debris_upgrades_merged_optional_wall_arch_decoration_retained",
+      "environmentSources": "assets-source/environment/",
+      "environmentEvidence": "docs/environment-scenes/ENVIRONMENT-KIT.md"
     },
     {
       "asset": "space-structures",
-      "status": "queued_streaming_contract_needed"
+      "status": "platform_truss_bulkhead_arena_merged_procedural_debris_rings_retained",
+      "environmentSources": "assets-source/environment/",
+      "environmentEvidence": "docs/environment-scenes/ENVIRONMENT-KIT.md"
     },
     {
       "asset": "asteroids",
@@ -731,5 +737,23 @@
     "runtimeResourceCount": 27,
     "servedHashesVerified": 34,
     "publicEvidence": "assets-source/production/integration-evidence/release"
+  },
+  "faceliftRelease": {
+    "pull_request": "https://github.com/KnotEnvy/KnotzAxxon/pull/5",
+    "merged_commit": "1b3ff18bbabdedf30295846f3594c831ef5c30a5",
+    "status": "merged_deployed_public_verified",
+    "testsPassed": 241,
+    "authoredEnvironmentParts": 175,
+    "optionalNotBuilt": [
+      "Barrier-wall panelling",
+      "Arch soffits"
+    ],
+    "deliberatelyProcedural": [
+      "Debris rings",
+      "Bolts and halos",
+      "Shader sky and atmosphere"
+    ],
+    "workflow": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/43740120349",
+    "publicVerifiedAt": "2026-11-15T17:22:23.180143+00:00"
   }
 }

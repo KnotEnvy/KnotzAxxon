@@ -15,5 +15,8 @@
   "liveChanged": false,
   "latestFailedThreadId": "mcp:launch:312f86d0676181af51917a288560e4d9da4c53e247b9f9c9ee8830860fee55a1",
   "authDiagnosisThreadId": "mcp:launch:21c61277a995a980355ff486596f1f3c28572693f3f138c31319bfda04509fc0",
-  "userReportedClaudeReadyAfterReboot": true
+  "userReportedClaudeReadyAfterReboot": true,
+  "historicalRecord": true,
+  "resolvedBy": "../studio-polish/finish-line-crew.json",
+  "currentReleaseStatus": "facelift_live_verified"
 }

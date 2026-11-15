@@ -31,3 +31,7 @@ The user explicitly authorizes pushing, merging and cleaning up when ready. No a
 ## Integration result
 
 All three implementation deliveries are integrated. Combined validation passed 241 tests, the Pages build, default and legacy imported-model QA, context/audio browser recovery, responsive/reduced-motion menu navigation, and production desktop/touch smoke. The authored environment queue is completed within the documented scope; optional barrier-wall panels/arch soffits and deliberate procedural debris rings remain recorded choices. Runtime cleanup failure paths were tightened during integration. Final steps are CI, merge and public deployment verification.
+
+## Published result
+
+PR #5 merged at `1b3ff18bbabdedf30295846f3594c831ef5c30a5`; Pages workflow `43740120349` succeeded. Public desktop, touch portrait and touch landscape smoke passed, and all 35 served model/template hashes match the validated build. The approved facelift pass is complete and live. Full archives and curated editable sources are retained; the remote release branch was removed. The documented optional scope and unmeasured hardware/human limits remain disclosures, not a claim that every possible enhancement has been exhausted.

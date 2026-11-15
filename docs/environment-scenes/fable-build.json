@@ -25,5 +25,8 @@
   "hasPendingQuestion": false,
   "pendingApproval": null,
   "waitTimedOut": false,
-  "next": "First slice awaiting real-material proof after RELIC resource reservation clears; no worker remains running."
+  "next": "First slice awaiting real-material proof after RELIC resource reservation clears; no worker remains running.",
+  "historicalRecord": true,
+  "resolvedBy": "../studio-polish/finish-line-crew.json",
+  "currentReleaseStatus": "facelift_live_verified"
 }

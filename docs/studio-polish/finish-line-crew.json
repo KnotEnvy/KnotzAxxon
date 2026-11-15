@@ -50,7 +50,13 @@
   },
   "integrationOwner": "primary_superbeast",
   "releaseGate": "Combined validation, reviewable sources/evidence, CI and public deployment verification",
-  "cleanup": "Verified archives plus curated editable source/devlog; no unrelated deletion",
+  "cleanup": "Verified scratch archives; editable sources/scenes and curated devlog retained; merged remote release branch deleted.",
   "localCheckpoint": "cf5983c6427a294b82b756f09601bedc11a1e494",
-  "status": "validated_pending_ci_deployment"
+  "status": "complete_merged_deployed_public_verified",
+  "release": {
+    "pull_request": "https://github.com/KnotEnvy/KnotzAxxon/pull/5",
+    "deployed_commit": "1b3ff18bbabdedf30295846f3594c831ef5c30a5",
+    "workflow": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/43740120349",
+    "public_verified_at": "2026-11-15T17:22:23.180143+00:00"
+  }
 }

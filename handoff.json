@@ -1,11 +1,11 @@
 {
   "schema_version": 4,
   "project": "KnotzAxxon",
-  "updated_at": "2026-11-15T17:07:06.948064+00:00",
-  "status": "facelift_validated_pending_ci_and_deployment",
-  "production_ready": false,
+  "updated_at": "2026-11-15T17:22:23.180143+00:00",
+  "status": "facelift_live_verified",
+  "production_ready": true,
   "ready_for_testers": true,
-  "production_ready_basis": "Integrated facelift passed 241 regressions, Pages build, default/legacy runtime ownership/motion QA, context and audio recovery, UI navigation/reduced motion, and local production desktop/touch smoke. Awaiting CI/merge and public deployment verification.",
+  "production_ready_basis": "All automated combined release checks and CI passed, PR5 merged and Pages deployed. Public desktop/portrait/landscape smoke passed with28runtime resources and35servedhashes matchingthevalidatedbuild. Priorusercrossdeviceplayacceptanceisreported; newkit-humanplayandhardwareframe-timeareunclaimed.",
   "release_scope": [
     "Authored eight-sector environment architecture, landmarks, gate/fence housings, platforms, trusses, bulkheads and boss arena using one shared startup-cached GLB.",
     "Responsive HUD/menu/results, warning hierarchy and priority, touch targets, focus and settings feedback.",
@@ -23,12 +23,26 @@
     "runtime_default_and_legacy": "passed",
     "production_local": "passed",
     "served_runtime_resources": 28,
-    "served_model_hashes": 35
+    "served_model_hashes": 35,
+    "public_site": "passed;28default resources and35servedmodel/templatehashesmatchlocaldist",
+    "ci": "PR and merged-main pipelines passed"
   },
   "workspace": {
     "branch": "art/blender-production-upgrades",
     "remote": "https://github.com/KnotEnvy/KnotzAxxon",
-    "release_status": "local validated; push/PR/merge pending"
+    "release_status": "merged_deployed_public_verified",
+    "pull_request": "https://github.com/KnotEnvy/KnotzAxxon/pull/5",
+    "merged_commit": "1b3ff18bbabdedf30295846f3594c831ef5c30a5",
+    "delivery": {
+      "status": "github_pages_published_verified",
+      "url": "https://knotenvy.github.io/KnotzAxxon/",
+      "deployed_commit": "1b3ff18bbabdedf30295846f3594c831ef5c30a5",
+      "workflow_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/43740120349",
+      "workflow_status": "success",
+      "verified_at": "2026-11-15T17:22:23.180143+00:00",
+      "note": "Final documentation closeout does not change deployed runtime assets."
+    },
+    "release_branch_status": "Remote branch deleted after merge; active bound worktree retained for user."
   },
   "authorization": {
     "push_merge_cleanup": true,
@@ -61,6 +75,7 @@
   "current_facelift": {
     "assessment": "docs/studio-polish/FINISH-LINE.md",
     "environment": "docs/environment-scenes/ENVIRONMENT-KIT.md",
-    "completed_code_checkpoint": "cf5983c6427a294b82b756f09601bedc11a1e494"
+    "completed_code_checkpoint": "cf5983c6427a294b82b756f09601bedc11a1e494",
+    "status": "complete_and_live_verified"
   }
 }

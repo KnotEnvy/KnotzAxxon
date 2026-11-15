@@ -1,6 +1,6 @@
 {
   "phase": "studio_polish",
-  "status": "combined_facelift_validated_pending_ci_deployment",
+  "status": "facelift_live_verified",
   "baseRevision": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
   "userAcceptance": {
     "type": "user_reported",
@@ -128,10 +128,11 @@
     "environment": {
       "model": "claude-fable-5-2",
       "options": {
-        "effort": "xhigh"
+        "effort": "high"
       },
-      "taskRecord": "../environment-scenes/fable-build.json",
-      "status": "completed_cpu_slice_pending_visual_proof"
+      "host": "NitroBliss",
+      "taskRecord": "finish-line-crew.json",
+      "status": "delivered_integrated_deployed_verified"
     }
   },
   "constraints": [
@@ -140,11 +141,7 @@
     "Preserve curated sources/devlog and archived originals.",
     "No formal Opus review claimed;previous review remains deferred."
   ],
-  "next": [
-    "Commit curated assets, authoring sources, integration fixes and current evidence.",
-    "Push PR, await CI, merge and verify deployed public resources.",
-    "Record exact deployed revision, remove retired remote branch and confirm the bound worktree is clean."
-  ],
+  "next": [],
   "firstCodeValidation": {
     "archiveSha256": "0b6cff273bc78b2f74f24a0149e0a073c6e2d9846a847e3d9f30ca2573c44e72",
     "payloadFilesVerified": 15,
@@ -261,5 +258,14 @@
     "scope": "Validated code/audio/UI/lifecycle polish; 230 tests and build passed; environment delivery and release evidence follow.",
     "pushed": false,
     "liveChanged": false
+  },
+  "release": {
+    "pull_request": "https://github.com/KnotEnvy/KnotzAxxon/pull/5",
+    "deployed_commit": "1b3ff18bbabdedf30295846f3594c831ef5c30a5",
+    "workflow": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/43740120349",
+    "public_verified_at": "2026-11-15T17:22:23.180143+00:00",
+    "tests": 241,
+    "public_resources": 28,
+    "public_hashes": 35
   }
 }
