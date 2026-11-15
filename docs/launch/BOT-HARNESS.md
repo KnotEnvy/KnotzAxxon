@@ -73,6 +73,23 @@ An unused production `Game.shotsFired` counter stays0; the harness now observes 
 `Projectiles.fire(SIDE.PLAYER)` calls separately and labels the raw game counter.
 This is a telemetry correction in test tooling, not gameplay or cadence tuning.
 
+`pilot-earned-loop-04` won normally, used the actual Continue button to enter loop1,
+and then flew40seconds with normal resources. This separate earned-next-loop diagnostic
+is a time-bounded observation (not a completed second campaign), rendered201frames,
+and receives no episode credit. `pilot-gamepad-05` additionally won loop0 via synthetic
+standard gamepad polling in Modern/Medium, exercised the same earned continuation,
+then died in loop3. Fable's ambient edits changed source hashes during both batches;
+their receipts explicitly mark `stableSource:false`, so neither is frozen evidence.
+
+Realtime support is now implemented via `--realtime`: the normal Engine loop receives
+actual requestAnimationFrame timestamps and renders every frame, with recorded actual
+rAF intervals. It rejects accelerated chunk calls during a realtime trial. This path
+still needs its own pilot and SolLow's visual observations before any live credit.
+`KZBot.startRealtime` / `observeRealtime` are available for the live tester's controls.
+Per-seed replay can supply `--time-origin` from the logged initial engine clock; default
+trials retain the normal clock. `summarize.cjs <candidate-hash>` audits all receipts
+and keeps development/pilot totals strictly separate from final-candidate totals.
+
 ## Portable distribution checkpoint
 
 `node scripts/qa/launch/package-itch.mjs` creates a separate relative-base HTML5

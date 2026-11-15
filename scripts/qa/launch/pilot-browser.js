@@ -23,7 +23,7 @@ window.KZBot = (() => {
       damage:p.damage,crash:g._crash,warn:g.warn,fire:g.projectiles.fire,getGamepads:navigator.getGamepads};
     const run={spec,frames:0,renderedFrames:0,rawSeconds:0,events:[],samples:[],
       sectors:[],features:{},bossPhases:[],rackHits:0,rackDetonations:0,
-      maxHeat:0,minFuel:1,observedShots:0,decision:null,lastSector:-1,lastBossPhase:-1,
+      maxHeat:0,minFuel:1,observedShots:0,previousZ:p.pos.z,decision:null,lastSector:-1,lastBossPhase:-1,
       lastRackHits:0,lastRackCharging:false,held:new Set(),renderCpuMs:[],
       startedAt:performance.now(),original,k,done:false};
     active=run;
@@ -160,48 +160,84 @@ window.KZBot = (() => {
     intent(run,mx,my,fire,roll);
   }
 
+  function observeFrame(run) {
+    const {engine:e,game:g}=run.k;
+    const out={checkpoint:null};
+    const p=g.player;
+    run.maxHeat=Math.max(run.maxHeat,p.heat);run.minFuel=Math.min(run.minFuel,p.fuel);
+    if(g.sectorIndex!==run.lastSector){run.lastSector=g.sectorIndex;
+      run.sectors.push(g.sectorIndex);run.events.push({type:'sector',frame:run.frames,index:g.sectorIndex,z:p.pos.z});out.checkpoint='sector';}
+    for(const f of g.level.features){
+      if(f.z>=run.previousZ&&f.z<p.pos.z){
+        const key=`${f.kind}${f.type?':'+f.type:''}${f.debris?':debris':''}`;
+        if(!run.passed)run.passed=new Set();
+        if(!run.passed.has(f.id)){run.passed.add(f.id);run.features[key]=(run.features[key]??0)+1;}
+      }
+    }
+    const b=g.boss;
+    if(b?.active&&b.phase!==run.lastBossPhase){run.lastBossPhase=b.phase;run.bossPhases.push(b.phase);run.events.push({type:'boss-phase',frame:run.frames,phase:b.phase});out.checkpoint='boss';}
+    if(b?.launcher){
+      const hits=b.launcher.hits;
+      if(hits>run.lastRackHits)run.rackHits+=hits-run.lastRackHits;
+      if(run.lastRackCharging&&!b.launcher.charging&&run.lastRackHits>=5)run.rackDetonations++;
+      run.lastRackHits=hits;run.lastRackCharging=b.launcher.charging;
+    }
+    if(run.frames%120===0)run.samples.push({frame:run.frames,rawSeconds:run.rawSeconds,gameSeconds:g.runTime,
+      pos:p.pos.toArray(),state:g.state,sector:g.sectorIndex,hull:p.hull,shield:p.shields,fuel:p.fuel,heat:p.heat,
+      shots:run.observedShots,gameShotsCounter:g.shotsFired,hits:g.shotsHit,kills:g.kills,score:g.score,threads:g.threads,grazes:g.grazes,
+      boss:b?{hp:b.hp,phase:b.phase,coreOpen:b.coreOpen,rackHits:b.launcher.hits,charging:b.launcher.charging}:null,
+      memory:{...e.renderer.info.memory},programs:e.renderer.info.programs.length,canvas:{width:e.canvas.width,height:e.canvas.height},decision:run.decision});
+    if(g.state==='over'||g.state==='victory'){run.done=true;run.outcome=g.state;out.checkpoint='terminal';}
+    if(run.rawSeconds>=run.spec.maxSeconds&&!run.done){run.done=true;run.outcome='timeout';out.checkpoint='timeout';}
+    run.previousZ=p.pos.z;
+    return out.checkpoint;
+  }
+
+  function drain(run) {
+    const g=run.k.game,out={};
+    out.events=run.events.splice(0);out.samples=run.samples.splice(0);
+    out.frame=run.frames;out.renderedFrames=run.renderedFrames;out.done=run.done;
+    out.state=g.state;out.z=g.player.pos.z;
+    out.checkpoint=run.checkpoint??null;run.checkpoint=null;
+    return out;
+  }
+
   function chunk(limit=240) {
     const run=active;if(!run)throw Error('No active episode');
-    const {engine:e,game:g}=run.k;
-    const start=performance.now(),out={events:[],samples:[],checkpoint:null};
+    if(run.realtime)throw Error('Do not accelerate a realtime trial');
+    const {engine:e,game:g}=run.k,start=performance.now();
     e.running=true;
     for(let n=0;n<limit&&!run.done;n++){
       if(g.state==='playing'&&run.frames%6===0)decide(run);
       const now=performance.now();e._last=now-1000/60;
       e._loop(now); // original frame law, including normal hit-stop/recovery
       run.frames++;run.rawSeconds+=1/60;
-      const p=g.player;
-      run.maxHeat=Math.max(run.maxHeat,p.heat);run.minFuel=Math.min(run.minFuel,p.fuel);
-      if(g.sectorIndex!==run.lastSector){run.lastSector=g.sectorIndex;
-        run.sectors.push(g.sectorIndex);run.events.push({type:'sector',frame:run.frames,index:g.sectorIndex,z:p.pos.z});out.checkpoint='sector';}
-      for(const f of g.level.features){
-        if(f.z>=p.pos.z-p.speed/60-2&&f.z<p.pos.z){
-          const key=`${f.kind}${f.type?':'+f.type:''}${f.debris?':debris':''}`;
-          if(!run.passed)run.passed=new Set();
-          if(!run.passed.has(f.id)){run.passed.add(f.id);run.features[key]=(run.features[key]??0)+1;}
-        }
-      }
-      const b=g.boss;
-      if(b?.active&&b.phase!==run.lastBossPhase){run.lastBossPhase=b.phase;run.bossPhases.push(b.phase);run.events.push({type:'boss-phase',frame:run.frames,phase:b.phase});out.checkpoint='boss';}
-      if(b?.launcher){
-        const hits=b.launcher.hits;
-        if(hits>run.lastRackHits)run.rackHits+=hits-run.lastRackHits;
-        if(run.lastRackCharging&&!b.launcher.charging&&run.lastRackHits>=5)run.rackDetonations++;
-        run.lastRackHits=hits;run.lastRackCharging=b.launcher.charging;
-      }
-      if(run.frames%120===0)run.samples.push({frame:run.frames,rawSeconds:run.rawSeconds,gameSeconds:g.runTime,
-        pos:p.pos.toArray(),state:g.state,sector:g.sectorIndex,hull:p.hull,shield:p.shields,fuel:p.fuel,heat:p.heat,
-        shots:run.observedShots,gameShotsCounter:g.shotsFired,hits:g.shotsHit,kills:g.kills,score:g.score,threads:g.threads,grazes:g.grazes,
-        boss:b?{hp:b.hp,phase:b.phase,coreOpen:b.coreOpen,rackHits:b.launcher.hits,charging:b.launcher.charging}:null,
-        memory:{...e.renderer.info.memory},programs:e.renderer.info.programs.length,canvas:{width:e.canvas.width,height:e.canvas.height},decision:run.decision});
-      if(g.state==='over'||g.state==='victory'){run.done=true;run.outcome=g.state;out.checkpoint='terminal';}
-      if(run.rawSeconds>=run.spec.maxSeconds&&!run.done){run.done=true;run.outcome='timeout';out.checkpoint='timeout';}
+      run.checkpoint=observeFrame(run)??run.checkpoint;
     }
     e.running=false;
-    out.events=run.events.splice(0);out.samples=run.samples.splice(0);
-    out.frame=run.frames;out.renderedFrames=run.renderedFrames;out.done=run.done;
-    out.cpuMs=performance.now()-start;out.state=g.state;out.z=g.player.pos.z;
-    return out;
+    return {...drain(run),cpuMs:performance.now()-start};
+  }
+
+  function startRealtime(spec) {
+    const initial=begin({...spec,renderEvery:1});
+    const run=active,{engine:e,game:g}=run.k;
+    run.realtime=true;run.rafIntervals=[];run.original.loop=e._loop;
+    window.requestAnimationFrame=run.original.raf;
+    e._loop=(now)=>{
+      if(!e.running)return;
+      const interval=now-e._last;
+      if(g.state==='playing'&&run.frames%6===0)decide(run);
+      run.original.loop(now); // actual rAF timestamp; no synthetic clock/step
+      run.frames++;run.rawSeconds+=e.realDelta;run.rafIntervals.push(interval);
+      run.checkpoint=observeFrame(run)??run.checkpoint;
+      if(run.done)e.stop();
+    };
+    e.start();return {...initial,mode:'realtime-render-every-frame'};
+  }
+
+  function observeRealtime() {
+    if(!active?.realtime)throw Error('No realtime trial');
+    return {...drain(active),elapsedWallMs:performance.now()-active.startedAt};
   }
 
   function end() {
@@ -217,12 +253,19 @@ window.KZBot = (() => {
       kills:g.kills,score:g.score,shots:run.observedShots,gameShotsCounter:g.shotsFired,hits:g.shotsHit,grades:g.grades,threads:g.threads,grazes:g.grazes,
       memory:{...e.renderer.info.memory},programs:e.renderer.info.programs.length,
       renderSubmissionCpuMs:{samples:frameCpu.length,p50:q(.5),p95:q(.95),max:q(1)},
-      healthLaw:'original Player.damage called unchanged',stepLaw:'original Engine._loop at synthetic 60Hz; actual rendered cadence separately counted'};
+      healthLaw:'original Player.damage called unchanged',
+      stepLaw:run.realtime?'original Engine._loop with actual requestAnimationFrame timestamps':'original Engine._loop at synthetic 60Hz; actual rendered cadence separately counted'};
+    if(run.realtime){
+      const intervals=run.rafIntervals.sort((a,b)=>a-b),q=k=>intervals[Math.min(intervals.length-1,Math.floor(intervals.length*k))]??null;
+      result.actualRafIntervalsMs={samples:intervals.length,p50:q(.5),p95:q(.95),p99:q(.99),max:q(1)};
+      result.mode='realtime';
+    }
     intent(run,0,0,false,false);e.input.reset();e.stop();
     window.requestAnimationFrame=run.original.raf;e.postfx.render=run.original.render;
+    if(run.original.loop)e._loop=run.original.loop;
     p.damage=run.original.damage;g._crash=run.original.crash;g.warn=run.original.warn;g.projectiles.fire=run.original.fire;
     if(run.spec.profile==='gamepad')delete navigator.getGamepads;
     active=null;return result;
   }
-  return {begin,chunk,end};
+  return {begin,chunk,end,startRealtime,observeRealtime};
 })();

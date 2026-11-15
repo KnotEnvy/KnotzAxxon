@@ -43,7 +43,7 @@ for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>cleanup().final
     if(ready)break;await new Promise(r=>setTimeout(r,100));
   }
   if(!ready)throw Error('Owned server not ready');
-  const config={runId,source:before,final,url,count,loops,seed,
+  const config={runId,source:before,final,url,count,loops,seed,realtime:args.includes('--realtime'),
     renderEvery:Number(arg('--render-every','12')),maxSeconds:Number(arg('--max-seconds','720')),
     quality:arg('--quality','low'),camera:arg('--camera','classic'),profile:arg('--profile','analog'),
     width:Number(arg('--width','960')),height:Number(arg('--height','540')),

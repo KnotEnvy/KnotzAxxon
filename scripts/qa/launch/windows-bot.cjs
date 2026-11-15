@@ -44,10 +44,12 @@ const append=(name,value)=>fs.appendFileSync(path.join(config.out,name),JSON.str
       episode.sharedRandomSeed=(episode.seed^0xa1b2c3d4)>>>0;
       await page.evaluate(async spec=>{const {rand}=await import('/src/core/Utils.js');rand.reset(spec.sharedRandomSeed)},episode);
       const errorStart=errors.length;
-      const initial=await page.evaluate(spec=>KZBot.begin(spec),episode);append('initial.jsonl',{...episode,...initial});
+      const initial=await page.evaluate(({episode,realtime})=>realtime?KZBot.startRealtime(episode):KZBot.begin(episode),{episode,realtime:config.realtime});
+      append('initial.jsonl',{...episode,...initial});
       let done=false,chunk=0;
       while(!done){
-        const batch=await page.evaluate(()=>KZBot.chunk(240));done=batch.done;
+        if(config.realtime)await page.waitForTimeout(2000);
+        const batch=await page.evaluate(realtime=>realtime?KZBot.observeRealtime():KZBot.chunk(240),config.realtime);done=batch.done;
         for(const event of batch.events)append('events.jsonl',{id:episode.id,...event});
         for(const sample of batch.samples)append('samples.jsonl',{id:episode.id,...sample});
         append('chunks.jsonl',{id:episode.id,chunk:chunk++,...batch,events:undefined,samples:undefined});

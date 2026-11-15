@@ -108,3 +108,14 @@ what actually reached Pages/Itch; account-only actions and remaining limitations
 ## 2026-11-15 primary checkpoint
 
 Fresh baseline241/241 passed (artifacts/launch/baseline-tests.txt). SolLow proved WindowsChrome157/GTX1650Ti local-pipe path and completed2 normal pilots; final0/60. Bot implementation, matrix and credit filters are present; two evidence-rule tests pass; bot GPU pilot pending Opus capture-slot release. Portable ZIP pilot built/read back with43files; nested iframe/browser checks pending. Hydrogen reported provider quota reset1h35 on its second run; no cleanup implementation has been accepted. Ownership correction and concrete work reminder sent to existing thread; no model substitution. FableHigh is delegated for additive ambient/environment work. Finalcandidate/judging/publication remain pending; finalcreditedbot0/1000.
+
+Subsequent primary checkpoint: bot completed11 normal development episodes (10unique
+seed/loop pairs; four victories) across the representative bands, with all eight
+sectors/boss phases/rack coverage collectively. Two separate40second earned-next-loop
+diagnostics followed actual Continue-button victories. These are not final credits;
+two batches explicitly changed source during Fable edits. Raw records stay in
+artifacts/launch/bot/. Packaged HTML5 hardware QA passed all43file hashes,28default
+model loads, nested paths/iframe fullscreen and four responsive/reduced-motion fixtures.
+Actual public browser inspection tooling is ready; Fable currently owns the render slot.
+Primary tooling checkpoint committed as `cd7514d`; no runtime/publishing claim attaches
+to that tooling-only commit. Finalbot0/1000, finallive0/60, judgingrounds0 remain unchanged.
