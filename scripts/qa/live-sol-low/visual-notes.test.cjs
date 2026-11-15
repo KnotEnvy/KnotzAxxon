@@ -7,6 +7,7 @@ const sheet={id:'SYNTHETIC',sha256:'sheet-hash',completedAt:'2026-11-15T00:00:05
 const frame=panel=>({panel,facts:['Synthetic red/green/blue panel'],interpretations:[],confidence:'high',limits:['Synthetic only']});
 const command={viewed:true,viewedAt:'2026-11-15T00:00:06.000Z',frames:[frame(1),frame(3)]};
 const result=sheetNotes(sheet,command,'synthetic','2026-11-15T00:00:07.000Z');
+assert(result.every(note=>note.observer==='Terra medium visual agent'));
 assert.deepEqual(result.map(r=>r.panel),[1,3]);assert.deepEqual(result.map(r=>r.captureToViewedMs),[6000,2000]);
 assert(!('viewed' in sheet));assert(!('viewed' in sheet.panels[0]));
 assert.throws(()=>sheetNotes(sheet,{...command,viewed:false},'synthetic'));
@@ -28,6 +29,7 @@ const {singleNote}=require('./visual-notes.cjs');
 const original={id:'single',sha256:'original-hash',completedAt:'2026-11-15T00:00:00Z'};
 const explicit={viewed:true,facts:['Ship visible'],confidence:'medium',limits:['Still only']};
 const single=singleNote(original,explicit,'synthetic','2026-11-15T00:00:12Z');
+assert.equal(single.observer,'Terra medium visual agent');
 assert.equal(single.captureToViewedMs,12000);assert.equal(single.sourceScreenshotSha256,'original-hash');
 assert.equal(single.viewedAt,single.noteAcceptedAt);assert.deepEqual(single.interpretations,[]);
 assert.throws(()=>singleNote(original,{...explicit,viewed:false},'synthetic'));

@@ -26,7 +26,7 @@ async function observe(reason,quiet=false){
  const previous=active.observations.at(-1);
  const row={id,trialId:active.spec.id,reason,startedAt,completedAt:at(),gapMs:previous?Date.parse(startedAt)-Date.parse(previous.startedAt):null,
   captureCompletedAt,file,sha256:hash(fs.readFileSync(path.join(config.out,file))),presentation,batch,
-  observer:'Sol LOW visual agent',operator:active.operator,viewed:false};
+  observer:'Terra medium visual agent',operator:active.operator,viewed:false};
  active.observations.push(row);append('observations.jsonl',row);
  if(!quiet)console.log(JSON.stringify({op:'screenshot-ready',id,path:config.outLocal?`${config.outLocal}/${file}`:path.join(config.out,file),done:batch.done,captureCompletedAt,readyEmittedAt:at(),checkpoint:batch.checkpoint,
   instruction:'Open screenshot with view_image, then submit note with facts/interpretation/confidence/limits. Capture alone is not observation.'}));
@@ -112,7 +112,7 @@ async function burst(command,first=null){
     await page.evaluate(async spec=>{const {rand}=await import('/src/core/Utils.js');rand.reset(spec.sharedRandomSeed)},spec);
     const initial=await page.evaluate(spec=>KZBot.startRealtime(spec),spec);
     used.add(spec.seed);active={spec,sourceBefore:c.source,startedAt:at(),initial,hardware,errorStart:errors.length,
-     observations:[],notes:[],sheets:[],operator:'primary developed realtime bot; Sol LOW visual observer',manualActions:[]};
+     observations:[],notes:[],sheets:[],operator:'primary developed realtime bot; Terra medium visual observer',manualActions:[]};
     append('initial.jsonl',{...active,observations:undefined,notes:undefined});
     const first=await observe('initial',!!c.burst);if(c.burst)await burst({...c,reason:'initial+opening'},first);
    }else if(c.op==='pipeline-observe'){
@@ -138,7 +138,7 @@ async function burst(command,first=null){
     const allowed=['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Space','KeyL','ShiftLeft'];
     if(!Array.isArray(c.keys)||c.keys.some(k=>!allowed.includes(k)))throw Error('Unsupported keys');
     await releaseKeys();held=c.keys;for(const k of held)await page.keyboard.down(k);
-    active.operator='mixed: primary realtime bot plus Sol LOW supplemental keyboard';
+    active.operator='mixed: primary realtime bot plus Terra medium supplemental keyboard';
     active.manualActions.push({at:at(),keys:held,note:'Bot still decides every six frames and may overwrite intents; no exclusive manual-control claim'});
    }else if(c.op==='end'||c.op==='abort'){
     if(!active)throw Error('No trial');await releaseKeys();

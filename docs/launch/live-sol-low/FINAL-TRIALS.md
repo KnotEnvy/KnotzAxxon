@@ -152,3 +152,7 @@ start-burst / view_image / note-sheet+nextBurst workflow. Up to3labelled frames 
 image call; full originals and hashes remain. Explicit per-panel actual viewedAt/facts
 are required; creation never acknowledges viewing. Existing10second gap blocker and
 all60matrix remain unchanged. No new gameplay was run for this CPU preparation.
+
+## Current player and independent timing audit
+
+Since the explicit2026-11-15 user instruction, **Terra medium** owns new observed player runs. Earlier Sol Low evidence remains historical; the existing directory name is retained. Before credit, run `node scripts/qa/launch/audit-live.cjs <trials.jsonl> <candidate sourceHash>` and inspect original images/notes. Its record checks exclude unviewed captures from the viewing cadence and check actual-view ages; even a passing record audit never grants automatic gameplay credit. See `TERRA-TAKEOVER.md`.

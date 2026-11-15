@@ -22,7 +22,7 @@ for(const signal of ['SIGTERM','SIGINT'])process.once(signal,()=>cleanup().final
 (async()=>{
  const before=fingerprint(root);if(before.sourceHash!==candidate)throw Error('Candidate mismatch before lease; no browser launched');
  if(fs.existsSync(out))throw Error('Refusing to overwrite evidence');
- lease=acquireGPU('/home/knotzuni/code/KnotzAxxon/asset-work/public-launch/gpu-reservation.json',`Sol LOW ${pilotMode?'pilot':'final'} live ${runId}`);
+ lease=acquireGPU('/home/knotzuni/code/KnotzAxxon/asset-work/public-launch/gpu-reservation.json',`Terra medium ${pilotMode?'pilot':'final'} live ${runId}`);
  fs.mkdirSync(out,{recursive:true});
  const listener=net.createServer();await new Promise((r,j)=>{listener.once('error',j);listener.listen(0,'127.0.0.1',r)});
  const port=listener.address().port;await new Promise(r=>listener.close(r));

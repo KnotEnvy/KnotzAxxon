@@ -13,7 +13,7 @@ function sheetNotes(sheet,command,trialId,acceptedAt=new Date().toISOString()){
    !Array.isArray(frame.interpretations)||!Array.isArray(frame.limits)||!['low','medium','high'].includes(frame.confidence))throw Error('Each selected panel needs facts[], interpretations[], limits[], confidence');
   return {trialId,observationId:panel.id,sheetId:sheet.id,panel:panel.panel,sourceScreenshotSha256:panel.sha256,
    sheetSha256:sheet.sha256,viewedAt,noteAcceptedAt:acceptedAt,viewedAtSource:'explicit observer timestamp',
-   captureToViewedMs:viewed-Date.parse(panel.completedAt),viewMethod:'labelled contact sheet',observer:'Sol LOW visual agent',
+   captureToViewedMs:viewed-Date.parse(panel.completedAt),viewMethod:'labelled contact sheet',observer:'Terra medium visual agent',
    facts:frame.facts,interpretations:frame.interpretations,confidence:frame.confidence,limits:frame.limits};
  });
 }
@@ -21,7 +21,7 @@ function singleNote(observation,command,trialId,acceptedAt=new Date().toISOStrin
  if(!observation||command.viewed!==true||!Array.isArray(command.facts)||!command.facts.length||command.facts.some(x=>typeof x!=='string'||!x.trim())||!Array.isArray(command.interpretations??[])||!Array.isArray(command.limits)||!['low','medium','high'].includes(command.confidence))throw Error('Explicit viewed:true, known screenshot, facts, confidence and limits required');
  return {trialId,observationId:observation.id,sourceScreenshotSha256:observation.sha256,
  viewedAt:acceptedAt,noteAcceptedAt:acceptedAt,viewedAtSource:'conservative note acceptance after explicit observer acknowledgment',
- captureToViewedMs:Date.parse(acceptedAt)-Date.parse(observation.completedAt),viewMethod:'original single screenshot',observer:'Sol LOW visual agent',
+ captureToViewedMs:Date.parse(acceptedAt)-Date.parse(observation.completedAt),viewMethod:'original single screenshot',observer:'Terra medium visual agent',
  facts:command.facts,interpretations:command.interpretations??[],confidence:command.confidence,limits:command.limits};
 }
 module.exports={sheetNotes,singleNote};
