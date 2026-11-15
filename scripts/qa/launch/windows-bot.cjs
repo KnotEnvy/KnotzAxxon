@@ -1,5 +1,7 @@
 // Windows process. Browser automation uses Playwright's local child-process pipes.
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os');
+const {readPackage,attachProduction}=require('./production-bundle.cjs');
+const {packageIdentity,samePackage}=require('./production-proof.cjs');
 const config=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
 const {chromium}=require(config.playwright);
 const append=(name,value)=>fs.appendFileSync(path.join(config.out,name),JSON.stringify(value)+'\n');
@@ -22,7 +24,17 @@ let currentEpisode=null;
     }});
     page.on('response',r=>{if(r.status()>=400){const failure={url:r.url(),status:r.status()};
       errors.push('HTTP '+failure.status+': '+failure.url);append('network.jsonl',failure)}});
-    await page.goto(config.url);await page.waitForFunction(()=>!!window.KZ,{},{timeout:120000});
+    if(config.final&&!config.production)throw Error('Final bot requires a frozen production package');
+    let servedBuild={kind:'development-source',creditEligible:false};
+    if(config.production){
+      const bundle=readPackage(config.production.directory,config.source.sourceHash);
+      if(!samePackage(packageIdentity(bundle),config.production.identity))throw Error('Windows production package identity mismatch');
+      servedBuild=await attachProduction(page,config.url,bundle);
+    }else{
+      await page.goto(config.url);await page.waitForFunction(()=>!!window.KZ,{},{timeout:120000});
+      await page.evaluate(async()=>{KZ.rand=(await import('/src/core/Utils.js')).rand});
+    }
+    fs.writeFileSync(path.join(config.out,'served-build.json'),JSON.stringify(servedBuild,null,2)+'\n');
     const probe=await page.evaluate(()=>{
       const gl=KZ.engine.renderer.getContext(),ext=gl.getExtension('WEBGL_debug_renderer_info');
       return {webgl2:gl instanceof WebGL2RenderingContext,vendor:ext&&gl.getParameter(ext.UNMASKED_VENDOR_WEBGL),
@@ -49,13 +61,33 @@ let currentEpisode=null;
       // Seed the existing shared PRNG once at the episode boundary. This keeps
       // its algorithm/distribution intact and makes boss/effect choices replayable.
       episode.sharedRandomSeed=(episode.seed^0xa1b2c3d4)>>>0;
-      await page.evaluate(async spec=>{const {rand}=await import('/src/core/Utils.js');rand.reset(spec.sharedRandomSeed)},episode);
+      await page.evaluate(spec=>KZ.rand.reset(spec.sharedRandomSeed),episode);
       const errorStart=errors.length;
       const initial=await page.evaluate(({episode,realtime})=>realtime?KZBot.startRealtime(episode):KZBot.begin(episode),{episode,realtime:config.realtime});
       append('initial.jsonl',{...episode,...initial});
-      let done=false,chunk=0;
+      let done=false,chunk=0,pausedOnce=false;
+      const episodeStarted=Date.now();
+      const snapshot=()=>page.evaluate(()=>({state:KZ.game.state,z:KZ.game.player.pos.z,runTime:KZ.game.runTime,
+        memory:{...KZ.engine.renderer.info.memory},programs:KZ.engine.renderer.info.programs.length}));
+      if(config.lifecycleProbe)append('lifecycle.jsonl',{id:episode.id,stage:'initial',at:new Date().toISOString(),...await snapshot()});
       while(!done){
         if(config.realtime)await page.waitForTimeout(2000);
+        if(config.lifecycleProbe&&!pausedOnce&&Date.now()-episodeStarted>=5000){
+          pausedOnce=true;
+          const state=await snapshot();
+          if(state.state==='playing'){
+            await page.keyboard.press('Escape');
+            const paused=await snapshot();
+            if(paused.state!=='paused')throw Error('Lifecycle probe did not pause through keyboard');
+            await page.waitForTimeout(2000);
+            const still=await snapshot();
+            if(still.state!=='paused'||still.z!==paused.z||still.runTime!==paused.runTime)throw Error('Gameplay advanced while paused');
+            await page.locator('#screen-pause [data-action="resume"]').click();
+            const resumed=await snapshot();
+            if(resumed.state!=='playing')throw Error('Lifecycle probe did not resume through menu');
+            append('lifecycle.jsonl',{id:episode.id,stage:'pause-resume',at:new Date().toISOString(),paused,still,resumed,pauseMs:2000});
+          }else append('lifecycle.jsonl',{id:episode.id,stage:'pause-not-reached',state});
+        }
         const batch=await page.evaluate(realtime=>realtime?KZBot.observeRealtime():KZBot.chunk(240),config.realtime);done=batch.done;
         for(const event of batch.events)append('events.jsonl',{id:episode.id,...event});
         for(const sample of batch.samples)append('samples.jsonl',{id:episode.id,...sample});
@@ -69,10 +101,11 @@ let currentEpisode=null;
       }
       const result=await page.evaluate(()=>{KZ.engine.renderer.getContext().finish();return KZBot.end()});
       const row={...result,runId:config.runId,initial:initial.initial,sourceHash:config.source.sourceHash,harnessHash:config.harnessHash,
-        sourceCommit:config.source.head,frozenCandidate:config.frozenCandidate,harnessTreeHash:config.harnessTreeHash,servedBuild:'Vite development graph of fingerprinted candidate source; production bundle verified separately',
+        sourceCommit:config.source.head,frozenCandidate:config.frozenCandidate,harnessTreeHash:config.harnessTreeHash,servedBuild,
         hardware:{...hardware,viewport:initial.initial.viewport,canvas:initial.initial.canvas,settings:initial.initial.settings},
         errors:errors.slice(errorStart),kind:config.final?'final-candidate':'development-pilot',
         creditEligible:config.final&&result.completed&&errors.length===errorStart&&result.renderedFrames>0};
+      if(config.lifecycleProbe)append('lifecycle.jsonl',{id:episode.id,stage:'terminal',at:new Date().toISOString(),...await snapshot()});
       append('episodes.jsonl',row);console.log(JSON.stringify({episode:row.id,loop:row.loop,outcome:row.outcome,
         sectors:row.sectors,z:row.z,fuel:row.fuel,frames:row.frames,renderedFrames:row.renderedFrames,creditEligible:row.creditEligible}));
       if(config.final&&errors.length!==errorStart)throw Error('Final batch stopped after runtime/network error; failed episode retained');

@@ -7,6 +7,58 @@ Previous deployed runtime: `1b3ff18bbabdedf30295846f3594c831ef5c30a5` (PR 5).
 Historical validation: 241 regressions; 28 default resources / 35 served model hashes.
 These are baseline facts, not new-candidate results.
 
+## Current status — 2026-11-15, after Round 01
+
+Owner implementation tranches have been handed off and integrated. **Primary release
+work remains active.** RC01 is frozen at `c0ee2949de29adfa52e6dcdae6768c73ec15474a`
+(source `6d28e0210d802d0932762ba85f61d4cf43f14a646099a5f99411b0ab240f1362`).
+It passed 329 regressions and local GPU verification of both 46-file packages.
+Pending Vite 7.3.7, loopback-default and QA provenance changes require a new RC02;
+RC01 remains immutable and is not approved for publication.
+
+| Requirement | Actual state | Next acceptance / owner |
+|---|---|---|
+| Final production hardware bot episodes | **0/1000** | Primary: run and audit exact production bytes across the prescribed matrix |
+| Source-level RC01 hardware batch | **100 completed**, excluded from final credit | Retain raw records and historical audit; Vite DEV execution is source evidence |
+| Actually observed Terra Medium player episodes | **0/60** | Primary/Terra Medium: first demonstrate timely actual viewing and notes; then ten qualifying trials per band |
+| Independent judging gate | **0/21 scores >=9**, Round 01 preserved | Fresh readonly Luna/Terra High/Haiku review of one next frozen candidate after material evidence improves |
+| Sustained frame time / resource behavior | Open | Primary: candidate-bound real-rAF distributions, worst stalls, repeated runs and pause/resume |
+| Physical input and assistive operation | Open | Opus: phone/controller/keyboard/assistive walkthrough, explicit supported-device limits |
+| Audible quality and recovery | Open; synthesis/lifecycle measured, nothing heard | Spark: actual listening, output devices and interruption/recovery evidence |
+| Public account / live distribution proof | Open; nothing newly published | Primary with Opus store review: only after applicable prepublication gates pass |
+
+The current bot attachment prototype boots the exact frozen production package on
+GTX1650Ti, browser-verifies all 46 shipped files and detaches its debugger before
+normal play. It is an **uncredited smoke**, not a completed episode or performance
+verdict. Integrating its provenance checks into final bot/player harnesses is active.
+
+Round 01 scores (lenses 1–7, unchanged):
+
+| Judge | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Luna | 8.3 | 7.8 | 6.8 | 8.4 | 7.6 | 7.2 | 7.0 |
+| Terra High | 7.8 | 6.5 | 5.0 | 7.3 | 6.5 | 4.5 | 6.8 |
+| Haiku | 6 | 5 | 4 | 7 | 6 | 4 | 5 |
+
+Original responses, ratings, gate output and byte-identical cutoff inputs are under
+`judging/round-01/`; `snapshot-manifest.json` preserves all 12 pinned inputs before
+this mutable ledger update. Later evidence does not alter that round's cutoff.
+
+Targeted triage retains ownership: Sol code audit/security/module boundaries, Fable
+3D/contrast/readability, Opus UI/small text/results/font fallback, Spark audio.
+Long modules and static-image readability concerns are questions to verify against
+actual use, not instructions for wholesale splitting, redesign or replacing accepted
+art. Do not call an evidence gap a confirmed defect. The historical grade discrepancy
+already has the monotonic-clock fix and before/after proof in `NEGATIVE-FIRST-FRAME.md`.
+
+Publication ordering is explicit: build and verify immutable local packages, complete
+applicable gameplay/performance/device/audio evidence, and obtain all 21 required
+scores on the same candidate **before publishing**. Live URL/account smoke checks
+then verify the approved artifact after its authorized upload, retaining the previous
+Itch build. Until then they remain pending postupload checks. If a judge requires live
+publication proof before awarding 9, record that gate conflict and seek a specific
+user decision; never reinterpret a failing score, invent live proof or publish early.
+
 ## Release gate
 
 The user requires **each** of Luna, Terra and Haiku to independently score **>=9/10
@@ -22,12 +74,12 @@ be stated precisely; they do not justify fabricated evidence or scores.
 
 | Priority | Deliverable / owner | Exclusive writes | Dependencies / current state |
 |---|---|---|---|
-| P0 | Primary: bot, GPU campaign, integration, distribution | `scripts/qa/launch/`, `docs/launch/`, `artifacts/launch/bot/`, packaging scripts/config by coordination | Started; final credited bot/live counts **0 / 0**; no candidate frozen |
-| P0 | Terra Medium, Nitro: live observed gameplay and hardware pilot (user replacement for Sol Low) | `scripts/qa/live-sol-low/`, `docs/launch/live-sol-low/`, `artifacts/launch/live-sol-low/` | Verify Windows Chrome/local-pipe GPU first; normal gameplay; pilots separate from final trials |
-| P1 | Opus High, Nitro: title and actual-game marketing | `src/style.css`, `src/ui/Screens.js`, `index.html`, title-only hunks in `src/game/Game.js`, `public/brand/`, `assets-source/launch-marketing/`, `scripts/brand/launch/` | CPU work first; coordinate GPU slot; no gameplay or model replacement |
-| P1 | Spark 1.3, SuperBeast: audio | `src/audio/` and audio content are reserved for Spark's replacement/patch delivery; owned remote output only | Read exact base; no dirty-root edits; no heavy GPU; coordinate Hydrogen |
-| P1 | Sol XHigh, same former-Hydrogen SuperBeast thread: code cleanup | Core/entities/render/lifecycle/tests/docs outside leases; audit entire codebase | Existing worktree/branch; no duplicate launch; UI/attract/audio/world writes reserved |
-| P1 | Fable High, Nitro: restrained ambient/environment additions and graphical judge fixes | `src/world/`, graphical assets/lighting/ambient/background rendering hunks, coordinated before edits | Explicit user owner; preserve RNG, envelopes, accepted art, draw/triangle budgets; primary integrates only |
+| P0 | Primary: bot, GPU campaign, integration, distribution | `scripts/qa/launch/`, `docs/launch/`, `artifacts/launch/bot/`, packaging scripts/config by coordination | Active integration; RC01 frozen; final production bot/live **0 / 0**; RC02 pending |
+| P0 | Terra Medium, Nitro: live observed gameplay and hardware pilot (user replacement for Sol Low) | `scripts/qa/live-sol-low/`, `docs/launch/live-sol-low/`, `artifacts/launch/live-sol-low/` | CPU handoff complete; active-view latency unresolved; no qualifying player episode |
+| P1 | Opus High, Nitro: title and actual-game marketing | `src/style.css`, `src/ui/Screens.js`, `index.html`, title-only hunks in `src/game/Game.js`, `public/brand/`, `assets-source/launch-marketing/`, `scripts/brand/launch/` | Implementation handoff integrated; targeted Round 01 UI/device/font triage remains |
+| P1 | Spark 1.3, SuperBeast: audio | `src/audio/` and audio content are reserved for Spark's replacement/patch delivery; owned remote output only | Implementation handoff integrated; measured audio only; listening proof remains |
+| P1 | Sol XHigh, same former-Hydrogen SuperBeast thread: code cleanup | Core/entities/render/lifecycle/tests/docs outside leases; audit entire codebase | Both tranches integrated; 50-path audit retained; module/security follow-up stays scoped |
+| P1 | Fable High, Nitro: restrained ambient/environment additions and graphical judge fixes | `src/world/`, graphical assets/lighting/ambient/background rendering hunks, coordinated before edits | Implementation handoff integrated; motion readability needs actual combat evidence; accepted art preserved |
 | P2 | Primary: portable Itch HTML5 archive | Packaging tooling and `artifacts/launch/distribution/` | Relative base; nested iframe/WebGL2/fullscreen/responsive/assets QA; inspect live listing first |
 | P3 | Luna / Terra / Haiku: seven-lens judges, Nitro | Readonly; isolated reports supplied as responses | Only after integration, frozen candidate and proof packet |
 
@@ -91,7 +143,7 @@ findings. All reviewers receive the same packet and are initially blind to one a
 - Existing Pages: https://knotenvy.github.io/KnotzAxxon/ (baseline live verification historical).
 - Existing Itch: https://hacktivatenation.itch.io/knotzaxxon (actual browser inspected 19:40 UTC: external Pages link, no public iframe/upload;
   preserve previous account uploads; hidden dashboard contents not observed).
-- New publication: **none**. New judging rounds: **none**. Candidate **RC01 frozen**, identity in `candidates/rc01.json`; evidence gates still pending.
+- New publication: **none**. Round 01: **complete, all 21 below 9**. Candidate **RC01 frozen**, identity in `candidates/rc01.json`; evidence gates still pending.
 - Gunner/all art are explicitly accepted by the user. Historical optional 21-asset
   formal review backlog is closed by acceptance; formal review counts remain historical 0.
 - Human cross-device acceptance remains user-reported. New agent/bot sessions will be
@@ -377,3 +429,9 @@ Spark’s exact source/test delivery is integrated as `6f93f8b`;7 new audio disp
 Terra medium returned the bounded GPU slot unused; no pilot and no new image view. Four delivered attribution changes match exact hashes and3 tooling test files pass. Primary added4 independent record-audit integrity tests: unviewed captures cannot fill actual viewing gaps, image hashes must match, and stale view ages fail. No record checker grants automatic player credit. Final player remains0/60.
 
 Both RC01 packages build with46 files. Portable Itch ZIP: **7,354,932bytes**, SHA256 **`7f45808003f396e35be16dc90379e790f7bd69daa996f5fba7ae7b73bd8b5694`**, relative base/index at root. Production/nested-iframe hardware checks precede counted bot runs. Marketing editable bundle:32 files/4 exports/5 native screenshots, SHA256 `e064559cbcb02f99ace896419c7b2db49c12182dbf2f505e0af7d108fd221321`; full receipt in `marketing-bundle.json`. All previous live releases remain unchanged.
+
+## RC01 package hardware verification and counted campaign start
+
+Both immutable RC01 packages passed actual GTX1650Ti/D3D11 Chrome157 verification. Pages46 files/35 model files hash-match,481 engine callbacks/presentation draws across desktop/portrait/landscape, no errors or failed requests. Portable Itch46 files hash-match,326 engine callbacks across four views, nested arbitrary path + sandbox iframe/fullscreen + explicit WebGL2 failure handling pass. These are local packaged checks, not publication or FPS proof. Exact receipts in `RC01-PACKAGES.json`.
+
+Counted batch `rc01-final-0000` started with100 source/harness-guarded matrix episodes. Opening loop0 seed reached all eight sectors and victory; rows remain provisional before closing receipt audit. Final audited bot0/1000 and Terra player0/60 at this checkpoint. No runtime/harness/source asset edits are permitted during the campaign.

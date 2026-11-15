@@ -33,7 +33,7 @@ async function stream(file,visit){
   }
   const unfiltered=auditEpisodes(rows,receipts,candidate.sourceHash);
   const credit=auditEpisodes(rows,receipts,candidate.sourceHash,candidate.browserPilotHash,
-    {harnessHash:candidate.harnessHash,commit:candidate.commit,sha256:sha256(candidateBytes)});
+    {harnessHash:candidate.harnessHash,commit:candidate.commit,sha256:sha256(candidateBytes),productionPackages:candidate.productionPackages});
   const ids=new Set(credit.creditedIds),valid=rows.filter(r=>ids.has(r.id));
   const wrongHarness=rows.filter(r=>unfiltered.creditedIds.includes(r.id)&&r.harnessHash!==candidate.browserPilotHash).map(r=>r.id);
   const features={},outcomes={},warnings={},collisions={},damage={},grades={},rigs={},qualities={},profiles={},viewports={};

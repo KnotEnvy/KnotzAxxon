@@ -1,0 +1,23 @@
+# Scoped release security review
+
+This primary audit responds to Round01 TERRA-01 on immutable RC01 (`6d28e021…`). It is a source/dependency/trust-boundary review, not a penetration test or security certification. Exact reviewed file hashes, registry responses and five full GitHub advisory responses are retained in `artifacts/launch/security/rc01/`; `review-manifest.json` pins the evidence. The existing cleanup audit covers maintainability/ownership separately and identifies its historical branch accurately.
+
+## Concrete finding and staged correction
+
+SEC-01: the lockfile selects Vite7.3.6. `npm audit --omit=dev --json` exits0 with no advisories; the complete audit exits1 with one high affected package (Vite), aggregating five advisories. GitHub advisory API responses confirm Vite7.3.7 as the first patched7.x version, published October20–21,2026. An isolated dependency stage pins7.3.7 and its complete registry audit exits0 with no reported vulnerabilities. These measurements are an advisory-database snapshot, not proof of absence of all vulnerabilities.
+
+The RC01 batch and readonly judging round have finished with exact original bytes retained. Vite7.3.7 is staged in the worktree with an owned dependency directory; applicable checks and an RC02 freeze remain required before the full1000-episode production campaign. No shared dependency symlink target is modified. Vite is a build/development dependency; the verified static46-file packages contain no Vite server or `node_modules`. Actual QA servers explicitly bind127.0.0.1 and local browser pipes expose no CDP listener. The repository default development host has been changed from `true` to `127.0.0.1` in the pending correction. No arbitrary security exposure is justified by the production-only clean audit.
+
+## Reviewed boundaries
+
+- URL query data: shared seeds pass a1–6alphanumeric regex and a bounded base36 numeric conversion before use. Model/environment switches select known local alternatives, not caller-specified URLs. There is no source evaluation of query input.
+- Browser storage: SettingsStore accepts only schema keys and validated finite/clamped numbers, enumerated choices or real booleans. It does not merge arbitrary object properties. Scores reject nonfinite/negative scores, bound numeric fields, strip callsigns to three uppercase alphanumerics and limit the table to10. Best grades admit only S/A/B/C. Storage read/write errors preserve session behavior and disclose persistence. Huge hostile same-origin storage values can still consume parse time; no formal adversarial-size test was run.
+- HTML insertion: inspected Screens/HUD templates receive fixed schema strings, sanitized score fields, computed numeric formatting and validated grade values. Results headings/summary/callsign fields use textContent or value. No inspected player-controlled string has an unrestricted path into these HTML sinks. This is a scoped data-flow review, not exhaustive dynamic XSS testing.
+- Runtime network/data: production code loads packaged same-origin model/recipe assets. No game backend, accounts, remote scoreboard, analytics, user file uploads, arbitrary remote imports or credential storage is implemented. Social metadata and the apple icon reference the known Pages origin. GLTF/recipe assets are trusted shipped build inputs; validating arbitrary third-party uploads is outside this game.
+- Debug boundary: main exposes `window.KZ` only under Vite DEV; the actual production browser reports verify debug_api=false. QA telemetry lives outside the built game.
+- Build chain: npm ci uses the integrity-pinned lockfile; production dependency is Three0.185.1. GitHub workflow actions are pinned to commit SHAs, default contents permission is read, deployment permissions belong to the deployment job, and only dist is uploaded. Dependency scripts and GitHub runner/service compromise are residual supply-chain risks; no claim of action-source or full transitive-code audit is made.
+- Distribution: portable packager rejects symbolic links, unexpected source/tool/maps, invalid root/relative paths and oversize outputs; final archive readback and actual packaged asset hashes passed. Live hosting headers, dashboard permissions and the eventual account upload remain outside this local check.
+
+## Outcome
+
+No material production data-flow defect was demonstrated by this scoped inspection. One real developer-tooling dependency issue is retained with its exact correction and owner; it must land before the final candidate. Physical input, listening and gameplay evidence gaps remain separate and unresolved. Primary retains integration ownership; Fable/Opus/Spark visual/audio paths were not edited by this audit.

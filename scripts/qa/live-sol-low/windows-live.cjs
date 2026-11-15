@@ -2,6 +2,9 @@
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),readline=require('node:readline');
 const {createHash}=require('node:crypto');
 const {execFile}=require('node:child_process');
+const {readPackage,attachProduction}=require('../launch/production-bundle.cjs');
+const {packageIdentity,samePackage}=require('../launch/production-proof.cjs');
+const {auditViewingRecords}=require('../launch/audit-live.cjs');
 const {sheetNotes,singleNote}=require('./visual-notes.cjs');
 const {admitCapture,admitNote,acquisitionDelay}=require('./pipeline.cjs');
 const config=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
@@ -69,8 +72,19 @@ async function burst(command,first=null){
  });
  page=await context.newPage();
  page.on('pageerror',e=>{errors.push({at:at(),message:e.message});append('errors.jsonl',errors.at(-1))});
- page.on('requestfailed',r=>append('network.jsonl',{url:r.url(),failure:r.failure()}));
- await page.goto(config.url);await page.waitForFunction(()=>!!window.KZ,{},{timeout:120000});
+ page.on('requestfailed',r=>{if(!r.url().startsWith('ws:')){const failure={at:at(),url:r.url(),failure:r.failure()};errors.push(failure);append('network.jsonl',failure)}});
+ page.on('response',r=>{if(r.status()>=400){const failure={at:at(),url:r.url(),status:r.status()};errors.push(failure);append('network.jsonl',failure)}});
+ if(!config.pilotMode&&!config.production)throw Error('Final live requires frozen production package');
+ let servedBuild={kind:'development-source',creditEligible:false};
+ if(config.production){
+  const bundle=readPackage(config.production.directory,config.candidate);
+  if(!samePackage(packageIdentity(bundle),config.production.identity))throw Error('Windows live package mismatch');
+  servedBuild=await attachProduction(page,config.url,bundle);
+ }else{
+  await page.goto(config.url);await page.waitForFunction(()=>!!window.KZ,{},{timeout:120000});
+  await page.evaluate(async()=>{KZ.rand=(await import('/src/core/Utils.js')).rand});
+ }
+ fs.writeFileSync(path.join(config.out,'served-build.json'),JSON.stringify(servedBuild,null,2)+'\n');
  const probe=await page.evaluate(()=>{const gl=KZ.engine.renderer.getContext(),ext=gl.getExtension('WEBGL_debug_renderer_info');return {
   webgl2:gl instanceof WebGL2RenderingContext,vendor:ext&&gl.getParameter(ext.UNMASKED_VENDOR_WEBGL),renderer:ext&&gl.getParameter(ext.UNMASKED_RENDERER_WEBGL),
   userAgent:navigator.userAgent,viewport:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio}}});
@@ -78,6 +92,7 @@ async function burst(command,first=null){
   chrome:config.chrome,automation:'Playwright local child-process pipe',physicalDevicesTested:[],at:at()};
  fs.writeFileSync(path.join(config.out,'hardware.json'),JSON.stringify(hardware,null,2)+'\n');
  if(!probe.webgl2||!probe.renderer||/swiftshader|llvmpipe|software|basic render/i.test(probe.renderer))throw Error('Real hardware WebGL2 required');
+ if(errors.length)throw Error('Startup page/network errors');
  if(hash(fs.readFileSync(config.pilot))!==config.botHash)throw Error('Bot harness changed before load');
  await page.addScriptTag({path:config.pilot});
  // Remain on the normal title/attract screen until an explicit trial start.
@@ -109,9 +124,9 @@ async function burst(command,first=null){
     await page.evaluate(spec=>{KZ.settings.set('quality',spec.quality);KZ.settings.set('camera',spec.camera)},spec);
     if(!engaged){await page.locator('#screen-title [data-action="start"]').click();engaged=true} // trusted gesture immediately before fixture; no viewing/wait here
     spec.sharedRandomSeed=(spec.seed^0xa1b2c3d4)>>>0;
-    await page.evaluate(async spec=>{const {rand}=await import('/src/core/Utils.js');rand.reset(spec.sharedRandomSeed)},spec);
+    await page.evaluate(spec=>KZ.rand.reset(spec.sharedRandomSeed),spec);
     const initial=await page.evaluate(spec=>KZBot.startRealtime(spec),spec);
-    used.add(spec.seed);active={spec,sourceBefore:c.source,startedAt:at(),initial,hardware,errorStart:errors.length,
+    used.add(spec.seed);active={trialId:spec.id,spec,servedBuild,frozenCandidate:config.frozenCandidate,harnessTreeHash:config.harnessTreeHash,sourceBefore:c.source,startedAt:at(),initial,hardware,errorStart:errors.length,
      observations:[],notes:[],sheets:[],operator:'primary developed realtime bot; Terra medium visual observer',manualActions:[]};
     append('initial.jsonl',{...active,observations:undefined,notes:undefined});
     const first=await observe('initial',!!c.burst);if(c.burst)await burst({...c,reason:'initial+opening'},first);
@@ -148,14 +163,14 @@ async function burst(command,first=null){
     const reasons=[];if(config.pilotMode)reasons.push('development pilot; permanently ineligible for final credit');
     if(c.op==='abort'||!result.completed)reasons.push('incomplete/aborted/timeout');
     if(c.source?.sourceHash!==config.candidate||active.sourceBefore.sourceHash!==c.source?.sourceHash)reasons.push('source mismatch');
+    if(c.harnessTreeHash!==config.harnessTreeHash)reasons.push('harness mismatch');
     if(result.mode!=='realtime'||result.renderedFrames!==result.frames)reasons.push('realtime/render count mismatch');
     const initial=active.initial.initial;if(initial.hull!==3||initial.shields!==1||initial.fuel!==1||initial.z!==0||initial.loop!==active.spec.loop)reasons.push('nonstandard initial resources/fixture');
     if(errors.length!==active.errorStart)reasons.push('page errors');
-    const viewed=active.observations.filter(o=>o.viewed);
-    if(viewed.length<3||!viewed.some(o=>o.reason==='initial')||!viewed.some(o=>o.reason!=='initial'&&!o.batch.done)||!viewed.some(o=>o.batch.done))reasons.push('missing start/during/terminal visual observations');
-    if(active.observations.some((o,i)=>i>0&&!active.observations[i-1].batch.done&&(o.gapMs||0)>10000))reasons.push('observation gap >10 seconds');
-    const row={schemaVersion:1,kind:config.kind,pilotMode:config.pilotMode,trialId:active.spec.id,candidate:config.candidate,buildKind:'Vite development graph; production bundle not exercised',
-     ...active,sourceAfter:c.source,result,endedAt:at(),pageErrors:errors.slice(active.errorStart),
+    const viewingAudit=auditViewingRecords(active);
+    reasons.push(...viewingAudit.reasons);
+    const row={schemaVersion:1,kind:config.kind,pilotMode:config.pilotMode,trialId:active.spec.id,candidate:config.candidate,buildKind:config.production?'hash-verified production package':'development source; ineligible for final credit',
+     ...active,viewingAudit,sourceAfter:c.source,result,endedAt:at(),pageErrors:errors.slice(active.errorStart),
      credited:false,eligibility:config.pilotMode?'pilot: never final credit':'pending primary evidence audit',blockingReasons:reasons};
     append('trials.jsonl',row);console.log(JSON.stringify({op:'trial-ended',id:active.spec.id,outcome:result.outcome,blockingReasons:reasons,credited:false}));active=null;
    }else throw Error('Unknown command');

@@ -8,8 +8,10 @@ play, audible perception, physical-device behavior or sustained hardware FPS.
 ## Current checkpoint
 
 - **RC01 frozen:** runtime commit `c0ee2949de29adfa52e6dcdae6768c73ec15474a`, source `6d28e0210d802d0932762ba85f61d4cf43f14a646099a5f99411b0ab240f1362`; exact96 runtime,116 QA/test and55 editable-source hashes in [candidate identity](candidates/rc01.json). Later documentation commits do not change that frozen identity.
-- **329/329 regressions pass.** Pages and portable Itch builds pass,46 files each. Exact-source Chrome audio lifecycle and32s audio rendering pass; nothing heard. Local production/nested-iframe hardware verification is underway; results must be read from their final receipts.
-- Final bot0/1000 and player0/60; no judge round run. Terra medium replaces Sol Low for new player runs; [honest takeover and independent timing audit](live-sol-low/TERRA-TAKEOVER.md).
+- **329/329 regressions pass.** Pages and portable Itch builds pass,46 files each. Exact-source Chrome audio lifecycle and32s audio rendering pass; nothing heard. Local production/nested-iframe hardware verification passed on the GTX1650Ti; both46-file packages hash-match, Pages35 model files match, and all checked views have zero page/network errors. Exact counts/receipts: [RC01-PACKAGES.json](RC01-PACKAGES.json). Pages measured481 engine callbacks/presentation draws; the Itch views measured326 engine callbacks (counts are not FPS).
+- Final production bot **0/1000**, actually observed player **0/60**. The completed RC01 `rc01-final-0000` batch has 100 source-level hardware episodes served from Vite DEV; it is excluded from final production credit. Raw evidence and the old-rule historical audit are retained unchanged. Terra Medium remains the selected player; the actual-view cadence blocker remains open.
+- Round 01 completed at its original cutoff: Luna 8.3/7.8/6.8/8.4/7.6/7.2/7.0; Terra High 7.8/6.5/5.0/7.3/6.5/4.5/6.8; Haiku 6/5/4/7/6/4/5. **0/21 >=9.** Originals and byte-identical cutoff snapshots remain in [round-01](judging/round-01/). Later evidence earns no retrospective score changes.
+- RC02 work is pending: Vite 7.3.7 and loopback-default correction, plus exact-production bot/player provenance. The new production attachment smoke verifies all 46 shipped files on GTX1650Ti, with no shipped-byte changes and debugger detached before play; it is uncredited. [Scoped security review](SECURITY-SCOPE.md) records the dependency finding and limits.
 - All21 individual >=9 gate remains unchanged; see [JUDGING-PROTOCOL.md](JUDGING-PROTOCOL.md). No publication or whole-release completion is authorized by a source freeze or automated check alone.
 - The accepted gunner/art/models remain approved. No historical optional art review is fabricated. Main/Pages/Itch remain the previous published release.
 
@@ -56,3 +58,11 @@ this launch preparation. Preserve the previous Itch build when publishing.
 - [Ownership evidence hashes](ownership-integration.sha256), [tranche1 hardware ownership hashes](cleanup-tranche-1-nitro.sha256), [Settings hashes](settings-persistence.sha256), [reset hashes](reset-ownership.sha256).
 - Hardware quality-action diagnostic at `artifacts/launch/functional/prewarm-quality-2026-11-15T21-51-39-902Z/`:7 actual menu scenarios,4 prewarms,14 detached owners each, no page/network errors. Staged, zero gameplay credit; source-receipt pins the checkpoint.
 - [Latest delayed-pipeline observation pilot](live-sol-low/PARALLEL-PILOT-01.md): mechanism works, cadence does not. Final live0/60; no capture is automatically a viewed observation.
+
+## Publication sequence
+
+Local packages, applicable evidence and all 21 independent scores must pass before
+authorized publication. Live account/URL verification follows upload of that approved
+artifact and remains explicitly pending until then. A review that conditions its score
+on prior publication exposes a sequencing conflict; it does not authorize early upload
+or a fabricated pass. See [current ledger](FINISH-LINE.md) for owners and open gates.

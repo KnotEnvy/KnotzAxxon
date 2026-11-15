@@ -51,6 +51,29 @@ per-seed episodes, event/sample/chunk JSONL, errors/failures, checkpoint screens
 Keep raw records and failed-seed repros. No sustained hardware FPS or physical-device
 pass is claimed by this accelerated harness.
 
+## Exact production execution contract (RC02 onward)
+
+Final commands additionally require `--production artifacts/launch/pages/SOURCE_PREFIX`
+(or the pinned portable package). The freeze records both package manifest hashes,
+entry hashes and file counts. Coordinators verify bytes before and after execution;
+the Windows browser fetches and SHA256-checks the entire inventory. A loopback-only
+static server serves only verified package bytes. QA discovers compiled owners via
+a breakpoint over the existing Playwright child-process pipe, then removes the
+breakpoint and detaches before play. No shipped source, files or public debug API
+is added. The shared PRNG is the compiled instance, with no `/src/` runtime import.
+
+DEV/pilot evidence, incomplete browser checks, altered packages or a package absent
+from the immutable freeze receive zero production credit. The old RC01 100-episode
+DEV batch remains source evidence, with its historical audit retained unchanged.
+`production-provenance-audit.json` records its explicit 100 exclusions and zero final
+credit. Production attachment smoke alone is not a completed episode.
+
+For sustained diagnostic evidence, `--realtime --lifecycle-probe --production PATH`
+uses actual rAF timestamps, renders every frame, exercises a real Escape pause and
+menu resume once per episode, and records unchanged position/time while paused plus
+resource snapshots over repeated runs. It is always uncredited. rAF intervals and
+CPU render submissions are measured separately; neither is GPU execution timing.
+
 ## Pilot results (not final credits)
 
 `pilot-first-hardware` proved the actual GTX1650Ti renderer but timed out trying
@@ -114,9 +137,9 @@ or a sustained FPS benchmark. Final credit remains zero.
 Large campaigns may be split without changing the matrix:
 `--matrix --offset N --count M` takes the corresponding contiguous slice of the
 same1000seed plan. Preserve the same `--seed` and candidate fingerprint in every
-slice. Offsets outside the matrix fail. A row records the source commit and that
-it ran the Vite development graph; the exact production bundles are verified
-separately. No debug API is shipped in those production packages.
+slice. Offsets outside the matrix fail. Source-only pilots may still use Vite DEV. Final rows require a pinned exact
+production package and structured served-build proof; a separate package smoke
+cannot establish production provenance for a DEV episode. No debug API is shipped.
 
 Primary grade-provenance and first-clock diagnostic wrappers now retain the original
 sector-grade method and its caller/position, plus the initial realtime timestamp

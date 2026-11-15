@@ -10,20 +10,23 @@ No formal review or judge scores. Earlier pilot scripts, media and receipts pres
 Primary must supply the frozen `fingerprint.cjs` sourceHash and exclusive GPU slot.
 A git commit alone is insufficient: sourceHash covers sorted SHA256 entries for src,
 public, index.html, package/package-lock and Vite config, as the bot protocol defines.
-The record labels the tested build as the Vite development graph; it does not claim
-production bundles were exercised. Production packaging proof is separate.
+Since RC02, final trials require the immutable freeze and one of its exact
+production packages. Vite DEV is reserved for permanently uncredited pilots.
+The same production attachment/inventory verification as the bot campaign is used;
+no shipped bytes are changed or debug port opened.
 
 After that authorization, in an interactive terminal:
 
 ```sh
-node scripts/qa/live-sol-low/final-live.cjs --launch --candidate ACTUAL_64_HEX_SOURCE_HASH --run-id final-live-UNIQUE_NAME
+node scripts/qa/live-sol-low/final-live.cjs --launch --candidate ACTUAL_64_HEX_SOURCE_HASH --freeze docs/launch/candidates/RC_NAME.json --production artifacts/launch/pages/SOURCE_PREFIX --run-id final-live-UNIQUE_NAME
 ```
 
 No `--launch`: CPU preparation message only, no browser/server/lease. With `--launch`,
 source must match before the lease; then shared atomic lease acquired with pid,
 ownerPID and token recorded. Busy fails immediately; no polling/deleting stale locks.
-Coordinator owns an unused localhost-only Vite port, records startup log and waits for
-its ready output, then Windows Node starts installed Chrome through local pipes.
+Coordinator owns a loopback-only static server for hash-verified package bytes;
+Windows Node starts installed Chrome through local pipes. Browser inventory proof,
+package manifest identity and the full harness are retained before/after execution.
 No public debug port or firewall change. Source snapshots recorded for start/end and
 session receipt. A mismatch refuses start or marks the resulting trial ineligible.
 All raw output goes in a new `artifacts/launch/live-sol-low/<run-id>/`; overwrite refused.
@@ -156,3 +159,14 @@ all60matrix remain unchanged. No new gameplay was run for this CPU preparation.
 ## Current player and independent timing audit
 
 Since the explicit2026-11-15 user instruction, **Terra medium** owns new observed player runs. Earlier Sol Low evidence remains historical; the existing directory name is retained. Before credit, run `node scripts/qa/launch/audit-live.cjs <trials.jsonl> <candidate sourceHash>` and inspect original images/notes. Its record checks exclude unviewed captures from the viewing cadence and check actual-view ages; even a passing record audit never grants automatic gameplay credit. See `TERRA-TAKEOVER.md`.
+
+## Strict record audit (RC02 onward)
+
+`node scripts/qa/launch/audit-live.cjs TRIALS.jsonl docs/launch/candidates/RC_NAME.json`
+loads the closed-run receipt and requires frozen production identity plus a stable
+full harness. Runtime and offline checks share the same viewed-frame checks.
+Only explicit notes with matching original image hashes count; unviewed captures
+cannot fill gaps. Both actual-view times and conservative note-acceptance ages
+are checked against ten seconds. This is record validation and always returns
+`credited:false`; primary image/notes and seed/band review remain necessary.
+The actual-view path is still unproven; these guards do not establish cadence.

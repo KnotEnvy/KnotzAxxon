@@ -1,0 +1,395 @@
+{
+  "source": {
+    "head": "c0ee2949de29adfa52e6dcdae6768c73ec15474a",
+    "sourceHash": "6d28e0210d802d0932762ba85f61d4cf43f14a646099a5f99411b0ab240f1362",
+    "files": [
+      {
+        "file": "index.html",
+        "sha256": "4232265af7ad66b12b886cbfb6d0091ab92e939960d66a4c966fd92ee88baa38"
+      },
+      {
+        "file": "package-lock.json",
+        "sha256": "00d92ff1c61900e7150aa875c477d22bd91821c9ebef52fe77a381e4fb55c174"
+      },
+      {
+        "file": "package.json",
+        "sha256": "cd6e50af8e0df4d8ccd53d44243a0ec12f539783b7f789e062c3f4a8f82279b3"
+      },
+      {
+        "file": "public/apple-touch-icon.png",
+        "sha256": "4fd06c4020adcbcbffd3c3bcc4811a2aafd232b3b8207ff64b4cc6548f1dcd3a"
+      },
+      {
+        "file": "public/brand/itch-cover-630x500.png",
+        "sha256": "f6ba52ab6723c8cc38a08fb5c07d9757a225b3f5e6c796cf266323d5b1a8b3c9"
+      },
+      {
+        "file": "public/brand/og-1200x630.png",
+        "sha256": "440bd42ea3fdce8a3f1474bebb5002d0c7da33af09b9904146582077bca7348e"
+      },
+      {
+        "file": "public/brand/social-preview-1280x640.png",
+        "sha256": "34cd311b4c2c6fbcc0092e562dfe3bef176dc805d43d16ab14d9bd221ec075ea"
+      },
+      {
+        "file": "public/icon-512.png",
+        "sha256": "388addaeacc924fd704e0b3fd3dd9cf0933538706ec0ce6d13f4d346274b82ba"
+      },
+      {
+        "file": "public/models/environment/environment-kit.glb",
+        "sha256": "2b8832e2cd48fe85338e3dae0eee85fec906ead688cfb6dc7bfdf62d3d2993f0"
+      },
+      {
+        "file": "public/models/fuel.glb",
+        "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc"
+      },
+      {
+        "file": "public/models/player.glb",
+        "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57"
+      },
+      {
+        "file": "public/models/production/antenna.glb",
+        "sha256": "6cefc79edfd1b4f123550dc50ced9e441046e65ebb97d2629f48bb61c582beb5"
+      },
+      {
+        "file": "public/models/production/asteroids.glb",
+        "sha256": "0450b85240d589e4e2f65454f61b53af52d443a427d76f2c38a1008ae16272b2"
+      },
+      {
+        "file": "public/models/production/bunker.glb",
+        "sha256": "0cd38bb1b315bf68f3a84139bb73dd5009644c942d56ac03370d0ef7a6986dbb"
+      },
+      {
+        "file": "public/models/production/cargo-kit.glb",
+        "sha256": "c516490784e27f1c438df3ec731a4d025793f83522efd1215cec53d13da3e352"
+      },
+      {
+        "file": "public/models/production/carrier-template.bin",
+        "sha256": "4dddc3fbadc5bda65c8dd80c012353440a9927772bac61b8ae836a4a8452b593"
+      },
+      {
+        "file": "public/models/production/carrier-template.json",
+        "sha256": "44452e6b96683dd9e183efe1420dfd701322ea47b759300de1ee3015b4dba683"
+      },
+      {
+        "file": "public/models/production/carrier.glb",
+        "sha256": "f6dd09aa6324a6cf1bb9526bdfd94853f1ce59cafd243cecd10da813e2e96fe1"
+      },
+      {
+        "file": "public/models/production/cooling-stack.glb",
+        "sha256": "96a0f506f1c3ce4644fc1814283b1a0e022691b4786eb7481fa68ceda1cc2002"
+      },
+      {
+        "file": "public/models/production/cooling-stack.template.json",
+        "sha256": "dc71a4c9dfd70e10e217af3c3b358be983a1901e23a3fcf9d2f84e1ff3d20601"
+      },
+      {
+        "file": "public/models/production/covered-fighter.glb",
+        "sha256": "5234cd4ad177855ed5c6fd5b76584f409e5bfa669edf38243b272d50aedf12d3"
+      },
+      {
+        "file": "public/models/production/covered-fighter.recipe.json",
+        "sha256": "af50af1d8684cf24902c5acd6a864211609085ad8f853a83b5fd20ddc9e7f71b"
+      },
+      {
+        "file": "public/models/production/dreadnought.glb",
+        "sha256": "67c5e604ea19b941a76b127a1221c87350161f3637ffbd19e87a16489ec69c6c"
+      },
+      {
+        "file": "public/models/production/drone.glb",
+        "sha256": "7053c26483f863ec9c854cf57bd0efd1e7f5a775616c0d78200ae0c7f273b8ee"
+      },
+      {
+        "file": "public/models/production/flak-gun.glb",
+        "sha256": "97a07ec5317b98c095182aadbe08cbef02310f3f4a126db631b8f7e1453cbcdd"
+      },
+      {
+        "file": "public/models/production/flak-gun.template.json",
+        "sha256": "60f0aeb6c958b7e6d93be7d063a6ecf141892cd27313c99d6eac0bcfe795b987"
+      },
+      {
+        "file": "public/models/production/fuel-depot.glb",
+        "sha256": "14ea9f351088e35aeb304e6ed46699299864a063cd873571dd30d018216c67af"
+      },
+      {
+        "file": "public/models/production/fuel-depot.template.json",
+        "sha256": "84bb0fb34892052a5c423cf750ed07c2acff033b11a34963f8770970696b15a1"
+      },
+      {
+        "file": "public/models/production/fuel-pickup.glb",
+        "sha256": "152fac271b398f2a44183759b4c4250716a87fc28862221bde6035a84caa912f"
+      },
+      {
+        "file": "public/models/production/heavy-turret.glb",
+        "sha256": "de95debb8de0d5813b60ee935980ebaf44d7fe387be03b2de934a9a70b535409"
+      },
+      {
+        "file": "public/models/production/interceptor.glb",
+        "sha256": "2ebc37c7fb12624707a0e21d91ea610c06dc27b2dc4922d9e44d5531573d1152"
+      },
+      {
+        "file": "public/models/production/mine.glb",
+        "sha256": "51276e4106087f0e890dd52986a79369a944495fbe72a8139eb0e5b4c40b5369"
+      },
+      {
+        "file": "public/models/production/missile.glb",
+        "sha256": "8e491aacae4e235d24bc6fcba44e84d0b9c2c75ef8b229ea5a93341f156de004"
+      },
+      {
+        "file": "public/models/production/parked-fighter.glb",
+        "sha256": "681d691d277906ca960819d7f7a19536de041264fe76bd7a672a34c5fa24be55"
+      },
+      {
+        "file": "public/models/production/repair-pickup.glb",
+        "sha256": "f063dc0d9daa554f982da33fc72a9222c1a396031a59fe5f2ba71eb9c0929caa"
+      },
+      {
+        "file": "public/models/production/shield-pickup.glb",
+        "sha256": "8619ec08a7fce0679408172052a009073e1dcd39356374ab3b2608993981d4ae"
+      },
+      {
+        "file": "public/models/production/spread-pickup.glb",
+        "sha256": "01df1ee78e1bbbead7cd7cd58121d571ab5a40f8259e2a4cf0dea2211883256f"
+      },
+      {
+        "file": "public/models/production/wreckage-templates.json",
+        "sha256": "184b4a8fce26501a7f3938dc04498736d19df24c2c280ac28bdb69c1564d00c2"
+      },
+      {
+        "file": "public/models/production/wreckage.glb",
+        "sha256": "f39cce1fbf0c6d15ee046c04b52d1ca5ec26c757beb65dc3eabfe700793aee89"
+      },
+      {
+        "file": "public/models/radar.glb",
+        "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d"
+      },
+      {
+        "file": "public/models/sentinel.glb",
+        "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef"
+      },
+      {
+        "file": "public/models/silo.glb",
+        "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e"
+      },
+      {
+        "file": "public/models/turret.glb",
+        "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2"
+      },
+      {
+        "file": "public/og-image.png",
+        "sha256": "b5ce2b011e564ede25f4bc5a3a25fe1b47cebe974de00eafa4263e2e186a99f8"
+      },
+      {
+        "file": "public/social-preview.png",
+        "sha256": "b7237d97eae0523f365547e489333eac777f0ed63fe65333eb981393dee32eb4"
+      },
+      {
+        "file": "src/audio/Audio.js",
+        "sha256": "765063c5c7fe236b19f7ab1bd7f0b431f21bf72e114a20e119b952a3e23d4f12"
+      },
+      {
+        "file": "src/core/Collision.js",
+        "sha256": "8c183663f626f06fea03b0ae64bceafaab3222223079b7e022127936b9a38cfc"
+      },
+      {
+        "file": "src/core/Engine.js",
+        "sha256": "d14eca7330f43d98c1c41496be87b09e0756a668c080afd7d8153b69c5c1cab3"
+      },
+      {
+        "file": "src/core/FlightCamera.js",
+        "sha256": "f691b3cef8a36de611762cb3129571f0684457e607be141dc1b5158401f4506e"
+      },
+      {
+        "file": "src/core/Input.js",
+        "sha256": "c0e4d5979f27fc130106069c6363e6111b6c75403e3fb45f5a5aa3b6f96b8c60"
+      },
+      {
+        "file": "src/core/Lifetime.js",
+        "sha256": "118766236d21e0d992de1cdf14f7304bbf6c2bbd47c431196d6fdcb3ef52bba0"
+      },
+      {
+        "file": "src/core/Settings.js",
+        "sha256": "d60210acc5e42d9c6e11b4dbe2d4da5e670df47f6845788c14a340da6264b32a"
+      },
+      {
+        "file": "src/core/Utils.js",
+        "sha256": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972"
+      },
+      {
+        "file": "src/entities/Boss.js",
+        "sha256": "a785a38179c7794cc41dd156a64da5fe9d1692a512d260dca82e8ec9aa3b60d9"
+      },
+      {
+        "file": "src/entities/Enemies.js",
+        "sha256": "ffa90bb1b16489699e204ff4211bbca984527375a858df66c8ae29db6b541f5f"
+      },
+      {
+        "file": "src/entities/Pickup.js",
+        "sha256": "83987aac65a68b94e68509a3371d9b388ceca55f64c73c3ca5d7bdbd4e1debe5"
+      },
+      {
+        "file": "src/entities/Player.js",
+        "sha256": "30f8214d5e8595e8caccd5d60d8ca8a3ec899badc35f6917d30921abdde7b64f"
+      },
+      {
+        "file": "src/entities/Projectiles.js",
+        "sha256": "79e97d9a8ab7b913a8411f911a8eb3fd3091d50693bb769d39c797035b10a443"
+      },
+      {
+        "file": "src/fx/Ambience.js",
+        "sha256": "33c061a5f4b33ec90451969567cb64ed1be4b2be7c099e9de65b3287c24706e6"
+      },
+      {
+        "file": "src/fx/Effects.js",
+        "sha256": "84b4ade2de9d8458c084d0225db8b28059b4bbc156d3f9bc00c759395baabd82"
+      },
+      {
+        "file": "src/fx/Particles.js",
+        "sha256": "73439e3605009151ef32f37b144150778269983aa7f644cf72e60f39210af361"
+      },
+      {
+        "file": "src/fx/Trail.js",
+        "sha256": "ab3bd00309bbb979cec1b6b1f210e149880405d37218d34b2407814fcf69ec52"
+      },
+      {
+        "file": "src/game/AltitudeEcho.js",
+        "sha256": "47854f49cd151b488aef52850788921f83fe4e41db9e9eb7c9fd08348acb1c07"
+      },
+      {
+        "file": "src/game/CameraRig.js",
+        "sha256": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205"
+      },
+      {
+        "file": "src/game/CombatVisibility.js",
+        "sha256": "0afefd22a7b5f729acf38b4e6461456fd71768143080ce9cd6a19a4b1096a5f9"
+      },
+      {
+        "file": "src/game/Game.js",
+        "sha256": "ae9aa4f076ebb8743cc0ab898a58f80363845a20e2e6e9cdc5f09d7448bebce4"
+      },
+      {
+        "file": "src/game/WorldCollision.js",
+        "sha256": "7cb145c8b3b920d526675cd4ce0b9c71c896ec773e0ff991ffb14f9a4da5be23"
+      },
+      {
+        "file": "src/main.js",
+        "sha256": "c80f6d813187dafd29aab141bec68a5ce9d6296d925c680d74bdb39fa73a0959"
+      },
+      {
+        "file": "src/render/CelestialMaterials.js",
+        "sha256": "4d366b9765599d7d18d2a25d8f835bb8d76ad9644d854edea3d1e3848bdb0ee6"
+      },
+      {
+        "file": "src/render/Dispose.js",
+        "sha256": "4fd5c005beda831f9c5fd647352bad0ad5c128431c9260a7591983a48fc90c3c"
+      },
+      {
+        "file": "src/render/GeoUtils.js",
+        "sha256": "eb138a5ad1280bc4db4731de456938390a20002b9caccd74ca6b041b9d9874c5"
+      },
+      {
+        "file": "src/render/ImportedAntenna.js",
+        "sha256": "2c1e1e4d6b3b1a830da625d29a82f0eb9c2d4fe2debc7cc2001b25cb91e35299"
+      },
+      {
+        "file": "src/render/ImportedCargo.js",
+        "sha256": "a4b253d1fccfefc7760e57a06b78a5086c1ff486860be68a5506741c217e55a4"
+      },
+      {
+        "file": "src/render/ImportedCarrier.js",
+        "sha256": "c68a2497517f6e880158ba1a4444edce2de1992aa3606b01d8470e29806713bd"
+      },
+      {
+        "file": "src/render/ImportedCoolingStack.js",
+        "sha256": "d7ce95a7d90e2f210874fa045a17a66445a93e653687fc3c99230882e2251b14"
+      },
+      {
+        "file": "src/render/ImportedCoveredFighter.js",
+        "sha256": "624a758e43ab0d935bfa783a1bffab68bdcd3cda32498d565c0eee3acde28c06"
+      },
+      {
+        "file": "src/render/ImportedFlakGun.js",
+        "sha256": "c9b1f9b3a5087d37ded257d69d048b99c1bf4da9b714d08d238aec2782f6a9a1"
+      },
+      {
+        "file": "src/render/ImportedFuelDepot.js",
+        "sha256": "a008d2f91ff549a3258211d155287e5a16b195c43112ba9b8076d24787b1b7d6"
+      },
+      {
+        "file": "src/render/ImportedLandmarks.js",
+        "sha256": "55a3558f4c5419793c6ab38be11bf92a398c088bf6f85d57cdb57fd3ed4aa76b"
+      },
+      {
+        "file": "src/render/ImportedModels.js",
+        "sha256": "972ee916c1c1324a90b7610a9681b9cbdd334b5bed1aa355e238475807311967"
+      },
+      {
+        "file": "src/render/ImportedWreckage.js",
+        "sha256": "947963758df53c3363e1eebe33ae565db7cb5fd2fc0736555a9a7aca60ef810b"
+      },
+      {
+        "file": "src/render/Materials.js",
+        "sha256": "0cd27e17956004cf7c6dd2ecd694d70c62e40a0c0f43ef7621aec554029e3161"
+      },
+      {
+        "file": "src/render/PlayerShip.js",
+        "sha256": "b2c769f41fdd819d848a21e695ad88bdf793a14e9a82a7a365f2d33d24a6ae2f"
+      },
+      {
+        "file": "src/render/PostFX.js",
+        "sha256": "2f89dfbd0b755e31776ba8b8e2328187af0a8f97a364177be47129b582ef41cd"
+      },
+      {
+        "file": "src/render/Sky.js",
+        "sha256": "d86b693eb05de496a1fa65e2235421ca4c650ff11b748cd437c0159874d7c424"
+      },
+      {
+        "file": "src/render/Textures.js",
+        "sha256": "521e2145ec81318dae369f69b4c032ce48e6af876e5bd1f7afe360a900b2429b"
+      },
+      {
+        "file": "src/render/Underlay.js",
+        "sha256": "a108b4d9607784e4baaa08a44b228942067e356dda0f39b294e5021d8aa33e90"
+      },
+      {
+        "file": "src/style.css",
+        "sha256": "76ff550a9a1d812063fe117eca6f78525a51f2a7144a2ffa18cf977ee7ba77d2"
+      },
+      {
+        "file": "src/ui/HUD.js",
+        "sha256": "3a8f51f35f239f55bba142ebd8062e8065807261af42c45ee6e3d8dbdef32510"
+      },
+      {
+        "file": "src/ui/Screens.js",
+        "sha256": "e9b108e1015e8cc31bab58df11094d5a6febcf0efb6445b391f86840d00c668b"
+      },
+      {
+        "file": "src/world/AmbientTraffic.js",
+        "sha256": "b66f773157b36ae19e4dbcf957c73952688635c2002d3de6b24ad2f50a423c99"
+      },
+      {
+        "file": "src/world/EnvironmentKit.js",
+        "sha256": "7af30353f78569218925b2dddf9dddc4ff32f61e33b8301644b05a04e27cb09c"
+      },
+      {
+        "file": "src/world/Fortress.js",
+        "sha256": "c7b0e66a3c5a64d21551cbde57621835b3526959df89ba5c36216604610ee5cd"
+      },
+      {
+        "file": "src/world/FortressKit.js",
+        "sha256": "f06d615580a4069ef7bc378d7ab73bf8d9b53c9ab37dc8d9c7cc4a4686bc9cdc"
+      },
+      {
+        "file": "src/world/Level.js",
+        "sha256": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016"
+      },
+      {
+        "file": "vite.config.js",
+        "sha256": "f63bb125c79e8f3212f31936543800dd4719539271e31b1cbf2e38e0306063dc"
+      }
+    ]
+  },
+  "manifestSHA256": "50062eee157b9f55c35fd26e12f47f6eff03bf60aa463a25f8ffe150bb6fb8d5",
+  "allFilesHashMatched": 46,
+  "exitCode": 0
+}
