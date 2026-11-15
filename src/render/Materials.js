@@ -8,6 +8,7 @@
 
 import * as THREE from 'three';
 import * as Tex from './Textures.js';
+import { runCleanups } from '../core/Lifetime.js';
 
 /**
  * Per-vertex light animation, evaluated in the vertex shader so a whole
@@ -49,7 +50,29 @@ export class Materials {
     this._disposables = [];
     /** Shared clock for every patched (non-ShaderMaterial) animated material. */
     this.clock = { value: 0 };
-    this.build();
+    try {
+      Tex.setAnisotropy(aniso);
+      this.build();
+    } catch (error) {
+      try { this.dispose(); } catch { /* keep the construction error */ }
+      throw error;
+    }
+  }
+
+  /** Include instance/imported maps and shader samplers without cloning owners. */
+  setAnisotropy(aniso, scene) {
+    this.aniso = aniso;
+    Tex.setAnisotropy(aniso);
+    const materials = new Set(this._disposables);
+    scene?.traverse(object => {
+      for (const m of [].concat(object.material ?? [])) materials.add(m);
+    });
+    for (const m of materials) {
+      for (const value of Object.values(m)) Tex.setTextureAnisotropy(value, aniso);
+      for (const uniform of Object.values(m.uniforms ?? {})) {
+        for (const value of [].concat(uniform.value)) Tex.setTextureAnisotropy(value, aniso);
+      }
+    }
   }
 
   track(m) {
@@ -477,8 +500,11 @@ export class Materials {
   }
 
   dispose() {
-    for (const m of [...this._disposables]) m.dispose?.();
+    if (this._disposed) return;
+    this._disposed = true;
+    const materials = [...this._disposables];
     this._disposables.length = 0;
     this._neon.clear();
+    runCleanups(materials.map(m => () => m.dispose?.()));
   }
 }

@@ -87,18 +87,69 @@ export class Audio {
    */
   async init(offline = null) {
     if (this._lifetime.closed) this._lifetime = new Lifetime();
-    if (this.ctx) {
-      // Never await resume(): outside a user gesture the promise can stay
-      // pending forever, and nothing should block on audio coming back.
-      if (this.ctx.state === 'suspended') this.ctx.resume().catch(() => {});
-      return;
-    }
+    if (this.ctx) { this._resume(); return; }
+    // A device that already failed is not retried on every gesture; a fresh
+    // entry (dispose) clears this.
+    if (!this.enabled && !offline) return;
     const Ctor = window.AudioContext || window.webkitAudioContext;
     if (!Ctor && !offline) { this.enabled = false; return; }
 
-    const ctx = offline ?? new Ctor({ latencyHint: 'interactive' });
-    this.ctx = ctx;
+    let ctx = null;
+    try {
+      ctx = offline ?? new Ctor({ latencyHint: 'interactive' });
+      this.ctx = ctx;
+      this._offline = !!offline;
+      this._buildGraph(ctx, offline);
+    } catch (error) {
+      // Sound is optional: keep the game running silently, report the original
+      // failure once, and release whatever part of the graph was built.
+      this._releaseGraph();
+      try { this._lifetime.dispose(); } catch { /* keep the audio failure */ }
+      if (ctx && !offline) ctx.close?.()?.catch?.(() => {});
+      this.ctx = this.noise = this.pink = this.brown = this._rooms = null;
+      this.enabled = false;
+      console.warn('KNOTZAXXON: audio unavailable, continuing without sound.', error);
+      return;
+    }
 
+    this.ready = true;
+    if (offline) return;
+    this._lifetime.listen(globalThis.document, 'visibilitychange', () => this._onVisibility());
+    if (globalThis.document?.hidden) this._onVisibility();
+    else this._resume();
+
+    this._startScheduler();
+  }
+
+  /**
+   * Resume a context the browser suspended or interrupted (autoplay policy,
+   * phone call, app switch). Never awaited: outside a user gesture the promise
+   * can stay pending forever, and nothing should block on audio coming back.
+   * Callers run inside gestures, so a failed attempt is retried by the next one.
+   */
+  _resume() {
+    const ctx = this.ctx;
+    if (!ctx || this._offline || ctx.state === 'running' || ctx.state === 'closed') return;
+    if (globalThis.document?.hidden) return;
+    this._hiddenSuspend = false;
+    ctx.resume().catch(() => {});
+  }
+
+  /** A hidden page plays nothing; only audio this hid is brought back. */
+  _onVisibility() {
+    const ctx = this.ctx;
+    if (!ctx || this._offline) return;
+    if (globalThis.document?.hidden) {
+      if (ctx.state !== 'running') return;
+      this._hiddenSuspend = true;
+      ctx.suspend().catch(() => {});
+    } else if (this._hiddenSuspend) {
+      this._hiddenSuspend = false;
+      ctx.resume().catch(() => {});
+    }
+  }
+
+  _buildGraph(ctx, offline) {
     this.master = ctx.createGain();
     this.comp = ctx.createDynamicsCompressor();
     this.comp.threshold.value = -12;
@@ -188,12 +239,6 @@ export class Audio {
 
     this._applyVolumes();
     this._lifetime.listen(settings, 'change', () => this._applyVolumes());
-
-    this.ready = true;
-    if (offline) return;
-    if (ctx.state === 'suspended') ctx.resume().catch(() => {});
-
-    this._startScheduler();
   }
 
   /** Offline rendering: subsequent effects start at `seconds` instead of now. */
@@ -206,16 +251,25 @@ export class Audio {
     this.stopMusic(); this.stopEngine();
     this._lifetime.dispose();
     clearInterval(this._schedTimer);
+    this._schedTimer = null;
     this.ready = false;
     if (this.ctx) {
-      for (const key of ['master', 'comp', 'brickwall', 'limiter', 'sfxBus', 'combatBus', 'musicBus', 'duck', 'musicShelf', 'musicPocket',
-        'musicComp', 'muffle', 'reverb', 'reverbIn', 'sfxSend', 'musicSend']) {
-        this[key]?.disconnect(); this[key] = null;
-      }
-      this.ctx.close().catch(() => {});
+      this._releaseGraph();
+      if (!this._offline) this.ctx.close().catch(() => {});
     }
     this.ctx = this.noise = this.pink = this.brown = this._rooms = null;
     this._lastSfx.clear();
+    // A fresh entry may try the device again.
+    this.enabled = true;
+    this._offline = this._hiddenSuspend = false;
+  }
+
+  _releaseGraph() {
+    for (const key of ['master', 'comp', 'brickwall', 'limiter', 'sfxBus', 'combatBus', 'musicBus', 'duck', 'musicShelf', 'musicPocket',
+      'musicComp', 'muffle', 'reverb', 'reverbIn', 'sfxSend', 'musicSend']) {
+      try { this[key]?.disconnect(); } catch { /* a node from a failed build */ }
+      this[key] = null;
+    }
   }
 
   _applyVolumes() {

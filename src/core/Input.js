@@ -1,4 +1,4 @@
-import { Lifetime } from './Lifetime.js';
+import { Lifetime, runCleanups } from './Lifetime.js';
 /**
  * Input abstraction: keyboard, gamepad and touch all collapse into one
  * intent struct the game reads each frame. Nothing else in the codebase
@@ -50,13 +50,25 @@ export class Input extends EventTarget {
     this._touchRollQueued = false;
     this.hasGamepad = false;
     this.lastDevice = 'keyboard';
+    this._focused = true;
+    this._suppressPadEdges = false;
+    // Set by Engine while the page cannot be seen (blur, hidden document, lost
+    // WebGL context); independent of focus, which a context loss never changes.
+    this._suspended = false;
 
-    this._bindKeyboard();
-    this._bindPointer();
-    this._bindTouch();
+    try {
+      this._bindKeyboard();
+      this._bindPointer();
+      this._bindTouch();
 
-    this._lifetime.listen(this.root, 'gamepadconnected', () => { this.hasGamepad = true; });
-    this._lifetime.listen(this.root, 'gamepaddisconnected', () => { this.hasGamepad = !!navigator.getGamepads?.().find(Boolean); });
+      this._lifetime.listen(this.root, 'gamepadconnected', () => { this.hasGamepad = true; });
+      this._lifetime.listen(this.root, 'gamepaddisconnected', () => {
+        this.hasGamepad = !!this._gamepads()?.some(pad => pad?.connected);
+      });
+    } catch (error) {
+      try { this.dispose(); } catch { /* preserve the construction error */ }
+      throw error;
+    }
   }
 
   /* ---------------------------------------------------------------- */
@@ -80,7 +92,8 @@ export class Input extends EventTarget {
       if (a) this._down.delete(a);
     });
     // Releasing everything on blur avoids a stuck throttle when alt-tabbing.
-    this._lifetime.listen(this.root, 'blur', () => this.reset(true));
+    this._lifetime.listen(this.root, 'blur', () => { this._focused = false; this._suppressPadEdges = true; this.reset(); });
+    this._lifetime.listen(this.root, 'focus', () => { this._focused = true; });
   }
 
   _bindPointer() {
@@ -184,7 +197,21 @@ export class Input extends EventTarget {
     this._resetStick?.();
   }
 
-  dispose() { this._lifetime.dispose(); this.reset(true); }
+  /**
+   * Page invisible/inactive (hidden document, lost context) vs. usable again.
+   * While suspended no pad edge can act, and any button state that changed
+   * while no frames were polled is learned as "held" on the first active poll
+   * instead of arriving as a fresh press (e.g. an auto-resume from pause).
+   */
+  setSuspended(suspended) {
+    suspended = !!suspended;
+    if (suspended) this._suppressPadEdges = true;
+    // Drop keyboard/pointer/touch intent queued while no frames could run.
+    if (suspended || this._suspended) this.reset();
+    this._suspended = suspended;
+  }
+
+  dispose() { runCleanups([() => this._lifetime.dispose(), () => this.reset(true)]); }
 
   /** True on the frame a control went down. */
   justPressed(action) {
@@ -201,6 +228,7 @@ export class Input extends EventTarget {
    */
   update() {
     this._pollGamepad();
+    if (!this._focused || this._suspended) { this.reset(); return; }
 
     let x = 0, y = 0;
     if (this.isDown('left')) x -= 1;
@@ -238,14 +266,26 @@ export class Input extends EventTarget {
   _padVecX = 0;
   _padVecY = 0;
 
+  _gamepads() {
+    try { return navigator.getGamepads?.(); }
+    catch { return null; } // Permissions policy or a disconnected device.
+  }
+
   _pollGamepad() {
     this._padVecX = this._padVecY = 0;
-    const pads = navigator.getGamepads?.();
-    if (!pads) return;
+    const pads = this._gamepads();
     let pad = null;
-    for (const p of pads) if (p && p.connected) { pad = p; break; }
-    if (!pad) { this._padDown.clear(); return; }
+    if (pads) for (const p of pads) if (p && p.connected) { pad = p; break; }
+    if (!pad) {
+      this._padDown.clear(); this._prevPad.clear(); this.hasGamepad = false;
+      if (this._focused && !this._suspended) this._suppressPadEdges = false;
+      return;
+    }
     this.hasGamepad = true;
+    // Inactive (blurred/hidden/context lost): expose no pad state at all, so menu
+    // repeat and isDown() cannot act on a stale held button. Edges that appear
+    // meanwhile are swallowed by _suppressPadEdges on the first active poll.
+    if (!this._focused || this._suspended) { this._padDown.clear(); this._prevPad.clear(); return; }
 
     const dz = (v) => (Math.abs(v) < 0.18 ? 0 : (v - Math.sign(v) * 0.18) / 0.82);
     this._padVecX = dz(pad.axes[0] ?? 0);
@@ -269,22 +309,26 @@ export class Input extends EventTarget {
     if (btn(PAD.DOWN) || this._padVecY < -0.55) this._padDown.add('down');
 
     for (const a of this._padDown) {
-      if (!this._prevPad.has(a)) {
+      if (this._focused && !this._suspended && !this._suppressPadEdges && !this._prevPad.has(a)) {
         this.pressed.add(a);
         this.lastDevice = 'gamepad';
         this.dispatchEvent(new CustomEvent('press', { detail: a }));
       }
     }
+    // Learn held buttons once on refocus even if background rAF stopped.
+    if (this._focused && !this._suspended) this._suppressPadEdges = false;
   }
 
   /** Rumble, when the pad supports it. Silently no-ops otherwise. */
   rumble(strong = 0.5, weak = 0.3, ms = 120) {
-    const pads = navigator.getGamepads?.();
+    const pads = this._gamepads();
     if (!pads) return;
     for (const p of pads) {
-      p?.vibrationActuator?.playEffect?.('dual-rumble', {
-        startDelay: 0, duration: ms, strongMagnitude: strong, weakMagnitude: weak,
-      }).catch(() => {});
+      try {
+        p?.vibrationActuator?.playEffect?.('dual-rumble', {
+          startDelay: 0, duration: ms, strongMagnitude: strong, weakMagnitude: weak,
+        })?.catch?.(() => {});
+      } catch { /* Haptics are optional, including on a disconnected device. */ }
     }
   }
 }

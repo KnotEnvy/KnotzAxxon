@@ -16,6 +16,7 @@ import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
 import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { clamp01, damp } from '../core/Utils.js';
+import { runCleanups } from '../core/Lifetime.js';
 
 const CompositeShader = {
   uniforms: {
@@ -207,62 +208,74 @@ export class PostFX {
     this.scene = scene;
     this.camera = camera;
 
-    const size = renderer.getDrawingBufferSize(new THREE.Vector2());
-    /**
-     * Deliberately NOT multisampled.
-     *
-     * UnrealBloomPass reads `readBuffer.texture` and then blends its result
-     * back into `readBuffer`. When that buffer is multisampled, the read
-     * forces an MSAA resolve, and drivers are entitled to invalidate the
-     * multisample attachment afterwards — so the additive blend lands on
-     * discarded contents and the whole frame comes back black. It is
-     * driver-dependent, which makes it the worst kind of bug to ship.
-     *
-     * Anti-aliasing is handled by the FXAA built into the composite pass
-     * instead: no extra pass, no resolve, and cheaper than 4x MSAA.
-     */
-    const target = new THREE.WebGLRenderTarget(size.x, size.y, {
-      type: THREE.HalfFloatType,
-      samples: 0,
-      depthBuffer: true,
-      stencilBuffer: false,
-    });
-    this.composer = new EffectComposer(renderer, target);
-    this.composer.setPixelRatio(1); // we manage resolution scaling ourselves
+    this._passes = [];
+    try {
+      const size = renderer.getDrawingBufferSize(new THREE.Vector2());
+      /**
+       * Deliberately NOT multisampled.
+       *
+       * UnrealBloomPass reads `readBuffer.texture` and then blends its result
+       * back into `readBuffer`. When that buffer is multisampled, the read
+       * forces an MSAA resolve, and drivers are entitled to invalidate the
+       * multisample attachment afterwards — so the additive blend lands on
+       * discarded contents and the whole frame comes back black. It is
+       * driver-dependent, which makes it the worst kind of bug to ship.
+       *
+       * Anti-aliasing is handled by the FXAA built into the composite pass
+       * instead: no extra pass, no resolve, and cheaper than 4x MSAA.
+       */
+      this._initialTarget = new THREE.WebGLRenderTarget(size.x, size.y, {
+        type: THREE.HalfFloatType,
+        samples: 0,
+        depthBuffer: true,
+        stencilBuffer: false,
+      });
+      this.composer = new EffectComposer(renderer, this._initialTarget);
+      this._initialTarget = null;
+      this.composer.setPixelRatio(1); // we manage resolution scaling ourselves
 
-    this.renderPass = new RenderPass(scene, camera);
-    this.composer.addPass(this.renderPass);
+      this.renderPass = new RenderPass(scene, camera);
+      this._addPass(this.renderPass);
 
-    this.bloom = new UnrealBloomPass(
-      new THREE.Vector2(size.x, size.y),
-      quality.bloomStrength,
-      0.42,   // radius — tight, so glow reads as glow and not as haze
-      1.02,   // threshold
-    );
-    // Anything at or below this is "lit", not "glowing". Emissive materials
-    // are authored around it: trim sits just under, hot cores sit above.
-    this.bloom.threshold = 1.02;
-    this.bloom.enabled = quality.bloom;
-    this.composer.addPass(this.bloom);
+      this.bloom = new UnrealBloomPass(
+        new THREE.Vector2(size.x, size.y),
+        quality.bloomStrength,
+        0.42,   // radius — tight, so glow reads as glow and not as haze
+        1.02,   // threshold
+      );
+      // Anything at or below this is "lit", not "glowing". Emissive materials
+      // are authored around it: trim sits just under, hot cores sit above.
+      this.bloom.threshold = 1.02;
+      this.bloom.enabled = quality.bloom;
+      this._addPass(this.bloom);
 
-    this.composer.addPass(new OutputPass());
+      this._addPass(new OutputPass());
 
-    this.composite = new ShaderPass(CompositeShader);
-    this.composite.renderToScreen = true;
-    this.composer.addPass(this.composite);
+      this.composite = new ShaderPass(CompositeShader);
+      this.composite.renderToScreen = true;
+      this._addPass(this.composite);
 
-    /* Live-tunable effect state, driven by the game. */
-    this.state = {
-      aberration: 0,
-      radial: 0,
-      damage: 0,
-      flash: 0,
-      desat: 0,
-      shakeBoost: 0,
-    };
-    this._target = { aberration: 0, radial: 0, damage: 0, desat: 0 };
+      /* Live-tunable effect state, driven by the game. */
+      this.state = {
+        aberration: 0,
+        radial: 0,
+        damage: 0,
+        flash: 0,
+        desat: 0,
+        shakeBoost: 0,
+      };
+      this._target = { aberration: 0, radial: 0, damage: 0, desat: 0 };
 
-    this.applyQuality(quality);
+      this.applyQuality(quality);
+    } catch (error) {
+      try { this.dispose(); } catch { /* keep the construction error */ }
+      throw error;
+    }
+  }
+
+  _addPass(pass) {
+    this._passes.push(pass);
+    this.composer.addPass(pass);
   }
 
   applyQuality(q) {
@@ -346,7 +359,11 @@ export class PostFX {
   }
 
   dispose() {
-    for (const pass of this.composer.passes) pass.dispose?.();
-    this.composer.dispose();
+    if (this._disposed) return;
+    this._disposed = true;
+    runCleanups([
+      ...this._passes.map(pass => () => pass.dispose?.()),
+      () => this.composer?.dispose(), () => this._initialTarget?.dispose(),
+    ]);
   }
 }

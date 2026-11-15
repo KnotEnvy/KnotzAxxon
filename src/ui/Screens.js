@@ -26,6 +26,23 @@ const BOOT_LINES = [
   'PILOT AUTHORISATION ACCEPTED.',
 ];
 
+/** True when this browser will keep a write to local storage. */
+export function storageWritable() {
+  try {
+    const key = 'knotzaxxon.probe';
+    localStorage.setItem(key, '1'); localStorage.removeItem(key);
+    return true;
+  } catch { return false; }
+}
+
+const HINT_ENGAGE = /ENTER(?: \/ CLICK)? TO ENGAGE/;
+/** Title prompt for the device the pilot is actually holding. */
+export function engageHint(original, device, touchDevice = false) {
+  if (device === 'gamepad') return original.replace(HINT_ENGAGE, 'PRESS A TO ENGAGE');
+  if (touchDevice || device === 'touch') return original.replace(HINT_ENGAGE, 'TAP ENGAGE TO LAUNCH');
+  return original;
+}
+
 export class Screens extends EventTarget {
   constructor() {
     super();
@@ -41,6 +58,7 @@ export class Screens extends EventTarget {
 
     this._bindPointer();
     this._bindKeys();
+    this._lifetime.listen(settings, 'change', e => this._settingChanged(e.detail?.id));
     this._buildSettings();
     this.show('boot');
   }
@@ -60,9 +78,10 @@ export class Screens extends EventTarget {
       if (id !== 'boot' && id !== 'sector') el.setAttribute('aria-modal', String(id === name));
       el.tabIndex = -1;
     }
+    if (name !== 'sector') this._cardDone();
     this.current = name;
     if (name === 'scores') this._renderScores();
-    if (name === 'settings') this._refreshSettings();
+    if (name === 'settings') { this._refreshSettings(); this._settingsStatus(); }
     this.selIndex = restore ? (this._selection?.get(name) ?? 0) : 0;
     if (name === 'over' && !restore) this.selIndex = Math.max(0, this._items().findIndex(n => n.classList.contains('mi')));
     this._refreshSelection({ focus: name !== 'boot' });
@@ -73,6 +92,7 @@ export class Screens extends EventTarget {
     for (const animation of this._cardAnimations ?? []) animation.cancel();
     this._cardAnimations = [];
     for (const el of this.screens.values()) { el.classList.remove('is-active'); el.inert = true; el.setAttribute('aria-hidden', 'true'); }
+    this._cardDone();
     document.activeElement?.blur?.();
     this.current = null;
   }
@@ -233,6 +253,7 @@ export class Screens extends EventTarget {
 
   /** Controlled repeat for a held D-pad/stick while a menu is open. */
   updateGamepad(input, realDt) {
+    if (input?.lastDevice !== this._device) this.setInputDevice(input?.lastDevice);
     if (!this.isOpen || input.lastDevice !== 'gamepad') { this._padRepeatAction = null; return; }
     const held = ['up', 'down', 'left', 'right'].find(a => input._padDown.has(a));
     if (!held) { this._padRepeatAction = null; return; }
@@ -241,6 +262,16 @@ export class Screens extends EventTarget {
     }
     this._padRepeatTimer -= realDt;
     if (this._padRepeatTimer <= 0) { this.handleControl(held); this._padRepeatTimer = 0.12; }
+  }
+
+  /** Match on-screen prompts to the active device. Text only; no input semantics. */
+  setInputDevice(device) {
+    this._device = device;
+    const hint = document.getElementById('title-hint');
+    if (!hint) return;
+    this._hintOriginal ??= hint.textContent;
+    const next = engageHint(this._hintOriginal, device, !!document.documentElement?.classList?.contains('touch-device'));
+    if (hint.textContent !== next) hint.textContent = next;
   }
 
   _act(action) {
@@ -278,10 +309,29 @@ export class Screens extends EventTarget {
     this._refreshSettings();
   }
 
+  /** Persistence state, or the change just made, in one polite status line. */
+  _settingsStatus(id) {
+    const el = document.getElementById('settings-status');
+    if (!el) return;
+    const saved = storageWritable();
+    const spec = id && SCHEMA.find(s => s.id === id);
+    const where = saved ? 'SAVED ON THIS DEVICE' : 'THIS SESSION ONLY: BROWSER STORAGE UNAVAILABLE';
+    el.textContent = spec ? `${spec.name} ${settings.display(id)} · ${where}` : saved ? 'CHANGES SAVE ON THIS DEVICE' : 'BROWSER STORAGE UNAVAILABLE: CHANGES LAST THIS SESSION';
+    el.classList.toggle('session', !saved);
+    el.classList.toggle('changed', !!spec);
+  }
+
+  _settingChanged(id) {
+    if (this.current === 'settings') this._settingsStatus(id);
+  }
+
   _refreshSettings() {
     for (const s of SCHEMA) {
       const val = document.querySelector(`[data-val="${s.id}"]`);
-      if (val) val.textContent = settings.display(s.id);
+      if (val) {
+        val.textContent = settings.display(s.id);
+        if (s.type === 'toggle') val.dataset.state = settings.get(s.id) ? 'on' : 'off';
+      }
       const range = document.querySelector(`input[data-id="${s.id}"]`);
       if (range) { range.value = settings.get(s.id); range.setAttribute('aria-valuetext', settings.display(s.id)); }
     }
@@ -334,8 +384,17 @@ export class Screens extends EventTarget {
       if (detail) this._cardAnimations.push(detail);
     }
     el.classList.add('is-active');
+    // Warnings dock under the card while it holds the top strip.
+    const card = el.querySelector?.('.sector-card')?.getBoundingClientRect?.();
+    const root = document.documentElement;
+    if (card && root?.style) { root.style.setProperty('--card-bottom', `${Math.round(card.bottom)}px`); root.classList.add('sector-card-on'); }
     clearTimeout(this._cardT);
-    this._cardT = setTimeout(() => el.classList.remove('is-active'), duration * 1000);
+    this._cardT = setTimeout(() => { el.classList.remove('is-active'); this._cardDone(); }, duration * 1000);
+  }
+
+  _cardDone() {
+    clearTimeout(this._cardT);
+    document.documentElement?.classList?.remove('sector-card-on');
   }
 
   /* ------------------------------------------------------------------ */
@@ -347,10 +406,10 @@ export class Screens extends EventTarget {
     const cont = document.getElementById('btn-continue');
     if (cont) { cont.hidden = !canContinue; cont.textContent = continueLabel; }
     const host = document.getElementById('over-results');
-    const chips = (list, dim) => `<span class="grade-chips${dim ? ' dim' : ''}">${list.map((g, k) =>
-      `<i class="g-${g ?? 'none'}" title="Sector ${k + 1}"><small>${k + 1}</small>${g ?? '–'}</i>`).join('')}</span>`;
+    const chips = (list, dim) => `<span class="grade-chips${dim ? ' dim' : ''}" role="list">${list.map((g, k) =>
+      `<i class="g-${g ?? 'none'}" role="listitem" aria-label="Sector ${k + 1}: ${g ? 'grade ' + g : 'not graded'}"><small aria-hidden="true">${k + 1}</small><b aria-hidden="true">${g ?? '–'}</b></i>`).join('')}</span>`;
     host.innerHTML = rows.map((r, i) => `
-      <div class="result-row ${r.total ? 'total' : ''}" style="animation-delay:${i * 0.07}s">
+      <div class="result-row ${r.total ? 'total' : ''}${r.chips ? ' has-grades' : ''}" style="animation-delay:${i * 0.07}s">
         <span>${r.label}</span>${r.chips ? chips(r.chips, r.dim) : `<span>${r.value}</span>`}
       </div>`).join('');
     if (rank >= 0) {
@@ -373,7 +432,7 @@ export class Screens extends EventTarget {
         if (saved) { saved.name = name || 'ACE'; Scores.save(list); }
       });
       const help = document.createElement('span'); help.className = 'callsign-help'; help.id = 'callsign-help';
-      help.textContent = 'Type 3 characters. Controller: A edits, left/right selects, up/down changes, A finishes.';
+      help.textContent = 'Type 3 characters, Enter to finish. Controller: A edits, left/right selects, up/down changes, A finishes.';
       field.setAttribute('aria-describedby', help.id);
       label.append(field); host.append(label, help);
       if (!Scores.persistent) {
@@ -412,6 +471,6 @@ export class Screens extends EventTarget {
   }
   dispose() {
     for (const animation of this._cardAnimations ?? []) animation.cancel();
-    this._cardAnimations = []; this._lifetime.dispose(); clearTimeout(this._cardT); }
+    this._cardAnimations = []; this._lifetime.dispose(); this._cardDone(); }
 
 }

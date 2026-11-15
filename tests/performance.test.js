@@ -33,7 +33,7 @@ function rafHarness() {
   globalThis.cancelAnimationFrame = id => queue.delete(id);
   const e = Object.create(Engine.prototype);
   Object.assign(e, { running:false, _raf:null, _disposed:false, _contextLost:false,
-    _loop(){}, sky:{ _bake(){} }, renderer:{shadowMap:{}}, _onResize(){} });
+    _updateHooks:[], _loop(){}, sky:{ _bake(){} }, renderer:{shadowMap:{}}, _onResize(){} });
   return { e, queue };
 }
 

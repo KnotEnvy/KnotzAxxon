@@ -1,5 +1,5 @@
 import { glowSprite } from './Textures.js';
-import { disposeModel } from './Dispose.js';
+import { runCleanups } from '../core/Lifetime.js';
 import { planetMaterial, planetRingMaterial } from './CelestialMaterials.js';
 /**
  * Procedural sky.
@@ -193,66 +193,82 @@ export class Sky {
   constructor(renderer, scene) {
     this.renderer = renderer;
     this.scene = scene;
+    this._previousScene = {
+      background: scene.background, environment: scene.environment, fog: scene.fog,
+      backgroundIntensity: scene.backgroundIntensity, environmentIntensity: scene.environmentIntensity,
+      fogColor: scene.fog?.color.clone(), fogDensity: scene.fog?.density,
+    };
+    try {
+      this._skyScene = new THREE.Scene();
+      this._material = new THREE.ShaderMaterial({
+        vertexShader: SKY_VERT,
+        fragmentShader: SKY_FRAG,
+        side: THREE.BackSide,
+        depthWrite: false,
+        toneMapped: false,
+        uniforms: {
+          uZenith: { value: new THREE.Color() },
+          uHorizon: { value: new THREE.Color() },
+          uGround: { value: new THREE.Color() },
+          uNebulaA: { value: new THREE.Color() },
+          uNebulaB: { value: new THREE.Color() },
+          uSunDir: { value: new THREE.Vector3(0, 0.3, 1) },
+          uSunColor: { value: new THREE.Color() },
+          uStarDensity: { value: 0.05 },
+          uNebulaAmount: { value: 1 },
+          uSeed: { value: 0 },
+        },
+      });
+      this._skyGeometry = new THREE.BoxGeometry(10, 10, 10);
+      this._skyMesh = new THREE.Mesh(this._skyGeometry, this._material);
+      this._skyScene.add(this._skyMesh);
 
-    this._skyScene = new THREE.Scene();
-    this._material = new THREE.ShaderMaterial({
-      vertexShader: SKY_VERT,
-      fragmentShader: SKY_FRAG,
-      side: THREE.BackSide,
-      depthWrite: false,
-      toneMapped: false,
-      uniforms: {
-        uZenith: { value: new THREE.Color() },
-        uHorizon: { value: new THREE.Color() },
-        uGround: { value: new THREE.Color() },
-        uNebulaA: { value: new THREE.Color() },
-        uNebulaB: { value: new THREE.Color() },
-        uSunDir: { value: new THREE.Vector3(0, 0.3, 1) },
-        uSunColor: { value: new THREE.Color() },
-        uStarDensity: { value: 0.05 },
-        uNebulaAmount: { value: 1 },
-        uSeed: { value: 0 },
-      },
-    });
-    this._skyMesh = new THREE.Mesh(new THREE.BoxGeometry(10, 10, 10), this._material);
-    this._skyScene.add(this._skyMesh);
+      this._cubeRT = new THREE.WebGLCubeRenderTarget(512, { type: THREE.HalfFloatType });
+      this._cubeCam = new THREE.CubeCamera(0.1, 100, this._cubeRT);
+      this._pmrem = new THREE.PMREMGenerator(renderer);
+      this._pmrem.compileCubemapShader();
+      this._envRT = null;
 
-    this._cubeRT = new THREE.WebGLCubeRenderTarget(512, { type: THREE.HalfFloatType });
-    this._cubeCam = new THREE.CubeCamera(0.1, 100, this._cubeRT);
-    this._pmrem = new THREE.PMREMGenerator(renderer);
-    this._pmrem.compileCubemapShader();
-    this._envRT = null;
+      /* --- sun + celestial bodies ------------------------------------- */
 
-    /* --- sun + celestial bodies ------------------------------------- */
+      this.group = new THREE.Group();
+      this.group.matrixAutoUpdate = false;
+      scene.add(this.group);
 
-    this.group = new THREE.Group();
-    this.group.matrixAutoUpdate = false;
-    scene.add(this.group);
+      this.sunLight = new THREE.DirectionalLight(0xffffff, 3);
+      this.sunLight.castShadow = true;
+      this.sunLight.shadow.mapSize.set(2048, 2048);
+      this.sunLight.shadow.camera.near = 1;
+      this.sunLight.shadow.camera.far = 260;
+      this.sunLight.shadow.bias = -0.0006;
+      this.sunLight.shadow.normalBias = 0.04;
+      // Tight frustum: the playfield is only ~60 units wide, so a huge shadow
+      // camera just wasted texels and dragged extra geometry into the depth pass.
+      const cam = this.sunLight.shadow.camera;
+      cam.left = -58; cam.right = 58; cam.top = 58; cam.bottom = -58;
+      cam.updateProjectionMatrix();
+      scene.add(this.sunLight);
+      scene.add(this.sunLight.target);
 
-    this.sunLight = new THREE.DirectionalLight(0xffffff, 3);
-    this.sunLight.castShadow = true;
-    this.sunLight.shadow.mapSize.set(2048, 2048);
-    this.sunLight.shadow.camera.near = 1;
-    this.sunLight.shadow.camera.far = 260;
-    this.sunLight.shadow.bias = -0.0006;
-    this.sunLight.shadow.normalBias = 0.04;
-    // Tight frustum: the playfield is only ~60 units wide, so a huge shadow
-    // camera just wasted texels and dragged extra geometry into the depth pass.
-    const cam = this.sunLight.shadow.camera;
-    cam.left = -58; cam.right = 58; cam.top = 58; cam.bottom = -58;
-    cam.updateProjectionMatrix();
-    scene.add(this.sunLight);
-    scene.add(this.sunLight.target);
+      this.ambient = new THREE.HemisphereLight(0x33507a, 0x100c14, 1.0);
+      scene.add(this.ambient);
 
-    this.ambient = new THREE.HemisphereLight(0x33507a, 0x100c14, 1.0);
-    scene.add(this.ambient);
+      /** Rim light from the opposite side — separates silhouettes from the sky. */
+      this.rimLight = new THREE.DirectionalLight(0x4fd8ff, 1.1);
+      scene.add(this.rimLight, this.rimLight.target);
 
-    /** Rim light from the opposite side — separates silhouettes from the sky. */
-    this.rimLight = new THREE.DirectionalLight(0x4fd8ff, 1.1);
-    scene.add(this.rimLight, this.rimLight.target);
+      this._buildBodies();
+      this.apply('dusk', 1);
+      this._previousScene = null;
+    } catch (error) {
+      try { this.dispose(); } catch { /* keep the construction error */ }
+      throw error;
+    }
+  }
 
-    this._buildBodies();
-    this.apply('dusk', 1);
+  _ownBody(resource) {
+    (this._bodyResources ??= new Set()).add(resource);
+    return resource;
   }
 
   /**
@@ -272,26 +288,26 @@ export class Sky {
     this.planetRatio = 0.13;
 
     // sun disc (unlit, blooms hard)
-    const sunGeo = new THREE.SphereGeometry(1, 24, 16);
-    this.sunDisc = new THREE.Mesh(sunGeo, new THREE.MeshBasicMaterial({ color: 0xffffff, toneMapped: false, fog: false }));
+    const sunGeo = this._ownBody(new THREE.SphereGeometry(1, 24, 16));
+    this.sunDisc = new THREE.Mesh(sunGeo, this._ownBody(new THREE.MeshBasicMaterial({ color: 0xffffff, toneMapped: false, fog: false })));
     this.group.add(this.sunDisc);
 
     // corona sprite
-    this.sunGlow = new THREE.Sprite(new THREE.SpriteMaterial({
+    this.sunGlow = new THREE.Sprite(this._ownBody(new THREE.SpriteMaterial({
       map: glowSprite(), color: 0xffc98a, transparent: true, blending: THREE.AdditiveBlending,
       depthWrite: false, depthTest: true, toneMapped: false, fog: false, opacity: 0.55,
-    }));
+    })));
     this.group.add(this.sunGlow);
 
     // a big moody planet hanging off to one side
-    const planetGeo = new THREE.SphereGeometry(1, 48, 32);
-    this.planetMat = planetMaterial();
+    const planetGeo = this._ownBody(new THREE.SphereGeometry(1, 48, 32));
+    this.planetMat = this._ownBody(planetMaterial());
     this.planet = new THREE.Mesh(planetGeo, this.planetMat);
     this.planetDir = new THREE.Vector3(-0.48, 0.16, 0.86).normalize();
     this.group.add(this.planet);
 
-    const ringGeo = new THREE.RingGeometry(1.45, 2.3, 96, 1);
-    this.planetRing = new THREE.Mesh(ringGeo, planetRingMaterial());
+    const ringGeo = this._ownBody(new THREE.RingGeometry(1.45, 2.3, 96, 1));
+    this.planetRing = new THREE.Mesh(ringGeo, this._ownBody(planetRingMaterial()));
     this.planetRing.rotation.set(-1.15, 0.35, 0.2);
     this.group.add(this.planetRing);
   }
@@ -327,8 +343,8 @@ export class Sky {
     // sky twice (reset, then sector entry), so skip an identical re-bake.
     const bakeKey = `${name}:${seed}`;
     if (bakeKey !== this._bakeKey || !this._envRT) {
-      this._bakeKey = bakeKey;
       this._bake();
+      this._bakeKey = bakeKey;
     }
 
     // fog: one instance, mutated, so blends and materials keep their reference
@@ -384,17 +400,32 @@ export class Sky {
     const r = this.renderer;
     const prevRT = r.getRenderTarget();
     const prevTone = r.toneMapping;
+    const prevFace = r.getActiveCubeFace?.() ?? 0;
+    const prevMip = r.getActiveMipmapLevel?.() ?? 0;
+    const prevXR = r.xr?.enabled;
+    let failure;
     r.toneMapping = THREE.NoToneMapping;
-    this._cubeCam.update(r, this._skyScene);
-    r.toneMapping = prevTone;
-    r.setRenderTarget(prevRT);
+    try {
+      this._cubeCam.update(r, this._skyScene);
+    } catch (error) {
+      failure = error;
+      throw error;
+    } finally {
+      r.toneMapping = prevTone;
+      if (r.xr) r.xr.enabled = prevXR;
+      if (failure) {
+        try { r.setRenderTarget(prevRT, prevFace, prevMip); } catch { /* retain bake failure */ }
+      } else r.setRenderTarget(prevRT, prevFace, prevMip);
+    }
 
     this.scene.background = this._cubeRT.texture;
     this.scene.backgroundIntensity = 1;
 
-    this._envRT?.dispose();
-    this._envRT = this._pmrem.fromCubemap(this._cubeRT.texture);
-    this.scene.environment = this._envRT.texture;
+    const next = this._pmrem.fromCubemap(this._cubeRT.texture);
+    const previous = this._envRT;
+    this._envRT = next;
+    this.scene.environment = next.texture;
+    previous?.dispose();
     this.scene.environmentIntensity = 1.0;
   }
 
@@ -454,17 +485,37 @@ export class Sky {
   dispose() {
     if (this._disposed) return;
     this._disposed = true;
-    disposeModel(this.group, true);
-    for (const light of [this.sunLight, this.rimLight, this.ambient]) {
-      light.removeFromParent(); light.dispose?.();
-    }
-    this.sunLight.target.removeFromParent();
-    this.rimLight.target.removeFromParent();
-    this.scene.background = this.scene.environment = null;
-    this._material.dispose();
-    this._skyMesh.geometry.dispose();
-    this._cubeRT.dispose();
-    this._envRT?.dispose();
-    this._pmrem.dispose();
+    const resources = new Set(this._bodyResources);
+    this.group?.traverse(object => {
+      if (object.geometry && !object.isSprite) resources.add(object.geometry);
+      for (const material of [].concat(object.material ?? [])) resources.add(material);
+    });
+    for (const resource of [this._material, this._skyGeometry ?? this._skyMesh?.geometry,
+      this._cubeRT, this._envRT, this._pmrem]) if (resource) resources.add(resource);
+    const previous = this._previousScene;
+    runCleanups([
+      () => this.group?.removeFromParent(),
+      ...[this.sunLight, this.rimLight, this.ambient].flatMap(light => [
+        () => light?.removeFromParent(), () => light?.target?.removeFromParent(), () => light?.dispose?.(),
+      ]),
+      () => {
+        if (previous || this.scene.background === this._cubeRT?.texture) {
+          this.scene.background = previous?.background ?? null;
+          this.scene.backgroundIntensity = previous?.backgroundIntensity ?? 1;
+        }
+        if (previous || this.scene.environment === this._envRT?.texture) {
+          this.scene.environment = previous?.environment ?? null;
+          this.scene.environmentIntensity = previous?.environmentIntensity ?? 1;
+        }
+        if (previous) {
+          this.scene.fog = previous.fog;
+          if (previous.fogColor) {
+            previous.fog.color.copy(previous.fogColor);
+            previous.fog.density = previous.fogDensity;
+          }
+        }
+      },
+      ...[...resources].map(resource => () => resource.dispose()),
+    ]);
   }
 }

@@ -1,3 +1,4 @@
+import { runCleanups } from '../core/Lifetime.js';
 /**
  * The world beneath the flight lane.
  *
@@ -100,55 +101,60 @@ const LOOKS = {
 
 export class Underlay {
   constructor(scene) {
-    this.cityMap = cityTexture();
-    this.nebulaMap = nebulaTexture();
+    try {
+      this.cityMap = cityTexture();
+      this.nebulaMap = nebulaTexture();
 
-    this.material = new THREE.ShaderMaterial({
-      vertexShader: UNDERLAY_VERT,
-      fragmentShader: UNDERLAY_FRAG,
-      uniforms: {
-        uMapA: { value: this.nebulaMap },
-        uMapB: { value: this.cityMap },
-        uMix: { value: 1 },
-        uTint: { value: new THREE.Color(0xffffff) },
-        uGain: { value: 1 },
-        uOffset: { value: new THREE.Vector2() },
-        uTime: { value: 0 },
-        uOpacity: { value: 1 },
-      },
-      transparent: true,
-      depthWrite: false,
-    });
-    this.plane = new THREE.Mesh(new THREE.PlaneGeometry(SIZE, SIZE).rotateX(-Math.PI / 2), this.material);
-    this.plane.frustumCulled = false;
-    this.plane.renderOrder = -5;
-    scene.add(this.plane);
+      this.material = new THREE.ShaderMaterial({
+        vertexShader: UNDERLAY_VERT,
+        fragmentShader: UNDERLAY_FRAG,
+        uniforms: {
+          uMapA: { value: this.nebulaMap },
+          uMapB: { value: this.cityMap },
+          uMix: { value: 1 },
+          uTint: { value: new THREE.Color(0xffffff) },
+          uGain: { value: 1 },
+          uOffset: { value: new THREE.Vector2() },
+          uTime: { value: 0 },
+          uOpacity: { value: 1 },
+        },
+        transparent: true,
+        depthWrite: false,
+      });
+      this.plane = new THREE.Mesh(new THREE.PlaneGeometry(SIZE, SIZE).rotateX(-Math.PI / 2), this.material);
+      this.plane.frustumCulled = false;
+      this.plane.renderOrder = -5;
+      scene.add(this.plane);
 
-    this.gridMaterial = new THREE.ShaderMaterial({
-      vertexShader: GRID_VERT,
-      fragmentShader: GRID_FRAG,
-      uniforms: {
-        uColor: { value: new THREE.Color(0x2f86c8) },
-        uOpacity: { value: 0 },
-        uFocus: { value: new THREE.Vector3() },
-      },
-      transparent: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      toneMapped: false,
-    });
-    this.grid = new THREE.Mesh(new THREE.PlaneGeometry(260, 420).rotateX(-Math.PI / 2), this.gridMaterial);
-    this.grid.frustumCulled = false;
-    this.grid.renderOrder = 1;
-    scene.add(this.grid);
+      this.gridMaterial = new THREE.ShaderMaterial({
+        vertexShader: GRID_VERT,
+        fragmentShader: GRID_FRAG,
+        uniforms: {
+          uColor: { value: new THREE.Color(0x2f86c8) },
+          uOpacity: { value: 0 },
+          uFocus: { value: new THREE.Vector3() },
+        },
+        transparent: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+        toneMapped: false,
+      });
+      this.grid = new THREE.Mesh(new THREE.PlaneGeometry(260, 420).rotateX(-Math.PI / 2), this.gridMaterial);
+      this.grid.frustumCulled = false;
+      this.grid.renderOrder = 1;
+      scene.add(this.grid);
 
-    this._mix = 1;
-    this._opacity = 1;
-    this._space = false;
-    this._gridOpacity = 0;
-    this._look = LOOKS.dusk;
-    this._grid = false;
-    this.material.uniforms.uTint.value.setHex(this._look.tint);
+      this._mix = 1;
+      this._opacity = 1;
+      this._space = false;
+      this._gridOpacity = 0;
+      this._look = LOOKS.dusk;
+      this._grid = false;
+      this.material.uniforms.uTint.value.setHex(this._look.tint);
+    } catch (error) {
+      try { this.dispose(); } catch { /* keep the construction error */ }
+      throw error;
+    }
   }
 
   /** @param {string} sky preset name @param {boolean} space open-space sector */
@@ -186,9 +192,13 @@ export class Underlay {
   }
 
   dispose() {
-    for (const m of [this.plane, this.grid]) { m.removeFromParent(); m.geometry.dispose(); m.material.dispose(); }
-    this.cityMap.dispose();
-    this.nebulaMap.dispose();
+    if (this._disposed) return;
+    this._disposed = true;
+    runCleanups([
+      () => this.plane?.removeFromParent(), () => this.grid?.removeFromParent(),
+      ...[this.plane?.geometry, this.grid?.geometry, this.material, this.gridMaterial,
+        this.cityMap, this.nebulaMap].map(resource => () => resource?.dispose()),
+    ]);
   }
 }
 

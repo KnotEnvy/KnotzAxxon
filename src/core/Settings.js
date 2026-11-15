@@ -155,19 +155,30 @@ export const SCHEMA = [
   },
 ];
 
-const DEFAULTS = Object.fromEntries(SCHEMA.map((s) => [s.id, s.def]));
+// Reject coercions such as "false", null, or numeric strings. Saved finite
+// values retain their precision; UI setters keep the schema's existing steps.
+function normalize(spec, value, snap = false) {
+  if (spec.type === 'choice') return spec.options.includes(value) ? value : spec.def;
+  if (spec.type === 'toggle') return typeof value === 'boolean' ? value : spec.def;
+  if (typeof value !== 'number' || !Number.isFinite(value)) return spec.def;
+  const bounded = clamp(value, spec.min, spec.max);
+  return snap ? Number(clamp(Math.round(bounded / spec.step) * spec.step, spec.min, spec.max).toFixed(10)) : bounded;
+}
 
-class SettingsStore extends EventTarget {
+export class SettingsStore extends EventTarget {
   constructor() {
     super();
-    this.values = { ...DEFAULTS, ...this._load() };
+    const saved = this._load();
+    this.values = Object.fromEntries(SCHEMA.map(spec => [spec.id,
+      normalize(spec, Object.hasOwn(saved, spec.id) ? saved[spec.id] : spec.def)]));
     this._autoDetect();
   }
 
   _load() {
     try {
       const raw = localStorage.getItem(KEY);
-      return raw ? JSON.parse(raw) : {};
+      const saved = raw ? JSON.parse(raw) : null;
+      return saved && typeof saved === 'object' && !Array.isArray(saved) ? saved : {};
     } catch {
       return {};
     }
@@ -184,9 +195,9 @@ class SettingsStore extends EventTarget {
   /** First run only: guess a sane preset from the device. */
   _autoDetect() {
     try { if (localStorage.getItem(KEY)) return; } catch { /* storage unavailable */ }
-    const mobile = matchMedia('(pointer: coarse)').matches;
-    const cores = navigator.hardwareConcurrency || 4;
-    const mem = navigator.deviceMemory || 4;
+    const mobile = globalThis.matchMedia?.('(pointer: coarse)').matches ?? false;
+    const cores = globalThis.navigator?.hardwareConcurrency || 4;
+    const mem = globalThis.navigator?.deviceMemory || 4;
     if (mobile) this.values.quality = cores >= 8 ? 'medium' : 'low';
     else if (cores >= 12 && mem >= 8) this.values.quality = 'ultra';
     else if (cores >= 6) this.values.quality = 'high';
@@ -201,7 +212,7 @@ class SettingsStore extends EventTarget {
   set(id, value) {
     const spec = SCHEMA.find((s) => s.id === id);
     if (!spec) return;
-    if (spec.type === 'range') value = clamp(Math.round(value / spec.step) * spec.step, spec.min, spec.max);
+    value = normalize(spec, value, true);
     if (this.values[id] === value) return;
     this.values[id] = value;
     this.save();

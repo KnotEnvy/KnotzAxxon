@@ -26,6 +26,37 @@ class Cell {
   }
 }
 
+/**
+ * Warning hierarchy. Damage and threats that need a reaction stay red and
+ * pulse; situation notices are steady amber; openings and gains are steady
+ * green. Purely presentational: timing and audio are owned by the game.
+ */
+const WARN_GAIN = /^(CORE EXPOSED|ARMOUR BREACHED|SENTINEL STAGGERED|ENEMY TRACKING BLINDED|RACK \d)/;
+const WARN_NOTICE = /^(SENTINEL ENGAGED|MISSILE CHARGING|LOOP \d+ - THREAT ESCALATED)/;
+export function warnTone(label) {
+  const t = String(label ?? '').toUpperCase();
+  return WARN_GAIN.test(t) ? 'gain' : WARN_NOTICE.test(t) ? 'notice' : 'alert';
+}
+
+/**
+ * Fit the altimeter between the instrument blocks that share its screen edge.
+ * Rects are viewport pixels. Returns null when nothing shares the edge (CSS
+ * layout stands), else a centre line and a track height that never overlap.
+ */
+export function fitAltimeter({ alt, track, want, tr, br, viewH, gap = 10, minTrack = 64 }) {
+  const shares = (r) => !!r && r.width > 0 && r.left < alt.right && r.right > alt.left;
+  const sharesTr = shares(tr), sharesBr = shares(br);
+  if (!sharesTr && !sharesBr) return null;
+  const top = sharesTr ? tr.bottom + gap : gap;
+  const bottom = sharesBr ? br.top - gap : viewH - gap;
+  const chrome = Math.max(0, alt.height - track);
+  const fitted = clamp(Math.floor(bottom - top - chrome), minTrack, want);
+  const height = chrome + fitted;
+  const fits = height <= bottom - top;
+  const centre = fits ? clamp(viewH / 2, top + height / 2, bottom - height / 2) : top + height / 2;
+  return { centre: Math.round(centre), track: fitted, fits, sharesBr };
+}
+
 const text = (el) => new Cell(el, (e, v) => { e.textContent = v; });
 const bar = (el) => new Cell(el, (e, v) => { e.style.transform = `scaleX(${v})`; });
 const cls = (el, name) => new Cell(el, (e, v) => { e.classList.toggle(name, !!v); });
@@ -61,11 +92,14 @@ export class HUD {
     this.fuel = bar($('hud-fuel'));
     this.fuelPct = text($('hud-fuel-pct'));
     this.fuelLow = cls($('hud-fuel')?.parentElement, 'low');
+    this.fuelLabel = text($('hud-fuel')?.parentElement?.parentElement?.querySelector('.gauge-head .label'));
     this.hull = bar($('hud-hull'));
     this.hullPct = text($('hud-hull-pct'));
     this.hullLow = cls($('hud-hull')?.parentElement, 'low');
+    this.hullLabel = text($('hud-hull')?.parentElement?.parentElement?.querySelector('.gauge-head .label'));
     this.heat = bar($('hud-heat'));
     this.heatHot = cls($('hud-heat')?.parentElement, 'low');
+    this.heatLabel = text($('hud-heat')?.parentElement?.parentElement?.querySelector('.gauge-head .label'));
     this.boost = bar($('hud-boost'));
     this.shieldsEl = $('hud-shields');
     this.weapon = text($('hud-weapon'));
@@ -111,6 +145,35 @@ export class HUD {
 
     this._buildAltTicks();
     this._buildShieldPips(3);
+    this._watchLayout();
+  }
+
+  /** Re-fit the altimeter only when instrument blocks or the viewport resize. */
+  _watchLayout() {
+    if (typeof ResizeObserver !== 'function' || !this.altMarker) return;
+    this._altimeterEl = document.getElementById('hud-altimeter');
+    this._layoutObserver = new ResizeObserver(() => this._fitAltimeter());
+    for (const el of [this.root, document.querySelector('.hud-tr'), document.querySelector('.hud-br')]) if (el) this._layoutObserver.observe(el);
+  }
+
+  _fitAltimeter(first = true) {
+    const alt = this._altimeterEl, track = this.altTrack;
+    if (!alt || !track) return;
+    if (first) this.root?.classList.remove('alt-crowded');
+    alt.style.top = ''; track.style.height = '';
+    const want = track.getBoundingClientRect().height;
+    const fit = fitAltimeter({ alt: alt.getBoundingClientRect(), track: want, want,
+      tr: document.querySelector('.hud-tr')?.getBoundingClientRect(), br: document.querySelector('.hud-br')?.getBoundingClientRect(),
+      viewH: innerHeight });
+    if (!fit) return;
+    // Too short for both on one edge: the weapons block steps left of the altimeter column.
+    if (first && !fit.fits && fit.sharesBr && this.root) {
+      this.root.style.setProperty('--alt-w', `${Math.ceil(alt.getBoundingClientRect().width)}px`);
+      this.root.classList.add('alt-crowded');
+      return this._fitAltimeter(false);
+    }
+    alt.style.top = `${fit.centre}px`;
+    if (fit.track < want) track.style.height = `${fit.track}px`;
   }
 
   _buildAltTicks() {
@@ -176,12 +239,15 @@ export class HUD {
     this.fuel.set(clamp01(s.fuel));
     this.fuelPct.set(Math.round(s.fuel * 100));
     this.fuelLow.set(s.fuel < 0.25);
+    this.fuelLabel.set(s.fuel < 0.25 ? 'FUEL LOW' : 'FUEL');
     const hullT = s.hull / s.hullMax;
     this.hull.set(clamp01(hullT));
     this.hullPct.set(Math.round(hullT * 100));
     this.hullLow.set(hullT <= 0.34);
+    this.hullLabel.set(hullT <= 0.34 ? 'HULL CRIT' : 'HULL');
     this.heat.set(clamp01(s.heat));
     this.heatHot.set(s.overheated);
+    this.heatLabel.set(s.overheated ? 'OVERHEAT' : 'HEAT');
     this.boost.set(clamp01(s.boost));
     this.weapon.set(s.weapon);
 
@@ -225,7 +291,7 @@ export class HUD {
 
     if (this._gradeTimer > 0) {
       this._gradeTimer -= dt;
-      if (this._gradeTimer <= 0) this.gradeEl?.classList.remove('on');
+      if (this._gradeTimer <= 0) { this.gradeEl?.classList.remove('on'); this.root?.classList.remove('grade-on'); }
     }
 
     /* --- warnings -------------------------------------------------------- */
@@ -401,6 +467,9 @@ export class HUD {
     if (this.gradeDetail) this.gradeDetail.textContent = detail;
     this.gradeEl.classList.add('on');
     this._gradeTimer = duration;
+    // Warnings drop beneath the banner instead of printing over it.
+    const box = this.gradeEl.getBoundingClientRect?.();
+    if (box && this.root?.style) { this.root.style.setProperty('--grade-bottom', `${Math.round(box.bottom + 8)}px`); this.root.classList.add('grade-on'); }
   }
 
   /** Retire the grade banner early, e.g. when a sector card takes the strip. */
@@ -408,11 +477,13 @@ export class HUD {
     if (this._gradeTimer <= 0) return;
     this._gradeTimer = 0;
     this.gradeEl?.classList.remove('on');
+    this.root?.classList.remove('grade-on');
   }
 
   warn(label, duration = 1.6) {
     if (!this.warnEl) return;
     this.warnEl.textContent = label;
+    if (this.warnEl.dataset) this.warnEl.dataset.tone = warnTone(label);
     this.warnOn.set(true);
     this._warnTimer = duration;
   }
@@ -517,7 +588,7 @@ export class HUD {
     });
   }
 
-  dispose() { clearTimeout(this._bumpT); this.reset(); this.setLive(false); }
+  dispose() { clearTimeout(this._bumpT); this._layoutObserver?.disconnect(); this._layoutObserver = null; this.reset(); this.setLive(false); }
 
   reset() {
     clearTimeout(this._bumpT);
@@ -528,6 +599,7 @@ export class HUD {
     if (this.hitEl) this.hitEl.style.opacity = '0';
     this._gradeTimer = 0;
     this.gradeEl?.classList.remove('on');
+    this.root?.classList.remove('grade-on');
     this._comboTimer = this._comboPulse = 0;
     this.chainEventEl?.classList.remove('on', 'lost');
     this.chainWrap?.classList.remove('urgent', 'max-chain');

@@ -1,7 +1,7 @@
 import { prepareImportedCarrier } from '../render/ImportedCarrier.js';
 import { findAltitudeEcho } from './AltitudeEcho.js';
 import { inCombatView } from './CombatVisibility.js';
-import { Lifetime } from '../core/Lifetime.js';
+import { Lifetime, runCleanups } from '../core/Lifetime.js';
 import { traceWorld } from './WorldCollision.js';
 import { segmentSphere, segmentBox } from '../core/Collision.js';
 /**
@@ -104,50 +104,71 @@ export class Game {
     this.scene = engine.scene;
     this.materials = engine.materials;
 
-    this.state = STATE.IDLE;
-    this.hud = new HUD();
-    this.rig = new CameraRig(engine.camera);
-
-    this.fx = new Effects(this.scene, this.materials, settings.quality);
-    this.dust = new AmbientDust(this.scene);
-    this.projectiles = new Projectiles(this.scene, this.materials, settings.quality);
-    this.player = new Player(this.scene, this.materials, this.projectiles, this.fx);
-
     this.enemies = [];
     this.pickups = [];
     this.boss = null;
-
     this.level = null;
     this.fortress = null;
 
-    this._previousPlayer = new THREE.Vector3();
-    this._colliderScratch = [];
-    this._contacts = [];
-    this._altitudeEcho = {};
-    this._wallsAhead = [];
+    try {
+      this.state = STATE.IDLE;
+      this.hud = new HUD();
+      this.rig = new CameraRig(engine.camera);
 
-    this.reset(1);
+      this.fx = new Effects(this.scene, this.materials, settings.quality);
+      this.dust = new AmbientDust(this.scene);
+      this.projectiles = new Projectiles(this.scene, this.materials, settings.quality);
+      this.player = new Player(this.scene, this.materials, this.projectiles, this.fx);
 
-    this._lifetime.listen(settings, 'change', (e) => this._onSetting(e.detail));
-    engine.onQualityChange = (q) => {
-      this.fx.applyQuality(q);
-      if (this.fortress) this.fortress.quality = q;
-    };
+      this._previousPlayer = new THREE.Vector3();
+      this._colliderScratch = [];
+      this._contacts = [];
+      this._altitudeEcho = {};
+      this._wallsAhead = [];
+
+      this.reset(1);
+
+      this._lifetime.listen(settings, 'change', (e) => this._onSetting(e.detail));
+      this._onQualityChange = (q) => {
+        this.fx.applyQuality(q);
+        if (this.fortress) this.fortress.quality = q;
+      };
+      engine.onQualityChange = this._onQualityChange;
+    } catch (error) {
+      // Outer startup code never receives a failed constructor's instance.
+      try { this.dispose(); } catch { /* keep the initialization error */ }
+      throw error;
+    }
   }
 
   dispose() {
     if (this._disposed) return;
     this._disposed = true;
-    this._lifetime.dispose();
-
-    this.engine.onQualityChange = null;
-    for (const entity of [...this.enemies, ...this.pickups]) entity.dispose();
+    const entities = [...this.enemies, ...this.pickups], boss = this.boss;
     this.enemies.length = this.pickups.length = 0;
-    this.boss?.dispose(); this.boss = null;
-    this.fortress?.clear(); this.fortress?.root.removeFromParent();
-    this.fortress?._gateMat?.dispose();
-    this.fortress?._fenceMat?.dispose();
-    this.player.dispose(); this.projectiles.dispose(); this.fx.dispose(); this.dust.dispose(); this.hud.dispose();
+    this.boss = null;
+    const f = this.fortress;
+    runCleanups([
+      () => this._lifetime.dispose(),
+      () => {
+        if (this._onQualityChange && this.engine.onQualityChange === this._onQualityChange) {
+          this.engine.onQualityChange = null;
+        }
+      },
+      ...entities.map(entity => () => entity.dispose()),
+      () => boss?.dispose(),
+      () => {
+        if (!f) return;
+        const chunks = [...f.chunks.values()];
+        f.chunks.clear();
+        runCleanups(chunks.map(group => () => f._disposeChunk(group)));
+      },
+      () => f?.clear(),
+      () => f?.root.removeFromParent(),
+      () => f?._gateMat?.dispose(),
+      () => f?._fenceMat?.dispose(),
+      ...[this.player, this.projectiles, this.fx, this.dust, this.hud].map(owner => () => owner?.dispose()),
+    ]);
   }
 
   _onSetting({ id }) {
@@ -235,42 +256,61 @@ export class Game {
    */
   prewarm(compile) {
     const f = this.fortress;
-    const groups = this.level.sectors.map(s => f._buildChunk(Math.floor((s.zStart + 200) / CHUNK_LEN)));
-    const staged = [...ENEMY_KINDS].map(kind => this._spawnEnemy(kind, { x: 0, y: 6, z: 40, seed: 1 })).filter(Boolean);
-    const boss = new Boss(this.scene, this.materials, { z: 80 });
-    boss.group.position.set(0, 14, 80);
-    const pickups = PICKUP_KINDS.map(kind => new Pickup(this.scene, this.materials, kind, 0, 6, 30));
-    // Gates and electric barriers create their shared force-field material on
-    // first stream-in; make it now and put one quad in front of the compile.
-    f._gateMat ??= this.materials.forceField(0xff6a2a);
-    f._fenceMat ??= this.materials.forceField(0x8fdcff);
-    const fields = [f._gateMat, f._fenceMat].map((m) => {
-      const q = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), m);
-      q.position.set(0, 6, 50);
-      this.scene.add(q);
-      return q;
-    });
-    // The classic-rig silhouette only shows in that rig.
+    const originalChunks = new Set(f.root.children);
+    const groups = [], pickups = [], fields = [], fieldGeometries = [];
+    const enemyStart = this.enemies.length;
+    let boss, failed = false;
     const silhouette = this.player.model?.userData?.silhouette;
     const silhouetteShown = silhouette?.visible;
-    if (silhouette) silhouette.visible = true;
-    // instanced effect pools only compile their variants once they hold an instance
-    _v.set(0, 4, 40);
-    this.fx.wreck(_v, 0, 1);
-    this.fx.chunk(_v, 0, 0, 0, 1);
-    this.fx.explosion(_v, 1);
-    this.fx.update(0.001, 0, this.engine.camera);
     try {
+      for (const s of this.level.sectors) {
+        groups.push(f._buildChunk(Math.floor((s.zStart + 200) / CHUNK_LEN)));
+      }
+      for (const kind of ENEMY_KINDS) this._spawnEnemy(kind, { x: 0, y: 6, z: 40, seed: 1 });
+      boss = new Boss(this.scene, this.materials, { z: 80 });
+      boss.group.position.set(0, 14, 80);
+      for (const kind of PICKUP_KINDS) pickups.push(new Pickup(this.scene, this.materials, kind, 0, 6, 30));
+      // Force-field materials stay owned by the fortress until Game disposal.
+      f._gateMat ??= this.materials.forceField(0xff6a2a);
+      f._fenceMat ??= this.materials.forceField(0x8fdcff);
+      for (const material of [f._gateMat, f._fenceMat]) {
+        const geometry = new THREE.PlaneGeometry(1, 1);
+        fieldGeometries.push(geometry);
+        const q = new THREE.Mesh(geometry, material);
+        fields.push(q);
+        q.position.set(0, 6, 50);
+        this.scene.add(q);
+      }
+      // The classic-rig silhouette only shows in that rig.
+      if (silhouette) silhouette.visible = true;
+      // Instanced effect pools compile their variants once they hold an instance.
+      _v.set(0, 4, 40);
+      this.fx.wreck(_v, 0, 1);
+      this.fx.chunk(_v, 0, 0, 0, 1);
+      this.fx.explosion(_v, 1);
+      this.fx.update(0.001, 0, this.engine.camera);
       compile();
+    } catch (error) {
+      failed = true;
+      throw error;
     } finally {
-      this.fx.clear();
-      for (const g of groups) f._disposeChunk(g);
-      for (const e of staged) e.dispose();
-      this.enemies.length = 0;
-      boss.dispose();
-      for (const p of pickups) p.dispose();
-      for (const q of fields) { q.removeFromParent(); q.geometry.dispose(); }
-      if (silhouette) silhouette.visible = silhouetteShown;
+      // A builder may attach its group before throwing, without returning it.
+      const chunks = new Set([...groups, ...f.root.children.filter(g => !originalChunks.has(g))]);
+      const staged = this.enemies.splice(enemyStart);
+      try {
+        runCleanups([
+          () => this.fx.clear(),
+          ...[...chunks].map(group => () => f._disposeChunk(group)),
+          ...staged.map(enemy => () => enemy.dispose()),
+          () => boss?.dispose(),
+          ...pickups.map(pickup => () => pickup.dispose()),
+          ...fields.map(field => () => field.removeFromParent()),
+          ...fieldGeometries.map(geometry => () => geometry.dispose()),
+          () => { if (silhouette) silhouette.visible = silhouetteShown; },
+        ]);
+      } catch (error) {
+        if (!failed) throw error;
+      }
     }
   }
 
@@ -578,8 +618,8 @@ export class Game {
   _spawnEnemy(kind, feature) {
     const e = createEnemy(kind, this.materials, feature);
     if (!e) return null;
-    this.scene.add(e.group);
     this.enemies.push(e);
+    this.scene.add(e.group);
     return e;
   }
 
@@ -1061,7 +1101,9 @@ export class Game {
   }
 
   warn(label) {
-    if (this._warnCooldown > 0) return;
+    // A lock needs an immediate dodge: a recent notice must not hide its cue.
+    const critical = label.startsWith('MISSILE LOCK');
+    if (this._warnCooldown > 0 && !critical) return;
     this._warnCooldown = 1.2;
     this.hud.warn(label);
     audio.alarm();
