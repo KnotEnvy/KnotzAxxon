@@ -1,0 +1,820 @@
+{
+  "sourceSha256": "9703ecf1d74a80ad8ac622e9b3b04e5d039805d61482b3347bc209a57f930d2f",
+  "cases": [
+    {
+      "name": "Game constructor rollback at HUD",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(partial?._disposed)\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:114:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:80:3"
+    },
+    {
+      "name": "Game constructor rollback at CameraRig",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(partial?._disposed)\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:114:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:80:3"
+    },
+    {
+      "name": "Game constructor rollback at Effects",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(partial?._disposed)\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:114:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:80:3"
+    },
+    {
+      "name": "Game constructor rollback at AmbientDust",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(partial?._disposed)\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:114:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:80:3"
+    },
+    {
+      "name": "Game constructor rollback at Projectiles",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(partial?._disposed)\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:114:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:80:3"
+    },
+    {
+      "name": "Game constructor rollback at Player",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(partial?._disposed)\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:114:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:80:3"
+    },
+    {
+      "name": "Game constructor rollback at Level",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(partial?._disposed)\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:114:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:80:3"
+    },
+    {
+      "name": "Game constructor rollback at Fortress",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(partial?._disposed)\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:114:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:80:3"
+    },
+    {
+      "name": "Game constructor rollback at initial sky",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(partial?._disposed)\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:114:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:80:3"
+    },
+    {
+      "name": "Game constructor rollback at settings subscription",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(partial?._disposed)\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:114:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:80:3"
+    },
+    {
+      "name": "Game constructor rollback at quality callback",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(partial?._disposed)\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:114:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:80:3"
+    },
+    {
+      "name": "Game prewarm cleanup at chunk 2 entry",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n2 !== 1\n\n    at sameItems (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:16:10)\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:257:5\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at chunk 2 attached",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n3 !== 1\n\n    at sameItems (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:16:10)\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:257:5\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at enemy 2",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'enemy 1'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at enemy scene attachment",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'enemy 1'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at boss construction",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'enemy 1',\n-   'enemy 2',\n-   'enemy 3',\n-   'enemy 4',\n-   'enemy 5',\n-   'enemy 6',\n-   'enemy 7',\n-   'enemy 8',\n-   'enemy 9'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at boss positioning",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'boss 1',\n-   'enemy 1',\n-   'enemy 2',\n-   'enemy 3',\n-   'enemy 4',\n-   'enemy 5',\n-   'enemy 6',\n-   'enemy 7',\n-   'enemy 8',\n-   'enemy 9'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at pickup 2",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'boss 1',\n-   'enemy 1',\n-   'enemy 2',\n-   'enemy 3',\n-   'enemy 4',\n-   'enemy 5',\n-   'enemy 6',\n-   'enemy 7',\n-   'enemy 8',\n-   'enemy 9',\n-   'pickup 1'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at gate material",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'boss 1',\n-   'enemy 1',\n-   'enemy 2',\n-   'enemy 3',\n-   'enemy 4',\n-   'enemy 5',\n-   'enemy 6',\n-   'enemy 7',\n-   'enemy 8',\n-   'enemy 9',\n-   'pickup 1',\n-   'pickup 2',\n-   'pickup 3',\n-   'pickup 4'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at fence material",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'boss 1',\n-   'enemy 1',\n-   'enemy 2',\n-   'enemy 3',\n-   'enemy 4',\n-   'enemy 5',\n-   'enemy 6',\n-   'enemy 7',\n-   'enemy 8',\n-   'enemy 9',\n-   'pickup 1',\n-   'pickup 2',\n-   'pickup 3',\n-   'pickup 4'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at field geometry 2",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'boss 1',\n-   'enemy 1',\n-   'enemy 2',\n-   'enemy 3',\n-   'enemy 4',\n-   'enemy 5',\n-   'enemy 6',\n-   'enemy 7',\n-   'enemy 8',\n-   'enemy 9',\n-   'pickup 1',\n-   'pickup 2',\n-   'pickup 3',\n-   'pickup 4'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at field mesh 2",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'boss 1',\n-   'enemy 1',\n-   'enemy 2',\n-   'enemy 3',\n-   'enemy 4',\n-   'enemy 5',\n-   'enemy 6',\n-   'enemy 7',\n-   'enemy 8',\n-   'enemy 9',\n-   'pickup 1',\n-   'pickup 2',\n-   'pickup 3',\n-   'pickup 4'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at field positioning",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'boss 1',\n-   'enemy 1',\n-   'enemy 2',\n-   'enemy 3',\n-   'enemy 4',\n-   'enemy 5',\n-   'enemy 6',\n-   'enemy 7',\n-   'enemy 8',\n-   'enemy 9',\n-   'pickup 1',\n-   'pickup 2',\n-   'pickup 3',\n-   'pickup 4'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at field scene attachment",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'boss 1',\n-   'enemy 1',\n-   'enemy 2',\n-   'enemy 3',\n-   'enemy 4',\n-   'enemy 5',\n-   'enemy 6',\n-   'enemy 7',\n-   'enemy 8',\n-   'enemy 9',\n-   'pickup 1',\n-   'pickup 2',\n-   'pickup 3',\n-   'pickup 4'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at wreck",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'boss 1',\n-   'enemy 1',\n-   'enemy 2',\n-   'enemy 3',\n-   'enemy 4',\n-   'enemy 5',\n-   'enemy 6',\n-   'enemy 7',\n-   'enemy 8',\n-   'enemy 9',\n-   'pickup 1',\n-   'pickup 2',\n-   'pickup 3',\n-   'pickup 4'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at chunk effect",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'boss 1',\n-   'enemy 1',\n-   'enemy 2',\n-   'enemy 3',\n-   'enemy 4',\n-   'enemy 5',\n-   'enemy 6',\n-   'enemy 7',\n-   'enemy 8',\n-   'enemy 9',\n-   'pickup 1',\n-   'pickup 2',\n-   'pickup 3',\n-   'pickup 4'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at explosion",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'boss 1',\n-   'enemy 1',\n-   'enemy 2',\n-   'enemy 3',\n-   'enemy 4',\n-   'enemy 5',\n-   'enemy 6',\n-   'enemy 7',\n-   'enemy 8',\n-   'enemy 9',\n-   'pickup 1',\n-   'pickup 2',\n-   'pickup 3',\n-   'pickup 4'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at effect update",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: every staged entity is retired exactly once\n+ actual - expected\n\n+ []\n- [\n-   'boss 1',\n-   'enemy 1',\n-   'enemy 2',\n-   'enemy 3',\n-   'enemy 4',\n-   'enemy 5',\n-   'enemy 6',\n-   'enemy 7',\n-   'enemy 8',\n-   'enemy 9',\n-   'pickup 1',\n-   'pickup 2',\n-   'pickup 3',\n-   'pickup 4'\n- ]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:253:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at compile",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:255:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at compile and cleanup",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: preserve preparation/compile error over cleanup errors\n+ actual - expected\n\n+ Error: effect clear failed\n+     at game.fx.clear (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:230:109)\n+     at Game.prewarm (file:///home/knotzuni/code/KnotzAxxon/src/game/Game.js:266:15)\n+     at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:244:16\n+     at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n+     at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3\n- Error: prepare compile and cleanup\n-     at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:131:33\n-     at check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:32)\n-     at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:9\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:252:17\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at cleanup only",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Error'\n- 'AggregateError'\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:251:47\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game prewarm cleanup at normal",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:255:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:130:3"
+    },
+    {
+      "name": "Game disposal attempts every assigned owner after independent cleanup failures, once",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The validation function is expected to return \"true\". Received false\n\nCaught error:\n\nError: cleanup lifetime\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:308:10\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:288:1"
+    },
+    {
+      "name": "Game normal prewarm and repeated teardown retain bounded shared ownership and later callbacks",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ null\n- [Function: later]\n\n    at file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:334:12\n    at async check (file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:21:26)\n    at async file:///home/knotzuni/code/KnotzAxxon/tests/fixtures/game-startup-lifecycle.mjs:320:1"
+    },
+    {
+      "name": "Game startup normal allocation order and RNG contract",
+      "pass": true,
+      "signature": {
+        "level": "b48ff39ad2285b2dbaeee1a22f89e1d5fcfd63fde5b39eac4a659d28df476ca3",
+        "player": [
+          0,
+          9,
+          0
+        ],
+        "camera": [
+          [
+            -45.254833995939045,
+            54.255,
+            -17.254833995939038
+          ],
+          [
+            0.11591721128461727,
+            0.8804759972591574,
+            0.2798489035957905,
+            -0.3647050994087191
+          ],
+          52
+        ],
+        "scene": [
+          [
+            "PerspectiveCamera",
+            ""
+          ],
+          [
+            "Points",
+            ""
+          ],
+          [
+            "Points",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "PointLight",
+            ""
+          ],
+          [
+            "PointLight",
+            ""
+          ],
+          [
+            "PointLight",
+            ""
+          ],
+          [
+            "PointLight",
+            ""
+          ],
+          [
+            "PointLight",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "LineSegments",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Group",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ],
+          [
+            "Mesh",
+            ""
+          ]
+        ],
+        "chunks": [
+          [
+            [
+              252,
+              null
+            ],
+            [
+              144,
+              null
+            ],
+            [
+              4932,
+              null
+            ],
+            [
+              1704,
+              null
+            ],
+            [
+              1332,
+              null
+            ],
+            [
+              3384,
+              null
+            ],
+            [
+              108,
+              null
+            ],
+            [
+              1812,
+              null
+            ]
+          ],
+          [
+            [
+              252,
+              null
+            ],
+            [
+              72,
+              null
+            ],
+            [
+              5184,
+              null
+            ],
+            [
+              2208,
+              null
+            ],
+            [
+              936,
+              null
+            ],
+            [
+              5172,
+              null
+            ],
+            [
+              108,
+              null
+            ],
+            [
+              1812,
+              null
+            ]
+          ],
+          [
+            [
+              396,
+              null
+            ],
+            [
+              1008,
+              null
+            ],
+            [
+              1800,
+              null
+            ],
+            [
+              3360,
+              null
+            ]
+          ],
+          [
+            [
+              144,
+              null
+            ],
+            [
+              144,
+              null
+            ],
+            [
+              1404,
+              null
+            ],
+            [
+              396,
+              null
+            ],
+            [
+              216,
+              null
+            ],
+            [
+              3816,
+              null
+            ],
+            [
+              1380,
+              null
+            ],
+            [
+              936,
+              null
+            ],
+            [
+              2760,
+              null
+            ],
+            [
+              108,
+              null
+            ],
+            [
+              1812,
+              null
+            ]
+          ],
+          [
+            [
+              216,
+              null
+            ],
+            [
+              1440,
+              null
+            ],
+            [
+              216,
+              null
+            ],
+            [
+              216,
+              null
+            ],
+            [
+              144,
+              null
+            ],
+            [
+              2340,
+              null
+            ]
+          ],
+          [
+            [
+              360,
+              null
+            ],
+            [
+              72,
+              null
+            ],
+            [
+              3564,
+              null
+            ],
+            [
+              1632,
+              null
+            ],
+            [
+              936,
+              null
+            ],
+            [
+              3084,
+              null
+            ],
+            [
+              108,
+              null
+            ],
+            [
+              2052,
+              null
+            ]
+          ],
+          [
+            [
+              288,
+              null
+            ],
+            [
+              144,
+              null
+            ],
+            [
+              4680,
+              null
+            ],
+            [
+              1596,
+              null
+            ],
+            [
+              936,
+              null
+            ],
+            [
+              2400,
+              null
+            ],
+            [
+              108,
+              null
+            ],
+            [
+              1812,
+              null
+            ]
+          ],
+          [
+            [
+              36,
+              null
+            ],
+            [
+              1620,
+              null
+            ],
+            [
+              288,
+              null
+            ],
+            [
+              216,
+              null
+            ],
+            [
+              252,
+              null
+            ],
+            [
+              1572,
+              null
+            ]
+          ]
+        ],
+        "enemies": [
+          [
+            "turret",
+            [
+              0,
+              6,
+              40
+            ],
+            2.4,
+            2
+          ],
+          [
+            "heavyTurret",
+            [
+              0,
+              6,
+              40
+            ],
+            3.4,
+            6
+          ],
+          [
+            "silo",
+            [
+              0,
+              6,
+              40
+            ],
+            3.2,
+            5
+          ],
+          [
+            "fuel",
+            [
+              0,
+              6,
+              40
+            ],
+            2.2,
+            1
+          ],
+          [
+            "radar",
+            [
+              0,
+              6,
+              40
+            ],
+            3,
+            4
+          ],
+          [
+            "mine",
+            [
+              0,
+              6,
+              40
+            ],
+            1.9,
+            1
+          ],
+          [
+            "drone",
+            [
+              0,
+              6,
+              40
+            ],
+            2.2,
+            3
+          ],
+          [
+            "interceptor",
+            [
+              0,
+              6,
+              40
+            ],
+            2.2,
+            2
+          ],
+          [
+            "parked",
+            [
+              0,
+              6,
+              40
+            ],
+            2.4,
+            1
+          ]
+        ],
+        "rngCalls": 3945,
+        "rngEnd": -206285398
+      },
+      "signatureSha256": "15a619aab805b7b06de0b147e1c2b755d7bfacda1fb252127e71a45011f8353f"
+    }
+  ]
+}

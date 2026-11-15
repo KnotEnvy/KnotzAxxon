@@ -1,0 +1,100 @@
+{
+  "url": "http://127.0.0.1:57470",
+  "browser": "156.0.8078.4",
+  "note": "SwiftShader software frames; interaction and layout only",
+  "checks": [
+    {
+      "id": "portrait-title",
+      "fs": 12,
+      "right": 366.609375,
+      "scrollW": 390,
+      "vw": 390,
+      "hint": "TAP ENGAGE TO LAUNCH"
+    },
+    {
+      "id": "short",
+      "walk": [
+        {
+          "text": "CONTINUE: LOOP 2",
+          "inView": true,
+          "unobstructed": true
+        },
+        {
+          "text": "ACE",
+          "inView": true,
+          "unobstructed": true
+        },
+        {
+          "text": "CONTINUE: LOOP 2",
+          "inView": true,
+          "unobstructed": true
+        },
+        {
+          "text": "RE-ENGAGE",
+          "inView": true,
+          "unobstructed": true
+        },
+        {
+          "text": "MAIN MENU",
+          "inView": true,
+          "unobstructed": true
+        }
+      ]
+    },
+    {
+      "id": "short",
+      "settingsReturn": {
+        "inView": true,
+        "hit": true
+      }
+    },
+    {
+      "id": "short",
+      "status": "GRAPHICS PRESET MEDIUM · SAVED ON THIS DEVICE"
+    },
+    {
+      "id": "short",
+      "escape": {
+        "current": "title",
+        "focus": "settings"
+      }
+    },
+    {
+      "id": "desk-rm",
+      "walk": [
+        {
+          "text": "CONTINUE: LOOP 2",
+          "inView": true,
+          "unobstructed": true
+        },
+        {
+          "text": "ACE",
+          "inView": true,
+          "unobstructed": true
+        },
+        {
+          "text": "CONTINUE: LOOP 2",
+          "inView": true,
+          "unobstructed": true
+        },
+        {
+          "text": "RE-ENGAGE",
+          "inView": true,
+          "unobstructed": true
+        },
+        {
+          "text": "MAIN MENU",
+          "inView": true,
+          "unobstructed": true
+        }
+      ]
+    },
+    {
+      "id": "desk-rm",
+      "reducedWarn": {
+        "opacity": "1",
+        "infinite": 0
+      }
+    }
+  ]
+}

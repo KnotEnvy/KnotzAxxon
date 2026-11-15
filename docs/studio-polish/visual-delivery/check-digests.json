@@ -1,0 +1,22 @@
+{
+  "tests-final.log": {
+    "bytes": 14061,
+    "sha256": "170594ce9960f00bc7d6f1c43d727168297303a464c4230526ef5f7509ed7890"
+  },
+  "build-final.log": {
+    "bytes": 794,
+    "sha256": "bf7fa20fc22bd857570bb9778e843897cbbf9cb32242d1a32aae8fa35f599d85"
+  },
+  "focused-tests.log": {
+    "bytes": 1703,
+    "sha256": "c5e03a59b7aeb17f610eab30d34554a53b7ce0314ccfad2c3f0e41e778699839"
+  },
+  "ownership-start.log": {
+    "bytes": 10137,
+    "sha256": "1b2e9cb1cdb2299e159d690dd91e137d3c7e30d0c6f6de908efaca8c6aaf8362"
+  },
+  "patch": {
+    "sha256": "6e0a9fc98328fbf06ca9fc0739082842b60f85d709476ad5e74b772f3bba0230",
+    "paths": 13
+  }
+}

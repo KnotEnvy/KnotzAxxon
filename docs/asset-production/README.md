@@ -31,8 +31,8 @@ These are starting budgets, not quality goals. Prioritize silhouette, fitted par
 | Carrier | Fortress.js `_carrier`, sector 4 `_voidProps` | Approved for release; deferred Opus polish |
 | Derelict dreadnought | Fortress.js `_dreadnought`, sector 2 `_voidProps` | Approved for release; deferred Opus polish |
 | Asteroids / wreckage | Fortress.js `rockGeometry`, `_voidProps` | Asteroid and wreckage initials integrated; source batching/shaders preserved |
-| Fortress dressing | `_deckProps`, `_wallDressing`, `_skyline`, `_crates`, `_landingPad`, `_fuelDepot`, `_flakGun`, `_coolingStack`, `_antenna`, `_bunker` | Queued as reusable kits; retain merged chunk draws and vertex colors |
-| Decorative parked fighters | `parkedFighterParts`, `_parkedFighter` | Coordinate with gameplay parked fighter; decorative merged instance cannot become one GLB hierarchy per prop |
+| Fortress dressing | `_deckProps`, `_wallDressing`, `_skyline`, `_crates`, `_landingPad`, `_fuelDepot`, `_flakGun`, `_coolingStack`, `_antenna`, `_bunker` | Approved production props are shipped; authored architecture remains in docs/environment-scenes/QUEUE.md. Retain merged chunk draws and vertex colors |
+| Decorative parked fighters | `parkedFighterParts`, `_parkedFighter` | Covered-fighter scenery kit and gameplay parked fighter are shipped; preserve merged decorative batching |
 | Barriers / moving gates | `_wall`, `_gate`, `_fence`, `_arch`, `_debrisGate` | Queued; collider gaps, full aim ranges, warning cues and motion remain authoritative |
 | Space structures | `_platform`, `_debrisRing`, `_arena`, `_sectorEdges` | Queued; streamed geometry, collision and occlusion contracts |
 | Missile | Projectiles.js missileParts | Initial integrated opt-in; **one instanced draw**, pool capacity40 and +Z travel axis preserved |

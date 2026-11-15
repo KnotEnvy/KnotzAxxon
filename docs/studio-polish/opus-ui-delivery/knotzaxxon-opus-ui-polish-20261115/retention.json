@@ -1,0 +1,18 @@
+{
+  "archive": "/home/knotz2/code/KnotzAxxon-archive/2026-11-15/studio-polish/knotzaxxon-opus-ui-polish-20261115.tar.gz",
+  "archiveSha256": "cbaf90f0b10f80c6565c4578e0d15f207ce8ae103ed39f5c3e65ac4287d18122",
+  "omittedFromCheckout": [
+    {
+      "path": "proof/opus-ui-proof-full.tar.gz",
+      "bytes": 101222604,
+      "sha256": "7452a9fe35bdc6bd4e0944181e12f997dffa8883c71046ea8224284d9e9e0c02"
+    },
+    {
+      "path": "proof/opus-ui-proof-full.tar.gz.sha256",
+      "bytes": 92,
+      "sha256": "4d53ed44de70848244a05294674fcceae3a4bcf4b86b3597f9035fbe8fb08775"
+    }
+  ],
+  "originalManifest": "MANIFEST.sha256 (historical full delivery)",
+  "retainedChecksums": "retainedSHA256SUMS"
+}

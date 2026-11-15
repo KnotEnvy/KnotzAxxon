@@ -1,0 +1,151 @@
+{
+  "node": "v24.14.0",
+  "three": "0.185.1, existing ignored root symlink reused",
+  "vite": "7.3.6, existing /tmp/nitrobliss-studio-code-tools",
+  "playwright": "1.64.0, isolated temporary install matching project lock",
+  "browser": {
+    "version": "156.0.8078.4",
+    "revision": 1248,
+    "platform": "native Linux x64",
+    "sha256": "4fa61f0ba0b4f89b7bec242c32ca16d3bccf69dbfef0651924a9ba8fede5f9d6"
+  },
+  "graphics": "WebGL 2 / ANGLE Vulkan SwiftShader Subzero, software GPU",
+  "browserEnvOnly": {
+    "unset": [
+      "DISPLAY",
+      "WAYLAND_DISPLAY"
+    ],
+    "LD_LIBRARY_PATH": "/tmp/nitrobliss-studio-visual-qa/lib/usr/lib/x86_64-linux-gnu",
+    "FONTCONFIG_FILE": "/tmp/nitrobliss-studio-visual-qa/fonts.conf",
+    "flags": [
+      "--ozone-platform=headless",
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader"
+    ]
+  },
+  "isolatedLibraryPackages": [
+    {
+      "file": "fonts-liberation_1%3a1.07.4-11_all.deb",
+      "package": "fonts-liberation",
+      "version": "1:1.07.4-11",
+      "sha256": "d359cba9c3ac8a40fb57773881e20827845e9fab1b2d6fd25cde4b7bade7d57f"
+    },
+    {
+      "file": "libasound2_1.2.6.1-1ubuntu1.2_amd64.deb",
+      "package": "libasound2",
+      "version": "1.2.6.1-1ubuntu1.2",
+      "sha256": "dce4ce1043cde35f4bc375a4b1bd84badd5dec7e656ea2a8849edf9215bc8c33"
+    },
+    {
+      "file": "libatk-bridge2.0-0_2.38.0-3_amd64.deb",
+      "package": "libatk-bridge2.0-0",
+      "version": "2.38.0-3",
+      "sha256": "98924a5b376da9c075663ea61721fb0d91a55be3473c4643286491247f229b48"
+    },
+    {
+      "file": "libatk1.0-0_2.36.0-3build1_amd64.deb",
+      "package": "libatk1.0-0",
+      "version": "2.36.0-3build1",
+      "sha256": "598b522b64a20c9a3ea44fa816b539976c39d41bf2bccd104fed49954638f0f9"
+    },
+    {
+      "file": "libatspi2.0-0_2.44.0-3_amd64.deb",
+      "package": "libatspi2.0-0",
+      "version": "2.44.0-3",
+      "sha256": "93b243e9d8fb3de9ba78251cf3dec2c6b66836ea7329ae4026981ce8dda62de4"
+    },
+    {
+      "file": "libdrm-common_2.4.113-2~ubuntu0.22.04.1_all.deb",
+      "package": "libdrm-common",
+      "version": "2.4.113-2~ubuntu0.22.04.1",
+      "sha256": "35a306712d8b15b30c42ecd73ec087813eb01c0b3125dc8f7ca2b5134e133522"
+    },
+    {
+      "file": "libdrm2_2.4.113-2~ubuntu0.22.04.1_amd64.deb",
+      "package": "libdrm2",
+      "version": "2.4.113-2~ubuntu0.22.04.1",
+      "sha256": "555925f1caedfd98d89bae3bc11b4fe3401c2c4817dbbafcab25e1144582e946"
+    },
+    {
+      "file": "libgbm1_23.2.1-1ubuntu3.1~22.04.4_amd64.deb",
+      "package": "libgbm1",
+      "version": "23.2.1-1ubuntu3.1~22.04.4",
+      "sha256": "10d37ffd63f8f98fc9a1ad5b32abc7a9da760f4ed85c806d98f10a61c17f8ef5"
+    },
+    {
+      "file": "libnspr4_2%3a4.35-0ubuntu0.22.04.1_amd64.deb",
+      "package": "libnspr4",
+      "version": "2:4.35-0ubuntu0.22.04.1",
+      "sha256": "b3c96e4a61675c87f8d9655109346748847d859abc95f20493159d06b5aa30ef"
+    },
+    {
+      "file": "libnss3_2%3a3.98-0ubuntu0.22.04.5_amd64.deb",
+      "package": "libnss3",
+      "version": "2:3.98-0ubuntu0.22.04.5",
+      "sha256": "75f3879ab9969a930b5bf4b9229345d57e2ebe310ad8ce58c9d91393d823b236"
+    },
+    {
+      "file": "libwayland-server0_1.20.0-1ubuntu0.1_amd64.deb",
+      "package": "libwayland-server0",
+      "version": "1.20.0-1ubuntu0.1",
+      "sha256": "b5d514dc17edac6b93ba2476d90806337ca4afcc914952a7e78af2e5cd0c4a7b"
+    },
+    {
+      "file": "libxcb-randr0_1.14-3ubuntu3_amd64.deb",
+      "package": "libxcb-randr0",
+      "version": "1.14-3ubuntu3",
+      "sha256": "39dc0f73fa3bd43f3f7755cb7d12bfd1cd59dd8966f747d66fba47dfc8652f62"
+    },
+    {
+      "file": "libxcomposite1_1%3a0.4.5-1build2_amd64.deb",
+      "package": "libxcomposite1",
+      "version": "1:0.4.5-1build2",
+      "sha256": "1e3d7e7b53149f6fff92e1fbf4203b61301ca4e251b2949a34bf788dd999621f"
+    },
+    {
+      "file": "libxdamage1_1%3a1.1.5-2build2_amd64.deb",
+      "package": "libxdamage1",
+      "version": "1:1.1.5-2build2",
+      "sha256": "a705af86334b9c219e5f50e21e5bc51bfbf8b8189ca88d4fcafff734de81a503"
+    },
+    {
+      "file": "libxfixes3_1%3a6.0.0-1_amd64.deb",
+      "package": "libxfixes3",
+      "version": "1:6.0.0-1",
+      "sha256": "f627555440060edf19801d77d369c99547cf47123fe4e30c5bdb8b664f0b4467"
+    },
+    {
+      "file": "libxi6_2%3a1.8-1build1_amd64.deb",
+      "package": "libxi6",
+      "version": "2:1.8-1build1",
+      "sha256": "47662736cca4be456fd42a5f0a9d3bed8a5cfad4ee08b809a95dde6004daf275"
+    },
+    {
+      "file": "libxkbcommon0_1.4.0-1_amd64.deb",
+      "package": "libxkbcommon0",
+      "version": "1.4.0-1",
+      "sha256": "a0470edb237d52b71ad41f755c043164abed01423585ed5ea19525b3baaf84f7"
+    },
+    {
+      "file": "libxrandr2_2%3a1.5.2-1build1_amd64.deb",
+      "package": "libxrandr2",
+      "version": "2:1.5.2-1build1",
+      "sha256": "5fbce1f1ec150c715fd83eeef5626363580218db09cedc8ac888b172476b0c82"
+    },
+    {
+      "file": "libxrender1_1%3a0.9.10-1build4_amd64.deb",
+      "package": "libxrender1",
+      "version": "1:0.9.10-1build4",
+      "sha256": "a68f6db4320b5963dd499b83b6cc8c7b5cd39b05e84862d5945da9244e4c96d6"
+    },
+    {
+      "file": "libxshmfence1_1.3-1build4_amd64.deb",
+      "package": "libxshmfence1",
+      "version": "1.3-1build4",
+      "sha256": "d51ed6fc3932038ebfa0e59065184c715e27ea2cd910cf0a300cfe24cffd744c"
+    }
+  ],
+  "systemInstalledPackages": [],
+  "projectPackageLockEdits": false,
+  "windowsBrowsersUsed": false
+}

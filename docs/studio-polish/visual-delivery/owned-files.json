@@ -1,0 +1,110 @@
+{
+  "baseHEAD": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
+  "patchBase": "Per-file START snapshot; Engine includes the prior technical patch. NOT a HEAD diff.",
+  "files": [
+    {
+      "path": "src/core/Settings.js",
+      "status": "modified",
+      "beforeSHA256": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+      "afterSHA256": "3c5b6547395e71c21422b1ccd8712aa4c236c13f826070866484f7d4c5946ba2",
+      "beforeBytes": 8622,
+      "afterBytes": 9386
+    },
+    {
+      "path": "src/core/Engine.js",
+      "status": "modified",
+      "beforeSHA256": "f18ae181a8998a42ab84c080f5e9a5650a7a0455a7eed70b06792f78a044d8ce",
+      "afterSHA256": "480c2d5ddd3a87f711b7ac3def9e8dd8145c19b75c7931453dc444c6417b31c9",
+      "beforeBytes": 12508,
+      "afterBytes": 12791
+    },
+    {
+      "path": "src/render/Sky.js",
+      "status": "modified",
+      "beforeSHA256": "12314912081437f6c646031ee8d14b62753755b890ca104ae48f7f3083801ed5",
+      "afterSHA256": "d86b693eb05de496a1fa65e2235421ca4c650ff11b748cd437c0159874d7c424",
+      "beforeBytes": 17265,
+      "afterBytes": 19640
+    },
+    {
+      "path": "src/render/Materials.js",
+      "status": "modified",
+      "beforeSHA256": "8af35e4641253713d8d8d1770edebb3dd0bff77bf5caee4eaba7f0db58aebd52",
+      "afterSHA256": "0cd27e17956004cf7c6dd2ecd694d70c62e40a0c0f43ef7621aec554029e3161",
+      "beforeBytes": 16831,
+      "afterBytes": 17778
+    },
+    {
+      "path": "src/render/Textures.js",
+      "status": "modified",
+      "beforeSHA256": "c94160c1d3980da63fc7822b88d049b2adccb5ea301e1705b8a1b48ae9dc8c05",
+      "afterSHA256": "47bb0f3749c482ca97d070d9e1fc13a833d14fbd944c86ea74eb9324589965ec",
+      "beforeBytes": 17474,
+      "afterBytes": 18538
+    },
+    {
+      "path": "src/render/PostFX.js",
+      "status": "modified",
+      "beforeSHA256": "6712a809ab94f87b1a4b49048660495e9bcd803a459872d09b2a2881b2e7d7b4",
+      "afterSHA256": "2f89dfbd0b755e31776ba8b8e2328187af0a8f97a364177be47129b582ef41cd",
+      "beforeBytes": 11993,
+      "afterBytes": 12534
+    },
+    {
+      "path": "src/render/Underlay.js",
+      "status": "modified",
+      "beforeSHA256": "b5f2929651916059bec2848133269be36087ca916884552ef1dd705a1cb9e425",
+      "afterSHA256": "a108b4d9607784e4baaa08a44b228942067e356dda0f39b294e5021d8aa33e90",
+      "beforeBytes": 11604,
+      "afterBytes": 12040
+    },
+    {
+      "path": "src/ui/HUD.js",
+      "status": "modified",
+      "beforeSHA256": "cdabf59fd9388a2ad185802d939519c7a0cc21f7848606c34d09c3642fe3007d",
+      "afterSHA256": "877d87977381687273a15a24765b3a47b58211d5add82ffb6003c451d071cb87",
+      "beforeBytes": 20222,
+      "afterBytes": 20732
+    },
+    {
+      "path": "src/ui/Screens.js",
+      "status": "modified",
+      "beforeSHA256": "d673524308b43294a7ecddf0f4931112bad056c622d0d170ced84ef669764ff5",
+      "afterSHA256": "6099f72bbd2b4cc703df02843bfa155387d14c4510da6a9cb95ed7a515f2cf35",
+      "beforeBytes": 18841,
+      "afterBytes": 18978
+    },
+    {
+      "path": "src/style.css",
+      "status": "modified",
+      "beforeSHA256": "96e803520dc8bb7e0c4aae1292ede78096d2b71fff8cb5af3359b8a5d275504b",
+      "afterSHA256": "974e2434d5a790d11f7663273aceeedfa8c02704561316c29f43726c68376344",
+      "beforeBytes": 35155,
+      "afterBytes": 37323
+    },
+    {
+      "path": "tests/studio-render-ownership.test.js",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0a0440a1179b43ff197e35f73e3274e5dc2b88732d0d4ce13058928c397a8b5e",
+      "beforeBytes": 0,
+      "afterBytes": 8277
+    },
+    {
+      "path": "tests/studio-settings-quality.test.js",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "7994bef19cf28c88ac82a4ef0d5045a81a4b40df96206c1dfedb6bb378b2e586",
+      "beforeBytes": 0,
+      "afterBytes": 5972
+    },
+    {
+      "path": "tests/studio-hud-feedback.test.js",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "5fd23f7901cb8a4099bf15363316b6db24fd00f90e73ed6bac02967a01b9c133",
+      "beforeBytes": 0,
+      "afterBytes": 2567
+    }
+  ]
+}

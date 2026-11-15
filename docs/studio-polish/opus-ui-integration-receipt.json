@@ -1,0 +1,33 @@
+{
+  "verifiedAt": "2026-11-15T16:36:17.618500+00:00",
+  "status": "integrated_verified",
+  "archiveSha256": "cbaf90f0b10f80c6565c4578e0d15f207ce8ae103ed39f5c3e65ac4287d18122",
+  "deliveredContentHashesVerified": 20,
+  "ownedBeforeHashesMatched": true,
+  "deliveredAfterHashesMatched": true,
+  "testsPassed": 230,
+  "testsBreakdown": "205 prior + 13 audio + 11 UI + 1 primary warning-priority regression",
+  "buildPages": "passed",
+  "diffCheck": "passed",
+  "integrationNavReport": "opus-ui-integrated-nav.json",
+  "warningPriorityFix": "Actual Game.warn repro dropped MISSILE LOCK after BARRAGE; primary test failed on old source, passes with critical lock bypass; ordinary warnings retain cooldown.",
+  "devlogPngsInspected": 5,
+  "integrationPngsInspected": [
+    "short-results-callsign.png",
+    "short-settings.png"
+  ],
+  "retention": "opus-ui-delivery/knotzaxxon-opus-ui-polish-20261115/retention.json",
+  "limits": [
+    "Software browser frames establish layout/interaction, not physical device FPS.",
+    "No spatial delivery integrated yet; final combined release verification remains pending."
+  ],
+  "sourceHashes": {
+    "src/ui/HUD.js": "32f1ad403971b74bec0815c30e56ed27b95d2afcd3d2d21442a1253f7b0b4e8c",
+    "src/ui/Screens.js": "277848a9752163f6d0fe0ca3b97134245579597ea734356f5ffd569113810691",
+    "src/style.css": "b82ca14b9e8eba1bab5007c178f18e961c313abf864af607b6d5a3669766f9bd",
+    "index.html": "12dc73d847df14cd2ef07782e469abc9ff13a2be0b13829147d3c2260e56a45c",
+    "src/game/Game.js": "3ac668b63f82a3530f449d90c5802d98bb91da206dacdd659e24e2bb736f3b4d",
+    "tests/warning-priority.test.js": "00226613872f97828054abe90bd1bec0aee4393dbd981291a160eb87e0cfbeb9"
+  },
+  "liveChanged": false
+}

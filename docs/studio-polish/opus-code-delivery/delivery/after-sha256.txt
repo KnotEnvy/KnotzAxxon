@@ -1,0 +1,4 @@
+42a261cde0372e132bd7bd3e7fc50a23fda9a10da14d38c55b2d0a8d35979452  src/audio/Audio.js
+65ae30655f74ce79d31aec08ae96507b3ff21fb081ef706d9f0305d2a8e028c0  src/main.js
+613dfe2fde72c5c02f0f844d36c7bea5e5c68b9e2a5134d560d36eb2a3e9c5ae  tests/opus-code-audio-lifecycle.test.js
+99adeeb95ba9129089a90019ff1d2d082aaf520f672b22ce10a5a6416abb0e49  tests/fixtures/opus-code-audio-lifecycle.mjs

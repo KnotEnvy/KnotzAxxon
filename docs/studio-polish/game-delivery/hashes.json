@@ -1,0 +1,108 @@
+{
+  "baseHead": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
+  "currentHead": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
+  "baseGameSha256": "9703ecf1d74a80ad8ac622e9b3b04e5d039805d61482b3347bc209a57f930d2f",
+  "startOwned": [
+    {
+      "path": "src/game/Game.js",
+      "exists": true,
+      "sha256": "9703ecf1d74a80ad8ac622e9b3b04e5d039805d61482b3347bc209a57f930d2f"
+    },
+    {
+      "path": "tests/game-startup-lifecycle.test.js",
+      "exists": false,
+      "sha256": null
+    },
+    {
+      "path": "tests/fixtures/game-startup-lifecycle.mjs",
+      "exists": false,
+      "sha256": null
+    }
+  ],
+  "endOwned": [
+    {
+      "path": "src/game/Game.js",
+      "sha256": "7c199cc275b76855e10ca0c9ea14e96d4c34eea7aecdbe368f3b9c5a56674892",
+      "gitBlob": "67410b5377a3a519d26e01825b6995804e6afa3c",
+      "bytes": 56657
+    },
+    {
+      "path": "tests/game-startup-lifecycle.test.js",
+      "sha256": "f3c2a10b247a79bec2a9424f2f48f63dacf798cf4a25b720b96b29124202e1b8",
+      "gitBlob": "45a7f7b05ae142c25e8bfc109b80f9bf38abd462",
+      "bytes": 692
+    },
+    {
+      "path": "tests/fixtures/game-startup-lifecycle.mjs",
+      "sha256": "730fedf055f5bd0d66503d141e7fbe45d7447bb71a3ac736ce1423a36bcdc436",
+      "gitBlob": "07b99488f1b4b50dd071c1bcd9ab61c8ece36853",
+      "bytes": 19495
+    }
+  ],
+  "earlierPatchObserved": [
+    {
+      "path": "src/core/Engine.js",
+      "sha256": "480c2d5ddd3a87f711b7ac3def9e8dd8145c19b75c7931453dc444c6417b31c9",
+      "gitBlob": "f3622156d61d5d5ce329a0ff4a7e7319d1a35bd5",
+      "bytes": 12791,
+      "startSha256": "f18ae181a8998a42ab84c080f5e9a5650a7a0455a7eed70b06792f78a044d8ce",
+      "unchanged": false
+    },
+    {
+      "path": "src/core/Input.js",
+      "sha256": "ded0e57f1cde084ef16e705aa9148642f2630573ed43b7ed6397899ef403abb7",
+      "gitBlob": "21a2d6bddcb9fd70a5bbfe7c8886bbb6c1bcc37e",
+      "bytes": 11148,
+      "startSha256": "ded0e57f1cde084ef16e705aa9148642f2630573ed43b7ed6397899ef403abb7",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/Lifetime.js",
+      "sha256": "118766236d21e0d992de1cdf14f7304bbf6c2bbd47c431196d6fdcb3ef52bba0",
+      "gitBlob": "fa031cabd459f4e066ffc0a1f7f4fb977d5bde38",
+      "bytes": 1190,
+      "startSha256": "118766236d21e0d992de1cdf14f7304bbf6c2bbd47c431196d6fdcb3ef52bba0",
+      "unchanged": true
+    },
+    {
+      "path": "src/main.js",
+      "sha256": "d70ef96d12d633b74a477f47ef486f71d8423ac7bb73ba058a592caaab8cafb0",
+      "gitBlob": "cbfc6fad2de8b95540d74bef79a1b24820b2dc82",
+      "bytes": 7031,
+      "startSha256": "d70ef96d12d633b74a477f47ef486f71d8423ac7bb73ba058a592caaab8cafb0",
+      "unchanged": true
+    },
+    {
+      "path": "tests/performance.test.js",
+      "sha256": "2caa273714f7ca26116de70e5abc627e14198cc499637759cc9661948f5c50f7",
+      "gitBlob": "52d13ef131e0480df5c1c4e611915a69fb5446c7",
+      "bytes": 7920,
+      "startSha256": "2caa273714f7ca26116de70e5abc627e14198cc499637759cc9661948f5c50f7",
+      "unchanged": true
+    },
+    {
+      "path": "tests/lifecycle.test.js",
+      "sha256": "5a2cb8b90f295e80e131430dedefd8def863eb2eb6e35378b8541c3d9db060fb",
+      "gitBlob": "e1db8f5e8a16f1dfe5acf3a3001f73a9c803a2a2",
+      "bytes": 8889,
+      "startSha256": "5a2cb8b90f295e80e131430dedefd8def863eb2eb6e35378b8541c3d9db060fb",
+      "unchanged": true
+    },
+    {
+      "path": "tests/fixtures/startup-lifecycle.mjs",
+      "sha256": "f7feb3f452cd40438fbca208aa4b9b1c09eaac68f19f98c0fdfe73d8dc32c4a1",
+      "gitBlob": "27c241843bd116840230238f3deae23d1bd3aaf4",
+      "bytes": 4063,
+      "startSha256": "f7feb3f452cd40438fbca208aa4b9b1c09eaac68f19f98c0fdfe73d8dc32c4a1",
+      "unchanged": true
+    }
+  ],
+  "outsideOwnedWrites": false,
+  "outsideOwnedChangeNote": "Engine.js changed concurrently in the sibling render/quality work; this worker never wrote that file. Six other earlier-patch paths still match starting bytes.",
+  "changesPatch": {
+    "path": "asset-work/studio-game/changes.patch",
+    "sha256": "8cfc038085fae5ef500a8e4c5a94352377fff909534de801487b39f72353aff2",
+    "gitBlob": "0db019e846d4816956e752d2b1350031bd5d3b5c",
+    "bytes": 29872
+  }
+}

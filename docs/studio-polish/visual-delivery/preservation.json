@@ -1,0 +1,40 @@
+{
+  "protectedAssetFiles": 968,
+  "assetChanges": [],
+  "technicalPatchFiles": [
+    {
+      "path": "src/main.js",
+      "sha256": "d70ef96d12d633b74a477f47ef486f71d8423ac7bb73ba058a592caaab8cafb0",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/Lifetime.js",
+      "sha256": "118766236d21e0d992de1cdf14f7304bbf6c2bbd47c431196d6fdcb3ef52bba0",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/Input.js",
+      "sha256": "ded0e57f1cde084ef16e705aa9148642f2630573ed43b7ed6397899ef403abb7",
+      "unchanged": true
+    },
+    {
+      "path": "tests/performance.test.js",
+      "sha256": "2caa273714f7ca26116de70e5abc627e14198cc499637759cc9661948f5c50f7",
+      "unchanged": true
+    },
+    {
+      "path": "tests/lifecycle.test.js",
+      "sha256": "5a2cb8b90f295e80e131430dedefd8def863eb2eb6e35378b8541c3d9db060fb",
+      "unchanged": true
+    },
+    {
+      "path": "tests/fixtures/startup-lifecycle.mjs",
+      "sha256": "f7feb3f452cd40438fbca208aa4b9b1c09eaac68f19f98c0fdfe73d8dc32c4a1",
+      "unchanged": true
+    }
+  ],
+  "packageChanges": [],
+  "engineChanges": "Exactly seven added sampling-hook lines relative to START; prior lifecycle patch retained byte-for-byte elsewhere.",
+  "nonOwnedGameSHA256": "7c199cc275b76855e10ca0c9ea14e96d4c34eea7aecdbe368f3b9c5a56674892",
+  "nonOwnedGameNote": "Concurrent worker source, read only; excluded from patch/replacements. Root SuperBeast-only Input regression not synced or claimed here."
+}

@@ -1,0 +1,352 @@
+{
+ "method": "Background Blender reopen of the saved .blend and clean-scene GLB reimport; evaluated depsgraph triangles and world bounds in game axes. No rendering.",
+ "blender": "5.2.1 LTS",
+ "kitBlend": {
+  "file": "environment-kit.blend",
+  "sha256": "bbed5b68733d1463f3d48e09f3a06d3c5bcd33ccfa93c53180b623894924c85d",
+  "bytes": 325502,
+  "libraries": [],
+  "images": 2,
+  "scenes": [
+   "KnotzAxxonEnvironmentKit"
+  ],
+  "unit": "METRIC",
+  "collections": {
+   "RS_WallFrame": {
+    "objects": 13,
+    "triangles": 182
+   },
+   "RS_PipeRun": {
+    "objects": 8,
+    "triangles": 344
+   },
+   "RS_Gallery": {
+    "objects": 4,
+    "triangles": 40
+   },
+   "RS_ServiceBay": {
+    "objects": 10,
+    "triangles": 116
+   },
+   "RS_FanHousing": {
+    "objects": 5,
+    "triangles": 296
+   },
+   "RS_ExhaustTrunk": {
+    "objects": 8,
+    "triangles": 216
+   },
+   "RS_GateHousing": {
+    "objects": 11,
+    "triangles": 764
+   },
+   "RS_ReactorCore": {
+    "objects": 12,
+    "triangles": 894
+   },
+   "EK_Parapet": {
+    "objects": 6,
+    "triangles": 98
+   },
+   "AF_Hangar": {
+    "objects": 3,
+    "triangles": 66
+   },
+   "AF_Crest": {
+    "objects": 4,
+    "triangles": 96
+   },
+   "AF_Tower": {
+    "objects": 10,
+    "triangles": 366
+   },
+   "GB_Armor": {
+    "objects": 3,
+    "triangles": 34
+   },
+   "GB_Casemate": {
+    "objects": 4,
+    "triangles": 192
+   },
+   "GB_Crest": {
+    "objects": 2,
+    "triangles": 56
+   },
+   "GB_Director": {
+    "objects": 9,
+    "triangles": 278
+   },
+   "IC_Buttress": {
+    "objects": 3,
+    "triangles": 34
+   },
+   "IC_Crest": {
+    "objects": 3,
+    "triangles": 28
+   },
+   "IC_Portal": {
+    "objects": 3,
+    "triangles": 130
+   },
+   "IC_Keep": {
+    "objects": 9,
+    "triangles": 270
+   },
+   "TG_Alarm": {
+    "objects": 2,
+    "triangles": 30
+   },
+   "TG_Crest": {
+    "objects": 2,
+    "triangles": 56
+   },
+   "TG_Blast": {
+    "objects": 3,
+    "triangles": 78
+   },
+   "TG_Siren": {
+    "objects": 8,
+    "triangles": 300
+   },
+   "SK_Rock": {
+    "objects": 6,
+    "triangles": 308
+   },
+   "SK_Fence": {
+    "objects": 4,
+    "triangles": 152
+   },
+   "SP_Platform": {
+    "objects": 4,
+    "triangles": 226
+   },
+   "SP_Truss": {
+    "objects": 1,
+    "triangles": 100
+   },
+   "SE_Bulkhead": {
+    "objects": 7,
+    "triangles": 362
+   },
+   "BA_Arena": {
+    "objects": 8,
+    "triangles": 170
+   }
+  },
+  "materials": 45
+ },
+ "reimport": {
+  "RS_WallFrame": {
+   "meshes": 13,
+   "triangles": 182,
+   "recipeTriangles": 182,
+   "worstBoundsDelta": 8e-07,
+   "nonMeshObjects": 0
+  },
+  "RS_PipeRun": {
+   "meshes": 8,
+   "triangles": 344,
+   "recipeTriangles": 344,
+   "worstBoundsDelta": 4.35e-05,
+   "nonMeshObjects": 0
+  },
+  "RS_Gallery": {
+   "meshes": 4,
+   "triangles": 40,
+   "recipeTriangles": 40,
+   "worstBoundsDelta": 8e-07,
+   "nonMeshObjects": 0
+  },
+  "RS_ServiceBay": {
+   "meshes": 10,
+   "triangles": 116,
+   "recipeTriangles": 116,
+   "worstBoundsDelta": 8e-07,
+   "nonMeshObjects": 0
+  },
+  "RS_FanHousing": {
+   "meshes": 5,
+   "triangles": 296,
+   "recipeTriangles": 296,
+   "worstBoundsDelta": 3.35e-05,
+   "nonMeshObjects": 0
+  },
+  "RS_ExhaustTrunk": {
+   "meshes": 8,
+   "triangles": 216,
+   "recipeTriangles": 216,
+   "worstBoundsDelta": 8e-07,
+   "nonMeshObjects": 0
+  },
+  "RS_GateHousing": {
+   "meshes": 11,
+   "triangles": 764,
+   "recipeTriangles": 764,
+   "worstBoundsDelta": 4.03e-05,
+   "nonMeshObjects": 0
+  },
+  "RS_ReactorCore": {
+   "meshes": 12,
+   "triangles": 894,
+   "recipeTriangles": 894,
+   "worstBoundsDelta": 1.45e-05,
+   "nonMeshObjects": 0
+  },
+  "EK_Parapet": {
+   "meshes": 6,
+   "triangles": 98,
+   "recipeTriangles": 98,
+   "worstBoundsDelta": 1.2e-06,
+   "nonMeshObjects": 0
+  },
+  "AF_Hangar": {
+   "meshes": 3,
+   "triangles": 66,
+   "recipeTriangles": 66,
+   "worstBoundsDelta": 7e-07,
+   "nonMeshObjects": 0
+  },
+  "AF_Crest": {
+   "meshes": 4,
+   "triangles": 96,
+   "recipeTriangles": 96,
+   "worstBoundsDelta": 4.61e-05,
+   "nonMeshObjects": 0
+  },
+  "AF_Tower": {
+   "meshes": 10,
+   "triangles": 366,
+   "recipeTriangles": 366,
+   "worstBoundsDelta": 5.03e-05,
+   "nonMeshObjects": 0
+  },
+  "GB_Armor": {
+   "meshes": 3,
+   "triangles": 34,
+   "recipeTriangles": 34,
+   "worstBoundsDelta": 8e-07,
+   "nonMeshObjects": 0
+  },
+  "GB_Casemate": {
+   "meshes": 4,
+   "triangles": 192,
+   "recipeTriangles": 192,
+   "worstBoundsDelta": 8e-07,
+   "nonMeshObjects": 0
+  },
+  "GB_Crest": {
+   "meshes": 2,
+   "triangles": 56,
+   "recipeTriangles": 56,
+   "worstBoundsDelta": 8e-07,
+   "nonMeshObjects": 0
+  },
+  "GB_Director": {
+   "meshes": 9,
+   "triangles": 278,
+   "recipeTriangles": 278,
+   "worstBoundsDelta": 4.09e-05,
+   "nonMeshObjects": 0
+  },
+  "IC_Buttress": {
+   "meshes": 3,
+   "triangles": 34,
+   "recipeTriangles": 34,
+   "worstBoundsDelta": 9e-07,
+   "nonMeshObjects": 0
+  },
+  "IC_Crest": {
+   "meshes": 3,
+   "triangles": 28,
+   "recipeTriangles": 28,
+   "worstBoundsDelta": 1.5e-06,
+   "nonMeshObjects": 0
+  },
+  "IC_Portal": {
+   "meshes": 3,
+   "triangles": 130,
+   "recipeTriangles": 130,
+   "worstBoundsDelta": 8e-07,
+   "nonMeshObjects": 0
+  },
+  "IC_Keep": {
+   "meshes": 9,
+   "triangles": 270,
+   "recipeTriangles": 270,
+   "worstBoundsDelta": 4.04e-05,
+   "nonMeshObjects": 0
+  },
+  "TG_Alarm": {
+   "meshes": 2,
+   "triangles": 30,
+   "recipeTriangles": 30,
+   "worstBoundsDelta": 8e-07,
+   "nonMeshObjects": 0
+  },
+  "TG_Crest": {
+   "meshes": 2,
+   "triangles": 56,
+   "recipeTriangles": 56,
+   "worstBoundsDelta": 8e-07,
+   "nonMeshObjects": 0
+  },
+  "TG_Blast": {
+   "meshes": 3,
+   "triangles": 78,
+   "recipeTriangles": 78,
+   "worstBoundsDelta": 1.9e-06,
+   "nonMeshObjects": 0
+  },
+  "TG_Siren": {
+   "meshes": 8,
+   "triangles": 300,
+   "recipeTriangles": 300,
+   "worstBoundsDelta": 4.33e-05,
+   "nonMeshObjects": 0
+  },
+  "SK_Rock": {
+   "meshes": 6,
+   "triangles": 308,
+   "recipeTriangles": 308,
+   "worstBoundsDelta": 4.86e-05,
+   "nonMeshObjects": 0
+  },
+  "SK_Fence": {
+   "meshes": 4,
+   "triangles": 152,
+   "recipeTriangles": 152,
+   "worstBoundsDelta": 4.96e-05,
+   "nonMeshObjects": 0
+  },
+  "SP_Platform": {
+   "meshes": 4,
+   "triangles": 226,
+   "recipeTriangles": 226,
+   "worstBoundsDelta": 2.41e-05,
+   "nonMeshObjects": 0
+  },
+  "SP_Truss": {
+   "meshes": 1,
+   "triangles": 100,
+   "recipeTriangles": 100,
+   "worstBoundsDelta": 7e-07,
+   "nonMeshObjects": 0
+  },
+  "SE_Bulkhead": {
+   "meshes": 7,
+   "triangles": 362,
+   "recipeTriangles": 362,
+   "worstBoundsDelta": 5e-06,
+   "nonMeshObjects": 0
+  },
+  "BA_Arena": {
+   "meshes": 8,
+   "triangles": 170,
+   "recipeTriangles": 170,
+   "worstBoundsDelta": 6e-07,
+   "nonMeshObjects": 0
+  }
+ },
+ "failures": [],
+ "passed": true
+}

@@ -61,3 +61,8 @@ is separate from the shipped destructible fuel cell.
 Native Linux Blender on NitroBliss is the required runtime for this phase.
 
 Production asset release was user-approved on 2026-11-14. The 21 new submissions load by default. Curated development evidence remains with editable source packs, and complete initial snapshots are preserved in the local archive recorded by `docs/asset-production/retention.json`. Formal Opus review/polish is still deferred.
+
+Authored sector architecture lives in [environment/](environment/README.md): the editable shared kit,
+all ten composition scenes, native Blender generators, named module exports, runtime metadata,
+verification helpers and selected game/viewport images. Only its shared runtime GLB ships in the
+game. The UI pass retains five before/after comparisons in `studio-polish/devlog/`.

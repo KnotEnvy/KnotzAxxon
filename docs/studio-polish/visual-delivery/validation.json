@@ -1,0 +1,203 @@
+{
+  "recordedAt": "2026-11-15T07:55:49.971749+00:00",
+  "baseHEAD": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
+  "implementation": {
+    "provider": "codex",
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "xhigh",
+    "solo": true,
+    "newCheckouts": false,
+    "commitsPushesDeploys": false
+  },
+  "patch": {
+    "base": "Exact per-file START snapshot; not HEAD",
+    "sourceAndTestPaths": 13,
+    "sha256": "6e0a9fc98328fbf06ca9fc0739082842b60f85d709476ad5e74b772f3bba0230",
+    "forwardCheck": "passed against owner-only start/ snapshot",
+    "reverseWorkingTreeCheck": "passed",
+    "whitespaceCheck": "passed",
+    "javaScriptSyntaxChecks": 12,
+    "supportScriptSyntaxChecks": 6,
+    "cssValidation": "Vite Pages build"
+  },
+  "tests": {
+    "baselineObserved": 114,
+    "combinedFinalPassed": 163,
+    "failed": 0,
+    "ownTestsPassed": 14,
+    "nonOwnedExistingAndConcurrentTests": 149,
+    "ownershipStartExpectedFailures": 8,
+    "ownershipFinalPassed": 8,
+    "focusedTests": "node --test tests/studio-*.test.js",
+    "fullTests": "npm test",
+    "coverageBoundary": "Combined count includes other Game worker tests. SuperBeast-only Input edge regression is not present or claimed here."
+  },
+  "build": {
+    "command": "node /tmp/nitrobliss-studio-code-tools/node_modules/vite/bin/vite.js build --base=/KnotzAxxon/",
+    "status": "passed",
+    "log": "build-final.log"
+  },
+  "browserUi": {
+    "status": "passed",
+    "fixtures": [
+      "desktop",
+      "portrait",
+      "landscape"
+    ],
+    "report": "ui-qa-clean-exit.json",
+    "features": [
+      "Space activates one native settings change",
+      "Preset/hardware cap and renderer/library/albedo/normal/roughness map consistency",
+      "Amber focus and Tab order",
+      "Pause/settings/back/resume by keyboard or touch",
+      "Device-neutral controller menu actions",
+      "Reduced-motion visible warning and result rows",
+      "Grade chips fit without horizontal overflow",
+      "Retry and normal-motion warning animation"
+    ],
+    "physicalControllerTest": false,
+    "processExitCode": 0
+  },
+  "productionRelease": {
+    "status": "passed",
+    "report": "release-report.json",
+    "fixtures": [
+      "desktop 1280x720",
+      "touch 390x844",
+      "touch 844x390"
+    ],
+    "runtimeResources": 27,
+    "servedModelTemplateHashes": 34,
+    "assetsMatchDist": true,
+    "modelsMatchDist": true,
+    "debugApiAbsent": true,
+    "errors": [],
+    "processExitCode": 0
+  },
+  "modelQa": {
+    "legacy": {
+      "status": "passed",
+      "log": "models-legacy-clean-exit.log",
+      "report": "models-legacy-report.json",
+      "processExitCode": 0
+    },
+    "default": {
+      "status": "passed",
+      "processExitCode": 0,
+      "log": "models-default.log",
+      "report": "models-default-report.json",
+      "templateShutdown": {
+        "geometries": 6,
+        "antennaGeometries": 5,
+        "bunkerGeometries": 3,
+        "fuelDepotGeometries": 2,
+        "cargoGeometries": 2,
+        "coveredGeometries": 42,
+        "disposedExactlyOnce": true
+      }
+    },
+    "runner": "run-existing-qa.cjs executes original QA source with isolated module/Vite resolution, native headless flags, LOW boot and 120-second model screenshot timeout in memory; existing QA files are unchanged"
+  },
+  "captures": {
+    "sourcePngs": 30,
+    "retainedComparisonPngs": 5,
+    "before": "Source-reconstructed START owners against current non-owned game/assets; actual WebGL render",
+    "after": "Actual WebGL render from delivered owner source bytes",
+    "allThreeRigsAtAllThreeViewports": true,
+    "all15CameraAndProjectionPairsIdentical": true,
+    "quality": "LOW",
+    "deviceScaleFactor": 1,
+    "rendererPixelRatioAtLow": 0.75,
+    "seed": 42,
+    "time": 12,
+    "sector": 1,
+    "player": [
+      0,
+      8,
+      270
+    ],
+    "hud": "Synthetic critical, chain and boss telemetry over the real seeded sector-1 world",
+    "viewed": "viewed.json",
+    "hashes": "evidence/manifest.json and evidence/capture-{before,after}.json"
+  },
+  "preservation": {
+    "protectedAssetFiles": 968,
+    "assetChanges": [],
+    "technicalPatchFiles": [
+      {
+        "path": "src/main.js",
+        "sha256": "d70ef96d12d633b74a477f47ef486f71d8423ac7bb73ba058a592caaab8cafb0",
+        "unchanged": true
+      },
+      {
+        "path": "src/core/Lifetime.js",
+        "sha256": "118766236d21e0d992de1cdf14f7304bbf6c2bbd47c431196d6fdcb3ef52bba0",
+        "unchanged": true
+      },
+      {
+        "path": "src/core/Input.js",
+        "sha256": "ded0e57f1cde084ef16e705aa9148642f2630573ed43b7ed6397899ef403abb7",
+        "unchanged": true
+      },
+      {
+        "path": "tests/performance.test.js",
+        "sha256": "2caa273714f7ca26116de70e5abc627e14198cc499637759cc9661948f5c50f7",
+        "unchanged": true
+      },
+      {
+        "path": "tests/lifecycle.test.js",
+        "sha256": "5a2cb8b90f295e80e131430dedefd8def863eb2eb6e35378b8541c3d9db060fb",
+        "unchanged": true
+      },
+      {
+        "path": "tests/fixtures/startup-lifecycle.mjs",
+        "sha256": "f7feb3f452cd40438fbca208aa4b9b1c09eaac68f19f98c0fdfe73d8dc32c4a1",
+        "unchanged": true
+      }
+    ],
+    "packageChanges": [],
+    "engineChanges": "Exactly seven added sampling-hook lines relative to START; prior lifecycle patch retained byte-for-byte elsewhere.",
+    "nonOwnedGameSHA256": "7c199cc275b76855e10ca0c9ea14e96d4c34eea7aecdbe368f3b9c5a56674892",
+    "nonOwnedGameNote": "Concurrent worker source, read only; excluded from patch/replacements. Root SuperBeast-only Input regression not synced or claimed here."
+  },
+  "toolingIssues": [
+    {
+      "issue": "T3 preview and html_preview native libraries unavailable",
+      "resolution": "Isolated native Linux Playwright/Chromium and extracted libraries; no sudo/system installation. html_render attached the self-contained comparison document."
+    },
+    {
+      "issue": "WSL Wayland SwiftShader requested unsupported VK_KHR_wayland_surface",
+      "resolution": "Only QA browser environment unsets DISPLAY/WAYLAND_DISPLAY and uses headless Ozone."
+    },
+    {
+      "issue": "Host fallback font configuration incomplete",
+      "resolution": "Temporary Fontconfig plus extracted Liberation fonts; early unconfigured-font images excluded."
+    },
+    {
+      "issue": "Initial legacy catalogue screenshot timed out at 30 seconds after model assertions",
+      "resolution": "Separate LOW/120-second rerun passed."
+    },
+    {
+      "issue": "Initial immediate UI opacity assertion failed in short landscape after two passing fixtures",
+      "resolution": "Isolated landscape and all-fixture rerun passed on unchanged app source, using deterministic shared seed and waiting for computed UI state."
+    },
+    {
+      "issue": "Optional balanced-wrap capture refresh encountered stopped server, then 120-second software-GPU timeout",
+      "resolution": "Experiment reverted; all retained PNGs match the earlier successful full capture report and delivered bytes. Failed diagnostic retained separately."
+    },
+    {
+      "issue": "Older retained legacy/UI shell sessions reported exit 143 despite successful assertion reports",
+      "resolution": "Dedicated legacy and three-viewport UI reruns both exited 0."
+    }
+  ],
+  "limits": [
+    "Scripted native SwiftShader evidence, not physical FPS, sustained device acceptance, GPU-memory measurement or an assistive-technology audit.",
+    "User-reported successful cross-device acceptance is retained; no repeat human/device testing requested.",
+    "No formal Opus review or fix round.",
+    "Primary owns subsequent integrated Input/controller/context-loss QA.",
+    "Only confirmed owned constructor/bake reproductions are fixed; not a guarantee for allocations hidden inside failing Three constructors."
+  ],
+  "remainingQueue": "LEDGER.md: modular fortress architecture/props, barriers/gates and space scene modules retain batching, RNG, bounds, collision/motion, streaming and ownership contracts. No new assets/audio/Blender work completed.",
+  "temporaryQaServers": "All closed after successful native QA",
+  "status": "complete"
+}

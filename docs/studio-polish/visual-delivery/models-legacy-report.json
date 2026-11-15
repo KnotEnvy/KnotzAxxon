@@ -1,0 +1,2067 @@
+{
+  "selectedFighter": "hero-interceptor-imported",
+  "groundTargets": [
+    "turret",
+    "radar",
+    "silo",
+    "fuel"
+  ],
+  "productionPreview": false,
+  "cargoKit": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 3
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 15,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 16,
+        "props": 4
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 4
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 18,
+        "props": 5
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 47,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 49,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 3
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 81,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 83,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 101,
+        "props": 3
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 103,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 15,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 16,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 4
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 18,
+        "props": 4
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 47,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 49,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 81,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 83,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 101,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 103,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 3
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 15,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 16,
+        "props": 3
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 4
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 18,
+        "props": 4
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 47,
+        "props": 3
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 3
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 49,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 81,
+        "props": 3
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 83,
+        "props": 3
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 101,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 103,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 15,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 16,
+        "props": 3
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 5
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 18,
+        "props": 4
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 47,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 49,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 81,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 83,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 101,
+        "props": 3
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 103,
+        "props": 3
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 2
+      }
+    ],
+    "props": 175,
+    "sourceParity": "Original arguments,RNG,surfaces,paint,emitters,outside-prop buffers and merged hull retirement"
+  },
+  "coveredFighter": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 3
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 0,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 3
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 1
+      }
+    ],
+    "props": 24,
+    "sourceParity": "Original arguments,RNG,surfaces,paint,emitters,outside-prop buffers and merged hull retirement"
+  },
+  "fuelDepot": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 4,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 5,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 6,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 7,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 8,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 9,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 10,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 11,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 12,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 13,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 14,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 15,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 0,
+        "index": 16,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 4,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 5,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 6,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 7,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 8,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 9,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 10,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 11,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 12,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 13,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 14,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 15,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 0,
+        "index": 16,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 4,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 5,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 6,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 7,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 8,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 9,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 10,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 11,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 12,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 13,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 14,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 15,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 0,
+        "index": 16,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 1,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 2,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 3,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 4,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 5,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 6,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 7,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 8,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 9,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 10,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 11,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 12,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 13,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 14,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 15,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 0,
+        "index": 16,
+        "props": 0
+      }
+    ],
+    "props": 29,
+    "sourceParity": "RNG,surface records,zero method draws,all outside-prop geometry buffers"
+  },
+  "bunker": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 86,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 88,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 106,
+        "props": 0
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 108,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 86,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 5,
+        "index": 88,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 106,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 6,
+        "index": 108,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 86,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 88,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 106,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 108,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 82,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 84,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 86,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 5,
+        "index": 88,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 102,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 104,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 106,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 6,
+        "index": 108,
+        "props": 1
+      }
+    ],
+    "props": 15,
+    "sourceParity": "RNG,surface records,warm tuples/colors,all outside-prop geometry buffers"
+  },
+  "flakGun": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 3
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 19,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 21,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 1,
+        "index": 23,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 3
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 19,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 21,
+        "props": 0
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 1,
+        "index": 23,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 19,
+        "props": 0
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 21,
+        "props": 5
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 1,
+        "index": 23,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 17,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 19,
+        "props": 0
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 21,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 1,
+        "index": 23,
+        "props": 1
+      }
+    ],
+    "props": 22,
+    "sourceParity": "RNG,surface records,flak emitter position/direction/rate/owner and all outside-prop buffers"
+  },
+  "coolingStack": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 52,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 3,
+        "index": 54,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 2
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 52,
+        "props": 1
+      },
+      {
+        "seed": 7,
+        "sectorIndex": 3,
+        "index": 54,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 52,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 3,
+        "index": 54,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 48,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 50,
+        "props": 2
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 52,
+        "props": 1
+      },
+      {
+        "seed": 123,
+        "sectorIndex": 3,
+        "index": 54,
+        "props": 2
+      }
+    ],
+    "props": 27,
+    "sourceParity": "RNG,surface records,heat tuples/colors,steam emitter ownership and all outside-prop buffers"
+  },
+  "antenna": {
+    "trials": [
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 83,
+        "props": 1
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 5,
+        "index": 86,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 103,
+        "props": 2
+      },
+      {
+        "seed": 1,
+        "sectorIndex": 6,
+        "index": 106,
+        "props": 2
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 83,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 5,
+        "index": 86,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 103,
+        "props": 1
+      },
+      {
+        "seed": 42,
+        "sectorIndex": 6,
+        "index": 106,
+        "props": 1
+      }
+    ],
+    "props": 11,
+    "sourceParity": "RNG,surface records,strobe tuples/colors,all outside-prop geometry buffers"
+  },
+  "wreckage": {
+    "trials": [
+      {
+        "seed": 1,
+        "index": 68,
+        "taken": false
+      },
+      {
+        "seed": 1,
+        "index": 70,
+        "taken": true
+      },
+      {
+        "seed": 1,
+        "index": 74,
+        "taken": true
+      },
+      {
+        "seed": 1,
+        "index": 77,
+        "taken": false
+      },
+      {
+        "seed": 7,
+        "index": 68,
+        "taken": true
+      },
+      {
+        "seed": 7,
+        "index": 70,
+        "taken": true
+      },
+      {
+        "seed": 7,
+        "index": 74,
+        "taken": false
+      },
+      {
+        "seed": 7,
+        "index": 77,
+        "taken": false
+      },
+      {
+        "seed": 42,
+        "index": 68,
+        "taken": false
+      },
+      {
+        "seed": 42,
+        "index": 70,
+        "taken": false
+      },
+      {
+        "seed": 42,
+        "index": 74,
+        "taken": true
+      },
+      {
+        "seed": 42,
+        "index": 77,
+        "taken": false
+      },
+      {
+        "seed": 123,
+        "index": 68,
+        "taken": true
+      },
+      {
+        "seed": 123,
+        "index": 70,
+        "taken": true
+      },
+      {
+        "seed": 123,
+        "index": 74,
+        "taken": false
+      },
+      {
+        "seed": 123,
+        "index": 77,
+        "taken": false
+      }
+    ],
+    "takenBranches": 7,
+    "sourceParity": "Original branch state and all outside-branch buffers"
+  },
+  "asteroids": {
+    "completeChunks": 42,
+    "chunks": [
+      {
+        "seed": 1,
+        "index": 67,
+        "rockMeshes": 1,
+        "rockTriangles": 780
+      },
+      {
+        "seed": 1,
+        "index": 68,
+        "rockMeshes": 1,
+        "rockTriangles": 780
+      },
+      {
+        "seed": 1,
+        "index": 69,
+        "rockMeshes": 1,
+        "rockTriangles": 580
+      },
+      {
+        "seed": 1,
+        "index": 70,
+        "rockMeshes": 1,
+        "rockTriangles": 780
+      },
+      {
+        "seed": 1,
+        "index": 71,
+        "rockMeshes": 1,
+        "rockTriangles": 1440
+      },
+      {
+        "seed": 1,
+        "index": 72,
+        "rockMeshes": 1,
+        "rockTriangles": 660
+      },
+      {
+        "seed": 1,
+        "index": 73,
+        "rockMeshes": 1,
+        "rockTriangles": 600
+      },
+      {
+        "seed": 1,
+        "index": 74,
+        "rockMeshes": 2,
+        "rockTriangles": 11020
+      },
+      {
+        "seed": 1,
+        "index": 75,
+        "rockMeshes": 1,
+        "rockTriangles": 580
+      },
+      {
+        "seed": 1,
+        "index": 76,
+        "rockMeshes": 1,
+        "rockTriangles": 960
+      },
+      {
+        "seed": 1,
+        "index": 77,
+        "rockMeshes": 1,
+        "rockTriangles": 600
+      },
+      {
+        "seed": 1,
+        "index": 78,
+        "rockMeshes": 1,
+        "rockTriangles": 560
+      },
+      {
+        "seed": 1,
+        "index": 79,
+        "rockMeshes": 1,
+        "rockTriangles": 760
+      },
+      {
+        "seed": 1,
+        "index": 80,
+        "rockMeshes": 1,
+        "rockTriangles": 600
+      },
+      {
+        "seed": 7,
+        "index": 67,
+        "rockMeshes": 2,
+        "rockTriangles": 12400
+      },
+      {
+        "seed": 7,
+        "index": 68,
+        "rockMeshes": 1,
+        "rockTriangles": 600
+      },
+      {
+        "seed": 7,
+        "index": 69,
+        "rockMeshes": 1,
+        "rockTriangles": 760
+      },
+      {
+        "seed": 7,
+        "index": 70,
+        "rockMeshes": 1,
+        "rockTriangles": 740
+      },
+      {
+        "seed": 7,
+        "index": 71,
+        "rockMeshes": 1,
+        "rockTriangles": 860
+      },
+      {
+        "seed": 7,
+        "index": 72,
+        "rockMeshes": 1,
+        "rockTriangles": 1140
+      },
+      {
+        "seed": 7,
+        "index": 73,
+        "rockMeshes": 1,
+        "rockTriangles": 780
+      },
+      {
+        "seed": 7,
+        "index": 74,
+        "rockMeshes": 1,
+        "rockTriangles": 940
+      },
+      {
+        "seed": 7,
+        "index": 75,
+        "rockMeshes": 1,
+        "rockTriangles": 860
+      },
+      {
+        "seed": 7,
+        "index": 76,
+        "rockMeshes": 1,
+        "rockTriangles": 1240
+      },
+      {
+        "seed": 7,
+        "index": 77,
+        "rockMeshes": 2,
+        "rockTriangles": 12500
+      },
+      {
+        "seed": 7,
+        "index": 78,
+        "rockMeshes": 1,
+        "rockTriangles": 860
+      },
+      {
+        "seed": 7,
+        "index": 79,
+        "rockMeshes": 1,
+        "rockTriangles": 2800
+      },
+      {
+        "seed": 7,
+        "index": 80,
+        "rockMeshes": 1,
+        "rockTriangles": 860
+      },
+      {
+        "seed": 42,
+        "index": 67,
+        "rockMeshes": 1,
+        "rockTriangles": 860
+      },
+      {
+        "seed": 42,
+        "index": 68,
+        "rockMeshes": 1,
+        "rockTriangles": 1060
+      },
+      {
+        "seed": 42,
+        "index": 69,
+        "rockMeshes": 1,
+        "rockTriangles": 2740
+      },
+      {
+        "seed": 42,
+        "index": 70,
+        "rockMeshes": 1,
+        "rockTriangles": 480
+      },
+      {
+        "seed": 42,
+        "index": 71,
+        "rockMeshes": 1,
+        "rockTriangles": 660
+      },
+      {
+        "seed": 42,
+        "index": 72,
+        "rockMeshes": 1,
+        "rockTriangles": 940
+      },
+      {
+        "seed": 42,
+        "index": 73,
+        "rockMeshes": 1,
+        "rockTriangles": 680
+      },
+      {
+        "seed": 42,
+        "index": 74,
+        "rockMeshes": 1,
+        "rockTriangles": 1120
+      },
+      {
+        "seed": 42,
+        "index": 75,
+        "rockMeshes": 1,
+        "rockTriangles": 860
+      },
+      {
+        "seed": 42,
+        "index": 76,
+        "rockMeshes": 1,
+        "rockTriangles": 500
+      },
+      {
+        "seed": 42,
+        "index": 77,
+        "rockMeshes": 1,
+        "rockTriangles": 1020
+      },
+      {
+        "seed": 42,
+        "index": 78,
+        "rockMeshes": 1,
+        "rockTriangles": 800
+      },
+      {
+        "seed": 42,
+        "index": 79,
+        "rockMeshes": 1,
+        "rockTriangles": 1160
+      },
+      {
+        "seed": 42,
+        "index": 80,
+        "rockMeshes": 1,
+        "rockTriangles": 500
+      }
+    ],
+    "sharedDisposals": 0,
+    "sourceParity": "RNG,all nonrock buffers,rock draw count and centers/axes/rates"
+  },
+  "carrier": {
+    "carrierTriangles": 8492,
+    "chunks": [
+      {
+        "z0": 6432,
+        "triangles": 240,
+        "buckets": 5
+      },
+      {
+        "z0": 6528,
+        "triangles": 744,
+        "buckets": 5
+      },
+      {
+        "z0": 6624,
+        "triangles": 744,
+        "buckets": 5
+      },
+      {
+        "z0": 6720,
+        "triangles": 744,
+        "buckets": 5
+      },
+      {
+        "z0": 6816,
+        "triangles": 744,
+        "buckets": 5
+      },
+      {
+        "z0": 6912,
+        "triangles": 1352,
+        "buckets": 6
+      },
+      {
+        "z0": 7008,
+        "triangles": 744,
+        "buckets": 5
+      },
+      {
+        "z0": 7104,
+        "triangles": 744,
+        "buckets": 5
+      },
+      {
+        "z0": 7200,
+        "triangles": 744,
+        "buckets": 5
+      },
+      {
+        "z0": 7296,
+        "triangles": 744,
+        "buckets": 5
+      },
+      {
+        "z0": 7392,
+        "triangles": 744,
+        "buckets": 5
+      },
+      {
+        "z0": 7488,
+        "triangles": 204,
+        "buckets": 5
+      }
+    ],
+    "radarVertices": 0,
+    "chunkGeometriesDisposed": 77
+  },
+  "dreadnought": {
+    "landmarkTriangles": 9384,
+    "chunks": [
+      {
+        "z0": 3360,
+        "added": [
+          {
+            "key": "hull",
+            "triangles": 60
+          },
+          {
+            "key": "dark",
+            "triangles": 180
+          },
+          {
+            "key": "neon",
+            "triangles": 408
+          }
+        ]
+      },
+      {
+        "z0": 3456,
+        "added": [
+          {
+            "key": "hull",
+            "triangles": 108
+          },
+          {
+            "key": "dark",
+            "triangles": 288
+          },
+          {
+            "key": "neon",
+            "triangles": 660
+          }
+        ]
+      },
+      {
+        "z0": 3552,
+        "added": [
+          {
+            "key": "hull",
+            "triangles": 108
+          },
+          {
+            "key": "dark",
+            "triangles": 408
+          },
+          {
+            "key": "neon",
+            "triangles": 588
+          }
+        ]
+      },
+      {
+        "z0": 3648,
+        "added": [
+          {
+            "key": "hull",
+            "triangles": 108
+          },
+          {
+            "key": "dark",
+            "triangles": 228
+          },
+          {
+            "key": "neon",
+            "triangles": 768
+          }
+        ]
+      },
+      {
+        "z0": 3744,
+        "added": [
+          {
+            "key": "hull",
+            "triangles": 108
+          },
+          {
+            "key": "dark",
+            "triangles": 228
+          },
+          {
+            "key": "neon",
+            "triangles": 756
+          }
+        ]
+      },
+      {
+        "z0": 3840,
+        "added": [
+          {
+            "key": "hull",
+            "triangles": 108
+          },
+          {
+            "key": "dark",
+            "triangles": 408
+          },
+          {
+            "key": "neon",
+            "triangles": 564
+          }
+        ]
+      },
+      {
+        "z0": 3936,
+        "added": [
+          {
+            "key": "hull",
+            "triangles": 96
+          },
+          {
+            "key": "dark",
+            "triangles": 216
+          },
+          {
+            "key": "neon",
+            "triangles": 708
+          }
+        ]
+      },
+      {
+        "z0": 4032,
+        "added": [
+          {
+            "key": "hull",
+            "triangles": 108
+          },
+          {
+            "key": "dark",
+            "triangles": 228
+          },
+          {
+            "key": "neon",
+            "triangles": 768
+          }
+        ]
+      },
+      {
+        "z0": 4128,
+        "added": [
+          {
+            "key": "hull",
+            "triangles": 108
+          },
+          {
+            "key": "dark",
+            "triangles": 396
+          },
+          {
+            "key": "neon",
+            "triangles": 672
+          }
+        ]
+      },
+      {
+        "z0": 4224,
+        "added": []
+      }
+    ],
+    "rngChecks": 10,
+    "chunkGeometriesDisposed": 49,
+    "sharedDisposals": 0
+  },
+  "missilePool": {
+    "triangles": 204,
+    "capacity": 40,
+    "drawCalls": 1,
+    "drawTriangles": 8160,
+    "baselineParityFrames": 120,
+    "launchesIncludingOverflow": 47,
+    "geometryDisposals": 1,
+    "ownedMaterialDisposals": 0,
+    "sourceDisposals": 0
+  },
+  "pickupChecks": [],
+  "flyers": [],
+  "iterations": [
+    {
+      "iteration": 0,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    },
+    {
+      "iteration": 1,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    },
+    {
+      "iteration": 2,
+      "shutters": 4,
+      "pods": 2,
+      "charge": [
+        0.7215010465569316,
+        0.4473306488652976,
+        0.1298701883802477
+      ]
+    }
+  ],
+  "errors": []
+}

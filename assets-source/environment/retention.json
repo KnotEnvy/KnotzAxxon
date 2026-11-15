@@ -1,0 +1,107 @@
+{
+  "fullArchive": "/home/knotz2/code/KnotzAxxon-archive/2026-11-15/environment-scenes/knotzaxxon-environment-kit-fable-20261115.tar.gz",
+  "archiveSha256": "752d770910317025b3179090db71c343d3fb9d37dad4822f10959b653199a9d5",
+  "omitted": [
+    {
+      "path": "devlog/game-software-webgl/edge-departure-chase--source.png",
+      "sha256": "d46d2f3880f3a89e87c92ef1eff5115b7f4f9fd3574df49bd32fb0c0a5526ad5",
+      "bytes": 1168181
+    },
+    {
+      "path": "devlog/game-software-webgl/citadel-gate-classic--source.png",
+      "sha256": "b9ba5485f1f6fdff963e5449263ad9a451e9fc82fd69a6c89046d661a1e1f6c2",
+      "bytes": 1243031
+    },
+    {
+      "path": "devlog/game-software-webgl/airfield-tower-chase--source.png",
+      "sha256": "9a8f184c2303e7aaebc9c30810a47412e99389d56ed199ea0c4a740c991f1922",
+      "bytes": 1191259
+    },
+    {
+      "path": "devlog/game-software-webgl/boss-throat-classic--source.png",
+      "sha256": "be866ebaf4de9d7fa42a9864270e12dd27ea1db1beddeac547cfaa3e7f4022a5",
+      "bytes": 1167125
+    },
+    {
+      "path": "devlog/game-software-webgl/citadel-gate-classic--kit.png",
+      "sha256": "27387b2a71b6fbdfad9479a7673082d52e88fe6f0f4aef865b25e4691d953f9a",
+      "bytes": 1256921
+    },
+    {
+      "path": "devlog/game-software-webgl/gauntlet-siren-chase--kit.png",
+      "sha256": "6306bf613eea08522c81c4a3d9c130554af1b7bb2358a8007d12e6e4078e2bbf",
+      "bytes": 1168122
+    },
+    {
+      "path": "devlog/game-software-webgl/gauntlet-siren-chase--source.png",
+      "sha256": "0a11dbaae595b5720566a321fe3e38463ae8738be20291e5bb8695fa044f2567",
+      "bytes": 1163686
+    },
+    {
+      "path": "devlog/game-software-webgl/reactor-core-chase--source.png",
+      "sha256": "634b2d969c2e6062f142b2e99baf08e05c2e6e6bf8f5da869181b4af8e30cf23",
+      "bytes": 1255251
+    },
+    {
+      "path": "devlog/game-software-webgl/battery-director-chase--source.png",
+      "sha256": "ba0a03d1a19a86acdc3a50b0eeede5a905d9a144fe3950f25879bd9ecdfdbb2d",
+      "bytes": 1199963
+    },
+    {
+      "path": "devlog/game-software-webgl/citadel-keep-chase--kit.png",
+      "sha256": "26b49af2713b4ad8488794142feba92878425ca56d8f03aaa4cf49e32e051193",
+      "bytes": 1338332
+    },
+    {
+      "path": "devlog/game-software-webgl/edge-departure-chase--kit.png",
+      "sha256": "fb7158c968f76a7d889bb245a1fc430184b174a9a6eba4bfcd7558be4c3d9f0d",
+      "bytes": 1177412
+    },
+    {
+      "path": "devlog/game-software-webgl/citadel-keep-chase--source.png",
+      "sha256": "3776cc6eb2d72824c0dab560922fc92a345b5312e2f533b4aa130660167a6d89",
+      "bytes": 1337291
+    },
+    {
+      "path": "devlog/game-software-webgl/reactor-core-modern--source.png",
+      "sha256": "b0c1898632913c5ea1cc9ca16614868056e1b57e969d5202d0b9437f0716b4c6",
+      "bytes": 1248493
+    },
+    {
+      "path": "devlog/game-software-webgl/airfield-tower-chase--kit.png",
+      "sha256": "b6afb8231b677608f3ba4665395c236f5cbbac9cf9aec4983207a2c4c7d2a466",
+      "bytes": 1211019
+    },
+    {
+      "path": "devlog/game-software-webgl/boss-throat-classic--kit.png",
+      "sha256": "631201234bc7b0a3eea6094d31c59ec401384db8107ecccf3f21c267eb9b3dff",
+      "bytes": 1168127
+    },
+    {
+      "path": "devlog/game-software-webgl/battery-director-chase--kit.png",
+      "sha256": "0dfaa1b6e26f1b4c9cdae038f54262ffa59b6a6b4978b8bca0d532ab138fee71",
+      "bytes": 1202939
+    },
+    {
+      "path": "devlog/game-software-webgl/reactor-core-modern--kit.png",
+      "sha256": "7fd23124ef751ebe61ebef3d154b7e5503ad8615f40a1ea7b814d1e5c0acf64c",
+      "bytes": 1245946
+    },
+    {
+      "path": "devlog/blender-mcp/00-mcp-reconnect-scratch-scene.png",
+      "sha256": "24ca7efb8fb0597534c3284e8b503eea9f12e6c9767557bccb2bc2e52639c30f",
+      "bytes": 404661
+    },
+    {
+      "path": "tools/gpu-probe.cjs",
+      "sha256": "68e633c0da6bc2236d80dbcc8ffcc80656c0eab236fde5eb988a6161876194eb",
+      "bytes": 971
+    },
+    {
+      "path": "tools/package.sh",
+      "sha256": "54ccdef2dcd4dc465c05412899a7d25ff6bb2e7c67085b0554c102f7a3ef8881",
+      "bytes": 3536
+    }
+  ],
+  "changes": "Removed Python caches; made retained authoring/capture helpers repository-relative and native-Linux only. Original helpers remain in the full archive. All editable scenes and module generators retained."
+}

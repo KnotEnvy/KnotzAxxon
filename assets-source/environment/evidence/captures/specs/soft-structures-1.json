@@ -1,0 +1,131 @@
+{
+ "out": "captures/soft-structures-1",
+ "seed": 7,
+ "quality": "high",
+ "width": 1024,
+ "height": 576,
+ "variants": {
+  "source": "environmentKit=0",
+  "kit": ""
+ },
+ "scenes": [
+  [
+   "title",
+   "title",
+   0,
+   0,
+   60,
+   null
+  ],
+  [
+   "boss-throat-classic",
+   "classic",
+   7,
+   100,
+   12,
+   {
+    "x": 0,
+    "y": 12
+   }
+  ],
+  [
+   "boss-chamber-classic",
+   "classic",
+   7,
+   380,
+   12,
+   {
+    "x": 0,
+    "y": 12
+   }
+  ],
+  [
+   "boss-chamber-chase",
+   "chase",
+   7,
+   380,
+   12,
+   {
+    "x": 0,
+    "y": 12
+   }
+  ],
+  [
+   "edge-departure-chase",
+   "chase",
+   2,
+   -70,
+   12,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "edge-arrival-chase",
+   "chase",
+   3,
+   -78,
+   12,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "edge-arrival-classic",
+   "classic",
+   3,
+   -78,
+   12,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "platform-chase",
+   "chase",
+   2,
+   290,
+   12,
+   {
+    "x": 0,
+    "y": 5
+   }
+  ],
+  [
+   "debris-gate-chase",
+   "chase",
+   4,
+   70,
+   12,
+   {
+    "x": 0,
+    "y": 12
+   }
+  ],
+  [
+   "fence-chase",
+   "chase",
+   3,
+   575,
+   12,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "citadel-gate-classic",
+   "classic",
+   5,
+   790,
+   12,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ]
+ ]
+}

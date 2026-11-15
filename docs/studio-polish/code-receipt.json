@@ -1,0 +1,11 @@
+{
+  "archive": "/home/knotz2/code/KnotzAxxon-archive/2026-11-14/studio-polish/nitrobliss-studio-code-0ed9d2c-20261115.tar.gz",
+  "archiveSha256": "0b6cff273bc78b2f74f24a0149e0a073c6e2d9846a847e3d9f30ca2573c44e72",
+  "payloadFilesVerified": 15,
+  "baseRevision": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
+  "applied": true,
+  "receiverTestsPassed": 114,
+  "receiverBuild": "passed",
+  "receiverReleaseSmoke": "passed",
+  "published": false
+}

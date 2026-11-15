@@ -1,0 +1,390 @@
+{
+ "file": "reactor-spine-composition.blend",
+ "sha256": "f5522dddcb71914bb2bf0291a69ba21333b9e11622da091cf9db198da8792f3a",
+ "bytes": 2624434,
+ "blender": "5.2.1 LTS",
+ "scene": "reactor-spine",
+ "unit": "METRIC",
+ "libraries": [],
+ "provenance": {
+  "schema": "knotzaxxon-environment-composition-v1",
+  "seed": 7,
+  "loop": 0,
+  "chunks": [
+   54,
+   58
+  ],
+  "gateTime": 1.7,
+  "note": "Actual Fortress._buildChunk output (kit off vs kit on) in game coordinates; gate planes/posts posed by the source update(time). Player/threat models are placed by the Blender builder from shipped GLBs at scale 1.",
+  "fortressSha": "a3dc93d67d5e4d2169f0cbbe08f4faee2629460279498947ba3dbb023360bdb0"
+ },
+ "reuse": "Approved shipped props in this scene: player and threat GLBs at scale 1 (GAMEPLAY); scenery templates that load in Node (cargo kit, cooling stack, covered fighter, fuel depot, flak gun, antenna, wreckage, carrier) are inside the streamed chunk meshes exactly as the runtime stamps them. Bunker, dreadnought and asteroid templates load only in the browser, so those props show their procedural fallback here.",
+ "notLiveGpu": "Offline reconstruction of actual CPU-streamed chunk geometry with proxy materials; not a live WebGL capture.",
+ "collections": {
+  "KIT_streamed": {
+   "objects": 45,
+   "triangles": 47474,
+   "hiddenInViewport": false
+  },
+  "SOURCE_streamed": {
+   "objects": 46,
+   "triangles": 33884,
+   "hiddenInViewport": true
+  },
+  "GAMEPLAY": {
+   "objects": 118,
+   "triangles": 28092,
+   "hiddenInViewport": false
+  },
+  "REFERENCE": {
+   "objects": 3,
+   "triangles": 0,
+   "hiddenInViewport": false
+  },
+  "CAMERAS": {
+   "objects": 9,
+   "triangles": 0,
+   "hiddenInViewport": false
+  },
+  "KIT_LIBRARY": {
+   "objects": 175,
+   "triangles": 6262,
+   "hiddenInViewport": true
+  }
+ },
+ "kitStreamedAttributesByBucket": {
+  "deck": [
+   "Col"
+  ],
+  "grate": [
+   "Col"
+  ],
+  "neon": [
+   "Col,aAnim"
+  ],
+  "dark": [
+   "Col"
+  ],
+  "paint": [
+   "Col"
+  ],
+  "hull": [
+   "Col"
+  ],
+  "spin": [
+   "Col,aPivot,aSpin"
+  ],
+  "hazard": [
+   "Col"
+  ],
+  "forceField": [
+   "Col"
+  ]
+ },
+ "gameplay": [
+  {
+   "name": "PLAYER_shipped_scale1",
+   "gamePosition": [
+    0.0,
+    9.0,
+    5376.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 8
+  },
+  {
+   "name": "THREAT_turret_5322",
+   "gamePosition": [
+    5.231,
+    0.0,
+    5321.636
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 8
+  },
+  {
+   "name": "THREAT_turret_5358",
+   "gamePosition": [
+    -1.87,
+    0.0,
+    5357.951
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 8
+  },
+  {
+   "name": "THREAT_turret_5385",
+   "gamePosition": [
+    -7.249,
+    0.0,
+    5384.724
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 8
+  },
+  {
+   "name": "THREAT_mine_5400",
+   "gamePosition": [
+    9.416,
+    10.45,
+    5399.581
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 4
+  },
+  {
+   "name": "THREAT_mine_5410",
+   "gamePosition": [
+    3.548,
+    19.386,
+    5409.631
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 4
+  },
+  {
+   "name": "THREAT_mine_5595",
+   "gamePosition": [
+    1.734,
+    14.77,
+    5595.066
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 4
+  },
+  {
+   "name": "THREAT_mine_5597",
+   "gamePosition": [
+    4.295,
+    5.778,
+    5597.158
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 4
+  },
+  {
+   "name": "THREAT_mine_5601",
+   "gamePosition": [
+    -1.759,
+    10.713,
+    5600.787
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 4
+  },
+  {
+   "name": "THREAT_mine_5605",
+   "gamePosition": [
+    -2.306,
+    12.011,
+    5604.653
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 4
+  },
+  {
+   "name": "THREAT_turret_5701",
+   "gamePosition": [
+    7.911,
+    0.0,
+    5701.326
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 8
+  }
+ ],
+ "cameras": [
+  {
+   "name": "CAM_classic_pose0_z5376",
+   "rig": "classic",
+   "type": "ORTHO",
+   "eyeGame": [
+    -45.255,
+    54.255,
+    5358.745
+   ],
+   "targetGame": [
+    0,
+    9,
+    5404
+   ],
+   "maxDelta": 4.88e-05
+  },
+  {
+   "name": "CAM_modern_pose0_z5376",
+   "rig": "modern",
+   "type": "PERSP",
+   "eyeGame": [
+    -9.919,
+    23.0,
+    5348.749
+   ],
+   "targetGame": [
+    0.0,
+    10.2,
+    5392.0
+   ],
+   "maxDelta": 0.0001094
+  },
+  {
+   "name": "CAM_chase_pose0_z5376",
+   "rig": "chase",
+   "type": "PERSP",
+   "eyeGame": [
+    -2.509,
+    18.5,
+    5352.131
+   ],
+   "targetGame": [
+    0.0,
+    10.2,
+    5392.0
+   ],
+   "maxDelta": 0.0001269
+  },
+  {
+   "name": "CAM_classic_pose1_z5450",
+   "rig": "classic",
+   "type": "ORTHO",
+   "eyeGame": [
+    -45.255,
+    54.255,
+    5432.745
+   ],
+   "targetGame": [
+    0,
+    9,
+    5478
+   ],
+   "maxDelta": 4.88e-05
+  },
+  {
+   "name": "CAM_modern_pose1_z5450",
+   "rig": "modern",
+   "type": "PERSP",
+   "eyeGame": [
+    -9.919,
+    23.0,
+    5422.749
+   ],
+   "targetGame": [
+    0.0,
+    10.2,
+    5466.0
+   ],
+   "maxDelta": 0.0001094
+  },
+  {
+   "name": "CAM_chase_pose1_z5450",
+   "rig": "chase",
+   "type": "PERSP",
+   "eyeGame": [
+    -2.509,
+    18.5,
+    5426.131
+   ],
+   "targetGame": [
+    0.0,
+    10.2,
+    5466.0
+   ],
+   "maxDelta": 0.0001269
+  },
+  {
+   "name": "CAM_classic_pose2_z5300",
+   "rig": "classic",
+   "type": "ORTHO",
+   "eyeGame": [
+    -45.255,
+    54.255,
+    5282.745
+   ],
+   "targetGame": [
+    0,
+    9,
+    5328
+   ],
+   "maxDelta": 4.88e-05
+  },
+  {
+   "name": "CAM_modern_pose2_z5300",
+   "rig": "modern",
+   "type": "PERSP",
+   "eyeGame": [
+    -9.919,
+    23.0,
+    5272.749
+   ],
+   "targetGame": [
+    0.0,
+    10.2,
+    5316.0
+   ],
+   "maxDelta": 0.0001094
+  },
+  {
+   "name": "CAM_chase_pose2_z5300",
+   "rig": "chase",
+   "type": "PERSP",
+   "eyeGame": [
+    -2.509,
+    18.5,
+    5276.131
+   ],
+   "targetGame": [
+    0.0,
+    10.2,
+    5316.0
+   ],
+   "maxDelta": 0.0001269
+  }
+ ],
+ "packedImages": 0,
+ "images": 0,
+ "failures": [],
+ "passed": true
+}

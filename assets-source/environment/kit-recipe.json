@@ -1,0 +1,5448 @@
+{
+ "schema": "knotzaxxon-environment-kit-v1",
+ "axes": "game metres: +x far wall, +y up, +z flight; GLB vertices equal game coordinates (absolute x unless a part note says local)",
+ "animModes": {
+  "STEADY": 0,
+  "STROBE": 1,
+  "CHASE": 2,
+  "BREATHE": 3,
+  "FLICKER": 4
+ },
+ "modules": {
+  "RS_WallFrame": {
+   "parts": [
+    {
+     "part": "plinth",
+     "node": "RS_WallFrame__plinth",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Stepped base course x26.3..27.4; the source base conduit sits in its kerb step. Unit length.",
+     "triangles": 14,
+     "localBounds": {
+      "min": [
+       26.3,
+       0.0,
+       -0.5
+      ],
+      "max": [
+       27.4,
+       1.5,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "pier_foot",
+     "node": "RS_WallFrame__pier_foot",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Battered pier footing at a source rib z: block to y1.9, shoulder to the shaft section at y2.5.",
+     "triangles": 32,
+     "localBounds": {
+      "min": [
+       25.75,
+       -0.0,
+       -1.62
+      ],
+      "max": [
+       27.4,
+       2.5,
+       1.62
+      ]
+     }
+    },
+    {
+     "part": "pier_shaft",
+     "node": "RS_WallFrame__pier_shaft",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 2.5, zRib)",
+      "scale": "sy=H-4.3"
+     },
+     "owner": "chunk",
+     "note": "Pier shaft x25.95..27.4, z+-1.3, chamfered. Unit height; the source rib height H sets sy.",
+     "triangles": 12,
+     "localBounds": {
+      "min": [
+       25.95,
+       -0.0,
+       -1.3
+      ],
+      "max": [
+       27.4,
+       1.0,
+       1.3
+      ]
+     }
+    },
+    {
+     "part": "pier_head",
+     "node": "RS_WallFrame__pier_head",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, H-1.8, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Corbelled pier head: flares to x25.8, block, stepped cap. 1.8 tall, top at the source rib height.",
+     "triangles": 36,
+     "localBounds": {
+      "min": [
+       25.8,
+       0.0,
+       -1.5
+      ],
+      "max": [
+       27.4,
+       1.5,
+       1.5
+      ]
+     }
+    },
+    {
+     "part": "pier_cap",
+     "node": "RS_WallFrame__pier_cap",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, H-1.8, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Stepped cap block on the pier head (split from pier_head so the two heaviest sectors can omit it).",
+     "triangles": 16,
+     "localBounds": {
+      "min": [
+       26.15,
+       1.5,
+       -1.05
+      ],
+      "max": [
+       27.4,
+       1.8,
+       1.05
+      ]
+     }
+    },
+    {
+     "part": "pier_lamp",
+     "node": "RS_WallFrame__pier_lamp",
+     "bucket": "neon",
+     "tint": "0xffbf69",
+     "uvScale": 8,
+     "gain": 0.55,
+     "fx": {
+      "anim": [
+       3,
+       0.4,
+       "i*0.17"
+      ]
+     },
+     "stamp": {
+      "origin": "(0, H-1.8, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Dim head lamp (sub-bloom), mirrors the source near-side rib beacon rate/phase.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       25.74,
+       0.85,
+       -0.5
+      ],
+      "max": [
+       25.8,
+       1.2,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "stile",
+     "node": "RS_WallFrame__stile",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y0, z)",
+      "scale": "sy=height"
+     },
+     "owner": "chunk",
+     "note": "Vertical frame member 0.4 proud of the field, unit height.",
+     "triangles": 6,
+     "localBounds": {
+      "min": [
+       27.0,
+       0.0,
+       -0.25
+      ],
+      "max": [
+       27.4,
+       1.0,
+       0.25
+      ]
+     }
+    },
+    {
+     "part": "rail",
+     "node": "RS_WallFrame__rail",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, yMid, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Horizontal frame member (frieze) 0.45 proud, 0.5 tall, unit length.",
+     "triangles": 6,
+     "localBounds": {
+      "min": [
+       26.95,
+       -0.25,
+       -0.5
+      ],
+      "max": [
+       27.4,
+       0.25,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "coping",
+     "node": "RS_WallFrame__coping",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Wall coping x26.8..34.2 with a weathered nose; sits on the source wall top y=h. Unit length.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       26.8,
+       0.0,
+       -0.5
+      ],
+      "max": [
+       34.2,
+       0.45,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "win_frame",
+     "node": "RS_WallFrame__win_frame",
+     "bucket": "dark",
+     "tint": "0x56606c",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, yMid, z)",
+      "scale": "sy, sz"
+     },
+     "owner": "chunk",
+     "note": "Window bezel on the recessed field; unit y/z.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       27.2,
+       -0.5,
+       -0.5
+      ],
+      "max": [
+       27.4,
+       0.5,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "win_glass",
+     "node": "RS_WallFrame__win_glass",
+     "bucket": "neon",
+     "tint": "0xffffff",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {
+      "anim": "source window flicker tuple or none"
+     },
+     "stamp": {
+      "origin": "(0, yMid, z)",
+      "scale": "sy, sz"
+     },
+     "owner": "chunk",
+     "note": "Lit pane; source size/warm flag/flicker tuple. Unit y/z.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       27.14,
+       -0.5,
+       -0.5
+      ],
+      "max": [
+       27.2,
+       0.5,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "sign_hood",
+     "node": "RS_WallFrame__sign_hood",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y+h+0.45, z)",
+      "scale": "sz=w+1.4"
+     },
+     "owner": "chunk",
+     "note": "Hood over the source neon sign, unit length.",
+     "triangles": 12,
+     "localBounds": {
+      "min": [
+       26.15,
+       0.0,
+       -0.5
+      ],
+      "max": [
+       27.4,
+       0.34,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "sign_arm",
+     "node": "RS_WallFrame__sign_arm",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Stand-off arm carrying the source sign backing off the recessed field.",
+     "triangles": 8,
+     "localBounds": {
+      "min": [
+       26.88,
+       -0.1,
+       -0.1
+      ],
+      "max": [
+       27.4,
+       0.1,
+       0.1
+      ]
+     }
+    }
+   ],
+   "triangles": 182,
+   "glb": {
+    "file": "modules/RS_WallFrame.glb",
+    "bytes": 22164,
+    "sha256": "dffe25cf5c24bab0ae9654e4d31c9fcd7c3dc3eceb8b60ce741168a236c6257f"
+   }
+  },
+  "RS_PipeRun": {
+   "parts": [
+    {
+     "part": "main",
+     "node": "RS_PipeRun__main",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "segment start on axis",
+      "scale": "sx=sy=r, sz=len"
+     },
+     "owner": "chunk",
+     "note": "Unit pipe along +z (radius 1, 10 sides, open ends that always die inside a pier, pylon or collar).",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       -0.9511,
+       -1.0,
+       0.0
+      ],
+      "max": [
+       0.9511,
+       1.0,
+       1.0
+      ]
+     }
+    },
+    {
+     "part": "collar",
+     "node": "RS_PipeRun__collar",
+     "bucket": "hull",
+     "tint": "0x8894a4",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(26.4, yPipe, zFace)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Penetration collar where a main enters the approach (-z) face of a pier / pylon / bastion. Source collar tint.",
+     "triangles": 22,
+     "localBounds": {
+      "min": [
+       -0.4619,
+       -0.4619,
+       -0.26
+      ],
+      "max": [
+       0.4619,
+       0.4619,
+       0.02
+      ]
+     }
+    },
+    {
+     "part": "elbow_end",
+     "node": "RS_PipeRun__elbow_end",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(26.4, yPipe, zRunEnd)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Run end beside a bay or fan: quarter bend from +z into the wall with a wall flange. Local origin = end of the straight run.",
+     "triangles": 64,
+     "localBounds": {
+      "min": [
+       -0.34,
+       -0.4503,
+       0.0
+      ],
+      "max": [
+       1.05,
+       0.4503,
+       1.12
+      ]
+     }
+    },
+    {
+     "part": "elbow_start",
+     "node": "RS_PipeRun__elbow_start",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(26.4, yPipe, zRunStart)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Mirror of elbow_end for the start of a run.",
+     "triangles": 64,
+     "localBounds": {
+      "min": [
+       -0.34,
+       -0.4503,
+       -1.12
+      ],
+      "max": [
+       1.05,
+       0.4503,
+       0.0
+      ]
+     }
+    },
+    {
+     "part": "riser",
+     "node": "RS_PipeRun__riser",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(26.4, 5.1, z)",
+      "scale": "sy=h-5.1+0.5"
+     },
+     "owner": "chunk",
+     "note": "Riser from the upper main to the crest, unit height, r0.26.",
+     "triangles": 16,
+     "localBounds": {
+      "min": [
+       -0.26,
+       0.0,
+       -0.26
+      ],
+      "max": [
+       0.26,
+       1.0,
+       0.26
+      ]
+     }
+    },
+    {
+     "part": "riser_tee",
+     "node": "RS_PipeRun__riser_tee",
+     "bucket": "hull",
+     "tint": "0x8894a4",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(26.4, 5.1, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Tee sleeve on the upper main at the riser foot.",
+     "triangles": 50,
+     "localBounds": {
+      "min": [
+       -0.425,
+       -0.425,
+       -0.42
+      ],
+      "max": [
+       0.425,
+       0.75,
+       0.42
+      ]
+     }
+    },
+    {
+     "part": "riser_head",
+     "node": "RS_PipeRun__riser_head",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Riser bend over the coping into the crest coolant main (x28.2, y h+1.0). Absolute x.",
+     "triangles": 80,
+     "localBounds": {
+      "min": [
+       26.14,
+       0.5,
+       -0.26
+      ],
+      "max": [
+       28.2,
+       1.26,
+       0.26
+      ]
+     }
+    },
+    {
+     "part": "riser_sleeve",
+     "node": "RS_PipeRun__riser_sleeve",
+     "bucket": "hull",
+     "tint": "0x8894a4",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(26.4, L, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Deck sleeve where a riser passes through the gallery slab.",
+     "triangles": 28,
+     "localBounds": {
+      "min": [
+       -0.4,
+       -0.42,
+       -0.4
+      ],
+      "max": [
+       0.4,
+       0.14,
+       0.4
+      ]
+     }
+    }
+   ],
+   "triangles": 344,
+   "glb": {
+    "file": "modules/RS_PipeRun.glb",
+    "bytes": 17352,
+    "sha256": "f6171771b7f041038722a38c594a4e0ae68b5165bdd4544590583cbc848a90fc"
+   }
+  },
+  "RS_Gallery": {
+   "parts": [
+    {
+     "part": "deck",
+     "node": "RS_Gallery__deck",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, L, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Gallery slab x25.95..27.4, top at the source ledge y. Unit length.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       25.95,
+       -0.3,
+       -0.5
+      ],
+      "max": [
+       27.4,
+       0.0,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "rail",
+     "node": "RS_Gallery__rail",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, L, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Top rail and toe board, unit length.",
+     "triangles": 14,
+     "localBounds": {
+      "min": [
+       25.97,
+       0.0,
+       -0.5
+      ],
+      "max": [
+       26.09,
+       1.12,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "post",
+     "node": "RS_Gallery__post",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, L, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Stanchion.",
+     "triangles": 8,
+     "localBounds": {
+      "min": [
+       25.98,
+       0.0,
+       -0.05
+      ],
+      "max": [
+       26.08,
+       1.0,
+       0.05
+      ]
+     }
+    },
+    {
+     "part": "brace",
+     "node": "RS_Gallery__brace",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, L, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Knee brace under the slab.",
+     "triangles": 8,
+     "localBounds": {
+      "min": [
+       26.1,
+       -2.0,
+       -0.09
+      ],
+      "max": [
+       27.4,
+       -0.3,
+       0.09
+      ]
+     }
+    }
+   ],
+   "triangles": 40,
+   "glb": {
+    "file": "modules/RS_Gallery.glb",
+    "bytes": 5856,
+    "sha256": "95583cd09393700c6b1e27cf0dc73278b074ea7db28e775b15ed31dc03d8b7dc"
+   }
+  },
+  "RS_ServiceBay": {
+   "parts": [
+    {
+     "part": "shell",
+     "node": "RS_ServiceBay__shell",
+     "bucket": "dark",
+     "tint": "0x303844",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, z)",
+      "scale": "sy=h, sz=w"
+     },
+     "owner": "chunk",
+     "note": "Pocket walls x27.0..30.6 (ceiling, back, both sides), inward facing. Unit y/z.",
+     "triangles": 8,
+     "localBounds": {
+      "min": [
+       27.0,
+       0.0,
+       -0.5
+      ],
+      "max": [
+       30.6,
+       1.0,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "floor",
+     "node": "RS_ServiceBay__floor",
+     "bucket": "grate",
+     "tint": "0x7f8a99",
+     "uvScale": 3,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, z)",
+      "scale": "sz=w"
+     },
+     "owner": "chunk",
+     "note": "Bay floor grating, unit length.",
+     "triangles": 2,
+     "localBounds": {
+      "min": [
+       26.3,
+       0.04,
+       -0.5
+      ],
+      "max": [
+       30.6,
+       0.04,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "jamb",
+     "node": "RS_ServiceBay__jamb",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zJamb)",
+      "scale": "sy=h+1.5"
+     },
+     "owner": "chunk",
+     "note": "Bay jamb x26.55..27.4, 0.9 wide, unit height; one per side at z+-(w/2+0.45).",
+     "triangles": 12,
+     "localBounds": {
+      "min": [
+       26.55,
+       -0.0,
+       -0.45
+      ],
+      "max": [
+       27.4,
+       1.0,
+       0.45
+      ]
+     }
+    },
+    {
+     "part": "header",
+     "node": "RS_ServiceBay__header",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, z)",
+      "scale": "sz=w+1.8"
+     },
+     "owner": "chunk",
+     "note": "Header beam over the opening, unit length.",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       26.55,
+       0.0,
+       -0.5
+      ],
+      "max": [
+       27.4,
+       1.5,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "hazard",
+     "node": "RS_ServiceBay__hazard",
+     "bucket": "hazard",
+     "tint": "0xffffff",
+     "uvScale": 3,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, z)",
+      "scale": "sz=w+1.2"
+     },
+     "owner": "chunk",
+     "note": "Source hazard lintel band on the header face, unit length.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       26.5,
+       0.45,
+       -0.5
+      ],
+      "max": [
+       26.55,
+       1.05,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "shutter",
+     "node": "RS_ServiceBay__shutter",
+     "bucket": "dark",
+     "tint": "0x56606c",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, z)",
+      "scale": "sy=h, sz=w"
+     },
+     "owner": "chunk",
+     "note": "Half-raised roller shutter 1.6 m inside the bay; unit y/z.",
+     "triangles": 22,
+     "localBounds": {
+      "min": [
+       28.42,
+       0.46,
+       -0.5
+      ],
+      "max": [
+       28.62,
+       1.0,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "ceiling_light",
+     "node": "RS_ServiceBay__ceiling_light",
+     "bucket": "neon",
+     "tint": "0xff8a3a",
+     "uvScale": 8,
+     "gain": 0.85,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, z)",
+      "scale": "sz=w-1"
+     },
+     "owner": "chunk",
+     "note": "Source warm ceiling strip (tuple kept) at the bay mouth, unit length.",
+     "triangles": 12,
+     "localBounds": {
+      "min": [
+       27.45,
+       -0.14,
+       -0.5
+      ],
+      "max": [
+       27.75,
+       -0.02,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "back_light",
+     "node": "RS_ServiceBay__back_light",
+     "bucket": "neon",
+     "tint": "0xffd9a0",
+     "uvScale": 8,
+     "gain": 0.7,
+     "fx": {
+      "anim": [
+       2,
+       0.5,
+       0
+      ]
+     },
+     "stamp": {
+      "origin": "(0, 0, z)",
+      "scale": "sz=w-2"
+     },
+     "owner": "chunk",
+     "note": "Source floor chase strip (tuple kept, warm white instead of player cyan) at the back wall, unit length.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       30.38,
+       0.08,
+       -0.5
+      ],
+      "max": [
+       30.58,
+       0.3,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "strobe_housing",
+     "node": "RS_ServiceBay__strobe_housing",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 3,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h+1.5, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Strobe housing on the header.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       26.66,
+       0.0,
+       -0.34
+      ],
+      "max": [
+       27.3,
+       0.3,
+       0.34
+      ]
+     }
+    },
+    {
+     "part": "strobe",
+     "node": "RS_ServiceBay__strobe",
+     "bucket": "neon",
+     "tint": "0xff8a3a",
+     "uvScale": 8,
+     "gain": 1.6,
+     "fx": {
+      "anim": [
+       1,
+       0.8,
+       "source phase"
+      ]
+     },
+     "stamp": {
+      "origin": "(0, h+1.8, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Source warning strobe (size 0.55, gain 1.6, STROBE 0.8, source phase).",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       26.7,
+       0.0,
+       -0.275
+      ],
+      "max": [
+       27.25,
+       0.55,
+       0.275
+      ]
+     }
+    }
+   ],
+   "triangles": 116,
+   "glb": {
+    "file": "modules/RS_ServiceBay.glb",
+    "bytes": 16996,
+    "sha256": "e5a8d294716a3f883a6871893c816acca1061fc4a45894f73c535742f19a7059"
+   }
+  },
+  "RS_FanHousing": {
+   "parts": [
+    {
+     "part": "cowl",
+     "node": "RS_FanHousing__cowl",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 5,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, z)",
+      "scale": "sy=sz=r (x unscaled)"
+     },
+     "owner": "chunk",
+     "note": "Round cowl from the field (x27.4) to a lip at x25.95, bore radius 1.0r.",
+     "triangles": 96,
+     "localBounds": {
+      "min": [
+       25.95,
+       -1.2171,
+       -1.2171
+      ],
+      "max": [
+       27.4,
+       1.2171,
+       1.2171
+      ]
+     }
+    },
+    {
+     "part": "mount",
+     "node": "RS_FanHousing__mount",
+     "bucket": "dark",
+     "tint": "0x5a6878",
+     "uvScale": 5,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, z)",
+      "scale": "sy=sz=r (x unscaled)"
+     },
+     "owner": "chunk",
+     "note": "Square mounting plate on the field (source housing is 2.3r square).",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       27.26,
+       -1.4,
+       -1.4
+      ],
+      "max": [
+       27.4,
+       1.4,
+       1.4
+      ]
+     }
+    },
+    {
+     "part": "void",
+     "node": "RS_FanHousing__void",
+     "bucket": "neon",
+     "tint": "0x0c1418",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, z)",
+      "scale": "sy=sz=r (x unscaled)"
+     },
+     "owner": "chunk",
+     "note": "Source near-black shroud void (neon bucket, 0x0c1418) at the duct back.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       27.24,
+       -0.9659,
+       -0.9659
+      ],
+      "max": [
+       27.24,
+       0.9659,
+       0.9659
+      ]
+     }
+    },
+    {
+     "part": "stator",
+     "node": "RS_FanHousing__stator",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, z)",
+      "scale": "sy=sz=r (x unscaled)"
+     },
+     "owner": "chunk",
+     "note": "Three stator struts and the bearing behind the rotor sweep.",
+     "triangles": 58,
+     "localBounds": {
+      "min": [
+       26.62,
+       -0.5433,
+       -0.891
+      ],
+      "max": [
+       27.24,
+       1.0,
+       0.891
+      ]
+     }
+    },
+    {
+     "part": "rotor",
+     "node": "RS_FanHousing__rotor",
+     "bucket": "spin",
+     "tint": "0xa8b4c2",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {
+      "pivot": "stamp origin",
+      "spin": "source [1,0,0,rate]"
+     },
+     "stamp": {
+      "origin": "source pivot (26.3, y, z)",
+      "scale": "s=r"
+     },
+     "owner": "chunk",
+     "note": "Six twisted blades and spinner about +x; local origin is the source pivot; tip 0.9r inside the 1.0r bore.",
+     "triangles": 122,
+     "localBounds": {
+      "min": [
+       -0.12,
+       -0.8952,
+       -0.9042
+      ],
+      "max": [
+       0.1141,
+       0.8952,
+       0.9042
+      ]
+     }
+    }
+   ],
+   "triangles": 296,
+   "glb": {
+    "file": "modules/RS_FanHousing.glb",
+    "bytes": 18700,
+    "sha256": "73acc2aef9cf4557a18857b72428433838c0e4cc80115ddf3991bb344d810629"
+   }
+  },
+  "RS_ExhaustTrunk": {
+   "parts": [
+    {
+     "part": "trunk",
+     "node": "RS_ExhaustTrunk__trunk",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Exhaust trunk section x29.6..33.0, y h+0.9..h+3.3, chamfered crown. Unit length.",
+     "triangles": 12,
+     "localBounds": {
+      "min": [
+       29.6,
+       0.9,
+       -0.5
+      ],
+      "max": [
+       33.0,
+       3.3,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "joint",
+     "node": "RS_ExhaustTrunk__joint",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Expansion joint rib with the trunk saddle and the coolant-main saddle, every 16 m.",
+     "triangles": 38,
+     "localBounds": {
+      "min": [
+       27.75,
+       0.45,
+       -0.4
+      ],
+      "max": [
+       33.16,
+       3.46,
+       0.4
+      ]
+     }
+    },
+    {
+     "part": "vent",
+     "node": "RS_ExhaustTrunk__vent",
+     "bucket": "dark",
+     "tint": "0x5a6878",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Vent hood on the trunk crown.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       30.4,
+       3.3,
+       -1.2
+      ],
+      "max": [
+       32.2,
+       3.78,
+       1.2
+      ]
+     }
+    },
+    {
+     "part": "vent_glow",
+     "node": "RS_ExhaustTrunk__vent_glow",
+     "bucket": "neon",
+     "tint": "0xff7a3a",
+     "uvScale": 8,
+     "gain": 0.8,
+     "fx": {
+      "anim": [
+       2,
+       0.35,
+       "fract(|z - zCore| / 160)"
+      ]
+     },
+     "stamp": {
+      "origin": "(0, h, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Vent throat glow on the lane side of the hood; chase phase converges on the reactor core.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       30.34,
+       3.4,
+       -1.0
+      ],
+      "max": [
+       30.4,
+       3.68,
+       1.0
+      ]
+     }
+    },
+    {
+     "part": "house_body",
+     "node": "RS_ExhaustTrunk__house_body",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, yMin, zSeam)",
+      "scale": "sy=height"
+     },
+     "owner": "chunk",
+     "note": "Junction house on a chunk seam where the seeded wall height steps; x27.05..34.3, z0..4.4. Unit height.",
+     "triangles": 12,
+     "localBounds": {
+      "min": [
+       27.05,
+       0.0,
+       -0.0
+      ],
+      "max": [
+       34.3,
+       1.0,
+       4.4
+      ]
+     }
+    },
+    {
+     "part": "house_roof",
+     "node": "RS_ExhaustTrunk__house_roof",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, yTop, zSeam)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Junction house roof slab and twin flues.",
+     "triangles": 88,
+     "localBounds": {
+      "min": [
+       26.65,
+       0.0,
+       -0.3
+      ],
+      "max": [
+       34.55,
+       2.1,
+       4.7
+      ]
+     }
+    },
+    {
+     "part": "house_louvre",
+     "node": "RS_ExhaustTrunk__house_louvre",
+     "bucket": "dark",
+     "tint": "0x56606c",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, yTop-2.6, zSeam)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Lane-facing louvres.",
+     "triangles": 36,
+     "localBounds": {
+      "min": [
+       26.84,
+       0.0,
+       0.9
+      ],
+      "max": [
+       27.1,
+       1.64,
+       3.5
+      ]
+     }
+    },
+    {
+     "part": "house_lamp",
+     "node": "RS_ExhaustTrunk__house_lamp",
+     "bucket": "neon",
+     "tint": "0xff3d55",
+     "uvScale": 8,
+     "gain": 1.4,
+     "fx": {
+      "anim": [
+       1,
+       0.7,
+       "fract(zSeam/97)"
+      ]
+     },
+     "stamp": {
+      "origin": "(0, yTop+0.5, zSeam)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Roof warning lamp.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       27.5,
+       0.0,
+       2.0
+      ],
+      "max": [
+       27.9,
+       0.4,
+       2.4
+      ]
+     }
+    }
+   ],
+   "triangles": 216,
+   "glb": {
+    "file": "modules/RS_ExhaustTrunk.glb",
+    "bytes": 19256,
+    "sha256": "a5b194b4c6fc7ef620049b91a99b3721bb85e533701631233d7633fa13cee528"
+   }
+  },
+  "RS_GateHousing": {
+   "parts": [
+    {
+     "part": "pylon_body",
+     "node": "RS_GateHousing__pylon_body",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, gate.z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Gate pylon behind the far post, x26.7..34.3, z+-3.3, y0..36.6.",
+     "triangles": 16,
+     "localBounds": {
+      "min": [
+       26.7,
+       -0.0,
+       -3.3
+      ],
+      "max": [
+       34.3,
+       36.6,
+       3.3
+      ]
+     }
+    },
+    {
+     "part": "pylon_footing",
+     "node": "RS_GateHousing__pylon_footing",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, gate.z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Battered footing, y0..6, flaring to z+-4.7.",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       26.2,
+       0.0,
+       -4.7
+      ],
+      "max": [
+       34.3,
+       6.0,
+       4.7
+      ]
+     }
+    },
+    {
+     "part": "pylon_cheeks",
+     "node": "RS_GateHousing__pylon_cheeks",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, gate.z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Two cheeks x25.9..26.7 flanking the far post so it sits in a channel.",
+     "triangles": 32,
+     "localBounds": {
+      "min": [
+       25.9,
+       -0.0,
+       -3.0
+      ],
+      "max": [
+       26.75,
+       35.6,
+       3.0
+      ]
+     }
+    },
+    {
+     "part": "pylon_bands",
+     "node": "RS_GateHousing__pylon_bands",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, gate.z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Dark bands wrapping the pylon at y 12 / 24.",
+     "triangles": 40,
+     "localBounds": {
+      "min": [
+       26.5,
+       11.7,
+       -3.5
+      ],
+      "max": [
+       34.5,
+       24.3,
+       3.5
+      ]
+     }
+    },
+    {
+     "part": "pylon_crown",
+     "node": "RS_GateHousing__pylon_crown",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, gate.z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Crown block and beacon mast above the gate header.",
+     "triangles": 54,
+     "localBounds": {
+      "min": [
+       26.2,
+       36.6,
+       -3.7
+      ],
+      "max": [
+       34.7,
+       39.6,
+       3.7
+      ]
+     }
+    },
+    {
+     "part": "pylon_beacon",
+     "node": "RS_GateHousing__pylon_beacon",
+     "bucket": "neon",
+     "tint": "0xff3d55",
+     "uvScale": 8,
+     "gain": 1.4,
+     "fx": {
+      "anim": [
+       1,
+       0.9,
+       "fract(gate.z/53)"
+      ]
+     },
+     "stamp": {
+      "origin": "(0, 0, gate.z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Mast beacon.",
+     "triangles": 12,
+     "localBounds": {
+      "min": [
+       30.2,
+       39.6,
+       -0.3
+      ],
+      "max": [
+       30.8,
+       40.2,
+       0.3
+      ]
+     }
+    },
+    {
+     "part": "collar",
+     "node": "RS_GateHousing__collar",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 3,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, yCoil, gate.z)",
+      "scale": "none; rotY 0 far, pi near"
+     },
+     "owner": "gate-feature",
+     "note": "Emitter collar at a source coil height: two chamfered plates and a core, inside the source coil box (x24.2..27.4, 0.7 tall, z+-1.9).",
+     "triangles": 64,
+     "localBounds": {
+      "min": [
+       24.2,
+       -0.0,
+       -1.9
+      ],
+      "max": [
+       27.4,
+       0.7,
+       1.9
+      ]
+     }
+    },
+    {
+     "part": "emitter",
+     "node": "RS_GateHousing__emitter",
+     "bucket": "neon",
+     "tint": "0xff7a3a",
+     "uvScale": 8,
+     "gain": 1.3,
+     "fx": {
+      "anim": [
+       3,
+       1.4,
+       "yCoil/top"
+      ]
+     },
+     "stamp": {
+      "origin": "(0, yCoil, gate.z)",
+      "scale": "none; rotY 0 far, pi near"
+     },
+     "owner": "gate-feature",
+     "note": "Emitter slot glow, the source coil neon tuple, recessed between the plates.",
+     "triangles": 8,
+     "localBounds": {
+      "min": [
+       24.32,
+       0.24,
+       -1.78
+      ],
+      "max": [
+       27.28,
+       0.46,
+       1.78
+      ]
+     }
+    },
+    {
+     "part": "truss",
+     "node": "RS_GateHousing__truss",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, gate.z)",
+      "scale": "none"
+     },
+     "owner": "gate-feature",
+     "note": "Open box-girder header inside the source lintel volume (x-27..27, y35..36.6, z+-1.7).",
+     "triangles": 488,
+     "localBounds": {
+      "min": [
+       -27.0,
+       35.0,
+       -1.7
+      ],
+      "max": [
+       27.0,
+       36.6,
+       1.7
+      ]
+     }
+    },
+    {
+     "part": "manifold",
+     "node": "RS_GateHousing__manifold",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, gate.z)",
+      "scale": "none"
+     },
+     "owner": "gate-feature",
+     "note": "Coolant manifold inside the header girder.",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       -26.9,
+       35.4766,
+       -0.34
+      ],
+      "max": [
+       26.9,
+       36.1234,
+       0.34
+      ]
+     }
+    },
+    {
+     "part": "lamp_arm",
+     "node": "RS_GateHousing__lamp_arm",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 3,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(x, 0, gate.z)",
+      "scale": "none"
+     },
+     "owner": "gate-feature",
+     "note": "Arm from the bottom chord to each source chase lamp (x step 3, z-1.8).",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       -0.07,
+       35.0,
+       -1.7
+      ],
+      "max": [
+       0.07,
+       35.14,
+       -1.5
+      ]
+     }
+    }
+   ],
+   "triangles": 764,
+   "glb": {
+    "file": "modules/RS_GateHousing.glb",
+    "bytes": 51188,
+    "sha256": "515210bbffad5997abbbaeaefeb869d33c12293917d85a6bf075ab6145a37999"
+   }
+  },
+  "RS_ReactorCore": {
+   "parts": [
+    {
+     "part": "podium",
+     "node": "RS_ReactorCore__podium",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zCore)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Battered podium y0..5 (stamp y=0).",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       25.75,
+       0.0,
+       -13.7
+      ],
+      "max": [
+       34.6,
+       5.0,
+       13.7
+      ]
+     }
+    },
+    {
+     "part": "body",
+     "node": "RS_ReactorCore__body",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zCore)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Bastion body, unit height (stamp y=5, sy=Hb-5): flanks, back, and a front wall with three true slot pockets 0.55 deep.",
+     "triangles": 54,
+     "localBounds": {
+      "min": [
+       25.95,
+       0.0,
+       -13.0
+      ],
+      "max": [
+       34.6,
+       1.0,
+       13.0
+      ]
+     }
+    },
+    {
+     "part": "slot_glow",
+     "node": "RS_ReactorCore__slot_glow",
+     "bucket": "neon",
+     "tint": "0xff7a3a",
+     "uvScale": 8,
+     "gain": 0.78,
+     "fx": {
+      "anim": [
+       3,
+       0.5,
+       "k*0.33"
+      ]
+     },
+     "stamp": {
+      "origin": "(0, y, zCore)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Core glow at the back of each slot (sub-bloom lit panel). Unit height with the body.",
+     "triangles": 6,
+     "localBounds": {
+      "min": [
+       26.49,
+       0.14,
+       -5.5
+      ],
+      "max": [
+       26.49,
+       0.9,
+       5.5
+      ]
+     }
+    },
+    {
+     "part": "slot_bars",
+     "node": "RS_ReactorCore__slot_bars",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zCore)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Shield bars across the slots. Unit height with the body.",
+     "triangles": 126,
+     "localBounds": {
+      "min": [
+       26.07,
+       0.229,
+       -5.5
+      ],
+      "max": [
+       26.25,
+       0.811,
+       5.5
+      ]
+     }
+    },
+    {
+     "part": "fins",
+     "node": "RS_ReactorCore__fins",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zCore)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Vertical fins between the slots, 0.2 proud. Unit height with the body.",
+     "triangles": 24,
+     "localBounds": {
+      "min": [
+       25.75,
+       0.0,
+       -7.4
+      ],
+      "max": [
+       25.95,
+       1.0,
+       7.4
+      ]
+     }
+    },
+    {
+     "part": "crown",
+     "node": "RS_ReactorCore__crown",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zCore)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Cornice at the body top (stamp y=Hb).",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       25.7,
+       -0.0,
+       -13.35
+      ],
+      "max": [
+       34.9,
+       0.9,
+       13.35
+      ]
+     }
+    },
+    {
+     "part": "drum",
+     "node": "RS_ReactorCore__drum",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 10,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zCore)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Containment drum below the dome (axis x33.5, r6): its rear arc stands behind the wall line. Unit height (stamp y=0, sy=Hb+0.9).",
+     "triangles": 40,
+     "localBounds": {
+      "min": [
+       27.5,
+       0.0,
+       -6.0
+      ],
+      "max": [
+       39.5,
+       1.0,
+       6.0
+      ]
+     }
+    },
+    {
+     "part": "dome",
+     "node": "RS_ReactorCore__dome",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 10,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zCore)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Drum ring, springing and containment dome above the cornice (stamp y=Hb).",
+     "triangles": 338,
+     "localBounds": {
+      "min": [
+       26.9,
+       0.9,
+       -6.6
+      ],
+      "max": [
+       40.1,
+       10.3,
+       6.6
+      ]
+     }
+    },
+    {
+     "part": "dome_band",
+     "node": "RS_ReactorCore__dome_band",
+     "bucket": "neon",
+     "tint": "0xff7a3a",
+     "uvScale": 8,
+     "gain": 0.8,
+     "fx": {
+      "anim": [
+       3,
+       0.35,
+       0.18
+      ]
+     },
+     "stamp": {
+      "origin": "(0, y, zCore)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Heat band at the dome springing (sub-bloom).",
+     "triangles": 40,
+     "localBounds": {
+      "min": [
+       27.42,
+       3.4,
+       -6.08
+      ],
+      "max": [
+       39.58,
+       3.85,
+       6.08
+      ]
+     }
+    },
+    {
+     "part": "stacks",
+     "node": "RS_ReactorCore__stacks",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zCore)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Vent stacks on the dome shoulder and the flue cap.",
+     "triangles": 168,
+     "localBounds": {
+      "min": [
+       30.1055,
+       8.2,
+       -3.85
+      ],
+      "max": [
+       36.8945,
+       11.2,
+       3.85
+      ]
+     }
+    },
+    {
+     "part": "strobe",
+     "node": "RS_ReactorCore__strobe",
+     "bucket": "neon",
+     "tint": "0xff3d55",
+     "uvScale": 8,
+     "gain": 1.6,
+     "fx": {
+      "anim": [
+       1,
+       0.6,
+       "k*0.5"
+      ]
+     },
+     "stamp": {
+      "origin": "(33.5+-1, Hb+11.1, zCore)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Crown strobes, two stamps.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       -0.3,
+       0.0,
+       -0.3
+      ],
+      "max": [
+       0.3,
+       0.55,
+       0.3
+      ]
+     }
+    },
+    {
+     "part": "vent",
+     "node": "RS_ReactorCore__vent",
+     "bucket": "dark",
+     "tint": "0x56606c",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Flush vent grille on the bastion front for a source fan steam emitter that falls inside the bastion.",
+     "triangles": 48,
+     "localBounds": {
+      "min": [
+       25.8,
+       -0.9,
+       -1.1
+      ],
+      "max": [
+       25.95,
+       0.96,
+       1.1
+      ]
+     }
+    }
+   ],
+   "triangles": 894,
+   "glb": {
+    "file": "modules/RS_ReactorCore.glb",
+    "bytes": 45016,
+    "sha256": "ab9e29c6fd8a3f3fca2aeefe966ac4f0256f7ba0e841269dc26110604beb982f"
+   }
+  },
+  "EK_Parapet": {
+   "parts": [
+    {
+     "part": "channel",
+     "node": "EK_Parapet__channel",
+     "bucket": "hull",
+     "tint": "0xc8d2de",
+     "uvScale": 10,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Near parapet section inside the source box x-34..-27, y0..3.2: twin kerbs, a 0.5 deep service channel on top, a recessed panel band on the outer face. Unit length, capped.",
+     "triangles": 44,
+     "localBounds": {
+      "min": [
+       -34.0,
+       0.0,
+       -0.5
+      ],
+      "max": [
+       -27.0,
+       3.2,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "outer_rib",
+     "node": "EK_Parapet__outer_rib",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Rib filling the outer recess band at a source rib z, flush with the source outer face x-34.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       -34.0,
+       0.85,
+       -0.7
+      ],
+      "max": [
+       -33.78,
+       2.75,
+       0.7
+      ]
+     }
+    },
+    {
+     "part": "bridge",
+     "node": "EK_Parapet__bridge",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Cross rib tying the two kerbs across the channel at a source rib z; top 0.1 under the source top plane.",
+     "triangles": 6,
+     "localBounds": {
+      "min": [
+       -33.2,
+       2.7,
+       -0.5
+      ],
+      "max": [
+       -27.8,
+       3.19,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "bridge_lamp",
+     "node": "EK_Parapet__bridge_lamp",
+     "bucket": "neon",
+     "tint": "0xffbf69",
+     "uvScale": 8,
+     "gain": 0.5,
+     "fx": {
+      "anim": [
+       3,
+       0.4,
+       "i*0.17"
+      ]
+     },
+     "stamp": {
+      "origin": "(0, 0, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Dim marker in the bridge top (sub-bloom); top face is the source top plane y3.2. Tint = sector accent.",
+     "triangles": 2,
+     "localBounds": {
+      "min": [
+       -30.95,
+       3.2,
+       -0.22
+      ],
+      "max": [
+       -30.05,
+       3.2,
+       0.22
+      ]
+     }
+    },
+    {
+     "part": "hatch",
+     "node": "EK_Parapet__hatch",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Service hatch on the channel floor with two grab bars.",
+     "triangles": 30,
+     "localBounds": {
+      "min": [
+       -32.2,
+       2.7,
+       -1.2
+      ],
+      "max": [
+       -29.6,
+       2.92,
+       1.2
+      ]
+     }
+    },
+    {
+     "part": "tray",
+     "node": "EK_Parapet__tray",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Cable tray along the inner kerb of the channel, unit length.",
+     "triangles": 6,
+     "localBounds": {
+      "min": [
+       -28.75,
+       2.7,
+       -0.5
+      ],
+      "max": [
+       -28.1,
+       2.92,
+       0.5
+      ]
+     }
+    }
+   ],
+   "triangles": 98,
+   "glb": {
+    "file": "modules/EK_Parapet.glb",
+    "bytes": 11300,
+    "sha256": "64ed323831156915d418c5883475503111c0e745d6bb7631d47dc49ac7952df0"
+   }
+  },
+  "AF_Hangar": {
+   "parts": [
+    {
+     "part": "door_leaf",
+     "node": "AF_Hangar__door_leaf",
+     "bucket": "hull",
+     "tint": "0x9aa6b4",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zLeaf)",
+      "scale": "sy=h, sz=leafWidth"
+     },
+     "owner": "chunk",
+     "note": "Sliding hangar door leaf parked half open, 0.45 inside the opening; two pressed ribs. Unit y/z.",
+     "triangles": 28,
+     "localBounds": {
+      "min": [
+       27.47,
+       0.0,
+       -0.5
+      ],
+      "max": [
+       27.75,
+       1.0,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "door_track",
+     "node": "AF_Hangar__door_track",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, z)",
+      "scale": "sz=w"
+     },
+     "owner": "chunk",
+     "note": "Door head track under the header, unit length.",
+     "triangles": 8,
+     "localBounds": {
+      "min": [
+       27.42,
+       -0.26,
+       -0.5
+      ],
+      "max": [
+       27.9,
+       -0.06,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "apron_bar",
+     "node": "AF_Hangar__apron_bar",
+     "bucket": "neon",
+     "tint": "0xffe8c0",
+     "uvScale": 8,
+     "gain": 0.6,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, z)",
+      "scale": "sz=w-1"
+     },
+     "owner": "chunk",
+     "note": "Flood bar under the header lip lighting the apron (sub-bloom, steady).",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       26.6,
+       -0.1,
+       -0.5
+      ],
+      "max": [
+       26.86,
+       -0.02,
+       0.5
+      ]
+     }
+    }
+   ],
+   "triangles": 46,
+   "glb": {
+    "file": "modules/AF_Hangar.glb",
+    "bytes": 6064,
+    "sha256": "461c1dd22e27872d44b3119cc21d8deee18c5266a6dcdc782b88b282b300327e"
+   }
+  },
+  "AF_Crest": {
+   "parts": [
+    {
+     "part": "rail",
+     "node": "AF_Crest__rail",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Two-bar crest handrail above the coping, unit length.",
+     "triangles": 16,
+     "localBounds": {
+      "min": [
+       27.05,
+       0.92,
+       -0.5
+      ],
+      "max": [
+       27.17,
+       1.49,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "post",
+     "node": "AF_Crest__post",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Crest rail stanchion.",
+     "triangles": 8,
+     "localBounds": {
+      "min": [
+       27.06,
+       0.45,
+       -0.05
+      ],
+      "max": [
+       27.16,
+       1.37,
+       0.05
+      ]
+     }
+    },
+    {
+     "part": "mast",
+     "node": "AF_Crest__mast",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Floodlight mast on the crest at a source rib: tapered column, outreach arm and lamp housing over the apron (x >= 26.3).",
+     "triangles": 52,
+     "localBounds": {
+      "min": [
+       26.32,
+       0.45,
+       -1.0
+      ],
+      "max": [
+       28.3078,
+       6.6,
+       1.0
+      ]
+     }
+    },
+    {
+     "part": "mast_lamp",
+     "node": "AF_Crest__mast_lamp",
+     "bucket": "neon",
+     "tint": "0xffe8c0",
+     "uvScale": 8,
+     "gain": 0.62,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Flood lamp face (sub-bloom, steady): the opening sector stays calm.",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       26.3,
+       6.0,
+       -0.9
+      ],
+      "max": [
+       26.96,
+       6.26,
+       0.9
+      ]
+     }
+    }
+   ],
+   "triangles": 96,
+   "glb": {
+    "file": "modules/AF_Crest.glb",
+    "bytes": 9040,
+    "sha256": "d9d44b59cd31a5747210cb6d6462b619c181b685af6b43e97e84da0f173286a2"
+   }
+  },
+  "AF_Tower": {
+   "parts": [
+    {
+     "part": "base",
+     "node": "AF_Tower__base",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Battered base y0..4 (stamp y=0).",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       25.95,
+       0.0,
+       -7.4
+      ],
+      "max": [
+       35.0,
+       4.0,
+       7.4
+      ]
+     }
+    },
+    {
+     "part": "shaft",
+     "node": "AF_Tower__shaft",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Tower shaft, unit height (stamp y=4, sy=h+2-4).",
+     "triangles": 16,
+     "localBounds": {
+      "min": [
+       26.3,
+       -0.0,
+       -6.0
+      ],
+      "max": [
+       35.0,
+       1.0,
+       6.0
+      ]
+     }
+    },
+    {
+     "part": "shaft_ribs",
+     "node": "AF_Tower__shaft_ribs",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Three vertical ribs on the lane face, unit height with the shaft.",
+     "triangles": 24,
+     "localBounds": {
+      "min": [
+       26.05,
+       0.0,
+       -3.88
+      ],
+      "max": [
+       26.3,
+       1.0,
+       3.88
+      ]
+     }
+    },
+    {
+     "part": "cab",
+     "node": "AF_Tower__cab",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Neck, flared cab floor, slanted cab walls and roof above the shaft (stamp y=h+2). Cab x 25.9..35.5, floor at +14.2.",
+     "triangles": 92,
+     "localBounds": {
+      "min": [
+       25.9,
+       -0.0,
+       -6.0
+      ],
+      "max": [
+       35.5,
+       17.6,
+       6.0
+      ]
+     }
+    },
+    {
+     "part": "cab_glass",
+     "node": "AF_Tower__cab_glass",
+     "bucket": "neon",
+     "tint": "0x8bcbd0",
+     "uvScale": 8,
+     "gain": 0.55,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Cab glazing band on the lane-facing and approach-facing sides (sub-bloom, sector accent).",
+     "triangles": 8,
+     "localBounds": {
+      "min": [
+       25.9196,
+       14.5,
+       -5.9707
+      ],
+      "max": [
+       33.7858,
+       16.1,
+       5.9707
+      ]
+     }
+    },
+    {
+     "part": "cab_trim",
+     "node": "AF_Tower__cab_trim",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Sill and head bands around the cab, neck collars.",
+     "triangles": 70,
+     "localBounds": {
+      "min": [
+       25.8106,
+       4.0,
+       -6.1066
+      ],
+      "max": [
+       35.5894,
+       16.4,
+       6.1066
+      ]
+     }
+    },
+    {
+     "part": "neck_lights",
+     "node": "AF_Tower__neck_lights",
+     "bucket": "neon",
+     "tint": "0x8bcbd0",
+     "uvScale": 8,
+     "gain": 0.5,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Stair-core window slots up the neck lane face (sub-bloom).",
+     "triangles": 30,
+     "localBounds": {
+      "min": [
+       27.17,
+       1.6,
+       -0.9
+      ],
+      "max": [
+       27.2,
+       10.1,
+       0.9
+      ]
+     }
+    },
+    {
+     "part": "roof_gear",
+     "node": "AF_Tower__roof_gear",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Roof mast, yard arm, radar pedestal and plant boxes (stamp y=h+2).",
+     "triangles": 60,
+     "localBounds": {
+      "min": [
+       29.1,
+       17.6,
+       -1.5
+      ],
+      "max": [
+       32.5732,
+       23.4,
+       3.4
+      ]
+     }
+    },
+    {
+     "part": "radar",
+     "node": "AF_Tower__radar",
+     "bucket": "spin",
+     "tint": "0xa8b4c2",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {
+      "pivot": "stamp origin",
+      "spin": "[0,1,0,0.9]"
+     },
+     "stamp": {
+      "origin": "(29.6, h+2+18.5, zTower)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Airfield surveillance radar bar rotating about +y; local origin is the pivot; sweep radius 2.3 (x >= 27.3).",
+     "triangles": 36,
+     "localBounds": {
+      "min": [
+       -2.3,
+       0.0,
+       -0.16
+      ],
+      "max": [
+       2.3,
+       0.95,
+       0.34
+      ]
+     }
+    },
+    {
+     "part": "beacon",
+     "node": "AF_Tower__beacon",
+     "bucket": "neon",
+     "tint": "0xff3d55",
+     "uvScale": 8,
+     "gain": 1.4,
+     "fx": {
+      "anim": [
+       1,
+       0.7,
+       0.0
+      ]
+     },
+     "stamp": {
+      "origin": "(32.4, h+2+23.4, zTower)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Mast-head obstruction beacon.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       -0.24,
+       0.0,
+       -0.24
+      ],
+      "max": [
+       0.24,
+       0.46,
+       0.24
+      ]
+     }
+    }
+   ],
+   "triangles": 366,
+   "glb": {
+    "file": "modules/AF_Tower.glb",
+    "bytes": 28624,
+    "sha256": "949a4dcbba68ef911e1c2682b82fc25d4bd48f249ae90e05a198ca5971c7c49c"
+   }
+  },
+  "GB_Armor": {
+   "parts": [
+    {
+     "part": "glacis",
+     "node": "GB_Armor__glacis",
+     "bucket": "hull",
+     "tint": "0xa2acb6",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Sloped armour skirt between piers, y1.5..7.2, toe x26.02 overhanging the plinth kerb. Unit length.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       26.02,
+       1.5,
+       -0.5
+      ],
+      "max": [
+       27.4,
+       7.2,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "glacis_cap",
+     "node": "GB_Armor__glacis_cap",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Cap rail on the glacis head, unit length.",
+     "triangles": 8,
+     "localBounds": {
+      "min": [
+       26.86,
+       7.2,
+       -0.5
+      ],
+      "max": [
+       27.4,
+       7.46,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "strake",
+     "node": "GB_Armor__strake",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Raised armour strake on the glacis slope.",
+     "triangles": 16,
+     "localBounds": {
+      "min": [
+       25.88,
+       1.5,
+       -0.16
+      ],
+      "max": [
+       27.4,
+       7.2,
+       0.16
+      ]
+     }
+    }
+   ],
+   "triangles": 34,
+   "glb": {
+    "file": "modules/GB_Armor.glb",
+    "bytes": 5256,
+    "sha256": "821925678f01d68962966b2fcf9f950369bbaed22f8f85c9917918f1e57d738d"
+   }
+  },
+  "GB_Casemate": {
+   "parts": [
+    {
+     "part": "blast_door",
+     "node": "GB_Casemate__blast_door",
+     "bucket": "hull",
+     "tint": "0x8a949e",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, z)",
+      "scale": "sy=h, sz=w"
+     },
+     "owner": "chunk",
+     "note": "Closed two-leaf armoured door 0.6 inside the opening; pressed ribs and a centre seam. Unit y/z.",
+     "triangles": 42,
+     "localBounds": {
+      "min": [
+       27.5,
+       0.0,
+       -0.5
+      ],
+      "max": [
+       27.9,
+       1.0,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "hoist_rail",
+     "node": "GB_Casemate__hoist_rail",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y0, z)",
+      "scale": "sy=height"
+     },
+     "owner": "chunk",
+     "note": "Twin hoist guide rails climbing the wall field above the bay, unit height.",
+     "triangles": 12,
+     "localBounds": {
+      "min": [
+       27.05,
+       0.0,
+       -1.04
+      ],
+      "max": [
+       27.4,
+       1.0,
+       1.04
+      ]
+     }
+    },
+    {
+     "part": "hoist_car",
+     "node": "GB_Casemate__hoist_car",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, yCar, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Shell hoist carriage on the rails: cage, three shells upright.",
+     "triangles": 106,
+     "localBounds": {
+      "min": [
+       26.4,
+       -0.75,
+       -0.8
+      ],
+      "max": [
+       27.08,
+       0.75,
+       0.8
+      ]
+     }
+    },
+    {
+     "part": "hoist_head",
+     "node": "GB_Casemate__hoist_head",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, yTop, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Sheave housing at the head of the hoist.",
+     "triangles": 32,
+     "localBounds": {
+      "min": [
+       26.48,
+       -0.52,
+       -1.42
+      ],
+      "max": [
+       27.4,
+       0.35,
+       1.25
+      ]
+     }
+    }
+   ],
+   "triangles": 192,
+   "glb": {
+    "file": "modules/GB_Casemate.glb",
+    "bytes": 12392,
+    "sha256": "791a6a8760954a4e1de24af4328c1b5245581636fdab0e5b7247e77d25b6e1d9"
+   }
+  },
+  "GB_Crest": {
+   "parts": [
+    {
+     "part": "merlon",
+     "node": "GB_Crest__merlon",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Armour merlon on the coping, 3.6 long, sloped head.",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       26.9,
+       0.45,
+       -1.8
+      ],
+      "max": [
+       28.5,
+       2.3,
+       1.8
+      ]
+     }
+    },
+    {
+     "part": "deflector",
+     "node": "GB_Crest__deflector",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Blast deflector behind the merlons: a plate leaning away from the lane on two struts.",
+     "triangles": 36,
+     "localBounds": {
+      "min": [
+       30.0,
+       0.45,
+       -3.2
+      ],
+      "max": [
+       33.2,
+       4.6,
+       3.2
+      ]
+     }
+    }
+   ],
+   "triangles": 56,
+   "glb": {
+    "file": "modules/GB_Crest.glb",
+    "bytes": 5400,
+    "sha256": "56a01bdc31a295b4c701f9a378f96fe7914f920c6d24b3e9cbe367dcd232da14"
+   }
+  },
+  "GB_Director": {
+   "parts": [
+    {
+     "part": "barbette",
+     "node": "GB_Director__barbette",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Battered barbette y0..5 (stamp y=0).",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       25.95,
+       0.0,
+       -8.4
+      ],
+      "max": [
+       35.2,
+       5.0,
+       8.4
+      ]
+     }
+    },
+    {
+     "part": "tower",
+     "node": "GB_Director__tower",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Armoured tower body, unit height (stamp y=5, sy=h+1-5).",
+     "triangles": 16,
+     "localBounds": {
+      "min": [
+       26.4,
+       -0.0,
+       -7.4
+      ],
+      "max": [
+       35.2,
+       1.0,
+       7.4
+      ]
+     }
+    },
+    {
+     "part": "plates",
+     "node": "GB_Director__plates",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Applique armour plates on the lane face (stamp y=h-5).",
+     "triangles": 30,
+     "localBounds": {
+      "min": [
+       26.2,
+       0.0,
+       -5.6
+      ],
+      "max": [
+       26.4,
+       3.6,
+       5.6
+      ]
+     }
+    },
+    {
+     "part": "slits",
+     "node": "GB_Director__slits",
+     "bucket": "neon",
+     "tint": "0xffb43a",
+     "uvScale": 8,
+     "gain": 0.5,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Vision slits in the applique plates (sub-bloom, steady).",
+     "triangles": 30,
+     "localBounds": {
+      "min": [
+       26.18,
+       2.2,
+       -4.9
+      ],
+      "max": [
+       26.2,
+       2.42,
+       4.9
+      ]
+     }
+    },
+    {
+     "part": "house",
+     "node": "GB_Director__house",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Octagonal director house and roof on the tower (stamp y=h+1).",
+     "triangles": 50,
+     "localBounds": {
+      "min": [
+       27.0,
+       0.0,
+       -6.2
+      ],
+      "max": [
+       34.6,
+       5.0,
+       6.2
+      ]
+     }
+    },
+    {
+     "part": "house_trim",
+     "node": "GB_Director__house_trim",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Base ring, roof hatch and the rangefinder pedestal.",
+     "triangles": 44,
+     "localBounds": {
+      "min": [
+       26.8676,
+       -0.0,
+       -6.3912
+      ],
+      "max": [
+       34.7324,
+       5.9,
+       6.3912
+      ]
+     }
+    },
+    {
+     "part": "rangefinder",
+     "node": "GB_Director__rangefinder",
+     "bucket": "spin",
+     "tint": "0xa8b4c2",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {
+      "pivot": "stamp origin",
+      "spin": "[0,1,0,0.25]"
+     },
+     "stamp": {
+      "origin": "(30.8, h+1+5.9, zTower)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Coincidence rangefinder turning slowly about +y: tube, end optics, centre housing. Sweep radius 4.8 (x >= 26.0).",
+     "triangles": 50,
+     "localBounds": {
+      "min": [
+       -0.8,
+       0.0,
+       -4.8
+      ],
+      "max": [
+       0.8,
+       1.3,
+       4.8
+      ]
+     }
+    },
+    {
+     "part": "mast",
+     "node": "GB_Director__mast",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Signal mast behind the director (stamp y=h+1).",
+     "triangles": 28,
+     "localBounds": {
+      "min": [
+       33.0441,
+       4.8,
+       -1.2
+      ],
+      "max": [
+       33.3559,
+       11.0,
+       1.2
+      ]
+     }
+    },
+    {
+     "part": "beacon",
+     "node": "GB_Director__beacon",
+     "bucket": "neon",
+     "tint": "0xff3d55",
+     "uvScale": 8,
+     "gain": 1.4,
+     "fx": {
+      "anim": [
+       1,
+       0.7,
+       0.0
+      ]
+     },
+     "stamp": {
+      "origin": "(33.2, h+1+11.0, zTower)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Mast-head beacon.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       -0.22,
+       0.0,
+       -0.22
+      ],
+      "max": [
+       0.22,
+       0.42,
+       0.22
+      ]
+     }
+    }
+   ],
+   "triangles": 278,
+   "glb": {
+    "file": "modules/GB_Director.glb",
+    "bytes": 22696,
+    "sha256": "887ae9f3e1c00ac31e5198851f1fef9fa7a123a1f4d723d655e1e090caee3cbf"
+   }
+  },
+  "IC_Buttress": {
+   "parts": [
+    {
+     "part": "fin",
+     "node": "IC_Buttress__fin",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, H, zRib)",
+      "scale": "sy=h-H"
+     },
+     "owner": "chunk",
+     "note": "Flying fin from a pier head up to the crest, unit height, z+-0.45.",
+     "triangles": 12,
+     "localBounds": {
+      "min": [
+       25.95,
+       0.0,
+       -0.45
+      ],
+      "max": [
+       27.4,
+       1.0,
+       0.45
+      ]
+     }
+    },
+    {
+     "part": "finial",
+     "node": "IC_Buttress__finial",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Obelisk finial on the crest above each pier.",
+     "triangles": 12,
+     "localBounds": {
+      "min": [
+       26.95,
+       0.45,
+       -0.65
+      ],
+      "max": [
+       28.25,
+       3.7,
+       0.65
+      ]
+     }
+    },
+    {
+     "part": "finial_lamp",
+     "node": "IC_Buttress__finial_lamp",
+     "bucket": "neon",
+     "tint": "0xffc36a",
+     "uvScale": 8,
+     "gain": 0.55,
+     "fx": {
+      "anim": [
+       3,
+       0.22,
+       "i*0.17"
+      ]
+     },
+     "stamp": {
+      "origin": "(0, h, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Dim amber lamp in the finial foot (sub-bloom).",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       26.9,
+       0.62,
+       -0.3
+      ],
+      "max": [
+       26.96,
+       0.98,
+       0.3
+      ]
+     }
+    }
+   ],
+   "triangles": 34,
+   "glb": {
+    "file": "modules/IC_Buttress.glb",
+    "bytes": 5440,
+    "sha256": "9125a250b14214ac31511e684b5e1b10ba5c41e3c550dadab4635c6503c648d1"
+   }
+  },
+  "IC_Crest": {
+   "parts": [
+    {
+     "part": "attic",
+     "node": "IC_Crest__attic",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Attic storey x27.9..33.4, y h+0.45..h+3.3, chamfered head. Unit length.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       27.9,
+       0.45,
+       -0.5
+      ],
+      "max": [
+       33.4,
+       3.3,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "attic_band",
+     "node": "IC_Crest__attic_band",
+     "bucket": "neon",
+     "tint": "0xffc36a",
+     "uvScale": 8,
+     "gain": 0.5,
+     "fx": {
+      "anim": [
+       3,
+       0.22,
+       "bay phase"
+      ]
+     },
+     "stamp": {
+      "origin": "(0, h, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Command-deck light slot in the attic face, one per bay (sub-bloom). Unit length.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       27.86,
+       1.45,
+       -0.5
+      ],
+      "max": [
+       27.9,
+       1.95,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "attic_pilaster",
+     "node": "IC_Crest__attic_pilaster",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Pilaster on the attic face at each pier line.",
+     "triangles": 8,
+     "localBounds": {
+      "min": [
+       27.66,
+       0.45,
+       -0.75
+      ],
+      "max": [
+       27.9,
+       3.3,
+       0.75
+      ]
+     }
+    }
+   ],
+   "triangles": 28,
+   "glb": {
+    "file": "modules/IC_Crest.glb",
+    "bytes": 5036,
+    "sha256": "0a0dc8601d4c633ef08b1e88dc8a2c9c1ac77591dea3da59f436aa900aadc05e"
+   }
+  },
+  "IC_Portal": {
+   "parts": [
+    {
+     "part": "grille",
+     "node": "IC_Portal__grille",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, z)",
+      "scale": "sy=h, sz=w"
+     },
+     "owner": "chunk",
+     "note": "Portcullis grille 0.5 inside the opening: nine bars and two cross rails. Unit y/z.",
+     "triangles": 88,
+     "localBounds": {
+      "min": [
+       27.84,
+       0.0,
+       -0.5
+      ],
+      "max": [
+       27.98,
+       1.0,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "keystone",
+     "node": "IC_Portal__keystone",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h+1.5, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Stepped crest block over the header.",
+     "triangles": 32,
+     "localBounds": {
+      "min": [
+       26.62,
+       -0.0,
+       -2.2
+      ],
+      "max": [
+       27.4,
+       2.1,
+       2.2
+      ]
+     }
+    },
+    {
+     "part": "crest_light",
+     "node": "IC_Portal__crest_light",
+     "bucket": "neon",
+     "tint": "0xffc36a",
+     "uvScale": 8,
+     "gain": 0.6,
+     "fx": {
+      "anim": [
+       3,
+       0.22,
+       0.0
+      ]
+     },
+     "stamp": {
+      "origin": "(0, h+1.5, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Amber slot in the crest block (sub-bloom).",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       26.6,
+       0.3,
+       -1.5
+      ],
+      "max": [
+       26.62,
+       0.7,
+       1.5
+      ]
+     }
+    }
+   ],
+   "triangles": 130,
+   "glb": {
+    "file": "modules/IC_Portal.glb",
+    "bytes": 10504,
+    "sha256": "7bd80eae47dd85403543c5c00e0b54895230670dff343c3f521d2292cba18b7f"
+   }
+  },
+  "IC_Keep": {
+   "parts": [
+    {
+     "part": "base",
+     "node": "IC_Keep__base",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Battered base y0..5 (stamp y=0).",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       25.95,
+       0.0,
+       -9.0
+      ],
+      "max": [
+       36.0,
+       5.0,
+       9.0
+      ]
+     }
+    },
+    {
+     "part": "body",
+     "node": "IC_Keep__body",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Keep body, unit height (stamp y=5, sy=h+3-5).",
+     "triangles": 16,
+     "localBounds": {
+      "min": [
+       26.4,
+       -0.0,
+       -8.0
+      ],
+      "max": [
+       36.0,
+       1.0,
+       8.0
+      ]
+     }
+    },
+    {
+     "part": "buttress",
+     "node": "IC_Keep__buttress",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Front corner buttresses and slot cheeks, unit height with the body.",
+     "triangles": 48,
+     "localBounds": {
+      "min": [
+       25.95,
+       -0.0,
+       -8.3
+      ],
+      "max": [
+       27.3,
+       1.0,
+       8.3
+      ]
+     }
+    },
+    {
+     "part": "slot",
+     "node": "IC_Keep__slot",
+     "bucket": "neon",
+     "tint": "0xffc36a",
+     "uvScale": 8,
+     "gain": 0.6,
+     "fx": {
+      "anim": [
+       3,
+       0.22,
+       0.0
+      ]
+     },
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Tall command light slot between the cheeks (sub-bloom). Unit height with the body.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       26.36,
+       0.1,
+       -0.8
+      ],
+      "max": [
+       26.4,
+       0.92,
+       0.8
+      ]
+     }
+    },
+    {
+     "part": "tiers",
+     "node": "IC_Keep__tiers",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Two setback tiers and the roof above the body (stamp y=h+3).",
+     "triangles": 84,
+     "localBounds": {
+      "min": [
+       26.4,
+       0.0,
+       -8.0
+      ],
+      "max": [
+       36.0,
+       13.5,
+       8.0
+      ]
+     }
+    },
+    {
+     "part": "tier_trim",
+     "node": "IC_Keep__tier_trim",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "String courses at the tier heads.",
+     "triangles": 32,
+     "localBounds": {
+      "min": [
+       27.3332,
+       6.6,
+       -6.534
+      ],
+      "max": [
+       35.2847,
+       12.4,
+       6.534
+      ]
+     }
+    },
+    {
+     "part": "bridge_band",
+     "node": "IC_Keep__bridge_band",
+     "bucket": "neon",
+     "tint": "0xffc36a",
+     "uvScale": 8,
+     "gain": 0.55,
+     "fx": {
+      "anim": [
+       3,
+       0.22,
+       0.4
+      ]
+     },
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Command bridge window band on the lane and approach faces of both tiers (sub-bloom).",
+     "triangles": 6,
+     "localBounds": {
+      "min": [
+       27.37,
+       4.5,
+       -6.43
+      ],
+      "max": [
+       34.0,
+       10.9,
+       5.2
+      ]
+     }
+    },
+    {
+     "part": "masts",
+     "node": "IC_Keep__masts",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Twin command masts and yard on the roof.",
+     "triangles": 44,
+     "localBounds": {
+      "min": [
+       31.2268,
+       13.5,
+       -2.4
+      ],
+      "max": [
+       31.5732,
+       20.5,
+       2.4
+      ]
+     }
+    },
+    {
+     "part": "beacon",
+     "node": "IC_Keep__beacon",
+     "bucket": "neon",
+     "tint": "0xff3d55",
+     "uvScale": 8,
+     "gain": 1.4,
+     "fx": {
+      "anim": [
+       1,
+       0.6,
+       "k*0.5"
+      ]
+     },
+     "stamp": {
+      "origin": "(31.4, h+3+20.5, zKeep+-1.6)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Mast-head beacons, two stamps.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       -0.22,
+       0.0,
+       -0.22
+      ],
+      "max": [
+       0.22,
+       0.42,
+       0.22
+      ]
+     }
+    }
+   ],
+   "triangles": 270,
+   "glb": {
+    "file": "modules/IC_Keep.glb",
+    "bytes": 22668,
+    "sha256": "fb6897ceaffc3c44340e512d1741dd79de5de64e2ad009471505eb62997aa4d4"
+   }
+  },
+  "TG_Alarm": {
+   "parts": [
+    {
+     "part": "rib_light",
+     "node": "TG_Alarm__rib_light",
+     "bucket": "neon",
+     "tint": "0xff3d55",
+     "uvScale": 8,
+     "gain": 0.7,
+     "fx": {
+      "anim": [
+       3,
+       0.5,
+       "i*0.17"
+      ]
+     },
+     "stamp": {
+      "origin": "(0, 3.0, zRib)",
+      "scale": "sy=height"
+     },
+     "owner": "chunk",
+     "note": "Red alarm strip up the front of a pier shaft (sub-bloom), unit height.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       25.92,
+       0.0,
+       -0.15
+      ],
+      "max": [
+       25.95,
+       1.0,
+       0.15
+      ]
+     }
+    },
+    {
+     "part": "rib_guard",
+     "node": "TG_Alarm__rib_guard",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 3.0, zRib)",
+      "scale": "sy=height"
+     },
+     "owner": "chunk",
+     "note": "Twin guard rails flanking the alarm strip, unit height.",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       25.86,
+       0.0,
+       -0.3
+      ],
+      "max": [
+       25.95,
+       1.0,
+       0.3
+      ]
+     }
+    }
+   ],
+   "triangles": 30,
+   "glb": {
+    "file": "modules/TG_Alarm.glb",
+    "bytes": 4152,
+    "sha256": "417747911fa6d51b066437f2ac20871564c54cebcbfc4543d2e9b072abec77fd"
+   }
+  },
+  "TG_Crest": {
+   "parts": [
+    {
+     "part": "tooth",
+     "node": "TG_Crest__tooth",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Saw tooth on the coping, 3.4 long, rising toward +z (against the approach).",
+     "triangles": 8,
+     "localBounds": {
+      "min": [
+       27.1,
+       0.45,
+       -1.7
+      ],
+      "max": [
+       28.5,
+       2.4,
+       1.7
+      ]
+     }
+    },
+    {
+     "part": "barb",
+     "node": "TG_Crest__barb",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h, zRib)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Barbed mast behind the teeth at each pier line.",
+     "triangles": 48,
+     "localBounds": {
+      "min": [
+       29.0,
+       0.45,
+       -1.42
+      ],
+      "max": [
+       29.8,
+       6.0,
+       1.42
+      ]
+     }
+    }
+   ],
+   "triangles": 56,
+   "glb": {
+    "file": "modules/TG_Crest.glb",
+    "bytes": 5444,
+    "sha256": "026a7e84ac331206b6b17dd604d17312469935d835378ff3e24955e1c44187d6"
+   }
+  },
+  "TG_Blast": {
+   "parts": [
+    {
+     "part": "door",
+     "node": "TG_Blast__door",
+     "bucket": "hull",
+     "tint": "0x7c8690",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, z)",
+      "scale": "sy=h, sz=w"
+     },
+     "owner": "chunk",
+     "note": "Sealed blast door on the wall field between the jambs, x26.95..27.4, two heavy ribs. Unit y/z.",
+     "triangles": 28,
+     "localBounds": {
+      "min": [
+       26.84,
+       0.0,
+       -0.5
+      ],
+      "max": [
+       27.4,
+       1.0,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "chevrons",
+     "node": "TG_Blast__chevrons",
+     "bucket": "hazard",
+     "tint": "0xffffff",
+     "uvScale": 3,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, z)",
+      "scale": "sy=h, sz=w"
+     },
+     "owner": "chunk",
+     "note": "Hazard band across the door foot. Unit y/z.",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       26.92,
+       0.02,
+       -0.5
+      ],
+      "max": [
+       26.95,
+       0.2,
+       0.5
+      ]
+     }
+    },
+    {
+     "part": "lock",
+     "node": "TG_Blast__lock",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, h/2, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Centre lock wheel and bolt bar.",
+     "triangles": 40,
+     "localBounds": {
+      "min": [
+       26.66,
+       -0.8084,
+       -1.6
+      ],
+      "max": [
+       26.95,
+       0.8084,
+       1.6
+      ]
+     }
+    }
+   ],
+   "triangles": 78,
+   "glb": {
+    "file": "modules/TG_Blast.glb",
+    "bytes": 7020,
+    "sha256": "d0cd41d4b7ff62963b0c46dee36e9a1d71009971edf2b1b0290632a500cd6dd3"
+   }
+  },
+  "TG_Siren": {
+   "parts": [
+    {
+     "part": "base",
+     "node": "TG_Siren__base",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Battered base y0..5 (stamp y=0).",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       25.95,
+       0.0,
+       -6.4
+      ],
+      "max": [
+       34.6,
+       5.0,
+       6.4
+      ]
+     }
+    },
+    {
+     "part": "body",
+     "node": "TG_Siren__body",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Tower body, unit height (stamp y=5, sy=h+2-5).",
+     "triangles": 16,
+     "localBounds": {
+      "min": [
+       26.6,
+       -0.0,
+       -5.2
+      ],
+      "max": [
+       34.6,
+       1.0,
+       5.2
+      ]
+     }
+    },
+    {
+     "part": "slots",
+     "node": "TG_Siren__slots",
+     "bucket": "neon",
+     "tint": "0xff3d55",
+     "uvScale": 8,
+     "gain": 0.62,
+     "fx": {
+      "anim": [
+       3,
+       0.5,
+       0.0
+      ]
+     },
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Three alarm slots on the lane face (sub-bloom). Unit height with the body.",
+     "triangles": 30,
+     "localBounds": {
+      "min": [
+       26.56,
+       0.12,
+       -3.1
+      ],
+      "max": [
+       26.6,
+       0.9,
+       3.1
+      ]
+     }
+    },
+    {
+     "part": "slot_fins",
+     "node": "TG_Siren__slot_fins",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Fins between the slots, unit height with the body.",
+     "triangles": 32,
+     "localBounds": {
+      "min": [
+       26.3,
+       0.0,
+       -4.18
+      ],
+      "max": [
+       26.6,
+       1.0,
+       4.18
+      ]
+     }
+    },
+    {
+     "part": "blades",
+     "node": "TG_Siren__blades",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Twin blade pylons above the body (stamp y=h+2), 15 tall.",
+     "triangles": 24,
+     "localBounds": {
+      "min": [
+       27.2,
+       0.0,
+       -4.6
+      ],
+      "max": [
+       33.8,
+       15.0,
+       4.6
+      ]
+     }
+    },
+    {
+     "part": "horns",
+     "node": "TG_Siren__horns",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zTower)",
+      "scale": "see note"
+     },
+     "owner": "chunk",
+     "note": "Siren horns between the blades, mouths toward the lane (stamp y=h+2).",
+     "triangles": 144,
+     "localBounds": {
+      "min": [
+       27.5,
+       3.2489,
+       -2.9
+      ],
+      "max": [
+       30.0,
+       11.0657,
+       2.9
+      ]
+     }
+    },
+    {
+     "part": "beacon_bar",
+     "node": "TG_Siren__beacon_bar",
+     "bucket": "spin",
+     "tint": "0xa8b4c2",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {
+      "pivot": "stamp origin",
+      "spin": "[0,1,0,1.6]"
+     },
+     "stamp": {
+      "origin": "(30.5, h+2+15.3, zTower)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Rotating beacon carrier about +y, sweep radius 2.2 (x >= 28.3).",
+     "triangles": 24,
+     "localBounds": {
+      "min": [
+       -2.2,
+       -0.5,
+       -0.3
+      ],
+      "max": [
+       2.2,
+       0.36,
+       0.3
+      ]
+     }
+    },
+    {
+     "part": "beacon",
+     "node": "TG_Siren__beacon",
+     "bucket": "neon",
+     "tint": "0xff3d55",
+     "uvScale": 8,
+     "gain": 1.4,
+     "fx": {
+      "anim": [
+       1,
+       1.1,
+       0.0
+      ]
+     },
+     "stamp": {
+      "origin": "(30.5, h+2+15.66, zTower)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Alarm beacon on the carrier hub (source gauntlet strobe rate 1.1).",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       -0.3,
+       0.0,
+       -0.3
+      ],
+      "max": [
+       0.3,
+       0.5,
+       0.3
+      ]
+     }
+    }
+   ],
+   "triangles": 300,
+   "glb": {
+    "file": "modules/TG_Siren.glb",
+    "bytes": 22020,
+    "sha256": "f41440949748b06776ccb73606755b641067a7fed2d4027c09c6b166034de328"
+   }
+  },
+  "SK_Rock": {
+   "parts": [
+    {
+     "part": "rock_a",
+     "node": "SK_Rock__rock_a",
+     "bucket": "rock",
+     "tint": "0xffffff",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {
+      "pivot": "source",
+      "spin": "source"
+     },
+     "stamp": {
+      "origin": "rock centre",
+      "scale": "sx, sy, sz = r * seeded axis scales; rotY from the seeded phase"
+     },
+     "owner": "chunk",
+     "note": "Faceted rock, convex, all vertices within radius 1.0 of the origin (source eroded rocks reach 1.07).",
+     "triangles": 52,
+     "localBounds": {
+      "min": [
+       -0.6964,
+       -0.8444,
+       -0.8167
+      ],
+      "max": [
+       0.6677,
+       0.8896,
+       0.7675
+      ]
+     }
+    },
+    {
+     "part": "rock_b",
+     "node": "SK_Rock__rock_b",
+     "bucket": "rock",
+     "tint": "0xffffff",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {
+      "pivot": "source",
+      "spin": "source"
+     },
+     "stamp": {
+      "origin": "rock centre",
+      "scale": "sx, sy, sz = r * seeded axis scales; rotY from the seeded phase"
+     },
+     "owner": "chunk",
+     "note": "Faceted rock, convex, all vertices within radius 1.0 of the origin (source eroded rocks reach 1.07).",
+     "triangles": 48,
+     "localBounds": {
+      "min": [
+       -0.8908,
+       -0.8788,
+       -0.8737
+      ],
+      "max": [
+       0.8305,
+       0.7968,
+       0.887
+      ]
+     }
+    },
+    {
+     "part": "rock_c",
+     "node": "SK_Rock__rock_c",
+     "bucket": "rock",
+     "tint": "0xffffff",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {
+      "pivot": "source",
+      "spin": "source"
+     },
+     "stamp": {
+      "origin": "rock centre",
+      "scale": "sx, sy, sz = r * seeded axis scales; rotY from the seeded phase"
+     },
+     "owner": "chunk",
+     "note": "Faceted rock, convex, all vertices within radius 1.0 of the origin (source eroded rocks reach 1.07).",
+     "triangles": 52,
+     "localBounds": {
+      "min": [
+       -0.7114,
+       -0.8315,
+       -0.7341
+      ],
+      "max": [
+       0.7326,
+       0.8794,
+       0.7187
+      ]
+     }
+    },
+    {
+     "part": "rock_d",
+     "node": "SK_Rock__rock_d",
+     "bucket": "rock",
+     "tint": "0xffffff",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {
+      "pivot": "source",
+      "spin": "source"
+     },
+     "stamp": {
+      "origin": "rock centre",
+      "scale": "sx, sy, sz = r * seeded axis scales; rotY from the seeded phase"
+     },
+     "owner": "chunk",
+     "note": "Faceted rock, convex, all vertices within radius 1.0 of the origin (source eroded rocks reach 1.07).",
+     "triangles": 50,
+     "localBounds": {
+      "min": [
+       -0.7299,
+       -0.855,
+       -0.7435
+      ],
+      "max": [
+       0.9278,
+       0.8549,
+       0.7538
+      ]
+     }
+    },
+    {
+     "part": "rock_e",
+     "node": "SK_Rock__rock_e",
+     "bucket": "rock",
+     "tint": "0xffffff",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {
+      "pivot": "source",
+      "spin": "source"
+     },
+     "stamp": {
+      "origin": "rock centre",
+      "scale": "sx, sy, sz = r * seeded axis scales; rotY from the seeded phase"
+     },
+     "owner": "chunk",
+     "note": "Faceted rock, convex, all vertices within radius 1.0 of the origin (source eroded rocks reach 1.07).",
+     "triangles": 50,
+     "localBounds": {
+      "min": [
+       -0.8747,
+       -0.8365,
+       -0.7939
+      ],
+      "max": [
+       0.9639,
+       0.9453,
+       0.8147
+      ]
+     }
+    },
+    {
+     "part": "rock_f",
+     "node": "SK_Rock__rock_f",
+     "bucket": "rock",
+     "tint": "0xffffff",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {
+      "pivot": "source",
+      "spin": "source"
+     },
+     "stamp": {
+      "origin": "rock centre",
+      "scale": "sx, sy, sz = r * seeded axis scales; rotY from the seeded phase"
+     },
+     "owner": "chunk",
+     "note": "Faceted rock, convex, all vertices within radius 1.0 of the origin (source eroded rocks reach 1.07).",
+     "triangles": 56,
+     "localBounds": {
+      "min": [
+       -0.809,
+       -0.8837,
+       -0.8375
+      ],
+      "max": [
+       0.8447,
+       0.9089,
+       0.8493
+      ]
+     }
+    }
+   ],
+   "triangles": 308,
+   "glb": {
+    "file": "modules/SK_Rock.glb",
+    "bytes": 29792,
+    "sha256": "771d271750cffaa15a31dca1f0b88646e468dfc29997d1116d6f9fa61c40af84"
+   }
+  },
+  "SK_Fence": {
+   "parts": [
+    {
+     "part": "column",
+     "node": "SK_Fence__column",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(xPylon, 0, z)",
+      "scale": "sy=h"
+     },
+     "owner": "chunk",
+     "note": "Octagonal pylon column inscribed in the source 2.6 square, unit height.",
+     "triangles": 22,
+     "localBounds": {
+      "min": [
+       -1.3,
+       -0.0,
+       -1.3
+      ],
+      "max": [
+       1.3,
+       1.0,
+       1.3
+      ]
+     }
+    },
+    {
+     "part": "base",
+     "node": "SK_Fence__base",
+     "bucket": "hull",
+     "tint": "0x8a96a6",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(xPylon, 0, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Stepped footing inside the source 3.6 x 1.2 x 3.6 base.",
+     "triangles": 50,
+     "localBounds": {
+      "min": [
+       -1.8,
+       -0.0,
+       -1.8
+      ],
+      "max": [
+       1.8,
+       1.2,
+       1.8
+      ]
+     }
+    },
+    {
+     "part": "insulator",
+     "node": "SK_Fence__insulator",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 3,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(xPylon, yCoil, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Insulator drum with chamfered rims inside the source coil plate (r <= 1.7, 0.5 tall).",
+     "triangles": 48,
+     "localBounds": {
+      "min": [
+       -1.5336,
+       0.0,
+       -1.5336
+      ],
+      "max": [
+       1.5336,
+       0.5,
+       1.5336
+      ]
+     }
+    },
+    {
+     "part": "insulator_glow",
+     "node": "SK_Fence__insulator_glow",
+     "bucket": "neon",
+     "tint": "0x9fe8ff",
+     "uvScale": 8,
+     "gain": 1.3,
+     "fx": {
+      "anim": [
+       3,
+       2.2,
+       "source k/4 (+0.5 far)"
+      ]
+     },
+     "stamp": {
+      "origin": "(xPylon, yCoil, z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Current glow between the sheds: the source coil neon tuple and colour, inside the source glow box.",
+     "triangles": 32,
+     "localBounds": {
+      "min": [
+       -1.6076,
+       0.17,
+       -1.6076
+      ],
+      "max": [
+       1.6076,
+       0.33,
+       1.6076
+      ]
+     }
+    }
+   ],
+   "triangles": 152,
+   "glb": {
+    "file": "modules/SK_Fence.glb",
+    "bytes": 11236,
+    "sha256": "c5a29a1259ec573c34cd39f1bd92b247aff390a325b56ff0a665461e1ad18c2b"
+   }
+  },
+  "SP_Platform": {
+   "parts": [
+    {
+     "part": "deck",
+     "node": "SP_Platform__deck",
+     "bucket": "deck",
+     "tint": "0xc8d2de",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(f.x, f.y, f.z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Deck slab with a recessed side band (0.25 deep) between corner posts and ribs; top face is the source plane y2.4.",
+     "triangles": 110,
+     "localBounds": {
+      "min": [
+       -8.0,
+       -0.0,
+       -8.0
+      ],
+      "max": [
+       8.0,
+       2.4,
+       8.0
+      ]
+     }
+    },
+    {
+     "part": "skirt",
+     "node": "SP_Platform__skirt",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(f.x, f.y, f.z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Chamfered skirt inside the source skirt box (17.5 square, y -0.5..0).",
+     "triangles": 28,
+     "localBounds": {
+      "min": [
+       -8.75,
+       -0.5,
+       -8.75
+      ],
+      "max": [
+       8.75,
+       0.0,
+       8.75
+      ]
+     }
+    },
+    {
+     "part": "strut",
+     "node": "SP_Platform__strut",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(f.x, f.y, f.z)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Tapered station-keeping strut and collar inside the source 2 x 6 x 2 strut.",
+     "triangles": 40,
+     "localBounds": {
+      "min": [
+       -1.0,
+       -6.2,
+       -1.0
+      ],
+      "max": [
+       1.0,
+       -0.5,
+       1.0
+      ]
+     }
+    },
+    {
+     "part": "nacelle",
+     "node": "SP_Platform__nacelle",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 3,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(f.x +- 6.5, f.y, f.z +- 6.5)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Thruster nacelle inside the source 1.6 x 1.2 x 1.6 thruster box (local origin on its axis, y -1.6..-0.4).",
+     "triangles": 48,
+     "localBounds": {
+      "min": [
+       -0.7418,
+       -1.6,
+       -0.78
+      ],
+      "max": [
+       0.7418,
+       -0.4,
+       0.78
+      ]
+     }
+    }
+   ],
+   "triangles": 226,
+   "glb": {
+    "file": "modules/SP_Platform.glb",
+    "bytes": 14776,
+    "sha256": "640f744994f65258e79eae05968d05bdf8b4400f0155eb09062bb14838757c4d"
+   }
+  },
+  "SP_Truss": {
+   "parts": [
+    {
+     "part": "bay",
+     "node": "SP_Truss__bay",
+     "bucket": "dark",
+     "tint": "0x5a6472",
+     "uvScale": 10,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(x, y, zBay)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Open lattice bay: four chords, an end frame, face and top diagonals. Members 0.4; all inside x+-1.5, y0..3.",
+     "triangles": 100,
+     "localBounds": {
+      "min": [
+       -1.5,
+       0.0,
+       -8.0
+      ],
+      "max": [
+       1.5,
+       3.0,
+       8.0
+      ]
+     }
+    }
+   ],
+   "triangles": 100,
+   "glb": {
+    "file": "modules/SP_Truss.glb",
+    "bytes": 6728,
+    "sha256": "7ffafe987b36d0bf22169093735182b790ef108da57085f966755392b4ff32f9"
+   }
+  },
+  "SE_Bulkhead": {
+   "parts": [
+    {
+     "part": "ribs",
+     "node": "SE_Bulkhead__ribs",
+     "bucket": "hull",
+     "tint": "0xaab2bc",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zEdge)",
+      "scale": "none; rotY 0 arrival, pi departure"
+     },
+     "owner": "chunk",
+     "note": "Seven battered buttress ribs down the cliff face, 1.7 proud at the shoulder.",
+     "triangles": 84,
+     "localBounds": {
+      "min": [
+       -27.9,
+       -38.4,
+       -1.7
+      ],
+      "max": [
+       27.9,
+       -3.3,
+       0.0
+      ]
+     }
+    },
+    {
+     "part": "corbel",
+     "node": "SE_Bulkhead__corbel",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zEdge)",
+      "scale": "none; rotY 0 arrival, pi departure"
+     },
+     "owner": "chunk",
+     "note": "Stepped corbel course under the deck lip, full width.",
+     "triangles": 16,
+     "localBounds": {
+      "min": [
+       -31.0,
+       -5.4,
+       -0.9
+      ],
+      "max": [
+       31.0,
+       -3.3,
+       0.0
+      ]
+     }
+    },
+    {
+     "part": "catwalk",
+     "node": "SE_Bulkhead__catwalk",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zEdge)",
+      "scale": "none; rotY 0 arrival, pi departure"
+     },
+     "owner": "chunk",
+     "note": "Inspection catwalk between the ribs at y -9, with a two-bar rail.",
+     "triangles": 156,
+     "localBounds": {
+      "min": [
+       -26.1,
+       -9.3,
+       -1.45
+      ],
+      "max": [
+       26.1,
+       -7.9,
+       0.0
+      ]
+     }
+    },
+    {
+     "part": "launch_rail",
+     "node": "SE_Bulkhead__launch_rail",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 5,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(+-8, 0, zEdge)",
+      "scale": "none; rotY as the bulkhead"
+     },
+     "owner": "chunk",
+     "note": "Launch rail cantilevered 10 m beyond the lip just under deck level (y -2.3..-1.5), end stop and two raking struts.",
+     "triangles": 46,
+     "localBounds": {
+      "min": [
+       -0.7,
+       -7.2,
+       -10.4
+      ],
+      "max": [
+       0.7,
+       -1.5,
+       0.0
+      ]
+     }
+    },
+    {
+     "part": "rail_lamp",
+     "node": "SE_Bulkhead__rail_lamp",
+     "bucket": "neon",
+     "tint": "0xffb43a",
+     "uvScale": 8,
+     "gain": 1.2,
+     "fx": {
+      "anim": [
+       2,
+       0.8,
+       "k/5"
+      ]
+     },
+     "stamp": {
+      "origin": "(+-8, 0, zEdge - dir*(2k+1))",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Small launch-rail chase lamp on the rail top (source lip-lamp colour and rate).",
+     "triangles": 10,
+     "localBounds": {
+      "min": [
+       -0.2,
+       -1.5,
+       -0.2
+      ],
+      "max": [
+       0.2,
+       -1.36,
+       0.2
+      ]
+     }
+    },
+    {
+     "part": "pylon_shaft",
+     "node": "SE_Bulkhead__pylon_shaft",
+     "bucket": "hull",
+     "tint": "0x9aa6b4",
+     "uvScale": 5,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(+-25, 0, zPylon)",
+      "scale": "sy=h"
+     },
+     "owner": "chunk",
+     "note": "Launch pylon shaft, octagonal, inset 0.15 inside the source 3 x h x 3 box. Unit height.",
+     "triangles": 22,
+     "localBounds": {
+      "min": [
+       -1.35,
+       -0.0,
+       -1.35
+      ],
+      "max": [
+       1.35,
+       1.0,
+       1.35
+      ]
+     }
+    },
+    {
+     "part": "pylon_band",
+     "node": "SE_Bulkhead__pylon_band",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 4,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(+-25, y, zPylon)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Band collar at the full source width (3 x 3), 0.5 tall.",
+     "triangles": 28,
+     "localBounds": {
+      "min": [
+       -1.5,
+       -0.0,
+       -1.5
+      ],
+      "max": [
+       1.5,
+       0.5,
+       1.5
+      ]
+     }
+    }
+   ],
+   "triangles": 362,
+   "glb": {
+    "file": "modules/SE_Bulkhead.glb",
+    "bytes": 26796,
+    "sha256": "1e625ce69aba11bf27d82bd803a1d4b7aa2c12e4b6094612772dbaf0cdeee12f"
+   }
+  },
+  "BA_Arena": {
+   "parts": [
+    {
+     "part": "pier_base",
+     "node": "BA_Arena__pier_base",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(xPier, 0, zPier)",
+      "scale": "none; rotY pi on the near side is not used"
+     },
+     "owner": "chunk",
+     "note": "Battered pier footing y0..5 from the full source footprint.",
+     "triangles": 20,
+     "localBounds": {
+      "min": [
+       -4.0,
+       0.0,
+       -4.0
+      ],
+      "max": [
+       4.0,
+       5.0,
+       4.0
+      ]
+     }
+    },
+    {
+     "part": "pier_shaft",
+     "node": "BA_Arena__pier_shaft",
+     "bucket": "hull",
+     "tint": "0x9fb0c2",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(xPier, 5, zPier)",
+      "scale": "sy=h-9"
+     },
+     "owner": "chunk",
+     "note": "Pier shaft, chamfered, unit height (source buttress tint).",
+     "triangles": 12,
+     "localBounds": {
+      "min": [
+       -3.4,
+       -0.0,
+       -3.4
+      ],
+      "max": [
+       3.4,
+       1.0,
+       3.4
+      ]
+     }
+    },
+    {
+     "part": "pier_fins",
+     "node": "BA_Arena__pier_fins",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 6,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(xPier, 5, zPier)",
+      "scale": "sy=h-9"
+     },
+     "owner": "chunk",
+     "note": "Twin fins on the lane face out to the source face plane, unit height; the source light strip runs between them.",
+     "triangles": 12,
+     "localBounds": {
+      "min": [
+       -4.0,
+       0.0,
+       -2.2
+      ],
+      "max": [
+       -3.4,
+       1.0,
+       2.2
+      ]
+     }
+    },
+    {
+     "part": "pier_crown",
+     "node": "BA_Arena__pier_crown",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(xPier, h-4, zPier)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Flared crown back out to the full source footprint, 4 tall, top at the seeded buttress height.",
+     "triangles": 52,
+     "localBounds": {
+      "min": [
+       -4.0,
+       0.0,
+       -4.0
+      ],
+      "max": [
+       4.0,
+       4.0,
+       4.0
+      ]
+     }
+    },
+    {
+     "part": "coil",
+     "node": "BA_Arena__coil",
+     "bucket": "dark",
+     "tint": "0xffffff",
+     "uvScale": 3,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(xPier, yCoil, zPier)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Octagonal conduit coil ring inside the source 9 x 0.6 x 9 plate.",
+     "triangles": 28,
+     "localBounds": {
+      "min": [
+       -4.5,
+       -0.0,
+       -4.5
+      ],
+      "max": [
+       4.5,
+       0.6,
+       4.5
+      ]
+     }
+    },
+    {
+     "part": "near_block",
+     "node": "BA_Arena__near_block",
+     "bucket": "hull",
+     "tint": "0x9fb0c2",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(xBlock, 0, zBlock)",
+      "scale": "none"
+     },
+     "owner": "chunk",
+     "note": "Near-side block inside the source 8 x 3.2 x 8 solid: chamfered body, sloped shoulders.",
+     "triangles": 32,
+     "localBounds": {
+      "min": [
+       -4.0,
+       -0.0,
+       -4.0
+      ],
+      "max": [
+       4.0,
+       3.2,
+       4.0
+      ]
+     }
+    },
+    {
+     "part": "throat_rib",
+     "node": "BA_Arena__throat_rib",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, 0, zRib)",
+      "scale": "sy=40"
+     },
+     "owner": "chunk",
+     "note": "Rib on the far throat wall, flush with the source face x41 (wall mass moves back to x41.5). Unit height, absolute x.",
+     "triangles": 8,
+     "localBounds": {
+      "min": [
+       41.0,
+       0.0,
+       -0.9
+      ],
+      "max": [
+       41.5,
+       1.0,
+       0.9
+      ]
+     }
+    },
+    {
+     "part": "throat_band",
+     "node": "BA_Arena__throat_band",
+     "bucket": "hull",
+     "tint": "0x8e96a0",
+     "uvScale": 8,
+     "gain": 1.0,
+     "fx": {},
+     "stamp": {
+      "origin": "(0, y, zMid)",
+      "scale": "sz=len"
+     },
+     "owner": "chunk",
+     "note": "Horizontal band on the far throat wall, flush with the source face. Unit length, absolute x.",
+     "triangles": 6,
+     "localBounds": {
+      "min": [
+       41.0,
+       -0.5,
+       -0.5
+      ],
+      "max": [
+       41.5,
+       0.5,
+       0.5
+      ]
+     }
+    }
+   ],
+   "triangles": 170,
+   "glb": {
+    "file": "modules/BA_Arena.glb",
+    "bytes": 16204,
+    "sha256": "8956e20e4838898aaa55962906af5a7fdeb501645d4e93962895866f19fbe878"
+   }
+  }
+ },
+ "runtime": {
+  "file": "runtime/environment-kit.glb",
+  "bytes": 455760,
+  "sha256": "2b8832e2cd48fe85338e3dae0eee85fec906ead688cfb6dc7bfdf62d3d2993f0"
+ },
+ "totals": {
+  "RS_WallFrame": 182,
+  "RS_PipeRun": 344,
+  "RS_Gallery": 40,
+  "RS_ServiceBay": 116,
+  "RS_FanHousing": 296,
+  "RS_ExhaustTrunk": 216,
+  "RS_GateHousing": 764,
+  "RS_ReactorCore": 894,
+  "EK_Parapet": 98,
+  "AF_Hangar": 46,
+  "AF_Crest": 96,
+  "AF_Tower": 366,
+  "GB_Armor": 34,
+  "GB_Casemate": 192,
+  "GB_Crest": 56,
+  "GB_Director": 278,
+  "IC_Buttress": 34,
+  "IC_Crest": 28,
+  "IC_Portal": 130,
+  "IC_Keep": 270,
+  "TG_Alarm": 30,
+  "TG_Crest": 56,
+  "TG_Blast": 78,
+  "TG_Siren": 300,
+  "SK_Rock": 308,
+  "SK_Fence": 152,
+  "SP_Platform": 226,
+  "SP_Truss": 100,
+  "SE_Bulkhead": 362,
+  "BA_Arena": 170
+ },
+ "parts": 175,
+ "triangles": 6262,
+ "orientation": {
+  "facesChecked": 2617,
+  "flipped": [],
+  "degenerate": []
+ },
+ "generator": {
+  "blender": "5.2.1 LTS",
+  "build": "9e2066aef7ef",
+  "sources": {
+   "audit_glb.py": "05d788a46571e62d6ffd830be0b4ebcf9e6189e5c6a2afc669d9c0f1365a4bbb",
+   "compose_scene.py": "049c90656495b6d35773975f83afcc617c1797efc37d442749b17c1019d665ed",
+   "generate.py": "845a851329035ca15c048f81651efe4121a751d08993701cc853bbacbee50864",
+   "kit_dsl.py": "21ae1f90f33277347a078e8aec2661b348664ad2dbbf54cc6eadd4a26df3576a",
+   "kit_geometry.py": "ac769b8890d81b74fa55d0114f4f041397b07cede800db88b8a53b0589749178",
+   "parts_fortress.py": "1d982bb0632f23263e243ad7e0ab17c6cf3b565cb907a3408400767c619edfb4",
+   "parts_reactor.py": "a34b7896ffff674ff8e6a3c641513a5f60ecca5dd783295bcf19a2463b3abb50",
+   "parts_structures.py": "ebcbd12bec0a2185c4b61855c6b5e47a052b03716459f0474d311ca210b55258",
+   "verify_blend.py": "2d7f75519b1366f8dd101c5bec3a491bd1750988e70c12ace09acba45514e242"
+  }
+ }
+}

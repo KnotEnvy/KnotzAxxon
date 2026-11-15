@@ -27,6 +27,8 @@ import { appendImportedDreadnought, appendImportedAsteroid, appendImportedBunker
 import { LIGHT_ANIM } from '../render/Materials.js';
 import { Rng, clamp, lerp, TAU } from '../core/Utils.js';
 import { CHUNK_LEN, DECK_HALF, CORRIDOR_HALF, ALT_MAX, SECTOR_KINDS } from './Level.js';
+import { wallRecordFor, gateKitFor, composeFarWall, composeNearParapet, composeGateOrnament } from './FortressKit.js';
+import { environmentKitReady, kitPart, put } from './EnvironmentKit.js';
 
 const _c = new THREE.Color();
 const { STROBE, CHASE, BREATHE, FLICKER } = LIGHT_ANIM;
@@ -268,6 +270,13 @@ class Batch {
 
 const _tri = new Float32Array(9);
 
+/**
+ * Discards geometry. Where the authored environment kit replaces a procedural
+ * picture, the source calls still run through this sink so every seeded draw
+ * happens in source order.
+ */
+const NO_BATCH = { box() {}, stamp() {}, lamp() {}, add(_key, geo) { geo.dispose(); }, surfaces: [], captureSurfaces: false };
+
 /* ------------------------------------------------------------------ */
 /* Prop geometry                                                       */
 /* ------------------------------------------------------------------ */
@@ -312,6 +321,27 @@ function rockGeometry(rng, r) {
   }
   g.computeVertexNormals();
   return g;
+}
+
+const ROCK_PARTS = ['SK_Rock.rock_a', 'SK_Rock.rock_b', 'SK_Rock.rock_c', 'SK_Rock.rock_d', 'SK_Rock.rock_e', 'SK_Rock.rock_f'];
+
+/**
+ * A seeded debris rock. With the environment kit loaded this is one of six
+ * startup templates (about 50 triangles) stamped with the source's seeded
+ * axis scales, instead of an 80- or 320-triangle icosahedron built and eroded
+ * per rock at chunk time. Both paths make the same five draws in the same order.
+ */
+function rockShape(rng, r) {
+  if (!environmentKitReady()) return rockGeometry(rng, r);
+  rng.bool(0.4);                          // source detail draw
+  const sx = rng.range(0.7, 1.3), sy = rng.range(0.55, 1.0), sz = rng.range(0.7, 1.4);
+  const seed = rng.next() * 10;
+  return { tpl: kitPart(ROCK_PARTS[Math.floor(seed * 0.6) % 6]), sx: r * sx, sy: r * sy, sz: r * sz, rotY: seed * 0.6283 };
+}
+
+function emitRock(batch, shape, x, y, z, uvScale, color, fx) {
+  if (shape.isBufferGeometry) batch.add('rock', shape, x, y, z, uvScale, color, 0, 1, fx);
+  else batch.stamp('rock', shape.tpl, x, y, z, uvScale, color, { sx: shape.sx, sy: shape.sy, sz: shape.sz, rotY: shape.rotY, fx });
 }
 
 /** Parked enemy fighter silhouette, nose toward -Z (they face the intruder). */
@@ -535,12 +565,18 @@ export class Fortress {
     if (!sector) return group;
 
     if (sector.kind === SECTOR_KINDS.FORTRESS) {
+      // With the environment kit loaded the far wall is authored architecture:
+      // the source methods still make every seeded draw, but record the far
+      // wall's parameters instead of emitting its boxes. Null = procedural wall.
+      const rec = this._wallRec = wallRecordFor(sector, z0);
       this._deck(batch, rng, z0, sector);
-      this._trenchWalls(batch, rng, z0, sector);
-      this._wallDressing(batch, rng, z0, sector, emit);
+      this._trenchWalls(batch, rng, z0, sector, rec);
+      this._wallDressing(batch, rng, z0, sector, emit, rec);
       this._deckProps(batch, rng, z0, sector, emit);
-      this._skyline(batch, rng, z0, sector, emit);
+      this._skyline(batch, rng, z0, sector, emit, rec);
       this._sectorEdges(batch, z0, z1, sector);
+      if (rec) composeFarWall(this, batch, rec, z0, z1, sector);
+      this._wallRec = null;
     } else if (sector.kind === SECTOR_KINDS.BOSS) {
       this._arena(batch, rng, z0, sector);
       this._sectorEdges(batch, z0, z1, sector);
@@ -557,7 +593,12 @@ export class Fortress {
         const featureBatch = new Batch();
         // Barriers are the game's central read: lift their approach faces.
         featureBatch.frontLift = 1.55;
-        if (f.kind === 'gate') this._gate(obstacle, f, group, featureBatch);
+        if (f.kind === 'gate') {
+          // Authored gate housing: the source planes, posts, motion and runtime
+          // state are untouched; only the ornament inside the source solids changes.
+          if (gateKitFor(this.level.sectorAt(f.z))) { this._gate(obstacle, f, group, null); composeGateOrnament(featureBatch, f); }
+          else this._gate(obstacle, f, group, featureBatch);
+        }
         else if (f.kind === 'fence') this._fence(obstacle, f, featureBatch, rng);
         else if (f.kind === 'wall') this._wall(featureBatch, f, rng);
         else this._arch(featureBatch, f, rng);
@@ -658,30 +699,38 @@ export class Fortress {
   /* Near-side decorative structures use a cutaway profile; gameplay barriers stay full height. */
   /* --- trench walls --------------------------------------------------- */
 
-  _trenchWalls(batch, rng, z0, sector) {
+  /** @param {object|null} rec far-wall record: when given, the far (+x) wall is recorded, not emitted. */
+  _trenchWalls(batch, rng, z0, sector, rec = null) {
     const zc = z0 + CHUNK_LEN / 2;
     for (const side of [-1, 1]) {
       const baseX = side * (DECK_HALF + 3.5);
       const fullHeight = rng.range(20, 34);
       const h = side < 0 ? 3.2 : fullHeight;
+      const far = side > 0 ? rec : null;
+      const out = far ? NO_BATCH : batch;
 
-      batch.box('hull', 7, h, CHUNK_LEN, baseX, 0, zc, 10, 0xc8d2de);
+      // The authored near parapet is carved inside this same box, so it cannot hide more than the box did.
+      if (side < 0 && rec?.theme) composeNearParapet(batch, z0, rec.theme);
+      else out.box('hull', 7, h, CHUNK_LEN, baseX, 0, zc, 10, 0xc8d2de);
 
       // vertical ribs
       // detail density has to track chunk length, not be a fixed count
       const ribs = Math.max(3, Math.round(CHUNK_LEN / 16));
       for (let i = 0; i < ribs; i++) {
         const z = z0 + (i + 0.5) * (CHUNK_LEN / ribs);
-        batch.box('dark', 1.6, h * rng.range(0.55, 0.95), 2.6, baseX - side * 3.6, 0, z, 6, 0xffffff);
+        const H = h * rng.range(0.55, 0.95);
+        out.box('dark', 1.6, H, 2.6, baseX - side * 3.6, 0, z, 6, 0xffffff);
         // Rib-cap beacons: the near side's low parapet gets a slow breathe.
         if (side < 0) batch.box('neon', 0.5, 0.25, 0.5, baseX - side * 3.6, h * 0.5, z, 8, 0xff8a4a, 0, 0.9, { anim: [BREATHE, 0.4, i * 0.17] });
+        far?.ribs.push({ i, z, H });
       }
 
       // horizontal ledge + hazard stripe at flight-deck height
-      batch.box('dark', 2.4, 0.9, CHUNK_LEN, baseX - side * 3.6, side < 0 ? 1.8 : rng.range(9, 15), zc, 6, 0xffffff);
+      const ledgeY = side < 0 ? 1.8 : rng.range(9, 15);
+      out.box('dark', 2.4, 0.9, CHUNK_LEN, baseX - side * 3.6, ledgeY, zc, 6, 0xffffff);
 
       // glowing conduit at the base, in the sector's accent rather than player cyan
-      batch.box('neon', 0.5, 0.5, CHUNK_LEN - 2, baseX - side * 3.5, 0.7, zc, 10, themeFor(sector).accent, 0, 0.62);
+      out.box('neon', 0.5, 0.5, CHUNK_LEN - 2, baseX - side * 3.5, 0.7, zc, 10, themeFor(sector).accent, 0, 0.62);
 
       // lit windows; a few are failing tubes
       const wins = rng.int(5, 5 + Math.round(CHUNK_LEN / 8));
@@ -690,11 +739,37 @@ export class Fortress {
         const wy = rng.range(0.6, Math.max(0.8, h - 2));
         const warm = rng.bool(0.35);
         const failing = rng.bool(0.12);
-        batch.box('neon', 0.25, rng.range(0.5, 1.6), rng.range(1.2, 3.2),
+        const hgt = rng.range(0.5, 1.6), dep = rng.range(1.2, 3.2);
+        const anim = failing ? [FLICKER, rng.range(0.6, 1.4), rng.next()] : null;
+        out.box('neon', 0.25, hgt, dep,
           baseX - side * 3.55, wy, wz, 8, warm ? 0xffb43a : 0x45e0ff, 0, 1.25,
-          failing ? { anim: [FLICKER, rng.range(0.6, 1.4), rng.next()] } : null);
+          anim ? { anim } : null);
+        far?.windows.push({ z: wz, y: wy, hgt, dep, warm, anim });
       }
+      if (far) { far.h = h; far.ledgeY = ledgeY; }
     }
+  }
+
+  /**
+   * Far wall height of a chunk from its own seeded stream (pure: a private
+   * RNG replayed into the discard sink). The kit bridges the seeded height
+   * step where two chunks meet. Null outside the given sector.
+   */
+  _farWallHeight(index, sector) {
+    const z0 = index * CHUNK_LEN;
+    if (this.level.sectorAt(z0 + CHUNK_LEN * 0.5) !== sector) return null;
+    let cache = this._wallHeights;
+    if (!cache || cache.level !== this.level) cache = this._wallHeights = { level: this.level, map: new Map() };
+    let h = cache.map.get(index);
+    if (h === undefined) {
+      const rng = new Rng((index * 2654435761 + this.level.seed) >>> 0);
+      this._deck(NO_BATCH, rng, z0, sector);
+      NO_BATCH.captureSurfaces = false;
+      const rec = { ribs: [], windows: [] };
+      this._trenchWalls(NO_BATCH, rng, z0, sector, rec);
+      cache.map.set(index, (h = rec.h));
+    }
+    return h;
   }
 
   /**
@@ -702,9 +777,11 @@ export class Fortress {
    * signage. The far wall is behind every target in all three rigs, so it can
    * be busy without ever hiding a threat.
    */
-  _wallDressing(batch, rng, z0, sector, emit) {
+  _wallDressing(batch, rng, z0, sector, emit, rec = null) {
     const face = DECK_HALF - 0.1;          // inner face of the far wall
     const theme = themeFor(sector);
+    // The authored kit rebuilds this machinery from the recorded seeded values.
+    if (rec) batch = NO_BATCH;
 
     // two horizontal pipe runs with collars
     for (const y of [3.2, 5.1]) {
@@ -722,9 +799,11 @@ export class Fortress {
       batch.box('neon', 0.3, 0.25, w - 1, face - 0.55, h - 0.6, z, 8, theme.warm, 0, 0.85);
       batch.box('hazard', 0.5, 0.6, w + 1.2, face - 0.35, h, z, 3, 0xffffff);
       for (const s of [-1, 1]) batch.box('hazard', 0.5, h, 0.6, face - 0.35, 0, z + s * (w / 2 + 0.3), 3, 0xffffff);
-      batch.lamp(face - 0.6, h + 1.0, z, 0.55, 0xff8a3a, 1.6, [STROBE, 0.8, rng.next()]);
+      const strobePhase = rng.next();
+      batch.lamp(face - 0.6, h + 1.0, z, 0.55, 0xff8a3a, 1.6, [STROBE, 0.8, strobePhase]);
       // inner glow floor strip and a parked tug
       batch.box('neon', 0.2, 0.08, w - 2, face - 0.7, 0.05, z, 8, 0x45e0ff, 0, 0.7, { anim: [CHASE, 0.5, 0] });
+      if (rec) rec.hangar = { z, w, h, strobePhase };
     }
 
     // big extractor fans set into the wall
@@ -732,10 +811,12 @@ export class Fortress {
     for (let i = 0; i < fans; i++) {
       const z = z0 + rng.range(10, CHUNK_LEN - 10);
       const y = rng.range(9, 15), r = rng.range(2.2, 3.2);
+      const rate = rng.range(3.5, 6) * (rng.bool() ? 1 : -1);
       batch.box('dark', 0.5, r * 2.3, r * 2.3, face - 0.2, y - r * 1.15, z, 5, 0x5a6878);
       batch.box('neon', 0.15, r * 2.1, r * 2.1, face - 0.35, y - r * 1.05, z, 8, 0x0c1418, 0, 1);
       batch.stamp('spin', TPL.fan, face - 0.6, y, z, 4, 0xa8b4c2,
-        { s: r, fx: { pivot: [face - 0.6, y, z], spin: [1, 0, 0, rng.range(3.5, 6) * (rng.bool() ? 1 : -1)] } });
+        { s: r, fx: { pivot: [face - 0.6, y, z], spin: [1, 0, 0, rate] } });
+      rec?.fans.push({ z, y, r, rate });
       if (theme.name === 'reactor') emit('steam', face - 1.2, y, z, 1.4);
     }
 
@@ -748,7 +829,12 @@ export class Fortress {
       batch.box('dark', 0.4, h + 0.8, w + 0.8, face - 0.2, y - 0.4, z, 6, 0x222a34);
       for (const dy of [0, h]) batch.box('neon', 0.16, 0.16, w, face - 0.5, y + dy, z, 8, color, 0, 1.3, anim);
       for (const dz of [-w / 2, w / 2]) batch.box('neon', 0.16, h, 0.16, face - 0.5, y, z + dz, 8, color, 0, 1.3, anim);
-      for (let k = 0; k < 3; k++) batch.box('neon', 0.12, 0.4, w * rng.range(0.2, 0.6), face - 0.5, y + h * (0.25 + k * 0.25), z, 8, color, 0, 0.7, anim);
+      const bars = [];
+      for (let k = 0; k < 3; k++) {
+        bars.push(w * rng.range(0.2, 0.6));
+        batch.box('neon', 0.12, 0.4, bars[k], face - 0.5, y + h * (0.25 + k * 0.25), z, 8, color, 0, 0.7, anim);
+      }
+      if (rec) rec.sign = { z, y, w, h, color, anim, bars };
     }
   }
 
@@ -802,6 +888,7 @@ export class Fortress {
     // satellite dishes on the far shoulder of every fortress sector
     if (rng.bool(0.45)) {
       const x = DECK_HALF - 3, z = z0 + rng.range(8, CHUNK_LEN - 8);
+      this._wallRec?.props.push({ kind: 'dish', x, z, hx: 2.4, hz: 2.4 });
       batch.box('dark', 1.2, 2.6, 1.2, x, 0, z, 4, 0xffffff);
       batch.stamp('spin', TPL.dish, x, 3.4, z, 3, 0xc0cad6,
         { s: 2.2, fx: { pivot: [x, 3.4, z], spin: [0, 1, 0, rng.range(0.35, 0.8)] } });
@@ -810,6 +897,7 @@ export class Fortress {
   }
 
   _crates(batch, rng, x, z, maxH) {
+    if (x > 0) this._wallRec?.props.push({ kind: 'crates', x, z, hx: 1.8, hz: 1.8 });
     if (appendImportedCargo(this, batch, rng, x, z, maxH, this._proceduralCrates)) return;
     this._proceduralCrates(batch, rng, x, z, maxH);
   }
@@ -836,6 +924,7 @@ export class Fortress {
    * reads as one of the live parked fighters you can strafe.
    */
   _parkedFighter(batch, x, z, rng) {
+    this._wallRec?.props.push({ kind: 'fighter', x, z, hx: 3.2, hz: 3.8 });
     if (appendImportedCoveredFighter(batch, x, z, rng)) return;
     this._proceduralParkedFighter(batch, x, z, rng);
   }
@@ -864,6 +953,7 @@ export class Fortress {
 
   /** A horizontal tank farm on saddles: bulk storage, not a shootable drum. */
   _fuelDepot(batch, rng, x, z) {
+    this._wallRec?.props.push({ kind: 'depot', x, z, hx: 2.9, hz: 4.2 });
     if (appendImportedFuelDepot(batch, rng, x, z)) return;
     this._proceduralFuelDepot(batch, rng, x, z);
   }
@@ -910,6 +1000,7 @@ export class Fortress {
   }
 
   _coolingStack(batch, rng, x, z, emit) {
+    this._wallRec?.props.push({ kind: 'stack', x, z, hx: 2.1, hz: 2.1 });
     if (!appendImportedCoolingStack(batch, rng, x, z, emit)) this._proceduralCoolingStack(batch, rng, x, z, emit);
   }
 
@@ -937,6 +1028,7 @@ export class Fortress {
   }
 
   _bunker(batch, rng, x, z, theme) {
+    this._wallRec?.props.push({ kind: 'bunker', x, z, hx: 3.6, hz: 4.1 });
     if (!appendImportedBunker(batch, rng, x, z, theme)) this._proceduralBunker(batch, rng, x, z, theme);
   }
 
@@ -948,7 +1040,7 @@ export class Fortress {
 
   /* --- background skyline --------------------------------------------- */
 
-  _skyline(batch, rng, z0, sector, emit = () => {}) {
+  _skyline(batch, rng, z0, sector, emit = () => {}, rec = null) {
     const count = rng.int(4, 4 + Math.round(CHUNK_LEN / 14));
     for (let i = 0; i < count; i++) {
       const side = rng.bool() ? 1 : -1;
@@ -962,6 +1054,7 @@ export class Fortress {
       // Towers rise from the fortress's lower tiers, so none of them float.
       const root = 60, taper = h / (h + root);
       batch.add('dark', taperedBox(lerp(wTop, w, 1 / taper), wTop, h + root, lerp(dTop, dBottom, 1 / taper), dTop), x, -root, z, 12, 0xffffff, rot);
+      if (rec && side > 0) rec.towers.push({ x, z, rot, yBottom: -root, yTop: h, bottom: [lerp(wTop, w, 1 / taper) / 2, lerp(dTop, dBottom, 1 / taper) / 2], top: [wTop / 2, dTop / 2] });
       // Fixtures are authored in each roof's own frame so yaw never leaves
       // a beacon or parapet hanging in empty space beside a tapered tower.
       const roof = (key, rw, rh, rd, ox, oy, oz, color, gain = 1, fx = null) =>
@@ -1033,10 +1126,26 @@ export class Fortress {
         batch.lamp(x, -2.2, z - dir * 0.1, 0.6, 0xffb43a, 1.4, [CHASE, 0.8, ((x + DECK_HALF) / 54 + (dir > 0 ? 0 : 0.5)) % 1]);
         batch.box('neon', 0.5, 30, 0.3, x, -36, z + dir * 0.05, 10, 0x2a5a70, 0, 0.7);
       }
+      // Authored bulkhead under the lip: buttress ribs, corbel course, catwalk and launch rails.
+      // Everything is below deck level (y <= -1.36), under every flight floor.
+      const kit = environmentKitReady();
+      if (kit) {
+        const rotY = dir < 0 ? 0 : Math.PI;
+        for (const name of ['ribs', 'corbel', 'catwalk']) put(batch, `SE_Bulkhead.${name}`, 0, 0, z, { rotY });
+        for (const rx of [-8, 8]) {
+          put(batch, 'SE_Bulkhead.launch_rail', rx, 0, z, { rotY });
+          for (let k = 0; k < 5; k++) put(batch, 'SE_Bulkhead.rail_lamp', rx, 0, z + dir * (2 * k + 1), { fx: { anim: [CHASE, 0.8, dir > 0 ? 1 - k / 5 : k / 5] } });
+        }
+      }
       // launch pylons stand clear of the corridor on both shoulders
       for (const side of [-1, 1]) {
         const h = side < 0 ? 3 : 26;
-        batch.box('hull', 3, h, 3, side * (DECK_HALF - 2), 0, z - dir * 3, 5, 0x9aa6b4);
+        const px = side * (DECK_HALF - 2), pz = z - dir * 3;
+        if (kit) {
+          // octagonal shaft and band collars inside the source 3 x h x 3 box
+          put(batch, 'SE_Bulkhead.pylon_shaft', px, 0, pz, { sy: h });
+          for (const y of side < 0 ? [0, h - 0.5] : [0, 8, 16, h - 0.5]) put(batch, 'SE_Bulkhead.pylon_band', px, y, pz);
+        } else batch.box('hull', 3, h, 3, px, 0, pz, 5, 0x9aa6b4);
         batch.lamp(side * (DECK_HALF - 2), h + 0.2, z - dir * 3, 0.8, 0xff3d55, 1.6, [STROBE, 0.9, side > 0 ? 0 : 0.5]);
       }
     }
@@ -1171,8 +1280,8 @@ export class Fortress {
         for (let x = -DECK_HALF; x <= DECK_HALF; x += 5.2) {
           const s = rng.range(2.8, 3.8);
           const cy = Math.min(y1 - s * 0.6, y + rng.range(0.6, 1.8));
-          batch.add('rock', rockGeometry(rng, s), x + rng.range(-1, 1), Math.max(y0 + s * 0.5, cy), f.z + rng.range(-t / 2 + 1, t / 2 - 1), s * 2,
-            rng.pick([0xb8b0a4, 0x9a928a, 0xc4b8a8]), 0, 1, { spin: [0, 1, 0, 0] });
+          emitRock(batch, rockShape(rng, s), x + rng.range(-1, 1), Math.max(y0 + s * 0.5, cy), f.z + rng.range(-t / 2 + 1, t / 2 - 1), s * 2,
+            rng.pick([0xb8b0a4, 0x9a928a, 0xc4b8a8]), { spin: [0, 1, 0, 0] });
         }
       }
       // a few big hull plates lock the drift together
@@ -1225,13 +1334,26 @@ export class Fortress {
       const x = side * (CORRIDOR_HALF + 4);
       // A barrier, not decoration: the near pylon rises just past the beam it holds.
       const h = side < 0 ? f.y + f.band + 2.5 : ALT_MAX + 4;
-      batch.box('dark', 2.6, h, 2.6, x, 0, f.z, 4, 0xffffff);
-      batch.box('hull', 3.6, 1.2, 3.6, x, 0, f.z, 4, 0x8a96a6);
+      // Authored pylon hardware sits inside the source pylon solids; the glow keeps the source tuple.
+      const kit = environmentKitReady();
+      if (kit) {
+        put(batch, 'SK_Fence.column', x, 0, f.z, { sy: h });
+        put(batch, 'SK_Fence.base', x, 0, f.z);
+      } else {
+        batch.box('dark', 2.6, h, 2.6, x, 0, f.z, 4, 0xffffff);
+        batch.box('hull', 3.6, 1.2, 3.6, x, 0, f.z, 4, 0x8a96a6);
+      }
       // insulator coils around the emitter head, breathing with the current
       for (let k = 0; k < 4; k++) {
         const y = f.y - 1 + k * (f.band + 2) / 4;
-        batch.box('dark', 3.4, 0.5, 3.4, x, y, f.z, 3, 0xffffff);
-        batch.box('neon', 3.5, 0.2, 3.5, x, y + 0.15, f.z, 8, 0x9fe8ff, 0, 1.3, { anim: [BREATHE, 2.2, k / 4 + (side > 0 ? 0.5 : 0)] });
+        const glow = { anim: [BREATHE, 2.2, k / 4 + (side > 0 ? 0.5 : 0)] };
+        if (kit) {
+          put(batch, 'SK_Fence.insulator', x, y, f.z);
+          put(batch, 'SK_Fence.insulator_glow', x, y, f.z, { fx: glow });
+        } else {
+          batch.box('dark', 3.4, 0.5, 3.4, x, y, f.z, 3, 0xffffff);
+          batch.box('neon', 3.5, 0.2, 3.5, x, y + 0.15, f.z, 8, 0x9fe8ff, 0, 1.3, glow);
+        }
       }
       batch.box('neon', 0.8, f.band, 0.8, x - side * 1.5, f.y, f.z, 8, 0xdff6ff, 0, 1.5, { anim: [FLICKER, 1.3, side > 0 ? 0.3 : 0.7] });
       if (side > 0) batch.lamp(x, h + 0.3, f.z, 0.8, 0xff3d55, 1.6, [STROBE, 0.8, 0]);
@@ -1254,22 +1376,34 @@ export class Fortress {
 
   _platform(batch, f, rng) {
     batch.surfaces.push({ minX:f.x-8, maxX:f.x+8, minZ:f.z-8, maxZ:f.z+8, top:f.y+2.57 });
-    batch.box('deck', 16, 2.4, 16, f.x, f.y, f.z, 8, 0xc8d2de);
-    batch.box('dark', 17.5, 0.5, 17.5, f.x, f.y - 0.5, f.z, 8, 0xffffff);
+    // Authored platform body: every piece sits inside the source solid it replaces; the top face,
+    // footprint, guide surface, lights and their seeded phases are the source's.
+    const kit = environmentKitReady();
+    if (kit) {
+      put(batch, 'SP_Platform.deck', f.x, f.y, f.z);
+      put(batch, 'SP_Platform.skirt', f.x, f.y, f.z);
+    } else {
+      batch.box('deck', 16, 2.4, 16, f.x, f.y, f.z, 8, 0xc8d2de);
+      batch.box('dark', 17.5, 0.5, 17.5, f.x, f.y - 0.5, f.z, 8, 0xffffff);
+    }
     batch.box('neon', 15, 0.12, 0.35, f.x, f.y + 2.45, f.z - 7.6, 8, 0x45e0ff, 0, 0.85);
     batch.box('neon', 15, 0.12, 0.35, f.x, f.y + 2.45, f.z + 7.6, 8, 0x45e0ff, 0, 0.85);
     // underside strut, so it doesn't look like it's floating by magic; tower
     // platforms stand on a pylon rising from the dreadnought's deck
     if (f.pylon) {
       const base = -15;
-      batch.box('dark', 2.6, f.y - 0.5 - base, 2.6, f.x, base, f.z, 6, 0xffffff);
+      if (kit) put(batch, 'SK_Fence.column', f.x, base, f.z, { sy: f.y - 0.5 - base, uv: 6 });
+      else batch.box('dark', 2.6, f.y - 0.5 - base, 2.6, f.x, base, f.z, 6, 0xffffff);
       for (let y = base + 3; y < f.y - 2; y += 4) batch.box('neon', 2.8, 0.18, 2.8, f.x, y, f.z, 8, 0xff3d55, 0, 0.9, { anim: [CHASE, 0.8, (y - base) / 24] });
+    } else if (kit) {
+      put(batch, 'SP_Platform.strut', f.x, f.y, f.z);
     } else {
       batch.box('dark', 2, 6, 2, f.x, f.y - 6.2, f.z, 6, 0xffffff);
     }
     // station-keeping thrusters and corner beacons
     for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
-      batch.box('dark', 1.6, 1.2, 1.6, f.x + sx * 6.5, f.y - 1.6, f.z + sz * 6.5, 3, 0xffffff);
+      if (kit) put(batch, 'SP_Platform.nacelle', f.x + sx * 6.5, f.y, f.z + sz * 6.5);
+      else batch.box('dark', 1.6, 1.2, 1.6, f.x + sx * 6.5, f.y - 1.6, f.z + sz * 6.5, 3, 0xffffff);
       batch.box('neon', 1.1, 0.1, 1.1, f.x + sx * 6.5, f.y - 1.7, f.z + sz * 6.5, 8, 0x8fe4ff, 0, 1.3, { anim: [BREATHE, 0.9, rng.next()] });
       batch.lamp(f.x + sx * 7.6, f.y + 2.5, f.z + sz * 7.6, 0.4, sx < 0 ? 0xff3d55 : 0x52ffa8, 1.5, [STROBE, 0.8, sz < 0 ? 0 : 0.5]);
     }
@@ -1295,6 +1429,7 @@ export class Fortress {
       const z = f.z + rng.range(-24, 24);
       const spin = { pivot: [pivot[0], pivot[1], z], spin: [0, 0, 1, speed] };
       if (rng.bool(0.7)) {
+        // Ring rocks are few and large, so they keep the eroded source geometry.
         batch.add('rock', rockGeometry(rng, s), x, y, z, s * 2, rng.pick([0xb8b0a4, 0x9a928a, 0xc4b8a8]), 0, 1, spin);
       } else {
         const g = new THREE.BoxGeometry(s * 2.2, s * 0.25, s * 0.5).rotateZ(rng.next() * 3).rotateY(rng.next() * 3);
@@ -1342,9 +1477,12 @@ export class Fortress {
       const side = rng.bool() ? 1 : -1;
       const x = side * rng.range(140, 220), y = rng.range(-20, 50);
       const z = z0 + CHUNK_LEN / 2;
-      batch.box('dark', 3, 3, CHUNK_LEN, x, y, z, 10, 0x5a6472);
+      // An open lattice girder inside the source 3 x 3 box when the kit is loaded.
+      const lattice = environmentKitReady();
+      if (!lattice) batch.box('dark', 3, 3, CHUNK_LEN, x, y, z, 10, 0x5a6472);
       for (let k = 0; k < 6; k++) {
         const zz = z0 + k * CHUNK_LEN / 6;
+        if (lattice) put(batch, 'SP_Truss.bay', x, y, zz + 8);
         batch.box('dark', 1, 14, 1, x, y - 5.5, zz, 5, 0x5a6472);
         batch.box('hull', 6, 5, 7, x + side * 4, y - 1, zz + 6, 6, 0x9aa6b4);
         batch.box('neon', 0.4, 2.5, 5, x - side * 0.6, y - 0.2, zz + 6, 8, rng.bool(0.7) ? 0xffc27a : 0x9fe8ff, 0, 1.1);
@@ -1537,13 +1675,27 @@ export class Fortress {
     // buttresses marching down both sides of the arena
     for (const side of [-1, 1]) {
       const x = side * (W / 2 - 3);
-      batch.box('hull', 8, side < 0 ? 3.2 : rng.range(26, 44), 8, x, 0, z0 + 14, 10, 0x9fb0c2);
-      batch.box('hull', 8, side < 0 ? 3.2 : rng.range(26, 44), 8, x, 0, z0 + 44, 10, 0x9fb0c2);
+      // Authored piers and blocks stay inside the source 8 x h x 8 solids; heights are the seeded draws.
+      const kit = environmentKitReady();
+      for (const dz of [14, 44]) {
+        const h = side < 0 ? 3.2 : rng.range(26, 44);
+        if (!kit) batch.box('hull', 8, h, 8, x, 0, z0 + dz, 10, 0x9fb0c2);
+        else if (side < 0) put(batch, 'BA_Arena.near_block', x, 0, z0 + dz);
+        else {
+          put(batch, 'BA_Arena.pier_base', x, 0, z0 + dz);
+          put(batch, 'BA_Arena.pier_shaft', x, 5, z0 + dz, { sy: h - 9 });
+          put(batch, 'BA_Arena.pier_fins', x, 5, z0 + dz, { sy: h - 9 });
+          put(batch, 'BA_Arena.pier_crown', x, h - 4, z0 + dz);
+        }
+      }
       batch.box('neon', 0.4, side < 0 ? 1.8 : 24, 0.4, x - side * 4.3, side < 0 ? 0.6 : 3, z0 + 14, 8, 0xff3d55, 0, 1.1, { anim: [BREATHE, 0.5, 0] });
       batch.box('neon', 0.4, side < 0 ? 1.8 : 24, 0.4, x - side * 4.3, side < 0 ? 0.6 : 3, z0 + 44, 8, 0xff3d55, 0, 1.1, { anim: [BREATHE, 0.5, 0.5] });
       if (side > 0) {
         // conduit coils climbing the far buttresses
-        for (let y = 4; y < 24; y += 3) batch.box('dark', 9, 0.6, 9, x, y, z0 + 44, 3, 0xffffff);
+        for (let y = 4; y < 24; y += 3) {
+          if (kit) put(batch, 'BA_Arena.coil', x, y, z0 + 44);
+          else batch.box('dark', 9, 0.6, 9, x, y, z0 + 44, 3, 0xffffff);
+        }
         batch.stamp('spin', TPL.dish, x, 30, z0 + 14, 4, 0xa4b0bf,
           { s: 4, fx: { pivot: [x, 30, z0 + 14], spin: [0, 1, 0, 0.5] } });
       }
@@ -1552,7 +1704,12 @@ export class Fortress {
     // the approach throat narrows before the core chamber
     if (local < 240) {
       for (const side of [-1, 1]) {
-        batch.box('hull', 14, side < 0 ? 3.2 : 40, CHUNK_LEN, side * (W / 2 + 6), 0, zc, 12, 0x8f9dad);
+        if (side > 0 && environmentKitReady()) {
+          // Far throat wall as framed armour: the mass moves back 0.5 and ribs / bands stand at the source face.
+          batch.box('hull', 13.5, 40, CHUNK_LEN, W / 2 + 6.25, 0, zc, 12, 0x8f9dad);
+          for (let z = z0 + 6; z < z0 + CHUNK_LEN; z += 12) put(batch, 'BA_Arena.throat_rib', 0, 0, z, { sy: 40 });
+          for (const y of [13.3, 26.6, 39.5]) put(batch, 'BA_Arena.throat_band', 0, y, zc, { sz: CHUNK_LEN });
+        } else batch.box('hull', 14, side < 0 ? 3.2 : 40, CHUNK_LEN, side * (W / 2 + 6), 0, zc, 12, 0x8f9dad);
       }
     }
   }

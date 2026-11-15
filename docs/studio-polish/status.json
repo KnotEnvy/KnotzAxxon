@@ -1,0 +1,265 @@
+{
+  "phase": "studio_polish",
+  "status": "combined_facelift_validated_pending_ci_deployment",
+  "baseRevision": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
+  "userAcceptance": {
+    "type": "user_reported",
+    "statement": "Extensive player testing;game working and playing great across devices.",
+    "hardwareBenchmarksClaimed": false
+  },
+  "assignments": {
+    "code": {
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "options": {
+        "reasoningEffort": "high"
+      },
+      "task": {
+        "taskId": "node:delegated-task:command%3Amcp%3Aeaabd069-0600-4150-8afa-02f110f1337b%3Aremote-delegate%3Anitro-sol-high-studio-code-polish-20261114-01",
+        "childThreadId": null,
+        "remoteChild": {
+          "environmentId": "543fe9a3-cf00-4f96-8f57-b8d50dd01cd2",
+          "threadId": "mcp:launch:06cb0db28fd6b35da4a2a732fdd55e946b2885c6ec912fb7880e083abbca145e",
+          "label": "NitroBliss"
+        },
+        "link": "[Studio code backlog and lifecycle polish \u2014 Sol High](t3-thread://v2/543fe9a3-cf00-4f96-8f57-b8d50dd01cd2/mcp:launch:06cb0db28fd6b35da4a2a732fdd55e946b2885c6ec912fb7880e083abbca145e)",
+        "childRunId": null,
+        "childNodeId": "node:delegated-task:command%3Amcp%3Aeaabd069-0600-4150-8afa-02f110f1337b%3Aremote-delegate%3Anitro-sol-high-studio-code-polish-20261114-01",
+        "status": "completed",
+        "workState": "completed",
+        "hasPendingChildRuns": false,
+        "latestTerminalRunId": null,
+        "latestTerminalStatus": null,
+        "latestTerminalSummary": null,
+        "latestTerminalResultContextTransferId": null,
+        "providerInstanceId": "codex",
+        "model": "gpt-6.1-sol",
+        "executedModel": null,
+        "summary": null,
+        "resultContextTransferId": null,
+        "hasPendingQuestion": false,
+        "pendingApproval": null,
+        "waitTimedOut": false
+      },
+      "status": "delivered_verified_integrated"
+    },
+    "presentation": {
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "options": {
+        "reasoningEffort": "xhigh"
+      },
+      "status": "delivered_hash_verified_integrated",
+      "scope": "UI/HUD and asset/environment/readability polish,including live anisotropy quality consistency.",
+      "task": {
+        "taskId": "node:delegated-task:command%3Amcp%3Aeaabd069-0600-4150-8afa-02f110f1337b%3Aremote-delegate%3Anitro-sol-xhigh-studio-presentation-polish-20261115-01",
+        "childThreadId": null,
+        "remoteChild": {
+          "environmentId": "543fe9a3-cf00-4f96-8f57-b8d50dd01cd2",
+          "threadId": "mcp:launch:d94425e96830e0c2ac1a53104fee3418dd306752b9874fcac2306473a6bcf00d",
+          "label": "NitroBliss"
+        },
+        "link": "[Studio UI/HUD and rendering polish \u2014 Sol XHigh](t3-thread://v2/543fe9a3-cf00-4f96-8f57-b8d50dd01cd2/mcp:launch:d94425e96830e0c2ac1a53104fee3418dd306752b9874fcac2306473a6bcf00d)",
+        "childRunId": null,
+        "childNodeId": "node:delegated-task:command%3Amcp%3Aeaabd069-0600-4150-8afa-02f110f1337b%3Aremote-delegate%3Anitro-sol-xhigh-studio-presentation-polish-20261115-01",
+        "status": "completed",
+        "workState": "completed",
+        "hasPendingChildRuns": false,
+        "latestTerminalRunId": null,
+        "latestTerminalStatus": null,
+        "latestTerminalSummary": null,
+        "latestTerminalResultContextTransferId": null,
+        "providerInstanceId": "codex",
+        "model": "gpt-6.1-sol",
+        "executedModel": null,
+        "summary": null,
+        "resultContextTransferId": null,
+        "hasPendingQuestion": false,
+        "pendingApproval": null,
+        "waitTimedOut": false
+      }
+    },
+    "gameFollowup": {
+      "taskId": "node:delegated-task:command%3Amcp%3Aeaabd069-0600-4150-8afa-02f110f1337b%3Aremote-delegate%3Anitro-sol-high-game-lifecycle-polish-20261115-01",
+      "childThreadId": null,
+      "remoteChild": {
+        "environmentId": "543fe9a3-cf00-4f96-8f57-b8d50dd01cd2",
+        "threadId": "mcp:launch:56acbf8c992685a445a7c0dc186bcae3bf3408e8a231633a46249a3bdc1510e0",
+        "label": "NitroBliss"
+      },
+      "link": "[Game startup and prewarm ownership \u2014 Sol High](t3-thread://v2/543fe9a3-cf00-4f96-8f57-b8d50dd01cd2/mcp:launch:56acbf8c992685a445a7c0dc186bcae3bf3408e8a231633a46249a3bdc1510e0)",
+      "childRunId": null,
+      "childNodeId": "node:delegated-task:command%3Amcp%3Aeaabd069-0600-4150-8afa-02f110f1337b%3Aremote-delegate%3Anitro-sol-high-game-lifecycle-polish-20261115-01",
+      "status": "completed_verified_integrated",
+      "workState": "completed",
+      "hasPendingChildRuns": false,
+      "latestTerminalRunId": null,
+      "latestTerminalStatus": null,
+      "latestTerminalSummary": null,
+      "latestTerminalResultContextTransferId": null,
+      "providerInstanceId": "codex",
+      "model": "gpt-6.1-sol",
+      "executedModel": null,
+      "summary": null,
+      "resultContextTransferId": null,
+      "hasPendingQuestion": false,
+      "pendingApproval": null,
+      "waitTimedOut": false
+    },
+    "sonnetFeel": {
+      "provider": "claudeAgent",
+      "model": "claude-sonnet-5-5",
+      "options": {
+        "effort": "high"
+      },
+      "speed": "normal,user approved",
+      "taskRecord": "sonnet-build.json",
+      "status": "cancelled_user_reassignment"
+    },
+    "opusFeel": {
+      "model": "claude-opus-5-5",
+      "options": {
+        "effort": "medium",
+        "fastMode": true
+      },
+      "taskRecord": "opus-medium-feel-build.json",
+      "status": "completed_reviewed_integrated"
+    },
+    "environment": {
+      "model": "claude-fable-5-2",
+      "options": {
+        "effort": "xhigh"
+      },
+      "taskRecord": "../environment-scenes/fable-build.json",
+      "status": "completed_cpu_slice_pending_visual_proof"
+    }
+  },
+  "constraints": [
+    "All current builders on NitroBliss; SuperBeast orchestrates integration and release. Fable High owns spatial work, two Opus High workers own nonspatial code/audio and UI/HUD.",
+    "No balance/collision/camera changes without a demonstrated issue.",
+    "Preserve curated sources/devlog and archived originals.",
+    "No formal Opus review claimed;previous review remains deferred."
+  ],
+  "next": [
+    "Commit curated assets, authoring sources, integration fixes and current evidence.",
+    "Push PR, await CI, merge and verify deployed public resources.",
+    "Record exact deployed revision, remove retired remote branch and confirm the bound worktree is clean."
+  ],
+  "firstCodeValidation": {
+    "archiveSha256": "0b6cff273bc78b2f74f24a0149e0a073c6e2d9846a847e3d9f30ca2573c44e72",
+    "payloadFilesVerified": 15,
+    "receiverTestsPassed": 114,
+    "receiverBuild": "passed",
+    "receiverReleaseSmoke": "passed:desktop,portrait,landscape;27 runtime resources/34 served hashes matchdist",
+    "source": "code-delivery/LEDGER.md",
+    "localRuntimeProcessExit": 0
+  },
+  "integrationReviewQueue": [
+    "Context recovery findings resolved: Escape/P/menu resume blocked while context is lost or renderer resume is pending; suspended touch intent cleared on recovery.",
+    "Renderer setup failure keeps input suspended and starts no frame loop; successful retry learns held pad buttons before accepting fresh input.",
+    "Environment integration and its scene-specific regression checks remain pending."
+  ],
+  "integrationValidation": {
+    "regressionTestsPassed": 241,
+    "build": "passed",
+    "defaultModels": "passed including175environmenttemplates",
+    "legacyModels": "passed",
+    "contextBrowser": "passed",
+    "audioBrowser": "passed with recorded limits",
+    "uiNavigation": "passed includingreducedmotion/shortview",
+    "productionRelease": "passed desktop/portrait/landscape;28runtime resources/35servedhashes",
+    "fullReport": "../release-validation.json"
+  },
+  "priorIntegrationValidation": {
+    "regressionTestsPassed": 150,
+    "build": "passed",
+    "releaseSmoke": "passed:desktop/portrait/landscape;27 runtime resources and34 model/template hashes matchdist",
+    "scope": "Initial code+Game patches and root suspended-frame input regression;remote presentation work not yet included.",
+    "runtimeProcessExit": 0,
+    "verifiedAt": "2026-11-15T07:17:46.660721+00:00"
+  },
+  "releaseAuthorization": {
+    "authorized": true,
+    "instruction": "When done get everything pushed, merged, and cleaned up.",
+    "condition": "Integrate validated deliveries, pass combined release checks, then push/merge and verify deployment."
+  },
+  "latestCodeIntegration": {
+    "verifiedAt": "2026-11-15T15:16:24.804262+00:00",
+    "status": "integrated_regression_and_browser_recovery_verified",
+    "archiveSha256": "efc19ffd5720a64fd112973cbf9b3b9704fd5c32a98cc91615887e0c3d7cfe0f",
+    "deliveredContentHashesVerified": 28,
+    "sourceBeforeHashesMatched": true,
+    "afterHashesMatched": true,
+    "testsPassed": 218,
+    "buildPages": "passed",
+    "diffCheck": "passed",
+    "browserReport": "opus-code-browser.json",
+    "sourceChanges": [
+      "src/main.js",
+      "src/audio/Audio.js"
+    ],
+    "newTests": [
+      "tests/opus-code-audio-lifecycle.test.js",
+      "tests/fixtures/opus-code-audio-lifecycle.mjs"
+    ],
+    "unchangedCoreAudit": [
+      "Engine",
+      "Input",
+      "Lifetime",
+      "Settings",
+      "Game"
+    ],
+    "limitations": [
+      "Software-rendered Chromium; no audible mix, mobile OS interruption or hardware performance verdict.",
+      "This headless browser keeps tabs visible; actual hidden-tab behavior was not established here. CPU fixtures cover the visibility handler.",
+      "Touch and keyboard recovery from explicit suspension were observed. The context was already running at Escape-first observation, so autoplay blocking/initial gesture policy was not established by this Chromium session."
+    ],
+    "liveChanged": false,
+    "sourceHashes": {
+      "src/main.js": "65ae30655f74ce79d31aec08ae96507b3ff21fb081ef706d9f0305d2a8e028c0",
+      "src/audio/Audio.js": "42a261cde0372e132bd7bd3e7fc50a23fda9a10da14d38c55b2d0a8d35979452",
+      "tests/opus-code-audio-lifecycle.test.js": "613dfe2fde72c5c02f0f844d36c7bea5e5c68b9e2a5134d560d36eb2a3e9c5ae",
+      "tests/fixtures/opus-code-audio-lifecycle.mjs": "99adeeb95ba9129089a90019ff1d2d082aaf520f672b22ce10a5a6416abb0e49",
+      "scripts/qa/audio-lifecycle.cjs": "a48dfab85fd1b86582b1fdf904abf2e98d97cd73c184dc7c44535a10d21e6cc3"
+    }
+  },
+  "latestUiIntegration": {
+    "verifiedAt": "2026-11-15T16:36:17.618500+00:00",
+    "status": "integrated_verified",
+    "archiveSha256": "cbaf90f0b10f80c6565c4578e0d15f207ce8ae103ed39f5c3e65ac4287d18122",
+    "deliveredContentHashesVerified": 20,
+    "ownedBeforeHashesMatched": true,
+    "deliveredAfterHashesMatched": true,
+    "testsPassed": 230,
+    "testsBreakdown": "205 prior + 13 audio + 11 UI + 1 primary warning-priority regression",
+    "buildPages": "passed",
+    "diffCheck": "passed",
+    "integrationNavReport": "opus-ui-integrated-nav.json",
+    "warningPriorityFix": "Actual Game.warn repro dropped MISSILE LOCK after BARRAGE; primary test failed on old source, passes with critical lock bypass; ordinary warnings retain cooldown.",
+    "devlogPngsInspected": 5,
+    "integrationPngsInspected": [
+      "short-results-callsign.png",
+      "short-settings.png"
+    ],
+    "retention": "opus-ui-delivery/knotzaxxon-opus-ui-polish-20261115/retention.json",
+    "limits": [
+      "Software browser frames establish layout/interaction, not physical device FPS.",
+      "No spatial delivery integrated yet; final combined release verification remains pending."
+    ],
+    "sourceHashes": {
+      "src/ui/HUD.js": "32f1ad403971b74bec0815c30e56ed27b95d2afcd3d2d21442a1253f7b0b4e8c",
+      "src/ui/Screens.js": "277848a9752163f6d0fe0ca3b97134245579597ea734356f5ffd569113810691",
+      "src/style.css": "b82ca14b9e8eba1bab5007c178f18e961c313abf864af607b6d5a3669766f9bd",
+      "index.html": "12dc73d847df14cd2ef07782e469abc9ff13a2be0b13829147d3c2260e56a45c",
+      "src/game/Game.js": "3ac668b63f82a3530f449d90c5802d98bb91da206dacdd659e24e2bb736f3b4d",
+      "tests/warning-priority.test.js": "00226613872f97828054abe90bd1bec0aee4393dbd981291a160eb87e0cfbeb9"
+    },
+    "liveChanged": false
+  },
+  "localCheckpoint": {
+    "commit": "cf5983c6427a294b82b756f09601bedc11a1e494",
+    "scope": "Validated code/audio/UI/lifecycle polish; 230 tests and build passed; environment delivery and release evidence follow.",
+    "pushed": false,
+    "liveChanged": false
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "baseSHA": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
+  "validatedAtUtc": "2026-11-15T03:01:24.879636+00:00",
+  "baseline": {
+    "command": "npm test",
+    "passed": 104,
+    "failed": 0
+  },
+  "faultReproductionBefore": {
+    "newTestsInitiallyRun": 7,
+    "expectedFailures": 7,
+    "actualEntryBaselineExitCode": 1,
+    "actualEntryBaselineError": "unhandled game teardown failed masks compile failure"
+  },
+  "final": {
+    "command": "npm test",
+    "passed": 114,
+    "failed": 0,
+    "newTechnicalTests": 10
+  },
+  "build": {
+    "command": "npm run build:pages",
+    "exitCode": 0,
+    "nativeLinux": true,
+    "vite": "7.3.6",
+    "rollup": "4.68.3",
+    "esbuild": "0.28.2",
+    "three": "0.185.1",
+    "warning": "Existing ImportedLandmarks dynamic+static import prevents separate chunk; source unchanged."
+  },
+  "syntax": [
+    {
+      "path": "src/main.js",
+      "exitCode": 0
+    },
+    {
+      "path": "src/core/Engine.js",
+      "exitCode": 0
+    },
+    {
+      "path": "src/core/Lifetime.js",
+      "exitCode": 0
+    },
+    {
+      "path": "src/core/Input.js",
+      "exitCode": 0
+    },
+    {
+      "path": "tests/performance.test.js",
+      "exitCode": 0
+    },
+    {
+      "path": "tests/lifecycle.test.js",
+      "exitCode": 0
+    },
+    {
+      "path": "tests/fixtures/startup-lifecycle.mjs",
+      "exitCode": 0
+    }
+  ],
+  "diffCheck": "passed",
+  "patchCheckAgainstBaseIndex": "passed, read-only --cached --check; index not modified",
+  "patchCheckReverseWorkingTree": "passed",
+  "ownedPaths": [
+    "src/main.js",
+    "src/core/Engine.js",
+    "src/core/Lifetime.js",
+    "src/core/Input.js",
+    "tests/performance.test.js",
+    "tests/lifecycle.test.js",
+    "tests/fixtures/startup-lifecycle.mjs"
+  ],
+  "patchSHA256": "01c34e411fdea5aa9f768f6ce541ee155e6d4e8f8e174ad059b2f8d6fa88d873",
+  "coverage": [
+    "Actual entry module in a VM with injected compile/texture upload/disposer failures",
+    "Actual Engine and Input constructors with injected binding/initialization failures",
+    "Failure-tolerant listener/wait and resource teardown",
+    "One RAF through context restoration and intentional stop",
+    "Focus/held-controller pause ownership and optional gamepad failures",
+    "Existing full regression suite including deterministic generation, collision/aim, eight sectors, quality resource retirement, storage scores and camera rigs"
+  ],
+  "scopeLimits": {
+    "fullModelQA": "Not rerun: no assets, adapters, geometry, materials, shader or quality-presentation changes. Current default/legacy checks reported passing by task/release evidence. Existing CPU model regressions run in npm test.",
+    "browserReleaseSmoke": "Not rerun in this worker; scoped CPU lifecycle fault tests plus native production build. Task/release evidence reports current live release passing. Root owns integration/release checks.",
+    "humanAcceptance": "USER-REPORTED extensive successful actual cross-device playtesting and great gameplay; no repeated human/device test requested.",
+    "hardwareMeasurements": "No hardware FPS, p95 or GPU-memory plateau measured or claimed.",
+    "nestedConstructorFailures": "Assigned Engine/Input owners fixed; partial Game/Sky and early Game prewarm preparation gaps remain explicitly queued in LEDGER.md."
+  },
+  "outsideOwnershipEvidence": {
+    "gameConstructor": {
+      "originalError": true,
+      "assigned": false,
+      "sceneChildrenBefore": 1,
+      "sceneChildrenAfterOuterCleanup": 51,
+      "orphanedGeometryObjects": 50
+    },
+    "prewarmPreparation": {
+      "stagedGeometryCount": 8,
+      "stagedGeometryDisposalsAfterGameShutdown": 0
+    },
+    "nestedSkyConstructor": {
+      "originalError": true,
+      "rendererDisposals": 1,
+      "cubeDisposalsAfterEngineRollback": 0,
+      "sceneChildrenAfterEngineRollback": 6
+    },
+    "settingsSchema": {
+      "storedShake": "invalid",
+      "storedMaster": "invalid",
+      "cameraHasFallback": true
+    },
+    "currentSettingsUnchanged": true,
+    "gradeFallbackSlots": 8
+  },
+  "originalPreservation": {
+    "entries": 7478,
+    "files": 7477,
+    "symlinks": 1,
+    "sizeAndMtimeChanges": [],
+    "inventorySHA256": "e7e7fbb72fe84e51765274b18cf00cf4f4b1c3fd75f3a222fd96095b7ba98fd5",
+    "contentAndLinkInventorySHA256": "2b6452e117753090acde46c76e7b9196dc663329bc4a239078454a592e3936d6",
+    "note": "Original content digests were recorded after audit; original entry size/mtime checks against the initial pre-sync inventory remained unchanged.",
+    "prePackagingContentAndLinkVerification": "7477 file SHA-256 values and 1 symlink target match recorded inventory; initial size/mtime checks unchanged."
+  },
+  "releaseActions": {
+    "commits": 0,
+    "pushes": 0,
+    "deployments": 0,
+    "newCheckouts": 0,
+    "delegates": 0,
+    "credentialChanges": 0,
+    "checkoutSync": "one authorized existing-main fast-forward from ee221ad to baseSHA"
+  }
+}

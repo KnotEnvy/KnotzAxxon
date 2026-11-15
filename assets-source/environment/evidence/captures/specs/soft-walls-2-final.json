@@ -1,0 +1,67 @@
+{
+ "out": "captures/soft-walls-2-final",
+ "seed": 7,
+ "quality": "high",
+ "width": 1024,
+ "height": 576,
+ "variants": {
+  "kit": ""
+ },
+ "scenes": [
+  [
+   "airfield-tower-classic",
+   "classic",
+   0,
+   640,
+   12,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "airfield-tower-chase",
+   "chase",
+   0,
+   640,
+   12,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "battery-director-classic",
+   "classic",
+   1,
+   680,
+   12,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "battery-director-chase",
+   "chase",
+   1,
+   680,
+   12,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "gauntlet-siren-classic",
+   "classic",
+   6,
+   760,
+   12,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ]
+ ]
+}

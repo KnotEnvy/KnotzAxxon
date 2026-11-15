@@ -1,0 +1,40 @@
+{
+  "verifiedAt": "2026-11-15T15:16:24.804262+00:00",
+  "status": "integrated_regression_and_browser_recovery_verified",
+  "archiveSha256": "efc19ffd5720a64fd112973cbf9b3b9704fd5c32a98cc91615887e0c3d7cfe0f",
+  "deliveredContentHashesVerified": 28,
+  "sourceBeforeHashesMatched": true,
+  "afterHashesMatched": true,
+  "testsPassed": 218,
+  "buildPages": "passed",
+  "diffCheck": "passed",
+  "browserReport": "opus-code-browser.json",
+  "sourceChanges": [
+    "src/main.js",
+    "src/audio/Audio.js"
+  ],
+  "newTests": [
+    "tests/opus-code-audio-lifecycle.test.js",
+    "tests/fixtures/opus-code-audio-lifecycle.mjs"
+  ],
+  "unchangedCoreAudit": [
+    "Engine",
+    "Input",
+    "Lifetime",
+    "Settings",
+    "Game"
+  ],
+  "limitations": [
+    "Software-rendered Chromium; no audible mix, mobile OS interruption or hardware performance verdict.",
+    "This headless browser keeps tabs visible; actual hidden-tab behavior was not established here. CPU fixtures cover the visibility handler.",
+    "Touch and keyboard recovery from explicit suspension were observed. The context was already running at Escape-first observation, so autoplay blocking/initial gesture policy was not established by this Chromium session."
+  ],
+  "liveChanged": false,
+  "sourceHashes": {
+    "src/main.js": "65ae30655f74ce79d31aec08ae96507b3ff21fb081ef706d9f0305d2a8e028c0",
+    "src/audio/Audio.js": "42a261cde0372e132bd7bd3e7fc50a23fda9a10da14d38c55b2d0a8d35979452",
+    "tests/opus-code-audio-lifecycle.test.js": "613dfe2fde72c5c02f0f844d36c7bea5e5c68b9e2a5134d560d36eb2a3e9c5ae",
+    "tests/fixtures/opus-code-audio-lifecycle.mjs": "99adeeb95ba9129089a90019ff1d2d082aaf520f672b22ce10a5a6416abb0e49",
+    "scripts/qa/audio-lifecycle.cjs": "a48dfab85fd1b86582b1fdf904abf2e98d97cd73c184dc7c44535a10d21e6cc3"
+  }
+}

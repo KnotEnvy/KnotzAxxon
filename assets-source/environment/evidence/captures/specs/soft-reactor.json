@@ -1,0 +1,46 @@
+{
+ "out": "captures/soft-reactor",
+ "seed": 7,
+ "quality": "high",
+ "width": 1280,
+ "height": 720,
+ "variants": {
+  "source": "environmentKit=0",
+  "kit": ""
+ },
+ "scenes": [
+  [
+   "core-classic",
+   "classic",
+   3,
+   826,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "core-modern",
+   "modern",
+   3,
+   826,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "core-chase",
+   "chase",
+   3,
+   826,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ]
+ ]
+}

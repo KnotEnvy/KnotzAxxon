@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "checks": [
+    "trusted touch gesture unlocks the actual audio context",
+    "trusted touch restores a suspended context without replacing it",
+    "trusted key restores a suspended context"
+  ],
+  "errors": [],
+  "limitations": [
+    "Software-rendered Chromium; no audible mix, mobile OS interruption or hardware performance verdict.",
+    "This headless browser keeps tabs visible; actual hidden-tab behavior was not established here. CPU fixtures cover the visibility handler."
+  ],
+  "escapeFirstState": "running",
+  "interpretation": "Touch and keyboard recovery from explicit suspension were observed. The context was already running at Escape-first observation, so autoplay blocking/initial gesture policy was not established by this Chromium session."
+}

@@ -1,0 +1,221 @@
+{
+ "file": "boss-arena-composition.blend",
+ "sha256": "5df5a426bd4a434dfa7384da82a2ced25f20ab70cc04fb318a05fc1760e0779c",
+ "bytes": 1664016,
+ "blender": "5.2.1 LTS",
+ "scene": "boss-arena",
+ "unit": "METRIC",
+ "libraries": [],
+ "provenance": {
+  "schema": "knotzaxxon-environment-composition-v1",
+  "seed": 7,
+  "loop": 0,
+  "chunks": [
+   118,
+   121
+  ],
+  "gateTime": 1.7,
+  "note": "Actual Fortress._buildChunk output (kit off vs kit on) in game coordinates; gate planes/posts posed by the source update(time). Player/threat models are placed by the Blender builder from shipped GLBs at scale 1.",
+  "fortressSha": "a3dc93d67d5e4d2169f0cbbe08f4faee2629460279498947ba3dbb023360bdb0"
+ },
+ "reuse": "Approved shipped props in this scene: player and threat GLBs at scale 1 (GAMEPLAY); scenery templates that load in Node (cargo kit, cooling stack, covered fighter, fuel depot, flak gun, antenna, wreckage, carrier) are inside the streamed chunk meshes exactly as the runtime stamps them. Bunker, dreadnought and asteroid templates load only in the browser, so those props show their procedural fallback here.",
+ "notLiveGpu": "Offline reconstruction of actual CPU-streamed chunk geometry with proxy materials; not a live WebGL capture.",
+ "collections": {
+  "KIT_streamed": {
+   "objects": 24,
+   "triangles": 6814,
+   "hiddenInViewport": false
+  },
+  "SOURCE_streamed": {
+   "objects": 24,
+   "triangles": 5288,
+   "hiddenInViewport": true
+  },
+  "GAMEPLAY": {
+   "objects": 28,
+   "triangles": 30740,
+   "hiddenInViewport": false
+  },
+  "REFERENCE": {
+   "objects": 1,
+   "triangles": 0,
+   "hiddenInViewport": false
+  },
+  "CAMERAS": {
+   "objects": 6,
+   "triangles": 0,
+   "hiddenInViewport": false
+  },
+  "KIT_LIBRARY": {
+   "objects": 175,
+   "triangles": 6262,
+   "hiddenInViewport": true
+  }
+ },
+ "kitStreamedAttributesByBucket": {
+  "deck": [
+   "Col"
+  ],
+  "neon": [
+   "Col,aAnim"
+  ],
+  "paint": [
+   "Col"
+  ],
+  "hull": [
+   "Col"
+  ],
+  "dark": [
+   "Col"
+  ],
+  "spin": [
+   "Col,aPivot,aSpin"
+  ]
+ },
+ "gameplay": [
+  {
+   "name": "PLAYER_shipped_scale1",
+   "gamePosition": [
+    0.0,
+    9.0,
+    11380.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 8
+  },
+  {
+   "name": "THREAT_fuel_11420",
+   "gamePosition": [
+    -8.0,
+    0.0,
+    11420.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 6
+  },
+  {
+   "name": "THREAT_fuel_11440",
+   "gamePosition": [
+    8.0,
+    0.0,
+    11440.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "meshes": 6
+  }
+ ],
+ "cameras": [
+  {
+   "name": "CAM_classic_pose0_z11380",
+   "rig": "classic",
+   "type": "ORTHO",
+   "eyeGame": [
+    -45.255,
+    54.255,
+    11362.745
+   ],
+   "targetGame": [
+    0,
+    9,
+    11408
+   ],
+   "maxDelta": 4.88e-05
+  },
+  {
+   "name": "CAM_modern_pose0_z11380",
+   "rig": "modern",
+   "type": "PERSP",
+   "eyeGame": [
+    -9.919,
+    23.0,
+    11352.749
+   ],
+   "targetGame": [
+    0.0,
+    10.2,
+    11396.0
+   ],
+   "maxDelta": 0.0001094
+  },
+  {
+   "name": "CAM_chase_pose0_z11380",
+   "rig": "chase",
+   "type": "PERSP",
+   "eyeGame": [
+    -2.509,
+    18.5,
+    11356.131
+   ],
+   "targetGame": [
+    0.0,
+    10.2,
+    11396.0
+   ],
+   "maxDelta": 0.0003614
+  },
+  {
+   "name": "CAM_classic_pose1_z11600",
+   "rig": "classic",
+   "type": "ORTHO",
+   "eyeGame": [
+    -45.255,
+    54.255,
+    11582.745
+   ],
+   "targetGame": [
+    0,
+    9,
+    11628
+   ],
+   "maxDelta": 4.88e-05
+  },
+  {
+   "name": "CAM_modern_pose1_z11600",
+   "rig": "modern",
+   "type": "PERSP",
+   "eyeGame": [
+    -9.919,
+    23.0,
+    11572.749
+   ],
+   "targetGame": [
+    0.0,
+    10.2,
+    11616.0
+   ],
+   "maxDelta": 0.0001094
+  },
+  {
+   "name": "CAM_chase_pose1_z11600",
+   "rig": "chase",
+   "type": "PERSP",
+   "eyeGame": [
+    -2.509,
+    18.5,
+    11576.131
+   ],
+   "targetGame": [
+    0.0,
+    10.2,
+    11616.0
+   ],
+   "maxDelta": 0.0003614
+  }
+ ],
+ "packedImages": 4,
+ "images": 4,
+ "failures": [],
+ "passed": true
+}

@@ -1,0 +1,36 @@
+[
+  {
+    "command": [
+      "git",
+      "apply",
+      "--check",
+      "--directory=asset-work/studio-visual/start",
+      "asset-work/studio-visual/changes.patch"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "apply",
+      "--reverse",
+      "--check",
+      "asset-work/studio-visual/changes.patch"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]
