@@ -10,6 +10,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { chromium } = require(process.env.KZ_PLAYWRIGHT_PATH || 'playwright');
+const {startEvidence,finishEvidence}=require('./launch/browser-evidence.cjs');
 const URL = process.env.KZ_TEST_URL || 'http://127.0.0.1:5291';
 const OUT = process.env.KZ_OUT || 'artifacts/opus-ui-nav';
 fs.mkdirSync(OUT, { recursive: true });
@@ -22,9 +23,10 @@ const visible = () => {
 };
 
 (async () => {
-  const browser = await chromium.launch({ headless: true, executablePath: process.env.KZ_CHROME || undefined,
-    args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'], env: { ...process.env, DISPLAY: '', WAYLAND_DISPLAY: '' } });
-  const out = { url: URL, browser: browser.version(), note: 'SwiftShader software frames; interaction and layout only', checks: [] };
+  const browser = await chromium.launch({ headless: true, ...(process.env.KZ_CHROME_EXE ? {
+    executablePath:process.env.KZ_CHROME_EXE,args:['--use-angle=d3d11','--enable-gpu','--ignore-gpu-blocklist']
+  } : {executablePath:process.env.KZ_CHROME||undefined,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader','--ignore-gpu-blocklist'],env:{...process.env,DISPLAY:'',WAYLAND_DISPLAY:''}}) });
+  const out = { url: URL, browser: browser.version(), note: 'Interaction/layout diagnostics; actual renderer is recorded per fixture; no physical-device or FPS claim', checks: [] };
   const fail = (msg) => { out.checks.push({ fail: msg }); process.exitCode = 1; };
   try {
     {
@@ -32,12 +34,14 @@ const visible = () => {
       const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
       const page = await ctx.newPage();
       await page.goto(URL); await page.waitForFunction(() => window.KZ?.screens?.current === 'title', null, { timeout: 120000 });
+      await startEvidence(page);
       await page.evaluate(() => { KZ.engine.stop(); KZ.screens.updateGamepad(KZ.engine.input, 0); });
       const t = await page.evaluate(() => { const s = document.querySelector('.title-sub'); return { fs: parseFloat(getComputedStyle(s).fontSize), right: s.getBoundingClientRect().right, scrollW: document.documentElement.scrollWidth, vw: innerWidth, hint: document.getElementById('title-hint').textContent }; });
       out.checks.push({ id: 'portrait-title', ...t });
       if (t.fs < 12 || t.right > t.vw || t.scrollW > t.vw) fail(`portrait-title: subtitle ${t.fs}px right ${t.right}`);
       if (t.hint !== 'TAP ENGAGE TO LAUNCH') fail(`portrait-title: hint ${t.hint}`);
       await page.screenshot({ path: path.join(OUT, 'portrait-title.png'), timeout: 120000 });
+      out.checks.push({id:'portrait-rendering',rendering:await finishEvidence(page,browser)});
       await ctx.close();
     }
     for (const [id, viewport, reduced] of [['short', { width: 1280, height: 440 }, false], ['desk-rm', { width: 1280, height: 720 }, true]]) {
@@ -45,6 +49,7 @@ const visible = () => {
       const page = await ctx.newPage(); const errors = []; page.on('pageerror', e => errors.push(e.message));
       await page.addInitScript(() => { try { localStorage.setItem('knotzaxxon.settings.v2', JSON.stringify({ quality: 'low', camera: 'classic', shake: 0 })); localStorage.removeItem('knotzaxxon.scores.v2'); } catch {} });
       await page.goto(URL); await page.waitForFunction(() => window.KZ?.screens?.current === 'title', null, { timeout: 120000 });
+      await startEvidence(page);
       await page.evaluate(() => KZ.engine.stop());
       // victory with a new record: CONTINUE focused, walk up into the callsign and down through every action
       await page.evaluate(() => { KZ.game.start(); KZ.screens.hide(); KZ.game.score = 912340; KZ.game._finish(true); });
@@ -87,6 +92,7 @@ const visible = () => {
         out.checks.push({ id, escape: back });
         if (back.current !== 'title' || back.focus !== 'settings') fail(`${id}: Escape did not restore focus to SYSTEMS (${JSON.stringify(back)})`);
       }
+      out.checks.push({id,rendering:await finishEvidence(page,browser)});
       if (errors.length) fail(`${id}: page errors ${errors}`);
       await ctx.close();
     }

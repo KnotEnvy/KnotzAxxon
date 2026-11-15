@@ -1,18 +1,23 @@
 /** End-to-end model bindings, cues and resource lifetime against the actual game. */
-const { chromium } = require('playwright');
+const { chromium } = require(process.env.KZ_PLAYWRIGHT_PATH || 'playwright');
 const { spawn } = require('node:child_process');
 const fs = require('node:fs');
-const productionPreview = !process.argv.includes('--legacy');
+const path = require('node:path');
+const {startEvidence,finishEvidence}=require('./launch/browser-evidence.cjs');
+const OUT=process.env.KZ_OUT || 'artifacts/imported-models';
+const URL=process.env.KZ_TEST_URL || 'http://127.0.0.1:4181';
+const productionPreview = !process.argv.includes('--legacy') && process.env.KZ_MODEL_LEGACY !== '1';
 (async () => {
- const server=spawn(process.execPath,['node_modules/vite/bin/vite.js','--host','127.0.0.1','--port','4181','--strictPort'],{stdio:'pipe'});
+ const server=process.env.KZ_TEST_URL?null:spawn(process.execPath,['node_modules/vite/bin/vite.js','--host','127.0.0.1','--port','4181','--strictPort'],{stdio:'pipe'});
  let browser; const errors=[];
  try {
-  for(let i=0;i<100;i++){try{if((await fetch('http://127.0.0.1:4181')).ok)break;}catch{} await new Promise(r=>setTimeout(r,100));}
-  browser=await chromium.launch({headless:true});
+  for(let i=0;i<100;i++){try{if((await fetch(URL)).ok)break;}catch{} await new Promise(r=>setTimeout(r,100));}
+  browser=await chromium.launch({headless:true,...(process.env.KZ_CHROME_EXE?{executablePath:process.env.KZ_CHROME_EXE,args:['--use-angle=d3d11','--enable-gpu','--ignore-gpu-blocklist']}:{})});
   const page=await browser.newPage({viewport:{width:1280,height:720}});
   page.on('pageerror',e=>errors.push(e.message));
-  await page.goto('http://127.0.0.1:4181'+(productionPreview?'':'?productionModels=0'));
+  await page.goto(URL+(productionPreview?'':'?productionModels=0'));
   await page.waitForFunction(()=>!!window.KZ,undefined,{timeout:90000});
+  await startEvidence(page);
   const report=await page.evaluate(async(productionPreview)=>{
    const {Boss}=await import('/src/entities/Boss.js');
    const {Vector3,Scene,Matrix4,Quaternion}=await import('/node_modules/three/build/three.module.js');
@@ -842,9 +847,9 @@ const productionPreview = !process.argv.includes('--legacy');
    return {selectedFighter:game.player.model.name,groundTargets:['turret','radar','silo','fuel'],productionPreview,environmentKitParts:environmentKit.environmentKitParts().size,...sceneryResults,fuelDepot,bunker,flakGun,coolingStack,antenna,wreckage,asteroids,carrier,dreadnought,missilePool,parkedFighter,pickupChecks,flyers,heavyTurret,mine,batch,iterations:results};
   },productionPreview);
   if(errors.length)throw Error(errors.join('\n'));
-  fs.mkdirSync('artifacts/imported-models',{recursive:true});
-  fs.writeFileSync('artifacts/imported-models/'+(productionPreview?'production-report.json':'report.json'),JSON.stringify({...report,errors},null,2)+'\n');
-  await page.screenshot({path:'artifacts/imported-models/in-game.png'});
+  fs.mkdirSync(OUT,{recursive:true});
+  fs.writeFileSync(OUT+'/'+(productionPreview?'production-report.json':'report.json'),JSON.stringify({...report,errors},null,2)+'\n');
+  await page.screenshot({path:path.join(OUT,'in-game.png')});
   if(productionPreview)for(const rig of ['classic','modern','chase']) {
    await page.evaluate(async rig=>{
     const {settings}=await import('/src/core/Settings.js');
@@ -884,7 +889,7 @@ const productionPreview = !process.argv.includes('--legacy');
     game.projectiles.render(engine.camera);
     engine.renderer.render(game.scene,engine.camera);
    },rig);
-   await page.locator('canvas').first().screenshot({path:`artifacts/imported-models/production-${rig}.png`});
+   await page.locator('canvas').first().screenshot({path:`${OUT}/production-${rig}.png`});
   }
   if(productionPreview)for(const rig of ['classic','modern','chase']) {
    await page.evaluate(async rig=>{
@@ -899,7 +904,7 @@ const productionPreview = !process.argv.includes('--legacy');
     for(let i=35;i<=40;i++)game.fortress.chunks.set(i,game.fortress._buildChunk(i));
     engine.renderer.render(game.scene,engine.camera);
    },rig);
-   await page.locator('canvas').first().screenshot({path:`artifacts/imported-models/dreadnought-${rig}.png`});
+   await page.locator('canvas').first().screenshot({path:`${OUT}/dreadnought-${rig}.png`});
   }
   if(productionPreview)for(const rig of ['classic','modern','chase']) {
    await page.evaluate(async rig=>{
@@ -911,7 +916,7 @@ const productionPreview = !process.argv.includes('--legacy');
     game.fortress.clear();for(let i=68;i<=75;i++)game.fortress.chunks.set(i,game.fortress._buildChunk(i));
     game.materials.update(1.25);engine.renderer.render(game.scene,engine.camera);
    },rig);
-   await page.locator('canvas').first().screenshot({path:`artifacts/imported-models/carrier-${rig}.png`});
+   await page.locator('canvas').first().screenshot({path:`${OUT}/carrier-${rig}.png`});
   }
   if(productionPreview)for(const rig of ['classic','modern','chase']) {
    await page.evaluate(async rig=>{
@@ -927,7 +932,7 @@ const productionPreview = !process.argv.includes('--legacy');
     settings.set('camera',rig);game.rig.applyRig();game.rig.snap(game.player);
     game.materials.update(1.25);engine.renderer.render(game.scene,engine.camera);
    },rig);
-   await page.locator('canvas').first().screenshot({path:`artifacts/imported-models/antenna-${rig}.png`});
+   await page.locator('canvas').first().screenshot({path:`${OUT}/antenna-${rig}.png`});
   }
   if(productionPreview)for(const rig of ['classic','modern','chase']) {
    await page.evaluate(async rig=>{
@@ -943,7 +948,7 @@ const productionPreview = !process.argv.includes('--legacy');
     settings.set('camera',rig);game.rig.applyRig();game.rig.snap(game.player);
     game.materials.update(1.25);engine.renderer.render(game.scene,engine.camera);
    },rig);
-   await page.locator('canvas').first().screenshot({path:`artifacts/imported-models/cooling-stack-${rig}.png`});
+   await page.locator('canvas').first().screenshot({path:`${OUT}/cooling-stack-${rig}.png`});
   }
   if(productionPreview)for(const rig of ['classic','modern','chase']) {
    await page.evaluate(async rig=>{
@@ -956,7 +961,7 @@ const productionPreview = !process.argv.includes('--legacy');
     settings.set('camera',rig);game.rig.applyRig();game.rig.snap(game.player);
     game.materials.update(1.25);engine.renderer.render(game.scene,engine.camera);
    },rig);
-   await page.locator('canvas').first().screenshot({path:`artifacts/imported-models/flak-gun-${rig}.png`});
+   await page.locator('canvas').first().screenshot({path:`${OUT}/flak-gun-${rig}.png`});
   }
   if(productionPreview)for(const rig of ['classic','modern','chase']) {
    await page.evaluate(async rig=>{
@@ -972,7 +977,7 @@ const productionPreview = !process.argv.includes('--legacy');
     settings.set('camera',rig);game.rig.applyRig();game.rig.snap(game.player);
     game.materials.update(1.25);engine.renderer.render(game.scene,engine.camera);
    },rig);
-   await page.locator('canvas').first().screenshot({path:`artifacts/imported-models/bunker-${rig}.png`});
+   await page.locator('canvas').first().screenshot({path:`${OUT}/bunker-${rig}.png`});
   }
   if(productionPreview)for(const rig of ['classic','modern','chase']) {
    await page.evaluate(async rig=>{
@@ -988,7 +993,7 @@ const productionPreview = !process.argv.includes('--legacy');
     settings.set('camera',rig);game.rig.applyRig();game.rig.snap(game.player);
     game.materials.update(1.25);engine.renderer.render(game.scene,engine.camera);
    },rig);
-   await page.locator('canvas').first().screenshot({path:`artifacts/imported-models/fuel-depot-${rig}.png`});
+   await page.locator('canvas').first().screenshot({path:`${OUT}/fuel-depot-${rig}.png`});
   }
   if(productionPreview)for(const asset of ['cargo-kit','covered-fighter'])for(const rig of ['classic','modern','chase']) {
    await page.evaluate(async({asset,rig})=>{
@@ -1004,7 +1009,7 @@ const productionPreview = !process.argv.includes('--legacy');
     settings.set('camera',rig);game.rig.applyRig();game.rig.snap(game.player);
     game.materials.update(1.25);engine.renderer.render(game.scene,engine.camera);
    },{asset,rig});
-   await page.locator('canvas').first().screenshot({path:`artifacts/imported-models/${asset}-${rig}.png`});
+   await page.locator('canvas').first().screenshot({path:`${OUT}/${asset}-${rig}.png`});
   }
   if(productionPreview) {
    report.asteroidTemplateShutdown=await page.evaluate(async()=>{
@@ -1028,11 +1033,14 @@ const productionPreview = !process.argv.includes('--legacy');
     if(![...geometries].every(g=>counts.get(g)===1))throw Error('Asteroid template shutdown exactly once');
     return {geometries:asteroidGeometryCount,antennaGeometries:antennaGeometries.length,bunkerGeometries:bunkerGeometries.length,fuelDepotGeometries:fuelDepotGeometries.length,cargoGeometries:cargoGeometries.length,coveredGeometries:coveredGeometries.length,environmentGeometries:environmentGeometries.length,disposedExactlyOnce:true};
    });
-   fs.writeFileSync('artifacts/imported-models/production-report.json',JSON.stringify({...report,errors},null,2)+'\n');
+   fs.writeFileSync(path.join(OUT,'production-report.json'),JSON.stringify({...report,errors},null,2)+'\n');
   }
+  report.rendering=await finishEvidence(page,browser);
+  fs.writeFileSync(path.join(OUT,productionPreview?'production-report.json':'report.json'),JSON.stringify({...report,errors},null,2)+'\n');
+  if(errors.length)throw Error('Browser page errors: '+errors.join('; '));
   console.log(JSON.stringify(report,null,2));
  } catch(error) {
   if(errors.length)console.error('Browser errors:',errors);
   throw error;
- } finally {await browser?.close();server.kill();}
+ } finally {await browser?.close();server?.kill();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

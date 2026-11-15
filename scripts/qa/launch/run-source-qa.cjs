@@ -4,10 +4,15 @@ const {spawn,execFileSync}=require('node:child_process');
 const {acquireGPU}=require('./gpu-lease.cjs');
 const {fingerprint}=require('./fingerprint.cjs');
 const root=path.resolve(__dirname,'../../..'),name=process.argv[2];
-if(!['audio-render','audio-lifecycle'].includes(name))throw Error('Expected audio-render or audio-lifecycle');
-const out=path.join(root,'artifacts/launch/audio',name+'-'+new Date().toISOString().replace(/[:.]/g,'-'));
+const scriptByName={'audio-render':'audio-render','audio-lifecycle':'audio-lifecycle','context-recovery':'context-recovery',
+  'models-default':'imported-models','models-legacy':'imported-models','ui-nav':'opus-ui-nav'};
+if(!Object.hasOwn(scriptByName,name))throw Error('Expected '+Object.keys(scriptByName).join(', '));
+const out=path.join(root,'artifacts/launch',name.startsWith('audio-')?'audio':'functional',name+'-'+new Date().toISOString().replace(/[:.]/g,'-'));
 const win=p=>execFileSync('wslpath',['-w',p],{encoding:'utf8'}).trim();
-let lease,server;
+let lease,server,child,closing=false;
+async function stop(p){if(p&&p.exitCode===null){p.kill('SIGTERM');await new Promise(r=>p.once('exit',r))}}
+async function cleanup(){if(closing)return;closing=true;await stop(child);await stop(server);lease?.release()}
+for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>cleanup().finally(()=>process.exit(130)));
 (async()=>{
   lease=acquireGPU('/home/knotzuni/code/KnotzAxxon/asset-work/public-launch/gpu-reservation.json','Primary '+name);
   fs.mkdirSync(out,{recursive:true});const before=fingerprint(root);
@@ -19,11 +24,12 @@ let lease,server;
   if(!ready)throw Error('Owned QA server failed to start');
   const config={source:before,env:{KZ_TEST_URL:url,KZ_OUT:win(out),
     KZ_PLAYWRIGHT_PATH:win('/home/knotzuni/code/KnotzAxxon/asset-work/studio-opus-code/tools/node_modules/playwright'),
-    KZ_CHROME_EXE:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'},
-    script:win(path.join(root,'scripts/qa',name+'.cjs'))};
+    KZ_CHROME_EXE:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+    KZ_MODEL_LEGACY:name==='models-legacy'?'1':'0'},
+    script:win(path.join(root,'scripts/qa',scriptByName[name]+'.cjs'))};
   const file=path.join(out,'config.json');fs.writeFileSync(file,JSON.stringify(config,null,2));
-  const child=spawn('node.exe',[win(path.join(__dirname,'windows-source-qa.cjs')),win(file)],{stdio:'inherit'});
+  child=spawn('node.exe',[win(path.join(__dirname,'windows-source-qa.cjs')),win(file)],{stdio:'inherit'});
   const code=await new Promise((r,j)=>{child.once('error',j);child.once('exit',r)});
   const after=fingerprint(root);fs.writeFileSync(path.join(out,'source-receipt.json'),JSON.stringify({before,after,stableSource:before.sourceHash===after.sourceHash,exitCode:code},null,2));
-  if(code!==0)process.exitCode=1;
-})().catch(e=>{console.error(e.stack);process.exitCode=1}).finally(()=>{server?.kill();lease?.release()});
+  if(code!==0||before.sourceHash!==after.sourceHash)process.exitCode=1;
+})().catch(e=>{console.error(e.stack);process.exitCode=1}).finally(cleanup);

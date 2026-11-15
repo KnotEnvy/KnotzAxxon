@@ -146,3 +146,35 @@ to that tooling-only commit. Finalbot0/1000, finallive0/60, judgingrounds0 remai
   bot-operated, not observed by SolLow, and earns no final credit.
 - Final counts remain bot0/1000 and live0/60; no candidate freeze, panel round,
   PR, push, publication or replacement of an existing live build.
+
+
+## Marketing and evidence-control checkpoint
+
+- Native actual-game marketing integrated `db04eb9`. All22 delivery hashes checked;
+  13export/screenshot/legacy manifest entries verified, including PNG dimensions.
+  Cover630x500, OG1200x630, GitHub1280x640 (799,009B), transparent banner1200x260,
+  five native1920x1080 screenshots and editable composition/listing source retained.
+  Original raw frames and initial art remain externally indexed and in Git history.
+- Source frames: frozen snapshot `cdbdf6a` / runtime fingerprint233e6bab…; every
+  native capture had Ultra/DPR1/renderScale1,1920x1080 actual buffer, GTX1650Ti.
+  Sector teleports/resource top-ups were marketing staging, never gameplay evidence.
+  Final runtime fingerprint after metadata/brand addition is
+  `e1623af9d9da402d89b80adfb0cef43a9a4e1b6c98c9df7f01eb0c7764c7236a` (96files).
+- New portable development archive on that fingerprint:46files /7,355,877B,
+  SHA256 `65ed78c05863ebfb673f0de27beb74fda3bc667ac1f3bb0164bde2f1844bbea2`.
+  ZIP readback/relative-base build passed. New archive hardware smoke still pending.
+- SolLow's CPU60episode interactive harness and plan integrated `f92591c`; checks
+  confirm10unique seeds per0/1/2/3/7/30band and wrong-source rejection before lease.
+  It requires real viewed screenshots/notes and realtime/render parity, and credits
+  nothing automatically. Its new controls need the delegated small hardware pilot.
+- Primary candidate-freeze, full campaign audit and all21judge gate tools are present;
+  integrity checks reject mixed candidates, pilots/software/resource modifications,
+  duplicate judges/seeds, omitted lenses and one subthreshold score among twenty10s.
+  Synthetic score fixtures are not panel results. No candidate has been frozen yet.
+- Opus's full regression checkpoint261/261 passed after the new gate tests appeared;
+  Pages build outside checkout included the new brand assets/metadata. New source-QA
+  Windows adapters are tooling-only and still require their own hardware execution.
+- Remaining release-critical work: actual Hydrogen cleanup (provider quota; reset
+  reported about20:20UTC), new-control pilot, integrated finalfreeze/regressions and
+  production/package checks,1000validhardwarebot/60observedlive episodes, fresh
+  independentpanel rounds until all21>=9, then actualpublication/publicverification.

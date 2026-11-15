@@ -65,3 +65,12 @@ Itch still publicly links out to Pages and has no iframe or public upload contro
 No account dashboard was accessed. All four pages returned200 without page errors;
 Pages rendered through the actual GTX1650Ti adapter. This is baseline inspection,
 not evidence of final publication or account upload preservation.
+
+
+After native marketing integration, a second **development** package is at
+`artifacts/launch/distribution/e1623af9d9da402d/`:46files,7,355,877B, ZIP SHA256
+`65ed78c05863ebfb673f0de27beb74fda3bc667ac1f3bb0164bde2f1844bbea2`.
+All paths and ZIP readback passed. Runtime fingerprint
+`e1623af9d9da402d89b80adfb0cef43a9a4e1b6c98c9df7f01eb0c7764c7236a` includes new
+brand/OG metadata. It still needs the hardware nested-path/WebGL-disabled smoke.
+This archive has not been uploaded and is not a final judged delivery.
