@@ -10,7 +10,9 @@ honest; implementation work and external verification gaps are reported as such.
 After runtime, cleanup and marketing integration, commit the runtime and QA harness,
 then run `node scripts/qa/launch/freeze-candidate.cjs rc01` (use a new name each time).
 The immutable candidate JSON pins the exact commit, all runtime/resource file hashes,
-all QA/test hashes, dependency versions and marketing manifest.
+all QA/test hashes, dependency versions, marketing manifest, and editable launch
+marketing/environment sources plus brand tools. Ignored caches/bytecode do not
+enter these Git-aware file identities.
 The actual file count is measured on each candidate.
 Do not alter runtime/assets or test laws during final counted trials. A subsequent
 runtime fix creates a new candidate and needs applicable fresh evidence.

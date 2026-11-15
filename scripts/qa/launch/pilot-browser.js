@@ -41,6 +41,8 @@ window.KZBot = (() => {
           performanceNow:start,wallTimeMs:performance.timeOrigin+start,
           z:p.pos.z,sector:g.sectorIndex,loop:g.loop,state:g.state,bossPhase:g.boss?.phase??null,
           programsBefore,programsAfter:e.renderer.info.programs.length,
+          addedPrograms:e.renderer.info.programs.slice(programsBefore).map(program=>({id:program.id,
+            name:program.name,cacheKeyLength:program.cacheKey.length,cacheKeyTail:program.cacheKey.slice(-1024)})),
           memory:{...e.renderer.info.memory},canvas:[e.canvas.width,e.canvas.height],
           settings:{...k.settings.values},decision:run.decision};
         run.renderStallCount++;run.events.push(stall);run.renderStalls.push(stall);

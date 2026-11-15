@@ -30,3 +30,33 @@ final frozen-candidate episodes unless they independently meet all campaign rule
 UI fixes belongOpus; visual/material/art changes belongFable; code scheduling/
 resource ownership findings coordinateHydrogen. No arbitrary quality reduction or
 gameplay rebalance is justified by these measurements.
+
+## Paired30second realtime startup probes
+
+On the unchanged f35524e9 runtime, two normal-resource bot-operated, actual-rAF
+flights used seed170001, synthetic gamepad/Modern/Medium,960x540/DPR1, initial
+engine time25.180588853711168 and the same shared PRNG seed. Each stopped deliberately
+at30seconds, so both are incomplete diagnostics and receive zero episode credit.
+The first bootedHigh before switching toMedium; the second bootedMedium directly.
+
+- pilot-stall-high-to-medium-01:1785actual renders/frames; max submission431.6ms
+  atframe527/z310.40, programs63to64.
+- pilot-stall-medium-boot-01:1794actual renders/frames; max290.1ms atframe535/
+  z311.16, programs49to50; opening frame56.8ms.
+
+Both source receipts match; neither reproduced the3.1second first-frame event.
+Both slower submissions coincide with a program-count increase nearz310. This is
+a correlation, not isolated proof of shader compilation cost. Browser contexts were
+fresh but driver/OS caches were not controlled or cleared. ActualrAF timestamps
+differ, so this is a paired-seed startup probe, not identical frame timing or a
+balance comparison. No quality/gameplay/material change was made. Next telemetry
+also records added program names/cache-key tails to identify the missing variant
+before considering any owner-coordinated fix.
+
+An accelerated fixed60Hz, every-frame-rendered30second diagnostic (1801actual
+renders, deliberate timeout, no episode credit) then identified the added program
+atframe539/z311.06: `warm_armor`, duration281.2ms, count49to50. The opening
+64.9ms submission added `FUEL_Hull` and `FUEL_Band`. Raw cache keys/adapter/source
+receipts are in artifacts/launch/bot/pilot-stall-program-id-01/. This narrows the
+prewarm investigation to actual material variants; it is not sustained realtime
+performance evidence or a proven root cause.

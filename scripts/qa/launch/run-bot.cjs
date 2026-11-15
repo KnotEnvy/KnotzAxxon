@@ -20,11 +20,12 @@ if(!/^[a-zA-Z0-9_-]+$/.test(runId))throw Error('Invalid run id');
 const out=path.join(root,'artifacts/launch/bot',runId);
 const win=p=>execFileSync('wslpath',['-w',p],{encoding:'utf8'}).trim();
 let lease,server,child,closing=false;
+async function stop(p) {
+  if(p?.pid&&p.exitCode===null&&p.signalCode===null&&p.kill('SIGTERM'))await new Promise(r=>p.once('exit',r));
+}
 async function cleanup() {
   if(closing)return;closing=true;
-  if(child&&child.exitCode===null){child.kill('SIGTERM');await new Promise(r=>child.once('exit',r));}
-  if(server&&server.exitCode===null){server.kill('SIGTERM');await new Promise(r=>server.once('exit',r));}
-  lease?.release();
+  await stop(child);await stop(server);lease?.release();
 }
 for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>cleanup().finally(()=>process.exit(130)));
 (async()=>{
@@ -47,7 +48,7 @@ for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>cleanup().final
   if(!ready)throw Error('Owned server not ready');
   const config={runId,source:before,final,url,count,loops,seed,realtime:args.includes('--realtime'),
     renderEvery:Number(arg('--render-every','12')),maxSeconds:Number(arg('--max-seconds','720')),
-    quality:arg('--quality','low'),camera:arg('--camera','classic'),profile:arg('--profile','analog'),
+    quality:arg('--quality','low'),bootQuality:arg('--boot-quality',arg('--quality','low')),camera:arg('--camera','classic'),profile:arg('--profile','analog'),
     width:Number(arg('--width','960')),height:Number(arg('--height','540')),
     timeOrigin:args.includes('--time-origin')?Number(arg('--time-origin','0')):null,
     out:win(out),pilot:win(path.join(__dirname,'pilot-browser.js')),

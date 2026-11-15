@@ -9,8 +9,8 @@ let currentEpisode=null;
     args:['--use-angle=d3d11','--enable-gpu','--ignore-gpu-blocklist']});
   try{
     const context=await browser.newContext({viewport:{width:config.width,height:config.height},hasTouch:config.profile==='analog'});
-    await context.addInitScript(({quality,camera})=>{
-      localStorage.setItem('knotzaxxon.settings.v2',JSON.stringify({quality,camera,assist:false,shake:0}));
+    await context.addInitScript(({quality,bootQuality,camera})=>{
+      localStorage.setItem('knotzaxxon.settings.v2',JSON.stringify({quality:bootQuality??quality,camera,assist:false,shake:0}));
       const Native=window.WebSocket;window.WebSocket=class extends Native{
         constructor(url,protocols){super(protocols==='vite-hmr'?'ws://127.0.0.1:1':url,protocols)}
       };

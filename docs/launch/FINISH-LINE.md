@@ -242,3 +242,18 @@ was cancelled so it cannot later replay obsolete ownership. The new full brief i
 queued in that existing thread; no duplicateHydrogen/modelsubstitution launched.
 Reviewbranch push used existing gh authorization through a per-command credential
 helper; no credential/config change. Main/Pages/Itch remain unchanged.
+
+## Measured audio and stall diagnostics
+
+Currentf35524e9 audio checks passed:32second measured render peak-5.32dBFS,
+zero clips/page errors; actual Chrome trusted-gesture/same-context lifecycle passed.
+Receipts include hardware/device/quality/render spans. No listening/physical-phone/
+hidden-tab/Escape-blocking verdict is claimed (audio/INTEGRATION.md).
+
+Two30second realtime startup probes and one accelerated shader-identification
+probe deliberately timed out; all remain incomplete diagnostics with zero episode
+credit. They did not reproduce the3.1second event. New programs coincide with
+290–432ms stalls nearz310; the third identifieswarm_armor. Opening variants include
+FUEL_Hull/FUEL_Band. Exact details and causal limits are in PERFORMANCE-INVESTIGATION.md;
+raw file hashes in artifacts/launch/startup-audio-diagnostic-sha256.txt. No renderer/
+material/gameplay code was changed. Primary GPU lease is released.

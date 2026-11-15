@@ -35,3 +35,20 @@ is stable at fingerprint `233e6bab12c008325de2a1d69c93379730ebe6338facbbbaa35af7
 The initial render report has no adapter/frame span, so it is only Chrome audio
 measurement; final QA instrumentation now records actual render spans/device too.
 No person or agent listened, and no physical speaker/phone verdict is claimed.
+
+## Current-candidate measured checks
+
+On sourcef35524e9b88d693884763838c8691da2b2c28d22e2a4a7bba6f6f440b5b22790,
+the repeated32second OfflineAudioContext render peaked at-5.32dBFS with zero clipped
+samples and page errors. Report/WAV/spectrum:
+artifacts/launch/audio/audio-render-2026-11-15T20-28-56-841Z/. This receipt records
+NitroBliss Windows Chrome157.0.8103.52 GTX1650Ti/D3D11, High/Classic/1400x900/DPR1
+and1209actual engine-rendered frames while audio measurement ran.
+
+The actual Chrome lifecycle checks passed again in
+artifacts/launch/audio/audio-lifecycle-2026-11-15T20-30-49-100Z/: same renderer/
+browser/device, Low/Classic/800x450,293actual rendered frames, no page errors.
+Both source-before/after receipts are stable. As before, headless tabs stayed
+visible and Escape-first state wasrunning, so these runs do not establish hidden-
+tab policy, Escape blocking, phone interruptions or physical-device behavior.
+No person or agent listened; the measured result is not an audio-perception verdict.

@@ -10,7 +10,8 @@ if (!name || !/^[a-z0-9][a-z0-9_-]*$/.test(name)) throw Error('Expected a unique
 const file = path.join(root, 'docs/launch/candidates', name + '.json');
 if (fs.existsSync(file)) throw Error('Candidate identities are immutable; use a new name');
 const dirty = execFileSync('git', ['status', '--porcelain', '--', 'src', 'public', 'index.html',
-  'package.json', 'package-lock.json', 'vite.config.js', 'scripts/qa', 'tests', 'assets-source/launch-marketing'],
+  'package.json', 'package-lock.json', 'vite.config.js', 'scripts/qa', 'scripts/brand', 'tests',
+  'assets-source/launch-marketing', 'assets-source/launch-environment'],
 {cwd: root, encoding: 'utf8'}).trim();
 if (dirty) throw Error('Commit candidate runtime and harness before freezing:\n' + dirty);
 const source = fingerprint(root);
@@ -24,9 +25,12 @@ function treeHashes(dir) {
   return files.map(file=>({file, sha256:sha256(fs.readFileSync(path.join(root,file)))}));
 }
 const harnessFiles = [...treeHashes('scripts/qa'), ...treeHashes('tests')];
+const editableFiles = [...treeHashes('scripts/brand'), ...treeHashes('assets-source/launch-marketing'),
+  ...treeHashes('assets-source/launch-environment')];
 const candidate = {schema: 'knotzaxxon.frozen-candidate.v1', name, frozenAt: new Date().toISOString(),
   commit: source.head, sourceHash: source.sourceHash, sourceFiles: source.files,
   harnessHash: sha256(JSON.stringify(harnessFiles)), harnessFiles,
+  editableSourceHash:sha256(JSON.stringify(editableFiles)), editableSourceFiles:editableFiles,
   browserPilotHash: sha256(fs.readFileSync(path.join(root, 'scripts/qa/launch/pilot-browser.js'))),
   marketingManifest: {file: path.relative(root, exportsFile), sha256: sha256(fs.readFileSync(exportsFile))},
   dependencies: {node: process.version, vite: require('vite/package.json').version,

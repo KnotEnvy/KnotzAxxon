@@ -16,7 +16,7 @@ const candidate=arg('--candidate',pilotMode?fingerprint(root).sourceHash:''),run
 if(!/^[a-f0-9]{64}$/.test(candidate)||!(pilotMode?/^pilot-live-[a-zA-Z0-9_-]+$/:/^final-live-[a-zA-Z0-9_-]+$/).test(runId))throw Error('Matching candidate and mode-specific pilot-live-/final-live- run id required');
 const out=path.join(root,'artifacts/launch/live-sol-low',runId),win=p=>execFileSync('wslpath',['-w',p],{encoding:'utf8'}).trim();
 let lease,server,child,closing=false,config,exitCode=0;
-async function stop(p){if(p&&p.exitCode===null){p.kill('SIGTERM');await new Promise(r=>p.once('exit',r))}}
+async function stop(p){if(p?.pid&&p.exitCode===null&&p.signalCode===null&&p.kill('SIGTERM'))await new Promise(r=>p.once('exit',r))}
 async function cleanup(){if(closing)return;closing=true;await stop(child);await stop(server);lease?.release()}
 for(const signal of ['SIGTERM','SIGINT'])process.once(signal,()=>cleanup().finally(()=>process.exit(130)));
 (async()=>{
