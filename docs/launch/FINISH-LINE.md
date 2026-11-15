@@ -292,3 +292,14 @@ pipe. Detailed capability limits are in live-sol-low/OBSERVATION-PATH-ASSESSMENT
 The265-test regression suite passed after integrating the current QA adapters.
 PROOF-PACKET.md now indexes the seven lenses, exact receipts and known gaps without
 inventing reviews or attributing development pilots to a future final candidate.
+
+## Confirmed first-frame core defect — fix required before freeze
+
+QA-only grade-provenance tracing reproduced the live pilot's unearned sector7 grade.
+Engine._loop accepts negative elapsed time when the first rAF timestamp precedes
+start's performance.now baseline. Backward flight belowz0 makes Level.sectorAt fall
+through to the last sector and grade its predecessor. Both real GTX1650Ti realtime
+tracing and an actual Engine/Game CPU reproduction establish this sequence. See
+NEGATIVE-FIRST-FRAME.md and the hashed raw evidence. Hydrogen owns the nonvisual
+core fix and meaningful regression; primary will integrate and rerun the hardware
+reproduction before final campaigns. No post-fix pass or final episode credit exists.

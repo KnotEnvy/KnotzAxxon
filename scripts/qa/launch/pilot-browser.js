@@ -20,7 +20,7 @@ window.KZBot = (() => {
     }
     const i=e.input,p=g.player;
     const original={raf:window.requestAnimationFrame,render:e.postfx.render,
-      damage:p.damage,crash:g._crash,warn:g.warn,fire:g.projectiles.fire,getGamepads:navigator.getGamepads};
+      damage:p.damage,crash:g._crash,warn:g.warn,fire:g.projectiles.fire,grade:g._gradeSector,getGamepads:navigator.getGamepads};
     const run={spec,frames:0,renderedFrames:0,rawSeconds:0,events:[],samples:[],
       sectors:[],features:{},bossPhases:[],rackHits:0,rackDetonations:0,
       maxHeat:0,minFuel:1,observedShots:0,previousZ:p.pos.z,decision:null,lastSector:-1,lastBossPhase:-1,
@@ -63,6 +63,17 @@ window.KZBot = (() => {
       run.events.push({type:'collision',frame:run.frames,z:p.pos.z,tag,before,hull:p.hull,shields:p.shields,
         damaging:p.hull!==before.hull||p.shields!==before.shields,decision:run.decision});return result;
     };
+    // Grade provenance is observational: record only a newly produced grade and
+    // preserve the original method's receiver, arguments, result and side effects.
+    g._gradeSector=function(index){
+      const before=this._sectorStats?.[index]?.grade;
+      const result=original.grade.call(this,index);
+      const after=this._sectorStats?.[index]?.grade;
+      if(after!==before)run.events.push({type:'sector-grade',frame:run.frames,index,
+        sector:this.sectorIndex,z:p.pos.z,state:this.state,before,grade:after,
+        caller:new Error().stack?.split('\n').slice(2,5)});
+      return result;
+    };
     g.warn=function(label){run.events.push({type:'warning',frame:run.frames,z:p.pos.z,label});return original.warn.call(this,label)};
     g.projectiles.fire=function(side,...args){
       const result=original.fire.call(this,side,...args);
@@ -74,7 +85,7 @@ window.KZBot = (() => {
     if(spec.profile==='gamepad')Object.defineProperty(navigator,'getGamepads',{configurable:true,value:()=>[run.pad]});
     document.activeElement?.blur?.();
     return {initial:{hull:p.hull,shields:p.shields,fuel:p.fuel,loop:g.loop,z:p.pos.z,
-      engineTime:e.time,settings:{...k.settings.values},viewport:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio},
+      engineTime:e.time,grades:[...g.grades],settings:{...k.settings.values},viewport:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio},
       canvas:{width:e.canvas.width,height:e.canvas.height}},
       fixture:spec.attachCurrent?'earned-continuation':'seeded-loop-start',operator:'primary developed bot',input:spec.profile};
   }
@@ -285,7 +296,7 @@ window.KZBot = (() => {
     intent(run,0,0,false,false);e.input.reset();e.stop();
     window.requestAnimationFrame=run.original.raf;e.postfx.render=run.original.render;
     if(run.original.loop)e._loop=run.original.loop;
-    p.damage=run.original.damage;g._crash=run.original.crash;g.warn=run.original.warn;g.projectiles.fire=run.original.fire;
+    p.damage=run.original.damage;g._crash=run.original.crash;g.warn=run.original.warn;g.projectiles.fire=run.original.fire;g._gradeSector=run.original.grade;
     if(run.spec.profile==='gamepad')delete navigator.getGamepads;
     active=null;return result;
   }
