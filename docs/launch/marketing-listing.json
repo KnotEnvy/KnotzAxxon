@@ -1,0 +1,180 @@
+{
+  "schema": "knotzaxxon.marketing-listing.v1",
+  "owner": "Opus High title/brand/marketing (Nitro)",
+  "base_commit": "2a77036cbc6a64b1b1656c8df8949a5650098dab",
+  "inspected_at": "2026-11-15T18:47:04Z",
+  "method": {
+    "summary": "Raw HTTP capture of the public pages and their referenced images (curl, desktop Chrome UA, no login). The T3 preview browser failed to open (host missing libnspr4/libnss3/libgbm and others); the standalone headless fallback is reserved for rendered-page screenshots. No account, dashboard or upload data was available, so upload contents, embed settings and draft state are NOT observed.",
+    "raw_dir": "/home/knotzuni/code/KnotzAxxon/asset-work/public-launch/opus-high-marketing/raw/listing-20261115T184704Z",
+    "raw_sha256": {
+      "itch.html": "f40cc2e2c81461315319023942c5a96433a2745cd7c3bcf04c9176f078fda848",
+      "itch-data.json": "03f67c2e1677e7294dcbf69bf30f93e36c208f379dea04be9ec06a3486db867f",
+      "pages.html": "93a92720c99f2f7fb6168ff69324e4685b91ee6e4052a5dfc7a0a382a88f37a0",
+      "live-images/itch-cover-original-32178616.png": "b5ce2b011e564ede25f4bc5a3a25fe1b47cebe974de00eafa4263e2e186a99f8",
+      "live-images/itch-header-original-32178718.png": "b5ce2b011e564ede25f4bc5a3a25fe1b47cebe974de00eafa4263e2e186a99f8",
+      "live-images/itch-cover-315x250c.png": "225640cf77df0797a73068509df2e8efea4e99740209cc1d5162a9662b2ce5d6",
+      "live-images/pages-og-image.png": "b5ce2b011e564ede25f4bc5a3a25fe1b47cebe974de00eafa4263e2e186a99f8",
+      "live-images/pages-social-preview.png": "b7237d97eae0523f365547e489333eac777f0ed63fe65333eb981393dee32eb4",
+      "live-images/pages-apple-touch-icon.png": "4fd06c4020adcbcbffd3c3bcc4811a2aafd232b3b8207ff64b4cc6548f1dcd3a",
+      "live-images/pages-icon-512.png": "388addaeacc924fd704e0b3fd3dd9cf0933538706ec0ce6d13f4d346274b82ba"
+    }
+  },
+  "itch_listing": {
+    "url": "https://hacktivatenation.itch.io/knotzaxxon",
+    "game_id": 5350354,
+    "http_status": 200,
+    "title": "KNOTZAXXON: Assault on the Iron Fortress",
+    "author": "Hacktivate Nation Studios",
+    "page_classification": "A downloadable game",
+    "observed_play_path": "No HTML5 embed, iframe, upload row or download button in the public HTML. A 'Play now' section links out to https://knotenvy.github.io/KnotzAxxon/ ('The playable game is currently hosted on our external site. Requires a browser with WebGL 2 support.').",
+    "description_meta": "An arcade-inspired 3D isometric rail shooter. Assault the fortress from three camera perspectives.",
+    "body_copy_observed": [
+      "Fight your way through a 3D isometric rail shooter built for quick arcade runs. Pick your perspective, navigate the fortress defenses, and take on the Iron Sentinel.",
+      "Eight sectors and an Iron Sentinel boss encounter.",
+      "Three camera perspectives: classic, modern and chase.",
+      "Daily seeded runs and a harder loop for another challenge.",
+      "Keyboard, gamepad and touch controls."
+    ],
+    "metadata": {
+      "status": "Released",
+      "genre": "Shooter",
+      "tags_in_data_json": [
+        "shooter"
+      ],
+      "ai_disclosure": "AI Assisted, Code",
+      "published": "13 November 2026 @ 00:57 UTC",
+      "updated": "15 November 2026 @ 01:28 UTC",
+      "pricing_breadcrumb": "Free",
+      "theme_color": "#0b101a",
+      "links": [
+        "https://x.com/Hacktivate16708",
+        "https://knotenvy.github.io/KnotzAxxon/"
+      ]
+    },
+    "devlog_posts": [
+      {
+        "title": "We rebuilt 21 models without moving the hitboxes",
+        "url": "https://hacktivatenation.itch.io/knotzaxxon/devlog/1778970/we-rebuilt-21-models-without-moving-the-hitboxes",
+        "posted": "15 November 2026 @ 01:27 UTC"
+      },
+      {
+        "title": "What a Blender bake-off taught us about arcade silhouettes",
+        "url": "https://hacktivatenation.itch.io/knotzaxxon/devlog/1778975/what-a-blender-bake-off-taught-us-about-arcade-silhouettes",
+        "posted": "15 November 2026 @ 01:28 UTC"
+      }
+    ],
+    "images": {
+      "cover": {
+        "id": 32178616,
+        "original_url": "https://img.itch.zone/aW1nLzMyMTc4NjE2LnBuZw==/original/OX1IeP.png",
+        "dimensions": "1200x630",
+        "aspect": "1.905:1",
+        "sha256": "b5ce2b011e564ede25f4bc5a3a25fe1b47cebe974de00eafa4263e2e186a99f8",
+        "served_thumbnail": "315x250 #c (center crop), observed"
+      },
+      "header_banner": {
+        "id": 32178718,
+        "original_url": "https://img.itch.zone/aW1nLzMyMTc4NzE4LnBuZw==/original/h7gaDf.png",
+        "dimensions": "1200x630",
+        "sha256": "b5ce2b011e564ede25f4bc5a3a25fe1b47cebe974de00eafa4263e2e186a99f8"
+      },
+      "screenshots_data_json": [],
+      "screenshot_sidebar_observed": "One sidebar image linking to the cover original (32178616, displayed 347x500)",
+      "og_image": "cover original (1200x630)",
+      "twitter_image": "cover at 508x254 #b"
+    }
+  },
+  "pages_site": {
+    "url": "https://knotenvy.github.io/KnotzAxxon/",
+    "last_modified": "Sun, 15 Nov 2026 17:19:23 GMT",
+    "etag": "\"6af9e99b-3743\"",
+    "title": "KNOTZAXXON // ASSAULT ON THE IRON FORTRESS",
+    "og_image": "https://knotenvy.github.io/KnotzAxxon/og-image.png (1200x630)",
+    "social_preview_png": "1280x640, 879,561 bytes",
+    "icons": [
+      "apple-touch-icon.png 180x180",
+      "icon-512.png 512x512",
+      "inline SVG favicon"
+    ],
+    "deployed_runtime": "1b3ff18bbabdedf30295846f3594c831ef5c30a5 (per docs/release-validation.json)"
+  },
+  "findings": [
+    "Itch cover, Itch header banner and Pages og-image are byte-identical (sha256 b5ce2b01...). The art predates the authored environment kit: an empty, dark deck with no ship, enemy, fire or sector variety.",
+    "The cover is 1200x630 (1.9:1) where itch asks for 315:250. Itch's 315x250 centre crop cuts the wordmark to 'NOTZAXXON' and clips the copy (observed in live-images/itch-cover-315x250c.png).",
+    "data.json lists zero screenshots; itch recommends 3-5. The sidebar shows only the cover again.",
+    "Only one tag ('shooter') is public. Tags are set in the itch dashboard (account-only action).",
+    "The listing is classified 'A downloadable game' but has no visible download; play is an external link. An in-page HTML5 upload (primary's P2 archive) would remove the off-site hop. Whether to switch, and the embed/viewport/mobile settings, are account-only decisions.",
+    "Do not assume itch uploads match Pages: no uploads are publicly visible, so their content and version are unobserved."
+  ],
+  "official_specs": {
+    "itch_cover": {
+      "source": "https://itch.io/docs/creators/getting-started",
+      "verbatim": [
+        "Cover images should respect a 315:250 aspect ratio.",
+        "315x250 is a minimum, but it's best to include a larger image with the same aspect ratio, like 630x500."
+      ]
+    },
+    "itch_screenshots": {
+      "source": "https://itch.io/docs/creators/getting-started",
+      "verbatim": [
+        "Screenshots can be any size, it's recommended to upload between 3 and 5 of them."
+      ]
+    },
+    "itch_banner_background": {
+      "source": "https://itch.io/docs/creators/design",
+      "verbatim": [
+        "It can be a semi-transparent PNG, it could be an animated GIF (some particle effects around the title letters?).",
+        "When a banner is uploaded to an itch.io page, it replaces the title otherwise shown just above the description."
+      ],
+      "dimensions": "None published. Any banner size here is a design choice, not an itch requirement."
+    },
+    "itch_html5": {
+      "source": "https://itch.io/docs/creators/html5",
+      "verbatim": [
+        "The ZIP file should not contain more than 1,000 individual files after extraction.",
+        "The size of all the extracted content should not be greater than 500MB.",
+        "The size any single extracted file should not be greater than 200MB.",
+        "The maximum length of a file name including path should not be greater than 240 characters long.",
+        "The ZIP file must contain a file called `index.html`"
+      ],
+      "notes": "Embed-in-page needs author-chosen viewport dimensions; optional auto fullscreen button; 'Mobile Friendly' toggle gives mobile visitors click-to-launch fullscreen."
+    },
+    "github_social_preview": {
+      "source": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview",
+      "verbatim": [
+        "Your image should be a PNG, JPG, or GIF file under 1 MB in size.",
+        "we recommend a size of at least 640 by 320 pixels",
+        "(1280 by 640 pixels for best display)."
+      ]
+    },
+    "open_graph": {
+      "note": "1200x630 is the widely used summary_large_image/OG size; Open Graph itself sets no pixel size. Absolute URLs are already used."
+    }
+  },
+  "preserve_previous": {
+    "rule": "The current live itch cover/banner and Pages link art are kept byte-for-byte in the raw capture above; nothing is uploaded or deleted by this worker. Replacing listing images, tags or uploads is an account-only action for the owner.",
+    "public_repo_art_policy": "New link art is added under public/brand/ with new filenames; the old public/og-image.png and social-preview.png stay so existing cached links keep resolving."
+  },
+  "deliverables": {
+    "status": "sources_captured_exports_pending_slot",
+    "editable_sources": [
+      "assets-source/launch-marketing/template.html",
+      "assets-source/launch-marketing/compositions.json",
+      "assets-source/launch-marketing/frames/",
+      "scripts/brand/launch/compose.cjs"
+    ],
+    "export_manifest": "assets-source/launch-marketing/export-manifest.json (written by compose.cjs; not yet run)",
+    "planned_exports": {
+      "itch_cover": "public/brand/itch-cover-630x500.png (315:250, Void Gap / Chase)",
+      "open_graph": "public/brand/og-1200x630.png (Sentinel fight)",
+      "github_social": "public/brand/social-preview-1280x640.png (<1 MB enforced)",
+      "itch_banner": "assets-source/launch-marketing/exports/itch-banner-1200x260.png (transparent; size is a design choice)",
+      "itch_screenshots": "5 GPU HUD frames, 1920x1080 CSS px; currently browser-upscaled from 1536x864-1824x1026 buffers, recapture with render scale 1.0 before calling them native"
+    },
+    "remaining_gpu_or_browser_needs": [
+      "One short browser slot to run compose.cjs (static HTML, --disable-gpu)",
+      "One bounded GPU slot to recapture the 5 screenshots with engine render scale pinned to 1.0 (capture staging only), on the frozen candidate"
+    ],
+    "pending_code": "index.html og:image/twitter:image switch to public/brand/og-1200x630.png once the export exists; old public/og-image.png kept for cached links"
+  }
+}

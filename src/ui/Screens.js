@@ -43,6 +43,26 @@ export function engageHint(original, device, touchDevice = false) {
   return original;
 }
 
+/** Which control legend the title shows; same device rule as engageHint. */
+export function titleDevice(device, touchDevice = false) {
+  if (device === 'gamepad') return 'gamepad';
+  if (touchDevice || device === 'touch') return 'touch';
+  return 'keyboard';
+}
+
+/**
+ * Browsers start audio only inside a key, click or tap; controller buttons are
+ * not a user activation. A pad-only pilot is told the one gesture that works.
+ */
+export function audioHint(device, audioState) {
+  if (device !== 'gamepad' || !audioState || audioState === 'running') return '';
+  return 'SOUND: PRESS ANY KEY, CLICK OR TAP ONCE';
+}
+
+/** Title label for the sector the live attract camera is flying through. */
+export const attractLabel = (sector) =>
+  `SECTOR ${String((sector?.index ?? 0) + 1).padStart(2, '0')} // ${sector?.name ?? ''}`;
+
 export class Screens extends EventTarget {
   constructor() {
     super();
@@ -82,6 +102,7 @@ export class Screens extends EventTarget {
     this.current = name;
     if (name === 'scores') this._renderScores();
     if (name === 'settings') { this._refreshSettings(); this._settingsStatus(); }
+    if (name === 'title') this._refreshTitle();
     this.selIndex = restore ? (this._selection?.get(name) ?? 0) : 0;
     if (name === 'over' && !restore) this.selIndex = Math.max(0, this._items().findIndex(n => n.classList.contains('mi')));
     this._refreshSelection({ focus: name !== 'boot' });
@@ -223,9 +244,10 @@ export class Screens extends EventTarget {
       field.setSelectionRange(this._callsignCursor, this._callsignCursor + 1);
       return true;
     }
-    if (action === 'up' || action === 'down') {
+    const titleStep = this.current === 'title' && (action === 'left' || action === 'right');
+    if (action === 'up' || action === 'down' || titleStep) {
       if (items.length) {
-        this.selIndex = (this.selIndex + (action === 'up' ? -1 : 1) + items.length) % items.length;
+        this.selIndex = (this.selIndex + (action === 'up' || action === 'left' ? -1 : 1) + items.length) % items.length;
         this._refreshSelection({ focus: true }); audio.ui('move');
       }
       return true;
@@ -254,6 +276,7 @@ export class Screens extends EventTarget {
   /** Controlled repeat for a held D-pad/stick while a menu is open. */
   updateGamepad(input, realDt) {
     if (input?.lastDevice !== this._device) this.setInputDevice(input?.lastDevice);
+    if (this.current === 'title' && this._device === 'gamepad') this._refreshAudioHint();
     if (!this.isOpen || input.lastDevice !== 'gamepad') { this._padRepeatAction = null; return; }
     const held = ['up', 'down', 'left', 'right'].find(a => input._padDown.has(a));
     if (!held) { this._padRepeatAction = null; return; }
@@ -272,6 +295,47 @@ export class Screens extends EventTarget {
     this._hintOriginal ??= hint.textContent;
     const next = engageHint(this._hintOriginal, device, !!document.documentElement?.classList?.contains('touch-device'));
     if (hint.textContent !== next) hint.textContent = next;
+    this._refreshTitleDevice();
+    this._refreshAudioHint();
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Title / attract                                                     */
+  /* ------------------------------------------------------------------ */
+
+  _refreshTitle() {
+    const date = document.getElementById('title-daily-date');
+    // Same UTC date the daily seed is derived from (Game.dailyLabel).
+    const label = `${new Date().toISOString().slice(0, 10)} UTC`;
+    if (date && date.textContent !== label) date.textContent = label;
+    this._refreshTitleDevice();
+    this._refreshAudioHint();
+  }
+
+  _refreshTitleDevice() {
+    const title = this.screens?.get('title');
+    if (!title?.dataset) return;
+    const device = titleDevice(this._device, !!document.documentElement?.classList?.contains('touch-device'));
+    if (title.dataset.device !== device) title.dataset.device = device;
+  }
+
+  _refreshAudioHint() {
+    const el = document.getElementById('title-audio');
+    if (!el) return;
+    const next = audioHint(this._device, audio.enabled === false ? null : (audio.ctx?.state ?? 'suspended'));
+    if (el.textContent !== next) el.textContent = next;
+  }
+
+  /** The live attract camera moved to another sector. */
+  attract(sector) {
+    const el = document.getElementById('title-live-sector');
+    const next = attractLabel(sector);
+    if (el && el.textContent !== next) el.textContent = next;
+  }
+
+  /** Blackout between two attract vignettes, so streaming never shows. */
+  attractCut(on) {
+    document.getElementById('attract-cut')?.classList?.toggle('on', !!on);
   }
 
   _act(action) {

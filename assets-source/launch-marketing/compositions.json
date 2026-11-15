@@ -1,0 +1,68 @@
+{
+  "schema": "knotzaxxon.launch-compositions.v1",
+  "template": "template.html",
+  "note": "Edit copy/layout in template.html and these entries, then run scripts/brand/launch/compose.cjs. Backgrounds are unretouched real-engine frames; all type is live text.",
+  "frames": {
+    "void-gap": {
+      "file": "frames/void-gap-chase-1920x1080.png",
+      "captured_at": "2026-11-15T19:08:10.790Z",
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "render_class": "hardware",
+      "browser": "Chrome 157.0.8103.52 (Windows, headless, ANGLE D3D11)",
+      "viewport": [1920, 1080], "dpr": 1, "drawing_buffer": [1824, 1026], "render_scale": 0.95,
+      "quality": "ultra", "camera": "chase", "seed": 7, "sector": "03 THE VOID GAP", "engine_frame": 502,
+      "staging": "Staged real-engine frame: seed 7, teleport into the sector, hull top-up, fire held. Not gameplay evidence.",
+      "capture_log": "asset-work/public-launch/opus-high-marketing/captures/final-r1-20261115T190627Z/capture.jsonl"
+    },
+    "sentinel": {
+      "file": "frames/sentinel-classic-1920x1080.png",
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "render_class": "hardware",
+      "browser": "Chrome 157.0.8103.52 (Windows, headless, ANGLE D3D11)",
+      "viewport": [1920, 1080], "dpr": 1, "drawing_buffer": [1536, 864], "render_scale": 0.8,
+      "quality": "ultra", "camera": "classic", "seed": 7, "sector": "08 THE IRON SENTINEL", "engine_frame": 644,
+      "staging": "Staged real-engine frame: seed 7, teleport to the boss approach, hull top-up, fire held. Not gameplay evidence.",
+      "capture_log": "asset-work/public-launch/opus-high-marketing/captures/final-r1-20261115T190627Z/capture.jsonl"
+    }
+  },
+  "outputs": [
+    {
+      "id": "itch-cover", "size": [630, 500], "layout": "cover", "frame": "void-gap",
+      "focus": ["49%", "50%"], "show": ["cta", "live"], "pill": "PLAY FREE IN BROWSER", "liveLabel": "SECTOR 03",
+      "spec": "itch cover, 315:250 at the recommended 630x500; legible at the 315x250 thumbnail",
+      "out": ["public/brand/itch-cover-630x500.png"]
+    },
+    {
+      "id": "open-graph", "size": [1200, 630], "layout": "card", "frame": "sentinel",
+      "place": { "scale": 0.62, "left": 275, "top": -20 },
+      "show": ["kicker", "tag", "cta", "site", "live"], "pill": "PLAY FREE IN YOUR BROWSER", "liveLabel": "SECTOR 08 // IRON SENTINEL",
+      "spec": "Open Graph / Twitter summary_large_image 1200x630",
+      "out": ["public/brand/og-1200x630.png"]
+    },
+    {
+      "id": "github-social", "size": [1280, 640], "layout": "card", "frame": "sentinel",
+      "place": { "scale": 0.66, "left": 290, "top": -36 },
+      "show": ["kicker", "tag", "cta", "site", "live"], "pill": "PLAY FREE IN YOUR BROWSER", "liveLabel": "SECTOR 08 // IRON SENTINEL",
+      "spec": "GitHub social preview 1280x640, PNG under 1 MB (upload is account-only)",
+      "maxBytes": 1000000,
+      "out": ["public/brand/social-preview-1280x640.png"]
+    },
+    {
+      "id": "itch-banner", "size": [1200, 260], "layout": "banner", "frame": null, "transparent": true,
+      "show": [],
+      "spec": "itch banner replaces the page title; itch publishes no size, so 1200x260 is a design choice",
+      "out": ["assets-source/launch-marketing/exports/itch-banner-1200x260.png"]
+    }
+  ],
+  "screenshots": {
+    "spec": "itch recommends 3-5 screenshots of any size; these are native 1920x1080 CSS-pixel GPU captures with the HUD (drawing buffer shown per file; the engine's dynamic resolution was active)",
+    "files": [
+      { "src": "hero-sentinel-1920x1080-hud.png", "drawing_buffer": [1536, 864], "camera": "classic", "sector": "08" },
+      { "src": "hero-reactor-spine-1920x1080-hud.png", "drawing_buffer": [1824, 1026], "camera": "modern", "sector": "04" },
+      { "src": "hero-void-gap-1920x1080-hud.png", "drawing_buffer": [1824, 1026], "camera": "chase", "sector": "03" },
+      { "src": "hero-inner-citadel-1920x1080-hud.png", "drawing_buffer": [1728, 972], "camera": "classic", "sector": "06" },
+      { "src": "hero-gauntlet-1920x1080-hud.png", "drawing_buffer": [1728, 972], "camera": "chase", "sector": "07" }
+    ],
+    "capture_dir": "asset-work/public-launch/opus-high-marketing/captures/final-r1-20261115T190627Z"
+  }
+}

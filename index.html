@@ -157,19 +157,45 @@
       </div>
     </div>
 
-    <div class="screen" id="screen-title">
+    <!-- Attract cut: hides the instant between two live title vignettes. -->
+    <div class="attract-cut" id="attract-cut" aria-hidden="true"></div>
+
+    <div class="screen" id="screen-title" data-device="keyboard">
+      <div class="title-live" aria-hidden="true">
+        <i class="live-dot"></i><span class="live-tag">LIVE IN ENGINE</span>
+        <span class="live-sector" id="title-live-sector">SECTOR 01 // OUTER FORTRESS</span>
+      </div>
       <div class="title-wrap">
         <div class="title-kicker">KNOTZ INTERACTIVE / FLIGHT DIVISION</div>
         <h1 class="title"><span class="t-glitch" data-text="KNOTZAXXON">KNOTZAXXON</span></h1>
-        <div class="title-sub">ASSAULT ON THE IRON FORTRESS</div><p class="mission-brief">One interceptor. Eight hostile sectors.<br>Match altitude. Read your shadow. Break the fortress.</p>
+        <div class="title-sub">ASSAULT ON THE IRON FORTRESS</div>
+        <p class="mission-brief"><span>One interceptor. Eight hostile sectors. One Iron Sentinel.</span><br><span class="brief-doctrine">Match altitude. Read your shadow. Break the fortress.</span></p>
+        <ul class="title-feats" aria-label="Game features">
+          <li><b>8</b> SECTORS</li>
+          <li><b>1</b> SENTINEL BOSS</li>
+          <li><b>3</b> CAMERA RIGS</li>
+          <li><b>&#8734;</b> HARDER LOOPS</li>
+        </ul>
         <div class="menu" id="title-menu">
-          <button class="mi" data-action="start">ENGAGE</button>
-          <button class="mi" data-action="daily">DAILY SORTIE</button>
-          <button class="mi" data-action="howto">FLIGHT MANUAL</button>
-          <button class="mi" data-action="settings">SYSTEMS</button>
-          <button class="mi" data-action="scores">RECORDS</button>
+          <div class="title-primary">
+            <button class="mi mi-cta" data-action="start"><i class="cta-chev" aria-hidden="true"></i>ENGAGE<span class="cta-sub" aria-hidden="true">FLY NOW &middot; IN YOUR BROWSER</span></button>
+            <button class="mi mi-daily" data-action="daily">DAILY SORTIE<span class="mi-meta" id="title-daily-date" aria-hidden="true"></span></button>
+          </div>
+          <div class="title-aux">
+            <button class="mi" data-action="howto">FLIGHT MANUAL</button>
+            <button class="mi" data-action="settings">SYSTEMS</button>
+            <button class="mi" data-action="scores">RECORDS</button>
+          </div>
         </div>
-        <div class="title-foot"><span id="title-hint">ENTER / CLICK TO ENGAGE</span></div>
+        <div class="title-foot">
+          <span id="title-hint">ENTER / CLICK TO ENGAGE</span>
+          <span class="title-audio" id="title-audio" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+      <div class="title-controls" aria-hidden="true">
+        <span class="ctl-keyboard"><kbd>WASD</kbd> FLY <kbd>SPACE</kbd> FIRE <kbd>SHIFT</kbd> BOOST <kbd>L</kbd> ROLL</span>
+        <span class="ctl-gamepad"><kbd>STICK</kbd> FLY <kbd>A</kbd> FIRE <kbd>X</kbd> BOOST <kbd>B</kbd> ROLL</span>
+        <span class="ctl-touch"><kbd>STICK</kbd> FLY <kbd>FIRE</kbd> <kbd>BST</kbd> <kbd>ROLL</kbd> ON SCREEN</span>
       </div>
     </div>
 
