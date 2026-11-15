@@ -213,24 +213,33 @@ export class Game {
     const enemies = [...this.enemies], pickups = [...this.pickups], boss = this.boss;
     this.enemies.length = this.pickups.length = 0;
     this.boss = null;
-    runCleanups([
-      () => this.fortress?.clear(),
-      () => {
-        this.level = new Level(seed, loop);
-        prepareImportedCarrier(this.level);
-        if (!this.fortress) {
-          this.fortress = new Fortress(this.scene, this.materials, this.level, settings.quality);
-        } else {
-          this.fortress.level = this.level;
-        }
-      },
-      ...enemies.map(enemy => () => enemy.dispose()),
-      ...pickups.map(pickup => () => pickup.dispose()),
-      () => boss?.dispose(),
-      () => this.projectiles.clear(),
-      () => this.fx.clear(),
-      () => this.hud.reset(),
-    ]);
+    let preparationFailure;
+    try {
+      runCleanups([
+        () => this.fortress?.clear(),
+        () => {
+          try {
+            this.level = new Level(seed, loop);
+            prepareImportedCarrier(this.level);
+            if (!this.fortress) {
+              this.fortress = new Fortress(this.scene, this.materials, this.level, settings.quality);
+            } else {
+              this.fortress.level = this.level;
+            }
+          } catch (error) { preparationFailure = {error}; }
+        },
+        ...enemies.map(enemy => () => enemy.dispose()),
+        ...pickups.map(pickup => () => pickup.dispose()),
+        () => boss?.dispose(),
+        () => this.projectiles.clear(),
+        () => this.fx.clear(),
+        () => this.hud.reset(),
+      ]);
+    } catch (error) {
+      if (!preparationFailure) throw error;
+    }
+    // A construction fault remains the cause even if retiring old owners fails.
+    if (preparationFailure) throw preparationFailure.error;
 
     this.featureCursor = 0;
     this._hudCursor = 0;

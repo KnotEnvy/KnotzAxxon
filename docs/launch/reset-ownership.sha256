@@ -1,2 +1,4 @@
 7aabc3b86316c8e64ae2f5ddbad7d662fa9525bad08e67cf3021fcf4ff92c96c  artifacts/launch/integration/reset-ownership/after.log
 0543661d7050b9bda2e3648ed3f21d8c39fef5ac0596d69ef87c5ecd241213c1  artifacts/launch/integration/reset-ownership/before.log
+f18b30244326572b21d63f626454ecd1e335e42780423a482908abb6f1d619e3  artifacts/launch/integration/reset-ownership/integration-caught-startup-wrapper.log
+646cc3bb13e5643953ad55de1fcf4cbcee0514801f97d5e78f808501864e57cc  artifacts/launch/integration/reset-ownership/startup-contract-after.log
