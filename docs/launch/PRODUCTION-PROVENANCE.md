@@ -22,7 +22,12 @@ Chrome157.0.8103.52: all 46 files matched, debug API absent before QA attachment
 normal Engage advanced to playing/z30.6096 after one second, no page errors.
 Evidence: `artifacts/launch/production-attachment/2026-11-15T22-38-53-612Z/`.
 That is an **uncredited attachment smoke**, not an episode or sustained performance
-verdict. A completed pilot on the corrected package path is still required.
+verdict. The corrected package path then completed `pilot-production-provenance-01`
+on source `8ecde1d465d12f89…`: loop30 seed180401, keyboard/Chase/High960x540,
+genuine death after718 simulationframes/60actual renders, sectors0–1, no errors.
+All46 browser file hashes matched; source, full harness and package were stable.
+Exact raw receipt/PNG/hash index: `artifacts/launch/bot/pilot-production-provenance-01/`.
+The pilot is permanently uncredited.
 
 Final rows require structured browser proof and stable matching package receipts,
 in addition to source, full-harness, frozen-identity, hardware, normal-resource,
@@ -40,6 +45,8 @@ checks always return `credited:false`; truthful original-image review, actual ti
 viewing, band coverage and seed uniqueness still need primary audit. This correction
 does not solve observation latency or claim physical-device/listening evidence.
 
-Before the full campaign: commit integrated runtime/harness, build both immutable
-packages, freeze a fresh RC02, complete an uncredited production pilot, and verify
-package-path hardware smoke. Do not overwrite RC01 or retrospectively change Round01.
+RC02 is now frozen at commit `22ef1c0067c0aa7ec9461991d0abf9c2a674586e`, source
+`8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28`, with both
+production identities pinned in `candidates/rc02.json`. Fresh package hardware checks passed for both46-file builds;
+sustained realtime checks precede the full campaign. RC01 and Round01 remain
+unchanged; no package, source freeze or pilot grants publication approval.

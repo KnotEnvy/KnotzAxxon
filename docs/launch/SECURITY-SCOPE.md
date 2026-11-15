@@ -2,11 +2,11 @@
 
 This primary audit responds to Round01 TERRA-01 on immutable RC01 (`6d28e021…`). It is a source/dependency/trust-boundary review, not a penetration test or security certification. Exact reviewed file hashes, registry responses and five full GitHub advisory responses are retained in `artifacts/launch/security/rc01/`; `review-manifest.json` pins the evidence. The existing cleanup audit covers maintainability/ownership separately and identifies its historical branch accurately.
 
-## Concrete finding and staged correction
+## Concrete finding and committed correction
 
 SEC-01: the lockfile selects Vite7.3.6. `npm audit --omit=dev --json` exits0 with no advisories; the complete audit exits1 with one high affected package (Vite), aggregating five advisories. GitHub advisory API responses confirm Vite7.3.7 as the first patched7.x version, published October20–21,2026. An isolated dependency stage pins7.3.7 and its complete registry audit exits0 with no reported vulnerabilities. These measurements are an advisory-database snapshot, not proof of absence of all vulnerabilities.
 
-The RC01 batch and readonly judging round have finished with exact original bytes retained. Vite7.3.7 is staged in the worktree with an owned dependency directory; applicable checks and an RC02 freeze remain required before the full1000-episode production campaign. No shared dependency symlink target is modified. Vite is a build/development dependency; the verified static46-file packages contain no Vite server or `node_modules`. Actual QA servers explicitly bind127.0.0.1 and local browser pipes expose no CDP listener. The repository default development host has been changed from `true` to `127.0.0.1` in the pending correction. No arbitrary security exposure is justified by the production-only clean audit.
+The RC01 batch and readonly judging round have finished with exact original bytes retained. Vite7.3.7 and the loopback default are committed in `22ef1c0`, with an owned dependency directory;337 regressions and the corrected complete audit pass. RC02 is frozen with both production identities before the full1000-episode production campaign. No shared dependency symlink target is modified. Vite is a build/development dependency; the verified static46-file packages contain no Vite server or `node_modules`. Actual QA servers explicitly bind127.0.0.1 and local browser pipes expose no CDP listener. The repository default development host has been changed from `true` to `127.0.0.1` in the committed correction. No arbitrary security exposure is justified by the production-only clean audit.
 
 ## Reviewed boundaries
 

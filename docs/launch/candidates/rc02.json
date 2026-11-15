@@ -1,0 +1,1168 @@
+{
+  "schema": "knotzaxxon.frozen-candidate.v1",
+  "name": "rc02",
+  "frozenAt": "2026-11-15T22:57:24.978Z",
+  "commit": "22ef1c0067c0aa7ec9461991d0abf9c2a674586e",
+  "sourceHash": "8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28",
+  "sourceFiles": [
+    {
+      "file": "index.html",
+      "sha256": "4232265af7ad66b12b886cbfb6d0091ab92e939960d66a4c966fd92ee88baa38"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "862b336ea4d03ae4e762322dfdffcc1130f729a677853ba54489d6e834b69999"
+    },
+    {
+      "file": "package.json",
+      "sha256": "bca42666050a122191dc9bd84bed75c465a7a661a28566fbf8e617b5a7c514bc"
+    },
+    {
+      "file": "public/apple-touch-icon.png",
+      "sha256": "4fd06c4020adcbcbffd3c3bcc4811a2aafd232b3b8207ff64b4cc6548f1dcd3a"
+    },
+    {
+      "file": "public/brand/itch-cover-630x500.png",
+      "sha256": "f6ba52ab6723c8cc38a08fb5c07d9757a225b3f5e6c796cf266323d5b1a8b3c9"
+    },
+    {
+      "file": "public/brand/og-1200x630.png",
+      "sha256": "440bd42ea3fdce8a3f1474bebb5002d0c7da33af09b9904146582077bca7348e"
+    },
+    {
+      "file": "public/brand/social-preview-1280x640.png",
+      "sha256": "34cd311b4c2c6fbcc0092e562dfe3bef176dc805d43d16ab14d9bd221ec075ea"
+    },
+    {
+      "file": "public/icon-512.png",
+      "sha256": "388addaeacc924fd704e0b3fd3dd9cf0933538706ec0ce6d13f4d346274b82ba"
+    },
+    {
+      "file": "public/models/environment/environment-kit.glb",
+      "sha256": "2b8832e2cd48fe85338e3dae0eee85fec906ead688cfb6dc7bfdf62d3d2993f0"
+    },
+    {
+      "file": "public/models/fuel.glb",
+      "sha256": "e87abf686e98106f85b3f5c4a5d7d61afd91baac4b15afac96d95ecfced00acc"
+    },
+    {
+      "file": "public/models/player.glb",
+      "sha256": "b379dc7394986ffc248ca401a886302a9c6775d2783ca0bdef604e72377b8c57"
+    },
+    {
+      "file": "public/models/production/antenna.glb",
+      "sha256": "6cefc79edfd1b4f123550dc50ced9e441046e65ebb97d2629f48bb61c582beb5"
+    },
+    {
+      "file": "public/models/production/asteroids.glb",
+      "sha256": "0450b85240d589e4e2f65454f61b53af52d443a427d76f2c38a1008ae16272b2"
+    },
+    {
+      "file": "public/models/production/bunker.glb",
+      "sha256": "0cd38bb1b315bf68f3a84139bb73dd5009644c942d56ac03370d0ef7a6986dbb"
+    },
+    {
+      "file": "public/models/production/cargo-kit.glb",
+      "sha256": "c516490784e27f1c438df3ec731a4d025793f83522efd1215cec53d13da3e352"
+    },
+    {
+      "file": "public/models/production/carrier-template.bin",
+      "sha256": "4dddc3fbadc5bda65c8dd80c012353440a9927772bac61b8ae836a4a8452b593"
+    },
+    {
+      "file": "public/models/production/carrier-template.json",
+      "sha256": "44452e6b96683dd9e183efe1420dfd701322ea47b759300de1ee3015b4dba683"
+    },
+    {
+      "file": "public/models/production/carrier.glb",
+      "sha256": "f6dd09aa6324a6cf1bb9526bdfd94853f1ce59cafd243cecd10da813e2e96fe1"
+    },
+    {
+      "file": "public/models/production/cooling-stack.glb",
+      "sha256": "96a0f506f1c3ce4644fc1814283b1a0e022691b4786eb7481fa68ceda1cc2002"
+    },
+    {
+      "file": "public/models/production/cooling-stack.template.json",
+      "sha256": "dc71a4c9dfd70e10e217af3c3b358be983a1901e23a3fcf9d2f84e1ff3d20601"
+    },
+    {
+      "file": "public/models/production/covered-fighter.glb",
+      "sha256": "5234cd4ad177855ed5c6fd5b76584f409e5bfa669edf38243b272d50aedf12d3"
+    },
+    {
+      "file": "public/models/production/covered-fighter.recipe.json",
+      "sha256": "af50af1d8684cf24902c5acd6a864211609085ad8f853a83b5fd20ddc9e7f71b"
+    },
+    {
+      "file": "public/models/production/dreadnought.glb",
+      "sha256": "67c5e604ea19b941a76b127a1221c87350161f3637ffbd19e87a16489ec69c6c"
+    },
+    {
+      "file": "public/models/production/drone.glb",
+      "sha256": "7053c26483f863ec9c854cf57bd0efd1e7f5a775616c0d78200ae0c7f273b8ee"
+    },
+    {
+      "file": "public/models/production/flak-gun.glb",
+      "sha256": "97a07ec5317b98c095182aadbe08cbef02310f3f4a126db631b8f7e1453cbcdd"
+    },
+    {
+      "file": "public/models/production/flak-gun.template.json",
+      "sha256": "60f0aeb6c958b7e6d93be7d063a6ecf141892cd27313c99d6eac0bcfe795b987"
+    },
+    {
+      "file": "public/models/production/fuel-depot.glb",
+      "sha256": "14ea9f351088e35aeb304e6ed46699299864a063cd873571dd30d018216c67af"
+    },
+    {
+      "file": "public/models/production/fuel-depot.template.json",
+      "sha256": "84bb0fb34892052a5c423cf750ed07c2acff033b11a34963f8770970696b15a1"
+    },
+    {
+      "file": "public/models/production/fuel-pickup.glb",
+      "sha256": "152fac271b398f2a44183759b4c4250716a87fc28862221bde6035a84caa912f"
+    },
+    {
+      "file": "public/models/production/heavy-turret.glb",
+      "sha256": "de95debb8de0d5813b60ee935980ebaf44d7fe387be03b2de934a9a70b535409"
+    },
+    {
+      "file": "public/models/production/interceptor.glb",
+      "sha256": "2ebc37c7fb12624707a0e21d91ea610c06dc27b2dc4922d9e44d5531573d1152"
+    },
+    {
+      "file": "public/models/production/mine.glb",
+      "sha256": "51276e4106087f0e890dd52986a79369a944495fbe72a8139eb0e5b4c40b5369"
+    },
+    {
+      "file": "public/models/production/missile.glb",
+      "sha256": "8e491aacae4e235d24bc6fcba44e84d0b9c2c75ef8b229ea5a93341f156de004"
+    },
+    {
+      "file": "public/models/production/parked-fighter.glb",
+      "sha256": "681d691d277906ca960819d7f7a19536de041264fe76bd7a672a34c5fa24be55"
+    },
+    {
+      "file": "public/models/production/repair-pickup.glb",
+      "sha256": "f063dc0d9daa554f982da33fc72a9222c1a396031a59fe5f2ba71eb9c0929caa"
+    },
+    {
+      "file": "public/models/production/shield-pickup.glb",
+      "sha256": "8619ec08a7fce0679408172052a009073e1dcd39356374ab3b2608993981d4ae"
+    },
+    {
+      "file": "public/models/production/spread-pickup.glb",
+      "sha256": "01df1ee78e1bbbead7cd7cd58121d571ab5a40f8259e2a4cf0dea2211883256f"
+    },
+    {
+      "file": "public/models/production/wreckage-templates.json",
+      "sha256": "184b4a8fce26501a7f3938dc04498736d19df24c2c280ac28bdb69c1564d00c2"
+    },
+    {
+      "file": "public/models/production/wreckage.glb",
+      "sha256": "f39cce1fbf0c6d15ee046c04b52d1ca5ec26c757beb65dc3eabfe700793aee89"
+    },
+    {
+      "file": "public/models/radar.glb",
+      "sha256": "0c5c998069dd934e2b564b923acee7239de8b6d2b79df73cdb704f55629a700d"
+    },
+    {
+      "file": "public/models/sentinel.glb",
+      "sha256": "b35fafdbac832d494479e971552f05b84b00ea00e595a071cbb297f5f14302ef"
+    },
+    {
+      "file": "public/models/silo.glb",
+      "sha256": "0d3d10a097c2e48e9648e8d275dc121dd26d75c70f4be20f51ea9ea75a374f4e"
+    },
+    {
+      "file": "public/models/turret.glb",
+      "sha256": "d98ba44b53b2519bea58c44ccece4a23348287d8df285883ed28999ded960ab2"
+    },
+    {
+      "file": "public/og-image.png",
+      "sha256": "b5ce2b011e564ede25f4bc5a3a25fe1b47cebe974de00eafa4263e2e186a99f8"
+    },
+    {
+      "file": "public/social-preview.png",
+      "sha256": "b7237d97eae0523f365547e489333eac777f0ed63fe65333eb981393dee32eb4"
+    },
+    {
+      "file": "src/audio/Audio.js",
+      "sha256": "765063c5c7fe236b19f7ab1bd7f0b431f21bf72e114a20e119b952a3e23d4f12"
+    },
+    {
+      "file": "src/core/Collision.js",
+      "sha256": "8c183663f626f06fea03b0ae64bceafaab3222223079b7e022127936b9a38cfc"
+    },
+    {
+      "file": "src/core/Engine.js",
+      "sha256": "d14eca7330f43d98c1c41496be87b09e0756a668c080afd7d8153b69c5c1cab3"
+    },
+    {
+      "file": "src/core/FlightCamera.js",
+      "sha256": "f691b3cef8a36de611762cb3129571f0684457e607be141dc1b5158401f4506e"
+    },
+    {
+      "file": "src/core/Input.js",
+      "sha256": "c0e4d5979f27fc130106069c6363e6111b6c75403e3fb45f5a5aa3b6f96b8c60"
+    },
+    {
+      "file": "src/core/Lifetime.js",
+      "sha256": "118766236d21e0d992de1cdf14f7304bbf6c2bbd47c431196d6fdcb3ef52bba0"
+    },
+    {
+      "file": "src/core/Settings.js",
+      "sha256": "d60210acc5e42d9c6e11b4dbe2d4da5e670df47f6845788c14a340da6264b32a"
+    },
+    {
+      "file": "src/core/Utils.js",
+      "sha256": "f31d7b6cddbbd318887eaaec7c888e7f4478bd14cccdba5cb124103056998972"
+    },
+    {
+      "file": "src/entities/Boss.js",
+      "sha256": "a785a38179c7794cc41dd156a64da5fe9d1692a512d260dca82e8ec9aa3b60d9"
+    },
+    {
+      "file": "src/entities/Enemies.js",
+      "sha256": "ffa90bb1b16489699e204ff4211bbca984527375a858df66c8ae29db6b541f5f"
+    },
+    {
+      "file": "src/entities/Pickup.js",
+      "sha256": "83987aac65a68b94e68509a3371d9b388ceca55f64c73c3ca5d7bdbd4e1debe5"
+    },
+    {
+      "file": "src/entities/Player.js",
+      "sha256": "30f8214d5e8595e8caccd5d60d8ca8a3ec899badc35f6917d30921abdde7b64f"
+    },
+    {
+      "file": "src/entities/Projectiles.js",
+      "sha256": "79e97d9a8ab7b913a8411f911a8eb3fd3091d50693bb769d39c797035b10a443"
+    },
+    {
+      "file": "src/fx/Ambience.js",
+      "sha256": "33c061a5f4b33ec90451969567cb64ed1be4b2be7c099e9de65b3287c24706e6"
+    },
+    {
+      "file": "src/fx/Effects.js",
+      "sha256": "84b4ade2de9d8458c084d0225db8b28059b4bbc156d3f9bc00c759395baabd82"
+    },
+    {
+      "file": "src/fx/Particles.js",
+      "sha256": "73439e3605009151ef32f37b144150778269983aa7f644cf72e60f39210af361"
+    },
+    {
+      "file": "src/fx/Trail.js",
+      "sha256": "ab3bd00309bbb979cec1b6b1f210e149880405d37218d34b2407814fcf69ec52"
+    },
+    {
+      "file": "src/game/AltitudeEcho.js",
+      "sha256": "47854f49cd151b488aef52850788921f83fe4e41db9e9eb7c9fd08348acb1c07"
+    },
+    {
+      "file": "src/game/CameraRig.js",
+      "sha256": "ae1769e3f3a98e084d5ecd3cdb1b7e4ebd11286aae8ccb845d403c0b90eb2205"
+    },
+    {
+      "file": "src/game/CombatVisibility.js",
+      "sha256": "0afefd22a7b5f729acf38b4e6461456fd71768143080ce9cd6a19a4b1096a5f9"
+    },
+    {
+      "file": "src/game/Game.js",
+      "sha256": "ae9aa4f076ebb8743cc0ab898a58f80363845a20e2e6e9cdc5f09d7448bebce4"
+    },
+    {
+      "file": "src/game/WorldCollision.js",
+      "sha256": "7cb145c8b3b920d526675cd4ce0b9c71c896ec773e0ff991ffb14f9a4da5be23"
+    },
+    {
+      "file": "src/main.js",
+      "sha256": "c80f6d813187dafd29aab141bec68a5ce9d6296d925c680d74bdb39fa73a0959"
+    },
+    {
+      "file": "src/render/CelestialMaterials.js",
+      "sha256": "4d366b9765599d7d18d2a25d8f835bb8d76ad9644d854edea3d1e3848bdb0ee6"
+    },
+    {
+      "file": "src/render/Dispose.js",
+      "sha256": "4fd5c005beda831f9c5fd647352bad0ad5c128431c9260a7591983a48fc90c3c"
+    },
+    {
+      "file": "src/render/GeoUtils.js",
+      "sha256": "eb138a5ad1280bc4db4731de456938390a20002b9caccd74ca6b041b9d9874c5"
+    },
+    {
+      "file": "src/render/ImportedAntenna.js",
+      "sha256": "2c1e1e4d6b3b1a830da625d29a82f0eb9c2d4fe2debc7cc2001b25cb91e35299"
+    },
+    {
+      "file": "src/render/ImportedCargo.js",
+      "sha256": "a4b253d1fccfefc7760e57a06b78a5086c1ff486860be68a5506741c217e55a4"
+    },
+    {
+      "file": "src/render/ImportedCarrier.js",
+      "sha256": "c68a2497517f6e880158ba1a4444edce2de1992aa3606b01d8470e29806713bd"
+    },
+    {
+      "file": "src/render/ImportedCoolingStack.js",
+      "sha256": "d7ce95a7d90e2f210874fa045a17a66445a93e653687fc3c99230882e2251b14"
+    },
+    {
+      "file": "src/render/ImportedCoveredFighter.js",
+      "sha256": "624a758e43ab0d935bfa783a1bffab68bdcd3cda32498d565c0eee3acde28c06"
+    },
+    {
+      "file": "src/render/ImportedFlakGun.js",
+      "sha256": "c9b1f9b3a5087d37ded257d69d048b99c1bf4da9b714d08d238aec2782f6a9a1"
+    },
+    {
+      "file": "src/render/ImportedFuelDepot.js",
+      "sha256": "a008d2f91ff549a3258211d155287e5a16b195c43112ba9b8076d24787b1b7d6"
+    },
+    {
+      "file": "src/render/ImportedLandmarks.js",
+      "sha256": "55a3558f4c5419793c6ab38be11bf92a398c088bf6f85d57cdb57fd3ed4aa76b"
+    },
+    {
+      "file": "src/render/ImportedModels.js",
+      "sha256": "972ee916c1c1324a90b7610a9681b9cbdd334b5bed1aa355e238475807311967"
+    },
+    {
+      "file": "src/render/ImportedWreckage.js",
+      "sha256": "947963758df53c3363e1eebe33ae565db7cb5fd2fc0736555a9a7aca60ef810b"
+    },
+    {
+      "file": "src/render/Materials.js",
+      "sha256": "0cd27e17956004cf7c6dd2ecd694d70c62e40a0c0f43ef7621aec554029e3161"
+    },
+    {
+      "file": "src/render/PlayerShip.js",
+      "sha256": "b2c769f41fdd819d848a21e695ad88bdf793a14e9a82a7a365f2d33d24a6ae2f"
+    },
+    {
+      "file": "src/render/PostFX.js",
+      "sha256": "2f89dfbd0b755e31776ba8b8e2328187af0a8f97a364177be47129b582ef41cd"
+    },
+    {
+      "file": "src/render/Sky.js",
+      "sha256": "d86b693eb05de496a1fa65e2235421ca4c650ff11b748cd437c0159874d7c424"
+    },
+    {
+      "file": "src/render/Textures.js",
+      "sha256": "521e2145ec81318dae369f69b4c032ce48e6af876e5bd1f7afe360a900b2429b"
+    },
+    {
+      "file": "src/render/Underlay.js",
+      "sha256": "a108b4d9607784e4baaa08a44b228942067e356dda0f39b294e5021d8aa33e90"
+    },
+    {
+      "file": "src/style.css",
+      "sha256": "76ff550a9a1d812063fe117eca6f78525a51f2a7144a2ffa18cf977ee7ba77d2"
+    },
+    {
+      "file": "src/ui/HUD.js",
+      "sha256": "3a8f51f35f239f55bba142ebd8062e8065807261af42c45ee6e3d8dbdef32510"
+    },
+    {
+      "file": "src/ui/Screens.js",
+      "sha256": "e9b108e1015e8cc31bab58df11094d5a6febcf0efb6445b391f86840d00c668b"
+    },
+    {
+      "file": "src/world/AmbientTraffic.js",
+      "sha256": "b66f773157b36ae19e4dbcf957c73952688635c2002d3de6b24ad2f50a423c99"
+    },
+    {
+      "file": "src/world/EnvironmentKit.js",
+      "sha256": "7af30353f78569218925b2dddf9dddc4ff32f61e33b8301644b05a04e27cb09c"
+    },
+    {
+      "file": "src/world/Fortress.js",
+      "sha256": "c7b0e66a3c5a64d21551cbde57621835b3526959df89ba5c36216604610ee5cd"
+    },
+    {
+      "file": "src/world/FortressKit.js",
+      "sha256": "f06d615580a4069ef7bc378d7ab73bf8d9b53c9ab37dc8d9c7cc4a4686bc9cdc"
+    },
+    {
+      "file": "src/world/Level.js",
+      "sha256": "871f5bb9b492173c2b9bfc5ffd7a1f6b52344ef15b04224b1714e4b7b5c72016"
+    },
+    {
+      "file": "vite.config.js",
+      "sha256": "8522bd740e45011aa29491baffc47f5ad55855f12698466e73d913ee563861cf"
+    }
+  ],
+  "productionPackages": [
+    {
+      "kind": "pages",
+      "manifest": "artifacts/launch/pages/8ecde1d465d12f89/manifest.json",
+      "sourceHash": "8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28",
+      "manifestSHA256": "a2d6fbd97dbfa5d0b9d9e468f2cd09efedf5627d41c9b5b0d985773c456ce860",
+      "fileCount": 46,
+      "entry": "assets/index-Bz5MUwzc.js",
+      "entrySHA256": "4a45043b98ce58a061968d24f6ced29dc8623fa735006e1f514617d4fc769940"
+    },
+    {
+      "kind": "distribution",
+      "manifest": "artifacts/launch/distribution/8ecde1d465d12f89/manifest.json",
+      "sourceHash": "8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28",
+      "manifestSHA256": "bfd36518366fb327356e3a46a7d3de17c6d0cd9913b34c1dcfe293c47c691ec6",
+      "fileCount": 46,
+      "entry": "assets/index-DLM14mBo.js",
+      "entrySHA256": "72b6f26ed4cb3fd604476da15c7c5131019a78ef0ffc9e93aece804ae2915a36"
+    }
+  ],
+  "harnessHash": "c429e9a0477a68b90c3924f28d7d88cad3a5f06240aaf62482b5a7190969015d",
+  "harnessFiles": [
+    {
+      "file": "scripts/qa/antenna-baseline.mjs",
+      "sha256": "e0c6cb8c4ac10fb379b3028cfe7a2cdab97ca887b3a2d2d4611174788c357fc9"
+    },
+    {
+      "file": "scripts/qa/asset-baseline.mjs",
+      "sha256": "959e7adaa63549db17c552a98007bc55011e891febe4b0343f8e8f9444ac59ce"
+    },
+    {
+      "file": "scripts/qa/audio-lifecycle.cjs",
+      "sha256": "575d7439170d8444a2ef7d494ffdc763ee891883aa94fb315834766d2a5ccc9c"
+    },
+    {
+      "file": "scripts/qa/audio-render.cjs",
+      "sha256": "426b7def5c65bf50508c02e2564185d3f7a6caa0c47934b110039d48dde9c996"
+    },
+    {
+      "file": "scripts/qa/browser-smoke.cjs",
+      "sha256": "f121966a776d2fd8ae2e1ea93817e8967a7870e866a4b281084a04cd38889aec"
+    },
+    {
+      "file": "scripts/qa/bunker-baseline.mjs",
+      "sha256": "7dfc8db750dda4a857b4aa75d596ead826095473325dbccb36be3a103602e851"
+    },
+    {
+      "file": "scripts/qa/campaign-smoke.cjs",
+      "sha256": "79cf42e51cd4e08663bdc7a0c702c3d7f0c49d67ae027d77854db283bbcf0cca"
+    },
+    {
+      "file": "scripts/qa/cargo-kit-baseline.mjs",
+      "sha256": "bbccba01b15576086bf336ec20072355cbf3bcafe2212d2ad03216ab1ac8160c"
+    },
+    {
+      "file": "scripts/qa/context-recovery.cjs",
+      "sha256": "fce6635c8aef239ff81ec455c58d6c5acfe8af03b43a047b31397b7e309c2ea4"
+    },
+    {
+      "file": "scripts/qa/cooling-stack-baseline.mjs",
+      "sha256": "bf50b441957885d4385c5897f080923068f7c0ae81366561cd6fde10bd9861cd"
+    },
+    {
+      "file": "scripts/qa/covered-fighter-baseline.mjs",
+      "sha256": "abaa367141d3f789397877f9c7884c4b3b7a90755566145744bc98089b445873"
+    },
+    {
+      "file": "scripts/qa/flak-gun-baseline.mjs",
+      "sha256": "d127283f09870245e315a012195dbe5fd4bb90eb7fb727abd0a23a9701cb0442"
+    },
+    {
+      "file": "scripts/qa/fuel-depot-baseline.mjs",
+      "sha256": "5dc02c539eb76a99bc6aa6b6bef6f3327e7c090371ed05d55aa112fe1a3fefc1"
+    },
+    {
+      "file": "scripts/qa/imported-models.cjs",
+      "sha256": "95be55fb82c6d0eb45cf2f7bc1ee81d1035192c4585fb150a6f017921363b4e2"
+    },
+    {
+      "file": "scripts/qa/landmark-baseline.mjs",
+      "sha256": "71954ffc473e2150fa22c5d48ade5d5670be5a4b877aa23eb290099a499ee403"
+    },
+    {
+      "file": "scripts/qa/launch/audit-live.cjs",
+      "sha256": "22d929afb7489f1636ae87d166c7e88933c0f01f5322566cf2d72240f25eb9b8"
+    },
+    {
+      "file": "scripts/qa/launch/browser-evidence.cjs",
+      "sha256": "9d4a0dbf0c3e15b1a157afe1da71094dda47478b846f52965e64e9d2eb986cce"
+    },
+    {
+      "file": "scripts/qa/launch/campaign-report.cjs",
+      "sha256": "bf286d5387494da0babb303079b3040504945477314593f744afc0c1650d3586"
+    },
+    {
+      "file": "scripts/qa/launch/credit.cjs",
+      "sha256": "e1c6720aac6855b9e58283e4a185c5ea8e10626285ac94ea014e96c24a2305ee"
+    },
+    {
+      "file": "scripts/qa/launch/fingerprint.cjs",
+      "sha256": "0c0d22d8b08fd9cdb7e387c7c7ebd1c1177f3ae84e84b07d35692c372b15a33b"
+    },
+    {
+      "file": "scripts/qa/launch/freeze-candidate.cjs",
+      "sha256": "85df70b4ebb20112e95d99f8b598e05bfdcd8f607b59cea26de452928208368f"
+    },
+    {
+      "file": "scripts/qa/launch/gpu-lease.cjs",
+      "sha256": "c06c0b7739c6262cbc5273183b9f899ded289db3e0948e1cee459c459cea03e3"
+    },
+    {
+      "file": "scripts/qa/launch/inspect-public.cjs",
+      "sha256": "fcc30386c0afed0119c5c94835e178f529817de127b6b494a5fd6be916ded247"
+    },
+    {
+      "file": "scripts/qa/launch/judge-gate.cjs",
+      "sha256": "d3e261ab473220fe54245f81ba9d39780cb9fce9f6f0ff49465118b0d32c5fe0"
+    },
+    {
+      "file": "scripts/qa/launch/matrix.mjs",
+      "sha256": "599aa133d2b13f353ddb9e1e0527b2eca13f42be369ea08b82ced8c182788833"
+    },
+    {
+      "file": "scripts/qa/launch/model-dependencies.js",
+      "sha256": "b08f1cb6119147123b17afe18619679591b3edb73018ef8d56f86c9c2f2614c6"
+    },
+    {
+      "file": "scripts/qa/launch/package-itch.mjs",
+      "sha256": "ed604bb81bc0b831ea5e54ee1a7669ae9b04c6d1ca1b172d8be2ccd75938faa0"
+    },
+    {
+      "file": "scripts/qa/launch/package-pages.mjs",
+      "sha256": "12c9343da8a3b03175c508c99a0314a043a073afad4b4257d8b0157d8180cdec"
+    },
+    {
+      "file": "scripts/qa/launch/pilot-browser.js",
+      "sha256": "7a3647597378969a59d36df5f9531b0ce883c9f9c1a6a2f2d1e3b5f7cace5781"
+    },
+    {
+      "file": "scripts/qa/launch/plan.cjs",
+      "sha256": "38ac2938100926217d2d953bcd15d502f776043baf1521ef5f90dbfc13323cc2"
+    },
+    {
+      "file": "scripts/qa/launch/production-bundle.cjs",
+      "sha256": "d0c0e9d2aa37c058829beeeefd19af84981e6797f915d6f99bc0c317a8edccbf"
+    },
+    {
+      "file": "scripts/qa/launch/production-evidence.cjs",
+      "sha256": "b016d3f4ac41aa9f9ebd6f66dbd4aa0994eb37f95a7f358ff804fc8023936abd"
+    },
+    {
+      "file": "scripts/qa/launch/production-proof.cjs",
+      "sha256": "e7e0c8868f81da3a8550bd02f762e49678969cee8aef6c90a77594946ef93016"
+    },
+    {
+      "file": "scripts/qa/launch/production-smoke.cjs",
+      "sha256": "06f8dc044b1cf3c643910dc980a7ebbeeaa0e9e0ecd7814c3f1a65a771bcf8b3"
+    },
+    {
+      "file": "scripts/qa/launch/run-bot.cjs",
+      "sha256": "a50b3c5b3051874f83859120917c6954a81c64d249fc5445ab5bd0ce4ee435e8"
+    },
+    {
+      "file": "scripts/qa/launch/run-source-qa.cjs",
+      "sha256": "462ab61ee480351073dd47261a88ac8b3f7f4e517067d1b0bb725a476a4f8084"
+    },
+    {
+      "file": "scripts/qa/launch/summarize.cjs",
+      "sha256": "08d7bd911d6de678d3873fb060d0577da9c854a26c6a4bc04668bac5bb0ae5cb"
+    },
+    {
+      "file": "scripts/qa/launch/verify-itch.cjs",
+      "sha256": "d3e3e5b23801b18590c61371a8e4b298ced2275df1494a65504846f22bd7c25a"
+    },
+    {
+      "file": "scripts/qa/launch/verify-pages.cjs",
+      "sha256": "cc4879e841e8652e5ae0b3fccd7ce178755fefe8541a6417a7711eef8caf20e1"
+    },
+    {
+      "file": "scripts/qa/launch/windows-bot.cjs",
+      "sha256": "110c66a5899edd698928c75f389f9bc23cb3ff8eebe7aa177b0a78bc7a94c2a6"
+    },
+    {
+      "file": "scripts/qa/launch/windows-itch.cjs",
+      "sha256": "eb239106637947973ddaedf7e7e9d1f780b55d4355c577e4a46cd39040e15f76"
+    },
+    {
+      "file": "scripts/qa/launch/windows-production-smoke.cjs",
+      "sha256": "a2cde81c7f73434ef4373a3a2804e9d766e587479c59cb069d10e336346334b0"
+    },
+    {
+      "file": "scripts/qa/launch/windows-public.cjs",
+      "sha256": "89c56596c97926dbf76124b4be42acdb4bd520757987f9edbee681ef93f037f5"
+    },
+    {
+      "file": "scripts/qa/launch/windows-source-qa.cjs",
+      "sha256": "f9d1f38f9c33c6fe3fcfddde7a490bfa3630ba4102ef4e144f944d696a5d2e9c"
+    },
+    {
+      "file": "scripts/qa/live-sol-low/contact-sheet-test.py",
+      "sha256": "a45d0a64c1eff535abae7cacc69b90d798aee3bd475e306329948a9009780d5b"
+    },
+    {
+      "file": "scripts/qa/live-sol-low/contact-sheet.py",
+      "sha256": "502a27f962296d06d305a464b8d1df11908916bafffbac7a7044fdecd7a3e89c"
+    },
+    {
+      "file": "scripts/qa/live-sol-low/final-live.cjs",
+      "sha256": "22643d5b898ec7ac6692cf8a38057c55383d1b8f16b4edd49ede09aa93fe9ee2"
+    },
+    {
+      "file": "scripts/qa/live-sol-low/launch.cjs",
+      "sha256": "c97175b97995050143d0e7d3363188a1a7774e89f021ce5e14b3a3a9df7d4f36"
+    },
+    {
+      "file": "scripts/qa/live-sol-low/mode-guard.cjs",
+      "sha256": "b2eaaf24350f555f57dc2ce9ac6178650851c6dc1d02fc1cd5a8038afc40e1b3"
+    },
+    {
+      "file": "scripts/qa/live-sol-low/pilot.cjs",
+      "sha256": "6954bdb7c53981f825c2d69ff188fa85a709270cfe795184af66f16642009af8"
+    },
+    {
+      "file": "scripts/qa/live-sol-low/pipeline.cjs",
+      "sha256": "f678c779f8a1d26afc11197493c0b509ae910ac695debd2f7b2dcea3b8ebf1f6"
+    },
+    {
+      "file": "scripts/qa/live-sol-low/pipeline.test.cjs",
+      "sha256": "d17c972956fcc677ea008320f503a7ae1e4e333fbbb5539f756648ff60e412fb"
+    },
+    {
+      "file": "scripts/qa/live-sol-low/prepare.test.cjs",
+      "sha256": "9c4358ae4733592746033ddbb2b5397e8e38c41c20e81bf5915c314e63eb6e26"
+    },
+    {
+      "file": "scripts/qa/live-sol-low/trial-plan.cjs",
+      "sha256": "8eb92af52ce3c2042c6296f23cb581a029a468bc7fd88f5302237655d22cc70c"
+    },
+    {
+      "file": "scripts/qa/live-sol-low/visual-notes.cjs",
+      "sha256": "39a8bd6e833f481b3f2f32a4c4b2f08a07b8b7d771e4a5a766e562380a720502"
+    },
+    {
+      "file": "scripts/qa/live-sol-low/visual-notes.test.cjs",
+      "sha256": "d6b40eb7f24253d2a922fc43ee61629b89d1bf0e440644b91ed25f3a60831b93"
+    },
+    {
+      "file": "scripts/qa/live-sol-low/windows-live.cjs",
+      "sha256": "f8050a3f52b946e7139fb11427375d6f2ebe461b3f50613f77e331602c76d998"
+    },
+    {
+      "file": "scripts/qa/model-capture.cjs",
+      "sha256": "b1970d535936547a44a7b58b05e1fc41a57c0a7255a24ee6cc37f3c0fd737a6d"
+    },
+    {
+      "file": "scripts/qa/motion-capture.cjs",
+      "sha256": "9532e2ea9e33bc0cc69662f63d59e1507f9f21299a1f3fe57dcb4dbe38cc8820"
+    },
+    {
+      "file": "scripts/qa/opus-ui-audit.cjs",
+      "sha256": "6b44a9f620060bcb538a4fe8b0f8c89953c938a00c2aa2815ea3995ad9017247"
+    },
+    {
+      "file": "scripts/qa/opus-ui-compare.cjs",
+      "sha256": "34e840248095f593d0d5384906f9ec983eea68fcf50ae515a251ffdf6e06e11d"
+    },
+    {
+      "file": "scripts/qa/opus-ui-nav.cjs",
+      "sha256": "f9bf90a54ceef6aa32168574248fb78d595fc5dce1455f2e1f9ebba9f62f4177"
+    },
+    {
+      "file": "scripts/qa/prewarm-quality.cjs",
+      "sha256": "1a86b9ab3966493c0c56727f2dc4a8b97fcc286fb60af76db1d54b51a0f518ad"
+    },
+    {
+      "file": "scripts/qa/prewarm-retention.cjs",
+      "sha256": "7a27576213aae4005e384646215e4f459fbae6a1f09c985b9ef8eb19ac729ace"
+    },
+    {
+      "file": "scripts/qa/receive-asset.py",
+      "sha256": "7521a95ed901f494b4f3a7a382c2cd9123bc15d58324af41dc6fd648e68e3086"
+    },
+    {
+      "file": "scripts/qa/release-smoke.cjs",
+      "sha256": "fd82d1b49d76db4286fa91ea24cf721b459cc9eec5b4054716a0d9cbfbd5f8a8"
+    },
+    {
+      "file": "scripts/qa/ship-capture.cjs",
+      "sha256": "c0e69d44b23573122c03cce38bc75a6f058ad28903ac89f0352003bdb6e918cc"
+    },
+    {
+      "file": "scripts/qa/showcase-capture.cjs",
+      "sha256": "cf2dddec55811511c0dae18bc9fa1f0abe7b779ffb72055fd3cab617c2f91d78"
+    },
+    {
+      "file": "tests/ambient-traffic.test.js",
+      "sha256": "dc3cabfc72f22dc754525dfc139799ddebff13efab5635e4687ec2f8eacb6258"
+    },
+    {
+      "file": "tests/atmosphere.test.js",
+      "sha256": "ec013d4a0ec492c7967acc086751674f79741981922123ef8275f5946316e0d4"
+    },
+    {
+      "file": "tests/audio-dispose.test.js",
+      "sha256": "d10af1162e1ae83dc2d8fa3c286bd87688325abbef6a08c6775611aa972305b5"
+    },
+    {
+      "file": "tests/authenticity.test.js",
+      "sha256": "8f24ed9c6ecf54661ccc1d13b4cd6128e8ef3cae38dd889554251beee0e6aaba"
+    },
+    {
+      "file": "tests/camera.test.js",
+      "sha256": "173de2e5ef4b5638398b3e6c11f087f640aff9d4ef0063d4ce74c0fb8cf34e8c"
+    },
+    {
+      "file": "tests/collision.test.js",
+      "sha256": "a3f7e6e8f860f427d6f924597e9ffd0e0029281b0aa08bf403ba5ff10fcf8ddb"
+    },
+    {
+      "file": "tests/combat-feedback.test.js",
+      "sha256": "61e70fff5d646d1a9059b48a8e3d998d806d94972ea1db0bcbedd3442b52bfa1"
+    },
+    {
+      "file": "tests/combat-polish.test.js",
+      "sha256": "2730a243296254fce3a6837b165534a0b040464fd02ad0053247014c11a9fb87"
+    },
+    {
+      "file": "tests/component-lifecycle.test.js",
+      "sha256": "fd9e7a9cf8e18d4d0071c97951399983dedda17b9dcda4ff288252bf00f1671e"
+    },
+    {
+      "file": "tests/context-resume.test.js",
+      "sha256": "c4d1cc884e8ba9e95cea9a1ef9a147e5298ee4691b888863460cf5d755b362a5"
+    },
+    {
+      "file": "tests/environment-kit.test.js",
+      "sha256": "d28d78b09973e61711d8d7c9d0b6dfa07ed39dce4d04820d4bb0bc680ccfce9f"
+    },
+    {
+      "file": "tests/feel.test.js",
+      "sha256": "25b76127ca24134217fd7594a002290eb937a709b83e81c5ca087665b369fb50"
+    },
+    {
+      "file": "tests/fixtures/chunk-digest.js",
+      "sha256": "95e3ceb23fd686ac9c2dce2ce666b79c469caca96b10ee5bb63e1921b00c5d43"
+    },
+    {
+      "file": "tests/fixtures/context-resume.mjs",
+      "sha256": "fd7f7e003b32e499e4203d2bab4a7a309219ff8ea275ef7c6f46004a4b777bbc"
+    },
+    {
+      "file": "tests/fixtures/fortress-source-golden.json",
+      "sha256": "7f14956432f8f4173f5b5b2df257d81749d263cab6ce0031b3b4d8e4aadbd63b"
+    },
+    {
+      "file": "tests/fixtures/game-startup-lifecycle.mjs",
+      "sha256": "16d121a02491cb406ac10b520aba3267d3dbf73786836518e3cb7559d9f5bd1d"
+    },
+    {
+      "file": "tests/fixtures/imported-prewarm-lifecycle.mjs",
+      "sha256": "9fdb9ddece1f57000648c43ddeee5f08850ac5033d56dc7a839ddb162ae81626"
+    },
+    {
+      "file": "tests/fixtures/opus-code-audio-lifecycle.mjs",
+      "sha256": "99adeeb95ba9129089a90019ff1d2d082aaf520f672b22ce10a5a6416abb0e49"
+    },
+    {
+      "file": "tests/fixtures/opus-ui-dom.mjs",
+      "sha256": "b173f87a68ddb911e04b5ec7ed690a1b7676a69cc40f7d445720aa0f341097d3"
+    },
+    {
+      "file": "tests/fixtures/startup-lifecycle.mjs",
+      "sha256": "e3afef674fdf45200422c8bae9f66a82da5c493790471cdead99cc045c1f6404"
+    },
+    {
+      "file": "tests/fixtures/studio-feel.mjs",
+      "sha256": "7885977b1d66d31dc772337641cce69bb2b63859e239a5b52eff5cb7c1080b89"
+    },
+    {
+      "file": "tests/frame-budget.test.js",
+      "sha256": "744565d2cdb2bb341eda68e5c450b35c901e99a11314ac02f8f1da7a4ced45ef"
+    },
+    {
+      "file": "tests/frame-clock.test.js",
+      "sha256": "9edb7eaee0bd7aa5de1d8c51317958fb54effce03bd9353953e5ab304b3cb6b4"
+    },
+    {
+      "file": "tests/game-collision.test.js",
+      "sha256": "6f7801b98409907eead636be3e268342b8c73e5f14727ae715dd0482f5aca1da"
+    },
+    {
+      "file": "tests/game-reset-ownership.test.js",
+      "sha256": "a979d35ac4103a4757da8c90e0a2e482839679a2194251d55f9b7dc2e569593e"
+    },
+    {
+      "file": "tests/game-startup-lifecycle.test.js",
+      "sha256": "7ce35322a5176c3461b01f89cb9a69fb15ac62bb81a8fe2e7f3e56fb379d5d9d"
+    },
+    {
+      "file": "tests/imported-prewarm-lifecycle.test.js",
+      "sha256": "9f87777ccee606c84e48816c3b7da457011672401e72cb3cd179e103eecc8f2b"
+    },
+    {
+      "file": "tests/judge-gate.test.js",
+      "sha256": "ff30b38eaa0480c8b89f4230de0ee7e632d306be082228f5b3730c8cbbefa6ff"
+    },
+    {
+      "file": "tests/launch-evidence.test.js",
+      "sha256": "2f81e8613151a87f37fc5b6d245f0bc5e91cdf2520a153d0b8e1249a0a80ee95"
+    },
+    {
+      "file": "tests/lifecycle.test.js",
+      "sha256": "59163b048536bfc17b32de57b85cf4342b8b87e59f8adef095424b9e78682f25"
+    },
+    {
+      "file": "tests/live-observation-audit.test.js",
+      "sha256": "5fa57c97213419f2507e27ded75d3f729eb28ce0ae228f60e17c3287ff68aa1d"
+    },
+    {
+      "file": "tests/missile-lock-cue.test.js",
+      "sha256": "2fb675f7f1ef2c6980a967149a5f5e8944d6aad014d0c59f7fbb9cd3bdd02494"
+    },
+    {
+      "file": "tests/model-integrity.test.js",
+      "sha256": "abcd06634de7670527e907c59b220288319e9fd961322c91b521a1fd4923efac"
+    },
+    {
+      "file": "tests/opus-code-audio-lifecycle.test.js",
+      "sha256": "613dfe2fde72c5c02f0f844d36c7bea5e5c68b9e2a5134d560d36eb2a3e9c5ae"
+    },
+    {
+      "file": "tests/opus-ui-feedback.test.js",
+      "sha256": "cc1e18c4a9f81a9ed8296d3033e98ad81132b6d909466327ba02602bd5338434"
+    },
+    {
+      "file": "tests/performance.test.js",
+      "sha256": "0f0426c0878a49f5da71d73b7023d0fd0f6264104d2d5e775729f0415f05cbb9"
+    },
+    {
+      "file": "tests/production-package.test.js",
+      "sha256": "cb952ab2eaa5f3b290da5b09c6a8e967a8cd8adcbed310d1081465f90fce7d94"
+    },
+    {
+      "file": "tests/results-shortview.test.js",
+      "sha256": "023e7f0d10fc0c058614d604076333adb970ac30bf57f479143fd16828429c71"
+    },
+    {
+      "file": "tests/sector-refinement.test.js",
+      "sha256": "f7c506846a9060b3f6aa065874498e69a97dc3c01d4cbeeb9c229d2cbb93e350"
+    },
+    {
+      "file": "tests/settings-persistence.test.js",
+      "sha256": "053a324e0252f63dbe18cce55a53e104fa95256f93caca30c63f61ad4721b772"
+    },
+    {
+      "file": "tests/showcase.test.js",
+      "sha256": "b7bec7d9d97ce6bc896106405cb2c93af773419342921370762f878f1d96a065"
+    },
+    {
+      "file": "tests/studio-feel.test.js",
+      "sha256": "006168836350271e5b815c963920e3cfd602cfcb1b135dda58a40e9e2fe632a3"
+    },
+    {
+      "file": "tests/studio-hud-feedback.test.js",
+      "sha256": "5fd23f7901cb8a4099bf15363316b6db24fd00f90e73ed6bac02967a01b9c133"
+    },
+    {
+      "file": "tests/studio-render-ownership.test.js",
+      "sha256": "84237c287da21a5474b1a7d8605f3f99a569a457e2cc0797bf0ccdb4f0f09366"
+    },
+    {
+      "file": "tests/studio-settings-quality.test.js",
+      "sha256": "a46d5fb4e22e244f20a3f2f3815ea9aec0ade51d65fe54723f545504529082b2"
+    },
+    {
+      "file": "tests/template-lifecycle.test.js",
+      "sha256": "24b7af6ed8b2b19971ce0502b0dfff90fccf0a3d336dda2abf32945720b6388d"
+    },
+    {
+      "file": "tests/title-attract.test.js",
+      "sha256": "e524866932017dc70aa3f61f4a9940bcb3593b789faec227dca32ecbe9860f48"
+    },
+    {
+      "file": "tests/ui-ownership-faults.test.js",
+      "sha256": "270521fbbd8eaf5235313f0c04569d9c0e698602a9eddf9615d3f262cd092032"
+    },
+    {
+      "file": "tests/ux.test.js",
+      "sha256": "310a099a12896e2c6a419ae93bc2a26d498e2011e6ff92758f8f1712ce4c5fe8"
+    },
+    {
+      "file": "tests/visibility.test.js",
+      "sha256": "f7bf48ca36dd0bfe3e251e01b26cb7162f490dc53e8933045fbf400b3d40a51d"
+    },
+    {
+      "file": "tests/visual.test.js",
+      "sha256": "393d3d8916bd0b0a71a02e8a04be4a455b00a74cd39f2b55acdf19ec03b24949"
+    },
+    {
+      "file": "tests/warning-priority.test.js",
+      "sha256": "00226613872f97828054abe90bd1bec0aee4393dbd981291a160eb87e0cfbeb9"
+    },
+    {
+      "file": "tests/world-retirement.test.js",
+      "sha256": "72725fc05b6f8d5533f7080e092cc125b9fdd41d193c1331c60e5c02afdf95fc"
+    }
+  ],
+  "editableSourceHash": "0e1a17f8a2b75dbcbeb2df693aa5905f3e55332c8ff2a2f764df7a25a4864dce",
+  "editableSourceFiles": [
+    {
+      "file": "scripts/brand/launch/capture-frames.cjs",
+      "sha256": "9b0e4b4f33ea7993f3d3e4790ecd5d73ff858c0851cb0931980b771f61d357b9"
+    },
+    {
+      "file": "scripts/brand/launch/capture.cjs",
+      "sha256": "7f444f08cc978641c7e26787c4d34687aae5ffe626312fcb81d1bb0711e78264"
+    },
+    {
+      "file": "scripts/brand/launch/compose.cjs",
+      "sha256": "0c17099ef996b38213e874047b73eb7c42bcaf53e3fb782046772b2ad2cfee44"
+    },
+    {
+      "file": "scripts/brand/launch/results-plan.cjs",
+      "sha256": "930ea5522fc21322363400f515fbe6e575a18e062ebc69a86a228aadf1074994"
+    },
+    {
+      "file": "scripts/brand/launch/with-gpu-lease.cjs",
+      "sha256": "458f6a0aca657f5d6f9928b75bb9a510e006b2d2f7daa1f12ea6d12fd37a0eca"
+    },
+    {
+      "file": "scripts/brand/render-link-art.cjs",
+      "sha256": "48c7fb9e9bfdd6ab5e4c95c4243125268d1af2b731b8bb1636b3be47fdb95299"
+    },
+    {
+      "file": "assets-source/launch-marketing/ITCH-LISTING.md",
+      "sha256": "626b4eb74e1c7fa49889da0ada70016e2551788cf6be8346e8399818adcc4ee4"
+    },
+    {
+      "file": "assets-source/launch-marketing/README.md",
+      "sha256": "ef6897493c935b367a7c7ad06a28fd0307942668925c8ac2ce9d90bf3e389aa8"
+    },
+    {
+      "file": "assets-source/launch-marketing/compositions.json",
+      "sha256": "e400ebb8f156f45556ebf437daf3ff94c7581588b3dc1a8c9228b34582f3f307"
+    },
+    {
+      "file": "assets-source/launch-marketing/export-manifest.json",
+      "sha256": "9a3cadcaa92387ffae041224d8e31e77c75a3ad1f583340cb7f47b6f43da840f"
+    },
+    {
+      "file": "assets-source/launch-marketing/exports/itch-banner-1200x260.png",
+      "sha256": "f4e2fb9605d223a8da72f317c4cbcab2db15bc5017626edfd97efb5086306b87"
+    },
+    {
+      "file": "assets-source/launch-marketing/frames/interceptor-screen-chase-1920x1080.png",
+      "sha256": "aa590e2c96c4aef428e13d36e549c47336aa1c598d58cf6e27392e0929da16cd"
+    },
+    {
+      "file": "assets-source/launch-marketing/frames/iron-sentinel-classic-1920x1080.png",
+      "sha256": "d09312105de3f8d33e6abed7b6df612ea162139d62344428f8045491c3b73231"
+    },
+    {
+      "file": "assets-source/launch-marketing/results-evidence/RECEIPT.json",
+      "sha256": "0e7b5961ae8be0a06d1f82ba183aa3b243798417c28c413c10da9ddf80bd3134"
+    },
+    {
+      "file": "assets-source/launch-marketing/results-evidence/SHA256SUMS",
+      "sha256": "d7658393cc4009f634b89768f12843ece5541531410e5fa48858c33d4f913e3f"
+    },
+    {
+      "file": "assets-source/launch-marketing/results-evidence/base-960x540-victory-opened.png",
+      "sha256": "6ffec3ffed4ecb9c1ad6b42b9d5b9a65c44754e9486af88466783825f5daf575"
+    },
+    {
+      "file": "assets-source/launch-marketing/results-evidence/captures-20261115T201834Z-capture.jsonl",
+      "sha256": "70f054f4a7b30c641d4479f77c4f10f59d48020d54c35263b79a7830444e29bf"
+    },
+    {
+      "file": "assets-source/launch-marketing/results-evidence/captures-20261115T201834Z-lease.jsonl",
+      "sha256": "cc0fcd2564b7edc181e45d0089ee17ff967a7dea31018e4a6788a0144854b227"
+    },
+    {
+      "file": "assets-source/launch-marketing/results-evidence/captures-r2-20261115T202145Z-capture.jsonl",
+      "sha256": "025da78648be76f6f0d77cb82cfeed6e94f2b7867f216e582c5ce9b8ae7cdd1c"
+    },
+    {
+      "file": "assets-source/launch-marketing/results-evidence/captures-r2-20261115T202145Z-lease.jsonl",
+      "sha256": "809dbdfe175a716cafe22ae94b094ee0efb639e40a51bc54d3b63368631f64fe"
+    },
+    {
+      "file": "assets-source/launch-marketing/results-evidence/patched-667x375-touch-defeat-opened.png",
+      "sha256": "3c765571bef32b7b959ce77415fa2bf071d1980cfa90789572968928b55c88c2"
+    },
+    {
+      "file": "assets-source/launch-marketing/results-evidence/patched-r2-390x844-touch-victory-opened.png",
+      "sha256": "e2f49462edf4aca658e16aa97a0b574ad2174e708cc304dd5a02378219a1674a"
+    },
+    {
+      "file": "assets-source/launch-marketing/results-evidence/patched-r2-960x540-victory-after-leave.png",
+      "sha256": "56a5f77839289caf19a804f61dec295b9c5ef4b8edf1ae65336b52b775fc3ba3"
+    },
+    {
+      "file": "assets-source/launch-marketing/results-evidence/patched-r2-960x540-victory-opened.png",
+      "sha256": "5ae79e3723e30e4fde1199094f01da284e8260be12f9fa715e02fff42c7bf89e"
+    },
+    {
+      "file": "assets-source/launch-marketing/screenshots/01-iron-sentinel-1920x1080.png",
+      "sha256": "f1ad971759d6e91ff541c4aa732880d186dfdc22b939c9fdc2a9ce1681e0037d"
+    },
+    {
+      "file": "assets-source/launch-marketing/screenshots/02-interceptor-screen-1920x1080.png",
+      "sha256": "933008e949adc7fa0467f1d3d0d87db6856db4b56abdd3d6bc9ba9bfdaec8e71"
+    },
+    {
+      "file": "assets-source/launch-marketing/screenshots/03-reactor-spine-1920x1080.png",
+      "sha256": "a03864da428c84b85a15d85171d5026795e1a69901766af2786deb1c839a5def"
+    },
+    {
+      "file": "assets-source/launch-marketing/screenshots/04-gun-batteries-1920x1080.png",
+      "sha256": "9d93bcd377eda8c42abce23a74fabbd500061c80dd06d9d252f951f6f82234ec"
+    },
+    {
+      "file": "assets-source/launch-marketing/screenshots/05-inner-citadel-1920x1080.png",
+      "sha256": "8de989e8e0a0d35bc61266e67b26327346e8595ee8eb25346f0d889c1b2e174b"
+    },
+    {
+      "file": "assets-source/launch-marketing/template.html",
+      "sha256": "4b633c914ed3bde9fc167aed7050ad6d704ff3b4ca1eed75a28d4d98cd196f56"
+    },
+    {
+      "file": "assets-source/launch-environment/README.md",
+      "sha256": "3abaebe22a8f50cfcd5e36df8ce6b6226d1b7ae9be595ece35c6bd9d6d1b5179"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/capture-diff.json",
+      "sha256": "f57dd7f3c30d985d15c5449953bf1749fee670eb15278bbf1fe0ee3a85f623df"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/capture-report.json",
+      "sha256": "10dc790c6eaa68278de70aa3f2482879637acf5fe9800d5ef2903058063d9fca"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/capture-source.json",
+      "sha256": "af30ae76948b14b825c8a4c41d1490929a7e4fd54449881c311e18cad477793c"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/cpu-measure.json",
+      "sha256": "b543e7e97f7a7cf1f031e0b51eeb41d53ae5a50a158e00aa21b398f9975bf7f9"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/frames/citadel-classic-wide-f390--after.png",
+      "sha256": "4b245d801f2edeec13ec47cf7525b3b1d1ba1c328f2c5209d791c131e1ef1d6a"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/frames/citadel-classic-wide-f390--before.png",
+      "sha256": "2450540676a44567581ee177d6f5b218922cc557d28e279c361f529879b91fce"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/frames/citadel-classic-wide-f390--page.png",
+      "sha256": "7ee6df61b657f69e3801073db66961a32fd45201297e02ae794eb28f055025fb"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/frames/gauntlet-chase-wide-f345--after.png",
+      "sha256": "e5052a3585bdfd9b6ba1ad210398e98fbc84fc6ee94b7eab2fd7ae23209989a1"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/frames/gauntlet-chase-wide-f345--before.png",
+      "sha256": "c31993ad2ba978ebf69171138e401dc8f86d00cbef6d47a48f60e47eebc7d0ec"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/frames/gauntlet-chase-wide-f345--detail-before-after-3x.png",
+      "sha256": "b50c71aa5ef9ca1bf9a6af1bcf87d1e5c40e7951eda4ebde1c3fbe0bb4a50495"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/frames/guns-classic-wide-f345--after.png",
+      "sha256": "6d589237a69e4daaf4e8b267b670db1aefa6a77e7d59dd2b41003ba6030613e7"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/frames/guns-classic-wide-f345--before.png",
+      "sha256": "c13a443e8d8725192c2fc4f5769b6fe0ab34fe257d86f90b98e3cd62756de815"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/frames/guns-classic-wide-f345--detail-before-after-3x.png",
+      "sha256": "a4826e48e482be0408da5d7bb161c0043c431adcbbbdf9b93a5139ed67a586ea"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/frames/outer-chase-wide-f345--after.png",
+      "sha256": "93daf87e177e2b41ab54eb424dd9d95dbc60187e51b78da7dbfa2fcc301dabc2"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/frames/outer-chase-wide-f345--before.png",
+      "sha256": "897467992fbe054f1d23c5ab6320d3afd99b9b5dffeb49686c702edbf12e4204"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/frames/outer-chase-wide-f345--detail-before-after-3x.png",
+      "sha256": "bcfbdc0d1867a6cb5afe5f5dcc750aeff0453e13946c29a0bd5d6f99e0019131"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/frames/reactor-classic-tall-f345--page.png",
+      "sha256": "f8fc8524f42970ecc8529feb346d8cb4ef2942d985ef1263a54a44b88f726a99"
+    },
+    {
+      "file": "assets-source/launch-environment/evidence/tests.txt",
+      "sha256": "fae11d69324cee53d12095fcf839f3c95b8b5a5e039967c0180ff0843258e564"
+    },
+    {
+      "file": "assets-source/launch-environment/retainedSHA256SUMS",
+      "sha256": "e6dd16923108198ae6621f5d82ea6a54f624b5c192d409460a61d8d097e86a58"
+    },
+    {
+      "file": "assets-source/launch-environment/specs/pilot.json",
+      "sha256": "ee49a8dbe647c148e07c802cd2c78c5987c17b674ce72aeb83bbc2b92a06a737"
+    },
+    {
+      "file": "assets-source/launch-environment/specs/traffic.json",
+      "sha256": "f747539f66753943319eab414badd6fcd0ec57572be702e06d5dbb9bbcc042bb"
+    },
+    {
+      "file": "assets-source/launch-environment/tools/capture-win.cjs",
+      "sha256": "4b037dc1e1b344dbed310db197ab421c09408fbcc76046b787063e45aa6f3044"
+    },
+    {
+      "file": "assets-source/launch-environment/tools/capture.cjs",
+      "sha256": "97c9590dfba3a3d23c6a18578037a321fd55067ca557e2e63ce89f4bfe48c561"
+    },
+    {
+      "file": "assets-source/launch-environment/tools/diff.mjs",
+      "sha256": "3e4b18df8e85683f27187592745486108eace1193e51e2c7d6da7285f954d8b6"
+    }
+  ],
+  "browserPilotHash": "7a3647597378969a59d36df5f9531b0ce883c9f9c1a6a2f2d1e3b5f7cace5781",
+  "marketingManifest": {
+    "file": "assets-source/launch-marketing/export-manifest.json",
+    "sha256": "9a3cadcaa92387ffae041224d8e31e77c75a3ad1f583340cb7f47b6f43da840f"
+  },
+  "dependencies": {
+    "node": "v24.14.0",
+    "vite": "7.3.7",
+    "three": "0.185.1",
+    "playwright": "1.64.0"
+  },
+  "gameplayRequirements": [
+    {
+      "loop": 0,
+      "count": 180,
+      "liveEpisodes": 10
+    },
+    {
+      "loop": 1,
+      "count": 180,
+      "liveEpisodes": 10
+    },
+    {
+      "loop": 2,
+      "count": 180,
+      "liveEpisodes": 10
+    },
+    {
+      "loop": 3,
+      "count": 180,
+      "liveEpisodes": 10
+    },
+    {
+      "loop": 7,
+      "count": 180,
+      "liveEpisodes": 10
+    },
+    {
+      "loop": 30,
+      "count": 100,
+      "liveEpisodes": 10
+    }
+  ],
+  "judgingRequirement": "Luna, Terra and Haiku independently >=9 in each of the seven unchanged lenses; all21 on this candidate",
+  "status": "identity frozen; gameplay, package and judging results must be attached separately"
+}

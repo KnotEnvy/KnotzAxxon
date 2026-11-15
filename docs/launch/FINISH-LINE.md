@@ -7,14 +7,18 @@ Previous deployed runtime: `1b3ff18bbabdedf30295846f3594c831ef5c30a5` (PR 5).
 Historical validation: 241 regressions; 28 default resources / 35 served model hashes.
 These are baseline facts, not new-candidate results.
 
-## Current status — 2026-11-15, after Round 01
+## Current status — 2026-11-15, RC02 preparation after Round 01
 
 Owner implementation tranches have been handed off and integrated. **Primary release
-work remains active.** RC01 is frozen at `c0ee2949de29adfa52e6dcdae6768c73ec15474a`
-(source `6d28e0210d802d0932762ba85f61d4cf43f14a646099a5f99411b0ab240f1362`).
-It passed 329 regressions and local GPU verification of both 46-file packages.
-Pending Vite 7.3.7, loopback-default and QA provenance changes require a new RC02;
-RC01 remains immutable and is not approved for publication.
+work remains active.** RC02 is frozen at `22ef1c0067c0aa7ec9461991d0abf9c2a674586e`
+(source `8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28`,
+harness `c429e9a0477a68b90c3924f28d7d88cad3a5f06240aaf62482b5a7190969015d`).
+It includes Vite 7.3.7, loopback default, exact-production bot/player provenance and
+strict actual-view/acknowledgment audit. All **337 regressions pass** and the complete
+dependency audit reports zero advisories. Both new packages contain 46 files; their
+shipped bytes match RC01, including the portable ZIP. RC01 remains immutable at
+`c0ee2949de29adfa52e6dcdae6768c73ec15474a`, with 329 tests and its original evidence.
+Neither identity freeze grants approval for publication.
 
 | Requirement | Actual state | Next acceptance / owner |
 |---|---|---|
@@ -22,15 +26,18 @@ RC01 remains immutable and is not approved for publication.
 | Source-level RC01 hardware batch | **100 completed**, excluded from final credit | Retain raw records and historical audit; Vite DEV execution is source evidence |
 | Actually observed Terra Medium player episodes | **0/60** | Primary/Terra Medium: first demonstrate timely actual viewing and notes; then ten qualifying trials per band |
 | Independent judging gate | **0/21 scores >=9**, Round 01 preserved | Fresh readonly Luna/Terra High/Haiku review of one next frozen candidate after material evidence improves |
-| Sustained frame time / resource behavior | Open | Primary: candidate-bound real-rAF distributions, worst stalls, repeated runs and pause/resume |
+| Sustained frame time / resource behavior | Two-run realtime diagnostic active | Primary: candidate-bound real-rAF distributions, worst stalls, repeated runs and pause/resume |
 | Physical input and assistive operation | Open | Opus: phone/controller/keyboard/assistive walkthrough, explicit supported-device limits |
 | Audible quality and recovery | Open; synthesis/lifecycle measured, nothing heard | Spark: actual listening, output devices and interruption/recovery evidence |
 | Public account / live distribution proof | Open; nothing newly published | Primary with Opus store review: only after applicable prepublication gates pass |
 
-The current bot attachment prototype boots the exact frozen production package on
-GTX1650Ti, browser-verifies all 46 shipped files and detaches its debugger before
-normal play. It is an **uncredited smoke**, not a completed episode or performance
-verdict. Integrating its provenance checks into final bot/player harnesses is active.
+The corrected production path completed `pilot-production-provenance-01`: a genuine
+normal-resource loop30 death on GTX1650Ti/D3D11 Chrome157, 718 simulation frames /
+60 actual renders, sectors0–1, no page errors. Browser hashes matched all46 files;
+source, full harness and package remained stable; debugger detached before play.
+This completed pilot is **uncredited** and does not establish realtime observation
+or sustained performance. Both new46-file packages passed fresh hardware checks; exact reports are in
+RC02-PACKAGES.json. Realtime lifecycle checks are running.
 
 Round 01 scores (lenses 1–7, unchanged):
 
@@ -74,7 +81,7 @@ be stated precisely; they do not justify fabricated evidence or scores.
 
 | Priority | Deliverable / owner | Exclusive writes | Dependencies / current state |
 |---|---|---|---|
-| P0 | Primary: bot, GPU campaign, integration, distribution | `scripts/qa/launch/`, `docs/launch/`, `artifacts/launch/bot/`, packaging scripts/config by coordination | Active integration; RC01 frozen; final production bot/live **0 / 0**; RC02 pending |
+| P0 | Primary: bot, GPU campaign, integration, distribution | `scripts/qa/launch/`, `docs/launch/`, `artifacts/launch/bot/`, packaging scripts/config by coordination | Active integration; RC02 frozen; final production bot/live **0 / 0** |
 | P0 | Terra Medium, Nitro: live observed gameplay and hardware pilot (user replacement for Sol Low) | `scripts/qa/live-sol-low/`, `docs/launch/live-sol-low/`, `artifacts/launch/live-sol-low/` | CPU handoff complete; active-view latency unresolved; no qualifying player episode |
 | P1 | Opus High, Nitro: title and actual-game marketing | `src/style.css`, `src/ui/Screens.js`, `index.html`, title-only hunks in `src/game/Game.js`, `public/brand/`, `assets-source/launch-marketing/`, `scripts/brand/launch/` | Implementation handoff integrated; targeted Round 01 UI/device/font triage remains |
 | P1 | Spark 1.3, SuperBeast: audio | `src/audio/` and audio content are reserved for Spark's replacement/patch delivery; owned remote output only | Implementation handoff integrated; measured audio only; listening proof remains |
@@ -435,3 +442,16 @@ Both RC01 packages build with46 files. Portable Itch ZIP: **7,354,932bytes**, SH
 Both immutable RC01 packages passed actual GTX1650Ti/D3D11 Chrome157 verification. Pages46 files/35 model files hash-match,481 engine callbacks/presentation draws across desktop/portrait/landscape, no errors or failed requests. Portable Itch46 files hash-match,326 engine callbacks across four views, nested arbitrary path + sandbox iframe/fullscreen + explicit WebGL2 failure handling pass. These are local packaged checks, not publication or FPS proof. Exact receipts in `RC01-PACKAGES.json`.
 
 Counted batch `rc01-final-0000` started with100 source/harness-guarded matrix episodes. Opening loop0 seed reached all eight sectors and victory; rows remain provisional before closing receipt audit. Final audited bot0/1000 and Terra player0/60 at this checkpoint. No runtime/harness/source asset edits are permitted during the campaign.
+
+## RC02 production-provenance checkpoint
+
+Commit `22ef1c0` preserves all Round01 originals and12 cutoff snapshots, tightens
+production-package and actual-view record checks, and pins Vite7.3.7. The scoped
+security review and exact-production contract are in SECURITY-SCOPE.md and
+PRODUCTION-PROVENANCE.md. Frozen identity: candidates/rc02.json. The completed
+production pilot is retained under artifacts/launch/bot/pilot-production-provenance-01/
+with original PNGs, all-file browser proof, stable receipt and evidence.sha256. It
+earns no final credit. All100 old RC01 DEV rows are explicitly excluded by the
+current production auditor; the original historical source-only audit is retained.
+
+Round01 disposition, targeted questions and ownership are indexed in ROUND01-TRIAGE.md.
