@@ -218,3 +218,27 @@ submission telemetry to the test bot for the next reproduction; it records secto
 clock, programs, resources and settings without changing production or simulation.
 Sol Low is implementing a faster explicitly-viewed contact-sheet workflow in its
 exclusive tooling area. No final freeze or judge round exists yet.
+
+## Results integration and observation-workflow checkpoint
+
+Opus's exact hardware-tested results correction is integrated ind160056: heading/
+summary stay visible, action selection preserves scroll position, outgoing panels
+cut before flight.265tests passed;18staged hardware comparisons and5curated images
+are retained with receipts/hashes. Runtime source is now
+f35524e9b88d693884763838c8691da2b2c28d22e2a4a7bba6f6f440b5b22790 (96files).
+See ui/RESULTS-PRESENTATION.md.
+
+The live contact-sheet workflow passes CPU validation and actual hardware controls,
+but genuinely viewed cadence is still blocked: panels were viewed16–20seconds
+after capture, and the intervening collision/death was missed. No criteria changed;
+final live remains0/60. Its genuine743frame death is a development pilot only.
+The first-frame3.1second stall and new342ms sector1event are retained in
+PERFORMANCE-INVESTIGATION.md for paired diagnostics; no cause/fix is claimed.
+
+Codecleanup resume sent to the existing HydrogenHIGH SuperBeast thread after its
+reported quota reset, with current reviewbranch15f57ed and explicit whole-module
+audit/implementation/lease constraints. The older stale queued coordination message
+was cancelled so it cannot later replay obsolete ownership. The new full brief is
+queued in that existing thread; no duplicateHydrogen/modelsubstitution launched.
+Reviewbranch push used existing gh authorization through a per-command credential
+helper; no credential/config change. Main/Pages/Itch remain unchanged.

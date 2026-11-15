@@ -8,6 +8,10 @@ const root=path.resolve(__dirname,'../../..'),args=process.argv.slice(2);
 const arg=(key,fallback)=>{const i=args.indexOf(key);return i<0?fallback:args[i+1]};
 if(!args.includes('--launch')){console.log('CPU preparation only. See FINAL-TRIALS.md; --launch requires frozen --candidate and --run-id.');process.exit(0)}
 const pilotMode=args.includes('--pilot');
+const pilotSeedBase=arg('--pilot-seed-base',null);
+if(pilotSeedBase!==null&&(!pilotMode||!Number.isSafeInteger(Number(pilotSeedBase))||Number(pilotSeedBase)<1||Number(pilotSeedBase)>2599999))throw Error('Pilot seed base requires --pilot and safe seeds below final2600001');
+const pilotMaxSeconds=Number(arg('--pilot-max-seconds','900'));
+if(args.includes('--pilot-max-seconds')&&(!pilotMode||!Number.isFinite(pilotMaxSeconds)||pilotMaxSeconds<5||pilotMaxSeconds>60))throw Error('Bounded smoke duration requires --pilot, 5–60 seconds');
 const candidate=arg('--candidate',pilotMode?fingerprint(root).sourceHash:''),runId=arg('--run-id','');
 if(!/^[a-f0-9]{64}$/.test(candidate)||!(pilotMode?/^pilot-live-[a-zA-Z0-9_-]+$/:/^final-live-[a-zA-Z0-9_-]+$/).test(runId))throw Error('Matching candidate and mode-specific pilot-live-/final-live- run id required');
 const out=path.join(root,'artifacts/launch/live-sol-low',runId),win=p=>execFileSync('wslpath',['-w',p],{encoding:'utf8'}).trim();
@@ -28,12 +32,13 @@ for(const signal of ['SIGTERM','SIGINT'])process.once(signal,()=>cleanup().final
   server.stdout.on('data',b=>{if(b.toString().includes('Local:')){clearTimeout(timer);resolve()}});
   server.once('exit',()=>{clearTimeout(timer);reject(Error('Owned server exited'))});server.once('error',reject)});
  config={schemaVersion:1,runId,candidate,sourceBefore:before,kind:pilotMode?'development-live-pilot':'final-candidate-live-observation',pilotMode,
-  url:`http://127.0.0.1:${port}/`,out:win(out),lease:{...lease,ownerPID:lease.pid},
+  url:`http://127.0.0.1:${port}/`,out:win(out),outLocal:out,python:'C:\\Python311\\python.exe',lease:{...lease,ownerPID:lease.pid},
   pilot:win(path.join(root,'scripts/qa/launch/pilot-browser.js')),
   botHash:sha256(fs.readFileSync(path.join(root,'scripts/qa/launch/pilot-browser.js'))),
+  toolingHashes:Object.fromEntries(fs.readdirSync(__dirname).filter(f=>/\.(cjs|py)$/.test(f)).map(f=>[f,sha256(fs.readFileSync(path.join(__dirname,f)))])),
   liveHarnessHash:sha256(fs.readFileSync(path.join(__dirname,'windows-live.cjs'))),
   playwright:win('/home/knotzuni/code/KnotzAxxon/asset-work/studio-opus-code/tools/node_modules/playwright'),
-  chrome:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',plan:pilotMode?[{id:'pilot-live-l30',seed:170101,loop:30,fixture:'seeded-loop-start',profile:'keyboard',camera:'chase',quality:'high',width:960,height:540,dpr:1,maxSeconds:900,renderEvery:1},{id:'pilot-live-l0',seed:170001,loop:0,fixture:'seeded-loop-start',profile:'gamepad',camera:'modern',quality:'medium',width:960,height:540,dpr:1,maxSeconds:900,renderEvery:1}]:trialPlan(Number(arg('--seed-base','2600001')))};
+  chrome:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',plan:pilotMode?[{id:'pilot-live-l30',seed:pilotSeedBase===null?170101:Number(pilotSeedBase),loop:30,fixture:'seeded-loop-start',profile:'keyboard',camera:'chase',quality:'high',width:960,height:540,dpr:1,maxSeconds:pilotMaxSeconds,renderEvery:1},{id:'pilot-live-l0',seed:pilotSeedBase===null?170001:Number(pilotSeedBase)+1,loop:0,fixture:'seeded-loop-start',profile:'gamepad',camera:'modern',quality:'medium',width:960,height:540,dpr:1,maxSeconds:pilotMaxSeconds,renderEvery:1}]:trialPlan(Number(arg('--seed-base','2600001')))};
  fs.writeFileSync(path.join(out,'config.json'),JSON.stringify(config,null,2)+'\n');
  child=spawn('node.exe',[win(path.join(__dirname,'windows-live.cjs')),win(path.join(out,'config.json'))],{stdio:['pipe','pipe','pipe']});
  child.stdout.pipe(process.stdout);child.stderr.pipe(process.stderr);

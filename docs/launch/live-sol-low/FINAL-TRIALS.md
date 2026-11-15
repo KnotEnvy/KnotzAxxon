@@ -144,3 +144,11 @@ Pilot specs170101/loop30 and170001/loop0 are separate from final60plan. Rowkind 
 run-id guards prevent pilot/final mixing; all pilot rows permanently uncredited.
 Bounded observe-burst captures up to3frames at1–3s intervals without pausing gameplay;
 captures still require actual view/note and do not automatically satisfy live cadence.
+
+## Contact-sheet controls (CPU-ready, awaiting bounded runtime smoke)
+
+See CONTACT-SHEET-WORKFLOW.md for the exact30second pilot-only smoke command and fast
+start-burst / view_image / note-sheet+nextBurst workflow. Up to3labelled frames fit one
+image call; full originals and hashes remain. Explicit per-panel actual viewedAt/facts
+are required; creation never acknowledges viewing. Existing10second gap blocker and
+all60matrix remain unchanged. No new gameplay was run for this CPU preparation.

@@ -16,7 +16,7 @@
       "environment": "NitroBliss",
       "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Ae5cfe017-b35d-4c5a-8fda-5f4124577460",
       "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Ae5cfe017-b35d-4c5a-8fda-5f4124577460",
-      "checkpoint": "pilot controls integrated; two normal realtime GTX1650Ti pilots on e1623af9 (loop30 death, loop0 all-sector victory); observation gaps retain blockers; final0/60",
+      "checkpoint": "contact-sheet controls CPU and hardware smoke complete; actual view ages16-20s and24s capture gap retain blockers; final0/60; no active GPU lease",
       "handoff": "docs/launch/live-sol-low/PILOT-HANDOFF.md"
     },
     {

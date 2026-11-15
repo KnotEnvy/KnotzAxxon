@@ -17,15 +17,11 @@ const source = fingerprint(root);
 const exportsFile = path.join(root, 'assets-source/launch-marketing/export-manifest.json');
 if (!fs.existsSync(exportsFile)) throw Error('Complete marketing exports before freezing public asset identity');
 function treeHashes(dir) {
-  const records = [];
-  function walk(rel) {
-    for (const entry of fs.readdirSync(path.join(root, rel), {withFileTypes: true}).sort((a,b)=>a.name.localeCompare(b.name))) {
-      const file = path.join(rel, entry.name);
-      if (entry.isDirectory()) walk(file);
-      else if (entry.isFile()) records.push({file, sha256: sha256(fs.readFileSync(path.join(root, file)))});
-    }
-  }
-  walk(dir); return records;
+  // Match the runtime fingerprint's Git-aware inclusion rules. Ignored bytecode,
+  // caches and tool output must never become environment-specific identities.
+  const files = [...new Set(execFileSync('git', ['ls-files', '-co', '--exclude-standard', '--', dir],
+    {cwd: root, encoding: 'utf8'}).trim().split('\n').filter(Boolean))].sort();
+  return files.map(file=>({file, sha256:sha256(fs.readFileSync(path.join(root,file)))}));
 }
 const harnessFiles = [...treeHashes('scripts/qa'), ...treeHashes('tests')];
 const candidate = {schema: 'knotzaxxon.frozen-candidate.v1', name, frozenAt: new Date().toISOString(),

@@ -1,6 +1,8 @@
 // Windows Node; interactive JSONL stdin. No autonomous campaign/observation loop.
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),readline=require('node:readline');
 const {createHash}=require('node:crypto');
+const {execFile}=require('node:child_process');
+const {sheetNotes}=require('./visual-notes.cjs');
 const config=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
 const {assertMode,assertRow}=require('./mode-guard.cjs');
 assertMode(config.pilotMode,config.kind,config.runId);
@@ -11,7 +13,7 @@ const append=(file,row)=>fs.appendFileSync(path.join(config.out,file),JSON.strin
 const hash=b=>createHash('sha256').update(b).digest('hex');
 let active=null,browser,page,held=[];const used=new Set(),errors=[];
 async function releaseKeys(){for(const k of held)await page.keyboard.up(k);held=[]}
-async function observe(reason){
+async function observe(reason,quiet=false){
  if(!active)throw Error('No active trial');
  const startedAt=at(),batch=await page.evaluate(()=>KZBot.observeRealtime());
  const id=`${active.spec.id}-o${String(active.observations.length+1).padStart(3,'0')}`,file=`${id}.png`;
@@ -24,9 +26,28 @@ async function observe(reason){
   file,sha256:hash(fs.readFileSync(path.join(config.out,file))),presentation,batch,
   observer:'Sol LOW visual agent',operator:active.operator,viewed:false};
  active.observations.push(row);append('observations.jsonl',row);
- console.log(JSON.stringify({op:'screenshot-ready',id,path:path.join(config.out,file),done:batch.done,checkpoint:batch.checkpoint,
+ if(!quiet)console.log(JSON.stringify({op:'screenshot-ready',id,path:path.join(config.out,file),done:batch.done,checkpoint:batch.checkpoint,
   instruction:'Open screenshot with view_image, then submit note with facts/interpretation/confidence/limits. Capture alone is not observation.'}));
  return row;
+}
+async function burst(command,first=null){
+ const count=command.count??3,intervalMs=command.intervalMs??2000;
+ if(!Number.isInteger(count)||count<1||count>3||!Number.isInteger(intervalMs)||intervalMs<1000||intervalMs>3000)throw Error('Burst bounded to 1–3 captures, interval1000–3000ms');
+ const rows=first?[first]:[],origin=first?Date.parse(first.startedAt):Date.now();
+ for(let n=rows.length;n<count;n++){
+  if(rows.at(-1)?.batch.done)break;
+  const wait=origin+n*intervalMs-Date.now();if(wait>0)await new Promise(resolve=>setTimeout(resolve,wait));
+  rows.push(await observe(`bounded-burst:${command.reason||'active'}:${n+1}/${count}`,true));
+ }
+ const id=`${active.spec.id}-sheet${String(active.sheets.length+1).padStart(3,'0')}`;
+ const manifest={id,file:`${id}.png`,frames:rows.map(r=>({id:r.id,file:r.file,sha256:r.sha256,startedAt:r.startedAt,completedAt:r.completedAt,frame:r.batch.frame,state:r.presentation.state}))};
+ const manifestPath=path.join(config.out,`${id}-input.json`);fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2)+'\n');
+ const sheet=JSON.parse(await new Promise((resolve,reject)=>execFile(config.python||'C:\\Python311\\python.exe',[path.join(__dirname,'contact-sheet.py'),manifestPath],{maxBuffer:1024*1024,timeout:20000},(error,stdout)=>error?reject(error):resolve(stdout))));
+ sheet.completedAt=at();sheet.trialId=active.spec.id;sheet.kind=config.kind;sheet.captureGapsMs=rows.map(r=>r.gapMs);
+ active.sheets.push(sheet);append('contact-sheets.jsonl',sheet);
+ console.log(JSON.stringify({op:'contact-sheet-ready',id,path:config.outLocal?`${config.outLocal}/${sheet.file}`:path.join(config.out,sheet.file),
+  panels:sheet.panels.map(p=>({panel:p.panel,id:p.id,state:p.state,capturedAt:p.completedAt})),completedAt:sheet.completedAt,
+  done:rows.at(-1).batch.done,instruction:'Open this sheet once with view_image; note-sheet requires actual viewedAt and explicit facts for each panel actually inspected. No automatic acknowledgment.'}));
 }
 (async()=>{
  browser=await chromium.launch({executablePath:config.chrome,headless:true,args:['--use-angle=d3d11','--enable-gpu','--ignore-gpu-blocklist']});
@@ -65,18 +86,17 @@ async function observe(reason){
     await page.evaluate(async spec=>{const {rand}=await import('/src/core/Utils.js');rand.reset(spec.sharedRandomSeed)},spec);
     const initial=await page.evaluate(spec=>KZBot.startRealtime(spec),spec);
     used.add(spec.seed);active={spec,sourceBefore:c.source,startedAt:at(),initial,hardware,errorStart:errors.length,
-     observations:[],notes:[],operator:'primary developed realtime bot; Sol LOW visual observer',manualActions:[]};
+     observations:[],notes:[],sheets:[],operator:'primary developed realtime bot; Sol LOW visual observer',manualActions:[]};
     append('initial.jsonl',{...active,observations:undefined,notes:undefined});
-    await observe('initial');
+    const first=await observe('initial',!!c.burst);if(c.burst)await burst({...c,reason:'initial+opening'},first);
    }else if(c.op==='observe')await observe(c.reason||'periodic');
-   else if(c.op==='observe-burst'){
-    const count=c.count??3,intervalMs=c.intervalMs??2000;
-    if(!Number.isInteger(count)||count<1||count>3||!Number.isInteger(intervalMs)||intervalMs<1000||intervalMs>3000)throw Error('Burst bounded to 1–3 captures, interval1000–3000ms');
-    for(let n=0;n<count;n++){
-     if(n)await new Promise(resolve=>setTimeout(resolve,intervalMs)); // wall-clock wait; realtime engine keeps running
-     const row=await observe(`bounded-burst:${c.reason||'active'}:${n+1}/${count}`);
-     if(row.batch.done)break;
-    }
+   else if(c.op==='observe-burst')await burst(c);
+   else if(c.op==='note-sheet'){
+    const sheet=active?.sheets.find(s=>s.id===c.sheetId);if(!sheet)throw Error('Unknown active contact sheet');
+    const notes=sheetNotes(sheet,c,active.spec.id);
+    for(const note of notes){active.observations.find(o=>o.id===note.observationId).viewed=true;active.notes.push(note);append('visual-notes.jsonl',note)}
+    console.log(JSON.stringify({op:'notes-accepted',sheetId:sheet.id,panels:notes.map(n=>n.panel),captureToViewedMs:notes.map(n=>n.captureToViewedMs)}));
+    if(c.nextBurst)await burst(typeof c.nextBurst==='object'?c.nextBurst:{});
    }
    else if(c.op==='note'){
     const observation=active?.observations.find(o=>o.id===c.observationId);
