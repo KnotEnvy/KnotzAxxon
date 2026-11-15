@@ -197,3 +197,24 @@ The complete delivery SHA256 index was verified, pilot/final negative guards pas
 and source remains unchanged. See live-sol-low/CONTROLS-PILOT-20261115.md and its raw
 receipts for exact evidence and limits. No candidate is frozen and no judge round
 or publication has occurred.
+
+## Hardware diagnostic batch,20:13–20:17UTC
+
+The current46-file portable archive passed all-file byte/hash checks,28default-model
+loads, arbitrary nested path, sandboxed iframe fullscreen, desktop/portrait/landscape/
+short reduced-motion layouts, and explicit WebGL2-negative startup. No page/network
+errors. ZIP remains65ed78c05863ebfb673f0de27beb74fda3bc667ac1f3bb0164bde2f1844bbea2.
+Context recovery passed all3manual resume routes; default and legacy model assertions
+and UI navigation passed. Exact paths/settings/render counts/limits are in HARDWARE-QA.md
+and DISTRIBUTION.md. All source receipts match e1623af9.261/261 unit regressions pass.
+The first model attempt failed on a QA dependency URL; retained alongside its passing
+rerun. No assertions were removed or weakened. These are source/package diagnostics,
+not completed gameplay episodes.
+
+Opus confirmed the two results presentation reports have code causes (sticky footer
+selection scrolls heading away; screen fade overlaps new flight) and is comparing a
+staged patch on hardware before applying it. Primary added bounded slow-render
+submission telemetry to the test bot for the next reproduction; it records sector,
+clock, programs, resources and settings without changing production or simulation.
+Sol Low is implementing a faster explicitly-viewed contact-sheet workflow in its
+exclusive tooling area. No final freeze or judge round exists yet.

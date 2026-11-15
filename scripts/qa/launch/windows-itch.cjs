@@ -1,9 +1,9 @@
-const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),os=require('node:os');
 const {createHash}=require('node:crypto');
 const config=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
 const {chromium}=require(config.playwright);
 const report={sourceHash:config.manifest.source.sourceHash,archive:config.manifest.archive,
-  kind:'local packaged HTML5 distribution QA',checks:[],errors:[],networkFailures:[],loadedModels:[],
+  kind:'local packaged HTML5 distribution QA',device:{host:os.hostname(),platform:process.platform,arch:process.arch},checks:[],errors:[],networkFailures:[],loadedModels:[],
   limits:['Headless hardware browser; emulated viewports/touch are not physical mobile-device proof.','Local iframe fixture; does not establish current live Itch upload.']};
 let browser;
 const frames=frame=>frame.evaluate(()=>new Promise(resolve=>{let n=0;function tick(){if(++n===12)resolve();else requestAnimationFrame(tick)}requestAnimationFrame(tick)}));
@@ -67,7 +67,7 @@ const frames=frame=>frame.evaluate(()=>new Promise(resolve=>{let n=0;function ti
     await game.locator('#hud.is-live').waitFor();await frames(game);
     const layout=await game.evaluate(()=>({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth,
       canvas:{width:document.getElementById('viewport').width,height:document.getElementById('viewport').height},
-      touch:document.getElementById('touch').classList.contains('on'),observedRendering:{...window.__distributionFrames}}));
+      touch:document.getElementById('touch').classList.contains('on'),configuredSettings:JSON.parse(localStorage.getItem('knotzaxxon.settings.v2')),observedRendering:{...window.__distributionFrames}}));
     assert.ok(layout.scrollWidth<=layout.width,'Horizontal overflow '+fixture.id);assert.ok(layout.canvas.width>0&&layout.canvas.height>0);
     if(fixture.touch)assert.ok(layout.touch);
     await page.screenshot({path:path.join(config.out,fixture.id+'.png'),timeout:120000});

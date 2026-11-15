@@ -20,7 +20,7 @@ const productionPreview = !process.argv.includes('--legacy') && process.env.KZ_M
   await startEvidence(page);
   const report=await page.evaluate(async(productionPreview)=>{
    const {Boss}=await import('/src/entities/Boss.js');
-   const {Vector3,Scene,Matrix4,Quaternion}=await import('/node_modules/three/build/three.module.js');
+   const {Vector3,Scene,Matrix4,Quaternion}=await import('/scripts/qa/launch/model-dependencies.js');
    const {game,engine}=window.KZ;engine.stop();game.start({seed:123});
    const check=(ok,msg)=>{if(!ok)throw Error(msg);};
    const environmentKit=await import('/src/world/EnvironmentKit.js');
@@ -222,7 +222,7 @@ const productionPreview = !process.argv.includes('--legacy') && process.env.KZ_M
      check(firstBody.every((m,i)=>m.material!==secondBody[i].material),kind+' instance materials');
      check(first.engine.material!==second.engine.material,kind+' independent engine cue');
      check(!first.flashMesh.visible&&first.flashMesh.scale.x>1,kind+' restored hidden flash');
-     const bounds=new (await import('/node_modules/three/build/three.module.js')).Box3().setFromObject(first._importedRoot);
+     const bounds=new (await import('/scripts/qa/launch/model-dependencies.js')).Box3().setFromObject(first._importedRoot);
      check(bounds.min.x < -2.5 && bounds.max.x > 2.5,kind+' unit world scale');
      check(Math.abs(first.engine.position.z-(kind==='drone'?-1.95:-1.84))<1e-5,kind+' exhaust pivot');
      game.scene.add(first.group);
@@ -841,7 +841,7 @@ const productionPreview = !process.argv.includes('--legacy') && process.env.KZ_M
    }
    const dreadnought={landmarkTriangles,chunks,rngChecks:rngChecks.length,chunkGeometriesDisposed:landmarkDisposed,sharedDisposals};
    if(productionPreview){
-    const {GLTFLoader}=await import('/node_modules/three/examples/jsm/loaders/GLTFLoader.js');
+    const {GLTFLoader}=await import('/scripts/qa/launch/model-dependencies.js');
     check(await environmentKit.loadEnvironmentKit(new GLTFLoader(),'/models/environment/'),'Environment kit restored after isolated prop proofs');
    }
    return {selectedFighter:game.player.model.name,groundTargets:['turret','radar','silo','fuel'],productionPreview,environmentKitParts:environmentKit.environmentKitParts().size,...sceneryResults,fuelDepot,bunker,flakGun,coolingStack,antenna,wreckage,asteroids,carrier,dreadnought,missilePool,parkedFighter,pickupChecks,flyers,heavyTurret,mine,batch,iterations:results};

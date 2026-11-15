@@ -72,5 +72,13 @@ After native marketing integration, a second **development** package is at
 `65ed78c05863ebfb673f0de27beb74fda3bc667ac1f3bb0164bde2f1844bbea2`.
 All paths and ZIP readback passed. Runtime fingerprint
 `e1623af9d9da402d89b80adfb0cef43a9a4e1b6c98c9df7f01eb0c7764c7236a` includes new
-brand/OG metadata. It still needs the hardware nested-path/WebGL-disabled smoke.
+brand/OG metadata. Hardware verification passed2026-11-15 at20:12UTC: all46files
+were fetched/hash-matched, all28default model resources loaded, nested iframe
+fullscreen and four responsive/reduced-motion fixtures passed with actual draws.
+A separate WebGL-disabled browser correctly showed the explicit WebGL2 requirement.
+The report has no page errors or failed network requests and identifies
+GTX1650Ti/D3D11 Chrome157.0.8103.52. These are local production-package diagnostics;
+settings were Low/Classic/DPR1 and host NitroBliss (the next verifier also records
+those fields directly in each receipt). Exact report: browser-qa/report.json beside
+this archive.
 This archive has not been uploaded and is not a final judged delivery.

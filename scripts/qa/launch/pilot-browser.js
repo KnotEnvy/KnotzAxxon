@@ -24,14 +24,28 @@ window.KZBot = (() => {
     const run={spec,frames:0,renderedFrames:0,rawSeconds:0,events:[],samples:[],
       sectors:[],features:{},bossPhases:[],rackHits:0,rackDetonations:0,
       maxHeat:0,minFuel:1,observedShots:0,previousZ:p.pos.z,decision:null,lastSector:-1,lastBossPhase:-1,
-      lastRackHits:0,lastRackCharging:false,held:new Set(),renderCpuMs:[],
+      lastRackHits:0,lastRackCharging:false,held:new Set(),renderCpuMs:[],renderStalls:[],renderStallCount:0,
       startedAt:performance.now(),original,k,done:false};
     active=run;
     window.requestAnimationFrame=()=>0;
     e.postfx.render=function(dt){
       if(run.frames%spec.renderEvery!==0)return;
-      const start=performance.now();original.render.call(this,dt);
-      run.renderCpuMs.push(performance.now()-start);run.renderedFrames++;
+      const start=performance.now(),programsBefore=e.renderer.info.programs.length;
+      original.render.call(this,dt);
+      const durationMs=performance.now()-start;
+      run.renderCpuMs.push(durationMs);run.renderedFrames++;
+      // Observe slow submissions at their actual sector/state; no timing law or
+      // renderer behavior changes. These are CPU submissions, not GPU timings.
+      if(durationMs>=50){
+        const stall={type:'render-submission-stall',frame:run.frames,durationMs,
+          performanceNow:start,wallTimeMs:performance.timeOrigin+start,
+          z:p.pos.z,sector:g.sectorIndex,loop:g.loop,state:g.state,bossPhase:g.boss?.phase??null,
+          programsBefore,programsAfter:e.renderer.info.programs.length,
+          memory:{...e.renderer.info.memory},canvas:[e.canvas.width,e.canvas.height],
+          settings:{...k.settings.values},decision:run.decision};
+        run.renderStallCount++;run.events.push(stall);run.renderStalls.push(stall);
+        run.renderStalls.sort((a,b)=>b.durationMs-a.durationMs);run.renderStalls.length=Math.min(16,run.renderStalls.length);
+      }
       run.lastRenderStats={frame:run.frames,calls:e.renderer.info.render.calls,
         triangles:e.renderer.info.render.triangles,points:e.renderer.info.render.points,
         lines:e.renderer.info.render.lines,canvas:{width:e.canvas.width,height:e.canvas.height}};
@@ -258,6 +272,7 @@ window.KZBot = (() => {
       kills:g.kills,score:g.score,shots:run.observedShots,gameShotsCounter:g.shotsFired,hits:g.shotsHit,grades:g.grades,threads:g.threads,grazes:g.grazes,
       memory:{...e.renderer.info.memory},programs:e.renderer.info.programs.length,
       renderSubmissionCpuMs:{samples:frameCpu.length,p50:q(.5),p95:q(.95),max:q(1)},
+      renderStallCount:run.renderStallCount,slowestRenderSubmissions:run.renderStalls,
       healthLaw:'original Player.damage called unchanged',
       stepLaw:run.realtime?'original Engine._loop with actual requestAnimationFrame timestamps':'original Engine._loop at synthetic 60Hz; actual rendered cadence separately counted'};
     if(run.realtime){
