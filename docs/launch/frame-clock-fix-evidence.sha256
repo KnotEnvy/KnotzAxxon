@@ -1,0 +1,17 @@
+da6d4e1e7e59b2a37cd7ecf697f9de9df410dc48ba9b9156df043cacff664ecf  artifacts/launch/diagnostics/frame-clock-base-tests.log
+c695cc720ad7545f76e23284e73e22158c426c63158a69448c362fc646fb5e69  artifacts/launch/diagnostics/frame-clock-candidate-tests.log
+b0e7e5c5c271f960257f2b64f4de64b0aae5d43fc20a66beb6addadb2ccaf892  artifacts/launch/diagnostics/negative-first-frame-cpu.json
+83582a645d269d3c8693220d97188b427335aa4fbf3ba61f1c14a2b99d2b1a15  artifacts/launch/bot/pilot-grade-clock-fixed-01/chunks.jsonl
+3463274991572c5f8e302dde8ef706baa6274425e0dddbc4625d0b426bd4a6d1  artifacts/launch/bot/pilot-grade-clock-fixed-01/config.json
+bd44e9065aac7f24f51fc64fc1c40071148caf14b56c65052415f92a83083669  artifacts/launch/bot/pilot-grade-clock-fixed-01/episode-0-frame-116-sector.png
+eb598ffed54b57e04d7ef5cd9bd247d932a66ef851d121c066e7758cede753b4  artifacts/launch/bot/pilot-grade-clock-fixed-01/episode-0-frame-498-sector.png
+ba1d17d286923504151443561ac373ab658c2bf9baf7217863cc30d74c92bd65  artifacts/launch/bot/pilot-grade-clock-fixed-01/episode-0-frame-828-terminal.png
+fd95f46084a90f4758d8a9d5815f1c31135a14dcd645642a63aa8b3b3e9ac3ff  artifacts/launch/bot/pilot-grade-clock-fixed-01/episodes.jsonl
+c2593970d7e97aae748a4a5a1911c39745c6c2cb69d637b538a000e42c88a7e2  artifacts/launch/bot/pilot-grade-clock-fixed-01/events.jsonl
+1768547912bead9d2ff7321e696917e7e5642302e8c795303688aacb0631f2f4  artifacts/launch/bot/pilot-grade-clock-fixed-01/hardware.json
+c9a8531b4b4be80158bf17e8d5cdb34b674a77faaa5f61f90aad55773fe1bb6b  artifacts/launch/bot/pilot-grade-clock-fixed-01/initial.jsonl
+91f5f2ce39121aa9342315614d58479e8864b49baef1ad446238e52be00eefe9  artifacts/launch/bot/pilot-grade-clock-fixed-01/media.jsonl
+a441d388de95741e3db6ba828380875862610fd64bb2a61b0a8bac688d8c37fe  artifacts/launch/bot/pilot-grade-clock-fixed-01/receipt.json
+0b065f59bb6f8b19cc2a08189cb3b1c46c2f8bc248a96552e7ca6609f2b7ac4e  artifacts/launch/bot/pilot-grade-clock-fixed-01/samples.jsonl
+ec23f71e5fb20dc410d76fc10b8cee6ee78717ae7a70d2d1859e88adf3b4667c  artifacts/launch/bot/pilot-grade-clock-fixed-01/server.log
+c7828ae5cf5ce5afdfd915c3a056c4687d6b66978aebb93d8dfe2603f923206b  artifacts/launch/bot/pilot-grade-clock-fixed-01/source-after.json

@@ -35,3 +35,34 @@ test('release evidence refuses pilots, software, timeouts, changing builds and d
   assert.equal(auditEpisodes([good],receipts,'other').total,0);
   assert.equal(auditEpisodes([good],receipts,'candidate','another-harness').total,0);
 });
+
+test('final campaign credit pins the entire QA recipe and immutable freeze record',()=>{
+  const frozen={harnessHash:'full-qa',commit:'frozen-runtime-commit',sha256:'freeze-bytes'};
+  const good={id:'r-0',runId:'r',seed:42,loop:0,kind:'final-candidate',sourceHash:'candidate',harnessHash:'pilot',
+    frozenCandidate:{commit:frozen.commit,sha256:frozen.sha256},
+    hardware:{webgl2:true,renderer:'ANGLE (NVIDIA GTX 1650 Ti D3D11)'},
+    completed:true,outcome:'over',creditEligible:true,errors:[],frames:6000,renderedFrames:500,
+    initial:{hull:3,shields:1,fuel:1,z:0,loop:0},sectors:[0,1],bossPhases:[]};
+  const receipt={stableSource:true,sourceHash:'candidate',afterSourceHash:'candidate',
+    stableHarness:true,harnessHash:frozen.harnessHash,afterHarnessHash:frozen.harnessHash,
+    frozenCandidate:{sha256:frozen.sha256}};
+  const audit=(row=good,value=receipt)=>auditEpisodes([row],new Map([['r',value]]),'candidate','pilot',frozen);
+  assert.equal(audit().total,1);
+  assert.equal(audit(good,{...receipt,afterHarnessHash:'changed-windows-coordinator'}).excluded[0].reason,'unverified-or-changing-harness');
+  assert.equal(audit(good,{...receipt,stableHarness:false}).total,0);
+  assert.equal(audit({...good,frozenCandidate:{...good.frozenCandidate,sha256:'other-freeze'}}).excluded[0].reason,'different-frozen-identity');
+  assert.equal(audit({...good,frozenCandidate:{...good.frozenCandidate,commit:'other-commit'}}).total,0);
+});
+
+test('final CLI rejects a missing freeze before acquiring GPU or creating a run',async()=>{
+  const {spawnSync}=await import('node:child_process');
+  const fs=await import('node:fs');
+  const {fileURLToPath}=await import('node:url');
+  const {fingerprint}=require('../scripts/qa/launch/fingerprint.cjs');
+  const root=fileURLToPath(new URL('..',import.meta.url)),id='guard-missing-freeze-'+process.pid;
+  const run=spawnSync(process.execPath,['scripts/qa/launch/run-bot.cjs','--final','--candidate',fingerprint(root).sourceHash,
+    '--count','1','--run-id',id],{cwd:root,encoding:'utf8'});
+  assert.equal(run.status,1);
+  assert.match(run.stderr,/--final requires --freeze/);
+  assert.equal(fs.existsSync(root+'/artifacts/launch/bot/'+id),false);
+});

@@ -2,10 +2,11 @@
 const fs=require('node:fs'),path=require('node:path'),readline=require('node:readline');
 const {auditEpisodes}=require('./credit.cjs');
 const {allocations}=require('./plan.cjs');
+const {sha256}=require('./fingerprint.cjs');
 const root=path.resolve(__dirname,'../../..');
 const candidateFile=process.argv[2];
 if(!candidateFile)throw Error('Expected a frozen candidate JSON');
-const candidate=JSON.parse(fs.readFileSync(candidateFile));
+const candidateBytes=fs.readFileSync(candidateFile),candidate=JSON.parse(candidateBytes);
 const jsonl=file=>fs.existsSync(file)?fs.readFileSync(file,'utf8').trim().split('\n').filter(Boolean).map(JSON.parse):[];
 const add=(table,key,count=1)=>{table[key]=(table[key]??0)+count};
 const quantiles=values=>{
@@ -31,7 +32,8 @@ async function stream(file,visit){
     runs.push({name,dir,receipt,episodes,failures:jsonl(path.join(dir,'failures.jsonl'))});
   }
   const unfiltered=auditEpisodes(rows,receipts,candidate.sourceHash);
-  const credit=auditEpisodes(rows,receipts,candidate.sourceHash,candidate.browserPilotHash);
+  const credit=auditEpisodes(rows,receipts,candidate.sourceHash,candidate.browserPilotHash,
+    {harnessHash:candidate.harnessHash,commit:candidate.commit,sha256:sha256(candidateBytes)});
   const ids=new Set(credit.creditedIds),valid=rows.filter(r=>ids.has(r.id));
   const wrongHarness=rows.filter(r=>unfiltered.creditedIds.includes(r.id)&&r.harnessHash!==candidate.browserPilotHash).map(r=>r.id);
   const features={},outcomes={},warnings={},collisions={},damage={},grades={},rigs={},qualities={},profiles={},viewports={};

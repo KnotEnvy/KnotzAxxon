@@ -2,8 +2,10 @@
 
 2026-11-15, runtime fingerprint
 `f35524e9b88d693884763838c8691da2b2c28d22e2a4a7bba6f6f440b5b22790`.
-Owner of the core implementation fix: Hydrogen High on SuperBeast. Primary owns
-QA reproduction/integration. This finding is not a rendering or UI defect.
+Primary implemented this small core integration fix after Hydrogen's active run
+failed at the provider quota limit. Hydrogen retains ownership of the whole-code
+cleanup and its existing authored delivery. There was no concurrent Engine writer.
+This finding is not a rendering or UI defect.
 
 ## Trigger and actual effect
 
@@ -60,3 +62,25 @@ post-fix pass is claimed by this document.
 
 Provenance instrumentation lives only in `scripts/qa/launch/pilot-browser.js` and
 is restored when each episode ends; it is never imported by production.
+
+## Verified fix checkpoint
+
+Engine now rejects nonfinite callback timestamps and clamps elapsed time at zero,
+retaining the monotonic `_last` baseline. Normal positive deltas, the1/15s frame cap,
+time scaling and substep/input laws remain in their original path. The Level lookup
+is unchanged; no flight/collision/aim envelope or balance setting was retuned.
+
+Three real Engine/Game regression cases pass: stale-first-rAF/no future grade,
+invalid timestamp/recovery, and ordinary/long-frame law. The first two fail against
+the base. Full suite:268/268 passed. Logs and the raw hardware evidence are hashed in
+`frame-clock-fix-evidence.sha256`.
+
+Hardware diagnostic `pilot-grade-clock-fixed-01`, same seed/loop/clock fixture and
+High/Chase/keyboard960×540 settings, runtime source
+`ff570c6627faed397553b73c28a06da45fe8f9cd975aec8f612b3a272a991da7`:
+first callback7467.7ms, start baseline7488.60000000149ms (−20.9ms skew), resulting
+rawDelta0/z0/sector0/allnull grades. Later only the legitimate grade0 was produced.
+Terminal genuine death,828actual renders/828frames, sectors[0,1], no page errors,
+stable source. It is a development diagnostic and earns zero final credit. Owned
+browser/server closed and lease released. This confirms the exact scheduling-skew
+case on real GTX1650Ti/D3D11 Chrome157; no timing/FPS or win-rate claim is inferred.

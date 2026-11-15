@@ -259,7 +259,10 @@ window.KZBot = (() => {
       if(!e.running)return;
       const interval=now-e._last;
       if(g.state==='playing'&&run.frames%6===0)decide(run);
+      const baseline=e._last;
       run.original.loop(now); // actual rAF timestamp; no synthetic clock/step
+      if(run.frames===0)run.events.push({type:'first-frame-clock',timestamp:now,baseline,
+        rawDelta:e.realDelta,z:g.player.pos.z,sector:g.sectorIndex,grades:[...g.grades]});
       run.frames++;run.rawSeconds+=e.realDelta;run.rafIntervals.push(interval);
       run.checkpoint=observeFrame(run)??run.checkpoint;
       if(run.done)e.stop();

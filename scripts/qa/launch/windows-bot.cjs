@@ -17,7 +17,11 @@ let currentEpisode=null;
     },config);
     const page=await context.newPage();const errors=[];
     page.on('pageerror',e=>{errors.push(e.message);append('errors.jsonl',{type:'pageerror',message:e.message,at:new Date().toISOString()})});
-    page.on('requestfailed',r=>{if(!r.url().startsWith('ws:'))append('network.jsonl',{url:r.url(),failure:r.failure()})});
+    page.on('requestfailed',r=>{if(!r.url().startsWith('ws:')){
+      const failure={url:r.url(),failure:r.failure()};errors.push('Network: '+failure.url+' '+JSON.stringify(failure.failure));append('network.jsonl',failure);
+    }});
+    page.on('response',r=>{if(r.status()>=400){const failure={url:r.url(),status:r.status()};
+      errors.push('HTTP '+failure.status+': '+failure.url);append('network.jsonl',failure)}});
     await page.goto(config.url);await page.waitForFunction(()=>!!window.KZ,{},{timeout:120000});
     const probe=await page.evaluate(()=>{
       const gl=KZ.engine.renderer.getContext(),ext=gl.getExtension('WEBGL_debug_renderer_info');
@@ -30,6 +34,7 @@ let currentEpisode=null;
       chrome:config.chrome,automation:'Playwright local child-process pipes',at:new Date().toISOString()};
     fs.writeFileSync(path.join(config.out,'hardware.json'),JSON.stringify(hardware,null,2)+'\n');
     if(!probe.webgl2||!probe.renderer||/swiftshader|llvmpipe|software|basic render/i.test(probe.renderer))throw Error('Hardware WebGL2 required; no software credit');
+    if(errors.length)throw Error('Startup errors: '+errors.join(' | '));
     await page.addScriptTag({path:config.pilot});
     // The title overlay deliberately intercepts canvas clicks. Its real launch
     // button supplies the trusted audio gesture; begin() then starts the fixture.
@@ -64,12 +69,13 @@ let currentEpisode=null;
       }
       const result=await page.evaluate(()=>{KZ.engine.renderer.getContext().finish();return KZBot.end()});
       const row={...result,runId:config.runId,initial:initial.initial,sourceHash:config.source.sourceHash,harnessHash:config.harnessHash,
-        sourceCommit:config.source.head,servedBuild:'Vite development graph of fingerprinted candidate source; production bundle verified separately',
+        sourceCommit:config.source.head,frozenCandidate:config.frozenCandidate,harnessTreeHash:config.harnessTreeHash,servedBuild:'Vite development graph of fingerprinted candidate source; production bundle verified separately',
         hardware:{...hardware,viewport:initial.initial.viewport,canvas:initial.initial.canvas,settings:initial.initial.settings},
         errors:errors.slice(errorStart),kind:config.final?'final-candidate':'development-pilot',
         creditEligible:config.final&&result.completed&&errors.length===errorStart&&result.renderedFrames>0};
       append('episodes.jsonl',row);console.log(JSON.stringify({episode:row.id,loop:row.loop,outcome:row.outcome,
         sectors:row.sectors,z:row.z,fuel:row.fuel,frames:row.frames,renderedFrames:row.renderedFrames,creditEligible:row.creditEligible}));
+      if(config.final&&errors.length!==errorStart)throw Error('Final batch stopped after runtime/network error; failed episode retained');
       if(result.outcome==='victory'&&!config.continuationCaptured){
         config.continuationCaptured=true;
         await page.locator('#btn-continue').click();

@@ -2,7 +2,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const {execFileSync} = require('node:child_process');
-const {fingerprint, sha256} = require('./fingerprint.cjs');
+const {fingerprint, harnessFingerprint, sha256} = require('./fingerprint.cjs');
 const {allocations} = require('./plan.cjs');
 const root = path.resolve(__dirname, '../../..');
 const name = process.argv[2];
@@ -24,12 +24,12 @@ function treeHashes(dir) {
     {cwd: root, encoding: 'utf8'}).trim().split('\n').filter(Boolean))].sort();
   return files.map(file=>({file, sha256:sha256(fs.readFileSync(path.join(root,file)))}));
 }
-const harnessFiles = [...treeHashes('scripts/qa'), ...treeHashes('tests')];
+const harness = harnessFingerprint(root), harnessFiles = harness.files;
 const editableFiles = [...treeHashes('scripts/brand'), ...treeHashes('assets-source/launch-marketing'),
   ...treeHashes('assets-source/launch-environment')];
 const candidate = {schema: 'knotzaxxon.frozen-candidate.v1', name, frozenAt: new Date().toISOString(),
   commit: source.head, sourceHash: source.sourceHash, sourceFiles: source.files,
-  harnessHash: sha256(JSON.stringify(harnessFiles)), harnessFiles,
+  harnessHash: harness.harnessHash, harnessFiles,
   editableSourceHash:sha256(JSON.stringify(editableFiles)), editableSourceFiles:editableFiles,
   browserPilotHash: sha256(fs.readFileSync(path.join(root, 'scripts/qa/launch/pilot-browser.js'))),
   marketingManifest: {file: path.relative(root, exportsFile), sha256: sha256(fs.readFileSync(exportsFile))},

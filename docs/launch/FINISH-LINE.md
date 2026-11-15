@@ -303,3 +303,20 @@ tracing and an actual Engine/Game CPU reproduction establish this sequence. See
 NEGATIVE-FIRST-FRAME.md and the hashed raw evidence. Hydrogen owns the nonvisual
 core fix and meaningful regression; primary will integrate and rerun the hardware
 reproduction before final campaigns. No post-fix pass or final episode credit exists.
+
+## First-frame fix verified; final evidence identity tightened
+
+Hydrogen ordinal5 failed at21:00UTC on a provider quota with a reported4h20reset.
+Primary implemented the confirmed small Engine clock fix while that core writer
+was idle; Spark is recovering Hydrogen's existing authored files read-only for
+integration, not replacing its cleanup role. A hardware first callback20.9ms before
+start now produces zero elapsed time/z0/allnull grades; later only grade0 is earned.
+The exact CPU/base failure and real GPU before/after diagnostics are retained in
+NEGATIVE-FIRST-FRAME.md and frame-clock-fix-evidence.sha256.268/268 regressions pass.
+
+Final bot runs now require an immutable freeze JSON in addition to runtime hash.
+They pin and recheck the entire QA/test tree, not only the browser pilot; campaign
+credit rejects changed coordinators/recipes or different freeze bytes. Missing-
+freeze CLI rejection occurs before GPU reservation or run creation. Startup and
+per-episode non-WebSocket network failures are explicit errors; final batches stop
+on a runtime/network failure and retain the failed row. No final campaign has begun.

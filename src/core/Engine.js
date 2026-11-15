@@ -299,9 +299,13 @@ export class Engine {
     if (!this.running) return;
     this._raf = requestAnimationFrame(this._loop);
 
-    const frameMs = now - this._last;
+    // A freshly scheduled rAF can carry the current frame's earlier timestamp.
+    // Keep the start baseline monotonic so neither this frame nor the next one
+    // can turn that scheduling skew into backward or duplicated simulation time.
+    if (!Number.isFinite(now)) return;
+    const frameMs = Math.max(0, now - this._last);
     const rawDt = Math.min(frameMs / 1000, MAX_FRAME);
-    this._last = now;
+    this._last = Math.max(this._last, now);
     this.realDelta = rawDt;
     this.frame++;
 

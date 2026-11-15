@@ -5,7 +5,7 @@ const path = require('node:path');
 const net = require('node:net');
 const { spawn, execFileSync } = require('node:child_process');
 const { acquireGPU } = require('./gpu-lease.cjs');
-const { fingerprint, sha256 } = require('./fingerprint.cjs');
+const { fingerprint, harnessFingerprint, sha256 } = require('./fingerprint.cjs');
 const { campaignPlan } = require('./plan.cjs');
 const root = path.resolve(__dirname, '../../..');
 const args = process.argv.slice(2);
@@ -29,11 +29,21 @@ async function cleanup() {
 }
 for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>cleanup().finally(()=>process.exit(130)));
 (async()=>{
+  const before=fingerprint(root), beforeHarness=harnessFingerprint(root);
+  let frozenCandidate=null;
+  if(final){
+    if(arg('--candidate',null)!==before.sourceHash)throw Error('--final requires matching --candidate sourceHash');
+    const freezeFile=arg('--freeze',null);
+    if(!freezeFile)throw Error('--final requires --freeze <immutable candidate JSON>');
+    const bytes=fs.readFileSync(path.resolve(root,freezeFile)),candidate=JSON.parse(bytes);
+    if(candidate.schema!=='knotzaxxon.frozen-candidate.v1'||candidate.sourceHash!==before.sourceHash||
+      candidate.harnessHash!==beforeHarness.harnessHash||candidate.browserPilotHash!==sha256(fs.readFileSync(path.join(__dirname,'pilot-browser.js'))))
+      throw Error('Frozen runtime or full QA/test harness does not match current files');
+    frozenCandidate={name:candidate.name,commit:candidate.commit,sourceHash:candidate.sourceHash,sha256:sha256(bytes)};
+  }
   lease=acquireGPU('/home/knotzuni/code/KnotzAxxon/asset-work/public-launch/gpu-reservation.json',`Primary bot ${runId}`);
   if(fs.existsSync(out))throw Error('Refusing to overwrite a previous run');
   fs.mkdirSync(out,{recursive:true});
-  const before=fingerprint(root);
-  if(final && arg('--candidate',null)!==before.sourceHash)throw Error('--final requires matching --candidate sourceHash');
   const listener=net.createServer();await new Promise((r,j)=>{listener.once('error',j);listener.listen(0,'127.0.0.1',r)});
   const port=listener.address().port;await new Promise(r=>listener.close(r));
   server=spawn(process.execPath,[path.join(root,'node_modules/vite/bin/vite.js'),'--host','127.0.0.1','--port',String(port),'--strictPort'],{cwd:root,stdio:['ignore','pipe','pipe']});
@@ -46,7 +56,7 @@ for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>cleanup().final
     if(ready)break;await new Promise(r=>setTimeout(r,100));
   }
   if(!ready)throw Error('Owned server not ready');
-  const config={runId,source:before,final,url,count,loops,seed,realtime:args.includes('--realtime'),
+  const config={runId,source:before,harnessTreeHash:beforeHarness.harnessHash,frozenCandidate,final,url,count,loops,seed,realtime:args.includes('--realtime'),
     renderEvery:Number(arg('--render-every','12')),maxSeconds:Number(arg('--max-seconds','720')),
     quality:arg('--quality','low'),bootQuality:arg('--boot-quality',arg('--quality','low')),camera:arg('--camera','classic'),profile:arg('--profile','analog'),
     width:Number(arg('--width','960')),height:Number(arg('--height','540')),
@@ -60,10 +70,11 @@ for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>cleanup().final
   child=spawn('node.exe',[win(path.join(__dirname,'windows-bot.cjs')),win(path.join(out,'config.json'))],{stdio:['ignore','pipe','pipe']});
   child.stdout.on('data',b=>process.stdout.write(b));child.stderr.on('data',b=>process.stderr.write(b));
   const code=await new Promise((r,j)=>{child.once('error',j);child.once('exit',r)});
-  const after=fingerprint(root);fs.writeFileSync(path.join(out,'source-after.json'),JSON.stringify(after,null,2)+'\n');
+  const after=fingerprint(root), afterHarness=harnessFingerprint(root);fs.writeFileSync(path.join(out,'source-after.json'),JSON.stringify(after,null,2)+'\n');
   const receipt={runId,sourceHash:before.sourceHash,afterSourceHash:after.sourceHash,
-    stableSource:before.sourceHash===after.sourceHash,kind:final?'final-candidate':'development-pilot',exitCode:code};
+    stableSource:before.sourceHash===after.sourceHash,harnessHash:beforeHarness.harnessHash,afterHarnessHash:afterHarness.harnessHash,
+    stableHarness:beforeHarness.harnessHash===afterHarness.harnessHash,frozenCandidate,kind:final?'final-candidate':'development-pilot',exitCode:code};
   fs.writeFileSync(path.join(out,'receipt.json'),JSON.stringify(receipt,null,2)+'\n');
   console.log(JSON.stringify(receipt));
-  if(code!==0||(final&&!receipt.stableSource))process.exitCode=1;
+  if(code!==0||(final&&(!receipt.stableSource||!receipt.stableHarness)))process.exitCode=1;
 })().catch(e=>{console.error(e.stack);process.exitCode=1}).finally(cleanup);

@@ -38,8 +38,10 @@ are explicitly not evidence of having earned earlier-loop progression.
 
 The matrix generator allocates 180 episodes each at loops0/1/2/3/7, 100 at loop30,
 all cameras/presets/profiles in each band, with unique seeds and portrait/landscape/
-desktop coverage. `--matrix --count 1000` selects it. `--final --candidate HASH`
-additionally requires the exact current source fingerprint. Final records require
+desktop coverage. `--matrix --count 1000` selects it. `--final --candidate HASH --freeze docs/launch/candidates/NAME.json`
+requires the exact runtime fingerprint, immutable frozen identity and complete QA/test
+recipe hash. The before/after receipt must prove both source and recipe stable;
+changed coordinators, different freeze bytes or missing frozen identity deny credit. Final records require
 an unchanged before/after receipt; `credit.cjs` rejects incompatible/pilot/failed/
 software/timeout/duplicate/resource-modified evidence. Two dedicated evidence-rule
 checks pass. Big batches must wait for a successful small pilot and final freeze.
@@ -115,3 +117,18 @@ same1000seed plan. Preserve the same `--seed` and candidate fingerprint in every
 slice. Offsets outside the matrix fail. A row records the source commit and that
 it ran the Vite development graph; the exact production bundles are verified
 separately. No debug API is shipped in those production packages.
+
+Primary grade-provenance and first-clock diagnostic wrappers now retain the original
+sector-grade method and its caller/position, plus the initial realtime timestamp
+and baseline. The confirmed negative-first-frame Engine fix has real GPU before/after
+evidence in `NEGATIVE-FIRST-FRAME.md`. These diagnostics receive no final credits.
+Non-WebSocket network/request/HTTP errors block startup or the affected episode;
+final batches stop and retain the failed row. Missing freeze rejects before leasing.
+
+`pilot-full-recipe-guards-01` validated the updated coordinator/network guards on
+GTX1650Ti/D3D11 Chrome157, runtimeff570c66. Normal loop30 seed170302/analog/Low/
+Classic960×540 ended in a genuine death after812simulationframes/68actual renders.
+Both complete QA/test recipe hashes matched before/after
+(`7d451bc002c619cd8fcd675828c88c1334ed7db5c568c328b980de903f0bc7fb`), source
+matched, exit0, no page/network errors. It is a development pilot with no frozen
+identity and earns zero final credit. Hash index:full-recipe-pilot.sha256.
