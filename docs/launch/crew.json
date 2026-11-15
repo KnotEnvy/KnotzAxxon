@@ -16,7 +16,7 @@
       "environment": "NitroBliss",
       "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3A2bd72f69-d02e-4952-b007-6e07ee22a2bb",
       "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3A2bd72f69-d02e-4952-b007-6e07ee22a2bb",
-      "checkpoint": "User replaced Sol Low player with Terra medium; CPU harness takeover plus one bounded hardware cadence pilot authorized on stable f89400b5 source; no final credit; final judge remains separate fresh high-effort task",
+      "checkpoint": "Terra CPU takeover complete; exact4 harness hashes verified;3 tooling test files pass. GPU slot returned unused. No new visual observations or episodes; independent primary viewed-frame audit added; final0/60.",
       "handoff": "docs/launch/live-sol-low/FINAL-TRIALS.md"
     },
     {
@@ -50,7 +50,7 @@
       "environment": "SuperBeast",
       "environmentId": "dd9d199e-852d-44e3-a2d3-62d31f3a5af2",
       "threadId": "mcp:launch:85b0de1fdd1ca1d19e869858df6177eb16640d58fc76a673dfbea34f30cce4f5",
-      "checkpoint": "integrated cadcf1b; 16 focused policy/cue checks and actual Chrome lifecycle passed; measured 32s render peak -5.31 dBFS, zero clips/nonfinite/errors; nothing heard"
+      "checkpoint": "Spark Audio.dispose source/test bytes verified and integrated as6f93f8b;7 fault/guard cases pass after4 before failures. Actual Chrome gesture/resume passes,32s mix -5.32dBFS/zero clips/nonfinite/errors on RC01; nothing heard."
     },
     {
       "role": "code cleanup",

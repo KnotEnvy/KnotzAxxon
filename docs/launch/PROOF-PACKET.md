@@ -7,27 +7,17 @@ play, audible perception, physical-device behavior or sustained hardware FPS.
 
 ## Current checkpoint
 
-- Worktree: tool-bound `release/final-public-launch`; main is still the prior live
-  release. Latest committed runtime checkpoint: `c7c6934`, after corrected cleanup,
-  world/UI retirement, Settings persistence and reset error preservation. The exact
-  final runtime hash will be pinned by the immutable candidate JSON after audio
-  retirement integration; earlier hashes below remain historical checkpoints.
-- **No final candidate frozen. No judge round run. Final bot0/1000, live0/60.**
-- The seven lenses and all21 individual >=9 release gate are unchanged; see
-  [JUDGING-PROTOCOL.md](JUDGING-PROTOCOL.md). Judges must score independently and
-  name unsupported conclusions and remaining findings honestly.
-- Latest complete regression checkpoint: **318/318** passed on2026-11-15 after
-  combined cleanup/world/UI/Settings/reset integration; Pages build passes. The
-  earlier ff570c66 Pages production bundle passed hardware smoke; new packages and
-  combined-source hardware checks are required before freeze/credit.
-- Existing accepted art/gunner/models remain approved by the user. Historical
-  optional formal asset-review counts remain historical; they are not new reviews.
+- **RC01 frozen:** runtime commit `c0ee2949de29adfa52e6dcdae6768c73ec15474a`, source `6d28e0210d802d0932762ba85f61d4cf43f14a646099a5f99411b0ab240f1362`; exact96 runtime,116 QA/test and55 editable-source hashes in [candidate identity](candidates/rc01.json). Later documentation commits do not change that frozen identity.
+- **329/329 regressions pass.** Pages and portable Itch builds pass,46 files each. Exact-source Chrome audio lifecycle and32s audio rendering pass; nothing heard. Local production/nested-iframe hardware verification is underway; results must be read from their final receipts.
+- Final bot0/1000 and player0/60; no judge round run. Terra medium replaces Sol Low for new player runs; [honest takeover and independent timing audit](live-sol-low/TERRA-TAKEOVER.md).
+- All21 individual >=9 gate remains unchanged; see [JUDGING-PROTOCOL.md](JUDGING-PROTOCOL.md). No publication or whole-release completion is authorized by a source freeze or automated check alone.
+- The accepted gunner/art/models remain approved. No historical optional art review is fabricated. Main/Pages/Itch remain the previous published release.
 
 ## Evidence by lens
 
 | Lens | Sources and concrete evidence | Limits and unfinished work |
 |---|---|---|
-| 1 Code, maintenance, tests, security | Entire `src/`, `tests/`, lockfile/build config; current318-test checkpoint; source and harness hashes in freeze tooling; no production `window.KZ` API in Pages smoke | Sol XHigh completed the same SuperBeast cleanup thread: both exact tranches are integrated, all50 production paths are audited with explicit limits, and reserved world/UI/reset fixes have landed. Spark’s Audio.dispose delivery is pending. QA instrumentation is separate from shipped code. |
+| 1 Code, maintenance, tests, security | Entire `src/`, `tests/`, lockfile/build config; current329-test checkpoint; source and harness hashes in freeze tooling; no production `window.KZ` API in Pages smoke | Sol XHigh completed the same SuperBeast cleanup thread: both exact tranches are integrated, all50 production paths are audited with explicit limits, and reserved world/UI/reset fixes have landed. Spark’s Audio.dispose delivery is integrated with exact source/test hashes and actual-browser lifecycle plus rendered-mix checks; see audio/DISPOSAL.md. QA instrumentation is separate from shipped code. |
 | 2 Reliability, lifecycle, performance, resources | [HARDWARE-QA.md](HARDWARE-QA.md), [PERFORMANCE-INVESTIGATION.md](PERFORMANCE-INVESTIGATION.md); context-loss/manual-resume, model/default/legacy/disposal, audio lifecycle and production resource checks | Source receipts span identified development checkpoints. Actual GPU probes established evicted material programs on the old baseline and retained IDs on corrected ownership; that does not prove every observed stall eliminated or establish FPS. Headless synthetic views do not prove physical-phone or sustained-FPS behavior. |
 | 3 Gameplay, fairness, pacing, boss, replay | [BOT-HARNESS.md](BOT-HARNESS.md), source-derived six-band matrix; complete genuine loop0 victory pilot in [live controls receipt](live-sol-low/CONTROLS-PILOT-20261115.md); per-seed telemetry/media retained under `artifacts/launch/` | Pilots receive no final credit. Required1000 hardware episodes and60 realtime visually observed episodes remain incomplete. Bot operation differs from visual-agent observation. The negative-first-frame grade defect has a verified core fix; see [before/after reproduction](NEGATIVE-FIRST-FRAME.md). |
 | 4 Art, world, ambience, readability | User acceptance; [Fable ambient receipt](fable/AMBIENT-TRAFFIC.md); `assets-source/environment/`, `assets-source/launch-environment/`;37 hardware traffic comparison pairs,9 targeted contracts | No accepted-art contest reopened. Traffic captures cover High, two viewports, loop0; stills are not a continuous motion/human-play verdict. |

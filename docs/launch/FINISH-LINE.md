@@ -91,7 +91,7 @@ findings. All reviewers receive the same packet and are initially blind to one a
 - Existing Pages: https://knotenvy.github.io/KnotzAxxon/ (baseline live verification historical).
 - Existing Itch: https://hacktivatenation.itch.io/knotzaxxon (actual browser inspected 19:40 UTC: external Pages link, no public iframe/upload;
   preserve previous account uploads; hidden dashboard contents not observed).
-- New publication: **none**. New judging rounds: **none**. Final candidate: **not frozen**.
+- New publication: **none**. New judging rounds: **none**. Candidate **RC01 frozen**, identity in `candidates/rc01.json`; evidence gates still pending.
 - Gunner/all art are explicitly accepted by the user. Historical optional 21-asset
   formal review backlog is closed by acceptance; formal review counts remain historical 0.
 - Human cross-device acceptance remains user-reported. New agent/bot sessions will be
@@ -367,3 +367,13 @@ Sol Low’s latest delayed-pipeline pilot was honestly excluded:511 actual rende
 User: “Let’s use Terra medium as our player.” Sol Low’s completed task is retired from further player runs; its historical pilots remain attributed to Sol Low with **0/60 final credit**. New player task uses verified `codex/gpt-6.1-terra`, `reasoningEffort=medium`, onNitro in the shared bound worktree. Same60-episode/10-per-band requirement and honest observation contracts remain. Existing `live-sol-low/` tooling paths are retained to avoid churn; new records must name Terra Medium. The player role is distinct from the fresh readonly Terra High judge required in the independent final panel.
 
 Terra has one bounded30s hardware control/cadence pilot slot after CPU inspection, with no second pilot/final campaign until source freeze/handoff. Primary holds production source stable during that slot. Last integrated source `f89400b5992e6a12eb6b08dab8ba485dc01269c3b90c9813accebe525b69ca97` passed actual GTX default and legacy models, context recovery and responsive keyboard/reduced-motion UI. All four receipts show stable source/exit0/no page errors; exact hardware metadata remains in the raw reports. Final bot0/1000 and live0/60; no judge round or publication.
+
+## RC01 freeze after complete owner integration
+
+Frozen runtime commit **`c0ee2949de29adfa52e6dcdae6768c73ec15474a`**; source **`6d28e0210d802d0932762ba85f61d4cf43f14a646099a5f99411b0ab240f1362`**,96 runtime files. QA/test harness **`5655b87d8f5c562d9216fb55e0372f3f5d1b7182b955789ef94e72d3ef26f5de`**,116 files; editable sources55 files. The immutable identity is `docs/launch/candidates/rc01.json`. This is an identity freeze, not release approval.
+
+Spark’s exact source/test delivery is integrated as `6f93f8b`;7 new audio disposal tests pass, reproducing4 fault failures on original source. Combined full suite: **329/329**. Actual RC01 Chrome audio recovery passed trusted key/touch same-context recovery (308 rendered frames);32-second synthesis measured **−5.32dBFS**, zero clipped/nonfinite samples and no page errors. No audio was heard; hidden-tab behavior in this headless session and physical mobile interruptions remain unverified.
+
+Terra medium returned the bounded GPU slot unused; no pilot and no new image view. Four delivered attribution changes match exact hashes and3 tooling test files pass. Primary added4 independent record-audit integrity tests: unviewed captures cannot fill actual viewing gaps, image hashes must match, and stale view ages fail. No record checker grants automatic player credit. Final player remains0/60.
+
+Both RC01 packages build with46 files. Portable Itch ZIP: **7,354,932bytes**, SHA256 **`7f45808003f396e35be16dc90379e790f7bd69daa996f5fba7ae7b73bd8b5694`**, relative base/index at root. Production/nested-iframe hardware checks precede counted bot runs. Marketing editable bundle:32 files/4 exports/5 native screenshots, SHA256 `e064559cbcb02f99ace896419c7b2db49c12182dbf2f505e0af7d108fd221321`; full receipt in `marketing-bundle.json`. All previous live releases remain unchanged.
