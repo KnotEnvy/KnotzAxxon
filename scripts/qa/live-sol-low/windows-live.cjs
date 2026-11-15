@@ -3,6 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),read
 const {createHash}=require('node:crypto');
 const {execFile}=require('node:child_process');
 const {sheetNotes,singleNote}=require('./visual-notes.cjs');
+const {admitCapture,admitNote,acquisitionDelay}=require('./pipeline.cjs');
 const config=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
 const {assertMode,assertRow}=require('./mode-guard.cjs');
 assertMode(config.pilotMode,config.kind,config.runId);
@@ -30,6 +31,15 @@ async function observe(reason,quiet=false){
  if(!quiet)console.log(JSON.stringify({op:'screenshot-ready',id,path:config.outLocal?`${config.outLocal}/${file}`:path.join(config.out,file),done:batch.done,captureCompletedAt,readyEmittedAt:at(),checkpoint:batch.checkpoint,
   instruction:'Open screenshot with view_image, then submit note with facts/interpretation/confidence/limits. Capture alone is not observation.'}));
  return row;
+}
+async function pipelineCapture(command,reason){
+ if(!active)throw Error('No active trial');
+ const delayMs=acquisitionDelay(command);admitCapture(active.observations);
+ const request={trialId:active.spec.id,requestedAt:at(),delayMs,reason};
+ append('acquisition-requests.jsonl',request);
+ if(delayMs)await new Promise(resolve=>setTimeout(resolve,delayMs)); // QA wait only; browser rAF continues
+ const row=await observe(reason);
+ append('acquisition-results.jsonl',{...request,observationId:row.id,captureStartedAt:row.startedAt,captureCompletedAt:row.captureCompletedAt});
 }
 async function burst(command,first=null){
  const count=command.count??3,intervalMs=command.intervalMs??2000;
@@ -105,6 +115,8 @@ async function burst(command,first=null){
      observations:[],notes:[],sheets:[],operator:'primary developed realtime bot; Sol LOW visual observer',manualActions:[]};
     append('initial.jsonl',{...active,observations:undefined,notes:undefined});
     const first=await observe('initial',!!c.burst);if(c.burst)await burst({...c,reason:'initial+opening'},first);
+   }else if(c.op==='pipeline-observe'){
+    await pipelineCapture(c,'pipeline-next');
    }else if(c.op==='observe')await observe(c.reason||'periodic');
    else if(c.op==='observe-burst')await burst(c);
    else if(c.op==='note-sheet'){
@@ -116,10 +128,11 @@ async function burst(command,first=null){
    }
    else if(c.op==='note'){
     const observation=active?.observations.find(o=>o.id===c.observationId);
+    if(c.pipeline){admitNote(observation);if(c.nextObserve===true)acquisitionDelay(c)}
     const note=singleNote(observation,c,active.spec.id);
     observation.viewed=true;active.notes.push(note);append('visual-notes.jsonl',note);
     console.log(JSON.stringify({op:'note-accepted',observationId:note.observationId,viewedAt:note.viewedAt,captureToViewedMs:note.captureToViewedMs}));
-    if(c.nextObserve===true)await observe('note-next');
+    if(c.nextObserve===true){if(c.pipeline)await pipelineCapture(c,'pipeline-note-next');else{if(c.acquireDelayMs!==undefined)throw Error('Acquisition delay requires pipeline:true');await observe('note-next')}}
    }else if(c.op==='keys'){
     if(!active||active.spec.profile!=='keyboard')throw Error('Supplemental manual keys require keyboard trial');
     const allowed=['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Space','KeyL','ShiftLeft'];

@@ -351,3 +351,13 @@ The portable ZIP is 7,356,344 bytes, SHA256
 this particular ZIP has not yet had nested iframe verification. All are development
 checkpoints, not final freeze, gameplay credit, deployment or Itch upload. Final
 bot/live credit remains **0/1000 and 0/60**, and no judging round has occurred.
+
+## 21:57 UTC combined ownership integration
+
+Corrected SuperBeast cleanup tranche1 (`effe596`) is integrated as `1cdcc68`; tranche2 (`efabcec`) as `059a395`. The latter records the50-production-path audit and constructor/cache/Settings API repairs. These audit source hashes describe the historical worker branch, not the final combined candidate. Native hardware proof for tranche1 retains the same targeted program IDs across successful/failed replacements and releases final owners; this proves ownership, not FPS or elimination of every compilation stall.
+
+Fable’s9 world-retirement regressions and exact delivered file hashes were independently verified and integrated as `9afce92`. Opus’s5 UI construction/disposal regressions are integrated as `abb2af9`; its real-payload Settings seam lands after the actual API as `3db429f`, with25 focused UI/settings tests passing. Primary owns the reset retirement fix (`d173f68`, corrected startup-error preservation in `c7c6934`). An initial integration run caught2 startup contract failures; the unchanged tests pass after preserving the original preparation error. Full combined suite: **318/318**, Pages build passes. No golden or gameplay law changed. Spark’s audio disposal patch is still pending remote delivery.
+
+Actual Windows Chrome157/GTX1650Ti quality-action diagnostic passed7 scenarios with4 actual prewarm calls,14 detached owners each time: same quality reuses, changed-quality Engage/Daily/Re-engage/keyboard launch warms before starting, paused Resume does not rewarm. This staged diagnostic earns zero gameplay credit. Default/legacy/context/UI combined-source hardware checks are running sequentially under owned leases.
+
+Sol Low’s latest delayed-pipeline pilot was honestly excluded:511 actual renders, normal loop30 death,24.357s capture gap and41.745/26.131s conservative note ages. Original images/notes/hash receipts are retained. Pipeline controls and3 CPU tooling test files pass, but no demonstrated10s actual-view cadence exists. Do not repeat identical pilots or relabel captured frames as viewed. **Final bot0/1000; final live0/60; no candidate frozen, judge round or publication.**
