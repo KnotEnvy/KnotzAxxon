@@ -23,3 +23,14 @@ const compact=sheetNotes(sheet,{viewed:true,viewedAt:'2026-11-15T00:00:06Z',conf
 assert.equal(compact.length,3);assert.equal(compact[0].confidence,'medium');assert.deepEqual(compact[0].interpretations,[]);
 assert.equal(compact[1].viewedAt,'2026-11-15T00:00:07Z');assert.equal(compact[1].captureToViewedMs,5000);
 console.log('PASS: compact explicit shared confidence/limits, panel-specific facts and optional distinct actual viewedAt.');
+
+const {singleNote}=require('./visual-notes.cjs');
+const original={id:'single',sha256:'original-hash',completedAt:'2026-11-15T00:00:00Z'};
+const explicit={viewed:true,facts:['Ship visible'],confidence:'medium',limits:['Still only']};
+const single=singleNote(original,explicit,'synthetic','2026-11-15T00:00:12Z');
+assert.equal(single.captureToViewedMs,12000);assert.equal(single.sourceScreenshotSha256,'original-hash');
+assert.equal(single.viewedAt,single.noteAcceptedAt);assert.deepEqual(single.interpretations,[]);
+assert.throws(()=>singleNote(original,{...explicit,viewed:false},'synthetic'));
+assert.throws(()=>singleNote(original,{...explicit,facts:['']},'synthetic'));
+assert.equal(original.viewed,undefined);
+console.log('PASS single-frame explicit acknowledgment, conservative acceptance timestamp, stale age retained and no auto-view mutation');

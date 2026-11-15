@@ -17,4 +17,11 @@ function sheetNotes(sheet,command,trialId,acceptedAt=new Date().toISOString()){
    facts:frame.facts,interpretations:frame.interpretations,confidence:frame.confidence,limits:frame.limits};
  });
 }
-module.exports={sheetNotes};
+function singleNote(observation,command,trialId,acceptedAt=new Date().toISOString()){
+ if(!observation||command.viewed!==true||!Array.isArray(command.facts)||!command.facts.length||command.facts.some(x=>typeof x!=='string'||!x.trim())||!Array.isArray(command.interpretations??[])||!Array.isArray(command.limits)||!['low','medium','high'].includes(command.confidence))throw Error('Explicit viewed:true, known screenshot, facts, confidence and limits required');
+ return {trialId,observationId:observation.id,sourceScreenshotSha256:observation.sha256,
+ viewedAt:acceptedAt,noteAcceptedAt:acceptedAt,viewedAtSource:'conservative note acceptance after explicit observer acknowledgment',
+ captureToViewedMs:Date.parse(acceptedAt)-Date.parse(observation.completedAt),viewMethod:'original single screenshot',observer:'Sol LOW visual agent',
+ facts:command.facts,interpretations:command.interpretations??[],confidence:command.confidence,limits:command.limits};
+}
+module.exports={sheetNotes,singleNote};

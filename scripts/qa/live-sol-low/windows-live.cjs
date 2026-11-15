@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),readline=require('node:readline');
 const {createHash}=require('node:crypto');
 const {execFile}=require('node:child_process');
-const {sheetNotes}=require('./visual-notes.cjs');
+const {sheetNotes,singleNote}=require('./visual-notes.cjs');
 const config=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
 const {assertMode,assertRow}=require('./mode-guard.cjs');
 assertMode(config.pilotMode,config.kind,config.runId);
@@ -11,22 +11,23 @@ const {chromium}=require(config.playwright);
 const at=()=>new Date().toISOString();
 const append=(file,row)=>fs.appendFileSync(path.join(config.out,file),JSON.stringify({at:at(),...row})+'\n');
 const hash=b=>createHash('sha256').update(b).digest('hex');
-let active=null,browser,page,held=[];const used=new Set(),errors=[];
+let active=null,browser,page,held=[],engaged=false;const used=new Set(),errors=[];
 async function releaseKeys(){for(const k of held)await page.keyboard.up(k);held=[]}
 async function observe(reason,quiet=false){
  if(!active)throw Error('No active trial');
  const startedAt=at(),batch=await page.evaluate(()=>KZBot.observeRealtime());
  const id=`${active.spec.id}-o${String(active.observations.length+1).padStart(3,'0')}`,file=`${id}.png`;
  await page.screenshot({path:path.join(config.out,file),timeout:30000});
+ const captureCompletedAt=at();
  const presentation=await page.evaluate(()=>({performanceNow:performance.now(),engineFrame:KZ.engine.frame,
   canvas:{width:KZ.engine.canvas.width,height:KZ.engine.canvas.height},settings:{...KZ.settings.values},
   state:KZ.game.state,sector:KZ.game.sectorIndex,visibility:document.visibilityState,focused:document.hasFocus()}));
  const previous=active.observations.at(-1);
  const row={id,trialId:active.spec.id,reason,startedAt,completedAt:at(),gapMs:previous?Date.parse(startedAt)-Date.parse(previous.startedAt):null,
-  file,sha256:hash(fs.readFileSync(path.join(config.out,file))),presentation,batch,
+  captureCompletedAt,file,sha256:hash(fs.readFileSync(path.join(config.out,file))),presentation,batch,
   observer:'Sol LOW visual agent',operator:active.operator,viewed:false};
  active.observations.push(row);append('observations.jsonl',row);
- if(!quiet)console.log(JSON.stringify({op:'screenshot-ready',id,path:path.join(config.out,file),done:batch.done,checkpoint:batch.checkpoint,
+ if(!quiet)console.log(JSON.stringify({op:'screenshot-ready',id,path:config.outLocal?`${config.outLocal}/${file}`:path.join(config.out,file),done:batch.done,captureCompletedAt,readyEmittedAt:at(),checkpoint:batch.checkpoint,
   instruction:'Open screenshot with view_image, then submit note with facts/interpretation/confidence/limits. Capture alone is not observation.'}));
  return row;
 }
@@ -69,19 +70,34 @@ async function burst(command,first=null){
  if(!probe.webgl2||!probe.renderer||/swiftshader|llvmpipe|software|basic render/i.test(probe.renderer))throw Error('Real hardware WebGL2 required');
  if(hash(fs.readFileSync(config.pilot))!==config.botHash)throw Error('Bot harness changed before load');
  await page.addScriptTag({path:config.pilot});
- await page.locator('#screen-title [data-action="start"]').click(); // trusted ENGAGE/audio gesture
+ // Remain on the normal title/attract screen until an explicit trial start.
  console.log(JSON.stringify({op:'ready',candidate:config.candidate,hardware,credited:0}));
  const commands=readline.createInterface({input:process.stdin});
  for await(const line of commands){
   try{
    const c=JSON.parse(line);append('commands.jsonl',{command:c});
    if(c.op==='quit'){if(active)throw Error('End or abort active trial before quit');break}
-   if(c.op==='start'){
+   if(c.op==='preflight'){
+    if(active||engaged)throw Error('Preflight requires normal unstarted title screen');
+    const startedAt=at(),file='preflight-title.png',target=path.join(config.out,file);
+    if(fs.existsSync(target))throw Error('Preflight already captured; do not overwrite');
+    const state=await page.evaluate(()=>({state:KZ.game.state,screen:KZ.screens.current}));
+    await page.screenshot({path:target,timeout:30000});
+    const row={kind:'unstarted-title-preflight',credited:false,startedAt,captureCompletedAt:at(),state,file,sha256:hash(fs.readFileSync(target))};
+    append('preflight.jsonl',row);
+    console.log(JSON.stringify({op:'preflight-ready',...row,path:config.outLocal?`${config.outLocal}/${file}`:target,readyEmittedAt:at(),instruction:'View title normally before start; no episode or gameplay observation credit. Record acknowledgment with preflight-note.'}));
+   }else if(c.op==='preflight-note'){
+    if(active||engaged||!fs.existsSync(path.join(config.out,'preflight-title.png')))throw Error('No unstarted preflight');
+    const observation={id:'preflight-title',completedAt:JSON.parse(fs.readFileSync(path.join(config.out,'preflight.jsonl'),'utf8').trim()).captureCompletedAt,sha256:hash(fs.readFileSync(path.join(config.out,'preflight-title.png')))};
+    append('preflight-notes.jsonl',{...singleNote(observation,c,'preflight'),kind:'unstarted-title-preflight',credited:false});
+    console.log(JSON.stringify({op:'preflight-note-accepted',credited:false}));
+   }else if(c.op==='start'){
     if(active)throw Error('End previous trial first');
     const spec=config.plan.find(x=>x.id===c.id);if(!spec||used.has(spec.seed))throw Error('Unknown or already attempted seed; never overwrite/retry silently');
     if(c.source?.sourceHash!==config.candidate)throw Error('Missing matching before fingerprint');
     await page.setViewportSize({width:spec.width,height:spec.height});
     await page.evaluate(spec=>{KZ.settings.set('quality',spec.quality);KZ.settings.set('camera',spec.camera)},spec);
+    if(!engaged){await page.locator('#screen-title [data-action="start"]').click();engaged=true} // trusted gesture immediately before fixture; no viewing/wait here
     spec.sharedRandomSeed=(spec.seed^0xa1b2c3d4)>>>0;
     await page.evaluate(async spec=>{const {rand}=await import('/src/core/Utils.js');rand.reset(spec.sharedRandomSeed)},spec);
     const initial=await page.evaluate(spec=>KZBot.startRealtime(spec),spec);
@@ -100,11 +116,10 @@ async function burst(command,first=null){
    }
    else if(c.op==='note'){
     const observation=active?.observations.find(o=>o.id===c.observationId);
-    if(!observation||c.viewed!==true||!Array.isArray(c.facts)||!c.facts.length||!Array.isArray(c.interpretations)||
-      !Array.isArray(c.limits)||!['low','medium','high'].includes(c.confidence))throw Error('Note requires viewed:true, known screenshot, facts[], interpretations[], limits[], confidence');
-    const note={trialId:active.spec.id,observationId:c.observationId,viewedAt:at(),observer:'Sol LOW visual agent',
-     facts:c.facts,interpretations:c.interpretations,confidence:c.confidence,limits:c.limits};
+    const note=singleNote(observation,c,active.spec.id);
     observation.viewed=true;active.notes.push(note);append('visual-notes.jsonl',note);
+    console.log(JSON.stringify({op:'note-accepted',observationId:note.observationId,viewedAt:note.viewedAt,captureToViewedMs:note.captureToViewedMs}));
+    if(c.nextObserve===true)await observe('note-next');
    }else if(c.op==='keys'){
     if(!active||active.spec.profile!=='keyboard')throw Error('Supplemental manual keys require keyboard trial');
     const allowed=['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Space','KeyL','ShiftLeft'];
