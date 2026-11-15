@@ -10,7 +10,7 @@ if(!Object.hasOwn(scriptByName,name))throw Error('Expected '+Object.keys(scriptB
 const out=path.join(root,'artifacts/launch',name.startsWith('audio-')?'audio':'functional',name+'-'+new Date().toISOString().replace(/[:.]/g,'-'));
 const win=p=>execFileSync('wslpath',['-w',p],{encoding:'utf8'}).trim();
 let lease,server,child,closing=false;
-async function stop(p){if(p&&p.exitCode===null){p.kill('SIGTERM');await new Promise(r=>p.once('exit',r))}}
+async function stop(p){if(p?.pid&&p.exitCode===null&&p.signalCode===null&&p.kill('SIGTERM'))await new Promise(r=>p.once('exit',r))}
 async function cleanup(){if(closing)return;closing=true;await stop(child);await stop(server);lease?.release()}
 for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>cleanup().finally(()=>process.exit(130)));
 (async()=>{
