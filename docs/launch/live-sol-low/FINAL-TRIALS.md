@@ -134,3 +134,13 @@ or cleanup path in these NEW files was exercised this tranche; the earlier hardw
 pilot is historical evidence of the underlying Windows/local-pipe path only. Final
 controls must receive a small runtime smoke in the authorized GPU slot before bulk
 use. Do not credit a smoke unless it independently meets all frozen-trial requirements.
+
+## Controls runtime pilot follow-up
+
+See CONTROLS-PILOT-20261115.md. Explicit development launch is now:
+`node scripts/qa/live-sol-low/final-live.cjs --launch --pilot --run-id pilot-live-UNIQUE`.
+Pilot derives current source hash unless supplied; matching hash is still enforced.
+Pilot specs170101/loop30 and170001/loop0 are separate from final60plan. Rowkind and
+run-id guards prevent pilot/final mixing; all pilot rows permanently uncredited.
+Bounded observe-burst captures up to3frames at1–3s intervals without pausing gameplay;
+captures still require actual view/note and do not automatically satisfy live cadence.

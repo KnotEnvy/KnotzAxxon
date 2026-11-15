@@ -11,3 +11,13 @@ for(const loop of bands){const rows=plan.filter(p=>p.loop===loop);assert.equal(r
 }
 for(const bad of [-1,1.5,0,0x7fffffff])assert.throws(()=>trialPlan(bad));
 console.log('CPU plan checks passed: 60 unique seeds, 10 per band, 3 rigs/4 qualities and mixed viewports per band. No trials executed.');
+
+const {assertMode,assertRow}=require('./mode-guard.cjs');
+assert.doesNotThrow(()=>assertMode(true,'development-live-pilot','pilot-live-test'));
+assert.doesNotThrow(()=>assertMode(false,'final-candidate-live-observation','final-live-test'));
+assert.throws(()=>assertMode(true,'final-candidate-live-observation','final-live-test'));
+assert.throws(()=>assertMode(false,'development-live-pilot','pilot-live-test'));
+assert.throws(()=>assertRow(true,{id:'live-l0-01',seed:170001}));
+assert.throws(()=>assertRow(true,{id:'pilot-live-test',seed:2600001}));
+assert.throws(()=>assertRow(false,{id:'pilot-live-test',seed:170001}));
+console.log('Pilot/final run identity and row guards pass positive/negative CPU checks.');

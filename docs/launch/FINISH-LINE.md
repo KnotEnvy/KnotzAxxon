@@ -178,3 +178,22 @@ to that tooling-only commit. Finalbot0/1000, finallive0/60, judgingrounds0 remai
   reported about20:20UTC), new-control pilot, integrated finalfreeze/regressions and
   production/package checks,1000validhardwarebot/60observedlive episodes, fresh
   independentpanel rounds until all21>=9, then actualpublication/publicverification.
+
+## 20:12 UTC integration checkpoint
+
+Sol Low delivered two more development pilots on runtime fingerprint
+`e1623af9d9da402d89b80adfb0cef43a9a4e1b6c98c9df7f01eb0c7764c7236a`:
+loop30 seed170101 ended in a genuine death (690 actual renders), and loop0 seed170001
+ended in an all-eight-sector victory (18,347 actual renders). Both used normal resources
+and real-time physics on GTX1650Ti/D3D11 Chrome157. The operator was the bot; Sol Low
+opened screenshots and recorded visual notes. Observation gaps of about11–36seconds
+prevent final-trial credit. These remain development pilots; final totals are still
+**0/1000 bot and0/60 live**. The loop0 record also retains a3.1second instrumented
+render stall and possible short-viewport results clipping for investigation. Neither
+is concealed by percentile timings. Pilot/final guards and bounded capture bursts
+were delivered; bursts do not acknowledge that an agent viewed a frame.
+
+The complete delivery SHA256 index was verified, pilot/final negative guards pass,
+and source remains unchanged. See live-sol-low/CONTROLS-PILOT-20261115.md and its raw
+receipts for exact evidence and limits. No candidate is frozen and no judge round
+or publication has occurred.

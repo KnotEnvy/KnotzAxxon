@@ -2,6 +2,9 @@
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),readline=require('node:readline');
 const {createHash}=require('node:crypto');
 const config=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
+const {assertMode,assertRow}=require('./mode-guard.cjs');
+assertMode(config.pilotMode,config.kind,config.runId);
+for(const spec of config.plan)assertRow(config.pilotMode,spec);
 const {chromium}=require(config.playwright);
 const at=()=>new Date().toISOString();
 const append=(file,row)=>fs.appendFileSync(path.join(config.out,file),JSON.stringify({at:at(),...row})+'\n');
@@ -66,6 +69,15 @@ async function observe(reason){
     append('initial.jsonl',{...active,observations:undefined,notes:undefined});
     await observe('initial');
    }else if(c.op==='observe')await observe(c.reason||'periodic');
+   else if(c.op==='observe-burst'){
+    const count=c.count??3,intervalMs=c.intervalMs??2000;
+    if(!Number.isInteger(count)||count<1||count>3||!Number.isInteger(intervalMs)||intervalMs<1000||intervalMs>3000)throw Error('Burst bounded to 1–3 captures, interval1000–3000ms');
+    for(let n=0;n<count;n++){
+     if(n)await new Promise(resolve=>setTimeout(resolve,intervalMs)); // wall-clock wait; realtime engine keeps running
+     const row=await observe(`bounded-burst:${c.reason||'active'}:${n+1}/${count}`);
+     if(row.batch.done)break;
+    }
+   }
    else if(c.op==='note'){
     const observation=active?.observations.find(o=>o.id===c.observationId);
     if(!observation||c.viewed!==true||!Array.isArray(c.facts)||!c.facts.length||!Array.isArray(c.interpretations)||
@@ -85,7 +97,7 @@ async function observe(reason){
     const terminal=await observe(c.op==='abort'?'abort':'end-before-summary');
     if(!terminal.batch.done&&c.op==='end')throw Error('Still running; end refused. Use abort to preserve incomplete evidence');
     const result=await page.evaluate(()=>KZBot.end());
-    const reasons=[];
+    const reasons=[];if(config.pilotMode)reasons.push('development pilot; permanently ineligible for final credit');
     if(c.op==='abort'||!result.completed)reasons.push('incomplete/aborted/timeout');
     if(c.source?.sourceHash!==config.candidate||active.sourceBefore.sourceHash!==c.source?.sourceHash)reasons.push('source mismatch');
     if(result.mode!=='realtime'||result.renderedFrames!==result.frames)reasons.push('realtime/render count mismatch');
@@ -94,9 +106,9 @@ async function observe(reason){
     const viewed=active.observations.filter(o=>o.viewed);
     if(viewed.length<3||!viewed.some(o=>o.reason==='initial')||!viewed.some(o=>o.reason!=='initial'&&!o.batch.done)||!viewed.some(o=>o.batch.done))reasons.push('missing start/during/terminal visual observations');
     if(active.observations.some((o,i)=>i>0&&!active.observations[i-1].batch.done&&(o.gapMs||0)>10000))reasons.push('observation gap >10 seconds');
-    const row={schemaVersion:1,trialId:active.spec.id,candidate:config.candidate,buildKind:'Vite development graph; production bundle not exercised',
+    const row={schemaVersion:1,kind:config.kind,pilotMode:config.pilotMode,trialId:active.spec.id,candidate:config.candidate,buildKind:'Vite development graph; production bundle not exercised',
      ...active,sourceAfter:c.source,result,endedAt:at(),pageErrors:errors.slice(active.errorStart),
-     credited:false,eligibility:'pending primary evidence audit',blockingReasons:reasons};
+     credited:false,eligibility:config.pilotMode?'pilot: never final credit':'pending primary evidence audit',blockingReasons:reasons};
     append('trials.jsonl',row);console.log(JSON.stringify({op:'trial-ended',id:active.spec.id,outcome:result.outcome,blockingReasons:reasons,credited:false}));active=null;
    }else throw Error('Unknown command');
   }catch(e){append('command-errors.jsonl',{message:e.stack});console.error(JSON.stringify({commandError:e.message}))}

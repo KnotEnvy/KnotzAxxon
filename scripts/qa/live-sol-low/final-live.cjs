@@ -7,8 +7,9 @@ const {trialPlan}=require('./trial-plan.cjs');
 const root=path.resolve(__dirname,'../../..'),args=process.argv.slice(2);
 const arg=(key,fallback)=>{const i=args.indexOf(key);return i<0?fallback:args[i+1]};
 if(!args.includes('--launch')){console.log('CPU preparation only. See FINAL-TRIALS.md; --launch requires frozen --candidate and --run-id.');process.exit(0)}
-const candidate=arg('--candidate',''),runId=arg('--run-id','');
-if(!/^[a-f0-9]{64}$/.test(candidate)||!/^final-live-[a-zA-Z0-9_-]+$/.test(runId))throw Error('Explicit frozen candidate and unique final-live run id required');
+const pilotMode=args.includes('--pilot');
+const candidate=arg('--candidate',pilotMode?fingerprint(root).sourceHash:''),runId=arg('--run-id','');
+if(!/^[a-f0-9]{64}$/.test(candidate)||!(pilotMode?/^pilot-live-[a-zA-Z0-9_-]+$/:/^final-live-[a-zA-Z0-9_-]+$/).test(runId))throw Error('Matching candidate and mode-specific pilot-live-/final-live- run id required');
 const out=path.join(root,'artifacts/launch/live-sol-low',runId),win=p=>execFileSync('wslpath',['-w',p],{encoding:'utf8'}).trim();
 let lease,server,child,closing=false,config,exitCode=0;
 async function stop(p){if(p&&p.exitCode===null){p.kill('SIGTERM');await new Promise(r=>p.once('exit',r))}}
@@ -17,7 +18,7 @@ for(const signal of ['SIGTERM','SIGINT'])process.once(signal,()=>cleanup().final
 (async()=>{
  const before=fingerprint(root);if(before.sourceHash!==candidate)throw Error('Candidate mismatch before lease; no browser launched');
  if(fs.existsSync(out))throw Error('Refusing to overwrite evidence');
- lease=acquireGPU('/home/knotzuni/code/KnotzAxxon/asset-work/public-launch/gpu-reservation.json',`Sol LOW final live ${runId}`);
+ lease=acquireGPU('/home/knotzuni/code/KnotzAxxon/asset-work/public-launch/gpu-reservation.json',`Sol LOW ${pilotMode?'pilot':'final'} live ${runId}`);
  fs.mkdirSync(out,{recursive:true});
  const listener=net.createServer();await new Promise((r,j)=>{listener.once('error',j);listener.listen(0,'127.0.0.1',r)});
  const port=listener.address().port;await new Promise(r=>listener.close(r));
@@ -26,13 +27,13 @@ for(const signal of ['SIGTERM','SIGINT'])process.once(signal,()=>cleanup().final
  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Owned server startup timeout')),20000);
   server.stdout.on('data',b=>{if(b.toString().includes('Local:')){clearTimeout(timer);resolve()}});
   server.once('exit',()=>{clearTimeout(timer);reject(Error('Owned server exited'))});server.once('error',reject)});
- config={schemaVersion:1,runId,candidate,sourceBefore:before,kind:'final-candidate-live-observation',
+ config={schemaVersion:1,runId,candidate,sourceBefore:before,kind:pilotMode?'development-live-pilot':'final-candidate-live-observation',pilotMode,
   url:`http://127.0.0.1:${port}/`,out:win(out),lease:{...lease,ownerPID:lease.pid},
   pilot:win(path.join(root,'scripts/qa/launch/pilot-browser.js')),
   botHash:sha256(fs.readFileSync(path.join(root,'scripts/qa/launch/pilot-browser.js'))),
   liveHarnessHash:sha256(fs.readFileSync(path.join(__dirname,'windows-live.cjs'))),
   playwright:win('/home/knotzuni/code/KnotzAxxon/asset-work/studio-opus-code/tools/node_modules/playwright'),
-  chrome:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',plan:trialPlan(Number(arg('--seed-base','2600001')))};
+  chrome:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',plan:pilotMode?[{id:'pilot-live-l30',seed:170101,loop:30,fixture:'seeded-loop-start',profile:'keyboard',camera:'chase',quality:'high',width:960,height:540,dpr:1,maxSeconds:900,renderEvery:1},{id:'pilot-live-l0',seed:170001,loop:0,fixture:'seeded-loop-start',profile:'gamepad',camera:'modern',quality:'medium',width:960,height:540,dpr:1,maxSeconds:900,renderEvery:1}]:trialPlan(Number(arg('--seed-base','2600001')))};
  fs.writeFileSync(path.join(out,'config.json'),JSON.stringify(config,null,2)+'\n');
  child=spawn('node.exe',[win(path.join(__dirname,'windows-live.cjs')),win(path.join(out,'config.json'))],{stdio:['pipe','pipe','pipe']});
  child.stdout.pipe(process.stdout);child.stderr.pipe(process.stderr);
@@ -59,6 +60,6 @@ for(const signal of ['SIGTERM','SIGINT'])process.once(signal,()=>cleanup().final
  if(child.exitCode===null){child.stdin.end();await new Promise(r=>child.once('exit',r))}
  exitCode=child.exitCode??1;
 })().catch(e=>{console.error(e.stack);exitCode=1}).finally(async()=>{
- if(config){const after=fingerprint(root);fs.writeFileSync(path.join(out,'receipt.json'),JSON.stringify({candidate,sourceAfter:after,stableSource:after.sourceHash===candidate,exitCode,credited:0,note:'Raw evidence only; per-trial audit and visual review required'},null,2)+'\n')}
+ if(config){const after=fingerprint(root);fs.writeFileSync(path.join(out,'receipt.json'),JSON.stringify({candidate,kind:config.kind,pilotMode,sourceAfter:after,stableSource:after.sourceHash===candidate,exitCode,credited:0,note:'Raw evidence only; per-trial audit and visual review required'},null,2)+'\n')}
  await cleanup();process.exitCode=exitCode;
 });
