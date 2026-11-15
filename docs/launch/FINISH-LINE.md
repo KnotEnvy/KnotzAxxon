@@ -257,3 +257,38 @@ credit. They did not reproduce the3.1second event. New programs coincide with
 FUEL_Hull/FUEL_Band. Exact details and causal limits are in PERFORMANCE-INVESTIGATION.md;
 raw file hashes in artifacts/launch/startup-audio-diagnostic-sha256.txt. No renderer/
 material/gameplay code was changed. Primary GPU lease is released.
+
+## 20:50 UTC production checkpoint and live-observation limit
+
+The fingerprinted Pages production bundle for source `f35524e9…b22790` passed
+hardware smoke on GTX1650Ti/D3D11 Chrome157:46/46 package bytes/hashes matched,
+28 default resources and35 served model hashes, desktop/portrait/landscape,
+shared-fortress/Daily start and persistence, no page/network errors.374 actual
+presentation frames were observed; adaptive drawing buffers and exact environment
+are recorded in HARDWARE-QA.md. This was local production verification, not a
+publication or gameplay campaign.
+
+Sol Low's immediate single-frame pilot seed170301/loop30 ended in a genuine normal-
+resource death after808frames/808renders on the same source. Screenshot-ready
+emission took25–32ms, but explicit viewing-note acceptance followed13–14seconds
+later; opening and terminal were viewed, intermediate active play/collision were
+not. Both blockers remain. Final credit stays0/60; this pilot cannot be relabelled.
+The fast-single tooling and evidence hashes were independently checked. Repeating
+identical latency pilots is not a remedy; Sol Low is investigating a materially
+different CPU-side observation workflow while primary advances package evidence.
+
+Hydrogen's active cleanup run remains coordinated on SuperBeast with all source,
+media, authoritative receipts and other owners' visual/audio leases preserved.
+No frozen final candidate, final bot credit or judge scores exist yet. The all21
+>=9 gate and1000bot/60live requirements remain unchanged.
+
+Sol Low's CPU-only preflight follow-up is now retained too: the title stays unstarted
+until the explicit first trial command, with separate honest preflight-view notes.
+That lifecycle change is runtime-unverified and supplies no gameplay credit. It does
+not solve active sampling latency. The current available shell/image path has no
+single-call hardware image-return adapter; preview cannot attach the proven Windows
+pipe. Detailed capability limits are in live-sol-low/OBSERVATION-PATH-ASSESSMENT.md.
+
+The265-test regression suite passed after integrating the current QA adapters.
+PROOF-PACKET.md now indexes the seven lenses, exact receipts and known gaps without
+inventing reviews or attributing development pilots to a future final candidate.

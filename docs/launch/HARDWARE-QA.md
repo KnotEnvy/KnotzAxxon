@@ -48,3 +48,34 @@ On final freeze, run appropriate checks serially, record exact source/build/harn
 identities, retain logs/JSON/media under artifacts/launch/, and update the proof packet
 with the actual outcomes and remaining limits. Avoid rerunning already-passed checks
 unless candidate changes or unresolved concerns justify it.
+
+## Production Pages package — 20:50 UTC checkpoint
+
+`package-pages.mjs` builds outside `dist/` with `/KnotzAxxon/` as the base;
+`verify-pages.cjs` serves that immutable output under its project prefix, compares
+all package bytes, then runs the existing production UI smoke in Windows Chrome
+through local pipes. The smoke asserts that the development API is absent. This
+adapts the existing assertions; no gameplay diagnostic hook is shipped.
+
+At runtime source `f35524e9b88d693884763838c8691da2b2c28d22e2a4a7bba6f6f440b5b22790`
+(HEAD `62d85e2d1650383accc325dfad7b955d32e75f11`), all **46 package files**
+matched HTTP bytes and hashes. All **28 default model/template resources** loaded;
+all **35 served model/template hashes** matched the package. Desktop 1280×720,
+touch-emulated portrait 390×844 and landscape 844×390 passed title-to-flight,
+layout, HUD bounds and applicable pause/resume controls. Shared fortress, Daily
+Sortie and settings persistence passed. No page errors or failed requests occurred.
+
+Actual renderer: GTX1650Ti via NVIDIA ANGLE/D3D11, NitroBliss Windows
+Chrome157.0.8103.52, DPR1, Low/Classic. Drawing buffers were respectively 912×513,
+292×633 and 633×292 because adaptive resolution remained active. Observational
+WebGL instrumentation counted **236 / 66 / 72** completed default-framebuffer
+presentation draws (**374 total**); each matched the observed engine callback
+count. Total successful WebGL draw calls were 14,844 / 3,915 / 4,556. This validates
+the production render path and reported device; it is not an FPS measurement,
+gameplay episode, physical touch-device test or public-deployment check.
+
+Evidence: `artifacts/launch/pages/f35524e9b88d6938/manifest.json` and
+`browser-qa/{report.json,package-receipt.json,desktop.png,
+touch-portrait.png,touch-landscape.png}`. Hash index:
+`docs/launch/pages-production-checkpoint.sha256`. The verifier exited0, closed its
+owned Chrome/server and released its own GPU lease. Nothing was deployed.

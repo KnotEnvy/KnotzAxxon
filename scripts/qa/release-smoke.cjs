@@ -7,11 +7,13 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawn } = require('node:child_process');
 const { createHash } = require('node:crypto');
-const { chromium } = require('playwright');
+const { chromium } = require(process.env.KZ_PLAYWRIGHT_PATH || 'playwright');
+const {installProductionEvidence,productionEvidence}=require('./launch/production-evidence.cjs');
+const DIST=process.env.KZ_BUILD_DIR || 'dist';
 const OUT = process.env.KZ_OUT || 'artifacts/release-smoke';
 const remote = !!process.env.KZ_TEST_URL;
 let URL = process.env.KZ_TEST_URL || null;
-const report = { verified_at: new Date().toISOString(), url: URL, target: remote ? 'deployed_site' : 'local_pages_build', checks: [], errors: [], failed_requests: [] };
+const report = { verified_at: new Date().toISOString(), url: URL, target: process.env.KZ_TARGET_KIND || (remote ? 'deployed_site' : 'local_pages_build'), checks: [], errors: [], failed_requests: [] };
 let server, browser, activePage;
 const assert = (ok, message) => { if (!ok) throw Error(message); };
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -49,11 +51,11 @@ async function layout(page) {
     for(const asset of assets) {
       assert(asset.pathname.startsWith('/KnotzAxxon/assets/'),'Asset escaped project path: '+asset);
       const res=await fetch(asset);assert(res.ok,'Asset HTTP '+res.status+': '+asset);
-      const actual=Buffer.from(await res.arrayBuffer()), disk=path.join('dist','assets',path.basename(asset.pathname));
+      const actual=Buffer.from(await res.arrayBuffer()), disk=path.join(DIST,'assets',path.basename(asset.pathname));
       if(!remote || process.env.KZ_COMPARE_DIST==='1')assert(actual.equals(fs.readFileSync(disk)),'Served asset differs from dist: '+asset);
     }
     report.assets=assets.map(a=>a.pathname);report.assets_matched_dist=!remote||process.env.KZ_COMPARE_DIST==='1';
-    browser=await chromium.launch({headless:true,...(process.env.KZ_BROWSER_CHANNEL ? {channel:process.env.KZ_BROWSER_CHANNEL} : {})});
+    browser=await chromium.launch({headless:true,...(process.env.KZ_CHROME_EXE?{executablePath:process.env.KZ_CHROME_EXE,args:['--use-angle=d3d11','--enable-gpu','--ignore-gpu-blocklist']} : {}),...(process.env.KZ_BROWSER_CHANNEL ? {channel:process.env.KZ_BROWSER_CHANNEL} : {})});
     report.browser=browser.version();
     const loadedModels=new Set();
     const contexts=[];
@@ -63,6 +65,7 @@ async function layout(page) {
       {name:'touch-landscape',width:844,height:390,touch:true,quality:'low'},
     ]) {
       const context=await browser.newContext({viewport:{width:fixture.width,height:fixture.height},hasTouch:fixture.touch,isMobile:fixture.touch});contexts.push(context);
+      await installProductionEvidence(context);
       const page=await context.newPage();activePage=page;page.setDefaultTimeout(90000);console.log('Release fixture: '+fixture.name);
       page.on('pageerror',e=>report.errors.push(fixture.name+': '+e.message));
       page.on('console',m=>{if(m.type()==='error')report.errors.push(fixture.name+': '+m.text());});
@@ -84,13 +87,16 @@ async function layout(page) {
         await page.click('#screen-pause [data-action="resume"]');await page.waitForFunction(()=>!document.getElementById('screen-pause').classList.contains('is-active'));await frames(page);
       }
       const state=await layout(page);
+      const rendering=await productionEvidence(page,browser);
+      assert(rendering.drawCalls>0&&rendering.presentationDraws>0,'No actual production draws: '+fixture.name);
+      if(process.env.KZ_REQUIRE_HARDWARE==='1')assert(rendering.webgl2&&rendering.renderer&&!/swiftshader|llvmpipe|software|basic render/i.test(rendering.renderer),'Real hardware required: '+rendering.renderer);
       assert(state.scrollWidth<=state.width,'Horizontal overflow: '+fixture.name);
       assert(state.canvas.width>0&&state.canvas.height>0,'No rendered canvas: '+fixture.name);
       assert(!state.debug_api,'Debug API present');
       if(state.altimeter)assert(state.altimeter.left>=0&&state.altimeter.right<=fixture.width&&state.altimeter.top>=0&&state.altimeter.bottom<=fixture.height,'Altimeter outside viewport: '+fixture.name);
       if(fixture.touch)assert(await page.locator('#touch').evaluate(el=>el.classList.contains('on')),'Touch controls missing');
       await page.screenshot({path:path.join(OUT,fixture.name+'.png')});
-      report.checks.push({fixture:fixture.name,...state,title_to_flight:true,keyboard_pause_resume:!fixture.touch,touch_controls:fixture.touch});
+      report.checks.push({fixture:fixture.name,...state,rendering,title_to_flight:true,keyboard_pause_resume:!fixture.touch,touch_controls:fixture.touch});
       if(fixture.name==='desktop') {
         const shared=new global.URL(URL);shared.searchParams.set('seed','4F9K2A');
         await page.goto(shared.href);await title(page);assert((await page.locator('#title-hint').textContent()).includes('SHARED FORTRESS 4F9K2A'),'Shared seed missing from title');
@@ -109,11 +115,11 @@ async function layout(page) {
     ];
     for(const name of requiredModels)assert(loadedModels.has(new global.URL(name,URL).pathname),'Default release failed to load '+name);
     report.default_model_assets=[...loadedModels].sort();
-    const modelFiles=['models/environment/environment-kit.glb',...['player','sentinel','turret','radar','silo','fuel'].map(n=>'models/'+n+'.glb'),...fs.readdirSync('dist/models/production').filter(n=>/\.(glb|json|bin)$/.test(n)).map(n=>'models/production/'+n)];
+    const modelFiles=['models/environment/environment-kit.glb',...['player','sentinel','turret','radar','silo','fuel'].map(n=>'models/'+n+'.glb'),...fs.readdirSync(path.join(DIST,'models/production')).filter(n=>/\.(glb|json|bin)$/.test(n)).map(n=>'models/production/'+n)];
     report.model_hashes=await Promise.all(modelFiles.map(async name=>{
       const response=await fetch(new global.URL(name,URL),{cache:'no-store'});assert(response.ok,'Model HTTP '+response.status+': '+name);
       const actual=Buffer.from(await response.arrayBuffer());
-      if(!remote||process.env.KZ_COMPARE_DIST==='1')assert(actual.equals(fs.readFileSync(path.join('dist',name))),'Served model differs from dist: '+name);
+      if(!remote||process.env.KZ_COMPARE_DIST==='1')assert(actual.equals(fs.readFileSync(path.join(DIST,name))),'Served model differs from dist: '+name);
       return {asset:name,bytes:actual.length,sha256:createHash('sha256').update(actual).digest('hex')};
     }));
     report.models_matched_dist=!remote||process.env.KZ_COMPARE_DIST==='1';
