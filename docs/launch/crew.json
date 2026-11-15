@@ -9,15 +9,15 @@
   "roles": [
     {
       "role": "live tester",
-      "model": "codex/gpt-6.1-sol",
+      "model": "codex/gpt-6.1-terra",
       "options": {
-        "reasoningEffort": "low"
+        "reasoningEffort": "medium"
       },
       "environment": "NitroBliss",
-      "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Ae5cfe017-b35d-4c5a-8fda-5f4124577460",
-      "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Ae5cfe017-b35d-4c5a-8fda-5f4124577460",
-      "checkpoint": "Delayed pipeline pilot170401 retained honestly:511 renders, normal death,24.357s capture gap; ten-second actual-view cadence unproven; final0/60; no active GPU lease",
-      "handoff": "docs/launch/live-sol-low/PILOT-HANDOFF.md"
+      "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3A2bd72f69-d02e-4952-b007-6e07ee22a2bb",
+      "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3A2bd72f69-d02e-4952-b007-6e07ee22a2bb",
+      "checkpoint": "User replaced Sol Low player with Terra medium; CPU harness takeover plus one bounded hardware cadence pilot authorized on stable f89400b5 source; no final credit; final judge remains separate fresh high-effort task",
+      "handoff": "docs/launch/live-sol-low/FINAL-TRIALS.md"
     },
     {
       "role": "UI/title/marketing presentation",
@@ -80,5 +80,20 @@
       "codex/gpt-6.1-terra high",
       "claudeAgent/claude-haiku-5-5 high"
     ]
-  }
+  },
+  "historicalRoles": [
+    {
+      "role": "live tester",
+      "model": "codex/gpt-6.1-sol",
+      "options": {
+        "reasoningEffort": "low"
+      },
+      "environment": "NitroBliss",
+      "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Ae5cfe017-b35d-4c5a-8fda-5f4124577460",
+      "threadId": "thread:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Ae5cfe017-b35d-4c5a-8fda-5f4124577460",
+      "checkpoint": "Delayed pipeline pilot170401 retained honestly:511 renders, normal death,24.357s capture gap; ten-second actual-view cadence unproven; final0/60; no active GPU lease",
+      "handoff": "docs/launch/live-sol-low/PILOT-HANDOFF.md",
+      "status": "superseded by explicit user instruction on2026-11-15; original pilots remain historical/uncredited"
+    }
+  ]
 }
