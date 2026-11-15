@@ -1,0 +1,2153 @@
+{
+ "method": "Actual Level + Fortress._buildChunk + Batch, seeds 1..24 x loops 0/1, all eight sectors. CPU counts (triangles, draw objects, upload bytes); not GPU profiling.",
+ "fortressSourceSha256": "3db6ba57ab778d43601492bb45b7db98bdbf2bb84984bcf117f924b9a24d53b0",
+ "templatesLoaded": {
+  "cargoKit": true,
+  "coolingStack": true,
+  "coveredFighter": true,
+  "fuelDepot": true,
+  "flakGun": true,
+  "antenna": true,
+  "wreckage": true,
+  "carrier": true
+ },
+ "templatesNotLoadable": {
+  "bunker": "ImportedModels.js template map (Vite/browser loader)",
+  "dreadnought": "ImportedModels.js template map (Vite/browser loader)",
+  "asteroids": "ImportedModels.js template map (Vite/browser loader)"
+ },
+ "flaggedFallbacks": "Because bunker / dreadnought / asteroid templates cannot load here, `_bunker`, `_dreadnought` and the asteroid part of `_voidProps` report the procedural fallback, not the shipped default path. Shipped counts for those three are in docs/asset-production/*-integration.json.",
+ "sectors": {
+  "0": {
+   "name": "OUTER FORTRESS",
+   "sub": "PERIMETER DEFENCE GRID",
+   "kind": "fortress",
+   "chunkSamples": 768,
+   "perChunk": {
+    "triangles": {
+     "min": 3932,
+     "mean": 8126.1,
+     "p95": 11056,
+     "max": 13348
+    },
+    "draws": {
+     "min": 7,
+     "mean": 8.1,
+     "p95": 12,
+     "max": 12
+    },
+    "bytes": {
+     "min": 580176,
+     "mean": 1215939.9,
+     "p95": 1660848,
+     "max": 2009856
+    },
+    "featureOwnedTriangles": {
+     "min": 0,
+     "mean": 89.7,
+     "p95": 936,
+     "max": 936
+    },
+    "featureOwnedDraws": {
+     "min": 0,
+     "mean": 0.4,
+     "p95": 4,
+     "max": 4
+    }
+   },
+   "highWindowTriangles": {
+    "min": 53948,
+    "mean": 65036.5,
+    "p95": 72300,
+    "max": 80168
+   },
+   "methods": {
+    "_deckProps": {
+     "calls": 768,
+     "trianglesPerCall": 3755.6,
+     "maxPerCall": 7672,
+     "trianglesPerChunk": 3755.6,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon",
+      "paint",
+      "spin"
+     ]
+    },
+    "_parkedFighter": {
+     "calls": 1066,
+     "trianglesPerCall": 1372,
+     "maxPerCall": 1372,
+     "trianglesPerChunk": 1904.4,
+     "buckets": [
+      "dark",
+      "hull",
+      "paint"
+     ]
+    },
+    "_skyline": {
+     "calls": 768,
+     "trianglesPerCall": 1878.6,
+     "maxPerCall": 5032,
+     "trianglesPerChunk": 1878.6,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_deck": {
+     "calls": 768,
+     "trianglesPerCall": 1014.2,
+     "maxPerCall": 1104,
+     "trianglesPerChunk": 1014.2,
+     "buckets": [
+      "dark",
+      "deck",
+      "grate",
+      "neon",
+      "paint"
+     ]
+    },
+    "_crates": {
+     "calls": 1428,
+     "trianglesPerCall": 490.8,
+     "maxPerCall": 852,
+     "trianglesPerChunk": 912.5,
+     "buckets": [
+      "hull"
+     ]
+    },
+    "_wallDressing": {
+     "calls": 768,
+     "trianglesPerCall": 835.6,
+     "maxPerCall": 964,
+     "trianglesPerChunk": 835.6,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_fuelDepot": {
+     "calls": 456,
+     "trianglesPerCall": 992,
+     "maxPerCall": 992,
+     "trianglesPerChunk": 589,
+     "buckets": [
+      "dark",
+      "hull"
+     ]
+    },
+    "_trenchWalls": {
+     "calls": 768,
+     "trianglesPerCall": 552.5,
+     "maxPerCall": 696,
+     "trianglesPerChunk": 552.5,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_landingPad": {
+     "calls": 390,
+     "trianglesPerCall": 180,
+     "maxPerCall": 180,
+     "trianglesPerChunk": 91.4,
+     "buckets": [
+      "neon",
+      "paint"
+     ]
+    },
+    "_sectorEdges": {
+     "calls": 768,
+     "trianglesPerCall": 0,
+     "maxPerCall": 0,
+     "trianglesPerChunk": 0,
+     "buckets": []
+    }
+   },
+   "features": {
+    "_wall:perimeter": {
+     "calls": 48,
+     "trianglesPerCall": 936,
+     "maxPerCall": 936,
+     "trianglesPerChunk": 58.5,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:notch": {
+     "calls": 20,
+     "trianglesPerCall": 609,
+     "maxPerCall": 612,
+     "trianglesPerChunk": 15.9,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:slot": {
+     "calls": 13,
+     "trianglesPerCall": 716.3,
+     "maxPerCall": 720,
+     "trianglesPerChunk": 12.1,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_arch": {
+     "calls": 4,
+     "trianglesPerCall": 612,
+     "maxPerCall": 612,
+     "trianglesPerChunk": 3.2,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    }
+   },
+   "sectorEdgeTrianglesPerEdgeChunk": null,
+   "plannedFeaturesPerSector": {
+    "arch": {
+     "min": 0,
+     "mean": 0.1,
+     "p95": 1,
+     "max": 1
+    },
+    "deck": {
+     "min": 16,
+     "mean": 16,
+     "p95": 16,
+     "max": 16
+    },
+    "drone": {
+     "min": 2,
+     "mean": 2,
+     "p95": 2,
+     "max": 2
+    },
+    "fuel": {
+     "min": 4,
+     "mean": 5.3,
+     "p95": 8,
+     "max": 10
+    },
+    "mine": {
+     "min": 0,
+     "mean": 0.1,
+     "p95": 0,
+     "max": 3
+    },
+    "parked": {
+     "min": 0,
+     "mean": 1.5,
+     "p95": 5,
+     "max": 8
+    },
+    "radar": {
+     "min": 1,
+     "mean": 1.2,
+     "p95": 2,
+     "max": 2
+    },
+    "turret": {
+     "min": 1,
+     "mean": 1.7,
+     "p95": 4,
+     "max": 4
+    },
+    "wall:notch": {
+     "min": 0,
+     "mean": 0.4,
+     "p95": 2,
+     "max": 2
+    },
+    "wall:perimeter": {
+     "min": 1,
+     "mean": 1,
+     "p95": 1,
+     "max": 1
+    },
+    "wall:slot": {
+     "min": 0,
+     "mean": 0.3,
+     "p95": 1,
+     "max": 1
+    }
+   }
+  },
+  "1": {
+   "name": "GUN BATTERIES",
+   "sub": "HEAVY EMPLACEMENTS",
+   "kind": "fortress",
+   "chunkSamples": 816,
+   "perChunk": {
+    "triangles": {
+     "min": 3988,
+     "mean": 7987.3,
+     "p95": 10788,
+     "max": 13172
+    },
+    "draws": {
+     "min": 7,
+     "mean": 8.4,
+     "p95": 12,
+     "max": 16
+    },
+    "bytes": {
+     "min": 589104,
+     "mean": 1199528.7,
+     "p95": 1646256,
+     "max": 1963248
+    },
+    "featureOwnedTriangles": {
+     "min": 0,
+     "mean": 99.5,
+     "p95": 720,
+     "max": 1440
+    },
+    "featureOwnedDraws": {
+     "min": 0,
+     "mean": 0.6,
+     "p95": 4,
+     "max": 8
+    }
+   },
+   "highWindowTriangles": {
+    "min": 49436,
+    "mean": 63902.6,
+    "p95": 71626,
+    "max": 75620
+   },
+   "methods": {
+    "_skyline": {
+     "calls": 816,
+     "trianglesPerCall": 3163.2,
+     "maxPerCall": 7288,
+     "trianglesPerChunk": 3163.2,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_deckProps": {
+     "calls": 816,
+     "trianglesPerCall": 2294.6,
+     "maxPerCall": 4268,
+     "trianglesPerChunk": 2294.6,
+     "buckets": [
+      "dark",
+      "grate",
+      "hazard",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_crates": {
+     "calls": 3164,
+     "trianglesPerCall": 530.7,
+     "maxPerCall": 1008,
+     "trianglesPerChunk": 2057.7,
+     "buckets": [
+      "hull"
+     ]
+    },
+    "_flakGun": {
+     "calls": 1382,
+     "trianglesPerCall": 704,
+     "maxPerCall": 704,
+     "trianglesPerChunk": 1192.3,
+     "buckets": [
+      "dark",
+      "hull"
+     ]
+    },
+    "_deck": {
+     "calls": 816,
+     "trianglesPerCall": 1014.3,
+     "maxPerCall": 1104,
+     "trianglesPerChunk": 1014.3,
+     "buckets": [
+      "dark",
+      "deck",
+      "grate",
+      "neon",
+      "paint"
+     ]
+    },
+    "_wallDressing": {
+     "calls": 816,
+     "trianglesPerCall": 846.3,
+     "maxPerCall": 964,
+     "trianglesPerChunk": 846.3,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_trenchWalls": {
+     "calls": 816,
+     "trianglesPerCall": 546.8,
+     "maxPerCall": 696,
+     "trianglesPerChunk": 546.8,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_sectorEdges": {
+     "calls": 816,
+     "trianglesPerCall": 22.6,
+     "maxPerCall": 384,
+     "trianglesPerChunk": 22.6,
+     "buckets": [
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_hazardPad": {
+     "calls": 382,
+     "trianglesPerCall": 24,
+     "maxPerCall": 24,
+     "trianglesPerChunk": 11.2,
+     "buckets": [
+      "grate",
+      "hazard"
+     ]
+    }
+   },
+   "features": {
+    "_wall:slot": {
+     "calls": 30,
+     "trianglesPerCall": 719.2,
+     "maxPerCall": 720,
+     "trianglesPerChunk": 26.4,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:window": {
+     "calls": 30,
+     "trianglesPerCall": 592.4,
+     "maxPerCall": 600,
+     "trianglesPerChunk": 21.8,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:pillars": {
+     "calls": 15,
+     "trianglesPerCall": 734.4,
+     "maxPerCall": 852,
+     "trianglesPerChunk": 13.5,
+     "buckets": [
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:notch": {
+     "calls": 17,
+     "trianglesPerCall": 609.9,
+     "maxPerCall": 612,
+     "trianglesPerChunk": 12.7,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:stagger": {
+     "calls": 11,
+     "trianglesPerCall": 716.7,
+     "maxPerCall": 720,
+     "trianglesPerChunk": 9.7,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_fence": {
+     "calls": 7,
+     "trianglesPerCall": 1013.1,
+     "maxPerCall": 1056,
+     "trianglesPerChunk": 8.7,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_arch": {
+     "calls": 9,
+     "trianglesPerCall": 612,
+     "maxPerCall": 612,
+     "trianglesPerChunk": 6.8,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    }
+   },
+   "sectorEdgeTrianglesPerEdgeChunk": {
+    "min": 384,
+    "mean": 384,
+    "p95": 384,
+    "max": 384
+   },
+   "plannedFeaturesPerSector": {
+    "arch": {
+     "min": 0,
+     "mean": 0.2,
+     "p95": 1,
+     "max": 2
+    },
+    "deck": {
+     "min": 18,
+     "mean": 18,
+     "p95": 18,
+     "max": 18
+    },
+    "drone": {
+     "min": 0,
+     "mean": 0.8,
+     "p95": 4,
+     "max": 8
+    },
+    "fence": {
+     "min": 0,
+     "mean": 0.1,
+     "p95": 1,
+     "max": 1
+    },
+    "fuel": {
+     "min": 2,
+     "mean": 6.1,
+     "p95": 12,
+     "max": 14
+    },
+    "heavyTurret": {
+     "min": 0,
+     "mean": 1.3,
+     "p95": 4,
+     "max": 5
+    },
+    "mine": {
+     "min": 0,
+     "mean": 7.6,
+     "p95": 15,
+     "max": 20
+    },
+    "parked": {
+     "min": 0,
+     "mean": 3.2,
+     "p95": 8,
+     "max": 11
+    },
+    "radar": {
+     "min": 0,
+     "mean": 1.4,
+     "p95": 3,
+     "max": 5
+    },
+    "silo": {
+     "min": 0,
+     "mean": 1.3,
+     "p95": 3,
+     "max": 5
+    },
+    "turret": {
+     "min": 2,
+     "mean": 6.6,
+     "p95": 10,
+     "max": 11
+    },
+    "wall:notch": {
+     "min": 0,
+     "mean": 0.4,
+     "p95": 1,
+     "max": 2
+    },
+    "wall:pillars": {
+     "min": 0,
+     "mean": 0.3,
+     "p95": 1,
+     "max": 2
+    },
+    "wall:slot": {
+     "min": 0,
+     "mean": 0.6,
+     "p95": 2,
+     "max": 3
+    },
+    "wall:stagger": {
+     "min": 0,
+     "mean": 0.2,
+     "p95": 1,
+     "max": 1
+    },
+    "wall:window": {
+     "min": 0,
+     "mean": 0.6,
+     "p95": 2,
+     "max": 2
+    }
+   }
+  },
+  "2": {
+   "name": "THE VOID GAP",
+   "sub": "OPEN SPACE TRANSIT",
+   "kind": "space",
+   "chunkSamples": 672,
+   "perChunk": {
+    "triangles": {
+     "min": 500,
+     "mean": 2984,
+     "p95": 12868,
+     "max": 15444
+    },
+    "draws": {
+     "min": 1,
+     "mean": 4.4,
+     "p95": 7,
+     "max": 9
+    },
+    "bytes": {
+     "min": 108000,
+     "mean": 570379,
+     "p95": 2687904,
+     "max": 3183360
+    },
+    "featureOwnedTriangles": {
+     "min": 0,
+     "mean": 1001,
+     "p95": 10920,
+     "max": 13100
+    },
+    "featureOwnedDraws": {
+     "min": 0,
+     "mean": 0.3,
+     "p95": 3,
+     "max": 3
+    }
+   },
+   "highWindowTriangles": {
+    "min": 10716,
+    "mean": 23896.4,
+    "p95": 39444,
+    "max": 49868
+   },
+   "methods": {
+    "_voidProps": {
+     "calls": 672,
+     "trianglesPerCall": 1775.5,
+     "maxPerCall": 2988,
+     "trianglesPerChunk": 1775.5,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon",
+      "rock"
+     ]
+    },
+    "_dreadnought": {
+     "calls": 672,
+     "trianglesPerCall": 671.4,
+     "maxPerCall": 1188,
+     "trianglesPerChunk": 671.4,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_driftingWreckage": {
+     "calls": 282,
+     "trianglesPerCall": 504.3,
+     "maxPerCall": 532,
+     "trianglesPerChunk": 211.6,
+     "buckets": [
+      "dark",
+      "neon"
+     ]
+    }
+   },
+   "features": {
+    "_wall:debrisGate": {
+     "calls": 61,
+     "trianglesPerCall": 11026.9,
+     "maxPerCall": 13100,
+     "trianglesPerChunk": 1001,
+     "buckets": [
+      "hull",
+      "neon",
+      "rock"
+     ]
+    },
+    "_debrisRing": {
+     "calls": 61,
+     "trianglesPerCall": 1412.9,
+     "maxPerCall": 2048,
+     "trianglesPerChunk": 128.3,
+     "buckets": [
+      "rock",
+      "spin"
+     ]
+    },
+    "_platform:pylon": {
+     "calls": 144,
+     "trianglesPerCall": 292,
+     "maxPerCall": 292,
+     "trianglesPerChunk": 62.6,
+     "buckets": [
+      "dark",
+      "deck",
+      "neon",
+      "paint"
+     ]
+    },
+    "_platform": {
+     "calls": 46,
+     "trianglesPerCall": 244,
+     "maxPerCall": 244,
+     "trianglesPerChunk": 16.7,
+     "buckets": [
+      "dark",
+      "deck",
+      "neon",
+      "paint"
+     ]
+    }
+   },
+   "sectorEdgeTrianglesPerEdgeChunk": null,
+   "plannedFeaturesPerSector": {
+    "debrisRing": {
+     "min": 0,
+     "mean": 1.3,
+     "p95": 3,
+     "max": 4
+    },
+    "fuel": {
+     "min": 0,
+     "mean": 0.4,
+     "p95": 2,
+     "max": 4
+    },
+    "heavyTurret": {
+     "min": 0,
+     "mean": 1.4,
+     "p95": 3,
+     "max": 3
+    },
+    "interceptor": {
+     "min": 5,
+     "mean": 16,
+     "p95": 25,
+     "max": 30
+    },
+    "mine": {
+     "min": 0,
+     "mean": 2.2,
+     "p95": 21,
+     "max": 26
+    },
+    "platform": {
+     "min": 3,
+     "mean": 4,
+     "p95": 8,
+     "max": 8
+    },
+    "turret": {
+     "min": 0,
+     "mean": 2.5,
+     "p95": 6,
+     "max": 7
+    },
+    "wall:debrisGate": {
+     "min": 0,
+     "mean": 1.3,
+     "p95": 3,
+     "max": 3
+    }
+   }
+  },
+  "3": {
+   "name": "REACTOR SPINE",
+   "sub": "THERMAL EXHAUST TRENCH",
+   "kind": "fortress",
+   "chunkSamples": 912,
+   "perChunk": {
+    "triangles": {
+     "min": 3656,
+     "mean": 6674,
+     "p95": 8756,
+     "max": 11380
+    },
+    "draws": {
+     "min": 7,
+     "mean": 9.5,
+     "p95": 15,
+     "max": 16
+    },
+    "bytes": {
+     "min": 534048,
+     "mean": 1036814.7,
+     "p95": 1417344,
+     "max": 1846272
+    },
+    "featureOwnedTriangles": {
+     "min": 0,
+     "mean": 250.4,
+     "p95": 948,
+     "max": 1440
+    },
+    "featureOwnedDraws": {
+     "min": 0,
+     "mean": 1.7,
+     "p95": 7,
+     "max": 8
+    }
+   },
+   "highWindowTriangles": {
+    "min": 44120,
+    "mean": 53398.5,
+    "p95": 59520,
+    "max": 62644
+   },
+   "methods": {
+    "_skyline": {
+     "calls": 912,
+     "trianglesPerCall": 2018.2,
+     "maxPerCall": 5008,
+     "trianglesPerChunk": 2018.2,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_deckProps": {
+     "calls": 912,
+     "trianglesPerCall": 1945.2,
+     "maxPerCall": 3964,
+     "trianglesPerChunk": 1945.2,
+     "buckets": [
+      "dark",
+      "grate",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_deck": {
+     "calls": 912,
+     "trianglesPerCall": 1013,
+     "maxPerCall": 1116,
+     "trianglesPerChunk": 1013,
+     "buckets": [
+      "dark",
+      "deck",
+      "grate",
+      "neon",
+      "paint"
+     ]
+    },
+    "_crates": {
+     "calls": 1722,
+     "trianglesPerCall": 505.2,
+     "maxPerCall": 852,
+     "trianglesPerChunk": 953.9,
+     "buckets": [
+      "hull"
+     ]
+    },
+    "_wallDressing": {
+     "calls": 912,
+     "trianglesPerCall": 854.4,
+     "maxPerCall": 964,
+     "trianglesPerChunk": 854.4,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_coolingStack": {
+     "calls": 1338,
+     "trianglesPerCall": 460,
+     "maxPerCall": 460,
+     "trianglesPerChunk": 674.9,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_trenchWalls": {
+     "calls": 912,
+     "trianglesPerCall": 552.2,
+     "maxPerCall": 696,
+     "trianglesPerChunk": 552.2,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_sectorEdges": {
+     "calls": 912,
+     "trianglesPerCall": 40.4,
+     "maxPerCall": 384,
+     "trianglesPerChunk": 40.4,
+     "buckets": [
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    }
+   },
+   "features": {
+    "_gate": {
+     "calls": 116,
+     "trianglesPerCall": 672,
+     "maxPerCall": 672,
+     "trianglesPerChunk": 85.5,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:perimeter": {
+     "calls": 48,
+     "trianglesPerCall": 948,
+     "maxPerCall": 948,
+     "trianglesPerChunk": 49.9,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_fence": {
+     "calls": 25,
+     "trianglesPerCall": 1013.3,
+     "maxPerCall": 1044,
+     "trianglesPerChunk": 27.8,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:slot": {
+     "calls": 24,
+     "trianglesPerCall": 720,
+     "maxPerCall": 732,
+     "trianglesPerChunk": 18.9,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_arch": {
+     "calls": 28,
+     "trianglesPerCall": 612,
+     "maxPerCall": 612,
+     "trianglesPerChunk": 18.8,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:window": {
+     "calls": 28,
+     "trianglesPerCall": 585.9,
+     "maxPerCall": 600,
+     "trianglesPerChunk": 18,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:notch": {
+     "calls": 16,
+     "trianglesPerCall": 612.8,
+     "maxPerCall": 624,
+     "trianglesPerChunk": 10.8,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:stagger": {
+     "calls": 11,
+     "trianglesPerCall": 720,
+     "maxPerCall": 720,
+     "trianglesPerChunk": 8.7,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:pillars": {
+     "calls": 11,
+     "trianglesPerCall": 702.5,
+     "maxPerCall": 840,
+     "trianglesPerChunk": 8.5,
+     "buckets": [
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_platform": {
+     "calls": 1,
+     "trianglesPerCall": 244,
+     "maxPerCall": 244,
+     "trianglesPerChunk": 0.3,
+     "buckets": [
+      "dark",
+      "deck",
+      "neon",
+      "paint"
+     ]
+    }
+   },
+   "sectorEdgeTrianglesPerEdgeChunk": {
+    "min": 384,
+    "mean": 384,
+    "p95": 384,
+    "max": 384
+   },
+   "plannedFeaturesPerSector": {
+    "arch": {
+     "min": 0,
+     "mean": 0.6,
+     "p95": 3,
+     "max": 3
+    },
+    "deck": {
+     "min": 19,
+     "mean": 19,
+     "p95": 19,
+     "max": 19
+    },
+    "drone": {
+     "min": 0,
+     "mean": 1.8,
+     "p95": 8,
+     "max": 10
+    },
+    "fence": {
+     "min": 0,
+     "mean": 0.5,
+     "p95": 2,
+     "max": 4
+    },
+    "fuel": {
+     "min": 4,
+     "mean": 8.7,
+     "p95": 16,
+     "max": 18
+    },
+    "gate": {
+     "min": 0,
+     "mean": 2.4,
+     "p95": 4,
+     "max": 5
+    },
+    "heavyTurret": {
+     "min": 0,
+     "mean": 0.8,
+     "p95": 3,
+     "max": 4
+    },
+    "mine": {
+     "min": 0,
+     "mean": 13.3,
+     "p95": 23,
+     "max": 30
+    },
+    "parked": {
+     "min": 0,
+     "mean": 1,
+     "p95": 5,
+     "max": 5
+    },
+    "radar": {
+     "min": 0,
+     "mean": 0.9,
+     "p95": 2,
+     "max": 3
+    },
+    "silo": {
+     "min": 0,
+     "mean": 0.7,
+     "p95": 2,
+     "max": 3
+    },
+    "turret": {
+     "min": 0,
+     "mean": 2.7,
+     "p95": 7,
+     "max": 9
+    },
+    "wall:notch": {
+     "min": 0,
+     "mean": 0.3,
+     "p95": 1,
+     "max": 2
+    },
+    "wall:perimeter": {
+     "min": 1,
+     "mean": 1,
+     "p95": 1,
+     "max": 1
+    },
+    "wall:pillars": {
+     "min": 0,
+     "mean": 0.2,
+     "p95": 1,
+     "max": 2
+    },
+    "wall:slot": {
+     "min": 0,
+     "mean": 0.5,
+     "p95": 2,
+     "max": 3
+    },
+    "wall:stagger": {
+     "min": 0,
+     "mean": 0.2,
+     "p95": 1,
+     "max": 2
+    },
+    "wall:window": {
+     "min": 0,
+     "mean": 0.6,
+     "p95": 2,
+     "max": 2
+    }
+   }
+  },
+  "4": {
+   "name": "INTERCEPTOR SCREEN",
+   "sub": "FIGHTER WING ENGAGEMENT",
+   "kind": "space",
+   "chunkSamples": 720,
+   "perChunk": {
+    "triangles": {
+     "min": 500,
+     "mean": 3289.5,
+     "p95": 12596,
+     "max": 17206
+    },
+    "draws": {
+     "min": 1,
+     "mean": 5.5,
+     "p95": 8,
+     "max": 10
+    },
+    "bytes": {
+     "min": 108000,
+     "mean": 569148,
+     "p95": 2633580,
+     "max": 3462072
+    },
+    "featureOwnedTriangles": {
+     "min": 0,
+     "mean": 642.2,
+     "p95": 10620,
+     "max": 13200
+    },
+    "featureOwnedDraws": {
+     "min": 0,
+     "mean": 0.2,
+     "p95": 3,
+     "max": 3
+    }
+   },
+   "highWindowTriangles": {
+    "min": 12125,
+    "mean": 26421.3,
+    "p95": 41431,
+    "max": 55631
+   },
+   "methods": {
+    "_voidProps": {
+     "calls": 720,
+     "trianglesPerCall": 2554.1,
+     "maxPerCall": 4914,
+     "trianglesPerChunk": 2554.1,
+     "buckets": [
+      "dark",
+      "deck",
+      "hull",
+      "neon",
+      "paint",
+      "rock",
+      "spin"
+     ]
+    },
+    "_carrier": {
+     "calls": 720,
+     "trianglesPerCall": 1422,
+     "maxPerCall": 3114,
+     "trianglesPerChunk": 1422,
+     "buckets": [
+      "dark",
+      "deck",
+      "hull",
+      "neon",
+      "paint",
+      "spin"
+     ]
+    },
+    "_driftingWreckage": {
+     "calls": 368,
+     "trianglesPerCall": 505.4,
+     "maxPerCall": 532,
+     "trianglesPerChunk": 258.3,
+     "buckets": [
+      "dark",
+      "neon"
+     ]
+    }
+   },
+   "features": {
+    "_wall:debrisGate": {
+     "calls": 41,
+     "trianglesPerCall": 11277.1,
+     "maxPerCall": 13200,
+     "trianglesPerChunk": 642.2,
+     "buckets": [
+      "hull",
+      "neon",
+      "rock"
+     ]
+    },
+    "_debrisRing": {
+     "calls": 36,
+     "trianglesPerCall": 1417.6,
+     "maxPerCall": 2060,
+     "trianglesPerChunk": 70.9,
+     "buckets": [
+      "rock",
+      "spin"
+     ]
+    },
+    "_platform": {
+     "calls": 66,
+     "trianglesPerCall": 244,
+     "maxPerCall": 244,
+     "trianglesPerChunk": 22.4,
+     "buckets": [
+      "dark",
+      "deck",
+      "neon",
+      "paint"
+     ]
+    }
+   },
+   "sectorEdgeTrianglesPerEdgeChunk": null,
+   "plannedFeaturesPerSector": {
+    "debrisRing": {
+     "min": 0,
+     "mean": 0.8,
+     "p95": 2,
+     "max": 3
+    },
+    "fuel": {
+     "min": 0,
+     "mean": 0.4,
+     "p95": 2,
+     "max": 2
+    },
+    "interceptor": {
+     "min": 5,
+     "mean": 22.5,
+     "p95": 36,
+     "max": 36
+    },
+    "mine": {
+     "min": 0,
+     "mean": 5.3,
+     "p95": 20,
+     "max": 24
+    },
+    "platform": {
+     "min": 0,
+     "mean": 1.4,
+     "p95": 6,
+     "max": 7
+    },
+    "turret": {
+     "min": 0,
+     "mean": 1.4,
+     "p95": 6,
+     "max": 7
+    },
+    "wall:debrisGate": {
+     "min": 0,
+     "mean": 0.9,
+     "p95": 2,
+     "max": 3
+    }
+   }
+  },
+  "5": {
+   "name": "INNER CITADEL",
+   "sub": "COMMAND SUPERSTRUCTURE",
+   "kind": "fortress",
+   "chunkSamples": 960,
+   "perChunk": {
+    "triangles": {
+     "min": 3624,
+     "mean": 6443.9,
+     "p95": 8476,
+     "max": 11000
+    },
+    "draws": {
+     "min": 7,
+     "mean": 9.1,
+     "p95": 15,
+     "max": 16
+    },
+    "bytes": {
+     "min": 531456,
+     "mean": 1002382.1,
+     "p95": 1362000,
+     "max": 1809120
+    },
+    "featureOwnedTriangles": {
+     "min": 0,
+     "mean": 228.9,
+     "p95": 948,
+     "max": 1452
+    },
+    "featureOwnedDraws": {
+     "min": 0,
+     "mean": 1.4,
+     "p95": 7,
+     "max": 8
+    }
+   },
+   "highWindowTriangles": {
+    "min": 43276,
+    "mean": 51553.7,
+    "p95": 57608,
+    "max": 65526
+   },
+   "methods": {
+    "_skyline": {
+     "calls": 960,
+     "trianglesPerCall": 1985.6,
+     "maxPerCall": 4936,
+     "trianglesPerChunk": 1985.6,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_deckProps": {
+     "calls": 960,
+     "trianglesPerCall": 1800.8,
+     "maxPerCall": 3748,
+     "trianglesPerChunk": 1800.8,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_deck": {
+     "calls": 960,
+     "trianglesPerCall": 1013.2,
+     "maxPerCall": 1104,
+     "trianglesPerChunk": 1013.2,
+     "buckets": [
+      "dark",
+      "deck",
+      "grate",
+      "neon",
+      "paint"
+     ]
+    },
+    "_crates": {
+     "calls": 1778,
+     "trianglesPerCall": 515,
+     "maxPerCall": 852,
+     "trianglesPerChunk": 953.9,
+     "buckets": [
+      "hull"
+     ]
+    },
+    "_wallDressing": {
+     "calls": 960,
+     "trianglesPerCall": 845.8,
+     "maxPerCall": 964,
+     "trianglesPerChunk": 845.8,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_antenna": {
+     "calls": 1842,
+     "trianglesPerCall": 306.9,
+     "maxPerCall": 352,
+     "trianglesPerChunk": 589,
+     "buckets": [
+      "dark",
+      "neon"
+     ]
+    },
+    "_trenchWalls": {
+     "calls": 960,
+     "trianglesPerCall": 550.3,
+     "maxPerCall": 696,
+     "trianglesPerChunk": 550.3,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_bunker": {
+     "calls": 548,
+     "trianglesPerCall": 36,
+     "maxPerCall": 36,
+     "trianglesPerChunk": 20.6,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_sectorEdges": {
+     "calls": 960,
+     "trianglesPerCall": 19.2,
+     "maxPerCall": 384,
+     "trianglesPerChunk": 19.2,
+     "buckets": [
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    }
+   },
+   "features": {
+    "_gate": {
+     "calls": 74,
+     "trianglesPerCall": 672,
+     "maxPerCall": 672,
+     "trianglesPerChunk": 51.8,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:perimeter": {
+     "calls": 48,
+     "trianglesPerCall": 948,
+     "maxPerCall": 948,
+     "trianglesPerChunk": 47.4,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_fence": {
+     "calls": 33,
+     "trianglesPerCall": 1013.5,
+     "maxPerCall": 1044,
+     "trianglesPerChunk": 34.8,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:slot": {
+     "calls": 41,
+     "trianglesPerCall": 722.6,
+     "maxPerCall": 732,
+     "trianglesPerChunk": 30.9,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:window": {
+     "calls": 23,
+     "trianglesPerCall": 571.3,
+     "maxPerCall": 588,
+     "trianglesPerChunk": 13.7,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:notch": {
+     "calls": 21,
+     "trianglesPerCall": 615.4,
+     "maxPerCall": 624,
+     "trianglesPerChunk": 13.5,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:stagger": {
+     "calls": 17,
+     "trianglesPerCall": 720.7,
+     "maxPerCall": 732,
+     "trianglesPerChunk": 12.8,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_arch": {
+     "calls": 19,
+     "trianglesPerCall": 612,
+     "maxPerCall": 612,
+     "trianglesPerChunk": 12.1,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:pillars": {
+     "calls": 12,
+     "trianglesPerCall": 777,
+     "maxPerCall": 852,
+     "trianglesPerChunk": 9.7,
+     "buckets": [
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    }
+   },
+   "sectorEdgeTrianglesPerEdgeChunk": {
+    "min": 384,
+    "mean": 384,
+    "p95": 384,
+    "max": 384
+   },
+   "plannedFeaturesPerSector": {
+    "arch": {
+     "min": 0,
+     "mean": 0.4,
+     "p95": 2,
+     "max": 3
+    },
+    "deck": {
+     "min": 20,
+     "mean": 20,
+     "p95": 20,
+     "max": 20
+    },
+    "drone": {
+     "min": 0,
+     "mean": 2.4,
+     "p95": 9,
+     "max": 10
+    },
+    "fence": {
+     "min": 0,
+     "mean": 0.7,
+     "p95": 2,
+     "max": 3
+    },
+    "fuel": {
+     "min": 4,
+     "mean": 8.7,
+     "p95": 14,
+     "max": 16
+    },
+    "gate": {
+     "min": 0,
+     "mean": 1.5,
+     "p95": 3,
+     "max": 4
+    },
+    "heavyTurret": {
+     "min": 0,
+     "mean": 2.1,
+     "p95": 6,
+     "max": 11
+    },
+    "mine": {
+     "min": 0,
+     "mean": 17.5,
+     "p95": 29,
+     "max": 33
+    },
+    "parked": {
+     "min": 0,
+     "mean": 1.3,
+     "p95": 5,
+     "max": 7
+    },
+    "radar": {
+     "min": 0,
+     "mean": 1.2,
+     "p95": 3,
+     "max": 4
+    },
+    "silo": {
+     "min": 0,
+     "mean": 1,
+     "p95": 3,
+     "max": 4
+    },
+    "turret": {
+     "min": 0,
+     "mean": 3.7,
+     "p95": 8,
+     "max": 11
+    },
+    "wall:notch": {
+     "min": 0,
+     "mean": 0.4,
+     "p95": 2,
+     "max": 2
+    },
+    "wall:perimeter": {
+     "min": 1,
+     "mean": 1,
+     "p95": 1,
+     "max": 1
+    },
+    "wall:pillars": {
+     "min": 0,
+     "mean": 0.3,
+     "p95": 1,
+     "max": 1
+    },
+    "wall:slot": {
+     "min": 0,
+     "mean": 0.9,
+     "p95": 2,
+     "max": 3
+    },
+    "wall:stagger": {
+     "min": 0,
+     "mean": 0.4,
+     "p95": 2,
+     "max": 2
+    },
+    "wall:window": {
+     "min": 0,
+     "mean": 0.5,
+     "p95": 2,
+     "max": 2
+    }
+   }
+  },
+  "6": {
+   "name": "THE GAUNTLET",
+   "sub": "FINAL APPROACH",
+   "kind": "fortress",
+   "chunkSamples": 816,
+   "perChunk": {
+    "triangles": {
+     "min": 3804,
+     "mean": 6491,
+     "p95": 8532,
+     "max": 10168
+    },
+    "draws": {
+     "min": 7,
+     "mean": 8.8,
+     "p95": 15,
+     "max": 16
+    },
+    "bytes": {
+     "min": 561696,
+     "mean": 1008639.4,
+     "p95": 1364832,
+     "max": 1662424
+    },
+    "featureOwnedTriangles": {
+     "min": 0,
+     "mean": 150.9,
+     "p95": 708,
+     "max": 1452
+    },
+    "featureOwnedDraws": {
+     "min": 0,
+     "mean": 1.1,
+     "p95": 7,
+     "max": 8
+    }
+   },
+   "highWindowTriangles": {
+    "min": 42996,
+    "mean": 51942.2,
+    "p95": 57840,
+    "max": 62396
+   },
+   "methods": {
+    "_deckProps": {
+     "calls": 816,
+     "trianglesPerCall": 1972.1,
+     "maxPerCall": 4220,
+     "trianglesPerChunk": 1972.1,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_skyline": {
+     "calls": 816,
+     "trianglesPerCall": 1963.7,
+     "maxPerCall": 4768,
+     "trianglesPerChunk": 1963.7,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_deck": {
+     "calls": 816,
+     "trianglesPerCall": 1011.4,
+     "maxPerCall": 1116,
+     "trianglesPerChunk": 1011.4,
+     "buckets": [
+      "dark",
+      "deck",
+      "grate",
+      "neon",
+      "paint"
+     ]
+    },
+    "_crates": {
+     "calls": 1552,
+     "trianglesPerCall": 512.6,
+     "maxPerCall": 852,
+     "trianglesPerChunk": 974.9,
+     "buckets": [
+      "hull"
+     ]
+    },
+    "_wallDressing": {
+     "calls": 816,
+     "trianglesPerCall": 841,
+     "maxPerCall": 964,
+     "trianglesPerChunk": 841,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon",
+      "spin"
+     ]
+    },
+    "_antenna": {
+     "calls": 1540,
+     "trianglesPerCall": 307.6,
+     "maxPerCall": 352,
+     "trianglesPerChunk": 580.4,
+     "buckets": [
+      "dark",
+      "neon"
+     ]
+    },
+    "_trenchWalls": {
+     "calls": 816,
+     "trianglesPerCall": 551.9,
+     "maxPerCall": 696,
+     "trianglesPerChunk": 551.9,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_bunker": {
+     "calls": 520,
+     "trianglesPerCall": 36,
+     "maxPerCall": 36,
+     "trianglesPerChunk": 22.9,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_sectorEdges": {
+     "calls": 816,
+     "trianglesPerCall": 0,
+     "maxPerCall": 0,
+     "trianglesPerChunk": 0,
+     "buckets": []
+    }
+   },
+   "features": {
+    "_gate": {
+     "calls": 78,
+     "trianglesPerCall": 672,
+     "maxPerCall": 672,
+     "trianglesPerChunk": 64.2,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:slot": {
+     "calls": 22,
+     "trianglesPerCall": 722.7,
+     "maxPerCall": 732,
+     "trianglesPerChunk": 19.5,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:window": {
+     "calls": 23,
+     "trianglesPerCall": 575,
+     "maxPerCall": 588,
+     "trianglesPerChunk": 16.2,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:pillars": {
+     "calls": 15,
+     "trianglesPerCall": 714.4,
+     "maxPerCall": 852,
+     "trianglesPerChunk": 13.1,
+     "buckets": [
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:notch": {
+     "calls": 17,
+     "trianglesPerCall": 613.4,
+     "maxPerCall": 624,
+     "trianglesPerChunk": 12.8,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_fence": {
+     "calls": 9,
+     "trianglesPerCall": 1002.7,
+     "maxPerCall": 1032,
+     "trianglesPerChunk": 11.1,
+     "buckets": [
+      "dark",
+      "hull",
+      "neon"
+     ]
+    },
+    "_arch": {
+     "calls": 8,
+     "trianglesPerCall": 612,
+     "maxPerCall": 612,
+     "trianglesPerChunk": 6,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    },
+    "_wall:stagger": {
+     "calls": 6,
+     "trianglesPerCall": 722,
+     "maxPerCall": 732,
+     "trianglesPerChunk": 5.3,
+     "buckets": [
+      "dark",
+      "hazard",
+      "hull",
+      "neon"
+     ]
+    }
+   },
+   "sectorEdgeTrianglesPerEdgeChunk": null,
+   "plannedFeaturesPerSector": {
+    "arch": {
+     "min": 0,
+     "mean": 0.2,
+     "p95": 1,
+     "max": 2
+    },
+    "deck": {
+     "min": 17,
+     "mean": 17,
+     "p95": 17,
+     "max": 17
+    },
+    "drone": {
+     "min": 0,
+     "mean": 3.7,
+     "p95": 12,
+     "max": 15
+    },
+    "fence": {
+     "min": 0,
+     "mean": 0.2,
+     "p95": 1,
+     "max": 1
+    },
+    "fuel": {
+     "min": 2,
+     "mean": 6.1,
+     "p95": 11,
+     "max": 14
+    },
+    "gate": {
+     "min": 0,
+     "mean": 1.6,
+     "p95": 3,
+     "max": 5
+    },
+    "heavyTurret": {
+     "min": 0,
+     "mean": 1.8,
+     "p95": 5,
+     "max": 8
+    },
+    "mine": {
+     "min": 6,
+     "mean": 17.7,
+     "p95": 26,
+     "max": 33
+    },
+    "parked": {
+     "min": 0,
+     "mean": 0.8,
+     "p95": 5,
+     "max": 9
+    },
+    "radar": {
+     "min": 0,
+     "mean": 1,
+     "p95": 2,
+     "max": 4
+    },
+    "silo": {
+     "min": 0,
+     "mean": 0.9,
+     "p95": 2,
+     "max": 3
+    },
+    "turret": {
+     "min": 0,
+     "mean": 3.1,
+     "p95": 6,
+     "max": 10
+    },
+    "wall:notch": {
+     "min": 0,
+     "mean": 0.4,
+     "p95": 1,
+     "max": 2
+    },
+    "wall:pillars": {
+     "min": 0,
+     "mean": 0.3,
+     "p95": 2,
+     "max": 3
+    },
+    "wall:slot": {
+     "min": 0,
+     "mean": 0.5,
+     "p95": 1,
+     "max": 2
+    },
+    "wall:stagger": {
+     "min": 0,
+     "mean": 0.1,
+     "p95": 1,
+     "max": 1
+    },
+    "wall:window": {
+     "min": 0,
+     "mean": 0.5,
+     "p95": 2,
+     "max": 2
+    }
+   }
+  },
+  "7": {
+   "name": "THE IRON SENTINEL",
+   "sub": "FORTRESS CORE",
+   "kind": "boss",
+   "chunkSamples": 480,
+   "perChunk": {
+    "triangles": {
+     "min": 1304,
+     "mean": 1311.2,
+     "p95": 1328,
+     "max": 1328
+    },
+    "draws": {
+     "min": 6,
+     "mean": 6,
+     "p95": 6,
+     "max": 6
+    },
+    "bytes": {
+     "min": 235584,
+     "mean": 236534.4,
+     "p95": 238752,
+     "max": 238752
+    },
+    "featureOwnedTriangles": {
+     "min": 0,
+     "mean": 0,
+     "p95": 0,
+     "max": 0
+    },
+    "featureOwnedDraws": {
+     "min": 0,
+     "mean": 0,
+     "p95": 0,
+     "max": 0
+    }
+   },
+   "highWindowTriangles": {
+    "min": 10456,
+    "mean": 10489.5,
+    "p95": 10504,
+    "max": 10504
+   },
+   "methods": {
+    "_arena": {
+     "calls": 480,
+     "trianglesPerCall": 1311.2,
+     "maxPerCall": 1328,
+     "trianglesPerChunk": 1311.2,
+     "buckets": [
+      "dark",
+      "deck",
+      "hull",
+      "neon",
+      "paint",
+      "spin"
+     ]
+    },
+    "_sectorEdges": {
+     "calls": 480,
+     "trianglesPerCall": 0,
+     "maxPerCall": 0,
+     "trianglesPerChunk": 0,
+     "buckets": []
+    }
+   },
+   "features": {},
+   "sectorEdgeTrianglesPerEdgeChunk": null,
+   "plannedFeaturesPerSector": {
+    "arena": {
+     "min": 10,
+     "mean": 10,
+     "p95": 10,
+     "max": 10
+    },
+    "boss": {
+     "min": 1,
+     "mean": 1,
+     "p95": 1,
+     "max": 1
+    },
+    "fuel": {
+     "min": 2,
+     "mean": 2,
+     "p95": 2,
+     "max": 2
+    }
+   }
+  }
+ }
+}

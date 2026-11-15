@@ -1,0 +1,102 @@
+{
+  "viewedAt": "2026-11-15T07:41:58.714050+00:00",
+  "method": "view_image of actual native PNGs and before/after nine-view contact sheets",
+  "files": [
+    {
+      "name": "desktop-hud",
+      "scene": "desktop-classic",
+      "frames": [
+        {
+          "phase": "before",
+          "sha256": "00d7833325dca133f5a4624bf7fbfc485ff4a07e143d5a0c5b29376e0a2ee9f5"
+        },
+        {
+          "phase": "after",
+          "sha256": "7b39619512fd6c7f458c1e23cc9d24ee7bbae88812e21b1d0c1fc6045294d351"
+        }
+      ],
+      "file": "evidence/desktop-hud.png",
+      "sha256": "d43a574834c6e39f2b680f5e7e171e6d4daed9ad8c07aadfd8083a124aaa1740"
+    },
+    {
+      "name": "portrait-hud",
+      "scene": "portrait-modern",
+      "frames": [
+        {
+          "phase": "before",
+          "sha256": "612f5ddfa4a4276991ad2a529bd9970945cd59be2f7eaf02f32d6ddee0fbdee0"
+        },
+        {
+          "phase": "after",
+          "sha256": "deedfc1549290dd533d7b4cb3f3abe88bbff7440ac8a036f2c7cf0609d44fc6f"
+        }
+      ],
+      "file": "evidence/portrait-hud.png",
+      "sha256": "81f89a9277a25231698c5db6f22e3c7db75d2029a46f5a80d0e02022d437d4fc"
+    },
+    {
+      "name": "landscape-hud",
+      "scene": "landscape-chase",
+      "frames": [
+        {
+          "phase": "before",
+          "sha256": "f749aa44808a84d95e368e6cb4fa757d7a43c4cb69c1f2af2d019340c42c5b57"
+        },
+        {
+          "phase": "after",
+          "sha256": "49dcb00e2f64ab37f2516ab3f10f13937381862b34d86757cb98a2b61bd9e4e6"
+        }
+      ],
+      "file": "evidence/landscape-hud.png",
+      "sha256": "ffc0d811273ea0ebe9b6573499340bfe272e8326af90875b572bb574e08d45d1"
+    },
+    {
+      "name": "systems-focus",
+      "scene": "desktop-settings",
+      "frames": [
+        {
+          "phase": "before",
+          "sha256": "a3c9c4fbbcfe00ece3a4e1ca31b3e8785a997ae3a3216fc02717546d921f0067"
+        },
+        {
+          "phase": "after",
+          "sha256": "78b9791875090649ccd0ebb23ed16cafe492c4665c4491409c7859aefb554127"
+        }
+      ],
+      "file": "evidence/systems-focus.png",
+      "sha256": "35abc5de65d2036e37fe0d31905a7ea382490db0c9ea202c8f4fa417c5efc8ec"
+    },
+    {
+      "name": "reduced-motion-results",
+      "scene": "portrait-results",
+      "frames": [
+        {
+          "phase": "before",
+          "sha256": "dd3055bc54a823ec0386c991d8db82344cbf1a539538d7837c56269013a49258"
+        },
+        {
+          "phase": "after",
+          "sha256": "27c154e789e5ba7eef67b081ed9a561d8ea561d395551c47307be0ec83cc9cee"
+        }
+      ],
+      "file": "evidence/reduced-motion-results.png",
+      "sha256": "d06ba6f2e9c934ac8d426d6c7991651fe9b17d135c3491c30761c8a90711b21f"
+    }
+  ],
+  "allRigsAtAllViewportsViewed": true,
+  "observations": [
+    "Portrait boss strip overlaps chain before and clears it after.",
+    "Short landscape boss bar used to intrude into score/sector space; final upper-center strip is separate.",
+    "Critical gauge labels now give a text state, with unchanged thresholds.",
+    "Reduced-motion warning was invisible before; remains steady after.",
+    "Reduced-motion result rows were blank before; after shows score, code and all eight numbered grades.",
+    "SYSTEMS labels/descriptions are larger and arrow focus is amber; selected row and tab order are retained.",
+    "World mood, silhouettes, geometry, source camera matrices and projection remain consistent; no lighting change justified."
+  ],
+  "limits": [
+    "Synthetic critical/boss HUD over seeded sector-1 world, not a natural boss encounter.",
+    "START owner baseline is source-reconstructed against current shared non-owned code/assets.",
+    "Native SwiftShader captures do not establish physical FPS, GPU memory or assistive-technology acceptance.",
+    "No human/device retest requested; user-reported acceptance retained."
+  ]
+}

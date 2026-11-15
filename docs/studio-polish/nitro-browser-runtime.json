@@ -1,0 +1,13 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "status": "completed_native_chromium_game_screenshot_verified",
+  "threadId": "mcp:launch:f3ba81f576b05f769ac2bdad2f173f7cf0cc4632fb131918b36f3476355faebd",
+  "scope": "Native Linux browser QA dependency repair only; no game edits",
+  "wrapper": "/home/knotzuni/code/KnotzAxxon/asset-work/studio-browser-tools/bin/kz-pw",
+  "envFile": "/home/knotzuni/code/KnotzAxxon/asset-work/studio-browser-tools/bin/kz-browser-env.sh",
+  "sharedT3Preview": "Still unavailable; root system dependencies would be required but standalone wrapper is sufficient.",
+  "systemChanges": false,
+  "softwareWebGL2": true,
+  "screenshotTimeoutMs": 120000
+}

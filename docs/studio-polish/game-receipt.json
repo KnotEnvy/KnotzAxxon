@@ -1,0 +1,19 @@
+{
+  "archive": "/home/knotz2/code/KnotzAxxon-archive/2026-11-14/studio-polish/nitrobliss-studio-game-0ed9d2c-20261115.tar.gz",
+  "archiveSha256": "faa8e62419fa2b33e68b8761acb9dd9d4cb6b82f5c551982aeb47e96de4341ce",
+  "payloadFilesVerified": 21,
+  "baseRevision": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
+  "applied": true,
+  "receiverTestsPassed": 150,
+  "receiverBuild": "passed",
+  "receiverReleaseSmoke": "passed:desktop,portrait,landscape;27 runtime resources/34 served hashes matchdist",
+  "workerTestsPassedInSharedWorkspace": 155,
+  "workerSiblingTestsIncluded": 6,
+  "rootAdditionalRegressionTests": 1,
+  "rootReviewChanges": [
+    "Cross-platform fileURLToPath for test fixture spawning.",
+    "Suppress gamepad edges on first focused sample after blur,including suspended background rAF."
+  ],
+  "published": false,
+  "receiverRuntimeProcessExit": 0
+}

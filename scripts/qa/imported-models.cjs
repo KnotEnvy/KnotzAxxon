@@ -18,6 +18,9 @@ const productionPreview = !process.argv.includes('--legacy');
    const {Vector3,Scene,Matrix4,Quaternion}=await import('/node_modules/three/build/three.module.js');
    const {game,engine}=window.KZ;engine.stop();game.start({seed:123});
    const check=(ok,msg)=>{if(!ok)throw Error(msg);};
+   const environmentKit=await import('/src/world/EnvironmentKit.js');
+   check(environmentKit.environmentKitReady()===productionPreview,'Environment kit enabled on default path and absent on legacy path');
+   if(productionPreview)check(environmentKit.environmentKitParts().size===175,'Environment kit part binding');
    check(game.player.model.name==='hero-interceptor-imported','Selected fighter was not loaded');
    check(game.player.model.userData.engines.length===2,'Engine binding');
    check(game.player.model.userData.silhouette.geometry.attributes.position.count>0,'Occlusion silhouette');
@@ -511,6 +514,9 @@ const productionPreview = !process.argv.includes('--legacy');
    landmark.root.removeFromParent();
    for(const m of [game.materials.hull,game.materials.darkMetal,game.materials.neonVertex])m.removeEventListener('dispose',onShared);
    const carrier={carrierTriangles,chunks:carrierChunks,radarVertices,chunkGeometriesDisposed:carrierRetired};
+   // The following prop references predate the authored architecture layer.
+   // Isolate these approved substitutions so downstream equality stays strict.
+   if(productionPreview)environmentKit.disposeEnvironmentKit();
    const {Fortress:SourceFortress}=await import('/assets-source/production/asteroids/initial/reference/src/world/Fortress.js');
    const asteroidChunks=[];
    const sourceMaterials=[game.materials.hull,game.materials.darkMetal,game.materials.neonVertex,game.materials.rock];
@@ -829,7 +835,11 @@ const productionPreview = !process.argv.includes('--legacy');
     sceneryResults[method==='_crates'?'cargoKit':'coveredFighter']={trials,props:trials.reduce((n,t)=>n+t.props,0),sourceParity:'Original arguments,RNG,surfaces,paint,emitters,outside-prop buffers and merged hull retirement'};
    }
    const dreadnought={landmarkTriangles,chunks,rngChecks:rngChecks.length,chunkGeometriesDisposed:landmarkDisposed,sharedDisposals};
-   return {selectedFighter:game.player.model.name,groundTargets:['turret','radar','silo','fuel'],productionPreview,...sceneryResults,fuelDepot,bunker,flakGun,coolingStack,antenna,wreckage,asteroids,carrier,dreadnought,missilePool,parkedFighter,pickupChecks,flyers,heavyTurret,mine,batch,iterations:results};
+   if(productionPreview){
+    const {GLTFLoader}=await import('/node_modules/three/examples/jsm/loaders/GLTFLoader.js');
+    check(await environmentKit.loadEnvironmentKit(new GLTFLoader(),'/models/environment/'),'Environment kit restored after isolated prop proofs');
+   }
+   return {selectedFighter:game.player.model.name,groundTargets:['turret','radar','silo','fuel'],productionPreview,environmentKitParts:environmentKit.environmentKitParts().size,...sceneryResults,fuelDepot,bunker,flakGun,coolingStack,antenna,wreckage,asteroids,carrier,dreadnought,missilePool,parkedFighter,pickupChecks,flyers,heavyTurret,mine,batch,iterations:results};
   },productionPreview);
   if(errors.length)throw Error(errors.join('\n'));
   fs.mkdirSync('artifacts/imported-models',{recursive:true});
@@ -1010,11 +1020,13 @@ const productionPreview = !process.argv.includes('--legacy');
     const {importedCargoTemplates}=await import('/src/render/ImportedCargo.js');
     const {importedCoveredFighterTemplates}=await import('/src/render/ImportedCoveredFighter.js');
     const cargoGeometries=importedCargoTemplates(),coveredGeometries=importedCoveredFighterTemplates();
-    [...cargoGeometries,...coveredGeometries].forEach(g=>geometries.add(g));
+    const {environmentKitParts}=await import('/src/world/EnvironmentKit.js');
+    const environmentGeometries=[...environmentKitParts().values()];
+    [...cargoGeometries,...coveredGeometries,...environmentGeometries].forEach(g=>geometries.add(g));
     const counts=new Map();for(const g of geometries)g.addEventListener('dispose',()=>counts.set(g,(counts.get(g)||0)+1));
     disposeImportedModels();disposeImportedModels();
     if(![...geometries].every(g=>counts.get(g)===1))throw Error('Asteroid template shutdown exactly once');
-    return {geometries:asteroidGeometryCount,antennaGeometries:antennaGeometries.length,bunkerGeometries:bunkerGeometries.length,fuelDepotGeometries:fuelDepotGeometries.length,cargoGeometries:cargoGeometries.length,coveredGeometries:coveredGeometries.length,disposedExactlyOnce:true};
+    return {geometries:asteroidGeometryCount,antennaGeometries:antennaGeometries.length,bunkerGeometries:bunkerGeometries.length,fuelDepotGeometries:fuelDepotGeometries.length,cargoGeometries:cargoGeometries.length,coveredGeometries:coveredGeometries.length,environmentGeometries:environmentGeometries.length,disposedExactlyOnce:true};
    });
    fs.writeFileSync('artifacts/imported-models/production-report.json',JSON.stringify({...report,errors},null,2)+'\n');
   }

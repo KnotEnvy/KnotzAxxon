@@ -1,0 +1,150 @@
+{
+  "startedAt": "2026-11-15T07:51:54.140Z",
+  "checks": [
+    {
+      "fixture": "desktop",
+      "settings_space_once": true,
+      "live_sampling": {
+        "expected": 4,
+        "max": 4,
+        "aniso": 4,
+        "maps": [
+          4,
+          4,
+          4
+        ]
+      },
+      "amber_focus": true,
+      "tab_order": true,
+      "pause_settings_resume": true,
+      "menu_gamepad_actions": true,
+      "reduced_motion_warning_and_results": true,
+      "results_fit": {
+        "overflow": false,
+        "rows": [
+          {
+            "opacity": "1",
+            "overflow": false
+          },
+          {
+            "opacity": "1",
+            "overflow": false
+          }
+        ],
+        "chips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "retry": true,
+      "normal_warning_animation": true
+    },
+    {
+      "fixture": "portrait",
+      "settings_space_once": true,
+      "live_sampling": {
+        "expected": 4,
+        "max": 4,
+        "aniso": 4,
+        "maps": [
+          4,
+          4,
+          4
+        ]
+      },
+      "amber_focus": true,
+      "tab_order": true,
+      "pause_settings_resume": true,
+      "menu_gamepad_actions": true,
+      "reduced_motion_warning_and_results": true,
+      "results_fit": {
+        "overflow": false,
+        "rows": [
+          {
+            "opacity": "1",
+            "overflow": false
+          },
+          {
+            "opacity": "1",
+            "overflow": false
+          }
+        ],
+        "chips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "retry": true,
+      "normal_warning_animation": true
+    },
+    {
+      "fixture": "landscape",
+      "settings_space_once": true,
+      "live_sampling": {
+        "expected": 4,
+        "max": 4,
+        "aniso": 4,
+        "maps": [
+          4,
+          4,
+          4
+        ]
+      },
+      "amber_focus": true,
+      "tab_order": true,
+      "pause_settings_resume": true,
+      "menu_gamepad_actions": true,
+      "reduced_motion_warning_and_results": true,
+      "results_fit": {
+        "overflow": false,
+        "rows": [
+          {
+            "opacity": "1",
+            "overflow": false
+          },
+          {
+            "opacity": "1",
+            "overflow": false
+          }
+        ],
+        "chips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "retry": true,
+      "normal_warning_animation": true
+    }
+  ],
+  "errors": [],
+  "lastWarning": {
+    "fixture": "landscape",
+    "class": "warn on",
+    "opacity": "1",
+    "animation": "none",
+    "reduce": true,
+    "timer": 30,
+    "cell": true,
+    "state": "playing",
+    "screen": null
+  },
+  "endedAt": "2026-11-15T07:54:56.607Z"
+}

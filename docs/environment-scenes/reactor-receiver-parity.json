@@ -1,0 +1,160 @@
+{
+ "method": "Paired actual Fortress._buildChunk runs (unchanged source vs adapter) on identical Level plans; CPU only, stub materials (identity checked), shipped cooling/cargo templates loaded. Not GPU/WebGL evidence.",
+ "seeds": [
+  1,
+  2,
+  3,
+  7,
+  11,
+  42,
+  99,
+  123,
+  777,
+  2026
+ ],
+ "loops": [
+  0,
+  1,
+  3
+ ],
+ "summary": {
+  "reactorChunkPairs": 570,
+  "nonReactorChunkPairs": 180,
+  "gatesCompared": 66,
+  "gateMotionSamples": 16896,
+  "emittersCompared": 2769,
+  "surfacesCompared": 19554,
+  "slicesCompared": 2406,
+  "drawDelta": {
+   "0": 501,
+   "-1": 69
+  },
+  "perChunk": [],
+  "levelPlansCompared": 30,
+  "spinTuples": 1766,
+  "fanPicturesYielded": 16,
+  "drawDeltaCases": [
+   {
+    "seed": 1,
+    "loop": 0,
+    "chunk": 51,
+    "d": -1,
+    "missing": [],
+    "added": []
+   },
+   {
+    "seed": 1,
+    "loop": 0,
+    "chunk": 52,
+    "d": -1,
+    "missing": [],
+    "added": []
+   },
+   {
+    "seed": 1,
+    "loop": 0,
+    "chunk": 54,
+    "d": -1,
+    "missing": [],
+    "added": []
+   },
+   {
+    "seed": 1,
+    "loop": 0,
+    "chunk": 56,
+    "d": -1,
+    "missing": [],
+    "added": []
+   },
+   {
+    "seed": 2,
+    "loop": 0,
+    "chunk": 50,
+    "d": -1,
+    "missing": [],
+    "added": []
+   },
+   {
+    "seed": 2,
+    "loop": 0,
+    "chunk": 52,
+    "d": -1,
+    "missing": [],
+    "added": []
+   },
+   {
+    "seed": 2,
+    "loop": 0,
+    "chunk": 57,
+    "d": -1,
+    "missing": [],
+    "added": []
+   },
+   {
+    "seed": 3,
+    "loop": 0,
+    "chunk": 50,
+    "d": -1,
+    "missing": [],
+    "added": []
+   },
+   {
+    "seed": 3,
+    "loop": 0,
+    "chunk": 55,
+    "d": -1,
+    "missing": [],
+    "added": []
+   },
+   {
+    "seed": 7,
+    "loop": 0,
+    "chunk": 57,
+    "d": -1,
+    "missing": [],
+    "added": []
+   },
+   {
+    "seed": 7,
+    "loop": 0,
+    "chunk": 61,
+    "d": -1,
+    "missing": [],
+    "added": []
+   },
+   {
+    "seed": 11,
+    "loop": 0,
+    "chunk": 56,
+    "d": -1,
+    "missing": [],
+    "added": []
+   }
+  ],
+  "sectorEdgesSourceCalls": 19
+ },
+ "lifecycle": {
+  "streamedChunksAlive": 8,
+  "chunkGeometriesDisposedOnClear": 48,
+  "chunkGeometriesTracked": 48,
+  "templatesDisposedByChunkRetirement": 0,
+  "overridesBeforeShutdown": [
+   "_trenchWalls",
+   "_wallDressing",
+   "_coolingStack",
+   "_deckProps",
+   "_skyline",
+   "_sectorEdges",
+   "_rsCompose",
+   "_gate"
+  ],
+  "overridesAfterShutdown": [],
+  "templateCount": 70,
+  "templateDisposeCounts": [
+   1
+  ],
+  "templatesDisposedOnce": true
+ },
+ "failures": [],
+ "passed": true
+}

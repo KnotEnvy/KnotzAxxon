@@ -102,13 +102,14 @@ async function layout(page) {
       await context.close();
     }
     const requiredModels=[
+      'models/environment/environment-kit.glb',
       ...['player','sentinel','turret','radar','silo','fuel'].map(n=>'models/'+n+'.glb'),
       ...['drone','interceptor','heavy-turret','mine','shield-pickup','parked-fighter','spread-pickup','repair-pickup','fuel-pickup','missile','dreadnought','asteroids','bunker','cargo-kit'].map(n=>'models/production/'+n+'.glb'),
       ...['carrier-template.json','carrier-template.bin','wreckage-templates.json','cooling-stack.template.json','flak-gun.template.json','fuel-depot.template.json','covered-fighter.recipe.json'].map(n=>'models/production/'+n),
     ];
     for(const name of requiredModels)assert(loadedModels.has(new global.URL(name,URL).pathname),'Default release failed to load '+name);
     report.default_model_assets=[...loadedModels].sort();
-    const modelFiles=[...['player','sentinel','turret','radar','silo','fuel'].map(n=>'models/'+n+'.glb'),...fs.readdirSync('dist/models/production').filter(n=>/\.(glb|json|bin)$/.test(n)).map(n=>'models/production/'+n)];
+    const modelFiles=['models/environment/environment-kit.glb',...['player','sentinel','turret','radar','silo','fuel'].map(n=>'models/'+n+'.glb'),...fs.readdirSync('dist/models/production').filter(n=>/\.(glb|json|bin)$/.test(n)).map(n=>'models/production/'+n)];
     report.model_hashes=await Promise.all(modelFiles.map(async name=>{
       const response=await fetch(new global.URL(name,URL),{cache:'no-store'});assert(response.ok,'Model HTTP '+response.status+': '+name);
       const actual=Buffer.from(await response.arrayBuffer());

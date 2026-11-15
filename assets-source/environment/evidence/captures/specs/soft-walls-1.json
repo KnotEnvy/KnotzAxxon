@@ -1,0 +1,134 @@
+{
+ "out": "captures/soft-walls-1",
+ "seed": 7,
+ "quality": "high",
+ "width": 1024,
+ "height": 576,
+ "variants": {
+  "source": "environmentKit=0",
+  "kit": ""
+ },
+ "scenes": [
+  [
+   "reactor-core-classic",
+   "classic",
+   3,
+   826,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "reactor-core-modern",
+   "modern",
+   3,
+   826,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "reactor-core-chase",
+   "chase",
+   3,
+   826,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "airfield-tower-classic",
+   "classic",
+   0,
+   640,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "airfield-tower-chase",
+   "chase",
+   0,
+   640,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "battery-director-classic",
+   "classic",
+   1,
+   680,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "battery-director-chase",
+   "chase",
+   1,
+   680,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "citadel-keep-classic",
+   "classic",
+   5,
+   810,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "citadel-keep-chase",
+   "chase",
+   5,
+   810,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "gauntlet-siren-classic",
+   "classic",
+   6,
+   740,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "gauntlet-siren-chase",
+   "chase",
+   6,
+   740,
+   20,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ]
+ ]
+}

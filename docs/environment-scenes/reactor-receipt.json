@@ -1,0 +1,32 @@
+{
+  "verifiedAt": "2026-11-15T09:10:43.884926+00:00",
+  "status": "initial_cpu_verified_pending_real_material_review",
+  "archive": "/home/knotz2/code/KnotzAxxon-archive/2026-11-15/environment-scenes/fable-reactor-spine-initial-20261115T091043Z.tar.gz",
+  "archiveSha256": "69cc631a08a4beb245f677e54ab47c7b9c576b930867f10632fcb159b55d54ec",
+  "archiveFilesReadbackVerified": 179,
+  "frozenContentHashesVerified": 173,
+  "frozenSourceHashesMatchCurrentTree": true,
+  "receiverParity": true,
+  "receiverGlb": true,
+  "proofs": [
+    "reactor-receiver-parity.json",
+    "reactor-receiver-glb.json"
+  ],
+  "imagesInspected": [
+    "devlog/world/seed7-core-classic-kit.png",
+    "devlog/world/seed7-core-classic-source.png",
+    "devlog/world/seed7-gate-chase-kit.png",
+    "devlog/modules/RS_ReactorCore-approach.png"
+  ],
+  "imagesAre": "Flat CPU previews, not WebGL or EEVEE proof",
+  "resourceGate": "RELIC quiet_window reservation exists at receiver inspection; no GPU jobs started.",
+  "productionIntegration": false,
+  "liveChanged": false,
+  "remaining": [
+    "Live material/lighting/shadow/bloom/normal-map proof and scene performance validation",
+    "Near parapet still procedural",
+    "Some core/source-prop intersections and chunk-seam steps disclosed by builder",
+    "Title/attract and boss framing not verified",
+    "Remaining environment queue is unbuilt"
+  ]
+}

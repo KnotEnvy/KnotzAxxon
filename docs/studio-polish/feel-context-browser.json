@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "route": "Escape",
+      "lost": {
+        "game": "paused",
+        "lost": true,
+        "running": false,
+        "frame": 27,
+        "suspended": true
+      },
+      "restored": {
+        "game": "paused",
+        "lost": false,
+        "running": true,
+        "frame": 28,
+        "suspended": false
+      },
+      "manuallyResumed": {
+        "game": "playing",
+        "lost": false,
+        "running": true,
+        "frame": 29,
+        "suspended": false
+      },
+      "touchEdgesCleared": true
+    },
+    {
+      "route": "p",
+      "lost": {
+        "game": "paused",
+        "lost": true,
+        "running": false,
+        "frame": 30,
+        "suspended": true
+      },
+      "restored": {
+        "game": "paused",
+        "lost": false,
+        "running": true,
+        "frame": 31,
+        "suspended": false
+      },
+      "manuallyResumed": {
+        "game": "playing",
+        "lost": false,
+        "running": true,
+        "frame": 33,
+        "suspended": false
+      },
+      "touchEdgesCleared": true
+    },
+    {
+      "route": "resume-button",
+      "lost": {
+        "game": "paused",
+        "lost": true,
+        "running": false,
+        "frame": 35,
+        "suspended": true
+      },
+      "restored": {
+        "game": "paused",
+        "lost": false,
+        "running": true,
+        "frame": 37,
+        "suspended": false
+      },
+      "manuallyResumed": {
+        "game": "playing",
+        "lost": false,
+        "running": true,
+        "frame": 64,
+        "suspended": false
+      },
+      "touchEdgesCleared": true
+    }
+  ],
+  "errors": [],
+  "renderer": "SwiftShader software; no hardware-FPS claim"
+}

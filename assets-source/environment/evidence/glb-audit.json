@@ -1,0 +1,5033 @@
+{
+ "method": "Stdlib-only GLB parse (header, JSON chunk, BIN chunk, accessors); independent of the generator, Blender and three.js.",
+ "modules": {
+  "RS_WallFrame": {
+   "file": "modules/RS_WallFrame.glb",
+   "bytes": 22164,
+   "sha256": "dffe25cf5c24bab0ae9654e4d31c9fcd7c3dc3eceb8b60ce741168a236c6257f",
+   "nodes": 13,
+   "meshes": 13,
+   "materials": 6,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 182,
+   "parts": [
+    {
+     "node": "RS_WallFrame__coping",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      26.8,
+      -0.0,
+      -0.5
+     ],
+     "max": [
+      34.2,
+      0.45,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_WallFrame__pier_cap",
+     "triangles": 16,
+     "vertices": 30,
+     "min": [
+      26.15,
+      1.5,
+      -1.05
+     ],
+     "max": [
+      27.4,
+      1.8,
+      1.05
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_WallFrame__pier_foot",
+     "triangles": 32,
+     "vertices": 60,
+     "min": [
+      25.75,
+      -0.0,
+      -1.62
+     ],
+     "max": [
+      27.4,
+      2.5,
+      1.62
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_WallFrame__pier_head",
+     "triangles": 36,
+     "vertices": 70,
+     "min": [
+      25.8,
+      -0.0,
+      -1.5
+     ],
+     "max": [
+      27.4,
+      1.5,
+      1.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_WallFrame__pier_lamp",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      25.74,
+      0.85,
+      -0.5
+     ],
+     "max": [
+      25.8,
+      1.2,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ffbf69_0.55",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_WallFrame__pier_shaft",
+     "triangles": 12,
+     "vertices": 24,
+     "min": [
+      25.95,
+      -0.0,
+      -1.3
+     ],
+     "max": [
+      27.4,
+      1.0,
+      1.3
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_WallFrame__plinth",
+     "triangles": 14,
+     "vertices": 28,
+     "min": [
+      26.3,
+      -0.0,
+      -0.5
+     ],
+     "max": [
+      27.4,
+      1.5,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_WallFrame__rail",
+     "triangles": 6,
+     "vertices": 12,
+     "min": [
+      26.95,
+      -0.25,
+      -0.5
+     ],
+     "max": [
+      27.4,
+      0.25,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_WallFrame__sign_arm",
+     "triangles": 8,
+     "vertices": 16,
+     "min": [
+      26.88,
+      -0.1,
+      -0.1
+     ],
+     "max": [
+      27.4,
+      0.1,
+      0.1
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_WallFrame__sign_hood",
+     "triangles": 12,
+     "vertices": 24,
+     "min": [
+      26.15,
+      -0.0,
+      -0.5
+     ],
+     "max": [
+      27.4,
+      0.34,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_WallFrame__stile",
+     "triangles": 6,
+     "vertices": 12,
+     "min": [
+      27.0,
+      -0.0,
+      -0.25
+     ],
+     "max": [
+      27.4,
+      1.0,
+      0.25
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_WallFrame__win_frame",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      27.2,
+      -0.5,
+      -0.5
+     ],
+     "max": [
+      27.4,
+      0.5,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_56606c_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_WallFrame__win_glass",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      27.14,
+      -0.5,
+      -0.5
+     ],
+     "max": [
+      27.2,
+      0.5,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ffffff_1.00",
+     "bucket": "neon",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     25.74,
+     -0.5,
+     -1.62
+    ],
+    "max": [
+     34.2,
+     2.5,
+     1.62
+    ]
+   }
+  },
+  "RS_PipeRun": {
+   "file": "modules/RS_PipeRun.glb",
+   "bytes": 17352,
+   "sha256": "f6171771b7f041038722a38c594a4e0ae68b5165bdd4544590583cbc848a90fc",
+   "nodes": 8,
+   "meshes": 8,
+   "materials": 2,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 344,
+   "parts": [
+    {
+     "node": "RS_PipeRun__collar",
+     "triangles": 22,
+     "vertices": 24,
+     "min": [
+      -0.4619,
+      -0.4619,
+      -0.26
+     ],
+     "max": [
+      0.4619,
+      0.4619,
+      0.02
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8894a4_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_PipeRun__elbow_end",
+     "triangles": 64,
+     "vertices": 58,
+     "min": [
+      -0.34,
+      -0.4503,
+      -0.0
+     ],
+     "max": [
+      1.05,
+      0.4503,
+      1.12
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_PipeRun__elbow_start",
+     "triangles": 64,
+     "vertices": 58,
+     "min": [
+      -0.34,
+      -0.4503,
+      -1.12
+     ],
+     "max": [
+      1.05,
+      0.4503,
+      0.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_PipeRun__main",
+     "triangles": 20,
+     "vertices": 20,
+     "min": [
+      -0.9511,
+      -1.0,
+      -0.0
+     ],
+     "max": [
+      0.9511,
+      1.0,
+      1.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_PipeRun__riser",
+     "triangles": 16,
+     "vertices": 16,
+     "min": [
+      -0.26,
+      -0.0,
+      -0.26
+     ],
+     "max": [
+      0.26,
+      1.0,
+      0.26
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_PipeRun__riser_head",
+     "triangles": 80,
+     "vertices": 56,
+     "min": [
+      26.14,
+      0.5,
+      -0.26
+     ],
+     "max": [
+      28.2,
+      1.26,
+      0.26
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_PipeRun__riser_sleeve",
+     "triangles": 28,
+     "vertices": 32,
+     "min": [
+      -0.4,
+      -0.42,
+      -0.4
+     ],
+     "max": [
+      0.4,
+      0.14,
+      0.4
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8894a4_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_PipeRun__riser_tee",
+     "triangles": 50,
+     "vertices": 56,
+     "min": [
+      -0.425,
+      -0.425,
+      -0.42
+     ],
+     "max": [
+      0.425,
+      0.75,
+      0.42
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8894a4_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -0.9511,
+     -1.0,
+     -1.12
+    ],
+    "max": [
+     28.2,
+     1.26,
+     1.12
+    ]
+   }
+  },
+  "RS_Gallery": {
+   "file": "modules/RS_Gallery.glb",
+   "bytes": 5856,
+   "sha256": "95583cd09393700c6b1e27cf0dc73278b074ea7db28e775b15ed31dc03d8b7dc",
+   "nodes": 4,
+   "meshes": 4,
+   "materials": 1,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 40,
+   "parts": [
+    {
+     "node": "RS_Gallery__brace",
+     "triangles": 8,
+     "vertices": 18,
+     "min": [
+      26.1,
+      -2.0,
+      -0.09
+     ],
+     "max": [
+      27.4,
+      -0.3,
+      0.09
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_Gallery__deck",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      25.95,
+      -0.3,
+      -0.5
+     ],
+     "max": [
+      27.4,
+      0.0,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_Gallery__post",
+     "triangles": 8,
+     "vertices": 16,
+     "min": [
+      25.98,
+      -0.0,
+      -0.05
+     ],
+     "max": [
+      26.08,
+      1.0,
+      0.05
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_Gallery__rail",
+     "triangles": 14,
+     "vertices": 28,
+     "min": [
+      25.97,
+      -0.0,
+      -0.5
+     ],
+     "max": [
+      26.09,
+      1.12,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     25.95,
+     -2.0,
+     -0.5
+    ],
+    "max": [
+     27.4,
+     1.12,
+     0.5
+    ]
+   }
+  },
+  "RS_ServiceBay": {
+   "file": "modules/RS_ServiceBay.glb",
+   "bytes": 16996,
+   "sha256": "e5a8d294716a3f883a6871893c816acca1061fc4a45894f73c535742f19a7059",
+   "nodes": 10,
+   "meshes": 10,
+   "materials": 9,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 116,
+   "parts": [
+    {
+     "node": "RS_ServiceBay__back_light",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      30.38,
+      0.08,
+      -0.5
+     ],
+     "max": [
+      30.58,
+      0.3,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ffd9a0_0.70",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ServiceBay__ceiling_light",
+     "triangles": 12,
+     "vertices": 24,
+     "min": [
+      27.45,
+      -0.14,
+      -0.5
+     ],
+     "max": [
+      27.75,
+      -0.02,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff8a3a_0.85",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ServiceBay__floor",
+     "triangles": 2,
+     "vertices": 4,
+     "min": [
+      26.3,
+      0.04,
+      -0.5
+     ],
+     "max": [
+      30.6,
+      0.04,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_grate_7f8a99_1.00",
+     "bucket": "grate",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ServiceBay__hazard",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      26.5,
+      0.45,
+      -0.5
+     ],
+     "max": [
+      26.55,
+      1.05,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hazard_ffffff_1.00",
+     "bucket": "hazard",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ServiceBay__header",
+     "triangles": 20,
+     "vertices": 36,
+     "min": [
+      26.55,
+      -0.0,
+      -0.5
+     ],
+     "max": [
+      27.4,
+      1.5,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ServiceBay__jamb",
+     "triangles": 12,
+     "vertices": 24,
+     "min": [
+      26.55,
+      -0.0,
+      -0.45
+     ],
+     "max": [
+      27.4,
+      1.0,
+      0.45
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ServiceBay__shell",
+     "triangles": 8,
+     "vertices": 16,
+     "min": [
+      27.0,
+      -0.0,
+      -0.5
+     ],
+     "max": [
+      30.6,
+      1.0,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_303844_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ServiceBay__shutter",
+     "triangles": 22,
+     "vertices": 44,
+     "min": [
+      28.42,
+      0.46,
+      -0.5
+     ],
+     "max": [
+      28.62,
+      1.0,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_56606c_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ServiceBay__strobe",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      26.7,
+      -0.0,
+      -0.275
+     ],
+     "max": [
+      27.25,
+      0.55,
+      0.275
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff8a3a_1.60",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ServiceBay__strobe_housing",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      26.66,
+      -0.0,
+      -0.34
+     ],
+     "max": [
+      27.3,
+      0.3,
+      0.34
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     26.3,
+     -0.14,
+     -0.5
+    ],
+    "max": [
+     30.6,
+     1.5,
+     0.5
+    ]
+   }
+  },
+  "RS_FanHousing": {
+   "file": "modules/RS_FanHousing.glb",
+   "bytes": 18700,
+   "sha256": "73acc2aef9cf4557a18857b72428433838c0e4cc80115ddf3991bb344d810629",
+   "nodes": 5,
+   "meshes": 5,
+   "materials": 5,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 296,
+   "parts": [
+    {
+     "node": "RS_FanHousing__cowl",
+     "triangles": 96,
+     "vertices": 84,
+     "min": [
+      25.95,
+      -1.2171,
+      -1.2171
+     ],
+     "max": [
+      27.4,
+      1.2171,
+      1.2171
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_FanHousing__mount",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      27.26,
+      -1.4,
+      -1.4
+     ],
+     "max": [
+      27.4,
+      1.4,
+      1.4
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_5a6878_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_FanHousing__rotor",
+     "triangles": 122,
+     "vertices": 252,
+     "min": [
+      -0.12,
+      -0.8952,
+      -0.9042
+     ],
+     "max": [
+      0.1141,
+      0.8952,
+      0.9042
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_spin_a8b4c2_1.00",
+     "bucket": "spin",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_FanHousing__stator",
+     "triangles": 58,
+     "vertices": 96,
+     "min": [
+      26.62,
+      -0.5433,
+      -0.891
+     ],
+     "max": [
+      27.24,
+      1.0,
+      0.891
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_FanHousing__void",
+     "triangles": 10,
+     "vertices": 12,
+     "min": [
+      27.24,
+      -0.9659,
+      -0.9659
+     ],
+     "max": [
+      27.24,
+      0.9659,
+      0.9659
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_0c1418_1.00",
+     "bucket": "neon",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -0.12,
+     -1.4,
+     -1.4
+    ],
+    "max": [
+     27.4,
+     1.4,
+     1.4
+    ]
+   }
+  },
+  "RS_ExhaustTrunk": {
+   "file": "modules/RS_ExhaustTrunk.glb",
+   "bytes": 19256,
+   "sha256": "a5b194b4c6fc7ef620049b91a99b3721bb85e533701631233d7633fa13cee528",
+   "nodes": 8,
+   "meshes": 8,
+   "materials": 6,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 216,
+   "parts": [
+    {
+     "node": "RS_ExhaustTrunk__house_body",
+     "triangles": 12,
+     "vertices": 24,
+     "min": [
+      27.05,
+      0.0,
+      -0.0
+     ],
+     "max": [
+      34.3,
+      1.0,
+      4.4
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ExhaustTrunk__house_lamp",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      27.5,
+      0.0,
+      2.0
+     ],
+     "max": [
+      27.9,
+      0.4,
+      2.4
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff3d55_1.40",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ExhaustTrunk__house_louvre",
+     "triangles": 36,
+     "vertices": 72,
+     "min": [
+      26.84,
+      0.0,
+      0.9
+     ],
+     "max": [
+      27.1,
+      1.64,
+      3.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_56606c_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ExhaustTrunk__house_roof",
+     "triangles": 88,
+     "vertices": 144,
+     "min": [
+      26.65,
+      -0.0,
+      -0.3
+     ],
+     "max": [
+      34.55,
+      2.1,
+      4.7
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ExhaustTrunk__joint",
+     "triangles": 38,
+     "vertices": 72,
+     "min": [
+      27.75,
+      0.45,
+      -0.4
+     ],
+     "max": [
+      33.16,
+      3.46,
+      0.4
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ExhaustTrunk__trunk",
+     "triangles": 12,
+     "vertices": 24,
+     "min": [
+      29.6,
+      0.9,
+      -0.5
+     ],
+     "max": [
+      33.0,
+      3.3,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ExhaustTrunk__vent",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      30.4,
+      3.3,
+      -1.2
+     ],
+     "max": [
+      32.2,
+      3.78,
+      1.2
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_5a6878_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ExhaustTrunk__vent_glow",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      30.34,
+      3.4,
+      -1.0
+     ],
+     "max": [
+      30.4,
+      3.68,
+      1.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff7a3a_0.80",
+     "bucket": "neon",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     26.65,
+     0.0,
+     -1.2
+    ],
+    "max": [
+     34.55,
+     3.78,
+     4.7
+    ]
+   }
+  },
+  "RS_GateHousing": {
+   "file": "modules/RS_GateHousing.glb",
+   "bytes": 51188,
+   "sha256": "515210bbffad5997abbbaeaefeb869d33c12293917d85a6bf075ab6145a37999",
+   "nodes": 11,
+   "meshes": 11,
+   "materials": 5,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 764,
+   "parts": [
+    {
+     "node": "RS_GateHousing__collar",
+     "triangles": 64,
+     "vertices": 112,
+     "min": [
+      24.2,
+      -0.0,
+      -1.9
+     ],
+     "max": [
+      27.4,
+      0.7,
+      1.9
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "gate-feature",
+     "insideSourceSolid": {
+      "min": [
+       24.2,
+       0.0,
+       -1.9
+      ],
+      "max": [
+       27.4,
+       0.7,
+       1.9
+      ]
+     }
+    },
+    {
+     "node": "RS_GateHousing__emitter",
+     "triangles": 8,
+     "vertices": 16,
+     "min": [
+      24.32,
+      0.24,
+      -1.78
+     ],
+     "max": [
+      27.28,
+      0.46,
+      1.78
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff7a3a_1.30",
+     "bucket": "neon",
+     "owner": "gate-feature",
+     "insideSourceSolid": {
+      "min": [
+       24.15,
+       0.22,
+       -1.95
+      ],
+      "max": [
+       27.45,
+       0.47,
+       1.95
+      ]
+     }
+    },
+    {
+     "node": "RS_GateHousing__lamp_arm",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      -0.07,
+      35.0,
+      -1.7
+     ],
+     "max": [
+      0.07,
+      35.14,
+      -1.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "gate-feature",
+     "insideSourceSolid": {
+      "min": [
+       -0.3,
+       35.0,
+       -1.7
+      ],
+      "max": [
+       0.3,
+       36.6,
+       -1.5
+      ]
+     }
+    },
+    {
+     "node": "RS_GateHousing__manifold",
+     "triangles": 20,
+     "vertices": 20,
+     "min": [
+      -26.9,
+      35.4766,
+      -0.34
+     ],
+     "max": [
+      26.9,
+      36.1234,
+      0.34
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "gate-feature",
+     "insideSourceSolid": {
+      "min": [
+       -27,
+       35,
+       -1.7
+      ],
+      "max": [
+       27,
+       36.6,
+       1.7
+      ]
+     }
+    },
+    {
+     "node": "RS_GateHousing__pylon_bands",
+     "triangles": 40,
+     "vertices": 72,
+     "min": [
+      26.5,
+      11.7,
+      -3.5
+     ],
+     "max": [
+      34.5,
+      24.3,
+      3.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_GateHousing__pylon_beacon",
+     "triangles": 12,
+     "vertices": 24,
+     "min": [
+      30.2,
+      39.6,
+      -0.3
+     ],
+     "max": [
+      30.8,
+      40.2,
+      0.3
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff3d55_1.40",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_GateHousing__pylon_body",
+     "triangles": 16,
+     "vertices": 30,
+     "min": [
+      26.7,
+      -0.0,
+      -3.3
+     ],
+     "max": [
+      34.3,
+      36.6,
+      3.3
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_GateHousing__pylon_cheeks",
+     "triangles": 32,
+     "vertices": 60,
+     "min": [
+      25.9,
+      -0.0,
+      -3.0
+     ],
+     "max": [
+      26.75,
+      35.6,
+      3.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_GateHousing__pylon_crown",
+     "triangles": 54,
+     "vertices": 116,
+     "min": [
+      26.2,
+      36.6,
+      -3.7
+     ],
+     "max": [
+      34.7,
+      39.6,
+      3.7
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_GateHousing__pylon_footing",
+     "triangles": 20,
+     "vertices": 36,
+     "min": [
+      26.2,
+      -0.0,
+      -4.7
+     ],
+     "max": [
+      34.3,
+      6.0,
+      4.7
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_GateHousing__truss",
+     "triangles": 488,
+     "vertices": 976,
+     "min": [
+      -27.0,
+      35.0,
+      -1.7
+     ],
+     "max": [
+      27.0,
+      36.6,
+      1.7
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "gate-feature",
+     "insideSourceSolid": {
+      "min": [
+       -27,
+       35,
+       -1.7
+      ],
+      "max": [
+       27,
+       36.6,
+       1.7
+      ]
+     }
+    }
+   ],
+   "bounds": {
+    "min": [
+     -27.0,
+     -0.0,
+     -4.7
+    ],
+    "max": [
+     34.7,
+     40.2,
+     4.7
+    ]
+   }
+  },
+  "RS_ReactorCore": {
+   "file": "modules/RS_ReactorCore.glb",
+   "bytes": 45016,
+   "sha256": "ab9e29c6fd8a3f3fca2aeefe966ac4f0256f7ba0e841269dc26110604beb982f",
+   "nodes": 12,
+   "meshes": 12,
+   "materials": 7,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 894,
+   "parts": [
+    {
+     "node": "RS_ReactorCore__body",
+     "triangles": 54,
+     "vertices": 108,
+     "min": [
+      25.95,
+      -0.0,
+      -13.0
+     ],
+     "max": [
+      34.6,
+      1.0,
+      13.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ReactorCore__crown",
+     "triangles": 20,
+     "vertices": 36,
+     "min": [
+      25.7,
+      -0.0,
+      -13.35
+     ],
+     "max": [
+      34.9,
+      0.9,
+      13.35
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ReactorCore__dome",
+     "triangles": 338,
+     "vertices": 240,
+     "min": [
+      26.9,
+      0.9,
+      -6.6
+     ],
+     "max": [
+      40.1,
+      10.3,
+      6.6
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ReactorCore__dome_band",
+     "triangles": 40,
+     "vertices": 40,
+     "min": [
+      27.42,
+      3.4,
+      -6.08
+     ],
+     "max": [
+      39.58,
+      3.85,
+      6.08
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff7a3a_0.80",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ReactorCore__drum",
+     "triangles": 40,
+     "vertices": 40,
+     "min": [
+      27.5,
+      -0.0,
+      -6.0
+     ],
+     "max": [
+      39.5,
+      1.0,
+      6.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ReactorCore__fins",
+     "triangles": 24,
+     "vertices": 48,
+     "min": [
+      25.75,
+      -0.0,
+      -7.4
+     ],
+     "max": [
+      25.95,
+      1.0,
+      7.4
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ReactorCore__podium",
+     "triangles": 20,
+     "vertices": 40,
+     "min": [
+      25.75,
+      -0.0,
+      -13.7
+     ],
+     "max": [
+      34.6,
+      5.0,
+      13.7
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ReactorCore__slot_bars",
+     "triangles": 126,
+     "vertices": 252,
+     "min": [
+      26.07,
+      0.229,
+      -5.5
+     ],
+     "max": [
+      26.25,
+      0.811,
+      5.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ReactorCore__slot_glow",
+     "triangles": 6,
+     "vertices": 12,
+     "min": [
+      26.49,
+      0.14,
+      -5.5
+     ],
+     "max": [
+      26.49,
+      0.9,
+      5.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff7a3a_0.78",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ReactorCore__stacks",
+     "triangles": 168,
+     "vertices": 204,
+     "min": [
+      30.1055,
+      8.2,
+      -3.85
+     ],
+     "max": [
+      36.8945,
+      11.2,
+      3.85
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ReactorCore__strobe",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      -0.3,
+      -0.0,
+      -0.3
+     ],
+     "max": [
+      0.3,
+      0.55,
+      0.3
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff3d55_1.60",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "RS_ReactorCore__vent",
+     "triangles": 48,
+     "vertices": 96,
+     "min": [
+      25.8,
+      -0.9,
+      -1.1
+     ],
+     "max": [
+      25.95,
+      0.96,
+      1.1
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_56606c_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -0.3,
+     -0.9,
+     -13.7
+    ],
+    "max": [
+     40.1,
+     11.2,
+     13.7
+    ]
+   }
+  },
+  "EK_Parapet": {
+   "file": "modules/EK_Parapet.glb",
+   "bytes": 11300,
+   "sha256": "64ed323831156915d418c5883475503111c0e745d6bb7631d47dc49ac7952df0",
+   "nodes": 6,
+   "meshes": 6,
+   "materials": 4,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 98,
+   "parts": [
+    {
+     "node": "EK_Parapet__bridge",
+     "triangles": 6,
+     "vertices": 12,
+     "min": [
+      -33.2,
+      2.7,
+      -0.5
+     ],
+     "max": [
+      -27.8,
+      3.19,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "EK_Parapet__bridge_lamp",
+     "triangles": 2,
+     "vertices": 4,
+     "min": [
+      -30.95,
+      3.2,
+      -0.22
+     ],
+     "max": [
+      -30.05,
+      3.2,
+      0.22
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ffbf69_0.50",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "EK_Parapet__channel",
+     "triangles": 44,
+     "vertices": 72,
+     "min": [
+      -34.0,
+      -0.0,
+      -0.5
+     ],
+     "max": [
+      -27.0,
+      3.2,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_c8d2de_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "EK_Parapet__hatch",
+     "triangles": 30,
+     "vertices": 60,
+     "min": [
+      -32.2,
+      2.7,
+      -1.2
+     ],
+     "max": [
+      -29.6,
+      2.92,
+      1.2
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "EK_Parapet__outer_rib",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      -34.0,
+      0.85,
+      -0.7
+     ],
+     "max": [
+      -33.78,
+      2.75,
+      0.7
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "EK_Parapet__tray",
+     "triangles": 6,
+     "vertices": 12,
+     "min": [
+      -28.75,
+      2.7,
+      -0.5
+     ],
+     "max": [
+      -28.1,
+      2.92,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -34.0,
+     -0.0,
+     -1.2
+    ],
+    "max": [
+     -27.0,
+     3.2,
+     1.2
+    ]
+   }
+  },
+  "AF_Hangar": {
+   "file": "modules/AF_Hangar.glb",
+   "bytes": 7148,
+   "sha256": "7e86aefc5280420431f814484be0638cff1bb00630b11ee0569d44603c50fb76",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 66,
+   "parts": [
+    {
+     "node": "AF_Hangar__apron_bar",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      26.6,
+      -0.1,
+      -0.5
+     ],
+     "max": [
+      26.86,
+      -0.02,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ffe8c0_0.60",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Hangar__door_leaf",
+     "triangles": 48,
+     "vertices": 96,
+     "min": [
+      27.47,
+      -0.0,
+      -0.5
+     ],
+     "max": [
+      27.75,
+      1.0,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_9aa6b4_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Hangar__door_track",
+     "triangles": 8,
+     "vertices": 16,
+     "min": [
+      27.42,
+      -0.26,
+      -0.5
+     ],
+     "max": [
+      27.9,
+      -0.06,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     26.6,
+     -0.26,
+     -0.5
+    ],
+    "max": [
+     27.9,
+     1.0,
+     0.5
+    ]
+   }
+  },
+  "AF_Crest": {
+   "file": "modules/AF_Crest.glb",
+   "bytes": 9040,
+   "sha256": "d9d44b59cd31a5747210cb6d6462b619c181b685af6b43e97e84da0f173286a2",
+   "nodes": 4,
+   "meshes": 4,
+   "materials": 2,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 96,
+   "parts": [
+    {
+     "node": "AF_Crest__mast",
+     "triangles": 52,
+     "vertices": 90,
+     "min": [
+      26.32,
+      0.45,
+      -1.0
+     ],
+     "max": [
+      28.3078,
+      6.6,
+      1.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Crest__mast_lamp",
+     "triangles": 20,
+     "vertices": 40,
+     "min": [
+      26.3,
+      6.0,
+      -0.9
+     ],
+     "max": [
+      26.96,
+      6.26,
+      0.9
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ffe8c0_0.62",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Crest__post",
+     "triangles": 8,
+     "vertices": 16,
+     "min": [
+      27.06,
+      0.45,
+      -0.05
+     ],
+     "max": [
+      27.16,
+      1.37,
+      0.05
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Crest__rail",
+     "triangles": 16,
+     "vertices": 32,
+     "min": [
+      27.05,
+      0.92,
+      -0.5
+     ],
+     "max": [
+      27.17,
+      1.49,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     26.3,
+     0.45,
+     -1.0
+    ],
+    "max": [
+     28.3078,
+     6.6,
+     1.0
+    ]
+   }
+  },
+  "AF_Tower": {
+   "file": "modules/AF_Tower.glb",
+   "bytes": 28624,
+   "sha256": "949a4dcbba68ef911e1c2682b82fc25d4bd48f249ae90e05a198ca5971c7c49c",
+   "nodes": 10,
+   "meshes": 10,
+   "materials": 7,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 366,
+   "parts": [
+    {
+     "node": "AF_Tower__base",
+     "triangles": 20,
+     "vertices": 36,
+     "min": [
+      25.95,
+      -0.0,
+      -7.4
+     ],
+     "max": [
+      35.0,
+      4.0,
+      7.4
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Tower__beacon",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      -0.24,
+      -0.0,
+      -0.24
+     ],
+     "max": [
+      0.24,
+      0.46,
+      0.24
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff3d55_1.40",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Tower__cab",
+     "triangles": 92,
+     "vertices": 164,
+     "min": [
+      25.9,
+      -0.0,
+      -6.0
+     ],
+     "max": [
+      35.5,
+      17.6,
+      6.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Tower__cab_glass",
+     "triangles": 8,
+     "vertices": 20,
+     "min": [
+      25.9196,
+      14.5,
+      -5.9707
+     ],
+     "max": [
+      33.7858,
+      16.1,
+      5.9706
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_8bcbd0_0.55",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Tower__cab_trim",
+     "triangles": 70,
+     "vertices": 140,
+     "min": [
+      25.8106,
+      4.0,
+      -6.1066
+     ],
+     "max": [
+      35.5894,
+      16.4,
+      6.1066
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Tower__neck_lights",
+     "triangles": 30,
+     "vertices": 60,
+     "min": [
+      27.17,
+      1.6,
+      -0.9
+     ],
+     "max": [
+      27.2,
+      10.1,
+      0.9
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_8bcbd0_0.50",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Tower__radar",
+     "triangles": 36,
+     "vertices": 60,
+     "min": [
+      -2.3,
+      -0.0,
+      -0.16
+     ],
+     "max": [
+      2.3,
+      0.95,
+      0.34
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_spin_a8b4c2_1.00",
+     "bucket": "spin",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Tower__roof_gear",
+     "triangles": 60,
+     "vertices": 86,
+     "min": [
+      29.1,
+      17.6,
+      -1.5
+     ],
+     "max": [
+      32.5732,
+      23.4,
+      3.4
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Tower__shaft",
+     "triangles": 16,
+     "vertices": 30,
+     "min": [
+      26.3,
+      -0.0,
+      -6.0
+     ],
+     "max": [
+      35.0,
+      1.0,
+      6.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "AF_Tower__shaft_ribs",
+     "triangles": 24,
+     "vertices": 48,
+     "min": [
+      26.05,
+      -0.0,
+      -3.88
+     ],
+     "max": [
+      26.3,
+      1.0,
+      3.88
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -2.3,
+     -0.0,
+     -7.4
+    ],
+    "max": [
+     35.5894,
+     23.4,
+     7.4
+    ]
+   }
+  },
+  "GB_Armor": {
+   "file": "modules/GB_Armor.glb",
+   "bytes": 5256,
+   "sha256": "821925678f01d68962966b2fcf9f950369bbaed22f8f85c9917918f1e57d738d",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 34,
+   "parts": [
+    {
+     "node": "GB_Armor__glacis",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      26.02,
+      1.5,
+      -0.5
+     ],
+     "max": [
+      27.4,
+      7.2,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_a2acb6_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Armor__glacis_cap",
+     "triangles": 8,
+     "vertices": 16,
+     "min": [
+      26.86,
+      7.2,
+      -0.5
+     ],
+     "max": [
+      27.4,
+      7.46,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Armor__strake",
+     "triangles": 16,
+     "vertices": 30,
+     "min": [
+      25.88,
+      1.5,
+      -0.16
+     ],
+     "max": [
+      27.4,
+      7.2,
+      0.16
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     25.88,
+     1.5,
+     -0.5
+    ],
+    "max": [
+     27.4,
+     7.46,
+     0.5
+    ]
+   }
+  },
+  "GB_Casemate": {
+   "file": "modules/GB_Casemate.glb",
+   "bytes": 12392,
+   "sha256": "791a6a8760954a4e1de24af4328c1b5245581636fdab0e5b7247e77d25b6e1d9",
+   "nodes": 4,
+   "meshes": 4,
+   "materials": 3,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 192,
+   "parts": [
+    {
+     "node": "GB_Casemate__blast_door",
+     "triangles": 42,
+     "vertices": 84,
+     "min": [
+      27.5,
+      -0.0,
+      -0.5
+     ],
+     "max": [
+      27.9,
+      1.0,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8a949e_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Casemate__hoist_car",
+     "triangles": 106,
+     "vertices": 134,
+     "min": [
+      26.4,
+      -0.75,
+      -0.8
+     ],
+     "max": [
+      27.08,
+      0.75,
+      0.8
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Casemate__hoist_head",
+     "triangles": 32,
+     "vertices": 44,
+     "min": [
+      26.48,
+      -0.52,
+      -1.42
+     ],
+     "max": [
+      27.4,
+      0.35,
+      1.25
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Casemate__hoist_rail",
+     "triangles": 12,
+     "vertices": 24,
+     "min": [
+      27.05,
+      -0.0,
+      -1.04
+     ],
+     "max": [
+      27.4,
+      1.0,
+      1.04
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     26.4,
+     -0.75,
+     -1.42
+    ],
+    "max": [
+     27.9,
+     1.0,
+     1.25
+    ]
+   }
+  },
+  "GB_Crest": {
+   "file": "modules/GB_Crest.glb",
+   "bytes": 5400,
+   "sha256": "56a01bdc31a295b4c701f9a378f96fe7914f920c6d24b3e9cbe367dcd232da14",
+   "nodes": 2,
+   "meshes": 2,
+   "materials": 2,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 56,
+   "parts": [
+    {
+     "node": "GB_Crest__deflector",
+     "triangles": 36,
+     "vertices": 72,
+     "min": [
+      30.0,
+      0.45,
+      -3.2
+     ],
+     "max": [
+      33.2,
+      4.6,
+      3.2
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Crest__merlon",
+     "triangles": 20,
+     "vertices": 38,
+     "min": [
+      26.9,
+      0.45,
+      -1.8
+     ],
+     "max": [
+      28.5,
+      2.3,
+      1.8
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     26.9,
+     0.45,
+     -3.2
+    ],
+    "max": [
+     33.2,
+     4.6,
+     3.2
+    ]
+   }
+  },
+  "GB_Director": {
+   "file": "modules/GB_Director.glb",
+   "bytes": 22696,
+   "sha256": "887ae9f3e1c00ac31e5198851f1fef9fa7a123a1f4d723d655e1e090caee3cbf",
+   "nodes": 9,
+   "meshes": 9,
+   "materials": 6,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 278,
+   "parts": [
+    {
+     "node": "GB_Director__barbette",
+     "triangles": 20,
+     "vertices": 36,
+     "min": [
+      25.95,
+      -0.0,
+      -8.4
+     ],
+     "max": [
+      35.2,
+      5.0,
+      8.4
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Director__beacon",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      -0.22,
+      -0.0,
+      -0.22
+     ],
+     "max": [
+      0.22,
+      0.42,
+      0.22
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff3d55_1.40",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Director__house",
+     "triangles": 50,
+     "vertices": 90,
+     "min": [
+      27.0,
+      -0.0,
+      -6.2
+     ],
+     "max": [
+      34.6,
+      5.0,
+      6.2
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Director__house_trim",
+     "triangles": 44,
+     "vertices": 64,
+     "min": [
+      26.8676,
+      -0.0,
+      -6.3912
+     ],
+     "max": [
+      34.7324,
+      5.9,
+      6.3912
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Director__mast",
+     "triangles": 28,
+     "vertices": 42,
+     "min": [
+      33.0441,
+      4.8,
+      -1.2
+     ],
+     "max": [
+      33.3559,
+      11.0,
+      1.2
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Director__plates",
+     "triangles": 30,
+     "vertices": 60,
+     "min": [
+      26.2,
+      -0.0,
+      -5.6
+     ],
+     "max": [
+      26.4,
+      3.6,
+      5.6
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Director__rangefinder",
+     "triangles": 50,
+     "vertices": 84,
+     "min": [
+      -0.8,
+      -0.0,
+      -4.8
+     ],
+     "max": [
+      0.8,
+      1.3,
+      4.8
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_spin_a8b4c2_1.00",
+     "bucket": "spin",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Director__slits",
+     "triangles": 30,
+     "vertices": 60,
+     "min": [
+      26.18,
+      2.2,
+      -4.9
+     ],
+     "max": [
+      26.2,
+      2.42,
+      4.9
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ffb43a_0.50",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "GB_Director__tower",
+     "triangles": 16,
+     "vertices": 30,
+     "min": [
+      26.4,
+      -0.0,
+      -7.4
+     ],
+     "max": [
+      35.2,
+      1.0,
+      7.4
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -0.8,
+     -0.0,
+     -8.4
+    ],
+    "max": [
+     35.2,
+     11.0,
+     8.4
+    ]
+   }
+  },
+  "IC_Buttress": {
+   "file": "modules/IC_Buttress.glb",
+   "bytes": 5440,
+   "sha256": "9125a250b14214ac31511e684b5e1b10ba5c41e3c550dadab4635c6503c648d1",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 34,
+   "parts": [
+    {
+     "node": "IC_Buttress__fin",
+     "triangles": 12,
+     "vertices": 24,
+     "min": [
+      25.95,
+      -0.0,
+      -0.45
+     ],
+     "max": [
+      27.4,
+      1.0,
+      0.45
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Buttress__finial",
+     "triangles": 12,
+     "vertices": 24,
+     "min": [
+      26.95,
+      0.45,
+      -0.65
+     ],
+     "max": [
+      28.25,
+      3.7,
+      0.65
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Buttress__finial_lamp",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      26.9,
+      0.62,
+      -0.3
+     ],
+     "max": [
+      26.96,
+      0.98,
+      0.3
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ffc36a_0.55",
+     "bucket": "neon",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     25.95,
+     -0.0,
+     -0.65
+    ],
+    "max": [
+     28.25,
+     3.7,
+     0.65
+    ]
+   }
+  },
+  "IC_Crest": {
+   "file": "modules/IC_Crest.glb",
+   "bytes": 5036,
+   "sha256": "0a0dc8601d4c633ef08b1e88dc8a2c9c1ac77591dea3da59f436aa900aadc05e",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 28,
+   "parts": [
+    {
+     "node": "IC_Crest__attic",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      27.9,
+      0.45,
+      -0.5
+     ],
+     "max": [
+      33.4,
+      3.3,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Crest__attic_band",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      27.86,
+      1.45,
+      -0.5
+     ],
+     "max": [
+      27.9,
+      1.95,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ffc36a_0.50",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Crest__attic_pilaster",
+     "triangles": 8,
+     "vertices": 16,
+     "min": [
+      27.66,
+      0.45,
+      -0.75
+     ],
+     "max": [
+      27.9,
+      3.3,
+      0.75
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     27.66,
+     0.45,
+     -0.75
+    ],
+    "max": [
+     33.4,
+     3.3,
+     0.75
+    ]
+   }
+  },
+  "IC_Portal": {
+   "file": "modules/IC_Portal.glb",
+   "bytes": 10504,
+   "sha256": "7bd80eae47dd85403543c5c00e0b54895230670dff343c3f521d2292cba18b7f",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 130,
+   "parts": [
+    {
+     "node": "IC_Portal__crest_light",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      26.6,
+      0.3,
+      -1.5
+     ],
+     "max": [
+      26.62,
+      0.7,
+      1.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ffc36a_0.60",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Portal__grille",
+     "triangles": 88,
+     "vertices": 176,
+     "min": [
+      27.84,
+      -0.0,
+      -0.5
+     ],
+     "max": [
+      27.98,
+      1.0,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Portal__keystone",
+     "triangles": 32,
+     "vertices": 60,
+     "min": [
+      26.62,
+      -0.0,
+      -2.2
+     ],
+     "max": [
+      27.4,
+      2.1,
+      2.2
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     26.6,
+     -0.0,
+     -2.2
+    ],
+    "max": [
+     27.98,
+     2.1,
+     2.2
+    ]
+   }
+  },
+  "IC_Keep": {
+   "file": "modules/IC_Keep.glb",
+   "bytes": 22668,
+   "sha256": "fb6897ceaffc3c44340e512d1741dd79de5de64e2ad009471505eb62997aa4d4",
+   "nodes": 9,
+   "meshes": 9,
+   "materials": 6,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 270,
+   "parts": [
+    {
+     "node": "IC_Keep__base",
+     "triangles": 20,
+     "vertices": 36,
+     "min": [
+      25.95,
+      -0.0,
+      -9.0
+     ],
+     "max": [
+      36.0,
+      5.0,
+      9.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Keep__beacon",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      -0.22,
+      -0.0,
+      -0.22
+     ],
+     "max": [
+      0.22,
+      0.42,
+      0.22
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff3d55_1.40",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Keep__body",
+     "triangles": 16,
+     "vertices": 30,
+     "min": [
+      26.4,
+      -0.0,
+      -8.0
+     ],
+     "max": [
+      36.0,
+      1.0,
+      8.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Keep__bridge_band",
+     "triangles": 6,
+     "vertices": 12,
+     "min": [
+      27.37,
+      4.5,
+      -6.43
+     ],
+     "max": [
+      34.0,
+      10.9,
+      5.2
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ffc36a_0.55",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Keep__buttress",
+     "triangles": 48,
+     "vertices": 92,
+     "min": [
+      25.95,
+      -0.0,
+      -8.3
+     ],
+     "max": [
+      27.3,
+      1.0,
+      8.3
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Keep__masts",
+     "triangles": 44,
+     "vertices": 66,
+     "min": [
+      31.2268,
+      13.5,
+      -2.4
+     ],
+     "max": [
+      31.5732,
+      20.5,
+      2.4
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Keep__slot",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      26.36,
+      0.1,
+      -0.8
+     ],
+     "max": [
+      26.4,
+      0.92,
+      0.8
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ffc36a_0.60",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Keep__tier_trim",
+     "triangles": 32,
+     "vertices": 60,
+     "min": [
+      27.3332,
+      6.6,
+      -6.534
+     ],
+     "max": [
+      35.2847,
+      12.4,
+      6.534
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "IC_Keep__tiers",
+     "triangles": 84,
+     "vertices": 156,
+     "min": [
+      26.4,
+      -0.0,
+      -8.0
+     ],
+     "max": [
+      36.0,
+      13.5,
+      8.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -0.22,
+     -0.0,
+     -9.0
+    ],
+    "max": [
+     36.0,
+     20.5,
+     9.0
+    ]
+   }
+  },
+  "TG_Alarm": {
+   "file": "modules/TG_Alarm.glb",
+   "bytes": 4152,
+   "sha256": "417747911fa6d51b066437f2ac20871564c54cebcbfc4543d2e9b072abec77fd",
+   "nodes": 2,
+   "meshes": 2,
+   "materials": 2,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 30,
+   "parts": [
+    {
+     "node": "TG_Alarm__rib_guard",
+     "triangles": 20,
+     "vertices": 40,
+     "min": [
+      25.86,
+      -0.0,
+      -0.3
+     ],
+     "max": [
+      25.95,
+      1.0,
+      0.3
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "TG_Alarm__rib_light",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      25.92,
+      -0.0,
+      -0.15
+     ],
+     "max": [
+      25.95,
+      1.0,
+      0.15
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff3d55_0.70",
+     "bucket": "neon",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     25.86,
+     -0.0,
+     -0.3
+    ],
+    "max": [
+     25.95,
+     1.0,
+     0.3
+    ]
+   }
+  },
+  "TG_Crest": {
+   "file": "modules/TG_Crest.glb",
+   "bytes": 5444,
+   "sha256": "026a7e84ac331206b6b17dd604d17312469935d835378ff3e24955e1c44187d6",
+   "nodes": 2,
+   "meshes": 2,
+   "materials": 2,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 56,
+   "parts": [
+    {
+     "node": "TG_Crest__barb",
+     "triangles": 48,
+     "vertices": 96,
+     "min": [
+      29.0,
+      0.45,
+      -1.42
+     ],
+     "max": [
+      29.8,
+      6.0,
+      1.42
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "TG_Crest__tooth",
+     "triangles": 8,
+     "vertices": 18,
+     "min": [
+      27.1,
+      0.45,
+      -1.7
+     ],
+     "max": [
+      28.5,
+      2.4,
+      1.7
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     27.1,
+     0.45,
+     -1.7
+    ],
+    "max": [
+     29.8,
+     6.0,
+     1.7
+    ]
+   }
+  },
+  "TG_Blast": {
+   "file": "modules/TG_Blast.glb",
+   "bytes": 7020,
+   "sha256": "d0cd41d4b7ff62963b0c46dee36e9a1d71009971edf2b1b0290632a500cd6dd3",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 78,
+   "parts": [
+    {
+     "node": "TG_Blast__chevrons",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      26.92,
+      0.02,
+      -0.5
+     ],
+     "max": [
+      26.95,
+      0.2,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hazard_ffffff_1.00",
+     "bucket": "hazard",
+     "owner": "chunk"
+    },
+    {
+     "node": "TG_Blast__door",
+     "triangles": 28,
+     "vertices": 56,
+     "min": [
+      26.84,
+      -0.0,
+      -0.5
+     ],
+     "max": [
+      27.4,
+      1.0,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_7c8690_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "TG_Blast__lock",
+     "triangles": 40,
+     "vertices": 54,
+     "min": [
+      26.66,
+      -0.8084,
+      -1.6
+     ],
+     "max": [
+      26.95,
+      0.8084,
+      1.6
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     26.66,
+     -0.8084,
+     -1.6
+    ],
+    "max": [
+     27.4,
+     1.0,
+     1.6
+    ]
+   }
+  },
+  "TG_Siren": {
+   "file": "modules/TG_Siren.glb",
+   "bytes": 22020,
+   "sha256": "f41440949748b06776ccb73606755b641067a7fed2d4027c09c6b166034de328",
+   "nodes": 8,
+   "meshes": 8,
+   "materials": 6,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 300,
+   "parts": [
+    {
+     "node": "TG_Siren__base",
+     "triangles": 20,
+     "vertices": 36,
+     "min": [
+      25.95,
+      -0.0,
+      -6.4
+     ],
+     "max": [
+      34.6,
+      5.0,
+      6.4
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "TG_Siren__beacon",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      -0.3,
+      -0.0,
+      -0.3
+     ],
+     "max": [
+      0.3,
+      0.5,
+      0.3
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff3d55_1.40",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "TG_Siren__beacon_bar",
+     "triangles": 24,
+     "vertices": 36,
+     "min": [
+      -2.2,
+      -0.5,
+      -0.3
+     ],
+     "max": [
+      2.2,
+      0.36,
+      0.3
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_spin_a8b4c2_1.00",
+     "bucket": "spin",
+     "owner": "chunk"
+    },
+    {
+     "node": "TG_Siren__blades",
+     "triangles": 24,
+     "vertices": 48,
+     "min": [
+      27.2,
+      -0.0,
+      -4.6
+     ],
+     "max": [
+      33.8,
+      15.0,
+      4.6
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "TG_Siren__body",
+     "triangles": 16,
+     "vertices": 30,
+     "min": [
+      26.6,
+      -0.0,
+      -5.2
+     ],
+     "max": [
+      34.6,
+      1.0,
+      5.2
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "TG_Siren__horns",
+     "triangles": 144,
+     "vertices": 192,
+     "min": [
+      27.5,
+      3.2489,
+      -2.9
+     ],
+     "max": [
+      30.0,
+      11.0657,
+      2.9
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "TG_Siren__slot_fins",
+     "triangles": 32,
+     "vertices": 64,
+     "min": [
+      26.3,
+      -0.0,
+      -4.18
+     ],
+     "max": [
+      26.6,
+      1.0,
+      4.18
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "TG_Siren__slots",
+     "triangles": 30,
+     "vertices": 60,
+     "min": [
+      26.56,
+      0.12,
+      -3.1
+     ],
+     "max": [
+      26.6,
+      0.9,
+      3.1
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ff3d55_0.62",
+     "bucket": "neon",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -2.2,
+     -0.5,
+     -6.4
+    ],
+    "max": [
+     34.6,
+     15.0,
+     6.4
+    ]
+   }
+  },
+  "SK_Rock": {
+   "file": "modules/SK_Rock.glb",
+   "bytes": 29792,
+   "sha256": "771d271750cffaa15a31dca1f0b88646e468dfc29997d1116d6f9fa61c40af84",
+   "nodes": 6,
+   "meshes": 6,
+   "materials": 1,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 308,
+   "parts": [
+    {
+     "node": "SK_Rock__rock_a",
+     "triangles": 52,
+     "vertices": 156,
+     "min": [
+      -0.6964,
+      -0.8444,
+      -0.8167
+     ],
+     "max": [
+      0.6677,
+      0.8896,
+      0.7675
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_rock_ffffff_1.00",
+     "bucket": "rock",
+     "owner": "chunk"
+    },
+    {
+     "node": "SK_Rock__rock_b",
+     "triangles": 48,
+     "vertices": 144,
+     "min": [
+      -0.8908,
+      -0.8788,
+      -0.8737
+     ],
+     "max": [
+      0.8305,
+      0.7968,
+      0.887
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_rock_ffffff_1.00",
+     "bucket": "rock",
+     "owner": "chunk"
+    },
+    {
+     "node": "SK_Rock__rock_c",
+     "triangles": 52,
+     "vertices": 156,
+     "min": [
+      -0.7114,
+      -0.8315,
+      -0.7341
+     ],
+     "max": [
+      0.7326,
+      0.8794,
+      0.7187
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_rock_ffffff_1.00",
+     "bucket": "rock",
+     "owner": "chunk"
+    },
+    {
+     "node": "SK_Rock__rock_d",
+     "triangles": 50,
+     "vertices": 150,
+     "min": [
+      -0.7299,
+      -0.855,
+      -0.7435
+     ],
+     "max": [
+      0.9278,
+      0.8549,
+      0.7538
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_rock_ffffff_1.00",
+     "bucket": "rock",
+     "owner": "chunk"
+    },
+    {
+     "node": "SK_Rock__rock_e",
+     "triangles": 50,
+     "vertices": 150,
+     "min": [
+      -0.8747,
+      -0.8365,
+      -0.7939
+     ],
+     "max": [
+      0.9639,
+      0.9453,
+      0.8147
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_rock_ffffff_1.00",
+     "bucket": "rock",
+     "owner": "chunk"
+    },
+    {
+     "node": "SK_Rock__rock_f",
+     "triangles": 56,
+     "vertices": 168,
+     "min": [
+      -0.809,
+      -0.8837,
+      -0.8375
+     ],
+     "max": [
+      0.8447,
+      0.9089,
+      0.8493
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_rock_ffffff_1.00",
+     "bucket": "rock",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -0.8908,
+     -0.8837,
+     -0.8737
+    ],
+    "max": [
+     0.9639,
+     0.9453,
+     0.887
+    ]
+   }
+  },
+  "SK_Fence": {
+   "file": "modules/SK_Fence.glb",
+   "bytes": 11236,
+   "sha256": "c5a29a1259ec573c34cd39f1bd92b247aff390a325b56ff0a665461e1ad18c2b",
+   "nodes": 4,
+   "meshes": 4,
+   "materials": 3,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 152,
+   "parts": [
+    {
+     "node": "SK_Fence__base",
+     "triangles": 50,
+     "vertices": 88,
+     "min": [
+      -1.8,
+      -0.0,
+      -1.8
+     ],
+     "max": [
+      1.8,
+      1.2,
+      1.8
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8a96a6_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "SK_Fence__column",
+     "triangles": 22,
+     "vertices": 40,
+     "min": [
+      -1.3,
+      -0.0,
+      -1.3
+     ],
+     "max": [
+      1.3,
+      1.0,
+      1.3
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "SK_Fence__insulator",
+     "triangles": 48,
+     "vertices": 80,
+     "min": [
+      -1.5336,
+      -0.0,
+      -1.5336
+     ],
+     "max": [
+      1.5336,
+      0.5,
+      1.5336
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "SK_Fence__insulator_glow",
+     "triangles": 32,
+     "vertices": 32,
+     "min": [
+      -1.6076,
+      0.17,
+      -1.6076
+     ],
+     "max": [
+      1.6076,
+      0.33,
+      1.6076
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_9fe8ff_1.30",
+     "bucket": "neon",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -1.8,
+     -0.0,
+     -1.8
+    ],
+    "max": [
+     1.8,
+     1.2,
+     1.8
+    ]
+   }
+  },
+  "SP_Platform": {
+   "file": "modules/SP_Platform.glb",
+   "bytes": 14776,
+   "sha256": "640f744994f65258e79eae05968d05bdf8b4400f0155eb09062bb14838757c4d",
+   "nodes": 4,
+   "meshes": 4,
+   "materials": 2,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 226,
+   "parts": [
+    {
+     "node": "SP_Platform__deck",
+     "triangles": 110,
+     "vertices": 220,
+     "min": [
+      -8.0,
+      -0.0,
+      -8.0
+     ],
+     "max": [
+      8.0,
+      2.4,
+      8.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_deck_c8d2de_1.00",
+     "bucket": "deck",
+     "owner": "chunk"
+    },
+    {
+     "node": "SP_Platform__nacelle",
+     "triangles": 48,
+     "vertices": 50,
+     "min": [
+      -0.7418,
+      -1.6,
+      -0.78
+     ],
+     "max": [
+      0.7418,
+      -0.4,
+      0.78
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "SP_Platform__skirt",
+     "triangles": 28,
+     "vertices": 48,
+     "min": [
+      -8.75,
+      -0.5,
+      -8.75
+     ],
+     "max": [
+      8.75,
+      0.0,
+      8.75
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "SP_Platform__strut",
+     "triangles": 40,
+     "vertices": 72,
+     "min": [
+      -1.0,
+      -6.2,
+      -1.0
+     ],
+     "max": [
+      1.0,
+      -0.5,
+      1.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -8.75,
+     -6.2,
+     -8.75
+    ],
+    "max": [
+     8.75,
+     2.4,
+     8.75
+    ]
+   }
+  },
+  "SP_Truss": {
+   "file": "modules/SP_Truss.glb",
+   "bytes": 6728,
+   "sha256": "7ffafe987b36d0bf22169093735182b790ef108da57085f966755392b4ff32f9",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 100,
+   "parts": [
+    {
+     "node": "SP_Truss__bay",
+     "triangles": 100,
+     "vertices": 200,
+     "min": [
+      -1.5,
+      -0.0,
+      -8.0
+     ],
+     "max": [
+      1.5,
+      3.0,
+      8.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_5a6472_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -1.5,
+     -0.0,
+     -8.0
+    ],
+    "max": [
+     1.5,
+     3.0,
+     8.0
+    ]
+   }
+  },
+  "SE_Bulkhead": {
+   "file": "modules/SE_Bulkhead.glb",
+   "bytes": 26796,
+   "sha256": "1e625ce69aba11bf27d82bd803a1d4b7aa2c12e4b6094612772dbaf0cdeee12f",
+   "nodes": 7,
+   "meshes": 7,
+   "materials": 5,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [
+    "KHR_materials_emissive_strength"
+   ],
+   "triangles": 362,
+   "parts": [
+    {
+     "node": "SE_Bulkhead__catwalk",
+     "triangles": 156,
+     "vertices": 312,
+     "min": [
+      -26.1,
+      -9.3,
+      -1.45
+     ],
+     "max": [
+      26.1,
+      -7.9,
+      0.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "SE_Bulkhead__corbel",
+     "triangles": 16,
+     "vertices": 30,
+     "min": [
+      -31.0,
+      -5.4,
+      -0.9
+     ],
+     "max": [
+      31.0,
+      -3.3,
+      0.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "SE_Bulkhead__launch_rail",
+     "triangles": 46,
+     "vertices": 92,
+     "min": [
+      -0.7,
+      -7.2,
+      -10.4
+     ],
+     "max": [
+      0.7,
+      -1.5,
+      0.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "SE_Bulkhead__pylon_band",
+     "triangles": 28,
+     "vertices": 48,
+     "min": [
+      -1.5,
+      -0.0,
+      -1.5
+     ],
+     "max": [
+      1.5,
+      0.5,
+      1.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "SE_Bulkhead__pylon_shaft",
+     "triangles": 22,
+     "vertices": 40,
+     "min": [
+      -1.35,
+      -0.0,
+      -1.35
+     ],
+     "max": [
+      1.35,
+      1.0,
+      1.35
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_9aa6b4_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "SE_Bulkhead__rail_lamp",
+     "triangles": 10,
+     "vertices": 20,
+     "min": [
+      -0.2,
+      -1.5,
+      -0.2
+     ],
+     "max": [
+      0.2,
+      -1.36,
+      0.2
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_neon_ffb43a_1.20",
+     "bucket": "neon",
+     "owner": "chunk"
+    },
+    {
+     "node": "SE_Bulkhead__ribs",
+     "triangles": 84,
+     "vertices": 168,
+     "min": [
+      -27.9,
+      -38.4,
+      -1.7
+     ],
+     "max": [
+      27.9,
+      -3.3,
+      0.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_aab2bc_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -31.0,
+     -38.4,
+     -10.4
+    ],
+    "max": [
+     31.0,
+     1.0,
+     1.5
+    ]
+   }
+  },
+  "BA_Arena": {
+   "file": "modules/BA_Arena.glb",
+   "bytes": 16204,
+   "sha256": "8956e20e4838898aaa55962906af5a7fdeb501645d4e93962895866f19fbe878",
+   "nodes": 8,
+   "meshes": 8,
+   "materials": 3,
+   "images": 0,
+   "textures": 0,
+   "animations": 0,
+   "skins": 0,
+   "scenes": 1,
+   "extensionsUsed": [],
+   "triangles": 170,
+   "parts": [
+    {
+     "node": "BA_Arena__coil",
+     "triangles": 28,
+     "vertices": 48,
+     "min": [
+      -4.5,
+      -0.0,
+      -4.5
+     ],
+     "max": [
+      4.5,
+      0.6,
+      4.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_dark_ffffff_1.00",
+     "bucket": "dark",
+     "owner": "chunk"
+    },
+    {
+     "node": "BA_Arena__near_block",
+     "triangles": 32,
+     "vertices": 60,
+     "min": [
+      -4.0,
+      -0.0,
+      -4.0
+     ],
+     "max": [
+      4.0,
+      3.2,
+      4.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_9fb0c2_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "BA_Arena__pier_base",
+     "triangles": 20,
+     "vertices": 36,
+     "min": [
+      -4.0,
+      -0.0,
+      -4.0
+     ],
+     "max": [
+      4.0,
+      5.0,
+      4.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "BA_Arena__pier_crown",
+     "triangles": 52,
+     "vertices": 96,
+     "min": [
+      -4.0,
+      -0.0,
+      -4.0
+     ],
+     "max": [
+      4.0,
+      4.0,
+      4.0
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "BA_Arena__pier_fins",
+     "triangles": 12,
+     "vertices": 24,
+     "min": [
+      -4.0,
+      -0.0,
+      -2.2
+     ],
+     "max": [
+      -3.4,
+      1.0,
+      2.2
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "BA_Arena__pier_shaft",
+     "triangles": 12,
+     "vertices": 24,
+     "min": [
+      -3.4,
+      -0.0,
+      -3.4
+     ],
+     "max": [
+      3.4,
+      1.0,
+      3.4
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_9fb0c2_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "BA_Arena__throat_band",
+     "triangles": 6,
+     "vertices": 12,
+     "min": [
+      41.0,
+      -0.5,
+      -0.5
+     ],
+     "max": [
+      41.5,
+      0.5,
+      0.5
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    },
+    {
+     "node": "BA_Arena__throat_rib",
+     "triangles": 8,
+     "vertices": 16,
+     "min": [
+      41.0,
+      -0.0,
+      -0.9
+     ],
+     "max": [
+      41.5,
+      1.0,
+      0.9
+     ],
+     "degenerate": 0,
+     "windingAgainstNormals": 0,
+     "nonUnitNormals": 0,
+     "nonFinite": 0,
+     "extraAttributes": [],
+     "material": "RSK_hull_8e96a0_1.00",
+     "bucket": "hull",
+     "owner": "chunk"
+    }
+   ],
+   "bounds": {
+    "min": [
+     -4.5,
+     -0.5,
+     -4.5
+    ],
+    "max": [
+     41.5,
+     5.0,
+     4.5
+    ]
+   }
+  }
+ },
+ "failures": [],
+ "nearestAbsoluteX": 25.7,
+ "totals": {
+  "modules": 30,
+  "parts": 175,
+  "triangles": 6282,
+  "bytes": 486200,
+  "materialsPerModule": {
+   "RS_WallFrame": 6,
+   "RS_PipeRun": 2,
+   "RS_Gallery": 1,
+   "RS_ServiceBay": 9,
+   "RS_FanHousing": 5,
+   "RS_ExhaustTrunk": 6,
+   "RS_GateHousing": 5,
+   "RS_ReactorCore": 7,
+   "EK_Parapet": 4,
+   "AF_Hangar": 3,
+   "AF_Crest": 2,
+   "AF_Tower": 7,
+   "GB_Armor": 3,
+   "GB_Casemate": 3,
+   "GB_Crest": 2,
+   "GB_Director": 6,
+   "IC_Buttress": 3,
+   "IC_Crest": 3,
+   "IC_Portal": 3,
+   "IC_Keep": 6,
+   "TG_Alarm": 2,
+   "TG_Crest": 2,
+   "TG_Blast": 3,
+   "TG_Siren": 6,
+   "SK_Rock": 1,
+   "SK_Fence": 3,
+   "SP_Platform": 2,
+   "SP_Truss": 1,
+   "SE_Bulkhead": 5,
+   "BA_Arena": 3
+  }
+ },
+ "passed": true
+}

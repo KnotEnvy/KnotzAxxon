@@ -1,0 +1,112 @@
+{
+ "out": "captures/reactor-first",
+ "seed": 7,
+ "quality": "high",
+ "width": 1600,
+ "height": 900,
+ "variants": {
+  "source": "environmentKit=0",
+  "kit": ""
+ },
+ "scenes": [
+  [
+   "wall-classic",
+   "classic",
+   3,
+   750,
+   30,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "wall-modern",
+   "modern",
+   3,
+   750,
+   30,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "wall-chase",
+   "chase",
+   3,
+   750,
+   30,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "core-classic",
+   "classic",
+   3,
+   826,
+   30,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "core-modern",
+   "modern",
+   3,
+   826,
+   30,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "core-chase",
+   "chase",
+   3,
+   826,
+   30,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "gate-classic",
+   "classic",
+   3,
+   900,
+   30,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "gate-modern",
+   "modern",
+   3,
+   900,
+   30,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ],
+  [
+   "gate-chase",
+   "chase",
+   3,
+   900,
+   30,
+   {
+    "x": 0,
+    "y": 9
+   }
+  ]
+ ]
+}

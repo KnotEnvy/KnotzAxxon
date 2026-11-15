@@ -1,0 +1,40 @@
+{
+  "verifiedAt": "2026-11-15T08:49:23.354258+00:00",
+  "workerTestsPassed": 202,
+  "combinedTestsPassed": 205,
+  "build": "passed",
+  "diffCheck": "passed",
+  "files": {
+    "src/core/Engine.js": "29f04c730bf3021711bd30e7d6529cfb20c37e0776f2102960d9db5af6a61388",
+    "src/core/Input.js": "05e3338f0dc004aababa4217407a4df5a4a034536910a269fed692d70736bdf9",
+    "src/main.js": "304debb8176cafd9edb4c6de6bc08ab99dec4ad47077d0065d20398c155f67c0",
+    "tests/studio-feel.test.js": "006168836350271e5b815c963920e3cfd602cfcb1b135dda58a40e9e2fe632a3",
+    "tests/lifecycle.test.js": "4cb0ee0765c7c031c8fa7b0acc0eb4450abcf996219f0853550bf2fafd1fbeff",
+    "tests/context-resume.test.js": "c4d1cc884e8ba9e95cea9a1ef9a147e5298ee4691b888863460cf5d755b362a5",
+    "tests/fixtures/context-resume.mjs": "fd7f7e003b32e499e4203d2bab4a7a309219ff8ea275ef7c6f46004a4b777bbc",
+    "scripts/qa/context-recovery.cjs": "46303e635d5c7f7e1666ffbaaed72c0525bfb93c2f1fddd20bd17acda4946adb"
+  },
+  "limits": [
+    "CPU cadence tests are simulated, not hardware latency or FPS measurements.",
+    "Browser validation uses SwiftShader software rendering.",
+    "No environment scene integration or final combined release acceptance claimed.",
+    "Current changes remain uncommitted; live release unchanged."
+  ],
+  "browser": {
+    "report": "feel-context-browser.json",
+    "reportSha256": "7d27590c0f1bbb862f4f0c830cbcd0a1be713a007db6b0f980d61cde9883e09d",
+    "status": "passed",
+    "routes": [
+      "Escape",
+      "p",
+      "resume-button"
+    ],
+    "pageErrors": 0,
+    "pngsViewed": [
+      "lost-paused.png",
+      "restored-paused.png",
+      "manual-resume.png"
+    ],
+    "softwareRenderingOnly": true
+  }
+}

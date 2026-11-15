@@ -1,4 +1,4 @@
-import { Lifetime } from './Lifetime.js';
+import { Lifetime, runCleanups } from './Lifetime.js';
 import { FlightCamera } from './FlightCamera.js';
 /**
  * Engine: owns the renderer, the scene graph root, the frame loop and the
@@ -44,21 +44,26 @@ export class Engine {
     this._updateHooks = [];
     this._lateHooks = [];
 
-    this._initRenderer();
-    this._initScene();
+    try {
+      this._initRenderer();
+      this._initScene();
 
-    this.input = new Input();
+      this.input = new Input();
 
-    this._onResize = this._onResize.bind(this);
-    this._lifetime.listen(window, 'resize', this._onResize);
-    this._lifetime.listen(window, 'orientationchange', this._onResize);
-    this._lifetime.listen(document, 'visibilitychange', () => {
-      if (document.hidden) this.dispatchVisibility(false);
-      else this.dispatchVisibility(true);
-    });
+      this._onResize = this._onResize.bind(this);
+      this._lifetime.listen(window, 'resize', this._onResize);
+      this._lifetime.listen(window, 'orientationchange', this._onResize);
+      this._lifetime.listen(window, 'blur', () => this.dispatchVisibility(false));
+      this._lifetime.listen(window, 'focus', () => this.dispatchVisibility(!document.hidden));
+      this._lifetime.listen(document, 'visibilitychange', () => this.dispatchVisibility(!document.hidden));
 
-    this._lifetime.listen(settings, 'change', (e) => this._onSettingChange(e.detail));
-
+      this._lifetime.listen(settings, 'change', (e) => this._onSettingChange(e.detail));
+    } catch (error) {
+      // A failed constructor never reaches main's assignment. Retire the
+      // owners that were assigned here without replacing the original error.
+      try { this.dispose(); } catch { /* all assigned owners were attempted */ }
+      throw error;
+    }
   }
 
   /* ------------------------------------------------------------------ */
@@ -96,22 +101,40 @@ export class Engine {
 
   _onContextLost(e) {
     e.preventDefault();
-    const resume = this.running;
+    // A restore whose renderer could not be set up leaves its resume pending.
+    const resume = this.running || this._resumeAfterRestore;
     this.stop();
     this._contextLost = true;
     this._resumeAfterRestore = resume;
+    this.dispatchVisibility(false);
   }
 
   _onContextRestored() {
     if (this._disposed) return;
     this._contextLost = false;
-    // Render-target contents are lost too: re-bake the environment and shadows.
-    this.sky._bake();
-    this.renderer.shadowMap.needsUpdate = true;
-    this._onResize();
     const resume = this._resumeAfterRestore;
     this._resumeAfterRestore = false;
-    if (resume) this.start();
+    // Gameplay stays paused for a manual resume; pad edges made while no frame
+    // ran are learned as held by Input's first active poll, not replayed.
+    try {
+      // Renderer-owned state first. If it cannot be restored, no loop starts
+      // that would throw every frame; the resume waits for a later restore.
+      this.renderer.shadowMap.needsUpdate = true;
+      this._onResize();
+    } catch (error) {
+      this._resumeAfterRestore = resume;
+      throw error;
+    }
+    if (!document.hidden) this.input?.setSuspended?.(false);
+    try {
+      // Render-target contents are lost too: re-bake the environment.
+      this.sky._bake();
+    } finally {
+      // Sky restores renderer state and keeps its previous environment bound
+      // when a bake fails: resume on the usable renderer rather than strand a
+      // frozen frame, and still report the original bake error.
+      if (resume) this.start();
+    }
   }
 
   _initScene() {
@@ -133,6 +156,7 @@ export class Engine {
 
     this.postfx = new PostFX(this.renderer, this.scene, this.camera, q);
     this.postfx.setScanlines(settings.get('scanlines'));
+    this._refreshTextureQuality();
 
     this._onResize();
   }
@@ -149,6 +173,8 @@ export class Engine {
     this._last = performance.now();
     this._msEma = 16.7;
     this._scaleCooldown = 1.2;
+    if (!visible) this.input?.reset();
+    this.input?.setSuspended?.(!visible);
     for (const fn of this._updateHooks) fn.visibility?.(visible);
     this.onVisibility?.(visible);
   }
@@ -217,9 +243,15 @@ export class Engine {
     this.stats.scale = this._renderScale;
   }
 
+  _refreshTextureQuality() {
+    this.maxAnisotropy = Math.min(settings.quality.anisotropy, this.renderer.capabilities.getMaxAnisotropy());
+    this.materials.setAnisotropy(this.maxAnisotropy, this.scene);
+  }
+
   _onSettingChange({ id }) {
     if (id === 'quality') {
       const q = settings.quality;
+      this._refreshTextureQuality();
       this.renderer.shadowMap.enabled = q.shadows;
       this.renderer.shadowMap.needsUpdate = true;
       this.sky.setShadowQuality(q.shadows, q.shadowMapSize);
@@ -321,16 +353,18 @@ export class Engine {
 
   dispose() {
     if (this._disposed) return;
-    this.stop();
     this._disposed = true;
-    this._lifetime.dispose();
-    this.input.dispose();
     this._updateHooks.length = this._lateHooks.length = 0;
     this.onQualityChange = this.onVisibility = null;
-    this.postfx.dispose();
-    this.underlay.dispose();
-    this.sky.dispose();
-    this.materials.dispose();
-    this.renderer.dispose();
+    runCleanups([
+      () => this.stop(),
+      () => this._lifetime.dispose(),
+      () => this.input?.dispose(),
+      () => this.postfx?.dispose(),
+      () => this.underlay?.dispose(),
+      () => this.sky?.dispose(),
+      () => this.materials?.dispose(),
+      () => this.renderer?.dispose(),
+    ]);
   }
 }

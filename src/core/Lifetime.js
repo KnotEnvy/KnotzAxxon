@@ -1,3 +1,12 @@
+/** Finish every owner even when one cleanup fails, then report the failures. */
+export function runCleanups(cleanups) {
+  const errors = [];
+  for (const cleanup of cleanups) {
+    try { cleanup(); } catch (error) { errors.push(error); }
+  }
+  if (errors.length) throw new AggregateError(errors, 'Cleanup failed');
+}
+
 /** Owns subscriptions and cancellable waits for one application component. */
 export class Lifetime {
   constructor() { this.closed = false; this.cleanups = new Set(); }
@@ -17,7 +26,8 @@ export class Lifetime {
   dispose() {
     if (this.closed) return;
     this.closed = true;
-    for (const cleanup of this.cleanups) cleanup();
+    const cleanups = [...this.cleanups];
     this.cleanups.clear();
+    runCleanups(cleanups);
   }
 }

@@ -1,0 +1,75 @@
+{
+  "startedUtc": "2026-11-15T02:45:55.484878+00:00",
+  "before": {
+    "branch": "main",
+    "head": "ee221ad3e05cd66292fe02b71b50f513696bdda2",
+    "trackedStatus": "",
+    "status": "?? asset-work/",
+    "untrackedCount": 7478
+  },
+  "instructions": "No applicable AGENTS.md found in project/ancestors before or after sync; no delegation or checkouts created.",
+  "runtime": {
+    "node": "v24.14.0",
+    "npm": "11.9.0",
+    "nativeLinux": true,
+    "tailscaleWindowsCli": true,
+    "wslpath": "/usr/bin/wslpath",
+    "three": {
+      "version": "0.185.1",
+      "reused": "asset-work/carrier/.runtime/node_modules/three",
+      "rootResolution": "ignored node_modules/three symlink"
+    },
+    "vite": {
+      "version": "7.3.6",
+      "initiallyAvailableNative": false,
+      "temporaryInstall": "/tmp/nitrobliss-studio-code-tools",
+      "reason": "Native Pages build; no existing native Vite found. No project lockfile/package changes.",
+      "transitiveVersions": {
+        "rollup": "4.68.3",
+        "esbuild": "0.28.2"
+      }
+    },
+    "playwright": {
+      "rootNativePackageAvailable": false,
+      "used": false,
+      "installed": false,
+      "note": "Existing Windows browser cache observed; no Windows Node/browser tooling used."
+    },
+    "packagesReinstalled": []
+  },
+  "sync": {
+    "originMain": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
+    "untrackedCollisions": []
+  },
+  "after": {
+    "branch": "main",
+    "head": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
+    "trackedStatus": "",
+    "status": "?? asset-work/"
+  },
+  "final": {
+    "branch": "main",
+    "head": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
+    "trackedStatus": "M src/core/Engine.js\n M src/core/Input.js\n M src/core/Lifetime.js\n M src/main.js\n M tests/performance.test.js",
+    "indexChanged": false,
+    "ownedPaths": [
+      "src/main.js",
+      "src/core/Engine.js",
+      "src/core/Lifetime.js",
+      "src/core/Input.js",
+      "tests/performance.test.js",
+      "tests/lifecycle.test.js",
+      "tests/fixtures/startup-lifecycle.mjs"
+    ],
+    "untrackedOriginalPreservation": "All original entry sizes and mtimes unchanged; original content/symlink inventory retained in audit directory; final digest verification recorded separately."
+  },
+  "originalPreservation": {
+    "entries": 7478,
+    "files": 7477,
+    "symlinks": 1,
+    "sizeAndMtimeChanges": [],
+    "inventorySHA256": "e7e7fbb72fe84e51765274b18cf00cf4f4b1c3fd75f3a222fd96095b7ba98fd5",
+    "contentAndLinkInventorySHA256": "2b6452e117753090acde46c76e7b9196dc663329bc4a239078454a592e3936d6",
+    "note": "Original content digests were recorded after audit; original entry size/mtime checks against the initial pre-sync inventory remained unchanged."
+  }
+}

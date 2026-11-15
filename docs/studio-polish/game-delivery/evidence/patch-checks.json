@@ -1,0 +1,124 @@
+[
+  {
+    "command": [
+      "node",
+      "--check",
+      "src/game/Game.js"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "passed": true,
+    "exitOneMeansNewFileDiff": false
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "tests/game-startup-lifecycle.test.js"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "passed": true,
+    "exitOneMeansNewFileDiff": false
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "tests/fixtures/game-startup-lifecycle.mjs"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "passed": true,
+    "exitOneMeansNewFileDiff": false
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check",
+      "--",
+      "src/game/Game.js"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "passed": true,
+    "exitOneMeansNewFileDiff": false
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--no-index",
+      "--check",
+      "--",
+      "/dev/null",
+      "tests/game-startup-lifecycle.test.js"
+    ],
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": "",
+    "passed": true,
+    "exitOneMeansNewFileDiff": true
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--no-index",
+      "--check",
+      "--",
+      "/dev/null",
+      "tests/fixtures/game-startup-lifecycle.mjs"
+    ],
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": "",
+    "passed": true,
+    "exitOneMeansNewFileDiff": true
+  },
+  {
+    "command": [
+      "git",
+      "apply",
+      "--reverse",
+      "--check",
+      "asset-work/studio-game/changes.patch"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "passed": true,
+    "exitOneMeansNewFileDiff": false
+  },
+  {
+    "command": [
+      "git",
+      "read-tree",
+      "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "passed": true,
+    "exitOneMeansNewFileDiff": false
+  },
+  {
+    "command": [
+      "git",
+      "apply",
+      "--cached",
+      "--check",
+      "asset-work/studio-game/changes.patch"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "passed": true,
+    "exitOneMeansNewFileDiff": false
+  }
+]

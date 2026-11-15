@@ -1,0 +1,1790 @@
+{
+ "seeds": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24
+ ],
+ "loops": [
+  0,
+  1
+ ],
+ "window": 8,
+ "fortressSha": "a3dc93d67d5e4d2169f0cbbe08f4faee2629460279498947ba3dbb023360bdb0",
+ "sectors": {
+  "0": {
+   "name": "OUTER FORTRESS",
+   "meanSrc": 8126,
+   "meanKit": 9093,
+   "p95Src": 11056,
+   "p95Kit": 12038,
+   "maxSrc": 13348,
+   "maxKit": 14218,
+   "winSrc": 76760,
+   "winKit": 84796,
+   "drawsSrc": 8.14,
+   "drawsKit": 8.14,
+   "kbSrc": 1187,
+   "kbKit": 1320,
+   "msSrc": 5.21,
+   "msKit": 6.13
+  },
+  "1": {
+   "name": "GUN BATTERIES",
+   "meanSrc": 7987,
+   "meanKit": 8981,
+   "p95Src": 10788,
+   "p95Kit": 11726,
+   "maxSrc": 13172,
+   "maxKit": 14154,
+   "winSrc": 75620,
+   "winKit": 83866,
+   "drawsSrc": 8.43,
+   "drawsKit": 8.43,
+   "kbSrc": 1171,
+   "kbKit": 1307,
+   "msSrc": 5.46,
+   "msKit": 6.33
+  },
+  "2": {
+   "name": "THE VOID GAP",
+   "meanSrc": 2984,
+   "meanKit": 2744,
+   "p95Src": 12868,
+   "p95Kit": 7056,
+   "maxSrc": 15444,
+   "maxKit": 8888,
+   "winSrc": 55788,
+   "winKit": 56592,
+   "drawsSrc": 4.41,
+   "drawsKit": 4.41,
+   "kbSrc": 557,
+   "kbKit": 481,
+   "msSrc": 5.98,
+   "msKit": 4.24
+  },
+  "3": {
+   "name": "REACTOR SPINE",
+   "meanSrc": 6674,
+   "meanKit": 9157,
+   "p95Src": 8756,
+   "p95Kit": 11718,
+   "maxSrc": 11380,
+   "maxKit": 14432,
+   "winSrc": 61948,
+   "winKit": 82622,
+   "drawsSrc": 9.48,
+   "drawsKit": 9.35,
+   "kbSrc": 1012,
+   "kbKit": 1341,
+   "msSrc": 4.54,
+   "msKit": 6.38
+  },
+  "4": {
+   "name": "INTERCEPTOR SCREEN",
+   "meanSrc": 3290,
+   "meanKit": 3147,
+   "p95Src": 12596,
+   "p95Kit": 6811,
+   "maxSrc": 17206,
+   "maxKit": 10010,
+   "winSrc": 61681,
+   "winKit": 56323,
+   "drawsSrc": 5.47,
+   "drawsKit": 5.47,
+   "kbSrc": 556,
+   "kbKit": 509,
+   "msSrc": 3.97,
+   "msKit": 3.14
+  },
+  "5": {
+   "name": "INNER CITADEL",
+   "meanSrc": 6444,
+   "meanKit": 8436,
+   "p95Src": 8476,
+   "p95Kit": 10838,
+   "maxSrc": 11000,
+   "maxKit": 13748,
+   "winSrc": 65526,
+   "winKit": 82286,
+   "drawsSrc": 9.15,
+   "drawsKit": 9.07,
+   "kbSrc": 979,
+   "kbKit": 1247,
+   "msSrc": 4.62,
+   "msKit": 6.28
+  },
+  "6": {
+   "name": "THE GAUNTLET",
+   "meanSrc": 6491,
+   "meanKit": 7987,
+   "p95Src": 8532,
+   "p95Kit": 10386,
+   "maxSrc": 10168,
+   "maxKit": 13530,
+   "winSrc": 62396,
+   "winKit": 76170,
+   "drawsSrc": 8.83,
+   "drawsKit": 8.74,
+   "kbSrc": 985,
+   "kbKit": 1185,
+   "msSrc": 4.5,
+   "msKit": 5.42
+  },
+  "7": {
+   "name": "THE IRON SENTINEL",
+   "meanSrc": 1311,
+   "meanKit": 1656,
+   "p95Src": 1328,
+   "p95Kit": 1730,
+   "maxSrc": 1328,
+   "maxKit": 1730,
+   "winSrc": 29388,
+   "winKit": 35268,
+   "drawsSrc": 6,
+   "drawsKit": 6,
+   "kbSrc": 231,
+   "kbKit": 275,
+   "msSrc": 0.98,
+   "msKit": 1.15
+  }
+ },
+ "features": {
+  "wall:perimeter": {
+   "n": 144,
+   "meanSrc": 944,
+   "maxSrc": 948,
+   "meanKit": 944,
+   "maxKit": 948
+  },
+  "wall:stagger": {
+   "n": 45,
+   "meanSrc": 720,
+   "maxSrc": 732,
+   "meanKit": 720,
+   "maxKit": 732
+  },
+  "wall:slot": {
+   "n": 130,
+   "meanSrc": 721,
+   "maxSrc": 732,
+   "meanKit": 721,
+   "maxKit": 732
+  },
+  "arch": {
+   "n": 68,
+   "meanSrc": 612,
+   "maxSrc": 612,
+   "meanKit": 612,
+   "maxKit": 612
+  },
+  "wall:debrisGate": {
+   "n": 102,
+   "meanSrc": 11127,
+   "maxSrc": 13200,
+   "meanKit": 5061,
+   "maxKit": 5590
+  },
+  "wall:pillars": {
+   "n": 53,
+   "meanSrc": 732,
+   "maxSrc": 852,
+   "meanKit": 732,
+   "maxKit": 852
+  },
+  "gate": {
+   "n": 268,
+   "meanSrc": 700,
+   "maxSrc": 700,
+   "meanKit": 2362,
+   "maxKit": 2362
+  },
+  "fence": {
+   "n": 74,
+   "meanSrc": 1014,
+   "maxSrc": 1058,
+   "meanKit": 1558,
+   "maxKit": 1602
+  },
+  "wall:notch": {
+   "n": 91,
+   "meanSrc": 612,
+   "maxSrc": 624,
+   "meanKit": 612,
+   "maxKit": 624
+  },
+  "wall:window": {
+   "n": 104,
+   "meanSrc": 582,
+   "maxSrc": 600,
+   "meanKit": 582,
+   "maxKit": 600
+  }
+ },
+ "partsPerChunk": {
+  "0": {
+   "RS_FanHousing.rotor": {
+    "stampsPerChunk": 1.46,
+    "trianglesPerChunk": 178.6
+   },
+   "RS_WallFrame.pier_head": {
+    "stampsPerChunk": 4.24,
+    "trianglesPerChunk": 152.7
+   },
+   "RS_FanHousing.cowl": {
+    "stampsPerChunk": 1.46,
+    "trianglesPerChunk": 140.5
+   },
+   "RS_WallFrame.pier_foot": {
+    "stampsPerChunk": 4.24,
+    "trianglesPerChunk": 135.8
+   },
+   "RS_Gallery.post": {
+    "stampsPerChunk": 13.77,
+    "trianglesPerChunk": 110.1
+   },
+   "RS_WallFrame.win_glass": {
+    "stampsPerChunk": 10.78,
+    "trianglesPerChunk": 107.8
+   },
+   "AF_Crest.mast": {
+    "stampsPerChunk": 1.98,
+    "trianglesPerChunk": 103.1
+   },
+   "RS_ExhaustTrunk.house_roof": {
+    "stampsPerChunk": 1.06,
+    "trianglesPerChunk": 93.5
+   },
+   "RS_Gallery.rail": {
+    "stampsPerChunk": 6.05,
+    "trianglesPerChunk": 84.7
+   },
+   "RS_Gallery.brace": {
+    "stampsPerChunk": 8.72,
+    "trianglesPerChunk": 69.8
+   },
+   "RS_Gallery.deck": {
+    "stampsPerChunk": 6.05,
+    "trianglesPerChunk": 60.5
+   },
+   "EK_Parapet.outer_rib": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 60
+   },
+   "AF_Crest.post": {
+    "stampsPerChunk": 6.94,
+    "trianglesPerChunk": 55.5
+   },
+   "RS_WallFrame.pier_shaft": {
+    "stampsPerChunk": 4.24,
+    "trianglesPerChunk": 50.9
+   },
+   "RS_WallFrame.stile": {
+    "stampsPerChunk": 7.45,
+    "trianglesPerChunk": 44.7
+   },
+   "EK_Parapet.channel": {
+    "stampsPerChunk": 1,
+    "trianglesPerChunk": 44
+   },
+   "RS_WallFrame.pier_lamp": {
+    "stampsPerChunk": 4.24,
+    "trianglesPerChunk": 42.4
+   },
+   "AF_Crest.mast_lamp": {
+    "stampsPerChunk": 1.98,
+    "trianglesPerChunk": 39.6
+   },
+   "AF_Hangar.door_leaf": {
+    "stampsPerChunk": 1.4,
+    "trianglesPerChunk": 39.1
+   },
+   "RS_ExhaustTrunk.house_louvre": {
+    "stampsPerChunk": 1.06,
+    "trianglesPerChunk": 38.3
+   },
+   "EK_Parapet.bridge": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 36
+   },
+   "EK_Parapet.hatch": {
+    "stampsPerChunk": 1,
+    "trianglesPerChunk": 30
+   },
+   "RS_WallFrame.plinth": {
+    "stampsPerChunk": 1.76,
+    "trianglesPerChunk": 24.6
+   },
+   "AF_Crest.rail": {
+    "stampsPerChunk": 1.06,
+    "trianglesPerChunk": 17
+   },
+   "RS_ServiceBay.jamb": {
+    "stampsPerChunk": 1.4,
+    "trianglesPerChunk": 16.8
+   },
+   "RS_FanHousing.mount": {
+    "stampsPerChunk": 1.46,
+    "trianglesPerChunk": 14.6
+   },
+   "RS_FanHousing.void": {
+    "stampsPerChunk": 1.46,
+    "trianglesPerChunk": 14.6
+   },
+   "RS_ServiceBay.header": {
+    "stampsPerChunk": 0.7,
+    "trianglesPerChunk": 14
+   },
+   "RS_ExhaustTrunk.house_body": {
+    "stampsPerChunk": 1.06,
+    "trianglesPerChunk": 12.8
+   },
+   "EK_Parapet.bridge_lamp": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 12
+   },
+   "RS_WallFrame.coping": {
+    "stampsPerChunk": 1.06,
+    "trianglesPerChunk": 10.6
+   },
+   "RS_ExhaustTrunk.house_lamp": {
+    "stampsPerChunk": 1.06,
+    "trianglesPerChunk": 10.6
+   },
+   "RS_ServiceBay.ceiling_light": {
+    "stampsPerChunk": 0.7,
+    "trianglesPerChunk": 8.4
+   },
+   "RS_ServiceBay.back_light": {
+    "stampsPerChunk": 0.7,
+    "trianglesPerChunk": 7
+   },
+   "RS_ServiceBay.hazard": {
+    "stampsPerChunk": 0.7,
+    "trianglesPerChunk": 7
+   },
+   "AF_Hangar.apron_bar": {
+    "stampsPerChunk": 0.7,
+    "trianglesPerChunk": 7
+   },
+   "RS_ServiceBay.strobe_housing": {
+    "stampsPerChunk": 0.7,
+    "trianglesPerChunk": 7
+   },
+   "RS_ServiceBay.strobe": {
+    "stampsPerChunk": 0.7,
+    "trianglesPerChunk": 7
+   },
+   "RS_WallFrame.rail": {
+    "stampsPerChunk": 1.06,
+    "trianglesPerChunk": 6.4
+   },
+   "EK_Parapet.tray": {
+    "stampsPerChunk": 1,
+    "trianglesPerChunk": 6
+   },
+   "AF_Tower.cab": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 5.8
+   },
+   "RS_ServiceBay.shell": {
+    "stampsPerChunk": 0.7,
+    "trianglesPerChunk": 5.6
+   },
+   "AF_Hangar.door_track": {
+    "stampsPerChunk": 0.7,
+    "trianglesPerChunk": 5.6
+   },
+   "RS_WallFrame.sign_hood": {
+    "stampsPerChunk": 0.45,
+    "trianglesPerChunk": 5.4
+   },
+   "AF_Tower.cab_trim": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 4.4
+   },
+   "AF_Tower.roof_gear": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 3.8
+   },
+   "AF_Tower.radar": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 2.3
+   },
+   "AF_Tower.neck_lights": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 1.9
+   },
+   "AF_Tower.shaft_ribs": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 1.5
+   },
+   "RS_ServiceBay.floor": {
+    "stampsPerChunk": 0.7,
+    "trianglesPerChunk": 1.4
+   },
+   "AF_Tower.base": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 1.3
+   },
+   "AF_Tower.shaft": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 1
+   },
+   "AF_Tower.beacon": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 0.6
+   },
+   "AF_Tower.cab_glass": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 0.5
+   }
+  },
+  "1": {
+   "RS_FanHousing.rotor": {
+    "stampsPerChunk": 1.51,
+    "trianglesPerChunk": 184.5
+   },
+   "RS_WallFrame.pier_head": {
+    "stampsPerChunk": 4.77,
+    "trianglesPerChunk": 171.6
+   },
+   "GB_Crest.merlon": {
+    "stampsPerChunk": 7.82,
+    "trianglesPerChunk": 156.5
+   },
+   "RS_WallFrame.pier_foot": {
+    "stampsPerChunk": 4.77,
+    "trianglesPerChunk": 152.5
+   },
+   "RS_FanHousing.cowl": {
+    "stampsPerChunk": 1.51,
+    "trianglesPerChunk": 145.2
+   },
+   "RS_WallFrame.win_glass": {
+    "stampsPerChunk": 10.11,
+    "trianglesPerChunk": 101.1
+   },
+   "RS_ExhaustTrunk.house_roof": {
+    "stampsPerChunk": 1.06,
+    "trianglesPerChunk": 93.2
+   },
+   "GB_Crest.deflector": {
+    "stampsPerChunk": 1.99,
+    "trianglesPerChunk": 71.5
+   },
+   "GB_Casemate.hoist_car": {
+    "stampsPerChunk": 0.64,
+    "trianglesPerChunk": 68.3
+   },
+   "GB_Armor.glacis": {
+    "stampsPerChunk": 6.71,
+    "trianglesPerChunk": 67.1
+   },
+   "EK_Parapet.outer_rib": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 60
+   },
+   "RS_WallFrame.pier_shaft": {
+    "stampsPerChunk": 4.77,
+    "trianglesPerChunk": 57.2
+   },
+   "GB_Armor.strake": {
+    "stampsPerChunk": 3.46,
+    "trianglesPerChunk": 55.4
+   },
+   "GB_Armor.glacis_cap": {
+    "stampsPerChunk": 6.71,
+    "trianglesPerChunk": 53.6
+   },
+   "RS_WallFrame.pier_lamp": {
+    "stampsPerChunk": 4.77,
+    "trianglesPerChunk": 47.7
+   },
+   "RS_WallFrame.stile": {
+    "stampsPerChunk": 7.54,
+    "trianglesPerChunk": 45.3
+   },
+   "EK_Parapet.channel": {
+    "stampsPerChunk": 1,
+    "trianglesPerChunk": 44
+   },
+   "RS_ExhaustTrunk.house_louvre": {
+    "stampsPerChunk": 1.06,
+    "trianglesPerChunk": 38.1
+   },
+   "EK_Parapet.bridge": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 36
+   },
+   "GB_Casemate.blast_door": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 30.3
+   },
+   "EK_Parapet.hatch": {
+    "stampsPerChunk": 1,
+    "trianglesPerChunk": 30
+   },
+   "RS_WallFrame.plinth": {
+    "stampsPerChunk": 1.78,
+    "trianglesPerChunk": 24.9
+   },
+   "GB_Casemate.hoist_head": {
+    "stampsPerChunk": 0.64,
+    "trianglesPerChunk": 20.6
+   },
+   "RS_ServiceBay.jamb": {
+    "stampsPerChunk": 1.44,
+    "trianglesPerChunk": 17.3
+   },
+   "RS_FanHousing.mount": {
+    "stampsPerChunk": 1.51,
+    "trianglesPerChunk": 15.1
+   },
+   "RS_FanHousing.void": {
+    "stampsPerChunk": 1.51,
+    "trianglesPerChunk": 15.1
+   },
+   "RS_ServiceBay.header": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 14.4
+   },
+   "RS_ExhaustTrunk.house_body": {
+    "stampsPerChunk": 1.06,
+    "trianglesPerChunk": 12.7
+   },
+   "EK_Parapet.bridge_lamp": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 12
+   },
+   "RS_WallFrame.coping": {
+    "stampsPerChunk": 1.06,
+    "trianglesPerChunk": 10.6
+   },
+   "RS_ExhaustTrunk.house_lamp": {
+    "stampsPerChunk": 1.06,
+    "trianglesPerChunk": 10.6
+   },
+   "SE_Bulkhead.pylon_band": {
+    "stampsPerChunk": 0.35,
+    "trianglesPerChunk": 9.9
+   },
+   "SE_Bulkhead.catwalk": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 9.2
+   },
+   "RS_ServiceBay.ceiling_light": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 8.6
+   },
+   "GB_Casemate.hoist_rail": {
+    "stampsPerChunk": 0.64,
+    "trianglesPerChunk": 7.7
+   },
+   "RS_ServiceBay.back_light": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 7.2
+   },
+   "RS_ServiceBay.hazard": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 7.2
+   },
+   "RS_ServiceBay.strobe_housing": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 7.2
+   },
+   "RS_ServiceBay.strobe": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 7.2
+   },
+   "RS_WallFrame.rail": {
+    "stampsPerChunk": 1.06,
+    "trianglesPerChunk": 6.4
+   },
+   "EK_Parapet.tray": {
+    "stampsPerChunk": 1,
+    "trianglesPerChunk": 6
+   },
+   "SE_Bulkhead.rail_lamp": {
+    "stampsPerChunk": 0.59,
+    "trianglesPerChunk": 5.9
+   },
+   "RS_ServiceBay.shell": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 5.8
+   },
+   "RS_WallFrame.sign_hood": {
+    "stampsPerChunk": 0.48,
+    "trianglesPerChunk": 5.7
+   },
+   "SE_Bulkhead.launch_rail": {
+    "stampsPerChunk": 0.12,
+    "trianglesPerChunk": 5.4
+   },
+   "SE_Bulkhead.ribs": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 4.9
+   },
+   "SK_Fence.insulator": {
+    "stampsPerChunk": 0.07,
+    "trianglesPerChunk": 3.3
+   },
+   "GB_Director.house": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 2.9
+   },
+   "GB_Director.rangefinder": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 2.9
+   },
+   "GB_Director.house_trim": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 2.6
+   },
+   "SE_Bulkhead.pylon_shaft": {
+    "stampsPerChunk": 0.12,
+    "trianglesPerChunk": 2.6
+   },
+   "SK_Fence.insulator_glow": {
+    "stampsPerChunk": 0.07,
+    "trianglesPerChunk": 2.2
+   },
+   "GB_Director.plates": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 1.8
+   },
+   "GB_Director.slits": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 1.8
+   },
+   "GB_Director.mast": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 1.6
+   },
+   "RS_ServiceBay.floor": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 1.4
+   },
+   "GB_Director.barbette": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 1.2
+   },
+   "GB_Director.tower": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 0.9
+   },
+   "SE_Bulkhead.corbel": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 0.9
+   },
+   "SK_Fence.base": {
+    "stampsPerChunk": 0.02,
+    "trianglesPerChunk": 0.9
+   },
+   "GB_Director.beacon": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 0.6
+   },
+   "SK_Fence.column": {
+    "stampsPerChunk": 0.02,
+    "trianglesPerChunk": 0.4
+   }
+  },
+  "2": {
+   "SP_Truss.bay": {
+    "stampsPerChunk": 2.32,
+    "trianglesPerChunk": 232.1
+   },
+   "SK_Rock.rock_f": {
+    "stampsPerChunk": 1.29,
+    "trianglesPerChunk": 72.3
+   },
+   "SK_Rock.rock_a": {
+    "stampsPerChunk": 1.35,
+    "trianglesPerChunk": 70.2
+   },
+   "SK_Rock.rock_c": {
+    "stampsPerChunk": 1.33,
+    "trianglesPerChunk": 68.9
+   },
+   "SK_Rock.rock_e": {
+    "stampsPerChunk": 1.35,
+    "trianglesPerChunk": 67.3
+   },
+   "SK_Rock.rock_d": {
+    "stampsPerChunk": 1.34,
+    "trianglesPerChunk": 67.2
+   },
+   "SK_Rock.rock_b": {
+    "stampsPerChunk": 1.4,
+    "trianglesPerChunk": 67
+   },
+   "SP_Platform.nacelle": {
+    "stampsPerChunk": 1.13,
+    "trianglesPerChunk": 54.3
+   },
+   "SP_Platform.deck": {
+    "stampsPerChunk": 0.28,
+    "trianglesPerChunk": 31.1
+   },
+   "SP_Platform.skirt": {
+    "stampsPerChunk": 0.28,
+    "trianglesPerChunk": 7.9
+   },
+   "SK_Fence.column": {
+    "stampsPerChunk": 0.21,
+    "trianglesPerChunk": 4.7
+   },
+   "SP_Platform.strut": {
+    "stampsPerChunk": 0.07,
+    "trianglesPerChunk": 2.7
+   }
+  },
+  "3": {
+   "RS_ExhaustTrunk.joint": {
+    "stampsPerChunk": 5.84,
+    "trianglesPerChunk": 222.1
+   },
+   "RS_PipeRun.collar": {
+    "stampsPerChunk": 9.25,
+    "trianglesPerChunk": 203.5
+   },
+   "RS_FanHousing.rotor": {
+    "stampsPerChunk": 1.49,
+    "trianglesPerChunk": 181.4
+   },
+   "RS_GateHousing.collar": {
+    "stampsPerChunk": 2.8,
+    "trianglesPerChunk": 179.1
+   },
+   "RS_WallFrame.pier_head": {
+    "stampsPerChunk": 4.55,
+    "trianglesPerChunk": 163.7
+   },
+   "RS_WallFrame.pier_foot": {
+    "stampsPerChunk": 4.55,
+    "trianglesPerChunk": 145.5
+   },
+   "RS_FanHousing.cowl": {
+    "stampsPerChunk": 1.49,
+    "trianglesPerChunk": 142.7
+   },
+   "RS_Gallery.post": {
+    "stampsPerChunk": 16.82,
+    "trianglesPerChunk": 134.5
+   },
+   "RS_WallFrame.win_frame": {
+    "stampsPerChunk": 10.45,
+    "trianglesPerChunk": 104.5
+   },
+   "RS_WallFrame.win_glass": {
+    "stampsPerChunk": 10.45,
+    "trianglesPerChunk": 104.5
+   },
+   "RS_PipeRun.main": {
+    "stampsPerChunk": 5.13,
+    "trianglesPerChunk": 102.7
+   },
+   "RS_PipeRun.elbow_end": {
+    "stampsPerChunk": 1.55,
+    "trianglesPerChunk": 99.1
+   },
+   "RS_PipeRun.elbow_start": {
+    "stampsPerChunk": 1.54,
+    "trianglesPerChunk": 98.8
+   },
+   "RS_Gallery.brace": {
+    "stampsPerChunk": 11.8,
+    "trianglesPerChunk": 94.4
+   },
+   "RS_ExhaustTrunk.house_roof": {
+    "stampsPerChunk": 1.02,
+    "trianglesPerChunk": 89.4
+   },
+   "RS_Gallery.rail": {
+    "stampsPerChunk": 6.37,
+    "trianglesPerChunk": 89.2
+   },
+   "RS_PipeRun.riser_head": {
+    "stampsPerChunk": 1.08,
+    "trianglesPerChunk": 86.7
+   },
+   "RS_FanHousing.stator": {
+    "stampsPerChunk": 1.49,
+    "trianglesPerChunk": 86.2
+   },
+   "RS_WallFrame.pier_cap": {
+    "stampsPerChunk": 4.55,
+    "trianglesPerChunk": 72.7
+   },
+   "RS_Gallery.deck": {
+    "stampsPerChunk": 6.37,
+    "trianglesPerChunk": 63.7
+   },
+   "RS_GateHousing.truss": {
+    "stampsPerChunk": 0.13,
+    "trianglesPerChunk": 62.1
+   },
+   "EK_Parapet.outer_rib": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 60
+   },
+   "EK_Parapet.hatch": {
+    "stampsPerChunk": 2,
+    "trianglesPerChunk": 60
+   },
+   "RS_WallFrame.pier_shaft": {
+    "stampsPerChunk": 4.55,
+    "trianglesPerChunk": 54.6
+   },
+   "RS_PipeRun.riser_tee": {
+    "stampsPerChunk": 1.08,
+    "trianglesPerChunk": 54.2
+   },
+   "RS_ExhaustTrunk.vent": {
+    "stampsPerChunk": 4.87,
+    "trianglesPerChunk": 48.7
+   },
+   "RS_ExhaustTrunk.vent_glow": {
+    "stampsPerChunk": 4.87,
+    "trianglesPerChunk": 48.7
+   },
+   "RS_WallFrame.pier_lamp": {
+    "stampsPerChunk": 4.55,
+    "trianglesPerChunk": 45.5
+   },
+   "RS_WallFrame.stile": {
+    "stampsPerChunk": 7.46,
+    "trianglesPerChunk": 44.7
+   },
+   "EK_Parapet.channel": {
+    "stampsPerChunk": 1,
+    "trianglesPerChunk": 44
+   },
+   "RS_ExhaustTrunk.house_louvre": {
+    "stampsPerChunk": 1.02,
+    "trianglesPerChunk": 36.6
+   },
+   "EK_Parapet.bridge": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 36
+   },
+   "RS_WallFrame.plinth": {
+    "stampsPerChunk": 1.89,
+    "trianglesPerChunk": 26.4
+   },
+   "RS_GateHousing.emitter": {
+    "stampsPerChunk": 2.8,
+    "trianglesPerChunk": 22.4
+   },
+   "RS_ReactorCore.dome": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 17.8
+   },
+   "SE_Bulkhead.pylon_band": {
+    "stampsPerChunk": 0.63,
+    "trianglesPerChunk": 17.7
+   },
+   "RS_PipeRun.riser": {
+    "stampsPerChunk": 1.08,
+    "trianglesPerChunk": 17.3
+   },
+   "RS_ServiceBay.jamb": {
+    "stampsPerChunk": 1.44,
+    "trianglesPerChunk": 17.3
+   },
+   "SE_Bulkhead.catwalk": {
+    "stampsPerChunk": 0.11,
+    "trianglesPerChunk": 16.4
+   },
+   "RS_ServiceBay.shutter": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 15.9
+   },
+   "RS_FanHousing.mount": {
+    "stampsPerChunk": 1.49,
+    "trianglesPerChunk": 14.9
+   },
+   "RS_FanHousing.void": {
+    "stampsPerChunk": 1.49,
+    "trianglesPerChunk": 14.9
+   },
+   "RS_ServiceBay.header": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 14.4
+   },
+   "RS_ExhaustTrunk.trunk": {
+    "stampsPerChunk": 1.17,
+    "trianglesPerChunk": 14
+   },
+   "RS_GateHousing.lamp_arm": {
+    "stampsPerChunk": 1.4,
+    "trianglesPerChunk": 14
+   },
+   "RS_WallFrame.rail": {
+    "stampsPerChunk": 2.25,
+    "trianglesPerChunk": 13.5
+   },
+   "RS_ExhaustTrunk.house_body": {
+    "stampsPerChunk": 1.02,
+    "trianglesPerChunk": 12.2
+   },
+   "EK_Parapet.bridge_lamp": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 12
+   },
+   "RS_WallFrame.coping": {
+    "stampsPerChunk": 1.17,
+    "trianglesPerChunk": 11.7
+   },
+   "SE_Bulkhead.rail_lamp": {
+    "stampsPerChunk": 1.05,
+    "trianglesPerChunk": 10.5
+   },
+   "SK_Fence.insulator": {
+    "stampsPerChunk": 0.22,
+    "trianglesPerChunk": 10.5
+   },
+   "RS_ExhaustTrunk.house_lamp": {
+    "stampsPerChunk": 1.02,
+    "trianglesPerChunk": 10.2
+   },
+   "SE_Bulkhead.launch_rail": {
+    "stampsPerChunk": 0.21,
+    "trianglesPerChunk": 9.7
+   },
+   "RS_WallFrame.sign_arm": {
+    "stampsPerChunk": 1.11,
+    "trianglesPerChunk": 8.9
+   },
+   "SE_Bulkhead.ribs": {
+    "stampsPerChunk": 0.11,
+    "trianglesPerChunk": 8.8
+   },
+   "RS_ReactorCore.stacks": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 8.8
+   },
+   "RS_ServiceBay.ceiling_light": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 8.7
+   },
+   "RS_ServiceBay.back_light": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 7.2
+   },
+   "RS_ServiceBay.hazard": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 7.2
+   },
+   "RS_ServiceBay.strobe_housing": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 7.2
+   },
+   "RS_ServiceBay.strobe": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 7.2
+   },
+   "SK_Fence.insulator_glow": {
+    "stampsPerChunk": 0.22,
+    "trianglesPerChunk": 7
+   },
+   "RS_GateHousing.pylon_crown": {
+    "stampsPerChunk": 0.13,
+    "trianglesPerChunk": 6.9
+   },
+   "RS_WallFrame.sign_hood": {
+    "stampsPerChunk": 0.55,
+    "trianglesPerChunk": 6.7
+   },
+   "RS_ReactorCore.slot_bars": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 6.6
+   },
+   "EK_Parapet.tray": {
+    "stampsPerChunk": 1,
+    "trianglesPerChunk": 6
+   },
+   "RS_ServiceBay.shell": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 5.8
+   },
+   "RS_GateHousing.pylon_bands": {
+    "stampsPerChunk": 0.13,
+    "trianglesPerChunk": 5.1
+   },
+   "SE_Bulkhead.pylon_shaft": {
+    "stampsPerChunk": 0.21,
+    "trianglesPerChunk": 4.6
+   },
+   "RS_GateHousing.pylon_cheeks": {
+    "stampsPerChunk": 0.13,
+    "trianglesPerChunk": 4.1
+   },
+   "RS_ReactorCore.body": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 2.8
+   },
+   "SK_Fence.base": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 2.7
+   },
+   "RS_GateHousing.pylon_footing": {
+    "stampsPerChunk": 0.13,
+    "trianglesPerChunk": 2.5
+   },
+   "RS_GateHousing.manifold": {
+    "stampsPerChunk": 0.13,
+    "trianglesPerChunk": 2.5
+   },
+   "RS_ReactorCore.drum": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 2.1
+   },
+   "RS_ReactorCore.dome_band": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 2.1
+   },
+   "RS_GateHousing.pylon_body": {
+    "stampsPerChunk": 0.13,
+    "trianglesPerChunk": 2
+   },
+   "RS_PipeRun.riser_sleeve": {
+    "stampsPerChunk": 0.07,
+    "trianglesPerChunk": 1.9
+   },
+   "SE_Bulkhead.corbel": {
+    "stampsPerChunk": 0.11,
+    "trianglesPerChunk": 1.7
+   },
+   "RS_GateHousing.pylon_beacon": {
+    "stampsPerChunk": 0.13,
+    "trianglesPerChunk": 1.5
+   },
+   "RS_ServiceBay.floor": {
+    "stampsPerChunk": 0.72,
+    "trianglesPerChunk": 1.4
+   },
+   "RS_ReactorCore.fins": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 1.3
+   },
+   "SK_Fence.column": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 1.2
+   },
+   "RS_ReactorCore.podium": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 1.1
+   },
+   "RS_ReactorCore.crown": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 1.1
+   },
+   "RS_ReactorCore.strobe": {
+    "stampsPerChunk": 0.11,
+    "trianglesPerChunk": 1.1
+   },
+   "RS_ReactorCore.slot_glow": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 0.3
+   },
+   "SP_Platform.nacelle": {
+    "stampsPerChunk": 0,
+    "trianglesPerChunk": 0.2
+   },
+   "SP_Platform.deck": {
+    "stampsPerChunk": 0,
+    "trianglesPerChunk": 0.1
+   },
+   "SP_Platform.strut": {
+    "stampsPerChunk": 0,
+    "trianglesPerChunk": 0
+   },
+   "SP_Platform.skirt": {
+    "stampsPerChunk": 0,
+    "trianglesPerChunk": 0
+   }
+  },
+  "4": {
+   "SP_Truss.bay": {
+    "stampsPerChunk": 1.87,
+    "trianglesPerChunk": 186.7
+   },
+   "SK_Rock.rock_f": {
+    "stampsPerChunk": 0.84,
+    "trianglesPerChunk": 47.1
+   },
+   "SK_Rock.rock_d": {
+    "stampsPerChunk": 0.9,
+    "trianglesPerChunk": 45.1
+   },
+   "SK_Rock.rock_c": {
+    "stampsPerChunk": 0.87,
+    "trianglesPerChunk": 45.1
+   },
+   "SK_Rock.rock_a": {
+    "stampsPerChunk": 0.86,
+    "trianglesPerChunk": 44.5
+   },
+   "SK_Rock.rock_e": {
+    "stampsPerChunk": 0.85,
+    "trianglesPerChunk": 42.6
+   },
+   "SK_Rock.rock_b": {
+    "stampsPerChunk": 0.82,
+    "trianglesPerChunk": 39.1
+   },
+   "SP_Platform.nacelle": {
+    "stampsPerChunk": 0.37,
+    "trianglesPerChunk": 17.6
+   },
+   "SP_Platform.deck": {
+    "stampsPerChunk": 0.09,
+    "trianglesPerChunk": 10.1
+   },
+   "SP_Platform.strut": {
+    "stampsPerChunk": 0.09,
+    "trianglesPerChunk": 3.7
+   },
+   "SP_Platform.skirt": {
+    "stampsPerChunk": 0.09,
+    "trianglesPerChunk": 2.6
+   }
+  },
+  "5": {
+   "RS_Gallery.post": {
+    "stampsPerChunk": 31.23,
+    "trianglesPerChunk": 249.8
+   },
+   "RS_FanHousing.rotor": {
+    "stampsPerChunk": 1.49,
+    "trianglesPerChunk": 181.5
+   },
+   "RS_Gallery.brace": {
+    "stampsPerChunk": 21.25,
+    "trianglesPerChunk": 170
+   },
+   "RS_WallFrame.pier_head": {
+    "stampsPerChunk": 4.58,
+    "trianglesPerChunk": 165
+   },
+   "RS_Gallery.rail": {
+    "stampsPerChunk": 11.35,
+    "trianglesPerChunk": 158.9
+   },
+   "RS_WallFrame.pier_foot": {
+    "stampsPerChunk": 4.58,
+    "trianglesPerChunk": 146.7
+   },
+   "RS_FanHousing.cowl": {
+    "stampsPerChunk": 1.49,
+    "trianglesPerChunk": 142.8
+   },
+   "RS_Gallery.deck": {
+    "stampsPerChunk": 11.35,
+    "trianglesPerChunk": 113.5
+   },
+   "RS_GateHousing.collar": {
+    "stampsPerChunk": 1.7,
+    "trianglesPerChunk": 108.5
+   },
+   "RS_WallFrame.win_frame": {
+    "stampsPerChunk": 10.47,
+    "trianglesPerChunk": 104.7
+   },
+   "RS_WallFrame.win_glass": {
+    "stampsPerChunk": 10.47,
+    "trianglesPerChunk": 104.7
+   },
+   "RS_ExhaustTrunk.house_roof": {
+    "stampsPerChunk": 1.04,
+    "trianglesPerChunk": 91.8
+   },
+   "RS_FanHousing.stator": {
+    "stampsPerChunk": 1.49,
+    "trianglesPerChunk": 86.3
+   },
+   "RS_WallFrame.pier_cap": {
+    "stampsPerChunk": 4.58,
+    "trianglesPerChunk": 73.3
+   },
+   "IC_Buttress.finial": {
+    "stampsPerChunk": 5.87,
+    "trianglesPerChunk": 70.5
+   },
+   "IC_Crest.attic_band": {
+    "stampsPerChunk": 6.92,
+    "trianglesPerChunk": 69.2
+   },
+   "IC_Portal.grille": {
+    "stampsPerChunk": 0.71,
+    "trianglesPerChunk": 62.8
+   },
+   "EK_Parapet.outer_rib": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 60
+   },
+   "EK_Parapet.hatch": {
+    "stampsPerChunk": 2,
+    "trianglesPerChunk": 60
+   },
+   "IC_Buttress.finial_lamp": {
+    "stampsPerChunk": 5.87,
+    "trianglesPerChunk": 58.7
+   },
+   "RS_WallFrame.pier_shaft": {
+    "stampsPerChunk": 4.58,
+    "trianglesPerChunk": 55
+   },
+   "IC_Crest.attic_pilaster": {
+    "stampsPerChunk": 5.87,
+    "trianglesPerChunk": 47
+   },
+   "RS_WallFrame.pier_lamp": {
+    "stampsPerChunk": 4.58,
+    "trianglesPerChunk": 45.8
+   },
+   "RS_WallFrame.stile": {
+    "stampsPerChunk": 7.41,
+    "trianglesPerChunk": 44.5
+   },
+   "EK_Parapet.channel": {
+    "stampsPerChunk": 1,
+    "trianglesPerChunk": 44
+   },
+   "IC_Buttress.fin": {
+    "stampsPerChunk": 3.4,
+    "trianglesPerChunk": 40.8
+   },
+   "RS_GateHousing.truss": {
+    "stampsPerChunk": 0.08,
+    "trianglesPerChunk": 37.6
+   },
+   "RS_ExhaustTrunk.house_louvre": {
+    "stampsPerChunk": 1.04,
+    "trianglesPerChunk": 37.6
+   },
+   "EK_Parapet.bridge": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 36
+   },
+   "RS_WallFrame.rail": {
+    "stampsPerChunk": 4.53,
+    "trianglesPerChunk": 27.2
+   },
+   "RS_WallFrame.plinth": {
+    "stampsPerChunk": 1.83,
+    "trianglesPerChunk": 25.7
+   },
+   "IC_Portal.keystone": {
+    "stampsPerChunk": 0.66,
+    "trianglesPerChunk": 21.2
+   },
+   "RS_ServiceBay.jamb": {
+    "stampsPerChunk": 1.43,
+    "trianglesPerChunk": 17.1
+   },
+   "RS_FanHousing.mount": {
+    "stampsPerChunk": 1.49,
+    "trianglesPerChunk": 14.9
+   },
+   "RS_FanHousing.void": {
+    "stampsPerChunk": 1.49,
+    "trianglesPerChunk": 14.9
+   },
+   "RS_ServiceBay.header": {
+    "stampsPerChunk": 0.71,
+    "trianglesPerChunk": 14.3
+   },
+   "RS_GateHousing.emitter": {
+    "stampsPerChunk": 1.7,
+    "trianglesPerChunk": 13.6
+   },
+   "SK_Fence.insulator": {
+    "stampsPerChunk": 0.28,
+    "trianglesPerChunk": 13.2
+   },
+   "RS_ExhaustTrunk.house_body": {
+    "stampsPerChunk": 1.04,
+    "trianglesPerChunk": 12.5
+   },
+   "EK_Parapet.bridge_lamp": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 12
+   },
+   "RS_WallFrame.coping": {
+    "stampsPerChunk": 1.12,
+    "trianglesPerChunk": 11.2
+   },
+   "IC_Crest.attic": {
+    "stampsPerChunk": 1.12,
+    "trianglesPerChunk": 11.2
+   },
+   "RS_ExhaustTrunk.house_lamp": {
+    "stampsPerChunk": 1.04,
+    "trianglesPerChunk": 10.4
+   },
+   "SK_Fence.insulator_glow": {
+    "stampsPerChunk": 0.28,
+    "trianglesPerChunk": 8.8
+   },
+   "RS_ServiceBay.ceiling_light": {
+    "stampsPerChunk": 0.71,
+    "trianglesPerChunk": 8.6
+   },
+   "RS_GateHousing.lamp_arm": {
+    "stampsPerChunk": 0.85,
+    "trianglesPerChunk": 8.5
+   },
+   "SE_Bulkhead.pylon_band": {
+    "stampsPerChunk": 0.3,
+    "trianglesPerChunk": 8.4
+   },
+   "RS_WallFrame.sign_arm": {
+    "stampsPerChunk": 1,
+    "trianglesPerChunk": 8
+   },
+   "SE_Bulkhead.catwalk": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 7.8
+   },
+   "RS_ServiceBay.back_light": {
+    "stampsPerChunk": 0.71,
+    "trianglesPerChunk": 7.1
+   },
+   "RS_ServiceBay.hazard": {
+    "stampsPerChunk": 0.71,
+    "trianglesPerChunk": 7.1
+   },
+   "RS_ServiceBay.strobe_housing": {
+    "stampsPerChunk": 0.71,
+    "trianglesPerChunk": 7.1
+   },
+   "RS_ServiceBay.strobe": {
+    "stampsPerChunk": 0.71,
+    "trianglesPerChunk": 7.1
+   },
+   "IC_Portal.crest_light": {
+    "stampsPerChunk": 0.66,
+    "trianglesPerChunk": 6.6
+   },
+   "EK_Parapet.tray": {
+    "stampsPerChunk": 1,
+    "trianglesPerChunk": 6
+   },
+   "RS_WallFrame.sign_hood": {
+    "stampsPerChunk": 0.5,
+    "trianglesPerChunk": 6
+   },
+   "RS_ServiceBay.shell": {
+    "stampsPerChunk": 0.71,
+    "trianglesPerChunk": 5.7
+   },
+   "SE_Bulkhead.rail_lamp": {
+    "stampsPerChunk": 0.5,
+    "trianglesPerChunk": 5
+   },
+   "SE_Bulkhead.launch_rail": {
+    "stampsPerChunk": 0.1,
+    "trianglesPerChunk": 4.6
+   },
+   "SE_Bulkhead.ribs": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 4.2
+   },
+   "IC_Keep.tiers": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 4.2
+   },
+   "RS_GateHousing.pylon_crown": {
+    "stampsPerChunk": 0.08,
+    "trianglesPerChunk": 4.2
+   },
+   "SK_Fence.base": {
+    "stampsPerChunk": 0.07,
+    "trianglesPerChunk": 3.4
+   },
+   "RS_GateHousing.pylon_bands": {
+    "stampsPerChunk": 0.08,
+    "trianglesPerChunk": 3.1
+   },
+   "RS_GateHousing.pylon_cheeks": {
+    "stampsPerChunk": 0.08,
+    "trianglesPerChunk": 2.5
+   },
+   "IC_Keep.buttress": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 2.4
+   },
+   "SE_Bulkhead.pylon_shaft": {
+    "stampsPerChunk": 0.1,
+    "trianglesPerChunk": 2.2
+   },
+   "IC_Keep.masts": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 2.2
+   },
+   "IC_Keep.tier_trim": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 1.6
+   },
+   "RS_GateHousing.pylon_footing": {
+    "stampsPerChunk": 0.08,
+    "trianglesPerChunk": 1.5
+   },
+   "RS_GateHousing.manifold": {
+    "stampsPerChunk": 0.08,
+    "trianglesPerChunk": 1.5
+   },
+   "SK_Fence.column": {
+    "stampsPerChunk": 0.07,
+    "trianglesPerChunk": 1.5
+   },
+   "RS_ServiceBay.floor": {
+    "stampsPerChunk": 0.71,
+    "trianglesPerChunk": 1.4
+   },
+   "RS_GateHousing.pylon_body": {
+    "stampsPerChunk": 0.08,
+    "trianglesPerChunk": 1.2
+   },
+   "IC_Keep.base": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 1
+   },
+   "IC_Keep.beacon": {
+    "stampsPerChunk": 0.1,
+    "trianglesPerChunk": 1
+   },
+   "RS_GateHousing.pylon_beacon": {
+    "stampsPerChunk": 0.08,
+    "trianglesPerChunk": 0.9
+   },
+   "SE_Bulkhead.corbel": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 0.8
+   },
+   "IC_Keep.body": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 0.8
+   },
+   "IC_Keep.slot": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 0.5
+   },
+   "IC_Keep.bridge_band": {
+    "stampsPerChunk": 0.05,
+    "trianglesPerChunk": 0.3
+   }
+  },
+  "6": {
+   "TG_Crest.barb": {
+    "stampsPerChunk": 5.92,
+    "trianglesPerChunk": 283.9
+   },
+   "RS_FanHousing.rotor": {
+    "stampsPerChunk": 1.47,
+    "trianglesPerChunk": 179.6
+   },
+   "TG_Crest.tooth": {
+    "stampsPerChunk": 22.42,
+    "trianglesPerChunk": 179.4
+   },
+   "RS_WallFrame.pier_head": {
+    "stampsPerChunk": 4.61,
+    "trianglesPerChunk": 166
+   },
+   "RS_WallFrame.pier_foot": {
+    "stampsPerChunk": 4.61,
+    "trianglesPerChunk": 147.5
+   },
+   "RS_FanHousing.cowl": {
+    "stampsPerChunk": 1.47,
+    "trianglesPerChunk": 141.3
+   },
+   "RS_GateHousing.collar": {
+    "stampsPerChunk": 2.1,
+    "trianglesPerChunk": 134.6
+   },
+   "RS_WallFrame.win_frame": {
+    "stampsPerChunk": 10.56,
+    "trianglesPerChunk": 105.6
+   },
+   "RS_WallFrame.win_glass": {
+    "stampsPerChunk": 10.56,
+    "trianglesPerChunk": 105.6
+   },
+   "RS_ExhaustTrunk.house_roof": {
+    "stampsPerChunk": 1.05,
+    "trianglesPerChunk": 92
+   },
+   "TG_Alarm.rib_guard": {
+    "stampsPerChunk": 4.36,
+    "trianglesPerChunk": 87.1
+   },
+   "RS_FanHousing.stator": {
+    "stampsPerChunk": 1.47,
+    "trianglesPerChunk": 85.4
+   },
+   "RS_WallFrame.pier_cap": {
+    "stampsPerChunk": 4.61,
+    "trianglesPerChunk": 73.8
+   },
+   "EK_Parapet.outer_rib": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 60
+   },
+   "EK_Parapet.hatch": {
+    "stampsPerChunk": 2,
+    "trianglesPerChunk": 60
+   },
+   "RS_WallFrame.pier_shaft": {
+    "stampsPerChunk": 4.61,
+    "trianglesPerChunk": 55.3
+   },
+   "RS_GateHousing.truss": {
+    "stampsPerChunk": 0.1,
+    "trianglesPerChunk": 46.6
+   },
+   "RS_WallFrame.pier_lamp": {
+    "stampsPerChunk": 4.61,
+    "trianglesPerChunk": 46.1
+   },
+   "RS_WallFrame.stile": {
+    "stampsPerChunk": 7.44,
+    "trianglesPerChunk": 44.6
+   },
+   "EK_Parapet.channel": {
+    "stampsPerChunk": 1,
+    "trianglesPerChunk": 44
+   },
+   "TG_Alarm.rib_light": {
+    "stampsPerChunk": 4.36,
+    "trianglesPerChunk": 43.6
+   },
+   "RS_ExhaustTrunk.house_louvre": {
+    "stampsPerChunk": 1.05,
+    "trianglesPerChunk": 37.6
+   },
+   "EK_Parapet.bridge": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 36
+   },
+   "TG_Blast.lock": {
+    "stampsPerChunk": 0.69,
+    "trianglesPerChunk": 27.6
+   },
+   "RS_WallFrame.plinth": {
+    "stampsPerChunk": 1.83,
+    "trianglesPerChunk": 25.7
+   },
+   "TG_Blast.door": {
+    "stampsPerChunk": 0.69,
+    "trianglesPerChunk": 19.4
+   },
+   "RS_GateHousing.emitter": {
+    "stampsPerChunk": 2.1,
+    "trianglesPerChunk": 16.8
+   },
+   "RS_ServiceBay.jamb": {
+    "stampsPerChunk": 1.38,
+    "trianglesPerChunk": 16.6
+   },
+   "RS_FanHousing.mount": {
+    "stampsPerChunk": 1.47,
+    "trianglesPerChunk": 14.7
+   },
+   "RS_FanHousing.void": {
+    "stampsPerChunk": 1.47,
+    "trianglesPerChunk": 14.7
+   },
+   "RS_ServiceBay.header": {
+    "stampsPerChunk": 0.69,
+    "trianglesPerChunk": 13.8
+   },
+   "RS_ExhaustTrunk.house_body": {
+    "stampsPerChunk": 1.05,
+    "trianglesPerChunk": 12.5
+   },
+   "EK_Parapet.bridge_lamp": {
+    "stampsPerChunk": 6,
+    "trianglesPerChunk": 12
+   },
+   "RS_WallFrame.coping": {
+    "stampsPerChunk": 1.14,
+    "trianglesPerChunk": 11.4
+   },
+   "RS_GateHousing.lamp_arm": {
+    "stampsPerChunk": 1.05,
+    "trianglesPerChunk": 10.5
+   },
+   "RS_ExhaustTrunk.house_lamp": {
+    "stampsPerChunk": 1.05,
+    "trianglesPerChunk": 10.5
+   },
+   "TG_Siren.horns": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 8.5
+   },
+   "RS_WallFrame.sign_arm": {
+    "stampsPerChunk": 0.96,
+    "trianglesPerChunk": 7.7
+   },
+   "RS_ServiceBay.hazard": {
+    "stampsPerChunk": 0.69,
+    "trianglesPerChunk": 6.9
+   },
+   "TG_Blast.chevrons": {
+    "stampsPerChunk": 0.69,
+    "trianglesPerChunk": 6.9
+   },
+   "RS_ServiceBay.strobe_housing": {
+    "stampsPerChunk": 0.69,
+    "trianglesPerChunk": 6.9
+   },
+   "RS_ServiceBay.strobe": {
+    "stampsPerChunk": 0.69,
+    "trianglesPerChunk": 6.9
+   },
+   "RS_WallFrame.rail": {
+    "stampsPerChunk": 1.15,
+    "trianglesPerChunk": 6.9
+   },
+   "EK_Parapet.tray": {
+    "stampsPerChunk": 1,
+    "trianglesPerChunk": 6
+   },
+   "RS_WallFrame.sign_hood": {
+    "stampsPerChunk": 0.48,
+    "trianglesPerChunk": 5.8
+   },
+   "RS_GateHousing.pylon_crown": {
+    "stampsPerChunk": 0.1,
+    "trianglesPerChunk": 5.2
+   },
+   "SK_Fence.insulator": {
+    "stampsPerChunk": 0.09,
+    "trianglesPerChunk": 4.2
+   },
+   "RS_GateHousing.pylon_bands": {
+    "stampsPerChunk": 0.1,
+    "trianglesPerChunk": 3.8
+   },
+   "RS_GateHousing.pylon_cheeks": {
+    "stampsPerChunk": 0.1,
+    "trianglesPerChunk": 3.1
+   },
+   "SK_Fence.insulator_glow": {
+    "stampsPerChunk": 0.09,
+    "trianglesPerChunk": 2.8
+   },
+   "RS_GateHousing.pylon_footing": {
+    "stampsPerChunk": 0.1,
+    "trianglesPerChunk": 1.9
+   },
+   "RS_GateHousing.manifold": {
+    "stampsPerChunk": 0.1,
+    "trianglesPerChunk": 1.9
+   },
+   "TG_Siren.slot_fins": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 1.9
+   },
+   "TG_Siren.slots": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 1.8
+   },
+   "RS_GateHousing.pylon_body": {
+    "stampsPerChunk": 0.1,
+    "trianglesPerChunk": 1.5
+   },
+   "TG_Siren.blades": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 1.4
+   },
+   "TG_Siren.beacon_bar": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 1.4
+   },
+   "TG_Siren.base": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 1.2
+   },
+   "RS_GateHousing.pylon_beacon": {
+    "stampsPerChunk": 0.1,
+    "trianglesPerChunk": 1.1
+   },
+   "SK_Fence.base": {
+    "stampsPerChunk": 0.02,
+    "trianglesPerChunk": 1.1
+   },
+   "TG_Siren.body": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 0.9
+   },
+   "TG_Siren.beacon": {
+    "stampsPerChunk": 0.06,
+    "trianglesPerChunk": 0.6
+   },
+   "SK_Fence.column": {
+    "stampsPerChunk": 0.02,
+    "trianglesPerChunk": 0.5
+   }
+  },
+  "7": {
+   "BA_Arena.coil": {
+    "stampsPerChunk": 7,
+    "trianglesPerChunk": 196
+   },
+   "BA_Arena.pier_crown": {
+    "stampsPerChunk": 2,
+    "trianglesPerChunk": 104
+   },
+   "BA_Arena.near_block": {
+    "stampsPerChunk": 2,
+    "trianglesPerChunk": 64
+   },
+   "BA_Arena.pier_base": {
+    "stampsPerChunk": 2,
+    "trianglesPerChunk": 40
+   },
+   "BA_Arena.pier_shaft": {
+    "stampsPerChunk": 2,
+    "trianglesPerChunk": 24
+   },
+   "BA_Arena.pier_fins": {
+    "stampsPerChunk": 2,
+    "trianglesPerChunk": 24
+   },
+   "BA_Arena.throat_rib": {
+    "stampsPerChunk": 2.4,
+    "trianglesPerChunk": 19.2
+   },
+   "BA_Arena.throat_band": {
+    "stampsPerChunk": 0.9,
+    "trianglesPerChunk": 5.4
+   }
+  }
+ }
+}

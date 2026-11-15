@@ -18,8 +18,8 @@
   --violet: #a06bff;
 
   --hud-pad: clamp(14px, 2.2vmin, 30px);
-  --fs-xs: clamp(11px, 1.3vmin, 14px);
-  --fs-sm: clamp(10px, 1.28vmin, 15px);
+  --fs-xs: clamp(12px, 1.3vmin, 14px);
+  --fs-sm: clamp(12px, 1.28vmin, 15px);
   --fs-md: clamp(13px, 1.75vmin, 21px);
   --fs-lg: clamp(20px, 3.1vmin, 40px);
   --fs-xl: clamp(34px, 8.4vmin, 118px);
@@ -46,7 +46,7 @@ html, body {
 
 #viewport { touch-action: none; position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 
-.label { color: var(--ink-dim); font-size: var(--fs-xs); letter-spacing: 0.22em; }
+.label { color: var(--ink-dim); font-size: var(--fs-xs); letter-spacing: 0.14em; }
 
 /* ==========================================================================
    HUD
@@ -176,6 +176,8 @@ html, body {
 .gauge { display: flex; flex-direction: column; gap: 3px; min-width: clamp(96px, 15vmin, 220px); }
 .hud-br .gauge { align-items: flex-end; }
 .gauge-head { display: flex; justify-content: space-between; gap: 0.8em; width: 100%; font-size: var(--fs-xs); color: var(--ink-dim); }
+.gauge-head { font-variant-numeric: tabular-nums; }
+.gauge-head .label { letter-spacing: 0.08em; }
 .gauge-track {
   width: 100%; height: 7px;
   background: rgba(255, 255, 255, 0.07);
@@ -257,7 +259,9 @@ html, body {
 
 .warn {
   position: absolute; top: 24%; left: 50%; transform: translateX(-50%);
-  font-size: var(--fs-md); letter-spacing: 0.4em; color: var(--red);
+  max-width: min(72vw, 640px); padding: 6px 12px;
+  font-size: var(--fs-md); line-height: 1.5; letter-spacing: 0.14em; color: var(--red);
+  background: linear-gradient(90deg, transparent, #070e18e6 16%, #070e18e6 84%, transparent);
   text-shadow: 0 0 24px rgba(255, 61, 85, 0.9);
   opacity: 0; text-align: center;
 }
@@ -455,9 +459,9 @@ html, body {
   border-left: 2px solid transparent;
   transition: background 0.15s, border-color 0.15s;
 }
-.setting:hover, .setting.sel { background: rgba(69, 224, 255, 0.1); border-left-color: var(--cyan); }
+.setting:hover, .setting.sel, .setting:focus-within { background: rgba(69, 224, 255, 0.1); border-left-color: var(--cyan); }
 .setting-name { letter-spacing: 0.14em; }
-.setting-desc { display: block; font-size: var(--fs-xs); color: var(--ink-dim); letter-spacing: 0.06em; margin-top: 2px; }
+.setting-desc { display: block; font-size: var(--fs-xs); line-height: 1.55; color: var(--ink-dim); letter-spacing: 0.02em; margin-top: 4px; }
 .setting-ctl { display: flex; align-items: center; gap: 0.9em; }
 .setting-ctl button {
   appearance: none; border: 1px solid rgba(69, 224, 255, 0.35); background: transparent;
@@ -465,7 +469,10 @@ html, body {
   width: 2em; height: 1.9em; cursor: pointer; transition: background 0.15s, color 0.15s;
 }
 .setting-ctl button:hover { background: var(--cyan); color: #04070c; }
-.setting-val { min-width: 7em; text-align: center; color: #fff; letter-spacing: 0.16em; }
+.setting-val { min-width: 7em; text-align: center; color: #fff; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; }
+.setting-val[data-state="on"] { color: var(--green); }
+.setting-val[data-state="off"] { color: var(--ink-dim); }
+.setting-ctl button:focus-visible, .tb:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; background: #123443; color: #fff; }
 .setting-ctl input[type=range] { width: clamp(90px, 14vmin, 170px); accent-color: var(--cyan); }
 
 /* --- scores ----------------------------------------------------------- */
@@ -494,6 +501,8 @@ html, body {
   opacity: 0; animation: rowIn 0.4s var(--ease) forwards;
 }
 .result-row.total { background: rgba(69, 224, 255, 0.13); font-size: var(--fs-md); margin-top: 0.5em; }
+.result-row.has-grades { align-items: center; padding-top: 18px; }
+.result-row > span { min-width: 0; }
 .result-row span:first-child { color: var(--ink-dim); letter-spacing: 0.2em; }
 .result-row span:last-child { color: #fff; font-variant-numeric: tabular-nums; }
 .result-row.total span:last-child { color: var(--amber); text-shadow: 0 0 18px rgba(255, 180, 58, 0.7); }
@@ -639,7 +648,7 @@ html, body {
 /* Combo emphasis stays in the fixed HUD. */
 .chain { gap: 10px; min-height: 52px; }
 .chain-x { font-size: clamp(27px, 3.4vmin, 42px); line-height: 1; display: inline-block; transform-origin: left center; }
-.chain-info { display: flex; flex-direction: column; gap: 5px; }
+.chain-info { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
 .chain-detail { font-size: clamp(11px, 1.2vmin, 13px); letter-spacing: .05em; color: #ffdfaa; }
 .chain-bar { width: clamp(104px, 12vmin, 164px); height: 5px; }
 .chain-event { font-size: 11px; letter-spacing: .12em; color: #ffd58e; min-height: 13px; opacity: 0; }
@@ -674,3 +683,112 @@ html, body {
 @media (max-width:440px) { .altimeter { min-width:50px; padding:8px 11px; } .route-strip { gap:3px; } .route-strip i { width:9px; } .sector-card { padding:0 8px 8px; } }
 @media (max-height:480px) { #screen-sector { padding-top:110px; } #screen-sector .sc-line { margin:.4em 0; } .sc-rhythm { margin:4px 0; } }
 @media (prefers-reduced-motion:reduce) { .sc-line, .result-row { animation:none !important; } .alt-contact { transition:none; } }
+
+/* Keep compact instruments separate from the boss and from touch controls. */
+.boss-phase { letter-spacing: .12em; line-height: 1.5; }
+.touch-device .hud-tl { width: clamp(158px, 43vw, 196px); padding: 8px 10px; }
+.touch-device .chain { gap: 7px; }
+.touch-device .chain-detail { font-size: 11px; line-height: 1.4; letter-spacing: 0; }
+.touch-device .chain-bar { width: 100%; }
+.touch-device .chain-event { letter-spacing: .02em; }
+.touch-device .sector-name { letter-spacing: .12em; }
+.touch-device .boss-bar { top: calc(var(--safe-top) + 148px); width: calc(100% - var(--safe-left) - var(--safe-right) - 28px); }
+@media (min-aspect-ratio: 4/3) {
+  .touch-device .boss-bar { top: calc(var(--safe-top) + 18px); width: min(44vw, calc(100vw - var(--safe-left) - var(--safe-right) - 420px)); }
+}
+@media (max-height: 480px) {
+  .altimeter { min-width: 62px; padding: 6px 10px; }
+  .touch-device .hud-bl, .touch-device .hud-br { padding: 8px 10px; }
+}
+@media (max-width: 440px) {
+  .result-row { gap: 10px; padding: 9px 10px; line-height: 1.5; }
+  .result-row > span:first-child { letter-spacing: .06em; }
+  .result-row.has-grades { flex-direction: column; align-items: stretch; gap: 16px; padding-top: 9px; }
+  .grade-chips { justify-content: space-between; }
+  .grade-chips i { width: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Removing an animation must retain the information it would reveal. */
+  .warn.on, .result-row { opacity: 1; }
+}
+
+/* ==========================================================================
+   Final polish: warning hierarchy, reachable actions, legible results,
+   touch targets. Later in the cascade on purpose; earlier rules stay intact.
+   ========================================================================== */
+
+/* Damage/threat alerts keep the red pulse; notices and gains are steady. */
+.warn[data-tone="notice"] { color: #ffc46b; text-shadow: 0 0 18px rgba(255, 180, 58, 0.6); }
+.warn[data-tone="gain"] { color: #8dffc1; text-shadow: 0 0 18px rgba(82, 255, 168, 0.55); }
+.warn.on[data-tone="notice"], .warn.on[data-tone="gain"] { animation: warnin 0.18s ease-out both; }
+@keyframes warnin { from { opacity: 0; } to { opacity: 1; } }
+/* Warnings drop beneath a sector grade banner, and beneath a sector card. */
+.hud.grade-on .warn { top: max(24%, calc(var(--grade-bottom, 0px) + 6px)); }
+:root.sector-card-on .warn { top: calc(var(--card-bottom, 30vh) + 8px); }
+
+/* The narrow-screen card offset was overridden by the later top-strip rule;
+   restate it so the card clears the score and chain block on phones. */
+@media (max-width: 680px) {
+  #screen-sector { padding-top: calc(var(--safe-top) + 150px); }
+  .grade { top: calc(var(--safe-top) + 140px); }
+}
+
+/* Panel actions stay in reach while long content scrolls beneath them. */
+.panel { --panel-pad: clamp(20px, 3.4vmin, 48px); }
+/* Chromium pins sticky boxes to the content edge; run the bar through the
+   panel's bottom padding so nothing scrolls visibly beneath it. */
+.panel > .menu:last-child {
+  position: sticky; bottom: calc(-1 * var(--panel-pad)); z-index: 2;
+  margin-top: 1.2em; margin-bottom: calc(-1 * var(--panel-pad));
+  padding: 14px 0 var(--panel-pad);
+  background: linear-gradient(180deg, rgba(5, 11, 18, 0), #050b12 14px);
+}
+#screen-howto .panel, #screen-scores .panel { scroll-padding-bottom: calc(64px + var(--panel-pad)); }
+#screen-settings .panel { scroll-padding-bottom: calc(92px + var(--panel-pad)); }
+#screen-over .panel { scroll-padding-bottom: calc(150px + var(--panel-pad)); }
+@media (max-height: 820px) {
+  .result-row { padding-top: 0.42em; padding-bottom: 0.42em; }
+  #screen-over .panel-title { margin-bottom: 0.7em; }
+}
+@media (max-height: 500px) {
+  .panel > .menu:last-child { gap: 0.15em; padding-top: 8px; }
+  .panel > .menu:last-child .mi { padding-top: 0.32em; padding-bottom: 0.32em; }
+  #screen-over .panel { scroll-padding-bottom: calc(112px + var(--panel-pad)); }
+}
+
+/* Results: sector numbers sit above each grade at a readable size. */
+.grade-chips { align-items: flex-end; }
+.result-row .grade-chips i {
+  display: inline-flex; flex-direction: column; align-items: center; gap: 3px;
+  height: auto; background: none; outline: none; color: inherit;
+}
+.result-row .grade-chips i small { position: static; font-size: 11px; line-height: 1; color: #9fbccc; }
+.grade-chips i b {
+  display: grid; place-items: center; width: 100%; height: 22px;
+  font-size: 13px; font-weight: 700; color: #06121a; background: #6e8ea6;
+}
+.grade-chips .g-S b { background: #92ffd0; }
+.grade-chips .g-A b { background: var(--amber); }
+.grade-chips .g-B b { background: #a8c8dc; }
+.grade-chips .g-C b { background: #ff9a8a; }
+.grade-chips .g-none b { background: transparent; color: var(--ink-dim); box-shadow: inset 0 0 0 1px #2a3c4a; }
+.grade-chips.dim i b { opacity: 0.7; }
+.grade-chips.dim i { opacity: 1; }
+.result-row.has-grades { padding-top: 0.5em; padding-bottom: 0.5em; }
+
+/* Settings: one quiet line confirming where a change went. */
+.settings-status { min-height: 1.6em; margin: 0; font-size: var(--fs-xs); letter-spacing: 0.12em; line-height: 1.6; color: #a9c6d4; text-align: center; }
+.settings-status.changed { color: #8dffc1; }
+.settings-status.session { color: #ffc46b; }
+
+/* Phone title: the subtitle floor was 10px; keep it at a readable 12px. */
+.title-sub { font-size: clamp(12px, 1.15vw, 17px); }
+
+/* Touch: every menu and settings control is at least a 44px target. */
+.touch-device .mi { min-height: 44px; }
+.touch-device #title-menu { gap: 2px; }
+.touch-device .setting-ctl button { min-width: 44px; min-height: 44px; }
+.touch-device .setting, .touch-device .pilot-entry input { min-height: 44px; }
+
+/* Short desktop windows: the weapons block steps left of the altimeter column. */
+.hud.alt-crowded .hud-br { right: calc(var(--safe-right) + var(--hud-pad) + var(--alt-w, 76px) + 12px); }

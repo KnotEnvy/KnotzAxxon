@@ -215,7 +215,10 @@
       <div class="panel">
         <h2 class="panel-title">SYSTEMS</h2>
         <div class="settings" id="settings-list"></div>
-        <div class="menu"><button class="mi" data-action="back">RETURN</button></div>
+        <div class="menu">
+          <p class="settings-status" id="settings-status" role="status" aria-live="polite"></p>
+          <button class="mi" data-action="back">RETURN</button>
+        </div>
       </div>
     </div>
 
@@ -265,9 +268,9 @@
       <button class="tb touch-pause" id="tb-pause" aria-label="Pause game">II</button>
       <div class="stick" id="touch-stick"><i></i></div>
       <div class="tbtns">
-        <button class="tb" id="tb-fire">FIRE</button>
-        <button class="tb small" id="tb-boost">BST</button>
-        <button class="tb small" id="tb-roll">ROLL</button>
+        <button class="tb" id="tb-fire" aria-label="Fire">FIRE</button>
+        <button class="tb small" id="tb-boost" aria-label="Afterburner">BST</button>
+        <button class="tb small" id="tb-roll" aria-label="Barrel roll">ROLL</button>
       </div>
     </div>
 

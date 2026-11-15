@@ -1,0 +1,1661 @@
+{
+  "phase": "before",
+  "startedAt": "2026-11-15T07:13:09.784Z",
+  "source": "START owner snapshot + current non-owned game; actual WebGL render",
+  "seed": 42,
+  "time": 12,
+  "sector": 0,
+  "into": 270,
+  "player": [
+    0,
+    8,
+    270
+  ],
+  "quality": "low",
+  "pixelRatio": 1,
+  "limits": "Manual staged scene + synthetic HUD telemetry, not human play. SwiftShader software GPU, no hardware timing.",
+  "captures": [
+    {
+      "name": "desktop-classic",
+      "sha256": "00d7833325dca133f5a4624bf7fbfc485ff4a07e143d5a0c5b29376e0a2ee9f5",
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "boxes": {
+        ".hud-tl": {
+          "x": 15.828125,
+          "y": 15.828125,
+          "width": 205.96875,
+          "height": 125,
+          "right": 221.796875,
+          "bottom": 140.828125
+        },
+        ".hud-tr": {
+          "x": 1092.125,
+          "y": 15.828125,
+          "width": 172.046875,
+          "height": 79.5,
+          "right": 1264.171875,
+          "bottom": 95.328125
+        },
+        ".hud-bl": {
+          "x": 15.828125,
+          "y": 620.171875,
+          "width": 142,
+          "height": 84,
+          "right": 157.828125,
+          "bottom": 704.171875
+        },
+        ".hud-br": {
+          "x": 1100.171875,
+          "y": 513.015625,
+          "width": 164,
+          "height": 191.15625,
+          "right": 1264.171875,
+          "bottom": 704.171875
+        },
+        "#hud-altimeter": {
+          "x": 1188.171875,
+          "y": 213.5,
+          "width": 76,
+          "height": 293,
+          "right": 1264.171875,
+          "bottom": 506.5
+        },
+        "#hud-boss": {
+          "x": 281.6015625,
+          "y": 22.171875,
+          "width": 716.796875,
+          "height": 43.5,
+          "right": 998.3984375,
+          "bottom": 65.671875
+        },
+        "#hud-warn": {
+          "x": 554.1953125,
+          "y": 172.796875,
+          "width": 171.609375,
+          "height": 15,
+          "right": 725.8046875,
+          "bottom": 187.796875
+        },
+        ".setting-ctl button:focus": null,
+        ".result-row:last-child": null,
+        ".grade-chips": null
+      },
+      "focus": "<body>\n  <div id=\"app\">\n    <canvas id=\"viewport\" aria-label=\"KnotzAxxon flight playfield\" data-engine=\"three.js r185\" width=\"960\" height=\"540\"></canvas>\n\n    <!-- ============================== HUD ============================== -->\n    <div id=\"hud\" class=\"hud is-live\" aria-hidden=\"false\">\n\n      ",
+      "camera": [
+        -0.7071067811865477,
+        2.7755575615628914e-17,
+        0.7071067811865476,
+        0,
+        0.4082492888212953,
+        0.8164955825684628,
+        0.4082492888212952,
+        0,
+        -0.5773495632430207,
+        0.5773516810802466,
+        -0.5773495632430208,
+        0,
+        -45.254833995939045,
+        54.255,
+        252.74516600406096,
+        1
+      ],
+      "projection": [
+        0.014062499999999999,
+        0,
+        0,
+        0,
+        0,
+        0.025,
+        0,
+        0,
+        0,
+        0,
+        -0.0026053540024750864,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        1
+      ]
+    },
+    {
+      "name": "desktop-modern",
+      "sha256": "efac380eee99bba52f9d652d16c0a4bf905c9fa438e4f39ed51d894e5764ff15",
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "boxes": {
+        ".hud-tl": {
+          "x": 15.828125,
+          "y": 15.828125,
+          "width": 205.96875,
+          "height": 125,
+          "right": 221.796875,
+          "bottom": 140.828125
+        },
+        ".hud-tr": {
+          "x": 1092.125,
+          "y": 15.828125,
+          "width": 172.046875,
+          "height": 79.5,
+          "right": 1264.171875,
+          "bottom": 95.328125
+        },
+        ".hud-bl": {
+          "x": 15.828125,
+          "y": 620.171875,
+          "width": 142,
+          "height": 84,
+          "right": 157.828125,
+          "bottom": 704.171875
+        },
+        ".hud-br": {
+          "x": 1100.171875,
+          "y": 513.015625,
+          "width": 164,
+          "height": 191.15625,
+          "right": 1264.171875,
+          "bottom": 704.171875
+        },
+        "#hud-altimeter": {
+          "x": 1188.171875,
+          "y": 213.5,
+          "width": 76,
+          "height": 293,
+          "right": 1264.171875,
+          "bottom": 506.5
+        },
+        "#hud-boss": {
+          "x": 281.6015625,
+          "y": 22.171875,
+          "width": 716.796875,
+          "height": 43.5,
+          "right": 998.3984375,
+          "bottom": 65.671875
+        },
+        "#hud-warn": {
+          "x": 554.1953125,
+          "y": 172.796875,
+          "width": 171.609375,
+          "height": 15,
+          "right": 725.8046875,
+          "bottom": 187.796875
+        },
+        ".setting-ctl button:focus": null,
+        ".result-row:last-child": null,
+        ".grade-chips": null
+      },
+      "focus": "<body>\n  <div id=\"app\">\n    <canvas id=\"viewport\" aria-label=\"KnotzAxxon flight playfield\" data-engine=\"three.js r185\" width=\"960\" height=\"540\"></canvas>\n\n    <!-- ============================== HUD ============================== -->\n    <div id=\"hud\" class=\"hud is-live\" aria-hidden=\"false\">\n\n      ",
+      "camera": [
+        -0.9746985638237089,
+        0,
+        0.2235233985067336,
+        0,
+        0.0619512801432207,
+        0.9608243791274734,
+        0.2701454263224187,
+        0,
+        -0.21476673059069515,
+        0.2771579197394604,
+        -0.9365141424223551,
+        0,
+        -9.91858415644439,
+        22,
+        242.74891399720866,
+        1
+      ],
+      "projection": [
+        1.014776862340176,
+        0,
+        0,
+        0,
+        0,
+        1.8040477552714238,
+        0,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        -1,
+        0,
+        0,
+        -0.7003191558653031,
+        0
+      ]
+    },
+    {
+      "name": "desktop-chase",
+      "sha256": "8bde422b717f69f2e23b8af651a376b9b8184bebf735138b1c653ec1442a178a",
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "boxes": {
+        ".hud-tl": {
+          "x": 15.828125,
+          "y": 15.828125,
+          "width": 205.96875,
+          "height": 125,
+          "right": 221.796875,
+          "bottom": 140.828125
+        },
+        ".hud-tr": {
+          "x": 1092.125,
+          "y": 15.828125,
+          "width": 172.046875,
+          "height": 79.5,
+          "right": 1264.171875,
+          "bottom": 95.328125
+        },
+        ".hud-bl": {
+          "x": 15.828125,
+          "y": 620.171875,
+          "width": 142,
+          "height": 84,
+          "right": 157.828125,
+          "bottom": 704.171875
+        },
+        ".hud-br": {
+          "x": 1100.171875,
+          "y": 513.015625,
+          "width": 164,
+          "height": 191.15625,
+          "right": 1264.171875,
+          "bottom": 704.171875
+        },
+        "#hud-altimeter": {
+          "x": 1188.171875,
+          "y": 213.5,
+          "width": 76,
+          "height": 293,
+          "right": 1264.171875,
+          "bottom": 506.5
+        },
+        "#hud-boss": {
+          "x": 281.6015625,
+          "y": 22.171875,
+          "width": 716.796875,
+          "height": 43.5,
+          "right": 998.3984375,
+          "bottom": 65.671875
+        },
+        "#hud-warn": {
+          "x": 554.1953125,
+          "y": 172.796875,
+          "width": 171.609375,
+          "height": 15,
+          "right": 725.8046875,
+          "bottom": 187.796875
+        },
+        ".setting-ctl button:focus": null,
+        ".result-row:last-child": null,
+        ".grade-chips": null
+      },
+      "focus": "<body>\n  <div id=\"app\">\n    <canvas id=\"viewport\" aria-label=\"KnotzAxxon flight playfield\" data-engine=\"three.js r185\" width=\"960\" height=\"540\"></canvas>\n\n    <!-- ============================== HUD ============================== -->\n    <div id=\"hud\" class=\"hud is-live\" aria-hidden=\"false\">\n\n      ",
+      "camera": [
+        -0.9980261509314943,
+        -1.734723475976807e-18,
+        0.06279969790425637,
+        0,
+        0.01277526444725352,
+        0.9790897512831184,
+        0.20302721874336022,
+        0,
+        -0.061486540601733336,
+        0.20342875640469688,
+        -0.9771571758895645,
+        0,
+        -2.5086831184236833,
+        17.5,
+        246.13147451116143,
+        1
+      ],
+      "projection": [
+        0.8661740421457028,
+        0,
+        0,
+        0,
+        0,
+        1.5398649638145827,
+        0,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        -1,
+        0,
+        0,
+        -0.7003191558653031,
+        0
+      ]
+    },
+    {
+      "name": "desktop-settings",
+      "sha256": "a3c9c4fbbcfe00ece3a4e1ca31b3e8785a997ae3a3216fc02717546d921f0067",
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "boxes": {
+        ".hud-tl": {
+          "x": 15.828125,
+          "y": 15.828125,
+          "width": 205.96875,
+          "height": 125,
+          "right": 221.796875,
+          "bottom": 140.828125
+        },
+        ".hud-tr": {
+          "x": 1092.125,
+          "y": 15.828125,
+          "width": 172.046875,
+          "height": 79.5,
+          "right": 1264.171875,
+          "bottom": 95.328125
+        },
+        ".hud-bl": {
+          "x": 15.828125,
+          "y": 620.171875,
+          "width": 142,
+          "height": 84,
+          "right": 157.828125,
+          "bottom": 704.171875
+        },
+        ".hud-br": {
+          "x": 1100.171875,
+          "y": 513.015625,
+          "width": 164,
+          "height": 191.15625,
+          "right": 1264.171875,
+          "bottom": 704.171875
+        },
+        "#hud-altimeter": {
+          "x": 1188.171875,
+          "y": 213.5,
+          "width": 76,
+          "height": 293,
+          "right": 1264.171875,
+          "bottom": 506.5
+        },
+        "#hud-boss": {
+          "x": 281.6015625,
+          "y": 22.171875,
+          "width": 716.796875,
+          "height": 43.5,
+          "right": 998.3984375,
+          "bottom": 65.671875
+        },
+        "#hud-warn": {
+          "x": 554.1953125,
+          "y": 172.796875,
+          "width": 171.609375,
+          "height": 15,
+          "right": 725.8046875,
+          "bottom": 187.796875
+        },
+        ".setting-ctl button:focus": {
+          "x": 1064.53125,
+          "y": 109.90625,
+          "width": 40,
+          "height": 40,
+          "right": 1104.53125,
+          "bottom": 149.90625
+        },
+        ".result-row:last-child": null,
+        ".grade-chips": null
+      },
+      "focus": "<button data-setting-step=\"1\" aria-label=\"Increase GRAPHICS PRESET\" aria-describedby=\"setting-value-quality\">&gt;</button>",
+      "camera": [
+        -0.9980261509314943,
+        -1.734723475976807e-18,
+        0.06279969790425637,
+        0,
+        0.01277526444725352,
+        0.9790897512831184,
+        0.20302721874336022,
+        0,
+        -0.061486540601733336,
+        0.20342875640469688,
+        -0.9771571758895645,
+        0,
+        -2.5086831184236833,
+        17.5,
+        246.13147451116143,
+        1
+      ],
+      "projection": [
+        0.8661740421457028,
+        0,
+        0,
+        0,
+        0,
+        1.5398649638145827,
+        0,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        -1,
+        0,
+        0,
+        -0.7003191558653031,
+        0
+      ]
+    },
+    {
+      "name": "desktop-results",
+      "sha256": "fb64db4aefddfc3ba787846d3ab650dd7d17ef8eac3fd22b15c1ffcb53ed93bf",
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "boxes": {
+        ".hud-tl": {
+          "x": 15.828125,
+          "y": 15.828125,
+          "width": 205.96875,
+          "height": 125,
+          "right": 221.796875,
+          "bottom": 140.828125
+        },
+        ".hud-tr": {
+          "x": 1092.125,
+          "y": 15.828125,
+          "width": 172.046875,
+          "height": 79.5,
+          "right": 1264.171875,
+          "bottom": 95.328125
+        },
+        ".hud-bl": {
+          "x": 15.828125,
+          "y": 620.171875,
+          "width": 142,
+          "height": 84,
+          "right": 157.828125,
+          "bottom": 704.171875
+        },
+        ".hud-br": {
+          "x": 1100.171875,
+          "y": 513.015625,
+          "width": 164,
+          "height": 191.15625,
+          "right": 1264.171875,
+          "bottom": 704.171875
+        },
+        "#hud-altimeter": {
+          "x": 1188.171875,
+          "y": 213.5,
+          "width": 76,
+          "height": 293,
+          "right": 1264.171875,
+          "bottom": 506.5
+        },
+        "#hud-boss": {
+          "x": 281.6015625,
+          "y": 22.171875,
+          "width": 716.796875,
+          "height": 43.5,
+          "right": 998.3984375,
+          "bottom": 65.671875
+        },
+        "#hud-warn": {
+          "x": 554.1953125,
+          "y": 172.796875,
+          "width": 171.609375,
+          "height": 15,
+          "right": 725.8046875,
+          "bottom": 187.796875
+        },
+        ".setting-ctl button:focus": null,
+        ".result-row:last-child": {
+          "x": 165.46875,
+          "y": 380.96875,
+          "width": 949.0625,
+          "height": 22,
+          "right": 1114.53125,
+          "bottom": 402.96875
+        },
+        ".grade-chips": {
+          "x": 868.53125,
+          "y": 312.46875,
+          "width": 236,
+          "height": 24,
+          "right": 1104.53125,
+          "bottom": 336.46875
+        }
+      },
+      "focus": "<button class=\"mi sel\" data-action=\"continue\" id=\"btn-continue\">CONTINUE: LOOP 2</button>",
+      "camera": [
+        -0.9980261509314943,
+        -1.734723475976807e-18,
+        0.06279969790425637,
+        0,
+        0.01277526444725352,
+        0.9790897512831184,
+        0.20302721874336022,
+        0,
+        -0.061486540601733336,
+        0.20342875640469688,
+        -0.9771571758895645,
+        0,
+        -2.5086831184236833,
+        17.5,
+        246.13147451116143,
+        1
+      ],
+      "projection": [
+        0.8661740421457028,
+        0,
+        0,
+        0,
+        0,
+        1.5398649638145827,
+        0,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        -1,
+        0,
+        0,
+        -0.7003191558653031,
+        0
+      ]
+    },
+    {
+      "name": "portrait-classic",
+      "sha256": "ad6f42ffbce40335793665bed1a974b5d134e62d3609ab42ce5110d57f1f6391",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "boxes": {
+        ".hud-tl": {
+          "x": 14,
+          "y": 14,
+          "width": 187.96875,
+          "height": 112,
+          "right": 201.96875,
+          "bottom": 126
+        },
+        ".hud-tr": {
+          "x": 184,
+          "y": 14,
+          "width": 130,
+          "height": 52,
+          "right": 314,
+          "bottom": 66
+        },
+        ".hud-bl": {
+          "x": 14,
+          "y": 644.90625,
+          "width": 116,
+          "height": 74,
+          "right": 130,
+          "bottom": 718.90625
+        },
+        ".hud-br": {
+          "x": 257,
+          "y": 638.90625,
+          "width": 119,
+          "height": 80,
+          "right": 376,
+          "bottom": 718.90625
+        },
+        "#hud-altimeter": {
+          "x": 308,
+          "y": 312.5,
+          "width": 68,
+          "height": 219,
+          "right": 376,
+          "bottom": 531.5
+        },
+        "#hud-boss": {
+          "x": 70.203125,
+          "y": 90,
+          "width": 249.59375,
+          "height": 43.5,
+          "right": 319.796875,
+          "bottom": 133.5
+        },
+        "#hud-warn": {
+          "x": 109.1953125,
+          "y": 202.546875,
+          "width": 171.609375,
+          "height": 15,
+          "right": 280.8046875,
+          "bottom": 217.546875
+        },
+        ".setting-ctl button:focus": null,
+        ".result-row:last-child": null,
+        ".grade-chips": null
+      },
+      "focus": "<body>\n  <div id=\"app\">\n    <canvas id=\"viewport\" aria-label=\"KnotzAxxon flight playfield\" data-engine=\"three.js r185\" width=\"292\" height=\"633\"></canvas>\n\n    <!-- ============================== HUD ============================== -->\n    <div id=\"hud\" class=\"hud is-live\" aria-hidden=\"false\">\n\n      ",
+      "camera": [
+        -0.7071067811865477,
+        2.7755575615628914e-17,
+        0.7071067811865476,
+        0,
+        0.4082492888212953,
+        0.8164955825684628,
+        0.4082492888212952,
+        0,
+        -0.5773495632430207,
+        0.5773516810802466,
+        -0.5773495632430208,
+        0,
+        -45.254833995939045,
+        54.255,
+        252.74516600406096,
+        1
+      ],
+      "projection": [
+        0.016666666666666666,
+        0,
+        0,
+        0,
+        0,
+        0.007701421800947868,
+        0,
+        0,
+        0,
+        0,
+        -0.0026053540024750864,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        1
+      ]
+    },
+    {
+      "name": "portrait-modern",
+      "sha256": "612f5ddfa4a4276991ad2a529bd9970945cd59be2f7eaf02f32d6ddee0fbdee0",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "boxes": {
+        ".hud-tl": {
+          "x": 14,
+          "y": 14,
+          "width": 187.96875,
+          "height": 112,
+          "right": 201.96875,
+          "bottom": 126
+        },
+        ".hud-tr": {
+          "x": 184,
+          "y": 14,
+          "width": 130,
+          "height": 52,
+          "right": 314,
+          "bottom": 66
+        },
+        ".hud-bl": {
+          "x": 14,
+          "y": 644.90625,
+          "width": 116,
+          "height": 74,
+          "right": 130,
+          "bottom": 718.90625
+        },
+        ".hud-br": {
+          "x": 257,
+          "y": 638.90625,
+          "width": 119,
+          "height": 80,
+          "right": 376,
+          "bottom": 718.90625
+        },
+        "#hud-altimeter": {
+          "x": 308,
+          "y": 312.5,
+          "width": 68,
+          "height": 219,
+          "right": 376,
+          "bottom": 531.5
+        },
+        "#hud-boss": {
+          "x": 70.203125,
+          "y": 90,
+          "width": 249.59375,
+          "height": 43.5,
+          "right": 319.796875,
+          "bottom": 133.5
+        },
+        "#hud-warn": {
+          "x": 109.1953125,
+          "y": 202.546875,
+          "width": 171.609375,
+          "height": 15,
+          "right": 280.8046875,
+          "bottom": 217.546875
+        },
+        ".setting-ctl button:focus": null,
+        ".result-row:last-child": null,
+        ".grade-chips": null
+      },
+      "focus": "<body>\n  <div id=\"app\">\n    <canvas id=\"viewport\" aria-label=\"KnotzAxxon flight playfield\" data-engine=\"three.js r185\" width=\"292\" height=\"633\"></canvas>\n\n    <!-- ============================== HUD ============================== -->\n    <div id=\"hud\" class=\"hud is-live\" aria-hidden=\"false\">\n\n      ",
+      "camera": [
+        -0.9746985638237089,
+        0,
+        0.2235233985067336,
+        0,
+        0.0619512801432207,
+        0.9608243791274734,
+        0.2701454263224187,
+        0,
+        -0.21476673059069515,
+        0.2771579197394604,
+        -0.9365141424223551,
+        0,
+        -9.91858415644439,
+        22,
+        242.74891399720866,
+        1
+      ],
+      "projection": [
+        3.9041443729463636,
+        0,
+        0,
+        0,
+        0,
+        1.8040477552714238,
+        0,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        -1,
+        0,
+        0,
+        -0.7003191558653031,
+        0
+      ]
+    },
+    {
+      "name": "portrait-chase",
+      "sha256": "0c87d62e1ca7a4c57182f739acdce35c203e93779abd581a5c756e35f09207ed",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "boxes": {
+        ".hud-tl": {
+          "x": 14,
+          "y": 14,
+          "width": 187.96875,
+          "height": 112,
+          "right": 201.96875,
+          "bottom": 126
+        },
+        ".hud-tr": {
+          "x": 184,
+          "y": 14,
+          "width": 130,
+          "height": 52,
+          "right": 314,
+          "bottom": 66
+        },
+        ".hud-bl": {
+          "x": 14,
+          "y": 644.90625,
+          "width": 116,
+          "height": 74,
+          "right": 130,
+          "bottom": 718.90625
+        },
+        ".hud-br": {
+          "x": 257,
+          "y": 638.90625,
+          "width": 119,
+          "height": 80,
+          "right": 376,
+          "bottom": 718.90625
+        },
+        "#hud-altimeter": {
+          "x": 308,
+          "y": 312.5,
+          "width": 68,
+          "height": 219,
+          "right": 376,
+          "bottom": 531.5
+        },
+        "#hud-boss": {
+          "x": 70.203125,
+          "y": 90,
+          "width": 249.59375,
+          "height": 43.5,
+          "right": 319.796875,
+          "bottom": 133.5
+        },
+        "#hud-warn": {
+          "x": 109.1953125,
+          "y": 202.546875,
+          "width": 171.609375,
+          "height": 15,
+          "right": 280.8046875,
+          "bottom": 217.546875
+        },
+        ".setting-ctl button:focus": null,
+        ".result-row:last-child": null,
+        ".grade-chips": null
+      },
+      "focus": "<body>\n  <div id=\"app\">\n    <canvas id=\"viewport\" aria-label=\"KnotzAxxon flight playfield\" data-engine=\"three.js r185\" width=\"292\" height=\"633\"></canvas>\n\n    <!-- ============================== HUD ============================== -->\n    <div id=\"hud\" class=\"hud is-live\" aria-hidden=\"false\">\n\n      ",
+      "camera": [
+        -0.9980261509314943,
+        -1.734723475976807e-18,
+        0.06279969790425637,
+        0,
+        0.01277526444725352,
+        0.9790897512831184,
+        0.20302721874336022,
+        0,
+        -0.061486540601733336,
+        0.20342875640469688,
+        -0.9771571758895645,
+        0,
+        -2.5086831184236833,
+        17.5,
+        246.13147451116143,
+        1
+      ],
+      "projection": [
+        3.332425716562841,
+        0,
+        0,
+        0,
+        0,
+        1.5398649638145827,
+        0,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        -1,
+        0,
+        0,
+        -0.7003191558653031,
+        0
+      ]
+    },
+    {
+      "name": "portrait-settings",
+      "sha256": "60b7b94432e7fff56a6fc7c795c5cda3435a91bc1d190003596ee21f7c373469",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "boxes": {
+        ".hud-tl": {
+          "x": 14,
+          "y": 14,
+          "width": 187.96875,
+          "height": 112,
+          "right": 201.96875,
+          "bottom": 126
+        },
+        ".hud-tr": {
+          "x": 184,
+          "y": 14,
+          "width": 130,
+          "height": 52,
+          "right": 314,
+          "bottom": 66
+        },
+        ".hud-bl": {
+          "x": 14,
+          "y": 644.90625,
+          "width": 116,
+          "height": 74,
+          "right": 130,
+          "bottom": 718.90625
+        },
+        ".hud-br": {
+          "x": 257,
+          "y": 638.90625,
+          "width": 119,
+          "height": 80,
+          "right": 376,
+          "bottom": 718.90625
+        },
+        "#hud-altimeter": {
+          "x": 308,
+          "y": 312.5,
+          "width": 68,
+          "height": 219,
+          "right": 376,
+          "bottom": 531.5
+        },
+        "#hud-boss": {
+          "x": 70.203125,
+          "y": 90,
+          "width": 249.59375,
+          "height": 43.5,
+          "right": 319.796875,
+          "bottom": 133.5
+        },
+        "#hud-warn": {
+          "x": 109.1953125,
+          "y": 202.546875,
+          "width": 171.609375,
+          "height": 15,
+          "right": 280.8046875,
+          "bottom": 217.546875
+        },
+        ".setting-ctl button:focus": {
+          "x": 307,
+          "y": 145.5,
+          "width": 40,
+          "height": 40,
+          "right": 347,
+          "bottom": 185.5
+        },
+        ".result-row:last-child": null,
+        ".grade-chips": null
+      },
+      "focus": "<button data-setting-step=\"1\" aria-label=\"Increase GRAPHICS PRESET\" aria-describedby=\"setting-value-quality\">&gt;</button>",
+      "camera": [
+        -0.9980261509314943,
+        -1.734723475976807e-18,
+        0.06279969790425637,
+        0,
+        0.01277526444725352,
+        0.9790897512831184,
+        0.20302721874336022,
+        0,
+        -0.061486540601733336,
+        0.20342875640469688,
+        -0.9771571758895645,
+        0,
+        -2.5086831184236833,
+        17.5,
+        246.13147451116143,
+        1
+      ],
+      "projection": [
+        3.332425716562841,
+        0,
+        0,
+        0,
+        0,
+        1.5398649638145827,
+        0,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        -1,
+        0,
+        0,
+        -0.7003191558653031,
+        0
+      ]
+    },
+    {
+      "name": "portrait-results",
+      "sha256": "dd3055bc54a823ec0386c991d8db82344cbf1a539538d7837c56269013a49258",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "boxes": {
+        ".hud-tl": {
+          "x": 14,
+          "y": 14,
+          "width": 187.96875,
+          "height": 112,
+          "right": 201.96875,
+          "bottom": 126
+        },
+        ".hud-tr": {
+          "x": 184,
+          "y": 14,
+          "width": 130,
+          "height": 52,
+          "right": 314,
+          "bottom": 66
+        },
+        ".hud-bl": {
+          "x": 14,
+          "y": 644.90625,
+          "width": 116,
+          "height": 74,
+          "right": 130,
+          "bottom": 718.90625
+        },
+        ".hud-br": {
+          "x": 257,
+          "y": 638.90625,
+          "width": 119,
+          "height": 80,
+          "right": 376,
+          "bottom": 718.90625
+        },
+        "#hud-altimeter": {
+          "x": 308,
+          "y": 312.5,
+          "width": 68,
+          "height": 219,
+          "right": 376,
+          "bottom": 531.5
+        },
+        "#hud-boss": {
+          "x": 70.203125,
+          "y": 90,
+          "width": 249.59375,
+          "height": 43.5,
+          "right": 319.796875,
+          "bottom": 133.5
+        },
+        "#hud-warn": {
+          "x": 109.1953125,
+          "y": 202.546875,
+          "width": 171.609375,
+          "height": 15,
+          "right": 280.8046875,
+          "bottom": 217.546875
+        },
+        ".setting-ctl button:focus": null,
+        ".result-row:last-child": {
+          "x": 33,
+          "y": 439.5,
+          "width": 324,
+          "height": 22,
+          "right": 357,
+          "bottom": 461.5
+        },
+        ".grade-chips": {
+          "x": 159,
+          "y": 371,
+          "width": 188,
+          "height": 24,
+          "right": 347,
+          "bottom": 395
+        }
+      },
+      "focus": "<button class=\"mi sel\" data-action=\"continue\" id=\"btn-continue\">CONTINUE: LOOP 2</button>",
+      "camera": [
+        -0.9980261509314943,
+        -1.734723475976807e-18,
+        0.06279969790425637,
+        0,
+        0.01277526444725352,
+        0.9790897512831184,
+        0.20302721874336022,
+        0,
+        -0.061486540601733336,
+        0.20342875640469688,
+        -0.9771571758895645,
+        0,
+        -2.5086831184236833,
+        17.5,
+        246.13147451116143,
+        1
+      ],
+      "projection": [
+        3.332425716562841,
+        0,
+        0,
+        0,
+        0,
+        1.5398649638145827,
+        0,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        -1,
+        0,
+        0,
+        -0.7003191558653031,
+        0
+      ]
+    },
+    {
+      "name": "landscape-classic",
+      "sha256": "57865aea7f491f4e8c16cd7c8fd5bee71f90f72effadbc24232ab626736e545a",
+      "width": 844,
+      "height": 390,
+      "scrollWidth": 844,
+      "boxes": {
+        ".hud-tl": {
+          "x": 14,
+          "y": 14,
+          "width": 205.96875,
+          "height": 122,
+          "right": 219.96875,
+          "bottom": 136
+        },
+        ".hud-tr": {
+          "x": 616,
+          "y": 14,
+          "width": 152,
+          "height": 62,
+          "right": 768,
+          "bottom": 76
+        },
+        ".hud-bl": {
+          "x": 14,
+          "y": 180.90625,
+          "width": 130,
+          "height": 84,
+          "right": 144,
+          "bottom": 264.90625
+        },
+        ".hud-br": {
+          "x": 611,
+          "y": 174.90625,
+          "width": 133,
+          "height": 90,
+          "right": 744,
+          "bottom": 264.90625
+        },
+        "#hud-altimeter": {
+          "x": 754,
+          "y": 106.5,
+          "width": 76,
+          "height": 177,
+          "right": 830,
+          "bottom": 283.5
+        },
+        "#hud-boss": {
+          "x": 185.6875,
+          "y": 70,
+          "width": 472.625,
+          "height": 43.5,
+          "right": 658.3125,
+          "bottom": 113.5
+        },
+        "#hud-warn": {
+          "x": 336.1953125,
+          "y": 93.59375,
+          "width": 171.609375,
+          "height": 15,
+          "right": 507.8046875,
+          "bottom": 108.59375
+        },
+        ".setting-ctl button:focus": null,
+        ".result-row:last-child": null,
+        ".grade-chips": null
+      },
+      "focus": "<body>\n  <div id=\"app\">\n    <canvas id=\"viewport\" aria-label=\"KnotzAxxon flight playfield\" data-engine=\"three.js r185\" width=\"633\" height=\"292\"></canvas>\n\n    <!-- ============================== HUD ============================== -->\n    <div id=\"hud\" class=\"hud is-live\" aria-hidden=\"false\">\n\n      ",
+      "camera": [
+        -0.7071067811865477,
+        2.7755575615628914e-17,
+        0.7071067811865476,
+        0,
+        0.4082492888212953,
+        0.8164955825684628,
+        0.4082492888212952,
+        0,
+        -0.5773495632430207,
+        0.5773516810802466,
+        -0.5773495632430208,
+        0,
+        -45.254833995939045,
+        54.255,
+        252.74516600406096,
+        1
+      ],
+      "projection": [
+        0.011552132701421802,
+        0,
+        0,
+        0,
+        0,
+        0.025,
+        0,
+        0,
+        0,
+        0,
+        -0.0026053540024750864,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        1
+      ]
+    },
+    {
+      "name": "landscape-modern",
+      "sha256": "a9a0f2168965d4ea2e980397457256ebc50c799f56f0c0ce69303ed8fa3bac12",
+      "width": 844,
+      "height": 390,
+      "scrollWidth": 844,
+      "boxes": {
+        ".hud-tl": {
+          "x": 14,
+          "y": 14,
+          "width": 205.96875,
+          "height": 122,
+          "right": 219.96875,
+          "bottom": 136
+        },
+        ".hud-tr": {
+          "x": 616,
+          "y": 14,
+          "width": 152,
+          "height": 62,
+          "right": 768,
+          "bottom": 76
+        },
+        ".hud-bl": {
+          "x": 14,
+          "y": 180.90625,
+          "width": 130,
+          "height": 84,
+          "right": 144,
+          "bottom": 264.90625
+        },
+        ".hud-br": {
+          "x": 611,
+          "y": 174.90625,
+          "width": 133,
+          "height": 90,
+          "right": 744,
+          "bottom": 264.90625
+        },
+        "#hud-altimeter": {
+          "x": 754,
+          "y": 106.5,
+          "width": 76,
+          "height": 177,
+          "right": 830,
+          "bottom": 283.5
+        },
+        "#hud-boss": {
+          "x": 185.6875,
+          "y": 70,
+          "width": 472.625,
+          "height": 43.5,
+          "right": 658.3125,
+          "bottom": 113.5
+        },
+        "#hud-warn": {
+          "x": 336.1953125,
+          "y": 93.59375,
+          "width": 171.609375,
+          "height": 15,
+          "right": 507.8046875,
+          "bottom": 108.59375
+        },
+        ".setting-ctl button:focus": null,
+        ".result-row:last-child": null,
+        ".grade-chips": null
+      },
+      "focus": "<body>\n  <div id=\"app\">\n    <canvas id=\"viewport\" aria-label=\"KnotzAxxon flight playfield\" data-engine=\"three.js r185\" width=\"633\" height=\"292\"></canvas>\n\n    <!-- ============================== HUD ============================== -->\n    <div id=\"hud\" class=\"hud is-live\" aria-hidden=\"false\">\n\n      ",
+      "camera": [
+        -0.9746985638237089,
+        0,
+        0.2235233985067336,
+        0,
+        0.0619512801432207,
+        0.9608243791274734,
+        0.2701454263224187,
+        0,
+        -0.21476673059069515,
+        0.2771579197394604,
+        -0.9365141424223551,
+        0,
+        -9.91858415644439,
+        22,
+        242.74891399720866,
+        1
+      ],
+      "projection": [
+        0.8336239627439045,
+        0,
+        0,
+        0,
+        0,
+        1.8040477552714238,
+        0,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        -1,
+        0,
+        0,
+        -0.7003191558653031,
+        0
+      ]
+    },
+    {
+      "name": "landscape-chase",
+      "sha256": "f749aa44808a84d95e368e6cb4fa757d7a43c4cb69c1f2af2d019340c42c5b57",
+      "width": 844,
+      "height": 390,
+      "scrollWidth": 844,
+      "boxes": {
+        ".hud-tl": {
+          "x": 14,
+          "y": 14,
+          "width": 205.96875,
+          "height": 122,
+          "right": 219.96875,
+          "bottom": 136
+        },
+        ".hud-tr": {
+          "x": 616,
+          "y": 14,
+          "width": 152,
+          "height": 62,
+          "right": 768,
+          "bottom": 76
+        },
+        ".hud-bl": {
+          "x": 14,
+          "y": 180.90625,
+          "width": 130,
+          "height": 84,
+          "right": 144,
+          "bottom": 264.90625
+        },
+        ".hud-br": {
+          "x": 611,
+          "y": 174.90625,
+          "width": 133,
+          "height": 90,
+          "right": 744,
+          "bottom": 264.90625
+        },
+        "#hud-altimeter": {
+          "x": 754,
+          "y": 106.5,
+          "width": 76,
+          "height": 177,
+          "right": 830,
+          "bottom": 283.5
+        },
+        "#hud-boss": {
+          "x": 185.6875,
+          "y": 70,
+          "width": 472.625,
+          "height": 43.5,
+          "right": 658.3125,
+          "bottom": 113.5
+        },
+        "#hud-warn": {
+          "x": 336.1953125,
+          "y": 93.59375,
+          "width": 171.609375,
+          "height": 15,
+          "right": 507.8046875,
+          "bottom": 108.59375
+        },
+        ".setting-ctl button:focus": null,
+        ".result-row:last-child": null,
+        ".grade-chips": null
+      },
+      "focus": "<body>\n  <div id=\"app\">\n    <canvas id=\"viewport\" aria-label=\"KnotzAxxon flight playfield\" data-engine=\"three.js r185\" width=\"633\" height=\"292\"></canvas>\n\n    <!-- ============================== HUD ============================== -->\n    <div id=\"hud\" class=\"hud is-live\" aria-hidden=\"false\">\n\n      ",
+      "camera": [
+        -0.9980261509314943,
+        -1.734723475976807e-18,
+        0.06279969790425637,
+        0,
+        0.01277526444725352,
+        0.9790897512831184,
+        0.20302721874336022,
+        0,
+        -0.061486540601733336,
+        0.20342875640469688,
+        -0.9771571758895645,
+        0,
+        -2.5086831184236833,
+        17.5,
+        246.13147451116143,
+        1
+      ],
+      "projection": [
+        0.7115489761702456,
+        0,
+        0,
+        0,
+        0,
+        1.5398649638145827,
+        0,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        -1,
+        0,
+        0,
+        -0.7003191558653031,
+        0
+      ]
+    },
+    {
+      "name": "landscape-settings",
+      "sha256": "ea46833d3332c6de56c2d2593c1881013ea481da5c8b36a1a1f520adaf7591f6",
+      "width": 844,
+      "height": 390,
+      "scrollWidth": 844,
+      "boxes": {
+        ".hud-tl": {
+          "x": 14,
+          "y": 14,
+          "width": 205.96875,
+          "height": 122,
+          "right": 219.96875,
+          "bottom": 136
+        },
+        ".hud-tr": {
+          "x": 616,
+          "y": 14,
+          "width": 152,
+          "height": 62,
+          "right": 768,
+          "bottom": 76
+        },
+        ".hud-bl": {
+          "x": 14,
+          "y": 180.90625,
+          "width": 130,
+          "height": 84,
+          "right": 144,
+          "bottom": 264.90625
+        },
+        ".hud-br": {
+          "x": 611,
+          "y": 174.90625,
+          "width": 133,
+          "height": 90,
+          "right": 744,
+          "bottom": 264.90625
+        },
+        "#hud-altimeter": {
+          "x": 754,
+          "y": 106.5,
+          "width": 76,
+          "height": 177,
+          "right": 830,
+          "bottom": 283.5
+        },
+        "#hud-boss": {
+          "x": 185.6875,
+          "y": 70,
+          "width": 472.625,
+          "height": 43.5,
+          "right": 658.3125,
+          "bottom": 113.5
+        },
+        "#hud-warn": {
+          "x": 336.1953125,
+          "y": 93.59375,
+          "width": 171.609375,
+          "height": 15,
+          "right": 507.8046875,
+          "bottom": 108.59375
+        },
+        ".setting-ctl button:focus": {
+          "x": 747.671875,
+          "y": 98.5,
+          "width": 40,
+          "height": 40,
+          "right": 787.671875,
+          "bottom": 138.5
+        },
+        ".result-row:last-child": null,
+        ".grade-chips": null
+      },
+      "focus": "<button data-setting-step=\"1\" aria-label=\"Increase GRAPHICS PRESET\" aria-describedby=\"setting-value-quality\">&gt;</button>",
+      "camera": [
+        -0.9980261509314943,
+        -1.734723475976807e-18,
+        0.06279969790425637,
+        0,
+        0.01277526444725352,
+        0.9790897512831184,
+        0.20302721874336022,
+        0,
+        -0.061486540601733336,
+        0.20342875640469688,
+        -0.9771571758895645,
+        0,
+        -2.5086831184236833,
+        17.5,
+        246.13147451116143,
+        1
+      ],
+      "projection": [
+        0.7115489761702456,
+        0,
+        0,
+        0,
+        0,
+        1.5398649638145827,
+        0,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        -1,
+        0,
+        0,
+        -0.7003191558653031,
+        0
+      ]
+    },
+    {
+      "name": "landscape-results",
+      "sha256": "ecc1f487c7c662612f92dc51145728fd18d78a1e7beff9d10f946c963d71dcf0",
+      "width": 844,
+      "height": 390,
+      "scrollWidth": 844,
+      "boxes": {
+        ".hud-tl": {
+          "x": 14,
+          "y": 14,
+          "width": 205.96875,
+          "height": 122,
+          "right": 219.96875,
+          "bottom": 136
+        },
+        ".hud-tr": {
+          "x": 616,
+          "y": 14,
+          "width": 152,
+          "height": 62,
+          "right": 768,
+          "bottom": 76
+        },
+        ".hud-bl": {
+          "x": 14,
+          "y": 180.90625,
+          "width": 130,
+          "height": 84,
+          "right": 144,
+          "bottom": 264.90625
+        },
+        ".hud-br": {
+          "x": 611,
+          "y": 174.90625,
+          "width": 133,
+          "height": 90,
+          "right": 744,
+          "bottom": 264.90625
+        },
+        "#hud-altimeter": {
+          "x": 754,
+          "y": 106.5,
+          "width": 76,
+          "height": 177,
+          "right": 830,
+          "bottom": 283.5
+        },
+        "#hud-boss": {
+          "x": 185.6875,
+          "y": 70,
+          "width": 472.625,
+          "height": 43.5,
+          "right": 658.3125,
+          "bottom": 113.5
+        },
+        "#hud-warn": {
+          "x": 336.1953125,
+          "y": 93.59375,
+          "width": 171.609375,
+          "height": 15,
+          "right": 507.8046875,
+          "bottom": 108.59375
+        },
+        ".setting-ctl button:focus": null,
+        ".result-row:last-child": {
+          "x": 46.3125,
+          "y": 226.78125,
+          "width": 751.359375,
+          "height": 22,
+          "right": 797.671875,
+          "bottom": 248.78125
+        },
+        ".grade-chips": {
+          "x": 551.671875,
+          "y": 158.28125,
+          "width": 236,
+          "height": 24,
+          "right": 787.671875,
+          "bottom": 182.28125
+        }
+      },
+      "focus": "<button class=\"mi sel\" data-action=\"continue\" id=\"btn-continue\">CONTINUE: LOOP 2</button>",
+      "camera": [
+        -0.9980261509314943,
+        -1.734723475976807e-18,
+        0.06279969790425637,
+        0,
+        0.01277526444725352,
+        0.9790897512831184,
+        0.20302721874336022,
+        0,
+        -0.061486540601733336,
+        0.20342875640469688,
+        -0.9771571758895645,
+        0,
+        -2.5086831184236833,
+        17.5,
+        246.13147451116143,
+        1
+      ],
+      "projection": [
+        0.7115489761702456,
+        0,
+        0,
+        0,
+        0,
+        1.5398649638145827,
+        0,
+        0,
+        0,
+        0,
+        -1.0009118739008664,
+        -1,
+        0,
+        0,
+        -0.7003191558653031,
+        0
+      ]
+    }
+  ],
+  "errors": [],
+  "browser": "156.0.8078.4",
+  "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "endedAt": "2026-11-15T07:15:11.574Z"
+}

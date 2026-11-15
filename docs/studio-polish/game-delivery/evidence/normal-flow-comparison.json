@@ -1,0 +1,11 @@
+{
+  "equal": true,
+  "signatureSha256": "15a619aab805b7b06de0b147e1c2b755d7bfacda1fb252127e71a45011f8353f",
+  "originalSourceSha256": "9703ecf1d74a80ad8ac622e9b3b04e5d039805d61482b3347bc209a57f930d2f",
+  "fixedSourceSha256": "7c199cc275b76855e10ca0c9ea14e96d4c34eea7aecdbe368f3b9c5a56674892",
+  "rngCalls": 3945,
+  "rngEnd": -206285398,
+  "fixedPassing": 35,
+  "originalPassing": 1,
+  "cases": 35
+}

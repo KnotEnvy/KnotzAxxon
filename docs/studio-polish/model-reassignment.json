@@ -1,0 +1,16 @@
+{
+  "requestedAt": "2026-11-15T08:16:51.935110+00:00",
+  "reason": "User assigns Fable XHigh to environments and Opus to gameplay testing.",
+  "supersededEnvironmentTask": "superbeast-opus-xhigh-fast-environment-scenes-20261115-01",
+  "supersededTestingTask": "superbeast-sonnet-high-feel-tests-20261115-01",
+  "existingSourceHashes": {
+    "src/core/Engine.js": "10929167ee56f212ff0fa89216292e039f51e7efa1e4191a8293d22bfabf8bd5",
+    "src/core/Input.js": "03d74944b50fbd34bdb461667d0989c9eee958ef9aa1833789d7fff57190302e"
+  },
+  "preserveExistingWork": [
+    "asset-work/environment-scenes/",
+    "asset-work/studio-feel/"
+  ],
+  "newEnvironmentOutput": "asset-work/environment-scenes-fable/",
+  "newTestingOutput": "asset-work/studio-feel-opus/"
+}

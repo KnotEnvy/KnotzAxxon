@@ -1,0 +1,9 @@
+{
+  "archive": "/mnt/c/Users/Knotz2/Downloads/knotzaxxon-reactor-nitro-visual-input-20261115.tar.gz",
+  "sha256": "3f61c8b7e3fe1f384ae404129530d042bf02ea5f961a7c50f0ac7181913e0780",
+  "files": 326,
+  "sendStatus": "windows_taildrop_exit_0_archive_and_sidecar",
+  "recipient": "NitroBliss Windows 100.70.36.48",
+  "note": "Runtime+scene preview fixture; no tools, caches, git metadata, credentials or node_modules.",
+  "receiverVerification": "pending_worker_start"
+}

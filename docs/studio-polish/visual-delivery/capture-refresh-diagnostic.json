@@ -1,0 +1,23 @@
+{
+  "phase": "after",
+  "startedAt": "2026-11-15T07:34:20.179Z",
+  "source": "working source; actual WebGL render",
+  "seed": 42,
+  "time": 12,
+  "sector": 0,
+  "into": 270,
+  "player": [
+    0,
+    8,
+    270
+  ],
+  "quality": "low",
+  "pixelRatio": 1,
+  "limits": "Manual staged scene + synthetic HUD telemetry, not human play. SwiftShader software GPU, no hardware timing.",
+  "captures": [],
+  "errors": [],
+  "browser": "156.0.8078.4",
+  "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "failure": "page.screenshot: Timeout 120000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\n    at shot (/home/knotzuni/code/KnotzAxxon/asset-work/studio-visual/capture.cjs:17:14)\n    at async /home/knotzuni/code/KnotzAxxon/asset-work/studio-visual/capture.cjs:69:9",
+  "endedAt": "2026-11-15T07:36:38.576Z"
+}

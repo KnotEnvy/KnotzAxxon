@@ -1,4 +1,4 @@
-import { Lifetime } from './core/Lifetime.js';
+import { Lifetime, runCleanups } from './core/Lifetime.js';
 import { loadImportedModels, disposeImportedModels } from './render/ImportedModels.js';
 import { disposeTextures } from './render/Textures.js';
 import { disposeEnemyGeometry } from './entities/Enemies.js';
@@ -39,12 +39,16 @@ async function main() {
   let game = null;
   shutdown = () => {
     if (lifetime.closed) return;
-    lifetime.dispose();
-    engine?.stop(); game?.dispose(); screens.dispose(); audio.dispose();
-    disposeEnemyGeometry(); disposePickupGeometry(); disposeFortressTemplates();
-    engine?.dispose(); disposeTextures();
-    disposeImportedModels();
-    if (window.KZ?.engine === engine) delete window.KZ;
+    runCleanups([
+      () => lifetime.dispose(),
+      () => engine?.stop(),
+      () => game?.dispose(),
+      () => screens.dispose(),
+      () => audio.dispose(),
+      disposeEnemyGeometry, disposePickupGeometry, disposeFortressTemplates,
+      () => engine?.dispose(), disposeTextures, disposeImportedModels,
+      () => { if (window.KZ?.engine === engine) delete window.KZ; },
+    ]);
   };
 
   await screens.boot(async () => {
@@ -61,16 +65,19 @@ async function main() {
     game.prewarm(() => {
       const renderer = engine.renderer, previous = renderer.getRenderTarget();
       renderer.setRenderTarget(engine.postfx.composer.readBuffer);
-      renderer.compile(engine.scene, engine.camera);
-      // compile() builds programs only; upload every texture the staged scene
-      // uses too, so the first explosion or pickup does not pay for it.
-      engine.scene.traverse((object) => {
-        for (const material of [].concat(object.material ?? [])) {
-          const slots = [...Object.values(material), ...Object.values(material.uniforms ?? {}).map(u => u?.value)];
-          for (const t of slots) if (t?.isTexture && !t.isRenderTargetTexture) renderer.initTexture(t);
-        }
-      });
-      renderer.setRenderTarget(previous);
+      try {
+        renderer.compile(engine.scene, engine.camera);
+        // compile() builds programs only; upload every texture the staged scene
+        // uses too, so the first explosion or pickup does not pay for it.
+        engine.scene.traverse((object) => {
+          for (const material of [].concat(object.material ?? [])) {
+            const slots = [...Object.values(material), ...Object.values(material.uniforms ?? {}).map(u => u?.value)];
+            for (const t of slots) if (t?.isTexture && !t.isRenderTargetTexture) renderer.initTexture(t);
+          }
+        });
+      } finally {
+        renderer.setRenderTarget(previous);
+      }
     });
     // Yield without relying on rAF, which may be suspended in background tabs.
     await lifetime.delay(0);
@@ -114,7 +121,7 @@ async function main() {
         game.start();
         break;
       case 'resume':
-        game.resume();
+        if (!engine._contextLost && !engine._resumeAfterRestore) game.resume();
         break;
       case 'continue':
         game.continueLoop();
@@ -137,7 +144,7 @@ async function main() {
 
     if (action === 'pause') {
       if (game.state === STATE.PLAYING) game.pause();
-      else if (game.state === STATE.PAUSED) game.resume();
+      else if (game.state === STATE.PAUSED && !engine._contextLost && !engine._resumeAfterRestore) game.resume();
       return;
     }
 
@@ -153,10 +160,15 @@ async function main() {
     }
   });
 
-  // Any first interaction unlocks the audio context.
+  // Browsers start audio only inside an activation-triggering event: keydown
+  // (not Escape), a mouse pointerdown, or pointerup/touchend/click for touch.
+  // Keep listening after the first event so a touch's pointerdown, an Escape
+  // press or a later OS interruption (call, app switch) recovers on the next
+  // real gesture. init() returns at once while audio is running.
   const unlock = () => { audio.init(); };
-  lifetime.listen(window, 'pointerdown', unlock, { once: true });
-  lifetime.listen(window, 'keydown', unlock, { once: true });
+  for (const type of ['keydown', 'pointerdown', 'pointerup', 'touchend', 'click']) {
+    lifetime.listen(window, type, unlock, { capture: true, passive: true });
+  }
 
   /* ------------------------------------------------------------------ */
 
@@ -170,7 +182,7 @@ async function main() {
 }
 
 main().catch((err) => {
-  shutdown();
+  try { shutdown(); } catch { /* teardown attempted every owner; report the boot error */ }
   console.error(err);
   const log = document.getElementById('boot-log');
   if (log) {

@@ -1,0 +1,29 @@
+{
+  "taskId": "node:delegated-task:command%3Amcp%3A3150718d-67ab-45c7-9db9-1b4089c5507e%3Adelegate-task%3Asuperbeast-fable-xhigh-environment-scenes-20261115-01",
+  "childThreadId": "thread:delegated-task:command%3Amcp%3A3150718d-67ab-45c7-9db9-1b4089c5507e%3Adelegate-task%3Asuperbeast-fable-xhigh-environment-scenes-20261115-01",
+  "link": "[Authored environment scenes \u2014 Fable XHigh](t3-thread://v2/dd9d199e-852d-44e3-a2d3-62d31f3a5af2/thread:delegated-task:command%3Amcp%3A3150718d-67ab-45c7-9db9-1b4089c5507e%3Adelegate-task%3Asuperbeast-fable-xhigh-environment-scenes-20261115-01)",
+  "childRunId": "run:thread:thread%3Adelegated-task%3Acommand%253Amcp%253A3150718d-67ab-45c7-9db9-1b4089c5507e%253Adelegate-task%253Asuperbeast-fable-xhigh-environment-scenes-20261115-01:ordinal:1",
+  "childNodeId": "node:delegated-task:command%3Amcp%3A3150718d-67ab-45c7-9db9-1b4089c5507e%3Adelegate-task%3Asuperbeast-fable-xhigh-environment-scenes-20261115-01",
+  "status": "completed_cpu_slice_pending_visual_proof",
+  "workState": "completed",
+  "hasPendingChildRuns": false,
+  "latestTerminalRunId": null,
+  "latestTerminalStatus": null,
+  "latestTerminalSummary": null,
+  "latestTerminalResultContextTransferId": null,
+  "providerInstanceId": "claudeAgent",
+  "model": "claude-fable-5-2",
+  "executedModel": "claude-fable-5-2",
+  "options": [
+    {
+      "id": "effort",
+      "value": "xhigh"
+    }
+  ],
+  "summary": null,
+  "resultContextTransferId": null,
+  "hasPendingQuestion": false,
+  "pendingApproval": null,
+  "waitTimedOut": false,
+  "next": "First slice awaiting real-material proof after RELIC resource reservation clears; no worker remains running."
+}

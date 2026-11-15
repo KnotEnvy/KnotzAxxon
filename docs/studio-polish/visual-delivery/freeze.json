@@ -1,0 +1,15 @@
+{
+  "frozenAt": "2026-11-15T07:56:37.618606+00:00",
+  "payloadName": "nitrobliss-studio-visual-0ed9d2c-20261115",
+  "patchSHA256": "6e0a9fc98328fbf06ca9fc0739082842b60f85d709476ad5e74b772f3bba0230",
+  "patchPaths": 13,
+  "comparisons": 5,
+  "sourceCopies": "10 START files, 13 replacement source/test files",
+  "exclusions": [
+    "Tools/dependencies/caches",
+    "Raw frame/catalogue PNG sets",
+    "Game worker source/tests",
+    "Prior technical patch paths except owned Engine START/final",
+    "Transfer receipts and archive sidecars"
+  ]
+}

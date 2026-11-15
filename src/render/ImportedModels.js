@@ -9,6 +9,7 @@ import { prepareImportedAntenna, disposeImportedAntenna } from './ImportedAntenn
 import { loadImportedWreckage, disposeImportedWreckage } from './ImportedWreckage.js';
 import { loadImportedCarrier, disposeImportedCarrier } from './ImportedCarrier.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import { loadEnvironmentKit, disposeEnvironmentKit } from '../world/EnvironmentKit.js';
 
 const templates = new Map();
 
@@ -19,8 +20,11 @@ export async function loadImportedModels() {
   // User-approved production assets. Explicit 0 retains the procedural QA fallback.
   const productionPreview = new URLSearchParams(globalThis.location?.search ?? '').get('productionModels') !== '0';
   const productionNames = ['drone', 'interceptor', 'heavy-turret', 'mine', 'shield-pickup', 'parked-fighter', 'spread-pickup', 'repair-pickup', 'fuel-pickup', 'missile', 'dreadnought', 'asteroids', 'bunker', 'cargo-kit'];
+  // Authored fortress architecture. Explicit environmentKit=0 keeps the procedural walls for QA comparison.
+  if (productionPreview && new URLSearchParams(globalThis.location?.search ?? '').get('environmentKit') !== '0') names.push('environment-kit');
   if (productionPreview) names.push(...productionNames, 'carrier-runtime', 'wreckage-runtime', 'antenna-runtime', 'cooling-runtime', 'flak-runtime', 'fuel-depot-runtime', 'covered-fighter-runtime');
   const results = await Promise.allSettled(names.map(async name => {
+    if (name === 'environment-kit') return loadEnvironmentKit(loader, `${import.meta.env.BASE_URL}models/environment/`);
     if (name === 'covered-fighter-runtime') return loadImportedCoveredFighter(`${import.meta.env.BASE_URL}models/production/`);
     if (name === 'fuel-depot-runtime') return loadImportedFuelDepot(`${import.meta.env.BASE_URL}models/production/`);
     if (name === 'flak-runtime') return loadImportedFlakGun(`${import.meta.env.BASE_URL}models/production/`);
@@ -178,6 +182,7 @@ export function buildImportedParkedFighter(enemy) {
 }
 
 export function disposeImportedModels() {
+  disposeEnvironmentKit();
   disposeImportedCargo();
   disposeCoveredFighterTemplates();
   disposeImportedCarrier();

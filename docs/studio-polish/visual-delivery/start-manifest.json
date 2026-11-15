@@ -1,0 +1,46 @@
+{
+  "capturedAt": "2026-11-15T03:07:35.644362+00:00",
+  "head": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
+  "files": {
+    "src/core/Settings.js": {
+      "sha256": "aa691566774050c45730e6deca7b98c1cba66484a6b8e5d4009c99271a079d86",
+      "bytes": 8622
+    },
+    "src/core/Engine.js": {
+      "sha256": "f18ae181a8998a42ab84c080f5e9a5650a7a0455a7eed70b06792f78a044d8ce",
+      "bytes": 12508
+    },
+    "src/render/Sky.js": {
+      "sha256": "12314912081437f6c646031ee8d14b62753755b890ca104ae48f7f3083801ed5",
+      "bytes": 17265
+    },
+    "src/render/Materials.js": {
+      "sha256": "8af35e4641253713d8d8d1770edebb3dd0bff77bf5caee4eaba7f0db58aebd52",
+      "bytes": 16831
+    },
+    "src/render/Textures.js": {
+      "sha256": "c94160c1d3980da63fc7822b88d049b2adccb5ea301e1705b8a1b48ae9dc8c05",
+      "bytes": 17474
+    },
+    "src/render/PostFX.js": {
+      "sha256": "6712a809ab94f87b1a4b49048660495e9bcd803a459872d09b2a2881b2e7d7b4",
+      "bytes": 11993
+    },
+    "src/render/Underlay.js": {
+      "sha256": "b5f2929651916059bec2848133269be36087ca916884552ef1dd705a1cb9e425",
+      "bytes": 11604
+    },
+    "src/ui/HUD.js": {
+      "sha256": "cdabf59fd9388a2ad185802d939519c7a0cc21f7848606c34d09c3642fe3007d",
+      "bytes": 20222
+    },
+    "src/ui/Screens.js": {
+      "sha256": "d673524308b43294a7ecddf0f4931112bad056c622d0d170ced84ef669764ff5",
+      "bytes": 18841
+    },
+    "src/style.css": {
+      "sha256": "96e803520dc8bb7e0c4aae1292ede78096d2b71fff8cb5af3359b8a5d275504b",
+      "bytes": 35155
+    }
+  }
+}

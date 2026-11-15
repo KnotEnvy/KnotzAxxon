@@ -11,11 +11,37 @@ import * as THREE from 'three';
 import { Rng, clamp01, lerp, smoothstep } from '../core/Utils.js';
 
 const cache = new Map();
+let samplingAnisotropy = null;
+
+/** Mutate sampling in place: image data and shared texture identity stay live. */
+export function setTextureAnisotropy(texture, aniso) {
+  if (!texture?.isTexture || texture.isRenderTargetTexture) return;
+  const value = Number.isFinite(aniso) ? Math.max(1, Math.floor(aniso)) : 1;
+  if (texture.anisotropy === value) return;
+  texture.anisotropy = value;
+  texture.needsUpdate = true;
+}
+
+function sampleCached(value) {
+  if (samplingAnisotropy === null) return;
+  if (value?.isTexture) setTextureAnisotropy(value, samplingAnisotropy);
+  else if (value && typeof value === 'object') {
+    for (const texture of Object.values(value)) setTextureAnisotropy(texture, samplingAnisotropy);
+  }
+}
+
+/** Applies to warm cache hits and to textures forged later in this lifetime. */
+export function setAnisotropy(aniso) {
+  samplingAnisotropy = Number.isFinite(aniso) ? Math.max(1, Math.floor(aniso)) : 1;
+  for (const value of cache.values()) sampleCached(value);
+}
 
 /** Memoise by key so quality changes don't re-forge everything. */
 function once(key, build) {
   if (!cache.has(key)) cache.set(key, build());
-  return cache.get(key);
+  const value = cache.get(key);
+  sampleCached(value);
+  return value;
 }
 
 export function disposeTextures() {
@@ -24,6 +50,7 @@ export function disposeTextures() {
     else if (v && typeof v === 'object') for (const t of Object.values(v)) t?.isTexture && t.dispose();
   }
   cache.clear();
+  samplingAnisotropy = null;
 }
 
 /* ------------------------------------------------------------------ */

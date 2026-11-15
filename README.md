@@ -272,3 +272,10 @@ with [machine-readable status](docs/asset-production/status.json) and a
 [curated asset devlog](docs/asset-production/DEVLOG.md). The approved upgrades load by default.
 
 The approved production asset release enables 21 new gameplay/scenery submissions by default. `?productionModels=0` is retained only as a procedural QA fallback. Editable sources and curated devlog evidence are under `assets-source/production/`; release progress is recorded in `docs/asset-production/status.json`.
+
+The authored environment kit adds sector-specific architecture, landmarks, gate and fence housings,
+space platforms, bulkheads and the Sentinel arena through the existing shared chunk batches.
+`?environmentKit=0` keeps the original procedural architecture for comparison. Editable kit and
+composition scenes are in [assets-source/environment/](assets-source/environment/README.md);
+the [environment contracts and measured costs](docs/environment-scenes/ENVIRONMENT-KIT.md)
+record the preserved gameplay envelopes, seeded parity and performance limits.

@@ -1,0 +1,79 @@
+{
+  "utc": "2026-11-15T07:09:27.668509+00:00",
+  "baseHead": "0ed9d2cd935e514d5c89862cc0815c4e9a6bf542",
+  "ownedPaths": [
+    "src/game/Game.js",
+    "tests/game-startup-lifecycle.test.js",
+    "tests/fixtures/game-startup-lifecycle.mjs"
+  ],
+  "baselineTests": {
+    "passed": 114,
+    "total": 114,
+    "log": "evidence/baseline-tests.log"
+  },
+  "finalTests": {
+    "passed": 155,
+    "total": 155,
+    "ownedNewTests": 35,
+    "concurrentWorkerTestsBeyondBaselineAndOwned": 6,
+    "log": "evidence/final-tests.log"
+  },
+  "actualSourceFaultInjections": {
+    "fixedPassed": 35,
+    "originalPassed": 1,
+    "total": 35,
+    "originalSourceSha256": "9703ecf1d74a80ad8ac622e9b3b04e5d039805d61482b3347bc209a57f930d2f",
+    "fixedSourceSha256": "7c199cc275b76855e10ca0c9ea14e96d4c34eea7aecdbe368f3b9c5a56674892",
+    "newRegressionCasesFailingOriginal": 34,
+    "imports": "Real dependencies; VM constructor-entry/function boundaries inject faults; Game source is read verbatim, never transformed."
+  },
+  "normalContractComparison": {
+    "equal": true,
+    "signatureSha256": "15a619aab805b7b06de0b147e1c2b755d7bfacda1fb252127e71a45011f8353f",
+    "originalSourceSha256": "9703ecf1d74a80ad8ac622e9b3b04e5d039805d61482b3347bc209a57f930d2f",
+    "fixedSourceSha256": "7c199cc275b76855e10ca0c9ea14e96d4c34eea7aecdbe368f3b9c5a56674892",
+    "rngCalls": 3945,
+    "rngEnd": -206285398,
+    "fixedPassing": 35,
+    "originalPassing": 1,
+    "cases": 35
+  },
+  "originalReproduction": {
+    "command": "node asset-work/studio-code/reproduce-ownership-gaps.mjs",
+    "scriptSha256": "6b0880b1decbbf83c30874e984e21382968564bb18457ea502c04a9b8dab2604",
+    "constructorGeometryObjectsBefore": 50,
+    "constructorGeometryObjectsAfter": 0,
+    "stagedGeometryCount": 8,
+    "stagedDisposalsBefore": 0,
+    "stagedDisposalsAfter": 8,
+    "fixedCommand": "Run unchanged Game-only prefix of supplied reproduction through node --input-type=module; see fixed-ownership-repro.json."
+  },
+  "build": {
+    "command": "npm run build",
+    "exitCode": 0,
+    "log": "evidence/build.log",
+    "warnings": [
+      "ImportedLandmarks.js uses both static and dynamic imports; Vite keeps it in the static chunk."
+    ]
+  },
+  "diffChecks": "evidence/patch-checks.json",
+  "sourceInputsStableDuringValidation": true,
+  "sourceInputsBefore": "evidence/validation-inputs-before.json",
+  "sourceInputsAfter": "evidence/validation-inputs-after.json",
+  "earlierPatch": "Six starting paths remain byte-identical. Engine.js differs due to concurrent sibling quality-hook edits; this worker did not write it. Hashes recorded without a pristine-tree claim.",
+  "restrictionsObserved": [
+    "No helpers/subagents",
+    "No commit/push/deploy",
+    "No checkout/worktree creation, fetch/reset/clean",
+    "No installation",
+    "No browser/full-model QA or formal Opus pass",
+    "Only three owned source/test paths in changes.patch"
+  ],
+  "limits": [
+    "CPU fault injections and production bundle; no real renderer/GPU or device performance measurements. User-reported cross-device gameplay acceptance retained.",
+    "Nested constructors that throw before returning must clean up their own private allocations; Game retires completed owners, and captures attached chunk groups even when chunk construction fails.",
+    "Each child cleanup is attempted once. A child disposer that throws before releasing its own private internals must be hardened by that child owner.",
+    "The prewarm compile callback remains synchronous, matching its production caller.",
+    "Working tree contains intentional earlier and concurrent sibling changes; archive excludes their patch/source bytes."
+  ]
+}

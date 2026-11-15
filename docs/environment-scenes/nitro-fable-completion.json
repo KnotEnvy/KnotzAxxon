@@ -1,0 +1,19 @@
+{
+  "status": "fresh_retry_failed_invalid_api_key_auth_diagnosis_running",
+  "model": "claude-fable-5-2",
+  "effort": "xhigh",
+  "threadId": "mcp:launch:75ed45c96fec9e2649166ac301032feed26341ab274903a667f9108f77d303b4",
+  "environmentId": "543fe9a3-cf00-4f96-8f57-b8d50dd01cd2",
+  "error": "Invalid API key - Fix external API key",
+  "userDirection": [
+    "this codebase is yours to build how you please",
+    "to build until the entire game is complete from end to end"
+  ],
+  "next": "Diagnose delegated Claude credential/config origin before fresh Fable retry; preserve model selection and all source.",
+  "mcpSetup": "completed_and_verified_before_reboot",
+  "sceneArchiveSent": true,
+  "liveChanged": false,
+  "latestFailedThreadId": "mcp:launch:312f86d0676181af51917a288560e4d9da4c53e247b9f9c9ee8830860fee55a1",
+  "authDiagnosisThreadId": "mcp:launch:21c61277a995a980355ff486596f1f3c28572693f3f138c31319bfda04509fc0",
+  "userReportedClaudeReadyAfterReboot": true
+}

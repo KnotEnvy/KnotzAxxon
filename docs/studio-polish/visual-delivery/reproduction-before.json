@@ -1,0 +1,26 @@
+{
+  "gameConstructor": {
+    "originalError": true,
+    "assigned": false,
+    "sceneChildrenBefore": 1,
+    "sceneChildrenAfterOuterCleanup": 1,
+    "orphanedGeometryObjects": 0
+  },
+  "prewarmPreparation": {
+    "stagedGeometryCount": 8,
+    "stagedGeometryDisposalsAfterGameShutdown": 8
+  },
+  "nestedSkyConstructor": {
+    "originalError": true,
+    "rendererDisposals": 1,
+    "cubeDisposalsAfterEngineRollback": 0,
+    "sceneChildrenAfterEngineRollback": 6
+  },
+  "settingsSchema": {
+    "storedShake": "invalid",
+    "storedMaster": "invalid",
+    "cameraHasFallback": true
+  },
+  "currentSettingsUnchanged": true,
+  "gradeFallbackSlots": 8
+}

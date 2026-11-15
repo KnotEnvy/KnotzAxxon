@@ -1,0 +1,2121 @@
+{
+  "url": "http://127.0.0.1:5291",
+  "browser": "156.0.8078.4",
+  "note": "SwiftShader software frames: layout/legibility evidence only, no physical FPS claim",
+  "views": {
+    "portrait": {
+      "errors": [],
+      "shots": {
+        "boot": {
+          "file": "portrait-boot.png",
+          "current": "title",
+          "vw": 390,
+          "vh": 844,
+          "scrollW": 390,
+          "scrollH": 844,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "ENGAGE",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 23.390625,
+              "y": 394.5368957519531,
+              "width": 230,
+              "height": 47,
+              "top": 394.5368957519531,
+              "right": 253.390625,
+              "bottom": 441.5368957519531,
+              "left": 23.390625
+            },
+            "inViewport": true
+          },
+          "items": [
+            {
+              "t": "start",
+              "h": 47,
+              "w": 230,
+              "sel": true
+            },
+            {
+              "t": "daily",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "howto",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "settings",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "scores",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [
+            {
+              "el": "title-sub",
+              "fs": 10,
+              "text": "ASSAULT ON THE IRON FORTRESS"
+            }
+          ],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "title": {
+          "file": "portrait-title.png",
+          "current": "title",
+          "vw": 390,
+          "vh": 844,
+          "scrollW": 390,
+          "scrollH": 844,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "ENGAGE",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 23.390625,
+              "y": 393.5,
+              "width": 230,
+              "height": 47,
+              "top": 393.5,
+              "right": 253.390625,
+              "bottom": 440.5,
+              "left": 23.390625
+            },
+            "inViewport": true
+          },
+          "items": [
+            {
+              "t": "start",
+              "h": 47,
+              "w": 230,
+              "sel": true
+            },
+            {
+              "t": "daily",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "howto",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "settings",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "scores",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [
+            {
+              "el": "title-sub",
+              "fs": 10,
+              "text": "ASSAULT ON THE IRON FORTRESS"
+            }
+          ],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "howto": {
+          "file": "portrait-howto.png",
+          "current": "howto",
+          "vw": 390,
+          "vh": 844,
+          "scrollW": 390,
+          "scrollH": 844,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "RETURN",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 121.328125,
+              "y": 767,
+              "width": 147.328125,
+              "height": 44,
+              "top": 767,
+              "right": 268.65625,
+              "bottom": 811,
+              "left": 121.328125
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 1345,
+            "clientH": 818,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 832
+          },
+          "items": [
+            {
+              "t": "back",
+              "h": 44,
+              "w": 147,
+              "sel": true
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "settings": {
+          "file": "portrait-settings.png",
+          "current": "settings",
+          "vw": 390,
+          "vh": 844,
+          "scrollW": 390,
+          "scrollH": 844,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "<",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 151.40625,
+              "y": 166.1875,
+              "width": 44,
+              "height": 44,
+              "top": 166.1875,
+              "right": 195.40625,
+              "bottom": 210.1875,
+              "left": 151.40625
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 1307,
+            "clientH": 818,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 832
+          },
+          "items": [
+            {
+              "t": "quality",
+              "h": 127,
+              "w": 324,
+              "sel": true
+            },
+            {
+              "t": "camera",
+              "h": 127,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "master",
+              "h": 62,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "music",
+              "h": 62,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "sfx",
+              "h": 62,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "shake",
+              "h": 81,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "scanlines",
+              "h": 109,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "shadowLine",
+              "h": 127,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "invertY",
+              "h": 90,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "assist",
+              "h": 127,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "perf",
+              "h": 109,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "back",
+              "h": 44,
+              "w": 141,
+              "sel": false
+            }
+          ],
+          "status": [
+            {
+              "id": "settings-status",
+              "text": "CHANGES SAVE ON THIS DEVICE"
+            }
+          ],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "settings-changed": {
+          "file": "portrait-settings-changed.png",
+          "current": "settings",
+          "vw": 390,
+          "vh": 844,
+          "scrollW": 390,
+          "scrollH": 844,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "<",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 151.40625,
+              "y": 166.1875,
+              "width": 44,
+              "height": 44,
+              "top": 166.1875,
+              "right": 195.40625,
+              "bottom": 210.1875,
+              "left": 151.40625
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 1326,
+            "clientH": 818,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 832
+          },
+          "items": [
+            {
+              "t": "quality",
+              "h": 127,
+              "w": 324,
+              "sel": true
+            },
+            {
+              "t": "camera",
+              "h": 127,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "master",
+              "h": 62,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "music",
+              "h": 62,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "sfx",
+              "h": 62,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "shake",
+              "h": 81,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "scanlines",
+              "h": 109,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "shadowLine",
+              "h": 127,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "invertY",
+              "h": 90,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "assist",
+              "h": 127,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "perf",
+              "h": 109,
+              "w": 324,
+              "sel": false
+            },
+            {
+              "t": "back",
+              "h": 44,
+              "w": 141,
+              "sel": false
+            }
+          ],
+          "status": [
+            {
+              "id": "settings-status",
+              "text": "GRAPHICS PRESET MEDIUM · SAVED ON THIS DEVICE"
+            }
+          ],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "scores": {
+          "file": "portrait-scores.png",
+          "current": "scores",
+          "vw": 390,
+          "vh": 844,
+          "scrollW": 390,
+          "scrollH": 844,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "RETURN",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 121.328125,
+              "y": 477.09375,
+              "width": 147.328125,
+              "height": 44,
+              "top": 477.09375,
+              "right": 268.65625,
+              "bottom": 521.09375,
+              "left": 121.328125
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 238,
+            "clientH": 238,
+            "scrolls": false,
+            "top": 301.90625,
+            "bottom": 542.09375
+          },
+          "items": [
+            {
+              "t": "back",
+              "h": 44,
+              "w": 147,
+              "sel": true
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "hud": {
+          "file": "portrait-hud.png",
+          "current": null,
+          "vw": 390,
+          "vh": 844,
+          "scrollW": 390,
+          "scrollH": 844,
+          "focus": null,
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "hud-gain": {
+          "file": "portrait-hud-gain.png",
+          "current": null,
+          "vw": 390,
+          "vh": 844,
+          "scrollW": 390,
+          "scrollH": 844,
+          "focus": null,
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "hud-grade": {
+          "file": "portrait-hud-grade.png",
+          "current": null,
+          "vw": 390,
+          "vh": 844,
+          "scrollW": 390,
+          "scrollH": 844,
+          "focus": null,
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "hud-cards": {
+          "file": "portrait-hud-cards.png",
+          "current": null,
+          "vw": 390,
+          "vh": 844,
+          "scrollW": 390,
+          "scrollH": 844,
+          "focus": null,
+          "items": [],
+          "status": [],
+          "hudOverlap": [
+            "altxcard 63x27"
+          ],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "pause": {
+          "file": "portrait-pause.png",
+          "current": "pause",
+          "vw": 390,
+          "vh": 844,
+          "scrollW": 390,
+          "scrollH": 844,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "RESUME",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 121.328125,
+              "y": 383.703125,
+              "width": 147.328125,
+              "height": 44,
+              "top": 383.703125,
+              "right": 268.65625,
+              "bottom": 427.703125,
+              "left": 121.328125
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 263,
+            "clientH": 263,
+            "scrolls": false,
+            "top": 289.703125,
+            "bottom": 554.296875
+          },
+          "items": [
+            {
+              "t": "resume",
+              "h": 44,
+              "w": 147,
+              "sel": true
+            },
+            {
+              "t": "settings",
+              "h": 44,
+              "w": 153,
+              "sel": false
+            },
+            {
+              "t": "abort",
+              "h": 44,
+              "w": 227,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "over": {
+          "file": "portrait-over.png",
+          "current": "over",
+          "vw": 390,
+          "vh": 844,
+          "scrollW": 390,
+          "scrollH": 844,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "RE-ENGAGE",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 101.40625,
+              "y": 713.96875,
+              "width": 187.1875,
+              "height": 44,
+              "top": 713.96875,
+              "right": 288.59375,
+              "bottom": 757.96875,
+              "left": 101.40625
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 900,
+            "clientH": 818,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 832
+          },
+          "items": [
+            {
+              "t": "INPUT",
+              "h": 44,
+              "w": 100,
+              "sel": false
+            },
+            {
+              "t": "retry",
+              "h": 44,
+              "w": 187,
+              "sel": true
+            },
+            {
+              "t": "title",
+              "h": 44,
+              "w": 178,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "victory": {
+          "file": "portrait-victory.png",
+          "current": "over",
+          "vw": 390,
+          "vh": 844,
+          "scrollW": 390,
+          "scrollH": 844,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "CONTINUE: LOOP 2",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 54.90625,
+              "y": 661.40625,
+              "width": 280.1875,
+              "height": 44,
+              "top": 661.40625,
+              "right": 335.09375,
+              "bottom": 705.40625,
+              "left": 54.90625
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 991,
+            "clientH": 818,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 832
+          },
+          "items": [
+            {
+              "t": "INPUT",
+              "h": 44,
+              "w": 100,
+              "sel": false
+            },
+            {
+              "t": "continue",
+              "h": 44,
+              "w": 280,
+              "sel": true
+            },
+            {
+              "t": "retry",
+              "h": 44,
+              "w": 178,
+              "sel": false
+            },
+            {
+              "t": "title",
+              "h": 44,
+              "w": 178,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        }
+      }
+    },
+    "landscape": {
+      "errors": [],
+      "shots": {
+        "boot": {
+          "file": "landscape-boot.png",
+          "current": "title",
+          "vw": 844,
+          "vh": 390,
+          "scrollW": 844,
+          "scrollH": 390,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "ENGAGE",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 59.078125,
+              "y": 115.796875,
+              "width": 230,
+              "height": 47,
+              "top": 115.796875,
+              "right": 289.078125,
+              "bottom": 162.796875,
+              "left": 59.078125
+            },
+            "inViewport": true
+          },
+          "items": [
+            {
+              "t": "start",
+              "h": 47,
+              "w": 230,
+              "sel": true
+            },
+            {
+              "t": "daily",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "howto",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "settings",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "scores",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [
+            {
+              "el": "title-sub",
+              "fs": 10,
+              "text": "ASSAULT ON THE IRON FORTRESS"
+            }
+          ],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "title": {
+          "file": "landscape-title.png",
+          "current": "title",
+          "vw": 844,
+          "vh": 390,
+          "scrollW": 844,
+          "scrollH": 390,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "ENGAGE",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 59.078125,
+              "y": 115.796875,
+              "width": 230,
+              "height": 47,
+              "top": 115.796875,
+              "right": 289.078125,
+              "bottom": 162.796875,
+              "left": 59.078125
+            },
+            "inViewport": true
+          },
+          "items": [
+            {
+              "t": "start",
+              "h": 47,
+              "w": 230,
+              "sel": true
+            },
+            {
+              "t": "daily",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "howto",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "settings",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "scores",
+              "h": 44,
+              "w": 230,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [
+            {
+              "el": "title-sub",
+              "fs": 10,
+              "text": "ASSAULT ON THE IRON FORTRESS"
+            }
+          ],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "howto": {
+          "file": "landscape-howto.png",
+          "current": "howto",
+          "vw": 844,
+          "vh": 390,
+          "scrollW": 844,
+          "scrollH": 390,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "RETURN",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 348.328125,
+              "y": 313,
+              "width": 147.328125,
+              "height": 44,
+              "top": 313,
+              "right": 495.65625,
+              "bottom": 357,
+              "left": 348.328125
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 909,
+            "clientH": 364,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 378
+          },
+          "items": [
+            {
+              "t": "back",
+              "h": 44,
+              "w": 147,
+              "sel": true
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "settings": {
+          "file": "landscape-settings.png",
+          "current": "settings",
+          "vw": 844,
+          "vh": 390,
+          "scrollW": 844,
+          "scrollH": 390,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "<",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 592.078125,
+              "y": 101,
+              "width": 44,
+              "height": 44,
+              "top": 101,
+              "right": 636.078125,
+              "bottom": 145,
+              "left": 592.078125
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 832,
+            "clientH": 364,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 378
+          },
+          "items": [
+            {
+              "t": "quality",
+              "h": 62,
+              "w": 751,
+              "sel": true
+            },
+            {
+              "t": "camera",
+              "h": 62,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "master",
+              "h": 44,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "music",
+              "h": 44,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "sfx",
+              "h": 44,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "shake",
+              "h": 55,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "scanlines",
+              "h": 62,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "shadowLine",
+              "h": 62,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "invertY",
+              "h": 62,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "assist",
+              "h": 62,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "perf",
+              "h": 62,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "back",
+              "h": 44,
+              "w": 141,
+              "sel": false
+            }
+          ],
+          "status": [
+            {
+              "id": "settings-status",
+              "text": "CHANGES SAVE ON THIS DEVICE"
+            }
+          ],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "settings-changed": {
+          "file": "landscape-settings-changed.png",
+          "current": "settings",
+          "vw": 844,
+          "vh": 390,
+          "scrollW": 844,
+          "scrollH": 390,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "<",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 592.078125,
+              "y": 101,
+              "width": 44,
+              "height": 44,
+              "top": 101,
+              "right": 636.078125,
+              "bottom": 145,
+              "left": 592.078125
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 832,
+            "clientH": 364,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 378
+          },
+          "items": [
+            {
+              "t": "quality",
+              "h": 62,
+              "w": 751,
+              "sel": true
+            },
+            {
+              "t": "camera",
+              "h": 62,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "master",
+              "h": 44,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "music",
+              "h": 44,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "sfx",
+              "h": 44,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "shake",
+              "h": 55,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "scanlines",
+              "h": 62,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "shadowLine",
+              "h": 62,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "invertY",
+              "h": 62,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "assist",
+              "h": 62,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "perf",
+              "h": 62,
+              "w": 751,
+              "sel": false
+            },
+            {
+              "t": "back",
+              "h": 44,
+              "w": 141,
+              "sel": false
+            }
+          ],
+          "status": [
+            {
+              "id": "settings-status",
+              "text": "GRAPHICS PRESET MEDIUM · SAVED ON THIS DEVICE"
+            }
+          ],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "scores": {
+          "file": "landscape-scores.png",
+          "current": "scores",
+          "vw": 844,
+          "vh": 390,
+          "scrollW": 844,
+          "scrollH": 390,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "RETURN",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 348.328125,
+              "y": 247.09375,
+              "width": 147.328125,
+              "height": 44,
+              "top": 247.09375,
+              "right": 495.65625,
+              "bottom": 291.09375,
+              "left": 348.328125
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 232,
+            "clientH": 232,
+            "scrolls": false,
+            "top": 77.90625,
+            "bottom": 312.09375
+          },
+          "items": [
+            {
+              "t": "back",
+              "h": 44,
+              "w": 147,
+              "sel": true
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "hud": {
+          "file": "landscape-hud.png",
+          "current": null,
+          "vw": 844,
+          "vh": 390,
+          "scrollW": 844,
+          "scrollH": 390,
+          "focus": null,
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "hud-gain": {
+          "file": "landscape-hud-gain.png",
+          "current": null,
+          "vw": 844,
+          "vh": 390,
+          "scrollW": 844,
+          "scrollH": 390,
+          "focus": null,
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "hud-grade": {
+          "file": "landscape-hud-grade.png",
+          "current": null,
+          "vw": 844,
+          "vh": 390,
+          "scrollW": 844,
+          "scrollH": 390,
+          "focus": null,
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "hud-cards": {
+          "file": "landscape-hud-cards.png",
+          "current": null,
+          "vw": 844,
+          "vh": 390,
+          "scrollW": 844,
+          "scrollH": 390,
+          "focus": null,
+          "items": [],
+          "status": [],
+          "hudOverlap": [
+            "tlxcard 65x23",
+            "brxcard 96x56"
+          ],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "pause": {
+          "file": "landscape-pause.png",
+          "current": "pause",
+          "vw": 844,
+          "vh": 390,
+          "scrollW": 844,
+          "scrollH": 390,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "RESUME",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 348.328125,
+              "y": 160.109375,
+              "width": 147.328125,
+              "height": 44,
+              "top": 160.109375,
+              "right": 495.65625,
+              "bottom": 204.109375,
+              "left": 348.328125
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 244,
+            "clientH": 244,
+            "scrolls": false,
+            "top": 72.109375,
+            "bottom": 317.890625
+          },
+          "items": [
+            {
+              "t": "resume",
+              "h": 44,
+              "w": 147,
+              "sel": true
+            },
+            {
+              "t": "settings",
+              "h": 44,
+              "w": 153,
+              "sel": false
+            },
+            {
+              "t": "abort",
+              "h": 44,
+              "w": 227,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "over": {
+          "file": "landscape-over.png",
+          "current": "over",
+          "vw": 844,
+          "vh": 390,
+          "scrollW": 844,
+          "scrollH": 390,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "RE-ENGAGE",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 328.390625,
+              "y": 266.609375,
+              "width": 187.1875,
+              "height": 44,
+              "top": 266.609375,
+              "right": 515.578125,
+              "bottom": 310.609375,
+              "left": 328.390625
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 667,
+            "clientH": 364,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 378
+          },
+          "items": [
+            {
+              "t": "INPUT",
+              "h": 44,
+              "w": 100,
+              "sel": false
+            },
+            {
+              "t": "retry",
+              "h": 44,
+              "w": 187,
+              "sel": true
+            },
+            {
+              "t": "title",
+              "h": 44,
+              "w": 178,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "victory": {
+          "file": "landscape-victory.png",
+          "current": "over",
+          "vw": 844,
+          "vh": 390,
+          "scrollW": 844,
+          "scrollH": 390,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "CONTINUE: LOOP 2",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 281.890625,
+              "y": 220.21875,
+              "width": 280.1875,
+              "height": 44,
+              "top": 220.21875,
+              "right": 562.078125,
+              "bottom": 264.21875,
+              "left": 281.890625
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 740,
+            "clientH": 364,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 378
+          },
+          "items": [
+            {
+              "t": "INPUT",
+              "h": 44,
+              "w": 100,
+              "sel": false
+            },
+            {
+              "t": "continue",
+              "h": 44,
+              "w": 280,
+              "sel": true
+            },
+            {
+              "t": "retry",
+              "h": 44,
+              "w": 178,
+              "sel": false
+            },
+            {
+              "t": "title",
+              "h": 44,
+              "w": 178,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        }
+      }
+    },
+    "short": {
+      "errors": [],
+      "shots": {
+        "boot": {
+          "file": "short-boot.png",
+          "current": "title",
+          "vw": 1280,
+          "vh": 440,
+          "scrollW": 1280,
+          "scrollH": 440,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "ENGAGE",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 89.59375,
+              "y": 158.96875,
+              "width": 230,
+              "height": 47,
+              "top": 158.96875,
+              "right": 319.59375,
+              "bottom": 205.96875,
+              "left": 89.59375
+            },
+            "inViewport": true
+          },
+          "items": [
+            {
+              "t": "start",
+              "h": 47,
+              "w": 230,
+              "sel": true
+            },
+            {
+              "t": "daily",
+              "h": 28,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "howto",
+              "h": 28,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "settings",
+              "h": 28,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "scores",
+              "h": 28,
+              "w": 230,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "title": {
+          "file": "short-title.png",
+          "current": "title",
+          "vw": 1280,
+          "vh": 440,
+          "scrollW": 1280,
+          "scrollH": 440,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "ENGAGE",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 89.59375,
+              "y": 158.96875,
+              "width": 230,
+              "height": 47,
+              "top": 158.96875,
+              "right": 319.59375,
+              "bottom": 205.96875,
+              "left": 89.59375
+            },
+            "inViewport": true
+          },
+          "items": [
+            {
+              "t": "start",
+              "h": 47,
+              "w": 230,
+              "sel": true
+            },
+            {
+              "t": "daily",
+              "h": 28,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "howto",
+              "h": 28,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "settings",
+              "h": 28,
+              "w": 230,
+              "sel": false
+            },
+            {
+              "t": "scores",
+              "h": 28,
+              "w": 230,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "howto": {
+          "file": "short-howto.png",
+          "current": "howto",
+          "vw": 1280,
+          "vh": 440,
+          "scrollW": 1280,
+          "scrollH": 440,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "RETURN",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 566.328125,
+              "y": 383.6875,
+              "width": 147.328125,
+              "height": 23.3125,
+              "top": 383.6875,
+              "right": 713.65625,
+              "bottom": 407,
+              "left": 566.328125
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 773,
+            "clientH": 414,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 428
+          },
+          "items": [
+            {
+              "t": "back",
+              "h": 23,
+              "w": 147,
+              "sel": true
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "settings": {
+          "file": "short-settings.png",
+          "current": "settings",
+          "vw": 1280,
+          "vh": 440,
+          "scrollW": 1280,
+          "scrollH": 440,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "<",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 921.40625,
+              "y": 101,
+              "width": 40,
+              "height": 40,
+              "top": 101,
+              "right": 961.40625,
+              "bottom": 141,
+              "left": 921.40625
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 760,
+            "clientH": 414,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 428
+          },
+          "items": [
+            {
+              "t": "quality",
+              "h": 58,
+              "w": 958,
+              "sel": true
+            },
+            {
+              "t": "camera",
+              "h": 58,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "master",
+              "h": 36,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "music",
+              "h": 36,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "sfx",
+              "h": 36,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "shake",
+              "h": 55,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "scanlines",
+              "h": 58,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "shadowLine",
+              "h": 58,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "invertY",
+              "h": 58,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "assist",
+              "h": 58,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "perf",
+              "h": 58,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "back",
+              "h": 23,
+              "w": 141,
+              "sel": false
+            }
+          ],
+          "status": [
+            {
+              "id": "settings-status",
+              "text": "CHANGES SAVE ON THIS DEVICE"
+            }
+          ],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "settings-changed": {
+          "file": "short-settings-changed.png",
+          "current": "settings",
+          "vw": 1280,
+          "vh": 440,
+          "scrollW": 1280,
+          "scrollH": 440,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "<",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 921.40625,
+              "y": 101,
+              "width": 40,
+              "height": 40,
+              "top": 101,
+              "right": 961.40625,
+              "bottom": 141,
+              "left": 921.40625
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 760,
+            "clientH": 414,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 428
+          },
+          "items": [
+            {
+              "t": "quality",
+              "h": 58,
+              "w": 958,
+              "sel": true
+            },
+            {
+              "t": "camera",
+              "h": 58,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "master",
+              "h": 36,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "music",
+              "h": 36,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "sfx",
+              "h": 36,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "shake",
+              "h": 55,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "scanlines",
+              "h": 58,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "shadowLine",
+              "h": 58,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "invertY",
+              "h": 58,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "assist",
+              "h": 58,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "perf",
+              "h": 58,
+              "w": 958,
+              "sel": false
+            },
+            {
+              "t": "back",
+              "h": 23,
+              "w": 141,
+              "sel": false
+            }
+          ],
+          "status": [
+            {
+              "id": "settings-status",
+              "text": "GRAPHICS PRESET MEDIUM · SAVED ON THIS DEVICE"
+            }
+          ],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "scores": {
+          "file": "short-scores.png",
+          "current": "scores",
+          "vw": 1280,
+          "vh": 440,
+          "scrollW": 1280,
+          "scrollH": 440,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "RETURN",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 566.328125,
+              "y": 282.4375,
+              "width": 147.328125,
+              "height": 23.3125,
+              "top": 282.4375,
+              "right": 713.65625,
+              "bottom": 305.75,
+              "left": 566.328125
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 212,
+            "clientH": 212,
+            "scrolls": false,
+            "top": 113.25,
+            "bottom": 326.75
+          },
+          "items": [
+            {
+              "t": "back",
+              "h": 23,
+              "w": 147,
+              "sel": true
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "hud": {
+          "file": "short-hud.png",
+          "current": null,
+          "vw": 1280,
+          "vh": 440,
+          "scrollW": 1280,
+          "scrollH": 440,
+          "focus": null,
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "hud-gain": {
+          "file": "short-hud-gain.png",
+          "current": null,
+          "vw": 1280,
+          "vh": 440,
+          "scrollW": 1280,
+          "scrollH": 440,
+          "focus": null,
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "hud-grade": {
+          "file": "short-hud-grade.png",
+          "current": null,
+          "vw": 1280,
+          "vh": 440,
+          "scrollW": 1280,
+          "scrollH": 440,
+          "focus": null,
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "hud-cards": {
+          "file": "short-hud-cards.png",
+          "current": null,
+          "vw": 1280,
+          "vh": 440,
+          "scrollW": 1280,
+          "scrollH": 440,
+          "focus": null,
+          "items": [],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "pause": {
+          "file": "short-pause.png",
+          "current": "pause",
+          "vw": 1280,
+          "vh": 440,
+          "scrollW": 1280,
+          "scrollH": 440,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "RESUME",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 566.328125,
+              "y": 216.140625,
+              "width": 147.328125,
+              "height": 23.3125,
+              "top": 216.140625,
+              "right": 713.65625,
+              "bottom": 239.453125,
+              "left": 566.328125
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 182,
+            "clientH": 182,
+            "scrolls": false,
+            "top": 128.140625,
+            "bottom": 311.859375
+          },
+          "items": [
+            {
+              "t": "resume",
+              "h": 23,
+              "w": 147,
+              "sel": true
+            },
+            {
+              "t": "settings",
+              "h": 23,
+              "w": 153,
+              "sel": false
+            },
+            {
+              "t": "abort",
+              "h": 23,
+              "w": 227,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "over": {
+          "file": "short-over.png",
+          "current": "over",
+          "vw": 1280,
+          "vh": 440,
+          "scrollW": 1280,
+          "scrollH": 440,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "RE-ENGAGE",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 546.40625,
+              "y": 357.984375,
+              "width": 187.1875,
+              "height": 23.3125,
+              "top": 357.984375,
+              "right": 733.59375,
+              "bottom": 381.296875,
+              "left": 546.40625
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 618,
+            "clientH": 414,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 428
+          },
+          "items": [
+            {
+              "t": "INPUT",
+              "h": 36,
+              "w": 100,
+              "sel": false
+            },
+            {
+              "t": "retry",
+              "h": 23,
+              "w": 187,
+              "sel": true
+            },
+            {
+              "t": "title",
+              "h": 23,
+              "w": 178,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        },
+        "victory": {
+          "file": "short-victory.png",
+          "current": "over",
+          "vw": 1280,
+          "vh": 440,
+          "scrollW": 1280,
+          "scrollH": 440,
+          "focus": {
+            "tag": "BUTTON",
+            "text": "CONTINUE: LOOP 2",
+            "outline": "solid 2px",
+            "sel": true,
+            "rect": {
+              "x": 499.90625,
+              "y": 332.09375,
+              "width": 280.1875,
+              "height": 23.3125,
+              "top": 332.09375,
+              "right": 780.09375,
+              "bottom": 355.40625,
+              "left": 499.90625
+            },
+            "inViewport": true
+          },
+          "panel": {
+            "scrollH": 670,
+            "clientH": 414,
+            "scrolls": true,
+            "top": 12,
+            "bottom": 428
+          },
+          "items": [
+            {
+              "t": "INPUT",
+              "h": 36,
+              "w": 100,
+              "sel": false
+            },
+            {
+              "t": "continue",
+              "h": 23,
+              "w": 280,
+              "sel": true
+            },
+            {
+              "t": "retry",
+              "h": 23,
+              "w": 178,
+              "sel": false
+            },
+            {
+              "t": "title",
+              "h": 23,
+              "w": 178,
+              "sel": false
+            }
+          ],
+          "status": [],
+          "hudOverlap": [],
+          "offscreen": [],
+          "tiny": [],
+          "lowContrast": [],
+          "clipped": []
+        }
+      }
+    }
+  }
+}
