@@ -7,7 +7,7 @@ Previous deployed runtime: `1b3ff18bbabdedf30295846f3594c831ef5c30a5` (PR 5).
 Historical validation: 241 regressions; 28 default resources / 35 served model hashes.
 These are baseline facts, not new-candidate results.
 
-## Current status — 2026-11-15, RC02 frozen; evidence gates open
+## Current status — 2026-11-15, RC02 batch complete; hyper-speed runner validation
 
 Owner implementation tranches have been handed off and integrated. **Primary release
 work remains active.** RC02 is frozen at `22ef1c0067c0aa7ec9461991d0abf9c2a674586e`
@@ -22,9 +22,9 @@ Neither identity freeze grants approval for publication.
 
 | Requirement | Actual state | Next acceptance / owner |
 |---|---|---|
-| Final production hardware bot episodes | **0/1000 audited**; first100 production batch active | Primary: closing source/harness/package audit required before credit |
+| RC02 final production hardware bot episodes | **100/1000 audited**, 48 victories / 52 deaths | Remaining slow batches held for the user’s hyper-speed correction; a changed harness requires a new freeze and its own campaign count |
 | Source-level RC01 hardware batch | **100 completed**, excluded from final credit | Retain raw records and historical audit; Vite DEV execution is source evidence |
-| Actually observed Terra Medium player episodes | **0/60** | Primary/Terra Medium: first demonstrate timely actual viewing and notes; then ten qualifying trials per band |
+| Actually observed Terra Medium player episodes | **0/30** under latest user instruction | Primary/Terra Medium: first demonstrate timely actual viewing and notes; then five qualifying trials per band |
 | Independent judging gate | **0/21 scores >=9**, Round 01 preserved | Fresh readonly Luna/Terra High/Haiku review of one next frozen candidate after material evidence improves |
 | Sustained frame time / resource behavior | Two completed normal-resource realtime victories | Primary: candidate-bound real-rAF distributions, worst stalls, repeated runs and pause/resume |
 | Physical input and assistive operation | Open | Opus: phone/controller/keyboard/assistive walkthrough, explicit supported-device limits |
@@ -113,7 +113,7 @@ Pace continues to grow by `.16*loop`; there are no public Easy/Normal/Hard modes
 Representative full-episode bands: loops **0, 1, 2, 3, 7, 30**. The first five are
 the requested base/escalating/combat-saturation coverage; loop 30 additionally covers
 full generation saturation even in the opening sector. Minimum live-agent observations:
-**10 per band = 60**. Bot allocation: **180 each at 0/1/2/3/7, 100 at 30 = 1000**.
+**5 per band = 30** under the latest user instruction. Historical 60-row plans and judging cutoffs remain unchanged in their original evidence. Bot allocation: **180 each at 0/1/2/3/7, 100 at 30 = 1000**.
 Generation-cap boundaries at loops 4, 6, 7, 9, 12, 13, 30 also get separately labelled
 boundary diagnostics. These finite representatives do not exhaust endless loops.
 
@@ -481,3 +481,32 @@ frozen identity and hardware proof. In-flight rows are provisional; audited fina
 production credit remains0 until a stable closing receipt passes audit. The1000
 requirement and all21score/player gates remain unchanged. Image-return host details
 are preserved in live-sol-low/IMAGE-RETURN-HOST.md; no repair or pilot is implied.
+
+
+## User correction: hyper-speed bot campaign and 30 observed plays
+
+The completed RC02 production batch `rc02-production-0000` has a stable closing
+source/harness/package receipt and `campaign-audit.json`: **100 credited RC02
+episodes**, 48 victories / 52 deaths, 1,099,908 simulation frames and 91,703 draws.
+All eight sectors and three boss phases were reached. Its recorded episode wall
+time totals 1,036,096.5ms; it is valid RC02 evidence, not evidence for a changed
+QA recipe. No remaining-900 batch was started.
+
+The user requested hyper-speed simulation and distinguished **30 longer LLM plays**.
+The current player requirement is five per loop band, 30 total, with **0 credited**.
+Original Round01 scores, 60-row historical plans and failed pilots retain their
+original identities. Primary is measuring a sparse-render, large-chunk bot runner,
+checking seeded parity before freezing it. The runtime/gameplay files are unchanged.
+Do not promise a two-minute 1000-run campaign until measured throughput supports it.
+
+
+Hyper-runner closeout: the controlled six-band comparison has546 identical
+intermediate snapshots and equal terminal gameplay results. Its53,929.3ms reference
+versus19,339.6ms hyper time gives2.79x in that fixture, with5493 versus12 draws.
+The sampled weighted1000-run estimate is56.4minutes, not the user's two-minute
+target. Current-recipe natural six-row production pilots also closed cleanly,
+without the comparison RNG/streaming controls and without final credit. All342
+current-tree regressions and the30-row player guards pass. RC02 remains the last
+frozen candidate (337 tests at its freeze); no new freeze or full campaign started.
+Exact scope, raw evidence and unresolved speed target: BOT-SPEED.md,
+BOT-SPEED.json and BOT-SPEED-NATURAL.json. Both pilot GPU leases are released.

@@ -53,7 +53,7 @@ let currentEpisode=null;
     await page.locator('#screen-title [data-action="start"]').click();
     for(let index=0;index<config.count;index++){
       const episode={id:`${config.runId}-${index}`,seed:config.seed+index,loop:config.loops[index%config.loops.length],
-        profile:config.profile,camera:config.camera,quality:config.quality,renderEvery:config.renderEvery,maxSeconds:config.maxSeconds,timeOrigin:config.timeOrigin};
+        profile:config.profile,camera:config.camera,quality:config.quality,renderEvery:config.renderEvery,profileCosts:config.profileCosts,traceRandom:config.traceRandom,silentSimulation:!!config.hyper,hyper:config.hyper,chunkFrames:config.chunkFrames,maxSeconds:config.maxSeconds,timeOrigin:config.timeOrigin};
       Object.assign(episode,config.plan?.[index]??{});
       currentEpisode=episode;
       if(episode.width)await page.setViewportSize({width:episode.width,height:episode.height});
@@ -61,7 +61,6 @@ let currentEpisode=null;
       // Seed the existing shared PRNG once at the episode boundary. This keeps
       // its algorithm/distribution intact and makes boss/effect choices replayable.
       episode.sharedRandomSeed=(episode.seed^0xa1b2c3d4)>>>0;
-      await page.evaluate(spec=>KZ.rand.reset(spec.sharedRandomSeed),episode);
       const errorStart=errors.length;
       const initial=await page.evaluate(({episode,realtime})=>realtime?KZBot.startRealtime(episode):KZBot.begin(episode),{episode,realtime:config.realtime});
       append('initial.jsonl',{...episode,...initial});
@@ -88,11 +87,11 @@ let currentEpisode=null;
             append('lifecycle.jsonl',{id:episode.id,stage:'pause-resume',at:new Date().toISOString(),paused,still,resumed,pauseMs:2000});
           }else append('lifecycle.jsonl',{id:episode.id,stage:'pause-not-reached',state});
         }
-        const batch=await page.evaluate(realtime=>realtime?KZBot.observeRealtime():KZBot.chunk(240),config.realtime);done=batch.done;
+        const batch=await page.evaluate(({realtime,chunkFrames})=>realtime?KZBot.observeRealtime():KZBot.chunk(chunkFrames),{realtime:config.realtime,chunkFrames:episode.chunkFrames});done=batch.done;
         for(const event of batch.events)append('events.jsonl',{id:episode.id,...event});
         for(const sample of batch.samples)append('samples.jsonl',{id:episode.id,...sample});
         append('chunks.jsonl',{id:episode.id,chunk:chunk++,...batch,events:undefined,samples:undefined});
-        if(batch.checkpoint&&index<3){
+        if(batch.checkpoint&&index<3&&(!episode.hyper||batch.done)){
           const name=`episode-${index}-frame-${batch.frame}-${batch.checkpoint}.png`;
           if(batch.done)await page.waitForTimeout(450); // allow actual CSS result transition, not simulation time
           await page.screenshot({path:path.join(config.out,name),timeout:120000});
@@ -109,7 +108,7 @@ let currentEpisode=null;
       append('episodes.jsonl',row);console.log(JSON.stringify({episode:row.id,loop:row.loop,outcome:row.outcome,
         sectors:row.sectors,z:row.z,fuel:row.fuel,frames:row.frames,renderedFrames:row.renderedFrames,creditEligible:row.creditEligible}));
       if(config.final&&errors.length!==errorStart)throw Error('Final batch stopped after runtime/network error; failed episode retained');
-      if(result.outcome==='victory'&&!config.continuationCaptured){
+      if(result.outcome==='victory'&&!config.continuationCaptured&&!config.speedComparison){
         config.continuationCaptured=true;
         await page.locator('#btn-continue').click();
         const next=await page.evaluate(()=>({seed:KZ.game.seed,loop:KZ.game.loop,state:KZ.game.state,z:KZ.game.player.pos.z}));
@@ -118,7 +117,7 @@ let currentEpisode=null;
         const initialNext=await page.evaluate(spec=>KZBot.begin(spec),diagnostic);
         let finished=false;
         while(!finished){
-          const batch=await page.evaluate(()=>KZBot.chunk(240));finished=batch.done;
+          const batch=await page.evaluate(limit=>KZBot.chunk(limit),config.chunkFrames);finished=batch.done;
           for(const sample of batch.samples)append('progression-samples.jsonl',{id:diagnostic.id,...sample});
           for(const event of batch.events)append('progression-events.jsonl',{id:diagnostic.id,...event});
         }

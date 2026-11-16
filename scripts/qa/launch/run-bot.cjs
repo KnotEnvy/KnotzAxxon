@@ -12,10 +12,15 @@ const { campaignPlan } = require('./plan.cjs');
 const root = path.resolve(__dirname, '../../..');
 const args = process.argv.slice(2);
 function arg(name, fallback) { const i=args.indexOf(name); return i<0?fallback:args[i+1]; }
-const count=Number(arg('--count','3')), loops=arg('--loops','0,1,2,3,7,30').split(',').map(Number);
+const startedAt=Date.now();
+const speedComparison=args.includes('--compare-speed');
+const count=Number(arg('--count',speedComparison?'12':'3')), loops=arg('--loops','0,1,2,3,7,30').split(',').map(Number);
 const seed=Number(arg('--seed','170001')), final=args.includes('--final');
 const offset=Number(arg('--offset','0'));
+if(speedComparison&&(final||args.includes('--realtime')||count!==loops.length*2))throw Error('--compare-speed requires two pilot rows per loop, without --final/--realtime');
 const lifecycleProbe=args.includes('--lifecycle-probe');
+const renderEvery=Number(arg('--render-every',args.includes('--reference')?'12':'36000')),chunkFrames=Number(arg('--chunk-frames',args.includes('--reference')?'240':'36000'));
+if(!Number.isInteger(renderEvery)||renderEvery<1||renderEvery>43200||!Number.isInteger(chunkFrames)||chunkFrames<1||chunkFrames>36000)throw Error('Invalid render/chunk cadence');
 if(lifecycleProbe&&(final||!args.includes('--realtime')))throw Error('--lifecycle-probe requires an uncredited --realtime run');
 if(!Number.isInteger(count)||count<1||!loops.length||loops.some(l=>!Number.isInteger(l)||l<0))throw Error('Invalid count/loops');
 if(!Number.isInteger(offset)||offset<0||offset+count>1000&&args.includes('--matrix'))throw Error('Invalid campaign offset/range');
@@ -70,8 +75,8 @@ for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>cleanup().final
     }
     if(!ready)throw Error('Owned server not ready');
   }
-  const config={runId,source:before,harnessTreeHash:beforeHarness.harnessHash,frozenCandidate,final,url,lifecycleProbe,production:bundle?{directory:win(packageDir),identity:productionPackageBefore}:null,count,loops,seed,realtime:args.includes('--realtime'),
-    renderEvery:Number(arg('--render-every','12')),maxSeconds:Number(arg('--max-seconds','720')),
+  const config={runId,source:before,harnessTreeHash:beforeHarness.harnessHash,frozenCandidate,final,url,lifecycleProbe,speedComparison,hyper:!args.includes('--reference')&&!args.includes('--realtime'),production:bundle?{directory:win(packageDir),identity:productionPackageBefore}:null,count,loops,seed,realtime:args.includes('--realtime'),
+    renderEvery,chunkFrames,profileCosts:args.includes('--profile-costs'),traceRandom:args.includes('--trace-random'),maxSeconds:Number(arg('--max-seconds','720')),
     quality:arg('--quality','low'),bootQuality:arg('--boot-quality',arg('--quality','low')),camera:arg('--camera','classic'),profile:arg('--profile','analog'),
     width:Number(arg('--width','960')),height:Number(arg('--height','540')),
     timeOrigin:args.includes('--time-origin')?Number(arg('--time-origin','0')):null,
@@ -79,6 +84,9 @@ for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>cleanup().final
     playwright:win(fs.realpathSync(path.join(root,'node_modules/playwright'))),
     chrome:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
     lease:{...lease},harnessHash:sha256(fs.readFileSync(path.join(__dirname,'pilot-browser.js')))};
+  if(speedComparison)config.plan=loops.flatMap((loop,n)=>[false,true].map(hyper=>({loop,seed:seed+n,
+    profile:['analog','keyboard','gamepad'][n%3],camera:['classic','modern','chase'][n%3],
+    quality:'low',timeOrigin:0,deterministicStreaming:true,silentSimulation:true,hyper,renderEvery:hyper?36000:12,chunkFrames:hyper?36000:240})));
   if(args.includes('--matrix'))config.plan=campaignPlan(seed).slice(offset,offset+count);
   fs.writeFileSync(path.join(out,'config.json'),JSON.stringify(config,null,2)+'\n');
   child=spawn('node.exe',[win(path.join(__dirname,'windows-bot.cjs')),win(path.join(out,'config.json'))],{stdio:['ignore','pipe','pipe']});
@@ -88,7 +96,7 @@ for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>cleanup().final
   const productionPackageAfter=bundle?packageIdentity(readPackage(packageDir,before.sourceHash)):null;
   const proofFile=path.join(out,'served-build.json');
   const servedBuild=fs.existsSync(proofFile)?JSON.parse(fs.readFileSync(proofFile)):null;
-  const receipt={runId,productionPackageBefore,productionPackageAfter,servedBuild,
+  const receipt={runId,startedAt:new Date(startedAt).toISOString(),completedAt:new Date().toISOString(),wallMs:Date.now()-startedAt,productionPackageBefore,productionPackageAfter,servedBuild,
     stablePackage:!!bundle&&samePackage(productionPackageBefore,productionPackageAfter)&&samePackage(productionPackageBefore,servedBuild),
     productionRequests:served?.requests??[],sourceHash:before.sourceHash,afterSourceHash:after.sourceHash,
     stableSource:before.sourceHash===after.sourceHash,harnessHash:beforeHarness.harnessHash,afterHarnessHash:afterHarness.harnessHash,

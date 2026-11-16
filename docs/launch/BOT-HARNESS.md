@@ -2,8 +2,9 @@
 
 Tooling lives under `scripts/qa/launch/`; it is not imported by production.
 The Windows hardware path was first proved by Sol Low's pilot (see its handoff).
-The bot has completed hardware development pilots but has not yet earned any
-final-candidate episodes.
+RC02 earned 100 audited production episodes before the speed correction. The
+remaining batches are paused. The revised hyper runner has controlled parity and
+hardware pilot evidence, but no frozen campaign credit; see [BOT-SPEED.md](BOT-SPEED.md).
 
 Run a bounded pilot when the cooperative GPU lease is free:
 
@@ -11,16 +12,21 @@ Run a bounded pilot when the cooperative GPU lease is free:
 node scripts/qa/launch/run-bot.cjs --count 3 --loops 0 --seed 170001
 ```
 
-The coordinator owns a localhost Vite server and Windows Node/Chrome child using
+The coordinator owns a loopback-only verified production server when `--production`
+is supplied (a Vite DEV server for source pilots otherwise), and a Windows Node/Chrome child using
 Playwright pipes. It acquires the common GPU lease, refuses to overwrite an old
 run, records comprehensive source hashes before/after, and closes its children.
 Do independent CPU work whenever another owner holds the GPU.
 
-The browser bot calls the original `Engine._loop` with a synthetic 60Hz clock,
+The browser bot calls the original `Engine._loop` with an exact fixed 1/60 delta,
 preserving hit stop, time scaling, subdivisions, normal `Input.update`, actors,
 collision, weapons, resource consumption and presentation updates. It controls
-only scheduling and rendered-frame cadence (default one actual GPU render per
-12 simulation frames). `gl.finish()` ensures submitted work completes before an
+scheduling, fixed test resolution, rendered-frame cadence and deferred HUD drawing.
+The bulk default is a chunk/render interval of 36,000 simulation frames, with an
+explicit current-state draw at a chunk checkpoint/terminal. Typical episodes draw
+twice. Bulk audio uses the original unavailable-audio branch and supplies no audio
+quality evidence. Every game and late-update hook still runs each frame. A
+`--reference` pilot retains per-frame HUD drawing and a 1/12 render interval. `gl.finish()` ensures submitted work completes before an
 episode is recorded. This is accelerated coverage, not realtime feel or FPS proof.
 
 The pilot reads level/actor data, predicts gate timing, steers through gaps,
@@ -28,7 +34,11 @@ shoots real fuel cells, avoids contacts and uses the normal defensive roll.
 It never teleports during a run or grants extra health/fuel/damage/aim authority.
 Observational damage/collision/warning wrappers call the original methods and
 return their result unchanged. Their events are retained, not used to suppress
-damage. Existing shared PRNG is seeded once at each episode boundary and recorded.
+damage. Stop, shared-PRNG seed and fixture initialization now occur in the same
+browser task. Normal bulk runs retain production streaming budgets and native
+`Math.random`; the recorded seed alone cannot reproduce those wall-time/native
+random influences exactly. Controlled comparisons additionally fix streaming and
+native RNG and are permanently excluded from final credit.
 
 Profiles are keyboard events, synthetic standard gamepad polling, and synthetic
 touch intent through the normal input-folding path. These do not establish physical

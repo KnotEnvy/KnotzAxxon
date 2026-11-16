@@ -1,8 +1,8 @@
-# Final live-agent trial controls — prepared, not executed
+# Final live-agent trial controls — 30-play plan, not executed
 
 Prepared against HEAD `cdbdf6a2eb78198d77492b7353396089877aa2b4` on 2026-11-15.
 This tranche is CPU-only. No GPU lease acquired, browser launched or server started.
-Historical two completed pilots remain historical; final credited count **0/60**.
+Historical pilots remain historical. Current user requirement: **0/30**, five per band, Terra Medium. The former60-row plan is retained byte-for-byte as `final-trial-plan-60-historical.json`.
 No formal review or judge scores. Earlier pilot scripts, media and receipts preserved.
 
 ## Freeze and run
@@ -71,8 +71,8 @@ normal-input-path tests, not physical devices, touch hit testing or latency evid
 
 ## Plan and observation discipline
 
-`final-trial-plan.json` has 60 unexecuted rows, ten each at source-derived loops
-0/1/2/3/7/30, seeds2600001–2600060. Each band includes Classic/Modern/Chase,
+`final-trial-plan.json` has 30 unexecuted rows, five each at source-derived loops
+0/1/2/3/7/30, seeds2600001–2600030. Final row guards accept only01–05 per band. Each band includes Classic/Modern/Chase,
 Low/Medium/High/Ultra, desktop/landscape/portrait. All loop starts, including0, are
 labelled seeded-loop-start; none proves earned previous-loop progression. There are
 no public Easy/Normal/Hard modes. Plan generator supports an explicit different seed

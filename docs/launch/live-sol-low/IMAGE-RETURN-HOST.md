@@ -20,7 +20,7 @@ sudo /home/knotzuni/.t3/wsl-runtime/sha256-0141025335da334759cecd8db3483e09772f3
 Primary tried that command with `sudo -n`. It exited1: `sudo: a password is
 required`. A secure file-delivery credential card for that command timed out after
 60seconds without an answer. No credential was received, no install ran, and no
-second card was opened. A timeout does not authorize the installation.
+second card was opened. The timeout supplied no credential, so setup could not continue.
 
 This identifies a repairable prerequisite for the already exposed image-returning
 interface. It does **not** prove that repairing it will produce actual NVIDIA

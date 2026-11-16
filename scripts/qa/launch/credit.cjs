@@ -6,7 +6,8 @@ function auditEpisodes(rows,receipts,candidate,expectedHarness=null,expectedFree
     const receipt=receipts.get(row.runId??row.id.replace(/-\d+$/,''));
     let reason=null;
     const productionError=productionCreditError(row,receipt,candidate,expectedFreeze);
-    if(row.kind!=='final-candidate')reason='development-pilot';
+    if(row.comparisonFixture||row.deterministicStreaming)reason='comparison-fixture';
+    else if(row.kind!=='final-candidate')reason='development-pilot';
     else if(!receipt?.stableSource||receipt.sourceHash!==candidate||receipt.afterSourceHash!==candidate)reason='unverified-or-changing-source';
     else if(row.sourceHash!==candidate)reason='different-candidate';
     else if(expectedHarness&&row.harnessHash!==expectedHarness)reason='different-harness';

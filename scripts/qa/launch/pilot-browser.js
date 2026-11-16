@@ -1,39 +1,107 @@
 /* Browser-side bot. Test tooling only; never imported by the production game.
- * Uses the unmodified Engine._loop, including hit stop, time scaling, substeps,
- * input folding, collision checks, actor updates and presentation. Only rAF
- * scheduling and render cadence are controlled by the accelerated test clock.
+ * Uses the original Engine._loop, including hit stop, scaling, substeps, input,
+ * collisions and every update/late hook. Hyper mode defers HUD drawing, fixes
+ * resolution and sparsely renders, using the normal audio-unavailable branch.
+ * Comparison-only RNG/streaming fixtures are explicitly labelled and uncredited.
  */
 window.KZBot = (() => {
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
   let active=null;
   function begin(spec) {
     if(active)throw Error('Previous bot episode not closed');
+    if(!Number.isInteger(spec.renderEvery)||spec.renderEvery<1||!Number.isFinite(spec.maxSeconds)||spec.maxSeconds<=0)throw Error('Invalid bot cadence or duration');
     const k=window.KZ,{engine:e,game:g}=k;
     e.stop();
-    if(Number.isFinite(spec.timeOrigin)&&!spec.attachCurrent)e.time=spec.timeOrigin;
-    if(spec.attachCurrent){
-      if(g.state!=='playing'||g.loop!==spec.loop||g.seed!==spec.seed)throw Error('Earned continuation state mismatch');
-    }else{
-      g.start({seed:spec.seed});
-      // A labelled loop-start fixture, not a claim of earning prior victories.
-      if(spec.loop){g.reset(spec.seed,spec.loop);g._enterSector(0);}
+    const mathRandom=Math.random;
+    if(spec.deterministicStreaming){
+      // Native randomness also drives pickup bob phase. Separate call sites
+      // keep renderer UUID allocations from shifting those diagnostic phases.
+      const streams=new Map();
+      Math.random=()=>{
+        const site=(new Error().stack?.split('\n')[2]??'unknown').replace(/http:\/\/127\.0\.0\.1:\d+/g,'ORIGIN');
+        let rng=streams.get(site);
+        if(!rng){let hash=2166136261;for(const c of site)hash=Math.imul(hash^c.charCodeAt(0),16777619);
+          rng=new k.rand.constructor((spec.seed^hash)>>>0);streams.set(site,rng);}
+        return rng.next();
+      };
     }
+    const audioState={ready:k.audio.ready,enabled:k.audio.enabled};
+    if(spec.silentSimulation){
+      // Exercise the game's supported unavailable-audio branch. The original
+      // methods remain installed; no Web Audio voices or wall-clock detune RNG
+      // compete with the accelerated combat simulation. Listening is separate.
+      k.audio.stopMusic();k.audio.stopEngine();k.audio.ready=false;k.audio.enabled=false;
+    }
+    // Stop rAF and seed in this same JS task: no title/game frame may consume
+    // shared random values between seeding and fixture initialization.
+    if(!spec.attachCurrent&&Number.isInteger(spec.sharedRandomSeed))k.rand.reset(spec.sharedRandomSeed);
+    if(Number.isFinite(spec.timeOrigin)&&!spec.attachCurrent)e.time=spec.timeOrigin;
+    try {
+      if(spec.attachCurrent){
+        if(g.state!=='playing'||g.loop!==spec.loop||g.seed!==spec.seed)throw Error('Earned continuation state mismatch');
+      }else{
+        g.start({seed:spec.seed});
+        // A labelled loop-start fixture, not a claim of earning prior victories.
+        if(spec.loop){g.reset(spec.seed,spec.loop);g._enterSector(0);}
+      }
+    } catch(error){Math.random=mathRandom;Object.assign(k.audio,audioState);throw error;}
     const i=e.input,p=g.player;
     const original={raf:window.requestAnimationFrame,render:e.postfx.render,
-      damage:p.damage,crash:g._crash,warn:g.warn,fire:g.projectiles.fire,grade:g._gradeSector,getGamepads:navigator.getGamepads};
+      mathRandom,audioState,damage:p.damage,crash:g._crash,warn:g.warn,fire:g.projectiles.fire,grade:g._gradeSector,getGamepads:navigator.getGamepads,hud:g.hud.update,adapt:e._adaptResolution};
     const run={spec,frames:0,renderedFrames:0,rawSeconds:0,events:[],samples:[],
       sectors:[],features:{},bossPhases:[],rackHits:0,rackDetonations:0,
       maxHeat:0,minFuel:1,observedShots:0,previousZ:p.pos.z,decision:null,lastSector:-1,lastBossPhase:-1,
       lastRackHits:0,lastRackCharging:false,held:new Set(),renderCpuMs:[],renderStalls:[],renderStallCount:0,
-      startedAt:performance.now(),original,k,done:false};
+      startedAt:performance.now(),original,k,done:false,renderCpuTotalMs:0,costs:{},profileRestores:[]};
     active=run;
+    if(spec.traceRandom){
+      const next=k.rand.next;let calls=0;
+      k.rand.next=function(){const value=next.call(this);
+        if(calls++<1024)run.events.push({type:'random-trace',frame:run.frames,call:calls,value,
+          caller:new Error().stack?.split('\n').slice(2,6).map(line=>line.replace(/http:\/\/127\.0\.0\.1:\d+/g,'ORIGIN'))});
+        return value;};
+      run.profileRestores.push(()=>{k.rand.next=next});
+    }
+    if(spec.deterministicStreaming){
+      // Comparison fixture only. Production's wall-time streaming budget can
+      // build either one or two chunks, changing cosmetic RNG consumption.
+      // Select its one-chunk branch deterministically for both comparison arms.
+      const build=g.fortress._buildChunk;
+      g.fortress._buildChunk=function(...args){const group=build.apply(this,args);this._buildSpent=Infinity;return group;};
+      run.profileRestores.push(()=>{g.fortress._buildChunk=build});
+    }
+    // Opt-in inclusive CPU timings. Wrappers preserve receivers, arguments,
+    // return values and thrown errors, and are removed before the next episode.
+    if(spec.profileCosts){
+      const watch=(owner,key,label)=>{
+        const original=owner?.[key];if(typeof original!=='function')return;
+        owner[key]=function(...args){const start=performance.now();
+          try{return original.apply(this,args)}finally{
+            const cost=run.costs[label]??={calls:0,ms:0};cost.calls++;cost.ms+=performance.now()-start;
+          }};
+        run.profileRestores.push(()=>{owner[key]=original});
+      };
+      for(const [owner,key,label] of [[g,'update','game'],[g,'lateUpdate','presentation'],
+        [g.fortress,'update','world'],[g.fx,'update','effects'],[g.hud,'update','hud'],
+        [g.projectiles,'update','projectiles'],[g,'_spawnFeatures','spawn'],
+        [g,'_collidePlayerProjectiles','playerShots'],[g,'_collideStatic','staticCollision'],
+        [g,'_updatePresentation','gamePresentation'],[e.input,'update','input']])watch(owner,key,label);
+    }
     window.requestAnimationFrame=()=>0;
+    // Synthetic timestamps carry no real frame-cost signal. Adaptive
+    // resolution belongs to realtime QA; bulk runs retain the requested size.
+    if(!spec.realtime)e._adaptResolution=()=>{};
+    if(spec.hyper){
+      // HUD drawing consumes snapshots but supplies no simulation state. Keep
+      // only the latest snapshot while a synchronous bulk chunk is running.
+      g.hud.update=function(snapshot,dt){run.hudSnapshot=snapshot;run.hudDt=(run.hudDt??0)+dt;};
+    }
     e.postfx.render=function(dt){
-      if(run.frames%spec.renderEvery!==0)return;
+      if(!run.forceRender&&run.frames%spec.renderEvery!==0)return;
       const start=performance.now(),programsBefore=e.renderer.info.programs.length;
       original.render.call(this,dt);
       const durationMs=performance.now()-start;
-      run.renderCpuMs.push(durationMs);run.renderedFrames++;
+      run.renderCpuMs.push(durationMs);run.renderCpuTotalMs+=durationMs;run.renderedFrames++;
       // Observe slow submissions at their actual sector/state; no timing law or
       // renderer behavior changes. These are CPU submissions, not GPU timings.
       if(durationMs>=50){
@@ -85,7 +153,7 @@ window.KZBot = (() => {
     if(spec.profile==='gamepad')Object.defineProperty(navigator,'getGamepads',{configurable:true,value:()=>[run.pad]});
     document.activeElement?.blur?.();
     return {initial:{hull:p.hull,shields:p.shields,fuel:p.fuel,loop:g.loop,z:p.pos.z,
-      engineTime:e.time,grades:[...g.grades],settings:{...k.settings.values},viewport:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio},
+      engineTime:e.time,sharedRandomState:k.rand._s,grades:[...g.grades],settings:{...k.settings.values},viewport:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio},
       canvas:{width:e.canvas.width,height:e.canvas.height}},
       fixture:spec.attachCurrent?'earned-continuation':'seeded-loop-start',operator:'primary developed bot',input:spec.profile};
   }
@@ -214,7 +282,7 @@ window.KZBot = (() => {
       run.lastRackHits=hits;run.lastRackCharging=b.launcher.charging;
     }
     if(run.frames%120===0)run.samples.push({frame:run.frames,rawSeconds:run.rawSeconds,gameSeconds:g.runTime,
-      pos:p.pos.toArray(),state:g.state,sector:g.sectorIndex,hull:p.hull,shield:p.shields,fuel:p.fuel,heat:p.heat,
+      pos:p.pos.toArray(),sharedRandomState:run.k.rand._s,state:g.state,sector:g.sectorIndex,hull:p.hull,shield:p.shields,fuel:p.fuel,heat:p.heat,
       shots:run.observedShots,gameShotsCounter:g.shotsFired,hits:g.shotsHit,kills:g.kills,score:g.score,threads:g.threads,grazes:g.grazes,
       boss:b?{hp:b.hp,phase:b.phase,coreOpen:b.coreOpen,rackHits:b.launcher.hits,charging:b.launcher.charging}:null,
       memory:{...e.renderer.info.memory},programs:e.renderer.info.programs.length,lastRender:run.lastRenderStats,
@@ -236,22 +304,38 @@ window.KZBot = (() => {
 
   function chunk(limit=240) {
     const run=active;if(!run)throw Error('No active episode');
+    if(!Number.isInteger(limit)||limit<1||limit>36000)throw Error('Invalid bot chunk limit');
     if(run.realtime)throw Error('Do not accelerate a realtime trial');
     const {engine:e,game:g}=run.k,start=performance.now();
     e.running=true;
     for(let n=0;n<limit&&!run.done;n++){
-      if(g.state==='playing'&&run.frames%6===0)decide(run);
-      const now=performance.now();e._last=now-1000/60;
+      if(g.state==='playing'&&run.frames%6===0){
+        const at=run.spec.profileCosts?performance.now():0;decide(run);
+        if(run.spec.profileCosts){const c=run.costs.decide??={calls:0,ms:0};c.calls++;c.ms+=performance.now()-at;}
+      }
+      // A constant exact delta avoids wall-clock rounding randomly selecting
+      // one versus two Engine substeps at the 1/60 boundary. This changes only
+      // the test clock; Engine still applies its original scaling/substep law.
+      const now=1000/60;e._last=0;
       e._loop(now); // original frame law, including normal hit-stop/recovery
       run.frames++;run.rawSeconds+=1/60;
+      const at=run.spec.profileCosts?performance.now():0;
       run.checkpoint=observeFrame(run)??run.checkpoint;
+      if(run.spec.profileCosts){const c=run.costs.observe??={calls:0,ms:0};c.calls++;c.ms+=performance.now()-at;}
+    }
+    // A sparse-render checkpoint must show the current state, not an older
+    // canvas. This makes terminal/sector captures truthful without drawing all
+    // intermediate simulation frames.
+    if(run.checkpoint&&run.spec.renderEvery>12){
+      if(run.hudSnapshot){run.original.hud.call(g.hud,run.hudSnapshot,run.hudDt);run.hudDt=0;}
+      run.forceRender=true;try{e.postfx.render(0)}finally{run.forceRender=false}
     }
     e.running=false;
     return {...drain(run),cpuMs:performance.now()-start};
   }
 
   function startRealtime(spec) {
-    const initial=begin({...spec,renderEvery:1});
+    const initial=begin({...spec,realtime:true,hyper:false,renderEvery:1});
     const run=active,{engine:e,game:g}=run.k;
     run.realtime=true;run.rafIntervals=[];run.original.loop=e._loop;
     window.requestAnimationFrame=run.original.raf;
@@ -281,16 +365,20 @@ window.KZBot = (() => {
     const frameCpu=run.renderCpuMs.sort((a,b)=>a-b);
     const q=k=>frameCpu[Math.min(frameCpu.length-1,Math.floor(frameCpu.length*k))]??null;
     const result={...run.spec,outcome:run.outcome,completed:run.outcome==='over'||run.outcome==='victory',
-      fixture:run.spec.attachCurrent?'earned-continuation':'seeded-loop-start',frames:run.frames,renderedFrames:run.renderedFrames,renderEvery:run.spec.renderEvery,
+      fixture:run.spec.attachCurrent?'earned-continuation':'seeded-loop-start',comparisonFixture:!!run.spec.deterministicStreaming,frames:run.frames,renderedFrames:run.renderedFrames,renderEvery:run.spec.renderEvery,
       rawSeconds:run.rawSeconds,gameSeconds:g.runTime,wallMs:performance.now()-run.startedAt,
       sectors:run.sectors,featuresPassed:run.features,bossPhases:run.bossPhases,rackHits:run.rackHits,rackDetonations:run.rackDetonations,
       maxHeat:run.maxHeat,minFuel:run.minFuel,hull:p.hull,shields:p.shields,fuel:p.fuel,z:p.pos.z,
       kills:g.kills,score:g.score,shots:run.observedShots,gameShotsCounter:g.shotsFired,hits:g.shotsHit,grades:g.grades,threads:g.threads,grazes:g.grazes,
       memory:{...e.renderer.info.memory},programs:e.renderer.info.programs.length,
-      renderSubmissionCpuMs:{samples:frameCpu.length,p50:q(.5),p95:q(.95),max:q(1)},
+      renderSubmissionCpuMs:{samples:frameCpu.length,total:run.renderCpuTotalMs,p50:q(.5),p95:q(.95),max:q(1)},
+      costs:run.spec.profileCosts?run.costs:undefined,
+      mode:run.spec.hyper?'hyper-sparse-render':'accelerated-render',
+      presentationPolicy:run.spec.hyper?'deferred HUD snapshot and fixed resolution; all game/late hooks retained':'all presentation hooks retained',
+      audioPolicy:run.spec.silentSimulation?'unavailable-audio branch; no listening or sound validation':'normal audio',
       renderStallCount:run.renderStallCount,slowestRenderSubmissions:run.renderStalls,
       healthLaw:'original Player.damage called unchanged',
-      stepLaw:run.realtime?'original Engine._loop with actual requestAnimationFrame timestamps':'original Engine._loop at synthetic 60Hz; actual rendered cadence separately counted'};
+      stepLaw:run.realtime?'original Engine._loop with actual requestAnimationFrame timestamps':'original Engine._loop with exact fixed 1/60 delta; actual rendered cadence separately counted'};
     if(run.realtime){
       const intervals=run.rafIntervals.sort((a,b)=>a-b),q=k=>intervals[Math.min(intervals.length-1,Math.floor(intervals.length*k))]??null;
       result.actualRafIntervalsMs={samples:intervals.length,p50:q(.5),p95:q(.95),p99:q(.99),max:q(1)};
@@ -299,8 +387,11 @@ window.KZBot = (() => {
     intent(run,0,0,false,false);e.input.reset();e.stop();
     window.requestAnimationFrame=run.original.raf;e.postfx.render=run.original.render;
     if(run.original.loop)e._loop=run.original.loop;
+    g.hud.update=run.original.hud;e._adaptResolution=run.original.adapt;
+    Object.assign(run.k.audio,run.original.audioState);Math.random=run.original.mathRandom;
     p.damage=run.original.damage;g._crash=run.original.crash;g.warn=run.original.warn;g.projectiles.fire=run.original.fire;g._gradeSector=run.original.grade;
     if(run.spec.profile==='gamepad')delete navigator.getGamepads;
+    for(const restore of run.profileRestores.reverse())restore();
     active=null;return result;
   }
   return {begin,chunk,end,startRealtime,observeRealtime};

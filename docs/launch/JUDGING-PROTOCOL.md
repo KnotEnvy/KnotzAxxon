@@ -30,7 +30,7 @@ It reports counts by band/configuration, all-sector/boss/rack/gate/fence/space c
 earned-next-loop diagnostics, collisions/warnings, grades, heat/fuel/resource telemetry
 and failed-seed repro data. Its readiness flag covers only the bot evidence. Physical
 controllers/phones, subjective feel, listening and sustained FPS are separate claims.
-The default accelerated rendered cadence is1/12; actual counts are recorded per seed.
+Bulk bots now use sparse renders and large chunks; the default interval is36,000 simulation frames with current-state checkpoint/terminal draws. Every game/late hook remains active. Record the unavailable-audio policy and actual counts per seed. Controlled speed comparisons are uncredited; see BOT-SPEED.md. The current user requirement is30 observed Terra Medium plays, five per band; Round01’s historical60-play cutoff remains immutable.
 
 ## Fresh independent review rounds
 

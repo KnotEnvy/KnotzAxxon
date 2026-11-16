@@ -45,7 +45,7 @@ const candidate = {schema: 'knotzaxxon.frozen-candidate.v1', name, frozenAt: new
   dependencies: {node: process.version, vite: require('vite/package.json').version,
     three: JSON.parse(fs.readFileSync(path.join(root, 'node_modules/three/package.json'))).version,
     playwright: require('playwright/package.json').version},
-  gameplayRequirements: allocations.map(a=>({...a, liveEpisodes:10})),
+  gameplayRequirements: allocations.map(a=>({...a, liveEpisodes:5})),
   judgingRequirement: 'Luna, Terra and Haiku independently >=9 in each of the seven unchanged lenses; all21 on this candidate',
   status: 'identity frozen; gameplay, package and judging results must be attached separately'};
 fs.mkdirSync(path.dirname(file), {recursive:true});

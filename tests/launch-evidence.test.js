@@ -109,3 +109,15 @@ test('final bot and player CLIs reject missing production packages before GPU re
     }
   }finally{fs.rmSync(tmp,{recursive:true,force:true})}
 });
+
+
+test('comparison streaming or RNG fixtures cannot be relabelled as final campaign credit',()=>{
+  const row={servedBuild,id:'r-0',runId:'r',seed:1,loop:0,kind:'final-candidate',sourceHash:'candidate',
+    hardware:{webgl2:true,renderer:'NVIDIA GTX 1650 Ti'},completed:true,outcome:'over',creditEligible:true,
+    errors:[],frames:10,renderedFrames:2,initial:{hull:3,shields:1,fuel:1,z:0,loop:0},sectors:[0],bossPhases:[]};
+  const receipts=new Map([['r',{...packageReceipt,stableSource:true,sourceHash:'candidate',afterSourceHash:'candidate'}]]);
+  for(const fixture of [{comparisonFixture:true},{deterministicStreaming:true}]){
+    const result=auditEpisodes([{...row,...fixture}],receipts,'candidate');
+    assert.equal(result.total,0);assert.equal(result.excluded[0].reason,'comparison-fixture');
+  }
+});
