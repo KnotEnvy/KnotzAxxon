@@ -2,6 +2,8 @@
 
 Tooling lives under `scripts/qa/launch/`; it is not imported by production.
 The Windows hardware path was first proved by Sol Low's pilot (see its handoff).
+A bounded independent-browser pool is available with `--workers 1–4` (default 1).
+The measured four-worker pilot was slower; see [BOT-POOL.md](BOT-POOL.md).
 RC02 earned 100 audited production episodes before the speed correction. The
 remaining batches are paused. The revised hyper runner has controlled parity and
 hardware pilot evidence, but no frozen campaign credit; see [BOT-SPEED.md](BOT-SPEED.md).

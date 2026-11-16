@@ -98,3 +98,13 @@ All342 CPU regressions pass, including five new scheduling/ownership/admission
 checks. The30-row player-plan, explicit-note and pipeline CPU checks also pass.
 No production source or assets changed, no fresh candidate was frozen, and no
 remaining900/fresh1000 campaign, player episode, judge round or publication ran.
+
+
+## Independent browser pool follow-up
+
+The next measured experiment preserved every original game hook while allocating
+episodes to independent Chrome processes. Four workers were slower than one:
+1,826 versus 3,038 simulation frames per whole-coordinator second, across two
+natural seeds per loop band. The default remains one worker. See
+[BOT-POOL.md](BOT-POOL.md) and its raw-hash report for exact results and limits.
+The two-minute target remains unmet, and no new final campaign was started.

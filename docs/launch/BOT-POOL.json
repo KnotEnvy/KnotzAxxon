@@ -1,0 +1,410 @@
+{
+  "schema": "knotzaxxon.bot-worker-throughput.v1",
+  "pilots": [
+    {
+      "runId": "pilot-speed-pool-serial-10",
+      "workers": 1,
+      "sourceHash": "8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28",
+      "harnessHash": "c364a04a207b16c2b2b09f4425d5e8ac5dc6e156a813d104b841c3a529e26edc",
+      "package": {
+        "sourceHash": "8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28",
+        "manifestSHA256": "a2d6fbd97dbfa5d0b9d9e468f2cd09efedf5627d41c9b5b0d985773c456ce860",
+        "fileCount": 46,
+        "entry": "assets/index-Bz5MUwzc.js",
+        "entrySHA256": "4a45043b98ce58a061968d24f6ced29dc8623fa735006e1f514617d4fc769940"
+      },
+      "episodes": 12,
+      "victories": 3,
+      "deaths": 9,
+      "frames": 114130,
+      "renders": 24,
+      "episodeElapsedMs": 25997.30000000447,
+      "coordinatorWallMs": 37573,
+      "framesPerWallSecond": 3037.5535623985306,
+      "simulatedSecondsPerWallSecond": 50.62589270664976,
+      "bands": [
+        {
+          "loop": 0,
+          "sampleEpisodes": 2,
+          "meanFrames": 13456,
+          "weight": 180
+        },
+        {
+          "loop": 1,
+          "sampleEpisodes": 2,
+          "meanFrames": 17304,
+          "weight": 180
+        },
+        {
+          "loop": 2,
+          "sampleEpisodes": 2,
+          "meanFrames": 11763,
+          "weight": 180
+        },
+        {
+          "loop": 3,
+          "sampleEpisodes": 2,
+          "meanFrames": 9240.5,
+          "weight": 180
+        },
+        {
+          "loop": 7,
+          "sampleEpisodes": 2,
+          "meanFrames": 4338.5,
+          "weight": 180
+        },
+        {
+          "loop": 30,
+          "sampleEpisodes": 2,
+          "meanFrames": 963,
+          "weight": 100
+        }
+      ],
+      "projected1000Frames": 10194660,
+      "projected1000WallMs": 3356207.484272321,
+      "framesPerSecondRequiredFor120s": 84955.5,
+      "creditedEpisodes": 0,
+      "workerEvidence": [
+        {
+          "worker": 0,
+          "episodes": 12,
+          "hardware": {
+            "webgl2": true,
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+            "viewport": {
+              "width": 960,
+              "height": 540,
+              "dpr": 1
+            },
+            "canvas": {
+              "width": 720,
+              "height": 405
+            },
+            "settings": {
+              "quality": "low",
+              "camera": "classic",
+              "master": 0.8,
+              "music": 0.6,
+              "sfx": 0.9,
+              "shake": 0,
+              "scanlines": false,
+              "shadowLine": true,
+              "invertY": false,
+              "assist": false,
+              "perf": false
+            },
+            "browser": "157.0.8103.52",
+            "host": "NitroBliss",
+            "platform": "win32",
+            "arch": "x64",
+            "chrome": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+            "automation": "Playwright local child-process pipes",
+            "worker": 0,
+            "cpu": "Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz",
+            "logicalCPUs": 8,
+            "at": "2026-11-16T00:24:08.836Z"
+          },
+          "closed": {
+            "worker": 0,
+            "closedAt": "2026-11-16T00:24:36.363Z",
+            "wallMs": 35377
+          }
+        }
+      ],
+      "inputSHA256": {
+        "receipt.json": "cfa1c48795a2399b47268c69b0f732fbc83b321dbb9a4adb9bcd89e68a4d0f01",
+        "config.json": "26e31c1b9f39c8b198707ca7b96da5a1b4525da27d21b46362c34d0f8445b0d1",
+        "episodes.jsonl": "9480fc42d4d726f74235002e7256a8e69f4e9cf10c34e7d6e6ffdfd66d115e22",
+        "workers.jsonl": "cbe62b67b33121bcde31246b2a853304d4e544f4f4f5626f866f723fc5be03ae",
+        "served-build-worker-0.json": "8ad18fabad77d9cd65042c30bef03295a89ece9bd903de6d80e942511abc1e54",
+        "hardware-worker-0.json": "2fa42c89611fcaf8de52057c9907963a6bb8fa66ccb8a94e363219f47cbf7a4e"
+      }
+    },
+    {
+      "runId": "pilot-speed-pool-four-11",
+      "workers": 4,
+      "sourceHash": "8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28",
+      "harnessHash": "c364a04a207b16c2b2b09f4425d5e8ac5dc6e156a813d104b841c3a529e26edc",
+      "package": {
+        "sourceHash": "8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28",
+        "manifestSHA256": "a2d6fbd97dbfa5d0b9d9e468f2cd09efedf5627d41c9b5b0d985773c456ce860",
+        "fileCount": 46,
+        "entry": "assets/index-Bz5MUwzc.js",
+        "entrySHA256": "4a45043b98ce58a061968d24f6ced29dc8623fa735006e1f514617d4fc769940"
+      },
+      "episodes": 12,
+      "victories": 4,
+      "deaths": 8,
+      "frames": 120328,
+      "renders": 24,
+      "episodeElapsedMs": 105035.89999999851,
+      "coordinatorWallMs": 65890,
+      "framesPerWallSecond": 1826.1951737744726,
+      "simulatedSecondsPerWallSecond": 30.43658622958086,
+      "bands": [
+        {
+          "loop": 0,
+          "sampleEpisodes": 2,
+          "meanFrames": 13422.5,
+          "weight": 180
+        },
+        {
+          "loop": 1,
+          "sampleEpisodes": 2,
+          "meanFrames": 14783,
+          "weight": 180
+        },
+        {
+          "loop": 2,
+          "sampleEpisodes": 2,
+          "meanFrames": 15920,
+          "weight": 180
+        },
+        {
+          "loop": 3,
+          "sampleEpisodes": 2,
+          "meanFrames": 11568,
+          "weight": 180
+        },
+        {
+          "loop": 7,
+          "sampleEpisodes": 2,
+          "meanFrames": 3507.5,
+          "weight": 180
+        },
+        {
+          "loop": 30,
+          "sampleEpisodes": 2,
+          "meanFrames": 963,
+          "weight": 100
+        }
+      ],
+      "projected1000Frames": 10752480,
+      "projected1000WallMs": 5887913.928595173,
+      "framesPerSecondRequiredFor120s": 89604,
+      "creditedEpisodes": 0,
+      "workerEvidence": [
+        {
+          "worker": 0,
+          "episodes": 3,
+          "hardware": {
+            "webgl2": true,
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+            "viewport": {
+              "width": 960,
+              "height": 540,
+              "dpr": 1
+            },
+            "canvas": {
+              "width": 648,
+              "height": 364
+            },
+            "settings": {
+              "quality": "low",
+              "camera": "classic",
+              "master": 0.8,
+              "music": 0.6,
+              "sfx": 0.9,
+              "shake": 0,
+              "scanlines": false,
+              "shadowLine": true,
+              "invertY": false,
+              "assist": false,
+              "perf": false
+            },
+            "browser": "157.0.8103.52",
+            "host": "NitroBliss",
+            "platform": "win32",
+            "arch": "x64",
+            "chrome": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+            "automation": "Playwright local child-process pipes",
+            "worker": 0,
+            "cpu": "Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz",
+            "logicalCPUs": 8,
+            "at": "2026-11-16T00:25:28.831Z"
+          },
+          "closed": {
+            "worker": 0,
+            "closedAt": "2026-11-16T00:26:01.963Z",
+            "wallMs": 62521
+          }
+        },
+        {
+          "worker": 1,
+          "episodes": 3,
+          "hardware": {
+            "webgl2": true,
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+            "viewport": {
+              "width": 960,
+              "height": 540,
+              "dpr": 1
+            },
+            "canvas": {
+              "width": 648,
+              "height": 364
+            },
+            "settings": {
+              "quality": "low",
+              "camera": "classic",
+              "master": 0.8,
+              "music": 0.6,
+              "sfx": 0.9,
+              "shake": 0,
+              "scanlines": false,
+              "shadowLine": true,
+              "invertY": false,
+              "assist": false,
+              "perf": false
+            },
+            "browser": "157.0.8103.52",
+            "host": "NitroBliss",
+            "platform": "win32",
+            "arch": "x64",
+            "chrome": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+            "automation": "Playwright local child-process pipes",
+            "worker": 1,
+            "cpu": "Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz",
+            "logicalCPUs": 8,
+            "at": "2026-11-16T00:25:31.678Z"
+          },
+          "closed": {
+            "worker": 1,
+            "closedAt": "2026-11-16T00:26:02.109Z",
+            "wallMs": 62658
+          }
+        },
+        {
+          "worker": 2,
+          "episodes": 3,
+          "hardware": {
+            "webgl2": true,
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+            "viewport": {
+              "width": 960,
+              "height": 540,
+              "dpr": 1
+            },
+            "canvas": {
+              "width": 720,
+              "height": 405
+            },
+            "settings": {
+              "quality": "low",
+              "camera": "classic",
+              "master": 0.8,
+              "music": 0.6,
+              "sfx": 0.9,
+              "shake": 0,
+              "scanlines": false,
+              "shadowLine": true,
+              "invertY": false,
+              "assist": false,
+              "perf": false
+            },
+            "browser": "157.0.8103.52",
+            "host": "NitroBliss",
+            "platform": "win32",
+            "arch": "x64",
+            "chrome": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+            "automation": "Playwright local child-process pipes",
+            "worker": 2,
+            "cpu": "Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz",
+            "logicalCPUs": 8,
+            "at": "2026-11-16T00:25:27.227Z"
+          },
+          "closed": {
+            "worker": 2,
+            "closedAt": "2026-11-16T00:26:02.271Z",
+            "wallMs": 62820
+          }
+        },
+        {
+          "worker": 3,
+          "episodes": 3,
+          "hardware": {
+            "webgl2": true,
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+            "viewport": {
+              "width": 960,
+              "height": 540,
+              "dpr": 1
+            },
+            "canvas": {
+              "width": 648,
+              "height": 364
+            },
+            "settings": {
+              "quality": "low",
+              "camera": "classic",
+              "master": 0.8,
+              "music": 0.6,
+              "sfx": 0.9,
+              "shake": 0,
+              "scanlines": false,
+              "shadowLine": true,
+              "invertY": false,
+              "assist": false,
+              "perf": false
+            },
+            "browser": "157.0.8103.52",
+            "host": "NitroBliss",
+            "platform": "win32",
+            "arch": "x64",
+            "chrome": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+            "automation": "Playwright local child-process pipes",
+            "worker": 3,
+            "cpu": "Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz",
+            "logicalCPUs": 8,
+            "at": "2026-11-16T00:25:29.547Z"
+          },
+          "closed": {
+            "worker": 3,
+            "closedAt": "2026-11-16T00:26:02.844Z",
+            "wallMs": 63392
+          }
+        }
+      ],
+      "inputSHA256": {
+        "receipt.json": "498277a3c4395a518478902345b983225908576ef051bbc5e5509da4f884d04a",
+        "config.json": "eaccce87884ec05587aceb60260233459a591f5b7791ff37b4d916081da8a037",
+        "episodes.jsonl": "49c00c253ec74bc749ce1896d539a5136e9bf67ec95265fa2f0d6ce2d7ee4a26",
+        "workers.jsonl": "3f81ec917a2187a2d5a0c20226196ec52ca681f4c21bd7f1bde8d98e49281368",
+        "served-build-worker-0.json": "d9e4c3aa8c59e6c0eb84b3d88e5603cc8eebda6c97535b34f00f7a1ecb93d2aa",
+        "hardware-worker-0.json": "6f59d901a1589d11a4d2aa476be916ccf997873be0ab61ea4a19adf1d22415f0",
+        "served-build-worker-1.json": "d9e4c3aa8c59e6c0eb84b3d88e5603cc8eebda6c97535b34f00f7a1ecb93d2aa",
+        "hardware-worker-1.json": "56b8f0e42900cba39d9785e64ec193352a63b2f6b76914621b3888b3dd7f06ae",
+        "served-build-worker-2.json": "d9e4c3aa8c59e6c0eb84b3d88e5603cc8eebda6c97535b34f00f7a1ecb93d2aa",
+        "hardware-worker-2.json": "8a2cca9455d262e369ca1fbe92c672bc1ced04227758288be62c58ca16d88e25",
+        "served-build-worker-3.json": "d9e4c3aa8c59e6c0eb84b3d88e5603cc8eebda6c97535b34f00f7a1ecb93d2aa",
+        "hardware-worker-3.json": "f4fd2c524b6259efc227306e3a009d0617062940677910df1f585068912c9532"
+      }
+    }
+  ],
+  "throughputRatiosToFirst": [
+    {
+      "runId": "pilot-speed-pool-serial-10",
+      "ratio": 1
+    },
+    {
+      "runId": "pilot-speed-pool-four-11",
+      "ratio": 0.6012059166233966
+    }
+  ],
+  "limits": [
+    "Two natural seeds per band; outcomes differ because native randomness and timed streaming remain original.",
+    "This measures scheduling cost, not exact replay parity. Both pilots use Low/Classic/synthetic analog at 960x540.",
+    "Whole-coordinator timing includes startup, verification, screenshots, continuation and closing; sample projection is not a measured 1000-run campaign.",
+    "No final bot/player, listening, sustained performance or physical-device credit. No two-minute throughput demonstrated."
+  ]
+}

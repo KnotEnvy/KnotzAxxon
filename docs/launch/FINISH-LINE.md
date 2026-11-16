@@ -81,7 +81,7 @@ be stated precisely; they do not justify fabricated evidence or scores.
 
 | Priority | Deliverable / owner | Exclusive writes | Dependencies / current state |
 |---|---|---|---|
-| P0 | Primary: bot, GPU campaign, integration, distribution | `scripts/qa/launch/`, `docs/launch/`, `artifacts/launch/bot/`, packaging scripts/config by coordination | Active integration; RC02 frozen; final production bot/live **0 / 0** |
+| P0 | Primary: bot, GPU campaign, integration, distribution | `scripts/qa/launch/`, `docs/launch/`, `artifacts/launch/bot/`, packaging scripts/config by coordination | Active integration; RC02 **100/1000** audited; observed player **0/30**; changed hyper recipe has zero final credit |
 | P0 | Terra Medium, Nitro: live observed gameplay and hardware pilot (user replacement for Sol Low) | `scripts/qa/live-sol-low/`, `docs/launch/live-sol-low/`, `artifacts/launch/live-sol-low/` | CPU handoff complete; active-view latency unresolved; no qualifying player episode |
 | P1 | Opus High, Nitro: title and actual-game marketing | `src/style.css`, `src/ui/Screens.js`, `index.html`, title-only hunks in `src/game/Game.js`, `public/brand/`, `assets-source/launch-marketing/`, `scripts/brand/launch/` | Implementation handoff integrated; targeted Round 01 UI/device/font triage remains |
 | P1 | Spark 1.3, SuperBeast: audio | `src/audio/` and audio content are reserved for Spark's replacement/patch delivery; owned remote output only | Implementation handoff integrated; measured audio only; listening proof remains |
@@ -510,3 +510,29 @@ current-tree regressions and the30-row player guards pass. RC02 remains the last
 frozen candidate (337 tests at its freeze); no new freeze or full campaign started.
 Exact scope, raw evidence and unresolved speed target: BOT-SPEED.md,
 BOT-SPEED.json and BOT-SPEED-NATURAL.json. Both pilot GPU leases are released.
+
+
+## Hyper-speed follow-up: measured browser pool
+
+All **345 current-tree tests pass**. A bounded 1–4-worker scheduler now keeps each
+episode in its own browser owner, claims each plan row once and awaits all cleanup
+when a worker fails. Default remains one worker. Against the exact RC02 production
+package, two uncredited 12-episode pilots completed all six loop bands: serial
+37.573 seconds / 114,130 simulation frames; four workers 65.890 seconds / 120,328
+frames. All workers proved GTX1650Ti rendering, matched all46 production files,
+closed cleanly and retained stable source/harness/package receipts. Natural RNG and
+timed streaming remained original; different outcomes preclude an exact parity
+claim. Nothing was visually inspected or heard. See BOT-POOL.md and BOT-POOL.json.
+
+Four workers reduced normalized throughput to about60% of serial in this sample.
+The two-minute campaign target remains unmet; the serial weighted sample would
+require about28 times the observed throughput to finish in120 seconds. This is a
+small-sample feasibility calculation, not a completed1000-run measurement. No new
+freeze, full batch, observed player run, judge review or publication occurred.
+
+Actual counts remain RC02 **100/1000**, revised recipe **0 final**, Terra Medium
+**0/30**. The delayed RC01 DEV completion is already excluded and is not added again.
+Both experiment leases are released; all five browser owners reported closure.
+A pure gameplay simulation path is an unimplemented architectural possibility,
+with equivalence and coverage questions still to resolve. Do not weaken resource,
+collision, timing or RNG laws or claim two-minute success to close this gap.

@@ -17,6 +17,9 @@ const speedComparison=args.includes('--compare-speed');
 const count=Number(arg('--count',speedComparison?'12':'3')), loops=arg('--loops','0,1,2,3,7,30').split(',').map(Number);
 const seed=Number(arg('--seed','170001')), final=args.includes('--final');
 const offset=Number(arg('--offset','0'));
+const workers=Number(arg('--workers','1'));
+if(!Number.isInteger(workers)||workers<1||workers>4)throw Error('Invalid bot worker count (1–4 required)');
+if(workers>1&&(speedComparison||args.includes('--realtime')))throw Error('Comparison and realtime probes require one worker');
 if(speedComparison&&(final||args.includes('--realtime')||count!==loops.length*2))throw Error('--compare-speed requires two pilot rows per loop, without --final/--realtime');
 const lifecycleProbe=args.includes('--lifecycle-probe');
 const renderEvery=Number(arg('--render-every',args.includes('--reference')?'12':'36000')),chunkFrames=Number(arg('--chunk-frames',args.includes('--reference')?'240':'36000'));
@@ -75,7 +78,7 @@ for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>cleanup().final
     }
     if(!ready)throw Error('Owned server not ready');
   }
-  const config={runId,source:before,harnessTreeHash:beforeHarness.harnessHash,frozenCandidate,final,url,lifecycleProbe,speedComparison,hyper:!args.includes('--reference')&&!args.includes('--realtime'),production:bundle?{directory:win(packageDir),identity:productionPackageBefore}:null,count,loops,seed,realtime:args.includes('--realtime'),
+  const config={runId,workers,source:before,harnessTreeHash:beforeHarness.harnessHash,frozenCandidate,final,url,lifecycleProbe,speedComparison,hyper:!args.includes('--reference')&&!args.includes('--realtime'),production:bundle?{directory:win(packageDir),identity:productionPackageBefore}:null,count,loops,seed,realtime:args.includes('--realtime'),
     renderEvery,chunkFrames,profileCosts:args.includes('--profile-costs'),traceRandom:args.includes('--trace-random'),maxSeconds:Number(arg('--max-seconds','720')),
     quality:arg('--quality','low'),bootQuality:arg('--boot-quality',arg('--quality','low')),camera:arg('--camera','classic'),profile:arg('--profile','analog'),
     width:Number(arg('--width','960')),height:Number(arg('--height','540')),

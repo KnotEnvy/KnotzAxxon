@@ -2,11 +2,13 @@
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os');
 const {readPackage,attachProduction}=require('./production-bundle.cjs');
 const {packageIdentity,samePackage}=require('./production-proof.cjs');
+const {runWorkerPool}=require('./worker-pool.cjs');
 const config=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
 const {chromium}=require(config.playwright);
 const append=(name,value)=>fs.appendFileSync(path.join(config.out,name),JSON.stringify(value)+'\n');
-let currentEpisode=null;
-(async()=>{
+async function runWorker(worker,claim,stopAdmission){
+  let currentEpisode=null;
+  const startedAt=Date.now();
   const browser=await chromium.launch({executablePath:config.chrome,headless:true,
     args:['--use-angle=d3d11','--enable-gpu','--ignore-gpu-blocklist']});
   try{
@@ -34,7 +36,8 @@ let currentEpisode=null;
       await page.goto(config.url);await page.waitForFunction(()=>!!window.KZ,{},{timeout:120000});
       await page.evaluate(async()=>{KZ.rand=(await import('/src/core/Utils.js')).rand});
     }
-    fs.writeFileSync(path.join(config.out,'served-build.json'),JSON.stringify(servedBuild,null,2)+'\n');
+    fs.writeFileSync(path.join(config.out,`served-build-worker-${worker}.json`),JSON.stringify(servedBuild,null,2)+'\n');
+    if(worker===0)fs.writeFileSync(path.join(config.out,'served-build.json'),JSON.stringify(servedBuild,null,2)+'\n');
     const probe=await page.evaluate(()=>{
       const gl=KZ.engine.renderer.getContext(),ext=gl.getExtension('WEBGL_debug_renderer_info');
       return {webgl2:gl instanceof WebGL2RenderingContext,vendor:ext&&gl.getParameter(ext.UNMASKED_VENDOR_WEBGL),
@@ -43,16 +46,17 @@ let currentEpisode=null;
         canvas:{width:KZ.engine.canvas.width,height:KZ.engine.canvas.height},settings:KZ.settings.values};
     });
     const hardware={...probe,browser:browser.version(),host:os.hostname(),platform:process.platform,arch:process.arch,
-      chrome:config.chrome,automation:'Playwright local child-process pipes',at:new Date().toISOString()};
-    fs.writeFileSync(path.join(config.out,'hardware.json'),JSON.stringify(hardware,null,2)+'\n');
+      chrome:config.chrome,automation:'Playwright local child-process pipes',worker,cpu:os.cpus()[0]?.model,logicalCPUs:os.cpus().length,at:new Date().toISOString()};
+    fs.writeFileSync(path.join(config.out,`hardware-worker-${worker}.json`),JSON.stringify(hardware,null,2)+'\n');
+    if(worker===0)fs.writeFileSync(path.join(config.out,'hardware.json'),JSON.stringify(hardware,null,2)+'\n');
     if(!probe.webgl2||!probe.renderer||/swiftshader|llvmpipe|software|basic render/i.test(probe.renderer))throw Error('Hardware WebGL2 required; no software credit');
     if(errors.length)throw Error('Startup errors: '+errors.join(' | '));
     await page.addScriptTag({path:config.pilot});
     // The title overlay deliberately intercepts canvas clicks. Its real launch
     // button supplies the trusted audio gesture; begin() then starts the fixture.
     await page.locator('#screen-title [data-action="start"]').click();
-    for(let index=0;index<config.count;index++){
-      const episode={id:`${config.runId}-${index}`,seed:config.seed+index,loop:config.loops[index%config.loops.length],
+    for(let index;(index=claim())!==null;){
+      const episode={worker,planIndex:index,id:`${config.runId}-${index}`,seed:config.seed+index,loop:config.loops[index%config.loops.length],
         profile:config.profile,camera:config.camera,quality:config.quality,renderEvery:config.renderEvery,profileCosts:config.profileCosts,traceRandom:config.traceRandom,silentSimulation:!!config.hyper,hyper:config.hyper,chunkFrames:config.chunkFrames,maxSeconds:config.maxSeconds,timeOrigin:config.timeOrigin};
       Object.assign(episode,config.plan?.[index]??{});
       currentEpisode=episode;
@@ -128,6 +132,15 @@ let currentEpisode=null;
       }
     }
     await context.close();
-  }finally{await browser.close()}
-})().catch(e=>{append('failures.jsonl',{message:e.stack,episode:currentEpisode,sourceHash:config.source.sourceHash,
-  harnessHash:config.harnessHash,at:new Date().toISOString()});console.error(e.stack);process.exitCode=1});
+  }catch(error){
+    stopAdmission();
+    append('failures.jsonl',{message:error.stack,worker,episode:currentEpisode,sourceHash:config.source.sourceHash,
+      harnessHash:config.harnessHash,at:new Date().toISOString()});
+    throw error;
+  }finally{
+    await browser.close();
+    append('workers.jsonl',{worker,closedAt:new Date().toISOString(),wallMs:Date.now()-startedAt});
+  }
+}
+runWorkerPool({count:config.count,workers:config.workers??1,worker:runWorker})
+  .catch(error=>{console.error(error.stack);process.exitCode=1});
