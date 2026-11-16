@@ -1,0 +1,37 @@
+{
+  "round": 1,
+  "candidate": {
+    "commit": "c0ee2949de29adfa52e6dcdae6768c73ec15474a",
+    "sourceHash": "6d28e0210d802d0932762ba85f61d4cf43f14a646099a5f99411b0ab240f1362"
+  },
+  "mode": "fresh readonly delegate_task per judge; no helpers; same immutable input-manifest cutoff; running bot batch excluded",
+  "judges": [
+    {
+      "judge": "luna",
+      "model": "codex/gpt-6-luna",
+      "options": {
+        "reasoningEffort": "high"
+      },
+      "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3A09a4c356-dae3-464c-9874-daea536d82fb",
+      "status": "complete; original response and unchanged ratings retained"
+    },
+    {
+      "judge": "terra",
+      "model": "codex/gpt-6.1-terra",
+      "options": {
+        "reasoningEffort": "high"
+      },
+      "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3A5d41a32d-8e66-4afe-a29e-abd11536d635",
+      "status": "complete; original response and unchanged ratings retained"
+    },
+    {
+      "judge": "haiku",
+      "model": "claudeAgent/claude-haiku-5-5",
+      "options": {
+        "effort": "high"
+      },
+      "taskId": "node:delegated-task:command%3Amcp%3A62d938d9-f913-4b9e-8f84-2f838eadbafc%3Adelegate-task%3Aff647149-7a42-4b13-926a-9a43d9daa079",
+      "status": "complete; original response and unchanged ratings retained"
+    }
+  ]
+}

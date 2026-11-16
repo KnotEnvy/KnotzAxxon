@@ -106,7 +106,7 @@ export const SCHEMA = [
     type: 'choice',
     options: ['classic', 'modern', 'chase'],
     labels: ['CLASSIC 45', 'MODERN 20', 'CHASE'],
-    def: 'classic',
+    def: 'modern',
   },
   {
     id: 'master',
@@ -168,6 +168,8 @@ function normalize(spec, value, snap = false) {
 export class SettingsStore extends EventTarget {
   constructor() {
     super();
+    // Reading a valid record does not prove that the next write will succeed.
+    this.persistent = null;
     const saved = this._load();
     this.values = Object.fromEntries(SCHEMA.map(spec => [spec.id,
       normalize(spec, Object.hasOwn(saved, spec.id) ? saved[spec.id] : spec.def)]));
@@ -187,9 +189,11 @@ export class SettingsStore extends EventTarget {
   save() {
     try {
       localStorage.setItem(KEY, JSON.stringify(this.values));
+      this.persistent = true;
     } catch {
-      /* private browsing — settings just won't persist */
+      this.persistent = false;
     }
+    return this.persistent;
   }
 
   /** First run only: guess a sane preset from the device. */
@@ -202,7 +206,6 @@ export class SettingsStore extends EventTarget {
     else if (cores >= 12 && mem >= 8) this.values.quality = 'ultra';
     else if (cores >= 6) this.values.quality = 'high';
     else this.values.quality = 'medium';
-    if (mobile) this.values.camera = 'chase';
   }
 
   get(id) {

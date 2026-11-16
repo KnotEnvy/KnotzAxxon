@@ -1,0 +1,52 @@
+[
+  {
+    "path": "src/audio/Audio.js",
+    "method": "dispose",
+    "calls": [
+      "stopMusic",
+      "stopEngine"
+    ],
+    "expectedAdditional": [
+      "releaseGraph",
+      "close",
+      "scheduler clear"
+    ]
+  },
+  {
+    "path": "src/ui/Screens.js",
+    "method": "dispose",
+    "calls": [],
+    "expectedAdditional": [
+      "lifetime",
+      "card timeout"
+    ]
+  },
+  {
+    "path": "src/ui/HUD.js",
+    "method": "dispose",
+    "calls": [],
+    "expectedAdditional": [
+      "reset including damage RAF",
+      "hide"
+    ]
+  },
+  {
+    "path": "src/game/Game.js",
+    "method": "reset",
+    "calls": [],
+    "expectedAdditional": [
+      "enemy",
+      "pickup",
+      "boss",
+      "projectiles",
+      "fx",
+      "hud"
+    ]
+  },
+  {
+    "path": "src/ui/Screens.js",
+    "method": "constructor",
+    "addedRootListeners": 5,
+    "removedRootListeners": 0
+  }
+]

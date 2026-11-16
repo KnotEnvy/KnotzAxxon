@@ -1,0 +1,72 @@
+# Public-launch proof packet
+
+This is the evidence index for independent judges. It grants no release approval.
+Read the exact candidate identity and each receipt before attributing evidence to a
+build. A package build, screenshot or automated episode does not establish human
+play, audible perception, physical-device behavior or sustained hardware FPS.
+
+## Current checkpoint
+
+- **Current QA speed work (unfrozen):** [BOT-SPEED.md](BOT-SPEED.md) records controlled parity, natural packaged pilots and the missed couple-minute target. Current-tree342/342 tests pass; normal-resource simulation and separate30-play requirement remain. These pilots earn zero final credit and do not alter RC02 or Round01.
+
+- **RC02 frozen:** runtime commit `22ef1c0067c0aa7ec9461991d0abf9c2a674586e`, source `8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28`, harness `c429e9a0477a68b90c3924f28d7d88cad3a5f06240aaf62482b5a7190969015d`; [candidate identity](candidates/rc02.json) pins both production manifests/entry hashes. **337/337 tests** and complete dependency audit pass. New 46-file packages build, with shipped bytes identical to RC01. Fresh local package hardware checks pass for both46-file builds; [RC02-PACKAGES.json](RC02-PACKAGES.json) pins their reports. Two bounded realtime victories passed with39,333actual frames and pause/resume/resource receipts in [RC02-SUSTAINED.json](RC02-SUSTAINED.json); older receipts remain attributed accurately.
+
+- **Historical RC01 freeze:** runtime commit `c0ee2949de29adfa52e6dcdae6768c73ec15474a`, source `6d28e0210d802d0932762ba85f61d4cf43f14a646099a5f99411b0ab240f1362`; exact96 runtime,116 QA/test and55 editable-source hashes in [candidate identity](candidates/rc01.json). Later documentation commits do not change that frozen identity.
+- **RC01: 329/329 regressions passed.** Pages and portable Itch builds pass,46 files each. Exact-source Chrome audio lifecycle and32s audio rendering pass; nothing heard. Local production/nested-iframe hardware verification passed on the GTX1650Ti; both46-file packages hash-match, Pages35 model files match, and all checked views have zero page/network errors. Exact counts/receipts: [RC01-PACKAGES.json](RC01-PACKAGES.json). Pages measured481 engine callbacks/presentation draws; the Itch views measured326 engine callbacks (counts are not FPS).
+- RC02 final production bot **100/1000 audited** (48 victories / 52 deaths); remaining batches held for hyper-speed QA changes. Actually observed player **0/30** under the latest user instruction (five per band). A revised harness requires a new frozen identity and its own campaign audit. The completed RC01 `rc01-final-0000` batch has 100 source-level hardware episodes served from Vite DEV; it is excluded from final production credit. Raw evidence and the old-rule historical audit are retained unchanged. Terra Medium remains the selected player; the actual-view cadence blocker remains open.
+- Round 01 completed at its original cutoff: Luna 8.3/7.8/6.8/8.4/7.6/7.2/7.0; Terra High 7.8/6.5/5.0/7.3/6.5/4.5/6.8; Haiku 6/5/4/7/6/4/5. **0/21 >=9.** Originals and byte-identical cutoff snapshots remain in [round-01](judging/round-01/). Later evidence earns no retrospective score changes.
+- The new exact-production path completed an **uncredited** normal-resource loop30 pilot (718 frames/60 renders, genuine death, sectors0–1) on GTX1650Ti/Chrome157, all46 browser hashes, stable source/harness/package and zero page errors. Exact receipt and limits: [production provenance](PRODUCTION-PROVENANCE.md). Scoped [security review](SECURITY-SCOPE.md) retains the dependency finding/correction and limits.
+- All21 individual >=9 gate remains unchanged; see [JUDGING-PROTOCOL.md](JUDGING-PROTOCOL.md). No publication or whole-release completion is authorized by a source freeze or automated check alone.
+- The accepted gunner/art/models remain approved. No historical optional art review is fabricated. Main/Pages/Itch remain the previous published release.
+
+## Evidence by lens
+
+| Lens | Sources and concrete evidence | Limits and unfinished work |
+|---|---|---|
+| 1 Code, maintenance, tests, security | Entire `src/`, `tests/`, lockfile/build config; current329-test checkpoint; source and harness hashes in freeze tooling; no production `window.KZ` API in Pages smoke | Sol XHigh completed the same SuperBeast cleanup thread: both exact tranches are integrated, all50 production paths are audited with explicit limits, and reserved world/UI/reset fixes have landed. Spark’s Audio.dispose delivery is integrated with exact source/test hashes and actual-browser lifecycle plus rendered-mix checks; see audio/DISPOSAL.md. QA instrumentation is separate from shipped code. |
+| 2 Reliability, lifecycle, performance, resources | [HARDWARE-QA.md](HARDWARE-QA.md), [PERFORMANCE-INVESTIGATION.md](PERFORMANCE-INVESTIGATION.md); context-loss/manual-resume, model/default/legacy/disposal, audio lifecycle and production resource checks | Source receipts span identified development checkpoints. Actual GPU probes established evicted material programs on the old baseline and retained IDs on corrected ownership; that does not prove every observed stall eliminated or establish FPS. Headless synthetic views do not prove physical-phone or sustained-FPS behavior. |
+| 3 Gameplay, fairness, pacing, boss, replay | [BOT-HARNESS.md](BOT-HARNESS.md), source-derived six-band matrix; complete genuine loop0 victory pilot in [live controls receipt](live-sol-low/CONTROLS-PILOT-20261115.md); per-seed telemetry/media retained under `artifacts/launch/` | Pilots receive no final credit. Required1000 hardware episodes and30 realtime visually observed episodes remain incomplete. Original Round01 60-play cutoff requirements are preserved. Bot operation differs from visual-agent observation. The negative-first-frame grade defect has a verified core fix; see [before/after reproduction](NEGATIVE-FIRST-FRAME.md). |
+| 4 Art, world, ambience, readability | User acceptance; [Fable ambient receipt](fable/AMBIENT-TRAFFIC.md); `assets-source/environment/`, `assets-source/launch-environment/`;37 hardware traffic comparison pairs,9 targeted contracts | No accepted-art contest reopened. Traffic captures cover High, two viewports, loop0; stills are not a continuous motion/human-play verdict. |
+| 5 UI, HUD, access, input, responsiveness | Opus title tests and source, UI constructor/disposal fault regressions and actual-payload Settings persistence tests; [results presentation](ui/RESULTS-PRESENTATION.md);18 staged hardware results checks; source keyboard/short/portrait/reduced-motion QA; production desktop/portrait/landscape | Physical controller/touch hardware and assistive-technology use are untested. Staged results tests use actual screen code but do not claim normal-play replay. Live observation latency remains unresolved; see [assessment](live-sol-low/OBSERVATION-PATH-ASSESSMENT.md). |
+| 6 Audio/music/SFX/cues/unlock/recovery | [Audio integration](audio/INTEGRATION.md), [Spark measured tranche](audio/TRANCHE.md); distinct missile-lock cue;32s current-source mix measurement with zero clipping, trusted-gesture/same-context resume | No agent heard the audio. Visibility interruption was not exercised by the headless tab. No speaker/phone-call/physical-controller-only audition claim. |
+| 7 Title, brand, marketing, listing, distribution | `assets-source/launch-marketing/README.md`, `export-manifest.json`, `ITCH-LISTING.md`; five native1920×1080 GTX1650Ti screenshots; cover/OG/GitHub/banner editable sources; [DISTRIBUTION.md](DISTRIBUTION.md); local Pages production and prior portable Itch verification | Marketing frames are explicitly staged and source-identified, not gameplay wins. ScreenRGB, no printer profile/CMYK/bleed claim. Itch listing/images/upload and GitHub social preview remain unchanged account settings. A final portable archive must follow integration/freeze. |
+
+## Device and identity rules
+
+The hardware path is NitroBliss Windows Chrome157.0.8103.52 over Playwright local
+child-process pipes. Its unmasked renderer is NVIDIA GeForce GTX1650Ti through
+ANGLE/D3D11. Each run records actual settings, viewport, DPR, buffer and frame count.
+Software WebGL frames are not credited toward hardware campaign requirements.
+Only one owned Nitro GPU job runs at a time under the shared token/PID lease.
+
+Runtime identity comes from `scripts/qa/launch/fingerprint.cjs`. Final freezes also
+pin all QA/tests, dependency versions, marketing composition tools and editable
+launch art. Raw manifests, JSONL outcomes, original screenshots and failed attempts
+remain available; curated sources/evidence stay in the repository. Never sum pilots
+or incompatible source/harness records into a final count.
+
+## Publication truth
+
+The existing live Pages runtime is `1b3ff18bbabdedf30295846f3594c831ef5c30a5`, with
+documentation closeout `2a77036cbc6a64b1b1656c8df8949a5650098dab`. The public itch
+listing currently links to Pages; no new HTML5 upload is claimed. No final release
+PR, merge, Pages deployment, Itch upload or account-image update has occurred in
+this launch preparation. Preserve the previous Itch build when publishing.
+
+## Combined ownership evidence, 2026-11-15
+
+- [Full path audit and scope/limitations](cleanup/AUDIT.json), [tranche2 receipt](cleanup/TRANCHE-2.md). Audit hashes are for the worker’s historical branch, not the final combined runtime.
+- [Fable world retirement](fable/WORLD-RETIREMENT.md):9 real-kit/seeded-level fault regressions, independently passed onNitro; appearance and RNG definitions unchanged.
+- [Opus UI ownership](ui/OWNERSHIP-RETIREMENT.md) and [Settings status](ui/SETTINGS-PERSISTENCE.md): actual source, failure-before/pass-after, no separate storage probe.
+- [Primary reset retirement and preserved construction errors](RESET-OWNERSHIP.md): caught integration regression retained; unchanged reset/startup suites38/38 pass, full318/318 pass.
+- [Ownership evidence hashes](ownership-integration.sha256), [tranche1 hardware ownership hashes](cleanup-tranche-1-nitro.sha256), [Settings hashes](settings-persistence.sha256), [reset hashes](reset-ownership.sha256).
+- Hardware quality-action diagnostic at `artifacts/launch/functional/prewarm-quality-2026-11-15T21-51-39-902Z/`:7 actual menu scenarios,4 prewarms,14 detached owners each, no page/network errors. Staged, zero gameplay credit; source-receipt pins the checkpoint.
+- [Latest delayed-pipeline observation pilot](live-sol-low/PARALLEL-PILOT-01.md): mechanism works, cadence does not. Historical pilot credit was0/60; current requirement is0/30. No capture is automatically a viewed observation.
+
+## Publication sequence
+
+Local packages, applicable evidence and all 21 independent scores must pass before
+authorized publication. Live account/URL verification follows upload of that approved
+artifact and remains explicitly pending until then. A review that conditions its score
+on prior publication exposes a sequencing conflict; it does not authorize early upload
+or a fabricated pass. See [current ledger](FINISH-LINE.md) for owners and open gates.

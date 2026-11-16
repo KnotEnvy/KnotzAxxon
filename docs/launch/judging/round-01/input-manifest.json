@@ -1,0 +1,64 @@
+{
+  "candidate": {
+    "name": "rc01",
+    "commit": "c0ee2949de29adfa52e6dcdae6768c73ec15474a",
+    "sourceHash": "6d28e0210d802d0932762ba85f61d4cf43f14a646099a5f99411b0ab240f1362",
+    "harnessHash": "5655b87d8f5c562d9216fb55e0372f3f5d1b7182b955789ef94e72d3ef26f5de"
+  },
+  "cutoffAt": "2026-11-15T22:16:22.361719+00:00",
+  "auditedBotEpisodes": 0,
+  "creditedPlayerEpisodes": 0,
+  "files": [
+    {
+      "file": "docs/launch/candidates/rc01.json",
+      "sha256": "08811017a992b7e826f578122f07c75ad7bb458d1854286f0d48da1054909cfe"
+    },
+    {
+      "file": "docs/launch/RC01-PACKAGES.json",
+      "sha256": "a1c1ebc4ee780646fe7addd572ae871b64592751152cbf0aa572bb6953bd35aa"
+    },
+    {
+      "file": "docs/launch/JUDGING-PROTOCOL.md",
+      "sha256": "4f39ba2c88826b52bc23fdd32842cbb0164cc3bb3fefb40b7e5e7e41ccf9b47e"
+    },
+    {
+      "file": "docs/launch/FINISH-LINE.md",
+      "sha256": "73b8769423671cdb5921986f22da55de6b6331e54cd32889a82914e5f9396e2d"
+    },
+    {
+      "file": "docs/launch/marketing-bundle.json",
+      "sha256": "bc22924f7a600a7dc9e7ee5d794befc6976f10c6a4bb9f3ac1ee0adab0a47bd8"
+    },
+    {
+      "file": "artifacts/launch/rc01-validation/regressions-329.log",
+      "sha256": "257a6ef51e07d1b486070ba73d716fa381df206dfd7b19f2bfac1f3c9c2546e7"
+    },
+    {
+      "file": "artifacts/launch/pages/6d28e0210d802d09/manifest.json",
+      "sha256": "50062eee157b9f55c35fd26e12f47f6eff03bf60aa463a25f8ffe150bb6fb8d5"
+    },
+    {
+      "file": "artifacts/launch/pages/6d28e0210d802d09/browser-qa/report.json",
+      "sha256": "9fa70b3621c7b54459dc5554012cf305d481eba9b2aaef93388984c162b429bb"
+    },
+    {
+      "file": "artifacts/launch/pages/6d28e0210d802d09/browser-qa/package-receipt.json",
+      "sha256": "e091e11334f362da6033a66e3830a413cfcbeb4c0aa7ef39b7d5838b734e1483"
+    },
+    {
+      "file": "artifacts/launch/distribution/6d28e0210d802d09/manifest.json",
+      "sha256": "251c8daceaa3c6ff5f8f36f19d3919f376efafb3e593a90e4212d5ab42550fb9"
+    },
+    {
+      "file": "artifacts/launch/distribution/6d28e0210d802d09/browser-qa/report.json",
+      "sha256": "d9cd9c782f99a2794b7633cefabd42d11cc13fa07965d098dd59cdc1ae12c9de"
+    },
+    {
+      "file": "docs/launch/judging/round-01/proof-packet.md",
+      "sha256": "d987a006cc9321ad322b81b6db78225c2a37c4fa44c56f375c0b031223a91ff4"
+    }
+  ],
+  "excluded": [
+    "artifacts/launch/bot/rc01-final-0000 and all later running/new evidence"
+  ]
+}

@@ -1,11 +1,11 @@
 {
   "schema_version": 4,
   "project": "KnotzAxxon",
-  "updated_at": "2026-11-15T17:22:23.180143+00:00",
-  "status": "facelift_live_verified",
-  "production_ready": true,
+  "updated_at": "2026-11-16T00:00:00+00:00",
+  "status": "implementation_release_authorized_acceptance_open",
+  "production_ready": false,
   "ready_for_testers": true,
-  "production_ready_basis": "All automated combined release checks and CI passed, PR5 merged and Pages deployed. Public desktop/portrait/landscape smoke passed with28runtime resources and35servedhashes matchingthevalidatedbuild. Priorusercrossdeviceplayacceptanceisreported; newkit-humanplayandhardwareframe-timeareunclaimed.",
+  "production_ready_basis": "The user authorized publication of the completed implementation while explicitly accepting that launch acceptance remains incomplete. Current release validation and live publication identities are recorded in docs/release-validation.json; this status is not a claim that all release gates passed.",
   "release_scope": [
     "Authored eight-sector environment architecture, landmarks, gate/fence housings, platforms, trusses, bulkheads and boss arena using one shared startup-cached GLB.",
     "Responsive HUD/menu/results, warning hierarchy and priority, touch targets, focus and settings feedback.",
@@ -18,35 +18,35 @@
   ],
   "validation": {
     "report": "docs/release-validation.json",
-    "tests_passed": 241,
-    "build": "passed",
-    "runtime_default_and_legacy": "passed",
-    "production_local": "passed",
-    "served_runtime_resources": 28,
+    "tests_passed": 348,
+    "build": "Pages and portable production builds passed on final source; Vite 7.3.7; one non-fatal ImportedLandmarks.js chunk-placement warning",
+    "runtime_default_and_legacy": "GTX 1650 Ti / Windows Chrome model QA passed; clean-storage normal URL selects Modern 20, then START enters Sector 01 / Loop 0 at timeScale 1",
+    "production_local": "portable ZIP and Pages packages passed hardware/browser QA; 46 portable files hash matched; separate normal-launch smoke passed",
+    "served_runtime_resources": 46,
     "served_model_hashes": 35,
-    "public_site": "passed;28default resources and35servedmodel/templatehashesmatchlocaldist",
-    "ci": "PR and merged-main pipelines passed"
+    "public_site": "implementation Pages package QA passed; public deployment and source/hash proof pending merge",
+    "ci": "current implementation PR validation pending",
+    "tests_failed": 0
   },
   "workspace": {
-    "branch": "art/blender-production-upgrades",
+    "branch": "release/final-public-launch",
     "remote": "https://github.com/KnotEnvy/KnotzAxxon",
-    "release_status": "merged_deployed_public_verified",
-    "pull_request": "https://github.com/KnotEnvy/KnotzAxxon/pull/5",
-    "merged_commit": "1b3ff18bbabdedf30295846f3594c831ef5c30a5",
+    "release_status": "implementation_release_authorized_acceptance_open",
+    "pull_request": null,
+    "merged_commit": null,
     "delivery": {
-      "status": "github_pages_published_verified",
-      "url": "https://knotenvy.github.io/KnotzAxxon/",
-      "deployed_commit": "1b3ff18bbabdedf30295846f3594c831ef5c30a5",
-      "workflow_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/43740120349",
-      "workflow_status": "success",
-      "verified_at": "2026-11-15T17:22:23.180143+00:00",
-      "note": "Final documentation closeout does not change deployed runtime assets."
+      "status": "local packages verified; Pages deployment and Itch account upload pending",
+      "pages_url": "https://knotenvy.github.io/KnotzAxxon/",
+      "itch_url": "https://hacktivatenation.itch.io/knotzaxxon",
+      "previous_itch_upload": "preserve for rollback; no replacement confirmed yet"
     },
-    "release_branch_status": "Remote branch deleted after merge; active bound worktree retained for user."
+    "release_branch_status": "Remote branch deleted after merge; active bound worktree retained for user.",
+    "latest_pushed_commit": "5d73464c3716ab02816ac34585d236961895cf88",
+    "release_authorization": "User explicitly authorized publishing completed work with unfinished acceptance gates disclosed."
   },
   "authorization": {
-    "push_merge_cleanup": true,
-    "instruction": "When done get everything pushed, merged, and cleaned up."
+    "push_merge_publish_cleanup": true,
+    "scope": "Publish the approved implementation while retaining exact records of open acceptance gates."
   },
   "evidence_policy": "Full originals verified and archived before redundant scratch/delivery copies removed. Editable sources and selected devlog images remain in assets-source/. Generated broad QA outputs remain ignored under artifacts/.",
   "retention": [
@@ -59,9 +59,12 @@
     "new_environment_human_session": false
   },
   "remaining_limitations": [
-    "Software WebGL frames establish appearance and layout, not physical GPU frame time, latency or sustained hardware FPS.",
-    "No new human play session or audio audition on the integrated architecture was claimed.",
-    "Optional barrier-wall/arch dressing and unchanged debris rings remain deliberate scope decisions; shipped asset formal Opus polish remains deferred."
+    "RC02 production bot evidence is 100/1000 audited; the other 900 episodes were not run.",
+    "Observed Terra Medium player evidence is 0/30.",
+    "All 21 Round 01 judge scores remain below 9; no later passing round is claimed.",
+    "No actual listening/audition or physical-device proof is claimed.",
+    "Software WebGL frames do not establish physical GPU frame time, latency or sustained hardware FPS.",
+    "The two-minute bot campaign target remains unmet; measured serial estimate is about 56 minutes and the pool pilot was slower."
   ],
   "previous_release": {
     "status": "github_pages_published_verified",
@@ -77,5 +80,24 @@
     "environment": "docs/environment-scenes/ENVIRONMENT-KIT.md",
     "completed_code_checkpoint": "cf5983c6427a294b82b756f09601bedc11a1e494",
     "status": "complete_and_live_verified"
+  },
+  "release_validation_status": {
+    "implementation_head": "5d73464c3716ab02816ac34585d236961895cf88",
+    "frozen_runtime_candidate": "22ef1c0067c0aa7ec9461991d0abf9c2a674586e",
+    "current_tests": "348/348 passed on 2026-11-16",
+    "bot_runs": "100/1000 audited RC02",
+    "observed_players": "0/30 Terra Medium",
+    "judging": "Round 01 complete; all 21 scores below 9",
+    "listening_and_physical_device": "not demonstrated",
+    "publication_authorized_with_open_gates": true,
+    "implementation_source_fingerprint": "95251c20acca3f0fc8dc251b9ed45c60c7bc920db6b7d523ae0eaa1652be9cec",
+    "default_camera": "Modern 20 on fresh launch; missing/invalid stored value fallback Modern; valid saved choice preserved",
+    "clean_launch": "normal URL, empty settings storage; Start -> Sector 01 / Loop 0, timeScale 1",
+    "portable_zip_sha256": "14ce809412e858f1146af3570ab55db4b525db9c5ddadff6364abe1357f5d008"
+  },
+  "cleanup_archive": {
+    "path": "artifacts/launch/cleanup-scratch/rc02-dependency-stage.tar.gz",
+    "sha256": "73ca7aaa7c72f3e1963bfcf4cf0a5dd1fc7d85c1b82c67c57a6ebc5e45c9cf50",
+    "readback": "verified before scratch removal"
   }
 }

@@ -20,6 +20,54 @@ function padAccess(read) {
   };
 }
 
+test('keyboard aliases retain held intent until the final physical key releases', () => {
+  const root = new EventTarget(), input = new Input(root), presses = [];
+  input.addEventListener('press', e => presses.push(e.detail));
+  const key = (type, code) => root.dispatchEvent(Object.assign(new Event(type), { code, repeat: false }));
+  try {
+    for (const [first, second, action] of [['ArrowLeft', 'KeyA', 'left'], ['ShiftLeft', 'ShiftRight', 'boost']]) {
+      key('keydown', first); key('keydown', second); input.update();
+      assert.equal(input.isDown(action), true);
+      assert.equal(presses.filter(a => a === action).length, 1);
+      input.endFrame(); key('keyup', second); input.update();
+      assert.equal(input.isDown(action), true);
+      assert.equal(input.justPressed(action), false);
+      if (action === 'left') assert.equal(input.moveX, -1);
+      key('keyup', first); input.update(); assert.equal(input.isDown(action), false);
+    }
+    key('keydown', 'KeyA'); input.reset(); key('keyup', 'KeyA'); input.update();
+    assert.equal(input.moveX, 0);
+  } finally { input.dispose(); }
+});
+
+test('suspended and blurred keyboard, pointer and touch events cannot dispatch menu actions', () => {
+  const oldLookup = document.getElementById, nodes = new Map();
+  for (const id of ['viewport', 'tb-pause', 'tb-fire', 'tb-roll', 'touch-stick']) nodes.set(id, new EventTarget());
+  nodes.get('touch-stick').querySelector = () => null;
+  document.getElementById = id => nodes.get(id);
+  const root = new EventTarget(), input = new Input(root), presses = [];
+  input.addEventListener('press', e => presses.push(e.detail));
+  const send = () => {
+    root.dispatchEvent(Object.assign(new Event('keydown'), { code: 'Escape', repeat: false }));
+    nodes.get('viewport').dispatchEvent(Object.assign(new Event('pointerdown'), { button: 0, pointerType: 'mouse' }));
+    nodes.get('tb-pause').dispatchEvent(new Event('click'));
+    nodes.get('tb-roll').dispatchEvent(new Event('touchstart', { cancelable: true }));
+    nodes.get('tb-fire').dispatchEvent(new Event('touchstart', { cancelable: true }));
+  };
+  try {
+    input.setSuspended(true); send(); input.update();
+    assert.deepEqual(presses, []); assert.equal(input.fire, false);
+    input.setSuspended(false); input.update(); assert.deepEqual(presses, []);
+    root.dispatchEvent(new Event('blur')); send(); input.update(); assert.deepEqual(presses, []);
+    root.dispatchEvent(new Event('focus')); input.update(); assert.deepEqual(presses, []);
+    root.dispatchEvent(Object.assign(new Event('keydown'), { code: 'Escape', repeat: false }));
+    assert.deepEqual(presses, ['pause']);
+    nodes.get('viewport').dispatchEvent(Object.assign(new Event('pointerdown'), { button: 0, pointerType: 'mouse' }));
+    input.update(); assert.equal(input.fire, true);
+    root.dispatchEvent(new Event('pointercancel')); input.update(); assert.equal(input.fire, false);
+  } finally { input.dispose(); document.getElementById = oldLookup; }
+});
+
 test('failed Engine construction releases assigned resources and subscriptions, preserving the startup error', () => {
   const canvas = new EventTarget(), fault = Error('scene initialization failed');
   let rendererDisposals = 0, callbacks = 0;

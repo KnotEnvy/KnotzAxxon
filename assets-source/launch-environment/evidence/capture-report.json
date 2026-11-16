@@ -1,0 +1,1201 @@
+{
+ "url": "http://127.0.0.1:5231/",
+ "seed": 20261115,
+ "quality": "high",
+ "startedAt": "2026-11-15T19:32:41.395Z",
+ "views": [
+  {
+   "name": "wide",
+   "width": 1280,
+   "height": 720,
+   "gpu": {
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "vendor": "Google Inc. (NVIDIA)",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "dpr": 1,
+    "inner": [
+     1280,
+     720
+    ]
+   },
+   "shots": [
+    {
+     "scene": "outer-classic",
+     "file": "outer-classic-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 146,
+      "triangles": 167229
+     },
+     "before": {
+      "calls": 145,
+      "triangles": 167101
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 222.7,
+     "sector": "OUTER FORTRESS",
+     "sectorIndex": 0,
+     "camera": "classic",
+     "frame": 326,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.499,
+      "density": 0.55,
+      "tau": 4.056
+     },
+     "gpuMs": {
+      "samples": 24,
+      "medianOn": 1.7,
+      "medianOff": 1.8
+     }
+    },
+    {
+     "scene": "outer-classic",
+     "file": "outer-classic-wide-f345",
+     "simulatedFrames": 345,
+     "after": {
+      "calls": 134,
+      "triangles": 148739
+     },
+     "before": {
+      "calls": 133,
+      "triangles": 148611
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 250.7,
+     "sector": "OUTER FORTRESS",
+     "sectorIndex": 0,
+     "camera": "classic",
+     "frame": 371,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.499,
+      "density": 0.55,
+      "tau": 4.656
+     },
+     "gpuMs": {
+      "samples": 24,
+      "medianOn": 1.4,
+      "medianOff": 1.3
+     }
+    },
+    {
+     "scene": "outer-classic",
+     "file": "outer-classic-wide-f390",
+     "simulatedFrames": 390,
+     "after": {
+      "calls": 119,
+      "triangles": 124907
+     },
+     "before": {
+      "calls": 118,
+      "triangles": 124779
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 279,
+     "sector": "OUTER FORTRESS",
+     "sectorIndex": 0,
+     "camera": "classic",
+     "frame": 416,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.5,
+      "density": 0.55,
+      "tau": 5.256
+     },
+     "gpuMs": {
+      "samples": 24,
+      "medianOn": 1.5,
+      "medianOff": 1.4
+     }
+    },
+    {
+     "scene": "outer-chase",
+     "file": "outer-chase-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 167,
+      "triangles": 171917
+     },
+     "before": {
+      "calls": 166,
+      "triangles": 171789
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 222.7,
+     "sector": "OUTER FORTRESS",
+     "sectorIndex": 0,
+     "camera": "chase",
+     "frame": 740,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.499,
+      "density": 0.55,
+      "tau": 9.256
+     },
+     "gpuMs": {
+      "samples": 24,
+      "medianOn": 1.4,
+      "medianOff": 1.7
+     }
+    },
+    {
+     "scene": "outer-chase",
+     "file": "outer-chase-wide-f345",
+     "simulatedFrames": 345,
+     "after": {
+      "calls": 151,
+      "triangles": 152755
+     },
+     "before": {
+      "calls": 150,
+      "triangles": 152627
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 250.7,
+     "sector": "OUTER FORTRESS",
+     "sectorIndex": 0,
+     "camera": "chase",
+     "frame": 785,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.499,
+      "density": 0.55,
+      "tau": 9.856
+     },
+     "gpuMs": {
+      "samples": 24,
+      "medianOn": 1.2,
+      "medianOff": 1.2
+     }
+    },
+    {
+     "scene": "outer-chase",
+     "file": "outer-chase-wide-f390",
+     "simulatedFrames": 390,
+     "after": {
+      "calls": 142,
+      "triangles": 132907
+     },
+     "before": {
+      "calls": 141,
+      "triangles": 132779
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 279,
+     "sector": "OUTER FORTRESS",
+     "sectorIndex": 0,
+     "camera": "chase",
+     "frame": 830,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.5,
+      "density": 0.55,
+      "tau": 10.456
+     },
+     "gpuMs": {
+      "samples": 24,
+      "medianOn": 1.1,
+      "medianOff": 1.1
+     }
+    },
+    {
+     "scene": "guns-classic",
+     "file": "guns-classic-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 134,
+      "triangles": 111771
+     },
+     "before": {
+      "calls": 133,
+      "triangles": 111643
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 2127,
+     "sector": "GUN BATTERIES",
+     "sectorIndex": 1,
+     "camera": "classic",
+     "frame": 1154,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.8,
+      "tau": 13.956
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "guns-classic",
+     "file": "guns-classic-wide-f345",
+     "simulatedFrames": 345,
+     "after": {
+      "calls": 113,
+      "triangles": 110207
+     },
+     "before": {
+      "calls": 112,
+      "triangles": 110079
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 2158.1,
+     "sector": "GUN BATTERIES",
+     "sectorIndex": 1,
+     "camera": "classic",
+     "frame": 1199,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.8,
+      "tau": 14.481
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "guns-classic",
+     "file": "guns-classic-wide-f390",
+     "simulatedFrames": 390,
+     "after": {
+      "calls": 124,
+      "triangles": 106383
+     },
+     "before": {
+      "calls": 123,
+      "triangles": 106255
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 2189.1,
+     "sector": "GUN BATTERIES",
+     "sectorIndex": 1,
+     "camera": "classic",
+     "frame": 1244,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.55,
+      "density": 0.8,
+      "tau": 15.006
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "guns-chase",
+     "file": "guns-chase-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 161,
+      "triangles": 130907
+     },
+     "before": {
+      "calls": 160,
+      "triangles": 130779
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 2127,
+     "sector": "GUN BATTERIES",
+     "sectorIndex": 1,
+     "camera": "chase",
+     "frame": 1568,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.8,
+      "tau": 18.506
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "guns-chase",
+     "file": "guns-chase-wide-f345",
+     "simulatedFrames": 345,
+     "after": {
+      "calls": 155,
+      "triangles": 141567
+     },
+     "before": {
+      "calls": 154,
+      "triangles": 141439
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 2158.1,
+     "sector": "GUN BATTERIES",
+     "sectorIndex": 1,
+     "camera": "chase",
+     "frame": 1613,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.8,
+      "tau": 19.031
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "reactor-classic",
+     "file": "reactor-classic-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 137,
+      "triangles": 150191
+     },
+     "before": {
+      "calls": 136,
+      "triangles": 150063
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 5291,
+     "sector": "REACTOR SPINE",
+     "sectorIndex": 3,
+     "camera": "classic",
+     "frame": 1937,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.7,
+      "tau": 22.781
+     },
+     "gpuMs": {
+      "samples": 24,
+      "medianOn": 1.5,
+      "medianOff": 1.6
+     }
+    },
+    {
+     "scene": "reactor-classic",
+     "file": "reactor-classic-wide-f345",
+     "simulatedFrames": 345,
+     "after": {
+      "calls": 144,
+      "triangles": 156033
+     },
+     "before": {
+      "calls": 143,
+      "triangles": 155905
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 5324.2,
+     "sector": "REACTOR SPINE",
+     "sectorIndex": 3,
+     "camera": "classic",
+     "frame": 1982,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.7,
+      "tau": 23.344
+     },
+     "gpuMs": {
+      "samples": 24,
+      "medianOn": 1.4,
+      "medianOff": 1.3
+     }
+    },
+    {
+     "scene": "reactor-classic",
+     "file": "reactor-classic-wide-f390",
+     "simulatedFrames": 390,
+     "after": {
+      "calls": 160,
+      "triangles": 168375
+     },
+     "before": {
+      "calls": 159,
+      "triangles": 168247
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 5357.3,
+     "sector": "REACTOR SPINE",
+     "sectorIndex": 3,
+     "camera": "classic",
+     "frame": 2027,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.55,
+      "density": 0.7,
+      "tau": 23.906
+     },
+     "gpuMs": {
+      "samples": 24,
+      "medianOn": 1.4,
+      "medianOff": 1.3
+     }
+    },
+    {
+     "scene": "reactor-chase",
+     "file": "reactor-chase-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 195,
+      "triangles": 187833
+     },
+     "before": {
+      "calls": 194,
+      "triangles": 187705
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 5291,
+     "sector": "REACTOR SPINE",
+     "sectorIndex": 3,
+     "camera": "chase",
+     "frame": 2351,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.7,
+      "tau": 27.656
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "reactor-chase",
+     "file": "reactor-chase-wide-f345",
+     "simulatedFrames": 345,
+     "after": {
+      "calls": 204,
+      "triangles": 195161
+     },
+     "before": {
+      "calls": 203,
+      "triangles": 195033
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 5324.2,
+     "sector": "REACTOR SPINE",
+     "sectorIndex": 3,
+     "camera": "chase",
+     "frame": 2396,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.7,
+      "tau": 28.219
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "citadel-classic",
+     "file": "citadel-classic-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 101,
+      "triangles": 101491
+     },
+     "before": {
+      "calls": 100,
+      "triangles": 101363
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 8675,
+     "sector": "INNER CITADEL",
+     "sectorIndex": 5,
+     "camera": "classic",
+     "frame": 2720,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.599,
+      "density": 1,
+      "tau": 33.219
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "citadel-classic",
+     "file": "citadel-classic-wide-f345",
+     "simulatedFrames": 345,
+     "after": {
+      "calls": 129,
+      "triangles": 115759
+     },
+     "before": {
+      "calls": 128,
+      "triangles": 115631
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 8710.2,
+     "sector": "INNER CITADEL",
+     "sectorIndex": 5,
+     "camera": "classic",
+     "frame": 2765,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.599,
+      "density": 1,
+      "tau": 33.969
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "citadel-classic",
+     "file": "citadel-classic-wide-f390",
+     "simulatedFrames": 390,
+     "after": {
+      "calls": 136,
+      "triangles": 116311
+     },
+     "before": {
+      "calls": 135,
+      "triangles": 116183
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 8745.5,
+     "sector": "INNER CITADEL",
+     "sectorIndex": 5,
+     "camera": "classic",
+     "frame": 2810,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.6,
+      "density": 1,
+      "tau": 34.719
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "citadel-modern",
+     "file": "citadel-modern-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 171,
+      "triangles": 131863
+     },
+     "before": {
+      "calls": 170,
+      "triangles": 131735
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 8675,
+     "sector": "INNER CITADEL",
+     "sectorIndex": 5,
+     "camera": "modern",
+     "frame": 3134,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.599,
+      "density": 1,
+      "tau": 39.719
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "citadel-modern",
+     "file": "citadel-modern-wide-f345",
+     "simulatedFrames": 345,
+     "after": {
+      "calls": 182,
+      "triangles": 144929
+     },
+     "before": {
+      "calls": 181,
+      "triangles": 144801
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 8710.2,
+     "sector": "INNER CITADEL",
+     "sectorIndex": 5,
+     "camera": "modern",
+     "frame": 3179,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.599,
+      "density": 1,
+      "tau": 40.469
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "citadel-chase",
+     "file": "citadel-chase-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 171,
+      "triangles": 131863
+     },
+     "before": {
+      "calls": 170,
+      "triangles": 131735
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 8675,
+     "sector": "INNER CITADEL",
+     "sectorIndex": 5,
+     "camera": "chase",
+     "frame": 3503,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.599,
+      "density": 1,
+      "tau": 45.469
+     },
+     "gpuMs": {
+      "samples": 24,
+      "medianOn": 1.6,
+      "medianOff": 1.5
+     }
+    },
+    {
+     "scene": "citadel-chase",
+     "file": "citadel-chase-wide-f345",
+     "simulatedFrames": 345,
+     "after": {
+      "calls": 182,
+      "triangles": 144929
+     },
+     "before": {
+      "calls": 181,
+      "triangles": 144801
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 8710.2,
+     "sector": "INNER CITADEL",
+     "sectorIndex": 5,
+     "camera": "chase",
+     "frame": 3548,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.599,
+      "density": 1,
+      "tau": 46.219
+     },
+     "gpuMs": {
+      "samples": 24,
+      "medianOn": 1.7,
+      "medianOff": 2
+     }
+    },
+    {
+     "scene": "gauntlet-classic",
+     "file": "gauntlet-classic-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 129,
+      "triangles": 111293
+     },
+     "before": {
+      "calls": 128,
+      "triangles": 111165
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 10322,
+     "sector": "THE GAUNTLET",
+     "sectorIndex": 6,
+     "camera": "classic",
+     "frame": 3872,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.35,
+      "tau": 53.469
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "gauntlet-classic",
+     "file": "gauntlet-classic-wide-f345",
+     "simulatedFrames": 345,
+     "after": {
+      "calls": 127,
+      "triangles": 110675
+     },
+     "before": {
+      "calls": 126,
+      "triangles": 110547
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 10358.3,
+     "sector": "THE GAUNTLET",
+     "sectorIndex": 6,
+     "camera": "classic",
+     "frame": 3917,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.35,
+      "tau": 54.556
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "gauntlet-classic",
+     "file": "gauntlet-classic-wide-f390",
+     "simulatedFrames": 390,
+     "after": {
+      "calls": 110,
+      "triangles": 103489
+     },
+     "before": {
+      "calls": 109,
+      "triangles": 103361
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 10394.6,
+     "sector": "THE GAUNTLET",
+     "sectorIndex": 6,
+     "camera": "classic",
+     "frame": 3962,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.55,
+      "density": 0.35,
+      "tau": 55.644
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "gauntlet-chase",
+     "file": "gauntlet-chase-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 181,
+      "triangles": 133987
+     },
+     "before": {
+      "calls": 180,
+      "triangles": 133859
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 10322,
+     "sector": "THE GAUNTLET",
+     "sectorIndex": 6,
+     "camera": "chase",
+     "frame": 4286,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.35,
+      "tau": 62.894
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "gauntlet-chase",
+     "file": "gauntlet-chase-wide-f345",
+     "simulatedFrames": 345,
+     "after": {
+      "calls": 171,
+      "triangles": 126071
+     },
+     "before": {
+      "calls": 170,
+      "triangles": 125943
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 10358.3,
+     "sector": "THE GAUNTLET",
+     "sectorIndex": 6,
+     "camera": "chase",
+     "frame": 4331,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.35,
+      "tau": 63.981
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "voidgap-classic",
+     "file": "voidgap-classic-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 108,
+      "triangles": 108982
+     },
+     "before": {
+      "calls": 108,
+      "triangles": 108982
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 3714,
+     "sector": "THE VOID GAP",
+     "sectorIndex": 2,
+     "camera": "classic",
+     "frame": 4655,
+     "traffic": {
+      "drawn": false,
+      "opacity": 0,
+      "density": 0.35,
+      "tau": 68.981
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "voidgap-chase",
+     "file": "voidgap-chase-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 173,
+      "triangles": 131875
+     },
+     "before": {
+      "calls": 173,
+      "triangles": 131875
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 3714,
+     "sector": "THE VOID GAP",
+     "sectorIndex": 2,
+     "camera": "chase",
+     "frame": 4979,
+     "traffic": {
+      "drawn": false,
+      "opacity": 0,
+      "density": 0.35,
+      "tau": 73.981
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "boss-classic",
+     "file": "boss-classic-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 147,
+      "triangles": 112295
+     },
+     "before": {
+      "calls": 147,
+      "triangles": 112295
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 11749,
+     "sector": "THE IRON SENTINEL",
+     "sectorIndex": 7,
+     "camera": "classic",
+     "frame": 5303,
+     "traffic": {
+      "drawn": false,
+      "opacity": 0,
+      "density": 0.35,
+      "tau": 78.981
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "edge-classic",
+     "file": "edge-classic-wide-f240",
+     "simulatedFrames": 240,
+     "after": {
+      "calls": 74,
+      "triangles": 87999
+     },
+     "before": {
+      "calls": 73,
+      "triangles": 87871
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 3226.5,
+     "sector": "THE VOID GAP",
+     "sectorIndex": 2,
+     "camera": "classic",
+     "frame": 5567,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.025,
+      "density": 0.8,
+      "tau": 81.781
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "edge-classic",
+     "file": "edge-classic-wide-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 68,
+      "triangles": 78044
+     },
+     "before": {
+      "calls": 68,
+      "triangles": 78044
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "playing",
+     "z": 3269.3,
+     "sector": "THE VOID GAP",
+     "sectorIndex": 2,
+     "camera": "classic",
+     "frame": 5627,
+     "traffic": {
+      "drawn": false,
+      "opacity": 0,
+      "density": 0.8,
+      "tau": 82.766
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "title",
+     "file": "title-wide-f360",
+     "simulatedFrames": 360,
+     "after": {
+      "calls": 93,
+      "triangles": 113523
+     },
+     "before": {
+      "calls": 92,
+      "triangles": 113395
+     },
+     "canvas": [
+      1280,
+      720
+     ],
+     "state": "idle",
+     "z": 192,
+     "sector": "OUTER FORTRESS",
+     "sectorIndex": 0,
+     "camera": "classic",
+     "frame": 5987,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.5,
+      "density": 0.55,
+      "tau": 87.566
+     },
+     "gpuMs": null
+    }
+   ],
+   "errors": []
+  },
+  {
+   "name": "tall",
+   "width": 540,
+   "height": 960,
+   "gpu": {
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "vendor": "Google Inc. (NVIDIA)",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "dpr": 1,
+    "inner": [
+     540,
+     960
+    ]
+   },
+   "shots": [
+    {
+     "scene": "reactor-classic",
+     "file": "reactor-classic-tall-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 138,
+      "triangles": 150311
+     },
+     "before": {
+      "calls": 137,
+      "triangles": 150183
+     },
+     "canvas": [
+      540,
+      960
+     ],
+     "state": "playing",
+     "z": 5291,
+     "sector": "REACTOR SPINE",
+     "sectorIndex": 3,
+     "camera": "classic",
+     "frame": 326,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.7,
+      "tau": 3.794
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "reactor-classic",
+     "file": "reactor-classic-tall-f345",
+     "simulatedFrames": 345,
+     "after": {
+      "calls": 142,
+      "triangles": 154311
+     },
+     "before": {
+      "calls": 141,
+      "triangles": 154183
+     },
+     "canvas": [
+      540,
+      960
+     ],
+     "state": "playing",
+     "z": 5324.2,
+     "sector": "REACTOR SPINE",
+     "sectorIndex": 3,
+     "camera": "classic",
+     "frame": 371,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.549,
+      "density": 0.7,
+      "tau": 4.357
+     },
+     "gpuMs": null
+    },
+    {
+     "scene": "outer-chase",
+     "file": "outer-chase-tall-f300",
+     "simulatedFrames": 300,
+     "after": {
+      "calls": 166,
+      "triangles": 168941
+     },
+     "before": {
+      "calls": 165,
+      "triangles": 168813
+     },
+     "canvas": [
+      540,
+      960
+     ],
+     "state": "playing",
+     "z": 222.7,
+     "sector": "OUTER FORTRESS",
+     "sectorIndex": 0,
+     "camera": "chase",
+     "frame": 695,
+     "traffic": {
+      "drawn": true,
+      "opacity": 0.499,
+      "density": 0.55,
+      "tau": 8.357
+     },
+     "gpuMs": null
+    }
+   ],
+   "errors": []
+  }
+ ],
+ "errors": [],
+ "browser": "157.0.8103.52",
+ "finishedAt": "2026-11-15T19:33:04.566Z"
+}

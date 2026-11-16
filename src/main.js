@@ -51,6 +51,33 @@ async function main() {
     ]);
   };
 
+  let warmedQuality = null;
+  const runPrewarm = () => {
+    game.prewarm(() => {
+      const renderer = engine.renderer, previous = renderer.getRenderTarget();
+      let failed = false;
+      try {
+        renderer.setRenderTarget(engine.postfx.composer.readBuffer);
+        renderer.compile(engine.scene, engine.camera);
+        // compile() builds programs only; upload every texture the staged scene
+        // uses too, so the first explosion or pickup does not pay for it.
+        engine.scene.traverse((object) => {
+          for (const material of [].concat(object.material ?? [])) {
+            const slots = [...Object.values(material), ...Object.values(material.uniforms ?? {}).map(u => u?.value)];
+            for (const t of slots) if (t?.isTexture && !t.isRenderTargetTexture) renderer.initTexture(t);
+          }
+        });
+      } catch (error) {
+        failed = true;
+        throw error;
+      } finally {
+        try { renderer.setRenderTarget(previous); }
+        catch (error) { if (!failed) throw error; }
+      }
+    });
+    warmedQuality = settings.get('quality');
+  };
+
   await screens.boot(async () => {
     if (lifetime.closed) return;
     await loadImportedModels();
@@ -62,23 +89,7 @@ async function main() {
     // Warm the pipeline so no first sighting in the campaign is a shader-compile stall.
     // Compile against the composer's target: rendering to a target selects
     // different tone-mapping and colour-space variants than the canvas does.
-    game.prewarm(() => {
-      const renderer = engine.renderer, previous = renderer.getRenderTarget();
-      renderer.setRenderTarget(engine.postfx.composer.readBuffer);
-      try {
-        renderer.compile(engine.scene, engine.camera);
-        // compile() builds programs only; upload every texture the staged scene
-        // uses too, so the first explosion or pickup does not pay for it.
-        engine.scene.traverse((object) => {
-          for (const material of [].concat(object.material ?? [])) {
-            const slots = [...Object.values(material), ...Object.values(material.uniforms ?? {}).map(u => u?.value)];
-            for (const t of slots) if (t?.isTexture && !t.isRenderTargetTexture) renderer.initTexture(t);
-          }
-        });
-      } finally {
-        renderer.setRenderTarget(previous);
-      }
-    });
+    runPrewarm();
     // Yield without relying on rAF, which may be suspended in background tabs.
     await lifetime.delay(0);
   });
@@ -109,15 +120,25 @@ async function main() {
     if (hint) hint.textContent = `SHARED FORTRESS ${seedCode(sharedSeed)} // ENTER TO ENGAGE`;
   }
 
+  const ensureWarmed = () => {
+    const quality = settings.get('quality');
+    if (warmedQuality !== quality && game.state !== STATE.PLAYING && game.state !== STATE.DYING && game.state !== STATE.PAUSED) {
+      runPrewarm();
+    }
+  };
+
   lifetime.listen(screens, 'action', (e) => {
     switch (e.detail) {
       case 'start':
+        ensureWarmed();
         game.start({ daily: false, seed: sharedSeed ?? undefined });
         break;
       case 'daily':
+        ensureWarmed();
         game.start({ daily: true });
         break;
       case 'retry':
+        ensureWarmed();
         game.start();
         break;
       case 'resume':
@@ -156,6 +177,7 @@ async function main() {
     // Enter on the title screen is handled by Screens; this covers the
     // gamepad "A" shortcut when no item happens to be focused.
     if (action === 'confirm' && game.state === STATE.IDLE && screens.current === 'title') {
+      ensureWarmed();
       game.start({ daily: false, seed: sharedSeed ?? undefined });
     }
   });

@@ -144,3 +144,29 @@ test('repeated complete game construction and teardown returns scene to camera o
   }
   m.dispose();
 });
+
+test('pause and reset clear continuous proximity cues and boss audio phase', async () => {
+  const { audio } = await import('../src/audio/Audio.js');
+
+  const m = materials(), scene = new THREE.Scene(), camera = new FlightCamera(52, 1.8, .35, 1000);
+  scene.add(camera);
+  const engine = { scene, camera, materials: m, sky: { apply() {} }, input: { reset() {} }, setTimeScale() {}, frame: 0 };
+  const game = new Game(engine, { show() {} });
+  const prox = [], phases = [];
+  const origProx = audio.setProximity, origPhase = audio.setBossPhase;
+  audio.setProximity = (f, mi) => prox.push([f, mi]);
+  audio.setBossPhase = p => phases.push(p);
+  try {
+    game.state = 'playing';
+    game.pause();
+    assert.deepEqual(prox.at(-1), [0, 0]);
+    game.reset(42);
+    assert.deepEqual(prox.at(-1), [0, 0]);
+    assert.deepEqual(phases.at(-1), 0);
+  } finally {
+    audio.setProximity = origProx;
+    audio.setBossPhase = origPhase;
+    game.dispose();
+    m.dispose();
+  }
+});

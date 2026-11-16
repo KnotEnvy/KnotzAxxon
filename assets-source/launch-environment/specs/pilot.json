@@ -1,0 +1,6 @@
+{ "seed": 20261115, "quality": "high", "port": 5231,
+  "views": [{ "name": "wide", "width": 1280, "height": 720 }],
+  "scenes": [
+    { "name": "outer-classic", "camera": "classic", "sector": 0, "into": 260, "pilot": { "x": 0, "y": 8 }, "frames": [300, 40, 40], "timing": 20 },
+    { "name": "outer-chase", "camera": "chase", "sector": 0, "into": 260, "pilot": { "x": 0, "y": 8 }, "frames": [300, 40] }
+  ] }

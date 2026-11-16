@@ -10,6 +10,7 @@ import { loadImportedWreckage, disposeImportedWreckage } from './ImportedWreckag
 import { loadImportedCarrier, disposeImportedCarrier } from './ImportedCarrier.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { loadEnvironmentKit, disposeEnvironmentKit } from '../world/EnvironmentKit.js';
+import { runCleanups } from '../core/Lifetime.js';
 
 const templates = new Map();
 
@@ -34,7 +35,10 @@ export async function loadImportedModels() {
     if (name === 'carrier-runtime') return loadImportedCarrier(`${import.meta.env.BASE_URL}models/production/`);
     const folder = productionNames.includes(name) ? 'production/' : '';
     const gltf = await loader.loadAsync(`${import.meta.env.BASE_URL}models/${folder}${name}.glb`);
+    // Cargo preparation consumes its input on both success and failure.
     if (name === 'cargo-kit') { prepareImportedCargo(gltf); return; }
+    // Own the parsed root before preparation can fail (e.g. a missing node).
+    templates.set(name, gltf.scene);
     if (name === 'drone') {
       // The authored flash lives in a non-default scene to remain hidden in generic viewers.
       const flash = node(gltf.scenes[1], 'flash_shell');
@@ -49,10 +53,12 @@ export async function loadImportedModels() {
       const { prepareImportedAsteroids } = await import('./ImportedLandmarks.js');
       prepareImportedAsteroids(gltf.scene);
     }
-    templates.set(name, gltf.scene);
   }));
   const failure = results.find(result => result.status === 'rejected');
-  if (failure) { disposeImportedModels(); throw failure.reason; }
+  if (failure) {
+    try { disposeImportedModels(); } catch { /* preserve the original load error */ }
+    throw failure.reason;
+  }
 }
 
 /** One owned resource pair for the entire projectile pool; never clone per slot. */
@@ -182,15 +188,6 @@ export function buildImportedParkedFighter(enemy) {
 }
 
 export function disposeImportedModels() {
-  disposeEnvironmentKit();
-  disposeImportedCargo();
-  disposeCoveredFighterTemplates();
-  disposeImportedCarrier();
-  disposeImportedWreckage();
-  disposeImportedAntenna();
-  disposeImportedCoolingStack();
-  disposeImportedFuelDepot();
-  disposeImportedFlakGun();
   const resources = new Set();
   for (const root of templates.values()) {
     for (const geometry of root.userData.templateGeometries ?? []) resources.add(geometry);
@@ -202,8 +199,13 @@ export function disposeImportedModels() {
       }
     });
   }
-  for (const resource of resources) resource.dispose();
   templates.clear();
+  runCleanups([
+    disposeEnvironmentKit, disposeImportedCargo, disposeCoveredFighterTemplates,
+    disposeImportedCarrier, disposeImportedWreckage, disposeImportedAntenna,
+    disposeImportedCoolingStack, disposeImportedFuelDepot, disposeImportedFlakGun,
+    ...[...resources].map(resource => () => resource.dispose()),
+  ]);
 }
 
 function instantiate(name) {

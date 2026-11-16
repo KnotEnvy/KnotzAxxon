@@ -41,6 +41,7 @@ export class Input extends EventTarget {
     this.pressed = new Set();
 
     this._down = new Set();
+    this._keys = new Map();
     this._mouseDown = new Set();
     this._padDown = new Set();
     this._prevPad = new Set();
@@ -75,6 +76,7 @@ export class Input extends EventTarget {
 
   _bindKeyboard() {
     this._lifetime.listen(this.root, 'keydown', (e) => {
+      if (!this._focused || this._suspended) return;
       if (e.defaultPrevented || e.target?.matches?.('button, select, textarea')) return;
       if (e.target instanceof HTMLInputElement || e.target?.isContentEditable) return;
       const a = KEYMAP[e.code];
@@ -83,13 +85,16 @@ export class Input extends EventTarget {
       if (e.code === 'Space' || e.code.startsWith('Arrow')) e.preventDefault();
       if (e.repeat) return;
       this.lastDevice = 'keyboard';
+      this._keys.set(e.code, a);
+      if (this._down.has(a)) return;
       this._down.add(a);
       this.pressed.add(a);
       this.dispatchEvent(new CustomEvent('press', { detail: a }));
     });
     this._lifetime.listen(this.root, 'keyup', (e) => {
       const a = KEYMAP[e.code];
-      if (a) this._down.delete(a);
+      this._keys.delete(e.code);
+      if (a && ![...this._keys.values()].includes(a)) this._down.delete(a);
     });
     // Releasing everything on blur avoids a stuck throttle when alt-tabbing.
     this._lifetime.listen(this.root, 'blur', () => { this._focused = false; this._suppressPadEdges = true; this.reset(); });
@@ -101,6 +106,7 @@ export class Input extends EventTarget {
     if (!canvas) return;
     this._lifetime.listen(canvas, 'contextmenu', (e) => e.preventDefault());
     this._lifetime.listen(canvas, 'pointerdown', (e) => {
+      if (!this._focused || this._suspended) return;
       if (e.pointerType === 'touch') return;
       this.lastDevice = 'mouse';
       if (e.button === 0) {
@@ -118,10 +124,12 @@ export class Input extends EventTarget {
       if (e.button === 0) this._mouseDown.delete('fire');
       if (e.button === 2) this._mouseDown.delete('roll');
     });
+    this._lifetime.listen(this.root, 'pointercancel', () => this._mouseDown.clear());
   }
 
   _bindTouch() {
     this._lifetime.listen(document.getElementById('tb-pause'), 'click', () => {
+      if (!this._focused || this._suspended) return;
       this.lastDevice = 'touch'; this.dispatchEvent(new CustomEvent('press', { detail: 'pause' }));
     });
     const stick = document.getElementById('touch-stick');
@@ -136,6 +144,7 @@ export class Input extends EventTarget {
       if (knob) knob.style.transform = 'translate(-50%, -50%)';
     };
     const start = (e) => {
+      if (!this._focused || this._suspended) return;
       const t = e.changedTouches[0];
       id = t.identifier;
       const r = stick.getBoundingClientRect();
@@ -173,7 +182,11 @@ export class Input extends EventTarget {
 
     const hold = (el, set) => {
       if (!el) return;
-      this._lifetime.listen(el, 'touchstart', (e) => { e.preventDefault(); this.lastDevice = 'touch'; set(true); }, { passive: false });
+      this._lifetime.listen(el, 'touchstart', (e) => {
+        e.preventDefault();
+        if (!this._focused || this._suspended) return;
+        this.lastDevice = 'touch'; set(true);
+      }, { passive: false });
       this._lifetime.listen(el, 'touchend', (e) => { e.preventDefault(); set(false); }, { passive: false });
       this._lifetime.listen(el, 'touchcancel', () => set(false));
     };
@@ -181,6 +194,7 @@ export class Input extends EventTarget {
     hold(document.getElementById('tb-boost'), (v) => { this._touchBoost = v; });
     this._lifetime.listen(document.getElementById('tb-roll'), 'touchstart', (e) => {
       e.preventDefault();
+      if (!this._focused || this._suspended) return;
       this._touchRollQueued = true;
     }, { passive: false });
   }
@@ -188,7 +202,7 @@ export class Input extends EventTarget {
   /* ---------------------------------------------------------------- */
 
   reset(releaseGamepad = false) {
-    this._down.clear(); this._mouseDown.clear(); this.pressed.clear();
+    this._keys.clear(); this._down.clear(); this._mouseDown.clear(); this.pressed.clear();
     // Menu transitions clear intent, but retain physical pad edges until release.
     if (releaseGamepad) { this._padDown.clear(); this._prevPad.clear(); }
     this.moveX = this.moveY = this._padVecX = this._padVecY = 0;

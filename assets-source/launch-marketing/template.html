@@ -1,0 +1,86 @@
+<!doctype html>
+<!--
+  KNOTZAXXON launch art: one editable composition. Every layer is live HTML:
+  the background is an untouched real-engine frame, the title layer is text.
+  scripts/brand/launch/compose.cjs fills the data-* hooks from compositions.json
+  and screenshots each layout at its exact pixel size. Edit copy or layout here,
+  re-run the script; nothing is painted by hand.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --bg: #04070c; --ink: #e6f6ff; --dim: #a9c3d1; --cyan: #45e0ff; --cyan-hot: #a8f4ff; --amber: #ffb43a;
+    --mono: "Cascadia Mono", "SF Mono", "Roboto Mono", Menlo, Consolas, "DejaVu Sans Mono", "Liberation Mono", monospace;
+    --w: 1200px; --h: 630px; --s: 1; /* scale against a 1200px-wide reference */
+    --focus-x: 70%; --focus-y: 50%;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  [hidden] { display: none !important; }
+  html, body { width: var(--w); height: var(--h); overflow: hidden; background: var(--bg); font-family: var(--mono); color: var(--ink); }
+  html.transparent, body.transparent { background: transparent; }
+  .frame { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--focus-x) var(--focus-y); }
+  .scrim { position: absolute; inset: 0; }
+  .copy { position: absolute; display: flex; flex-direction: column; }
+  .kicker { color: #efba76; font-size: calc(18px * var(--s)); letter-spacing: .3em; }
+  .wordmark {
+    font-weight: 800; color: #fff; line-height: .9; letter-spacing: -.055em; white-space: nowrap;
+    font-size: calc(132px * var(--s));
+    filter: drop-shadow(0 calc(4px * var(--s)) calc(20px * var(--s)) rgba(0,0,0,.6)) drop-shadow(0 0 calc(26px * var(--s)) rgba(69,224,255,.3));
+  }
+  .sub { display: flex; align-items: center; gap: .8em; color: var(--cyan-hot); font-size: calc(26px * var(--s)); letter-spacing: .24em; margin-top: .55em;
+    text-shadow: 0 0 calc(14px * var(--s)) rgba(69,224,255,.45), 0 1px 4px #000; }
+  .sub::before { content: ''; width: 2.2em; height: calc(4px * var(--s)); background: var(--amber); box-shadow: 0 0 10px rgba(255,180,58,.6); flex: none; }
+  .tag { margin-top: calc(22px * var(--s)); font-size: calc(25px * var(--s)); line-height: 1.55; color: #d4e6ef; text-shadow: 0 1px 6px #000; }
+  .feats { display: flex; flex-wrap: wrap; gap: calc(10px * var(--s)); margin-top: calc(22px * var(--s)); }
+  .feats span { padding: calc(7px * var(--s)) calc(13px * var(--s)); font-size: calc(17px * var(--s)); letter-spacing: .14em; background: rgba(4,16,27,.78); border: 1px solid rgba(118,210,224,.38); }
+  .feats b { color: var(--amber); margin-right: .35em; }
+  .cta { display: flex; align-items: center; gap: calc(22px * var(--s)); margin-top: auto; }
+  .pill { white-space: nowrap; display: inline-flex; align-items: center; gap: .7em; padding: .55em 1.2em .5em 1em; font-size: calc(24px * var(--s)); font-weight: 800; letter-spacing: .18em; color: #160c00;
+    background: linear-gradient(180deg, #ffd27a, var(--amber) 55%, #f09a1a);
+    clip-path: polygon(calc(12px * var(--s)) 0, 100% 0, 100% calc(100% - 12px * var(--s)), calc(100% - 12px * var(--s)) 100%, 0 100%, 0 calc(12px * var(--s)));
+    box-shadow: 0 0 0 1px #ffe2a8 inset; }
+  .pill::before { content: ''; border-style: solid; border-width: .42em 0 .42em .6em; border-color: transparent transparent transparent #160c00; }
+  .site { font-size: calc(19px * var(--s)); letter-spacing: .06em; color: var(--dim); text-shadow: 0 1px 6px #000; }
+  .live { position: absolute; display: flex; align-items: center; gap: .7em; padding: .45em .8em; font-size: calc(15px * var(--s)); letter-spacing: .16em; color: #fff;
+    background: rgba(3,10,18,.7); border: 1px solid rgba(118,210,224,.32); }
+  .live i { width: .55em; height: .55em; border-radius: 50%; background: #ff4d5e; box-shadow: 0 0 8px #ff4d5e; }
+  .live em { font-style: normal; color: #ff9aa4; }
+
+  /* ---------------- layouts ---------------- */
+  /* wide link card: copy left, action right (OG 1200x630, GitHub 1280x640) */
+  body.card .scrim { background: linear-gradient(90deg, rgba(3,8,15,.92) 0%, rgba(3,8,15,.78) 32%, rgba(3,8,15,.22) 50%, rgba(3,8,15,0) 62%), linear-gradient(0deg, rgba(3,8,15,.55), transparent 26%); }
+  body.card .copy { left: calc(64px * var(--s)); top: calc(58px * var(--s)); bottom: calc(52px * var(--s)); width: calc(700px * var(--s)); }
+  body.card .wordmark { margin-top: calc(12px * var(--s)); font-size: calc(108px * var(--s)); }
+  body.card .tag { font-size: calc(23px * var(--s)); }
+  body.card .live { right: calc(26px * var(--s)); top: calc(24px * var(--s)); }
+
+  /* itch cover 630x500 (315:250): wordmark large, bottom-anchored, readable at 315x250 */
+  body.cover .scrim { background: linear-gradient(0deg, rgba(3,8,15,.95) 0%, rgba(3,8,15,.82) 30%, rgba(3,8,15,.25) 54%, rgba(3,8,15,0) 66%); }
+  body.cover .copy { left: calc(34px * var(--s)); right: calc(34px * var(--s)); bottom: calc(30px * var(--s)); }
+  body.cover .wordmark { font-size: calc(110px * var(--s)); }
+  body.cover .sub { font-size: calc(23px * var(--s)); letter-spacing: .18em; }
+  body.cover .cta { margin-top: calc(20px * var(--s)); }
+  body.cover .pill { font-size: calc(22px * var(--s)); }
+  body.cover .live { left: calc(22px * var(--s)); top: calc(20px * var(--s)); font-size: calc(17px * var(--s)); }
+
+  /* itch banner: transparent title lockup that replaces the page title */
+  body.banner .copy { left: calc(10px * var(--s)); top: 50%; transform: translateY(-50%); }
+  body.banner .wordmark { font-size: calc(118px * var(--s)); }
+</style>
+</head>
+<body>
+  <img class="frame" data-bind="frame" alt="">
+  <div class="scrim"></div>
+  <div class="live" data-show="live"><i></i><em>REAL ENGINE FRAME</em><span data-bind="liveLabel"></span></div>
+  <div class="copy">
+    <div class="kicker" data-show="kicker">KNOTZ INTERACTIVE / FLIGHT DIVISION</div>
+    <div class="wordmark">KNOTZAXXON</div>
+    <div class="sub">ASSAULT ON THE IRON FORTRESS</div>
+    <div class="tag" data-show="tag">One interceptor. Eight hostile sectors. One Iron Sentinel.<br>Match altitude. Read your shadow. Break the fortress.</div>
+    <div class="feats" data-show="feats"><span><b>8</b>SECTORS</span><span><b>1</b>SENTINEL BOSS</span><span><b>3</b>CAMERA RIGS</span><span><b>&#8734;</b>HARDER LOOPS</span></div>
+    <div class="cta" data-show="cta"><div class="pill" data-bind="pill">PLAY FREE IN YOUR BROWSER</div><div class="site" data-show="site">knotenvy.github.io/KnotzAxxon</div></div>
+  </div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-import { Lifetime } from '../core/Lifetime.js';
+import { Lifetime, runCleanups } from '../core/Lifetime.js';
 /**
  * Procedural audio.
  *
@@ -247,21 +247,33 @@ export class Audio {
     return this;
   }
 
+  /**
+   * Retire every independent resource exactly once, even when one step
+   * throws: a failing listener removal must not strand the scheduler timer
+   * or an owned context. Failures are reported together through the shared
+   * runCleanups AggregateError contract. Safe to call repeatedly; a borrowed
+   * offline context is retired but never closed.
+   */
   dispose() {
-    this.stopMusic(); this.stopEngine();
-    this._lifetime.dispose();
-    clearInterval(this._schedTimer);
-    this._schedTimer = null;
-    this.ready = false;
-    if (this.ctx) {
-      this._releaseGraph();
-      if (!this._offline) this.ctx.close().catch(() => {});
-    }
-    this.ctx = this.noise = this.pink = this.brown = this._rooms = null;
-    this._lastSfx.clear();
-    // A fresh entry may try the device again.
-    this.enabled = true;
-    this._offline = this._hiddenSuspend = false;
+    runCleanups([
+      () => { this.stopMusic(); },
+      () => { this.stopEngine(); },
+      () => { this._lifetime.dispose(); },
+      () => {
+        clearInterval(this._schedTimer);
+        this._schedTimer = null;
+      },
+      () => { if (this.ctx) this._releaseGraph(); },
+      () => { if (this.ctx && !this._offline) this.ctx.close().catch(() => {}); },
+      () => {
+        this.ready = false;
+        this.ctx = this.noise = this.pink = this.brown = this._rooms = null;
+        this._lastSfx.clear();
+        // A fresh entry may try the device again.
+        this.enabled = true;
+        this._offline = this._hiddenSuspend = false;
+      },
+    ]);
   }
 
   _releaseGraph() {
@@ -810,6 +822,38 @@ export class Audio {
     o.frequency.setValueAtTime(440, t);
     o.frequency.linearRampToValueAtTime(300, t + 0.35);
     o.frequency.linearRampToValueAtTime(440, t + 0.7);
+  }
+
+  /**
+   * Critical missile-lock cue, layered over the generic klaxon by Game.warn.
+   * Three rising pips (D6 E6 G6) with a 3 kHz click edge: the rising contour
+   * is unique among warnings, and the 1-3 kHz cue band is where the dense
+   * combat bed is weakest and the music pocket opens. Throttled separately
+   * from the klaxon since critical warnings bypass the HUD cooldown.
+   */
+  missileLock() {
+    if (!this.ready || !this._throttled('missileLock', 0.5)) return;
+    const t = this._now();
+    const g = this.ctx.createGain();
+    g.connect(this.sfxBus);
+    g.gain.value = 1;
+    [1174.66, 1318.51, 1567.98].forEach((hz, i) => {
+      const b = this.ctx.createGain();
+      b.connect(g);
+      this._env(b, t + i * 0.105, 0.003, 0.085, 0.2);
+      this._osc('square', hz * this._vary(0.01), t + i * 0.105, 0.095, b);
+    });
+    // a 3 kHz click on each pip front so the train cuts through a busy mix
+    const c = this.ctx.createGain();
+    const f = this.ctx.createBiquadFilter();
+    f.type = 'bandpass'; f.frequency.value = 3000; f.Q.value = 2;
+    c.connect(f); f.connect(this.sfxBus);
+    for (let i = 0; i < 3; i++) {
+      const p = this.ctx.createGain();
+      p.connect(c);
+      this._env(p, t + i * 0.105, 0.001, 0.02, 0.2);
+      this._noiseSrc(t + i * 0.105, 0.03, p, 2);
+    }
   }
 
   /**

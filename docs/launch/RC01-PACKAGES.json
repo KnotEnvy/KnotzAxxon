@@ -1,0 +1,266 @@
+{
+  "schema": "knotzaxxon.rc01-package-verification.v1",
+  "recordedAt": "2026-11-15T22:16:22.361719+00:00",
+  "candidate": {
+    "name": "rc01",
+    "commit": "c0ee2949de29adfa52e6dcdae6768c73ec15474a",
+    "sourceHash": "6d28e0210d802d0932762ba85f61d4cf43f14a646099a5f99411b0ab240f1362",
+    "harnessHash": "5655b87d8f5c562d9216fb55e0372f3f5d1b7182b955789ef94e72d3ef26f5de"
+  },
+  "pages": {
+    "report": "artifacts/launch/pages/6d28e0210d802d09/browser-qa/report.json",
+    "reportSHA256": "9fa70b3621c7b54459dc5554012cf305d481eba9b2aaef93388984c162b429bb",
+    "manifestSHA256": "50062eee157b9f55c35fd26e12f47f6eff03bf60aa463a25f8ffe150bb6fb8d5",
+    "allFilesHashMatched": 46,
+    "modelFilesHashMatched": 35,
+    "assetsMatched": true,
+    "modelsMatched": true,
+    "status": "passed",
+    "views": [
+      {
+        "fixture": "desktop",
+        "rendering": {
+          "engineCallbacks": 344,
+          "drawCalls": 22109,
+          "presentationDraws": 344,
+          "webgl2": true,
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "vendor": "Google Inc. (NVIDIA)",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+          "viewport": [
+            1280,
+            720,
+            1
+          ],
+          "canvas": [
+            912,
+            513
+          ],
+          "configuredSettings": {
+            "quality": "low",
+            "camera": "classic",
+            "master": 0.8,
+            "music": 0.6,
+            "sfx": 0.9,
+            "shake": 0,
+            "scanlines": false,
+            "shadowLine": true,
+            "invertY": false,
+            "assist": false,
+            "perf": false
+          },
+          "countingLaw": "Successful viewport-context draws; presentationDraws target the default framebuffer (one final composer draw per frame).",
+          "browser": "157.0.8103.52",
+          "host": "NitroBliss",
+          "platform": "win32"
+        }
+      },
+      {
+        "fixture": "touch-portrait",
+        "rendering": {
+          "engineCallbacks": 69,
+          "drawCalls": 4113,
+          "presentationDraws": 69,
+          "webgl2": true,
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "vendor": "Google Inc. (NVIDIA)",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+          "viewport": [
+            390,
+            844,
+            1
+          ],
+          "canvas": [
+            292,
+            633
+          ],
+          "configuredSettings": {
+            "quality": "low",
+            "camera": "classic",
+            "shake": 0
+          },
+          "countingLaw": "Successful viewport-context draws; presentationDraws target the default framebuffer (one final composer draw per frame).",
+          "browser": "157.0.8103.52",
+          "host": "NitroBliss",
+          "platform": "win32"
+        }
+      },
+      {
+        "fixture": "touch-landscape",
+        "rendering": {
+          "engineCallbacks": 68,
+          "drawCalls": 4305,
+          "presentationDraws": 68,
+          "webgl2": true,
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "vendor": "Google Inc. (NVIDIA)",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+          "viewport": [
+            844,
+            390,
+            1
+          ],
+          "canvas": [
+            633,
+            292
+          ],
+          "configuredSettings": {
+            "quality": "low",
+            "camera": "classic",
+            "shake": 0
+          },
+          "countingLaw": "Successful viewport-context draws; presentationDraws target the default framebuffer (one final composer draw per frame).",
+          "browser": "157.0.8103.52",
+          "host": "NitroBliss",
+          "platform": "win32"
+        }
+      }
+    ],
+    "errors": [],
+    "failedRequests": []
+  },
+  "itch": {
+    "report": "artifacts/launch/distribution/6d28e0210d802d09/browser-qa/report.json",
+    "reportSHA256": "d9cd9c782f99a2794b7633cefabd42d11cc13fa07965d098dd59cdc1ae12c9de",
+    "manifestSHA256": "251c8daceaa3c6ff5f8f36f19d3919f376efafb3e593a90e4212d5ab42550fb9",
+    "zipSHA256": "7f45808003f396e35be16dc90379e790f7bd69daa996f5fba7ae7b73bd8b5694",
+    "zipBytes": 7354932,
+    "allFilesHashMatched": 46,
+    "status": "passed",
+    "views": [
+      {
+        "fixture": "desktop-iframe",
+        "hardware": {
+          "webgl2": true,
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "vendor": "Google Inc. (NVIDIA)",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        },
+        "layout": {
+          "width": 1280,
+          "height": 768,
+          "scrollWidth": 1280,
+          "canvas": {
+            "width": 960,
+            "height": 576
+          },
+          "touch": false,
+          "configuredSettings": {
+            "quality": "low",
+            "camera": "classic",
+            "master": 0.8,
+            "music": 0.6,
+            "sfx": 0.9,
+            "shake": 0,
+            "scanlines": false,
+            "shadowLine": true,
+            "invertY": false,
+            "assist": false,
+            "perf": false
+          },
+          "observedRendering": {
+            "engineCallbacks": 198,
+            "drawCalls": 12441
+          }
+        }
+      },
+      {
+        "fixture": "portrait-iframe",
+        "hardware": {
+          "webgl2": true,
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "vendor": "Google Inc. (NVIDIA)",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        },
+        "layout": {
+          "width": 390,
+          "height": 812,
+          "scrollWidth": 390,
+          "canvas": {
+            "width": 292,
+            "height": 609
+          },
+          "touch": true,
+          "configuredSettings": {
+            "quality": "low",
+            "camera": "classic",
+            "shake": 0
+          },
+          "observedRendering": {
+            "engineCallbacks": 53,
+            "drawCalls": 3184
+          }
+        }
+      },
+      {
+        "fixture": "landscape-nested",
+        "hardware": {
+          "webgl2": true,
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "vendor": "Google Inc. (NVIDIA)",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        },
+        "layout": {
+          "width": 844,
+          "height": 390,
+          "scrollWidth": 844,
+          "canvas": {
+            "width": 633,
+            "height": 292
+          },
+          "touch": true,
+          "configuredSettings": {
+            "quality": "low",
+            "camera": "classic",
+            "shake": 0
+          },
+          "observedRendering": {
+            "engineCallbacks": 50,
+            "drawCalls": 3156
+          }
+        }
+      },
+      {
+        "fixture": "short-reduced-motion",
+        "hardware": {
+          "webgl2": true,
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "vendor": "Google Inc. (NVIDIA)",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        },
+        "layout": {
+          "width": 667,
+          "height": 375,
+          "scrollWidth": 667,
+          "canvas": {
+            "width": 500,
+            "height": 281
+          },
+          "touch": false,
+          "configuredSettings": {
+            "quality": "low",
+            "camera": "classic",
+            "shake": 0
+          },
+          "observedRendering": {
+            "engineCallbacks": 25,
+            "drawCalls": 1527
+          }
+        }
+      }
+    ],
+    "iframeFullscreen": true,
+    "explicitWebGL2Failure": true,
+    "errors": [],
+    "networkFailures": []
+  },
+  "publication": {
+    "pages": false,
+    "itch": false
+  },
+  "limits": [
+    "Headless hardware browser; emulated touch/viewports are not physical phone/controller evidence.",
+    "Render counts and successful viewport-context draws are not sustained FPS measurements.",
+    "Local packaged and nested iframe verification does not establish a live account upload."
+  ]
+}

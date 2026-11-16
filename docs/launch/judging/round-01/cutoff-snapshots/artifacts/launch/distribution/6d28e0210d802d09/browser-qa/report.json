@@ -1,0 +1,192 @@
+{
+  "sourceHash": "6d28e0210d802d0932762ba85f61d4cf43f14a646099a5f99411b0ab240f1362",
+  "archive": {
+    "file": "knotzaxxon-html5.zip",
+    "bytes": 7354932,
+    "sha256": "7f45808003f396e35be16dc90379e790f7bd69daa996f5fba7ae7b73bd8b5694"
+  },
+  "kind": "local packaged HTML5 distribution QA",
+  "device": {
+    "host": "NitroBliss",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "checks": [
+    {
+      "allPackagedFilesFetchedAndHashMatched": 46
+    },
+    {
+      "iframeFullscreen": true
+    },
+    {
+      "fixture": "desktop-iframe",
+      "hardware": {
+        "webgl2": true,
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+      },
+      "layout": {
+        "width": 1280,
+        "height": 768,
+        "scrollWidth": 1280,
+        "canvas": {
+          "width": 960,
+          "height": 576
+        },
+        "touch": false,
+        "configuredSettings": {
+          "quality": "low",
+          "camera": "classic",
+          "master": 0.8,
+          "music": 0.6,
+          "sfx": 0.9,
+          "shake": 0,
+          "scanlines": false,
+          "shadowLine": true,
+          "invertY": false,
+          "assist": false,
+          "perf": false
+        },
+        "observedRendering": {
+          "engineCallbacks": 198,
+          "drawCalls": 12441
+        }
+      },
+      "startedThroughUI": true,
+      "rafObservationCallbacks": 12
+    },
+    {
+      "fixture": "portrait-iframe",
+      "hardware": {
+        "webgl2": true,
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+      },
+      "layout": {
+        "width": 390,
+        "height": 812,
+        "scrollWidth": 390,
+        "canvas": {
+          "width": 292,
+          "height": 609
+        },
+        "touch": true,
+        "configuredSettings": {
+          "quality": "low",
+          "camera": "classic",
+          "shake": 0
+        },
+        "observedRendering": {
+          "engineCallbacks": 53,
+          "drawCalls": 3184
+        }
+      },
+      "startedThroughUI": true,
+      "rafObservationCallbacks": 12
+    },
+    {
+      "fixture": "landscape-nested",
+      "hardware": {
+        "webgl2": true,
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+      },
+      "layout": {
+        "width": 844,
+        "height": 390,
+        "scrollWidth": 844,
+        "canvas": {
+          "width": 633,
+          "height": 292
+        },
+        "touch": true,
+        "configuredSettings": {
+          "quality": "low",
+          "camera": "classic",
+          "shake": 0
+        },
+        "observedRendering": {
+          "engineCallbacks": 50,
+          "drawCalls": 3156
+        }
+      },
+      "startedThroughUI": true,
+      "rafObservationCallbacks": 12
+    },
+    {
+      "fixture": "short-reduced-motion",
+      "hardware": {
+        "webgl2": true,
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+      },
+      "layout": {
+        "width": 667,
+        "height": 375,
+        "scrollWidth": 667,
+        "canvas": {
+          "width": 500,
+          "height": 281
+        },
+        "touch": false,
+        "configuredSettings": {
+          "quality": "low",
+          "camera": "classic",
+          "shake": 0
+        },
+        "observedRendering": {
+          "engineCallbacks": 25,
+          "drawCalls": 1527
+        }
+      },
+      "startedThroughUI": true,
+      "rafObservationCallbacks": 12
+    },
+    {
+      "webglDisabledShowsExplicitWebgl2Requirement": true,
+      "bootMessage": "KNOTZ TACTICAL SYSTEMS  //  BIOS 4.11\n\nPOST ............................. OK\nINERTIAL PLATFORM ................ OK\nPULSE ARRAY CAPACITORS ........... OK\nSHIELD LATTICE ................... OK\nTERRAIN SHADOW PROJECTOR ......... OK\nFUSING PROCEDURAL GEOMETRY ....... OK\nSYNTHESISING AUDIO BANKS ......... OK\n\nTARGET: IRON FORTRESS, GRID 7-A\nPILOT AUTHORISATION ACCEPTED.\n\n\nFATAL: THREE.WebGLRenderer: Error creating WebGL context.\n\nThis build needs WebGL 2."
+    }
+  ],
+  "errors": [],
+  "networkFailures": [],
+  "loadedModels": [
+    "models/environment/environment-kit.glb",
+    "models/fuel.glb",
+    "models/player.glb",
+    "models/production/asteroids.glb",
+    "models/production/bunker.glb",
+    "models/production/cargo-kit.glb",
+    "models/production/carrier-template.bin",
+    "models/production/carrier-template.json",
+    "models/production/cooling-stack.template.json",
+    "models/production/covered-fighter.recipe.json",
+    "models/production/dreadnought.glb",
+    "models/production/drone.glb",
+    "models/production/flak-gun.template.json",
+    "models/production/fuel-depot.template.json",
+    "models/production/fuel-pickup.glb",
+    "models/production/heavy-turret.glb",
+    "models/production/interceptor.glb",
+    "models/production/mine.glb",
+    "models/production/missile.glb",
+    "models/production/parked-fighter.glb",
+    "models/production/repair-pickup.glb",
+    "models/production/shield-pickup.glb",
+    "models/production/spread-pickup.glb",
+    "models/production/wreckage-templates.json",
+    "models/radar.glb",
+    "models/sentinel.glb",
+    "models/silo.glb",
+    "models/turret.glb"
+  ],
+  "limits": [
+    "Headless hardware browser; emulated viewports/touch are not physical mobile-device proof.",
+    "Local iframe fixture; does not establish current live Itch upload."
+  ],
+  "browser": "157.0.8103.52",
+  "status": "passed"
+}

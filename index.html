@@ -5,23 +5,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#04070c" />
-  <meta name="description" content="KNOTZAXXON - Assault on the Iron Fortress. A 3D isometric rail shooter built with Three.js." />
+  <meta name="description" content="KNOTZAXXON: Assault on the Iron Fortress. A 3D isometric arcade rail shooter. Eight sectors, one Iron Sentinel, three camera rigs. Free in your browser." />
   <title>KNOTZAXXON // ASSAULT ON THE IRON FORTRESS</title>
-  <!-- Link previews. Absolute URLs: shared cards must resolve from any host. Art is rendered from the game by scripts/brand/render-link-art.cjs -->
+  <!-- Link previews. Absolute URLs: shared cards must resolve from any host. Art is composed from real engine frames by
+       scripts/brand/launch/compose.cjs (sources: assets-source/launch-marketing/). Legacy og-image.png stays for cached links. -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="KNOTZAXXON" />
   <meta property="og:title" content="KNOTZAXXON // Assault on the Iron Fortress" />
-  <meta property="og:description" content="A 3D isometric rail shooter built with Three.js. Match altitude, read your shadow, break the fortress. Play in your browser." />
+  <meta property="og:description" content="A 3D isometric arcade rail shooter. Match altitude, read your shadow, break the Iron Fortress. Eight sectors, one boss. Free in your browser." />
   <meta property="og:url" content="https://knotenvy.github.io/KnotzAxxon/" />
-  <meta property="og:image" content="https://knotenvy.github.io/KnotzAxxon/og-image.png" />
+  <meta property="og:image" content="https://knotenvy.github.io/KnotzAxxon/brand/og-1200x630.png" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="KNOTZAXXON title art: Assault on the Iron Fortress over an isometric fortress corridor" />
+  <meta property="og:image:alt" content="KNOTZAXXON: the interceptor trades fire with the Iron Sentinel boss on an isometric fortress deck. Real in-engine frame with title art." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="KNOTZAXXON // Assault on the Iron Fortress" />
-  <meta name="twitter:description" content="A 3D isometric rail shooter built with Three.js. Play in your browser." />
-  <meta name="twitter:image" content="https://knotenvy.github.io/KnotzAxxon/og-image.png" />
-  <meta name="twitter:image:alt" content="KNOTZAXXON title art: Assault on the Iron Fortress over an isometric fortress corridor" />
+  <meta name="twitter:description" content="A 3D isometric arcade rail shooter. Eight sectors, one Iron Sentinel. Free in your browser." />
+  <meta name="twitter:image" content="https://knotenvy.github.io/KnotzAxxon/brand/og-1200x630.png" />
+  <meta name="twitter:image:alt" content="KNOTZAXXON: the interceptor trades fire with the Iron Sentinel boss on an isometric fortress deck. Real in-engine frame with title art." />
   <link rel="apple-touch-icon" href="https://knotenvy.github.io/KnotzAxxon/apple-touch-icon.png" />
   <!-- inline icon: no /favicon.ico 404 -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2304070c'/%3E%3Cpath d='M16 4 28 16 16 28 4 16Z' fill='none' stroke='%2345e0ff' stroke-width='3'/%3E%3Cpath d='M16 11 21 16 16 21 11 16Z' fill='%23ffb43a'/%3E%3C/svg%3E" />
@@ -157,19 +159,45 @@
       </div>
     </div>
 
-    <div class="screen" id="screen-title">
+    <!-- Attract cut: hides the instant between two live title vignettes. -->
+    <div class="attract-cut" id="attract-cut" aria-hidden="true"></div>
+
+    <div class="screen" id="screen-title" data-device="keyboard">
+      <div class="title-live" aria-hidden="true">
+        <i class="live-dot"></i><span class="live-tag">LIVE IN ENGINE</span>
+        <span class="live-sector" id="title-live-sector">SECTOR 01 // OUTER FORTRESS</span>
+      </div>
       <div class="title-wrap">
         <div class="title-kicker">KNOTZ INTERACTIVE / FLIGHT DIVISION</div>
         <h1 class="title"><span class="t-glitch" data-text="KNOTZAXXON">KNOTZAXXON</span></h1>
-        <div class="title-sub">ASSAULT ON THE IRON FORTRESS</div><p class="mission-brief">One interceptor. Eight hostile sectors.<br>Match altitude. Read your shadow. Break the fortress.</p>
+        <div class="title-sub">ASSAULT ON THE IRON FORTRESS</div>
+        <p class="mission-brief"><span>One interceptor. Eight hostile sectors. One Iron Sentinel.</span><br><span class="brief-doctrine">Match altitude. Read your shadow. Break the fortress.</span></p>
+        <ul class="title-feats" aria-label="Game features">
+          <li><b>8</b> SECTORS</li>
+          <li><b>1</b> SENTINEL BOSS</li>
+          <li><b>3</b> CAMERA RIGS</li>
+          <li><b>&#8734;</b> HARDER LOOPS</li>
+        </ul>
         <div class="menu" id="title-menu">
-          <button class="mi" data-action="start">ENGAGE</button>
-          <button class="mi" data-action="daily">DAILY SORTIE</button>
-          <button class="mi" data-action="howto">FLIGHT MANUAL</button>
-          <button class="mi" data-action="settings">SYSTEMS</button>
-          <button class="mi" data-action="scores">RECORDS</button>
+          <div class="title-primary">
+            <button class="mi mi-cta" data-action="start"><i class="cta-chev" aria-hidden="true"></i>ENGAGE<span class="cta-sub" aria-hidden="true">FLY NOW &middot; IN YOUR BROWSER</span></button>
+            <button class="mi mi-daily" data-action="daily">DAILY SORTIE<span class="mi-meta" id="title-daily-date" aria-hidden="true"></span></button>
+          </div>
+          <div class="title-aux">
+            <button class="mi" data-action="howto">FLIGHT MANUAL</button>
+            <button class="mi" data-action="settings">SYSTEMS</button>
+            <button class="mi" data-action="scores">RECORDS</button>
+          </div>
         </div>
-        <div class="title-foot"><span id="title-hint">ENTER / CLICK TO ENGAGE</span></div>
+        <div class="title-foot">
+          <span id="title-hint">ENTER / CLICK TO ENGAGE</span>
+          <span class="title-audio" id="title-audio" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+      <div class="title-controls" aria-hidden="true">
+        <span class="ctl-keyboard"><kbd>WASD</kbd> FLY <kbd>SPACE</kbd> FIRE <kbd>SHIFT</kbd> BOOST <kbd>L</kbd> ROLL</span>
+        <span class="ctl-gamepad"><kbd>STICK</kbd> FLY <kbd>A</kbd> FIRE <kbd>X</kbd> BOOST <kbd>B</kbd> ROLL</span>
+        <span class="ctl-touch"><kbd>STICK</kbd> FLY <kbd>FIRE</kbd> <kbd>BST</kbd> <kbd>ROLL</kbd> ON SCREEN</span>
       </div>
     </div>
 
@@ -252,9 +280,10 @@
       </div>
     </div>
 
-    <div class="screen" id="screen-over">
+    <div class="screen" id="screen-over" aria-describedby="over-summary">
       <div class="panel">
         <h2 class="panel-title" id="over-title">MISSION FAILED</h2>
+        <p class="over-summary" id="over-summary"></p>
         <div class="results" id="over-results"></div>
         <div class="menu">
           <button class="mi" data-action="continue" id="btn-continue" hidden>CONTINUE: LOOP 2</button>

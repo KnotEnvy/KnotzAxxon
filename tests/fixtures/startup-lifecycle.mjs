@@ -5,7 +5,7 @@ import { Lifetime, runCleanups } from '../../src/core/Lifetime.js';
 
 const source = await readFile(process.env.LIFECYCLE_ENTRY ?? new URL('../../src/main.js', import.meta.url), 'utf8');
 const results = [];
-for (const failure of ['compile', 'upload', 'shutdown']) {
+for (const failure of ['compile', 'upload', 'compile and restore', 'warm target', 'restore', 'shutdown']) {
   const calls = [], errors = [], fault = Error(`${failure} failed`);
   const previousTarget = {}, warmTarget = {};
   let target = previousTarget, disposeHot, engine, game;
@@ -21,8 +21,13 @@ for (const failure of ['compile', 'upload', 'shutdown']) {
       this.scene = { traverse(fn) { fn({ material: { map: { isTexture: true } } }); } };
       this.renderer = {
         getRenderTarget: () => target,
-        setRenderTarget: value => { target = value; calls.push(value === previousTarget ? 'restore-target' : 'warm-target'); },
-        compile() { if (failure === 'compile') throw fault; },
+        setRenderTarget: value => {
+          target = value; calls.push(value === previousTarget ? 'restore-target' : 'warm-target');
+          if (value === warmTarget && failure === 'warm target') throw fault;
+          if (value === previousTarget && failure === 'restore') throw fault;
+          if (value === previousTarget && failure === 'compile and restore') throw Error('secondary restore failure');
+        },
+        compile() { if (failure === 'compile' || failure === 'compile and restore') throw fault; },
         initTexture() { if (failure === 'upload') throw fault; },
       };
       this.postfx = { composer: { readBuffer: warmTarget } };

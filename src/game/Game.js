@@ -88,6 +88,29 @@ export const BestGrades = {
   },
 };
 
+/**
+ * Title attract: the live engine flies real stretches of the campaign, one
+ * sector at a time (sector index, start as a fraction of the sector). Only
+ * the world streams; no enemies, shots, score or audio cues are created.
+ */
+export const ATTRACT_SHOTS = [
+  { sector: 0, at: 0.04 }, { sector: 1, at: 0.3 }, { sector: 3, at: 0.22 },
+  { sector: 2, at: 0.35 }, { sector: 5, at: 0.3 }, { sector: 6, at: 0.25 },
+];
+/** Seconds each vignette holds, and the blackout that hides the swap. */
+export const ATTRACT_HOLD = 14, ATTRACT_CUT = 0.32;
+/**
+ * Where the attract aims to keep the ship on screen (NDC, with per-axis
+ * weights): right of the title copy on wide screens, above it on narrow ones.
+ * The Classic rig anchors its camera to the corridor, so there the ship itself
+ * also flies an off-centre lane (inside CORRIDOR_HALF) and a cruise altitude
+ * (inside ALT_MAX) that clear the copy.
+ */
+export const ATTRACT_SPOT = {
+  wide: { at: [0.3, -0.14], weight: [1, 0.35], classicLane: -12, altitude: 11 },
+  narrow: { at: [0.18, 0.46], weight: [0.25, 1], classicLane: 12, altitude: 19 },
+};
+
 /** How far ahead of the player features become live entities. */
 const SPAWN_AHEAD = 300;
 const DESPAWN_BEHIND = 55;
@@ -144,7 +167,8 @@ export class Game {
   dispose() {
     if (this._disposed) return;
     this._disposed = true;
-    const entities = [...this.enemies, ...this.pickups], boss = this.boss;
+    const entities = [...this.enemies, ...this.pickups, ...(this._prewarmEntities ?? [])], boss = this.boss;
+    this._prewarmEntities = [];
     this.enemies.length = this.pickups.length = 0;
     this.boss = null;
     const f = this.fortress;
@@ -184,25 +208,38 @@ export class Game {
     this.seed = seed;
     this.loop = loop;
 
-    this.fortress?.clear();
-    this.level = new Level(seed, loop);
-    prepareImportedCarrier(this.level);
-    if (!this.fortress) {
-      this.fortress = new Fortress(this.scene, this.materials, this.level, settings.quality);
-    } else {
-      this.fortress.level = this.level;
-    }
-
-    for (const e of this.enemies) e.dispose();
-    this.enemies.length = 0;
-    for (const p of this.pickups) p.dispose();
-    this.pickups.length = 0;
-    this.boss?.dispose();
+    // Give up the previous sortie before retirement so one failed owner cannot
+    // leave other entities live or prevent independent pools from clearing.
+    const enemies = [...this.enemies], pickups = [...this.pickups], boss = this.boss;
+    this.enemies.length = this.pickups.length = 0;
     this.boss = null;
-
-    this.projectiles.clear();
-    this.fx.clear();
-    this.hud.reset();
+    let preparationFailure;
+    try {
+      runCleanups([
+        () => this.fortress?.clear(),
+        () => {
+          try {
+            this.level = new Level(seed, loop);
+            prepareImportedCarrier(this.level);
+            if (!this.fortress) {
+              this.fortress = new Fortress(this.scene, this.materials, this.level, settings.quality);
+            } else {
+              this.fortress.level = this.level;
+            }
+          } catch (error) { preparationFailure = {error}; }
+        },
+        ...enemies.map(enemy => () => enemy.dispose()),
+        ...pickups.map(pickup => () => pickup.dispose()),
+        () => boss?.dispose(),
+        () => this.projectiles.clear(),
+        () => this.fx.clear(),
+        () => this.hud.reset(),
+      ]);
+    } catch (error) {
+      if (!preparationFailure) throw error;
+    }
+    // A construction fault remains the cause even if retiring old owners fails.
+    if (preparationFailure) throw preparationFailure.error;
 
     this.featureCursor = 0;
     this._hudCursor = 0;
@@ -241,6 +278,8 @@ export class Game {
     this.engine.setTimeScale?.(1, true);
     this.engine.postfx?.resetTransient?.();
     this.engine.input.reset?.();
+    audio.setProximity?.(0, 0);
+    audio.setBossPhase?.(0);
     this.player.reset(0);
     this.rig.setFraming(0);
     this.rig.snap(this.player);
@@ -252,7 +291,9 @@ export class Game {
   /**
    * Compile every shader program the campaign will need before the first
    * frame: one chunk of each sector, one of each enemy, the boss and each
-   * pickup are staged, compiled, and torn down again.
+   * pickup are staged and compiled. Keep one detached set of these actual
+   * owners alive: disposing the last material for a variant evicts its program
+   * from Three.js, even if a different template material remains alive.
    */
   prewarm(compile) {
     const f = this.fortress;
@@ -297,19 +338,28 @@ export class Game {
       // A builder may attach its group before throwing, without returning it.
       const chunks = new Set([...groups, ...f.root.children.filter(g => !originalChunks.has(g))]);
       const staged = this.enemies.splice(enemyStart);
+      const owners = [...staged, ...(boss ? [boss] : []), ...pickups];
       try {
         runCleanups([
           () => this.fx.clear(),
           ...[...chunks].map(group => () => f._disposeChunk(group)),
-          ...staged.map(enemy => () => enemy.dispose()),
-          () => boss?.dispose(),
-          ...pickups.map(pickup => () => pickup.dispose()),
+          ...owners.map(owner => () => failed ? owner.dispose() : owner.group.removeFromParent()),
           ...fields.map(field => () => field.removeFromParent()),
           ...fieldGeometries.map(geometry => () => geometry.dispose()),
           () => { if (silhouette) silhouette.visible = silhouetteShown; },
         ]);
       } catch (error) {
-        if (!failed) throw error;
+        if (!failed) {
+          // A teardown failure must not strand the newly detached owners or
+          // replace the last successful warm set.
+          try { runCleanups(owners.map(owner => () => owner.dispose())); } catch { /* preserve teardown error */ }
+          throw error;
+        }
+      }
+      if (!failed) {
+        const previous = this._prewarmEntities ?? [];
+        this._prewarmEntities = owners;
+        runCleanups(previous.map(owner => () => owner.dispose()));
       }
     }
   }
@@ -324,6 +374,8 @@ export class Game {
     audio.init();
     this.mode = { daily: !!mode.daily, seed: Number.isInteger(mode.seed) ? mode.seed : null };
     this.reset(this.mode.daily ? dailySeed() : this.mode.seed ?? (Math.random() * 1e9) | 0, 0);
+    this._attract = null;
+    this.screens.attractCut?.(false);
     this.state = STATE.PLAYING;
     this.hud.setLive(true);
     this.screens.hide();
@@ -346,7 +398,74 @@ export class Game {
     this.engine.setTimeScale(1);
     this.engine.postfx.setDesaturation(0);
     this.engine.postfx.setBoost(0);
+    this._attract = { shot: 0, t: 0, cut: -1 };
+    this._attractShot(0);
     this.screens.show('title');
+  }
+
+  /** Cut the attract camera to one vignette of the current fortress. */
+  _attractShot(slot) {
+    const shot = ATTRACT_SHOTS[slot % ATTRACT_SHOTS.length];
+    const s = this.level.sectors[shot.sector];
+    if (!s || !this._attract) return;
+    this._attract.shot = slot % ATTRACT_SHOTS.length;
+    const p = this.player;
+    p.pos.z = s.zStart + (s.zEnd - s.zStart) * shot.at;
+    for (const trail of p.trails ?? []) trail.reset(p.pos); // no streak across the cut
+    // Presentation only, as in _enterSector: no HUD card, music or cue.
+    this.engine.sky.apply(s.sky, this.seed + s.index);
+    this.dust.setPreset(s.sky, true);
+    this.engine.underlay?.setEnvironment(s.sky, s.kind === SECTOR_KINDS.SPACE, true);
+    this.rig.setFraming(s.kind === SECTOR_KINDS.BOSS ? 6 : 0);
+    this._attractAim();
+    this.screens.attract?.(s);
+  }
+
+  /** The camera's stand-in on the title: the ship itself, aimed at an offset point. */
+  _attractView() {
+    const a = this._attract;
+    a.view ??= Object.create(this.player, { pos: { value: new THREE.Vector3(), writable: true } });
+    a.aim ??= new THREE.Vector3();
+    a.view.pos.copy(this.player.pos).add(a.aim);
+    return a.view;
+  }
+
+  /**
+   * Solve the camera aim offset that best puts the ship on ATTRACT_SPOT, then
+   * snap there. The response is measured, not assumed, so it holds for every
+   * rig (Classic ignores lateral aim; Modern and Chase follow it).
+   */
+  _attractAim() {
+    const a = this._attract, cam = this.engine.camera, p = this.player.pos;
+    this._attractView();
+    a.aim.set(0, 0, 0);
+    a.aspect = cam.aspect;
+    a.classic = !!this.rig.classic;
+    const spot = cam.aspect >= 1.15 ? ATTRACT_SPOT.wide : ATTRACT_SPOT.narrow;
+    const { at: [tx, ty], weight: [wx, wy] } = spot;
+    a.lane = a.classic ? spot.classicLane : 0;
+    a.altitude = spot.altitude;
+    p.x = a.lane; p.y = a.altitude;
+    const screen = () => { this.rig.snap(this._attractView()); const v = _v.copy(p).project(cam); return [v.x, v.y]; };
+    const STEP = 4;
+    for (let pass = 0; pass < 3; pass++) {
+      const [sx, sy] = screen();
+      a.aim.x += STEP; const [xx, xy] = screen(); a.aim.x -= STEP;
+      a.aim.z += STEP; const [zx, zy] = screen(); a.aim.z -= STEP;
+      // Weighted, damped least squares over J = [d/dx d/dz] of screen position.
+      const j = [[(xx - sx) * wx / STEP, (zx - sx) * wx / STEP], [(xy - sy) * wy / STEP, (zy - sy) * wy / STEP]];
+      const r = [(tx - sx) * wx, (ty - sy) * wy];
+      const a11 = j[0][0] ** 2 + j[1][0] ** 2, a22 = j[0][1] ** 2 + j[1][1] ** 2, a12 = j[0][0] * j[0][1] + j[1][0] * j[1][1];
+      const lambda = 1e-4 * (a11 + a22) + 1e-12;
+      const b1 = j[0][0] * r[0] + j[1][0] * r[1], b2 = j[0][1] * r[0] + j[1][1] * r[1];
+      const det = (a11 + lambda) * (a22 + lambda) - a12 * a12;
+      if (!Number.isFinite(det) || det <= 0) break;
+      a.aim.x += (b1 * (a22 + lambda) - a12 * b2) / det;
+      a.aim.z += ((a11 + lambda) * b2 - a12 * b1) / det;
+      if (!Number.isFinite(a.aim.x + a.aim.z)) { a.aim.set(0, 0, 0); break; }
+      a.aim.clampLength(0, 60);
+    }
+    this.rig.snap(this._attractView());
   }
 
   pause() {
@@ -355,6 +474,7 @@ export class Game {
     this.hud.setControlsLive(false);
     this.engine.setTimeScale(0, true);
     this.engine.input.reset();
+    audio.setProximity?.(0, 0);
     audio.setPaused(true);
     this.screens.show('pause');
   }
@@ -473,18 +593,28 @@ export class Game {
   _idleUpdate(dt, time) {
     const p = this.player;
     if (this.state === STATE.IDLE) {
-      if (p.pos.z > 1100) this.reset(1);
+      const a = this._attract;
+      if (a) {
+        a.t += dt;
+        if (a.cut < 0 && a.t >= ATTRACT_HOLD) { a.cut = 0; this.screens.attractCut?.(true); }
+        else if (a.cut >= 0 && (a.cut += dt) >= ATTRACT_CUT) {
+          this._attractShot(a.shot + 1);
+          a.t = 0; a.cut = -1;
+          this.screens.attractCut?.(false);
+        }
+      }
       p.model.visible = true;
-      // Bounded fly-through of the opening fortress.
+      // Drift through the current vignette; ATTRACT_HOLD bounds the distance.
       p.pos.z += 22 * dt;
-      p.pos.x = Math.sin(time * 0.35) * 8;
-      p.pos.y = 11 + Math.sin(time * 0.23) * 3;
+      p.pos.x = (a?.lane ?? 0) + Math.sin(time * 0.35) * (a?.lane ? 4 : 8);
+      p.pos.y = (a?.altitude ?? 11) + Math.sin(time * 0.23) * 3;
       p.model.rotation.z = Math.sin(time * 0.35 + 1.6) * 0.25;
       this.fortress.update(p.pos.z, dt, time, this.engine.frame);
       const ctx = this._ctx(dt, time);
       p._engineFx(dt, ctx, 0);
       p._updateShadow(ctx, dt);
-      this.rig.update(dt, time, p, { trauma: 0, boost: 0 });
+      if (a && (a.aspect !== this.engine.camera.aspect || a.classic !== !!this.rig.classic)) this._attractAim(); // resize, rotation or rig change
+      this.rig.update(dt, time, a ? this._attractView() : p, { trauma: 0, boost: 0 });
     }
   }
 
@@ -1107,6 +1237,7 @@ export class Game {
     this._warnCooldown = 1.2;
     this.hud.warn(label);
     audio.alarm();
+    if (critical) audio.missileLock();
   }
 
   /* ------------------------------------------------------------------ */

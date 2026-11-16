@@ -1,0 +1,15 @@
+{
+  "commit": "93bd29d473ef86593352b57fe0cde88623e34ac1",
+  "contentHash": "eaeade5ed1e3962769dfbf8651ecb4ede846056a50fe753c14ca76f6849a8e64",
+  "zip": {
+    "file": "artifacts/launch/marketing/eaeade5ed1e39627/knotzaxxon-marketing-editable.zip",
+    "bytes": 20765634,
+    "sha256": "e064559cbcb02f99ace896419c7b2db49c12182dbf2f505e0af7d108fd221321"
+  },
+  "manifest": "artifacts/launch/marketing/eaeade5ed1e39627/manifest.json",
+  "manifestSHA256": "0e11266ceaccba04061313361795ff5d6a3c4c3d7968349555e45e2520eaab7b",
+  "fileCount": 32,
+  "exportsValidated": 4,
+  "screenshotsValidated": 5,
+  "status": "account-ready local assets; release gates and uploads pending"
+}

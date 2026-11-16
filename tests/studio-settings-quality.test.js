@@ -8,6 +8,35 @@ globalThis.matchMedia = () => ({ matches: false });
 const { SettingsStore, SCHEMA, settings } = await import('../src/core/Settings.js');
 const { Engine } = await import('../src/core/Engine.js');
 
+test('settings persistence reports the actual payload write before change observers run and recovers', () => {
+  const previous = globalThis.localStorage;
+  const saved = { camera: 'classic', quality: 'high', music: .33 };
+  let rejectPayload = true;
+  globalThis.localStorage = {
+    getItem: () => JSON.stringify(saved),
+    setItem(key, payload) {
+      // A small unrelated probe can succeed while the real payload cannot.
+      if (key === 'knotzaxxon.settings.v2') {
+        if (rejectPayload) throw new DOMException('Quota full', 'QuotaExceededError');
+        Object.assign(saved, JSON.parse(payload));
+      }
+    },
+  };
+  try {
+    const store = new SettingsStore(), observed = [];
+    assert.equal(store.persistent, null); assert.equal(store.get('music'), .33);
+    assert.equal(store.save(), false); assert.equal(store.persistent, false);
+    store.addEventListener('change', () => observed.push(store.persistent));
+    store.set('music', .45); assert.deepEqual(observed, [false]);
+    assert.equal(store.get('music'), .45); assert.equal(saved.music, .33);
+    rejectPayload = false;
+    assert.equal(store.save(), true); assert.equal(store.persistent, true);
+    assert.equal(saved.music, .45);
+    store.set('music', .5); assert.deepEqual(observed, [false, true]);
+    assert.equal(new SettingsStore().get('music'), .5);
+  } finally { globalThis.localStorage = previous; }
+});
+
 test('studio: schema normalizes JSON shapes, invalid types, ranges, choices and toggles without resetting saved preferences', () => {
   for (const raw of ['null','[]','42','true','"hello"','{bad']) {
     localStorage.getItem = () => raw;
@@ -44,7 +73,7 @@ test('studio: blocked storage retains normalized session preferences; absent sto
   localStorage.getItem = () => { throw Error('blocked'); }; localStorage.setItem = () => { throw Error('blocked'); };
   const store = new SettingsStore(); store.set('master',.25); assert.equal(store.get('master'),.25);
   const media = globalThis.matchMedia; globalThis.matchMedia = () => ({matches:true});
-  localStorage.getItem = () => null; const first = new SettingsStore(); assert.equal(first.get('camera'),'chase');
+  localStorage.getItem = () => null; const first = new SettingsStore(); assert.equal(first.get('camera'),'modern');
   localStorage.getItem = () => '{"camera":"classic","quality":"high","shake":0}';
   const upgrade = new SettingsStore(); assert.equal(upgrade.get('camera'),'classic'); assert.equal(upgrade.get('quality'),'high'); assert.equal(upgrade.get('shake'),0);
   globalThis.matchMedia = media; localStorage.setItem = () => {};

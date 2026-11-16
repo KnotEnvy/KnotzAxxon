@@ -1,4 +1,4 @@
-import { Lifetime } from '../core/Lifetime.js';
+import { Lifetime, runCleanups } from '../core/Lifetime.js';
 /**
  * Screens and menus.
  *
@@ -26,13 +26,13 @@ const BOOT_LINES = [
   'PILOT AUTHORISATION ACCEPTED.',
 ];
 
-/** True when this browser will keep a write to local storage. */
-export function storageWritable() {
-  try {
-    const key = 'knotzaxxon.probe';
-    localStorage.setItem(key, '1'); localStorage.removeItem(key);
-    return true;
-  } catch { return false; }
+/**
+ * True when the settings themselves were just written to browser storage.
+ * A thin wrapper over SettingsStore.save(): the real payload, never a probe key,
+ * because a tiny probe can pass where the settings do not (and the reverse).
+ */
+export function storageWritable(store = settings) {
+  return store.save() === true;
 }
 
 const HINT_ENGAGE = /ENTER(?: \/ CLICK)? TO ENGAGE/;
@@ -43,30 +43,57 @@ export function engageHint(original, device, touchDevice = false) {
   return original;
 }
 
+/** Which control legend the title shows; same device rule as engageHint. */
+export function titleDevice(device, touchDevice = false) {
+  if (device === 'gamepad') return 'gamepad';
+  if (touchDevice || device === 'touch') return 'touch';
+  return 'keyboard';
+}
+
+/**
+ * Browsers start audio only inside a key, click or tap; controller buttons are
+ * not a user activation. A pad-only pilot is told the one gesture that works.
+ */
+export function audioHint(device, audioState) {
+  if (device !== 'gamepad' || !audioState || audioState === 'running') return '';
+  return 'SOUND: PRESS ANY KEY, CLICK OR TAP ONCE';
+}
+
+/** Title label for the sector the live attract camera is flying through. */
+export const attractLabel = (sector) =>
+  `SECTOR ${String((sector?.index ?? 0) + 1).padStart(2, '0')} // ${sector?.name ?? ''}`;
+
 export class Screens extends EventTarget {
   constructor() {
     super();
     this._lifetime = new Lifetime();
-    this.screens = new Map();
-    for (const el of document.querySelectorAll('.screen')) {
-      this.screens.set(el.id.replace('screen-', ''), el);
-    }
-    this.current = 'boot';
-    this.stack = [];
-    this._selection = new Map();
-    this.selIndex = 0;
+    try {
+      this.screens = new Map();
+      for (const el of document.querySelectorAll('.screen')) {
+        this.screens.set(el.id.replace('screen-', ''), el);
+      }
+      this.current = 'boot';
+      this.stack = [];
+      this._selection = new Map();
+      this.selIndex = 0;
 
-    this._bindPointer();
-    this._bindKeys();
-    this._lifetime.listen(settings, 'change', e => this._settingChanged(e.detail?.id));
-    this._buildSettings();
-    this.show('boot');
+      this._bindPointer();
+      this._bindKeys();
+      this._lifetime.listen(settings, 'change', e => this._settingChanged(e.detail?.id));
+      this._buildSettings();
+      this.show('boot');
+    } catch (error) {
+      // The caller never receives a failed instance: release what was bound here.
+      try { this.dispose(); } catch { /* keep the construction error */ }
+      throw error;
+    }
   }
 
   /* ------------------------------------------------------------------ */
 
   show(name, { push = false, restore = false } = {}) {
     if (this.current) this._selection?.set(this.current, this.selIndex);
+    for (const el of this.screens.values()) el.classList.remove('cut');
     this._callsignEditing = false;
     if (push && this.current) this.stack.push(this.current);
     for (const [id, el] of this.screens) {
@@ -81,9 +108,17 @@ export class Screens extends EventTarget {
     if (name !== 'sector') this._cardDone();
     this.current = name;
     if (name === 'scores') this._renderScores();
-    if (name === 'settings') { this._refreshSettings(); this._settingsStatus(); }
+    if (name === 'settings') {
+      // Establish where changes go by saving the actual settings once on open.
+      if (!restore) settings.save();
+      this._refreshSettings(); this._settingsStatus();
+    }
+    if (name === 'title') this._refreshTitle();
     this.selIndex = restore ? (this._selection?.get(name) ?? 0) : 0;
     if (name === 'over' && !restore) this.selIndex = Math.max(0, this._items().findIndex(n => n.classList.contains('mi')));
+    // A freshly opened panel starts at its heading; its sticky actions stay in view.
+    const panel = this.screens.get(name)?.querySelector?.('.panel');
+    if (panel && !restore) panel.scrollTop = 0;
     this._refreshSelection({ focus: name !== 'boot' });
     this.dispatchEvent(new CustomEvent('shown', { detail: name }));
   }
@@ -91,7 +126,11 @@ export class Screens extends EventTarget {
   hide() {
     for (const animation of this._cardAnimations ?? []) animation.cancel();
     this._cardAnimations = [];
-    for (const el of this.screens.values()) { el.classList.remove('is-active'); el.inert = true; el.setAttribute('aria-hidden', 'true'); }
+    // Leaving for flight: cut, do not fade, so no panel lingers over the new run.
+    for (const [id, el] of this.screens) {
+      el.classList.remove('is-active'); el.inert = true; el.setAttribute('aria-hidden', 'true');
+      if (id !== 'sector') el.classList.add('cut');
+    }
     this._cardDone();
     document.activeElement?.blur?.();
     this.current = null;
@@ -117,7 +156,9 @@ export class Screens extends EventTarget {
     this.selIndex = clamp(this.selIndex, 0, Math.max(0, items.length - 1));
     items.forEach((n, i) => n.classList.toggle('sel', i === this.selIndex));
     const selected = items[this.selIndex];
-    selected?.scrollIntoView?.({ block: 'nearest' });
+    // The sticky action bar is always visible; scrolling to its static
+    // position would push the panel heading off a short screen.
+    if (!selected?.closest?.('.panel > .menu:last-child')) selected?.scrollIntoView?.({ block: 'nearest' });
     if (focus) (selected?.matches('button, input') ? selected : selected?.querySelector('input, button'))?.focus({ preventScroll: true });
   }
 
@@ -223,9 +264,10 @@ export class Screens extends EventTarget {
       field.setSelectionRange(this._callsignCursor, this._callsignCursor + 1);
       return true;
     }
-    if (action === 'up' || action === 'down') {
+    const titleStep = this.current === 'title' && (action === 'left' || action === 'right');
+    if (action === 'up' || action === 'down' || titleStep) {
       if (items.length) {
-        this.selIndex = (this.selIndex + (action === 'up' ? -1 : 1) + items.length) % items.length;
+        this.selIndex = (this.selIndex + (action === 'up' || action === 'left' ? -1 : 1) + items.length) % items.length;
         this._refreshSelection({ focus: true }); audio.ui('move');
       }
       return true;
@@ -254,6 +296,7 @@ export class Screens extends EventTarget {
   /** Controlled repeat for a held D-pad/stick while a menu is open. */
   updateGamepad(input, realDt) {
     if (input?.lastDevice !== this._device) this.setInputDevice(input?.lastDevice);
+    if (this.current === 'title' && this._device === 'gamepad') this._refreshAudioHint();
     if (!this.isOpen || input.lastDevice !== 'gamepad') { this._padRepeatAction = null; return; }
     const held = ['up', 'down', 'left', 'right'].find(a => input._padDown.has(a));
     if (!held) { this._padRepeatAction = null; return; }
@@ -272,6 +315,47 @@ export class Screens extends EventTarget {
     this._hintOriginal ??= hint.textContent;
     const next = engageHint(this._hintOriginal, device, !!document.documentElement?.classList?.contains('touch-device'));
     if (hint.textContent !== next) hint.textContent = next;
+    this._refreshTitleDevice();
+    this._refreshAudioHint();
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Title / attract                                                     */
+  /* ------------------------------------------------------------------ */
+
+  _refreshTitle() {
+    const date = document.getElementById('title-daily-date');
+    // Same UTC date the daily seed is derived from (Game.dailyLabel).
+    const label = `${new Date().toISOString().slice(0, 10)} UTC`;
+    if (date && date.textContent !== label) date.textContent = label;
+    this._refreshTitleDevice();
+    this._refreshAudioHint();
+  }
+
+  _refreshTitleDevice() {
+    const title = this.screens?.get('title');
+    if (!title?.dataset) return;
+    const device = titleDevice(this._device, !!document.documentElement?.classList?.contains('touch-device'));
+    if (title.dataset.device !== device) title.dataset.device = device;
+  }
+
+  _refreshAudioHint() {
+    const el = document.getElementById('title-audio');
+    if (!el) return;
+    const next = audioHint(this._device, audio.enabled === false ? null : (audio.ctx?.state ?? 'suspended'));
+    if (el.textContent !== next) el.textContent = next;
+  }
+
+  /** The live attract camera moved to another sector. */
+  attract(sector) {
+    const el = document.getElementById('title-live-sector');
+    const next = attractLabel(sector);
+    if (el && el.textContent !== next) el.textContent = next;
+  }
+
+  /** Blackout between two attract vignettes, so streaming never shows. */
+  attractCut(on) {
+    document.getElementById('attract-cut')?.classList?.toggle('on', !!on);
   }
 
   _act(action) {
@@ -309,15 +393,22 @@ export class Screens extends EventTarget {
     this._refreshSettings();
   }
 
-  /** Persistence state, or the change just made, in one polite status line. */
+  /**
+   * Persistence state, or the change just made, in one polite status line.
+   * Reads SettingsStore.persistent, set by the store's last actual save
+   * (set() saves before it announces a change). Unknown claims nothing.
+   */
   _settingsStatus(id) {
     const el = document.getElementById('settings-status');
     if (!el) return;
-    const saved = storageWritable();
+    const persistent = settings.persistent;
+    const known = persistent === true || persistent === false;
     const spec = id && SCHEMA.find(s => s.id === id);
-    const where = saved ? 'SAVED ON THIS DEVICE' : 'THIS SESSION ONLY: BROWSER STORAGE UNAVAILABLE';
-    el.textContent = spec ? `${spec.name} ${settings.display(id)} · ${where}` : saved ? 'CHANGES SAVE ON THIS DEVICE' : 'BROWSER STORAGE UNAVAILABLE: CHANGES LAST THIS SESSION';
-    el.classList.toggle('session', !saved);
+    const change = spec && `${spec.name} ${settings.display(id)}`;
+    if (!known) el.textContent = change || 'CHANGES APPLY NOW';
+    else if (persistent) el.textContent = change ? `${change} · SAVED ON THIS DEVICE` : 'CHANGES SAVE ON THIS DEVICE';
+    else el.textContent = change ? `${change} · THIS SESSION ONLY: BROWSER STORAGE UNAVAILABLE` : 'BROWSER STORAGE UNAVAILABLE: CHANGES LAST THIS SESSION';
+    el.classList.toggle('session', persistent === false);
     el.classList.toggle('changed', !!spec);
   }
 
@@ -403,6 +494,18 @@ export class Screens extends EventTarget {
 
   results({ title, rows, rank, entry, canContinue = false, continueLabel = 'CONTINUE: LOOP 2' }) {
     document.getElementById('over-title').textContent = title;
+    const over = this.screens.get('over');
+    if (over?.dataset) over.dataset.outcome = canContinue ? 'victory' : 'defeat';
+    // Outcome context leads: sector, total and any record sit under the heading.
+    const summary = document.getElementById('over-summary');
+    if (summary) {
+      const sector = rows.find(r => r.label === 'SECTOR REACHED')?.value;
+      const total = rows.find(r => r.total)?.value;
+      // Each part stays on one line; a narrow screen wraps only between parts.
+      summary.textContent = [sector && `SECTOR ${sector}`, total && `TOTAL ${total}`,
+        rank >= 0 && `NEW RECORD · RANK ${String(rank + 1).padStart(2, '0')}`].filter(Boolean)
+        .map(part => part.replace(/ /g, '\u00a0')).join('  ·  ');
+    }
     const cont = document.getElementById('btn-continue');
     if (cont) { cont.hidden = !canContinue; cont.textContent = continueLabel; }
     const host = document.getElementById('over-results');
@@ -469,8 +572,15 @@ export class Screens extends EventTarget {
     if (barEl) barEl.style.width = '100%';
     await this._lifetime.delay(260);
   }
+  /** Attempts every owner even if one fails, then reports all failures. */
   dispose() {
-    for (const animation of this._cardAnimations ?? []) animation.cancel();
-    this._cardAnimations = []; this._lifetime.dispose(); this._cardDone(); }
+    const animations = this._cardAnimations ?? [];
+    this._cardAnimations = [];
+    runCleanups([
+      ...animations.map(animation => () => animation.cancel()),
+      () => this._lifetime.dispose(),
+      () => this._cardDone(),
+    ]);
+  }
 
 }

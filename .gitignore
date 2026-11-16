@@ -1,4 +1,4 @@
-node_modules/
+node_modules
 dist/
 .DS_Store
 *.log
@@ -19,3 +19,6 @@ test-results/
 /docs/**/*.jpg
 /docs/**/*.webp
 /docs/**/*.wav
+
+# Generated Python bytecode from QA compositors
+__pycache__/

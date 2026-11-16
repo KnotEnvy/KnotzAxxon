@@ -1,0 +1,223 @@
+{
+  "schema": "knotzaxxon.bot-speed-comparison.v1",
+  "runId": "pilot-speed-controlled-08",
+  "sourceHash": "8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28",
+  "harnessHash": "fff405360607cb796ecd75c509374d111a765b2d5e428c0164362a5a3b80049b",
+  "creditedEpisodes": 0,
+  "comparisonFixture": true,
+  "hardware": {
+    "webgl2": true,
+    "vendor": "Google Inc. (NVIDIA)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 960,
+      "height": 540,
+      "dpr": 1
+    },
+    "canvas": {
+      "width": 720,
+      "height": 405
+    },
+    "settings": {
+      "quality": "low",
+      "camera": "classic",
+      "master": 0.8,
+      "music": 0.6,
+      "sfx": 0.9,
+      "shake": 0,
+      "scanlines": false,
+      "shadowLine": true,
+      "invertY": false,
+      "assist": false,
+      "perf": false
+    },
+    "browser": "157.0.8103.52",
+    "host": "NitroBliss",
+    "platform": "win32",
+    "arch": "x64",
+    "chrome": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+    "automation": "Playwright local child-process pipes",
+    "at": "2026-11-16T00:02:23.670Z"
+  },
+  "pairs": [
+    {
+      "loop": 0,
+      "seed": 8000001,
+      "profile": "analog",
+      "camera": "classic",
+      "quality": "low",
+      "outcome": "victory",
+      "frames": 19373,
+      "samplesCompared": 161,
+      "exactGameplayAndSamplesMatch": true,
+      "reference": {
+        "id": "pilot-speed-controlled-08-0",
+        "wallMs": 19018.5,
+        "renders": 1615
+      },
+      "hyper": {
+        "id": "pilot-speed-controlled-08-1",
+        "wallMs": 4770.39999999851,
+        "renders": 2
+      },
+      "speedup": 3.986772597686974
+    },
+    {
+      "loop": 1,
+      "seed": 8000002,
+      "profile": "keyboard",
+      "camera": "modern",
+      "quality": "low",
+      "outcome": "over",
+      "frames": 12290,
+      "samplesCompared": 102,
+      "exactGameplayAndSamplesMatch": true,
+      "reference": {
+        "id": "pilot-speed-controlled-08-2",
+        "wallMs": 9991.20000000298,
+        "renders": 1025
+      },
+      "hyper": {
+        "id": "pilot-speed-controlled-08-3",
+        "wallMs": 3571.5,
+        "renders": 2
+      },
+      "speedup": 2.7974800503998263
+    },
+    {
+      "loop": 2,
+      "seed": 8000003,
+      "profile": "gamepad",
+      "camera": "chase",
+      "quality": "low",
+      "outcome": "victory",
+      "frames": 15821,
+      "samplesCompared": 131,
+      "exactGameplayAndSamplesMatch": true,
+      "reference": {
+        "id": "pilot-speed-controlled-08-4",
+        "wallMs": 10125.70000000298,
+        "renders": 1319
+      },
+      "hyper": {
+        "id": "pilot-speed-controlled-08-5",
+        "wallMs": 4389.5999999940395,
+        "renders": 2
+      },
+      "speedup": 2.3067477674541483
+    },
+    {
+      "loop": 3,
+      "seed": 8000004,
+      "profile": "analog",
+      "camera": "classic",
+      "quality": "low",
+      "outcome": "victory",
+      "frames": 14689,
+      "samplesCompared": 122,
+      "exactGameplayAndSamplesMatch": true,
+      "reference": {
+        "id": "pilot-speed-controlled-08-6",
+        "wallMs": 10934.80000000447,
+        "renders": 1225
+      },
+      "hyper": {
+        "id": "pilot-speed-controlled-08-7",
+        "wallMs": 4366.5,
+        "renders": 2
+      },
+      "speedup": 2.5042482537511668
+    },
+    {
+      "loop": 7,
+      "seed": 8000005,
+      "profile": "keyboard",
+      "camera": "modern",
+      "quality": "low",
+      "outcome": "over",
+      "frames": 2572,
+      "samplesCompared": 21,
+      "exactGameplayAndSamplesMatch": true,
+      "reference": {
+        "id": "pilot-speed-controlled-08-8",
+        "wallMs": 2024.5,
+        "renders": 215
+      },
+      "hyper": {
+        "id": "pilot-speed-controlled-08-9",
+        "wallMs": 1043.2999999970198,
+        "renders": 2
+      },
+      "speedup": 1.940477331549682
+    },
+    {
+      "loop": 30,
+      "seed": 8000006,
+      "profile": "gamepad",
+      "camera": "chase",
+      "quality": "low",
+      "outcome": "over",
+      "frames": 1120,
+      "samplesCompared": 9,
+      "exactGameplayAndSamplesMatch": true,
+      "reference": {
+        "id": "pilot-speed-controlled-08-10",
+        "wallMs": 1834.6000000014901,
+        "renders": 94
+      },
+      "hyper": {
+        "id": "pilot-speed-controlled-08-11",
+        "wallMs": 1198.3000000044703,
+        "renders": 2
+      },
+      "speedup": 1.531002253187554
+    }
+  ],
+  "totals": {
+    "pairs": 6,
+    "framesPerArm": 65865,
+    "samplesCompared": 546,
+    "referenceWallMs": 53929.30000001192,
+    "hyperWallMs": 19339.59999999404,
+    "referenceRenders": 5493,
+    "hyperRenders": 12,
+    "speedup": 2.788542679270954,
+    "hyperSimulationFramesPerSecond": 3405.706426193939,
+    "weighted1000EpisodeEstimateMs": 3385263.9999985695
+  },
+  "evidence": [
+    {
+      "file": "config.json",
+      "sha256": "c5e72484af15ac9b57981f4c75d1485673b3d9853fc9484632d49daca0910311"
+    },
+    {
+      "file": "receipt.json",
+      "sha256": "7572b3725deea3ae97c56e94904e3e46219119951919f87a4e7fbd3807ca480a"
+    },
+    {
+      "file": "hardware.json",
+      "sha256": "aaced88fad1bd05e89e0f5f370526f9ee7dacf20b9083b8d5d15f041d8b519a5"
+    },
+    {
+      "file": "served-build.json",
+      "sha256": "d4cd9181777022f0332088d22ea3d892d74596bba0c441205a934122af2afc22"
+    },
+    {
+      "file": "episodes.jsonl",
+      "sha256": "3d0f1e8e317806db83b43410bde8c56a43f7e1f7df3aa6d70a0604cf93e4f315"
+    },
+    {
+      "file": "samples.jsonl",
+      "sha256": "256160b72510f3adf95ff0d304815bf758b94e3540afec042715e9e3f04a8f4f"
+    }
+  ],
+  "limits": [
+    "These are uncredited comparison fixtures, not a frozen final campaign or realtime player evidence.",
+    "Both arms use the original compiled game and Engine; the comparison fixes one-chunk streaming and seeds native randomness separately per call site, with the original audio-unavailable branch.",
+    "Those controls isolate wall-time streaming, audio detune and renderer UUID randomness. Exact parity is established only under these controlled conditions; natural runs retain timing and native-random variation.",
+    "Timing covers episodes, not startup or closing overhead; all presets, seeds and devices are not represented by these six pairs.",
+    "The 1000-episode projection weights one sample per band and is an estimate, not a completed campaign or a two-minute promise.",
+    "CPU submission/render counts do not establish sustained FPS, audible quality or GPU execution time."
+  ]
+}

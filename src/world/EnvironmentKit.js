@@ -12,6 +12,8 @@
  * source geometry, which stays byte-identical to the pre-kit build.
  */
 
+import { runCleanups } from '../core/Lifetime.js';
+
 const templates = new Map();
 let ready = false;
 
@@ -26,7 +28,6 @@ const IDENTITY = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1];
 
 /** Cache position+normal templates from a parsed glTF; loader-owned resources are released. Returns whether the kit was accepted. */
 export function prepareEnvironmentKit(gltf) {
-  disposeEnvironmentKit();
   const scene = gltf.scene;
   scene.updateMatrixWorld(true);
   const geometries = new Set(), materials = new Set(), textures = new Set();
@@ -38,7 +39,10 @@ export function prepareEnvironmentKit(gltf) {
       for (const v of Object.values(m)) if (v?.isTexture) textures.add(v);
     }
   });
+  let accepted = false, failure = null;
   try {
+    // Inside the guard: a stale kit that fails to release must not strand this file's resources.
+    disposeEnvironmentKit();
     scene.traverse((o) => {
       if (!o.isMesh) return;
       const split = o.name.indexOf('__');
@@ -64,21 +68,24 @@ export function prepareEnvironmentKit(gltf) {
     for (const t of templates.values()) triangles += t.userData.kit.triangles;
     if (templates.size !== ENVIRONMENT_KIT_SIGNATURE[0] || triangles !== ENVIRONMENT_KIT_SIGNATURE[1]) {
       console.warn(`Environment kit rejected: ${templates.size} parts / ${triangles} triangles, expected ${ENVIRONMENT_KIT_SIGNATURE.join(' / ')}. Using procedural architecture.`);
-      disposeEnvironmentKit();
-      return false;
-    }
-    ready = true;
-    return true;
+    } else accepted = ready = true;
   } catch (error) {
-    // A malformed part may fail after earlier templates were cloned.
-    disposeEnvironmentKit();
-    throw error;
-  } finally {
-    for (const g of geometries) g.dispose();
-    for (const t of textures) t.dispose();
-    for (const m of materials) m.dispose();
-    scene.clear();
+    failure = { error };
   }
+  // Every loader-owned resource is attempted whatever the others do. A rejected or
+  // malformed kit also gives up the templates cloned so far (a part may fail late).
+  try {
+    runCleanups([
+      () => { if (!accepted) disposeEnvironmentKit(); },
+      ...[...geometries, ...textures, ...materials].map(resource => () => resource.dispose()),
+      () => scene.clear(),
+    ]);
+  } catch (cleanupError) {
+    // A preparation error is the cause; a cleanup failure must not replace it.
+    if (!failure) throw cleanupError;
+  }
+  if (failure) throw failure.error;
+  return accepted;
 }
 
 /**
@@ -97,9 +104,11 @@ export async function loadEnvironmentKit(loader, baseUrl) {
 
 /** Release every template exactly once (application shutdown or failed load). */
 export function disposeEnvironmentKit() {
-  for (const t of templates.values()) t.dispose();
+  // Ownership ends first: a failing disposer can neither strand the rest nor be revisited.
+  const owned = new Set(templates.values());
   templates.clear();
   ready = false;
+  runCleanups([...owned].map(template => () => template.dispose()));
 }
 
 export const environmentKitReady = () => ready;

@@ -1,7 +1,8 @@
 /** Real-page loss/recovery regression. Owns and closes its local QA server/browser. */
 const fs = require('node:fs');
 const { spawn } = require('node:child_process');
-const { chromium } = require('playwright');
+const { chromium } = require(process.env.KZ_PLAYWRIGHT_PATH || 'playwright');
+const {startEvidence,finishEvidence} = require('./launch/browser-evidence.cjs');
 const assert = require('node:assert/strict');
 const out = process.env.KZ_OUT || 'artifacts/context-recovery';
 const report = { status: 'running', cases: [], errors: [], renderer: 'SwiftShader software; no hardware-FPS claim' };
@@ -9,12 +10,15 @@ let server, browser;
 (async () => {
  fs.mkdirSync(out, { recursive: true });
  try {
-  const listener = require('node:net').createServer();
-  await new Promise((resolve, reject) => { listener.once('error', reject); listener.listen(0, '127.0.0.1', resolve); });
-  const port = listener.address().port;
-  await new Promise(resolve => listener.close(resolve));
-  const url = `http://127.0.0.1:${port}`;
-  server = spawn(process.execPath, ['node_modules/vite/bin/vite.js', '--host', '127.0.0.1', '--port', String(port), '--strictPort'], { stdio: 'ignore' });
+  let url = process.env.KZ_TEST_URL;
+  if (!url) {
+   const listener = require('node:net').createServer();
+   await new Promise((resolve, reject) => { listener.once('error', reject); listener.listen(0, '127.0.0.1', resolve); });
+   const port = listener.address().port;
+   await new Promise(resolve => listener.close(resolve));
+   url = `http://127.0.0.1:${port}`;
+   server = spawn(process.execPath, ['node_modules/vite/bin/vite.js', '--host', '127.0.0.1', '--port', String(port), '--strictPort'], { stdio: 'ignore' });
+  }
   let ready = false;
   for (let n = 0; n < 100; n++) {
    try { ready = (await fetch(url)).ok; } catch {}
@@ -22,13 +26,17 @@ let server, browser;
    await new Promise(resolve => setTimeout(resolve, 100));
   }
   assert.ok(ready, 'QA server readiness');
-  browser = await chromium.launch({ headless: true, args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'], env: { ...process.env, DISPLAY: '', WAYLAND_DISPLAY: '' } });
+  browser = await chromium.launch({ headless: true, ...(process.env.KZ_CHROME_EXE ? {
+   executablePath:process.env.KZ_CHROME_EXE,args:['--use-angle=d3d11','--enable-gpu','--ignore-gpu-blocklist']
+  } : {args:['--use-angle=swiftshader','--enable-unsafe-swiftshader'],env:{...process.env,DISPLAY:'',WAYLAND_DISPLAY:''}}) });
   const page = await browser.newPage({ viewport: { width: 800, height: 450 }, hasTouch: true });
   page.setDefaultTimeout(90000);
   page.on('pageerror', error => report.errors.push(error.message));
   await page.addInitScript(() => localStorage.setItem('knotzaxxon.settings.v2', JSON.stringify({ quality: 'low', camera: 'classic', shake: 0, master: 0 })));
   await page.goto(url);
   await page.waitForFunction(() => !!window.KZ, undefined, { timeout: 90000 });
+  report.rendering = await startEvidence(page);
+  report.renderer = report.rendering.renderer;
   await page.locator('#screen-title [data-action="start"]').click();
   await page.waitForFunction(() => KZ.game.state === 'playing');
   await page.evaluate(() => { window.__lossExtension = KZ.engine.renderer.getContext().getExtension('WEBGL_lose_context'); });
@@ -69,6 +77,7 @@ let server, browser;
    requestAnimationFrame(tick);
   }));
   await page.screenshot({ path: out + '/manual-resume.png' });
+  report.rendering = await finishEvidence(page,browser);
   assert.deepEqual(report.errors, []);
   report.status = 'passed';
  } catch (error) { report.status = 'failed'; report.failure = error.stack; process.exitCode = 1; }

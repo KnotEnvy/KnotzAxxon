@@ -257,16 +257,19 @@ html, body {
 
 /* --- warnings --------------------------------------------------------- */
 
+/* Readable on any backdrop: a near-solid plate, a dark glyph outline, and a
+   pulse that never drops below 60% so the text survives its low phase. */
 .warn {
   position: absolute; top: 24%; left: 50%; transform: translateX(-50%);
-  max-width: min(72vw, 640px); padding: 6px 12px;
-  font-size: var(--fs-md); line-height: 1.5; letter-spacing: 0.14em; color: var(--red);
-  background: linear-gradient(90deg, transparent, #070e18e6 16%, #070e18e6 84%, transparent);
-  text-shadow: 0 0 24px rgba(255, 61, 85, 0.9);
+  max-width: min(72vw, 640px); padding: 6px 18px;
+  font-size: var(--fs-md); font-weight: 700; line-height: 1.5; letter-spacing: 0.14em; color: #ff5a6e;
+  background: linear-gradient(90deg, #050b14b8, #050b14f0 12%, #050b14f0 88%, #050b14b8);
+  border-block: 1px solid color-mix(in srgb, currentColor 55%, transparent);
+  text-shadow: 0 0 2px #000, 0 1px 3px #000, 0 0 18px rgba(255, 61, 85, 0.75);
   opacity: 0; text-align: center;
 }
 .warn.on { animation: warnpulse 0.75s steps(2, end) infinite; }
-@keyframes warnpulse { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0.15; } }
+@keyframes warnpulse { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0.6; } }
 
 /* --- sector grade ------------------------------------------------------ */
 
@@ -357,40 +360,7 @@ html, body {
 .boot-bar { height: 3px; background: rgba(82, 255, 168, 0.16); margin-top: 1.4em; }
 .boot-bar i { display: block; height: 100%; width: 0%; background: var(--green); box-shadow: 0 0 14px var(--green); }
 
-/* --- title ------------------------------------------------------------ */
-
-.title-wrap { text-align: center; }
-.title-kicker { font-size: var(--fs-xs); letter-spacing: 0.7em; color: var(--ink-dim); margin-bottom: 1.6em; }
-.title {
-  font-size: var(--fs-xl); font-weight: 800; letter-spacing: 0.06em; line-height: 0.92;
-  color: #fff;
-}
-.t-glitch { position: relative; display: inline-block; text-shadow: 0 0 40px rgba(69, 224, 255, 0.55); }
-.t-glitch::before, .t-glitch::after {
-  content: attr(data-text); position: absolute; inset: 0;
-  clip-path: inset(0 0 55% 0);
-}
-.t-glitch::before { color: var(--red); animation: gl1 4.5s infinite steps(1); }
-.t-glitch::after { color: var(--cyan); clip-path: inset(52% 0 0 0); animation: gl2 5.5s infinite steps(1); }
-@keyframes gl1 {
-  0%, 92%, 100% { transform: none; opacity: 0; }
-  93% { transform: translate(-4px, 1px); opacity: 0.85; }
-  95% { transform: translate(3px, -2px); opacity: 0.7; }
-  97% { transform: none; opacity: 0; }
-}
-@keyframes gl2 {
-  0%, 88%, 100% { transform: none; opacity: 0; }
-  89% { transform: translate(5px, 0); opacity: 0.8; }
-  91% { transform: translate(-3px, 2px); opacity: 0.6; }
-  93% { transform: none; opacity: 0; }
-}
-.title-sub {
-  font-size: var(--fs-md); letter-spacing: 0.52em; color: var(--cyan);
-  margin-top: 0.9em; padding-bottom: 1.2em;
-  border-bottom: 1px solid rgba(69, 224, 255, 0.22);
-}
-.title-foot { margin-top: 2.4em; font-size: var(--fs-xs); letter-spacing: 0.34em; color: var(--ink-dim); animation: blink 2.2s infinite; }
-@keyframes blink { 0%, 60%, 100% { opacity: 0.85; } 80% { opacity: 0.2; } }
+/* --- title: see "Title / attract" at the end of this file ------------- */
 
 /* --- menus ------------------------------------------------------------ */
 
@@ -563,28 +533,17 @@ html, body {
 .perf.on { display: block; }
 
 @media (prefers-reduced-motion: reduce) {
-  .t-glitch::before, .t-glitch::after, .title-foot, .warn.on { animation: none !important; }
+  .warn.on { animation: none !important; }
 }
 
-/* Flight-deck edition: a quiet editorial title and instrument surfaces. */
-#screen-title { justify-content: flex-start; padding: 7vw; background: linear-gradient(90deg,rgba(3,9,17,.94),rgba(3,9,17,.52) 46%,transparent 78%); }
-.title-wrap { text-align: left; max-width: 72vw; }
-.title { font-size: clamp(32px,6.8vw,104px); letter-spacing: -.065em; text-shadow: 0 3px 24px #0008; }
-.title-kicker { color: #efba76; letter-spacing: .24em; }
-.title-sub { font-size: clamp(10px,1.15vw,17px); letter-spacing: .23em; }
-.mission-brief { color: #b6c9d4; line-height: 1.9; font-size: clamp(12px,1.15vw,16px); margin: 28px 0; }
-#title-menu { align-items: flex-start; margin-top: 20px; }
-#title-menu .mi { text-align: left; min-width: 230px; }
-#title-menu .mi[data-action="start"] { background: #c6eff0; color: #07131a; border: 1px solid #ecffff; padding: 15px 30px; text-shadow: none; }
-.title-foot { margin-top: 28px; }
+/* Flight-deck edition: instrument surfaces. */
 .hud-block { background: linear-gradient(110deg,#04101bdf,#04101b70); padding: 12px 16px; border-left: 2px solid #7ae1e766; backdrop-filter: blur(8px); }
 .altimeter { background: #04101bbf; padding: 12px; border: 1px solid #76c9d333; }
 .score { text-shadow: 0 0 12px #45e0ff44; }
 .mi:focus-visible, input:focus-visible { outline: 2px solid #ffd398; outline-offset: 5px; }
-@media (max-width: 680px) { #screen-title { padding: 6vw; } .title-wrap { max-width: 94vw; } .hud-block { padding: 7px 9px; } .mission-brief { margin: 18px 0; } }
+@media (max-width: 680px) { .hud-block { padding: 7px 9px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
 
-#screen-title { backdrop-filter: none; }
 .pilot-entry { display:flex; gap:16px; align-items:center; margin:18px 0; color:#b6d9e5; font-size:12px; }
 .pilot-entry input { width:100px; background:#081c28; border:1px solid #75d5df; padding:10px; color:white; font:inherit; text-transform:uppercase; letter-spacing:.2em; }
 
@@ -625,9 +584,6 @@ html, body {
   .alt-track { height: 100px; }
   .altimeter { padding: 5px; }
   .boss-bar { top: calc(var(--safe-top) + 70px); }
-  #screen-title { overflow-y: auto; touch-action: pan-y; align-items: flex-start; padding-top: 18px; padding-bottom: 18px; }
-  .title-kicker, .title-foot, .mission-brief { display: none; }
-  #title-menu { margin-top: 12px; }
 }
 
 .touch-device .score-row .label { display: none; }
@@ -718,8 +674,8 @@ html, body {
    ========================================================================== */
 
 /* Damage/threat alerts keep the red pulse; notices and gains are steady. */
-.warn[data-tone="notice"] { color: #ffc46b; text-shadow: 0 0 18px rgba(255, 180, 58, 0.6); }
-.warn[data-tone="gain"] { color: #8dffc1; text-shadow: 0 0 18px rgba(82, 255, 168, 0.55); }
+.warn[data-tone="notice"] { color: #ffc46b; text-shadow: 0 0 2px #000, 0 1px 3px #000, 0 0 18px rgba(255, 180, 58, 0.6); }
+.warn[data-tone="gain"] { color: #8dffc1; text-shadow: 0 0 2px #000, 0 1px 3px #000, 0 0 18px rgba(82, 255, 168, 0.55); }
 .warn.on[data-tone="notice"], .warn.on[data-tone="gain"] { animation: warnin 0.18s ease-out both; }
 @keyframes warnin { from { opacity: 0; } to { opacity: 1; } }
 /* Warnings drop beneath a sector grade banner, and beneath a sector card. */
@@ -781,14 +737,225 @@ html, body {
 .settings-status.changed { color: #8dffc1; }
 .settings-status.session { color: #ffc46b; }
 
-/* Phone title: the subtitle floor was 10px; keep it at a readable 12px. */
-.title-sub { font-size: clamp(12px, 1.15vw, 17px); }
 
 /* Touch: every menu and settings control is at least a 44px target. */
 .touch-device .mi { min-height: 44px; }
-.touch-device #title-menu { gap: 2px; }
 .touch-device .setting-ctl button { min-width: 44px; min-height: 44px; }
 .touch-device .setting, .touch-device .pilot-entry input { min-height: 44px; }
 
 /* Short desktop windows: the weapons block steps left of the altimeter column. */
 .hud.alt-crowded .hud-br { right: calc(var(--safe-right) + var(--hud-pad) + var(--alt-w, 76px) + 12px); }
+
+/* ==========================================================================
+   Title / attract
+   The live game flies behind the title (Game._idleUpdate rotates real sector
+   vignettes). Copy sits on a left scrim so the playfield stays visible on the
+   right; one amber call to action owns the eye. Every decorative animation is
+   CSS-only and stops whenever the title is not the active screen.
+   ========================================================================== */
+
+#screen-title {
+  justify-content: flex-start; align-items: center;
+  padding: max(24px, var(--safe-top)) max(24px, var(--safe-right)) max(24px, var(--safe-bottom)) max(clamp(24px, 6vw, 104px), var(--safe-left));
+  background:
+    linear-gradient(90deg, rgba(3, 8, 15, .92) 0%, rgba(3, 8, 15, .8) 30%, rgba(3, 8, 15, .38) 52%, rgba(3, 8, 15, 0) 70%),
+    linear-gradient(0deg, rgba(3, 8, 15, .7) 0%, rgba(3, 8, 15, 0) 24%);
+  backdrop-filter: none;
+}
+.title-wrap { text-align: left; max-width: min(720px, 56vw); position: relative; z-index: 1; }
+
+.title-kicker { font-size: var(--fs-xs); color: #efba76; letter-spacing: .3em; margin-bottom: .9em; }
+.title {
+  font-size: clamp(44px, 8.4vw, 136px); font-weight: 800; line-height: .9;
+  letter-spacing: -.055em; color: #fff;
+  filter: drop-shadow(0 4px 22px rgba(0, 0, 0, .55)) drop-shadow(0 0 30px rgba(69, 224, 255, .28));
+}
+.t-glitch { position: relative; display: inline-block; }
+.t-glitch::before, .t-glitch::after { content: attr(data-text); position: absolute; inset: 0; pointer-events: none; }
+.t-glitch::before { color: var(--red); clip-path: inset(0 0 55% 0); animation: gl1 4.5s infinite steps(1); }
+.t-glitch::after { color: var(--cyan); clip-path: inset(52% 0 0 0); animation: gl2 5.5s infinite steps(1); }
+@keyframes gl1 {
+  0%, 92%, 100% { transform: none; opacity: 0; }
+  93% { transform: translate(-4px, 1px); opacity: .85; }
+  95% { transform: translate(3px, -2px); opacity: .7; }
+  97% { transform: none; opacity: 0; }
+}
+@keyframes gl2 {
+  0%, 88%, 100% { transform: none; opacity: 0; }
+  89% { transform: translate(5px, 0); opacity: .8; }
+  91% { transform: translate(-3px, 2px); opacity: .6; }
+  93% { transform: none; opacity: 0; }
+}
+.title-sub {
+  display: flex; align-items: center; gap: .9em; margin-top: .75em;
+  font-size: clamp(12px, 1.35vw, 20px); letter-spacing: .26em; color: var(--cyan-hot);
+  text-shadow: 0 0 16px rgba(69, 224, 255, .45);
+}
+.title-sub::before { content: ''; flex: 0 0 auto; width: 2.4em; height: 3px; background: var(--amber); box-shadow: 0 0 10px rgba(255, 180, 58, .6); }
+.mission-brief { margin: 1.3em 0 0; color: #c9dbe5; font-size: clamp(13px, 1.2vw, 17px); line-height: 1.75; text-shadow: 0 1px 8px rgba(0, 0, 0, .8); }
+
+.title-feats { display: flex; flex-wrap: wrap; gap: 8px; margin: 1.3em 0 0; list-style: none; }
+.title-feats li {
+  padding: 6px 11px; font-size: var(--fs-xs); letter-spacing: .14em; color: #d8eef8;
+  background: rgba(4, 16, 27, .72); border: 1px solid rgba(118, 210, 224, .32);
+}
+.title-feats b { color: var(--amber); font-weight: 800; margin-right: .3em; }
+
+#title-menu { align-items: flex-start; gap: 14px; margin-top: clamp(18px, 3.2vh, 34px); }
+.title-primary { display: flex; flex-wrap: wrap; align-items: stretch; gap: 12px; }
+.title-aux { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+
+/* the one primary action */
+#title-menu .mi-cta {
+  display: inline-grid; grid-template-columns: auto auto; align-items: center; column-gap: .7em;
+  padding: .55em 1.5em .5em 1.15em; min-width: 0;
+  font-size: clamp(20px, 2.3vw, 32px); font-weight: 800; letter-spacing: .2em; text-align: left;
+  color: #160c00; background: linear-gradient(180deg, #ffd27a, var(--amber) 55%, #f09a1a);
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+  box-shadow: 0 0 0 1px #ffe2a8 inset, 0 10px 34px rgba(255, 160, 40, .35);
+  text-shadow: none; overflow: hidden;
+  transition: filter .18s, transform .18s var(--ease);
+}
+#title-menu .mi-cta::before { display: none; }
+#title-menu .mi-cta::after {
+  /* sheen sweep, composited transform only */
+  content: ''; position: absolute; top: 0; bottom: 0; left: 0; right: auto; width: 40%; height: auto; opacity: .55;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .7), transparent);
+  transform: translateX(-120%) skewX(-18deg); animation: ctaSheen 3.6s 1.2s infinite var(--ease);
+}
+@keyframes ctaSheen { 0%, 62% { transform: translateX(-120%) skewX(-18deg); } 100% { transform: translateX(330%) skewX(-18deg); } }
+.cta-chev { width: 0; height: 0; border-style: solid; border-width: .42em 0 .42em .62em; border-color: transparent transparent transparent #160c00; }
+.cta-sub { grid-column: 2; font-size: max(11px, .38em); font-weight: 700; letter-spacing: .18em; color: #4a2b00; margin-top: .25em; }
+#title-menu .mi-cta:hover, #title-menu .mi-cta.sel {
+  color: #160c00; letter-spacing: .2em; background: linear-gradient(180deg, #ffe3a6, #ffc35c 55%, #ffa526);
+  filter: brightness(1.06); transform: translateY(-1px); text-shadow: none;
+}
+#title-menu .mi-cta.sel { box-shadow: 0 0 0 1px #fff inset, 0 0 0 3px rgba(255, 255, 255, .0), 0 10px 40px rgba(255, 170, 50, .55); }
+#title-menu .mi-cta:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+/* the daily run: secondary, outlined */
+#title-menu .mi-daily {
+  display: inline-flex; flex-direction: column; justify-content: center; align-items: flex-start;
+  padding: .55em 1.2em; font-size: clamp(14px, 1.35vw, 19px); letter-spacing: .2em; text-align: left;
+  color: var(--ink); background: rgba(4, 16, 27, .7); border: 1px solid rgba(118, 210, 224, .55);
+}
+.mi-meta { font-size: var(--fs-xs); letter-spacing: .14em; color: #9fd8e4; margin-top: .3em; }
+.mi-meta:empty { display: none; }
+#title-menu .mi-daily::before, #title-menu .mi-daily::after { display: none; }
+#title-menu .mi-daily:hover, #title-menu .mi-daily.sel { letter-spacing: .2em; border-color: var(--cyan-hot); background: rgba(10, 40, 56, .85); }
+
+/* manual / systems / records */
+#title-menu .title-aux .mi { padding: .45em .9em; font-size: clamp(12px, 1.05vw, 15px); letter-spacing: .2em; color: #b4cddb; }
+#title-menu .title-aux .mi:hover, #title-menu .title-aux .mi.sel { letter-spacing: .2em; color: #fff; }
+#title-menu .title-aux .mi::before { left: .1em; }
+#title-menu .title-aux .mi::after { right: .1em; }
+
+.title-foot { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: clamp(14px, 2.4vh, 26px); font-size: var(--fs-xs); letter-spacing: .26em; color: #c3d8e4; text-shadow: 0 1px 6px #000; }
+#title-hint { animation: blink 2.2s infinite; }
+@keyframes blink { 0%, 60%, 100% { opacity: 1; } 80% { opacity: .55; } }
+.title-audio { color: #ffc46b; letter-spacing: .12em; }
+.title-audio:empty { display: none; }
+
+/* "this is the real game" badge, top right */
+.title-live {
+  position: absolute; top: max(18px, calc(var(--safe-top) + 14px)); right: max(18px, calc(var(--safe-right) + 14px));
+  display: flex; align-items: center; gap: 10px; padding: 7px 12px; white-space: nowrap;
+  font-size: var(--fs-xs); letter-spacing: .16em; color: #d8eef8;
+  background: rgba(3, 10, 18, .66); border: 1px solid rgba(118, 210, 224, .3);
+}
+.live-dot { width: 8px; height: 8px; border-radius: 50%; background: #ff4d5e; box-shadow: 0 0 8px #ff4d5e; animation: livePulse 1.6s infinite; }
+@keyframes livePulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+.live-tag { color: #ff9aa4; }
+.live-sector { color: #fff; }
+
+/* device-matched control legend, bottom right */
+.title-controls {
+  position: absolute; right: max(18px, calc(var(--safe-right) + 14px)); bottom: max(16px, calc(var(--safe-bottom) + 12px));
+  font-size: var(--fs-xs); letter-spacing: .12em; color: #a9c3d1; text-shadow: 0 1px 6px #000;
+}
+.title-controls > span { display: none; }
+#screen-title[data-device="keyboard"] .ctl-keyboard,
+#screen-title[data-device="gamepad"] .ctl-gamepad,
+#screen-title[data-device="touch"] .ctl-touch { display: inline; }
+.title-controls kbd {
+  display: inline-block; margin: 0 4px 0 10px; padding: 2px 6px; font: inherit; color: #fff;
+  border: 1px solid rgba(168, 244, 255, .45); background: rgba(4, 16, 27, .7);
+}
+
+/* a short blackout covering the swap between two live vignettes */
+.attract-cut { position: absolute; inset: 0; z-index: 15; pointer-events: none; background: #02050a; opacity: 0; transition: opacity .28s ease-in-out; }
+.attract-cut.on { opacity: 1; }
+
+/* Hidden screens keep no animation clock running. */
+.screen:not(.is-active) *, .screen:not(.is-active) *::before, .screen:not(.is-active) *::after { animation-play-state: paused !important; }
+
+/* narrow / portrait: copy anchors to the bottom so the live ship shows above */
+@media (max-width: 680px) {
+  #screen-title {
+    align-items: flex-end; overflow-y: auto; touch-action: pan-y;
+    padding: max(16px, var(--safe-top)) max(18px, var(--safe-right)) max(20px, var(--safe-bottom)) max(18px, var(--safe-left));
+    background: linear-gradient(0deg, rgba(3, 8, 15, .94) 0%, rgba(3, 8, 15, .86) 44%, rgba(3, 8, 15, .5) 56%, rgba(3, 8, 15, 0) 68%);
+  }
+  .title-wrap { max-width: 100%; width: 100%; }
+  .title-kicker { display: none; }
+  .title { font-size: clamp(40px, 13.5vw, 72px); }
+  .title-sub { letter-spacing: .16em; }
+  .title-sub::before { width: 1.4em; }
+  .mission-brief { font-size: 13px; line-height: 1.6; margin-top: 1em; }
+  .mission-brief br, .brief-doctrine { display: none; }
+  .title-feats { margin-top: 1em; gap: 6px; }
+  #title-menu { margin-top: 18px; gap: 10px; }
+  #title-menu .mi-daily { flex-direction: row; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .title-feats li { padding: 5px 8px; letter-spacing: .08em; }
+  .title-primary { width: 100%; }
+  #title-menu .mi-cta { flex: 1 1 100%; justify-content: center; }
+  #title-menu .mi-daily { flex: 1 1 100%; }
+  .title-live { left: max(14px, calc(var(--safe-left) + 10px)); right: auto; top: max(14px, calc(var(--safe-top) + 10px)); padding: 5px 9px; gap: 7px; letter-spacing: .1em; }
+  .title-controls { display: none; }
+}
+@media (max-width: 460px) { .live-tag { display: none; } .title-live { max-width: calc(100vw - 28px); overflow: hidden; text-overflow: ellipsis; } }
+
+/* short landscape (phones on their side, small laptop windows) */
+@media (max-height: 520px) {
+  #screen-title { align-items: flex-start; overflow-y: auto; touch-action: pan-y; padding-top: max(14px, var(--safe-top)); padding-bottom: max(14px, var(--safe-bottom)); }
+  .title-kicker, .mission-brief, .title-feats, .title-controls { display: none; }
+  .title { font-size: clamp(34px, 8vh, 56px); }
+  .title-sub { margin-top: .5em; }
+  #title-menu { margin-top: 12px; gap: 8px; }
+  #title-menu .mi-cta { font-size: 20px; }
+  .title-foot { margin-top: 10px; }
+  .title-live { padding: 4px 8px; }
+}
+
+.touch-device #title-menu .mi { min-height: 44px; }
+.touch-device #title-menu .title-aux .mi { min-width: 44px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .t-glitch::before, .t-glitch::after, #title-hint, .live-dot, #title-menu .mi-cta::after { animation: none !important; }
+  #title-menu .mi-cta::after { display: none; }
+  #title-hint { opacity: 1; }
+}
+
+/* ==========================================================================
+   Results on short screens: the outcome and its context lead. The panel opens
+   at its heading (Screens.show), the sticky actions stay reachable, and screens
+   cut rather than fade when flight begins so no result lingers over a new run.
+   ========================================================================== */
+.screen.cut { transition: none; }
+.over-summary { margin: -0.7em 0 1em; text-align: center; font-size: var(--fs-sm); letter-spacing: .18em; color: #c9dce6; }
+.over-summary:empty { display: none; }
+#screen-over[data-outcome="victory"] .panel-title { color: #ffe6b3; text-shadow: 0 0 26px rgba(255, 180, 58, .55); }
+#screen-over[data-outcome="defeat"] .panel-title { color: #ffc2c9; text-shadow: 0 0 26px rgba(255, 61, 85, .5); }
+@media (max-height: 600px) {
+  #screen-over .panel-title { font-size: clamp(18px, 4.6vh, 26px); padding-bottom: .35em; margin-bottom: .55em; }
+  #screen-over .over-summary { margin: -.2em 0 .7em; }
+  #screen-over .result-row { padding-top: .3em; padding-bottom: .3em; }
+  #screen-over .result-row.total { margin-top: .3em; }
+  #screen-over .pilot-entry { margin: 10px 0; }
+  #screen-over .callsign-help { margin: -4px 0 10px; }
+}
+@media (max-height: 500px) {
+  #screen-over .panel > .menu:last-child { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: .2em .4em; }
+  #screen-over .panel > .menu:last-child .mi { padding-left: 1.1em; padding-right: 1.1em; letter-spacing: .2em; }
+  #screen-over .panel { scroll-padding-bottom: calc(64px + var(--panel-pad)); }
+}

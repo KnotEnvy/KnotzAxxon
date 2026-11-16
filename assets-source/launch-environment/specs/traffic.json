@@ -1,0 +1,22 @@
+{ "seed": 20261115, "quality": "high", "port": 5231,
+  "views": [{ "name": "wide", "width": 1280, "height": 720 }, { "name": "tall", "width": 540, "height": 960 }],
+  "scenes": [
+    { "name": "outer-classic", "camera": "classic", "sector": 0, "into": 40, "pilot": { "x": 0, "y": 8 }, "frames": [300, 45, 45], "timing": 24, "hud": true },
+    { "name": "outer-chase", "camera": "chase", "sector": 0, "into": 40, "pilot": { "x": 0, "y": 8 }, "frames": [300, 45, 45], "timing": 24 },
+    { "name": "guns-classic", "camera": "classic", "sector": 1, "into": 420, "pilot": { "x": -4, "y": 9 }, "frames": [300, 45, 45] },
+    { "name": "guns-chase", "camera": "chase", "sector": 1, "into": 420, "pilot": { "x": -4, "y": 9 }, "frames": [300, 45] },
+    { "name": "reactor-classic", "camera": "classic", "sector": 3, "into": 520, "pilot": { "x": 3, "y": 10 }, "frames": [300, 45, 45], "timing": 24 },
+    { "name": "reactor-chase", "camera": "chase", "sector": 3, "into": 520, "pilot": { "x": 3, "y": 10 }, "frames": [300, 45] },
+    { "name": "citadel-classic", "camera": "classic", "sector": 5, "into": 640, "pilot": { "x": 0, "y": 9 }, "frames": [300, 45, 45], "hud": true },
+    { "name": "citadel-modern", "camera": "modern", "sector": 5, "into": 640, "pilot": { "x": 0, "y": 9 }, "frames": [300, 45] },
+    { "name": "citadel-chase", "camera": "chase", "sector": 5, "into": 640, "pilot": { "x": 0, "y": 9 }, "frames": [300, 45], "timing": 24 },
+    { "name": "gauntlet-classic", "camera": "classic", "sector": 6, "into": 380, "pilot": { "x": 0, "y": 9 }, "frames": [300, 45, 45] },
+    { "name": "gauntlet-chase", "camera": "chase", "sector": 6, "into": 380, "pilot": { "x": 0, "y": 9 }, "frames": [300, 45] },
+    { "name": "voidgap-classic", "camera": "classic", "sector": 2, "into": 300, "pilot": { "x": 0, "y": 10 }, "frames": [300] },
+    { "name": "voidgap-chase", "camera": "chase", "sector": 2, "into": 300, "pilot": { "x": 0, "y": 10 }, "frames": [300] },
+    { "name": "boss-classic", "camera": "classic", "sector": 7, "into": 200, "pilot": { "x": 0, "y": 10 }, "frames": [300] },
+    { "name": "edge-classic", "camera": "classic", "sector": 1, "into": 1560, "pilot": { "x": 0, "y": 9 }, "frames": [240, 60] },
+    { "name": "title", "camera": "title", "frames": [360] },
+    { "name": "reactor-classic", "view": "tall", "camera": "classic", "sector": 3, "into": 520, "pilot": { "x": 3, "y": 10 }, "frames": [300, 45], "hud": true },
+    { "name": "outer-chase", "view": "tall", "camera": "chase", "sector": 0, "into": 40, "pilot": { "x": 0, "y": 8 }, "frames": [300] }
+  ] }

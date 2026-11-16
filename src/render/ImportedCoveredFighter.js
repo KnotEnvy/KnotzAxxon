@@ -1,4 +1,5 @@
-import * as THREE from 'three';
+import { BufferGeometry, Float32BufferAttribute } from 'three';
+import { runCleanups } from '../core/Lifetime.js';
 let data;
 
 let templates = null;
@@ -7,12 +8,19 @@ let disposed = false;
 export function initializeCoveredFighter(THREE) {
   if (disposed) throw new Error('Covered fighter templates already shut down');
   if (templates) return templates;
-  templates = Object.freeze(data.parts.filter(part => part.bucket !== 'paint').map(part => {
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute('position', new THREE.Float32BufferAttribute(part.positions, 3));
-    geometry.setAttribute('normal', new THREE.Float32BufferAttribute(part.normals, 3));
-    return Object.freeze({ geometry, bucket: part.bucket, tint: part.tint, name: part.name });
-  }));
+  const built = [];
+  try {
+    for (const part of data.parts.filter(part => part.bucket !== 'paint')) {
+      const geometry = new THREE.BufferGeometry();
+      built.push({ geometry, bucket: part.bucket, tint: part.tint, name: part.name });
+      geometry.setAttribute('position', new THREE.Float32BufferAttribute(part.positions, 3));
+      geometry.setAttribute('normal', new THREE.Float32BufferAttribute(part.normals, 3));
+    }
+  } catch (error) {
+    try { runCleanups(built.map(part => () => part.geometry.dispose())); } catch { /* preserve preparation error */ }
+    throw error;
+  }
+  templates = Object.freeze(built.map(Object.freeze));
   return templates;
 }
 
@@ -26,16 +34,17 @@ export function stampCoveredFighter(batch, x, z, rng) {
 
 export function disposeCoveredFighterTemplates() {
   if (disposed) return;
-  for (const part of templates ?? []) part.geometry.dispose();
+  const owned = templates ?? [];
   templates = null;
   disposed = true; data = undefined;
+  runCleanups(owned.map(part => () => part.geometry.dispose()));
 }
 
 export async function loadImportedCoveredFighter(base) {
   const response = await fetch(base + 'covered-fighter.recipe.json');
   if (!response.ok) throw new Error('Covered fighter recipe failed to load');
   data = await response.json(); disposed = false;
-  initializeCoveredFighter(THREE);
+  initializeCoveredFighter({ BufferGeometry, Float32BufferAttribute });
 }
 export function appendImportedCoveredFighter(batch, x, z, rng) {
   if (!templates) return false;

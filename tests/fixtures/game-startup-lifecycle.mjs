@@ -250,7 +250,7 @@ for (const stage of prepStages) {
     if (stage === 'normal') assert.equal(caught, undefined);
     else if (stage === 'cleanup only') assert.equal(caught?.name, 'AggregateError');
     else assert.equal(caught, fault, 'preserve preparation/compile error over cleanup errors');
-    assert.deepEqual([...calls].sort(), [...temporary].sort(), 'every staged entity is retired exactly once');
+    assert.deepEqual([...calls].sort(), stage === 'normal' ? [] : [...temporary].sort(), 'failed staging retires every owner; successful staging retains one detached set');
     assert.equal(silhouette.visible, false);
     assert.equal(game.enemies.length, 1); assert.equal(game.enemies[0], liveEnemy);
     sameItems(e.scene.children, beforeScene);
@@ -274,6 +274,7 @@ for (const stage of prepStages) {
     }
     f._disposeChunk = retire; game.fx.clear = clear;
     game.dispose(); game.dispose();
+    assert.deepEqual([...calls].sort(), [...temporary].sort(), 'every staged owner retires exactly once by shutdown');
     sameItems(e.scene.children, [e.camera]);
     assert.equal(sharedDisposals, 0);
     for (const count of enemyGeometries.values()) assert.equal(count, 0);

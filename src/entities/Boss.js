@@ -1,4 +1,5 @@
 import { disposeModel } from '../render/Dispose.js';
+import { runCleanups } from '../core/Lifetime.js';
 import { buildImportedBoss } from '../render/ImportedModels.js';
 /**
  * THE IRON SENTINEL — the fortress core guardian, and this game's answer to
@@ -81,6 +82,14 @@ const cyl = (rt, rb, h, seg = 10) => new THREE.CylinderGeometry(rt, rb, h, seg);
 
 export class Boss {
   constructor(scene, mats, feature) {
+    try { this._initialize(scene, mats, feature); }
+    catch (error) {
+      try { this.dispose(); } catch { /* preserve the construction error */ }
+      throw error;
+    }
+  }
+
+  _initialize(scene, mats, feature) {
     this.mats = mats;
     this.rng = new Rng(feature.seed ?? 7);
     this.group = new THREE.Group();
@@ -871,8 +880,10 @@ export class Boss {
   dispose() {
     if (this._disposed) return;
     this._disposed = true;
-    disposeModel(this.group);
-    for (const m of [this.visorMat, this.chargeMat, this.seamMat]) m.dispose();
-    for (const pod of this.pods) pod.flashMat.dispose();
+    runCleanups([
+      () => { if (this.group) disposeModel(this.group); },
+      ...[this.visorMat, this.chargeMat, this.seamMat, ...(this.pods ?? []).map(p => p.flashMat)].filter(Boolean)
+        .map(material => () => material.dispose()),
+    ]);
   }
 }

@@ -1,0 +1,233 @@
+{
+  "schema": "knotzaxxon.bot-hyper-natural-pilot.v1",
+  "runId": "pilot-speed-natural-09",
+  "sourceHash": "8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28",
+  "harnessHash": "ab123a06955ac04b67ac1349a509091b22ef3eb8a41543db5b84664f718cc77e",
+  "hardware": {
+    "webgl2": true,
+    "vendor": "Google Inc. (NVIDIA)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 960,
+      "height": 540,
+      "dpr": 1
+    },
+    "canvas": {
+      "width": 720,
+      "height": 405
+    },
+    "settings": {
+      "quality": "low",
+      "camera": "classic",
+      "master": 0.8,
+      "music": 0.6,
+      "sfx": 0.9,
+      "shake": 0,
+      "scanlines": false,
+      "shadowLine": true,
+      "invertY": false,
+      "assist": false,
+      "perf": false
+    },
+    "browser": "157.0.8103.52",
+    "host": "NitroBliss",
+    "platform": "win32",
+    "arch": "x64",
+    "chrome": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+    "automation": "Playwright local child-process pipes",
+    "at": "2026-11-16T00:10:40.507Z"
+  },
+  "creditedEpisodes": 0,
+  "stableSource": true,
+  "stableHarness": true,
+  "stablePackage": true,
+  "episodes": [
+    {
+      "id": "pilot-speed-natural-09-0",
+      "seed": 8000001,
+      "loop": 0,
+      "profile": "analog",
+      "camera": "classic",
+      "quality": "low",
+      "outcome": "victory",
+      "frames": 19161,
+      "renderedFrames": 2,
+      "wallMs": 4446.10000000149,
+      "sectors": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "bossPhases": [
+        0,
+        1,
+        2
+      ],
+      "audioPolicy": "unavailable-audio branch; no listening or sound validation",
+      "comparisonFixture": false
+    },
+    {
+      "id": "pilot-speed-natural-09-1",
+      "seed": 8000002,
+      "loop": 1,
+      "profile": "analog",
+      "camera": "classic",
+      "quality": "low",
+      "outcome": "victory",
+      "frames": 17277,
+      "renderedFrames": 2,
+      "wallMs": 4203.5,
+      "sectors": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "bossPhases": [
+        0,
+        1,
+        2
+      ],
+      "audioPolicy": "unavailable-audio branch; no listening or sound validation",
+      "comparisonFixture": false
+    },
+    {
+      "id": "pilot-speed-natural-09-2",
+      "seed": 8000003,
+      "loop": 2,
+      "profile": "analog",
+      "camera": "classic",
+      "quality": "low",
+      "outcome": "over",
+      "frames": 10625,
+      "renderedFrames": 2,
+      "wallMs": 2826.7000000029802,
+      "sectors": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "bossPhases": [],
+      "audioPolicy": "unavailable-audio branch; no listening or sound validation",
+      "comparisonFixture": false
+    },
+    {
+      "id": "pilot-speed-natural-09-3",
+      "seed": 8000004,
+      "loop": 3,
+      "profile": "analog",
+      "camera": "classic",
+      "quality": "low",
+      "outcome": "victory",
+      "frames": 14673,
+      "renderedFrames": 2,
+      "wallMs": 2984.89999999851,
+      "sectors": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "bossPhases": [
+        0,
+        1,
+        2
+      ],
+      "audioPolicy": "unavailable-audio branch; no listening or sound validation",
+      "comparisonFixture": false
+    },
+    {
+      "id": "pilot-speed-natural-09-4",
+      "seed": 8000005,
+      "loop": 7,
+      "profile": "analog",
+      "camera": "classic",
+      "quality": "low",
+      "outcome": "over",
+      "frames": 2140,
+      "renderedFrames": 2,
+      "wallMs": 693.3999999985099,
+      "sectors": [
+        0,
+        1
+      ],
+      "bossPhases": [],
+      "audioPolicy": "unavailable-audio branch; no listening or sound validation",
+      "comparisonFixture": false
+    },
+    {
+      "id": "pilot-speed-natural-09-5",
+      "seed": 8000006,
+      "loop": 30,
+      "profile": "analog",
+      "camera": "classic",
+      "quality": "low",
+      "outcome": "over",
+      "frames": 1487,
+      "renderedFrames": 2,
+      "wallMs": 860.7999999970198,
+      "sectors": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "bossPhases": [],
+      "audioPolicy": "unavailable-audio branch; no listening or sound validation",
+      "comparisonFixture": false
+    }
+  ],
+  "totals": {
+    "episodes": 6,
+    "frames": 65363,
+    "renders": 12,
+    "episodeWallMs": 16015.39999999851,
+    "coordinatorWallMs": 28138
+  },
+  "evidence": [
+    {
+      "file": "artifacts/launch/bot/pilot-speed-natural-09/receipt.json",
+      "sha256": "016d41cfde94b629f63712c442e36e1958068b580e6225c990d62c02679634d9"
+    },
+    {
+      "file": "artifacts/launch/bot/pilot-speed-natural-09/config.json",
+      "sha256": "9c0576c8057ea782741a72eeacf69e9973d04a807835810a2adb25b1937e7e79"
+    },
+    {
+      "file": "artifacts/launch/bot/pilot-speed-natural-09/hardware.json",
+      "sha256": "427e5fce47b36af07c0aa0ae56967a5b2da63cbe0c64ed8c5640d444ca61be83"
+    },
+    {
+      "file": "artifacts/launch/bot/pilot-speed-natural-09/episodes.jsonl",
+      "sha256": "4eb1f25798804bd4f1228edf0de0dfedf793f9728deb911ed18544cad27bcd7d"
+    },
+    {
+      "file": "artifacts/launch/bot/pilot-speed-natural-09/evidence.sha256",
+      "sha256": "90cb2f526bcfc3f6332042deb7e1ce046f39c41d05233fae63bf651e52d61281"
+    }
+  ],
+  "limits": [
+    "Unfrozen development pilot; zero final campaign credit.",
+    "Original timed streaming and native randomness were retained; comparison RNG/streaming controls were not enabled.",
+    "Bulk audio exercised the original unavailable-audio branch; no listening verdict.",
+    "Only the opening six matrix rows were exercised, all Low/Classic/synthetic analog; no full-matrix throughput guarantee or physical-device claim.",
+    "Actual rAF play, Terra Medium viewing, sustained FPS and the 1000-run time target are not established."
+  ]
+}

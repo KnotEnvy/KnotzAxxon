@@ -26,9 +26,11 @@ import { appendImportedCarrier } from '../render/ImportedCarrier.js';
 import { appendImportedDreadnought, appendImportedAsteroid, appendImportedBunker } from '../render/ImportedLandmarks.js';
 import { LIGHT_ANIM } from '../render/Materials.js';
 import { Rng, clamp, lerp, TAU } from '../core/Utils.js';
+import { runCleanups } from '../core/Lifetime.js';
 import { CHUNK_LEN, DECK_HALF, CORRIDOR_HALF, ALT_MAX, SECTOR_KINDS } from './Level.js';
 import { wallRecordFor, gateKitFor, composeFarWall, composeNearParapet, composeGateOrnament } from './FortressKit.js';
 import { environmentKitReady, kitPart, put } from './EnvironmentKit.js';
+import { AmbientTraffic, disposeAmbientTraffic } from './AmbientTraffic.js';
 
 const _c = new THREE.Color();
 const { STROBE, CHASE, BREATHE, FLICKER } = LIGHT_ANIM;
@@ -385,8 +387,11 @@ const TPL = {
 
 /** Release the prop templates (application shutdown). */
 export function disposeFortressTemplates() {
-  for (const key of ['_pipeZ', '_drum', '_fan', '_dish', '_pad', '_padSmall']) { TPL[key]?.dispose(); TPL[key] = null; }
-  if (TPL._fighter) { TPL._fighter.hull.dispose(); TPL._fighter.dark.dispose(); TPL._fighter = null; }
+  // Every cache is given up before a disposer runs; each template is then attempted once.
+  const owned = new Set();
+  for (const key of ['_pipeZ', '_drum', '_fan', '_dish', '_pad', '_padSmall']) { if (TPL[key]) owned.add(TPL[key]); TPL[key] = null; }
+  if (TPL._fighter) { owned.add(TPL._fighter.hull).add(TPL._fighter.dark); TPL._fighter = null; }
+  runCleanups([...[...owned].map(template => () => template.dispose()), disposeAmbientTraffic]);
 }
 
 function mergeFlat(parts) {
@@ -451,6 +456,8 @@ export class Fortress {
     this.rearObstacles = [];
     /** Ambient smoke/steam/flak sources, read by the effects director. */
     this.emitters = [];
+    /** Distant service craft on fixed lanes: one draw, outside every chunk and seeded stream. */
+    this.traffic = new AmbientTraffic(scene);
   }
 
   /* ------------------------------------------------------------------ */
@@ -490,13 +497,15 @@ export class Fortress {
       this._buildSpent += performance.now() - t0;
     }
 
-    // retire chunks behind the player
+    // retire chunks behind the player: each leaves the map before it is released
+    let retired = null;
     for (const [i, group] of this.chunks) {
       if (i < first - 1 || i > last + 2) {
-        this._disposeChunk(group);
         this.chunks.delete(i);
+        (retired ??= []).push(group);
       }
     }
+    if (retired) runCleanups(retired.map(group => () => this._disposeChunk(group)));
 
     for (const a of this.animated) a.update?.(dt, time, playerZ);
     for (const obstacle of this.rearObstacles) {
@@ -504,18 +513,22 @@ export class Fortress {
       // them so they cannot obscure the next encounter. Collision data is intact.
       obstacle.group.visible = obstacle.endZ >= playerZ - 4;
     }
+    this.traffic.update(this.level, playerZ, dt || 0);
   }
 
+  /** Retire one chunk. Its meshes own their geometry; materials are borrowed and stay. */
   _disposeChunk(group) {
+    const owned = new Set();
     group.traverse((o) => {
-      if (o.isMesh) o.geometry.dispose();
+      if (o.isMesh && o.geometry) owned.add(o.geometry);
     });
-    this.root.remove(group);
+    // The owner records go first, then the picture and every geometry are each attempted.
     this.rearObstacles = this.rearObstacles.filter(o => o.owner !== group);
     this.emitters = this.emitters.filter(e => e.owner !== group);
     for (let i = this.animated.length - 1; i >= 0; i--) {
       if (this.animated[i].owner === group) this.animated.splice(i, 1);
     }
+    runCleanups([() => this.root.remove(group), ...[...owned].map(geometry => () => geometry.dispose())]);
   }
 
   /** Highest decorative deck surface beneath the guide footprint.
@@ -535,12 +548,13 @@ export class Fortress {
   }
 
   clear() {
-    for (const [, g] of this.chunks) this._disposeChunk(g);
+    const chunks = [...this.chunks.values()];
     this.chunks.clear();
     this.buildQueue.length = 0;
     this.animated.length = 0;
     this.rearObstacles.length = 0;
     this.emitters.length = 0;
+    runCleanups([...chunks.map(group => () => this._disposeChunk(group)), () => this.traffic.detach()]);
   }
 
   /* ------------------------------------------------------------------ */

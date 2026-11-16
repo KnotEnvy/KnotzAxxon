@@ -1,0 +1,138 @@
+{
+  "passed": false,
+  "candidate": {
+    "commit": "c0ee2949de29adfa52e6dcdae6768c73ec15474a",
+    "sourceHash": "6d28e0210d802d0932762ba85f61d4cf43f14a646099a5f99411b0ab240f1362"
+  },
+  "scores": [
+    {
+      "judge": "luna",
+      "lens": 1,
+      "score": 8.3
+    },
+    {
+      "judge": "luna",
+      "lens": 2,
+      "score": 7.8
+    },
+    {
+      "judge": "luna",
+      "lens": 3,
+      "score": 6.8
+    },
+    {
+      "judge": "luna",
+      "lens": 4,
+      "score": 8.4
+    },
+    {
+      "judge": "luna",
+      "lens": 5,
+      "score": 7.6
+    },
+    {
+      "judge": "luna",
+      "lens": 6,
+      "score": 7.2
+    },
+    {
+      "judge": "luna",
+      "lens": 7,
+      "score": 7
+    },
+    {
+      "judge": "terra",
+      "lens": 1,
+      "score": 7.8
+    },
+    {
+      "judge": "terra",
+      "lens": 2,
+      "score": 6.5
+    },
+    {
+      "judge": "terra",
+      "lens": 3,
+      "score": 5
+    },
+    {
+      "judge": "terra",
+      "lens": 4,
+      "score": 7.3
+    },
+    {
+      "judge": "terra",
+      "lens": 5,
+      "score": 6.5
+    },
+    {
+      "judge": "terra",
+      "lens": 6,
+      "score": 4.5
+    },
+    {
+      "judge": "terra",
+      "lens": 7,
+      "score": 6.8
+    },
+    {
+      "judge": "haiku",
+      "lens": 1,
+      "score": 6
+    },
+    {
+      "judge": "haiku",
+      "lens": 2,
+      "score": 5
+    },
+    {
+      "judge": "haiku",
+      "lens": 3,
+      "score": 4
+    },
+    {
+      "judge": "haiku",
+      "lens": 4,
+      "score": 7
+    },
+    {
+      "judge": "haiku",
+      "lens": 5,
+      "score": 6
+    },
+    {
+      "judge": "haiku",
+      "lens": 6,
+      "score": 4
+    },
+    {
+      "judge": "haiku",
+      "lens": 7,
+      "score": 5
+    }
+  ],
+  "failures": [
+    "luna/lens1: 8.3 below9",
+    "luna/lens2: 7.8 below9",
+    "luna/lens3: 6.8 below9",
+    "luna/lens4: 8.4 below9",
+    "luna/lens5: 7.6 below9",
+    "luna/lens6: 7.2 below9",
+    "luna/lens7: 7 below9",
+    "terra/lens1: 7.8 below9",
+    "terra/lens2: 6.5 below9",
+    "terra/lens3: 5 below9",
+    "terra/lens4: 7.3 below9",
+    "terra/lens5: 6.5 below9",
+    "terra/lens6: 4.5 below9",
+    "terra/lens7: 6.8 below9",
+    "haiku/lens1: 6 below9",
+    "haiku/lens2: 5 below9",
+    "haiku/lens3: 4 below9",
+    "haiku/lens4: 7 below9",
+    "haiku/lens5: 6 below9",
+    "haiku/lens6: 4 below9",
+    "haiku/lens7: 5 below9"
+  ],
+  "note": "This score gate alone does not establish gameplay counts, package validity or account publication"
+}

@@ -1,0 +1,65 @@
+{
+ "craft": 64,
+ "families": {
+  "near": 20,
+  "deep": 24,
+  "sky": 20
+ },
+ "triangles": 128,
+ "vertices": 256,
+ "bufferBytes": 12032,
+ "updateMicroseconds": 0.13,
+ "uniformWritesPerFrame": 4,
+ "looks": [
+  {
+   "sector": 0,
+   "name": "pattern traffic",
+   "density": 0.55,
+   "craftShown": 35,
+   "speed": 0.8,
+   "opacity": 0.5,
+   "strobe": 0.2,
+   "peak": 0.62
+  },
+  {
+   "sector": 1,
+   "name": "ammunition haulers",
+   "density": 0.8,
+   "craftShown": 51,
+   "speed": 0.7,
+   "opacity": 0.55,
+   "strobe": 0.45,
+   "peak": 0.778
+  },
+  {
+   "sector": 3,
+   "name": "coolant tenders",
+   "density": 0.7,
+   "craftShown": 45,
+   "speed": 0.75,
+   "opacity": 0.55,
+   "strobe": 0.4,
+   "peak": 0.759
+  },
+  {
+   "sector": 5,
+   "name": "command lanes",
+   "density": 1,
+   "craftShown": 64,
+   "speed": 1,
+   "opacity": 0.6,
+   "strobe": 0.3,
+   "peak": 0.786
+  },
+  {
+   "sector": 6,
+   "name": "lockdown patrols",
+   "density": 0.35,
+   "craftShown": 22,
+   "speed": 1.45,
+   "opacity": 0.55,
+   "strobe": 1,
+   "peak": 0.99
+  }
+ ]
+}
