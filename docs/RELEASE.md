@@ -23,7 +23,7 @@ npm run test:release
 
 The smoke script owns a temporary preview on an available local port and stops it afterward. On Windows, set KZ_BROWSER_CHANNEL=msedge to use installed Edge instead. Set KZ_TEST_URL to the Pages URL to test the deployed site; set KZ_COMPARE_DIST=1 to compare its three assets byte-for-byte with the local dist build. Generated evidence goes to artifacts/release-smoke/ and is ignored by Git; CI retains it as release-browser-evidence.
 
-The portable build remains npm run build (relative asset paths). The Pages build uses /KnotzAxxon/; publish only dist, never the repository root. No server, backend, API keys or external assets are required. WebGL 2 is required. Browser storage holds local settings, records and grades; it is specific to the browser and origin.
+The portable build remains npm run build (relative asset paths). The Pages build uses /KnotzAxxon/; publish only dist, never the repository root. No server, backend, API keys or external assets are required. WebGL 2 is required. Browser storage holds local settings, records and grades; it is specific to the browser and origin. A fresh launch defaults to the Modern 20 camera; valid saved camera choices are preserved. Clean-storage release smoke confirms the normal title Start enters Sector 01 / Loop 0 at time scale 1.
 
 ## Link preview art
 
@@ -50,12 +50,14 @@ The legacy `public/og-image.png` and `public/social-preview.png` stay deployed f
 
 ## Deploy and rollback
 
-For the final public launch, first close the applicable local evidence and all21
-independent-score gates on the same frozen candidate recorded in FINISH-LINE.
-Then publish the approved artifact and perform live URL/account smoke checks.
-Postupload proof remains pending until that authorized publication; it does not
-permit early upload or reinterpret a failing judge score. Preserve the previous
-Itch build and record the uploaded artifact identity.
+The user has authorized publication of the completed implementation even though
+some playtest and judging acceptance gates remain open. Publish the reviewed source
+through the normal PR/main/Pages workflow, then publish the portable HTML5 ZIP to the
+existing Itch listing using its authorized account capabilities. Preserve the previous
+Itch build for rollback and record the uploaded artifact identity. This authorization
+does not satisfy or waive the numeric acceptance gates recorded in
+[launch/FINISH-LINE.md](launch/FINISH-LINE.md), and publication must not be described
+as full acceptance.
 
 Merge a reviewed change into main or manually run GitHub Pages release in Actions. Check both validate and deploy jobs, then test the public URL in a fresh browser. Pages is configured to build from GitHub Actions; the environment allows main.
 

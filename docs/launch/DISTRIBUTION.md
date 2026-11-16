@@ -1,8 +1,9 @@
 # Portable HTML5 distribution
 
-The previously verified Pages runtime and the current live Itch upload are separate
-deliveries. Nothing in this release work has uploaded or replaced an Itch build.
-Keep the previous live upload available until the new, judged package is ready.
+Pages and Itch are separate deliveries. The user has authorized publication of the
+completed implementation despite unfinished playtest/judging acceptance. Preserve the
+previous Itch upload for rollback; an implementation release does not imply that the
+remaining acceptance gates passed.
 
 Build a separately fingerprinted relative-base package:
 
@@ -53,9 +54,11 @@ fixtures, not gameplay episodes or physical mobile-device proof. Official listin
 image specifications and current upload inspection belong in Opus's
 `marketing-listing.json` receipt.
 
-Publication remains blocked on required final gameplay evidence and all21 independent
-judge scores>=9 on the same candidate. Prepare the complete reviewable result before
-requesting any account-only secret/action. Never place credentials in chat or Git.
+The previous publication hold was superseded by the user's explicit authorization
+to publish the completed implementation. Publish the reviewed build, preserve the
+prior Itch upload, and record actual deployment/upload identities and live checks.
+This does not change the required 1,000 bot / 30 observed-player / 21-score acceptance
+gates, which remain open. Never place credentials in chat or Git.
 
 
 Actual public browser inspection now supplements Opus's raw HTTP audit:
@@ -82,3 +85,37 @@ settings were Low/Classic/DPR1 and host NitroBliss (the next verifier also recor
 those fields directly in each receipt). Exact report: browser-qa/report.json beside
 this archive.
 This archive has not been uploaded and is not a final judged delivery.
+
+
+## Current implementation publication — 2026-11-16
+
+Approved source: `release/final-public-launch`, implementation checkpoint
+`5d73464c3716ab02816ac34585d236961895cf88`. The frozen RC02 gameplay candidate
+remains `22ef1c0067c0aa7ec9461991d0abf9c2a674586e`; later tooling and release-record
+changes do not amend its immutable package or campaign records.
+
+Publication authorization followed explicit disclosure of these remaining facts:
+100/1,000 audited RC02 bot episodes; 0/30 observed Terra Medium episodes; Round 01
+all 21 scores below 9; actual listening and physical-device proof still open. Keep
+these counts visible wherever publication is described. Fill the final PR/head,
+merge SHA, Pages workflow/live hash receipt and Itch ZIP/hash/live iframe receipt
+only after each step succeeds. Retain the previous Itch upload for rollback.
+
+## Current implementation package — 2026-11-16
+
+The verified source fingerprint is
+`95251c20acca3f0fc8dc251b9ed45c60c7bc920db6b7d523ae0eaa1652be9cec`.
+The portable ZIP contains 46 files (7,354,917 bytes), SHA-256
+`14ce809412e858f1146af3570ab55db4b525db9c5ddadff6364abe1357f5d008`.
+Nitro Windows Chrome 157 / GTX 1650 Ti D3D11 verified all packaged file hashes,
+iframe fullscreen, responsive desktop and emulated touch, and the clean-storage
+normal-URL defaults. Fresh launches use Modern 20; valid saved camera choices remain
+intact. Title START was confirmed to enter Sector 01 / Loop 0 at normal timeScale 1
+from the exact production package. The Pages package passed its hardware and model
+hash checks, and a separate clean-storage production smoke verified Modern 20 there.
+
+Both checks are local package receipts. The Pages URL and Itch account upload still
+require their respective live deployment checks. Emulated touch is not physical
+device evidence; no gameplay, judge, or audio acceptance count changes. See
+`docs/release-validation.json` for package IDs, settings, open gates and delivery
+state.

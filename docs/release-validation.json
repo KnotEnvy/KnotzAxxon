@@ -1,14 +1,15 @@
 {
-  "verified_at": "2026-11-15T17:22:23.180143+00:00",
-  "status": "facelift_live_verified",
+  "verified_at": "2026-11-16",
+  "status": "implementation_release_authorized; local_release_verified; public_delivery_pending",
   "tests": {
     "command": "npm test",
-    "passed": 241,
-    "failed": 0
+    "passed": 348,
+    "failed": 0,
+    "verified_at": "2026-11-16"
   },
   "build": {
-    "command": "npm run build:pages",
-    "status": "passed"
+    "command": "npm run build:pages and npm run build",
+    "status": "passed with Vite 7.3.7; non-fatal ImportedLandmarks.js chunk-placement warning"
   },
   "production_browser": {
     "verified_at": "2026-11-15T17:04:29.175Z",
@@ -523,12 +524,8 @@
     "historical_report": "git show 0ed9d2c:docs/release-validation.json"
   },
   "deployment": {
-    "status": "success_public_verified",
-    "deployed_revision": "1b3ff18bbabdedf30295846f3594c831ef5c30a5",
-    "workflow_run": "https://github.com/KnotEnvy/KnotzAxxon/actions/runs/43740120349",
-    "pull_request": "https://github.com/KnotEnvy/KnotzAxxon/pull/5",
-    "url": "https://knotenvy.github.io/KnotzAxxon/",
-    "verified_at": "2026-11-15T17:22:23.180143+00:00"
+    "status": "pending PR merge and live verification",
+    "url": "https://knotenvy.github.io/KnotzAxxon/"
   },
   "public_browser": {
     "verified_at": "2026-11-15T17:20:28.911Z",
@@ -823,10 +820,76 @@
     ]
   },
   "cleanup": {
-    "boundWorktree": "Retained for user; clean after this documentation commit.",
-    "remoteReleaseBranch": "art/blender-production-upgrades deleted after confirmed merge.",
-    "scratch": "Full snapshot readback/hash verification preceded removal; see docs/studio-polish/retention.json.",
-    "retained": "Editable kit, all 10 composition scenes, deterministic generators, 31 environment images, 5 UI comparisons.",
-    "nitroTooling": "Native Blender MCP and reusable user-local browser runtime retained for future work; no system packages/credential changes in the browser repair."
+    "scratch_archive": "artifacts/launch/cleanup-scratch/rc02-dependency-stage.tar.gz",
+    "sha256_file": "artifacts/launch/cleanup-scratch/rc02-dependency-stage.tar.gz.sha256",
+    "readback": "tar listing and sha256sum verification passed before removing the complete scratch cache",
+    "scope": "unique untracked asset-work/public-launch/rc02-dependency-stage scratch package/cache"
+  },
+  "implementation_release": {
+    "status": "authorized; implementation and default-camera verification complete; PR/deployment pending",
+    "source_head": "95251c20acca3f0fc8dc251b9ed45c60c7bc920db6b7d523ae0eaa1652be9cec",
+    "frozen_runtime_candidate": "22ef1c0067c0aa7ec9461991d0abf9c2a674586e",
+    "tests": {
+      "command": "npm test",
+      "passed": 348,
+      "failed": 0,
+      "verified_at": "2026-11-16"
+    },
+    "model_qa": {
+      "production": "passed on Nitro Windows Chrome 157 / GTX 1650 Ti D3D11 using local-pipe hardware path",
+      "legacy": "passed on Nitro Windows Chrome 157 / GTX 1650 Ti D3D11 using local-pipe hardware path",
+      "limitations": "QA checks model bindings, runtime setup and cleanup; not player acceptance, sustained FPS or listening."
+    },
+    "acceptance_open": {
+      "audited_rc02_bot_episodes": "100/1000",
+      "observed_terra_medium_episodes": "0/30",
+      "judging_round_01": "all 21 scores below 9; no later passing round",
+      "audio_listening": "not demonstrated",
+      "physical_device": "not demonstrated"
+    },
+    "authorization": "User explicitly authorized publication of the completed implementation with these acceptance items open.",
+    "pages": {
+      "status": "local package QA passed; public deployment pending",
+      "url": "https://knotenvy.github.io/KnotzAxxon/"
+    },
+    "itch": {
+      "status": "local package QA passed; account upload and public verification pending",
+      "url": "https://hacktivatenation.itch.io/knotzaxxon",
+      "previous_upload": "retain for rollback"
+    },
+    "source_identity_type": "source fingerprint (not commit SHA)",
+    "default_launch": {
+      "fresh_camera": "modern (MODERN 20); missing or invalid stored camera also falls back to modern",
+      "saved_camera_preferences": "valid classic, modern, and chase values preserved",
+      "graphics_policy": "unchanged device auto-detection; Nitro GTX 1650 Ti selects high",
+      "settings": {
+        "quality": "high on Nitro",
+        "camera": "modern",
+        "master": 0.8,
+        "music": 0.6,
+        "sfx": 0.9,
+        "shake": 1,
+        "scanlines": false,
+        "shadowLine": true,
+        "invertY": false,
+        "assist": false,
+        "perf": false
+      },
+      "url": "normal URL; no search parameters or QA flags",
+      "clean_storage": "no saved settings before first launch; no global storage clearing or override",
+      "start": "title START reaches Sector 01 (index 0), Loop 0, daily false, seed null, engine timeScale 1 and target 1"
+    },
+    "packages": {
+      "source_fingerprint": "95251c20acca3f0fc8dc251b9ed45c60c7bc920db6b7d523ae0eaa1652be9cec",
+      "itch_zip": "artifacts/launch/distribution/95251c20acca3f0f/knotzaxxon-html5.zip",
+      "itch_zip_bytes": 7354917,
+      "itch_zip_sha256": "14ce809412e858f1146af3570ab55db4b525db9c5ddadff6364abe1357f5d008",
+      "file_count": 46,
+      "manifest_sha256": "e7622a7573f4ca57bed51b4a5f075a4fbfcaf136bff5f13060450709603ef4c0",
+      "itch_hardware_qa": "passed: Nitro Windows Chrome 157 / GTX 1650 Ti D3D11 using local-pipe; all 46 files matched; clean-storage normal-URL defaults and Modern 20 verified; iframe/fullscreen and responsive desktop/touch emulation passed; no page/network errors",
+      "pages_hardware_qa": "passed: Nitro Windows Chrome 157 / GTX 1650 Ti D3D11; 46 packaged files and runtime model hashes matched; desktop, portrait, landscape, WebGL2 and responsive checks passed; separate production launch smoke confirmed Modern 20 and normal start",
+      "production_start_smoke": "passed from exact packaged runtime after detaching QA bridge; plain URL, empty storage, Modern 20, High on Nitro, Sector 01, Loop 0, normal speed; no page errors",
+      "limitations": "Touch verification is emulated, not a physical-device test. This smoke is one opening-sector check, not a playtest campaign."
+    }
   }
 }

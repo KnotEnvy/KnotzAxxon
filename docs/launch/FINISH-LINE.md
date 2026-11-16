@@ -7,18 +7,20 @@ Previous deployed runtime: `1b3ff18bbabdedf30295846f3594c831ef5c30a5` (PR 5).
 Historical validation: 241 regressions; 28 default resources / 35 served model hashes.
 These are baseline facts, not new-candidate results.
 
-## Current status — 2026-11-15, RC02 batch complete; hyper-speed runner validation
+## Current status — 2026-11-16, publication authorized; acceptance remains open
 
 Owner implementation tranches have been handed off and integrated. **Primary release
 work remains active.** RC02 is frozen at `22ef1c0067c0aa7ec9461991d0abf9c2a674586e`
 (source `8ecde1d465d12f89680fdb530dea3a695b2ab56cf7e12c8cd1d8fb2ec7987f28`,
 harness `c429e9a0477a68b90c3924f28d7d88cad3a5f06240aaf62482b5a7190969015d`).
 It includes Vite 7.3.7, loopback default, exact-production bot/player provenance and
-strict actual-view/acknowledgment audit. All **337 regressions pass** and the complete
-dependency audit reports zero advisories. Both new packages contain 46 files; their
-shipped bytes match RC01, including the portable ZIP. RC01 remains immutable at
+strict actual-view/acknowledgment audit. At its freeze, **337 regressions passed** and
+the dependency audit reported zero advisories. Its two packages contained 46 files
+and matched the earlier shipped bytes. RC01 remains immutable at
 `c0ee2949de29adfa52e6dcdae6768c73ec15474a`, with 329 tests and its original evidence.
-Neither identity freeze grants approval for publication.
+The user later authorized publication of the completed implementation despite open
+playtest/judging gates. That authorization changes publication status only: it does not
+change either candidate identity, historical raw evidence, scores or acceptance counts.
 
 | Requirement | Actual state | Next acceptance / owner |
 |---|---|---|
@@ -29,7 +31,7 @@ Neither identity freeze grants approval for publication.
 | Sustained frame time / resource behavior | Two completed normal-resource realtime victories | Primary: candidate-bound real-rAF distributions, worst stalls, repeated runs and pause/resume |
 | Physical input and assistive operation | Open | Opus: phone/controller/keyboard/assistive walkthrough, explicit supported-device limits |
 | Audible quality and recovery | Open; synthesis/lifecycle measured, nothing heard | Spark: actual listening, output devices and interruption/recovery evidence |
-| Public account / live distribution proof | Open; nothing newly published | Primary with Opus store review: only after applicable prepublication gates pass |
+| Public account / live distribution proof | Authorized for this implementation release; publish and verify Pages/Itch independently | Primary: preserve the prior Itch upload and record exact live identities |
 
 The corrected production path completed `pilot-production-provenance-01`: a genuine
 normal-resource loop30 death on GTX1650Ti/D3D11 Chrome157, 718 simulation frames /
@@ -58,13 +60,13 @@ actual use, not instructions for wholesale splitting, redesign or replacing acce
 art. Do not call an evidence gap a confirmed defect. The historical grade discrepancy
 already has the monotonic-clock fix and before/after proof in `NEGATIVE-FIRST-FRAME.md`.
 
-Publication ordering is explicit: build and verify immutable local packages, complete
-applicable gameplay/performance/device/audio evidence, and obtain all 21 required
-scores on the same candidate **before publishing**. Live URL/account smoke checks
-then verify the approved artifact after its authorized upload, retaining the previous
-Itch build. Until then they remain pending postupload checks. If a judge requires live
-publication proof before awarding 9, record that gate conflict and seek a specific
-user decision; never reinterpret a failing score, invent live proof or publish early.
+Historical notes below record the earlier hold. The latest user authorization
+supersedes that hold for the completed implementation release, even though gameplay
+and judging acceptance remain incomplete. Build and verify the local package, publish
+the approved implementation, and run live URL/account checks while retaining the
+previous Itch build for rollback. Publication is not a pass on any open acceptance
+item. Never reinterpret a failing score, invent evidence, or describe the release as
+fully accepted.
 
 ## Release gate
 
@@ -73,9 +75,10 @@ in each of seven lenses on the same frozen final candidate**. All 21 scores must
 No averages, medians, subsets, edited scores or forced consensus satisfy this gate.
 Keep the rubric stable, every round and its evidence/limits, and use fresh readonly
 `delegate_task` tasks for every judging round/recheck. Fix actionable findings and
-revalidate affected evidence before freezing again. No final publication or completion
-claim before this gate and the required gameplay evidence pass. External blockers must
-be stated precisely; they do not justify fabricated evidence or scores.
+revalidate affected evidence before freezing again. This remains the acceptance gate
+for declaring the launch fully accepted. The latest user authorization permits
+publication of the implementation while this gate is open; it does not permit a
+completion claim or fabricated evidence. External blockers must be stated precisely.
 
 ## Priorities, leases and dependencies
 
@@ -150,7 +153,9 @@ findings. All reviewers receive the same packet and are initially blind to one a
 - Existing Pages: https://knotenvy.github.io/KnotzAxxon/ (baseline live verification historical).
 - Existing Itch: https://hacktivatenation.itch.io/knotzaxxon (actual browser inspected 19:40 UTC: external Pages link, no public iframe/upload;
   preserve previous account uploads; hidden dashboard contents not observed).
-- New publication: **none**. Round 01: **complete, all 21 below 9**. Candidate **RC01 frozen**, identity in `candidates/rc01.json`; evidence gates still pending.
+- Historical prior checkpoint: no new publication. Round 01 is **complete, all 21 below 9**. RC01 and RC02 remain frozen identities with unchanged original evidence.
+- Current implementation release authorization: user explicitly approved publication despite unfinished playtest/judging gates. Current implementation head at the latest checkpoint was `5d73464c3716ab02816ac34585d236961895cf88`; the separately frozen RC02 runtime remains `22ef1c0067c0aa7ec9461991d0abf9c2a674586e`.
+- Open acceptance is unchanged: 100/1,000 audited RC02 bot episodes; 0/30 observed Terra Medium plays; all 21 Round 01 ratings below 9; no actual listening/audio audition and no physical-device proof.
 - Gunner/all art are explicitly accepted by the user. Historical optional 21-asset
   formal review backlog is closed by acceptance; formal review counts remain historical 0.
 - Human cross-device acceptance remains user-reported. New agent/bot sessions will be
@@ -536,3 +541,30 @@ Both experiment leases are released; all five browser owners reported closure.
 A pure gameplay simulation path is an unimplemented architectural possibility,
 with equivalence and coverage questions still to resolve. Do not weaken resource,
 collision, timing or RNG laws or claim two-minute success to close this gap.
+
+## Current implementation package and launch defaults — 2026-11-16
+
+Source fingerprint `95251c20acca3f0fc8dc251b9ed45c60c7bc920db6b7d523ae0eaa1652be9cec`
+passed 348/348 current-tree tests. Production and legacy model QA passed on Nitro
+Windows Chrome 157 / GTX 1650 Ti D3D11. Pages and portable packages passed local
+hardware/package QA; neither public delivery is claimed complete before its live
+verification receipt is recorded.
+
+Fresh storage and a normal URL select **MODERN 20**. Missing or invalid persisted
+camera values also use Modern; explicit saved `classic`, `modern`, and `chase`
+preferences are retained. Other schema defaults are unchanged: graphics auto-detects
+by device (High on the Nitro test machine), master 0.8, music 0.6, effects 0.9,
+shake 1, scanlines off, altitude guide on, invert Y off, flight assist off, and
+performance readout off. The launch URL has no QA query parameters. With clean
+storage, title **START** enters Sector 01 (index 0), Loop 0, standard mode
+(`daily=false`, `seed=null`) at engine time scale 1. The production check used the
+exact package with the QA bridge detached before play; this one launch smoke is not
+a gameplay acceptance run.
+
+Portable ZIP:
+`artifacts/launch/distribution/95251c20acca3f0f/knotzaxxon-html5.zip`,
+46 files, 7,354,917 bytes, SHA-256
+`14ce809412e858f1146af3570ab55db4b525db9c5ddadff6364abe1357f5d008`.
+Package and Pages hardware checks used emulated touch layouts only; no physical
+device proof is claimed. Full receipts and remaining acceptance gates are in
+`docs/release-validation.json`.

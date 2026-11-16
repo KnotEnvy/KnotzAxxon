@@ -25,8 +25,10 @@ const frames=frame=>frame.evaluate(()=>new Promise(resolve=>{let n=0;function ti
     {id:'short-reduced-motion',width:667,height:375,touch:false,iframe:false,reducedMotion:'reduce'},
   ]){
     const context=await browser.newContext({viewport:{width:fixture.width,height:fixture.height},hasTouch:fixture.touch,isMobile:fixture.touch,reducedMotion:fixture.reducedMotion||'no-preference'});
-    await context.addInitScript(()=>{
+    if(fixture.id!=='desktop-iframe') await context.addInitScript(()=>{
       localStorage.setItem('knotzaxxon.settings.v2',JSON.stringify({quality:'low',camera:'classic',shake:0}));
+    });
+    await context.addInitScript(()=>{
       window.__distributionFrames={engineCallbacks:0,drawCalls:0};
       const raf=window.requestAnimationFrame.bind(window);
       window.requestAnimationFrame=callback=>raf(time=>{
@@ -43,9 +45,14 @@ const frames=frame=>frame.evaluate(()=>new Promise(resolve=>{let n=0;function ti
     page.on('requestfailed',r=>report.networkFailures.push({fixture:fixture.id,url:r.url(),error:r.failure()}));
     page.on('response',r=>{if(r.url().startsWith(config.url)&&r.status()>=400)report.errors.push({fixture:fixture.id,status:r.status(),url:r.url()});if(r.ok()&&r.url().includes('/models/'))loaded.add(new URL(r.url()).pathname.slice(config.prefix.length))});
     await page.goto(config.url+(fixture.iframe?'/qa/frame.html':config.prefix));
-    let game=page.mainFrame();
+    let game=page.mainFrame(),cleanLaunch=null;
     if(fixture.iframe){await page.locator('#game').waitFor();game=await(await page.locator('#game').elementHandle()).contentFrame();}
     await game.locator('#screen-title.is-active').waitFor();
+    if(fixture.id==='desktop-iframe'){
+      cleanLaunch=await game.evaluate(()=>({search:location.search,saved:localStorage.getItem('knotzaxxon.settings.v2')}));
+      assert.equal(cleanLaunch.search,'','Launch URL must be the normal URL without QA query flags');
+      assert.equal(cleanLaunch.saved,null,'Fresh browser context must not inherit QA or player settings');
+    }
     const hardware=await game.evaluate(()=>{
       const c=document.getElementById('viewport'),gl=c.getContext('webgl2'),ext=gl?.getExtension('WEBGL_debug_renderer_info');
       return {webgl2:!!gl,renderer:ext&&gl.getParameter(ext.UNMASKED_RENDERER_WEBGL),vendor:ext&&gl.getParameter(ext.UNMASKED_VENDOR_WEBGL),userAgent:navigator.userAgent};
@@ -60,6 +67,16 @@ const frames=frame=>frame.evaluate(()=>new Promise(resolve=>{let n=0;function ti
       await game.locator('[data-action="howto"]').first().click();await game.locator('#screen-howto.is-active').waitFor();
       await game.locator('#screen-howto [data-action="back"]').click();
       await game.locator('#screen-title [data-action="settings"]').click();await game.locator('#screen-settings.is-active').waitFor();
+      const defaults=await game.evaluate(()=>{
+        const coarse=matchMedia('(pointer: coarse)').matches,cores=navigator.hardwareConcurrency||4,mem=navigator.deviceMemory||4;
+        const quality=coarse?(cores>=8?'MEDIUM':'LOW'):(cores>=12&&mem>=8?'ULTRA':cores>=6?'HIGH':'MEDIUM');
+        return {camera:document.querySelector('[data-val="camera"]')?.textContent,
+          quality:document.querySelector('[data-val="quality"]')?.textContent,expectedQuality:quality,
+          settingsSaved:localStorage.getItem('knotzaxxon.settings.v2')};
+      });
+      assert.equal(defaults.camera,'MODERN 20','Clean-storage first-run camera default');
+      assert.equal(defaults.quality,defaults.expectedQuality,'First-run graphics tier must follow the shipped device policy');
+      report.checks.push({cleanStorageDefaults:defaults,normalURL:cleanLaunch.search});
       await game.locator('#screen-settings [data-action="back"]').click();
     }
     const start=game.locator('#screen-title [data-action="start"]');

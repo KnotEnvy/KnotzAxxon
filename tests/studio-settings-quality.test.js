@@ -73,7 +73,7 @@ test('studio: blocked storage retains normalized session preferences; absent sto
   localStorage.getItem = () => { throw Error('blocked'); }; localStorage.setItem = () => { throw Error('blocked'); };
   const store = new SettingsStore(); store.set('master',.25); assert.equal(store.get('master'),.25);
   const media = globalThis.matchMedia; globalThis.matchMedia = () => ({matches:true});
-  localStorage.getItem = () => null; const first = new SettingsStore(); assert.equal(first.get('camera'),'chase');
+  localStorage.getItem = () => null; const first = new SettingsStore(); assert.equal(first.get('camera'),'modern');
   localStorage.getItem = () => '{"camera":"classic","quality":"high","shake":0}';
   const upgrade = new SettingsStore(); assert.equal(upgrade.get('camera'),'classic'); assert.equal(upgrade.get('quality'),'high'); assert.equal(upgrade.get('shake'),0);
   globalThis.matchMedia = media; localStorage.setItem = () => {};

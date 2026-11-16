@@ -106,7 +106,7 @@ export const SCHEMA = [
     type: 'choice',
     options: ['classic', 'modern', 'chase'],
     labels: ['CLASSIC 45', 'MODERN 20', 'CHASE'],
-    def: 'classic',
+    def: 'modern',
   },
   {
     id: 'master',
@@ -206,7 +206,6 @@ export class SettingsStore extends EventTarget {
     else if (cores >= 12 && mem >= 8) this.values.quality = 'ultra';
     else if (cores >= 6) this.values.quality = 'high';
     else this.values.quality = 'medium';
-    if (mobile) this.values.camera = 'chase';
   }
 
   get(id) {
